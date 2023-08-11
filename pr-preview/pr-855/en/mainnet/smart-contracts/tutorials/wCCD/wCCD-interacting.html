@@ -1,0 +1,2814 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interacting with the wCCD token protocol &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Setting up the front end" href="wCCD-front-end-set-up.html" />
+    <link rel="prev" title="Understanding the wCCD smart contract" href="wCCD-introduction.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+  background-color: var(--bg-color);
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: var(--font-color);
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 1178px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="../../../net/installation/downloads.html">Install</a>
+  <a href="../../../net/guides/learn-about-concordium.html">Learn</a>
+  <a href="../../../net/nodes/node-requirements.html">Run a node</a>
+  <a href="../../../net/guides/deciding-wallet.html">Wallets</a>
+  <a href="../../../net/guides/how-to-earn.html">Earn</a>
+  <a href="../../../net/guides/developer-page.html">Develop</a>
+  <a href="../../general/introduction.html">Smart Contracts</a>
+  <a href="../../../net/guides/create-proofs.html">Use ID</a>
+</div>
+</body>
+</html>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><img src="../../../_static/discourse-brands.svg" class="icon-link-image" alt="Discourse"/></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:documentation@concordium.com" rel="noopener" target="_blank" title="Feedback"><span><i class="fas fa-bullhorn"></i></span>
+            <label class="sr-only">Feedback</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="list-caption">
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Releases and Installation
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/installation/downloads.html">
+     Downloads
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/installation/downloads-testnet.html">
+     Downloads - Testnet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/release-notes/release-notes-lp.html">
+     Release notes
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/installation/verification-instructions.html">
+     Verification instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Learn
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/learn-about-concordium.html">
+     Learn about Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/concepts/id-accounts.html">
+       Identities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/company-identities.html">
+         Company identity creation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/manage-accounts.html">
+       Accounts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/glossary.html">
+       Glossary of Concordium Terms
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Concordium Wallets
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/deciding-wallet.html">
+     Deciding between the wallets
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/concepts/concepts-transactions.html">
+       Transactions overview
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/wallet-faqs.html">
+     Wallet FAQs
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/mobile-wallet-gen2/faq.html">
+       Concordium Wallet for Mobile FAQ
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/browser-wallet/browser-wallet-faq.html">
+       Concordium Wallet for Web FAQ
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/browser-wallet/setup-browser-wallet.html">
+     Set up the Concordium Wallet for Web
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet-gen2/setup-mobile-wallet.html">
+     Set up the Concordium Wallet for Mobile
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet/setup-mobile-wallet.html">
+     Set up the Concordium Legacy Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/overview-desktop.html">
+     Set up the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/install-ledger-app.html">
+       Set up the LEDGER device and install the Concordium LEDGER App
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/accounts-desktop.html">
+       Desktop Wallet navigation and settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/update-application.html">
+       Update the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/reset-data.html">
+       Reset desktop wallet data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/create-identity.html">
+     Create an identity
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/change-identity-name.html">
+       Change identity name
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/create-account.html">
+     Create an account
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/change-account-name.html">
+       Change account name
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/send-ccd-wallets.html">
+     Send CCD
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/browser-wallet/connect-app.html">
+     Connect dApps to wallets
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/proofs.html">
+       Proofs and revealing information
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/tokens.html">
+     Tokens in the wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/shield-ccd-wallets.html">
+     Shield and unshield CCD on an account
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/shielded-transfer.html">
+       Make a shielded transfer on an account
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/export-key.html">
+     Export a private key
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/recovery.html">
+     Backup and recovery
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/export-import.html">
+       Make a backup of identities, accounts, and addresses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/recover-wallet.html">
+       Recover your Wallet
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet/share-address-mw.html">
+     Find and share your account address
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet/change-passcode-mw.html">
+     Update your passcode and biometric settings
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/scheduled-release.html">
+     Scheduled releases
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/single-sign-schedule.html">
+       Transfer CCD with a schedule in Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/mobile-wallet/inspect-release-schedule-mw.html">
+       Inspect a release schedule
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/address-book.html">
+     Manage address book
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/transaction-report.html">
+     Create a transaction report
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/desktop-wallet/transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/create-credentials-file.html">
+       Create a credentials file
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/multi-credentials.html">
+       Add credentials to an account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/proposed-transactions.html">
+       View transaction proposals
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Earn with Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/how-to-earn.html">
+     How to earn with Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/concepts/concepts-baker.html">
+       Bakers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/baker-pool.html">
+         Baker management
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/mobile-wallet/add-baker-mw.html">
+         Add baker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/mobile-wallet/update-baker-mw.html">
+         Change baker options
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/baker-windows.html">
+         Run a baker node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/baker-macos.html">
+         Run a baker node on macOS
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/baker-ubuntu.html">
+         Run a baker node on Ubuntu
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/baker-docker.html">
+         Run a baker node on Docker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/become-baker.html">
+         Become a baker using the Concordium Client
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/concepts/concepts-delegation.html">
+       Delegation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/add-delegation.html">
+         Delegate to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/update-delegation.html">
+         Update delegation to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/remove-delegation.html">
+         Remove delegation to a baker pool or passive delegation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/snippets/delegation-faq.html">
+       Delegation and baking FAQ
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Develop on Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-20">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/developer-page.html">
+     Developer resources
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/sdks-apis.html">
+       SDKs and APIs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/dapp-examples.html">
+       dApp examples
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/dashboards.html">
+       Dashboards and Status Pages
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/developer-tools.html">
+       Auxiliary Tools
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/grpc2.html">
+       gRPC V2 documentation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/grpc.html">
+       gRPC documentation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/nodes/node-requirements.html">
+     Run a node on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/ubuntu.html">
+       Ubuntu nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node-ubuntu.html">
+         Run a node on a server with Ubuntu on Mainnet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/run-node-ubuntu.html">
+         Run a node on a server with Ubuntu on Testnet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-ubuntu.html">
+         Troubleshoot a node on a server with Ubuntu
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/macos.html">
+       MacOS nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node-macos.html">
+         Run and manage a node on macOS
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-macos.html">
+         Troubleshoot a node on MacOS
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/windows.html">
+       Windows nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node-windows.html">
+         Run and manage a node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/node-runner-service-configuration.html">
+         Concordium Windows node runner service configuration
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-windows.html">
+         Troubleshoot a node running on Windows
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/docker.html">
+       Docker nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node.html">
+         Run a node with Docker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-docker.html">
+         Troubleshoot a node on a server with Docker
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/references/concordium-client.html">
+     Concordium Client
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/transactions.html">
+       Concordium Client transactions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/query-node.html">
+       Querying a node
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/run-local-chain.html">
+     Run a local chain
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    CCDScan
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-28">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/resources/ccd-scan.html">
+     CCDScan
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-blocks.html">
+       CCDScan Blocks overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-transactions.html">
+       CCDScan Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-accounts.html">
+       CCDScan Accounts overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-staking.html">
+       CCDScan Staking overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-nodes.html">
+       CCDScan Nodes overview
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Use Concordium's ID Layer
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/create-proofs.html">
+     Use ID: Create proofs
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/gallery/index.html">
+     The gallery with ID authentication
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/gallery/gallery-backend.html">
+       Writing the verifying backend
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/gallery/gallery-frontend.html">
+       Interacting with a wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/gallery/gallery-setup.html">
+       Setting up the front end
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Web3 ID
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-32">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/web3-id/index.html">
+     What is Web3 ID
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/web3-id/wallet.html">
+     Web3 ID in the Concordium Wallet for Web
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/web3-id/issuer.html">
+     Web3 ID issuers
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/web3-id/verifier.html">
+     Web3 ID verifiers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Smart Contracts v1
+   </span>
+  </p>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-33">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../general/introduction.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../guides/quick-start.html">
+     Quick start guide
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../best-practices/index.html">
+     Best practices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../best-practices/development.html">
+       Development best practices
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="../index.html">
+     Tutorials
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="../setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../piggy-bank/index.html">
+       PiggyBank
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../piggy-bank/writing.html">
+         Writing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../piggy-bank/testing.html">
+         Testing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../piggy-bank/deploying.html">
+         Deploying the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../piggy-bank/frontend.html">
+         Setting up a front end
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 current active has-children">
+      <a class="reference internal" href="index.html">
+       wCCD
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l3">
+        <a class="reference internal" href="wCCD-introduction.html">
+         Understanding the wCCD token protocol
+        </a>
+       </li>
+       <li class="toctree-l3 current active">
+        <a class="current reference internal" href="#">
+         Interacting with the wCCD token protocol
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="wCCD-front-end-set-up.html">
+         Setting up the front end
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="wCCD-full-dApp.html">
+         Running your first full dApp
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../voting/index.html">
+       The Voting dApp
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../voting/voting-sc.html">
+         Writing a voting smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../voting/voting-dapp.html">
+         Setting up the front-end
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../nft-minting/index.html">
+       Mint an NFT
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nft-minting/upload-nft.html">
+         Upload the NFT
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nft-minting/build-smart-contract.html">
+         Intialize, build, and deploy the smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nft-minting/mint-xfer.html">
+         Mint and transfer the NFT
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../sft-minting/index.html">
+       Mint a semi-fungible token
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../sft-minting/setup.html">
+         Setup the development environment
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../sft-minting/build-smart-contract.html">
+         Smart contract modifications
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../sft-minting/mint-xfer.html">
+         Mint and transfer semi-fungible token
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../fungible-tokens/index.html">
+       Mint fungible tokens
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../fungible-tokens/smart-contract.html">
+         Smart contract implementation for fungible tokens
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../fungible-tokens/mint-xfer.html">
+         Mint, transfer, and burn fungible tokens
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../nft-marketplace/index.html">
+       NFT marketplace smart contract tutorial
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../nft-marketplace/smart-contract.html">
+         Build and deploy the smart contract
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../eSealing/index.html">
+       eSealing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../eSealing/eSealing_dapp.html">
+         Exploring the eSealing dapp
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../sponsoredTransactions/index.html">
+       Sponsored Transactions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsSmartContract.html">
+         Exploring the sponsored Transactions Smart Contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">
+         Exploring the sponsored Transactions dApp
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../sponsoredTransactions/walletConnect.html">
+         Wallet Connect
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../smartContractUpgrade/index.html">
+       Smart Contract Upgrade
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../smartContractUpgrade/smartContractUpgrade.html">
+         Native upgradability
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../guides/contract-dev-guides.html">
+     Contract development guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/no-std.html">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/fallback-entrypoints.html">
+       Fallback entrypoints
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/json-params.html">
+       Work with the JSON parameters
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../guides/contract-testing-guides.html">
+     Contract testing guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/integration-test-contract.html">
+       Integration test a contract in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../guides/on-chain-index.html">
+     On-chain guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../guides/invoke-instance.html">
+       Invoke a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../references/index.html">
+     References
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/crypto-primitives.html">
+       Cryptographic primitives
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/host-fns.html">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../references/simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../onboarding-guide-ethereum-developers/index.html">
+     Ethereum developer onboarding
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../onboarding-guide-ethereum-developers/faq.html">
+       FAQs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../onboarding-guide-solana-developers/index.html">
+     Solana developer onboarding
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+    <label for="toctree-checkbox-52">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../onboarding-guide-solana-developers/overview.html">
+       Overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../onboarding-guide-solana-developers/faq.html">
+       FAQs
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Smart Contracts v0
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-53">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts-v0/sc-v0-rollup.html">
+     V0 smart contract documentation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+    <label for="toctree-checkbox-54">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts-v0/general/introduction.html">
+       Introduction and general guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/general/contract-module.html">
+         Smart contract modules
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/general/contract-instances.html">
+         Smart contract instances
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/general/contract-schema.html">
+         Smart contract schemas
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/general/develop-contracts.html">
+         Developing smart contracts in Rust
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts-v0/tutorials/piggy-bank/index.html">
+       Tutorials
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/tutorials/piggy-bank/writing.html">
+         Writing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/tutorials/piggy-bank/testing.html">
+         Testing the piggy bank smart contract
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/contract-dev-guides.html">
+       Contract development guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/setup-tools.html">
+         Install tools for development
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/setup-contract.html">
+         Setting up a smart contract project
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/compile-module.html">
+         Compile a Rust smart contract module
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/unit-test-contract.html">
+         Unit test a contract in Rust
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/custom-errors.html">
+         Return custom errors
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/local-simulate.html">
+         Locally simulate contract functions
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/build-schema.html">
+         Build a contract schema
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/no-std.html">
+         Build using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           no_std
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts-v0/guides/on-chain-index.html">
+       On-chain guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/deploy-module.html">
+         Deploy a smart contract module
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/initialize-contract.html">
+         Initialize a smart contract instance
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/interact-instance.html">
+         Interact with a smart contract instance
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/guides/inspect-instance.html">
+         Inspect a smart contract instance
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts-v0/references/index.html">
+       References
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+      <label for="toctree-checkbox-59">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/references/schema-json.html">
+         Schema JSON representation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/references/simulate-context.html">
+         Simulation contexts
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/references/host-fns.html">
+         Contract host functions
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/references/references-on-chain.html">
+         References on-chain
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts-v0/references/local-settings.html">
+         Local settings
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+         Rust contract examples (repo)
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">
+         concordium-std
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Low-code NFT marketplace
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/introduction.html">
+     Concordium low-code NFT framework
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/marketplace.html">
+     Low code NFT marketplace
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/minting-tool.html">
+     Low-code NFT minting tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-61">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/resources/legal.html">
+     Legal
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+    <label for="toctree-checkbox-62">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions.html">
+       Terms and conditions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-mw.html">
+       Terms and Conditions for Concordium Legacy Wallet (previously Concordium Mobile Wallet)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/third-party-licenses.html">
+       Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/third-party-notices.html">
+       Third-party Software and Hardware Notices
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/bw-licenses.html">
+       Concordium Wallet for Web Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/dw-licenses.html">
+       Concordium Desktop Wallet Third Party Licenses
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/resources/ar-idp-contact.html">
+     Contact Anonymity Revokers and Identity Providers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-non-state-mutative-functions">
+   Query (non-state-mutative) functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-ccd-balance-of-an-address">
+     Getting the CCD balance of an address
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-balanceof-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       balanceOf
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-operatorof-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       operatorOf
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-tokenmetadata-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       tokenMetadata
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-supports-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       supports
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#state-mutative-functions">
+   State-mutative functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-wrap-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       wrap
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-unwrap-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       unwrap
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-transfer-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       transfer
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-updateoperator-function">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       updateOperator
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="interacting-with-the-wccd-token-protocol">
+<span id="wccd-interacting"></span><h1>Interacting with the wCCD token protocol<a class="headerlink" href="#interacting-with-the-wccd-token-protocol" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you start with part 2 of this tutorial, make sure you have:</p>
+<ul class="simple">
+<li><p>access to a testnet node</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> version 5.0.1 or greater installed</p></li>
+<li><p>an account created in the wallet that is funded with some CCD</p></li>
+<li><p>the keys from the wallet imported into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration</p></li>
+</ul>
+<p>If you haven’t completed any of the above steps,
+<a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>
+will guide you through these setup steps.
+If you haven’t completed any of the above steps, you can continue
+with <a class="reference internal" href="wCCD-front-end-set-up.html#wccd-front-end-set-up"><span class="std std-ref">part 3</span></a> of this tutorial. However, it is recommended
+to complete every part of this tutorial in the given order.
+You need an up-to-date <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> version because the wCCD smart contract uses the newest <code class="docutils literal notranslate"><span class="pre">schema_V3</span></code>.</p>
+</div>
+<div class="section" id="query-non-state-mutative-functions">
+<h2>Query (non-state-mutative) functions<a class="headerlink" href="#query-non-state-mutative-functions" title="Permalink to this headline">#</a></h2>
+<p>The protocol has four query functions (<code class="docutils literal notranslate"><span class="pre">balanceOf</span></code>, <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code>, <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code>, and <code class="docutils literal notranslate"><span class="pre">supports</span></code>)
+that you can invoke on the wCCD contract. Because the <code class="docutils literal notranslate"><span class="pre">schema</span></code> is already embedded,
+the input parameters can be provided with the <code class="docutils literal notranslate"><span class="pre">--parameter-json</span></code> flag.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The wCCD smart contract has its schemas embedded and you will not have to provide any schemas with the <code class="docutils literal notranslate"><span class="pre">--schema</span></code> flag.
+You can read more about schemas in this <a class="reference internal" href="../../general/contract-schema.html#contract-schema"><span class="std std-ref">section</span></a>.</p>
+</div>
+<div class="section" id="getting-the-ccd-balance-of-an-address">
+<span id="balanceccd"></span><h3>Getting the CCD balance of an address<a class="headerlink" href="#getting-the-ccd-balance-of-an-address" title="Permalink to this headline">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Checking the CCD balance of an account (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can check the CCD balance of an account on <a class="reference external" href="https://testnet.ccdscan.io/">CCDScan</a>.</p>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_1.png"><img alt="../../../_images/wCCD_tutorial_1.png" src="../../../_images/wCCD_tutorial_1.png" style="width: 100%;" /></a>
+<p class="sd-card-text">You can check the CCD balance of an account with this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client account show ACCOUNT --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_10.png"><img alt="../../../_images/wCCD_tutorial_10.png" src="../../../_images/wCCD_tutorial_10.png" style="width: 100%;" /></a>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Checking the CCD balance of a smart contract (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can check the CCD balance of a smart contract with this command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract show INDEX --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_3.png"><img alt="../../../_images/wCCD_tutorial_3.png" src="../../../_images/wCCD_tutorial_3.png" style="width: 100%;" /></a>
+</div>
+</details><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The smallest unit of CCD is 1 micro CCD and equals 10<sup>−6</sup> (one millionth) of a CCD.
+CCD has 6 decimal places. 1 CCD is represented by the balance
+value of 1,000,000 micro CCD on the blockchain and is worth the equivalent of a balance value of 1,000,000 micro wCCD.</p>
+</div>
+</div>
+<div class="section" id="the-balanceof-function">
+<span id="balanceof"></span><h3>The <code class="docutils literal notranslate"><span class="pre">balanceOf</span></code> function<a class="headerlink" href="#the-balanceof-function" title="Permalink to this headline">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Input parameters for the <code class="docutils literal notranslate"><span class="pre">balanceOf</span></code> function (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Create a <code class="docutils literal notranslate"><span class="pre">balanceOf.json</span></code> file and insert the following JSON array.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">ACCOUNT_ADDRESS</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                            <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s">&quot;token_id&quot;</span><span class="p">:</span> <span class="n">TOKEN_ID</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">You can query the balance of several addresses in the above array.</p>
+</div>
+<p class="sd-card-text">If you insert an account address correctly, the JSON array should look similar to the below JSON array.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">If you insert a smart contract address correctly, the JSON array should look similar to the below JSON array.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">844</span><span class="p">,</span>
+                    <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">balanceOf</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_4.png"><img alt="../../../_images/wCCD_tutorial_4.png" src="../../../_images/wCCD_tutorial_4.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The smallest unit of CCD is 1 micro CCD and equals 10<sup>−6</sup> (one millionth) of a CCD.
+CCD has 6 decimal places. 1 CCD is represented by the balance
+value of 1,000,000 micro CCD on the blockchain and is worth the equivalent of a balance value of 1,000,000 micro wCCD.</p>
+</div>
+</div>
+<div class="section" id="the-operatorof-function">
+<span id="operatorof"></span><h3>The <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function<a class="headerlink" href="#the-operatorof-function" title="Permalink to this headline">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Input parameters for the <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Create an <code class="docutils literal notranslate"><span class="pre">operatorOf.json</span></code> file and insert the following JSON array.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">ACCOUNT_ADDRESS</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                            <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">ACCOUNT_ADDRESS</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                            <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">You can query several sets of addresses in the above array.</p>
+</div>
+<p class="sd-card-text">If you insert everything correctly, the JSON array should look similar to
+the below JSON array.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;4DH219BXocxeVByKpZAGKNAJx7s2w1HFpwaNu1Ljd1mXFXig22&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_7.png"><img alt="../../../_images/wCCD_tutorial_7.png" src="../../../_images/wCCD_tutorial_7.png" style="width: 100%;" /></a>
+</div>
+<div class="section" id="the-tokenmetadata-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function<a class="headerlink" href="#the-tokenmetadata-function" title="Permalink to this headline">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Input parameters for the <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Create a <code class="docutils literal notranslate"><span class="pre">tokenMetadata.json</span></code> file and insert the following JSON array.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This empty string is required because of the CIS-2 token standard.
+The <cite>tokenId</cite> of the wCCD token is the smallest unit possible (an empty string).</p>
+</div>
+</div>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">tokenMetadata</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_8.png"><img alt="../../../_images/wCCD_tutorial_8.png" src="../../../_images/wCCD_tutorial_8.png" style="width: 100%;" /></a>
+</div>
+<div class="section" id="the-supports-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">supports</span></code> function<a class="headerlink" href="#the-supports-function" title="Permalink to this headline">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Input parameters for the <code class="docutils literal notranslate"><span class="pre">supports</span></code> function (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Create a <code class="docutils literal notranslate"><span class="pre">supports.json</span></code> file and insert the following example JSON array. It will query if
+the two token standards (<code class="docutils literal notranslate"><span class="pre">CIS-0</span></code> and <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code>) are supported by the wCCD token.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;CIS-0&quot;</span><span class="p">,</span><span class="s2">&quot;CIS-2&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">You can find more information about the <a class="reference external" href="https://proposals.concordium.software/CIS/cis-0.html">CIS-0 standard</a>
+and the <a class="reference external" href="https://proposals.concordium.software/CIS/cis-2.html">CIS-2 standard</a>.</p>
+</div>
+</div>
+</details><p>You are ready now to invoke the <code class="docutils literal notranslate"><span class="pre">supports</span></code> function with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint supports --parameter-json supports.json --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<p>The below screenshot shows the response of querying if the wCCD
+token contract supports the following standards
+<code class="docutils literal notranslate"><span class="pre">[&quot;12345&quot;,&quot;CIS-0&quot;,&quot;CIS-2&quot;]</span></code>. Its response is that it does
+not support the standard <code class="docutils literal notranslate"><span class="pre">12345</span></code> but it supports the <code class="docutils literal notranslate"><span class="pre">CIS-0</span></code> and the <code class="docutils literal notranslate"><span class="pre">CIS-1</span></code> standards.</p>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_9.png"><img alt="../../../_images/wCCD_tutorial_9.png" src="../../../_images/wCCD_tutorial_9.png" style="width: 100%;" /></a>
+</div>
+</div>
+<div class="section" id="state-mutative-functions">
+<h2>State-mutative functions<a class="headerlink" href="#state-mutative-functions" title="Permalink to this headline">#</a></h2>
+<p>The protocol has four state-mutative functions (<code class="docutils literal notranslate"><span class="pre">wrap</span></code>, <code class="docutils literal notranslate"><span class="pre">unwrap</span></code>,
+<code class="docutils literal notranslate"><span class="pre">transfer</span></code>, and <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code>) that you can invoke on the wCCD smart contract.
+Because the <code class="docutils literal notranslate"><span class="pre">schema</span></code> is already embedded,
+the input parameters can be provided with the <code class="docutils literal notranslate"><span class="pre">--parameter-json</span></code> flag.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The wCCD smart contract has its schemas embedded and you will not have to provide any schemas with the <code class="docutils literal notranslate"><span class="pre">--schema</span></code> flag.
+You can read more about schemas in this <a class="reference internal" href="../../general/contract-schema.html#contract-schema"><span class="std std-ref">section</span></a>.</p>
+</div>
+<div class="section" id="the-wrap-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function<a class="headerlink" href="#the-wrap-function" title="Permalink to this headline">#</a></h3>
+<p>Wrapping CCD refers to the process of converting the native currency CCD into
+a <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> compliant token (wCCD) at a 1:1 ratio by sending CCD to the wCCD smart
+contract and getting wCCD in return.
+You can specify with the <code class="docutils literal notranslate"><span class="pre">--amount</span></code> flag how much CCD you want to wrap.</p>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">wrap.json</span></code> file and insert the JSON object
+from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract).</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Option 1 (Receiver is an account) (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">DATA_STRING</span><span class="p">,</span>
+    <span class="s">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">ACCOUNT_ADDRESS</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">DATA_STRING</span></code> is only relevant if wCCD is sent to a smart contract as described in option 2.
+You can use your account address if you want to credit the wCCD to your own account.
+If you insert your account address correctly, the JSON object should look similar to the below JSON object.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j&quot;</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Option 2 (Receiver is a smart contract) (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">DATA_STRING</span><span class="p">,</span>
+    <span class="s">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+            <span class="p">},</span>
+            <span class="n">ENTRYPOINT_NAME</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Some additional bytes (encoded as a lowercase hex string called <code class="docutils literal notranslate"><span class="pre">DATA_STRING</span></code>)
+are used in the <code class="docutils literal notranslate"><span class="pre">OnReceivingCis2</span></code> hook. This hook is executed only if the <code class="docutils literal notranslate"><span class="pre">to</span></code> address is a
+contract and the <code class="docutils literal notranslate"><span class="pre">to</span></code> address is not the invoker of the <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function.
+The <code class="docutils literal notranslate"><span class="pre">OnReceivingCis2</span></code> hook invokes the <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT_NAME</span></code> on the smart contract <code class="docutils literal notranslate"><span class="pre">INDEX</span></code> with
+the <code class="docutils literal notranslate"><span class="pre">OnReceivingCis2Params</span></code> parameters which include the above <code class="docutils literal notranslate"><span class="pre">DATA_STRING</span></code>.
+This action allows the receiving smart contract to
+react to the credited wCCD amount. You can keep the data field empty
+if you don’t want to send any additional data to the receiving smart contract.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">In programming, a <code class="docutils literal notranslate"><span class="pre">hook</span></code> is an interface provided in packaged code
+that allows a programmer to insert customized programming code to either
+provide a different behavior or to react when something happens.
+The <code class="docutils literal notranslate"><span class="pre">OnReceivingCis2</span></code> hook allows a smart contract developer to code a
+smart contract A that taps into the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> or <code class="docutils literal notranslate"><span class="pre">wrap</span></code> functions of the wCCD smart
+contract. Smart contract A can insert some custom logic/behavior if the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> or <code class="docutils literal notranslate"><span class="pre">wrap</span></code> functions
+are invoked and would result in the smart contract A getting credited some wCCD.</p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT_NAME</span></code> is an attribute that is added above each function
+in the smart contract code as shown below using the example entrypoint name <code class="docutils literal notranslate"><span class="pre">receiveToken</span></code>.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;contractName&quot;</span><span class="cp">, name = </span><span class="s">&quot;receiveToken&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive_Token</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">You can use the smart contract deployed at index 844 on testnet and
+its function entry point name <code class="docutils literal notranslate"><span class="pre">receiveToken</span></code> for testing.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">844</span><span class="p">,</span>
+                <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;receiveToken&quot;</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function, check
+the CCD balance of your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> (the account that initiates the transaction) and the wCCD smart contract as described <a class="reference internal" href="#balanceccd"><span class="std std-ref">here</span></a>.
+The <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function will send some CCD from your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> account to the wCCD smart contract contract.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial is also used by other people and they might at the same
+time interact with the smart contracts and change their CCD or wCCD balances.</p>
+</div>
+<p>Before you execute the <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function, check
+the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">to</span></code> address with the <a class="reference internal" href="#balanceof"><span class="std std-ref">balanceOf</span></a> function.
+The <code class="docutils literal notranslate"><span class="pre">to</span></code> address will receive some wCCD
+because the <code class="docutils literal notranslate"><span class="pre">wrap</span></code> function will credit some wCCD to the <code class="docutils literal notranslate"><span class="pre">to</span></code> address.</p>
+<p>You are ready now to wrap your CCD into wCCD with the following command.
+The <code class="docutils literal notranslate"><span class="pre">--energy</span></code> flag specifies the maximum amount of NRG to be spent on the transaction
+and can be used to set an upper limit of the transaction fee that you are
+willing to spend when interacting with the blockchain.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint wrap --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<p>The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 micro wCCD.</p>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_2.png"><img alt="../../../_images/wCCD_tutorial_2.png" src="../../../_images/wCCD_tutorial_2.png" style="width: 100%;" /></a>
+<p>Confirm that the CCD balance of the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> was decreased
+by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> and that the CCD balance of the wCCD smart contract contract was increased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind that the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> also paid some CCD as transaction fees.
+The amount of transaction fees can be seen as shown in the above screenshot.</p>
+</div>
+<p>Confirm that the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">to</span></code> address increased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
+</div>
+<div class="section" id="the-unwrap-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function<a class="headerlink" href="#the-unwrap-function" title="Permalink to this headline">#</a></h3>
+<p>Unwrapping CCD refers to the opposite process of converting the <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code>
+compliant wCCD token at a 1:1 ratio back to the native currency CCD by burning the
+wCCD token in the wCCD smart contract and getting CCD in return.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Input parameters for the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Create an <code class="docutils literal notranslate"><span class="pre">unwrap.json</span></code> file and insert the below JSON object.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s">&quot;amount&quot;</span><span class="p">:</span> <span class="n">AMOUNT</span><span class="p">,</span>
+    <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">DATA_STRING</span><span class="p">,</span>
+    <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="n">ACCOUNT_ADDRESS</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                        <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s">&quot;receiver&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="n">ACCOUNT_ADDRESS</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                        <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                    <span class="p">},</span>
+                    <span class="n">ENTRYPOINT_NAME</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="sd-card-text">If you insert everything correctly, the JSON object should look similar to
+the below JSON object that will unwrap 1,000,000 micro wCDD from an account
+and send the received CCDs back to the same account.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;1000000&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j&quot;</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;receiver&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j&quot;</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function, check
+the CCD balance of the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> address and the wCCD smart contract as described <a class="reference internal" href="#balanceccd"><span class="std std-ref">here</span></a>.
+The <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function will send some CCD from the wCCD smart contract to the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> address.</p>
+<p>Before you execute the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function, check
+the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address with the <a class="reference internal" href="#balanceof"><span class="std std-ref">balanceOf</span></a> function.
+The <code class="docutils literal notranslate"><span class="pre">owner</span></code> address will get its wCCD balance reduced
+because the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function will burn some wCCD from the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">owner</span></code> has to have at least a balance of <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> in wCCD tokens
+and the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> has to be the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address or be an <code class="docutils literal notranslate"><span class="pre">operator</span></code> of the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address.
+You are ready now to unwrap your wCCD into CCD with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint unwrap --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">unwrap</span></code> function.</p>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_11.png"><img alt="../../../_images/wCCD_tutorial_11.png" src="../../../_images/wCCD_tutorial_11.png" style="width: 100%;" /></a>
+<p>Confirm that the CCD balance of the <code class="docutils literal notranslate"><span class="pre">receiver</span></code> was increased
+by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> (specified in the <code class="docutils literal notranslate"><span class="pre">unwrap.json</span></code> file) and that the CCD
+balance of the wCCD smart contract was decreased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
+<p>Confirm that the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">owner</span></code> address decreased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> specified in the <code class="docutils literal notranslate"><span class="pre">unwrap.json</span></code> file.</p>
+</div>
+<div class="section" id="the-transfer-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function<a class="headerlink" href="#the-transfer-function" title="Permalink to this headline">#</a></h3>
+<p>You can transfer the wCCD tokens from one address to another address.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Input parameters for the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Create a <code class="docutils literal notranslate"><span class="pre">transfer.json</span></code> file and insert the below JSON array.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">&quot;amount&quot;</span><span class="p">:</span> <span class="n">AMOUNT</span><span class="p">,</span>
+        <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="n">DATA_STRING</span><span class="p">,</span>
+        <span class="s">&quot;from&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">ACCOUNT_ADDRESS</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                            <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">ACCOUNT_ADDRESS</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                            <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                        <span class="p">},</span>
+                        <span class="n">ENTRYPOINT_NAME</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s">&quot;token_id&quot;</span><span class="p">:</span> <span class="n">TOKEN_ID</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">You can execute several transfers in the above array.</p>
+</div>
+<p class="sd-card-text">If you insert everything correctly, the JSON array should look similar to
+the below JSON array that will transfer 1 micro wCCD from an account address to another account address.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;from&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;4DH219BXocxeVByKpZAGKNAJx7s2w1HFpwaNu1Ljd1mXFXig22&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function, check
+the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">from</span></code> address and the <code class="docutils literal notranslate"><span class="pre">to</span></code> address with the <a class="reference internal" href="#balanceof"><span class="std std-ref">balanceOf</span></a> function.
+The <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function will send some wCCD from the <code class="docutils literal notranslate"><span class="pre">from</span></code> address to the <code class="docutils literal notranslate"><span class="pre">to</span></code> address.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">from</span></code> address has to have at least a balance of <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> in wCCD tokens
+and the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> has to be the <code class="docutils literal notranslate"><span class="pre">from</span></code> address or be an <code class="docutils literal notranslate"><span class="pre">operator</span></code> of the <code class="docutils literal notranslate"><span class="pre">from</span></code> address.
+You are ready now to transfer your wCCD to another address with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint transfer --parameter-json transfer.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">transfer</span></code> function.</p>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_5.png"><img alt="../../../_images/wCCD_tutorial_5.png" src="../../../_images/wCCD_tutorial_5.png" style="width: 100%;" /></a>
+<p>Confirm that the wCCD balance of the <code class="docutils literal notranslate"><span class="pre">to</span></code> address was increased
+by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code> (specified in the <code class="docutils literal notranslate"><span class="pre">transfer.json</span></code> file) and that the wCCD
+balance of the <code class="docutils literal notranslate"><span class="pre">from</span></code> address was decreased by <code class="docutils literal notranslate"><span class="pre">AMOUNT</span></code>.</p>
+</div>
+<div class="section" id="the-updateoperator-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function<a class="headerlink" href="#the-updateoperator-function" title="Permalink to this headline">#</a></h3>
+<p>You can add one or more operator addresses to an address that you control.
+These operators have access to your wCCD tokens
+at that address and can transfer or unwrap them on your behalf.
+You should only add operator addresses that you trust. The <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function allows you
+to add and remove operators.
+For example, a smart contract address is often added as an operator so it can
+access your tokens to perform some smart contract operations
+without you having to interact with the smart contract again.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Input parameters for the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function (click here)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Create an <code class="docutils literal notranslate"><span class="pre">updateOperator.json</span></code> file and insert the below JSON array.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">&quot;operator&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">ACCOUNT_ADDRESS</span>
+                    <span class="p">]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Contract&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="s">&quot;index&quot;</span><span class="p">:</span> <span class="n">INDEX</span><span class="p">,</span>
+                            <span class="s">&quot;subindex&quot;</span><span class="p">:</span> <span class="n">SUBINDEX</span>
+                        <span class="p">}</span>
+                    <span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s">&quot;update&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;Enum&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Remove&quot;</span><span class="p">:</span> <span class="k">[]</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;Add&quot;</span><span class="p">:</span> <span class="k">[]</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">You can add/remove several operator addresses in the above array.</p>
+</div>
+<p class="sd-card-text">If you insert everything correctly, the JSON array should look similar to
+the below JSON array that will add the account address 4DH219B… as
+an operator to the <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code>.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;operator&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;4DH219BXocxeVByKpZAGKNAJx7s2w1HFpwaNu1Ljd1mXFXig22&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;update&quot;</span><span class="p">:</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;Add&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details><p>Before you execute the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function, check
+the state of the smart contract with the <a class="reference internal" href="#operatorof"><span class="std std-ref">operatorOf</span></a> function.</p>
+<p>You are ready now to update the operator on your <code class="docutils literal notranslate"><span class="pre">SENDER_ACCOUNT</span></code> address with the following command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint updateOperator --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy <span class="m">25000</span> --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<p>The below screenshot shows the execution of the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function.</p>
+<a class="reference internal image-reference" href="../../../_images/wCCD_tutorial_6.png"><img alt="../../../_images/wCCD_tutorial_6.png" src="../../../_images/wCCD_tutorial_6.png" style="width: 100%;" /></a>
+<p>Confirm that the <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> function has added/removed operator addresses by checking
+with the <code class="docutils literal notranslate"><span class="pre">operatorOf</span></code> function the state of the smart contract again.</p>
+<p>To continue with the tutorial click <a class="reference internal" href="wCCD-front-end-set-up.html#wccd-front-end-set-up"><span class="std std-ref">here</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="wCCD-introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Understanding the wCCD smart contract</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="wCCD-front-end-set-up.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Setting up the front end</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {margin:0px;}
+    
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="../../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+        </a>
+    </div>
+  </body>
+
+
+<div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
