@@ -90,19 +90,7 @@ Concordium Desktop Wallet
 Concordium LEDGER App
 =====================
 
-.. Note::
-
-   LEDGER firmware version 2.0.0 is no longer supported for the LEDGER NANO S.
-
-.. Note::
-
-   The LEDGER NANO X is not supported currently.
-
-- For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
-
-- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip>`_
-
-When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
+Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For information, see :ref:`Install the LEDGER app<install-ledger>`.
 
 .. _concordium-node-and-client-download:
 

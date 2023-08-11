@@ -1,3 +1,5 @@
+:orphan:
+
 .. include:: ../../variables.rst
 
 .. _install-Ledger-app:
@@ -43,6 +45,10 @@ Once you've set up the LEDGER device, you must check that it's running the prope
 Update the LEDGER device firmware
 ---------------------------------
 
+.. Note::
+
+   LEDGER firmware version 2.0.0 is no longer supported for the LEDGER NANO S.
+
 To find out which firmware version the LEDGER device is running, do the following:
 
 #. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
@@ -59,7 +65,13 @@ To find out which firmware version the LEDGER device is running, do the followin
 
 For details on how to update the LEDGER firmware, see `LEDGER NANO S guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_ or `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 
-Once you have updated the firmware version, you can download the LEDGER app at :ref:`Downloads <downloads>`.
+Once you have updated the firmware version, you can download the LEDGER app:
+
+- For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
+
+- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip>`_
+
+When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
 
 Follow the instructions below to update your app:
 
