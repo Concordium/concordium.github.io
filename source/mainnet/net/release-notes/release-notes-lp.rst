@@ -19,19 +19,33 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    May 31, 2023
+    July 31, 2023
 
-    |mw-gen2| for iOS 1.0.1 contains the following:
+        Version 1.1.1 includes bug fixes and an improvement for the upcoming protocol update.
 
-    - The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+        - Ensured compatibility with the upcoming protocol update (P6)
 
-    - Also, a minor change was made to support integration with eID verifiers.
+        - Fixed issue with DTS identities that contain non-ASCII characters.
 
-    - Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
-
-    - The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
+        - WalletConnect: Display balances in proper CCD format in the account selection view.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.1.0 - July 17, 2023
+
+            WalletConnect has been implemented in iOS 1.1.0, allowing you to interact with dApps in your |mw-gen2| on your iOS device to sign and submit transactions.
+
+        .. dropdown:: |mw-gen2| 1.0.1 - May 31, 2023
+
+            |mw-gen2| for iOS 1.0.1 contains the following:
+
+            - The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.
+
+            - Also, a minor change was made to support integration with eID verifiers.
+
+            - Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.
+
+            - The |mw-gen2| for iOS now requires iOS 15 as the minimum version.
 
         .. dropdown:: |mw-gen2| 1.0.0 - March 7, 2023
 
@@ -288,13 +302,17 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    May 30, 2023
+    August 8, 2023
 
-    In |mw-gen1| for iOS 3.2.0 identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+        |mw-gen1| 3.2.1 ensures support for the upcoming protocol version 6.
 
     .. dropdown:: Previous releases
 
-        .. dropdown:: |mw-gen1| for iOS 3.1.1 - March 27, 2023
+        .. dropdown:: |mw-gen1| 3.2.0 - May 30, 2023
+
+            In |mw-gen1| for iOS 3.2.0 identity and account creation has been locked in |mw-gen1| for iOS devices. This means that you cannot create new identities or accounts in |mw-gen1| on an iOS device. You can continue to use |mw-gen1|, but if you need to create a new identity or account you must use |mw-gen2|. You can also still recover your wallet from a backup file in |mw-gen1| on an iOS device.
+
+        .. dropdown:: |mw-gen1| 3.1.1 - March 27, 2023
 
             A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS. For more information, see the |mw-gen2| :ref:`FAQ<wallet-migrate>`.
 
@@ -447,14 +465,24 @@ Desktop Wallet
 
 .. _rn-ledger-app:
 
-Concordium Ledger app
+Concordium LEDGER app
 ---------------------
 
-    March 31, 2023
+    August 11, 2023 - version 4.1.2
 
-    Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.
+        Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see :ref:`Install the Concordium LEDGER app<install-ledger>`. In addition, Concordium's LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.
+
+        The following improvements are also included:
+
+        - Improved a number of user interface flows to require fewer clicks.
+
+        - Amounts are now prefixed with CCD to indicate the unit of the amount.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.1.0 - March 31, 2023
+
+            Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.
 
         .. dropdown:: 3.0.1 - June 15, 2022
 
@@ -780,11 +808,49 @@ Mainnet
 Testnet
 -------
 
-    June 7, 2023
+    August 9, 2023
 
-    Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+        Concordium Node 6.0.4 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023. **Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.**
+
+        Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
+
+        Additional features of this release include:
+
+        - Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.
+
+        - Changes in Wasm validation and execution in P6 include:
+
+            - Disallowed globals in initialization sections for V1 contracts in P6.
+
+            - Added support for sign extension instructions in Wasm in P6.
+
+            - Do not count custom sections towards module size when executing contracts.
+
+            - Support new ``invoke`` operations for retrieving account keys and checking signatures.
+
+        - Shut down consensus upon a protocol update updating from protocol version 6.
+
+        - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
+
+        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
+
+            - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
+
+        - Changed the ``GetBlockInfo`` endpoint:
+
+            - Block slot is only returned in protocol versions 0-5.
+
+            - In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.
+
+            - Endpoint extended to return block round and epoch in protocol version 6.
+
+        - Changed the ElectionInfo endpoint so that Election difficulty is only returned in protocol versions 0-5.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 5.4.2 - June 7, 2023
+
+            Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
 
         .. dropdown:: 5.4.1 - June 1, 2023
 
@@ -1158,15 +1224,29 @@ Tools
 Concordium Client
 -----------------
 
-    June 1, 2023
+    August 9, 2023
 
-    Concordium Client 5.2.0 contains the following features and bug fixes:
+        Concordium Client 6.0.1 adds support for the upcoming `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ which is planned for release on Testnet August 21, 2023. **Note that this version of Concordium-Client requires at least node version 5.4.**
 
-    - Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+        - Removed a stray CTrue in output of ``consensus show-chain-parameters``.
 
-    - Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
+        - Added ``raw GetNextUpdateSequenceNumbers`` subcommand.
+
+        - Added node version to the output of ``raw GetNodeInfo``.
+
+        - Print *Block time* instead of *Slot time* in the output of ``block show``.
+
+        - In the output of ``consensus show-parameters``, election difficulty is only printed when present.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 5.2.0 - June 1, 2023
+
+            Concordium Client 5.2.0 contains the following features and bug fixes:
+
+            - Fix a bug in display of ``consensus show-chain-parameters`` output for protocol version 6.
+
+            - Add ``raw GetBlockTransactionEvents`` that prints the list of transaction outcomes in a given block.
 
         .. dropdown:: 5.1.1 - March 2, 2023
 

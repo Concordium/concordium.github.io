@@ -26,14 +26,8 @@ printf "Building documentation versions: ${all_projects} for languages ${all_lan
 
 mkdir -p "${build_dir}"
 
-printf "Copying index.html to ${build_dir}\n"
-cp index.html "${build_dir}/index.html"
-
-printf "Copying CLAs to ${build_dir}\n"
-cp -r CLAs "${build_dir}/CLAs"
-
-printf "Copying 'extra' directory to ${build_dir}\n"
-cp -r extra "${build_dir}/extra"
+printf "Copying 'public' to '${build_dir}'\n"
+cp -rv public/* ${build_dir}
 
 for current_project in ${projects[@]}; do
   printf "\nProject '${current_project}':\n-----------------------------\n"
