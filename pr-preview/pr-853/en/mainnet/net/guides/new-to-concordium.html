@@ -1,0 +1,432 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting started with Concordium &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+  background-color: var(--bg-color);
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: var(--font-color);
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 1178px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="../installation/downloads.html">Install</a>
+  <a href="learn-about-concordium.html">Learn</a>
+  <a href="../nodes/node-requirements.html">Run a node</a>
+  <a href="deciding-wallet.html">Wallets</a>
+  <a href="how-to-earn.html">Earn</a>
+  <a href="developer-page.html">Develop</a>
+  <a href="../../smart-contracts/general/introduction.html">Smart Contracts</a>
+  <a href="create-proofs.html">Use ID</a>
+</div>
+</body>
+</html>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><img src="../../_static/discourse-brands.svg" class="icon-link-image" alt="Discourse"/></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:documentation@concordium.com" rel="noopener" target="_blank" title="Feedback"><span><i class="fas fa-bullhorn"></i></span>
+            <label class="sr-only">Feedback</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="getting-started-with-concordium">
+<span id="new-to-concordium"></span><h1>Getting started with Concordium<a class="headerlink" href="#getting-started-with-concordium" title="Permalink to this headline">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to learn more about the Concordium concepts<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Read about our project on <a class="reference external" href="https://www.concordium.com">concordium.com</a>.</p>
+<p class="sd-card-text">Read about the various concepts</p>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="../concepts/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../concepts/concepts-delegation.html#delegation-concept"><span class="std std-ref">Delegation</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">Baking</span></a></p></li>
+</ul>
+<p class="sd-card-text">Use the <a class="reference internal" href="../resources/glossary.html#glossary"><span class="std std-ref">glossary of terms</span></a> to learn the language</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to learn more about Concordium wallets<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="deciding-wallet.html#choosing-wallet"><span class="std std-ref">I’m not sure what kind of wallet I want</span></a></p></li>
+<li><p class="sd-card-text">I want a <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">web wallet</span></a></p></li>
+<li><p class="sd-card-text">I want a wallet for an <a class="reference internal" href="../mobile-wallet-gen2/setup-mobile-wallet.html#setup-g2-mobile-wallet"><span class="std std-ref">Android phone</span></a></p></li>
+<li><p class="sd-card-text">I want a wallet for an <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html#setup-mobile-wallet"><span class="std std-ref">iOS phone</span></a></p></li>
+<li><p class="sd-card-text">I want a wallet I can run on a <a class="reference internal" href="overview-desktop.html#overview-desktop"><span class="std std-ref">desktop computer that uses a hardware wallet</span></a></p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to run a node<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">See the <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">node requirements</span></a>.</p>
+<p class="sd-card-text">I want to run a node on:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/docker.html#docker-node"><span class="std std-ref">Docker</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/ubuntu.html#ubuntu-node"><span class="std std-ref">Linux/ubuntu</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/windows.html#windows-node"><span class="std std-ref">Windows</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../nodes/macos.html#macos-node"><span class="std std-ref">Mac</span></a></p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to stake CCD to earn more CCD<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The staking options on Concordium are <a class="reference internal" href="how-to-earn.html#how-to-earn"><span class="std std-ref">baking or delegating</span></a>. To be a baker you must run a node and have a minimum of 14000 CCDs in an account. There is no minimum amount of CCDs needed to delegate.</p>
+<ul class="simple">
+<li><p class="sd-card-text">I want to <a class="reference internal" href="../snippets/delegation-faq.html#delegation-faq"><span class="std std-ref">learn more about baking and delegating</span></a> before continuing.</p></li>
+<li><p class="sd-card-text">I have enough funds to <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">be a baker</span></a>.</p></li>
+<li><p class="sd-card-text">I only want to <a class="reference internal" href="add-delegation.html#add-delegation"><span class="std std-ref">delegate to a baker pool or passive delegation</span></a>.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to build a dApp that uses Concordium’s ID layer<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">See the tutorial for a <a class="reference internal" href="gallery/index.html#gallery"><span class="std std-ref">gallery that uses ID proofs for access</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to learn about smart contracts at Concordium<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Start with an <a class="reference internal" href="../../smart-contracts/general/introduction.html#introduction"><span class="std std-ref">introduction to smart contracts</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to write a smart contract<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Start by setting up the tools needed to write smart contracts. Concordium uses Rust as the language for smart contracts. <a class="reference internal" href="../../smart-contracts/tutorials/setup-env.html#setup-env"><span class="std std-ref">This guide</span></a> lists all the tools and environments needed to write smart contracts.</p>
+<p class="sd-card-text">Once you have set up the tools, you can write your contract.
+To see examples <a class="reference internal" href="dapp-examples.html#dapp-examples"><span class="std std-ref">click here</span></a>.
+To start a new project <a class="reference internal" href="../../smart-contracts/guides/setup-contract.html#setup-contract"><span class="std std-ref">click here</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to have a dApp that interacts with my smart contract<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">See the <a class="reference internal" href="../../smart-contracts/tutorials/wCCD/index.html#wccd"><span class="std std-ref">wCCD tutorial</span></a> or the <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/index.html#piggy-bank"><span class="std std-ref">Piggy Bank tutorial</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to mint NFTs<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">See the <a class="reference internal" href="../../smart-contracts/tutorials/nft-minting/index.html#nft-index"><span class="std std-ref">NFT minting tutorial</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+I want to make an NFT marketplace<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">See the <a class="reference internal" href="../../smart-contracts/tutorials/nft-marketplace/index.html#nft-marketplace-index"><span class="std std-ref">NFT marketplace tutorial</span></a>.</p>
+</div>
+</details></div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {margin:0px;}
+    
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+        </a>
+    </div>
+  </body>
+
+
+<div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
