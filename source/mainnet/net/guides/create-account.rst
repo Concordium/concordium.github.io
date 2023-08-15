@@ -17,7 +17,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. note::
         You can't import accounts that were created on the |mw-gen1|, |mw-gen2|, or |bw|.
 
-    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger-app>`.
+    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger>`.
 
     #. Go to **Accounts**. You can now see all the accounts that you're the custodian of.
 

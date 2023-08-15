@@ -296,6 +296,12 @@ Images must have :alt: text for accessibility. Generally, image width is 100%. F
 
 GIFs can be inserted but should only be used when it gives clarity to more complex actions. When using GIFs, the :alt: text is StreamPlayer and :align: is center.
 
+## Preview
+
+For non-technical users that might not want to install the tools above, you can request a preview in the GitHub pull request. The preview is added as a comment in the pull request and opens as a web page.
+
+Another alternative if you do not want to build the documentation to preview, is to install install Esbonio https://marketplace.visualstudio.com/items?itemName=swyddfa.esbonio into VSCode. Then you can use the command palette to run >Esbonio:OpenPreview. This builds a preview file. This solution still requires that you have VSCode installed and the repository locally on your computer.
+
 ## License
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
