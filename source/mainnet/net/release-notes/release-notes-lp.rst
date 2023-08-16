@@ -50,27 +50,39 @@ Wallets
 
     August XX, 2023
 
-        Version 1.2.1 contains the following:
+        Version 1.3.0 contains the following:
 
-        - Fixed end destination when exiting add/remove watched tokens.
+        - Export of secret recovery phrase is possible.
 
-        - Fixed item overlap issues with transaction details screen
+        - Several fixes for WalletConnect functionality are included.
 
-        - Removed all tokens with balance < 0 when selecting tokens for transfer
+            - Crash on WalletConnect restart
 
-        - Removed token thumbnail and added name in token details activity
-
-        - Transfer token flow now ends in the proper place
-
-        - Fixed issue where ID pub duplicated id error showed
-
-        - Ensured compatibility with the upcoming P6 protocol update.
-
-        - Changed text in tokens screen and added item decorator for divider in TokensFragment.
-
-        - Removed the ability to select other tokens when transferring from TokenDetailsActivity
+        - 
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.1 - August 16, 2023
+
+            Version 1.2.1 contains the following:
+
+            - Fixed end destination when exiting add/remove watched tokens.
+
+            - Fixed item overlap issues with transaction details screen
+
+            - Removed all tokens with balance < 0 when selecting tokens for transfer
+
+            - Removed token thumbnail and added name in token details activity
+
+            - Transfer token flow now ends in the proper place
+
+            - Fixed issue where ID pub duplicated id error showed
+
+            - Ensured compatibility with the upcoming P6 protocol update.
+
+            - Changed text in tokens screen and added item decorator for divider in TokensFragment.
+
+            - Removed the ability to select other tokens when transferring from TokenDetailsActivity
 
         .. dropdown:: |mw-gen2| 1.2.0 - June 27, 2023
 
