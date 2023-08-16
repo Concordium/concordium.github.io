@@ -58,7 +58,7 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    August 15, 2023
+    August 16, 2023
 
         Version 1.2.1 contains the following:
 
