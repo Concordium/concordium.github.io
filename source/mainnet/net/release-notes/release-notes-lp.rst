@@ -1407,7 +1407,7 @@ CCDScan
 
     August 21, 2023
 
-        Version CCD frontend 1.4.0 and backend 1.6.2 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
+        Version CCD frontend 1.4 and backend 1.6 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
 
     .. dropdown:: Previous releases
 
