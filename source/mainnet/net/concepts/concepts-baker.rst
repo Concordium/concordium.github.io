@@ -36,6 +36,8 @@ Baker pool
 
 You have the option when adding a baker to open a :ref:`baker pool<glossary-baker-pool>`. A baker pool allows others who want to earn rewards to do so without the need to run a node or become a baker themselves. To do this they :ref:`delegate<delegation-concept>` an amount of stake to your baker pool which then increases your stake and your :ref:`chances of winning the lottery<glossary-winning-probability>` to bake a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.
 
+The maximum size of a pool is 10% of all stake in pools (i.e., excluding passive delegation).
+
 .. _concepts-baker-stake:
 
 Stake and lottery
@@ -53,20 +55,22 @@ To be chosen to bake a block, the baker must take part in a
 
 The same stake is used when calculating whether a baker is included in the :ref:`finalization <glossary-finalization>` committee or not.
 
+.. todo::
+
+   If a baker misses baking a block, it is known which baker missed it. This is useful information for delegators when choosing a baker pool to delegate to, and node runners.
+
 Time concepts
 -------------
-The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>` and :ref:`slots <glossary-slot>`.
+The Concordium blockchain divides time into :ref:`epochs <glossary-epoch>`.
 
-.. image:: ../images/concepts/epochs-slots.png
-   :alt: timeline showing how 14400 slots make up one epoch
+When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
 
-When considering the rewards and other baking-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
+Epochs are subdivided into :ref:`rounds <glossary-round>`. Rounds have either a block or a timeout. Rounds have a minimum time interval, but the rounds can grow "in time" if a round times out. For example, if round 1 times out, then round 2's duration increases and so on. Then whenever there is a block in a round that manages to get a :ref:`quorum certificate<glossary-quorum-certificate>` attached, then the "round duration" will shrink, and it will continue to do so if , for example, there have been multiple rounds that have timed out.
+But it cannot shrink below the minimum time interval given by the chain parameters. There can only ever be one block for a certain round across all branches, thus there is a unique leader (potential baker) for a round in an epoch.
 
-Epochs are subdivided into slots. On any given :ref:`branch <glossary-branch>`, each slot can have a maximum of one block, but multiple blocks on different branches can be produced in the same slot. Slots have a duration of 250ms, and the duration is fixed at the :ref:`Genesis block <glossary-genesis-block>`.
+A :ref:`pay day<glossary-pay-day>` is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking, and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 08:05 UTC on Mainnet and approximately 11:05 UTC on Testnet. Bakers are finalized at the end of an epoch then one epoch passes before that next epoch where they are eligible to bake.
 
-A :ref:`pay day<glossary-pay-day>` is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours at 08:05 UTC on Mainnet and 11:05 UTC on Testnet.
-
-A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :ref:`pay day<glossary-pay-day>` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down.)
+A :ref:`cool-down period <glossary-cool-down-period>` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :ref:`pay day<glossary-pay-day>` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down period.)
 
 Finalization
 ============
@@ -76,18 +80,48 @@ Finalization
 What is finalization?
 ---------------------
 
-Finalization is the voting process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted periodically by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD, known as the Finalization committee.
+Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the bakers with an effective stake amount of at least 0.1% of the total amount (effective stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
+
+Finalizers sign a block, and their collective signatures are aggregated to form a :ref:`quorum certificate<glossary-quorum-certificate>`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
+
+Finalization happens at a minimum two seconds after block creation. A new block has to be created descended from that block for finalization to happen.
+
 When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
 
 Finalization committee
 ----------------------
 
-The finalization committee is formed by the bakers with a staked amount of at least 0.1% of the total amount of existing CCD. This specifically implies that in order to participate in the finalization committee you will probably have to modify the staked amount to reach the threshold.
+The finalization committee is formed by the bakers with a staked amount of at least 0.1% of the total stake of CCD in pools. If you are not in the finalization committee,  you will probably have to increase your staked amount to reach the threshold. There is a minimum and maximum size for the finalization committee; it is 0.1% of the effective stake in pools, but always at least 40 bakers and always at most 1000 bakers.
 
 Participating in the finalization committee produces rewards on each block that is finalized. The rewards are paid to the baker account some time after the block is finalized.
 
 Overview of the baker process
 =============================
+
+#. A Proof of stake based lottery system produces a list of bakers. The higher the baker’s stake, the higher the probability of being included on the list more often.
+
+#. The first baker on the list (Bob) makes a new block that appends to the genesis block.
+
+#. Bob then broadcasts the block to all peers.
+
+#. If the block is valid, the finalizers will sign it.
+
+#. If the combined effective stake of the finalizers who sign the block is *greater than or equal to* two-thirds of the total stake, the block gets a :ref:`Quorum Certificate (QC)<glossary-quorum-certificate>` that certifies that this is a valid block. Without the QC the new round cannot progress.
+
+.. image:: ../images/concepts/baker-process1.png
+   :alt: diagram of baker process
+
+6. The next baker (Alice) now uses the QC to produce the next block. The new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.
+
+.. image:: ../images/concepts/baker-process2.png
+   :alt: diagram of baker process
+
+If there are no issues, the protocol repeats this process from step 3.
+
+In the case of a faulty baker who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If Bob does not produce a block within a certain time, a :ref:`Timeout Certificate (TC)<glossary-timeout-certificate>` is issued to move the process forward. Alice can now use the TC instead of the QC to extend the previous block.
+
+Where to bake
+=============
 
 Baking is possible with |bw|, |mw-gen2|, |mw-gen1|, ``Concordium-client``, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.
 
@@ -145,7 +179,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 2: Set up the LEDGER device
 
-   The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger-app>`.
+   The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet. See :ref:`Install the Ledger App guide<install-ledger>`.
 
 .. dropdown:: Step 3: Set up the Concordium Desktop Wallet
 
@@ -174,7 +208,7 @@ This overview describes the recommended scenario for running a node and becoming
 For information about how to update your baker or stop baking, see :ref:`Change baker options<update-baker-mw>`.
 
 Baking with |mw-gen1| and |mw-gen2|
------------------------------------
+------------------------------------
 
 This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain when using |mw-gen1| or |mw-gen2| and running a node.
 
