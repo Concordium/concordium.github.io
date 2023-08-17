@@ -129,35 +129,41 @@ Wallets
 |bw|
 -------------------------
 
-    May 30, 2023
+    August 17, 2023
 
-    |bw| 1.0.6 contains fixes for the following issues:
+        |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
 
-    - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
-
-    - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
-
-    - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
-
-    - Fixed an issue so the first call of the gRPC client no longer always fails.
-
-    - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
-
-    - Added a missing translation for the Request CCD button.
-
-    - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
-
-    - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
-
-    - Display of a `deployModule` transaction includes a copy button for the module reference.
-
-    - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
-
-    - Added text that a transaction has been submitted.
-
-    - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
+        Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.0.6 - May 30, 2023
+
+            |bw| 1.0.6 contains fixes for the following issues:
+
+            - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+            - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+            - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+            - Fixed an issue so the first call of the gRPC client no longer always fails.
+
+            - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+            - Added a missing translation for the Request CCD button.
+
+            - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+            - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+            - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+            - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+            - Added text that a transaction has been submitted.
+
+            - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
 
         .. dropdown:: |bw| 1.0.4 - May 8, 2023
 

@@ -2113,22 +2113,11 @@ Concordium Wallet for Mobile 1.0.0 - September 26, 2022<div class="sd-summary-do
 <div class="section" id="bw">
 <span id="rn-bw"></span><h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>May 30, 2023</p>
-<p>Concordium Wallet for Web 1.0.6 contains fixes for the following issues:</p>
-<ul class="simple">
-<li><p>The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.</p></li>
-<li><p>Fixed an empty recovery displaying an error instead of informing the user that nothing was found.</p></li>
-<li><p>Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.</p></li>
-<li><p>Fixed an issue so the first call of the gRPC client no longer always fails.</p></li>
-<li><p>Fixed an issue so the first call of the gRPC client after changing network uses the correct network.</p></li>
-<li><p>Added a missing translation for the Request CCD button.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">deployModule</span></code> transactions are now supported in the <code class="docutils literal notranslate"><span class="pre">sendTransaction</span></code> endpoint of the wallet-api.</p></li>
-<li><p>In the display of a <cite>deployModule</cite> transaction, the previously titled module hash is now titled module reference.</p></li>
-<li><p>Display of a <cite>deployModule</cite> transaction includes a copy button for the module reference.</p></li>
-<li><p>Updated web-sdk to fix incorrect estimated cost for <cite>deployModule</cite> transaction.</p></li>
-<li><p>Added text that a transaction has been submitted.</p></li>
-<li><p>Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.</p></li>
-</ul>
+<div><p>August 17, 2023</p>
+<blockquote>
+<div><p>Concordium Wallet for Web 1.0.7 adds support for the <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released August 21, 2023.</p>
+<p>Additionally, Concordium plans to remove support for JSON-RPC in the Concordium Wallet for Web on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.</p>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2137,6 +2126,29 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web 1.0.6 - May 30, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Wallet for Web 1.0.6 contains fixes for the following issues:</p>
+<ul class="simple">
+<li><p class="sd-card-text">The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.</p></li>
+<li><p class="sd-card-text">Fixed an empty recovery displaying an error instead of informing the user that nothing was found.</p></li>
+<li><p class="sd-card-text">Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.</p></li>
+<li><p class="sd-card-text">Fixed an issue so the first call of the gRPC client no longer always fails.</p></li>
+<li><p class="sd-card-text">Fixed an issue so the first call of the gRPC client after changing network uses the correct network.</p></li>
+<li><p class="sd-card-text">Added a missing translation for the Request CCD button.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">deployModule</span></code> transactions are now supported in the <code class="docutils literal notranslate"><span class="pre">sendTransaction</span></code> endpoint of the wallet-api.</p></li>
+<li><p class="sd-card-text">In the display of a <cite>deployModule</cite> transaction, the previously titled module hash is now titled module reference.</p></li>
+<li><p class="sd-card-text">Display of a <cite>deployModule</cite> transaction includes a copy button for the module reference.</p></li>
+<li><p class="sd-card-text">Updated web-sdk to fix incorrect estimated cost for <cite>deployModule</cite> transaction.</p></li>
+<li><p class="sd-card-text">Added text that a transaction has been submitted.</p></li>
+<li><p class="sd-card-text">Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Web 1.0.4 - May 8, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
