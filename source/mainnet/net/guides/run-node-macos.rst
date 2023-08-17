@@ -209,13 +209,13 @@ If you want to change whether the node services start automatically, you have tw
 
       .. code-block:: console
 
-          $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist" "/Library/LaunchDaemons/"
+          $sudo ln -s "/Library/Concordium\ Node/LaunchDaemons/software.concordium.mainnet.node.plist" "/Library/LaunchDaemons/"
 
     - For testnet:
 
       .. code-block:: console
 
-          $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist" "/Library/LaunchDaemons/"
+          $sudo ln -s "/Library/Concordium\ Node/LaunchDaemons/software.concordium.testnet.node.plist" "/Library/LaunchDaemons/"
 
   - Enable automatic startup of the *node-collector* by running:
 
@@ -223,13 +223,13 @@ If you want to change whether the node services start automatically, you have tw
 
       .. code-block:: console
 
-         $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node-collector.plist" "/Library/LaunchDaemons/"
+         $sudo ln -s "/Library/Concordium\ Node/LaunchDaemons/software.concordium.mainnet.node-collector.plist" "/Library/LaunchDaemons/"
 
     - For testnet:
 
       .. code-block:: console
 
-         $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node-collector.plist" "/Library/LaunchDaemons/"
+         $sudo ln -s "/Library/Concordium\ Node/LaunchDaemons/software.concordium.testnet.node-collector.plist" "/Library/LaunchDaemons/"
 
   - Disable automatic startup of the *node* by running:
 
@@ -340,7 +340,7 @@ faster than requesting them from peers.
 
    - For mainnet:
 
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
+     - Edit ``/Library/Concordium\ Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
        administrator and add the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
@@ -350,7 +350,7 @@ faster than requesting them from peers.
 
    - For testnet:
 
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
+     - Edit ``/Library/Concordium\ Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
        administrator and add the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
