@@ -548,25 +548,65 @@ Nodes
 Mainnet
 -------
 
-    .. _542-mainnet:
+    .. _604-mainnet:
 
-    June 14, 2023
+    September 11, 2023
 
-    Concordium node version 5.4.2 contains the following features and bug fixes:
+        Concordium Node 6.0.4 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released September 25, 2023. **Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.**
 
-    - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+        Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
 
-    - Fixed a security issue.
+        Additional features of this release include:
 
-    - Support using block height as block identifiers in gRPC v2 API.
+        - Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.
 
-    - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+        - Changes in Wasm validation and execution in P6 include:
 
-    - Do not keep a historical list of peers when running as a normal node.
+            - Disallowed globals in initialization sections for V1 contracts in P6.
 
-    - Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+            - Added support for sign extension instructions in Wasm in P6.
+
+            - Do not count custom sections towards module size when executing contracts.
+
+            - Support new ``invoke`` operations for retrieving account keys and checking signatures.
+
+        - Shut down consensus upon a protocol update updating from protocol version 6.
+
+        - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
+
+        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
+
+            - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
+
+        - Changed the ``GetBlockInfo`` endpoint:
+
+            - Block slot is only returned in protocol versions 0-5.
+
+            - In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.
+
+            - Endpoint extended to return block round and epoch in protocol version 6.
+
+        - Changed the ElectionInfo endpoint so that Election difficulty is only returned in protocol versions 0-5.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 5.4.2 - June 14, 2023
+
+            .. _542-mainnet:
+
+            Concordium node version 5.4.2 contains the following features and bug fixes:
+
+            - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+            - Fixed a security issue.
+
+            - Support using block height as block identifiers in gRPC v2 API.
+
+            - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+            - Do not keep a historical list of peers when running as a normal node.
+
+            - Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
 
         .. dropdown:: 5.3.2 - April 27, 2023
 
