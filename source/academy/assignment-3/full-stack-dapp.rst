@@ -1,4 +1,4 @@
-.. _dapp-using-walletconnect:
+.. _fullstack-dapp-using-walletconnect:
 
 ========================
 dApp using WalletConnect

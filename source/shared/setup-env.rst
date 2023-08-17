@@ -1,4 +1,3 @@
-.. include:: ../../variables.rst
 .. _setup-env:
 
 =================================
@@ -239,9 +238,9 @@ Remember you are working on the testnet. Check if your node collector is up and 
 Setup a wallet
 ==============
 
-Now you need a Concordium wallet. Use the |bw|. The |bw| uses a 24 word secret recovery phrase to secure your wallet. Make sure to protect your 24 word secret recovery phrase and store it in a secure place. Anyone who knows the secret recovery phrase can access your wallet.
+Now you need a Concordium wallet. Use the Concordium Wallet for Web. The Concordium Wallet for Web uses a 24 word secret recovery phrase to secure your wallet. Make sure to protect your 24 word secret recovery phrase and store it in a secure place. Anyone who knows the secret recovery phrase can access your wallet.
 
-Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a |bw| in a chromium web browser. Follow :ref:`these instructions<setup-bw>` to install the extension. Configure it to run on testnet with an identity created from the Concordium testnet IP (shown below) and an account based on that identity. You don't have to provide an ID to create an identity on testnet when selecting ``Concordium testnet IP``. Test identities are meant for testnet testing only.
+Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_ to install a Concordium Wallet for Web in a chromium web browser. Follow :ref:`these instructions<setup-bw>` to install the extension. Configure it to run on testnet with an identity created from the Concordium testnet IP (shown below) and an account based on that identity. You don't have to provide an ID to create an identity on testnet when selecting ``Concordium testnet IP``. Test identities are meant for testnet testing only.
 
 .. image:: images/bw-idp-selection.png
     :width: 100%
