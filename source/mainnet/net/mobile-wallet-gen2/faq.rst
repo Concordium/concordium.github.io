@@ -56,7 +56,7 @@
 
     Yes. Because the |mw-gen2| is a separate app, you can continue to use it simultaneously with your |mw-gen1|. You can also choose to continue using only the |mw-gen1|. Just make sure that you continue to make :ref:`backups<export-import>` if you continue using the |mw-gen1|.
 
-    Identity and account creation is disabled in |mw-gen1| for Android, so it is a good idea to download and set up |mw-gen2|.
+    Identity and account creation is disabled in |mw-gen1|, so it is a good idea to download and set up |mw-gen2|.
 
 .. dropdown:: As a baker, what do I need to do to migrate from |mw-gen1| to |mw-gen2|?
 
