@@ -14,11 +14,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Remove preview
+      - name: Remove preview for Developer Documentation
         uses: rossjrw/pr-preview-action@v1
         with:
           preview-branch: gh-pages
           umbrella-dir: pr-preview
           source-dir: ./build
+          action: remove
+
+      - name: Remove preview for Concordium Academy
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview-academy
+          source-dir: ./build-academy
           action: remove
 

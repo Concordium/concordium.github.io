@@ -34,11 +34,20 @@ jobs:
         shell: bash
         run: ./scripts/build.sh
 
-      - name: Deploy preview 🚀
+      - name: Deploy preview for Developer Documentation 🚀
         uses: rossjrw/pr-preview-action@v1
         with:
           preview-branch: gh-pages
           umbrella-dir: pr-preview
           custom-url: developer.concordium.software
           source-dir: ./build
+          action: deploy
+
+      - name: Deploy preview for Concordium Academy 🚀
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview-academy
+          custom-url: developer.concordium.software
+          source-dir: ./build-academy
           action: deploy
