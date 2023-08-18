@@ -13,15 +13,28 @@ Web3 ID is an extension of the core protocol identity with other types of creden
 
 Web3 ID credentials, like the existing ones, will contain commitments to a variety of attributes. :ref:`Zero-knowledge proofs<glossary-zero-knowledge-proof>` can be constructed to verify the committed values. The |bw| supports construction of these proofs. The proofs can contain a mix of verifiable credentials and account credentials.
 
-========
 Entities
 ========
 
-The core entities of the Web3ID ecosystem are :ref:`issuers<glossary-issuer>` which issue and manage the lifetime of verifiable credentials, :ref:`holders<glossary-credential-holder>` that have verifiable credentials in their wallets, and use them to prove properties about themselves to :ref:`verifiers<glossary-verifier>`.
-Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials.
-Verifiable credentials themselves never leave the user's wallet.
+The core entities of the Web3ID ecosystem are :ref:`issuers<glossary-issuer>` which issue and manage the lifetime of verifiable credentials, and :ref:`holders<glossary-credential-holder>` that have verifiable credentials in their wallets, and use them to prove properties about themselves to :ref:`verifiers<glossary-verifier>`.
+
+The issuer is an entity that issues verifiable credentials. Issuers have a smart contract that holds credential lifetime metadata, a back-end service that has logic for identifying users and sending transactions to the smart contract, and a dApp that interacts with the user’s wallet and the back end to facilitate issuance of credentials.
+
+Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials. Verifiers have a back-end service that checks verifiable presentations and provides a service, And a dApp that facilitates interaction with the wallet, making requests.
+
+A user/wallet holds verifiable credentials, produces verifiable presentations, and interacts with the issuer and verifier. Verifiable credentials themselves never leave the user's wallet.
 
 .. image:: ../images/web3id/web3id-entities.png
+
+Issuance flow
+=============
+
+#. A user initiates a request for a verifiable credential from an :ref:`issuer's<glossary-issuer>` dApp.
+#. The issuer makes a request to the user for adding Web3ID credential. The request contains attributes and metadata.
+#. The user accepts or rejects the request. If they accept they generate a fresh credential holder ID.
+#. If the user accepts, the dApp sends the verifiable credential issuance request to the issuer’s back end.
+#. The issuer verifies the request, and if OK, registers the credential in the smart contract.
+#. The issuer returns a verifiable credential to the dApp which then sends it to the wallet, thus making the user a :ref:`holder<glossary-credential-holder>`.
 
 Support for issuers and verifiers
 =================================
@@ -42,7 +55,7 @@ An issuer will typically consist of the following components.
 In order to simplify issuance as much as possible Concordium provides a `template smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/credential-registry>`_
 that is expected to suffice for most of the issuers, but can be modified if custom logic is required.
 
-Concordium additionally provides an `issuer service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-issuer>`_ that is designed to handle all of the chain-specific interactions, and provide a simple REST API, so that only the custom business logic of the issuer must be implemented.
+Concordium additionally provides an `issuer service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-issuer>`_ that is designed to handle all of the chain-specific interactions, and provides a simple REST API, so that only the custom business logic of the issuer must be implemented.
 Note that the service must be run by the issuer themselves, since only they have the secret keys necessary to run it.
 
 In addition to the infrastructure listed above, the issuer must also provide JSON schemas for their credentials, and metadata.
