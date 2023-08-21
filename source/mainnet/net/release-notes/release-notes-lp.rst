@@ -586,7 +586,7 @@ Mainnet
 
             - Endpoint extended to return block round and epoch in protocol version 6.
 
-        - Changed the ElectionInfo endpoint so that Election difficulty is only returned in protocol versions 0-5.
+        - Changed the `GetElectionInfo` endpoint so that election difficulty is only returned in protocol versions 0-5.
 
     .. dropdown:: Previous releases
 
