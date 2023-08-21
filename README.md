@@ -46,7 +46,8 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ## Development
 
-All of the documentation lives in the `source` directory; here there is a subdirectory for Mainnet. General content such as site images, stylesheets, and other templates are in the `source` directory.
+All of the documentation lives in the `source` directory; here there is a subdirectory `mainnet` for the developer document and a subdirectory `academy` for Concordium Academy.
+General content such as site images, stylesheets, and other templates are in the `source` directory.
 
 ## Installation
 
@@ -150,6 +151,14 @@ To generate the schemas:
 branch of Concordium Rust
 SDK](https://github.com/Concordium/concordium-rust-sdk/tree/derive-schema).
 2. Run `cargo run generate --output_folder <path-to-grpc-json-schema-folder>`.
+
+# Deployment
+
+The developer documentation is hosted by GitHub Pages and the released files can be viewed on the branch [`gh-pages`](https://github.com/Concordium/concordium.github.io/tree/gh-pages).
+Likewise for the Concordium Academy site, the released files can be viewed on the [`gh-pages`](https://github.com/Concordium/concordium-academy/tree/gh-pages) branch of the [Concordium/concordium-academy repository](https://github.com/Concordium/concordium-academy).
+
+Deployment is triggered manually using the [Deploy workflow](https://github.com/Concordium/concordium.github.io/actions/workflows/deploy.yml) in GitHub Actions of this repository.
+This will build and deploy both the developer documentation and Concordium Academy.
 
 # Contributing
 
