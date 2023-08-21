@@ -1,0 +1,231 @@
+:root {
+
+    /*****************************************************************************
+    * Font family
+    **/
+    /* These are adapted from https://systemfontstack.com/ */
+    --pst-font-family-base-system: "Nb-akademie-std", sans-serif;
+    --pst-font-family-monospace-system: "SFMono-Regular", Menlo, Consolas, Monaco,
+      Liberation Mono, Lucida Console, monospace;
+  
+    --pst-font-family-base: var(--pst-font-family-base-system);
+    --pst-font-family-heading: var(--pst-font-family-base);
+    --pst-font-family-monospace: var(--pst-font-family-monospace-system);
+  
+    /*****************************************************************************
+    * Color
+    *
+    * Colors are defined in rgb string way, "red, green, blue"
+    **/
+    --pst-color-link: #235c9b;
+    --pst-color-link-hover: #235c9b;
+    --pst-color-sidebar-link-hover: #235c9b;
+    --pst-color-toc-link-hover: #235c9b;
+    --pst-color-toc-link-active: #235c9b;
+    --pst-color-headerlink: 35, 92, 155;
+    --pst-color-headerlink-hover: 255, 255, 255;
+    --pst-color-inline-code: 178, 34, 34;
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #000000;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+
+    [data-theme="dark"] {
+        --primary-color: #9A97F3;
+        --secondary-color: #818cab;
+        --font-color: #fff;
+        --bg-color: #000000;
+        --heading-color: #818cab;
+}
+
+body{
+    font-family: var(--pst-font-family-base-system);
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
+
+p{
+    line-height: 30px;
+    color: var(--font-color);
+}
+
+h1{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+h2{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+h3{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+h4{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+h5{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+h6{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+a.reference.external{
+    color: var(--pst-color-link);
+}
+
+a.reference.internal{
+    color: var(--pst-color-link);
+}
+
+a.reference.internal:hover{
+    color: var(--pst-color-link);
+}
+
+a.reference.internal:active{
+    color: var(--pst-color-link);
+}
+
+a.left-prev{
+    color: var(--pst-color-link);    
+}
+
+a.right-next{
+    color: var(--pst-color-link);    
+}
+
+a.current.reference.internal:hover{
+    color: var(--pst-color-link);      
+}
+
+.navbar{
+    position: fixed;
+    min-height: var(--pst-header-height);
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.wy-nav-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.wy-side-nav-search > a {
+    /* Fixes logo is gone, when it is an svg */
+    width: 100% !important;
+}
+
+.gp {
+    /* Adds padding to the right of '$' in code-blocks with terminal commands. */
+    padding-right: 0.5em;
+}
+
+.wy-side-nav-search {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sidebar-top-menu {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    margin-left: -.809em;
+    margin-right: -.809em;
+}
+
+.sidebar-top-menu a {
+    color: #d9d9d9;
+    flex: 1;
+    padding: 0.5em;
+    border-radius: 2px 2px 0 0;
+}
+
+.rst-versions.shift-up {
+    overflow-y: auto;
+}
+
+.sidebar-top-menu a.active {
+    background-color: #EFEFEF;
+}
+
+.discourse {
+    background: white;
+    color: black;
+}
+  
+i.fab fa-github-square:before {
+    background: black;
+    color: white;
+}
+
+.admonition.warning{
+    background: #FEF9E8;
+}
+
+.admonition.note{
+    background: #ebf2ff;
+}
+
+.consent {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    max-width: 530px;
+    padding: 30px 45px 25px;
+    background-color: #235c9b;
+    color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .consent {
+        left: 0;
+    }
+}
+
+.consent p {
+    margin-bottom: 0.5em;
+    color: whitesmoke;
+}
+
+.consent button {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.consent a:link {
+    margin-left: .5em;
+    color: lightblue;
+    text-decoration: underline;
+}
+
+.consent a:visited {
+    color: lightgrey;
+}
+
+.consent   a:hover {
+    color: #2980b9;
+}
+
+.consent a:active {
+    color: #d9d9d9;
+}
+
+/* Change the highlight color used in code-snippets. This makes them stand out more. */
+.highlight .hll {
+    background-color: #ccddcc;
+}
