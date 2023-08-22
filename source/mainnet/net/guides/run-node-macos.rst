@@ -229,7 +229,7 @@ If you want to change whether the node services start automatically, you have tw
 
       .. code-block:: console
 
-         $sudo ln -s "/Library/Concordium\ Node/LaunchDaemons/software.concordium.testnet.node-collector.plist" "/Library/LaunchDaemons/"
+         $sudo ln -s "/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node-collector.plist" "/Library/LaunchDaemons/"
 
   - Disable automatic startup of the *node* by running:
 
