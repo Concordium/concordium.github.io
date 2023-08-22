@@ -34,7 +34,7 @@ On mainnet
 
    .. code-block:: console
 
-      $sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium\ Node/Mainnet/Config/baker-credentials.json"
+      $sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json"
 
    (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for mainnet).
 
