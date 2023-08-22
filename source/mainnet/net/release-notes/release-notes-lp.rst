@@ -106,35 +106,39 @@ Wallets
 |bw|
 -------------------------
 
-    May 30, 2023
+    September 4, 2023
 
-    |bw| 1.0.6 contains fixes for the following issues:
-
-    - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
-
-    - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
-
-    - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
-
-    - Fixed an issue so the first call of the gRPC client no longer always fails.
-
-    - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
-
-    - Added a missing translation for the Request CCD button.
-
-    - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
-
-    - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
-
-    - Display of a `deployModule` transaction includes a copy button for the module reference.
-
-    - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
-
-    - Added text that a transaction has been submitted.
-
-    - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
+        |bw| 1.1.0 introduces support for Web3 ID. Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.0.6 - May 30, 2023
+
+            |bw| 1.0.6 contains fixes for the following issues:
+
+            - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+            - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+            - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+            - Fixed an issue so the first call of the gRPC client no longer always fails.
+
+            - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+            - Added a missing translation for the Request CCD button.
+
+            - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+            - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+            - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+            - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+            - Added text that a transaction has been submitted.
+
+            - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
 
         .. dropdown:: |bw| 1.0.4 - May 8, 2023
 

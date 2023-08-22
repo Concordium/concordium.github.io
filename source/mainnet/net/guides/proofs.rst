@@ -5,12 +5,12 @@
 Proofs and revealing information
 ================================
 
-Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area without revealing your exact age or country of residence. You can choose whether you want to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`zero knowledge proof<glossary-zero-knowledge-proof>` to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements.
+Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`zero-knowledge proof<glossary-zero-knowledge-proof>` to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements.
 
 .. image:: ../images/browser-wallet/zkp-one-attribute-ok.png
     :width: 75%
 
-When an attribute or attributes will be proven by zero knowledge proof but not revealed, the hidden icon |proof-zkp| appears next to the attributes to prove.
+When an attribute or attributes will be proven by zero-knowledge proof but not revealed, the **Zero-knowledge proof** heading appears on the card with the attributes to prove.
 
 If you do not meet one of the attributes in the statement, you would see a screen similar to below.
 
@@ -24,8 +24,6 @@ Other times the dApp or service may request that you **reveal** the information 
 .. image:: ../images/browser-wallet/reveal-proof.png
     :width: 75%
 
-When an attribute or attributes are to be revealed, the shown icon |proof-reveal| appears next to the information to reveal and a warning triangle |reveal-warning| appears on the information card.
-
 .. Warning::
 
     By **proving** information to a third-party, it may become possible for them to deduce precise information about you. When you **reveal** information to a third-party, you effectively hand over your information to them. This means that you should only do this if you agree with their data usage and protection policies.
@@ -38,6 +36,10 @@ It is also possible that a dApp could present a mixed statement that asks you to
 
 .. image:: ../images/browser-wallet/mixed-statement-proof.png
     :width: 75%
+
+Another example of a mixed statement could be that the dApp asks for you to prove your country of residence and your education level. This might require you to use account credentials to prove your country of residence meets the requirements, and a :ref:`verifiable credential<glossary-verifiable-credential>` to prove your education level.
+
+(Include two screenshots of the wallet flow with two types of proofs)
 
 Example dApp
 ============
@@ -57,13 +59,3 @@ When the wallet receives a request, a screen similiar to below appears.
     :width: 75%
 
 Click **Accept** to allow the dApp or service to complete the proof or click **Reject** if you do not want to share this information.
-
-.. |proof-reveal| image:: ../images/browser-wallet/reveal-icon.png
-             :alt: eye
-             :width: 50px
-.. |proof-zkp| image:: ../images/browser-wallet/zkp-icon.png
-             :alt: eye with line through
-             :width: 50px
-.. |reveal-warning| image:: ../images/browser-wallet/reveal-warning.png
-             :alt: yellow warning triangle
-             :width: 50px
