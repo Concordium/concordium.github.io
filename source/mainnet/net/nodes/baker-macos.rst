@@ -57,7 +57,7 @@ On testnet
 
    .. code-block:: console
 
-      $sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium\ Node/Testnet/Config/baker-credentials.json"
+      $sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
 
    (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for testnet).
 
