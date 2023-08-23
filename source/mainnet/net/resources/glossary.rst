@@ -756,6 +756,13 @@ Verifiable credential
 
 Issued to the individual by an :ref:`issuer<glossary-issuer>` who has authority for the credential to be issued. A verifiable credential contains some information about the individual that does not necessitate :ref:`anonymity revocation<glossary-anonymity-revoker>`, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :ref:`verifier<glossary-verifier>` using :ref:`zero-knowledge proofs<glossary-zero-knowledge-proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
 
+.. _glossary-verifiable-presentation:
+
+Verifiable presentation
+=======================
+
+Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. A presentation that contains a **zero-knowledge proof** might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the original verifiable credentials.
+
 .. _glossary-verifier:
 
 Verifier

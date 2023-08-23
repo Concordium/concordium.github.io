@@ -132,7 +132,7 @@ Wallets
     September 4, 2023
 
         |bw| 1.1.0 introduces support for Web3 ID. Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer.
-   
+
     .. dropdown:: Previous releases
 
         .. dropdown:: |bw| 1.0.7 - August 17, 2023

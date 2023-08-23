@@ -20,7 +20,7 @@ The core entities of the Web3ID ecosystem are :ref:`issuers<glossary-issuer>` wh
 
 The issuer is an entity that issues verifiable credentials. Issuers have a smart contract that holds credential lifetime metadata, a back-end service that has logic for identifying users and sending transactions to the smart contract, and a dApp that interacts with the user’s wallet and the back end to facilitate issuance of credentials.
 
-Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials. Verifiers have a back-end service that checks verifiable presentations and provides a service, And a dApp that facilitates interaction with the wallet, making requests.
+Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials. Verifiers have a back-end service that checks :ref:`verifiable presentations<glossary-verifiable-presentation>` and provides a service, And a dApp that facilitates interaction with the wallet, making requests.
 
 A user/wallet holds verifiable credentials, produces verifiable presentations, and interacts with the issuer and verifier. Verifiable credentials themselves never leave the user's wallet.
 
@@ -31,8 +31,7 @@ Issuance flow
 
 #. A user initiates a request for a verifiable credential from an :ref:`issuer's<glossary-issuer>` dApp.
 #. The issuer makes a request to the user for adding Web3ID credential. The request contains attributes and metadata.
-#. The user accepts or rejects the request. If they accept they generate a fresh credential holder ID.
-#. If the user accepts, the dApp sends the verifiable credential issuance request to the issuer’s back end.
+#. The user accepts or rejects the request. If they accept they generate a fresh credential holder ID. If the user accepts, the dApp sends the verifiable credential issuance request to the issuer’s back end.
 #. The issuer verifies the request, and if OK, registers the credential in the smart contract.
 #. The issuer returns a verifiable credential to the dApp which then sends it to the wallet, thus making the user a :ref:`holder<glossary-credential-holder>`.
 

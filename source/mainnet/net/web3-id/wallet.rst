@@ -23,9 +23,7 @@ Backup credentials
 
 #. Click |hamburger-bw| and select **Verifiable credentials**.
 
-#. Click |actions-bw| and select **Download export file**. This saves the verifiable credentials in a file in your downloads folder.
-
-
+#. Click |actions-bw| and select **Download export file**. This saves the verifiable credentials in a file in your downloads folder by default.
 
 Revoke credentials
 ==================
@@ -45,7 +43,7 @@ Recover credentials
 
 #. Click |actions-bw| and select **Open import window**.
 
-#. 
+#. Navigate to the location that the **web3IdCredentials.export** file is located and select the file.
 
 
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png

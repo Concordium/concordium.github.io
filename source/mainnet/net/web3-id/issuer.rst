@@ -127,6 +127,8 @@ An example response would be:
 
 Revoke
 
+Some text here.
+
 Credential metadata controls how the credential is displayed in the wallet. An example is:
 
 .. code-block:: json
@@ -138,3 +140,5 @@ Credential metadata controls how the credential is displayed in the wallet. An e
       },
       "backgroundColor": "#ffaa00"
     }
+
+You can update the metadata for verifiable credentials, such as title, image, colors, or localization, but the credential information cannot be edited.
