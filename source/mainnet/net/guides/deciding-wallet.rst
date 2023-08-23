@@ -26,7 +26,7 @@ Which wallet is best for you?
 
 The wallets work on two different environments: the Desktop Wallet on a computer, the |bw| on any device with a web browser, and |mw-gen1| and |mw-gen2| on a phone. The |mw-gen1| and |mw-gen2| are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a LEDGER device.
 
-- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-Ledger-app>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
+- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-ledger>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
 
 - |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a baker), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
 

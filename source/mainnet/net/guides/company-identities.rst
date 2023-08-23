@@ -63,13 +63,13 @@ Create an identity request
    #. Download the tools for your platform.
 
       - `Tools for Linux <https://distribution.concordium.software/tools/linux/enterprise-identities-v2-testnet.tar.gz>`__
-         - SHA256 checksum of the download: ``ad27147798583bc9c393af1ba554e005e3f0cb75137650ce3033452a20d32687``
+         - SHA256 checksum of the download: ``2847d59ff2a0806f081b04a503644f16d8f799e6975f1c32e9e6ce4871c25c49``
 
       - `Tools for Windows <https://distribution.concordium.software/tools/windows/signed/enterprise-identities-v2-testnet.zip>`__
-         - SHA256 checksum of the download: ``45ee2d3a15fa44135ce43da2e8edd40b57b96a26c04d33e76498ac239a3afd1e``
+         - SHA256 checksum of the download: ``208f2054b19fe8f90a2e2fbeb026e34a496e0353c596e2c422f082ca881e32dc``
 
       - `Tools for MacOS <https://distribution.concordium.software/tools/macos/signed/enterprise-identities-v2-testnet.zip>`__
-         - SHA256 checksum of the download: ``917ea1889f1d758ecffa65c5abe138692bb4bf3f3d6f040031156b598d67cf3f``
+         - SHA256 checksum of the download: ``d2d514e85b495fc4a25dbe349174e94a933f0447986cd502e8f17d7e7426e263``
 
    #. Extract the files in the bundle to the same location on your computer. The bundle contains the following files:
 

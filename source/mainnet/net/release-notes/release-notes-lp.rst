@@ -62,16 +62,39 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    June 27, 2023
+    August 16, 2023
 
-    The |mw-gen2| 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+        Version 1.2.1 contains the following:
 
-    Additionally, the following improvements were made:
+        - Fixed end destination when exiting add/remove watched tokens.
 
-    - Identity view: Display raw document type when no localized string is matched
-    - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
+        - Fixed item overlap issues with transaction details screen
+
+        - Removed all tokens with balance < 0 when selecting tokens for transfer
+
+        - Removed token thumbnail and added name in token details activity
+
+        - Transfer token flow now ends in the proper place
+
+        - Fixed issue where ID pub duplicated id error showed
+
+        - Ensured compatibility with the upcoming P6 protocol update.
+
+        - Changed text in tokens screen and added item decorator for divider in TokensFragment.
+
+        - Removed the ability to select other tokens when transferring from TokenDetailsActivity
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.0 - June 27, 2023
+
+            The |mw-gen2| 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+            Additionally, the following improvements were made:
+
+            - Identity view: Display raw document type when no localized string is matched
+
+            - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
 
         .. dropdown:: |mw-gen2| 1.1.8 - May 31, 2023
 
@@ -110,35 +133,41 @@ Wallets
 |bw|
 -------------------------
 
-    May 30, 2023
+    August 17, 2023
 
-    |bw| 1.0.6 contains fixes for the following issues:
+        |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
 
-    - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
-
-    - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
-
-    - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
-
-    - Fixed an issue so the first call of the gRPC client no longer always fails.
-
-    - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
-
-    - Added a missing translation for the Request CCD button.
-
-    - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
-
-    - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
-
-    - Display of a `deployModule` transaction includes a copy button for the module reference.
-
-    - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
-
-    - Added text that a transaction has been submitted.
-
-    - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
+        Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.0.6 - May 30, 2023
+
+            |bw| 1.0.6 contains fixes for the following issues:
+
+            - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+            - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+            - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+            - Fixed an issue so the first call of the gRPC client no longer always fails.
+
+            - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+            - Added a missing translation for the Request CCD button.
+
+            - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+            - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+            - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+            - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+            - Added text that a transaction has been submitted.
+
+            - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
 
         .. dropdown:: |bw| 1.0.4 - May 8, 2023
 
@@ -469,14 +498,24 @@ Desktop Wallet
 
 .. _rn-ledger-app:
 
-Concordium Ledger app
+Concordium LEDGER app
 ---------------------
 
-    March 31, 2023
+    August 11, 2023 - version 4.1.2
 
-    Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.
+        Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see :ref:`Install the Concordium LEDGER app<install-ledger>`. In addition, Concordium's LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.
+
+        The following improvements are also included:
+
+        - Improved a number of user interface flows to require fewer clicks.
+
+        - Amounts are now prefixed with CCD to indicate the unit of the amount.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.1.0 - March 31, 2023
+
+            Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.
 
         .. dropdown:: 3.0.1 - June 15, 2022
 
@@ -1399,27 +1438,33 @@ Smart contract deploy and initialize tool
 CCDScan
 -------
 
-    May 4, 2022
+    August 16, 2023
 
-    CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+        Version CCD frontend 1.4 and backend 1.6 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
 
-    CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
-    CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+    .. dropdown:: Previous releases
 
-    CCDScan release 1 features include:
-    - Block list view of the latest block data
-    - Block details for each block
-    - Transaction list view of the latest transaction data
-    - Transaction details for each transaction
-    - Account list view of the most recent account data
-    - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
-    - Easy search for specific details on blocks, transactions and accounts and bakers
-    - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
-    - A dashboard landing page with real-time updates from the Concordium blockchain
-    - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
-    - Ability to switch between Mainnet and Testnet data
-    - Ability to explore chain parameters and updates to these
-    - List of bakers and their stake, including the ability to drill through to the underlying account address
+        .. dropdown:: 1.0.0 - May 4, 2022
+
+            CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+
+            CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
+            CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+
+            CCDScan release 1 features include:
+            - Block list view of the latest block data
+            - Block details for each block
+            - Transaction list view of the latest transaction data
+            - Transaction details for each transaction
+            - Account list view of the most recent account data
+            - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
+            - Easy search for specific details on blocks, transactions and accounts and bakers
+            - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
+            - A dashboard landing page with real-time updates from the Concordium blockchain
+            - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
+            - Ability to switch between Mainnet and Testnet data
+            - Ability to explore chain parameters and updates to these
+            - List of bakers and their stake, including the ability to drill through to the underlying account address
 
 Libraries
 =========
