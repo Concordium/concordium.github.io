@@ -153,14 +153,19 @@ Example
    Parent block:               01aea0ec91fe37cb956aafcd6d0ab7f86cfd0207e5fffc2a87d40657e2c4fa40
    Last finalized block:       dbf61032a23e020dc6793cbf242c8eadcd91586d84873dee4ae92856b29e2b3f
    Finalized:                  yes
-   Receive time:               Thu, 17 Sep 2020 11:14:39 UTC
-   Arrive time:                Thu, 17 Sep 2020 11:14:39 UTC
-   Slot:                       117506438
-   Slot time:                  Thu, 17 Sep 2020 11:14:39 UTC
+   Receive time:               Thu, 3 Aug 2023 11:14:39 UTC
+   Arrive time:                Thu, 3 Aug 2023 11:14:39 UTC
+   Block time:                 Thu, 3 Aug 2023 11:14:39 UTC
+   Height:                     2269771
+   Height since last genesis:  396377
+   Genesis index:              2
    Baker:                      0
    Transaction count:          1
    Transaction energy cost:    112 NRG
    Transactions size:          284
+   Protocol version:           P6
+   Round:                      417788
+   Epoch:                      2701
 
 See the :ref:`glossary<glossary>` for detailed descriptions of the individual fields.
 
@@ -189,16 +194,17 @@ Example
 
    $concordium-client consensus show-parameters --include-bakers
    Election nonce:      17afce44c8eb1a7e0c48ec28bff50df3f43b36e68155f311f5574108564a2b66
-   Election difficulty: 2.5e-2
    Bakers:
-                                Account                       Lottery power
-           ----------------------------------------------------------------
-        0: 3hq851UoXyWz1cVAiTBYBHS9k5QX7YAF8aNgaKatztcLvoyepp   20.0531 %
-        1: 3mdmNou9ejMmaJ3oDGoWYfbhC6uUdd1kBSNBZBrKG6XPvRLEFJ   19.9866 %
-        2: 39wyk3ExyYnZXqmA83uoVwT3wiBdLbpCrU7hdRtWsJp8sF8kwL   19.9866 %
-        3: 4RCEGvpa3vi8U4V4jqciq8TB7ErqJH42nBGnKvarscrK8PrE2S   19.9872 %
-        4: 4pZN572izXS2jSNuGQ1nFg5ggvZZXsghFJMERzDqTNnJZkLyvX   19.9866 %
-        ...
+                              Account                       Lottery power  Account Name
+         ------------------------------------------------------------------------------
+      0: 4fvxZZ225xcEiCkgXTZt3cSReYgbxiMsSoj1UhAbGCsqvVg9N7   17.9465 %
+      1: 3p8FSc3KN5pKxRvEdsvJS8VS21KbkRS3x4MnGq1t6omuJXydJQ   17.9646 %
+      2: 39zGK3yRxHjgVVnHae2cgZBo6uWtC5Qg8GkmtMjPsJYgDc5pfF   17.9663 %
+      3: 353yq84vTgYZcVLpj4Vd5fdgGbMxAUpkktNnDFs1ogzSvDxMiH   17.9389 %
+      4: 33PbbH58cQj6CAHfLGy5z3FDKhHtjohQmK3ff63tzXJLWsAm8V   17.9753 %
+      48: 4QdCxcP9cApLxA8UGFXiY1HjSPnSkUaeVUERU8BmBdStgnS5Vh   2.9890 %
+      54: 4Z28EXyghd7tLbrMntGZxjBypwGxbQdcnexmeWxPaVeyvFC4bk   0.0152 %
+      ...
 
 
 Inspect consensus status
@@ -222,26 +228,33 @@ Example
 .. code-block:: console
 
    $concordium-client consensus status
-   Best block:                  7f9641fd4dfc1ffca2ef187fdddff375bb975764d66d68744574b893b61a8338
-   Genesis block:               1c647ab5e7ff63b28926f5eed88a9d49b130942a54d791abfa79b4cc0c98acd0
-   Genesis time:                Wed, 18 Mar 2020 14:57:45 UTC
-   Slot duration:               100
-   Epoch duration:              3600000
-   Last finalized block:        183e50fb2700716bd6f194f62fbd4b142a657b4bbd6d83bb64093463960ba4f3
-   Best block height:           154
-   Last finalized block height: 153
-   Blocks received count:       128
-   Block last received time:    Wed, 18 Mar 2020 14:57:45 UTC
-   Block receive latency:          60 ms (EMA),    39 ms (EMSD)
-   Block receive period:         7812 ms (EMA),  9086 ms (EMSD)
-   Blocks verified count:       171
-   Block last arrived time:     Wed, 18 Mar 2020 14:57:45 UTC
-   Block arrive latency:           61 ms (EMA),    60 ms (EMSD)
-   Block arrive period:          5029 ms (EMA),  6388 ms (EMSD)
-   Transactions per block:          0 ms (EMA),     3 ms (EMSD)
-   Finalization count:          51
-   Last finalized time:         Wed, 18 Mar 2020 14:57:50 UTC
-   Finalization period:         17434 ms (EMA), 11541 ms (EMSD)
+   Best block:                  9cd0a5f1dc488b919847e4b3e98aeea567fe80fafd077bacc2901f145f973c6d
+   Genesis block:               f97d975f0e92297c51e24c3b0d8fd39dfe8e1b148d993eba6e9389d4083f7a64
+   Genesis time:                2022-11-11 12:00:00 UTC
+   Epoch duration:              3m 45s
+   Last finalized block:        8cbd88385864c629935a7d96bf2c031b92dd17fb37d342f245eb445cd9719753
+   Best block height:           2270228
+   Last finalized block height: 2270227
+   Blocks received count:       395624
+   Block last received time:    Thu, 29 Jun 2023 12:29:16 UTC
+   Block receive latency:         162 ms (EMA),    49 ms (EMSD)
+   Block receive period:         1082 ms (EMA),   834 ms (EMSD)
+   Blocks verified count:       395624
+   Block last arrived time:     Thu, 29 Jun 2023 12:29:16 UTC
+   Block arrive latency:          167 ms (EMA),    49 ms (EMSD)
+   Block arrive period:          1082 ms (EMA),   834 ms (EMSD)
+   Transactions per block:         0.000 (EMA),    0.003 (EMSD)
+   Finalization count:          372903
+   Last finalized time:         Thu, 29 Jun 2023 12:29:15 UTC
+   Finalization period:          1104 ms (EMA),  1038 ms (EMSD)
+   Protocol version:            P6
+   Genesis index:               2
+   Current era genesis block:   a743879ed3dc9b628fbfe5b20f301e0df60ee539f094fdb796535c54591a3e93
+   Current era genesis time:    2023-06-22 11:30:09 UTC
+   Current timeout duration:    10s
+   Current round:               418265
+   Current epoch:               2704
+   Trigger block time:          2023-06-29 12:30:09 UTC
 
 EMA and EMSD refer to Exponential Moving Average and Exponential Moving
 Standard Deviation, respectively.

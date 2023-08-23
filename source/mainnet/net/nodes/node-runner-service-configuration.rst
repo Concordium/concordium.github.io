@@ -206,6 +206,20 @@ Environment variables to be set when starting the node. This can be used to set 
 
 Note that a number of environment variables are already set by configuration options, so this should only be used where there is no explicit configuration option provided.
 
+Another common node.env.* variable to add is for out-of-band catchup so that nodes can synchronize faster with the rest of the network. This improves performance and gets your node up and running more quickly.
+
+For Mainnet:
+
+.. code-block:: toml
+
+   node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
+
+For Testnet:
+
+.. code-block:: toml
+
+   node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
+
 node.args
 ---------
 

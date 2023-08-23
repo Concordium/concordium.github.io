@@ -1,3 +1,5 @@
+:orphan:
+
 .. include:: ../../variables.rst
 .. _testnet-release-notes:
 
@@ -5,11 +7,32 @@
 Release Notes - Testnet
 =======================
 
+This document is deprecated and replaced by the :ref:`product-separated release notes<release-notes>`.
+
 .. Note::
 
    Subscribe to the `Testnet status page <https://status.testnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
 
    To subscribe to updates on the Testnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
+
+June 27, 2023
+
+|mw-gen2| 1.2.0 for Android
+---------------------------
+
+The |mw-gen2| for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+Additionally, the following improvements were made:
+
+- Identity view: Display raw document type when no localized string is matched
+- Fixed a crash when inputting a too large amount as the stake for delegation or baking.
+
+June 7, 2023
+
+Concordium Node 5.4.2
+---------------------
+
+Concordium node version 5.4.2 fixes a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
 
 June 1, 2023
 

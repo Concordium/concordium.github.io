@@ -14,9 +14,9 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
     Download and install the following tools in this order:
 
     #. `rustup`_
-    #. :ref:`cargo-concordium<cargo-concordium-testnet>`
-    #. :ref:`concordium-client<concordium-node-and-client-download-testnet>`
-    #. :ref:`a node<concordium-node-and-client-download-testnet>` for deploying and interacting
+    #. :ref:`cargo-concordium<concordium-node-and-client-download>`
+    #. :ref:`concordium-client<concordium-node-and-client-download>`
+    #. :ref:`a Mainnet node<concordium-node-and-client-download>` or :ref:`Testnet node<testnet-node-downloads>` for deploying and interacting
 
     For more detailed information, see :ref:`Install tools for development<setup-tools>`.
 
@@ -100,6 +100,10 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
    debug information.
 
 .. dropdown:: Step 5 - Deploy your smart contract
+
+    .. note::
+
+        To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
     To deploy a smart contract module ``my_module.wasm.v1`` using the account with name account-name, run the following command:
 

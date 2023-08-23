@@ -33,4 +33,7 @@ jobs:
         with:
           branch: gh-pages
           folder: build
+          # Prevent the default behavior of force pushing which will remove previews see https://github.com/marketplace/actions/deploy-pr-preview.
+          force: false
           clean: true
+          clean-exclude: pr-preview/

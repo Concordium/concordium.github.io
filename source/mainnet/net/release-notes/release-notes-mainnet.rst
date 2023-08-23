@@ -1,3 +1,5 @@
+:orphan:
+
 .. include:: ../../variables.rst
 .. _mainnet-release-notes:
 
@@ -5,11 +7,44 @@
 Release notes - Mainnet
 =======================
 
+This document is deprecated and replaced by the :ref:`product-separated release notes<release-notes>`.
+
 .. Note::
 
    Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.
 
    To subscribe to updates on the Mainnet status page click **Subscribe** to get all updates or click **Get updates** to choose to get all updates or only updates for specific products.
+
+June 27, 2023
+
+|mw-gen2| 1.2.0 for Android
+---------------------------
+
+The |mw-gen2| for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+Additionally, the following improvements were made:
+
+- Identity view: Display raw document type when no localized string is matched
+- Fixed a crash when inputting a too large amount as the stake for delegation or baking.
+
+June 14, 2023
+
+Concordium Node 5.4.2
+---------------------
+
+Concordium node version 5.4.2 contains the following features and bug fixes:
+
+- Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+- Fixed a security issue.
+
+- Support using block height as block identifiers in gRPC v2 API.
+
+- Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+- Do not keep a historical list of peers when running as a normal node.
+
+- Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
 
 June 1, 2023
 
@@ -533,7 +568,7 @@ Concordium Node 4.3.1 introduces a number of performance improvements. The effec
 - Remove obsolete and unused option ``--max-expiry-duration``.
 - Remove transaction logging functionality from the node. It is replaced by an external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service. As a consequence the ``transaction-outcome-logging`` family of command line options are removed from the node.
 
-August 24, 20222
+August 24, 2022
 
 Concordium Client 4.1.0
 -----------------------
@@ -932,7 +967,7 @@ October 6, 2021
 Concordium Node v1.1.3
 ----------------------
 
-The :ref:`Concordium node release v1.1.3 <downloads>` implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
+The Concordium node release v1.1.3 implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
 This means that node runners **must upgrade** their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will
 stop processing new blocks at that point. See `protocol updates <https://github.com/Concordium/concordium-update-proposals>`_ for more details.
 

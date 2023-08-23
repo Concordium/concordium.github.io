@@ -17,7 +17,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. note::
         You can't import accounts that were created on the |mw-gen1|, |mw-gen2|, or |bw|.
 
-    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger-app>`.
+    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger>`.
 
     #. Go to **Accounts**. You can now see all the accounts that you're the custodian of.
 
@@ -64,6 +64,13 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     15. The LEDGER device says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.
 
     16. Select **Finished**. Your new account is now listed along with the other accounts you're the custodian of.
+
+    .. Note::
+
+        To set the currently selected account the default account, click the star icon. Setting this means that this will be the account initially visible when opening the account page.
+
+        .. image:: ../images/desktop-wallet/dw-favorite-account.png
+           :alt: dark account balance area with favorite button highlighted
 
 .. dropdown:: |mw-gen2|
 
