@@ -1,13 +1,25 @@
 .. include:: ../../variables.rst
 .. _create-proofs:
 
-=====================
-Use ID: Create proofs
-=====================
+=============
+Create proofs
+=============
 
-The |bw| allows dApps or services to request proofs that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of :ref:`statements<glossary-statement>` to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
+A :ref:`verifier<glossary-verifier>` is a business or use-case that provides a service contingent on the holder providing information about themselves using :ref:`verifiable credentials<glossary-verifiable-credential>` or :ref:`account credentials<glossary-account-credential>` they have. A verifier will typically consist of two components:
 
-The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service.
+1. A dApp that interacts with the wallet and requests a :ref:`verifiable presentation<glossary-verifiable-presentation>` from the user.
+2. A back end that will verify the provided presentations, and provide the required service if successful.
+
+The |bw| allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of :ref:`statements<glossary-statement>` to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain the zero-knowledge proofs.
+
+The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these attributes to the dApp or service. The verifiable credentials themselves never leave the holder's wallet, only the information requested by the verifier does.
+
+The verification of presentations consists of two parts.
+
+1. The cryptographic verification of zero-knowledge proofs, and checks that the verifiable credential is valid, which involves checks in smart contracts.
+2. The checking whether the properties attested to are the ones required. This is the custom business logic of the verifier.
+
+Note that the presentation can combine account credentials and verifiable credentials.
 
 The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
 
@@ -30,7 +42,7 @@ For the dApp or service developer there are some general rules about proofs that
 - There is no limit to the amount of attributes that can be revealed.
 - An attribute can only be used in one proof at a time.
 
-The attributes that can be revealed are:
+The identity provider issued attributes that can be revealed from :ref:`account credentials<glossary-account-credential>` are:
 
 - First name
 - Last name
@@ -45,6 +57,8 @@ The attributes that can be revealed are:
 - ID valid to
 - National ID number
 - Tax ID number
+
+You can also build statements that include proofs for attributes in :ref:`verifiable credentials<glossary-verifiable-credential>`. In this case, there is not a fixed list of attributes; it depends on the :ref:`issuer's needs<web3id-issuer>`.
 
 You can find more information about building proof statements in the `Concordium node SDK js repository <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#identity-proofs>`_.
 
@@ -163,6 +177,59 @@ For example, the statement below asks if the wallet owner is a citizen of China 
 .. Note::
 
     Country codes to use for residence and nationality proofs are the `ISO-3166-1 alpha-2 codes <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_.
+
+.. _verifier-tool:
+
+Tool to verify credentials
+==========================
+
+Concordium has developed a verifier tool which is a self-contained service that handles the retrieval of credentials from the chain, and the cryptographic verification of presentations.
+The tool is generic and the API exposed is minimal.
+The verifier has a single POST endpoint and is meant to be used by another service, such as a dApp.
+
+The response to the request will be 200 together with a JSON body that contains the request (i.e., challenge and statement for which the presentation is valid) together with the timestamp and block in which the verification took place. In case of an invalid request the error will be in the 4** range, either 404 if credentials cannot be found, or 400 for invalid proofs or otherwise malformed requests.
+
+You can choose whether you want to run the hosted Concordium verifier for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to create your own verifier tool.
+
+To create your own verifier tool, you can either build it with ``cargo`` or run it in Docker. The `readme file <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`__ provides instructions for both methods.
+
+An example response from the verifier tool is:
+
+.. code-block:: json
+
+   {
+     "block": "c4fa02aa6940750e6692639092406f32282b4d414d0aab66222e328caabbd411",
+     "blockTime": "2023-06-01T14:15:47.250Z",
+     "challenge": "dbd9887999b7ce48236f86fa35d29dd7a8335287b422b186e11ec6d1d02b3291",
+     "credentialStatements": [
+       {
+         "id": "did:ccd:testnet:sci:4718:0/credentialEntry/2eec102b173118dda466411fc7df88093788a34c3e2a4b0a8891f5c671a9d106",
+         "statement": [
+           {
+             "attributeTag": 0,
+             "set": [
+               "bar",
+               "baz",
+               "foo",
+               "qux"
+             ],
+             "type": "AttributeInSet"
+           },
+           {
+             "attributeTag": 3,
+             "lower": 0,
+             "type": "AttributeInRange",
+             "upper": 17
+           }
+         ],
+         "type": [
+           "ConcordiumVerifiableCredential",
+           "MyCredential",
+           "VerifiableCredential"
+         ]
+       }
+     ]
+   }
 
 Example dApp
 ============

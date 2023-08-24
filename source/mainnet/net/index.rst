@@ -68,17 +68,8 @@ index
    :includehidden:
    :caption: Use Concordium's ID Layer
 
-   guides/create-proofs
-   guides/gallery/index
-
-.. toctree::
-   :includehidden:
-   :caption: Web3 ID
-
    web3-id/index
-   web3-id/wallet
-   web3-id/issuer
-   web3-id/verifier
+   guides/gallery/index
 
 .. toctree::
    :includehidden:
