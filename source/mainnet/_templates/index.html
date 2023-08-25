@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{{pathto('_static/css/theme.css', 1)}}" type="text/css" />
+    <link rel="stylesheet" href="{{pathto('_static/style.css', 1)}}" type="text/css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" href="{{pathto('_static/concordium-logo-no-text.svg', 1)}}" />
     <meta name="theme-color" content="#000000" />
@@ -17,7 +17,7 @@
 <body>
     <div class="fit-content center margin-tb">
         <a href="https://developer.concordium.software/">
-            <img class="logo" src="{{pathto('_static/concordium-documentation-dark.svg', 1)}}" />
+            <img class="logo" src="{{pathto('_static/concordium-logo.svg', 1)}}" /> Documentation
         </a>
 
     </div>
@@ -41,14 +41,33 @@
     </div>
     <div class="text-center margin-tb">
       <h4>For chain info, status updates, or support, check out:</h4>
-      <ul class="list">
-        <li><a href="https://developer.concordium.software/en/mainnet/net/release-notes/release-notes-lp.html">Release notes</a></li>
-        <li><a href="https://ccdscan.io/">CCDScan</a></li>
-        <li><a href="https://dashboard.mainnet.concordium.software/"> Mainnet dashboard and block explorer</a></li>
-        <li><a href="https://dashboard.testnet.concordium.com/"> Testnet dashboard and block explorer</a></li>
-        <li><a href="https://status.mainnet.concordium.software/"> Mainnet status page</a></li>
-        <li><a href="https://status.testnet.concordium.software/"> Testnet status page</a></li>
         <li><a href="https://support.concordium.software/"> Discourse support page</a></li>
+        # Concordium GitHub
+        "name": "GitHub",
+        # URL where the link will redirect
+        "url": "https://github.com/Concordium",  # required
+        # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+        "icon": "fab fa-github-square",
+        # Whether icon should be a FontAwesome class, or a local file
+        "type": "fontawesome",  # Default is fontawesome
+    },
+    {
+        # Concordium Email Support
+        "name": "Support",
+        # URL where the link will redirect
+        "url": "mailto:support@concordium.software",  # required
+        # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+        "icon": "fas fa-envelope",
+        # Whether icon should be a FontAwesome class, or a local file
+        "type": "fontawesome",  # Default is fontawesome
+
+    },
+    {    
+        "name": "Discourse",
+        "url": "https://support.concordium.software/latest",
+        "icon": "_static/discourse-brands.svg",
+        "type": "local",
+    }
       </ul>
     </div>
 
@@ -65,21 +84,22 @@
         }
 
         p {
-            color: var(--pst-color-link);
+            color: white;
         }
         
         h3 {
             font-family: var(--pst-font-family-base-system);
-            color: #a38b72;
+            color: white;
             padding: 10px 0px 0px 0px;
         }
 
         h4 {
             font-family: var(--pst-font-family-base-system);
+            color: white;
         }
 
         a {
-            color:#235c9b;
+            color:white;
             text-decoration: none;
         }
 
@@ -142,7 +162,7 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
             padding: 16px;
             text-align: center;
-            background-color: #f1f1f1;
+            background: linear-gradient(9.01deg, rgba(255, 255, 255, 0.3) 22.98%, rgba(255, 255, 255, 0) 88.11%);
             transition: all 0.5s ease;
             border-radius: 15px;
             width: 400px;
