@@ -12,7 +12,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create an account in the wallet and acquire CCD.
+#. Create an account in a wallet and acquire CCD.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
@@ -28,9 +28,14 @@ is added to the chain, the baker receives a reward.
 Prerequisites
 =============
 -  Run a node
--  Create an account
--  Export the JSON file with the account information
--  Install the Concordium Client
+-  Create an account in a wallet
+-  Export a file with the account information
+
+   * To export the JSON file in |mw-gen1|, see :ref:`Make a backup of identities and accounts<export-import>`.
+
+   * To export the private key in |mw-gen2| and |bw|, see :ref:`Export a private key<export-key>`.
+
+-  :ref:`Install the Concordium Client<concordium-node-and-client-download>`
 
 For general information about baking concepts, see :ref:`baker-concept`.
 
@@ -46,7 +51,11 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the |mw-gen2| or |bw| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
+   You can only import accounts created in the |mw-gen2|, |bw|, or |mw-gen1| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information. 
+   
+   * To export the JSON file in |mw-gen1|, see :ref:`Make a backup of identities and accounts<export-import>`.
+
+   * To export the private key in |mw-gen2| and |bw|, see :ref:`Export a private key<export-key>`.
 
 To import an account run:
 

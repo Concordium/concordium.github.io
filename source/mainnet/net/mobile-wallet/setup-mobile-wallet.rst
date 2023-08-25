@@ -1,5 +1,8 @@
+:orphan:
+
 .. include:: ../../variables.rst
 .. _setup-mobile-wallet:
+
 
 ========================
 Set up the |mw-gen1|

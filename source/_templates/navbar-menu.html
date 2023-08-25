@@ -28,14 +28,50 @@ body {margin:0;}
 <body>
 
 <div class="navbar-menu w3-hide-medium w3-hide-small">
-  <a href="{{ pathto('net/installation/downloads') }}">Install</a>
-  <a href="{{ pathto('net/guides/learn-about-concordium') }}">Learn</a>
-  <a href="{{ pathto('net/nodes/node-requirements') }}">Run a node</a>
-  <a href="{{ pathto('net/guides/deciding-wallet') }}">Wallets</a>
-  <a href="{{ pathto('net/guides/how-to-earn') }}">Earn</a>
-  <a href="{{ pathto('net/guides/developer-page') }}">Develop</a>
-  <a href="{{ pathto('smart-contracts/general/introduction') }}">Smart Contracts</a>
-  <a href="{{ pathto('net/guides/create-proofs') }}">Use ID</a>
+  <div class="dropdown">
+    <button class="dropbtn">Download</button>
+    <div class="dropdown-content">
+      <a href="https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US">Concordium Wallet for Web</a>
+      <a href="https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.mainnet">Concordium Wallet for Mobile - Mainnet (Android)</a>
+      <a href="https://apps.apple.com/us/app/concordium-blockchain-wallet/id6444703764">Concordium Wallet for Mobile - Mainnet (iOS)</a>
+      <a href="https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet">Concordium Wallet for Mobile - Testnet (Android)</a>
+      <a href="https://apps.apple.com/us/app/concordium-blockchain-wallet/id6444703764">Concordium Wallet for Mobile - Testnet (iOS)</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Learn</button>
+    <div class="dropdown-content">
+      <a href="{{ pathto('net/concepts/id-accounts') }}">Identities</a>
+      <a href="{{ pathto('net/installation/downloads') }}">Accounts</a>
+      <a href="{{ pathto('net/resources/glossary') }}">Glossary</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Build</button>
+    <div class="dropdown-content">
+      <a href="#">Smart contracts</a>
+      <a href="{{ pathto('net/guides/create-proofs') }}">Use ID</a>
+      <a href="{{ pathto('net/guides/low-code-nft-marketplace/introduction') }}">Low-code NFT marketplace</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Discover</button>
+    <div class="dropdown-content">
+      <a href="https://medium.com/concordium">Blogs</a>
+      <a href="#">Tutorials</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Connect</button>
+    <div class="dropdown-content">
+      <a href="https://support.concordium.software/latest">Discourse</a>
+      <a href="mailto:support@concordium.software">Contact support</a>
+      <a href="https://github.com/Concordium">GitHub</a>
+      <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A">YouTube</a>
+    </div>
+  </div>
+  <a href="https://academy.concordium.software/ccd-academy/getting-started">Concordium Academy</a>
 </div>
 </body>
 </html>

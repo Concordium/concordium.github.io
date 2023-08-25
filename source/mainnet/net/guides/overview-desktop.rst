@@ -52,12 +52,3 @@ Step 4: Set up an identity and an initial account
 Once you've installed the Desktop Wallet, you must set up an identity and an initial account. Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
 
 You're now ready to start using the Desktop Wallet.
-
-.. toctree::
-    :hidden:
-    :maxdepth: 1
-
-    ../desktop-wallet/install-ledger-app
-    ../desktop-wallet/accounts-desktop
-    ../desktop-wallet/update-application
-    ../desktop-wallet/reset-data
