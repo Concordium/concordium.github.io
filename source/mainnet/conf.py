@@ -148,6 +148,7 @@ html_theme_options = {
     # 'prev_next_buttons_location': None,
     # 'style_external_links': False,
     # 'style_nav_header_background': '#235c9b',
+    "use_edit_page_button": True,
     # # Toc options
     "collapse_navigation": False,
     # 'sticky_navigation': True,
@@ -188,8 +189,8 @@ html_theme_options = {
         {    
             "name": "Discourse",
             "url": "https://support.concordium.software/latest",
-            "icon": "_static/discourse-brands.svg",
-            "type": "local",
+            "icon": "fab fa-discourse",
+            "type": "fontawesome",
         },
         {
             # Concordium Email Support
@@ -214,7 +215,7 @@ languages = os.environ['all_languages'].split(",") if 'all_languages' in os.envi
 html_show_sourcelink = False
 
 html_context = {
-    "display_github": True,
+    # "display_github": True,
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
     "github_version": current_version,
@@ -234,6 +235,10 @@ html_context = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["../_static"]
+
+html_css_files = [
+    '../static/styles.css',
+]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.

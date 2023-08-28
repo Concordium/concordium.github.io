@@ -51,8 +51,8 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the |mw-gen2|, |bw|, or |mw-gen1| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information. 
-   
+   You can only import accounts created in the |mw-gen2|, |bw|, or |mw-gen1| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information.
+
    * To export the JSON file in |mw-gen1|, see :ref:`Make a backup of identities and accounts<export-import>`.
 
    * To export the private key in |mw-gen2| and |bw|, see :ref:`Export a private key<export-key>`.
