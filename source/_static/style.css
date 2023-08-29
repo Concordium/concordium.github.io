@@ -190,7 +190,7 @@ i.fab fa-github-square:before {
     bottom: 0;
     max-width: 530px;
     padding: 30px 45px 25px;
-    background-color: #235c9b;
+    background: linear-gradient(9.01deg, rgba(255, 255, 255, 0.3) 22.98%, rgba(255, 255, 255, 0) 88.11%);
     color: #fff;
 }
 
@@ -202,7 +202,7 @@ i.fab fa-github-square:before {
 
 .consent p {
     margin-bottom: 0.5em;
-    color: whitesmoke;
+    color: #fff;
 }
 
 .consent button {
@@ -210,12 +210,16 @@ i.fab fa-github-square:before {
     padding-right: 1em;
     margin-left: .5em;
     margin-right: .5em;
+    background-color: #48A2AE;
+    border-radius: 12px;
+    border-width: 0;
+    color: #fff;
 }
 
 .consent a:link {
     margin-left: .5em;
-    color: lightblue;
-    text-decoration: underline;
+    color: #ffffff;
+
 }
 
 .consent a:visited {
@@ -223,7 +227,7 @@ i.fab fa-github-square:before {
 }
 
 .consent   a:hover {
-    color: #2980b9;
+    color: lightgrey;
 }
 
 .consent a:active {

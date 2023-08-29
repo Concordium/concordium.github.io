@@ -160,7 +160,7 @@ html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
-    "page_sidebar_items": ["page-toc"],
+    "page_sidebar_items": ["page-toc", "edit-this-page"],
     "footer_items": ["footer"],
     "show_prev_next": True,
     "navbar_align": "left",
@@ -219,6 +219,7 @@ html_context = {
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
     "github_version": current_version,
+    "doc_path": "source/mainnet",
     "conf_py_path": "/source/",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
