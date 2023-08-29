@@ -4,8 +4,9 @@
     * Font family
     **/
     /* These are adapted from https://systemfontstack.com/ */
-    --pst-font-family-base-system: 'IBM Plex Sans', sans-serif;
-    --pst-font-family-monospace-system: 'IBM Plex Mono', Consolas, monospace;
+    --pst-font-family-base-system: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    --pst-font-family-monospace-system: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', Courier, monospace;
   
     --pst-font-family-base: var(--pst-font-family-base-system);
     --pst-font-family-heading: var(--pst-font-family-base);
@@ -54,6 +55,7 @@ body{
 p{
     line-height: 30px;
     color: var(--font-color);
+    font-family: var(--pst-font-family-base-system);
 }
 
 h1{
@@ -67,7 +69,7 @@ h2{
 }
 
 h3{
-    font-family: IBM Plex Sans;
+    font-family: var(--pst-font-family-base-system);
     color: var(--heading-color);
 }
 
