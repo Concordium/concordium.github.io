@@ -1,0 +1,875 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set up the LEDGER device and install the Concordium LEDGER App &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/../_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/../_static/css/ibm-plex.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: relative;
+  background-color: var(--bg-color);
+}
+
+.navbar-menu a {
+  float: left;
+  display: inline;
+  text-align: center;
+  color: var(--font-color);
+  font-size: 15px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 1178px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <div class="dropdown">
+    <button class="dropbtn">Monitor</button>
+    <div class="dropdown-content">
+      <a href="https://ccdscan.io/">CCDScan</a>
+      <a href="https://dashboard.mainnet.concordium.software">Mainnet dashboard</a>
+      <a href="https://dashboard.testnet.concordium.com">Testnet dashboard</a>
+      <a href="https://status.mainnet.concordium.software">Mainnet status page</a>
+      <a href="https://status.testnet.concordium.software">Testnet status page</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Learn</button>
+    <div class="dropdown-content">
+      <a href="../concepts/id-accounts.html">Identities</a>
+      <a href="../installation/downloads.html">Accounts</a>
+      <a href="../resources/glossary.html">Glossary</a>
+      <a href="https://academy.concordium.software/ccd-academy/getting-started">Academy</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Build</button>
+    <div class="dropdown-content">
+      <a href="../../smart-contracts/general/introduction.html">Smart contracts</a>
+      <a href="../guides/create-proofs.html">Use ID</a>
+      <a href="../guides/low-code-nft-marketplace/introduction.html">Low-code NFT marketplace</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Discover</button>
+    <div class="dropdown-content">
+      <a href="https://medium.com/concordium">Blogs</a>
+      <a href="../guides/dapp-examples.html">Example dApps</a>
+      <a href="https://proposals.concordium.software/index.html">Concordium Standards</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Connect</button>
+    <div class="dropdown-content">
+      <a class="nav-link nav-external" href="https://support.concordium.software/latest">Discourse</a>
+      <a href="mailto:support@concordium.software">Contact support</a>
+      <a class="nav-link nav-external" href="https://github.com/Concordium">GitHub</a>
+      <a class="nav-link nav-external" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A">YouTube</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:documentation@concordium.com" rel="noopener" target="_blank" title="Feedback"><span><i class="fas fa-bullhorn"></i></span>
+            <label class="sr-only">Feedback</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-the-ledger-device">
+   Set up the LEDGER device
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-ledger-device-firmware">
+     Update the LEDGER device firmware
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-concordium-ledger-app-on-windows">
+   Install Concordium LEDGER app on Windows
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-python3-and-pip">
+     Install Python3 and pip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-custom-certificate-on-windows">
+     Install the custom certificate on Windows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-concordium-ledger-app-on-windows">
+     Install the Concordium LEDGER app on Windows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-concordium-ledger-app-on-windows">
+     Update the Concordium LEDGER app on Windows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-concordium-ledger-app-on-macos">
+   Install Concordium LEDGER app on macOS
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-homebrew-python3-and-pip">
+     Install Homebrew, Python3, and pip
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-custom-certificate-using-macos">
+     Install the custom certificate using macOS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-concordium-ledger-app-on-macos">
+     Install the Concordium LEDGER app on MacOS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-reinstall-the-concordium-ledger-app-on-macos">
+     Update/reinstall the Concordium LEDGER app on macOS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-concordium-ledger-app-on-ubuntu">
+   Install Concordium LEDGER app on Ubuntu
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-python3-and-pip-on-ubuntu">
+     Install Python3 and pip on Ubuntu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-custom-certificate-on-ubuntu">
+     Install the custom certificate on Ubuntu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-concordium-ledger-app-on-ubuntu">
+     Install the Concordium LEDGER app on Ubuntu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-the-concordium-ledger-app-on-ubuntu">
+     Update the Concordium LEDGER app on Ubuntu
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/mainnet/source/mainnet/net/desktop-wallet/install-ledger-app.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="set-up-the-ledger-device-and-install-the-concordium-ledger-app">
+<span id="install-ledger-app"></span><h1>Set up the LEDGER device and install the Concordium LEDGER App<a class="headerlink" href="#set-up-the-ledger-device-and-install-the-concordium-ledger-app" title="Permalink to this headline">#</a></h1>
+<p>To be able to sign and send transactions using the Desktop Wallet, you need a LEDGER hardware wallet, and you need to install the Concordium LEDGER Application on the LEDGER device. You can use Windows, macOS or Ubuntu to install the app.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The LEDGER NANO X is not supported currently.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>LEDGER hardware wallet</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>During the process described in this guide, you’ll generate private keys on the LEDGER device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.</p>
+</div>
+</div>
+<div class="section" id="set-up-the-ledger-device">
+<h2>Set up the LEDGER device<a class="headerlink" href="#set-up-the-ledger-device" title="Permalink to this headline">#</a></h2>
+<p>The LEDGER device will generate the unique 24-word recovery phrase that is used to derive your private keys.</p>
+<ol class="arabic simple">
+<li><p>Download and install <strong>Ledger Live</strong>. For information on how to do this, see <a class="reference external" href="https://www.ledger.com/ledger-live/download">Ledger’s documentation</a>. You’ll only need Ledger Live when you set up the LEDGER device and update the firmware.</p></li>
+<li><p>Open <strong>Ledger Live</strong>, select <strong>Get started</strong>, and then select <strong>Nano S</strong> or <strong>Nano S Plus</strong>.</p></li>
+<li><p>Follow the on-screen setup instructions to set up your PIN code on the LEDGER device.</p></li>
+<li><p>Follow the on-screen instructions to get your 24-word recovery phrase.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.</p>
+</div>
+<p>Once you’ve set up the LEDGER device, you must check that it’s running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version 2.1.0 for the LEDGER NANO S and 1.0.3 for LEDGER NANO S PLUS.</p>
+<div class="section" id="update-the-ledger-device-firmware">
+<h3>Update the LEDGER device firmware<a class="headerlink" href="#update-the-ledger-device-firmware" title="Permalink to this headline">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LEDGER firmware version 2.0.0 is no longer supported for the LEDGER NANO S.</p>
+</div>
+<p>To find out which firmware version the LEDGER device is running, do the following:</p>
+<ol class="arabic simple">
+<li><p>On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.</p></li>
+<li><p>On the <strong>NANO S PLUS</strong> press both buttons on the <strong>General</strong> menu item.</p></li>
+<li><p>Press the right button to navigate to <strong>Firmware version</strong>.</p></li>
+<li><p>Press both buttons to view the <strong>Secure Element</strong> version.</p>
+<ul class="simple">
+<li><p>For <strong>NANO S</strong>, if it says <strong>2.1.0</strong>, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.</p></li>
+<li><p>For <strong>NANO S PLUS</strong>, if it says <strong>1.1.0</strong>, you don’t have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.</p></li>
+</ul>
+</li>
+</ol>
+<p>For details on how to update the LEDGER firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware">LEDGER NANO S guide</a> or <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true">LEDGER NANO S PLUS guide</a>.</p>
+<p>Once you have updated the firmware version, you can download the LEDGER app:</p>
+<ul class="simple">
+<li><p>For LEDGER NANO S, <a class="reference external" href="https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip">download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0</a></p></li>
+<li><p>For LEDGER NANO S PLUS, <a class="reference external" href="https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip">download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0</a></p></li>
+</ul>
+<p>When installing the certificate, ensure that the public key of the certificate is <code class="code docutils literal notranslate"><span class="pre">04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b</span></code>.</p>
+<p>Follow the instructions below to update your app:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#update-app-windows"><span class="std std-ref">Update the Concordium LEDGER app on Windows</span></a></p></li>
+<li><p><a class="reference internal" href="#update-app-macos"><span class="std std-ref">Update/reinstall the Concordium LEDGER app on macOS</span></a></p></li>
+<li><p><a class="reference internal" href="#update-app-ubuntu"><span class="std std-ref">Update the Concordium LEDGER app on Ubuntu</span></a></p></li>
+</ul>
+</div></blockquote>
+<p>It should not be necessary to update the certificate.</p>
+</div>
+</div>
+<div class="section" id="install-concordium-ledger-app-on-windows">
+<h2>Install Concordium LEDGER app on Windows<a class="headerlink" href="#install-concordium-ledger-app-on-windows" title="Permalink to this headline">#</a></h2>
+<div class="section" id="install-python3-and-pip">
+<span id="install-python-pip-windows"></span><h3>Install Python3 and pip<a class="headerlink" href="#install-python3-and-pip" title="Permalink to this headline">#</a></h3>
+<ol class="arabic">
+<li><p>In the <strong>Start</strong> menu, type <em>store</em> to open the Microsoft store.</p></li>
+<li><p>In <strong>Search</strong>, in the upper right corner, enter <em>python</em>.</p></li>
+<li><p>Select <strong>Python 3.9</strong>, and then select <strong>Install</strong>.</p>
+<p>Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying <strong>Python 3.9 just got installed</strong>.</p>
+</li>
+</ol>
+<p>Restart your computer, and then confirm that Python and Pip were installed.</p>
+<ol class="arabic">
+<li><p>In the <strong>Start</strong> menu, type <em>PowerShell</em> and select <strong>Windows PowerShell</strong>. The command-line window opens.</p></li>
+<li><p>To confirm that Python3 was installed, enter</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>Python3 --version
+</pre></div>
+</div>
+</li>
+<li><p>To confirm that the package manager named pip is installed, enter</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip --version
+</pre></div>
+</div>
+</li>
+<li><p>To install Python tools for the LEDGER NANO S, enter</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip install ledgerblue
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="install-the-custom-certificate-on-windows">
+<h3>Install the custom certificate on Windows<a class="headerlink" href="#install-the-custom-certificate-on-windows" title="Permalink to this headline">#</a></h3>
+<p>You now have to install a custom certificate on the LEDGER device to ensure that it trusts applications signed by Concordium’s private key.</p>
+<ol class="arabic simple">
+<li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
+<li><p>Disconnect the LEDGER device from your computer.</p></li>
+<li><p>Download the ZIP folder with Concordium LEDGER application.</p></li>
+<li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
+<li><p>Now you need to start recovery mode on the LEDGER device.</p>
+<ul class="simple">
+<li><p>On the <strong>NANO S</strong>, press the <em>right</em> button and hold it down while you reconnect the LEDGER device to the computer until the LEDGER device says <strong>recovery</strong>.</p></li>
+<li><p>On the <strong>NANO S PLUS</strong>, press the <em>left</em> button and hold it down while you reconnect the LEDGER device to the computer. Navigate to <strong>Recovery mode</strong> and press both buttons to enter <strong>recovery mode</strong>.</p></li>
+</ul>
+</li>
+<li><p>Enter your PIN code.</p></li>
+<li><p>Open the folder you extracted the files to and double-click the <code class="docutils literal notranslate"><span class="pre">loadcertificate.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>. A command-line window opens.</p></li>
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. You can safely ignore the message in the command-line window saying <strong>Broken certificate chain - loading from user key</strong>. This is expected behavior.</p></li>
+<li><p>The LEDGER device says <strong>Certificate concordium</strong>. Press the right button to navigate through the key, while confirming that it is the following:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>and then press both buttons when the LEDGER device says <strong>Trust certificate</strong>.</p>
+<ol class="arabic simple">
+<li><p>Enter your PIN. The certificate has now been installed on the LEDGER device.</p></li>
+</ol>
+</div>
+<div class="section" id="install-the-concordium-ledger-app-on-windows">
+<span id="install-ledger-app-windows"></span><h3>Install the Concordium LEDGER app on Windows<a class="headerlink" href="#install-the-concordium-ledger-app-on-windows" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. You can now use the LEDGER device with the Desktop Wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="update-the-concordium-ledger-app-on-windows">
+<span id="update-app-windows"></span><h3>Update the Concordium LEDGER app on Windows<a class="headerlink" href="#update-the-concordium-ledger-app-on-windows" title="Permalink to this headline">#</a></h3>
+<p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before updating, verify that you have <a class="reference internal" href="#install-python-pip-windows"><span class="std std-ref">installed Python3, pip, and the Python tools</span></a> for LEDGER (ledgerblue) before updating the app.</p>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the LEDGER app if you haven’t done so already.</p></li>
+<li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you get the error <code class="docutils literal notranslate"><span class="pre">loadApp.py:</span> <span class="pre">error:</span> <span class="pre">unrecognized</span> <span class="pre">arguments:</span> <span class="pre">--apiLevel</span> <span class="pre">1</span></code> this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run <code class="docutils literal notranslate"><span class="pre">$pip3</span> <span class="pre">install</span> <span class="pre">ledgerblue</span> <span class="pre">--upgrade</span></code>.</p>
+</div>
+<ol class="arabic simple">
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons.</p></li>
+<li><p>Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the LEDGER device says <strong>Confirm action</strong>. Press both buttons to confirm. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the LEDGER app.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="install-concordium-ledger-app-on-macos">
+<h2>Install Concordium LEDGER app on macOS<a class="headerlink" href="#install-concordium-ledger-app-on-macos" title="Permalink to this headline">#</a></h2>
+<div class="section" id="install-homebrew-python3-and-pip">
+<span id="install-python-pip-macos"></span><h3>Install Homebrew, Python3, and pip<a class="headerlink" href="#install-homebrew-python3-and-pip" title="Permalink to this headline">#</a></h3>
+<ol class="arabic">
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
+<li><p>Install the package manager <a class="reference external" href="https://brew.sh/">Homebrew</a>; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>To install Python3, Pip3, <a class="reference external" href="https://libusb.info/">libusb</a>, and <a class="reference external" href="http://libjpeg.sourceforge.net/">libjpeg</a>, copy the following into the Terminal and press Enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>brew install python@3.9 libusb libjpeg
+</pre></div>
+</div>
+<p>You can use <cite>pyenv&lt;https://github.com/pyenv/pyenv&gt;</cite> if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.</p>
+</li>
+<li><p>To install ledgerblue, copy the following into the Terminal and press Enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip3 install ledgerblue
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="install-the-custom-certificate-using-macos">
+<h3>Install the custom certificate using macOS<a class="headerlink" href="#install-the-custom-certificate-using-macos" title="Permalink to this headline">#</a></h3>
+<p>You now have to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium’s private key.</p>
+<ol class="arabic">
+<li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
+<li><p>Download the ZIP folder with the Concordium LEDGER application.</p></li>
+<li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
+<li><p>Disconnect the LEDGER device from your computer.</p></li>
+<li><p>Now you need to start recovery mode on the LEDGER device.</p>
+<ul class="simple">
+<li><p>On the <strong>NANO S</strong>, press the <em>right</em> button and hold it down while you reconnect the LEDGER device to the computer. The LEDGER device says <strong>recovery mode</strong>.</p></li>
+<li><p>On the <strong>NANO S PLUS</strong>, press the <em>left</em> button and hold it down while you reconnect the LEDGER device to the computer. Navigate to <strong>Recovery mode</strong> and press both buttons to enter <strong>recovery mode</strong>.</p></li>
+</ul>
+</li>
+<li><p>Enter your PIN code.</p></li>
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
+<li><p>Load the certificate onto the LEDGER device by running the following script from the extracted folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./loadcertificate.sh
+</pre></div>
+</div>
+</li>
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. You can safely ignore the message in the command-line window saying <strong>Broken certificate chain - loading from user key</strong>. This is expected behavior.</p></li>
+<li><p>The LEDGER device says <strong>Certificate concordium</strong>. Press the right button to navigate through the key, while confirming that it is the following:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>and then press both buttons when the LEDGER device says <strong>Trust certificate</strong>.</p>
+<ol class="arabic simple">
+<li><p>Enter your PIN. The certificate has now been installed on the LEDGER device .</p></li>
+</ol>
+</div>
+<div class="section" id="install-the-concordium-ledger-app-on-macos">
+<span id="install-ledger-app-macos"></span><h3>Install the Concordium LEDGER app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">#</a></h3>
+<ol class="arabic">
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
+<li><p>Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./install.sh
+</pre></div>
+</div>
+</li>
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. You can now use the LEDGER device with the Desktop Wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="update-reinstall-the-concordium-ledger-app-on-macos">
+<span id="update-app-macos"></span><h3>Update/reinstall the Concordium LEDGER app on macOS<a class="headerlink" href="#update-reinstall-the-concordium-ledger-app-on-macos" title="Permalink to this headline">#</a></h3>
+<p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
+<p>When you update your LEDGER device, it should not be necessary to update the certificate.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re using a different computer than the one you used when you installed the app, you must <a class="reference internal" href="#install-python-pip-macos"><span class="std std-ref">install Python3, pip, and the Python tools</span></a> tools for LEDGER (ledgerblue) before updating the app.</p>
+</div>
+<ol class="arabic">
+<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the LEDGER app if you haven’t done so already.</p></li>
+<li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
+<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0</span></code>.</p></li>
+<li><p>Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you get the error <code class="docutils literal notranslate"><span class="pre">loadApp.py:</span> <span class="pre">error:</span> <span class="pre">unrecognized</span> <span class="pre">arguments:</span> <span class="pre">--apiLevel</span> <span class="pre">1</span></code> this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run <code class="docutils literal notranslate"><span class="pre">$pip3</span> <span class="pre">install</span> <span class="pre">ledgerblue</span> <span class="pre">--upgrade</span></code>.</p>
+</div>
+<ol class="arabic simple">
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>.</p></li>
+<li><p>Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the LEDGER device says <strong>Confirm action</strong>. Press both buttons to confirm. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the LEDGER app.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="install-concordium-ledger-app-on-ubuntu">
+<h2>Install Concordium LEDGER app on Ubuntu<a class="headerlink" href="#install-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">#</a></h2>
+<div class="section" id="install-python3-and-pip-on-ubuntu">
+<h3>Install Python3 and pip on Ubuntu<a class="headerlink" href="#install-python3-and-pip-on-ubuntu" title="Permalink to this headline">#</a></h3>
+<ol class="arabic" id="install-python-pip-ubuntu">
+<li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues">LEDGER ‘s guide Fix connection history</a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh <span class="p">|</span> sudo bash
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>Install python3:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install python3
+</pre></div>
+</div>
+</li>
+<li><p>Install pip:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install python3-pip
+</pre></div>
+</div>
+</li>
+<li><p>Install</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
+</pre></div>
+</div>
+</li>
+<li><p>Install ledgerblue:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo pip3 install ledgerblue
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="install-the-custom-certificate-on-ubuntu">
+<h3>Install the custom certificate on Ubuntu<a class="headerlink" href="#install-the-custom-certificate-on-ubuntu" title="Permalink to this headline">#</a></h3>
+<p>You now have to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium’s private key.</p>
+<ol class="arabic">
+<li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
+<li><p>Download the ZIP folder with the Concordium LEDGER application.</p></li>
+<li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
+<li><p>Disconnect the LEDGER device from your computer.</p></li>
+<li><p>Now you need to start recovery mode on the LEDGER device.</p>
+<ul class="simple">
+<li><p>On the <strong>Nano S</strong>, press the <em>right</em> button and hold it down while you reconnect the LEDGER device to the computer. The LEDGER device says <strong>recovery mode</strong>.</p></li>
+<li><p>On the <strong>Nano S Plus</strong>, press the <em>left</em> button and hold it down while you reconnect the LEDGER device to the computer. Navigate to <strong>Recovery mode</strong> and press both buttons to enter <strong>recovery mode</strong>.</p></li>
+</ul>
+</li>
+<li><p>Enter your PIN code.</p></li>
+<li><p>Run the following script from the folder you extracted the files to:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./loadcertificate.sh
+</pre></div>
+</div>
+</li>
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. You can safely ignore the message in the command-line window saying <strong>Broken certificate chain - loading from user key</strong>. This is expected behavior.</p></li>
+<li><p>The LEDGER device says <strong>Certificate concordium</strong>. Press the right button to navigate through the key, while confirming that it is the following:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>and then press both buttons when the LEDGER device says <strong>Trust certificate</strong>.</p>
+<ol class="arabic simple">
+<li><p>Enter your PIN. The certificate has now been installed on the LEDGER device.</p></li>
+</ol>
+</div>
+<div class="section" id="install-the-concordium-ledger-app-on-ubuntu">
+<span id="install-ledger-app-ubuntu"></span><h3>Install the Concordium LEDGER app on Ubuntu<a class="headerlink" href="#install-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">#</a></h3>
+<ol class="arabic">
+<li><p>Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./install.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. You can now use the LEDGER device with the Desktop Wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="update-the-concordium-ledger-app-on-ubuntu">
+<span id="update-app-ubuntu"></span><h3>Update the Concordium LEDGER app on Ubuntu<a class="headerlink" href="#update-the-concordium-ledger-app-on-ubuntu" title="Permalink to this headline">#</a></h3>
+<p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re using a different computer than the one you used when you installed the app, you must <a class="reference internal" href="#install-python-pip-ubuntu"><span class="std std-ref">install Python3, pip, and the Python tools</span></a> for LEDGER (ledgerblue) before updating the app.</p>
+</div>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the LEDGER app if you haven’t done so already.</p></li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">install.sh</span></code> file from the folder that you extracted the files to.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you get the error <code class="docutils literal notranslate"><span class="pre">loadApp.py:</span> <span class="pre">error:</span> <span class="pre">unrecognized</span> <span class="pre">arguments:</span> <span class="pre">--apiLevel</span> <span class="pre">1</span></code> this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run <code class="docutils literal notranslate"><span class="pre">$sudo</span> <span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">ledgerblue</span> <span class="pre">--upgrade</span></code>.</p>
+</div>
+<ol class="arabic simple">
+<li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>.</p></li>
+<li><p>Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the LEDGER device says <strong>Confirm action</strong>. Press both buttons to confirm. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
+<li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the LEDGER app.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+<style>
+    body {margin:0px;}
+    
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+        </a>
+    </div>
+  </body>
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+
+<div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
