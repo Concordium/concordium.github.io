@@ -16,7 +16,7 @@
 
 <body>
     <div class="fit-content center margin-tb">
-        <a href="https://concordium.com/">
+        <a href="https://concordium.com/" target="_blank">
             <img class="logo" src="{{pathto('_static/concordium-logo.svg', 1)}}" /><h3>Documentation</h3>
         </a>
 
@@ -31,19 +31,19 @@
       <a class="card" href="{{ pathto('net/installation/downloads') }}"><span class="fas fa-download fa-3x"></span><h3>Downloads</h3><p>Download Concordium software.</p></a>
       <a class="card" href="{{ pathto('net/guides/create-proofs') }}"><span class="fas fa-id-card fa-3x"></span><h3>Use ID</h3><p>Use the Concordium ID layer.</p></a>
       <a class="card" href="{{ pathto('net/guides/dapp-examples') }}"><span class="fas fa-desktop fa-3x"></span><h3>dApp examples</h3><p>Example dApps for inspiration.</p></a>
-      <a class="card" href="https://academy.concordium.software/ccd-academy/getting-started"><span class="fas fa-graduation-cap fa-3x"></span><h3>Concordium Academy</h3><p>Learn about Concordium and get rewards.</p></a>
+      <a class="card" href="https://academy.concordium.software/ccd-academy/getting-started" target="_blank"><span class="fas fa-graduation-cap fa-3x"></span><h3>Concordium Academy</h3><p>Learn about Concordium and get rewards.</p></a>
     </div>
 
     <style>
         body {
-            background: url({{pathto('_static/background-img.png', 1)}}) no-repeat center center fixed, rgb(240, 240, 240);
+            background: url({{pathto('_static/background-img.png', 1)}}) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
             margin: 0;
             padding: 0;
-            font-family: var(--pst-font-family-base-system);
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
         }
 
         p {
