@@ -1,9 +1,15 @@
-name: Deploy
+name: Deploy PR Preview
+# Only run when a PR has the 'preview' label
 on:
-  workflow_dispatch:
+  pull_request:
+    types:
+      - labeled
+
+concurrency: preview-${{ github.ref }}
+
 jobs:
-  build-and-deploy:
-    if: github.ref == 'refs/heads/main'
+  build-and-deploy-preview:
+    if: github.event.label.name == 'preview'
     runs-on: ubuntu-latest
     container: sphinxdoc/sphinx
     steps:
@@ -28,12 +34,11 @@ jobs:
         shell: bash
         run: ./scripts/build.sh
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+      - name: Deploy preview 🚀
+        uses: rossjrw/pr-preview-action@v1
         with:
-          branch: gh-pages
-          folder: build
-          # Prevent the default behavior of force pushing which will remove previews see https://github.com/marketplace/actions/deploy-pr-preview.
-          force: false
-          clean: true
-          clean-exclude: pr-preview/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          custom-url: developer.concordium.software
+          source-dir: ./build
+          action: deploy

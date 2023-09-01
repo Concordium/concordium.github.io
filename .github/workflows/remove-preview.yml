@@ -1,0 +1,24 @@
+name: Remove PR Preview
+
+on:
+  pull_request:
+    types:
+      - closed # This hook is needed to remove the preview when PR is closed.
+
+jobs:
+  remove-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+
+      - name: Remove preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          source-dir: ./build
+          action: remove
+
