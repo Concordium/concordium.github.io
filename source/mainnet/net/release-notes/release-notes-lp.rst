@@ -48,17 +48,9 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    August XX, 2023
+    September XX, 2023
 
-        Version 1.3.0 contains the following:
-
-        - Export of secret recovery phrase is possible.
-
-        - Several fixes for WalletConnect functionality are included.
-
-            - Crash on WalletConnect restart
-
-        - 
+        Version 1.3.0 contains several fixes for the  WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds.
 
     .. dropdown:: Previous releases
 

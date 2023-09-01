@@ -199,15 +199,10 @@ How to back up and import
             #. Enter your biometrics or app passcode.
 
             #. Review your import and tap **Ok, thanks**.
-
-.. dropdown:: |mw-gen2| for Android
-
-    You can export your secret recovery phrase to have an electronic copy, however, Concordium always recommends also writing it on paper.
-
     
-.. dropdown:: |mw-gen2| for iOS and |bw|
+.. dropdown:: |mw-gen2| and |bw|
 
-    Backup is not available in |mw-gen2| for iOS or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
+    Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
 
 
 .. |morepage| image:: ../images/more-ellipsis.png
