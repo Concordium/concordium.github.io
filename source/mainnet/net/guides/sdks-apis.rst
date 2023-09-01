@@ -14,6 +14,7 @@ The following SDKs and APIs exist for developing on the Concordium network.
 - `Concordium Java SDK <https://github.com/Concordium/concordium-java-sdk>`_
 - `Concordium .NET (C#) SDK <https://github.com/Concordium/concordium-net-sdk>`_
 - `Concordium Rosetta SDK <https://github.com/Concordium/concordium-rosetta>`_
+- `Concordium go SDK <https://github.com/Concordium/concordium-go-sdk>`_
 
 The following NPM libraries are useful for building web-based dApps:
 
