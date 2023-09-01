@@ -199,7 +199,7 @@ How to back up and import
             #. Enter your biometrics or app passcode.
 
             #. Review your import and tap **Ok, thanks**.
-    
+
 .. dropdown:: |mw-gen2| and |bw|
 
     Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
