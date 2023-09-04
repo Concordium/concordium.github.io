@@ -27,7 +27,7 @@
     --pst-color-inline-code: 178, 34, 34;
     --primary-color: #302AE6;
     --secondary-color: #536390;
-    --font-color: #000000;
+    --font-color: #333333;
     --bg-color: #fff;
     --heading-color: #292922;
 }
@@ -53,7 +53,8 @@ body{
   }
 
 p{
-    line-height: 30px;
+    line-height: 1.7em;
+    font-size: 17px;
     color: var(--font-color);
     font-family: var(--pst-font-family-base-system);
 }
