@@ -179,23 +179,23 @@ i.fab fa-github-square:before {
     color: white;
 }
 
-.admonition.warning{
+.admonition.warning {
     background: #ffffff;
     border-color: #F6DB9A;
     border: 1px solid;
 }
 
-.admonition.warning .title{
+.admonition.warning .admonition-title {
     background: #F6DB9A;
 }
 
-.admonition.note{
+.admonition.note {
     background: #ffffff;
     border-color: #65A4DD;
     border: 1px solid;
 }
 
-.note title{
+.admonition.note .admonition-title {
     background: #65A4DD;
 }
 
