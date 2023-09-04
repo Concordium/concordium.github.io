@@ -17,19 +17,19 @@
     *
     * Colors are defined in rgb string way, "red, green, blue"
     **/
-    --pst-color-link: #235c9b;
-    --pst-color-link-hover: #235c9b;
-    --pst-color-sidebar-link-hover: #235c9b;
-    --pst-color-toc-link-hover: #235c9b;
-    --pst-color-toc-link-active: #235c9b;
+    --pst-color-link: #005A78;
+    --pst-color-link-hover: #005A78;
+    --pst-color-sidebar-link-hover: #005A78;
+    --pst-color-toc-link-hover: #005A78;
+    --pst-color-toc-link-active: #005A78;
     --pst-color-headerlink: 35, 92, 155;
     --pst-color-headerlink-hover: 255, 255, 255;
     --pst-color-inline-code: 178, 34, 34;
-    --primary-color: #302AE6;
-    --secondary-color: #536390;
+    --primary-color: #005A78;
+    --secondary-color: #052535;
     --font-color: #333333;
-    --bg-color: #fff;
-    --heading-color: #292922;
+    --bg-color: #ffffff;
+    --heading-color: #333333;
 }
 
     [data-theme="dark"] {
@@ -180,11 +180,23 @@ i.fab fa-github-square:before {
 }
 
 .admonition.warning{
-    background: #FEF9E8;
+    background: #ffffff;
+    border-color: #F6DB9A;
+    border: 1px solid;
+}
+
+.admonition.warning .title{
+    background: #F6DB9A;
 }
 
 .admonition.note{
-    background: #ebf2ff;
+    background: #ffffff;
+    border-color: #65A4DD;
+    border: 1px solid;
+}
+
+.note title{
+    background: #65A4DD;
 }
 
 .consent {

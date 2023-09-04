@@ -1,3 +1,4 @@
+<!--  This page is not testable when restyling because it has to use the absolute path to files, and when testing locally the /en/mainnet/  part of the path is not included.-->
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -7,20 +8,18 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-    <link rel="stylesheet" href="{{pathto('_static/css/style.css', 1)}}" type="text/css" />
     <link rel="shortcut icon" href="{{pathto('_static/concordium-logo-no-text.svg', 1)}}" />
     <meta name="theme-color" content="#000000" />
     {% block extrahead %} {% endblock %}
 </head>
 
 <body>
-    <div class="fit-content center margin-tb">
+
+<!-- This can used to add a notification at the top of the landing page-->
+    <div class="info-container">
         <a href="https://concordium.com/" target="_blank">
             <img class="logo" src="{{pathto('_static/concordium-logo.svg', 1)}}" />
         </a>
-
-<!-- This can used to add a notification at the top of the landing page-->
-     <div class="info-container">
         <div class="info-text">
             <h4>Whoops!</h4>
             <p>You found a broken link. Thanks for letting us know.</p><p>If you need help to find something, <a href="mailto:support@concordium.software">contact us.</a> </p>
