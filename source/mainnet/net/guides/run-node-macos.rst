@@ -340,7 +340,7 @@ faster than requesting them from peers.
 
    - For mainnet:
 
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
+     - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"`` as an
        administrator and add the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
@@ -350,7 +350,7 @@ faster than requesting them from peers.
 
    - For testnet:
 
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
+     - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"`` as an
        administrator and add the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
