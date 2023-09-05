@@ -5,7 +5,7 @@
 Proofs and revealing information
 ================================
 
-Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service uses a :ref:`zero-knowledge proof<glossary-zero-knowledge-proof>` to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements.
+Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these :ref:`attributes<glossary-attribute>` to the dApp or service using your :ref:`account credentials<glossary-account-credential>` or :ref:`verifiable credentials<glossary-verifiable-credential>`. The dApp or service uses a :ref:`zero-knowledge proof<glossary-zero-knowledge-proof>` to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements. You can choose which account (and thus identity) to use to fulfill the proof request for :ref:`account credentials<glossary-account-credential>` using the drop-down above the proof.
 
 .. image:: ../images/browser-wallet/zkp-one-attribute-ok.png
     :width: 75%
@@ -32,14 +32,22 @@ Other times the dApp or service may request that you **reveal** the information 
 
 It is not possible for you to choose which attributes in the statement to prove/reveal or not prove/reveal. If there is something in the statement that you do not want to prove or reveal, you must reject the statement.
 
-It is also possible that a dApp could present a mixed statement that asks you to reveal one attribute and prove another. In the example below, the first name must be revealed and the user's age must be proven.
+It is also possible that a dApp could present a mixed statement that asks you to reveal one attribute and prove another. In the example below, the user's sex must be revealed and the user's age must be proven.
 
 .. image:: ../images/browser-wallet/mixed-statement-proof.png
     :width: 75%
 
-Another example of a mixed statement could be that the dApp asks for you to prove your country of residence and your education level. This might require you to use account credentials to prove your country of residence meets the requirements, and a :ref:`verifiable credential<glossary-verifiable-credential>` to prove your education level.
+Another example of a mixed proof includes a request to prove information from your :ref:`verifiable credential<glossary-verifiable-credential>` and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
 
-(Include two screenshots of the wallet flow with two types of proofs)
+.. image:: ../images/browser-wallet/vc-mixed-proof-1.png
+    :alt: window with verifiable credential proof and continue button
+    :width: 50%
+
+The second screen is requesting you prove information from your account credential. You can choose which account (and thus identity) you want to use for the proof. Click **Approve** if you agree to prove the information. Click |reject| to reject the proof request.
+
+.. image:: ../images/browser-wallet/vc-mixed-proof-2.png
+    :alt: window with account credential proof and approve button
+    :width: 50%
 
 Example dApp
 ============
@@ -58,4 +66,9 @@ When the wallet receives a request, a screen similiar to below appears.
 .. image:: ../images/browser-wallet/zkp-one-attribute-ok.png
     :width: 75%
 
-Click **Accept** to allow the dApp or service to complete the proof or click **Reject** if you do not want to share this information.
+Click **Accept** to allow the dApp or service to complete the proof or click **Reject** if you do not want to share this information. For more information about verifiable credentials and proofs, see :ref:`Web3 ID in the Concordium Wallet for Web<web3id-wallet>`.
+
+
+.. |reject| image:: ../images/browser-wallet/vc-reject-proof-button.png
+                    :width: 20px
+                    :alt: white x on red background
