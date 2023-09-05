@@ -244,6 +244,9 @@ Node collector configuration
 
 Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled. For information about how to do this, see :ref:`the note at the top of this topic<install-upgrade-node-windows>`.
 
+.. Note::
+  If the node is configured with TLS, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+
 Baking on a Windows node
 ========================
 

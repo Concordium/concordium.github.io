@@ -127,6 +127,9 @@ This will open your overrides in your default editor. Below is an example for th
 
 .. _upgrade-node-Ubuntu:
 
+.. Note::
+  If the node is configured with TLS, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+
 Upgrade version
 ===============
 
