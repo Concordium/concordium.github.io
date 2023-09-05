@@ -5,7 +5,9 @@
 Concordium Windows node runner service configuration
 ====================================================
 
-The Concordium Node Runner Service ("service" for short) is configured using a TOML file. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.)
+You can change the mainnet or testnet node configuration with the Configure Concordium Node Service. The Concordium Node Runner Service ("service" for short) is configured using a TOML file. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.)
+
+To run the app, search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. If you see a message saying *Do you want to allow this app to make changes to your device?*, select **Yes**. The configuration file opens in Notepad or your default editor.
 
 The service can be configured to run multiple nodes. Each node has its own section **[node.**\ *nodeid*\ **]** (where *nodeid* is a different identifier for each node), which defines the settings for that node.
 
