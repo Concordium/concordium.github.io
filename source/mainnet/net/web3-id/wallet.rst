@@ -5,7 +5,13 @@
 Web3 ID in the |bw|
 =====================
 
-Web3 :ref:`verifiable credentials<glossary-verifiable-credential>` are available in the |bw|.
+Web3 :ref:`verifiable credentials<glossary-verifiable-credential>` are available in the |bw|. They might have any of the following states:
+
+- Pending: the verifiable credential is in the process of being issued
+- Active: the verifiable credential is issued and valid
+- Revoked: the verifiable credential is no longer valid because the holder or issuer has canceled it
+- Not activated: the verifiable credential is issued but not yet active because it has not met the valid from date, e.g., a concert ticket
+- Expired: the verifiable credential is past the valid until date, e.g., a concert ticket
 
 Add verifiable credentials to the wallet
 ========================================
@@ -26,12 +32,24 @@ When choosing to add verifiable credentials from an issuer, make sure that you *
             :alt: window with transaction details and option buttons
             :width: 50%
 
+To see the details of the verifiable credential:
+
+#. Click |hamburger-bw| and select **Verifiable credentials**.
+
+#. Click on the verifiable credential card.
+
+#. Click |actions-bw| and select **Details**.
+
+    .. image:: ../images/browser-wallet/vc-details.png
+        :alt: window with card showing details of the verifiable credential
+        :width: 50%
+
 Backup verifiable credentials
 =============================
 
 #. Click |hamburger-bw| and select **Verifiable credentials**.
 
-#. Click |actions-bw| and select **Download export file**. This saves the verifiable credentials in a file in your downloads folder by default.
+#. Click |actions-bw| and select **Download export file**. This saves the verifiable credentials in a file called *web3IdCredentials.export* in your downloads folder by default.
 
 Revoke verifiable credentials
 =============================
@@ -40,9 +58,11 @@ In some cases, the issuer of the verifiable credential may allow you to revoke a
 
 #. Click |hamburger-bw| and select **Verifiable credentials**.
 
-#. Click on the verifiable credential to revoke.
+#. Click on the verifiable credential card to revoke.
 
-#. Click ? and select **Revoke**.
+#. Click |actions-bw| and select **Revoke**.
+
+#. Review the transaction information and click **Send**.
 
 Recover verifiable credentials
 ==============================
@@ -51,7 +71,13 @@ Recover verifiable credentials
 
 #. Click |actions-bw| and select **Open import window**.
 
-#. Navigate to the location that the **web3IdCredentials.export** file is located and select the file.
+#. Click **Select file to import**. Navigate to the location that the *web3IdCredentials.export* file is located and select the file.
+
+    .. image:: ../images/browser-wallet/vc-import.png
+        :alt: window with button to navigate to import file location
+        :width: 50%
+
+#. The verifiable credentials that could be imported from the file are added to the wallet.
 
 Use verifiable credentials
 ==========================
@@ -64,12 +90,52 @@ In cases where a verifier asks to prove your verifiable credentials, you are ask
 
 You can choose which account (and thus identity) and/or verifiable credential to use to prove/reveal the requested attributes.
 
-For more information, see :ref:`Proofs and revealing information<secret-proofs>`.
+It is important to understand the difference between a proof request and a reveal request. For more information, see :ref:`Proofs and revealing information<secret-proofs>`.
+
+In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request.
+
+.. image:: ../images/browser-wallet/proof-not-proved.png
+    :alt: window with button to reject proof request
+    :width: 50%
+
+Another example of a mixed proof includes a request to prove information from your verifiable credential and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
+
+.. image:: ../images/browser-wallet/vc-mixed-proof-1.png
+    :alt: window with verifiable credential proof and continue button
+    :width: 50%
+
+The second screen is requesting you prove information from your account credential. You can choose which account (and thus identity) you want to use for the proof. Click **Approve** if you agree to prove the information. Click |reject| to reject the proof request.
+
+.. image:: ../images/browser-wallet/vc-mixed-proof-2.png
+    :alt: window with account credential proof and approve button
+    :width: 50%
+
+These are just a few examples of how you might see proof requests in the |bw|, but the possibilities for what a verifier might request are limitless for verifiable credentials. The identity provider issued attributes that can be revealed from :ref:`account credentials<glossary-account-credential>` are:
+
+- First name
+- Last name
+- Sex
+- Date of birth
+- Country of residence
+- Country of nationality
+- ID document type
+- ID document number
+- ID document issuer
+- ID valid from
+- ID valid to
+- National ID number
+- Tax ID number
+
+
 
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
-                    :width: 20px
-                    :alt: three horizontal lines
+    :width: 20px
+    :alt: three horizontal lines
 
 .. |actions-bw| image:: ../images/browser-wallet/page-actions.png
                     :width: 20px
                     :alt: three horizontal lines
+
+.. |reject| image:: ../images/browser-wallet/vc-reject-proof-button.png
+                    :width: 20px
+                    :alt: white x on red background

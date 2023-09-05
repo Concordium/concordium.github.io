@@ -63,6 +63,8 @@ An issuer will typically consist of the following components.
 3. A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract,
    and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.
 
+To ease the process of becoming an issuer, Concordium has created a site where you can quickly and easily become an issuer (link for testnet and mainnet).
+
 In order to simplify issuance as much as possible Concordium provides a `template smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/credential-registry>`_
 that is expected to suffice for most of the issuers, but can be modified if custom logic is required.
 

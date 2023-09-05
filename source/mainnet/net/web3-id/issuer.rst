@@ -55,8 +55,6 @@ The issuer endpoint accepts a JSON body with the request to issue the credential
 
 JSON Schemas for requests and responses are available at (link).
 
-.. todo
-
 An example request is:
 
 .. code-block:: json
@@ -123,11 +121,7 @@ An example response would be:
      }
    }
 
-
-
-Revoke
-
-Some text here.
+If you have ``"holderRevocable": true,`` this means that the credential holder can revoke the credential themselves. If false, only the issuer can revoke the credential.
 
 Credential metadata controls how the credential is displayed in the wallet. An example is:
 
@@ -141,4 +135,4 @@ Credential metadata controls how the credential is displayed in the wallet. An e
       "backgroundColor": "#ffaa00"
     }
 
-You can update the metadata for verifiable credentials, such as title, image, colors, or localization, but the credential information cannot be edited.
+You can update the metadata for verifiable credentials, such as title, image, colors, or localization, but the credential information cannot be edited once the smart contract is deployed.
