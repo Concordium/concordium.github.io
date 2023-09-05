@@ -41,11 +41,18 @@ A user/wallet holds verifiable credentials, produces verifiable presentations, a
 Issuance flow for verifiable credentials
 ========================================
 
+The following diagram shows the issuance flow for verifiable credentials.
+
+.. image:: ../images/browser-wallet/web3id-diagram.png
+   :alt: diagram of verifiable credential flow
+   :width: 75%
+
 #. A user initiates a request for a verifiable credential from an :ref:`issuer's<glossary-issuer>` dApp.
-#. The issuer makes a request to the user for adding Web3ID credential. The request contains attributes and metadata.
-#. The user accepts or rejects the request. If they accept they generate a fresh credential holder ID. If the user accepts, the dApp sends the verifiable credential issuance request to the issuer’s back end.
-#. The issuer verifies the request, and if OK, registers the credential in the smart contract.
-#. The issuer returns a verifiable credential to the dApp which then sends it to the wallet, thus making the user a :ref:`holder<glossary-credential-holder>`.
+#. The issuer makes a request to the user's wallet for adding Web3ID credential. The request contains attributes and metadata.
+#. After reviewing what has been sent by the issuer, the user accepts or rejects the request.  If denied, the process stops here.
+#. If accepted, they generate a fresh credential holder ID and the wallet sends their credential ID (public key) to the issuer back end.
+#. The issuer verifies the request, and if OK, registers the credential metadata (validity period, styling, logo, colors) in the smart contract under the received credential ID.
+#. The issuer signs the attributes and returns a verifiable credential to the dApp which then sends it to the wallet, thus making the user a :ref:`holder<glossary-credential-holder>`.
 
 Support for issuers and verifiers
 =================================
