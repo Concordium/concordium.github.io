@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Web3 ID issuers" href="issuer.html" />
-    <link rel="prev" title="What is Web3 ID" href="index.html" />
+    <link rel="prev" title="Identity on Concordium" href="index.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -321,11 +321,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
@@ -899,23 +894,45 @@ body {margin:0;}
     Use Concordium's ID Layer
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
   <label class="label-parts" for="toctree-checkbox-30">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-proofs.html">
-     Use ID: Create proofs
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="index.html">
+     Identity on Concordium
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1 current active">
-    <a class="current reference internal" href="#">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -1855,18 +1838,28 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-credentials-to-the-wallet">
-   Add credentials to the wallet
+  <a class="reference internal nav-link" href="#add-verifiable-credentials-to-the-wallet">
+   Add verifiable credentials to the wallet
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#revoke-credentials-from-the-wallet">
-   Revoke credentials from the wallet
+  <a class="reference internal nav-link" href="#backup-verifiable-credentials">
+   Backup verifiable credentials
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recover-credentials">
-   Recover credentials
+  <a class="reference internal nav-link" href="#revoke-verifiable-credentials">
+   Revoke verifiable credentials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recover-verifiable-credentials">
+   Recover verifiable credentials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-verifiable-credentials">
+   Use verifiable credentials
   </a>
  </li>
 </ul>
@@ -1888,25 +1881,103 @@ body {margin:0;}
                 
   <span class="target" id="web3id-wallet"></span><div class="section" id="web3-id-in-the-bw">
 <h1>Web3 ID in the Concordium Wallet for Web<a class="headerlink" href="#web3-id-in-the-bw" title="Permalink to this headline">#</a></h1>
-<p>Web3 verifiable credentials are available in the Concordium Wallet for Web.</p>
-<div class="section" id="add-credentials-to-the-wallet">
-<h2>Add credentials to the wallet<a class="headerlink" href="#add-credentials-to-the-wallet" title="Permalink to this headline">#</a></h2>
+<p>Web3 <a class="reference internal" href="../resources/glossary.html#glossary-verifiable-credential"><span class="std std-ref">verifiable credentials</span></a> are available in the Concordium Wallet for Web. They might have any of the following states:</p>
+<ul class="simple">
+<li><p>Pending: the verifiable credential is in the process of being issued</p></li>
+<li><p>Active: the verifiable credential is issued and valid</p></li>
+<li><p>Revoked: the verifiable credential is no longer valid because the holder or issuer has canceled it</p></li>
+<li><p>Not activated: the verifiable credential is issued but not yet active because it has not met the valid from date, e.g., a concert ticket</p></li>
+<li><p>Expired: the verifiable credential is past the valid until date, e.g., a concert ticket</p></li>
+</ul>
+<div class="section" id="add-verifiable-credentials-to-the-wallet">
+<h2>Add verifiable credentials to the wallet<a class="headerlink" href="#add-verifiable-credentials-to-the-wallet" title="Permalink to this headline">#</a></h2>
 <p>When choosing to add verifiable credentials from an issuer, make sure that you <em>trust</em> the issuer.</p>
-<ol class="arabic simple">
-<li><p>Contact the issuer of the credentials and provide the information requested by the issuer.</p></li>
-<li><p>The issuer sends a request to your Concordium Wallet for Web to issue a verifiable credential. If you decline the request, the process stops here. If you accept the request, a public key is sent from your wallet to the issuer so that the issuer can put the credential on chain.</p></li>
+<ol class="arabic">
+<li><p>Contact the issuer of the verifiable credentials using the dApp the issuer provides and provide the information requested by the issuer.</p></li>
+<li><p>The issuer sends a request to your Concordium Wallet for Web to issue a verifiable credential. Click <strong>Cancel</strong> to stop the process or click <strong>Add credential</strong> to continue. You will see the verifiable credential as <strong>Pending</strong>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/add-web3id-credential.png"><img alt="window with pending credential and option buttons" src="../../_images/add-web3id-credential.png" style="width: 50%;" /></a>
+</div></blockquote>
+</li>
+<li><p>If you click <strong>Add credential</strong>, this generates a transaction. If you <strong>Reject</strong> the request, the process stops here. If you <strong>Sign &amp; submit</strong> the request, a public key is sent from your wallet to the issuer so that the issuer can put the verifiable credential on chain.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/add-web3id-credential-sign.png"><img alt="window with transaction details and option buttons" src="../../_images/add-web3id-credential-sign.png" style="width: 50%;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<p>To see the details of the verifiable credential:</p>
+<ol class="arabic">
+<li><p>Click <a class="reference internal" href="../../_images/hamburger-menu.png"><img alt="three horizontal lines" src="../../_images/hamburger-menu.png" style="width: 20px;" /></a> and select <strong>Verifiable credentials</strong>.</p></li>
+<li><p>Click on the verifiable credential card.</p></li>
+<li><p>Click <a class="reference internal" href="../../_images/page-actions.png"><img alt="three horizontal lines" src="../../_images/page-actions.png" style="width: 20px;" /></a> and select <strong>Details</strong>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vc-details.png"><img alt="window with card showing details of the verifiable credential" src="../../_images/vc-details.png" style="width: 50%;" /></a>
+</div></blockquote>
+</li>
 </ol>
 </div>
-<div class="section" id="revoke-credentials-from-the-wallet">
-<h2>Revoke credentials from the wallet<a class="headerlink" href="#revoke-credentials-from-the-wallet" title="Permalink to this headline">#</a></h2>
+<div class="section" id="backup-verifiable-credentials">
+<h2>Backup verifiable credentials<a class="headerlink" href="#backup-verifiable-credentials" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Click <a class="reference internal" href="../../_images/hamburger-menu.png"><img alt="three horizontal lines" src="../../_images/hamburger-menu.png" style="width: 20px;" /></a> and select <strong>Verifiable credentials</strong>.</p></li>
+<li><p>Click <a class="reference internal" href="../../_images/page-actions.png"><img alt="three horizontal lines" src="../../_images/page-actions.png" style="width: 20px;" /></a> and select <strong>Download export file</strong>. This saves the verifiable credentials in a file called <em>web3IdCredentials.export</em> in your downloads folder by default.</p></li>
+</ol>
+</div>
+<div class="section" id="revoke-verifiable-credentials">
+<h2>Revoke verifiable credentials<a class="headerlink" href="#revoke-verifiable-credentials" title="Permalink to this headline">#</a></h2>
 <p>In some cases, the issuer of the verifiable credential may allow you to revoke a credential yourself in your Concordium Wallet for Web if you no longer need it.</p>
 <ol class="arabic simple">
-<li><p>Click on the verifiable credential to remove in the Concordium Wallet for Web.</p></li>
-<li><p>Click ? and select Revoke.</p></li>
+<li><p>Click <a class="reference internal" href="../../_images/hamburger-menu.png"><img alt="three horizontal lines" src="../../_images/hamburger-menu.png" style="width: 20px;" /></a> and select <strong>Verifiable credentials</strong>.</p></li>
+<li><p>Click on the verifiable credential card to revoke.</p></li>
+<li><p>Click <a class="reference internal" href="../../_images/page-actions.png"><img alt="three horizontal lines" src="../../_images/page-actions.png" style="width: 20px;" /></a> and select <strong>Revoke</strong>.</p></li>
+<li><p>Review the transaction information and click <strong>Send</strong>.</p></li>
 </ol>
 </div>
-<div class="section" id="recover-credentials">
-<h2>Recover credentials<a class="headerlink" href="#recover-credentials" title="Permalink to this headline">#</a></h2>
+<div class="section" id="recover-verifiable-credentials">
+<h2>Recover verifiable credentials<a class="headerlink" href="#recover-verifiable-credentials" title="Permalink to this headline">#</a></h2>
+<ol class="arabic">
+<li><p>Click <a class="reference internal" href="../../_images/hamburger-menu.png"><img alt="three horizontal lines" src="../../_images/hamburger-menu.png" style="width: 20px;" /></a> and select <strong>Verifiable credentials</strong>.</p></li>
+<li><p>Click <a class="reference internal" href="../../_images/page-actions.png"><img alt="three horizontal lines" src="../../_images/page-actions.png" style="width: 20px;" /></a> and select <strong>Open import window</strong>.</p></li>
+<li><p>Click <strong>Select file to import</strong>. Navigate to the location that the <em>web3IdCredentials.export</em> file is located and select the file.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vc-import.png"><img alt="window with button to navigate to import file location" src="../../_images/vc-import.png" style="width: 50%;" /></a>
+</div></blockquote>
+</li>
+<li><p>The verifiable credentials that could be imported from the file are added to the wallet.</p></li>
+</ol>
+</div>
+<div class="section" id="use-verifiable-credentials">
+<h2>Use verifiable credentials<a class="headerlink" href="#use-verifiable-credentials" title="Permalink to this headline">#</a></h2>
+<p>In cases where a verifier asks to prove your verifiable credentials, you are asked to prove or reveal information in the Concordium Wallet for Web. Proofs or revealing information can be:</p>
+<ul class="simple">
+<li><p>Only verifiable credentials</p></li>
+<li><p>Only account credentials</p></li>
+<li><p>A mix of verifiable and account credentials</p></li>
+</ul>
+<p>You can choose which account (and thus identity) and/or verifiable credential to use to prove/reveal the requested attributes.</p>
+<p>It is important to understand the difference between a proof request and a reveal request. For more information, see <a class="reference internal" href="../guides/proofs.html#secret-proofs"><span class="std std-ref">Proofs and revealing information</span></a>.</p>
+<p>In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request.</p>
+<a class="reference internal image-reference" href="../../_images/proof-not-proved.png"><img alt="window with button to reject proof request" src="../../_images/proof-not-proved.png" style="width: 50%;" /></a>
+<p>Another example of a mixed proof includes a request to prove information from your verifiable credential and from your identity. The first screen is requesting you prove information from your verifiable credential. Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/vc-mixed-proof-1.png"><img alt="window with verifiable credential proof and continue button" src="../../_images/vc-mixed-proof-1.png" style="width: 50%;" /></a>
+<p>The second screen is requesting you prove information from your account credential. You can choose which account (and thus identity) you want to use for the proof. Click <strong>Approve</strong> if you agree to prove the information. Click <a class="reference internal" href="../../_images/vc-reject-proof-button.png"><img alt="white x on red background" src="../../_images/vc-reject-proof-button.png" style="width: 20px;" /></a> to reject the proof request.</p>
+<a class="reference internal image-reference" href="../../_images/vc-mixed-proof-2.png"><img alt="window with account credential proof and approve button" src="../../_images/vc-mixed-proof-2.png" style="width: 50%;" /></a>
+<p>These are just a few examples of how you might see proof requests in the Concordium Wallet for Web, but the possibilities for what a verifier might request are limitless for verifiable credentials. The identity provider issued attributes that can be revealed from <a class="reference internal" href="../resources/glossary.html#glossary-account-credential"><span class="std std-ref">account credentials</span></a> are:</p>
+<ul class="simple">
+<li><p>First name</p></li>
+<li><p>Last name</p></li>
+<li><p>Sex</p></li>
+<li><p>Date of birth</p></li>
+<li><p>Country of residence</p></li>
+<li><p>Country of nationality</p></li>
+<li><p>ID document type</p></li>
+<li><p>ID document number</p></li>
+<li><p>ID document issuer</p></li>
+<li><p>ID valid from</p></li>
+<li><p>ID valid to</p></li>
+<li><p>National ID number</p></li>
+<li><p>Tax ID number</p></li>
+</ul>
 </div>
 </div>
 
@@ -1920,7 +1991,7 @@ body {margin:0;}
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">What is Web3 ID</p>
+            <p class="prev-next-title">Identity on Concordium</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="issuer.html" title="next page">

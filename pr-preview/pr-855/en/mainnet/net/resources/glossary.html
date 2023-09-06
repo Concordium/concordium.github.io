@@ -323,11 +323,6 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
-     <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
       </a>
@@ -906,17 +901,39 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -937,40 +954,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -2283,6 +2266,11 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verifiable-presentation">
+   Verifiable presentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#verifier">
    Verifier
   </a>
@@ -2667,7 +2655,7 @@ given out to, e.g., bakers.</p>
 </div>
 <div class="section" id="pay-day">
 <span id="glossary-pay-day"></span><h2>Pay day<a class="headerlink" href="#pay-day" title="Permalink to this headline">#</a></h2>
-<p>A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the <strong>next pay day after the cool-down period ends</strong>. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 08:05 UTC on Mainnet and approximately 11:05 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.</p>
+<p>A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the <strong>next pay day after the cool-down period ends</strong>. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 08:05 UTC on Mainnet and approximately 12:00 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.</p>
 </div>
 <div class="section" id="passive-delegation">
 <span id="glossary-passive-delegation"></span><h2>Passive delegation<a class="headerlink" href="#passive-delegation" title="Permalink to this headline">#</a></h2>
@@ -2833,6 +2821,10 @@ The user identity certificate includes attributes such as name, age, and nationa
 <div class="section" id="verifiable-credential">
 <span id="glossary-verifiable-credential"></span><h2>Verifiable credential<a class="headerlink" href="#verifiable-credential" title="Permalink to this headline">#</a></h2>
 <p>Issued to the individual by an <a class="reference internal" href="#glossary-issuer"><span class="std std-ref">issuer</span></a> who has authority for the credential to be issued. A verifiable credential contains some information about the individual that does not necessitate <a class="reference internal" href="#glossary-anonymity-revoker"><span class="std std-ref">anonymity revocation</span></a>, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a <a class="reference internal" href="#glossary-verifier"><span class="std std-ref">verifier</span></a> using <a class="reference internal" href="#glossary-zero-knowledge-proof"><span class="std std-ref">zero-knowledge proofs</span></a>. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.</p>
+</div>
+<div class="section" id="verifiable-presentation">
+<span id="glossary-verifiable-presentation"></span><h2>Verifiable presentation<a class="headerlink" href="#verifiable-presentation" title="Permalink to this headline">#</a></h2>
+<p>Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. A presentation that contains a <strong>zero-knowledge proof</strong> might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the original verifiable credentials.</p>
 </div>
 <div class="section" id="verifier">
 <span id="glossary-verifier"></span><h2>Verifier<a class="headerlink" href="#verifier" title="Permalink to this headline">#</a></h2>

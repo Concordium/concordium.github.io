@@ -272,7 +272,7 @@ Import your key into the ``concordium-client`` configuration:
 
 .. code-block:: console
 
-    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
+    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>
 
 .. |send| image:: images/send-ccd.png
              :alt: button with paper airplane

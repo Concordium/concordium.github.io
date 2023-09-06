@@ -322,11 +322,6 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
-     <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
       </a>
@@ -905,17 +900,39 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -1891,7 +1874,7 @@ body {margin:0;}
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concordium-ledger-app">
-     Concordium Ledger app
+     Concordium LEDGER app
     </a>
    </li>
   </ul>
@@ -2046,13 +2029,21 @@ Concordium Wallet for Mobile 1.0.0 - March 7, 2023<div class="sd-summary-down do
 <div class="section" id="mw-gen2-for-android">
 <span id="rn-mwgen2-android"></span><h3>Concordium Wallet for Mobile for Android<a class="headerlink" href="#mw-gen2-for-android" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>June 27, 2023</p>
-<p>The Concordium Wallet for Mobile 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.</p>
-<p>Additionally, the following improvements were made:</p>
+<div><p>August 16, 2023</p>
+<blockquote>
+<div><p>Version 1.2.1 contains the following:</p>
 <ul class="simple">
-<li><p>Identity view: Display raw document type when no localized string is matched</p></li>
-<li><p>Fixed a crash when inputting a too large amount as the stake for delegation or baking.</p></li>
+<li><p>Fixed end destination when exiting add/remove watched tokens.</p></li>
+<li><p>Fixed item overlap issues with transaction details screen</p></li>
+<li><p>Removed all tokens with balance &lt; 0 when selecting tokens for transfer</p></li>
+<li><p>Removed token thumbnail and added name in token details activity</p></li>
+<li><p>Transfer token flow now ends in the proper place</p></li>
+<li><p>Fixed issue where ID pub duplicated id error showed</p></li>
+<li><p>Ensured compatibility with the upcoming P6 protocol update.</p></li>
+<li><p>Changed text in tokens screen and added item decorator for divider in TokensFragment.</p></li>
+<li><p>Removed the ability to select other tokens when transferring from TokenDetailsActivity</p></li>
 </ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2061,6 +2052,20 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Mobile 1.2.0 - June 27, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The Concordium Wallet for Mobile 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.</p>
+<p class="sd-card-text">Additionally, the following improvements were made:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Identity view: Display raw document type when no localized string is matched</p></li>
+<li><p class="sd-card-text">Fixed a crash when inputting a too large amount as the stake for delegation or baking.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Mobile 1.1.8 - May 31, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -2130,22 +2135,11 @@ Concordium Wallet for Mobile 1.0.0 - September 26, 2022<div class="sd-summary-do
 <div class="section" id="bw">
 <span id="rn-bw"></span><h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>May 30, 2023</p>
-<p>Concordium Wallet for Web 1.0.6 contains fixes for the following issues:</p>
-<ul class="simple">
-<li><p>The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.</p></li>
-<li><p>Fixed an empty recovery displaying an error instead of informing the user that nothing was found.</p></li>
-<li><p>Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.</p></li>
-<li><p>Fixed an issue so the first call of the gRPC client no longer always fails.</p></li>
-<li><p>Fixed an issue so the first call of the gRPC client after changing network uses the correct network.</p></li>
-<li><p>Added a missing translation for the Request CCD button.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">deployModule</span></code> transactions are now supported in the <code class="docutils literal notranslate"><span class="pre">sendTransaction</span></code> endpoint of the wallet-api.</p></li>
-<li><p>In the display of a <cite>deployModule</cite> transaction, the previously titled module hash is now titled module reference.</p></li>
-<li><p>Display of a <cite>deployModule</cite> transaction includes a copy button for the module reference.</p></li>
-<li><p>Updated web-sdk to fix incorrect estimated cost for <cite>deployModule</cite> transaction.</p></li>
-<li><p>Added text that a transaction has been submitted.</p></li>
-<li><p>Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.</p></li>
-</ul>
+<div><p>September 4, 2023</p>
+<blockquote>
+<div><p>Concordium Wallet for Web 1.1.0 introduces support for Web3 ID. Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer.</p>
+<p>For wallet users, you can already use the Web3 ID functionality by using Concordia(link). With Concordia, you can prove ownership of accounts on Telegram and Discord and allow trust between the two platforms. Using the bots to issue credentials based on your Telegram and Discord logins allows you to link your accounts and optionally your real name. This is done in two steps. First, you get Web3 ID credentials for your accounts (e.g. one for Discord, one for Telegram). Then, a dApp checks the credentials and stores the verification. Other users can see your other linked accounts within the platform, transferring trust since they know you from another platform.</p>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2154,6 +2148,39 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web 1.0.7 - August 17, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Wallet for Web 1.0.7 adds support for the <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released August 21, 2023.</p>
+<p class="sd-card-text">Additionally, Concordium plans to remove support for JSON-RPC in the Concordium Wallet for Web on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web 1.0.6 - May 30, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Wallet for Web 1.0.6 contains fixes for the following issues:</p>
+<ul class="simple">
+<li><p class="sd-card-text">The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.</p></li>
+<li><p class="sd-card-text">Fixed an empty recovery displaying an error instead of informing the user that nothing was found.</p></li>
+<li><p class="sd-card-text">Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.</p></li>
+<li><p class="sd-card-text">Fixed an issue so the first call of the gRPC client no longer always fails.</p></li>
+<li><p class="sd-card-text">Fixed an issue so the first call of the gRPC client after changing network uses the correct network.</p></li>
+<li><p class="sd-card-text">Added a missing translation for the Request CCD button.</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">deployModule</span></code> transactions are now supported in the <code class="docutils literal notranslate"><span class="pre">sendTransaction</span></code> endpoint of the wallet-api.</p></li>
+<li><p class="sd-card-text">In the display of a <cite>deployModule</cite> transaction, the previously titled module hash is now titled module reference.</p></li>
+<li><p class="sd-card-text">Display of a <cite>deployModule</cite> transaction includes a copy button for the module reference.</p></li>
+<li><p class="sd-card-text">Updated web-sdk to fix incorrect estimated cost for <cite>deployModule</cite> transaction.</p></li>
+<li><p class="sd-card-text">Added text that a transaction has been submitted.</p></li>
+<li><p class="sd-card-text">Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Web 1.0.4 - May 8, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -2666,10 +2693,17 @@ Open Testnet v2 update 1 - July 2, 2020<div class="sd-summary-down docutils">
 </details></div></blockquote>
 </div>
 <div class="section" id="concordium-ledger-app">
-<span id="rn-ledger-app"></span><h3>Concordium Ledger app<a class="headerlink" href="#concordium-ledger-app" title="Permalink to this headline">#</a></h3>
+<span id="rn-ledger-app"></span><h3>Concordium LEDGER app<a class="headerlink" href="#concordium-ledger-app" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>March 31, 2023</p>
-<p>Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.</p>
+<div><p>August 11, 2023 - version 4.1.2</p>
+<blockquote>
+<div><p>Concordium is pleased to announce support for the Concordium LEDGER app in LEDGER Live. You can install and update the Concordium LEDGER app from LEDGER Live. For details, see <a class="reference internal" href="../guides/overview-desktop.html#install-ledger"><span class="std std-ref">Install the Concordium LEDGER app</span></a>. In addition, Concordium’s LEDGER app now supports the LEDGER Nano X as well as the LEDGER Nano S and LEDGER Nano S Plus.</p>
+<p>The following improvements are also included:</p>
+<ul class="simple">
+<li><p>Improved a number of user interface flows to require fewer clicks.</p></li>
+<li><p>Amounts are now prefixed with CCD to indicate the unit of the amount.</p></li>
+</ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2678,6 +2712,15 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+3.1.0 - March 31, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Ledger App v3.1.0 now supports Ledger Nano S Plus firmware version 1.1.0.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 3.0.1 - June 15, 2022<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -3901,11 +3944,28 @@ Previous releases<div class="sd-summary-down docutils">
 <div class="section" id="ccdscan">
 <span id="rn-ccdscan"></span><h3>CCDScan<a class="headerlink" href="#ccdscan" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>May 4, 2022</p>
-<p>CCDScan (<a class="reference external" href="https://ccdscan.io">https://ccdscan.io</a>) is a Concordium blockchain explorer available for Concordium users and explorers.</p>
-<p>CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
+<div><p>August 16, 2023</p>
+<blockquote>
+<div><p>Version CCD frontend 1.4 and backend 1.6 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released August 21, 2023.</p>
+</div></blockquote>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Previous releases<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+1.0.0 - May 4, 2022<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">CCDScan (<a class="reference external" href="https://ccdscan.io">https://ccdscan.io</a>) is a Concordium blockchain explorer available for Concordium users and explorers.</p>
+<p class="sd-card-text">CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
 CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.</p>
-<p>CCDScan release 1 features include:
+<p class="sd-card-text">CCDScan release 1 features include:
 - Block list view of the latest block data
 - Block details for each block
 - Transaction list view of the latest transaction data
@@ -3919,7 +3979,9 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 - Ability to switch between Mainnet and Testnet data
 - Ability to explore chain parameters and updates to these
 - List of bakers and their stake, including the ability to drill through to the underlying account address</p>
-</div></blockquote>
+</div>
+</details></div>
+</details></div></blockquote>
 </div>
 </div>
 <div class="section" id="libraries">

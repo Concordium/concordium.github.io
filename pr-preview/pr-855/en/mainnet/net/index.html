@@ -322,11 +322,6 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
-     <li class="toctree-l2">
       <a class="reference internal" href="desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
       </a>
@@ -905,17 +900,39 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="guides/create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="web3-id/index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="web3-id/wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="web3-id/issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="web3-id/verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -1941,7 +1924,7 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#desktop-wallet">Desktop Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#mw-gen1-for-ios">Concordium Legacy Wallet for iOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#mw-gen1-for-android">Concordium Legacy Wallet for Android</a></li>
-<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#concordium-ledger-app">Concordium Ledger app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release-notes/release-notes-lp.html#concordium-ledger-app">Concordium LEDGER app</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-lp.html#nodes">Nodes</a><ul>
@@ -2126,6 +2109,7 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#unshielding">Unshielding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#user-identity-certificate">User identity certificate</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#verifiable-credential">Verifiable credential</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#verifiable-presentation">Verifiable presentation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#verifier">Verifier</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resources/glossary.html#wallet">Wallet</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="resources/glossary.html#the-desktop-wallet">The Desktop Wallet</a></li>
@@ -2213,39 +2197,7 @@ body {margin:0;}
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides/overview-desktop.html">Set up the Desktop Wallet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-1-set-up-the-node">Step 1: Set up the node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-2-set-up-the-ledger-device">Step 2: Set up the LEDGER device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-3-set-up-the-concordium-desktop-wallet">Step 3: Set up the Concordium Desktop Wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#step-4-set-up-an-identity-and-an-initial-account">Step 4: Set up an identity and an initial account</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="desktop-wallet/install-ledger-app.html">Set up the LEDGER device and install the Concordium LEDGER App</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#set-up-the-ledger-device">Set up the LEDGER device</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-ledger-device-firmware">Update the LEDGER device firmware</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-windows">Install Concordium LEDGER app on Windows</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-python3-and-pip">Install Python3 and pip</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-on-windows">Install the custom certificate on Windows</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-windows">Install the Concordium LEDGER app on Windows</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-concordium-ledger-app-on-windows">Update the Concordium LEDGER app on Windows</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-macos">Install Concordium LEDGER app on macOS</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-homebrew-python3-and-pip">Install Homebrew, Python3, and pip</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-using-macos">Install the custom certificate using macOS</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-macos">Install the Concordium LEDGER app on MacOS</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-reinstall-the-concordium-ledger-app-on-macos">Update/reinstall the Concordium LEDGER app on macOS</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-concordium-ledger-app-on-ubuntu">Install Concordium LEDGER app on Ubuntu</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-python3-and-pip-on-ubuntu">Install Python3 and pip on Ubuntu</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-custom-certificate-on-ubuntu">Install the custom certificate on Ubuntu</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#install-the-concordium-ledger-app-on-ubuntu">Install the Concordium LEDGER app on Ubuntu</a></li>
-<li class="toctree-l5"><a class="reference internal" href="desktop-wallet/install-ledger-app.html#update-the-concordium-ledger-app-on-ubuntu">Update the Concordium LEDGER app on Ubuntu</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="guides/overview-desktop.html#before-you-start">Before you start</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="desktop-wallet/accounts-desktop.html">Desktop Wallet navigation and settings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#more-options">More options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="desktop-wallet/accounts-desktop.html#desktop-wallet-settings">Desktop Wallet settings</a><ul>
@@ -2832,18 +2784,47 @@ body {margin:0;}
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Concordium's ID Layer</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="guides/create-proofs.html">Use ID: Create proofs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guides/create-proofs.html#general-rules">General rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/create-proofs.html#asking-a-user-to-reveal-attributes">Asking a user to reveal attributes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/create-proofs.html#range-proofs">Range proofs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/create-proofs.html#structure-a-range-proof">Structure a range proof</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-id/index.html">Identity on Concordium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-id/index.html#web3-id">Web3 ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-id/index.html#entities">Entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-id/index.html#issuance-flow-for-verifiable-credentials">Issuance flow for verifiable credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-id/index.html#support-for-issuers-and-verifiers">Support for issuers and verifiers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="web3-id/index.html#issuer">Issuer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web3-id/index.html#verifier">Verifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="web3-id/wallet.html">Web3 ID in the Concordium Wallet for Web</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="web3-id/wallet.html#add-verifiable-credentials-to-the-wallet">Add verifiable credentials to the wallet</a></li>
+<li class="toctree-l5"><a class="reference internal" href="web3-id/wallet.html#backup-verifiable-credentials">Backup verifiable credentials</a></li>
+<li class="toctree-l5"><a class="reference internal" href="web3-id/wallet.html#revoke-verifiable-credentials">Revoke verifiable credentials</a></li>
+<li class="toctree-l5"><a class="reference internal" href="web3-id/wallet.html#recover-verifiable-credentials">Recover verifiable credentials</a></li>
+<li class="toctree-l5"><a class="reference internal" href="web3-id/wallet.html#use-verifiable-credentials">Use verifiable credentials</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="guides/create-proofs.html#membership-proofs">Membership proofs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="guides/create-proofs.html#structure-a-membership-proof">Structure a membership proof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="web3-id/issuer.html">Web3 ID issuers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="web3-id/issuer.html#how-to-become-an-issuer">How to become an issuer</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="web3-id/issuer.html#concordium-issuer-tool">Concordium Issuer tool</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="guides/create-proofs.html#example-dapp">Example dApp</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="guides/create-proofs.html">Create proofs</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="guides/create-proofs.html#general-rules">General rules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/create-proofs.html#asking-a-user-to-reveal-attributes">Asking a user to reveal attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/create-proofs.html#range-proofs">Range proofs</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="guides/create-proofs.html#structure-a-range-proof">Structure a range proof</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="guides/create-proofs.html#membership-proofs">Membership proofs</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="guides/create-proofs.html#structure-a-membership-proof">Structure a membership proof</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="guides/create-proofs.html#tool-to-verify-credentials">Tool to verify credentials</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/create-proofs.html#example-dapp">Example dApp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="guides/gallery/index.html">The gallery with ID authentication</a><ul>
@@ -2856,38 +2837,6 @@ body {margin:0;}
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guides/gallery/gallery-frontend.html">Interacting with a wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guides/gallery/gallery-setup.html">Setting up the front end</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Web3 ID</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="web3-id/index.html">What is Web3 ID</a></li>
-<li class="toctree-l1"><a class="reference internal" href="web3-id/index.html#entities">Entities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-id/index.html#support-for-issuers-and-verifiers">Support for issuers and verifiers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web3-id/index.html#issuer">Issuer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="web3-id/index.html#verifier">Verifier</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="web3-id/wallet.html">Web3 ID in the Concordium Wallet for Web</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-id/wallet.html#add-credentials-to-the-wallet">Add credentials to the wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-id/wallet.html#revoke-credentials-from-the-wallet">Revoke credentials from the wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-id/wallet.html#recover-credentials">Recover credentials</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="web3-id/issuer.html">Web3 ID issuers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-id/issuer.html#how-to-become-an-issuer">How to become an issuer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="web3-id/issuer.html#concordium-issuer-tool">Concordium Issuer tool</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="web3-id/issuer.html#managing-credentials">Managing credentials</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="web3-id/verifier.html">Web3 ID verifiers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-id/verifier.html#tool-to-verify-credentials">Tool to verify credentials</a></li>
 </ul>
 </li>
 </ul>

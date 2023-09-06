@@ -322,11 +322,6 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
-     <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
       </a>
@@ -905,17 +900,39 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -1933,7 +1916,7 @@ body {margin:0;}
                 
   <div class="section" id="run-and-manage-a-node-on-windows">
 <span id="run-node-windows"></span><h1>Run and manage a node on Windows<a class="headerlink" href="#run-and-manage-a-node-on-windows" title="Permalink to this headline">#</a></h1>
-<p>This guide describes how organizations can run and manage a node on the Concordium network from a Windows computer. You can also run a node using <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>, <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p>
+<p>This guide describes how you can run and manage a node on the Concordium network from a Windows computer. You can also run a node using <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>, <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p>
 <p>If you want to run a baker node on Windows, see <a class="reference internal" href="baker-windows.html#baker-windows"><span class="std std-ref">Configure a node on Windows as baker</span></a>.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
@@ -1955,7 +1938,7 @@ body {margin:0;}
 default. If you have done special configuration of your node and want to
 re-use the configuration file and have the new API enabled, make sure to edit
 your configuration and add <code class="docutils literal notranslate"><span class="pre">grpc2.port</span></code> and <code class="docutils literal notranslate"><span class="pre">grpc2.address</span></code> settings. See
-<a class="reference internal" href="#configure-node"><span class="std std-ref">Configure the Concordium Node Service</span></a> for more information.</p>
+<a class="reference internal" href="../nodes/node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for more information.</p>
 <p><strong>Example for Mainnet:</strong></p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">grpc2</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">20000</span>
 <span class="n">grpc2</span><span class="p">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1&quot;</span>
@@ -1969,20 +1952,17 @@ your configuration and add <code class="docutils literal notranslate"><span clas
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See <a class="reference internal" href="#verify-running-node"><span class="std std-ref">Verify that the node is running</span></a> for details about how to do this.</p>
-<p>Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See <a class="reference internal" href="#configure-node"><span class="std std-ref">Configure the Concordium Node Service</span></a> for information about how to change the service configuration settings.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
 </div>
 <ol class="arabic">
+<li><p>IF UPGRADING: if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. This file is typically located at <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\nodes.toml.</span></code> (The path on your system is determined by the <code class="docutils literal notranslate"><span class="pre">Config</span></code> value in the registry key <code class="docutils literal notranslate"><span class="pre">HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node</span> <span class="pre">Runner</span></code>.) Or you can re-enter your values after upgrading. See <a class="reference internal" href="../nodes/node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for information about how to change the service configuration settings.</p></li>
 <li><p>Download the latest Windows Installer package (.msi file).</p>
 <ul class="simple">
 <li><p>For Mainnet go to <a class="reference internal" href="../installation/downloads.html#node-downloads"><span class="std std-ref">Downloads</span></a>.</p></li>
 <li><p>For Testnet go to <a class="reference internal" href="../installation/downloads-testnet.html#testnet-node-downloads"><span class="std std-ref">Downloads</span></a>.</p></li>
 </ul>
 </li>
+<li><p>IF UPGRADING: it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See <a class="reference internal" href="#verify-running-node"><span class="std std-ref">Verify that the node is running</span></a> for details about how to do this.</p></li>
 <li><p>In the folder where you downloaded the .msi file, double-click the .msi file. The <strong>Concordium Node Setup Wizard</strong> opens. Select <strong>Next</strong>. If you see a message saying <em>Windows protected your PC</em>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
 <li><p>Accept the terms of the End-User License Agreement and select <strong>Next</strong>.</p></li>
 <li><p>Set the <strong>Destination</strong> folders. The default is C:\ProgramData\Concordium\Node Runner.</p>
@@ -2051,18 +2031,8 @@ your configuration and add <code class="docutils literal notranslate"><span clas
 </div>
 <div class="section" id="enable-inbound-connections">
 <h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">#</a></h2>
-<p>If you are running your node behind a firewall, or behind your home
-router, then you will probably only be able to connect to other nodes,
-but other nodes will not be able to initiate connections to your node.
-This is perfectly fine, and your node will fully participate in the
-Concordium network. It will be able to send transactions and,
-<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
-<p>However you can also make your node an even better network participant
-by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens
-on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong> and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and
-platform configuration you will either need to forward an external port
-to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The
-details of how this is done will depend on your configuration.</p>
+<p>If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<p>However you can also make your node an even better network participant by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong> and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and platform configuration you will either need to forward an external port to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The details of how this is done will depend on your configuration. See <a class="reference internal" href="../nodes/node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for more information.</p>
 </div>
 <div class="section" id="connect-a-node-to-the-desktop-wallet">
 <h2>Connect a node to the Desktop Wallet<a class="headerlink" href="#connect-a-node-to-the-desktop-wallet" title="Permalink to this headline">#</a></h2>

@@ -322,11 +322,6 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
-     <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
       </a>
@@ -905,17 +900,39 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -1883,23 +1866,26 @@ body {margin:0;}
                 
   <div class="section" id="proofs-and-revealing-information">
 <span id="secret-proofs"></span><h1>Proofs and revealing information<a class="headerlink" href="#proofs-and-revealing-information" title="Permalink to this headline">#</a></h1>
-<p>Some dApps or services may require you to prove that you are over a certain age, or that you reside in a specific range of countries or area without revealing your exact age or country of residence. You can choose whether you want to prove these <a class="reference internal" href="../resources/glossary.html#glossary-attribute"><span class="std std-ref">attributes</span></a> to the dApp or service. The dApp or service uses a <a class="reference internal" href="../resources/glossary.html#glossary-zero-knowledge-proof"><span class="std std-ref">zero knowledge proof</span></a> to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements.</p>
+<p>Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these <a class="reference internal" href="../resources/glossary.html#glossary-attribute"><span class="std std-ref">attributes</span></a> to the dApp or service using your <a class="reference internal" href="../resources/glossary.html#glossary-account-credential"><span class="std std-ref">account credentials</span></a> or <a class="reference internal" href="../resources/glossary.html#glossary-verifiable-credential"><span class="std std-ref">verifiable credentials</span></a>. The dApp or service uses a <a class="reference internal" href="../resources/glossary.html#glossary-zero-knowledge-proof"><span class="std std-ref">zero-knowledge proof</span></a> to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements. You can choose which account (and thus identity) to use to fulfill the proof request for <a class="reference internal" href="../resources/glossary.html#glossary-account-credential"><span class="std std-ref">account credentials</span></a> using the drop-down above the proof.</p>
 <a class="reference internal image-reference" href="../../_images/zkp-one-attribute-ok.png"><img alt="../../_images/zkp-one-attribute-ok.png" src="../../_images/zkp-one-attribute-ok.png" style="width: 75%;" /></a>
-<p>When an attribute or attributes will be proven by zero knowledge proof but not revealed, the hidden icon <a class="reference internal" href="../../_images/zkp-icon.png"><img alt="eye with line through" src="../../_images/zkp-icon.png" style="width: 50px;" /></a> appears next to the attributes to prove.</p>
+<p>When an attribute or attributes will be proven by zero-knowledge proof but not revealed, the <strong>Zero-knowledge proof</strong> heading appears on the card with the attributes to prove.</p>
 <p>If you do not meet one of the attributes in the statement, you would see a screen similar to below.</p>
 <a class="reference internal image-reference" href="../../_images/zkp-two-attributes-not-ok.png"><img alt="../../_images/zkp-two-attributes-not-ok.png" src="../../_images/zkp-two-attributes-not-ok.png" style="width: 75%;" /></a>
 <p>In this situation you must reject the proof because you cannot prove that you meet the requirements in the statement.</p>
 <p>Other times the dApp or service may request that you <strong>reveal</strong> the information to them, such as your exact nationality or exact age. This is called <strong>Information to reveal</strong> and it appears as shown below in the wallet.</p>
 <a class="reference internal image-reference" href="../../_images/reveal-proof.png"><img alt="../../_images/reveal-proof.png" src="../../_images/reveal-proof.png" style="width: 75%;" /></a>
-<p>When an attribute or attributes are to be revealed, the shown icon <a class="reference internal" href="../../_images/reveal-icon.png"><img alt="eye" src="../../_images/reveal-icon.png" style="width: 50px;" /></a> appears next to the information to reveal and a warning triangle <a class="reference internal" href="../../_images/reveal-warning.png"><img alt="yellow warning triangle" src="../../_images/reveal-warning.png" style="width: 50px;" /></a> appears on the information card.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>By <strong>proving</strong> information to a third-party, it may become possible for them to deduce precise information about you. When you <strong>reveal</strong> information to a third-party, you effectively hand over your information to them. This means that you should only do this if you agree with their data usage and protection policies.</p>
 <p>For example, if your identity says that you are a resident of Denmark and a citizen of Denmark, and they ask you to prove that you are a resident of Norway or Denmark, and then ask you to prove that you are a citizen of Sweden or Denmark, it is quite likely that the third-party would be able to deduce that you are from Denmark.</p>
 </div>
 <p>It is not possible for you to choose which attributes in the statement to prove/reveal or not prove/reveal. If there is something in the statement that you do not want to prove or reveal, you must reject the statement.</p>
-<p>It is also possible that a dApp could present a mixed statement that asks you to reveal one attribute and prove another. In the example below, the first name must be revealed and the user’s age must be proven.</p>
+<p>It is also possible that a dApp could present a mixed statement that asks you to reveal one attribute and prove another. In the example below, the user’s sex must be revealed and the user’s age must be proven.</p>
 <a class="reference internal image-reference" href="../../_images/mixed-statement-proof.png"><img alt="../../_images/mixed-statement-proof.png" src="../../_images/mixed-statement-proof.png" style="width: 75%;" /></a>
+<p>Another example of a mixed proof includes a request to prove information from your <a class="reference internal" href="../resources/glossary.html#glossary-verifiable-credential"><span class="std std-ref">verifiable credential</span></a> and from your identity. The first screen is requesting you prove information from your verifiable credential. Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/vc-mixed-proof-1.png"><img alt="window with verifiable credential proof and continue button" src="../../_images/vc-mixed-proof-1.png" style="width: 50%;" /></a>
+<p>The second screen is requesting you prove information from your account credential. You can choose which account (and thus identity) you want to use for the proof. Click <strong>Approve</strong> if you agree to prove the information. Click <a class="reference internal" href="../../_images/vc-reject-proof-button.png"><img alt="white x on red background" src="../../_images/vc-reject-proof-button.png" style="width: 20px;" /></a> to reject the proof request.</p>
+<a class="reference internal image-reference" href="../../_images/vc-mixed-proof-2.png"><img alt="window with account credential proof and approve button" src="../../_images/vc-mixed-proof-2.png" style="width: 50%;" /></a>
 <div class="section" id="example-dapp">
 <h2>Example dApp<a class="headerlink" href="#example-dapp" title="Permalink to this headline">#</a></h2>
 <p>Concordium provides the following example demo app on testnet for you to see how the functionality works:</p>
@@ -1912,7 +1898,7 @@ body {margin:0;}
 <h2>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Permalink to this headline">#</a></h2>
 <p>When the wallet receives a request, a screen similiar to below appears.</p>
 <a class="reference internal image-reference" href="../../_images/zkp-one-attribute-ok.png"><img alt="../../_images/zkp-one-attribute-ok.png" src="../../_images/zkp-one-attribute-ok.png" style="width: 75%;" /></a>
-<p>Click <strong>Accept</strong> to allow the dApp or service to complete the proof or click <strong>Reject</strong> if you do not want to share this information.</p>
+<p>Click <strong>Accept</strong> to allow the dApp or service to complete the proof or click <strong>Reject</strong> if you do not want to share this information. For more information about verifiable credentials and proofs, see <a class="reference internal" href="../web3-id/wallet.html#web3id-wallet"><span class="std std-ref">Web3 ID in the Concordium Wallet for Web</span></a>.</p>
 </div>
 </div>
 

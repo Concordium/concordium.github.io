@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Web3 ID verifiers" href="verifier.html" />
+    <link rel="next" title="Create proofs" href="../guides/create-proofs.html" />
     <link rel="prev" title="Web3 ID in the Concordium Wallet for Web" href="wallet.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -321,11 +321,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
@@ -899,23 +894,45 @@ body {margin:0;}
     Use Concordium's ID Layer
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
   <label class="label-parts" for="toctree-checkbox-30">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-proofs.html">
-     Use ID: Create proofs
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="index.html">
+     Identity on Concordium
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2">
+      <a class="reference internal" href="wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2 current active">
+      <a class="current reference internal" href="#">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1 current active">
-    <a class="current reference internal" href="#">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -1866,11 +1849,6 @@ body {margin:0;}
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#managing-credentials">
-   Managing credentials
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -1896,15 +1874,15 @@ body {margin:0;}
 <p>An issuer needs to have the following components.</p>
 <ol class="arabic simple">
 <li><p>Some way of identifying users to whom the credentials will be issued, e.g., an existing database of users.</p></li>
-<li><p>JSON schemas and metadata for credentials. These are used by the wallet to display and style the credential.</p></li>
+<li><p>JSON schemas and metadata for credentials. These are used by the wallet to display and style the credential. This might be a logo, a background color, how the attributes will appear in the credential (e.g., date format, title), and so on.</p></li>
 <li><p>A smart contract where credential lifetime is managed, together with its metadata such as expiry time.</p></li>
 <li><p>A dApp where the user will request credentials with the help of the wallet.</p></li>
-<li><p>A backend which will issue credentials, which involves registering the credential in the smart contract, and returning it to the holder’s wallet.</p></li>
+<li><p>A back end which will issue credentials, which involves registering the credential in the smart contract, and returning it to the holder’s wallet.</p></li>
 </ol>
 <div class="section" id="concordium-issuer-tool">
 <h3>Concordium Issuer tool<a class="headerlink" href="#concordium-issuer-tool" title="Permalink to this headline">#</a></h3>
 <p>To make it easier to become an issuer, Concordium provides a generic issuer for Web3ID credentials. It exposes a REST API for registering credentials, and handles the correct formatting of credentials to submit to the chain, and communication with the node.</p>
-<p>Concordium provides docker images to make it simple to run the issuer tool, but the issuer themselves have to run it since issuing credentials requires access to private keys of the issuer, and payment of transaction fees.</p>
+<p>Concordium provides Docker images to make it simple to run the issuer tool, but the issuer themselves have to run it since issuing credentials requires access to private keys of the issuer, and payment of transaction fees.</p>
 <p>The issuer has the following endpoints:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">v0/issue</span></code></p></li>
@@ -1925,9 +1903,9 @@ body {margin:0;}
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The issue endpoint accepts a JSON body with the request to issue the credential and if successful returns a transaction hash that may be queried for status.</p>
+<p>The issuer endpoint accepts a JSON body with the request to issue the credential and if successful returns a transaction hash that may be queried for status.</p>
 <p>JSON Schemas for requests and responses are available at (link).</p>
-<p>An example request is</p>
+<p>An example request is:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;credentialSubject&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1947,7 +1925,8 @@ body {margin:0;}
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>an an example response would be</p>
+<p><code class="docutils literal notranslate"><span class="pre">validUntil</span></code> makes it possible for creditals to expire. <code class="docutils literal notranslate"><span class="pre">validFrom</span></code> allows you to set a start date and time for the credential, such as in the case of a backstage pass for a concert.</p>
+<p>An example response would be:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;txHash&quot;</span><span class="p">:</span> <span class="s2">&quot;179de883eb0e748b05dcb3a3632302cea56d0f410df86a1cc4558f3274c1cf3e&quot;</span><span class="p">,</span>
   <span class="nt">&quot;credential&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -1987,15 +1966,19 @@ body {margin:0;}
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">&quot;holderRevocable&quot;:</span> <span class="pre">true,</span></code> this means that the credential holder can revoke the credential themselves. If false, only the issuer can revoke the credential.</p>
+<p>Credential metadata controls how the credential is displayed in the wallet. An example is:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Mixed credential&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;logo&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://avatars.gibhubusercontent.com/u/39614219?s=200&amp;v=4&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffaa00&quot;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+<p>You can update the metadata for verifiable credentials, such as title, image, colors, or localization, but the credential information cannot be edited once the smart contract is deployed.</p>
 </div>
-<div class="section" id="managing-credentials">
-<h2>Managing credentials<a class="headerlink" href="#managing-credentials" title="Permalink to this headline">#</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p>Revoke</p></li>
-</ul>
-</div></blockquote>
 </div>
 </div>
 
@@ -2012,10 +1995,10 @@ body {margin:0;}
             <p class="prev-next-title">Web3 ID in the Concordium Wallet for Web</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="verifier.html" title="next page">
+    <a class='right-next' id="next-link" href="../guides/create-proofs.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Web3 ID verifiers</p>
+        <p class="prev-next-title">Create proofs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

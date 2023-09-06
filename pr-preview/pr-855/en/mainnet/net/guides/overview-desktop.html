@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Set up the LEDGER device and install the Concordium LEDGER App" href="../desktop-wallet/install-ledger-app.html" />
+    <link rel="next" title="Desktop Wallet navigation and settings" href="../desktop-wallet/accounts-desktop.html" />
     <link rel="prev" title="Set up the Concordium Legacy Wallet" href="../mobile-wallet/setup-mobile-wallet.html" />
 <link href="../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -321,11 +321,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
@@ -905,17 +900,39 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -1855,23 +1838,8 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-1-set-up-the-node">
-   Step 1: Set up the node
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-2-set-up-the-ledger-device">
-   Step 2: Set up the LEDGER device
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-3-set-up-the-concordium-desktop-wallet">
-   Step 3: Set up the Concordium Desktop Wallet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-4-set-up-an-identity-and-an-initial-account">
-   Step 4: Set up an identity and an initial account
+  <a class="reference internal nav-link" href="#before-you-start">
+   Before you start
   </a>
  </li>
 </ul>
@@ -1894,41 +1862,88 @@ body {margin:0;}
   <div class="section" id="set-up-the-desktop-wallet">
 <span id="overview-desktop"></span><h1>Set up the Desktop Wallet<a class="headerlink" href="#set-up-the-desktop-wallet" title="Permalink to this headline">#</a></h1>
 <p>The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.</p>
-<p>The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S and LEDGER NANO S Plus are supported.</p>
+<p>The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S, LEDGER NANO S Plus, and LEDGER Nano X are supported.</p>
 <p>This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you’ll be using the Desktop Wallet in combination with a LEDGER device to generate and store keys and sign transactions.</p>
-<div class="section" id="step-1-set-up-the-node">
-<h2>Step 1: Set up the node<a class="headerlink" href="#step-1-set-up-the-node" title="Permalink to this headline">#</a></h2>
-<p>The Desktop Wallet must be connected to a running <strong>trusted</strong> node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using <a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, and <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">with Docker</span></a> or <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">a Debian package</span></a> on Linux. You can also have a third-party provider run a node for you.</p>
+<div class="section" id="before-you-start">
+<h2>Before you start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">#</a></h2>
+<p>Before you start, make sure you’ve completed the following steps:</p>
+<ul class="simple">
+<li><p>You’ve set up the <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true">LEDGER Nano S</a>, <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4416927988625-Set-up-your-Ledger-Nano-S-Plus-?docs=true">LEDGER Nano S Plus</a>, or the <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true">LEDGER Nano X</a> and you have saved your 24-word recovery phrase generated on the LEDGER securely. This is the only backup of your private keys, and you need it to access you accounts if you lose your LEDGER device.</p></li>
+<li><p>You’ve downloaded <a class="reference external" href="https://www.ledger.com/ledger-live/download">Ledger Live</a>.</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Step 1: Set up the node<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The Desktop Wallet must be connected to a running <strong>trusted</strong> node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using <a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, and <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">with Docker</span></a> or <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">a Debian package</span></a> on Linux. You can also have a third-party provider run a node for you.</p>
 </div>
-<div class="section" id="step-2-set-up-the-ledger-device">
-<h2>Step 2: Set up the LEDGER device<a class="headerlink" href="#step-2-set-up-the-ledger-device" title="Permalink to this headline">#</a></h2>
-<p>The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet. See <a class="reference internal" href="../desktop-wallet/install-ledger-app.html#install-ledger-app"><span class="std std-ref">Install the Ledger App guide</span></a>.</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Step 2: Install the Desktop Wallet<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Download the latest version of the Desktop Wallet for <a class="reference internal" href="../installation/downloads.html#downloads-desktop-wallet"><span class="std std-ref">Mainnet</span></a> or <a class="reference internal" href="../installation/downloads-testnet.html#downloads-desktop-wallet-testnet"><span class="std std-ref">Testnet</span></a>.</p></li>
+<li><p class="sd-card-text">Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.</p></li>
+<li><p class="sd-card-text">If this is the first time you’re opening the Desktop Wallet, you’re asked to connect to a node. If you don’t see this message, go to <strong>Settings</strong>, and then select <strong>Node settings</strong>. The Virtual Hive node (concordiumwalletnode.com) is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the <strong>Address</strong> and <strong>Port</strong> of the node you’re running. The address is the network address of the node.</p></li>
+</ol>
+<ul>
+<li><p class="sd-card-text">If you’re running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the <strong>Address field</strong>, enter <em>127.0.0.1</em>, and in the <strong>Port field</strong> enter <em>10000</em>.</p></li>
+<li><p class="sd-card-text">If you’re running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the <strong>Address</strong> field, enter <em>127.0.0.1</em>, and in the <strong>Port field</strong> enter <em>10001</em>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/Node-setup-win-9.png"><img alt="../../_images/Node-setup-win-9.png" src="../../_images/Node-setup-win-9.png" style="width: 60%;" /></a>
+</div></blockquote>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Select <strong>Set connection</strong>. If the connection is working properly, there’s a message saying <em>Successfully connected</em>.</p></li>
+</ol>
 </div>
-<div class="section" id="step-3-set-up-the-concordium-desktop-wallet">
-<h2>Step 3: Set up the Concordium Desktop Wallet<a class="headerlink" href="#step-3-set-up-the-concordium-desktop-wallet" title="Permalink to this headline">#</a></h2>
-<p>You’ll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker.</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="install-ledger">
+<summary class="sd-summary-title sd-card-header">
+Step 3: Install the Concordium LEDGER app using LEDGER Live<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Open LEDGER Live and click Settings <a class="reference internal" href="../../_images/ledger-live-settings.png"><img alt="gear wheel on black background" src="../../_images/ledger-live-settings.png" style="width: 50px;" /></a>. Select <strong>Experimental features</strong> and turn on <strong>Developer mode</strong>.</p></li>
+<li><p class="sd-card-text">Connect the LEDGER device to your computer, and enter your PIN code to unlock the LEDGER.</p></li>
+<li><p class="sd-card-text">In the LEDGER Live app select <strong>My Ledger</strong> in the left side panel.</p></li>
+<li><p class="sd-card-text">The LEDGER says <strong>Allow Ledger Manager</strong>. Press both buttons simultaneously to allow the manager on your LEDGER.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to <strong>Install app</strong>, and then press both buttons.</p></li>
+<li><p class="sd-card-text">Search for <strong>Concordium Ledger App</strong> in the App catalog in Ledger Live, and then select <strong>Install</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">The LEDGER app can also be updated from LEDGER Live.</p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Step 4: Set up an identity and an initial account<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Once you’ve installed the Desktop Wallet, you must set up an <a class="reference internal" href="../resources/glossary.html#glossary-identity"><span class="std std-ref">identity</span></a> and an <a class="reference internal" href="../resources/glossary.html#glossary-initial-account"><span class="std std-ref">initial account</span></a>. If you want to be a baker, Concordium also recommends that you create a separate account to use as a baker account. See <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a> and <a class="reference internal" href="create-account.html#create-account"><span class="std std-ref">Create an account in the Desktop Wallet</span></a>.</p>
+</div>
+</details><p>Once you have completed these four steps, you’re ready to start using the Desktop Wallet.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Without CCD you can’t submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating baker transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.</p>
 <p>You can buy CCD on many exchanges. If you are running on testnet, you can request CCD for testing using a button in the wallet.</p>
 </div>
-<p>To set up the Desktop Wallet:</p>
-<ol class="arabic simple">
-<li><p>Install the Desktop Wallet. For more information, see <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Installation downloads</span></a>.</p></li>
-<li><p>Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.</p></li>
-<li><p>In the Desktop Wallet go to <strong>Settings</strong> and then select <strong>Node settings</strong>.</p></li>
-<li><p>The Virtual Hive node (concordiumwalletnode.com) is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the <strong>Address</strong> and <strong>Port</strong> of the node you’re running. The address is the network address of the node.</p></li>
-<li><p>Select <strong>Set connection</strong>. If the connection is working properly, there’s a message saying <strong>Successfully connected</strong>.</p></li>
-</ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Currently, it is not possible to exchange identities and accounts between the Concordium Legacy Wallet or Concordium Wallet for Mobile and the Desktop Wallet. If you try to import a file that has been exported from the Concordium Legacy Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Concordium Legacy Wallet.</p>
 </div>
-</div>
-<div class="section" id="step-4-set-up-an-identity-and-an-initial-account">
-<h2>Step 4: Set up an identity and an initial account<a class="headerlink" href="#step-4-set-up-an-identity-and-an-initial-account" title="Permalink to this headline">#</a></h2>
-<p>Once you’ve installed the Desktop Wallet, you must set up an identity and an initial account. Concordium also recommends that you create a separate account to use as a baker account. See <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a> and <a class="reference internal" href="create-account.html#create-account"><span class="std std-ref">Create an account in the Desktop Wallet</span></a>.</p>
-<p>You’re now ready to start using the Desktop Wallet.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -1947,10 +1962,10 @@ body {margin:0;}
             <p class="prev-next-title">Set up the Concordium Legacy Wallet</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../desktop-wallet/install-ledger-app.html" title="next page">
+    <a class='right-next' id="next-link" href="../desktop-wallet/accounts-desktop.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Set up the LEDGER device and install the Concordium LEDGER App</p>
+        <p class="prev-next-title">Desktop Wallet navigation and settings</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

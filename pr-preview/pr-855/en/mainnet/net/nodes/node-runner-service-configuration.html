@@ -322,11 +322,6 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
-      <a class="reference internal" href="../desktop-wallet/install-ledger-app.html">
-       Set up the LEDGER device and install the Concordium LEDGER App
-      </a>
-     </li>
-     <li class="toctree-l2">
       <a class="reference internal" href="../desktop-wallet/accounts-desktop.html">
        Desktop Wallet navigation and settings
       </a>
@@ -905,17 +900,39 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -936,40 +953,6 @@ body {margin:0;}
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l0 has-children">
-  <p aria-level="2" class="caption" role="heading">
-   <span class="caption-text">
-    Web3 ID
-   </span>
-  </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/index.html">
-     What is Web3 ID
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/wallet.html">
-     Web3 ID in the Concordium Wallet for Web
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/issuer.html">
-     Web3 ID issuers
-    </a>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../web3-id/verifier.html">
-     Web3 ID verifiers
-    </a>
    </li>
   </ul>
  </li>
@@ -2034,7 +2017,8 @@ body {margin:0;}
                 
   <div class="section" id="concordium-windows-node-runner-service-configuration">
 <span id="node-runner-service-configuration"></span><h1>Concordium Windows node runner service configuration<a class="headerlink" href="#concordium-windows-node-runner-service-configuration" title="Permalink to this headline">#</a></h1>
-<p>The Concordium Node Runner Service (“service” for short) is configured using a TOML file. This file is typically located at <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\nodes.toml.</span></code> (The path on your system is determined by the <code class="docutils literal notranslate"><span class="pre">Config</span></code> value in the registry key <code class="docutils literal notranslate"><span class="pre">HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node</span> <span class="pre">Runner</span></code>.)</p>
+<p>You can change the mainnet or testnet node configuration with the Configure Concordium Node Service. The Concordium Node Runner Service (“service” for short) is configured using a TOML file. This file is typically located at <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\nodes.toml.</span></code> (The path on your system is determined by the <code class="docutils literal notranslate"><span class="pre">Config</span></code> value in the registry key <code class="docutils literal notranslate"><span class="pre">HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node</span> <span class="pre">Runner</span></code>.)</p>
+<p>To run the app, search for <em>configure concordium node</em> in the <strong>Search</strong> bar, and then select <strong>Configure Concordium Node Service</strong>. If you see a message saying <em>Do you want to allow this app to make changes to your device?</em>, select <strong>Yes</strong>. The configuration file opens in Notepad or your default editor.</p>
 <p>The service can be configured to run multiple nodes. Each node has its own section <strong>[node.</strong><em>nodeid</em><strong>]</strong> (where <em>nodeid</em> is a different identifier for each node), which defines the settings for that node.</p>
 <p>Some settings can be shared among multiple nodes if they are specified in the section <strong>[common]</strong>. If a setting is present in <strong>[common]</strong> but not in <strong>[node.</strong><em>nodeid</em><strong>]</strong>, then the value from <strong>[common]</strong> will be used. If it is present in both, then <strong>[node.</strong><em>nodeid</em><strong>]</strong> takes precedence. Settings that can be set in <strong>[common]</strong> are indicated below by the word “common”.</p>
 <p>Some settings are paths of files or folders on your system. Relative paths are resolved relative to the configuration file itself. (Be aware that <code class="docutils literal notranslate"><span class="pre">\</span></code> must be escaped in TOML’s basic strings (delimited by <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) but not in literal strings (delimited by <code class="docutils literal notranslate"><span class="pre">''</span></code>).)</p>
