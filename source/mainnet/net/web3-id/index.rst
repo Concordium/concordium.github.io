@@ -89,9 +89,7 @@ This will typically consist of two components.
 Verification of presentations has two components, the cryptographic verification of the zero-knowledge proofs contained within, which establish that the holder indeed owns the relevant credentials and they are issued by the stated issuer, and the business logic checking that the required property was attested.
 In particular, a key part of the business logic is whether the verifier trusts a particular issuer, which is identified by a smart contract address and the public key registered therein.
 
-Concordium simplifies the checking of the cryptographic part by providing a `verifier service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_.
-This service can be run by the verifier themselves, and Concordium runs an instance of the verifier for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__.
-Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier. To read more about the verification service, see :ref:`Tool to verify credentials<verifier-tool>`.
+Concordium runs an instance of the verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`_ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__. Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier. You still have to provide a user interface or front end (usually a dApp) that calls the Concordium hosted verifier. Otherwise, if you want to run the verification service yourself, Concordium simplifies the checking of the cryptographic part by providing a `verifier service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_. To read more about the verification service, see :ref:`Tool to verify credentials<verifier-tool>`.
 
 An example verifier dApp can be found (link), and an example back end can be found (link).
 
