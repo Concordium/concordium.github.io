@@ -10,8 +10,8 @@ Web3 :ref:`verifiable credentials<glossary-verifiable-credential>` are available
 - Pending: the verifiable credential is in the process of being issued
 - Active: the verifiable credential is issued and valid
 - Revoked: the verifiable credential is no longer valid because the holder or issuer has canceled it
-- Not activated: the verifiable credential is issued but not yet active because it has not met the valid from date, e.g., a concert ticket
-- Expired: the verifiable credential is past the valid until date, e.g., a concert ticket
+- Not activated: the verifiable credential is issued but is not yet active because its *valid from date* has not passed, e.g. a concert ticket
+- Expired: the verifiable credential is past the *valid until date*, e.g. a concert ticket
 
 Add verifiable credentials to the wallet
 ========================================
