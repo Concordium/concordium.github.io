@@ -26,12 +26,6 @@ When choosing to add verifiable credentials from an issuer, make sure that you *
         :alt: window with pending credential and option buttons
         :width: 50%
 
-#. If you click **Add credential**, this generates a transaction. If you **Reject** the request, the process stops here. If you **Sign & submit** the request, a public key is sent from your wallet to the issuer so that the issuer can put the verifiable credential on chain.
-
-        .. image:: ../images/browser-wallet/add-web3id-credential-sign.png
-            :alt: window with transaction details and option buttons
-            :width: 50%
-
 To see the details of the verifiable credential:
 
 #. Click |hamburger-bw| and select **Verifiable credentials**.
