@@ -17,15 +17,15 @@
     *
     * Colors are defined in rgb string way, "red, green, blue"
     **/
-    --pst-color-link: #005A78;
-    --pst-color-link-hover: #005A78;
-    --pst-color-sidebar-link-hover: #005A78;
-    --pst-color-toc-link-hover: #005A78;
-    --pst-color-toc-link-active: #005A78;
-    --pst-color-headerlink: 35, 92, 155;
-    --pst-color-headerlink-hover: 255, 255, 255;
+    --pst-color-link: #48A2AE;
+    --pst-color-link-hover: #48A2AE;
+    --pst-color-sidebar-link-hover: #48A2AE;
+    --pst-color-toc-link-hover: #48A2AE;
+    --pst-color-toc-link-active: #48A2AE;
+    --pst-color-headerlink: #48A2AE;
+    --pst-color-headerlink-hover: #48A2AE;
     --pst-color-inline-code: 178, 34, 34;
-    --primary-color: #005A78;
+    --primary-color: #48A2AE;
     --secondary-color: #052535;
     --font-color: #333333;
     --bg-color: #ffffff;
@@ -205,14 +205,8 @@ i.fab fa-github-square:before {
     bottom: 0;
     max-width: 530px;
     padding: 30px 45px 25px;
-    background: linear-gradient(9.01deg, rgba(255, 255, 255, 0.3) 22.98%, rgba(255, 255, 255, 0) 88.11%);
+    background: linear-gradient(157deg, #005A78 -18.68%, #2E8894 95.63%);
     color: #fff;
-}
-
-@media only screen and (max-width: 768px) {
-    .consent {
-        left: 0;
-    }
 }
 
 .consent p {
@@ -252,4 +246,10 @@ i.fab fa-github-square:before {
 /* Change the highlight color used in code-snippets. This makes them stand out more. */
 .highlight .hll {
     background-color: #ccddcc;
+}
+
+@media only screen and (max-width: 768px) {
+    .consent {
+        left: 0;
+    }
 }
