@@ -100,4 +100,4 @@ An example verifier dApp can be found (link), and an example back end can be fou
    wallet
    issuer
    ../guides/create-proofs
-   Concordia
+   concordia
