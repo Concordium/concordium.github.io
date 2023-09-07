@@ -67,19 +67,15 @@ An issuer will typically consist of the following components.
 
 1. Some existing way of identifying users.
 2. A dApp that integrates with the wallet and allows the holder to request credential. An example dApp can be found (link).
-3. A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract,
-   and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.
+3. A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract, and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.
 
-To ease the process of becoming an issuer, Concordium has created a site where you can quickly and easily become an issuer (link for testnet and mainnet).
+To ease the process of becoming an issuer, Concordium has created the `Concordium Web3 ID Issuer Front End <https://web3id-issuer-onboarding.mainnet.concordium.software/>`__ where you can quickly and easily become an issuer.
 
-In order to simplify issuance as much as possible Concordium provides a `template smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/credential-registry>`_
-that is expected to suffice for most of the issuers, but can be modified if custom logic is required.
+In order to simplify issuance as much as possible Concordium provides a `template smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/credential-registry>`_ that is expected to suffice for most of the issuers, but can be modified if custom logic is required.
 
-Concordium additionally provides an `issuer service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-issuer>`_ that is designed to handle all of the chain-specific interactions, and provides a simple REST API, so that only the custom business logic of the issuer must be implemented.
-Note that the service must be run by the issuer themselves, since only they have the secret keys necessary to run it.
+As an alternative to the Concordium Web3 ID Issuer Front End, Concordium additionally provides an `issuer service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-issuer>`_ that is designed to handle all of the chain-specific interactions, and provides a simple REST API, so that only the custom business logic of the issuer must be implemented. Note that the service must be run by the issuer themselves, since only they have the secret keys necessary to run it.
 
-In addition to the infrastructure listed above, the issuer must also provide JSON schemas for their credentials, and metadata.
-These schemas and metadata are used by the holder's wallet to display the credentials in the wallet.
+Regardless of whether you use the Concordium Web3 ID Issuer Front End or the issuer service, the issuer must provide JSON schemas for their credentials, and metadata. These schemas and metadata are used by the holder's wallet to display the credentials in the wallet.
 
 Verifier
 --------
@@ -106,3 +102,4 @@ An example verifier dApp can be found (link), and an example back end can be fou
    wallet
    issuer
    ../guides/create-proofs
+   Concordia
