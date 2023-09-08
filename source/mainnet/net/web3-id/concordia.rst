@@ -17,7 +17,7 @@ To get started, log in with your social media account to get verifiable credenti
 
 In the **Verification** drop-down, you prove ownership of the social media accounts for the verifiable credentials you added to your |bw|.
 
-The Concordia Social media verifier also helps you check that your verification was completed successfully in the **Check verification** drop-down.
+The Concordia Social media verifier provides links where you check that your verification was completed successfully in the **Check verification** drop-down.
 
 If you want to remove your verification, click **Remove verification** in the Concordia Social media verifier.
 
