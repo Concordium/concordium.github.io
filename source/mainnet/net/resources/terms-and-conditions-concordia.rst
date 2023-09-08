@@ -13,21 +13,21 @@ Once the wallet holder (you) possess proof of your Telegram and/or Discord profi
 
 This service enables you to validate that your Telegram handle and Discord name indeed belong to you. Consequently, by asking Concordia inside the Telegram or Discord channel, other community members can confidently verify if a user in the Telegram channel is the same person as behind a Discord profile (or vice versa).
 
-If you would like to add an extra layer of identity verification the service running behind Concordia allows you to provide a proof of your actual name as it appears in your Concordium Wallet. Concordia will now include your name in addition to your Telegram and Discord profile names. 
+If you would like to add an extra layer of identity verification the service running behind Concordia allows you to provide a proof of your actual name as it appears in your Concordium Wallet. Concordia will now include your name in addition to your Telegram and Discord profile names.
 
 This service is entirely free to use, as all transaction costs for creating the proofs are covered by the service operator.
 
 Terms of service
 ================
 
-The Concordia bot and the services issuing verified credentials and verifying Telegram and Discord users are provided by Concordium Software ApS free of charge on an AS-IS basis. The services are designed to showcase in a simple way how the Web3 ID infrastructure may be utilized. 
+The Concordia bot and the services issuing verified credentials and verifying Telegram and Discord users are provided by Concordium Software ApS free of charge on an AS-IS basis. The services are designed to showcase in a simple way how the Web3 ID infrastructure may be utilized.
 
 Any new features or references to tools and functionality that are added to the Site shall also be subject to these Terms. Any part of these terms may be updated, changed, or replaced by posting updates and/or changes to the Site, https://concordia.mainnet.concordium.software/. You can review the most current version of the Terms at any time on this page. Your continued use of or access to the Site following the posting of any changes constitutes acceptance of those changes.
 
 Your profile is your responsibility. You are the only person with access to your wallet. It contains your personal data and you are responsible for keeping the wallet secure through protection of your access credentials that only you have. It is important to understand that you are the only party to any transaction on the Concordium blockchain.
 
 
-If you’re not comfortable with interacting with an inherently transparent blockchain, you should not engage with the Site to issue or verify social media proofs. You are solely responsible for the safekeeping of the private key (key phrase) associated with the blockchain address used to interact with the Site. The transactions on a blockchain, including transfer of data, are permanent and cannot be undone. 
+If you’re not comfortable with interacting with an inherently transparent blockchain, you should not engage with the Site to issue or verify social media proofs. You are solely responsible for the safekeeping of the private key (key phrase) associated with the blockchain address used to interact with the Site. The transactions on a blockchain, including transfer of data, are permanent and cannot be undone.
 
 The Site uses functionality on the Concordium blockchain, but has no influence on the  operation or integrity of this network. This network, or the services provided by the network to Concordia may not be available in the future.
 
@@ -35,7 +35,7 @@ There is no guarantee, actual or implied, that this site or functionality will f
 
 Services may be refused or ceased to anyone or everyone for any reason at any time.
 
-Access to the site is conditional on your acceptance of the attached privacy guidelines. These specifically address the storage of encrypted personal data, by yourself, as part of the interactions recommended by this SIte. 
+Access to the site is conditional on your acceptance of the attached privacy guidelines. These specifically address the storage of encrypted personal data, by yourself, as part of the interactions recommended by this Site.
 
 This Site has no relationships with the Social Media sites such as Discord and Telegram.
 
@@ -44,15 +44,15 @@ Privacy policy
 
 When using this service you agree and accept that certain data will be made public and at the same time this data will be collected by Concordium Software ApS in order to deliver the service.
 
-When you instruct the service to verify you are the owner of a Telegram or Discord profile, the service will register and store your Telegram or Discord handle as well as your user ID. 
+When you instruct the service to verify you are the owner of a Telegram or Discord profile, the service will register and store your Telegram or Discord handle as well as your user ID.
 
 When you issue a proof that your Telegram and Discord handles both, and at the same time, belong to you, you present the Verified Credentials in your Concordium Wallet to the service. The service will store this information so that when other community members queries Concordia to verify your Telegram or Discord name, the service will be able to provide Concordia with the stored information. This includes your actual name should you have chosen to make it public.
 
-When you use this service you understand that any personal information you choose to make public cannot be deleted by the service. The service itself fully supports the right to be forgotten and you may at any time be deleted from the service. Doing this means the Concordia bot(s) will no longer be able to verify your identities when prompted by other community members. 
+When you use this service you understand that any personal information you choose to make public cannot be deleted by the service. The service itself fully supports the right to be forgotten and you may at any time be deleted from the service. Doing this means the Concordia bot(s) will no longer be able to verify your identities when prompted by other community members.
 
 The following items of personal data are collected by the Service:
 
-- Discord and Telegram handles. 
+- Discord and Telegram handles.
 - Your real name should you choose to reveal it
 - Generated proofs.
 
