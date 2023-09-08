@@ -86,13 +86,13 @@ You can choose which account (and thus identity) and/or verifiable credential to
 
 It is important to understand the difference between a proof request and a reveal request. For more information, see :ref:`Proofs and revealing information<secret-proofs>`.
 
-In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request.
+In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request. You never see the reveal request because you do not meet the requirement from the other part of the proof.
 
 .. image:: ../images/browser-wallet/proof-not-proved.png
     :alt: window with button to reject proof request
     :width: 50%
 
-An example of a mixed proof includes a request to prove information from your verifiable credential and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
+Another example of a mixed proof includes a request to prove information from your verifiable credential and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
 
 .. image:: ../images/browser-wallet/vc-mixed-proof-1.png
     :alt: window with verifiable credential proof and continue button
