@@ -18,10 +18,12 @@ An issuer needs to have the following components.
 4. A dApp where the user will request credentials with the help of the wallet.
 5. A back end which will issue credentials, which involves registering the credential in the smart contract, and returning it to the holder's wallet.
 
+To make it easier to become an issuer, you can use the `Concordium Web3 ID Issuer Front End <https://web3id-issuer-onboarding.mainnet.concordium.software/>`__. This tool walks you through each step to become an issuer.
+
 Concordium Issuer tool
 ----------------------
 
-To make it easier to become an issuer, Concordium provides a generic issuer for Web3ID credentials. It exposes a REST API for registering credentials, and handles the correct formatting of credentials to submit to the chain, and communication with the node.
+Concordium also provides a generic issuer for Web3ID credentials. It exposes a REST API for registering credentials, and handles the correct formatting of credentials to submit to the chain, and communication with the node.
 
 Concordium provides Docker images to make it simple to run the issuer tool, but the issuer themselves have to run it since issuing credentials requires access to private keys of the issuer, and payment of transaction fees.
 

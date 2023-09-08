@@ -925,6 +925,11 @@ body {margin:0;}
        Create proofs
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="concordia.html">
+       Concordia
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1786,6 +1791,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-concordia.html">
+       About Concordia
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../resources/third-party-licenses.html">
        Third Party Licenses
       </a>
@@ -1886,8 +1896,8 @@ body {margin:0;}
 <li><p>Pending: the verifiable credential is in the process of being issued</p></li>
 <li><p>Active: the verifiable credential is issued and valid</p></li>
 <li><p>Revoked: the verifiable credential is no longer valid because the holder or issuer has canceled it</p></li>
-<li><p>Not activated: the verifiable credential is issued but not yet active because it has not met the valid from date, e.g., a concert ticket</p></li>
-<li><p>Expired: the verifiable credential is past the valid until date, e.g., a concert ticket</p></li>
+<li><p>Not activated: the verifiable credential is issued but is not yet active because its <em>valid from date</em> has not passed, e.g. a concert ticket</p></li>
+<li><p>Expired: the verifiable credential is past the <em>valid until date</em>, e.g. a concert ticket</p></li>
 </ul>
 <div class="section" id="add-verifiable-credentials-to-the-wallet">
 <h2>Add verifiable credentials to the wallet<a class="headerlink" href="#add-verifiable-credentials-to-the-wallet" title="Permalink to this headline">#</a></h2>
@@ -1897,11 +1907,6 @@ body {margin:0;}
 <li><p>The issuer sends a request to your Concordium Wallet for Web to issue a verifiable credential. Click <strong>Cancel</strong> to stop the process or click <strong>Add credential</strong> to continue. You will see the verifiable credential as <strong>Pending</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-web3id-credential.png"><img alt="window with pending credential and option buttons" src="../../_images/add-web3id-credential.png" style="width: 50%;" /></a>
-</div></blockquote>
-</li>
-<li><p>If you click <strong>Add credential</strong>, this generates a transaction. If you <strong>Reject</strong> the request, the process stops here. If you <strong>Sign &amp; submit</strong> the request, a public key is sent from your wallet to the issuer so that the issuer can put the verifiable credential on chain.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/add-web3id-credential-sign.png"><img alt="window with transaction details and option buttons" src="../../_images/add-web3id-credential-sign.png" style="width: 50%;" /></a>
 </div></blockquote>
 </li>
 </ol>
@@ -1956,7 +1961,7 @@ body {margin:0;}
 </ul>
 <p>You can choose which account (and thus identity) and/or verifiable credential to use to prove/reveal the requested attributes.</p>
 <p>It is important to understand the difference between a proof request and a reveal request. For more information, see <a class="reference internal" href="../guides/proofs.html#secret-proofs"><span class="std std-ref">Proofs and revealing information</span></a>.</p>
-<p>In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request.</p>
+<p>In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request. You never see the reveal request because you do not meet the requirement from the other part of the proof.</p>
 <a class="reference internal image-reference" href="../../_images/proof-not-proved.png"><img alt="window with button to reject proof request" src="../../_images/proof-not-proved.png" style="width: 50%;" /></a>
 <p>Another example of a mixed proof includes a request to prove information from your verifiable credential and from your identity. The first screen is requesting you prove information from your verifiable credential. Click <strong>Continue</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/vc-mixed-proof-1.png"><img alt="window with verifiable credential proof and continue button" src="../../_images/vc-mixed-proof-1.png" style="width: 50%;" /></a>

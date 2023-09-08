@@ -925,6 +925,11 @@ body {margin:0;}
        Create proofs
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="concordia.html">
+       Concordia
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1786,6 +1791,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-concordia.html">
+       About Concordia
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../resources/third-party-licenses.html">
        Third Party Licenses
       </a>
@@ -1929,16 +1939,12 @@ So tooling is provided that enables you to become an issuer and verify credentia
 <ol class="arabic simple">
 <li><p>Some existing way of identifying users.</p></li>
 <li><p>A dApp that integrates with the wallet and allows the holder to request credential. An example dApp can be found (link).</p></li>
-<li><p>A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract,
-and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.</p></li>
+<li><p>A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract, and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.</p></li>
 </ol>
-<p>To ease the process of becoming an issuer, Concordium has created a site where you can quickly and easily become an issuer (link for testnet and mainnet).</p>
-<p>In order to simplify issuance as much as possible Concordium provides a <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/credential-registry">template smart contract</a>
-that is expected to suffice for most of the issuers, but can be modified if custom logic is required.</p>
-<p>Concordium additionally provides an <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-issuer">issuer service</a> that is designed to handle all of the chain-specific interactions, and provides a simple REST API, so that only the custom business logic of the issuer must be implemented.
-Note that the service must be run by the issuer themselves, since only they have the secret keys necessary to run it.</p>
-<p>In addition to the infrastructure listed above, the issuer must also provide JSON schemas for their credentials, and metadata.
-These schemas and metadata are used by the holder’s wallet to display the credentials in the wallet.</p>
+<p>To ease the process of becoming an issuer, Concordium has created the <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Front End</a> where you can quickly and easily become an issuer.</p>
+<p>In order to simplify issuance as much as possible Concordium provides a <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/credential-registry">template smart contract</a> that is expected to suffice for most of the issuers, but can be modified if custom logic is required.</p>
+<p>As an alternative to the Concordium Web3 ID Issuer Front End, Concordium additionally provides an <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-issuer">issuer service</a> that is designed to handle all of the chain-specific interactions, and provides a simple REST API, so that only the custom business logic of the issuer must be implemented. Note that the service must be run by the issuer themselves, since only they have the secret keys necessary to run it.</p>
+<p>Regardless of whether you use the Concordium Web3 ID Issuer Front End or the issuer service, the issuer must provide JSON schemas for their credentials, and metadata. These schemas and metadata are used by the holder’s wallet to display the credentials in the wallet.</p>
 </div>
 <div class="section" id="verifier">
 <h3>Verifier<a class="headerlink" href="#verifier" title="Permalink to this headline">#</a></h3>
@@ -1950,9 +1956,7 @@ This will typically consist of two components.</p>
 </ol>
 <p>Verification of presentations has two components, the cryptographic verification of the zero-knowledge proofs contained within, which establish that the holder indeed owns the relevant credentials and they are issued by the stated issuer, and the business logic checking that the required property was attested.
 In particular, a key part of the business logic is whether the verifier trusts a particular issuer, which is identified by a smart contract address and the public key registered therein.</p>
-<p>Concordium simplifies the checking of the cryptographic part by providing a <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier">verifier service</a>.
-This service can be run by the verifier themselves, and Concordium runs an instance of the verifier for Mainnet (link) or <a class="reference external" href="https://web3id-verifier.testnet.concordium.com/v0/verify">Testnet</a>.
-Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier. To read more about the verification service, see <a class="reference internal" href="../guides/create-proofs.html#verifier-tool"><span class="std std-ref">Tool to verify credentials</span></a>.</p>
+<p>Concordium runs an instance of the verifier for <a class="reference external" href="https://web3id-verifier.mainnet.concordium.software/v0/verify">Mainnet</a> or <a class="reference external" href="https://web3id-verifier.testnet.concordium.com/v0/verify">Testnet</a>. Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier. You still have to provide a user interface or front end (usually a dApp) that calls the Concordium hosted verifier. Otherwise, if you want to run the verification service yourself, Concordium simplifies the checking of the cryptographic part by providing a <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier">verifier service</a>. To read more about the verification service, see <a class="reference internal" href="../guides/create-proofs.html#verifier-tool"><span class="std std-ref">Tool to verify credentials</span></a>.</p>
 <p>An example verifier dApp can be found (link), and an example back end can be found (link).</p>
 <div class="toctree-wrapper compound">
 </div>

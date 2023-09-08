@@ -10,8 +10,8 @@ Web3 :ref:`verifiable credentials<glossary-verifiable-credential>` are available
 - Pending: the verifiable credential is in the process of being issued
 - Active: the verifiable credential is issued and valid
 - Revoked: the verifiable credential is no longer valid because the holder or issuer has canceled it
-- Not activated: the verifiable credential is issued but not yet active because it has not met the valid from date, e.g., a concert ticket
-- Expired: the verifiable credential is past the valid until date, e.g., a concert ticket
+- Not activated: the verifiable credential is issued but is not yet active because its *valid from date* has not passed, e.g. a concert ticket
+- Expired: the verifiable credential is past the *valid until date*, e.g. a concert ticket
 
 Add verifiable credentials to the wallet
 ========================================
@@ -25,12 +25,6 @@ When choosing to add verifiable credentials from an issuer, make sure that you *
     .. image:: ../images/browser-wallet/add-web3id-credential.png
         :alt: window with pending credential and option buttons
         :width: 50%
-
-#. If you click **Add credential**, this generates a transaction. If you **Reject** the request, the process stops here. If you **Sign & submit** the request, a public key is sent from your wallet to the issuer so that the issuer can put the verifiable credential on chain.
-
-        .. image:: ../images/browser-wallet/add-web3id-credential-sign.png
-            :alt: window with transaction details and option buttons
-            :width: 50%
 
 To see the details of the verifiable credential:
 
@@ -92,7 +86,7 @@ You can choose which account (and thus identity) and/or verifiable credential to
 
 It is important to understand the difference between a proof request and a reveal request. For more information, see :ref:`Proofs and revealing information<secret-proofs>`.
 
-In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request.
+In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request. You never see the reveal request because you do not meet the requirement from the other part of the proof.
 
 .. image:: ../images/browser-wallet/proof-not-proved.png
     :alt: window with button to reject proof request

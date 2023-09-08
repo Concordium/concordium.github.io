@@ -19,7 +19,7 @@ The verification of presentations consists of two parts.
 1. The cryptographic verification of zero-knowledge proofs, and checks that the verifiable credential is valid, which involves checks in smart contracts.
 2. The checking whether the properties attested to are the ones required. This is the custom business logic of the verifier.
 
-Note that the presentation can combine account credentials and verifiable credentials.
+Note that the presentation can combine requirements for account credentials and verifiable credentials.
 
 The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
 

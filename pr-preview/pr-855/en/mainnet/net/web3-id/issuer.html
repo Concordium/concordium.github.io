@@ -925,6 +925,11 @@ body {margin:0;}
        Create proofs
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="concordia.html">
+       Concordia
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1786,6 +1791,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-concordia.html">
+       About Concordia
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../resources/third-party-licenses.html">
        Third Party Licenses
       </a>
@@ -1879,9 +1889,10 @@ body {margin:0;}
 <li><p>A dApp where the user will request credentials with the help of the wallet.</p></li>
 <li><p>A back end which will issue credentials, which involves registering the credential in the smart contract, and returning it to the holder’s wallet.</p></li>
 </ol>
+<p>To make it easier to become an issuer, you can use the <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Front End</a>. This tool walks you through each step to become an issuer.</p>
 <div class="section" id="concordium-issuer-tool">
 <h3>Concordium Issuer tool<a class="headerlink" href="#concordium-issuer-tool" title="Permalink to this headline">#</a></h3>
-<p>To make it easier to become an issuer, Concordium provides a generic issuer for Web3ID credentials. It exposes a REST API for registering credentials, and handles the correct formatting of credentials to submit to the chain, and communication with the node.</p>
+<p>Concordium also provides a generic issuer for Web3ID credentials. It exposes a REST API for registering credentials, and handles the correct formatting of credentials to submit to the chain, and communication with the node.</p>
 <p>Concordium provides Docker images to make it simple to run the issuer tool, but the issuer themselves have to run it since issuing credentials requires access to private keys of the issuer, and payment of transaction fees.</p>
 <p>The issuer has the following endpoints:</p>
 <ul class="simple">
