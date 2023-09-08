@@ -1,6 +1,10 @@
 .. _web3id-index:
 .. include:: ../../variables.rst
 
+.. meta::
+    :description lang=en:
+        ID is an integral part of the Concordium blockchain. Web3 ID expands on our ID layer and allows anyone to become a credential issuer.
+
 ======================
 Identity on Concordium
 ======================

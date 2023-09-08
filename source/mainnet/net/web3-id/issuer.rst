@@ -1,6 +1,10 @@
 .. _web3id-issuer:
 .. include:: ../../variables.rst
 
+.. meta::
+    :description lang=en:
+        Anyone can become an issuer of verifiable credentials for Web3 ID. Concordium provides an easy issuer tool to start the process.
+
 ===============
 Web3 ID issuers
 ===============

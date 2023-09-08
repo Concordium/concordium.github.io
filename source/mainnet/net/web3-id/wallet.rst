@@ -1,6 +1,10 @@
 .. _web3id-wallet:
 .. include:: ../../variables.rst
 
+.. meta::
+    :description lang=en:
+        Web3 ID allows you to add and use verifiable credentials in the wallet for interactions with services that require verification.
+
 =====================
 Web3 ID in the |bw|
 =====================

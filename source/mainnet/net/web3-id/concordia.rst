@@ -1,6 +1,10 @@
 .. _concordia:
 .. include:: ../../variables.rst
 
+.. meta::
+    :description lang=en:
+        Concordia is an example Web3 ID solution that allows you to transfer trust between Telegram and Discord.
+
 =========
 Concordia
 =========
