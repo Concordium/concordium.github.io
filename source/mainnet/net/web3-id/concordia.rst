@@ -23,7 +23,7 @@ In the **Verification** drop-down, you prove ownership of the social media accou
 
 The Concordia Social media verifier provides links to check that your verification was completed successfully in the **Check verification** drop-down.
 
-If you want to remove your verification, click **Remove verification** in the Concordia Social media verifier and select the social media platform for which you hold credentials in the wallet. For example, if you want to remove verification with verifiable credentials issued for Telegram then you would select Telegram. 
+If you want to remove your verification, click **Remove verification** in the Concordia Social media verifier and select the social media platform for which you hold credentials in the wallet. For example, if you want to remove verification with verifiable credentials issued for Telegram then you would select Telegram.
 
 Note that after verification was removed, it is not possible to prove ownership over Telegram or Discord accounts unless the process of verification is done again.
 
