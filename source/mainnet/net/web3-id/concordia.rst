@@ -15,7 +15,7 @@ To issue credentials and perform verification that these are your credentials, y
 
 To get started, get verifiable credentials for your accounts (e.g. one for Discord, one for Telegram) in the **Issue credentials** drop-down.
 
-In the **Verification** drop-down, you prove ownership of the accounts for the verifiable credentials you added to your |bw|.
+In the **Verification** drop-down, you prove ownership of the social media accounts for the verifiable credentials you added to your |bw|.
 
 The Concordia Social media verifier also helps you check that your verification was completed successfully in the **Check verification** drop-down.
 
