@@ -396,7 +396,7 @@ Invoke is also the act of triggering a receive function in a smart contract from
 Issuer
 ======
 
-Party that issues and manages Web3 ID credentials to users.
+Party that issues Web3 ID credentials to users. May also revoke Web3 ID credentials.
 
 .. _glossary-leader-election:
 
@@ -761,7 +761,7 @@ Issued to the individual by an :ref:`issuer<glossary-issuer>` who has authority 
 Verifiable presentation
 =======================
 
-Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. A presentation that contains a **zero-knowledge proof** might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the original verifiable credentials.
+Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. It contains a link that points to the contract and holder ID. A presentation that contains a **zero-knowledge proof** might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the actual attributes of verifiable credentials.
 
 .. _glossary-verifier:
 

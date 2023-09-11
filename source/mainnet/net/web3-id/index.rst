@@ -70,7 +70,7 @@ Issuer
 An issuer will typically consist of the following components.
 
 1. Some existing way of identifying users.
-2. A dApp that integrates with the wallet and allows the holder to request credential. An example dApp can be found (link).
+2. A dApp that integrates with the wallet and allows the holder to request credential. An example dApp is the `Concordia social media verifier on Testnet <https://concordia.testnet.concordium.com/>`_.
 3. A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract, and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.
 
 To ease the process of becoming an issuer, Concordium has created the `Concordium Web3 ID Issuer Front End <https://web3id-issuer-onboarding.mainnet.concordium.software/>`__ where you can quickly and easily become an issuer.
@@ -95,7 +95,7 @@ In particular, a key part of the business logic is whether the verifier trusts a
 
 Concordium runs an instance of the verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`_ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__. Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier. You still have to provide a user interface or front end (usually a dApp) that calls the Concordium hosted verifier. Otherwise, if you want to run the verification service yourself, Concordium simplifies the checking of the cryptographic part by providing a `verifier service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_. To read more about the verification service, see :ref:`Tool to verify credentials<verifier-tool>`.
 
-An example verifier dApp can be found (link), and an example back end can be found (link).
+An example verifier dApp is the `Concordia social media verifier on Testnet <https://concordia.testnet.concordium.com/>`_, and an example back end can be found in `the Web3 ID repository <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`.
 
 .. toctree::
    :hidden:

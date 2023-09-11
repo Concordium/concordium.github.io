@@ -15,7 +15,7 @@ To issue credentials and perform verification that these are your credentials, y
 
 `Concordia social media verifier on Mainnet <https://concordia.mainnet.concordium.software/>`_
 
-`Concordia social meda verifier on Testnet <https://concordia.testnet.concordium.com/>`_
+`Concordia social media verifier on Testnet <https://concordia.testnet.concordium.com/>`_
 
 To get started, log in with your social media account to get verifiable credentials for your accounts (e.g. one for Discord, one for Telegram) in the **Issue credentials** drop-down.
 
@@ -33,17 +33,9 @@ Concordium's bots
 To verify that you are using the real Concordium bots configured in our channels, use this reference:
 
 Telegram - Mainnet - @ConcordiaWeb3IDBot
-Telegram - Testnet - @ConcordiaTestBot
 
 Discord- Mainnet - Concordia#0667
-Discord - Testnet - ConcordiaTestnet#4379
-
 
 On Mainnet, use the links below:
 `Telegram issuer on Mainnet <https://telegram-web3id.mainnet.concordium.software/>`_
 `Discord issuer on Mainnet <https://discord-web3id.mainnet.concordium.software/>`_
-
-On Testnet, use the links below:
-
-`Telegram issuer on Testnet <https://telegram-web3id.testnet.concordium.software/>`_
-`Discord issuer on Testnet <https://discord-web3id.testnet.concordium.software/>`_

@@ -20,7 +20,7 @@ Web3 :ref:`verifiable credentials<glossary-verifiable-credential>` are available
 Add verifiable credentials to the wallet
 ========================================
 
-When choosing to add verifiable credentials from an issuer, make sure that you *trust* the issuer.
+When choosing to add verifiable credentials from an issuer, make sure that you *trust* the issuer to whom you are revealing information about yourself.
 
 #. Contact the issuer of the verifiable credentials using the dApp the issuer provides and provide the information requested by the issuer.
 
@@ -80,7 +80,7 @@ Recover verifiable credentials
 Use verifiable credentials
 ==========================
 
-In cases where a verifier asks to prove your verifiable credentials, you are asked to prove or reveal information in the |bw|. Proofs or revealing information can be:
+In cases where a verifier asks to prove your verifiable credentials, you are asked to generate a :ref:`verifiable presentation<glossary-verifiable-presentation>` in the |bw| to prove or reveal information. Proofs or revealing information can be:
 
 - Only verifiable credentials
 - Only account credentials

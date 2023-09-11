@@ -8,7 +8,7 @@ Create proofs
 A :ref:`verifier<glossary-verifier>` is a business or use-case that provides a service contingent on the holder providing information about themselves using :ref:`verifiable credentials<glossary-verifiable-credential>` or :ref:`account credentials<glossary-account-credential>` they have. A verifier will typically consist of two components:
 
 1. A dApp that interacts with the wallet and requests a :ref:`verifiable presentation<glossary-verifiable-presentation>` from the user.
-2. A back end that will verify the provided presentations, and provide the required service if successful.
+2. A back end that will verify the provided presentations, and provide the required service if successful, such as the `Concordia back end <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`_.
 
 The |bw| allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of :ref:`statements<glossary-statement>` to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.
 
@@ -192,44 +192,6 @@ The response to the request will be status code 200 together with a JSON body th
 You can choose whether you want to use the hosted Concordium verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`__ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to create your own verifier tool. Note that if you use the hosted verifier then you trust Concordium when verifying proofs.
 
 If you do not wish to use the Concordium hosted verifier, you can can either build your own following instructions in `readme file <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`__ or use the `published Docker image <https://hub.docker.com/r/concordium/web3id-verifier/tags>`__.
-
-An example response from the verifier tool is:
-
-.. code-block:: json
-
-   {
-     "block": "c4fa02aa6940750e6692639092406f32282b4d414d0aab66222e328caabbd411",
-     "blockTime": "2023-06-01T14:15:47.250Z",
-     "challenge": "dbd9887999b7ce48236f86fa35d29dd7a8335287b422b186e11ec6d1d02b3291",
-     "credentialStatements": [
-       {
-         "id": "did:ccd:testnet:sci:4718:0/credentialEntry/2eec102b173118dda466411fc7df88093788a34c3e2a4b0a8891f5c671a9d106",
-         "statement": [
-           {
-             "attributeTag": 0,
-             "set": [
-               "bar",
-               "baz",
-               "foo",
-               "qux"
-             ],
-             "type": "AttributeInSet"
-           },
-           {
-             "attributeTag": 3,
-             "lower": 0,
-             "type": "AttributeInRange",
-             "upper": 17
-           }
-         ],
-         "type": [
-           "ConcordiumVerifiableCredential",
-           "MyCredential",
-           "VerifiableCredential"
-         ]
-       }
-     ]
-   }
 
 Example dApp
 ============
