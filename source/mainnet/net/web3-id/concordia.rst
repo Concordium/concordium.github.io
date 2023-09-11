@@ -15,7 +15,7 @@ To issue credentials and perform verification that these are your credentials, y
 
 `Concordia social media verifier on Mainnet <https://concordia.mainnet.concordium.software/>`_
 
-`Concordia social meda verifier on Testnet <https://concordia.testnet.concordium.software/>`_
+`Concordia social meda verifier on Testnet <https://concordia.testnet.concordium.com/>`_
 
 To get started, log in with your social media account to get verifiable credentials for your accounts (e.g. one for Discord, one for Telegram) in the **Issue credentials** drop-down.
 
