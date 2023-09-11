@@ -32,7 +32,7 @@ Verifiable credentials, like account credentials, will contain commitments to a 
 Entities
 ========
 
-The core entities of the Web3ID ecosystem are :ref:`issuers<glossary-issuer>` which issue and manage the lifetime of verifiable credentials, and :ref:`holders<glossary-credential-holder>` that have verifiable credentials in their wallets, and use them to prove properties about themselves to :ref:`verifiers<glossary-verifier>`.
+The core entities of the Web3 ID ecosystem are :ref:`issuers<glossary-issuer>` which issue and manage the lifetime of verifiable credentials, and :ref:`holders<glossary-credential-holder>` that have verifiable credentials in their wallets, and use them to prove properties about themselves to :ref:`verifiers<glossary-verifier>`.
 
 The issuer is an entity that issues verifiable credentials. Issuers have a smart contract that holds credential lifetime metadata, a back-end service that has logic for identifying users and sending transactions to the smart contract, and a dApp that interacts with the user’s wallet and the back end to facilitate issuance of credentials.
 
