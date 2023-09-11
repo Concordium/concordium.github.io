@@ -58,16 +58,39 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    June 27, 2023
+    August 16, 2023
 
-    The |mw-gen2| 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+        Version 1.2.1 contains the following:
 
-    Additionally, the following improvements were made:
+        - Fixed end destination when exiting add/remove watched tokens.
 
-    - Identity view: Display raw document type when no localized string is matched
-    - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
+        - Fixed item overlap issues with transaction details screen
+
+        - Removed all tokens with balance < 0 when selecting tokens for transfer
+
+        - Removed token thumbnail and added name in token details activity
+
+        - Transfer token flow now ends in the proper place
+
+        - Fixed issue where ID pub duplicated id error showed
+
+        - Ensured compatibility with the upcoming P6 protocol update.
+
+        - Changed text in tokens screen and added item decorator for divider in TokensFragment.
+
+        - Removed the ability to select other tokens when transferring from TokenDetailsActivity
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.0 - June 27, 2023
+
+            The |mw-gen2| 1.2.0 for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+
+            Additionally, the following improvements were made:
+
+            - Identity view: Display raw document type when no localized string is matched
+
+            - Fixed a crash when inputting a too large amount as the stake for delegation or baking.
 
         .. dropdown:: |mw-gen2| 1.1.8 - May 31, 2023
 
@@ -106,35 +129,41 @@ Wallets
 |bw|
 -------------------------
 
-    May 30, 2023
+    August 17, 2023
 
-    |bw| 1.0.6 contains fixes for the following issues:
+        |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
 
-    - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
-
-    - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
-
-    - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
-
-    - Fixed an issue so the first call of the gRPC client no longer always fails.
-
-    - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
-
-    - Added a missing translation for the Request CCD button.
-
-    - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
-
-    - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
-
-    - Display of a `deployModule` transaction includes a copy button for the module reference.
-
-    - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
-
-    - Added text that a transaction has been submitted.
-
-    - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
+        Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.0.6 - May 30, 2023
+
+            |bw| 1.0.6 contains fixes for the following issues:
+
+            - The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.
+
+            - Fixed an empty recovery displaying an error instead of informing the user that nothing was found.
+
+            - Fixed an issue where the transaction list view would show the Request CCD button while loading the initial batch of transactions.
+
+            - Fixed an issue so the first call of the gRPC client no longer always fails.
+
+            - Fixed an issue so the first call of the gRPC client after changing network uses the correct network.
+
+            - Added a missing translation for the Request CCD button.
+
+            - ``deployModule`` transactions are now supported in the ``sendTransaction`` endpoint of the wallet-api.
+
+            - In the display of a `deployModule` transaction, the previously titled module hash is now titled module reference.
+
+            - Display of a `deployModule` transaction includes a copy button for the module reference.
+
+            - Updated web-sdk to fix incorrect estimated cost for `deployModule` transaction.
+
+            - Added text that a transaction has been submitted.
+
+            - Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.
 
         .. dropdown:: |bw| 1.0.4 - May 8, 2023
 
@@ -519,25 +548,65 @@ Nodes
 Mainnet
 -------
 
-    .. _542-mainnet:
+    .. _604-mainnet:
 
-    June 14, 2023
+    September 11, 2023
 
-    Concordium node version 5.4.2 contains the following features and bug fixes:
+        Concordium Node 6.0.4 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released September 25, 2023. **Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.**
 
-    - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+        Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
 
-    - Fixed a security issue.
+        Additional features of this release include:
 
-    - Support using block height as block identifiers in gRPC v2 API.
+        - Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.
 
-    - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+        - Changes in Wasm validation and execution in P6 include:
 
-    - Do not keep a historical list of peers when running as a normal node.
+            - Disallowed globals in initialization sections for V1 contracts in P6.
 
-    - Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+            - Added support for sign extension instructions in Wasm in P6.
+
+            - Do not count custom sections towards module size when executing contracts.
+
+            - Support new ``invoke`` operations for retrieving account keys and checking signatures.
+
+        - Shut down consensus upon a protocol update updating from protocol version 6.
+
+        - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
+
+        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
+
+            - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
+
+        - Changed the ``GetBlockInfo`` endpoint:
+
+            - Block slot is only returned in protocol versions 0-5.
+
+            - In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.
+
+            - Endpoint extended to return block round and epoch in protocol version 6.
+
+        - Changed the `GetElectionInfo` endpoint so that election difficulty is only returned in protocol versions 0-5.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 5.4.2 - June 14, 2023
+
+            .. _542-mainnet:
+
+            Concordium node version 5.4.2 contains the following features and bug fixes:
+
+            - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+            - Fixed a security issue.
+
+            - Support using block height as block identifiers in gRPC v2 API.
+
+            - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+            - Do not keep a historical list of peers when running as a normal node.
+
+            - Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
 
         .. dropdown:: 5.3.2 - April 27, 2023
 
@@ -1405,27 +1474,33 @@ Smart contract deploy and initialize tool
 CCDScan
 -------
 
-    May 4, 2022
+    August 16, 2023
 
-    CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+        Version CCD frontend 1.4 and backend 1.6 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
 
-    CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
-    CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+    .. dropdown:: Previous releases
 
-    CCDScan release 1 features include:
-    - Block list view of the latest block data
-    - Block details for each block
-    - Transaction list view of the latest transaction data
-    - Transaction details for each transaction
-    - Account list view of the most recent account data
-    - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
-    - Easy search for specific details on blocks, transactions and accounts and bakers
-    - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
-    - A dashboard landing page with real-time updates from the Concordium blockchain
-    - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
-    - Ability to switch between Mainnet and Testnet data
-    - Ability to explore chain parameters and updates to these
-    - List of bakers and their stake, including the ability to drill through to the underlying account address
+        .. dropdown:: 1.0.0 - May 4, 2022
+
+            CCDScan (https://ccdscan.io) is a Concordium blockchain explorer available for Concordium users and explorers.
+
+            CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
+            CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.
+
+            CCDScan release 1 features include:
+            - Block list view of the latest block data
+            - Block details for each block
+            - Transaction list view of the latest transaction data
+            - Transaction details for each transaction
+            - Account list view of the most recent account data
+            - Account details for each account address including related transactions, an account statement, and amount locked in release schedule where relevant
+            - Easy search for specific details on blocks, transactions and accounts and bakers
+            - Cross-linking between all relevant entities for easy navigation between blocks, transactions, and accounts
+            - A dashboard landing page with real-time updates from the Concordium blockchain
+            - Core metrics, graphs, and statistics on blocks, transactions, and accounts, including blocks added, block time, finalization time, transactions and accounts created
+            - Ability to switch between Mainnet and Testnet data
+            - Ability to explore chain parameters and updates to these
+            - List of bakers and their stake, including the ability to drill through to the underlying account address
 
 Libraries
 =========
