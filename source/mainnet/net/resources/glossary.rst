@@ -24,6 +24,17 @@ with the account holder's :ref:`identity<glossary-identity>`, although this asso
 for anonymity. This anonymity can only be revoked by :ref:`anonymity revokers<glossary-anonymity-revoker>`, in
 cooperation with the account's :ref:`identity provider<glossary-identity-provider>`.
 
+.. _glossary-account-credential:
+
+Account credential
+==================
+
+A certificate derived from the :ref:`glossary-identity-object` that proves that
+the owner has been verified by an identity provider. The key feature of the
+credential is that it **does not** identify the owner to the identity provider,
+nor to any other single entity, however it contains enough information to allow
+anonymity revokers in concert with the identity provider to find the owner.
+
 .. _glossary-alias:
 
 Alias
@@ -211,11 +222,7 @@ The consensus protocol for the blockchain. The protocol offers high transaction 
 Credential
 ==========
 
-A certificate derived from the :ref:`glossary-identity-object` that proves that
-the owner has been verified by an identity provider. The key feature of the
-credential is that it **does not** identify the owner to the identity provider,
-nor to any other single entity, however it contains enough information to allow
-anonymity revokers in concert with the identity provider to find the owner.
+See :ref:`account credential<glossary-account-credential>`.
 
 .. _glossary-credential-holder:
 
@@ -224,12 +231,19 @@ Credential holder
 
 The user holding a credential. An account is owned by one or more credential holders.
 
+.. _glossary-credential-registry-contract:
+
+Credential registry contract
+============================
+
+A smart contract used by :ref:`issuers<glossary-issuer>` of :ref:`verifiable credentials<glossary-verifiable-credential>` to register credentials when they are issued. This contract will also be used to track the state of a credential, e.g., valid, revoked, expired.
+
 .. _glossary-cryptographic-proof:
 
 Cryptographic proof
 ===================
 
-A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a zero-knowledge proof.
+A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a :ref:`zero-knowledge proof<glossary-zero-knowledge-proof>`.
 
 .. _glossary-decryption-key:
 
@@ -376,6 +390,13 @@ Invoke
 Invoke means to call something into effect.
 
 Invoke is also the act of triggering a receive function in a smart contract from ``concordium-client`` and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click :ref:`here to see examples of how to use invoke to view information about the instance<nft-view-fn>`.
+
+.. _glossary-issuer:
+
+Issuer
+======
+
+Party that issues Web3 ID credentials to users. May also revoke Web3 ID credentials.
 
 .. _glossary-leader-election:
 
@@ -728,6 +749,27 @@ User identity certificate
 Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
 The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
+.. _glossary-verifiable-credential:
+
+Verifiable credential
+=====================
+
+Issued to the individual by an :ref:`issuer<glossary-issuer>` who has authority for the credential to be issued. A verifiable credential contains some information about the individual that does not necessitate :ref:`anonymity revocation<glossary-anonymity-revoker>`, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :ref:`verifier<glossary-verifier>` using :ref:`zero-knowledge proofs<glossary-zero-knowledge-proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
+
+.. _glossary-verifiable-presentation:
+
+Verifiable presentation
+=======================
+
+Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. It contains a link that points to the contract and holder ID. A presentation that contains a **zero-knowledge proof** might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the actual attributes of verifiable credentials.
+
+.. _glossary-verifier:
+
+Verifier
+========
+
+Party that checks users' :ref:`verifiable credentials<glossary-verifiable-credential>`.
+
 .. _glossary-wallet:
 
 Wallet
@@ -749,6 +791,13 @@ The |bw|
 ^^^^^^^^
 
 The |bw| is a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
+
+.. _glossary-web3-id:
+
+Web3 ID
+=======
+
+Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
 
 .. _glossary-web-assembly:
 

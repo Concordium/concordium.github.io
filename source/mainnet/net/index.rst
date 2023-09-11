@@ -68,7 +68,7 @@ index
    :includehidden:
    :caption: Use Concordium's ID Layer
 
-   guides/create-proofs
+   web3-id/index
    guides/gallery/index
 
 .. toctree::
