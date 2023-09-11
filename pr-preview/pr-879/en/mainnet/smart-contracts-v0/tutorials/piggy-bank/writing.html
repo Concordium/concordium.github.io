@@ -1,0 +1,2465 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing the piggy bank smart contract &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Testing the piggy bank smart contract" href="testing.html" />
+    <link rel="prev" title="The piggy bank smart contract" href="index.html" />
+<link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.navbar-menu {
+  position: fixed;
+  background-color: var(--bg-color);
+}
+
+.navbar-menu a {
+  display: inline;
+  text-align: left;
+  padding: 16px;
+  color: var(--font-color);
+  font-size: 15px;
+}
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 1178px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+<body>
+
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <a href="../../../net/installation/downloads.html">Install</a>
+  <a href="../../../net/guides/learn-about-concordium.html">Learn</a>
+  <a href="../../../net/nodes/node-requirements.html">Run a node</a>
+  <a href="../../../net/guides/deciding-wallet.html">Wallets</a>
+  <a href="../../../net/guides/how-to-earn.html">Earn</a>
+  <a href="../../../net/guides/developer-page.html">Develop</a>
+  <a href="../../../smart-contracts/general/introduction.html">Smart Contracts</a>
+  <a href="../../../net/guides/create-proofs.html">Use ID</a>
+</div>
+</body>
+</html>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><img src="../../../_static/discourse-brands.svg" class="icon-link-image" alt="Discourse"/></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:documentation@concordium.com" rel="noopener" target="_blank" title="Feedback"><span><i class="fas fa-bullhorn"></i></span>
+            <label class="sr-only">Feedback</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="list-caption">
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Releases and Installation
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/installation/downloads.html">
+     Downloads
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/installation/downloads-testnet.html">
+     Downloads - Testnet
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/release-notes/release-notes-lp.html">
+     Release notes
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/installation/verification-instructions.html">
+     Verification instructions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Learn
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/learn-about-concordium.html">
+     Learn about Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/concepts/id-accounts.html">
+       Identities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/company-identities.html">
+         Company identity creation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/manage-accounts.html">
+       Accounts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/glossary.html">
+       Glossary of Concordium Terms
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Concordium Wallets
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/deciding-wallet.html">
+     Deciding between the wallets
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/concepts/concepts-transactions.html">
+       Transactions overview
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/wallet-faqs.html">
+     Wallet FAQs
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/mobile-wallet-gen2/faq.html">
+       Concordium Wallet for Mobile FAQ
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/browser-wallet/browser-wallet-faq.html">
+       Concordium Wallet for Web FAQ
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/browser-wallet/setup-browser-wallet.html">
+     Set up the Concordium Wallet for Web
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet-gen2/setup-mobile-wallet.html">
+     Set up the Concordium Wallet for Mobile
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet/setup-mobile-wallet.html">
+     Set up the Concordium Legacy Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/overview-desktop.html">
+     Set up the Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/accounts-desktop.html">
+       Desktop Wallet navigation and settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/update-application.html">
+       Update the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/reset-data.html">
+       Reset desktop wallet data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/create-identity.html">
+     Create an identity
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/change-identity-name.html">
+       Change identity name
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/create-account.html">
+     Create an account
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/change-account-name.html">
+       Change account name
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/send-ccd-wallets.html">
+     Send CCD
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/browser-wallet/connect-app.html">
+     Connect dApps to wallets
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/proofs.html">
+       Proofs and revealing information
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/tokens.html">
+     Tokens in the wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/shield-ccd-wallets.html">
+     Shield and unshield CCD on an account
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/shielded-transfer.html">
+       Make a shielded transfer on an account
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/export-key.html">
+     Export a private key
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/recovery.html">
+     Backup and recovery
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/export-import.html">
+       Make a backup of identities, accounts, and addresses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/recover-wallet.html">
+       Recover your Wallet
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet/share-address-mw.html">
+     Find and share your account address
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/mobile-wallet/change-passcode-mw.html">
+     Update your passcode and biometric settings
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/scheduled-release.html">
+     Scheduled releases
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/single-sign-schedule.html">
+       Transfer CCD with a schedule in Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/mobile-wallet/inspect-release-schedule-mw.html">
+       Inspect a release schedule
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/address-book.html">
+     Manage address book
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/transaction-report.html">
+     Create a transaction report
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/desktop-wallet/transaction-log-filter.html">
+     Apply a transaction log filter in the Desktop Wallet
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/overview-shared-accounts.html">
+     Shared accounts with multiple credentials in Desktop Wallet
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/create-credentials-file.html">
+       Create a credentials file
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/multi-credentials.html">
+       Add credentials to an account
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/multisig-simple-transfer.html">
+       Create a multi-signature CCD transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/multisig-transfer.html">
+       Create a scheduled transfer in the Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/sign-transaction.html">
+       Sign a transaction proposal
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/desktop-wallet/proposed-transactions.html">
+       View transaction proposals
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Earn with Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/how-to-earn.html">
+     How to earn with Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/concepts/concepts-baker.html">
+       Bakers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/baker-pool.html">
+         Baker management
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/mobile-wallet/add-baker-mw.html">
+         Add baker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/mobile-wallet/update-baker-mw.html">
+         Change baker options
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/baker-windows.html">
+         Run a baker node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/baker-macos.html">
+         Run a baker node on macOS
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/baker-ubuntu.html">
+         Run a baker node on Ubuntu
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/baker-docker.html">
+         Run a baker node on Docker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/become-baker.html">
+         Become a baker using the Concordium Client
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/concepts/concepts-delegation.html">
+       Delegation
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/add-delegation.html">
+         Delegate to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/update-delegation.html">
+         Update delegation to a baker pool or passive delegation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/remove-delegation.html">
+         Remove delegation to a baker pool or passive delegation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/snippets/delegation-faq.html">
+       Delegation and baking FAQ
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Develop on Concordium
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-20">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/developer-page.html">
+     Developer resources
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+    <label for="toctree-checkbox-21">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/sdks-apis.html">
+       SDKs and APIs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/dapp-examples.html">
+       dApp examples
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/dashboards.html">
+       Dashboards and Status Pages
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/developer-tools.html">
+       Auxiliary Tools
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/grpc2.html">
+       gRPC V2 documentation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/grpc.html">
+       gRPC documentation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/nodes/node-requirements.html">
+     Run a node on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+    <label for="toctree-checkbox-22">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/ubuntu.html">
+       Ubuntu nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node-ubuntu.html">
+         Run a node on a server with Ubuntu on Mainnet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/run-node-ubuntu.html">
+         Run a node on a server with Ubuntu on Testnet
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-ubuntu.html">
+         Troubleshoot a node on a server with Ubuntu
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/macos.html">
+       MacOS nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node-macos.html">
+         Run and manage a node on macOS
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-macos.html">
+         Troubleshoot a node on MacOS
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/windows.html">
+       Windows nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node-windows.html">
+         Run and manage a node on Windows
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/node-runner-service-configuration.html">
+         Concordium Windows node runner service configuration
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-windows.html">
+         Troubleshoot a node running on Windows
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../net/nodes/docker.html">
+       Docker nodes
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/guides/run-node.html">
+         Run a node with Docker
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../net/nodes/troubleshoot-docker.html">
+         Troubleshoot a node on a server with Docker
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/references/concordium-client.html">
+     Concordium Client
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+    <label for="toctree-checkbox-27">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/transactions.html">
+       Concordium Client transactions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/references/query-node.html">
+       Querying a node
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/run-local-chain.html">
+     Run a local chain
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    CCDScan
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-28">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/resources/ccd-scan.html">
+     CCDScan
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-blocks.html">
+       CCDScan Blocks overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-transactions.html">
+       CCDScan Transactions overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-accounts.html">
+       CCDScan Accounts overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-staking.html">
+       CCDScan Staking overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/ccd-scan-nodes.html">
+       CCDScan Nodes overview
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Use Concordium's ID Layer
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-30">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/web3-id/index.html">
+     Identity on Concordium
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/web3-id/concordia.html">
+       Concordia
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/guides/gallery/index.html">
+     The gallery with ID authentication
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/gallery/gallery-backend.html">
+       Writing the verifying backend
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/gallery/gallery-frontend.html">
+       Interacting with a wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/gallery/gallery-setup.html">
+       Setting up the front end
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Smart Contracts v1
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-33">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/general/introduction.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/general/contract-module.html">
+       Smart contract modules
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/general/contract-instances.html">
+       Smart contract instances
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/general/contract-schema.html">
+       Smart contract schemas
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/general/develop-contracts.html">
+       Developing smart contracts in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../smart-contracts/guides/quick-start.html">
+     Quick start guide
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/best-practices/index.html">
+     Best practices
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/best-practices/development.html">
+       Development best practices
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/tutorials/index.html">
+     Tutorials
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/setup-env.html">
+       Setup the development environment
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/counter/counter-contract.html">
+       Counter
+      </a>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/piggy-bank/index.html">
+       PiggyBank
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/piggy-bank/writing.html">
+         Writing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/piggy-bank/testing.html">
+         Testing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/piggy-bank/deploying.html">
+         Deploying the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/piggy-bank/frontend.html">
+         Setting up a front end
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/wCCD/index.html">
+       wCCD
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/wCCD/wCCD-introduction.html">
+         Understanding the wCCD token protocol
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/wCCD/wCCD-interacting.html">
+         Interacting with the wCCD token protocol
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/wCCD/wCCD-front-end-set-up.html">
+         Setting up the front end
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/wCCD/wCCD-full-dApp.html">
+         Running your first full dApp
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/voting/index.html">
+       The Voting dApp
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/voting/voting-sc.html">
+         Writing a voting smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/voting/voting-dapp.html">
+         Setting up the front-end
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/nft-minting/index.html">
+       Mint an NFT
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/nft-minting/upload-nft.html">
+         Upload the NFT
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/nft-minting/build-smart-contract.html">
+         Intialize, build, and deploy the smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/nft-minting/mint-xfer.html">
+         Mint and transfer the NFT
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/sft-minting/index.html">
+       Mint a semi-fungible token
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/sft-minting/setup.html">
+         Setup the development environment
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/sft-minting/build-smart-contract.html">
+         Smart contract modifications
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/sft-minting/mint-xfer.html">
+         Mint and transfer semi-fungible token
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/fungible-tokens/index.html">
+       Mint fungible tokens
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/fungible-tokens/smart-contract.html">
+         Smart contract implementation for fungible tokens
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/fungible-tokens/mint-xfer.html">
+         Mint, transfer, and burn fungible tokens
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/nft-marketplace/index.html">
+       NFT marketplace smart contract tutorial
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/nft-marketplace/smart-contract.html">
+         Build and deploy the smart contract
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/eSealing/index.html">
+       eSealing
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/eSealing/eSealing_dapp.html">
+         Exploring the eSealing dapp
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/sponsoredTransactions/index.html">
+       Sponsored Transactions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract.html">
+         Exploring the sponsored Transactions Smart Contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">
+         Exploring the sponsored Transactions dApp
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/sponsoredTransactions/walletConnect.html">
+         Wallet Connect
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../../smart-contracts/tutorials/smartContractUpgrade/index.html">
+       Smart Contract Upgrade
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../../smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade.html">
+         Native upgradability
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/guides/contract-dev-guides.html">
+     Contract development guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/setup-tools.html">
+       Install tools for development
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/setup-contract.html">
+       Setting up a smart contract project
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/compile-module.html">
+       Compile a Rust smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/custom-errors.html">
+       Return custom errors
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/local-simulate.html">
+       Locally simulate contract functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/build-schema.html">
+       Build a contract schema
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/no-std.html">
+       Build using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         no_std
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/fallback-entrypoints.html">
+       Fallback entrypoints
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/upgradeable-contract.html">
+       Make a contract upgradeable
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/json-params.html">
+       Work with the JSON parameters
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/guides/contract-testing-guides.html">
+     Contract testing guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/unit-test-contract.html">
+       Unit test a contract in Rust
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/integration-test-contract.html">
+       Integration test a contract in Rust
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/guides/on-chain-index.html">
+     On-chain guides
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/deploy-module.html">
+       Deploy a smart contract module
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/initialize-contract.html">
+       Initialize a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/interact-instance.html">
+       Interact with a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/inspect-instance.html">
+       Inspect a smart contract instance
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/guides/invoke-instance.html">
+       Invoke a smart contract instance
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/references/index.html">
+     References
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/references/crypto-primitives.html">
+       Cryptographic primitives
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/references/host-fns.html">
+       Contract host functions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/references/local-settings.html">
+       Local settings
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/references/references-on-chain.html">
+       References on-chain
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/references/schema-json.html">
+       Schema JSON representation
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/references/simulate-context.html">
+       Simulation contexts
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+       Rust contract examples (repo)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">
+       concordium-std
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+     Ethereum developer onboarding
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
+       FAQs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../smart-contracts/onboarding-guide-solana-developers/index.html">
+     Solana developer onboarding
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+    <label for="toctree-checkbox-52">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/onboarding-guide-solana-developers/overview.html">
+       Overview
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../smart-contracts/onboarding-guide-solana-developers/faq.html">
+       FAQs
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Smart Contracts v0
+   </span>
+  </p>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-53">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current nav bd-sidenav">
+   <li class="toctree-l1 current active has-children">
+    <a class="reference internal" href="../../sc-v0-rollup.html">
+     V0 smart contract documentation
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+    <label for="toctree-checkbox-54">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../general/introduction.html">
+       Introduction and general guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../general/contract-module.html">
+         Smart contract modules
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../general/contract-instances.html">
+         Smart contract instances
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../general/contract-schema.html">
+         Smart contract schemas
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../general/develop-contracts.html">
+         Developing smart contracts in Rust
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 current active has-children">
+      <a class="reference internal" href="index.html">
+       Tutorials
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l3 current active">
+        <a class="current reference internal" href="#">
+         Writing the piggy bank smart contract
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="testing.html">
+         Testing the piggy bank smart contract
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../guides/contract-dev-guides.html">
+       Contract development guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/setup-tools.html">
+         Install tools for development
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/setup-contract.html">
+         Setting up a smart contract project
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/compile-module.html">
+         Compile a Rust smart contract module
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/unit-test-contract.html">
+         Unit test a contract in Rust
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/custom-errors.html">
+         Return custom errors
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/local-simulate.html">
+         Locally simulate contract functions
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/build-schema.html">
+         Build a contract schema
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/no-std.html">
+         Build using
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           no_std
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../guides/on-chain-index.html">
+       On-chain guides
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/deploy-module.html">
+         Deploy a smart contract module
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/initialize-contract.html">
+         Initialize a smart contract instance
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/interact-instance.html">
+         Interact with a smart contract instance
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../guides/inspect-instance.html">
+         Inspect a smart contract instance
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l2 has-children">
+      <a class="reference internal" href="../../references/index.html">
+       References
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+      <label for="toctree-checkbox-59">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../references/schema-json.html">
+         Schema JSON representation
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../references/simulate-context.html">
+         Simulation contexts
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../references/host-fns.html">
+         Contract host functions
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../references/references-on-chain.html">
+         References on-chain
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../../references/local-settings.html">
+         Local settings
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts">
+         Rust contract examples (repo)
+        </a>
+       </li>
+       <li class="toctree-l3">
+        <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/">
+         concordium-std
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Low-code NFT marketplace
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/introduction.html">
+     Concordium low-code NFT framework
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/marketplace.html">
+     Low code NFT marketplace
+    </a>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/guides/low-code-nft-marketplace/minting-tool.html">
+     Low-code NFT minting tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l0 has-children">
+  <p aria-level="2" class="caption" role="heading">
+   <span class="caption-text">
+    Resources
+   </span>
+  </p>
+  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-61">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="nav bd-sidenav">
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/resources/legal.html">
+     Legal
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+    <label for="toctree-checkbox-62">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions.html">
+       Terms and conditions
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-dw.html">
+       Terms and Conditions for Concordium Desktop Wallet
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-mw.html">
+       Terms and Conditions for Concordium Legacy Wallet (previously Concordium Mobile Wallet)
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-concordia.html">
+       About Concordia
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/third-party-licenses.html">
+       Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/third-party-notices.html">
+       Third-party Software and Hardware Notices
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/bw-licenses.html">
+       Concordium Wallet for Web Third Party Licenses
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/dw-licenses.html">
+       Concordium Desktop Wallet Third Party Licenses
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../../net/resources/ar-idp-contact.html">
+     Contact Anonymity Revokers and Identity Providers
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparation">
+   Preparation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bring-in-the-standard-library">
+   Bring in the standard library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#piggy-bank-contract">
+   Piggy bank contract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifying-the-state">
+   Specifying the state
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-a-piggy-bank">
+   Set up a piggy bank
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-init-macro">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       #[init]
+      </span>
+     </code>
+     macro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-interaction-with-piggy-banks">
+   Define interaction with piggy banks
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-receive-macro">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       #[receive(...)]
+      </span>
+     </code>
+     macro
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inserting-ccd">
+     Inserting CCD
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smashing-a-piggy-bank">
+     Smashing a piggy bank
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="writing-the-piggy-bank-smart-contract">
+<span id="piggy-bank-writing-v0"></span><h1>Writing the piggy bank smart contract<a class="headerlink" href="#writing-the-piggy-bank-smart-contract" title="Permalink to this headline">#</a></h1>
+<p>This is the first <a class="reference internal" href="index.html#piggy-bank-v0"><span class="std std-ref">part of a tutorial</span></a> on smart contract
+development. In this part you will focus on how to write a smart contract in the
+<a class="reference external" href="https://www.rust-lang.org/">Rust</a> programming language using the <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> library.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The reader is assumed to have basic knowledge of what a blockchain and smart
+contract is, and some experience with <a class="reference external" href="https://www.rust-lang.org/">Rust</a>.</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#preparation" id="id4">Preparation</a></p></li>
+<li><p><a class="reference internal" href="#bring-in-the-standard-library" id="id5">Bring in the standard library</a></p></li>
+<li><p><a class="reference internal" href="#piggy-bank-contract" id="id6">Piggy bank contract</a></p></li>
+<li><p><a class="reference internal" href="#specifying-the-state" id="id7">Specifying the state</a></p></li>
+<li><p><a class="reference internal" href="#set-up-a-piggy-bank" id="id8">Set up a piggy bank</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-init-macro" id="id9">The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#define-interaction-with-piggy-banks" id="id10">Define interaction with piggy banks</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-receive-macro" id="id11">The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro</a></p></li>
+<li><p><a class="reference internal" href="#inserting-ccd" id="id12">Inserting CCD</a></p></li>
+<li><p><a class="reference internal" href="#smashing-a-piggy-bank" id="id13">Smashing a piggy bank</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
+<p>Before you start, make sure to have the necessary tooling to build Rust
+contracts.
+The guide <a class="reference internal" href="../../../smart-contracts/guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> shows you how to do this.
+Also, make sure to have a text editor for writing Rust.</p>
+<p>You also need to set up a new smart contract project.
+Follow the guide <a class="reference internal" href="../../../smart-contracts/guides/setup-contract.html#setup-contract"><span class="std std-ref">Setting up a smart contract project</span></a> and return to this point afterwards.</p>
+<p>For testing, you will need the following:</p>
+<ul class="simple">
+<li><p>set up a local testnet node using your preferred platform: <a class="reference internal" href="../../../net/nodes/windows.html#windows-node"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="../../../net/nodes/macos.html#macos-node"><span class="std std-ref">MacOS</span></a>, <a class="reference internal" href="../../../net/nodes/ubuntu.html#ubuntu-node"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="../../../net/nodes/docker.html#docker-node"><span class="std std-ref">Docker/Linux</span></a></p></li>
+<li><p><a class="reference internal" href="../../../net/guides/create-account.html#create-account"><span class="std std-ref">create an account for testnet</span></a></p></li>
+<li><p><a class="reference internal" href="../../../net/references/concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import the created account using concordium-client</span></a></p></li>
+</ul>
+<p>You are now ready to write a smart contract for the Concordium blockchain!</p>
+</div>
+<div class="section" id="bring-in-the-standard-library">
+<h2>Bring in the standard library<a class="headerlink" href="#bring-in-the-standard-library" title="Permalink to this headline">#</a></h2>
+<p>The source code of your smart contract is going to be in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory,
+which already contains the file <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code>, assuming you follow the above guide
+to set up your project.
+Open <code class="docutils literal notranslate"><span class="pre">src/lib.rs</span></code> in your editor and you’ll see some code for <a class="reference internal" href="testing.html#piggy-bank-testing-v0"><span class="std std-ref">writing tests</span></a>,
+which you can delete for now. You will come back to tests later in this tutorial.</p>
+<p>First, bring everything from the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library into scope
+by adding the line:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This library contains everything needed to write a smart contract. It
+provides convenient wrappers around some low-level operations making your code
+more readable, and although it is not strictly necessary to use this, it will
+save a lot of code for the vast majority of contract developers.</p>
+</div>
+<div class="section" id="piggy-bank-contract">
+<h2>Piggy bank contract<a class="headerlink" href="#piggy-bank-contract" title="Permalink to this headline">#</a></h2>
+<p>The contract you are going to build in this tutorial is going to act as a classic
+piggy bank. Everyone should be able to put money in the form of CCD into it, but only the owner
+can smash it and retrieve the CCD inside. Once the piggy bank has been
+smashed, it should not be possible to add CCD to it.</p>
+<p>The piggy-bank smart contract is going to contain a function for setting up a
+new piggy bank and two functions for updating a piggy bank; one is for everyone
+to use for inserting CCD, the other is for the owner to smash the piggy bank and
+prevent further interaction.</p>
+</div>
+<div class="section" id="specifying-the-state">
+<h2>Specifying the state<a class="headerlink" href="#specifying-the-state" title="Permalink to this headline">#</a></h2>
+<p>To implement a piggy bank you need to keep track of the amount of CCD it holds,
+and you need to know whether it has been smashed. The blockchain will take care
+of the first task for you since the chain keeps track of the balance of each smart-contract
+instance. Therefore, you only need to maintain whether the piggy bank has been smashed,
+which you do as part of the smart contract <em>state</em>.</p>
+<p>In Rust you represent this state as an enum with a variant for the piggy bank
+being intact and one for it being smashed:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">PiggyBankState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Intact</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Smashed</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Since the state of your smart contract is going to be stored on the blockchain,
+you need to specify how the contract state should be serialized.
+When using the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library, this all boils down to your type
+for the contract state having to implement the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.Serialize.html"><code class="docutils literal notranslate"><span class="pre">Serialize</span></code></a> trait exposed by
+<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a>.</p>
+<p>Luckily the library already contains implementations for most of the primitives
+and standard types in <a class="reference external" href="https://www.rust-lang.org/">Rust</a>, and a <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/derive.Serialize.html">procedural macro for deriving</a>
+<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.Serialize.html"><code class="docutils literal notranslate"><span class="pre">Serialize</span></code></a> for most cases of enums and structs:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serialize)]</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">PiggyBankState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Intact</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Smashed</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Later in this tutorial, you will also need to check the state for equality, so you also
+derive the trait implementation for <code class="docutils literal notranslate"><span class="pre">PartialEq</span></code> and <code class="docutils literal notranslate"><span class="pre">Eq</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serialize, PartialEq, Eq, Debug)]</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">PiggyBankState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Intact</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">Smashed</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-up-a-piggy-bank">
+<h2>Set up a piggy bank<a class="headerlink" href="#set-up-a-piggy-bank" title="Permalink to this headline">#</a></h2>
+<p>Now you will write the function to set up a new piggy bank, which in turn means
+specifying the init function for a smart contract.
+A smart contract must specify an init function, which is called when new
+instances of the contract are created, and is used to set up the initial state of
+the contract instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <a class="reference external" href="https://www.rust-lang.org/">Rust</a> developer could compare init functions with the convention of
+having a <code class="docutils literal notranslate"><span class="pre">new</span></code> function for types, and the smart contract as the type.</p>
+<p>If you have experience with object-oriented programming, it might help to
+think of a smart contract as a <em>class</em>, the init function as a
+<em>constructor</em>, and smart contract instances as <em>objects</em>.</p>
+</div>
+<p>In the case of the piggy bank; the initial state should be set to <code class="docutils literal notranslate"><span class="pre">Intact</span></code>.</p>
+<div class="section" id="the-init-macro">
+<h3>The <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro<a class="headerlink" href="#the-init-macro" title="Permalink to this headline">#</a></h3>
+<p>In <a class="reference external" href="https://www.rust-lang.org/">Rust</a> an init function can be specified as a regular function that is annotated
+with a procedural macro from <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> called <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a>.
+This allows you to create a new piggy bank as follows:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">piggy_init</span><span class="p">(</span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">PiggyBankState</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The macro saves you the details of setting up the function as an external
+function and serializing the state to bytes. The macro also provides an interface for
+accessing information about the context of the smart-contract call.</p>
+<p>The init function requires a name for the smart contract, in this case
+<code class="docutils literal notranslate"><span class="pre">&quot;PiggyBank&quot;</span></code>. The name <a class="footnote-reference brackets" href="#valid-name" id="id3">1</a> is used as part of the exported
+function, and is how you distinguish this smart contract from other smart
+contracts in your module.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">)]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The init function takes a single argument, <code class="docutils literal notranslate"><span class="pre">ctx:</span> <span class="pre">&amp;impl</span> <span class="pre">HasInitContext</span></code>,
+which is a trait with a number of getter functions for accessing
+information about the current context, such as the account that invoked this contract, the
+supplied arguments and information about the state of the blockchain.</p>
+<p>The return type of the function is <code class="docutils literal notranslate"><span class="pre">InitResult&lt;PiggyBankState&gt;</span></code>, which is an
+alias for <code class="docutils literal notranslate"><span class="pre">Result&lt;PiggyBankState,</span> <span class="pre">Reject&gt;</span></code>. The returned state is serialized
+and set as the initial state of the smart contract.</p>
+<p>Initializing the piggy bank state to be <code class="docutils literal notranslate"><span class="pre">Intact</span></code> is then straightforward:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="nb">Ok</span><span class="p">(</span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>A more complex smart contract would take a parameter and check during
+initialization that everything is set up as expected. This will be described later.</p>
+<dl class="footnote brackets">
+<dt class="label" id="valid-name"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>The <strong>contract name</strong> is only allowed to consist of ASCII alphanumeric or
+punctuation characters, and is not allowed to contain the <code class="docutils literal notranslate"><span class="pre">.</span></code> symbol. The <strong>function name</strong> is only allowed to consist of ASCII alphanumeric or punctuation characters. The <strong>function name</strong> together with <strong>contract name</strong> must not exceed 99 characters.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="define-interaction-with-piggy-banks">
+<h2>Define interaction with piggy banks<a class="headerlink" href="#define-interaction-with-piggy-banks" title="Permalink to this headline">#</a></h2>
+<p>You have now defined how instances of your smart contract are created, and the
+smart contract is in principle a valid contract.
+However, you would also like to define how to interact with instances of your
+contract, specifically how to add CCD to it and how to smash a piggy bank.</p>
+<p>A smart contract can expose zero or more functions for interacting with an
+instance.
+These functions are called receive functions. They can read and
+write to the state of the instance, read the state of the blockchain and
+return a description of actions to be executed on-chain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a <a class="reference external" href="https://www.rust-lang.org/">Rust</a> developer, receive functions are like methods with
+a mutable reference to <cite>self</cite>.</p>
+<p>A continuation of the analogy to object-oriented programming:
+receive functions correspond to object methods.</p>
+</div>
+<div class="section" id="the-receive-macro">
+<h3>The <code class="docutils literal notranslate"><span class="pre">#[receive(...)]</span></code> macro<a class="headerlink" href="#the-receive-macro" title="Permalink to this headline">#</a></h3>
+<p>In Rust, receive functions can be specified using the procedural macro
+<a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html"><code class="docutils literal notranslate"><span class="pre">#[receive]</span></code></a>, which, like <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a>, is used to annotate a function and sets up an
+external function and supplies you with an interface for accessing the context.
+But, unlike the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a> macro, the function for <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html"><code class="docutils literal notranslate"><span class="pre">#[receive]</span></code></a> is also supplied with
+a mutable reference to the current state of the instance:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;MyContract&quot;</span><span class="cp">, name = </span><span class="s">&quot;some_interaction&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">some_receive</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">MyContractState</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="fm">todo!</span><span class="p">(</span><span class="s">&quot;Implement&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">contract</span></code> attribute supplies the name of the contract to the macro.
+This name should match the name in the corresponding attribute in <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a>
+(<code class="docutils literal notranslate"><span class="pre">&quot;PiggyBank&quot;</span></code> in our case). It also requires a name to identify this
+particular receive function using <code class="docutils literal notranslate"><span class="pre">name</span></code>. The name and contract attributes
+each have to be unique within a smart contract module.</p>
+<p>The return type of the function is <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;A&gt;</span></code>, which is an alias for
+<code class="docutils literal notranslate"><span class="pre">Result&lt;A,</span> <span class="pre">Reject&gt;</span></code>.
+Here, <code class="docutils literal notranslate"><span class="pre">A</span></code> implements <code class="docutils literal notranslate"><span class="pre">HasActions</span></code>, which exposes functions for creating
+various <a class="reference internal" href="../../general/contract-instances.html#action-descriptions-v0"><span class="std std-ref">actions</span></a>.</p>
+<p>In this contract you will use the <strong>Accept</strong> and <strong>Simple Transfer</strong> actions.</p>
+</div>
+<div class="section" id="inserting-ccd">
+<h3>Inserting CCD<a class="headerlink" href="#inserting-ccd" title="Permalink to this headline">#</a></h3>
+<p>The first interaction you will specify for your piggy bank is how to insert CCD into it.
+You start by defining a receive function as:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;insert&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">piggy_insert</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="fm">todo!</span><span class="p">(</span><span class="s">&quot;Implement&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Make sure that the contract name matches the one you use for the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.init.html"><code class="docutils literal notranslate"><span class="pre">#[init]</span></code></a> macro,
+and name the receive function <code class="docutils literal notranslate"><span class="pre">insert</span></code>.
+The function will not need to use the <code class="docutils literal notranslate"><span class="pre">_ctx</span></code> context, so by convention, you
+prefix the argument with <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+<p>In the function body you have to make sure that the piggy bank is still intact: the
+smart contract should reject any messages if the piggy bank is smashed:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">Reject</span>::<span class="n">default</span><span class="p">());</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Since returning early is a common pattern when writing smart contracts and in
+<a class="reference external" href="https://www.rust-lang.org/">Rust</a> in general, <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> exposes a <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/macro.bail.html"><code class="docutils literal notranslate"><span class="pre">bail!</span></code></a> macro:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">bail</span><span class="o">!</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Furthermore, you can use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html"><code class="docutils literal notranslate"><span class="pre">ensure!</span></code></a> macro for returning early depending on a condition:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>From this line, you will know that the state of the piggy bank is intact and all
+you have left to do is accept the incoming amount of CCD.
+The CCD balance is maintained by the blockchain, so there is no need for you to
+maintain this in your contract. The contract just needs to produce the <strong>Accept</strong> action
+using the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> (more on that below):</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">accept</span><span class="p">())</span><span class="w"></span>
+</pre></div>
+</div>
+<p>So far you have the following definition of the receive function:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;insert&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">piggy_insert</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">accept</span><span class="p">())</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The definition of how to add CCD to the piggy bank is almost done, but one important detail is
+missing.
+If you were to send CCD to the current smart contract, the transaction
+would be rejected. This is a safety feature of <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code>,
+which, by default, prevents init and receive functions
+from accepting CCD.</p>
+<p>The reason for rejecting CCD by default is to reduce the risk of creating a smart
+contract that accepts CCD without retrieving it: any CCD passed to such a contract
+would be <em>inaccessible forever</em>.</p>
+<p>To be able to accept CCD, you have to add the <code class="docutils literal notranslate"><span class="pre">payable</span></code> attribute to the <code class="docutils literal notranslate"><span class="pre">#[receive]</span></code> macro.
+Now the function is required to
+take an extra argument <code class="docutils literal notranslate"><span class="pre">amount:</span> <span class="pre">Amount</span></code>, which represents the amount that is passed to the receive
+function.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;insert&quot;</span><span class="cp">, payable)]</span><span class="w"></span>
+</span><span class="k">fn</span> <span class="nf">piggy_insert</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">_amount</span>: <span class="nc">Amount</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">accept</span><span class="p">())</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>As mentioned above, since the blockchain is maintaining the balance of our smart contract, you
+do not have to do that yourself, and the <code class="docutils literal notranslate"><span class="pre">amount</span></code> is not used by your contract.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">payable</span></code> attribute also exists for the <code class="docutils literal notranslate"><span class="pre">#[init]</span></code> macro.</p>
+</div>
+</div>
+<div class="section" id="smashing-a-piggy-bank">
+<h3>Smashing a piggy bank<a class="headerlink" href="#smashing-a-piggy-bank" title="Permalink to this headline">#</a></h3>
+<p>Now that you can insert CCD into a piggy bank, you are only left to define how to
+smash one.
+Remember, you only want the owner of the piggy bank (smart contract
+instance) to be able to call this and only if the piggy bank has not already
+been smashed.
+It should set its state to be smashed and transfer all of its CCD to the owner.</p>
+<p>Again you use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html"><code class="docutils literal notranslate"><span class="pre">#[receive]</span></code></a> macro to define the smash function:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="fm">todo!</span><span class="p">(</span><span class="s">&quot;Implement&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Ensure that the contract name matches the one of your smart contract and name this function <code class="docutils literal notranslate"><span class="pre">smash</span></code>.</p>
+<p>To access the contract owner, use a getter function exposed by the context
+<code class="docutils literal notranslate"><span class="pre">ctx</span></code>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This returns the account address of the contract instance owner, i.e. the
+account that created the smart contract instance by invoking the
+init function.</p>
+<p>Similarly, the context has a getter function to access the sender of the current
+message that triggered this receive function:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Since both accounts and smart-contract instances are capable of sending messages,
+<code class="docutils literal notranslate"><span class="pre">sender</span></code> is of the  <code class="docutils literal notranslate"><span class="pre">Address</span></code> type, which is either an account
+address or a contract instance address.</p>
+<p>To compare the <code class="docutils literal notranslate"><span class="pre">sender</span></code> with <code class="docutils literal notranslate"><span class="pre">owner</span></code> you can use the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account"><code class="docutils literal notranslate"><span class="pre">matches_account</span></code></a>
+function defined on the <code class="docutils literal notranslate"><span class="pre">sender</span></code>, which will only return true if the sender is
+an account address that is equal to the owner:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">));</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Next ensure that the state of the piggy bank is <code class="docutils literal notranslate"><span class="pre">Intact</span></code>, just like previously:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>At this point you know the piggy bank is still intact and the sender is the
+owner, meaning you now get to the smashing part:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Since the state is a mutable reference, you can simply mutate it to be
+<code class="docutils literal notranslate"><span class="pre">Smashed</span></code>, preventing anyone from inserting any more CCD.</p>
+<p>Lastly you need to empty the piggy bank. To do that, transfer all the CCD
+of the smart-contract instance to an account.</p>
+<p>To transfer CCD from a smart contract instance you create an
+action for a simple transfer, again using the generic <code class="docutils literal notranslate"><span class="pre">A</span></code>.
+To construct a simple transfer you need to provide the address of the receiving
+account and the amount to be transferred.
+In this case the receiver is the owner of the piggy bank and the amount is the
+entire balance of the piggy bank.</p>
+<p>The context has a getter function for reading
+the current balance of the smart contract instance, which is called
+<a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/trait.HasReceiveContext.html#tymethod.self_balance"><code class="docutils literal notranslate"><span class="pre">self_balance</span></code></a>:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">self_balance</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You already have a variable with the address of the contract owner, so you can
+construct and return the action for a simple transfer:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">))</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The final definition of the “smash” receive function is then:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">self_balance</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">))</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build
+</pre></div>
+</div>
+<p>This should succeed if everything is set up correctly. Otherwise, compare your
+code with the one found <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs">here</a>.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The piggy bank smart contract</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="testing.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Testing the piggy bank smart contract</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {margin:0px;}
+    
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+    
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+    
+</style>
+<body>
+    
+    <div class="cc">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="../../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+        </a>
+    </div>
+  </body>
+
+
+<div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
