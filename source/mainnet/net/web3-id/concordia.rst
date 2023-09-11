@@ -36,12 +36,10 @@ Telegram - Mainnet - @ConcordiaWeb3IDBot
 
 Discord- Mainnet - Concordia#0667
 
-There is an example of independent issuers with the user interface that can be used to issue Web3 credentials for the account that is owned on the social media network. After credentials are issued, they can be used to prove ownership over social media accounts and transfer trust between them by using Concordia social media verifier on [Testnet ](https://concordia.testnet.concordium.com/)or [Mainnet](https://concordia.mainnet.concordium.software/).
-
-On Testnet, use the links below:
-`Telegram issuer on Testnet<https://telegram-web3id.testnet.concordium.com//>`_
-`Discord issuer on Testnet<https://discord-web3id.testnet.concordium.com//>`_
+There is an example of independent issuers with the user interface that can be used to issue verifiable credentials for the account that is owned on the social media network. After verifiable credentials are issued, they can be used to prove ownership of social media accounts and transfer trust between them by using Concordia social media verifier on `Testnet <https://concordia.testnet.concordium.com/>`__ or `Mainnet <https://concordia.mainnet.concordium.software/>`__.
 
 On Mainnet, use the links below:
+
 `Telegram issuer on Mainnet <https://telegram-web3id.mainnet.concordium.software/>`_
+
 `Discord issuer on Mainnet <https://discord-web3id.mainnet.concordium.software/>`_
