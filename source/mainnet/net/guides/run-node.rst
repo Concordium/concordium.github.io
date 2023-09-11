@@ -93,6 +93,9 @@ The node requires a database which must be stored on the host system so that it 
    and ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` as in the sample configurations.
 
 .. Note::
+   If the node is configured with TLS, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+
+.. Note::
 
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`.
 
