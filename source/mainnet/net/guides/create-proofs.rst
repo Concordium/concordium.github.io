@@ -187,7 +187,7 @@ Concordium has developed a verifier tool which is a self-contained service that 
 The tool is generic and the API exposed is minimal.
 The verifier has a single POST endpoint and is meant to be used by another service, such as a dApp.
 
-The response to the request will be 200 together with a JSON body that contains the request (i.e., challenge and statement for which the presentation is valid) together with the timestamp and block in which the verification took place. In case of an invalid request the error will be in the 4** range, either 404 if credentials cannot be found, or 400 for invalid proofs or otherwise malformed requests.
+The response to the request will be status code 200 together with a JSON body that contains the request (i.e., challenge and statement for which the presentation is valid) together with the timestamp and block in which the verification took place. In case of an invalid request the HTTP status code will be in the 4** range, either 404 if credentials cannot be found, or 400 for invalid proofs or otherwise malformed requests.
 
 You can choose whether you want to run the hosted Concordium verifier for Mainnet (link) or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to create your own verifier tool.
 
