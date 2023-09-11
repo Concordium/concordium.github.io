@@ -2750,16 +2750,44 @@ Previous releases<div class="sd-summary-down docutils">
 <div class="section" id="mainnet">
 <span id="rn-node-mainnet"></span><h3>Mainnet<a class="headerlink" href="#mainnet" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p id="id2">June 14, 2023</p>
-<p>Concordium node version 5.4.2 contains the following features and bug fixes:</p>
-<ul class="simple">
-<li><p>Enable CORS support in grpc-web. This only applies when grpc-web is enabled.</p></li>
-<li><p>Fixed a security issue.</p></li>
-<li><p>Support using block height as block identifiers in gRPC v2 API.</p></li>
-<li><p>Extend gRPC v2 API call <code class="docutils literal notranslate"><span class="pre">GetBlockInfo</span></code> with the protocol version of the block.</p></li>
-<li><p>Do not keep a historical list of peers when running as a normal node.</p></li>
-<li><p>Fixed a bug that caused an extra byte to be added when running <code class="docutils literal notranslate"><span class="pre">getModuleSource</span></code> in the V1 GRPC API.</p></li>
+<div><p id="id2">September 11, 2023</p>
+<blockquote>
+<div><p>Concordium Node 6.0.4 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released September 25, 2023. <strong>Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.</strong></p>
+<p>Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option <code class="docutils literal notranslate"><span class="pre">no-rpc-server</span></code> and environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_DISABLE_RPC_SERVER</span></code>, as well as default values of <code class="docutils literal notranslate"><span class="pre">rpc-server-port</span></code> (<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_PORT</span></code>) and <code class="docutils literal notranslate"><span class="pre">rpc-server-addr</span></code> (<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_ADDR</span></code>), have been removed. The V1 gRPC server is only started if both of these options are supplied.</p>
+<p>Additional features of this release include:</p>
+<ul>
+<li><p>Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.</p></li>
+<li><p>Changes in Wasm validation and execution in P6 include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Disallowed globals in initialization sections for V1 contracts in P6.</p></li>
+<li><p>Added support for sign extension instructions in Wasm in P6.</p></li>
+<li><p>Do not count custom sections towards module size when executing contracts.</p></li>
+<li><p>Support new <code class="docutils literal notranslate"><span class="pre">invoke</span></code> operations for retrieving account keys and checking signatures.</p></li>
 </ul>
+</div></blockquote>
+</li>
+<li><p>Shut down consensus upon a protocol update updating from protocol version 6.</p></li>
+<li><p>Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.</p></li>
+<li><p>Changed the <code class="docutils literal notranslate"><span class="pre">GetConsensusStatus</span></code> endpoint so that slot duration is only returned in protocol versions 0-5.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Changed the <code class="docutils literal notranslate"><span class="pre">GetBlockInfo</span></code> endpoint:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Block slot is only returned in protocol versions 0-5.</p></li>
+<li><p>In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.</p></li>
+<li><p>Endpoint extended to return block round and epoch in protocol version 6.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Changed the <cite>GetElectionInfo</cite> endpoint so that election difficulty is only returned in protocol versions 0-5.</p></li>
+</ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2769,12 +2797,29 @@ Previous releases<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
+5.4.2 - June 14, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text" id="id4">Concordium node version 5.4.2 contains the following features and bug fixes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Enable CORS support in grpc-web. This only applies when grpc-web is enabled.</p></li>
+<li><p class="sd-card-text">Fixed a security issue.</p></li>
+<li><p class="sd-card-text">Support using block height as block identifiers in gRPC v2 API.</p></li>
+<li><p class="sd-card-text">Extend gRPC v2 API call <code class="docutils literal notranslate"><span class="pre">GetBlockInfo</span></code> with the protocol version of the block.</p></li>
+<li><p class="sd-card-text">Do not keep a historical list of peers when running as a normal node.</p></li>
+<li><p class="sd-card-text">Fixed a bug that caused an extra byte to be added when running <code class="docutils literal notranslate"><span class="pre">getModuleSource</span></code> in the V1 GRPC API.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
 5.3.2 - April 27, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<ul id="id3">
+<ul id="id5">
 <li><p class="sd-card-text">Extended the Prometheus exporter with the following metrics: grpc_request_duration_seconds, grpc_in_flight_requests, consensus_baking_committee, consensus_finalization_committee, consensus_baking_lottery_power, consensus_baked_blocks_total, consensus_finalized_baked_blocks_total, network_soft_banned_peers_total, consensus_non_finalized_transactions and consensus_unsupported_pending_protocol_version. See <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md">docs/prometheus-exporter.md</a> for more details.</p></li>
 <li><p class="sd-card-text">Also, in the changelog for the node grpc_request_duration_seconds has been renamed to grpc_request_response_time_seconds to match the what is in the code.</p></li>
 <li><p class="sd-card-text">Added the following new options:</p>
