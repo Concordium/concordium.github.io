@@ -129,13 +129,19 @@ Wallets
 |bw|
 -------------------------
 
-    August 17, 2023
+    September 11, 2023
 
-        |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
+        |bw| 1.1.7 introduces support for Web3 ID. Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer.
 
-        Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
+        For wallet users, you can already use the Web3 ID functionality by using the `Concordia social media verifier on Mainnet <https://concordia.mainnet.concordium.software/>`_ or `Concordia social media verifier on Testnet <https://concordia.testnet.concordium.software/>`_. With Concordia, you can prove ownership of accounts on Telegram and Discord and thus transfer trust between the two platforms. Using the bots to issue credentials based on your Telegram and Discord logins allows you to link your accounts and optionally your real name. This is done in two steps. First, you get Web3 ID credentials for your accounts (e.g. one for Discord, one for Telegram). Then, a dApp checks the credentials and stores the verification. Other users can see your other linked accounts within the platform, transferring trust since they know you from another platform.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.0.7 - August 17, 2023
+
+            |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
+
+            Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
 
         .. dropdown:: |bw| 1.0.6 - May 30, 2023
 
