@@ -191,7 +191,7 @@ The response to the request will be status code 200 together with a JSON body th
 
 You can choose whether you want to use the hosted Concordium verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`__ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to create your own verifier tool. Note that if you use the hosted verifier then you trust Concordium when verifying proofs.
 
-To create your own verifier tool, you can either build it with ``cargo`` or run it in Docker. The `readme file <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`__ provides instructions for both methods.
+If you do not wish to use the Concordium hosted verifier, you can can either build your own following instructions in `readme file <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`__ or use the `published Docker image <https://hub.docker.com/r/concordium/web3id-verifier/tags>`__.
 
 An example response from the verifier tool is:
 
