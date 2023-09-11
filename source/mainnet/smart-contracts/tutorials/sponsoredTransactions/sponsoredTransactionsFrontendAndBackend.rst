@@ -1,47 +1,47 @@
 .. include:: ../../../variables.rst
 .. _sponsoredTransactionsFrontendAndBackend:
 
-===========================================
-Sponsored Transactions Frontend and Backend
-===========================================
+=============================================
+Sponsored Transactions Front end and Back end
+=============================================
 
-The goal of this part of the tutorial is to set up the frontend and the backend locally and to understand the two flows that the dApp provides.
+The goal of this part of the tutorial is to set up the front end and the back end locally and to understand the two flows that the dApp provides.
 
 You can explore the `hosted sponsored transaction service <https://sponsored.testnet.concordium.com>`_.
-The sponsored transaction service consists of a frontend and a backend. You can start your own service by
-following the instructions in the `frontend README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/README.md>`_
-and then the instructions in the `backend README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/backend/README.md>`_.
-Alternatively, follow the steps in the `README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/README.md>`_ to deploy the docker container.
-The docker container will set up the frontend as well as the backend.
+The sponsored transaction service consists of a front end and a back end. You can start your own service by
+following the instructions in the `front end README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/README.md>`_
+and then the instructions in the `back end README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/backend/README.md>`_.
+Alternatively, follow the steps in the `README.md file <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/README.md>`_ to deploy the Docker container.
+The docker container will set up the front end as well as the back end.
 
 .. note::
 
    Comprehensive instructions on how to set up the |bw|, create an account in the |bw|,
-   get some testnet CCD and run a local frontend can be found in :ref:`wCCD frontend-set-up section <wCCD-front-end-set-up>`.
+   get some testnet CCD and run a local front end can be found in :ref:`wCCD frontend-set-up section <wCCD-front-end-set-up>`.
 
-The frontend supports the following two flows with the |bw| (or |mw-gen2| that uses WalletConnect):
+The front end supports the following two flows with the |bw| (or |mw-gen2| that uses WalletConnect):
 
--   Create the message of a sponsored ``updateOperator`` transaction => Sign it with the wallet => Submit the signature to the ``/submitUpdateOperator`` backend endpoint.
--   Mint an NFT to your wallet account => Create the message of a sponsored ``transfer`` transaction => Sign it with the wallet => Submit the signature to the ``/submitTransfer`` backend endpoint.
+-   Create the message of a sponsored ``updateOperator`` transaction => Sign it with the wallet => Submit the signature to the ``/submitUpdateOperator`` back-end endpoint.
+-   Mint an NFT to your wallet account => Create the message of a sponsored ``transfer`` transaction => Sign it with the wallet => Submit the signature to the ``/submitTransfer`` back-end endpoint.
 
-The backend is a server that exposes two endpoints:
+The back end is a server that exposes two endpoints:
 
 - ``POST /submitUpdateOperator``
 - ``POST /submitTransfer``
 
 After submitting the signature to the ``/submitUpdateOperator`` or the ``/submitTransfer`` endpoint,
-the backend creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SMART_CONTRACT_INDEX <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/package.json#L41>`_, subindex: 0}.
+the back end creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SMART_CONTRACT_INDEX <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/package.json#L41>`_, subindex: 0}.
 The deployed smart contract code can be found `here <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_.
-After the transaction is sent to the blockchain node, the backend returns the transaction hash to the frontend.
+After the transaction is sent to the blockchain node, the back end returns the transaction hash to the front end.
 
-The backend server has to have access to a blockchain node and an account (with its associated private key)
-that is funded with some CCD to submit the sponsored transaction to the chain. The backend wallet
+The back-end server has to have access to a blockchain node and an account (with its associated private key)
+that is funded with some CCD to submit the sponsored transaction to the chain. The back-end wallet
 will pay for the transaction fees on behalf of the user.
 
 Schemas
 =======
 
-The frontend uses several `json` schemas in the ``./frontend/src/constants.ts`` file such as:
+The front end uses several `json` schemas in the ``./frontend/src/constants.ts`` file such as:
 
 .. code-block:: javascript
 
@@ -63,7 +63,7 @@ These schemas can be generated `in the smart contract folder <https://github.com
 
    cargo concordium build --schema-json-out ./
 
-This command creates a file with the json schema of your smart contract in your current directory.
+This command creates a file with the JSON schema of your smart contract in your current directory.
 
 Explore your public key
 =======================
@@ -80,7 +80,7 @@ You can export your keys file from the |bw| as follows:
    :width: 30 %
 
 In this exported file, you will find a ``verifyKey`` (your ``public key``), which should be
-identical to the displayed ``public key`` at the frontend. The frontend also displays your next nonce associated with your account.
+identical to the displayed ``public key`` at the front end. The front end also displays your next nonce associated with your account.
 This nonce is initially 0 and increases every time a successful sponsored transaction
 is recorded in the smart contract that was signed by your account.
 
@@ -97,8 +97,8 @@ Submit a sponsored ``updateOperator`` transaction
    :align: center
 
 The GIF shows an example of input parameters that can be used to successfully execute a sponsored ``updateOperator`` transaction.
-The transaction should be successfully submitted by the backend to the blockchain which can be checked on the
-blockchain explorer by clicking the transaction hash displayed at the frontend.
+The transaction should be successfully submitted by the back end to the blockchain which can be checked on the
+blockchain explorer by clicking the transaction hash displayed at the front end.
 
 When exploring the code, you will realize that the input parameter to the ``permit`` function
 and the ``message`` that is signed in the wallet are rather complex. For example, the ``message`` for the sponsored ``updateOperator`` transaction is as follows:
@@ -136,7 +136,7 @@ and the ``message`` that is signed in the wallet are rather complex. For example
    };
 
 Because the schema is included in the smart contract, you can use the format returned by the below command to get a
-template on how to create the ``message`` and input parameters for the functions in the smart contract:
+template for how to create the ``message`` and input parameters for the functions in the smart contract:
 
 .. code-block:: rust
 
@@ -153,8 +153,8 @@ Submit a sponsored ``transfer`` transaction
    :align: center
 
 The GIF shows an example of input parameters that can be used to successfully execute a sponsored ``transfer`` transaction.
-The transaction should be successfully submitted by the backend to the blockchain which can be checked on the
-blockchain explorer by clicking the transaction hash displayed at the frontend. You can also check that your ``to`` account is now the owner of the ``token_id``.
+The transaction should be successfully submitted by the back end to the blockchain which can be checked on the
+blockchain explorer by clicking the transaction hash displayed at the front end. You can also check that your ``to`` account is now the owner of the ``token_id``.
 
 When exploring the code, you will realize that the input parameter to the ``permit`` function
 and the ``message`` that is signed in the wallet are rather complex. For example, the ``message`` for the sponsored ``transfer`` transaction is as follows:
