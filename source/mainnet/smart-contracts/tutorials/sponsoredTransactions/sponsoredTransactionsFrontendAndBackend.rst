@@ -30,7 +30,7 @@ The backend is a server that exposes two endpoints:
 - ``POST /submitTransfer``
 
 After submitting the signature to the ``/submitUpdateOperator`` or the ``/submitTransfer`` endpoint,
-the backend creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SPONSORED_TX_CONTRACT_INDEX <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/package.json#L41>`_, subindex: 0}.
+the backend creates a sponsored transaction and submits it on-chain to the ``permit`` function in the smart contract {index: `SMART_CONTRACT_INDEX <https://github.com/Concordium/concordium-dapp-examples/blob/main/sponsoredTransactions/frontend/package.json#L41>`_, subindex: 0}.
 The deployed smart contract code can be found `here <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_.
 After the transaction is sent to the blockchain node, the backend returns the transaction hash to the frontend.
 

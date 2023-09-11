@@ -53,7 +53,7 @@ This function looks up the public key/keys associated with the signer address an
 .. note::
 
     The |bw| prepends the message with the account address (``signer``) and 8 zero bytes before signing it.
-    This ensures that signed messages can be distinguished from transactions that are equally signed by the account address in the |bw| because transactions are not prepended with 8 zero bytes.
+    This ensures that signed messages (prepended with 8 zero bytes and the account address) can be distinguished from transactions (prepended with the account nonce and the account address).
     The smart contract logic reverse engineers the |bw| implementation by equally prepending the account address (signer) and 8 zero bytes to the message.
 
 .. note::
@@ -79,7 +79,7 @@ You can explore the function by invoking it with the ``concordium-client`` as fo
 
 .. code-block:: console
 
-    $concordium-client contract invoke 4376 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    $concordium-client contract invoke 6372 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 For example, this ``supportsPermit.json`` file results in the below screenshot.
 
