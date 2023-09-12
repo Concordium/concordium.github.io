@@ -41,6 +41,21 @@ You can use the `Prometheus monitoring system <https://prometheus.io/download/>`
 
 For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
 
+Synchronize a node with the network
+===================================
+
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers.
+
+The startup time of the node can be improved by downloading the blocks from
+an out-of-band catchup service before starting the node. While it will still
+take time to process the blocks, it will typically be faster than requesting
+them from peers.
+
+This feature is enabled by default since node version 6 and is controlled
+by the ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` environment variable.
+
 .. Note::
 
     Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.

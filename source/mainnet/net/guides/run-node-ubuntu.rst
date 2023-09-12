@@ -73,37 +73,6 @@ platform configuration you will need to forward an external port
 to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
-Synchronize a node with the network
-===================================
-
-If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.
-
-  1. Stop the node if it is running
-
-    .. code-block:: console
-
-      $sudo systemctl stop concordium-mainnet-node.service
-
-  2. Edit the node service configuration file
-
-    .. code-block:: console
-
-      $sudo systemctl edit concordium-mainnet-node.service
-
-  3. Add the following under the ``[Service]`` section (create the section if it does not exist)
-
-    .. code-block:: ini
-
-      Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
-
-  4. Start the service again
-
-    .. code-block:: console
-
-      $sudo systemctl start concordium-mainnet-node.service
-
-After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
-
 .. _node-collector-ubuntu-mainnet:
 
 Node collector configuration

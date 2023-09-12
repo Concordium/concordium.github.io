@@ -209,36 +209,6 @@ When nodes are stopped or started, this is also recorded in the system event log
    .. image:: ../images/run-node/Node-setup-win-7.png
          :width: 50%
 
-
-Synchronize a node with the network
-===================================
-
-When you start a node for the first time, it can take a while to synchronize the node with the rest of the network, since it has to get all blocks from its peers.
-
-You can improve the performance by downloading the blocks from an out-of-band catchup service before starting the node. While it will still take time to process the blocks, it will typically be faster than requesting them from peers.
-
-#. Search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. The configuration file opens in **Notepad**.
-
-#. Specify the URL to the block file index in the configuration file:
-
-   - For mainnet, add the following line to the ``[node.mainnet]`` section:
-
-   .. code-block:: TOML
-
-      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
-
-   - For testnet, add the following line to the ``[node.testnet]`` section:
-
-   .. code-block:: TOML
-
-      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
-
-   Save the configuration file.
-
-#. In the **Search** bar, search for and select **Stop Concordium Service Node** to stop the node, and then search for and select **Start Concordium Service Node** to restart the node.
-
-#. Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. To see this, compare the finalized length of the chain with the length of your node. If they match, your node has caught up.
-
 Node collector configuration
 ============================
 

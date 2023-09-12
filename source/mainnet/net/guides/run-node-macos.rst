@@ -320,52 +320,6 @@ There are two ways to view the logs:
 
   - You can filter the logs with additional parameters, such as start and end date. Enter ``log show --help`` to see the parameters available.
 
-Synchronize a node with the network
-===================================
-
-When you start a node for the first time, it can take a while to synchronize the
-node with the rest of the network, since it has to get all blocks from its
-peers.
-
-You can improve the startup time by downloading the blocks from an out-of-band catchup service
-before starting the node. While it will still take time to process the blocks, it will typically be
-faster than requesting them from peers.
-
-.. note::
-
-   Catchup data for mainnet does not work with a testnet node and vice versa.  Make sure to use the
-   correct URL to the block file index for your node.
-
-#. Specify the URL to the block file index in the service file:
-
-   - For mainnet:
-
-     - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"`` as an
-       administrator and add the following in the *EnviromentVariables* section:
-
-       .. code-block:: xml
-
-         <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
-         <string>https://catchup.mainnet.concordium.software/blocks.idx</string>
-
-   - For testnet:
-
-     - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"`` as an
-       administrator and add the following in the *EnviromentVariables* section:
-
-       .. code-block:: xml
-
-         <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
-         <string>https://catchup.testnet.concordium.com/blocks.idx</string>
-
-
-#. Restart the appropriate node by running the application **Concordium Node Stop [Mainnet/Testnet]** (if running) and then
-   **Concordium Node Start [Mainnet/Testnet]**.
-
-#. Go to the mainnet or testnet dashboard to monitor when the node has caught up with its
-   peers on the blockchain. You do so by comparing the finalized length of the
-   chain with the length of your node. If they match, your node has caught up.
-
 Uninstall a macOS node
 ======================
 
