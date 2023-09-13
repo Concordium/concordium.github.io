@@ -5,9 +5,9 @@
 Create proofs
 =============
 
-A :ref:`verifier<glossary-verifier>` is a business or use-case that provides a service contingent on the holder providing information about themselves using :ref:`verifiable credentials<glossary-verifiable-credential>` or :ref:`account credentials<glossary-account-credential>` they have. A verifier will typically consist of two components:
+A :term:`verifier` is a business or use-case that provides a service contingent on the holder providing information about themselves using :term:`verifiable credentials<verifiable credential>` or :term:`account credentials<account credential>` they have. A verifier will typically consist of two components:
 
-1. A dApp that interacts with the wallet and requests a :ref:`verifiable presentation<glossary-verifiable-presentation>` from the user.
+1. A dApp that interacts with the wallet and requests a :term:`verifiable presentation` from the user.
 2. A back end that will verify the provided presentations, and provide the required service if successful, such as the `Concordia back end <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`_.
 
 The |bw| allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :term:`attributes<attributes>` to the dApp or service. The dApp or service constructs a list of :term:`statements<statement>` to request a corresponding list of :term:`zero-knowledge proofs<zero-knowledge proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.
@@ -42,7 +42,7 @@ For the dApp or service developer there are some general rules about proofs that
 - There is no limit to the amount of attributes that can be revealed.
 - An attribute can only be used in one proof at a time.
 
-The identity provider issued attributes that can be revealed from :ref:`account credentials<glossary-account-credential>` are:
+The identity provider issued attributes that can be revealed from :term:`account credentials<account credential>` are:
 
 - First name
 - Last name
@@ -58,7 +58,7 @@ The identity provider issued attributes that can be revealed from :ref:`account 
 - National ID number
 - Tax ID number
 
-You can also build statements that include proofs for attributes in :ref:`verifiable credentials<glossary-verifiable-credential>`. In this case, there is not a fixed list of attributes; it depends on the :ref:`issuer's needs<web3id-issuer>`.
+You can also build statements that include proofs for attributes in :term:`verifiable credentials<verifiable credential>`. In this case, there is not a fixed list of attributes; it depends on the :ref:`issuer's needs<web3id-issuer>`.
 
 You can find more information about building proof statements in the `Concordium node SDK js repository <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#identity-proofs>`_.
 
