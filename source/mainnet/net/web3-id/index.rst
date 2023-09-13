@@ -95,7 +95,7 @@ In particular, a key part of the business logic is whether the verifier trusts a
 
 Concordium runs an instance of the verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`_ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__. Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier. You still have to provide a user interface or front end (usually a dApp) that calls the Concordium hosted verifier. Otherwise, if you want to run the verification service yourself, Concordium simplifies the checking of the cryptographic part by providing a `verifier service <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_. To read more about the verification service, see :ref:`Tool to verify credentials<verifier-tool>`.
 
-An example verifier dApp is the `Concordia social media verifier on Testnet <https://concordia.testnet.concordium.com/>`_, and an example back end can be found in `the Web3 ID repository <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`.
+An example verifier dApp is the `Concordia social media verifier on Testnet <https://concordia.testnet.concordium.com/>`_, and an example back end can be found in `the Web3 ID repository <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`__.
 
 .. toctree::
    :hidden:
