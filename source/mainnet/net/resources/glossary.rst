@@ -320,7 +320,7 @@ below.
    Shielding
 
       The action of transferring a part of the public balance to the :term:`shielded balance`.
- 
+
    Slot
 
       See :term:`round`.
