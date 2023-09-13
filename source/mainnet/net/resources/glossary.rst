@@ -12,23 +12,29 @@ See also our `whitepaper`_ for more details on the terms described below.
 
 .. glossary::
 
-Account
-   An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key` that can be used to send shielded transfers to the account. An account is also associated with the account holder's :term:`identity`, although this association is encrypted for anonymity. This anonymity can only be revoked by :term:`anonymity revokers<anonymity revoker>`, in cooperation with the account's :term:`identity provider`.
+   Account
 
-Account credential
-   A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.
+      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key` that can be used to send shielded transfers to the account. An account is also associated with the account holder's :term:`identity`, although this association is encrypted for anonymity. This anonymity can only be revoked by :term:`anonymity revokers<anonymity revoker>`, in cooperation with the account's :term:`identity provider`.
 
-Alias
-   A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
+   Account credential
 
-Anonymity revoker
-   An authority who has power to know the identity of a participant. The anonymity revokers and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
+      A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.
 
-Attributes
-   User data, such as date of birth or country of residence, that is associated with a user :term:`identity`. Users can choose which attributes should be revealed in each of their accounts.
+   Alias
 
-Baker
-   A node that participates in the production of :term:`blocks<block>`, referred to as *baking*.
+      A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
+
+   Anonymity revoker
+
+      An authority who has power to know the identity of a participant. The anonymity revokers and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
+
+   Attributes
+
+      User data, such as date of birth or country of residence, that is associated with a user :term:`identity`. Users can choose which attributes should be revealed in each of their accounts.
+
+   Baker
+
+      A node that participates in the production of :term:`blocks<block>`, referred to as *baking*.
 
    Baker pool
 
@@ -120,7 +126,7 @@ Baker
 
       The user holding a credential. An account is owned by one or more credential holders.
 
-  Credential registry contract
+   Credential registry contract
 
       A smart contract used by :term:`issuers<issuer>` of :term:`verifiable credentials<verifiable credential>` to register credentials when they are issued. This contract will also be used to track the state of a credential, e.g., valid, revoked, expired.
 
