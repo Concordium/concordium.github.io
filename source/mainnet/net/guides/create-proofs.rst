@@ -1,26 +1,38 @@
 .. include:: ../../variables.rst
 .. _create-proofs:
 
-=====================
-Use ID: Create proofs
-=====================
+=============
+Create proofs
+=============
 
-The |bw| allows dApps or services to request proofs that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :term:`attributes<attributes>` to the dApp or service. The dApp or service constructs a list of :term:`statements<statement>` to request a corresponding list of :term:`zero-knowledge proofs<zero-knowledge proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
+A :ref:`verifier<glossary-verifier>` is a business or use-case that provides a service contingent on the holder providing information about themselves using :ref:`verifiable credentials<glossary-verifiable-credential>` or :ref:`account credentials<glossary-account-credential>` they have. A verifier will typically consist of two components:
 
-The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :term:`attributes<attributes>` to the dApp or service.
+1. A dApp that interacts with the wallet and requests a :ref:`verifiable presentation<glossary-verifiable-presentation>` from the user.
+2. A back end that will verify the provided presentations, and provide the required service if successful, such as the `Concordia back end <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`_.
 
-The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
+The |bw| allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :term:`attributes<attributes>` to the dApp or service. The dApp or service constructs a list of :term:`statements<statement>` to request a corresponding list of :term:`zero-knowledge proofs<zero-knowledge proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.
+
+The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :term:`attributes<attributes>` to the dApp or service. The verifiable credentials themselves never leave the holder's wallet, only the information requested by the verifier does.
+
+The verification of presentations consists of two parts.
+
+1. The cryptographic verification of zero-knowledge proofs, and checks that the verifiable credential is valid, which involves checks in smart contracts.
+2. The checking whether the properties attested to are the ones required. This is the custom business logic of the verifier.
+
+Note that the presentation can combine requirements for account credentials and verifiable credentials.
+
+The diagram below shows the interaction between the Rust server/back end, the dApp, and the wallet.
 
 .. image:: ../images/browser-wallet/proof-concept.png
     :width: 100%
 
-You have a server or backend that contains the :term:`challenge` and the statement.
+You have a server or back end that contains the :term:`challenge` and the statement.
 
-1. The dApp requests the :term:`challenge` from the server/backend.
-2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the :term:`statements<statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
+1. The dApp requests the :term:`challenge` from the server/back end.
+2. The server/back end returns the challenge to the dApp. The dApp uses it when sending the :term:`statements<statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the back end that ultimately checks proofs, and so it must be aware of the statement.
 3. The dApp sends a request for proof for the given challenge and statement to the wallet.
 4. The wallet sends proof back to the dApp (if accepted by the user).
-5. The dApp sends the proof to the backend which verifies it with respect to the challenge it has issued.
+5. The dApp sends the proof to the back end which verifies it with respect to the challenge it has issued.
 
 General rules
 =============
@@ -30,7 +42,7 @@ For the dApp or service developer there are some general rules about proofs that
 - There is no limit to the amount of attributes that can be revealed.
 - An attribute can only be used in one proof at a time.
 
-The attributes that can be revealed are:
+The identity provider issued attributes that can be revealed from :ref:`account credentials<glossary-account-credential>` are:
 
 - First name
 - Last name
@@ -45,6 +57,8 @@ The attributes that can be revealed are:
 - ID valid to
 - National ID number
 - Tax ID number
+
+You can also build statements that include proofs for attributes in :ref:`verifiable credentials<glossary-verifiable-credential>`. In this case, there is not a fixed list of attributes; it depends on the :ref:`issuer's needs<web3id-issuer>`.
 
 You can find more information about building proof statements in the `Concordium node SDK js repository <https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#identity-proofs>`_.
 
@@ -163,6 +177,26 @@ For example, the statement below asks if the wallet owner is a citizen of China 
 .. Note::
 
     Country codes to use for residence and nationality proofs are the `ISO-3166-1 alpha-2 codes <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_.
+
+.. _verifier-tool:
+
+Tool to verify credentials
+==========================
+
+Concordium has developed a verifier tool which is a self-contained service that handles the retrieval of credentials from the chain, and the cryptographic verification of presentations.
+The tool is generic and the API exposed is minimal.
+The verifier has a single POST endpoint and is meant to be used by another service, such as a dApp.
+
+The response to the request will be status code 200 together with a JSON body that contains the request (i.e., challenge and statement for which the presentation is valid) together with the timestamp and block in which the verification took place. In case of an invalid request the HTTP status code will be in the 4** range, either 404 if credentials cannot be found, or 400 for invalid proofs or otherwise malformed requests.
+
+You can choose whether you want to use the hosted Concordium verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`__ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to create your own verifier tool. Note that if you use the hosted verifier then you trust Concordium when verifying proofs.
+
+If you do not wish to use the Concordium hosted verifier, you can can either build your own following instructions in `readme file <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`__ or use the `published Docker image <https://hub.docker.com/r/concordium/web3id-verifier/tags>`__.
+
+Concordium Proof Explorer
+=========================
+
+If you want to familiarize yourself with how proofs work and can be constructed, you can use the `Concordium Proof Explorer <https://web3id-proof-explorer.testnet.concordium.com/>`__ to create proofs and send them to a |bw| to see how they interact with account credentials and verifiable credentials. The Concordium Proof Explorer works on Testnet.
 
 Example dApp
 ============

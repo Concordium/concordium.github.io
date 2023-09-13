@@ -17,7 +17,10 @@ below.
 
       An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key` that can be used to send shielded transfers to the account. An account is also associated with the account holder's :term:`identity`, although this association is encrypted for anonymity. This anonymity can only be revoked by :term:`anonymity revokers<anonymity revoker>`, in cooperation with the account's :term:`identity provider`.
 
-   
+   Account credential
+
+      A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.
+
    Alias
 
       A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
@@ -118,15 +121,19 @@ below.
 
    Credential
 
-      A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner. 
+      See :term:`account credential`.
 
    Credential holder
 
       The user holding a credential. An account is owned by one or more credential holders.
 
+  Credential registry contract
+
+      A smart contract used by :term:`issuers<issuer>` of :term:`verifiable credentials<verifiable credential>` to register credentials when they are issued. This contract will also be used to track the state of a credential, e.g., valid, revoked, expired.
+
    Cryptographic proof
 
-      A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a zero-knowledge proof.
+      A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a :term:`zero-knowledge proof`.
 
    Decryption key
 
@@ -199,6 +206,10 @@ below.
       Invoke means to call something into effect.
 
       Invoke is also the act of triggering a receive function in a smart contract from ``concordium-client`` and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click :ref:`here to see examples of how to use invoke to view information about the instance<nft-view-fn>`.
+
+   Issuer
+
+      Party that issues Web3 ID credentials to users. May also revoke Web3 ID credentials.
 
    Leader Election
 
@@ -367,6 +378,18 @@ below.
       Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
       The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
+   Verifiable credential
+
+      Issued to the individual by an :term:`issuer` who has authority for the credential to be issued. A verifiable credential contains some information about the individual that does not necessitate :term:`anonymity revocation<anonymity revoker>`, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :term:`verifier` using :term:`zero-knowledge proofs<zero-knowledge proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
+
+   Verifiable presentation
+
+      Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. It contains a link that points to the contract and holder ID. A presentation that contains a **zero-knowledge proof** might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the actual attributes of verifiable credentials.
+
+   Verifier
+
+      Party that checks users' :term:`verifiable credentials<verifiable credential>`.
+
    Wallet
 
       A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has four wallet types.
@@ -376,6 +399,10 @@ below.
       - The Mobile Wallet: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
 
       - The |bw|: a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
+
+   Web3 ID
+
+      Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
 
    WebAssembly
 
