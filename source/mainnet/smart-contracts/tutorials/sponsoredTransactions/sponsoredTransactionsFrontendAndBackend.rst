@@ -2,7 +2,7 @@
 .. _sponsoredTransactionsFrontendAndBackend:
 
 =============================================
-Sponsored Transactions Front end and Back end
+Sponsored Transactions Front End and Back End
 =============================================
 
 The goal of this part of the tutorial is to set up the front end and the back end locally and to understand the two flows that the dApp provides.
