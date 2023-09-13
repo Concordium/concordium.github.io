@@ -5,19 +5,19 @@
 Use ID: Create proofs
 =====================
 
-The |bw| allows dApps or services to request proofs that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :ref:`attributes<glossary-attribute>` to the dApp or service. The dApp or service constructs a list of :ref:`statements<glossary-statement>` to request a corresponding list of :ref:`zero knowledge proofs<glossary-zero-knowledge-proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
+The |bw| allows dApps or services to request proofs that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :term:`attributes<attributes>` to the dApp or service. The dApp or service constructs a list of :term:`statements<statement>` to request a corresponding list of :term:`zero-knowledge proofs<zero-knowledge proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement.
 
-The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :ref:`attributes<glossary-attribute>` to the dApp or service.
+The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these :term:`attributes<attributes>` to the dApp or service.
 
 The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
 
 .. image:: ../images/browser-wallet/proof-concept.png
     :width: 100%
 
-You have a server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
+You have a server or backend that contains the :term:`challenge` and the statement.
 
-1. The dApp requests the :ref:`challenge<glossary-challenge>` from the server/backend.
-2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the :ref:`statements<glossary-statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
+1. The dApp requests the :term:`challenge` from the server/backend.
+2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the :term:`statements<statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
 3. The dApp sends a request for proof for the given challenge and statement to the wallet.
 4. The wallet sends proof back to the dApp (if accepted by the user).
 5. The dApp sends the proof to the backend which verifies it with respect to the challenge it has issued.
@@ -69,7 +69,7 @@ Unless it is absolutely critical to know a specific attribute, it is good policy
 Range proofs
 ============
 
-:ref:`Range proofs<glossary-range-proofs>` allow you to present a range of values to the user's wallet to determine whether the user meets the required attribute. For example, you might want to know if a user over 18 years of age but under 30 years of age. You can present this as a range proof to be verified by the wallet.
+:term:`Range proofs` allow you to present a range of values to the user's wallet to determine whether the user meets the required attribute. For example, you might want to know if a user over 18 years of age but under 30 years of age. You can present this as a range proof to be verified by the wallet.
 
 Relevant attributes for range proofs are:
 
@@ -103,7 +103,7 @@ In the example below, you see a range proof constructed to check that wallet own
 Membership proofs
 =================
 
-:ref:`Membership proofs<glossary-membership-proof>` allow you to present a list of values to the user's wallet to determine whether the user has one of the required attributes in the list. For example, you might want to know if a user is a resident of the EU. You can present this as a membership proof to be verified by the wallet.
+:term:`Membership proofs<membership proof>` allow you to present a list of values to the user's wallet to determine whether the user has one of the required attributes in the list. For example, you might want to know if a user is a resident of the EU. You can present this as a membership proof to be verified by the wallet.
 
 Relevant attributes for membership proofs are:
 
@@ -140,7 +140,7 @@ In the example below, the proof checks that the wallet owner is a citizen of one
       ]
     }
 
-Membership proofs can also prove that a user does NOT have an attribute or attributes in a set, in other words a :ref:`non-membership proof<glossary-non-membership-proof>`. For example, if you need to know that a user is **not** a resident of a country that is subject to trade sanctions to use your service, you might request a proof that the wallet owner does not reside in the relevant countries.
+Membership proofs can also prove that a user does NOT have an attribute or attributes in a set, in other words a :term:`non-membership proof`. For example, if you need to know that a user is **not** a resident of a country that is subject to trade sanctions to use your service, you might request a proof that the wallet owner does not reside in the relevant countries.
 
 For example, the statement below asks if the wallet owner is a citizen of China or North Korea.
 
