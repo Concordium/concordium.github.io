@@ -37,7 +37,7 @@ It is also possible that a dApp could present a mixed statement that asks you to
 .. image:: ../images/browser-wallet/mixed-statement-proof.png
     :width: 75%
 
-Another example of a mixed proof includes a request to prove information from your :ref:`verifiable credential<glossary-verifiable-credential>` and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
+Another example of a mixed proof includes a request to prove information from your :term:`verifiable credential` and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
 
 .. image:: ../images/browser-wallet/vc-mixed-proof-1.png
     :alt: window with verifiable credential proof and continue button
