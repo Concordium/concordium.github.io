@@ -21,18 +21,18 @@ The verification of presentations consists of two parts.
 
 Note that the presentation can combine requirements for account credentials and verifiable credentials.
 
-The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
+The diagram below shows the interaction between the Rust server/back end, the dApp, and the wallet.
 
 .. image:: ../images/browser-wallet/proof-concept.png
     :width: 100%
 
-You have a server or backend that contains the :ref:`challenge<glossary-challenge>` and the statement.
+You have a server or back end that contains the :ref:`challenge<glossary-challenge>` and the statement.
 
-1. The dApp requests the :ref:`challenge<glossary-challenge>` from the server/backend.
-2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the :ref:`statements<glossary-statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
+1. The dApp requests the :ref:`challenge<glossary-challenge>` from the server/back end.
+2. The server/back end returns the challenge to the dApp. The dApp uses it when sending the :ref:`statements<glossary-statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the back end that ultimately checks proofs, and so it must be aware of the statement.
 3. The dApp sends a request for proof for the given challenge and statement to the wallet.
 4. The wallet sends proof back to the dApp (if accepted by the user).
-5. The dApp sends the proof to the backend which verifies it with respect to the challenge it has issued.
+5. The dApp sends the proof to the back end which verifies it with respect to the challenge it has issued.
 
 General rules
 =============
@@ -192,6 +192,11 @@ The response to the request will be status code 200 together with a JSON body th
 You can choose whether you want to use the hosted Concordium verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`__ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to create your own verifier tool. Note that if you use the hosted verifier then you trust Concordium when verifying proofs.
 
 If you do not wish to use the Concordium hosted verifier, you can can either build your own following instructions in `readme file <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`__ or use the `published Docker image <https://hub.docker.com/r/concordium/web3id-verifier/tags>`__.
+
+Concordium Proof Explorer
+=========================
+
+If you want to familiarize yourself with how proofs work and can be constructed, you can use the `Concordium Proof Explorer <https://web3id-proof-explorer.testnet.concordium.com/>`__ to create proofs and send them to a |bw| to see how they interact with account credentials and verifiable credentials. The Concordium Proof Explorer works on Testnet.
 
 Example dApp
 ============
