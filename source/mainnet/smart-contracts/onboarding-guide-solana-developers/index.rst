@@ -4,11 +4,11 @@
 Onboarding
 ==========
 
-A number of guides exist to help Solana developers to get started on the Concordium chain.
+Two guides help Solana developers get started on the Concordium chain.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Onboarding
+   :hidden:
 
    overview
    faq
