@@ -24,9 +24,21 @@ index
    nodes/node-requirements
    references/concordium-client
    guides/run-local-chain
-   guides/create-proofs
    guides/low-code-nft-marketplace/introduction.rst
    resources/ccd-scan
+
+.. toctree::
+   :includehidden:
+   :caption: CCDScan
+
+   resources/ccd-scan
+
+.. toctree::
+   :includehidden:
+   :caption: Use Concordium's ID Layer
+
+   web3-id/index
+   guides/gallery/index
 
 .. toctree::
    :includehidden:
@@ -61,6 +73,7 @@ index
    resources/terms-and-conditions
    resources/terms-and-conditions-dw
    resources/terms-and-conditions-mw
+   resources/terms-and-conditions-concordia
    resources/third-party-licenses
    resources/third-party-notices
    resources/bw-licenses
