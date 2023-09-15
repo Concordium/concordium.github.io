@@ -7,6 +7,9 @@ Wallet FAQs
 
 The following wallet FAQs can help you decide which wallet is best for you.
 
-- :ref:`Concordium Wallet for Mobile FAQ<mw-gen2-faq>`
+.. toctree::
+    :hidden:
+    :maxdepth: 2
 
-- :ref:`Concordium Wallet for Web FAQ<browser-wallet-faq>`
+    ../mobile-wallet-gen2/faq
+    ../browser-wallet/browser-wallet-faq
