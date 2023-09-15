@@ -8,6 +8,7 @@ The contract testing guides help you get started testing smart contracts. Here y
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    unit-test-contract
    integration-test-contract

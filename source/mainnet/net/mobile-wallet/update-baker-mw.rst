@@ -52,9 +52,9 @@ Once you have access baker settings for your wallet, you have four options:
 Update baker stake and restaking preference
 ===========================================
 
-You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account except during a :ref:`cool-down period<glossary-cool-down-period>`. If you increase the stake, the new stake takes effect at the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you'll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
+You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account except during a :term:`cool-down period`. If you increase the stake, the new stake takes effect at the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you'll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
 
-When you change the stake it can influence your :ref:`chance of being selected to bake a block<glossary-winning-probability>` and receive baker rewards and of being included in the :ref:`finalization <glossary-finalization>` committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a block and of being included in the finalization committee.
+When you change the stake it can influence your :term:`chance of being selected to bake a block<winning probability>` and receive baker rewards and of being included in the :term:`finalization` committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a block and of being included in the finalization committee.
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
@@ -70,7 +70,7 @@ When you change the stake it can influence your :ref:`chance of being selected t
 
     .. Note::
 
-        Reducing your stake results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The staked amount will be locked during this period and cannot be increased or decreased; you can still change restaking preferences during cool-down. The stake reduction is not effective until the next :ref:`pay day<glossary-pay-day>` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+        Reducing your stake results in a longer :term:`cool-down period`. The staked amount will be locked during this period and cannot be increased or decreased; you can still change restaking preferences during cool-down. The stake reduction is not effective until the next :term:`pay day` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
 
 .. dropdown:: |bw|
 
@@ -134,7 +134,7 @@ When you change the stake it can influence your :ref:`chance of being selected t
                 :alt: screen to update baker stake and restake preference options
 
         .. Note::
-            If you reduce the staked amount, a :ref:`cool-down<glossary-cool-down-period>` period applies.
+            If you reduce the staked amount, a :term:`cool-down<cool-down period>` period applies.
 
         5. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -476,7 +476,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
     3. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
-    4. You need to import your baker keys file to your node in order to start baking with the new keys. It is preferable to update them on the node as close to :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+    4. You need to import your baker keys file to your node in order to start baking with the new keys. It is preferable to update them on the node as close to :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
@@ -522,7 +522,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
         .. image:: ../images/browser-wallet/update-baker-keys-finish.png
                 :width: 40%
 
-    #. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+    #. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
@@ -650,7 +650,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
 Stop baking
 ===========
 
-If you remove a baker, the node that is configured with the :ref:`baker keys<glossary-private-keys>` will stop baking after a :ref:`cool-down period<glossary-cool-down-period>` of three weeks. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next :ref:`pay day<glossary-pay-day>`. When you've removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
+If you remove a baker, the node that is configured with the :term:`baker keys<private keys>` will stop baking after a :term:`cool-down period` of three weeks. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next :term:`pay day`. When you've removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
 
 If you no longer wish to bake on this account, you can stop baking.
 
@@ -799,7 +799,7 @@ If you no longer wish to bake on this account, you can stop baking.
 
 .. Note::
 
-    When you stop baking, there is a longer :ref:`cool-down period<glossary-cool-down-period>` before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.
+    When you stop baking, there is a longer :term:`cool-down period` before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.
 
 .. Note::
 

@@ -102,7 +102,7 @@ Configure the node with baker keys on Testnet
 Verify that a node is a baker node.
 -----------------------------------
 
-Two :ref:`epochs <glossary>` must have elapsed before you can see the baker ID of the node on the dashboard.
+Two :term:`epochs <epoch>` must have elapsed before you can see the baker ID of the node on the dashboard.
 
 You can use ``concordium-client`` to see the status of the node. For more information, see :ref:`Concordium Client <concordium-client>`.
 
