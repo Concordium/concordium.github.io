@@ -143,7 +143,7 @@ Wallets
 
         .. dropdown:: |bw| 1.0.7 - August 17, 2023
 
-            |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
+            |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with ConcordiumBFT consensus which will be released August 21, 2023.
 
             Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
 
@@ -255,13 +255,17 @@ Wallets
 Desktop Wallet
 --------------
 
-    August 4, 2022
+    September XX, 2023
 
-    The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
-
-    Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+        Version 1.6.0 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with ConcordiumBFT consensus which was released August 21, 2023 on Testnet and September 25, 2023 on Mainnet. The wallet also now supports gRPC2.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.5.0 - August 4, 2022
+
+            The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+            Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
 
         .. dropdown:: 1.4.2 - June 21, 2022
 
