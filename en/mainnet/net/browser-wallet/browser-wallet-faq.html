@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/browser-wallet/browser-wallet-faq.ed8aa18b-be25-4458-ae97-d0e0b39156a5.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1868,7 +1861,7 @@ Why was the Concordium Wallet for Web made?<div class="sd-summary-down docutils"
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The Concordium Wallet for Web was created as a tool for developers to connect <a class="reference external" href="https://en.wikipedia.org/wiki/Decentralized_application">dApps</a> to the Concordium blockchain and interact with it, and for users who are using dApps. It provides a simplified interface for users and introduces a <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a>, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the Concordium Wallet for Mobile.</p>
+<p class="sd-card-text">The Concordium Wallet for Web was created as a tool for developers to connect <a class="reference external" href="https://en.wikipedia.org/wiki/Decentralized_application">dApps</a> to the Concordium blockchain and interact with it, and for users who are using dApps. It provides a simplified interface for users and introduces a <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a>, which simplifies any restoration of an account should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the Concordium Wallet for Mobile.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1877,8 +1870,8 @@ What are the features and benefits of the Concordium Wallet for Web?<div class="
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Some of the functionality is the same as other Concordium wallets in that you can still send and receive funds. But the Concordium Wallet for Web uses a <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> that allows you to recover your wallet should you need to replace your device. That same secret recovery phrase will also allow you to recover the wallet on, for example, Concordium Wallet for Mobile.</p>
-<p class="sd-card-text">In Concordium Wallet for Web initial accounts are no longer created by the <a class="reference internal" href="../resources/glossary.html#glossary-identity-provider"><span class="std std-ref">identity provider</span></a> when your identity is verified, ensuring complete privacy of all your accounts. Going forward you <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">create all accounts yourself</span></a> in your Concordium Wallet.</p>
+<p class="sd-card-text">Some of the functionality is the same as other Concordium wallets in that you can still send and receive funds. But the Concordium Wallet for Web uses a <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> that allows you to recover your wallet should you need to replace your device. That same secret recovery phrase will also allow you to recover the wallet on, for example, Concordium Wallet for Mobile.</p>
+<p class="sd-card-text">In Concordium Wallet for Web initial accounts are no longer created by the <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> when your identity is verified, ensuring complete privacy of all your accounts. Going forward you <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">create all accounts yourself</span></a> in your Concordium Wallet.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1887,7 +1880,7 @@ What is a secret recovery phrase?<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">A <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> is a “master key” that unlocks all of your Concordium accounts. When entered into the wallet in the correct order, the 24 words in the recovery phrase will recover all of the private keys you were storing on your original wallet and give access to all <a class="reference internal" href="../resources/glossary.html#glossary-ccd"><span class="std std-ref">CCDs</span></a> in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets. Secret recovery phrases are sometimes referred to as seed phrases, mnemonic phrases, mnemonic seeds and backup phrases.</p>
+<p class="sd-card-text">A <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> is a “master key” that unlocks all of your Concordium accounts. When entered into the wallet in the correct order, the 24 words in the recovery phrase will recover all of the private keys you were storing on your original wallet and give access to all <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCDs</span></a> in the wallet. This means that even if you lose your physical hardware device, you’ll still have access to your blockchain assets. Secret recovery phrases are sometimes referred to as seed phrases, mnemonic phrases, mnemonic seeds and backup phrases.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1896,8 +1889,8 @@ How is a secret recovery phrase different from private keys?<div class="sd-summa
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><a class="reference internal" href="../resources/glossary.html#glossary-private-keys"><span class="std std-ref">Private keys</span></a> allow you to send, spend, and delegate your CCDs.</p>
-<p class="sd-card-text">Your <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> gives you access to your wallet and all of the private keys in the wallet. You can think of a wallet as being like a password manager for your accounts. As long as you have your master password (the secret recovery phrase), you have access to all CCDs in the wallet.</p>
+<p class="sd-card-text"><a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">Private keys</span></a> allow you to send, spend, and delegate your CCDs.</p>
+<p class="sd-card-text">Your <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> gives you access to your wallet and all of the private keys in the wallet. You can think of a wallet as being like a password manager for your accounts. As long as you have your master password (the secret recovery phrase), you have access to all CCDs in the wallet.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1917,7 +1910,7 @@ How can I keep my secret recovery phrase secure?<div class="sd-summary-down docu
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><p class="sd-card-text">Don’t take a picture of it; if you save photos to any cloud provider this could potentially expose your <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> so anyone could access your accounts and funds.</p></li>
+<li><p class="sd-card-text">Don’t take a picture of it; if you save photos to any cloud provider this could potentially expose your <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> so anyone could access your accounts and funds.</p></li>
 <li><p class="sd-card-text">Don’t keep it with your device. If you lose your device, anyone who finds it could access your accounts and funds.</p></li>
 <li><p class="sd-card-text">Put it in a safe location. Keep your secret recovery phrase in a safe location that is fireproof and waterproof, and that you will remember and can access relatively easily. There are companies that make devices, such as <a class="reference external" href="https://shop.ledger.com/products/the-billfodl">https://shop.ledger.com/products/the-billfodl</a> that can safely store your secret recovery phrase.</p></li>
 <li><p class="sd-card-text">Keep multiple physical copies of your secret recovery phrase in safe locations.</p></li>
@@ -1939,7 +1932,7 @@ Do I still need to make backups of my wallet?<div class="sd-summary-down docutil
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">No. For the Concordium Wallet for Web and Concordium Wallet for Mobile you do not need to make backups. Your <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> that you write down is the only way to recover your accounts and identities.</p>
+<p class="sd-card-text">No. For the Concordium Wallet for Web and Concordium Wallet for Mobile you do not need to make backups. Your <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> that you write down is the only way to recover your accounts and identities.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1950,7 +1943,7 @@ Can I migrate from the Concordium Legacy Wallet or Desktop Wallet to the Concord
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">No. Because the way that keys are protected differs between the old and new wallets you cannot simply migrate. If you use the Concordium Legacy Wallet or Desktop Wallet but want to use the Concordium Wallet for Web, you should do the following:</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Download the Concordium Wallet for Web and set it up so you have a <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a>, a verified identity, and at least one account.</p></li>
+<li><p class="sd-card-text">Download the Concordium Wallet for Web and set it up so you have a <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a>, a verified identity, and at least one account.</p></li>
 <li><p class="sd-card-text">Open the Concordium Legacy Wallet and send your funds from it to your new account(s) in the Concordium Wallet for Web.</p></li>
 <li><p class="sd-card-text">Once you are sure that all of your funds have been transferred and you have no incoming transfers, you can delete the Concordium Legacy Wallet on your phone. You can also keep the Concordium Legacy Wallet and use both wallets. Just make sure that you continue to make <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">backups</span></a> if you continue using the Concordium Legacy Wallet.</p></li>
 </ol>
@@ -1982,7 +1975,7 @@ I have a secret recovery phrase from another wallet. Can I use that in my Concor
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Reusing a <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> in multiple wallets is not recommended, as it increases the risk of having all your wallets compromised. Concordium recommends that you generate a new secret recovery phrase when setting up a new wallet on Concordium. For advanced users who understand the risks involved it is possible to reuse a 24 word recovery phase from another wallet with Concordium through the wallet recovery process. The wallet will not recover anything if you reuse your secret recovery phrase from another wallet, but it will set your wallet up with the secret recovery phrase, and from there you can request a new identity and accounts.</p>
+<p class="sd-card-text">Reusing a <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> in multiple wallets is not recommended, as it increases the risk of having all your wallets compromised. Concordium recommends that you generate a new secret recovery phrase when setting up a new wallet on Concordium. For advanced users who understand the risks involved it is possible to reuse a 24 word recovery phase from another wallet with Concordium through the wallet recovery process. The wallet will not recover anything if you reuse your secret recovery phrase from another wallet, but it will set your wallet up with the secret recovery phrase, and from there you can request a new identity and accounts.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1991,7 +1984,7 @@ I have a Concordium Desktop Wallet set up with a LEDGER device and a 24 word sec
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Identities and accounts from the Concordium Desktop Wallet cannot be recovered in the Concordium Wallet for Web. It is also not recommended to use secret recovery phrases from cold wallets in “hot wallets” like the Concordium Wallet for Web, as that defeats the purpose of having the <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> in a cold wallet, like the LEDGER devices.</p>
+<p class="sd-card-text">Identities and accounts from the Concordium Desktop Wallet cannot be recovered in the Concordium Wallet for Web. It is also not recommended to use secret recovery phrases from cold wallets in “hot wallets” like the Concordium Wallet for Web, as that defeats the purpose of having the <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> in a cold wallet, like the LEDGER devices.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2010,7 +2003,7 @@ Can I access the same accounts on different devices?<div class="sd-summary-down 
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">If you are using Concordium Wallet for Web and the Concordium Wallet for Mobile, you can because the Concordium Wallet for Mobile also uses the <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a>. You simply enter your <a class="reference internal" href="../guides/recover-wallet.html#recover-wallet"><span class="std std-ref">recovery phrase</span></a> into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.</p>
+<p class="sd-card-text">If you are using Concordium Wallet for Web and the Concordium Wallet for Mobile, you can because the Concordium Wallet for Mobile also uses the <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a>. You simply enter your <a class="reference internal" href="../guides/recover-wallet.html#recover-wallet"><span class="std std-ref">recovery phrase</span></a> into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2019,7 +2012,7 @@ What do I do if I forget my passcode on the Concordium Wallet for Web?<div class
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">If you forget your passcode for your installed Concordium Wallet for Web, you will need to <a class="reference internal" href="setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">remove the extension in your internet browswer and reinstall it</span></a>, choosing the option to <a class="reference internal" href="../guides/recover-wallet.html#recover-wallet"><span class="std std-ref">recover</span></a> your wallet. Use your <a class="reference internal" href="../resources/glossary.html#glossary-secret-recovery-phrase"><span class="std std-ref">secret recovery phrase</span></a> to recover the wallet.</p>
+<p class="sd-card-text">If you forget your passcode for your installed Concordium Wallet for Web, you will need to <a class="reference internal" href="setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">remove the extension in your internet browswer and reinstall it</span></a>, choosing the option to <a class="reference internal" href="../guides/recover-wallet.html#recover-wallet"><span class="std std-ref">recover</span></a> your wallet. Use your <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> to recover the wallet.</p>
 </div>
 </details></div>
 

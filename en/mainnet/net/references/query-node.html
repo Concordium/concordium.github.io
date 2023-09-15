@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/query-node.f8a0db99-53b3-4536-86c9-3bcd833ac879.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1990,7 +1983,7 @@ statistics related to baking and finalization of blocks.</p></li>
 </div>
 <p>List the addresses of all accounts on the chain as of a specific block:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
 </ul>
 <div class="section" id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
@@ -2014,8 +2007,8 @@ can also decrypt the shielded balance.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ACCOUNT</span></code>: Address or local name of the account (if not provided,
 will show the account with the local alias <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span></code>: Full hash of target block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--shielded</span></code>: Show the <a class="reference internal" href="../resources/glossary.html#glossary-shielded-balance"><span class="std std-ref">Shielded balance</span></a> (explained below).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span></code>: Full hash of target block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--shielded</span></code>: Show the <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a> (explained below).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--reveal-shielded</span></code>: Show the shielded balance and reveal it
 (explained below).</p></li>
 </ul>
@@ -2042,14 +2035,14 @@ will show the account with the local alias <code class="docutils literal notrans
 <ul class="simple">
 <li><p>has address <code class="docutils literal notranslate"><span class="pre">2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG</span></code>,</p></li>
 <li><p>has a balance of 1026 CCD,</p></li>
-<li><p>has <a class="reference internal" href="../resources/glossary.html#glossary-transaction-sequence-number"><span class="std std-ref">Transaction Sequence Number</span></a> <code class="docutils literal notranslate"><span class="pre">1</span></code>,</p></li>
+<li><p>has <a class="reference internal" href="../resources/glossary.html#term-Transaction-Sequence-Number"><span class="xref std std-term">transaction sequence number</span></a> <code class="docutils literal notranslate"><span class="pre">1</span></code>,</p></li>
 <li><p>has <code class="docutils literal notranslate"><span class="pre">a820662531d...</span></code> as the key for receiving shielded transfers.</p></li>
-<li><p>has no <a class="reference internal" href="../resources/glossary.html#glossary-incoming-shielded-amount"><span class="std std-ref">Incoming shielded amount</span></a>.</p></li>
-<li><p>has a <a class="reference internal" href="../resources/glossary.html#glossary-self-balance"><span class="std std-ref">Self balance</span></a> of <code class="docutils literal notranslate"><span class="pre">a9d35bf62442aabad72c...</span></code>. By default this
+<li><p>has no <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">incoming shielded amount</span></a>.</p></li>
+<li><p>has a <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">self balance</span></a> of <code class="docutils literal notranslate"><span class="pre">a9d35bf62442aabad72c...</span></code>. By default this
 only shows the first 20 characters of the encrypted amount. With a
 <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag the full encryption is shown.</p></li>
 </ul>
-<p>Furthermore, the account’s credential reveals no attributes from the <a class="reference internal" href="../resources/glossary.html#glossary-identity"><span class="std std-ref">Identity</span></a>
+<p>Furthermore, the account’s credential reveals no attributes from the <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>
 that the account is derived from, and expires at the end of September 2021.</p>
 <p>If the flag <code class="docutils literal notranslate"><span class="pre">--reveal-shielded</span></code> is provided, each of the shielded amounts
 will be decrypted and the decryption shown. Note that for this operation to
@@ -2064,7 +2057,7 @@ accessing the decryption key.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction status TX-HASH
 </pre></div>
 </div>
-<p>Display the lifecycle state of a <a class="reference internal" href="../resources/glossary.html#glossary-transaction"><span class="std std-ref">Transaction</span></a> (pending, committed, finalized,
+<p>Display the lifecycle state of a <a class="reference internal" href="../resources/glossary.html#term-Transaction"><span class="xref std std-term">transaction</span></a> (pending, committed, finalized,
 or absent).</p>
 <p>If the transaction is committed or finalized, the status (success or rejected)
 and execution cost is included as well.</p>
@@ -2087,7 +2080,7 @@ and execution cost is included as well.</p>
 time) are objective (i.e. all nodes participating in the Concordium network will
 agree on these) while others (e.g. arrival time) are specific to the local node:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
 </ul>
 <div class="section" id="id3">
 <h4>Example<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
@@ -2122,10 +2115,10 @@ agree on these) while others (e.g. arrival time) are specific to the local node:
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters <span class="o">[</span>--include-bakers<span class="o">]</span> <span class="o">[</span>--block BLOCK-HASH<span class="o">]</span>
 </pre></div>
 </div>
-<p>Show <a class="reference internal" href="../resources/glossary.html#glossary-leader-election"><span class="std std-ref">election parameters</span></a> for a specific block, optionally including
-bakers and their <a class="reference internal" href="../resources/glossary.html#glossary-lottery-power"><span class="std std-ref">Lottery Power</span></a>:</p>
+<p>Show <a class="reference internal" href="../resources/glossary.html#term-Leader-Election"><span class="xref std std-term">election parameters</span></a> for a specific block, optionally including
+bakers and their <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">lottery power</span></a>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">Best block</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--include-bakers</span></code>: If set, include table of bakers and their
 lottery power. The lottery power is recomputed periodically, so operations
 that affect them do not take effect immediately.</p></li>
@@ -2204,13 +2197,13 @@ Standard Deviation, respectively.</p>
 </pre></div>
 </div>
 <p>Display the list of identity providers or anonymity revokers at a given block,
-defaulting to the <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">best block</span></a>.</p>
+defaulting to the <a class="reference internal" href="../resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p>
 </div>
 </div>
 <div class="section" id="exchange-rates">
 <span id="id6"></span><h2>Exchange rates<a class="headerlink" href="#exchange-rates" title="Permalink to this headline">#</a></h2>
 <p>Conversion rates between NRG, CCD, and Euros can fluctuate between blocks. To get a best estimate of the current
-exchange rates, query the chain parameters of the <a class="reference internal" href="../resources/glossary.html#glossary-best-block"><span class="std std-ref">best block</span></a>:</p>
+exchange rates, query the chain parameters of the <a class="reference internal" href="../resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockChainParameters
 </pre></div>
 </div>

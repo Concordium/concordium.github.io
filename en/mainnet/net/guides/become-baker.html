@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/become-baker.6818a387-f34d-496a-8ff3-19f9fe68d5a7.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2045,7 +2038,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <p>To start the node with these baker keys and bake blocks, configure the node to
 use the baker keys, and <strong>restart</strong> it. The node will automatically start baking
 when the baker is included in the bakers for the current epoch.</p>
-<p>This change is executed immediately, and it will take effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> after the one in which the transaction for adding the baker was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
+<p>This change is executed immediately, and it will take effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the one in which the transaction for adding the baker was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
 <table class="table">
 <colgroup>
 <col style="width: 43%" />
@@ -2125,7 +2118,7 @@ to bake blocks is also modified.</p>
 <p>When a baker adds a stake for the first time or increases the stake, that
 change is executed on the chain and becomes visible as soon as the transaction
 is included in a block (can be seen through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span>
-<span class="pre">bakerAccount</span></code>) and takes effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
+<span class="pre">bakerAccount</span></code>) and takes effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
 <table class="table">
 <colgroup>
 <col style="width: 41%" />
@@ -2149,7 +2142,7 @@ is included in a block (can be seen through <code class="docutils literal notran
 </tr>
 </tbody>
 </table>
-<p>When a baker <strong>decreases the staked amount</strong>, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> after the cool-down ends. It can be consulted through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">bakerAccount</span></code>:</p>
+<p>When a baker <strong>decreases the staked amount</strong>, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down ends. It can be consulted through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">bakerAccount</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 
@@ -2216,7 +2209,7 @@ the account balance without staking them automatically. You can change this swit
 </pre></div>
 </div>
 <p>Changes to the restake flag will take effect immediately; however, the changes
-start affecting baking and finalizing power in the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+start affecting baking and finalizing power in the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 
@@ -2264,7 +2257,7 @@ the <code class="docutils literal notranslate"><span class="pre">baker</span> <s
 <div class="section" id="finalization">
 <h3>Finalization<a class="headerlink" href="#finalization" title="Permalink to this headline">#</a></h3>
 <p>Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the bakers with an effective stake amount of at least 0.1% of the total amount (effective stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.</p>
-<p>Finalizers sign a block, and their collective signatures are aggregated to form a <a class="reference internal" href="../resources/glossary.html#glossary-quorum-certificate"><span class="std std-ref">quorum certificate</span></a>. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn’t the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.</p>
+<p>Finalizers sign a block, and their collective signatures are aggregated to form a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a>. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn’t the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.</p>
 <p>Finalization happens at a minimum one second after block creation. A new block has to be created descended from that block for finalization to happen.</p>
 <p>When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.</p>
 </div>
@@ -2320,7 +2313,7 @@ so you have to execute:</p>
 <p>This removes the baker from the baker list and unlocks the staked amount on
 the baker so that it can be transferred or moved freely.</p>
 <p>When removing the baker, the change has the same timeline as decreasing
-the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> after the cool-down ends. You can check when the change will take effect by querying the account information:</p>
+the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down ends. You can check when the change will take effect by querying the account information:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show bakerAccount
 <span class="go">...</span>
 

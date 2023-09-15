@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/proofs.7837fb16-91a4-4bbb-8d52-d86c1bdd55c8.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1876,7 +1869,7 @@ body {margin:0;}
                 
   <div class="section" id="proofs-and-revealing-information">
 <span id="secret-proofs"></span><h1>Proofs and revealing information<a class="headerlink" href="#proofs-and-revealing-information" title="Permalink to this headline">#</a></h1>
-<p>Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these <a class="reference internal" href="../resources/glossary.html#glossary-attribute"><span class="std std-ref">attributes</span></a> to the dApp or service using your <a class="reference internal" href="../resources/glossary.html#glossary-account-credential"><span class="std std-ref">account credentials</span></a> or <a class="reference internal" href="../resources/glossary.html#glossary-verifiable-credential"><span class="std std-ref">verifiable credentials</span></a>. The dApp or service uses a <a class="reference internal" href="../resources/glossary.html#glossary-zero-knowledge-proof"><span class="std std-ref">zero-knowledge proof</span></a> to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements. You can choose which account (and thus identity) to use to fulfill the proof request for <a class="reference internal" href="../resources/glossary.html#glossary-account-credential"><span class="std std-ref">account credentials</span></a> using the drop-down above the proof.</p>
+<p>Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these <a class="reference internal" href="../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service using your <a class="reference internal" href="../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> or <a class="reference internal" href="../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a>. The dApp or service uses a <a class="reference internal" href="../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proof</span></a> to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements. You can choose which account (and thus identity) to use to fulfill the proof request for <a class="reference internal" href="../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> using the drop-down above the proof.</p>
 <a class="reference internal image-reference" href="../../_images/zkp-one-attribute-ok.png"><img alt="../../_images/zkp-one-attribute-ok.png" src="../../_images/zkp-one-attribute-ok.png" style="width: 75%;" /></a>
 <p>When an attribute or attributes will be proven by zero-knowledge proof but not revealed, the <strong>Zero-knowledge proof</strong> heading appears on the card with the attributes to prove.</p>
 <p>If you do not meet one of the attributes in the statement, you would see a screen similar to below.</p>
@@ -1892,7 +1885,7 @@ body {margin:0;}
 <p>It is not possible for you to choose which attributes in the statement to prove/reveal or not prove/reveal. If there is something in the statement that you do not want to prove or reveal, you must reject the statement.</p>
 <p>It is also possible that a dApp could present a mixed statement that asks you to reveal one attribute and prove another. In the example below, the user’s sex must be revealed and the user’s age must be proven.</p>
 <a class="reference internal image-reference" href="../../_images/mixed-statement-proof.png"><img alt="../../_images/mixed-statement-proof.png" src="../../_images/mixed-statement-proof.png" style="width: 75%;" /></a>
-<p>Another example of a mixed proof includes a request to prove information from your <a class="reference internal" href="../resources/glossary.html#glossary-verifiable-credential"><span class="std std-ref">verifiable credential</span></a> and from your identity. The first screen is requesting you prove information from your verifiable credential. Click <strong>Continue</strong>.</p>
+<p>Another example of a mixed proof includes a request to prove information from your <a class="reference internal" href="../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credential</span></a> and from your identity. The first screen is requesting you prove information from your verifiable credential. Click <strong>Continue</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/vc-mixed-proof-1.png"><img alt="window with verifiable credential proof and continue button" src="../../_images/vc-mixed-proof-1.png" style="width: 50%;" /></a>
 <p>The second screen is requesting you prove information from your account credential. You can choose which account (and thus identity) you want to use for the proof. Click <strong>Approve</strong> if you agree to prove the information. Click <a class="reference internal" href="../../_images/vc-reject-proof-button.png"><img alt="white x on red background" src="../../_images/vc-reject-proof-button.png" style="width: 20px;" /></a> to reject the proof request.</p>
 <a class="reference internal image-reference" href="../../_images/vc-mixed-proof-2.png"><img alt="window with account credential proof and approve button" src="../../_images/vc-mixed-proof-2.png" style="width: 50%;" /></a>

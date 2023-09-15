@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/concepts/concepts-delegation.e6853aff-4ecb-4ab9-bda0-018255467db7.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1903,8 +1896,8 @@ body {margin:0;}
                 
   <div class="section" id="delegation">
 <span id="delegation-concept"></span><h1>Delegation<a class="headerlink" href="#delegation" title="Permalink to this headline">#</a></h1>
-<p>On the Concordium blockchain, <a class="reference internal" href="../resources/glossary.html#glossary-baker"><span class="std std-ref">bakers</span></a> run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some <a class="reference internal" href="../resources/glossary.html#glossary-ccd"><span class="std std-ref">CCD</span></a>. Because Concordium runs a proof-of-stake protocol, each baker needs to <a class="reference internal" href="../resources/glossary.html#glossary-staked-amount"><span class="std std-ref">stake an amount to bake</span></a>, and the <a class="reference internal" href="../resources/glossary.html#glossary-lottery-power"><span class="std std-ref">probability of being selected to create the next block</span></a> is proportional to each baker’s stake. So the payment may be seen as an interest on the baker’s capital.</p>
-<p>Not everyone with CCD has the resources needed to run a baker. <a class="reference internal" href="../resources/glossary.html#glossary-delegate"><span class="std std-ref">Delegation</span></a> enables everyone to earn rewards for delegating some stake without the need to run a node or become a baker. Any party with CCD may delegate some of their capital to a baker. This increases the baker’s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party’s control; they are just considered part of the baker’s stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down period</span></a>.</p>
+<p>On the Concordium blockchain, <a class="reference internal" href="../resources/glossary.html#term-Baker"><span class="xref std std-term">bakers</span></a> run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a>. Because Concordium runs a proof-of-stake protocol, each baker needs to <a class="reference internal" href="../resources/glossary.html#term-Staked-Amount"><span class="xref std std-term">stake an amount to bake</span></a>, and the <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">probability of being selected to create the next block</span></a> is proportional to each baker’s stake. So the payment may be seen as an interest on the baker’s capital.</p>
+<p>Not everyone with CCD has the resources needed to run a baker. <a class="reference internal" href="../resources/glossary.html#term-Delegator"><span class="xref std std-term">Delegation</span></a> enables everyone to earn rewards for delegating some stake without the need to run a node or become a baker. Any party with CCD may delegate some of their capital to a baker. This increases the baker’s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party’s control; they are just considered part of the baker’s stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>.</p>
 <p>You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1912,7 +1905,7 @@ body {margin:0;}
 </div>
 <div class="section" id="pools-and-rewards">
 <h2>Pools and Rewards<a class="headerlink" href="#pools-and-rewards" title="Permalink to this headline">#</a></h2>
-<p>A baker opens a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">pool</span></a>, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. When the pool rewards are distributed, the baker takes a commission and the rest of the rewards are distributed to the pool members in proportion to their stakes in the pool. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the baker is 10%. The baker receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.</p>
+<p>A baker opens a <a class="reference internal" href="../resources/glossary.html#term-Baker-pool"><span class="xref std std-term">pool</span></a>, and other CCD holders delegate some stake to this pool. The probability that the baker running the pool is chosen to bake the next block is then proportional to the total stake in the pool. When the pool rewards are distributed, the baker takes a commission and the rest of the rewards are distributed to the pool members in proportion to their stakes in the pool. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the baker is 10%. The baker receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.</p>
 <p>Pool rewards are in three categories: finalization, baking and transaction fee rewards. These can have separate commission rates.</p>
 <div class="section" id="bounding-the-size-of-pools">
 <span id="delegation-caps"></span><h3>Bounding the size of pools<a class="headerlink" href="#bounding-the-size-of-pools" title="Permalink to this headline">#</a></h3>
@@ -1927,7 +1920,7 @@ body {margin:0;}
 </div>
 <div class="section" id="passive-delegation">
 <h3>Passive delegation<a class="headerlink" href="#passive-delegation" title="Permalink to this headline">#</a></h3>
-<p>For CCD holders who do not want to regularly check the performance of their pool, but just want a safe way of earning interest, <a class="reference internal" href="../resources/glossary.html#glossary-passive-delegation"><span class="std std-ref">passive delegation</span></a> offers a low-risk low-reward alternative. Passive delegation is not associated with a specific baker; it can be thought of as distributing its capital to each pool in proportion to the pool’s stake. It is not affected by the poor performance of a single baker. But the parameters are set in such a way that a party delegating to passive delegation earns less than by delegating to a reliable baker.</p>
+<p>For CCD holders who do not want to regularly check the performance of their pool, but just want a safe way of earning interest, <a class="reference internal" href="../resources/glossary.html#term-Passive-delegation"><span class="xref std std-term">passive delegation</span></a> offers a low-risk low-reward alternative. Passive delegation is not associated with a specific baker; it can be thought of as distributing its capital to each pool in proportion to the pool’s stake. It is not affected by the poor performance of a single baker. But the parameters are set in such a way that a party delegating to passive delegation earns less than by delegating to a reliable baker.</p>
 <p>The commission rates for passive delegation are:</p>
 <ul class="simple">
 <li><p>Baking commission: 12.00%</p></li>
@@ -1938,7 +1931,7 @@ body {margin:0;}
 </div>
 <div class="section" id="time-and-cool-downs">
 <h2>Time and cool-downs<a class="headerlink" href="#time-and-cool-downs" title="Permalink to this headline">#</a></h2>
-<p>Changes to the pools take effect every 24 hours at <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last <a class="reference internal" href="../resources/glossary.html#glossary-epoch"><span class="std std-ref">epoch</span></a> before pay day, then the change has to wait until the second pay day.</p>
+<p>Changes to the pools take effect every 24 hours at <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a baking pool all take effect at the <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last <a class="reference internal" href="../resources/glossary.html#term-Epoch"><span class="xref std std-term">epoch</span></a> before pay day, then the change has to wait until the second pay day.</p>
 <p>But decreasing the stake (whether for delegators or bakers) is subject to a cool-down period. In other words, once the transaction has been included in a block the cool-down period starts. Unstaking takes effect at the pay day event after the cool-down has elapsed, and the party’s stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.</p>
 </div>
 <div class="section" id="where-delegation-is-available">

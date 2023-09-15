@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/mobile-wallet/update-baker-mw.a8b63ca9-5df3-4f48-af16-a080f6c8839f.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1942,8 +1935,8 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
 </div></blockquote>
 <div class="section" id="update-baker-stake-and-restaking-preference">
 <span id="update-baker-stake-mw"></span><h2>Update baker stake and restaking preference<a class="headerlink" href="#update-baker-stake-and-restaking-preference" title="Permalink to this headline">#</a></h2>
-<p>You can change the <a class="reference internal" href="../concepts/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a baker account except during a <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down period</span></a>. If you increase the stake, the new stake takes effect at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you’ll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.</p>
-<p>When you change the stake it can influence your <a class="reference internal" href="../resources/glossary.html#glossary-winning-probability"><span class="std std-ref">chance of being selected to bake a block</span></a> and receive baker rewards and of being included in the <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalization</span></a> committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a block and of being included in the finalization committee.</p>
+<p>You can change the <a class="reference internal" href="../concepts/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a baker account except during a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>. If you increase the stake, the new stake takes effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you’ll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.</p>
+<p>When you change the stake it can influence your <a class="reference internal" href="../resources/glossary.html#term-Winning-probability"><span class="xref std std-term">chance of being selected to bake a block</span></a> and receive baker rewards and of being included in the <a class="reference internal" href="../resources/glossary.html#term-Finalization"><span class="xref std std-term">finalization</span></a> committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a block and of being included in the finalization committee.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Mobile and Concordium Legacy Wallet<div class="sd-summary-down docutils">
@@ -1957,7 +1950,7 @@ Concordium Wallet for Mobile and Concordium Legacy Wallet<div class="sd-summary-
 <p class="sd-card-text">Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">Reducing your stake results in a longer <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down period</span></a>. The staked amount will be locked during this period and cannot be increased or decreased; you can still change restaking preferences during cool-down. The stake reduction is not effective until the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> after cool-down period ends. During the cool-down period the staked amount continues earning rewards.</p>
+<p class="sd-card-text">Reducing your stake results in a longer <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>. The staked amount will be locked during this period and cannot be increased or decreased; you can still change restaking preferences during cool-down. The stake reduction is not effective until the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after cool-down period ends. During the cool-down period the staked amount continues earning rewards.</p>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2035,7 +2028,7 @@ Single signature account<div class="sd-summary-down docutils">
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">If you reduce the staked amount, a <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down</span></a> period applies.</p>
+<p class="sd-card-text">If you reduce the staked amount, a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down</span></a> period applies.</p>
 </div>
 <ol class="arabic simple" start="5">
 <li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
@@ -2352,7 +2345,7 @@ Concordium Wallet for Mobile and Concordium Legacy Wallet<div class="sd-summary-
 <ol class="arabic" start="2">
 <li><p class="sd-card-text">Once you have saved the keys, review the information on the overview screen of the add baker transaction then tap <strong>Submit baker transaction</strong>.</p></li>
 <li><p class="sd-card-text">The Concordium Wallet for Mobile or Concordium Legacy Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.</p></li>
-<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking with the new keys. It is preferable to update them on the node as close to <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
+<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking with the new keys. It is preferable to update them on the node as close to <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
@@ -2403,7 +2396,7 @@ Concordium Wallet for Web<div class="sd-summary-down docutils">
 <div><a class="reference internal image-reference" href="../../_images/update-baker-keys-finish.png"><img alt="../../_images/update-baker-keys-finish.png" src="../../_images/update-baker-keys-finish.png" style="width: 40%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
+<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
@@ -2531,7 +2524,7 @@ Multi signature account<div class="sd-summary-down docutils">
 </details></div>
 <div class="section" id="stop-baking">
 <span id="remove-baker-mw"></span><h2>Stop baking<a class="headerlink" href="#stop-baking" title="Permalink to this headline">#</a></h2>
-<p>If you remove a baker, the node that is configured with the <a class="reference internal" href="../resources/glossary.html#glossary-private-keys"><span class="std std-ref">baker keys</span></a> will stop baking after a <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down period</span></a> of three weeks. During this period, you’ll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a>. When you’ve removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you’ll then have to create a new set of baker keys.</p>
+<p>If you remove a baker, the node that is configured with the <a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">baker keys</span></a> will stop baking after a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> of three weeks. During this period, you’ll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. When you’ve removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you’ll then have to create a new set of baker keys.</p>
 <p>If you no longer wish to bake on this account, you can stop baking.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2678,7 +2671,7 @@ Multi signature account<div class="sd-summary-down docutils">
 </details></div>
 </details><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When you stop baking, there is a longer <a class="reference internal" href="../resources/glossary.html#glossary-cool-down-period"><span class="std std-ref">cool-down period</span></a> before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.</p>
+<p>When you stop baking, there is a longer <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

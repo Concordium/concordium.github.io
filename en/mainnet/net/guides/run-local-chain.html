@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-local-chain.99c673d2-b24d-4b62-a095-f5bd666dba5b.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1925,7 +1918,7 @@ body {margin:0;}
 <p>The chain is run by a network of baker nodes that bake and finalize blocks. In the following minimal example you will set up a network comprised of a single baker node that runs <em>locally</em> on your system and <em>does not connect to mainnet or testnet</em>. Note, however, that the concepts demonstrated here equally apply to any number of baker nodes configured in a LAN or WAN setting.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
-<p>You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the baker node(s). You will need <a class="reference internal" href="../resources/glossary.html#glossary-genesis-block"><span class="std std-ref">genesis block</span></a> data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.</p>
+<p>You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the baker node(s). You will need <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a> data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.</p>
 <div class="section" id="install-the-node-distribution">
 <h3>Install the node distribution<a class="headerlink" href="#install-the-node-distribution" title="Permalink to this headline">#</a></h3>
 <p>Concordium Node releases exist for Ubuntu, MacOS and Windows and Docker. See the <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">Node Requirements</span></a> section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.</p>
@@ -1936,7 +1929,7 @@ body {margin:0;}
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The node distributions provide commands for running and managing nodes on <a class="reference internal" href="../resources/glossary.html#glossary-mainnet"><span class="std std-ref">Mainnet</span></a> and <a class="reference internal" href="../resources/glossary.html#glossary-testnet"><span class="std std-ref">Testnet</span></a>. Ignore these since you are targeting your own chain and only need the binary.</p>
+<p>The node distributions provide commands for running and managing nodes on <a class="reference internal" href="../resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a>. Ignore these since you are targeting your own chain and only need the binary.</p>
 </div>
 </div>
 <div class="section" id="generate-genesis-data-and-account-credentials">
@@ -2086,7 +2079,7 @@ body {margin:0;}
 </div>
 <div class="section" id="interact-with-the-local-chain">
 <h2>Interact with the local chain<a class="headerlink" href="#interact-with-the-local-chain" title="Permalink to this headline">#</a></h2>
-<p>You can now interact with your local chain through the node via the <a class="reference internal" href="../references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> exposed on port 20100 as you would with <a class="reference internal" href="../resources/glossary.html#glossary-mainnet"><span class="std std-ref">Mainnet</span></a> or <a class="reference internal" href="../resources/glossary.html#glossary-testnet"><span class="std std-ref">Testnet</span></a> nodes. Concordium provides various <a class="reference internal" href="sdks-apis.html#sdks-apis"><span class="std std-ref">SDKs and APIs</span></a> that facilitate this as well as the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool. Assuming you have the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> binary version 5.1.1 or higher in your path, list the accounts using the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">list</span></code> command:</p>
+<p>You can now interact with your local chain through the node via the <a class="reference internal" href="../references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> exposed on port 20100 as you would with <a class="reference internal" href="../resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> or <a class="reference internal" href="../resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a> nodes. Concordium provides various <a class="reference internal" href="sdks-apis.html#sdks-apis"><span class="std std-ref">SDKs and APIs</span></a> that facilitate this as well as the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool. Assuming you have the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> binary version 5.1.1 or higher in your path, list the accounts using the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">list</span></code> command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client --grpc-ip <span class="m">127</span>.0.0.1 --grpc-port <span class="m">20100</span>  account list
 <span class="go">Accounts:</span>
 <span class="go">                 Account Address                     Account Names</span>

@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/snippets/revoking-anonymity.cf46a9e2-ae9c-4e43-9f7b-e8b614151eca.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -191,7 +196,7 @@ body {margin:0;}
                 
   <div class="section" id="revoking-anonymity">
 <h1>Revoking anonymity<a class="headerlink" href="#revoking-anonymity" title="Permalink to this headline">#</a></h1>
-<p>The identity of a user can only be revealed to a qualified authority as part of a valid legal process. A qualified authority is a governmental body that has authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct will all have authority to act in their jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant <a class="reference internal" href="../resources/ar-idp-contact.html#ar-idp-contact"><span class="std std-ref">anonymity revokers</span></a> and <a class="reference internal" href="../resources/glossary.html#glossary-identity-provider"><span class="std std-ref">identity provider</span></a> can the real-world identity of a user be revealed and only to the extent set out in the order.</p>
+<p>The identity of a user can only be revealed to a qualified authority as part of a valid legal process. A qualified authority is a governmental body that has authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct will all have authority to act in their jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant <a class="reference internal" href="../resources/ar-idp-contact.html#ar-idp-contact"><span class="std std-ref">anonymity revokers</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> can the real-world identity of a user be revealed and only to the extent set out in the order.</p>
 <p>When legally obliged, the anonymity revokers and identity provider work together to determine the owner of an account and determine which accounts belong to the same owner. Anonymity revocation is a multi-stage process requiring cooperation of multiple parties.</p>
 <p>Each account has an encryption of a specific user identifier. This number can be decrypted by a sufficient number of the anonymity revokers working together. The set of anonymity revokers and the number of them required to decrypt the user identifier are determined when the identity is issued.</p>
 <p>After the authorities have identified an on-chain transaction or account they would like to investigate, in order to reveal the real-world identity of a user, the following process must be followed:</p>

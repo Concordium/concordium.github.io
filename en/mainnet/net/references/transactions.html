@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/transactions.44f70078-c3d0-4530-b52b-40994d1ecd78.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1467,29 +1472,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-    <label for="toctree-checkbox-51">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
      Solana developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1514,8 +1507,8 @@ body {margin:0;}
     Smart Contracts v0
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-53">
+  <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-52">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1524,8 +1517,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contract documentation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-    <label for="toctree-checkbox-54">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1534,8 +1527,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1566,8 +1559,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1588,8 +1581,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1645,8 +1638,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1677,8 +1670,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1730,8 +1723,8 @@ body {margin:0;}
     Low-code NFT marketplace
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-60">
+  <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-59">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1759,8 +1752,8 @@ body {margin:0;}
     Resources
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-61">
+  <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-60">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1769,8 +1762,8 @@ body {margin:0;}
     <a class="reference internal" href="../resources/legal.html">
      Legal
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
-    <label for="toctree-checkbox-62">
+    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+    <label for="toctree-checkbox-61">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2078,13 +2071,13 @@ before sending it, and you’re asked to confirm that it matches your intent.
 Just before the transaction is sent, you’re asked for the password to access
 the signing keys.</p>
 <p>Once a transaction has been submitted, the command will continuously poll and
-display its status until it’s been <a class="reference internal" href="../resources/glossary.html#glossary-finalization"><span class="std std-ref">finalized</span></a>.</p>
+display its status until it’s been <a class="reference internal" href="../resources/glossary.html#term-Finalization"><span class="xref std std-term">finalized</span></a>.</p>
 </div>
 <div class="section" id="commands-for-showing-account-information">
 <span id="account-commands"></span><h2>Commands for showing account information<a class="headerlink" href="#commands-for-showing-account-information" title="Permalink to this headline">#</a></h2>
 <div class="section" id="account-sequence-number">
 <span id="account-seqno"></span><h3>Account sequence number<a class="headerlink" href="#account-sequence-number" title="Permalink to this headline">#</a></h3>
-<p>Each account on the Concordium blockchain has a <a class="reference internal" href="../resources/glossary.html#glossary-transaction-sequence-number"><span class="std std-ref">sequence number</span></a> and each
+<p>Each account on the Concordium blockchain has a <a class="reference internal" href="../resources/glossary.html#term-Transaction-Sequence-Number"><span class="xref std std-term">sequence number</span></a> and each
 transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
@@ -2104,7 +2097,7 @@ also be set manually via the option <code class="docutils literal notranslate"><
 <div class="section" id="account-aliases">
 <span id="id1"></span><h3>Account aliases<a class="headerlink" href="#account-aliases" title="Permalink to this headline">#</a></h3>
 <p>In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
-matching account <a class="reference internal" href="../resources/glossary.html#glossary-alias"><span class="std std-ref">aliases</span></a>. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+matching account <a class="reference internal" href="../resources/glossary.html#term-Alias"><span class="xref std std-term">aliases</span></a>. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
 <p>This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.</p>
 <p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account’s canonical address.</p>
@@ -2149,7 +2142,7 @@ are described in the following table.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">--amount</span></code>: number of CCD tokens to send.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--receiver</span></code>: name or address of the receiver account.</p></li>
 </ul>
-<p>The following flags are for adding a <a class="reference internal" href="../resources/glossary.html#glossary-transfer-memo"><span class="std std-ref">transfer memo</span></a> to the transfer.</p>
+<p>The following flags are for adding a <a class="reference internal" href="../resources/glossary.html#term-Transfer-Memo"><span class="xref std std-term">transfer memo</span></a> to the transfer.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--memo</span></code>: optional flag for providing a transfer memo as a string. The string will be CBOR encoded and included in the memo.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--memo-json</span></code>: optional flag for providing a transfer memo as a JSON file. The JSON contents of the file will be CBOR encoded and included in the memo.</p></li>
@@ -2191,7 +2184,7 @@ sender account A has three transaction signing keys 0, 1, and 3.</p>
 </div>
 <div class="section" id="make-a-shielded-transfer">
 <h3>Make a shielded transfer<a class="headerlink" href="#make-a-shielded-transfer" title="Permalink to this headline">#</a></h3>
-<p>A <a class="reference internal" href="../resources/glossary.html#glossary-shielded-transfer"><span class="std std-ref">shielded transfer</span></a> is a transfer from a <a class="reference internal" href="../resources/glossary.html#glossary-shielded-balance"><span class="std std-ref">shielded balance</span></a> to a shielded
+<p>A <a class="reference internal" href="../resources/glossary.html#term-Shielded-transfer"><span class="xref std std-term">shielded transfer</span></a> is a transfer from a <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a> to a shielded
 balance of another account. The command is very similar to a standard transfer.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-shielded --sender A --receiver B --amount <span class="m">8</span>
 </pre></div>
@@ -2228,7 +2221,7 @@ Concordium network.</p></li>
 </div>
 <p>This command has all of the additional options of <code class="docutils literal notranslate"><span class="pre">send</span></code>, as well as an
 additional flag <code class="docutils literal notranslate"><span class="pre">--index.</span></code> If given, this flag is used to select which
-<a class="reference internal" href="../resources/glossary.html#glossary-incoming-shielded-amount"><span class="std std-ref">incoming shielded amounts</span></a> that will be used as input to the transaction.</p>
+<a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">incoming shielded amounts</span></a> that will be used as input to the transaction.</p>
 <p>This is illustrated with the following example. <a class="reference internal" href="query-node.html#query-account-state"><span class="std std-ref">Querying an account</span></a> can display the
 list of incoming amounts on account. An output could look like this:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">...</span>
@@ -2242,14 +2235,14 @@ list of incoming amounts on account. An output could look like this:</p>
 </pre></div>
 </div>
 <p>If you want to <code class="docutils literal notranslate"><span class="pre">send-shielded</span></code> from the account while supplying index 8,
-only the shielded amount <code class="docutils literal notranslate"><span class="pre">8c0faff6739bffc531c5...</span></code> and the <a class="reference internal" href="../resources/glossary.html#glossary-self-balance"><span class="std std-ref">self balance</span></a>
+only the shielded amount <code class="docutils literal notranslate"><span class="pre">8c0faff6739bffc531c5...</span></code> and the <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">self balance</span></a>
 will be used as input of the shielded transfer.</p>
 <p>If the supplied index is out of range <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will refuse to send
 the transaction.</p>
 </div>
 <div class="section" id="shield-an-amount">
 <h3>Shield an amount<a class="headerlink" href="#shield-an-amount" title="Permalink to this headline">#</a></h3>
-<p>The command to <a class="reference internal" href="../resources/glossary.html#glossary-shielded-amount"><span class="std std-ref">shield</span></a> an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">account</span>
+<p>The command to <a class="reference internal" href="../resources/glossary.html#term-Shielded-amount"><span class="xref std std-term">shield</span></a> an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">account</span>
 <span class="pre">shield</span></code>. For example, an interaction to shield 10 CCD on account A looks like the following.</p>
 <p>The command is:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account shield --amount <span class="m">10</span> --sender A
