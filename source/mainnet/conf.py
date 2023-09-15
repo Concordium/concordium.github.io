@@ -192,17 +192,6 @@ html_theme_options = {
             "icon": "fab fa-discourse",
             "type": "fontawesome",
         },
-        {
-            # Concordium Email Support
-            "name": "Feedback",
-            # URL where the link will redirect
-            "url": "mailto:documentation@concordium.com",  # required
-            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
-            "icon": "fas fa-bullhorn",
-            # Whether icon should be a FontAwesome class, or a local file
-            "type": "fontawesome",  # Default is fontawesome
-
-        },
     ]        
     }
 
