@@ -2,9 +2,9 @@
 
 .. _faq:
 
-====
-FAQs
-====
+===========================
+FAQ for Ethereum developers
+===========================
 
 The following Frequently Asked Questions about Concordium
 focuses on helping developers with an Ethereum/solidity
