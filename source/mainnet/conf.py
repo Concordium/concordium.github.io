@@ -55,7 +55,8 @@ extensions = [
     "sphinx_toolbox.collapse",
     "sphinx_tabs.tabs",
     "sphinx_design",
-    'notfound.extension'
+    'notfound.extension',
+    "sphinx_tippy",
 ]
 
 # sphinx-prompt must be the first of these two.
@@ -235,6 +236,7 @@ html_context = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["../_static"]
+html_css_files = ["style.css","tippy.css"]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -254,6 +256,9 @@ html_sidebars = {
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Concordiumdoc'
 
+# Tippy configuration
+tippy_js = ("https://unpkg.com/@popperjs/core@2", "https://unpkg.com/tippy.js@6")
+tippy_tip_selector = "term"
 
 # -- Options for LaTeX output ------------------------------------------------
 
