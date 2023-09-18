@@ -5,7 +5,7 @@
 Proofs and revealing information
 ================================
 
-Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these :ref:`attributes<glossary-attribute>` to the dApp or service using your :ref:`account credentials<glossary-account-credential>` or :ref:`verifiable credentials<glossary-verifiable-credential>`. The dApp or service uses a :ref:`zero-knowledge proof<glossary-zero-knowledge-proof>` to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements. You can choose which account (and thus identity) to use to fulfill the proof request for :ref:`account credentials<glossary-account-credential>` using the drop-down above the proof.
+Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these :term:`attributes` to the dApp or service using your :term:`account credentials<account credential>` or :term:`verifiable credentials<verifiable credential>`. The dApp or service uses a :term:`zero-knowledge proof` to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements. You can choose which account (and thus identity) to use to fulfill the proof request for :term:`account credentials<account credential>` using the drop-down above the proof.
 
 .. image:: ../images/browser-wallet/zkp-one-attribute-ok.png
     :width: 75%
@@ -37,7 +37,7 @@ It is also possible that a dApp could present a mixed statement that asks you to
 .. image:: ../images/browser-wallet/mixed-statement-proof.png
     :width: 75%
 
-Another example of a mixed proof includes a request to prove information from your :ref:`verifiable credential<glossary-verifiable-credential>` and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
+Another example of a mixed proof includes a request to prove information from your :term:`verifiable credential` and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
 
 .. image:: ../images/browser-wallet/vc-mixed-proof-1.png
     :alt: window with verifiable credential proof and continue button

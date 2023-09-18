@@ -5,9 +5,10 @@
 Wallet FAQs
 ==================
 
-The wallet FAQs and articles can help you decide which wallet is best for you.
+The wallet FAQs can help you decide which wallet is best for you.
 
 .. toctree::
+    :hidden:
     :maxdepth: 2
     :hidden:
 
