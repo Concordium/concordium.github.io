@@ -67,7 +67,7 @@ Install/upgrade and run a node
 .. dropdown:: Mainnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of baker credentials.
 
   #. Go to :ref:`Downloads<node-downloads>`, and download the latest macOS installer package (.pkg file).
 
