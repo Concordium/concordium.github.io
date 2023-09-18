@@ -93,7 +93,7 @@ The node requires a database which must be stored on the host system so that it 
    and ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` as in the sample configurations.
 
 .. Note::
-   If the node is configured with TLS, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
 .. Note::
 

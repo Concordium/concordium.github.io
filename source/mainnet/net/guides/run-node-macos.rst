@@ -287,7 +287,7 @@ Since the GRPC V2 port is different than the GRPC V1 port, you need to change it
 .. _configure-baker-macos:
 
 .. Note::
-   If the node is configured with TLS, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
 
 Configure a node as a baker
 ===========================
