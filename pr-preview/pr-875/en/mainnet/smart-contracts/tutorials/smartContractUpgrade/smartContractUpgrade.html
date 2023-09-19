@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/../_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/../_static/css/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -40,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade.308f450a-f49a-4c3b-b1d3-f02cf0967e00.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade.302c30da-adbb-420a-b6d7-e253bd56cdd7.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2089,7 +2090,7 @@ should be coded and executed by experts that know about the underlying risks. Yo
 <p>Comprehensive instructions on how to download and set up <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> can be found in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
 </div>
 <p>This command will create the <code class="docutils literal notranslate"><span class="pre">smart_contract_upgrade.wasm.v1</span></code> file in your current folder. Deploy the smart contract module to testnet with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="Deploy contract version 1" class="align-center" src="../../../_images/deploy_contract_version1.png" />
@@ -2102,21 +2103,21 @@ for the placeholder <code class="docutils literal notranslate"><span class="pre"
 If the module is already deployed or not deployed, it does not make a
 difference because in both cases the console output will print the <code class="docutils literal notranslate"><span class="pre">moduleReference</span></code> that you need for the next step.</p>
 <p>Initialize a <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> smart contract instance with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init &lt;ModuleReference&gt; --contract smart_contract_upgrade --energy <span class="m">30000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">10000</span>  --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init &lt;ModuleReference&gt; --contract smart_contract_upgrade --energy <span class="m">30000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span>  --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <p>For example, when using the module reference from the image above, the command will look as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init 8fc09d2519f516cfbb3d139b1e567753780fbb52854ecbf9a12c447756d18eb0 --contract smart_contract_upgrade --energy <span class="m">30000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">10000</span>  --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init 8fc09d2519f516cfbb3d139b1e567753780fbb52854ecbf9a12c447756d18eb0 --contract smart_contract_upgrade --energy <span class="m">30000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span>  --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="Initialize contract version 1" class="align-center" src="../../../_images/initialize_contract.png" />
 <p>As seen in the image above, this command returns your smart contract index <code class="docutils literal notranslate"><span class="pre">4462</span></code>.</p>
 <p>Before upgrading the <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>, you can check its state with the view function as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke &lt;YourContractVersion1Index&gt; --entrypoint view --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke &lt;YourContractVersion1Index&gt; --entrypoint view --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <p>For example, when using the smart contract index from the image above, the command will look as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">4462</span> --entrypoint view --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">4462</span> --entrypoint view --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <p>You should see the following output.</p>
@@ -2132,7 +2133,7 @@ difference because in both cases the console output will print the <code class="
 </div>
 <img alt="Compile contract version 2" class="align-center" src="../../../_images/compile_contract_version2.png" />
 <p>This command will create the <code class="docutils literal notranslate"><span class="pre">smart_contract_upgrade.wasm.v1</span></code> file in your current folder. Deploy the smart contract module to testnet with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="Deploy contract version 2" class="align-center" src="../../../_images/deploy_contract_version2.png" />
@@ -2171,17 +2172,17 @@ code should be upgraded to the module <code class="docutils literal notranslate"
 and the <code class="docutils literal notranslate"><span class="pre">migration</span></code> function should be invoked
 with no input parameters (empty string: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) as part of the upgrade.</p>
 <p>Upgrade the smart contract as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update &lt;YourContractVersion1Index&gt; --entrypoint upgrade --parameter-json upgrade.json --energy <span class="m">5000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update &lt;YourContractVersion1Index&gt; --entrypoint upgrade --parameter-json upgrade.json --energy <span class="m">5000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <p>For example, when using the smart contract index from the image above, the command will look as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">4462</span> --entrypoint upgrade --parameter-json upgrade.json --energy <span class="m">5000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">4462</span> --entrypoint upgrade --parameter-json upgrade.json --energy <span class="m">5000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <p>You should see the following output.</p>
 <img alt="Upgrade contract version 1" class="align-center" src="../../../_images/upgrade.png" />
 <p>You can check that the state migration was successful by inspecting the state with the view function:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke &lt;YourContractVersion1Index&gt; --entrypoint view --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke &lt;YourContractVersion1Index&gt; --entrypoint view --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="View contract version 2" class="align-center" src="../../../_images/view_contract_version2.png" />
