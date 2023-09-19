@@ -91,7 +91,7 @@ copybutton_line_continuation_character = "\\"
 sphinx_tabs_disable_tab_closing = True
 
 # Disable default url prefix "/en/latest/" on every resource.
-notfound_urls_prefix = "/en/mainnet/"
+notfound_urls_prefix = None
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../_templates']
