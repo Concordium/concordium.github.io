@@ -6,7 +6,7 @@ Set up the |bw|
 =========================
 
 The |bw| is a digital wallet that enables you to create and manage your Concordium
-:ref:`identities<glossary-identity>` and :ref:`accounts<glossary-account>` and to create transactions, such as sending CCD.
+:term:`identities<identity>` and :term:`accounts<account>` and to create transactions, such as sending CCD.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
@@ -104,7 +104,7 @@ Get started
 Recovery phrase setup
 =====================
 
-If you are creating a new wallet, you must set up a :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your recovery phrase. It is important to keep this secret recovery phrase in a safe location in case you need to recover your wallet on a new device.
+If you are creating a new wallet, you must set up a :term:`secret recovery phrase`. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your recovery phrase. It is important to keep this secret recovery phrase in a safe location in case you need to recover your wallet on a new device.
 
 #. Once you click on **Create** you are shown the 24 word secret recovery phrase. Write it down and click **Continue**.
 
@@ -123,7 +123,7 @@ Having set up your passcode, you must then submit a request for an identity.
 
 #. Select a third-party identity provider from the list. An external web page opens within the app.
 
-#. Enter the information requested by the third-party :ref:`identity provider<glossary-identity-provider>`. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+#. Enter the information requested by the third-party :term:`identity provider`. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
 
 #. When you have submitted the information to the identity provider, you will have a pending identity in your app.  The verification or rejection is usually retrieved from the identity provider within minutes, but check frequently to retrieve the result. The result can be retrieved for up to seven days.
 

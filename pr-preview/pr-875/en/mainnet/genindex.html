@@ -27,7 +27,6 @@
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/../_static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="_static/../_static/css/ibm-plex.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -44,7 +43,7 @@
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-<link href="_static/style.css" rel="stylesheet" type="text/css">
+<link href="_static/css/style.css" rel="stylesheet" type="text/css">
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
@@ -56,13 +55,28 @@
 
   <div id="navbar-start">
     
-    
+    <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="_static/css/style.css" type="text/css" />
 
-<a class="navbar-brand" href="index.html">
-  <img src="_static/concordium-logo-dark.svg" class="logo" alt="logo">
-</a>
+<style>
 
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
 
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo" src="_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+
+</html>
     
   </div>
 
@@ -153,11 +167,11 @@ body {margin:0;}
   <div class="dropdown">
     <button class="dropbtn">Monitor</button>
     <div class="dropdown-content">
-      <a href="https://ccdscan.io/">CCDScan</a>
-      <a href="https://dashboard.mainnet.concordium.software">Mainnet dashboard</a>
-      <a href="https://dashboard.testnet.concordium.com">Testnet dashboard</a>
-      <a href="https://status.mainnet.concordium.software">Mainnet status page</a>
-      <a href="https://status.testnet.concordium.software">Testnet status page</a>
+      <a href="https://ccdscan.io/" target="_blank">CCDScan</a>
+      <a href="https://dashboard.mainnet.concordium.software" target="_blank">Mainnet dashboard</a>
+      <a href="https://dashboard.testnet.concordium.com" target="_blank">Testnet dashboard</a>
+      <a href="https://status.mainnet.concordium.software" target="_blank">Mainnet status page</a>
+      <a href="https://status.testnet.concordium.software" target="_blank">Testnet status page</a>
     </div>
   </div>
   <div class="dropdown">
@@ -166,7 +180,7 @@ body {margin:0;}
       <a href="net/concepts/id-accounts.html">Identities</a>
       <a href="net/installation/downloads.html">Accounts</a>
       <a href="net/resources/glossary.html">Glossary</a>
-      <a href="https://academy.concordium.software/ccd-academy/getting-started">Academy</a>
+      <a href="https://academy.concordium.software/ccd-academy/getting-started" target="_blank">Academy</a>
     </div>
   </div>
   <div class="dropdown">
@@ -180,18 +194,18 @@ body {margin:0;}
   <div class="dropdown">
     <button class="dropbtn">Discover</button>
     <div class="dropdown-content">
-      <a href="https://medium.com/concordium">Blogs</a>
+      <a href="https://medium.com/concordium" target="_blank">Blogs</a>
       <a href="net/guides/dapp-examples.html">Example dApps</a>
-      <a href="https://proposals.concordium.software/index.html">Concordium Standards</a>
+      <a href="https://proposals.concordium.software/index.html" target="_blank">Concordium Standards</a>
     </div>
   </div>
   <div class="dropdown">
     <button class="dropbtn">Connect</button>
     <div class="dropdown-content">
-      <a class="nav-link nav-external" href="https://support.concordium.software/latest">Discourse</a>
+      <a class="nav-link nav-external" href="https://support.concordium.software/latest" target="_blank">Discourse</a>
       <a href="mailto:support@concordium.software">Contact support</a>
-      <a class="nav-link nav-external" href="https://github.com/Concordium">GitHub</a>
-      <a class="nav-link nav-external" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A">YouTube</a>
+      <a class="nav-link nav-external" href="https://github.com/Concordium" target="_blank">GitHub</a>
+      <a class="nav-link nav-external" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" target="_blank">YouTube</a>
     </div>
   </div>
 </div>
@@ -204,24 +218,31 @@ body {margin:0;}
     <div id="navbar-end">
       
       <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
-            <label class="sr-only">Support</label></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
-            <label class="sr-only">Discourse</label></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mailto:documentation@concordium.com" rel="noopener" target="_blank" title="Feedback"><span><i class="fas fa-bullhorn"></i></span>
-            <label class="sr-only">Feedback</label></a>
-        </li>
-      </ul>
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="_static/css/style.css" type="text/css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="w3-bar w3-left">
+  <a href="https://github.com/Concordium" class="w3-bar-item w3-button w3-left"><i class="fab fa-github-square"></i>Github</a>
+  <a href="mailto:support@concordium.software" class="w3-bar-item w3-button w3-left"><i class="fas fa-envelope"></i>Support</a>
+  <a href="https://support.concordium.software/latest" class="w3-bar-item w3-button w3-left"><i class="fab fa-discourse"></i>Discourse</a>
+</div>
+</html>
+
+<style>
+
+  i {
+    padding-right: 10px;
+  }
+
+  w3-bar {
+    display: block;
+  }
+
+</style>
       </div>
       
     </div>
@@ -236,10 +257,30 @@ body {margin:0;}
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
             <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+              <div class="sidebar-start-items"><!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="_static/css/style.css" type="text/css" />
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="icon fas fa-search"></i>
+        <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="on">
+</form>
+
+<style>
+
+    .bd-search {
+        border-radius: 16px;
+    }
+
+    .form-control {
+        /* Drop Shadow 10 - 15 */
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.10);
+    }
+
+</style>
+</html><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     
   </div>
@@ -269,9 +310,12 @@ body {margin:0;}
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#B"><strong>B</strong></a>
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
@@ -279,15 +323,43 @@ body {margin:0;}
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
  
 </div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Account"><strong>Account</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Account-credential"><strong>Account credential</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Alias"><strong>Alias</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Anonymity-revoker"><strong>Anonymity revoker</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Attributes"><strong>Attributes</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Baker"><strong>Baker</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Baker-pool"><strong>Baker pool</strong></a>
+</li>
       <li>
     BanNode()
 
@@ -295,6 +367,16 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#BanNode">built-in function</a>
 </li>
       </ul></li>
+      <li><a href="net/resources/glossary.html#term-Best-block"><strong>Best block</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Best-chain"><strong>Best chain</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Block"><strong>Block</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Branch"><strong>Branch</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Build"><strong>Build</strong></a>
+</li>
       <li>
     built-in function
 
@@ -394,6 +476,20 @@ body {margin:0;}
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-cargo-concordium"><strong>cargo-concordium</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Catch-up"><strong>Catch-up</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-CCD"><strong>CCD</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-CCDScan"><strong>CCDScan</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Chain"><strong>Chain</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Chain-selection-rule"><strong>Chain selection rule</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Challenge"><strong>Challenge</strong></a>
+</li>
       <li>
     concordium
 
@@ -402,10 +498,36 @@ body {margin:0;}
 </li>
       </ul></li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Concordium-Byzantine-Fault-Tolerance-BFT-protocol"><strong>Concordium Byzantine Fault Tolerance (BFT) protocol</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Concordium-client"><strong>Concordium client</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Consensus"><strong>Consensus</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Cool-down-period"><strong>Cool-down period</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Credential"><strong>Credential</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Credential-holder"><strong>Credential holder</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Credential-registry-contract"><strong>Credential registry contract</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Cryptographic-proof"><strong>Cryptographic proof</strong></a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Decryption-key"><strong>Decryption key</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Delegator"><strong>Delegator</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Deploy"><strong>Deploy</strong></a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     DumpStart()
@@ -414,8 +536,6 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#DumpStart">built-in function</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     DumpStop()
 
@@ -426,9 +546,35 @@ body {margin:0;}
   </ul></td>
 </tr></table>
 
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Encryption-key"><strong>Encryption key</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Endpoint"><strong>Endpoint</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Entrypoint"><strong>Entrypoint</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Epoch"><strong>Epoch</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Finalization"><strong>Finalization</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Genesis-Block"><strong>Genesis Block</strong></a>
+</li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.get_init_origin">get_init_origin() (in module concordium)</a>
 </li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.get_parameter_section">get_parameter_section() (in module concordium)</a>
@@ -643,10 +789,26 @@ body {margin:0;}
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.invoke">invoke() (in module concordium)</a>
+      <li><a href="net/resources/glossary.html#term-Identity"><strong>Identity</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Identity-Issuer"><strong>Identity Issuer</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Identity-Object"><strong>Identity Object</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Identity-Provider"><strong>Identity Provider</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Initial-Account"><strong>Initial Account</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Initialize"><strong>Initialize</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Instance"><strong>Instance</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Invoke"><strong>Invoke</strong></a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.invoke">invoke() (in module concordium)</a>
+</li>
       <li>
     InvokeContract()
 
@@ -654,6 +816,8 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#InvokeContract">built-in function</a>
 </li>
       </ul></li>
+      <li><a href="net/resources/glossary.html#term-Issuer"><strong>Issuer</strong></a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -673,6 +837,8 @@ body {margin:0;}
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Leader-Election"><strong>Leader Election</strong></a>
+</li>
       <li>
     LeaveNetwork()
 
@@ -684,11 +850,19 @@ body {margin:0;}
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="smart-contracts/references/host-fns.html#concordium.log_event">log_event() (in module concordium)</a>
 </li>
+      <li><a href="net/resources/glossary.html#term-Lottery-Power"><strong>Lottery Power</strong></a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Mainnet"><strong>Mainnet</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Membership-proof"><strong>Membership proof</strong></a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     module
@@ -703,6 +877,8 @@ body {margin:0;}
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Node"><strong>Node</strong></a>
+</li>
       <li>
     NodeInfo()
 
@@ -711,11 +887,33 @@ body {margin:0;}
 </li>
       </ul></li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Non-membership-proof"><strong>Non-membership proof</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Nonce"><strong>Nonce</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Off-chain"><strong>Off-chain</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-On-chain"><strong>On-chain</strong></a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Passive-delegation"><strong>Passive delegation</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Pay-day"><strong>Pay day</strong></a>
+</li>
       <li>
     PeerConnect()
 
@@ -774,12 +972,46 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#PeerVersion">built-in function</a>
 </li>
       </ul></li>
+      <li><a href="net/resources/glossary.html#term-Private-keys"><strong>Private keys</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Qualified-authority"><strong>Qualified authority</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Quorum-certificate"><strong>Quorum certificate</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Range-proofs"><strong>Range proofs</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Reveal"><strong>Reveal</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Round"><strong>Round</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Rust"><strong>Rust</strong></a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Schema"><strong>Schema</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Secret-recovery-phrase"><strong>Secret recovery phrase</strong></a>
+</li>
       <li>
     SendTransaction()
 
@@ -787,6 +1019,14 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#SendTransaction">built-in function</a>
 </li>
       </ul></li>
+      <li><a href="net/resources/glossary.html#term-Shielded-amount"><strong>Shielded amount</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Shielded-balance"><strong>Shielded balance</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Shielded-transfer"><strong>Shielded transfer</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Shielding"><strong>Shielding</strong></a>
+</li>
       <li>
     Shutdown()
 
@@ -794,6 +1034,12 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#Shutdown">built-in function</a>
 </li>
       </ul></li>
+      <li><a href="net/resources/glossary.html#term-Slot"><strong>Slot</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Smart-contract"><strong>Smart contract</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Staked-Amount"><strong>Staked Amount</strong></a>
+</li>
       <li>
     StartBaker()
 
@@ -801,6 +1047,8 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#StartBaker">built-in function</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="smart-contracts/references/host-fns.html#concordium.state_create_entry">state_create_entry() (in module concordium)</a>
 </li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.state_delete_entry">state_delete_entry() (in module concordium)</a>
@@ -809,8 +1057,6 @@ body {margin:0;}
 </li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.state_entry_read">state_entry_read() (in module concordium)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="smart-contracts/references/host-fns.html#concordium.state_entry_resize">state_entry_resize() (in module concordium)</a>
 </li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.state_entry_size">state_entry_size() (in module concordium)</a>
@@ -829,6 +1075,8 @@ body {margin:0;}
 </li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.state_lookup_entry">state_lookup_entry() (in module concordium)</a>
 </li>
+      <li><a href="net/resources/glossary.html#term-Statement"><strong>Statement</strong></a>
+</li>
       <li>
     StopBaker()
 
@@ -836,6 +1084,28 @@ body {margin:0;}
         <li><a href="net/references/grpc.html#StopBaker">built-in function</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Testnet"><strong>Testnet</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Timeout-certificate"><strong>Timeout certificate</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Total-effective-stake"><strong>Total effective stake</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Transaction"><strong>Transaction</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Transaction-Sequence-Number"><strong>Transaction Sequence Number</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Transfer-Memo"><strong>Transfer Memo</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Transfer-with-schedule"><strong>Transfer with schedule</strong></a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -851,7 +1121,11 @@ body {margin:0;}
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Unshielding"><strong>Unshielding</strong></a>
+</li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.upgrade">upgrade() (in module concordium)</a>
+</li>
+      <li><a href="net/resources/glossary.html#term-User-identity-certificate"><strong>User identity certificate</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -859,11 +1133,41 @@ body {margin:0;}
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="smart-contracts/references/host-fns.html#concordium.verify_ecdsa_secp256k1_signature">verify_ecdsa_secp256k1_signature() (in module concordium)</a>
+      <li><a href="net/resources/glossary.html#term-Verifiable-credential"><strong>Verifiable credential</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Verifiable-presentation"><strong>Verifiable presentation</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Verifier"><strong>Verifier</strong></a>
+</li>
+      <li><a href="smart-contracts/references/host-fns.html#concordium.verify_ecdsa_secp256k1_signature">verify_ecdsa_secp256k1_signature() (in module concordium)</a>
+</li>
       <li><a href="smart-contracts/references/host-fns.html#concordium.verify_ed25519_signature">verify_ed25519_signature() (in module concordium)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Wallet"><strong>Wallet</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Web3-ID"><strong>Web3 ID</strong></a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-WebAssembly"><strong>WebAssembly</strong></a>
+</li>
+      <li><a href="net/resources/glossary.html#term-Winning-probability"><strong>Winning probability</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="net/resources/glossary.html#term-Zero-knowledge-proof"><strong>Zero-knowledge proof</strong></a>
 </li>
   </ul></td>
 </tr></table>

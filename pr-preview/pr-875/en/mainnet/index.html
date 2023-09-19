@@ -15,40 +15,40 @@
     <meta name="theme-color" content="#000000" />
     
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-<link href="_static/style.css" rel="stylesheet" type="text/css">
+<link href="_static/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
     <div class="fit-content center margin-tb">
-        <a href="https://concordium.com/">
-            <img class="logo" src="_static/concordium-logo.svg" /><h3>Documentation</h3>
+        <a href="https://concordium.com/" target="_blank">
+            <img class="logo" src="_static/concordium-logo.svg" /><h3 class="lp">Documentation</h3>
         </a>
 
     </div>
     <div class="card-container max-width center margin-tb">
-        <a class="card" href="net/guides/new-to-concordium.html"><span class="fas fa-map fa-3x"></span><h3>New here?</h3><p>Choose your path and learn about the Concordium blockchain.</p></a>
+        <a class="card" href="net/guides/new-to-concordium.html"><header class="lp"><i class="fas fa-map fa-2x"></i>New here?</header>Learn about the Concordium blockchain</a>
     </div>
     <div class="card-container max-width center margin-tb">
-      <a class="card" href="net/guides/wallets-lp.html"><span class="fas fa-wallet fa-3x"></span><h3>Manage a wallet</h3><p>All you need to know about Concordium's wallets.</p></a>
-      <a class="card" href="net/guides/how-to-earn.html"><span class="fas fa-coins fa-3x"></span><h3>Earn CCDs</h3><p>Earn CCDs by baking and delegating.</p></a>
-      <a class="card" href="smart-contracts/general/introduction.html"><span class="fas fa-code-branch fa-3x"></span><h3>Develop with Concordium</h3><p>Go through tutorials to learn about smart contracts and write your own smart contracts.</p></a>
-      <a class="card" href="net/installation/downloads.html"><span class="fas fa-download fa-3x"></span><h3>Downloads</h3><p>Download Concordium software.</p></a>
-      <a class="card" href="net/guides/create-proofs.html"><span class="fas fa-id-card fa-3x"></span><h3>Use ID</h3><p>Use the Concordium ID layer.</p></a>
-      <a class="card" href="net/guides/dapp-examples.html"><span class="fas fa-desktop fa-3x"></span><h3>dApp examples</h3><p>Example dApps for inspiration.</p></a>
-      <a class="card" href="https://academy.concordium.software/ccd-academy/getting-started"><span class="fas fa-graduation-cap fa-3x"></span><h3>Concordium Academy</h3><p>Learn about Concordium and get rewards.</p></a>
+      <a class="card" href="net/guides/wallets-lp.html"><header class="lp"><i class="fas fa-wallet fa-2x"></i>Manage a wallet</header>All you need to know about Concordium's wallets</a>
+      <a class="card" href="net/guides/how-to-earn.html"><header class="lp"><i class="fas fa-coins fa-2x"></i>Earn CCDs</header>Earn CCDs by baking and delegating</a>
+      <a class="card" href="smart-contracts/general/introduction.html"><header class="lp"><i class="fas fa-code-branch fa-2x"></i>Build on Concordium</header>Developer resources for smart contracts and nodes</a>
+      <a class="card" href="net/installation/downloads.html"><header class="lp"><i class="fas fa-download fa-2x"></i>Downloads</header>Download Concordium software</a>
+      <a class="card" href="net/web3-id/index.html"><header class="lp"><i class="fas fa-id-card fa-2x"></i>Use ID</header>Use the Concordium ID layer</a>
+      <a class="card" href="net/guides/dapp-examples.html"><header class="lp"><i class="fas fa-desktop fa-2x"></i>dApp examples</header>Example dApps for inspiration</a>
+      <a class="card" href="https://academy.concordium.software/ccd-academy/getting-started" target="_blank"><header class="lp"><i class="fas fa-graduation-cap fa-2x"></i>Concordium Academy</header>Learn about Concordium and get rewards</a>
     </div>
 
     <style>
         body {
-            background: url(_static/background-img.png) no-repeat center center fixed, rgb(240, 240, 240);
+            background: url(_static/background-img.png) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
             margin: 0;
             padding: 0;
-            font-family: var(--pst-font-family-base-system);
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
         }
 
         p {
@@ -57,24 +57,37 @@
         }
         
         h3 {
-            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-            color: white;
             padding: 10px 0px 0px 0px;
         }
 
-        h4 {
+        .lp {
             font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 700;
             color: white;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        header {
+            justify-content: center;
+        }
+
+        i {
+            padding-right: 10px;
         }
 
         a {
             color:white;
             font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
             text-decoration: none;
+            text-align: center;
         }
 
         a:visited {
-            color: #235c9b;
+            color: white;
             font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
             text-decoration: none;
         }
@@ -94,14 +107,6 @@
 
         .text-center {
             text-align:center;
-        }
-
-        ul.list {
-            list-style-type: none; /* Remove bullets */
-        }
-
-        ul.list>li {
-            margin: 10px;
         }
 
         .margin-tb {
@@ -124,19 +129,56 @@
                 bottom: 0;
                 max-width: 530px;
                 padding: 30px 45px 25px;
-                background-color: linear-gradient(9.01deg, rgba(255, 255, 255, 0.3) 22.98%, rgba(255, 255, 255, 0) 88.11%);
+                background: linear-gradient(157deg, #005A78 -18.68%, #2E8894 95.63%);
                 color: #fff;
             }
         
         /* Style the counter cards */
         .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-            padding: 16px;
-            text-align: center;
-            background: linear-gradient(9.01deg, rgba(255, 255, 255, 0.3) 22.98%, rgba(255, 255, 255, 0) 88.11%);
-            transition: all 0.5s ease;
-            border-radius: 15px;
-            width: 400px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            position: relative;
+            width:340px;
+            height: 175px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        /* border effect */
+        .card::before {
+            content: "";
+            z-index:-1;
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background-image: linear-gradient(210deg,
+             rgba(255, 255, 255, .05) 0%,
+             rgba(255, 255, 255, .4) 50%,
+             rgba(255, 255, 255, .05) 60%,
+             rgba(255, 255, 255, .3) 100%);
+            -webkit-mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#ffffff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            z-index:-2;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .05);
+            background-image: linear-gradient(-10deg,
+                rgba(255, 255, 255, .2) -50%,
+                rgba(255, 255, 255, .02) 30%,
+                rgba(255, 255, 255, .05) 60%,
+                rgba(255, 255, 255, .4) 150%);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0
         }
 
         .card:hover {

@@ -8,9 +8,9 @@ Deciding between the wallets
 Why you need a wallet
 =====================
 
-You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :term:`wallet` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
-The wallets are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
+The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
 No import of identities and accounts from one wallet to another
 ===============================================================

@@ -27,7 +27,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/../_static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/../_static/css/ibm-plex.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -39,11 +38,14 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/snippets/tokens.4b07ddf3-2d5a-454e-8add-19f9e86255f6.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
-<link href="../../_static/style.css" rel="stylesheet" type="text/css">
+<link href="../../_static/css/style.css" rel="stylesheet" type="text/css">
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
@@ -55,13 +57,28 @@
 
   <div id="navbar-start">
     
-    
+    <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
 
-<a class="navbar-brand" href="../../index.html">
-  <img src="../../_static/concordium-logo-dark.svg" class="logo" alt="logo">
-</a>
+<style>
 
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
 
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo" src="../../_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+
+</html>
     
   </div>
 
@@ -152,11 +169,11 @@ body {margin:0;}
   <div class="dropdown">
     <button class="dropbtn">Monitor</button>
     <div class="dropdown-content">
-      <a href="https://ccdscan.io/">CCDScan</a>
-      <a href="https://dashboard.mainnet.concordium.software">Mainnet dashboard</a>
-      <a href="https://dashboard.testnet.concordium.com">Testnet dashboard</a>
-      <a href="https://status.mainnet.concordium.software">Mainnet status page</a>
-      <a href="https://status.testnet.concordium.software">Testnet status page</a>
+      <a href="https://ccdscan.io/" target="_blank">CCDScan</a>
+      <a href="https://dashboard.mainnet.concordium.software" target="_blank">Mainnet dashboard</a>
+      <a href="https://dashboard.testnet.concordium.com" target="_blank">Testnet dashboard</a>
+      <a href="https://status.mainnet.concordium.software" target="_blank">Mainnet status page</a>
+      <a href="https://status.testnet.concordium.software" target="_blank">Testnet status page</a>
     </div>
   </div>
   <div class="dropdown">
@@ -165,7 +182,7 @@ body {margin:0;}
       <a href="../../net/concepts/id-accounts.html">Identities</a>
       <a href="../../net/installation/downloads.html">Accounts</a>
       <a href="../../net/resources/glossary.html">Glossary</a>
-      <a href="https://academy.concordium.software/ccd-academy/getting-started">Academy</a>
+      <a href="https://academy.concordium.software/ccd-academy/getting-started" target="_blank">Academy</a>
     </div>
   </div>
   <div class="dropdown">
@@ -179,18 +196,18 @@ body {margin:0;}
   <div class="dropdown">
     <button class="dropbtn">Discover</button>
     <div class="dropdown-content">
-      <a href="https://medium.com/concordium">Blogs</a>
+      <a href="https://medium.com/concordium" target="_blank">Blogs</a>
       <a href="../../net/guides/dapp-examples.html">Example dApps</a>
-      <a href="https://proposals.concordium.software/index.html">Concordium Standards</a>
+      <a href="https://proposals.concordium.software/index.html" target="_blank">Concordium Standards</a>
     </div>
   </div>
   <div class="dropdown">
     <button class="dropbtn">Connect</button>
     <div class="dropdown-content">
-      <a class="nav-link nav-external" href="https://support.concordium.software/latest">Discourse</a>
+      <a class="nav-link nav-external" href="https://support.concordium.software/latest" target="_blank">Discourse</a>
       <a href="mailto:support@concordium.software">Contact support</a>
-      <a class="nav-link nav-external" href="https://github.com/Concordium">GitHub</a>
-      <a class="nav-link nav-external" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A">YouTube</a>
+      <a class="nav-link nav-external" href="https://github.com/Concordium" target="_blank">GitHub</a>
+      <a class="nav-link nav-external" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" target="_blank">YouTube</a>
     </div>
   </div>
 </div>
@@ -203,24 +220,31 @@ body {margin:0;}
     <div id="navbar-end">
       
       <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
-            <label class="sr-only">Support</label></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
-            <label class="sr-only">Discourse</label></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mailto:documentation@concordium.com" rel="noopener" target="_blank" title="Feedback"><span><i class="fas fa-bullhorn"></i></span>
-            <label class="sr-only">Feedback</label></a>
-        </li>
-      </ul>
+        <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="w3-bar w3-left">
+  <a href="https://github.com/Concordium" class="w3-bar-item w3-button w3-left"><i class="fab fa-github-square"></i>Github</a>
+  <a href="mailto:support@concordium.software" class="w3-bar-item w3-button w3-left"><i class="fas fa-envelope"></i>Support</a>
+  <a href="https://support.concordium.software/latest" class="w3-bar-item w3-button w3-left"><i class="fab fa-discourse"></i>Discourse</a>
+</div>
+</html>
+
+<style>
+
+  i {
+    padding-right: 10px;
+  }
+
+  w3-bar {
+    display: block;
+  }
+
+</style>
       </div>
       
     </div>
@@ -235,10 +259,30 @@ body {margin:0;}
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
             <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+              <div class="sidebar-start-items"><!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+<link rel="stylesheet" href="../../_static/css/style.css" type="text/css" />
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+    <i class="icon fas fa-search"></i>
+        <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="on">
+</form>
+
+<style>
+
+    .bd-search {
+        border-radius: 16px;
+    }
+
+    .form-control {
+        /* Drop Shadow 10 - 15 */
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.10);
+    }
+
+</style>
+</html><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     
   </div>

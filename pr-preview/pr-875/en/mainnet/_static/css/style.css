@@ -17,19 +17,19 @@
     *
     * Colors are defined in rgb string way, "red, green, blue"
     **/
-    --pst-color-link: #235c9b;
-    --pst-color-link-hover: #235c9b;
-    --pst-color-sidebar-link-hover: #235c9b;
-    --pst-color-toc-link-hover: #235c9b;
-    --pst-color-toc-link-active: #235c9b;
-    --pst-color-headerlink: 35, 92, 155;
-    --pst-color-headerlink-hover: 255, 255, 255;
+    --pst-color-link: #48A2AE;
+    --pst-color-link-hover: #48A2AE;
+    --pst-color-sidebar-link-hover: #48A2AE;
+    --pst-color-toc-link-hover: #48A2AE;
+    --pst-color-toc-link-active: #48A2AE;
+    --pst-color-headerlink: #48A2AE;
+    --pst-color-headerlink-hover: #48A2AE;
     --pst-color-inline-code: 178, 34, 34;
-    --primary-color: #302AE6;
-    --secondary-color: #536390;
-    --font-color: #000000;
-    --bg-color: #fff;
-    --heading-color: #292922;
+    --primary-color: #48A2AE;
+    --secondary-color: #052535;
+    --font-color: #333333;
+    --bg-color: #ffffff;
+    --heading-color: #333333;
 }
 
     [data-theme="dark"] {
@@ -53,7 +53,8 @@ body{
   }
 
 p{
-    line-height: 30px;
+    line-height: 1.7em;
+    font-size: 17px;
     color: var(--font-color);
     font-family: var(--pst-font-family-base-system);
 }
@@ -178,12 +179,24 @@ i.fab fa-github-square:before {
     color: white;
 }
 
-.admonition.warning{
-    background: #FEF9E8;
+.admonition.warning {
+    background: #ffffff;
+    border-color: #F6DB9A;
+    border: 1px solid;
 }
 
-.admonition.note{
-    background: #ebf2ff;
+.admonition.warning .admonition-title {
+    background: #F6DB9A;
+}
+
+.admonition.note {
+    background: #ffffff;
+    border-color: #65A4DD;
+    border: 1px solid;
+}
+
+.admonition.note .admonition-title {
+    background: #65A4DD;
 }
 
 .consent {
@@ -192,19 +205,15 @@ i.fab fa-github-square:before {
     bottom: 0;
     max-width: 530px;
     padding: 30px 45px 25px;
-    background: linear-gradient(9.01deg, rgba(255, 255, 255, 0.3) 22.98%, rgba(255, 255, 255, 0) 88.11%);
+    background: linear-gradient(157deg, #005A78 -18.68%, #2E8894 95.63%);
     color: #fff;
-}
-
-@media only screen and (max-width: 768px) {
-    .consent {
-        left: 0;
-    }
 }
 
 .consent p {
     margin-bottom: 0.5em;
     color: #fff;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .consent button {
@@ -239,4 +248,10 @@ i.fab fa-github-square:before {
 /* Change the highlight color used in code-snippets. This makes them stand out more. */
 .highlight .hll {
     background-color: #ccddcc;
+}
+
+@media only screen and (max-width: 768px) {
+    .consent {
+        left: 0;
+    }
 }

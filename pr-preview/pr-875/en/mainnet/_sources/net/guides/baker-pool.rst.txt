@@ -4,7 +4,7 @@
 Baker management
 ================
 
-A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. There are some recommended best practices around baking, particularly when a baker runs a :ref:`baker pool<glossary-baker-pool>`. A baker can choose to open a baker pool to which others can :ref:`delegate<delegation-concept>` some of their stake.
+A :ref:`baker <baker-concept>` is a node that participates in the network by baking (creating) new blocks that are added to the chain. There are some recommended best practices around baking, particularly when a baker runs a :term:`baker pool`. A baker can choose to open a baker pool to which others can :ref:`delegate<delegation-concept>` some of their stake.
 
 Best practices for baking
 =========================
