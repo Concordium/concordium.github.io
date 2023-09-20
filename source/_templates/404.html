@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="shortcut icon" href="{{pathto('_static/concordium-logo-no-text.svg', 1)}}" />
     <meta name="theme-color" content="#000000" />
-    {% block extrahead %} {% endblock %}
 </head>
 
 <body>
@@ -30,7 +29,7 @@
             <p class="lp">You found a broken link. Thanks for letting us know.</p><p class="lp">If you need help to find something, <a href="mailto:support@concordium.software">contact us.</a> </p>
         </div>
     </div>
- 
+
 
     <style>
         body {
@@ -49,7 +48,7 @@
             font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 400;
         }
-    
+
         h4 {
             padding: 10px 0px 0px 0px;
             font-weight: 700;
@@ -136,7 +135,7 @@
             flex-direction: column;
             font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
             }
-        }  
+        }
 
         .info-text {
 	        width: 90%;
@@ -154,36 +153,26 @@
             max-height: 200px;
         }
 
-        *   {
+        * {
             box-sizing: border-box;
         }
 
         /* Responsive columns - one column layout (vertical) on Extra small devices (phones, 600px and down) */
         @media screen and (max-width: 600px) {
-
             .consent {
-                left: 0;}
+                left: 0;
+            }
         }
 
         /* Small devices (portrait tablets and large phones, 600px and up) */
-        @media only screen and (min-width: 600px) {            
+        @media only screen and (min-width: 600px) {
             .consent {
-                left: 0;}
+                left: 0;
             }
 
+        }
     </style>
 
+    {%include "analytics.html" %}
 </body>
-
-</html>
-
-<style>
-
-
-</style>
-
-{%include "analytics.html" %}
-
-</body>
-
 </html>
