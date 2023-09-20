@@ -5,8 +5,8 @@
 Shield and unshield CCD on an account
 =====================================
 
-Accounts on the Concordium blockchain have two balances, the **Balance** and the :ref:`shielded balance <glossary-shielded-balance>`. You can move funds between these
-two balances using either a :ref:`shield CCD transaction<glossary-shielding>` or an :ref:`unshield CCD transaction<glossary-unshielding>`.
+Accounts on the Concordium blockchain have two balances, the **Balance** and the :term:`shielded balance`. You can move funds between these
+two balances using either a :term:`shield CCD transaction<shielding>` or an :term:`unshield CCD transaction<unshielding>`.
 
 When you shield an amount on an account, only the account's credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can't see the shielded balance or any shielded transfers going in or out of the account. You can't make shielded transfers on multi-signature accounts, only on accounts with a single credential.
 
