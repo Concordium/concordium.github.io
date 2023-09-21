@@ -76,9 +76,9 @@ Ledger packages
 
 Once you have updated the firmware version, you can download the LEDGER app:
 
-- For LEDGER NANO S, `download the Concordium LEDGER App 1.0.0 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.0-target-2.1.0.zip>`_
+- For LEDGER NANO S, `download the Concordium LEDGER App 1.0.0 for LEDGER firmware version 2.1.0 <https://s3.eu-west-1.amazonaws.com/distribution.mainnet.concordium.software/tools/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip>`_
 
-- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 1.0.0 for LEDGER firmware version 1.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-1.0.0-nanos-plus-1.1.0.zip>`_
+- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 1.0.0 for LEDGER firmware version 1.1.0 <https://s3.eu-west-1.amazonaws.com/distribution.mainnet.concordium.software/tools/concordium-governance-ledger-app-1.0.0-nanos-plus.zip>`_
 
 When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
 

@@ -66,43 +66,29 @@ The |bw| is available to download as an extension for the `chromium web browsers
 Concordium Desktop Wallet
 =========================
 
-.. card:: Windows v1.5.0
-    :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.5.0.exe
+.. card:: Windows v1.6.0
+    :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.6.0.exe
 
-.. card:: MacOS v1.5.0
-    :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.5.0.dmg
+.. card:: MacOS v1.6.0
+    :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.6.0.dmg
 
-.. dropdown:: Linux® v1.5.0
+.. dropdown:: Linux® v1.6.0
 
    Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-   -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.AppImage>`_
+   -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.6.0.AppImage>`_
       -  SHA256 checksum of the download: ``044d8b2aa039428b7e6626d3af1dade21e52bee04dbcfc9f78d303bd0f1c855e``
 
-   -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.deb>`_
+   -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.6.0.deb>`_
       -  SHA256 checksum of the download: ``f15d996f9e73118cf12820265af6303a9d6359b30c1e3c401bd0f292e977ceb2``
 
-   -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.rpm>`_
+   -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.6.0.rpm>`_
       -  SHA256 checksum of the download: ``66d2a9ce4809a6e84a84accdb0768d6c1c6a7dcb046b751667a80d75a8a66464``
 
 Concordium LEDGER App - Sirius
 ==============================
 
-The version of the LEDGER App is the same for Mainnet and Testnet. So if you already have that installed for one or the other, you do not need to reinstall.
-
-.. Note::
-
-   LEDGER firmware version 2.0.0 is no longer supported.
-
-.. Note::
-
-   The LEDGER NANO X is not supported currently.
-
-When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
-
-- For LEDGER NANO S, `download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip>`_
-
-- For LEDGER NANO S PLUS, `download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0 <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip>`_
+Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For information, see :ref:`Install the LEDGER app<install-ledger>`.
 
 .. _concordium-node-and-client-download-testnet:
 
