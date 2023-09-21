@@ -38,19 +38,6 @@ In order to build a smart contract, run:
 
 This uses Cargo_ for building, but runs further optimizations on the result.
 
-.. Note::
-
-   If you receive an error similiar to the one below, you need to :ref:`install an earlier version of the rustup compiler<rust-compiler-issue>`.
-
-   .. code-block:: console
-
-      Error: Could not build smart contract.
-
-      Caused by:
-         0: Could not build module schema.
-         1: Could not generate module schema from Wasm module.
-         2: Unsupported instruction 0xc0
-
 If you want a smaller code footprint, enable the :ref:`wee_alloc feature <setup-wee-alloc-feature>` by using:
 
 .. code-block:: console
