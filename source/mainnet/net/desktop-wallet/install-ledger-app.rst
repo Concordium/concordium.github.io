@@ -69,7 +69,8 @@ To find out which firmware version the LEDGER device is running, do the followin
 
 For details on how to update the LEDGER firmware, see `LEDGER NANO S guide <https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware>`_ or `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 
-.. Ledger-downloads::
+.. _Ledger-downloads:
+
 Ledger packages
 ---------------
 
