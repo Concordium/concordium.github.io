@@ -10,7 +10,11 @@ Set up the LEDGER device and install the Concordium LEDGER App
 
 .. warning::
 
-   The steps here should only be used for members of the governance committee. If you are not a member of the governance committee, see :ref:`Install the Concordium LEDGER app using LEDGER Live<install-ledger>` for instructions on how to install.
+   The steps here are only for members of the governance committee. If you are not a member of the governance committee, see :ref:`Install the Concordium LEDGER app using LEDGER Live<install-ledger>` for instructions on how to install.
+
+.. seealso::
+
+   To read about the latest changes, see the `changelog <https://github.com/Concordium/concordium-ledger-app/blob/main/governance-app/CHANGELOG.md>`_.
 
 To be able to sign and send transactions using the Desktop Wallet, you need a LEDGER hardware wallet, and you need to install the Concordium LEDGER Application on the LEDGER device. You can use Windows, macOS or Ubuntu to install the app.
 
