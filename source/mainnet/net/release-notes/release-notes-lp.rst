@@ -887,45 +887,93 @@ Mainnet
 Testnet
 -------
 
-    August 9, 2023
+    October 10, 2023
 
-        Concordium Node 6.0.4 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023. **Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.**
+        Concordium Node 6.1.x contains bug fixes and improvements.
+        
+            **Improvements**
 
-        Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
+            - Exposed the health check service via grpc-web when grpc-web is enabled.
 
-        Additional features of this release include:
+            - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
 
-        - Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.
+            - Removed the concept of pending blocks.
 
-        - Changes in Wasm validation and execution in P6 include:
+            - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
 
-            - Disallowed globals in initialization sections for V1 contracts in P6.
+            - Added a number of endpoints to the GRPCV2 API, including:
 
-            - Added support for sign extension instructions in Wasm in P6.
+                - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
 
-            - Do not count custom sections towards module size when executing contracts.
+                - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate and epoch finalization entry contained in the block (where present).
 
-            - Support new ``invoke`` operations for retrieving account keys and checking signatures.
+                - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
 
-        - Shut down consensus upon a protocol update updating from protocol version 6.
+                - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
 
-        - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
+                - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
 
-        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
+            **Fixes**
 
-            - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
+            - Several fixes are included for peer handling.
 
-        - Changed the ``GetBlockInfo`` endpoint:
+                - Fixed a bug where stored peers are removed incorrectly. The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. You can use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup. An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
+                
+                - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup. 
 
-            - Block slot is only returned in protocol versions 0-5.
+            - Fixed a bug where the block state hash was not returned properly for the genesis block.
 
-            - In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.
+            - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
 
-            - Endpoint extended to return block round and epoch in protocol version 6.
+            - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
 
-        - Changed the ElectionInfo endpoint so that Election difficulty is only returned in protocol versions 0-5.
+            - Fixed a bug where it was not possible to use the collector with a node configured with TLS. You must configure the ``grpc-host`` flag of the collector with domain stated in the certificate that the node is configured with.
+
+            - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
+
+            - Fixed a bug in how the last timeout certificate is recovered at start-up.
+
+            - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.0.4 - August 9, 2023
+
+            Concordium Node 6.0.4 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023. **Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.**
+
+            Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
+
+            Additional features of this release include:
+
+            - Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.
+
+            - Changes in Wasm validation and execution in P6 include:
+
+                - Disallowed globals in initialization sections for V1 contracts in P6.
+
+                - Added support for sign extension instructions in Wasm in P6.
+
+                - Do not count custom sections towards module size when executing contracts.
+
+                - Support new ``invoke`` operations for retrieving account keys and checking signatures.
+
+            - Shut down consensus upon a protocol update updating from protocol version 6.
+
+            - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
+
+            - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
+
+                - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
+
+            - Changed the ``GetBlockInfo`` endpoint:
+
+                - Block slot is only returned in protocol versions 0-5.
+
+                - In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.
+
+                - Endpoint extended to return block round and epoch in protocol version 6.
+
+            - Changed the ElectionInfo endpoint so that Election difficulty is only returned in protocol versions 0-5.
 
         .. dropdown:: 5.4.2 - June 7, 2023
 
@@ -1303,21 +1351,39 @@ Tools
 Concordium Client
 -----------------
 
-    August 9, 2023
+    October 10, 2023
 
-        Concordium Client 6.0.1 adds support for the upcoming `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ which is planned for release on Testnet August 21, 2023. **Note that this version of Concordium-Client requires at least node version 5.4.**
+        Concordium Client 6.1.0 includes support for the following:
 
-        - Removed a stray CTrue in output of ``consensus show-chain-parameters``.
+            - Add baker win-time command for determining the earliest time a specified baker is expected to bake.
 
-        - Added ``raw GetNextUpdateSequenceNumbers`` subcommand.
+            - End stream consumption early if an error is returned.
 
-        - Added node version to the output of ``raw GetNodeInfo``.
+            - Add support for the following node version 6.1 queries under the ``raw`` command:
 
-        - Print *Block time* instead of *Slot time* in the output of ``block show``.
-
-        - In the output of ``consensus show-parameters``, election difficulty is only printed when present.
+                - ``GetBakersRewardPeriod``
+                - ``GetBlockCertificates``
+                - ``GetBakerEarliestWinTime``
+                - ``GetWinningBakersEpoch``
+                - ``GetFirstBlockEpoch``
+                - Add support for CommissionRates in ``CurrentPaydayBakerPoolStatus`` (Only available for node versions > 6.0).
+                - Show all options for importing an account.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.0.1 - August 9, 2023
+
+            Concordium Client 6.0.1 adds support for the upcoming `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ which is planned for release on Testnet August 21, 2023. **Note that this version of Concordium-Client requires at least node version 5.4.**
+
+            - Removed a stray CTrue in output of ``consensus show-chain-parameters``.
+
+            - Added ``raw GetNextUpdateSequenceNumbers`` subcommand.
+
+            - Added node version to the output of ``raw GetNodeInfo``.
+
+            - Print *Block time* instead of *Slot time* in the output of ``block show``.
+
+            - In the output of ``consensus show-parameters``, election difficulty is only printed when present.
 
         .. dropdown:: 5.2.0 - June 1, 2023
 
