@@ -29,16 +29,9 @@ index
 
 .. toctree::
    :includehidden:
-   :caption: CCDScan
-
-   resources/ccd-scan
-
-.. toctree::
-   :includehidden:
    :caption: Use Concordium's ID Layer
 
    web3-id/index
-   guides/gallery/index
 
 .. toctree::
    :includehidden:
@@ -52,7 +45,7 @@ index
    On-chain guides <../smart-contracts/guides/on-chain-index>
    References <../smart-contracts/references/index>
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/faq>
-   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/index>
+   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/overview>
 
 .. toctree::
    :includehidden:

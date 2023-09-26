@@ -4,6 +4,7 @@ body {margin:0;}
 .navbar-menu {
   position: relative;
   background-color: var(--bg-color);
+  padding-left: 50px;
 }
 
 .navbar-menu a {
@@ -79,6 +80,7 @@ body {margin:0;}
     <div class="dropdown-content">
       <a href="{{ pathto('net/concepts/id-accounts') }}">Identities</a>
       <a href="{{ pathto('net/installation/downloads') }}">Accounts</a>
+      <a href="{{ pathto('net/guides/wallet-lp') }}">Wallets</a>
       <a href="{{ pathto('net/resources/glossary') }}">Glossary</a>
       <a href="https://academy.concordium.software/ccd-academy/getting-started" target="_blank">Academy</a>
     </div>
@@ -87,7 +89,7 @@ body {margin:0;}
     <button class="dropbtn">Build</button>
     <div class="dropdown-content">
       <a href="{{ pathto('smart-contracts/general/introduction') }}">Smart contracts</a>
-      <a href="{{ pathto('net/guides/create-proofs') }}">Use ID</a>
+      <a href="{{ pathto('net/web3-id/index') }}">Use ID</a>
       <a href="{{ pathto('net/guides/low-code-nft-marketplace/introduction') }}">Low-code NFT marketplace</a>
     </div>
   </div>
