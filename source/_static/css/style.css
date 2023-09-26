@@ -52,26 +52,35 @@ body{
     color: var(--font-color);
   }
 
+/* Text styling */
 p{
     line-height: 1.7em;
-    font-size: 17px;
+    font-size: 16px;
     color: var(--font-color);
     font-family: var(--pst-font-family-base-system);
+}
+
+.section {
+    margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 h1{
     font-family: var(--pst-font-family-base-system);
     color: var(--heading-color);
+    margin-bottom: 34px;
 }
 
 h2{
     font-family: var(--pst-font-family-base-system);
     color: var(--heading-color);
+    margin-bottom: 28px;
 }
 
 h3{
     font-family: var(--pst-font-family-base-system);
     color: var(--heading-color);
+    margin-bottom: 24px;
 }
 
 h4{
@@ -117,6 +126,17 @@ a.current.reference.internal:hover{
     color: var(--pst-color-link);      
 }
 
+/*Code styling */
+/* Change the highlight color used in code-snippets. This makes them stand out more. */
+.highlight .hll {
+    background-color: #ccddcc;
+}
+
+/* Adds padding to the right of '$' in code-blocks with terminal commands. */
+.gp {
+    padding-right: 0.5em;
+}
+
 .navbar{
     position: fixed;
     min-height: var(--pst-header-height);
@@ -126,24 +146,115 @@ a.current.reference.internal:hover{
     align-items: center;
 }
 
-.wy-nav-content {
-    max-width: 900px;
-    margin: auto;
+/* Sidebar */
+@media (min-width: 720px) {
+    .bd-sidebar {
+        border-right: none;
+    }
+}
+​
+.bd-sidebar label  {
+    left: 0;
+    right: unset;
+    height: 35px;
 }
 
-.wy-side-nav-search > a {
-    /* Fixes logo is gone, when it is an svg */
-    width: 100% !important;
+.bd-sidebar label:hover {
+    background: none;
+}
+​
+.bd-sidebar .label-parts i {
+    left: 0;
+    right: unset;
+    top: 9px;
+}
+​
+.bd-sidebar .nav {
+    font-size: 14px;
+    padding: 0 0 4px 14px
+}
+​
+.nav.bd-sidenav li.has-children {
+    padding: 2px 0 2px 10px;
+}
+​
+.nav.bd-sidenav li {
+    padding: 3px 0 7px 10px;
+}
+​
+.bd-sidebar li {
+    padding: 2px 0 2px 10px;
+}
+​
+.bd-sidebar li.has-children>.reference {
+    padding-right: 0;
+}
+​
+.bd-sidebar .nav ul {
+    padding: 0 0 0 14px;
+}
+​
+.bd-sidebar .nav li>a {
+    padding: 4px 0 0 22px;
+    color: #888888;
+}
+​
+.bd-sidebar .nav li.has-children>a {
+    padding: 5px 0 5px 22px;
+}
+​
+.toctree-checkbox~label i {
+    transform: rotate(270deg);
+}
+​
+.toctree-checkbox:checked~label i {
+    transform: rotate(0deg);
+}
+​
+.bd-links {
+    margin-right: 0;
+    margin-left: 0;
+}
+​
+.fa-chevron-down:before {
+    color: #888888;
+}
+​
+nav.bd-links p.caption {
+    text-transform: unset;
+    font-weight: unset;
+    font-size: 14px;
+    padding: 0 0 0 22px;
+    color: #888888;
+}
+​
+.bd-sidebar .nav .active:hover>label .fa-chevron-down:before,
+.bd-sidebar .nav .active>label .fa-chevron-down:before {
+    color: rgba(var(--pst-color-sidebar-link-active),1);
+}
+​
+.bd-search {
+    padding: 37px 0 26px 0;
+    margin: 0;
 }
 
-.gp {
-    /* Adds padding to the right of '$' in code-blocks with terminal commands. */
-    padding-right: 0.5em;
+.bd-search input {
+    border-radius: 16px;
+    border: 1px solid #e7e7e7;
+    padding: 24px 24px 24px 50px;
+    font-size: 15px;
+}
+​
+.bd-search .icon {
+    left: 36px;
 }
 
-.wy-side-nav-search {
-    margin-bottom: 0;
-    padding-bottom: 0;
+.toctree-checkbox~label i {
+    transform: rotate(270deg);
+}
+​
+.toctree-checkbox:checked~label i {
+    transform: rotate(0deg);
 }
 
 .sidebar-top-menu {
@@ -179,6 +290,27 @@ i.fab fa-github-square:before {
     color: white;
 }
 
+/* Admonitions */
+.admonition>.admonition-title:before,
+div.admonition>.admonition-title:before {
+    left: 24px;
+    width: 16px;
+    height: 16px;
+}
+​
+.admonition p.admonition-title~*,
+div.admonition p.admonition-title~* {
+    margin: 20px 30px;
+}
+​
+.admonition,
+div.admonition {
+    margin: 50px auto;
+    padding: 0 0 30px;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
 .admonition.warning {
     background: #ffffff;
     border-color: #F6DB9A;
@@ -187,18 +319,23 @@ i.fab fa-github-square:before {
 
 .admonition.warning .admonition-title {
     background: #F6DB9A;
+    margin: 0;
+    padding: 10px 20px 10px 50px;
 }
 
 .admonition.note {
     background: #ffffff;
-    border-color: #65A4DD;
+    border-color: #acceed;
     border: 1px solid;
 }
 
 .admonition.note .admonition-title {
-    background: #65A4DD;
+    background: #e5f2ff;
+    margin: 0;
+    padding: 10px 20px 10px 50px;
 }
 
+/* Consent dialog */
 .consent {
     position: fixed;
     right: 0;
@@ -243,11 +380,6 @@ i.fab fa-github-square:before {
 
 .consent a:active {
     color: #d9d9d9;
-}
-
-/* Change the highlight color used in code-snippets. This makes them stand out more. */
-.highlight .hll {
-    background-color: #ccddcc;
 }
 
 @media only screen and (max-width: 768px) {
