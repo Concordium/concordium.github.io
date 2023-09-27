@@ -1,5 +1,5 @@
 .. include:: ../../variables.rst
-.. _terms-and-conditions:
+.. _terms-and-conditions-concordia:
 
 ===============
 About Concordia
