@@ -212,7 +212,7 @@ Install Homebrew, Python3, and pip
 
 #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
+#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip``.
 
 #. Install the package manager `Homebrew <https://brew.sh/>`_; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
 
@@ -257,7 +257,7 @@ You now have to install a custom certificate to ensure that the LEDGER device tr
 
 #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
+#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip``.
 
 #. Load the certificate onto the LEDGER device by running the following script from the extracted folder:
 
@@ -282,7 +282,7 @@ Install the Concordium LEDGER app on MacOS
 
 #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0``.
+#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip``.
 
 #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
 
