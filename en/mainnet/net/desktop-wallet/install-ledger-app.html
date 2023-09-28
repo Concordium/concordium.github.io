@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/desktop-wallet/install-ledger-app.9e7e5f49-9452-4f21-8a75-fd55f60695e0.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/desktop-wallet/install-ledger-app.32c5766d-6011-40d0-a29a-c3777b6921ca.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -197,6 +197,11 @@ body {margin:0;}
      Update the LEDGER device firmware
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ledger-packages">
+     Ledger packages
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -299,6 +304,14 @@ body {margin:0;}
                 
   <div class="section" id="set-up-the-ledger-device-and-install-the-concordium-ledger-app">
 <span id="install-ledger-app"></span><h1>Set up the LEDGER device and install the Concordium LEDGER App<a class="headerlink" href="#set-up-the-ledger-device-and-install-the-concordium-ledger-app" title="Permalink to this headline">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The steps here are only for members of the governance committee. If you are not a member of the governance committee, see <a class="reference internal" href="../guides/overview-desktop.html#install-ledger"><span class="std std-ref">Install the Concordium LEDGER app using LEDGER Live</span></a> for instructions on how to install.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>To read about the latest changes, see the <a class="reference external" href="https://github.com/Concordium/concordium-ledger-app/blob/main/governance-app/CHANGELOG.md">changelog</a>.</p>
+</div>
 <p>To be able to sign and send transactions using the Desktop Wallet, you need a LEDGER hardware wallet, and you need to install the Concordium LEDGER Application on the LEDGER device. You can use Windows, macOS or Ubuntu to install the app.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -347,10 +360,13 @@ body {margin:0;}
 </li>
 </ol>
 <p>For details on how to update the LEDGER firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360002731113-Update-Ledger-Nano-S-firmware">LEDGER NANO S guide</a> or <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true">LEDGER NANO S PLUS guide</a>.</p>
+</div>
+<div class="section" id="ledger-packages">
+<span id="ledger-downloads"></span><h3>Ledger packages<a class="headerlink" href="#ledger-packages" title="Permalink to this headline">#</a></h3>
 <p>Once you have updated the firmware version, you can download the LEDGER app:</p>
 <ul class="simple">
-<li><p>For LEDGER NANO S, <a class="reference external" href="https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.0.1-target-2.1.0.zip">download the Concordium LEDGER App 3.0.1 for LEDGER firmware version 2.1.0</a></p></li>
-<li><p>For LEDGER NANO S PLUS, <a class="reference external" href="https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-3.1.0-nanos-plus-1.1.0.zip">download the Concordium LEDGER App 3.1.0 for LEDGER firmware version 1.1.0</a></p></li>
+<li><p>For LEDGER NANO S, <a class="reference external" href="https://s3.eu-west-1.amazonaws.com/distribution.mainnet.concordium.software/tools/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip">download the Concordium LEDGER App 1.0.0 for LEDGER firmware version 2.1.0</a></p></li>
+<li><p>For LEDGER NANO S PLUS, <a class="reference external" href="https://s3.eu-west-1.amazonaws.com/distribution.mainnet.concordium.software/tools/concordium-governance-ledger-app-1.0.0-nanos-plus.zip">download the Concordium LEDGER App 1.0.0 for LEDGER firmware version 1.1.0</a></p></li>
 </ul>
 <p>When installing the certificate, ensure that the public key of the certificate is <code class="code docutils literal notranslate"><span class="pre">04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b</span></code>.</p>
 <p>Follow the instructions below to update your app:</p>
@@ -362,6 +378,7 @@ body {margin:0;}
 </ul>
 </div></blockquote>
 <p>It should not be necessary to update the certificate.</p>
+<p>See the changelog(link) for this governance version of the app.</p>
 </div>
 </div>
 <div class="section" id="install-concordium-ledger-app-on-windows">
@@ -401,7 +418,7 @@ body {margin:0;}
 <ol class="arabic simple">
 <li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
 <li><p>Disconnect the LEDGER device from your computer.</p></li>
-<li><p>Download the ZIP folder with Concordium LEDGER application.</p></li>
+<li><p><a class="reference internal" href="#ledger-downloads"><span class="std std-ref">Download the ZIP folder with Concordium LEDGER application</span></a>.</p></li>
 <li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
 <li><p>Now you need to start recovery mode on the LEDGER device.</p>
 <ul class="simple">
@@ -439,7 +456,7 @@ body {margin:0;}
 <p>Before updating, verify that you have <a class="reference internal" href="#install-python-pip-windows"><span class="std std-ref">installed Python3, pip, and the Python tools</span></a> for LEDGER (ledgerblue) before updating the app.</p>
 </div>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the LEDGER app if you haven’t done so already.</p></li>
+<li><p><a class="reference internal" href="#ledger-downloads"><span class="std std-ref">Download the LEDGER app</span></a> if you haven’t done so already.</p></li>
 <li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
 </ol>
 <div class="admonition note">
@@ -459,7 +476,7 @@ body {margin:0;}
 <span id="install-python-pip-macos"></span><h3>Install Homebrew, Python3, and pip<a class="headerlink" href="#install-homebrew-python3-and-pip" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
-<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
+<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>.</p></li>
 <li><p>Install the package manager <a class="reference external" href="https://brew.sh/">Homebrew</a>; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
@@ -483,7 +500,7 @@ body {margin:0;}
 <p>You now have to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium’s private key.</p>
 <ol class="arabic">
 <li><p>Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.</p></li>
-<li><p>Download the ZIP folder with the Concordium LEDGER application.</p></li>
+<li><p><a class="reference internal" href="#ledger-downloads"><span class="std std-ref">Download the ZIP folder with the Concordium LEDGER application</span></a>.</p></li>
 <li><p>Extract the files from the ZIP folder to a folder on your computer.</p></li>
 <li><p>Disconnect the LEDGER device from your computer.</p></li>
 <li><p>Now you need to start recovery mode on the LEDGER device.</p>
@@ -494,7 +511,7 @@ body {margin:0;}
 </li>
 <li><p>Enter your PIN code.</p></li>
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
-<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
+<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>.</p></li>
 <li><p>Load the certificate onto the LEDGER device by running the following script from the extracted folder:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./loadcertificate.sh
 </pre></div>
@@ -516,7 +533,7 @@ body {margin:0;}
 <span id="install-ledger-app-macos"></span><h3>Install the Concordium LEDGER app on MacOS<a class="headerlink" href="#install-the-concordium-ledger-app-on-macos" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
-<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.1-target-2.0.0</span></code>.</p></li>
+<li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>.</p></li>
 <li><p>Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./install.sh
 </pre></div>
@@ -535,7 +552,7 @@ body {margin:0;}
 <p>If you’re using a different computer than the one you used when you installed the app, you must <a class="reference internal" href="#install-python-pip-macos"><span class="std std-ref">install Python3, pip, and the Python tools</span></a> tools for LEDGER (ledgerblue) before updating the app.</p>
 </div>
 <ol class="arabic">
-<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the LEDGER app if you haven’t done so already.</p></li>
+<li><p><a class="reference internal" href="#ledger-downloads"><span class="std std-ref">Download the LEDGER app</span></a> if you haven’t done so already.</p></li>
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0</span></code>.</p></li>
 <li><p>Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:</p>

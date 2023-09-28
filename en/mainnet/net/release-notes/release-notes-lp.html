@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.ccce0999-d174-41f8-9cb3-0fbbea314842.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.65ae20ef-a98c-4fdf-bd02-6521ae944a29.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2166,7 +2166,7 @@ Concordium Wallet for Web 1.0.7 - August 17, 2023<div class="sd-summary-down doc
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Concordium Wallet for Web 1.0.7 adds support for the <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released August 21, 2023.</p>
+<p class="sd-card-text">Concordium Wallet for Web 1.0.7 adds support for the <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with ConcordiumBFT consensus which will be released August 21, 2023.</p>
 <p class="sd-card-text">Additionally, Concordium plans to remove support for JSON-RPC in the Concordium Wallet for Web on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -2299,9 +2299,10 @@ Concordium Wallet for Web 0.7.5 - October 19, 2022<div class="sd-summary-down do
 <div class="section" id="desktop-wallet">
 <span id="rn-dw"></span><h3>Desktop Wallet<a class="headerlink" href="#desktop-wallet" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>August 4, 2022</p>
-<p>The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.</p>
-<p>Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. <strong>This means that macOS users have to download this release manually.</strong></p>
+<div><p>September 28, 2023</p>
+<blockquote>
+<div><p>Version 1.6.0 adds support for the <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which was released August 21, 2023 on Testnet and September 25, 2023 on Mainnet. The wallet also now supports gRPC2.</p>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2310,6 +2311,16 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+1.5.0 - August 4, 2022<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.</p>
+<p class="sd-card-text">Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. <strong>This means that macOS users have to download this release manually.</strong></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 1.4.2 - June 21, 2022<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -2794,7 +2805,7 @@ Previous releases<div class="sd-summary-down docutils">
 <div class="section" id="mainnet">
 <span id="rn-node-mainnet"></span><h3>Mainnet<a class="headerlink" href="#mainnet" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p id="id2">September 11, 2023</p>
+<div><p id="id3">September 11, 2023</p>
 <blockquote>
 <div><p>Concordium Node 6.0.4 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt">protocol version 6</a> with Concordium BFT consensus which will be released September 25, 2023. <strong>Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.</strong></p>
 <p>Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option <code class="docutils literal notranslate"><span class="pre">no-rpc-server</span></code> and environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_DISABLE_RPC_SERVER</span></code>, as well as default values of <code class="docutils literal notranslate"><span class="pre">rpc-server-port</span></code> (<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_PORT</span></code>) and <code class="docutils literal notranslate"><span class="pre">rpc-server-addr</span></code> (<code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_ADDR</span></code>), have been removed. The V1 gRPC server is only started if both of these options are supplied.</p>
@@ -2846,7 +2857,7 @@ Previous releases<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text" id="id4">Concordium node version 5.4.2 contains the following features and bug fixes:</p>
+<p class="sd-card-text" id="id5">Concordium node version 5.4.2 contains the following features and bug fixes:</p>
 <ul class="simple">
 <li><p class="sd-card-text">Enable CORS support in grpc-web. This only applies when grpc-web is enabled.</p></li>
 <li><p class="sd-card-text">Fixed a security issue.</p></li>
@@ -2863,7 +2874,7 @@ Previous releases<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<ul id="id5">
+<ul id="id6">
 <li><p class="sd-card-text">Extended the Prometheus exporter with the following metrics: grpc_request_duration_seconds, grpc_in_flight_requests, consensus_baking_committee, consensus_finalization_committee, consensus_baking_lottery_power, consensus_baked_blocks_total, consensus_finalized_baked_blocks_total, network_soft_banned_peers_total, consensus_non_finalized_transactions and consensus_unsupported_pending_protocol_version. See <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md">docs/prometheus-exporter.md</a> for more details.</p></li>
 <li><p class="sd-card-text">Also, in the changelog for the node grpc_request_duration_seconds has been renamed to grpc_request_response_time_seconds to match the what is in the code.</p></li>
 <li><p class="sd-card-text">Added the following new options:</p>
