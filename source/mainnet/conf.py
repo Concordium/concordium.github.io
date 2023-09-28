@@ -351,7 +351,7 @@ redirects = {
     "./net/resources/sirius-testnet-reset-client.html": "/en/mainnet/index.html",
     "./net/resources/sirius-testnet-reset-nodes.html": "/en/mainnet/index.html",
     "./en/mainnet/smart-contracts/index": "/en/mainnet/smart-contracts/general/introduction.html",
-    "./concordium-rust-sdk/*": "https://docs.rs/concordium-rust-sdk/latest/concordium_rust_sdk/",
+    "concordium-rust-sdk/*": "https://docs.rs/concordium-rust-sdk/latest/concordium_rust_sdk/",
     "./net/resources/release-notes": "net/release-notes/release-notes-lp.html",
     "./net/resources/release-notes-mainnet": "net/release-notes/release-notes-lp.html",
     "./en/mainnet/smart-contracts/tutorials/piggy-bank/preparing": "/en/mainnet/smart-contracts/tutorials/piggy-bank/index.html",
