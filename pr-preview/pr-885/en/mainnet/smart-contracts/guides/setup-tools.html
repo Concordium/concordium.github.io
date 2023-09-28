@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/setup-tools.5938b44f-ab04-4b64-82cc-c2ddba68bdbd.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/setup-tools.b4e0ba86-c201-4a23-86df-3553967a7bfe.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1891,10 +1891,6 @@ environment.</p>
 <h2>Rust and Cargo<a class="headerlink" href="#rust-and-cargo" title="Permalink to this headline">#</a></h2>
 <p>First, <a class="reference external" href="https://rustup.rs/">install rustup</a>, which installs both <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> on your
 machine.</p>
-<p id="rust-compiler-issue">Due to a change in the behavior of the rust compiler, you must install the compiler version 1.69 or earlier. To do that, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup default <span class="m">1</span>.69
-</pre></div>
-</div>
 <p>Then use <code class="docutils literal notranslate"><span class="pre">rustup</span></code> to install the Wasm target, which is used for compilation:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup target add wasm32-unknown-unknown
 </pre></div>
