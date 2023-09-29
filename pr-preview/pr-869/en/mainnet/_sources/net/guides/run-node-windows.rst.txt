@@ -5,7 +5,7 @@
 Run and manage a node on Windows
 ================================
 
-This guide describes how organizations can run and manage a node on the Concordium network from a Windows computer. You can also run a node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`macOS <run-node-macos>`.
+This guide describes how you can run and manage a node on the Concordium network from a Windows computer. You can also run a node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`macOS <run-node-macos>`.
 
 If you want to run a baker node on Windows, see :ref:`Configure a node on Windows as baker<baker-windows>`.
 
@@ -32,7 +32,7 @@ Install/upgrade and run a node
    default. If you have done special configuration of your node and want to
    re-use the configuration file and have the new API enabled, make sure to edit
    your configuration and add ``grpc2.port`` and ``grpc2.address`` settings. See
-   :ref:`configure-node` for more information.
+   :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>` for more information.
 
    **Example for Mainnet:**
 
@@ -50,19 +50,17 @@ Install/upgrade and run a node
 
 .. Note::
 
-   If you are upgrading from an older node version to a newer node version, it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See :ref:`verify-running-node` for details about how to do this.
-
-   Additionally, if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. Or you can re-enter your values after upgrading. See :ref:`configure-node` for information about how to change the service configuration settings.
-
-.. Note::
-
    When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
+#. IF UPGRADING: if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.) Or you can re-enter your values after upgrading. See :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>` for information about how to change the service configuration settings.
 
 #. Download the latest Windows Installer package (.msi file).
 
    - For Mainnet go to :ref:`Downloads<node-downloads>`.
 
    - For Testnet go to :ref:`Downloads<testnet-node-downloads>`.
+
+#. IF UPGRADING: it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See :ref:`verify-running-node` for details about how to do this.
 
 #. In the folder where you downloaded the .msi file, double-click the .msi file. The **Concordium Node Setup Wizard** opens. Select **Next**. If you see a message saying *Windows protected your PC*, select **More info**, and then select **Run anyway**.
 
@@ -139,19 +137,9 @@ The node runs as a background service with no user interface. To verify that itâ
 Enable inbound connections
 ==========================
 
-If you are running your node behind a firewall, or behind your home
-router, then you will probably only be able to connect to other nodes,
-but other nodes will not be able to initiate connections to your node.
-This is perfectly fine, and your node will fully participate in the
-Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, :ref:`if so configured<become-a-baker>`, to bake and finalize.
 
-However you can also make your node an even better network participant
-by enabling inbound connections. By default, ``concordium-node`` listens
-on port ``8888`` for inbound connections on **Mainnet** and on port ``8889`` for inbound connections on **Testnet**. Depending on your network and
-platform configuration you will either need to forward an external port
-to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The
-details of how this is done will depend on your configuration.
+However you can also make your node an even better network participant by enabling inbound connections. By default, ``concordium-node`` listens on port ``8888`` for inbound connections on **Mainnet** and on port ``8889`` for inbound connections on **Testnet**. Depending on your network and platform configuration you will either need to forward an external port to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The details of how this is done will depend on your configuration. See :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>` for more information.
 
 Connect a node to the Desktop Wallet
 ====================================

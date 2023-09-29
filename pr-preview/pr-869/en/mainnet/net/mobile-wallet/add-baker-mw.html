@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/mobile-wallet/add-baker-mw.d0de0c37-bec2-4880-9589-138882a6967d.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -900,17 +905,44 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/concordia.html">
+       Concordia
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -940,8 +972,8 @@ body {margin:0;}
     Smart Contracts v1
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
+  <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-33">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -950,8 +982,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-    <label for="toctree-checkbox-33">
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -987,8 +1019,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/best-practices/index.html">
      Best practices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-    <label for="toctree-checkbox-34">
+    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1004,8 +1036,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/tutorials/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-    <label for="toctree-checkbox-35">
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1024,8 +1056,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/index.html">
        PiggyBank
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-      <label for="toctree-checkbox-36">
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1056,8 +1088,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/wCCD/index.html">
        wCCD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-      <label for="toctree-checkbox-37">
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1088,8 +1120,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/voting/index.html">
        The Voting dApp
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-      <label for="toctree-checkbox-38">
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1110,8 +1142,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/nft-minting/index.html">
        Mint an NFT
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-      <label for="toctree-checkbox-39">
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1137,8 +1169,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/sft-minting/index.html">
        Mint a semi-fungible token
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-      <label for="toctree-checkbox-40">
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1164,8 +1196,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/fungible-tokens/index.html">
        Mint fungible tokens
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-      <label for="toctree-checkbox-41">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1186,8 +1218,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/nft-marketplace/index.html">
        NFT marketplace smart contract tutorial
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-      <label for="toctree-checkbox-42">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1203,8 +1235,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/eSealing/index.html">
        eSealing
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-      <label for="toctree-checkbox-43">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1220,8 +1252,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/sponsoredTransactions/index.html">
        Sponsored Transactions
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-      <label for="toctree-checkbox-44">
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1247,8 +1279,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/smartContractUpgrade/index.html">
        Smart Contract Upgrade
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-      <label for="toctree-checkbox-45">
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1266,8 +1298,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1333,8 +1365,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/contract-testing-guides.html">
      Contract testing guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-    <label for="toctree-checkbox-47">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1355,8 +1387,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-    <label for="toctree-checkbox-48">
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1392,8 +1424,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-    <label for="toctree-checkbox-49">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1440,22 +1472,10 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
@@ -1764,6 +1784,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-concordia.html">
+       About Concordia
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../resources/third-party-licenses.html">
        Third Party Licenses
       </a>
@@ -2021,7 +2046,7 @@ Concordium Wallet for Mobile<div class="sd-summary-down docutils">
 <p class="sd-card-text">Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.</p>
 </div>
 <ol class="arabic" start="4">
-<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
+<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#term-Baker-pool"><span class="xref std std-term">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-baker-pool-mw.png"><img alt="screen to register baker for first time showing options to open or close pool for delegation" src="../../_images/add-baker-pool-mw.png" style="width: 50%;" /></a>
 </div></blockquote>
@@ -2052,7 +2077,7 @@ Concordium Wallet for Mobile<div class="sd-summary-down docutils">
 <div><a class="reference internal image-reference" href="../../_images/add-baker-finish-mw.png"><img alt="screen to register baker for first time showing transaction submission and finish option" src="../../_images/add-baker-finish-mw.png" style="width: 50%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
+<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
@@ -2092,7 +2117,7 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
 <p class="sd-card-text">Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.</p>
 </div>
 <ol class="arabic" start="4">
-<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
+<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#term-Baker-pool"><span class="xref std std-term">baker pool</span></a> or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-baker-pool-mw.png"><img alt="screen to choose whether to open a baker pool" src="../../_images/add-baker-pool-mw.png" style="width: 50%;" /></a>
 </div></blockquote>
@@ -2123,7 +2148,7 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
 <div><a class="reference internal image-reference" href="../../_images/add-baker-finish-mw.png"><img alt="screen to show transaction submitted" src="../../_images/add-baker-finish-mw.png" style="width: 50%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
+<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
@@ -2172,7 +2197,7 @@ Concordium Wallet for Web<div class="sd-summary-down docutils">
 <p class="sd-card-text">Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.</p>
 </div>
 <ol class="arabic" start="4">
-<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#glossary-baker-pool"><span class="std std-ref">baker pool</span></a> or keep it closed. Choose <strong>Open for delegation</strong> to open a baker pool. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool. Click <strong>Continue</strong>.</p>
+<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#term-Baker-pool"><span class="xref std std-term">baker pool</span></a> or keep it closed. Choose <strong>Open for delegation</strong> to open a baker pool. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a baker pool. Click <strong>Continue</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/add-baker-pool.png"><img alt="screen with buttons to open a pool for delegation or close a pool for delegation" src="../../_images/add-baker-pool.png" style="width: 40%;" /></a>
 </div></blockquote>
@@ -2209,7 +2234,7 @@ Concordium Wallet for Web<div class="sd-summary-down docutils">
 <div><a class="reference internal image-reference" href="../../_images/add-baker-finish.png"><img alt="../../_images/add-baker-finish.png" src="../../_images/add-baker-finish.png" style="width: 40%;" /></a>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#glossary-pay-day"><span class="std std-ref">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
+<li><p class="sd-card-text">You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a baker for a longer time.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>

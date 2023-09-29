@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,10 +39,13 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract.d3f984e2-25b0-4829-b73d-df7f3a7e8e35.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Sponsored Transactions Frontend and Backend" href="sponsoredTransactionsFrontendAndBackend.html" />
+    <link rel="next" title="Sponsored Transactions Front End and Back End" href="sponsoredTransactionsFrontendAndBackend.html" />
     <link rel="prev" title="A Sponsored Transactions dApp" href="index.html" />
 <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -900,17 +905,44 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../../../net/guides/create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../../../net/web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/web3-id/concordia.html">
+       Concordia
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../../net/guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -940,8 +972,8 @@ body {margin:0;}
     Smart Contracts v1
    </span>
   </p>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-33">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -950,8 +982,8 @@ body {margin:0;}
     <a class="reference internal" href="../../general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-    <label for="toctree-checkbox-33">
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -987,8 +1019,8 @@ body {margin:0;}
     <a class="reference internal" href="../../best-practices/index.html">
      Best practices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-    <label for="toctree-checkbox-34">
+    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1004,8 +1036,8 @@ body {margin:0;}
     <a class="reference internal" href="../index.html">
      Tutorials
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-    <label for="toctree-checkbox-35">
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1024,8 +1056,8 @@ body {margin:0;}
       <a class="reference internal" href="../piggy-bank/index.html">
        PiggyBank
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-      <label for="toctree-checkbox-36">
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1056,8 +1088,8 @@ body {margin:0;}
       <a class="reference internal" href="../wCCD/index.html">
        wCCD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-      <label for="toctree-checkbox-37">
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1088,8 +1120,8 @@ body {margin:0;}
       <a class="reference internal" href="../voting/index.html">
        The Voting dApp
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-      <label for="toctree-checkbox-38">
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1110,8 +1142,8 @@ body {margin:0;}
       <a class="reference internal" href="../nft-minting/index.html">
        Mint an NFT
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-      <label for="toctree-checkbox-39">
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1137,8 +1169,8 @@ body {margin:0;}
       <a class="reference internal" href="../sft-minting/index.html">
        Mint a semi-fungible token
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-      <label for="toctree-checkbox-40">
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1164,8 +1196,8 @@ body {margin:0;}
       <a class="reference internal" href="../fungible-tokens/index.html">
        Mint fungible tokens
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-      <label for="toctree-checkbox-41">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1186,8 +1218,8 @@ body {margin:0;}
       <a class="reference internal" href="../nft-marketplace/index.html">
        NFT marketplace smart contract tutorial
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-      <label for="toctree-checkbox-42">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1203,8 +1235,8 @@ body {margin:0;}
       <a class="reference internal" href="../eSealing/index.html">
        eSealing
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-      <label for="toctree-checkbox-43">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1220,8 +1252,8 @@ body {margin:0;}
       <a class="reference internal" href="index.html">
        Sponsored Transactions
       </a>
-      <input checked="" class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-      <label for="toctree-checkbox-44">
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1247,8 +1279,8 @@ body {margin:0;}
       <a class="reference internal" href="../smartContractUpgrade/index.html">
        Smart Contract Upgrade
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-      <label for="toctree-checkbox-45">
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1266,8 +1298,8 @@ body {margin:0;}
     <a class="reference internal" href="../../guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1333,8 +1365,8 @@ body {margin:0;}
     <a class="reference internal" href="../../guides/contract-testing-guides.html">
      Contract testing guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-    <label for="toctree-checkbox-47">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1355,8 +1387,8 @@ body {margin:0;}
     <a class="reference internal" href="../../guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-    <label for="toctree-checkbox-48">
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1392,8 +1424,8 @@ body {margin:0;}
     <a class="reference internal" href="../../references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-    <label for="toctree-checkbox-49">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1440,22 +1472,10 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../onboarding-guide-solana-developers/index.html">
@@ -1764,6 +1784,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../../../net/resources/terms-and-conditions-concordia.html">
+       About Concordia
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../../../net/resources/third-party-licenses.html">
        Third Party Licenses
       </a>
@@ -1836,13 +1861,13 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#registerpublickeys-function">
+  <a class="reference internal nav-link" href="#nonces-registry">
    <code class="docutils literal notranslate">
     <span class="pre">
-     registerPublicKeys
+     Nonces
     </span>
    </code>
-   function
+   registry
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1889,7 +1914,13 @@ specific entrypoints (<code class="docutils literal notranslate"><span class="pr
 the authorization checks conducted on the sender/invoker variable with signature verification.
 That is, the sponsoree needs to sign a message (indicating its intended action), then
 anyone can invoke the <code class="docutils literal notranslate"><span class="pre">permit</span></code> function with this signed message to execute the sponsoree’s intended action.
-The smart contract logic checks if the <code class="docutils literal notranslate"><span class="pre">signature</span></code> was generated by the sponsoree.</p>
+The smart contract logic checks if the <code class="docutils literal notranslate"><span class="pre">signature</span></code> was generated by the sponsoree with the <code class="docutils literal notranslate"><span class="pre">check_account_signature</span></code> host function.
+This function looks up the public key/keys associated with the signer address and verifies that the signer has generated the <code class="docutils literal notranslate"><span class="pre">signature</span></code> by signing the <code class="docutils literal notranslate"><span class="pre">message_hash</span></code>.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// Check signature.</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">valid_signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">check_account_signature</span><span class="p">(</span><span class="n">param</span><span class="p">.</span><span class="n">signer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">param</span><span class="p">.</span><span class="n">signature</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">message_hash</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">valid_signature</span><span class="p">,</span><span class="w"> </span><span class="n">CustomContractError</span>::<span class="n">WrongSignature</span><span class="p">.</span><span class="n">into</span><span class="p">());</span><span class="w"></span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Ed25519 is an elliptic curve signing algorithm using EdDSA and Curve25519. It belongs to asymmetric cryptography,
@@ -1901,7 +1932,7 @@ The smart contract needs to know the public key to be able to verify that the sp
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The Concordium Wallet for Web prepends the message with the account address (<code class="docutils literal notranslate"><span class="pre">signer</span></code>) and 8 zero bytes before signing it.
-This ensures that signed messages can be distinguished from transactions that are equally signed by the account address in the Concordium Wallet for Web because transactions don’t start with an account address.
+This ensures that signed messages (prepended with 8 zero bytes and the account address) can be distinguished from transactions (prepended with the account nonce and the account address).
 The smart contract logic reverse engineers the Concordium Wallet for Web implementation by equally prepending the account address (signer) and 8 zero bytes to the message.</p>
 </div>
 <div class="admonition note">
@@ -1923,7 +1954,7 @@ where the result is either “Entrypoint is not supported and can not be invoked
 the permit function using the sponsored transaction mechanism” or “Entrypoint is supported and
 can be invoked via the permit function using the sponsored transaction mechanism”.</p>
 <p>You can explore the function by invoking it with the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">4376</span> --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port <span class="m">10000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">6372</span> --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
 </pre></div>
 </div>
 <p>For example, this <code class="docutils literal notranslate"><span class="pre">supportsPermit.json</span></code> file results in the below screenshot.</p>
@@ -1936,23 +1967,9 @@ can be invoked via the permit function using the sponsored transaction mechanism
 <p>Comprehensive instructions on how to download and set up <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> can be found in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
 </div>
 </div>
-<div class="section" id="registerpublickeys-function">
-<h2><code class="docutils literal notranslate"><span class="pre">registerPublicKeys</span></code> function<a class="headerlink" href="#registerpublickeys-function" title="Permalink to this headline">#</a></h2>
-<p>Concordium smart contracts currently have no way to query the corresponding
-public key(s) of an account within the smart contract code. The Concordium team is working on exposing the public keys in the smart contract code in the next protocol update so that
-the registration of a public key within the smart contract code will not be necessary anymore in the future.
-For the time being, Concordium suggests using a <cite>public_key_registry</cite>
-that allows a special trusted role/account to register the public keys in the smart contract. The example smart contract implements
-such a registry. The logic of the code is as such that once an account has a public key registered, the mapping between the public key and the account can not be
-updated anymore in the <cite>public_key_registry</cite> as seen below:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// Register the public key.</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">old_public_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">().</span><span class="n">public_key_registry</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">param</span><span class="p">.</span><span class="n">account</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">param</span><span class="p">.</span><span class="n">public_key</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
-
-<span class="c1">// Return an error if the owner tries to update/re-write a new public key for an already registered account.</span>
-<span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">old_public_key</span><span class="p">.</span><span class="n">is_none</span><span class="p">(),</span><span class="w"> </span><span class="n">CustomContractError</span>::<span class="n">AccountAlreadyRegistered</span><span class="p">.</span><span class="n">into</span><span class="p">());</span><span class="w"></span>
-</pre></div>
-</div>
-<p>The registry in the smart contracts links an account to a public key and its next nonce.
+<div class="section" id="nonces-registry">
+<h2><code class="docutils literal notranslate"><span class="pre">Nonces</span></code> registry<a class="headerlink" href="#nonces-registry" title="Permalink to this headline">#</a></h2>
+<p>The smart contract has a registry to link an account to its next nonce.
 The nonce is increased sequentially every time a signed message (corresponding to the account) is successfully executed in the <code class="docutils literal notranslate"><span class="pre">permit</span></code> function.
 The nonce is used to prevent replay attacks of the signed message because only a message signed with the next nonce in sequence can be executed as seen below:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// Check the nonce to prevent replay attacks.</span>
@@ -2056,7 +2073,7 @@ The <code class="docutils literal notranslate"><span class="pre">signature</span
     <a class='right-next' id="next-link" href="sponsoredTransactionsFrontendAndBackend.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sponsored Transactions Frontend and Backend</p>
+        <p class="prev-next-title">Sponsored Transactions Front End and Back End</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

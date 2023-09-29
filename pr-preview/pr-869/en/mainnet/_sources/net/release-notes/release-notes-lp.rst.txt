@@ -58,9 +58,13 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    September XX, 2023
+    October 2, 2023
 
-        Version 1.3.0 contains several fixes for the  WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds.
+        Version 1.3.0 contains several fixes for the WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds. It also contains the ability to view the secret recovery phrase if you need to record it again.
+
+        .. note::
+
+            The option to view the secret recovery phrase is not available simply by upgrading to version 1.3.0. Instead, you must either create a new wallet or recover your wallet to be able to use this option.
 
     .. dropdown:: Previous releases
 
@@ -133,13 +137,23 @@ Wallets
 |bw|
 -------------------------
 
-    August 17, 2023
+    September 12, 2023
 
-        |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
-
-        Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
+        |bw| 1.1.8 contains a simple page for Web3 ID age proofs.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.1.7 - September 11, 2023
+
+            |bw| 1.1.7 introduces support for Web3 ID. Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer.
+
+            For wallet users, you can already use the Web3 ID functionality by using the `Concordia social media verifier on Mainnet <https://concordia.mainnet.concordium.software/>`_ or `Concordia social media verifier on Testnet <https://concordia.testnet.concordium.com/>`_. With Concordia, you can prove ownership of accounts on Telegram and Discord and thus transfer trust between the two platforms. Using the bots to issue credentials based on your Telegram and Discord logins allows you to link your accounts and optionally your real name. This is done in two steps. First, you get Web3 ID credentials for your accounts (e.g. one for Discord, one for Telegram). Then, a dApp checks the credentials and stores the verification. Other users can see your other linked accounts within the platform, transferring trust since they know you from another platform.
+
+        .. dropdown:: |bw| 1.0.7 - August 17, 2023
+
+            |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with ConcordiumBFT consensus which will be released August 21, 2023.
+
+            Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
 
         .. dropdown:: |bw| 1.0.6 - May 30, 2023
 
@@ -249,13 +263,17 @@ Wallets
 Desktop Wallet
 --------------
 
-    August 4, 2022
+    September 28, 2023
 
-    The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
-
-    Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+        Version 1.6.0 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which was released August 21, 2023 on Testnet and September 25, 2023 on Mainnet. The wallet also now supports gRPC2.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.5.0 - August 4, 2022
+
+            The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+            Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
 
         .. dropdown:: 1.4.2 - June 21, 2022
 
@@ -552,25 +570,65 @@ Nodes
 Mainnet
 -------
 
-    .. _542-mainnet:
+    .. _604-mainnet:
 
-    June 14, 2023
+    September 11, 2023
 
-    Concordium node version 5.4.2 contains the following features and bug fixes:
+        Concordium Node 6.0.4 contains support for `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released September 25, 2023. **Node runners should upgrade to version 6.0.4. before the protocol update to ensure that their nodes do not shut down.**
 
-    - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+        Also, gRPC v1 is NOT enabled in any of the node distributions. gRPC v2 should be used. As a consequence of this the configuration option ``no-rpc-server`` and environment variable ``CONCORDIUM_NODE_DISABLE_RPC_SERVER``, as well as default values of ``rpc-server-port`` (``CONCORDIUM_NODE_RPC_SERVER_PORT``) and ``rpc-server-addr`` (``CONCORDIUM_NODE_RPC_SERVER_ADDR``), have been removed. The V1 gRPC server is only started if both of these options are supplied.
 
-    - Fixed a security issue.
+        Additional features of this release include:
 
-    - Support using block height as block identifiers in gRPC v2 API.
+        - Fixed a network layer bug where initial messages after the handshake could be dropped in some circumstances.
 
-    - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+        - Changes in Wasm validation and execution in P6 include:
 
-    - Do not keep a historical list of peers when running as a normal node.
+            - Disallowed globals in initialization sections for V1 contracts in P6.
 
-    - Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
+            - Added support for sign extension instructions in Wasm in P6.
+
+            - Do not count custom sections towards module size when executing contracts.
+
+            - Support new ``invoke`` operations for retrieving account keys and checking signatures.
+
+        - Shut down consensus upon a protocol update updating from protocol version 6.
+
+        - Fixed a bug that causes bakers in genesis to restake their earnings when they should not. This affects genesis data at protocol version P5; P1-P4 genesis data are not affected. This breaks compatibility with chains started with P5 genesis data, where some genesis bakers are not set to restake earnings. Other chains (including mainnet and testnet) are not affected.
+
+        - Changed the ``GetConsensusStatus`` endpoint so that slot duration is only returned in protocol versions 0-5.
+
+            - Endpoint is extended to return current timeout duration, current round, current epoch and trigger block time in protocol version 6.
+
+        - Changed the ``GetBlockInfo`` endpoint:
+
+            - Block slot is only returned in protocol versions 0-5.
+
+            - In protocol version 6, the returned finalized block is the last finalized block until itself is finalized. Then it is itself.
+
+            - Endpoint extended to return block round and epoch in protocol version 6.
+
+        - Changed the `GetElectionInfo` endpoint so that election difficulty is only returned in protocol versions 0-5.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 5.4.2 - June 14, 2023
+
+            .. _542-mainnet:
+
+            Concordium node version 5.4.2 contains the following features and bug fixes:
+
+            - Enable CORS support in grpc-web. This only applies when grpc-web is enabled.
+
+            - Fixed a security issue.
+
+            - Support using block height as block identifiers in gRPC v2 API.
+
+            - Extend gRPC v2 API call ``GetBlockInfo`` with the protocol version of the block.
+
+            - Do not keep a historical list of peers when running as a normal node.
+
+            - Fixed a bug that caused an extra byte to be added when running ``getModuleSource`` in the V1 GRPC API.
 
         .. dropdown:: 5.3.2 - April 27, 2023
 

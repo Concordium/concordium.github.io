@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tippy.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -37,6 +39,9 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/installation/downloads.3377d556-d9fa-4dc3-9973-967d807f3838.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -900,17 +905,44 @@ body {margin:0;}
    </i>
   </label>
   <ul class="nav bd-sidenav">
-   <li class="toctree-l1">
-    <a class="reference internal" href="../guides/create-proofs.html">
-     Use ID: Create proofs
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../web3-id/index.html">
+     Identity on Concordium
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+    <label for="toctree-checkbox-31">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/wallet.html">
+       Web3 ID in the Concordium Wallet for Web
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/issuer.html">
+       Web3 ID issuers
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/create-proofs.html">
+       Create proofs
+      </a>
+     </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../web3-id/concordia.html">
+       Concordia
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/gallery/index.html">
      The gallery with ID authentication
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -940,8 +972,8 @@ body {margin:0;}
     Smart Contracts v1
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-32">
+  <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-33">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -950,8 +982,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/general/introduction.html">
      Introduction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-    <label for="toctree-checkbox-33">
+    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+    <label for="toctree-checkbox-34">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -987,8 +1019,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/best-practices/index.html">
      Best practices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-    <label for="toctree-checkbox-34">
+    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+    <label for="toctree-checkbox-35">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1004,8 +1036,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/tutorials/index.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-    <label for="toctree-checkbox-35">
+    <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+    <label for="toctree-checkbox-36">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1024,8 +1056,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/piggy-bank/index.html">
        PiggyBank
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-      <label for="toctree-checkbox-36">
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1056,8 +1088,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/wCCD/index.html">
        wCCD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-      <label for="toctree-checkbox-37">
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1088,8 +1120,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/voting/index.html">
        The Voting dApp
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-      <label for="toctree-checkbox-38">
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1110,8 +1142,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/nft-minting/index.html">
        Mint an NFT
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-      <label for="toctree-checkbox-39">
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1137,8 +1169,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/sft-minting/index.html">
        Mint a semi-fungible token
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-      <label for="toctree-checkbox-40">
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1164,8 +1196,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/fungible-tokens/index.html">
        Mint fungible tokens
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-      <label for="toctree-checkbox-41">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1186,8 +1218,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/nft-marketplace/index.html">
        NFT marketplace smart contract tutorial
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-      <label for="toctree-checkbox-42">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1203,8 +1235,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/eSealing/index.html">
        eSealing
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-      <label for="toctree-checkbox-43">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1220,8 +1252,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/sponsoredTransactions/index.html">
        Sponsored Transactions
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-      <label for="toctree-checkbox-44">
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1247,8 +1279,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts/tutorials/smartContractUpgrade/index.html">
        Smart Contract Upgrade
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-      <label for="toctree-checkbox-45">
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1266,8 +1298,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+    <label for="toctree-checkbox-47">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1333,8 +1365,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/contract-testing-guides.html">
      Contract testing guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-    <label for="toctree-checkbox-47">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1355,8 +1387,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/guides/on-chain-index.html">
      On-chain guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-    <label for="toctree-checkbox-48">
+    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+    <label for="toctree-checkbox-49">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1392,8 +1424,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts/references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-    <label for="toctree-checkbox-49">
+    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+    <label for="toctree-checkbox-50">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1440,22 +1472,10 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
      Ethereum developer onboarding
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../../smart-contracts/onboarding-guide-ethereum-developers/faq.html">
-       FAQs
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../../smart-contracts/onboarding-guide-solana-developers/index.html">
@@ -1764,6 +1784,11 @@ body {margin:0;}
       </a>
      </li>
      <li class="toctree-l2">
+      <a class="reference internal" href="../resources/terms-and-conditions-concordia.html">
+       About Concordia
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../resources/third-party-licenses.html">
        Third Party Licenses
       </a>
@@ -1873,22 +1898,22 @@ body {margin:0;}
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ubuntu-mainnet-node-version">
-     Ubuntu 5.4.2
+     Ubuntu 6.0.4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#linux-docker-mainnet-node-version">
-     Linux-Docker 5.4.2
+     Linux-Docker 6.0.4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#windows-mainnet-node-version">
-     Windows 5.4.2
+     Windows 6.0.4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mac-mainnet-node-version">
-     Mac 5.4.2
+     Mac 6.0.4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1970,44 +1995,44 @@ body {margin:0;}
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Windows v1.5.0</div>
+Windows v1.6.0</div>
 </div>
-<a class="sd-stretched-link reference external" href="https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.5.0.exe"></a></div>
+<a class="sd-stretched-link reference external" href="https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.6.0.exe"></a></div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-MacOS v1.5.0</div>
+MacOS v1.6.0</div>
 </div>
-<a class="sd-stretched-link reference external" href="https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.5.0.dmg"></a></div>
+<a class="sd-stretched-link reference external" href="https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.6.0.dmg"></a></div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Linux® v1.5.0<div class="sd-summary-down docutils">
+Linux® v1.6.0<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Download the Desktop Wallet for Linux®:</p>
 <ul>
-<li><p class="sd-card-text"><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.AppImage">Mainnet AppImage</a></p>
+<li><p class="sd-card-text"><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.AppImage">Mainnet AppImage</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="sd-card-text">SHA256 checksum of the download: <code class="code docutils literal notranslate"><span class="pre">a04dcab599799533d8e35765a656a0ad938074d5f267f1829c5aa8258376b4e8</span></code></p></li>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="code docutils literal notranslate"><span class="pre">ebc8082fa938ebce78fc407eaa0b9f79bc9da71d6d36ecde6c769decdf4f52b6</span></code></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="verification-instructions.html#verification-cdw-appimage"><span class="std std-ref">Verification instructions</span></a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text"><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.deb">Mainnet Debian package</a></p>
+<li><p class="sd-card-text"><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.deb">Mainnet Debian package</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="sd-card-text">SHA256 checksum of the download: <code class="code docutils literal notranslate"><span class="pre">ef0237f30e1c435323ef2eff2df82a23ffbb54b7c0b329666a07c78fb61119f1</span></code></p></li>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="code docutils literal notranslate"><span class="pre">ca9f4e38a422ba64e07a89e38cc762005bc31f3f4cbb399657a0adbd0de25a0e</span></code></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="verification-instructions.html#verification-cdw-deb"><span class="std std-ref">Verification instructions</span></a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text"><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.rpm">Mainnet RPM</a></p>
+<li><p class="sd-card-text"><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.rpm">Mainnet RPM</a></p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="sd-card-text">SHA256 checksum of the download: <code class="code docutils literal notranslate"><span class="pre">845f375c728b14ce13400869001b58c894510454dd7af8fa95d9538b5d8ef2d4</span></code></p></li>
+<li><p class="sd-card-text">SHA256 checksum of the download: <code class="code docutils literal notranslate"><span class="pre">92108b193bc314ba5dc3bd7fe25626645b70d1f7f5f8c0c85fd30aeccc67350f</span></code></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="verification-instructions.html#verification-cdw-rpm"><span class="std std-ref">Verification instructions</span></a></p></li>
 </ul>
 </div></blockquote>
@@ -2071,27 +2096,27 @@ into the folder <code class="docutils literal notranslate"><span class="pre">/us
 <p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
 </div>
 <div class="section" id="ubuntu-mainnet-node-version">
-<h3>Ubuntu 5.4.2<a class="headerlink" href="#ubuntu-mainnet-node-version" title="Permalink to this headline">#</a></h3>
-<p>To run a node on a server with Ubuntu, <a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_5.4.2-0_amd64.deb">download a Mainnet Debian package</a>.</p>
+<h3>Ubuntu 6.0.4<a class="headerlink" href="#ubuntu-mainnet-node-version" title="Permalink to this headline">#</a></h3>
+<p>To run a node on a server with Ubuntu, <a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.0.4-0_amd64.deb">download a Mainnet Debian package</a>.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>SHA256 checksum of the download: cab62172983d509e2e6b34e1bbc6464d989b1f749861278ee800d9efc31fd848</p></li>
+<li><p>SHA256 checksum of the download: 0c236d9a0d87d1dbc44e979155208aecd6f18051ca7baf02a2603b8a9599c454</p></li>
 <li><p><a class="reference internal" href="verification-instructions.html#verification-cdw-deb"><span class="std std-ref">Verification instrcutions</span></a></p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="linux-docker-mainnet-node-version">
-<h3>Linux-Docker 5.4.2<a class="headerlink" href="#linux-docker-mainnet-node-version" title="Permalink to this headline">#</a></h3>
+<h3>Linux-Docker 6.0.4<a class="headerlink" href="#linux-docker-mainnet-node-version" title="Permalink to this headline">#</a></h3>
 <p>To learn how to run a node with Ubuntu, see <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>. To upgrade your Docker node either restart the service if you are using the <cite>:latest</cite> image tag, or change the image tag to the new version. See <a class="reference internal" href="../guides/run-node.html#running-a-node"><span class="std std-ref">Running/upgrading a node</span></a> for details.</p>
 </div>
 <div class="section" id="windows-mainnet-node-version">
-<h3>Windows 5.4.2<a class="headerlink" href="#windows-mainnet-node-version" title="Permalink to this headline">#</a></h3>
-<p>To run a node on Windows, <a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi">download a Mainnet Windows Installer package</a>. <strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
+<h3>Windows 6.0.4<a class="headerlink" href="#windows-mainnet-node-version" title="Permalink to this headline">#</a></h3>
+<p>To run a node on Windows, <a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-6.0.4-0.msi">download a Mainnet Windows Installer package</a>. <strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
 <p>To learn how to run a node on Windows, see <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a>.</p>
 </div>
 <div class="section" id="mac-mainnet-node-version">
-<h3>Mac 5.4.2<a class="headerlink" href="#mac-mainnet-node-version" title="Permalink to this headline">#</a></h3>
-<p>To run a node on macOS, <a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg">download a Mainnet macOS installer package</a>.</p>
+<h3>Mac 6.0.4<a class="headerlink" href="#mac-mainnet-node-version" title="Permalink to this headline">#</a></h3>
+<p>To run a node on macOS, <a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-6.0.4-0.pkg">download a Mainnet macOS installer package</a>.</p>
 <p>To learn how to run a node on Mac, see <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
 </div>
 <div class="section" id="node-performance-monitoring">

@@ -5,9 +5,9 @@
 Set up the |mw-gen2|
 ========================
 
-The |mw-gen2| is a digital :ref:`wallet<glossary-wallet>` that enables you to create and manage your Concordium
-:ref:`identities<glossary-identity>` and :ref:`accounts<glossary-account>` and to create transactions such as sending CCD, :ref:`shielding<glossary-shielding>` and :ref:`unshielding<glossary-unshielding>` CCD,
-and sending :ref:`shielded transactions<glossary-shielded-transfer>`.
+The |mw-gen2| is a digital :term:`wallet` that enables you to create and manage your Concordium
+:term:`identities<identity>` and :term:`accounts<account>` and to create transactions such as sending CCD, :term:`shielding` and :term:`unshielding` CCD,
+and sending :term:`shielded transactions<shielded transfer>`.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
@@ -29,7 +29,7 @@ Get started
 Secret recovery phrase
 ======================
 
-Now you must write down and confirm your :ref:`secret recovery phrase<glossary-secret-recovery-phrase>`. It is important to keep this recovery phrase in a safe location in case you need to :ref:`recover your wallet<recover-wallet>`.
+Now you must write down and confirm your :term:`secret recovery phrase`. It is important to keep this recovery phrase in a safe location in case you need to :ref:`recover your wallet<recover-wallet>`.
 
 #. Tap **Set up a fresh wallet**.
 
@@ -65,7 +65,7 @@ Request identity
 
 #. Read the next page in the app, shortly explaining the Concordium concepts of initial account and identity. Tap **Continue**.
 
-#. Select a third party :ref:`identity provider<glossary-identity-provider>` from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
+#. Select a third party :term:`identity provider` from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
 
    .. image:: ../images/mobile-wallet/MW11.png
       :width: 50%
