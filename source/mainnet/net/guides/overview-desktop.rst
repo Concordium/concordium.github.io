@@ -65,7 +65,7 @@ Before you start, make sure you’ve completed the following steps:
 
 .. dropdown:: Step 4: Set up an identity and an initial account
 
-    Once you've installed the Desktop Wallet, you must set up an :ref:`identity <glossary-identity>` and an :ref:`initial account <glossary-initial-account>`. If you want to be a baker, Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
+    Once you've installed the Desktop Wallet, you must set up an :term:`identity` and an :term:`initial account`. If you want to be a baker, Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
 
 Once you have completed these four steps, you're ready to start using the Desktop Wallet.
 

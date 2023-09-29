@@ -40,7 +40,7 @@ This uses Cargo_ for building, but runs further optimizations on the result.
 
 .. Note::
 
-   If you receive an error similiar to the one below, you need to :ref:`install an earlier version of the rustup compiler<rust-compiler-issue>`.
+   If you receive an error similiar to the one below, you need to update your ``cargo-concordium`` to version 3.0 or later.
 
    .. code-block:: console
 
