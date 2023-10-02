@@ -404,6 +404,8 @@ redirects = {
     "./net/guides/add-baker-desktop": "net/mobile-wallet/add-baker-mw.html",
     "./net/guides/concordium-client": "net/references/concordium-client.html",
     "./net/installation/downloads-testnet": "net/installation/downloads.html",
+    "./net/resources/legal": "net/resources/terms-and-conditions.html",
+    "./en/mainnet/smart-contracts/onboarding-guide-solana-developers/index": "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview.html",
 }
 
 # -- Tags that enables the .. only option ----------------
