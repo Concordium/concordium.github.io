@@ -96,51 +96,51 @@ Concordium Desktop Wallet
 
 .. dropdown:: Mainnet
 
-   .. card:: Windows v1.5.0
-      :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.5.0.exe
+   .. card:: Windows v1.6.0
+      :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.6.0.exe
 
-   .. card:: MacOS v1.5.0
-      :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.5.0.dmg
+   .. card:: MacOS v1.6.0
+      :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.6.0.dmg
 
-   .. dropdown:: Linux® v1.5.0
+   .. dropdown:: Linux® v1.6.0
 
-      Download the Desktop Wallet for Linux®:
+      .. dropdown:: Linux® v1.5.0
 
-      - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.AppImage>`_
+         - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.AppImage>`_
 
-         - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
-         - :ref:`Verification instructions <verification-cdw-appimage>`
+            - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
+            - :ref:`Verification instructions <verification-cdw-appimage>`
 
-      - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.deb>`_
+         - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.deb>`_
 
-         - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
-         - :ref:`Verification instructions <verification-cdw-deb>`
+            - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
+            - :ref:`Verification instructions <verification-cdw-deb>`
 
-      - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.rpm>`_
+         - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.rpm>`_
 
-         - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
-         - :ref:`Verification instructions <verification-cdw-rpm>`
+            - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
+            - :ref:`Verification instructions <verification-cdw-rpm>`
 
 .. dropdown:: Testnet
 
-   .. card:: Windows v1.5.0
-      :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.5.0.exe
+   .. card:: Windows v1.6.0
+      :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.6.0.exe
 
-   .. card:: MacOS v1.5.0
-      :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.5.0.dmg
+   .. card:: MacOS v1.6.0
+      :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.6.0.dmg
 
-   .. dropdown:: Linux® v1.5.0
+   .. dropdown:: Linux® v1.6.0
 
       Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-      -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.AppImage>`_
-         -  SHA256 checksum of the download: ``044d8b2aa039428b7e6626d3af1dade21e52bee04dbcfc9f78d303bd0f1c855e``
+      -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.6.0.AppImage>`_
+         -  SHA256 checksum of the download: ``266c5c4b78ec12cd48881a48eac6cb37e142316fffbaa939120f9377a7ec752c``
 
-      -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.deb>`_
-         -  SHA256 checksum of the download: ``f15d996f9e73118cf12820265af6303a9d6359b30c1e3c401bd0f292e977ceb2``
+      -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.6.0.deb>`_
+         -  SHA256 checksum of the download: ``06638aa969e5ff71730ddcfba81abf11d78d15ba164c7ecb357183d7956ec9ef``
 
-      -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.5.0.rpm>`_
-         -  SHA256 checksum of the download: ``66d2a9ce4809a6e84a84accdb0768d6c1c6a7dcb046b751667a80d75a8a66464``
+      -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.6.0.rpm>`_
+         -  SHA256 checksum of the download: ``a8082780a33dd81a7572a7edb27a98ccc5c0215c66b3b28fff619bf8090bb47d``
 
 .. _ledger-app-download:
 
@@ -223,13 +223,13 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Windows |mainnet-node-version|
 
-To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |mainnet-node-version|
 
-To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_.
+      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-5.4.2-0.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
