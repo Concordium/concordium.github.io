@@ -1,10 +1,10 @@
 .. _solana-overview:
 
-========
-Overview
-========
+================================
+Onboarding for Solana developers
+================================
 
-This overview outlines the main differences of account models and smart contract functionality between Solana and Concordium.
+This overview outlines the main differences of account models and smart contract functionality between Solana and Concordium. :ref:`The FAQ<solana-faq>` answers commonly asked questions.
 
 Accounts
 ========
@@ -110,3 +110,9 @@ Concordium
 
         Ok(())
     }
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   faq

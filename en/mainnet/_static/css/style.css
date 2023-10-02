@@ -1,0 +1,391 @@
+:root {
+
+    /*****************************************************************************
+    * Font family
+    **/
+    /* These are adapted from https://systemfontstack.com/ */
+    --pst-font-family-base-system: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    --pst-font-family-monospace-system: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', Courier, monospace;
+  
+    --pst-font-family-base: var(--pst-font-family-base-system);
+    --pst-font-family-heading: var(--pst-font-family-base);
+    --pst-font-family-monospace: var(--pst-font-family-monospace-system);
+  
+    /*****************************************************************************
+    * Color
+    *
+    * Colors are defined in rgb string way, "red, green, blue"
+    **/
+    --pst-color-link: #48A2AE;
+    --pst-color-link-hover: #48A2AE;
+    --pst-color-sidebar-link-hover: #48A2AE;
+    --pst-color-toc-link-hover: #48A2AE;
+    --pst-color-toc-link-active: #48A2AE;
+    --pst-color-headerlink: #48A2AE;
+    --pst-color-headerlink-hover: #48A2AE;
+    --pst-color-inline-code: 178, 34, 34;
+    --primary-color: #48A2AE;
+    --secondary-color: #052535;
+    --font-color: #333333;
+    --bg-color: #ffffff;
+    --heading-color: #333333;
+}
+
+    [data-theme="dark"] {
+        --primary-color: #9A97F3;
+        --secondary-color: #818cab;
+        --font-color: #fff;
+        --bg-color: #000000;
+        --heading-color: #818cab;
+}
+
+html {
+    --pst-font-family-base: var(--pst-font-family-base-system);
+    --pst-font-family-heading: var(--pst-font-family-base-system);
+    --pst-font-family-monospace: var(--pst-font-family-monospace-system);
+}
+
+body{
+    font-family: var(--pst-font-family-base-system);
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
+
+/* Text styling */
+p{
+    line-height: 1.7em;
+    font-size: 16px;
+    color: var(--font-color);
+    font-family: var(--pst-font-family-base-system);
+}
+
+h1{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+    margin-bottom: 34px;
+}
+
+h2{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+    margin-bottom: 28px;
+}
+
+h3{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+    margin-bottom: 24px;
+}
+
+h4{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+h5{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+h6{
+    font-family: var(--pst-font-family-base-system);
+    color: var(--heading-color);
+}
+
+a.reference.external{
+    color: var(--pst-color-link);
+}
+
+a.reference.internal{
+    color: var(--pst-color-link);
+}
+
+a.reference.internal:hover{
+    color: var(--pst-color-link);
+}
+
+a.reference.internal:active{
+    color: var(--pst-color-link);
+}
+
+a.left-prev{
+    color: var(--pst-color-link);    
+}
+
+a.right-next{
+    color: var(--pst-color-link);    
+}
+
+a.current.reference.internal:hover{
+    color: var(--pst-color-link);      
+}
+
+/*Code styling */
+/* Change the highlight color used in code-snippets. This makes them stand out more. */
+.highlight .hll {
+    background-color: #ccddcc;
+}
+
+/* Adds padding to the right of '$' in code-blocks with terminal commands. */
+.gp {
+    padding-right: 0.5em;
+}
+
+.navbar{
+    position: fixed;
+    min-height: var(--pst-header-height);
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Sidebar */
+@media (min-width: 720px) {
+    .bd-sidebar {
+        border-right: none;
+    }
+}
+​
+.bd-sidebar label  {
+    left: 0;
+    right: unset;
+    height: 35px;
+}
+
+.bd-sidebar label:hover {
+    background: none;
+}
+​
+.bd-sidebar .label-parts i {
+    left: 0;
+    right: unset;
+    top: 9px;
+}
+​
+.bd-sidebar .nav {
+    font-size: 14px;
+    padding: 0 0 4px 14px
+}
+​
+.nav.bd-sidenav li.has-children {
+    padding: 2px 0 2px 10px;
+}
+​
+.nav.bd-sidenav li {
+    padding: 3px 0 7px 10px;
+}
+​
+.bd-sidebar li {
+    padding: 2px 0 2px 10px;
+}
+​
+.bd-sidebar li.has-children>.reference {
+    padding-right: 0;
+}
+​
+.bd-sidebar .nav ul {
+    padding: 0 0 0 14px;
+}
+​
+.bd-sidebar .nav li>a {
+    padding: 4px 0 0 22px;
+    color: #888888;
+}
+​
+.bd-sidebar .nav li.has-children>a {
+    padding: 5px 0 5px 22px;
+}
+​
+.toctree-checkbox~label i {
+    transform: rotate(270deg);
+}
+​
+.toctree-checkbox:checked~label i {
+    transform: rotate(0deg);
+}
+​
+.bd-links {
+    margin-right: 0;
+    margin-left: 0;
+}
+​
+.fa-chevron-down:before {
+    color: #888888;
+}
+​
+nav.bd-links p.caption {
+    text-transform: unset;
+    font-weight: unset;
+    font-size: 14px;
+    padding: 0 0 0 22px;
+    color: #888888;
+}
+​
+.bd-sidebar .nav .active:hover>label .fa-chevron-down:before,
+.bd-sidebar .nav .active>label .fa-chevron-down:before {
+    color: rgba(var(--pst-color-sidebar-link-active),1);
+}
+​
+.bd-search {
+    padding: 37px 0 26px 0;
+    margin: 0;
+}
+
+.bd-search input {
+    border-radius: 16px;
+    border: 1px solid #e7e7e7;
+    padding: 24px 24px 24px 50px;
+    font-size: 15px;
+}
+​
+.bd-search .icon {
+    left: 36px;
+}
+
+.toctree-checkbox~label i {
+    transform: rotate(270deg);
+}
+​
+.toctree-checkbox:checked~label i {
+    transform: rotate(0deg);
+}
+
+.sidebar-top-menu {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    margin-left: -.809em;
+    margin-right: -.809em;
+}
+
+.sidebar-top-menu a {
+    color: #d9d9d9;
+    flex: 1;
+    padding: 0.5em;
+    border-radius: 2px 2px 0 0;
+}
+
+.rst-versions.shift-up {
+    overflow-y: auto;
+}
+
+.sidebar-top-menu a.active {
+    background-color: #EFEFEF;
+}
+
+.discourse {
+    background: white;
+    color: black;
+}
+  
+i.fab fa-github-square:before {
+    background: black;
+    color: white;
+}
+
+/* Admonitions */
+.section {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+.admonition>.admonition-title,
+div.admonition>.admonition-title {
+    margin: 0;
+    padding: 10px 20px 10px 50px;
+}
+
+.admonition>.admonition-title:before,
+div.admonition>.admonition-title:before {
+    left: 24px;
+    width: 16px;
+    height: 16px;
+}
+​
+.admonition p.admonition-title~*,
+div.admonition p.admonition-title~* {
+    margin: 20px 30px;
+}
+​
+.admonition,
+div.admonition {
+    margin: 50px auto;
+    padding: 0 0 15px;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.admonition.warning {
+    background: #ffffff;
+    border-color: #F6DB9A;
+    border: 1px solid;
+}
+
+.admonition.warning .admonition-title {
+    background: #F6DB9A;
+}
+
+.admonition.note {
+    background: #ffffff;
+    border-color: #acceed;
+    border: 1px solid;
+}
+
+.admonition.note .admonition-title {
+    background: #e5f2ff;
+}
+
+/* Consent dialog */
+.consent {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    max-width: 530px;
+    padding: 30px 45px 25px;
+    background: linear-gradient(157deg, #005A78 -18.68%, #2E8894 95.63%);
+    color: #fff;
+}
+
+.consent p {
+    margin-bottom: 0.5em;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.consent button {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: .5em;
+    margin-right: .5em;
+    background-color: #48A2AE;
+    border-radius: 12px;
+    border-width: 0;
+    color: #fff;
+}
+
+.consent a:link {
+    margin-left: .5em;
+    color: #ffffff;
+
+}
+
+.consent a:visited {
+    color: lightgrey;
+}
+
+.consent   a:hover {
+    color: lightgrey;
+}
+
+.consent a:active {
+    color: #d9d9d9;
+}
+
+@media only screen and (max-width: 768px) {
+    .consent {
+        left: 0;
+    }
+}
