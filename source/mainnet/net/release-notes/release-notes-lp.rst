@@ -889,8 +889,8 @@ Testnet
 
     October 10, 2023
 
-        Concordium Node 6.1.x contains bug fixes and improvements.
-        
+        Concordium Node 6.1.5 contains bug fixes and improvements.
+
             **Improvements**
 
             - Exposed the health check service via grpc-web when grpc-web is enabled.
@@ -918,8 +918,8 @@ Testnet
             - Several fixes are included for peer handling.
 
                 - Fixed a bug where stored peers are removed incorrectly. The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. You can use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup. An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
-                
-                - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup. 
+
+                - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
 
             - Fixed a bug where the block state hash was not returned properly for the genesis block.
 
