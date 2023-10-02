@@ -14,7 +14,7 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contract development guides
+   :hidden:
 
    setup-tools
    setup-contract
