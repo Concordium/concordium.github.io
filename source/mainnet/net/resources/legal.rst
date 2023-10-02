@@ -4,10 +4,11 @@
 Legal
 =====
 
-The following topics relate to terms and conditions of use as well as notices and licenses for referenced hardware and software.
+The topics here relate to terms and conditions of use as well as notices and licenses for referenced hardware and software.
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    terms-and-conditions
    terms-and-conditions-dw

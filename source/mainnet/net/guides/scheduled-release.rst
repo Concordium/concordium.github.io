@@ -11,6 +11,7 @@ Some transfers contain a release schedule. This means that the CCD in the transf
 
 .. toctree::
     :maxdepth: 2
+    :hidden:
 
     ../desktop-wallet/single-sign-schedule
     ../mobile-wallet/inspect-release-schedule-mw

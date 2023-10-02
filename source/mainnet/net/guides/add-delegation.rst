@@ -5,7 +5,7 @@
 Delegate to a baker pool or passive delegation
 ==============================================
 
-You can delegate stake from an account to a :ref:`baker pool<glossary-baker-pool>` or to :ref:`passive delegation<glossary-passive-delegation>`.
+You can delegate stake from an account to a :term:`baker pool` or to :term:`passive delegation`.
 
 When you delegate some stake to a baker pool, it can influence the chances of the baker owner of the baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.
 
