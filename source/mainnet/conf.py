@@ -403,6 +403,7 @@ redirects = {
     "./net/desktop-wallet/update-delegation": "net/guides/update-delegation.html",
     "./net/guides/add-baker-desktop": "net/mobile-wallet/add-baker-mw.html",
     "./net/guides/concordium-client": "net/references/concordium-client.html",
+    "./net/installation/downloads-testnet": "net/installation/downloads.html",
 }
 
 # -- Tags that enables the .. only option ----------------
