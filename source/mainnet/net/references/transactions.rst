@@ -105,7 +105,7 @@ Just before the transaction is sent, you're asked for the password to access
 the signing keys.
 
 Once a transaction has been submitted, the command will continuously poll and
-display its status until it's been :ref:`finalized<glossary-finalization>`.
+display its status until it's been :term:`finalized<finalization>`.
 
 .. _account-commands:
 
@@ -117,7 +117,7 @@ Commands for showing account information
 Account sequence number
 -----------------------
 
-Each account on the Concordium blockchain has a :ref:`sequence number<glossary-transaction-sequence-number>` and each
+Each account on the Concordium blockchain has a :term:`sequence number<transaction sequence number>` and each
 transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
@@ -144,7 +144,7 @@ Account aliases
 ---------------
 
 In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
-matching account :ref:`aliases<glossary-alias>`. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+matching account :term:`aliases<alias>`. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
 This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.
@@ -208,7 +208,7 @@ Apart from the generic transaction flags above, the parameters are:
 -  ``--amount``: number of CCD tokens to send.
 -  ``--receiver``: name or address of the receiver account.
 
-The following flags are for adding a :ref:`transfer memo<glossary-transfer-memo>` to the transfer.
+The following flags are for adding a :term:`transfer memo` to the transfer.
 
 -  ``--memo``: optional flag for providing a transfer memo as a string. The string will be CBOR encoded and included in the memo.
 -  ``--memo-json``: optional flag for providing a transfer memo as a JSON file. The JSON contents of the file will be CBOR encoded and included in the memo.
@@ -255,7 +255,7 @@ sender account A has three transaction signing keys 0, 1, and 3.
 Make a shielded transfer
 ------------------------
 
-A :ref:`shielded transfer<glossary-shielded-transfer>` is a transfer from a :ref:`shielded balance<glossary-shielded-balance>` to a shielded
+A :term:`shielded transfer` is a transfer from a :term:`shielded balance` to a shielded
 balance of another account. The command is very similar to a standard transfer.
 
 .. code-block:: console
@@ -296,7 +296,7 @@ The interaction looks like the following:
 
 This command has all of the additional options of ``send``, as well as an
 additional flag ``--index.`` If given, this flag is used to select which
-:ref:`incoming shielded amounts<glossary-incoming-shielded-amount>` that will be used as input to the transaction.
+:term:`incoming shielded amounts<shielded balance>` that will be used as input to the transaction.
 
 This is illustrated with the following example. :ref:`Querying an account<query-account-state>` can display the
 list of incoming amounts on account. An output could look like this:
@@ -313,7 +313,7 @@ list of incoming amounts on account. An output could look like this:
    ...
 
 If you want to ``send-shielded`` from the account while supplying index 8,
-only the shielded amount ``8c0faff6739bffc531c5...`` and the :ref:`self balance<glossary-self-balance>`
+only the shielded amount ``8c0faff6739bffc531c5...`` and the :term:`self balance<shielded balance>`
 will be used as input of the shielded transfer.
 
 If the supplied index is out of range ``concordium-client`` will refuse to send
@@ -322,7 +322,7 @@ the transaction.
 Shield an amount
 ----------------
 
-The command to :ref:`shield<glossary-shielded-amount>` an amount with ``concordium-client`` is ``account
+The command to :term:`shield<shielded amount>` an amount with ``concordium-client`` is ``account
 shield``. For example, an interaction to shield 10 CCD on account A looks like the following.
 
 The command is:
