@@ -60,11 +60,6 @@ p{
     font-family: var(--pst-font-family-base-system);
 }
 
-.section {
-    margin-bottom: 60px;
-    margin-top: 60px;
-}
-
 h1{
     font-family: var(--pst-font-family-base-system);
     color: var(--heading-color);
@@ -291,6 +286,17 @@ i.fab fa-github-square:before {
 }
 
 /* Admonitions */
+.section {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+.admonition>.admonition-title,
+div.admonition>.admonition-title {
+    margin: 0;
+    padding: 10px 20px 10px 50px;
+}
+
 .admonition>.admonition-title:before,
 div.admonition>.admonition-title:before {
     left: 24px;
@@ -306,7 +312,7 @@ div.admonition p.admonition-title~* {
 .admonition,
 div.admonition {
     margin: 50px auto;
-    padding: 0 0 30px;
+    padding: 0 0 15px;
     border-radius: 16px;
     box-shadow: none;
 }
@@ -319,8 +325,6 @@ div.admonition {
 
 .admonition.warning .admonition-title {
     background: #F6DB9A;
-    margin: 0;
-    padding: 10px 20px 10px 50px;
 }
 
 .admonition.note {
@@ -331,8 +335,6 @@ div.admonition {
 
 .admonition.note .admonition-title {
     background: #e5f2ff;
-    margin: 0;
-    padding: 10px 20px 10px 50px;
 }
 
 /* Consent dialog */

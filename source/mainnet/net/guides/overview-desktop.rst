@@ -79,13 +79,6 @@ Once you have completed these four steps, you're ready to start using the Deskto
 
     Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
 
-Step 4: Set up an identity and an initial account
-==================================================
-
-Once you've installed the Desktop Wallet, you must set up an identity and an initial account. Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
-
-You're now ready to start using the Desktop Wallet.
-
 .. |ledger-settings| image:: ../images/desktop-wallet/ledger-live-settings.png
                     :alt: gear wheel on black background
                     :width: 50px
