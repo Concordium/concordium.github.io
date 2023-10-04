@@ -58,7 +58,7 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    October 2, 2023
+    October 4, 2023
 
         Version 1.3.0 contains several fixes for the WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds. It also contains the ability to view the secret recovery phrase if you need to record it again.
 
