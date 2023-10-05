@@ -332,8 +332,6 @@ band catchup the node will not have any peers.
 The out of band catchup can be kept enabled even after the node is caught up,
 but is not necessary. If you wish to disable do the the following:
 
-.. note::
-
 #. Remove the environment variables from the configuration file:
 
    - For mainnet:
@@ -342,16 +340,20 @@ but is not necessary. If you wish to disable do the the following:
        administrator and remove the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
+
          <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
          <string>https://catchup.mainnet.concordium.software/blocks.idx</string>
+
    - For testnet:
 
      - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"`` as an
        administrator and remove the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
+
          <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
          <string>https://catchup.testnet.concordium.com/blocks.idx</string>
+
 #. Restart the appropriate node by running the application **Concordium Node Stop [Mainnet/Testnet]** (if running) and then
    **Concordium Node Start [Mainnet/Testnet]**.
 
