@@ -58,29 +58,37 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    August 16, 2023
+    October 4, 2023
 
-        Version 1.2.1 contains the following:
+        Version 1.3.0 contains several fixes for the WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds. It also contains the ability to view the secret recovery phrase if you need to record it again.
 
-        - Fixed end destination when exiting add/remove watched tokens.
+        .. note::
 
-        - Fixed item overlap issues with transaction details screen
-
-        - Removed all tokens with balance < 0 when selecting tokens for transfer
-
-        - Removed token thumbnail and added name in token details activity
-
-        - Transfer token flow now ends in the proper place
-
-        - Fixed issue where ID pub duplicated id error showed
-
-        - Ensured compatibility with the upcoming P6 protocol update.
-
-        - Changed text in tokens screen and added item decorator for divider in TokensFragment.
-
-        - Removed the ability to select other tokens when transferring from TokenDetailsActivity
+            The option to view the secret recovery phrase is not available simply by upgrading to version 1.3.0. Instead, you must either create a new wallet or recover your wallet to be able to use this option.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.1 - August 16, 2023
+
+            Version 1.2.1 contains the following:
+
+            - Fixed end destination when exiting add/remove watched tokens.
+
+            - Fixed item overlap issues with transaction details screen
+
+            - Removed all tokens with balance < 0 when selecting tokens for transfer
+
+            - Removed token thumbnail and added name in token details activity
+
+            - Transfer token flow now ends in the proper place
+
+            - Fixed issue where ID pub duplicated id error showed
+
+            - Ensured compatibility with the upcoming P6 protocol update.
+
+            - Changed text in tokens screen and added item decorator for divider in TokensFragment.
+
+            - Removed the ability to select other tokens when transferring from TokenDetailsActivity
 
         .. dropdown:: |mw-gen2| 1.2.0 - June 27, 2023
 
@@ -893,9 +901,13 @@ Testnet
 
     October 10, 2023
 
-        Concordium Node 6.1.5 contains bug fixes and improvements.
+        Concordium Node 6.1.6 contains bug fixes and improvements.
 
             **Improvements**
+
+            - Node catchup is now enabled by default on all platforms.
+
+            - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
             - Exposed the health check service via grpc-web when grpc-web is enabled.
 
@@ -1359,11 +1371,11 @@ Concordium Client
 
         Concordium Client 6.1.0 includes support for the following:
 
-            - Add baker win-time command for determining the earliest time a specified baker is expected to bake.
+            - Added baker win-time command for determining the earliest time a specified baker is expected to bake.
 
-            - End stream consumption early if an error is returned.
+            - Stream consumption ends early if an error is returned.
 
-            - Add support for the following node version 6.1 queries under the ``raw`` command:
+            - Added support for the following node version 6.1 queries under the ``raw`` command:
 
                 - ``GetBakersRewardPeriod``
                 - ``GetBlockCertificates``
