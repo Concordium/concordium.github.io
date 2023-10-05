@@ -79,14 +79,6 @@ Once you have completed these four steps, you're ready to start using the Deskto
 
     Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
 
-.. toctree::
-    :hidden:
-    :maxdepth: 1
-
-    ../desktop-wallet/accounts-desktop
-    ../desktop-wallet/update-application
-    ../desktop-wallet/reset-data
-
 .. |ledger-settings| image:: ../images/desktop-wallet/ledger-live-settings.png
                     :alt: gear wheel on black background
                     :width: 50px

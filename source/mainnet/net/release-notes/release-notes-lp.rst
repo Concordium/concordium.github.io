@@ -58,29 +58,37 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    August 16, 2023
+    October 4, 2023
 
-        Version 1.2.1 contains the following:
+        Version 1.3.0 contains several fixes for the WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds. It also contains the ability to view the secret recovery phrase if you need to record it again.
 
-        - Fixed end destination when exiting add/remove watched tokens.
+        .. note::
 
-        - Fixed item overlap issues with transaction details screen
-
-        - Removed all tokens with balance < 0 when selecting tokens for transfer
-
-        - Removed token thumbnail and added name in token details activity
-
-        - Transfer token flow now ends in the proper place
-
-        - Fixed issue where ID pub duplicated id error showed
-
-        - Ensured compatibility with the upcoming P6 protocol update.
-
-        - Changed text in tokens screen and added item decorator for divider in TokensFragment.
-
-        - Removed the ability to select other tokens when transferring from TokenDetailsActivity
+            The option to view the secret recovery phrase is not available simply by upgrading to version 1.3.0. Instead, you must either create a new wallet or recover your wallet to be able to use this option.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.1 - August 16, 2023
+
+            Version 1.2.1 contains the following:
+
+            - Fixed end destination when exiting add/remove watched tokens.
+
+            - Fixed item overlap issues with transaction details screen
+
+            - Removed all tokens with balance < 0 when selecting tokens for transfer
+
+            - Removed token thumbnail and added name in token details activity
+
+            - Transfer token flow now ends in the proper place
+
+            - Fixed issue where ID pub duplicated id error showed
+
+            - Ensured compatibility with the upcoming P6 protocol update.
+
+            - Changed text in tokens screen and added item decorator for divider in TokensFragment.
+
+            - Removed the ability to select other tokens when transferring from TokenDetailsActivity
 
         .. dropdown:: |mw-gen2| 1.2.0 - June 27, 2023
 

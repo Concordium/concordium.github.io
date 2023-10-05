@@ -24,10 +24,7 @@ How to proceed
 Upgrade
 -------
 
-Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your |mw-gen1| or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the appropriate release notes:
-
-- :ref:`Mainnet release notes<mainnet-release-notes>`
-- :ref:`Testnet release notes <testnet-release-notes>`
+Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your |mw-gen1| or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the :ref:`release notes<release-notes>`.
 
 Final Notes
 ===========
@@ -204,6 +201,16 @@ How to back up and import
 
     Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
 
+        .. note::
+
+            The option to view the secret recovery phrase is available in |mw-gen2| for Android version 1.3.0 or greater in the Wallet Settings |wallet-settings|. However you cannot simply upgrade to version 1.3.0 and use this feature. Instead, you must either create a new wallet or recover your wallet to be able to see this option in Wallet Settings.
+
+    If you need to export your private key to use in Concordium Client (for example, to work with smart contracts or to set up baking), see :ref:`Export a private key<export-key>`.
+
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
+
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px
