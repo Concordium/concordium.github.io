@@ -75,6 +75,48 @@ details of how this is done will depend on your configuration.
 
 .. _node-collector-ubuntu-mainnet:
 
+Synchronize a node with the network
+===================================
+
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.
+
+The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. If you wish to disable do the the following:
+
+.. note::
+
+#. Remove the environment variables from the configuration file:
+
+  1. Stop the node if it is running
+
+    .. code-block:: console
+
+      $sudo systemctl stop concordium-mainnet-node.service
+
+  2. Edit the node service configuration file
+
+    .. code-block:: console
+
+      $sudo systemctl edit concordium-mainnet-node.service
+
+  3. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+    .. code-block:: ini
+
+      UnsetEnvironment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM
+
+  4. Start the service again
+
+    .. code-block:: console
+
+      $sudo systemctl start concordium-mainnet-node.service
+
+After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+
 Node collector configuration
 ============================
 
