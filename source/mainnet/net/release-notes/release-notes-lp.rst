@@ -58,29 +58,37 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    August 16, 2023
+    October 4, 2023
 
-        Version 1.2.1 contains the following:
+        Version 1.3.0 contains several fixes for the WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds. It also contains the ability to view the secret recovery phrase if you need to record it again.
 
-        - Fixed end destination when exiting add/remove watched tokens.
+        .. note::
 
-        - Fixed item overlap issues with transaction details screen
-
-        - Removed all tokens with balance < 0 when selecting tokens for transfer
-
-        - Removed token thumbnail and added name in token details activity
-
-        - Transfer token flow now ends in the proper place
-
-        - Fixed issue where ID pub duplicated id error showed
-
-        - Ensured compatibility with the upcoming P6 protocol update.
-
-        - Changed text in tokens screen and added item decorator for divider in TokensFragment.
-
-        - Removed the ability to select other tokens when transferring from TokenDetailsActivity
+            The option to view the secret recovery phrase is not available simply by upgrading to version 1.3.0. Instead, you must either create a new wallet or recover your wallet to be able to use this option.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.1 - August 16, 2023
+
+            Version 1.2.1 contains the following:
+
+            - Fixed end destination when exiting add/remove watched tokens.
+
+            - Fixed item overlap issues with transaction details screen
+
+            - Removed all tokens with balance < 0 when selecting tokens for transfer
+
+            - Removed token thumbnail and added name in token details activity
+
+            - Transfer token flow now ends in the proper place
+
+            - Fixed issue where ID pub duplicated id error showed
+
+            - Ensured compatibility with the upcoming P6 protocol update.
+
+            - Changed text in tokens screen and added item decorator for divider in TokensFragment.
+
+            - Removed the ability to select other tokens when transferring from TokenDetailsActivity
 
         .. dropdown:: |mw-gen2| 1.2.0 - June 27, 2023
 
@@ -143,7 +151,7 @@ Wallets
 
         .. dropdown:: |bw| 1.0.7 - August 17, 2023
 
-            |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which will be released August 21, 2023.
+            |bw| 1.0.7 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with ConcordiumBFT consensus which will be released August 21, 2023.
 
             Additionally, Concordium plans to remove support for JSON-RPC in the |bw| on 1 November 2023. JSON-RPC allows a dApp to communicate with the same node as the wallet is connected to, and enables dApps to access the JSON-RPC interface without being connected to a separate server itself. In future, the wallet API will only use gRPC2. More information is forthcoming about how developers should prepare for this.
 
@@ -255,13 +263,17 @@ Wallets
 Desktop Wallet
 --------------
 
-    August 4, 2022
+    September 28, 2023
 
-    The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
-
-    Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
+        Version 1.6.0 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which was released August 21, 2023 on Testnet and September 25, 2023 on Mainnet. The wallet also now supports gRPC2.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.5.0 - August 4, 2022
+
+            The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.
+
+            Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. **This means that macOS users have to download this release manually.**
 
         .. dropdown:: 1.4.2 - June 21, 2022
 
