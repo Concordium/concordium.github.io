@@ -223,7 +223,7 @@ but is not necessary. If you wish to disable do the the following:
 
 #. Search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. The configuration file opens in **Notepad**.
 
-#. Specify the URL to the block file index in the configuration file:
+#. Remove the environment variables from the configuration file:
 
    - For mainnet, remove the following line from the ``[node.mainnet]`` section:
 
