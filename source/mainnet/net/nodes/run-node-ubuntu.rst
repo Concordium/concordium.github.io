@@ -74,11 +74,18 @@ platform configuration you will need to forward an external port
 to ``8889`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
-Disable out-of-band catchup
+Synchronize a node with the network
 ===================================
 
-Since version 6.1 out-of-band catchup is enabled by default, but can still
-be disabled by doing the following:
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.
+
+The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. To disable out of band catchup remove the environment
+variables from the configuration file:
 
   1. Stop the node if it is running
 
@@ -103,6 +110,8 @@ be disabled by doing the following:
     .. code-block:: console
 
       $sudo systemctl start concordium-testnet-node.service
+
+After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
 
 .. _node-collector-ubuntu-testnet:
 

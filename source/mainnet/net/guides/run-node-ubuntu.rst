@@ -73,8 +73,6 @@ platform configuration you will need to forward an external port
 to ``8888`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
-.. _node-collector-ubuntu-mainnet:
-
 Synchronize a node with the network
 ===================================
 
@@ -85,11 +83,8 @@ catchup enabled. This will speed up the initial catchup and during out of
 band catchup the node will not have any peers.
 
 The out of band catchup can be kept enabled even after the node is caught up,
-but is not necessary. If you wish to disable do the the following:
-
-.. note::
-
-#. Remove the environment variables from the configuration file:
+but is not necessary. To disable out of band catchup remove the environment
+variables from the configuration file:
 
   1. Stop the node if it is running
 
@@ -116,6 +111,8 @@ but is not necessary. If you wish to disable do the the following:
       $sudo systemctl start concordium-mainnet-node.service
 
 After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+
+.. _node-collector-ubuntu-mainnet:
 
 Node collector configuration
 ============================
