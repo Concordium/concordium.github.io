@@ -74,6 +74,36 @@ platform configuration you will need to forward an external port
 to ``8889`` on your router, open it in your firewall, or both. The
 details of how this is done will depend on your configuration.
 
+Disable out-of-band catchup
+===================================
+
+Since version 6.1 out-of-band catchup is enabled by default, but can still
+be disabled by doing the following:
+
+  1. Stop the node if it is running
+
+    .. code-block:: console
+
+      $sudo systemctl stop concordium-testnet-node.service
+
+  2. Edit the node service configuration file
+
+    .. code-block:: console
+
+      $sudo systemctl edit concordium-testnet-node.service
+
+  3. Add the following under the ``[Service]`` section (create the section if it does not exist)
+
+    .. code-block:: ini
+
+      UnsetEnvironment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM
+
+  4. Start the service again
+
+    .. code-block:: console
+
+      $sudo systemctl start concordium-testnet-node.service
+
 .. _node-collector-ubuntu-testnet:
 
 Node collector configuration

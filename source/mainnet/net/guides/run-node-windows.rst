@@ -209,6 +209,38 @@ When nodes are stopped or started, this is also recorded in the system event log
    .. image:: ../images/run-node/Node-setup-win-7.png
          :width: 50%
 
+Synchronize a node with the network
+===================================
+
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.
+
+The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. If you wish to disable do the the following:
+
+#. Search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. The configuration file opens in **Notepad**.
+
+#. Specify the URL to the block file index in the configuration file:
+
+   - For mainnet, remove the following line from the ``[node.mainnet]`` section:
+
+   .. code-block:: TOML
+
+      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
+
+   - For testnet, remove the following line from the ``[node.testnet]`` section:
+
+   .. code-block:: TOML
+
+      node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
+
+   Save the configuration file.
+
+#. In the **Search** bar, search for and select **Stop Concordium Service Node** to stop the node, and then search for and select **Start Concordium Service Node** to restart the node.
+
 Node collector configuration
 ============================
 

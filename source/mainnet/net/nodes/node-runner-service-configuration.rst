@@ -208,7 +208,11 @@ Environment variables to be set when starting the node. This can be used to set 
 
 Note that a number of environment variables are already set by configuration options, so this should only be used where there is no explicit configuration option provided.
 
-Another common node.env.* variable to add is for out-of-band catchup so that nodes can synchronize faster with the rest of the network. This improves performance and gets your node up and running more quickly.
+After version 6.1 the node.env.* variable for out-of-band-catchup is now
+enabled by default. Having this variable set means that nodes can synchronize
+faster with the rest of the network. This improves performance and gets your
+node up and running more quickly. It can still be disabled, by removing the
+following lines for Mainnet and Testnet respectively.
 
 For Mainnet:
 
