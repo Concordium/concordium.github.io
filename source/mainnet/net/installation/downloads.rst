@@ -242,7 +242,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
       To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.6-0_amd64.deb>`_.
 
-      - SHA256 checksum of the download: ``tbd``
+      - SHA256 checksum of the download: ``b668ea82418fc713665c15361e8ab4fc09002ffdee6e7eabe19cce05b14be0e7``
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
