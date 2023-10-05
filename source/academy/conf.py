@@ -188,8 +188,8 @@ html_theme_options = {
         {
             "name": "Discourse",
             "url": "https://support.concordium.software/latest",
-            "icon": "_static/discourse-brands.svg",
-            "type": "local",
+            "icon": "fab fa-discourse",
+            "type": "fontawesome",
         },
         {
             # Concordium Email Support

@@ -1,0 +1,66 @@
+<div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
