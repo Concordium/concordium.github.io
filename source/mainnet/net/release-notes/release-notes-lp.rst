@@ -901,55 +901,55 @@ Testnet
 
     October 10, 2023
 
-        Concordium Node 6.1.6 contains bug fixes and improvements.
+    Concordium Node 6.1.6 contains bug fixes and improvements.
 
-            **Improvements**
+    **Improvements**
 
-            - Node catchup is now enabled by default on all platforms.
+        - Node catchup is now enabled by default on all platforms.
 
-            - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
+        - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
-            - Exposed the health check service via grpc-web when grpc-web is enabled.
+        - Exposed the health check service via grpc-web when grpc-web is enabled.
 
-            - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
+        - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
 
-            - Removed the concept of pending blocks.
+        - Removed the concept of pending blocks.
 
-            - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
+        - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
 
-            - Added a number of endpoints to the GRPCV2 API, including:
+        - Added a number of endpoints to the GRPCV2 API, including:
 
-                - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
+            - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
 
-                - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate and epoch finalization entry contained in the block (where present).
+            - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate and epoch finalization entry contained in the block (where present).
 
-                - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
+            - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
 
-                - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
+            - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
 
-                - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
+            - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
 
-            **Fixes**
+    **Fixes**
 
-            - Several fixes are included for peer handling.
+        - Several fixes are included for peer handling.
 
-                - Fixed a bug where stored peers are removed incorrectly. The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. You can use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup. An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
+            - Fixed a bug where stored peers are removed incorrectly. The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. You can use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup. An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
 
-                - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
+            - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
 
-            - Fixed a bug where the block state hash was not returned properly for the genesis block.
+        - Fixed a bug where the block state hash was not returned properly for the genesis block.
 
-            - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
+        - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
 
-            - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
+        - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
 
-            - Fixed a bug where it was not possible to use the collector with a node configured with TLS. You must configure the ``grpc-host`` flag of the collector with domain stated in the certificate that the node is configured with.
+        - Fixed a bug where it was not possible to use the collector with a node configured with TLS. You must configure the ``grpc-host`` flag of the collector with domain stated in the certificate that the node is configured with.
 
-            - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
+        - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
 
-            - Fixed a bug in how the last timeout certificate is recovered at start-up.
+        - Fixed a bug in how the last timeout certificate is recovered at start-up.
 
-            - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
+        - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
 
     .. dropdown:: Previous releases
 
