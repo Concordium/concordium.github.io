@@ -148,6 +148,7 @@ html_theme_options = {
     # 'prev_next_buttons_location': None,
     # 'style_external_links': False,
     # 'style_nav_header_background': '#235c9b',
+    "use_edit_page_button": True,
     # # Toc options
     "collapse_navigation": False,
     # 'sticky_navigation': True,
