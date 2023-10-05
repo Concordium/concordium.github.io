@@ -901,7 +901,7 @@ Testnet
 
     October 10, 2023
 
-        Concordium Node 6.1.5 contains bug fixes and improvements.
+        Concordium Node 6.1.6 contains bug fixes and improvements.
 
             **Improvements**
 
@@ -1371,11 +1371,11 @@ Concordium Client
 
         Concordium Client 6.1.0 includes support for the following:
 
-            - Add baker win-time command for determining the earliest time a specified baker is expected to bake.
+            - Added baker win-time command for determining the earliest time a specified baker is expected to bake.
 
-            - End stream consumption early if an error is returned.
+            - Stream consumption ends early if an error is returned.
 
-            - Add support for the following node version 6.1 queries under the ``raw`` command:
+            - Added support for the following node version 6.1 queries under the ``raw`` command:
 
                 - ``GetBakersRewardPeriod``
                 - ``GetBlockCertificates``
