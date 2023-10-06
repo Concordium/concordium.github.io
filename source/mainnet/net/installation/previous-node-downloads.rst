@@ -14,7 +14,7 @@ Windows - Mainnet and Testnet
 
 **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-`Windows 6.0.4 <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_
+`Windows 6.0.4 <https://distribution.concordium.software/windows/Signed/Node-6.0.4-0.msi>`_
 
 `Windows 5.4.2 <https://distribution.concordium.software/windows/Signed/Node-5.4.2-0.msi>`_
 
