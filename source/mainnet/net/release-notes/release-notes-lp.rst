@@ -905,7 +905,7 @@ Testnet
 
     **Improvements**
 
-        - Node catchup is now enabled by default on all platforms.
+        - Out of band catchup is now enabled by default on all platforms.
 
         - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
