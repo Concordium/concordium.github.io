@@ -905,7 +905,9 @@ Testnet
 
     **Improvements**
 
-        - Out of band catchup is now enabled by default on all platforms.
+        - Out-of-band catchup is now enabled by default on all platforms.
+
+        - The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup.
 
         - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
@@ -923,7 +925,7 @@ Testnet
 
             - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
 
-            - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate and epoch finalization entry contained in the block (where present).
+            - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate, and epoch finalization entry contained in the block (where present).
 
             - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
 
