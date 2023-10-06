@@ -901,7 +901,7 @@ Testnet
 
     October 10, 2023
 
-    Concordium Node 6.1.6 contains bug fixes and improvements.
+    Concordium Node 6.1.6 contains bug fixes and improvements. **This is the last release of the node that has support for V1 gRPC API.**
 
     **Improvements**
 
@@ -910,6 +910,8 @@ Testnet
         - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
         - Exposed the health check service via grpc-web when grpc-web is enabled.
+
+        - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
 
         - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
 
@@ -931,19 +933,13 @@ Testnet
 
     **Fixes**
 
-        - Several fixes are included for peer handling.
-
-          An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
-
-            - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
+        - An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
 
         - Fixed a bug where the block state hash was not returned properly for the genesis block.
 
         - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
 
         - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
-
-        - Fixed a bug where it was not possible to use the collector with a node configured with TLS. You must configure the ``grpc-host`` flag of the collector with domain stated in the certificate that the node is configured with.
 
         - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
 
@@ -1372,8 +1368,6 @@ Concordium Client
         Concordium Client 6.1.0 includes support for the following:
 
             - Added baker win-time command for determining the earliest time a specified baker is expected to bake.
-
-            - Stream consumption ends early if an error is returned.
 
             - Added support for the following node version 6.1 queries under the ``raw`` command:
 
