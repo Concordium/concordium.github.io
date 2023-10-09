@@ -5,7 +5,7 @@
 Tokens in the wallet
 ========================
 
-You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devices.
+You can add, inspect, and send tokens in the |bw| and |mw-gen2|.
 
 .. dropdown:: |bw|
 
@@ -117,6 +117,10 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2| for Android devi
         You can tap **Show raw metadata** to see the raw metadata for the token. You can also tap **Don't show token in wallet** if you don't want the token to appear in your wallet.
 
     .. dropdown:: Send tokens
+
+        .. Note::
+
+            It is not possible to send tokens in the |mw-gen2| for iOS.
 
         To access send, either:
 
