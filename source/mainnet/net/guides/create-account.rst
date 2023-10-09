@@ -5,10 +5,10 @@
 Create an account
 =================
 
-If you are using |mw-gen1| or Desktop Wallet, when you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
-to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+If you are using |mw-gen1| or Desktop Wallet, when you created your :term:`identity`, it came with an :term:`initial account`. The initial account is a special account that the :term:`identity provider` submits
+to the chain. When you already have an identity, you can create more :term:`accounts<account>` with that identity yourself.
 
-If you are using |bw| or |mw-gen2|, no initial account was created when you created your :ref:`identity<glossary-identity>`. You create all :ref:`accounts<glossary-account>` related to your identities.
+If you are using |bw| or |mw-gen2|, no initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -17,7 +17,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. note::
         You can't import accounts that were created on the |mw-gen1|, |mw-gen2|, or |bw|.
 
-    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger-app>`.
+    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger>`.
 
     #. Go to **Accounts**. You can now see all the accounts that you're the custodian of.
 

@@ -8,9 +8,9 @@ Deciding between the wallets
 Why you need a wallet
 =====================
 
-You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :term:`wallet` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
-The wallets are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
+The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
 No import of identities and accounts from one wallet to another
 ===============================================================
@@ -26,7 +26,7 @@ Which wallet is best for you?
 
 The wallets work on two different environments: the Desktop Wallet on a computer, the |bw| on any device with a web browser, and |mw-gen1| and |mw-gen2| on a phone. The |mw-gen1| and |mw-gen2| are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a LEDGER device.
 
-- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-Ledger-app>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
+- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-ledger>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
 
 - |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a baker), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
 

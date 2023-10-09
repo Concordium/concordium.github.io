@@ -10,7 +10,7 @@
 Introduction to smart contracts
 ===============================
 
-A :ref:`smart contract<glossary-smart-contract>` is a user-supplied piece of code submitted to the Concordium
+A :term:`smart contract` is a user-supplied piece of code submitted to the Concordium
 blockchain, used to define behavior that is not directly part of the core
 protocol. Smart contracts are executed by nodes in the Concordium network
 according to predefined rules. Their execution is fully transparent, and all

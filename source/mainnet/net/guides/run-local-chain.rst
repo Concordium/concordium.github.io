@@ -16,7 +16,7 @@ The chain is run by a network of baker nodes that bake and finalize blocks. In t
 
 Prerequisites
 =============
-You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the baker node(s). You will need :ref:`genesis block<glossary-genesis-block>` data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.
+You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the baker node(s). You will need :term:`genesis block` data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.
 
 Install the node distribution
 -----------------------------
@@ -31,11 +31,12 @@ The name of the binary has ``concordium-`` as its prefix but depends on the dist
 
 .. Note::
 
-   The node distributions provide commands for running and managing nodes on :ref:`Mainnet<glossary-mainnet>` and :ref:`Testnet<glossary-testnet>`. Ignore these since you are targeting your own chain and only need the binary.
+   The node distributions provide commands for running and managing nodes on :term:`Mainnet` and :term:`Testnet`. Ignore these since you are targeting your own chain and only need the binary.
 
 
 Generate genesis data and account credentials
 ---------------------------------------------
+
 Use the `genesis-creator <https://github.com/Concordium/concordium-misc-tools/tree/main/genesis-creator>`_ tool to generate genesis block data and credentials for the foundation and (initial) baker accounts.
 
 Build the tool
@@ -200,7 +201,7 @@ Pay attention to the host directory mappings specified by the ``volumes`` key. T
 Interact with the local chain
 =============================
 
-You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20100 as you would with :ref:`Mainnet<glossary-mainnet>` or :ref:`Testnet<glossary-testnet>` nodes. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
+You can now interact with your local chain through the node via the :ref:`Concordium Node gRPC API V2 <grpc2-documentation>` exposed on port 20100 as you would with :term:`Mainnet` or :term:`Testnet` nodes. Concordium provides various :ref:`SDKs and APIs<sdks-apis>` that facilitate this as well as the `Concordium Client <concordium-client>`_ command-line tool. Assuming you have the ``concordium-client`` binary version 5.1.1 or higher in your path, list the accounts using the ``account list`` command:
 
 .. code-block:: console
 
