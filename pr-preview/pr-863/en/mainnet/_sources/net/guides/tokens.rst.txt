@@ -118,6 +118,10 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2|.
 
     .. dropdown:: Send tokens
 
+        .. Note::
+
+            It is not possible to send tokens in the |mw-gen2| for iOS.
+
         To access send, either:
 
         - Tap Send |send| on an account in the Accounts overview.
