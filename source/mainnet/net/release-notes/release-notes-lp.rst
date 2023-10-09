@@ -19,7 +19,7 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    August 31, 2023
+    September 9, 2023
 
         Version 1.2.0 includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
 
