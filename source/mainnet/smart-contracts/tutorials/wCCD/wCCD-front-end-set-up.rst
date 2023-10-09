@@ -39,7 +39,7 @@ need for the user to host their own Concordium node.
 
 A browser wallet is a piece of code that can be added as an extension to supported browsers such as ``Chrome``.
 The browser wallet allows you to interact with the chain and make transactions.
-Currently, the |bw| does this by connecting to a (JSON-RPC) server that communicates with a node.
+Currently, the |bw| does this by connecting to a (gRPC) server that communicates with a node.
 The |bw| hosts the private keys corresponding to the accounts of the user and a link that points
 to a `server  <https://github.com/Concordium/concordium-json-rpc>`_.
 
