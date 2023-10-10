@@ -67,7 +67,7 @@ Install/upgrade and run a node
 .. dropdown:: Mainnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of baker credentials.
 
   #. Go to :ref:`Downloads<node-downloads>`, and download the latest macOS installer package (.pkg file).
 
@@ -107,7 +107,7 @@ Install/upgrade and run a node
 .. dropdown:: Testnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of baker credentials.
 
   #. Go to :ref:`Downloads<testnet-node-downloads>`, and download the latest macOS installer package (.pkg file).
 
@@ -285,6 +285,9 @@ Since the GRPC V2 port is different than the GRPC V1 port, you need to change it
     <string>http://localhost:20001</string>
 
 .. _configure-baker-macos:
+
+.. Note::
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
 
 Configure a node as a baker
 ===========================
