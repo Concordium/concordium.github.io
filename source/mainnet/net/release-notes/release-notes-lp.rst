@@ -19,17 +19,21 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    July 31, 2023
+    September 9, 2023
 
-        Version 1.1.1 includes bug fixes and an improvement for the upcoming protocol update.
-
-        - Ensured compatibility with the upcoming protocol update (P6)
-
-        - Fixed issue with DTS identities that contain non-ASCII characters.
-
-        - WalletConnect: Display balances in proper CCD format in the account selection view.
+        Version 1.2.0 includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.1.1 - July 31, 2023
+
+            Version 1.1.1 includes bug fixes and an improvement for the upcoming protocol update.
+
+            - Ensured compatibility with the upcoming protocol update (P6)
+
+            - Fixed issue with DTS identities that contain non-ASCII characters.
+
+            - WalletConnect: Display balances in proper CCD format in the account selection view.
 
         .. dropdown:: |mw-gen2| 1.1.0 - July 17, 2023
 
