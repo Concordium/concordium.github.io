@@ -330,7 +330,7 @@ catchup enabled. This will speed up the initial catchup and during out of
 band catchup the node will not have any peers.
 
 The out of band catchup can be kept enabled even after the node is caught up,
-but is not necessary. If you wish to disable do the the following:
+but is not necessary. If you wish to disable it do the the following:
 
 #. Remove the environment variables from the configuration file:
 
