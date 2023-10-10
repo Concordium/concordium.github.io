@@ -3,7 +3,7 @@
 .. _solana-faq:
 
 ====
-FAQs
+FAQ
 ====
 
 The following Frequently Asked Questions about Concordium focuses on helping developers with a Solana background to understand the Concordium blockchain and its smart contract ecosystem.

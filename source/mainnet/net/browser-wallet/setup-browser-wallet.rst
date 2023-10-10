@@ -21,7 +21,7 @@ Read the following guide to learn how to set up the wallet.
 Get started
 ===========
 
-#. Download the |bw| extension. See :ref:`Downloads<downloads-browser-wallet>`.
+#. Download the |bw| extension for your browser.
 
 .. dropdown:: Chrome
 
