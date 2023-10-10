@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/node-runner-service-configuration.85f7b684-f65d-412d-aad7-c5f28e0d3dad.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/node-runner-service-configuration.2b48663b-b573-4268-9641-8e2a54861337.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2097,7 +2097,11 @@ some GRPC V2 endpoints can be used to control the node.</p>
 </div>
 <p>Environment variables to be set when starting the node. This can be used to set configuration options that do not have a dedicated setting in the configuration file. For instance, the above example sets the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_TRANSACTIONS_PURGING_DELAY</span></code> environment variable, which determines how frequently pending transactions are purged.</p>
 <p>Note that a number of environment variables are already set by configuration options, so this should only be used where there is no explicit configuration option provided.</p>
-<p>Another common node.env.* variable to add is for out-of-band catchup so that nodes can synchronize faster with the rest of the network. This improves performance and gets your node up and running more quickly.</p>
+<p>After version 6.1 the node.env.* variable for out-of-band-catchup is now
+enabled by default. Having this variable set means that nodes can synchronize
+faster with the rest of the network. This improves performance and gets your
+node up and running more quickly. It can still be disabled, by removing the
+following lines for Mainnet and Testnet respectively.</p>
 <p>For Mainnet:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.mainnet.concordium.software/blocks.idx&#39;</span>
 </pre></div>

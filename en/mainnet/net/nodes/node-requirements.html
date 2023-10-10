@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/node-requirements.bb589d09-3227-466c-8117-4460077b8452.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/node-requirements.29cb273d-eb54-49f5-99ca-bed220682953.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1784,6 +1784,11 @@ body {margin:0;}
    Node metrics
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synchronize-a-node-with-the-network">
+   Synchronize a node with the network
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -1839,6 +1844,20 @@ choose from four different platforms to run your node: Ubuntu, Windows, MacOS, o
 <h2>Node metrics<a class="headerlink" href="#node-metrics" title="Permalink to this headline">#</a></h2>
 <p>You can use the <a class="reference external" href="https://prometheus.io/download/">Prometheus monitoring system</a> to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md">documentation in the repository</a>.</p>
 <p>For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can <a class="reference external" href="https://grafana.com/grafana/dashboards/18983-concordium-node-external/">download it from the Grafana marketplace</a>.</p>
+</div>
+<div class="section" id="synchronize-a-node-with-the-network">
+<h2>Synchronize a node with the network<a class="headerlink" href="#synchronize-a-node-with-the-network" title="Permalink to this headline">#</a></h2>
+<p>When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers.</p>
+<p>The startup time of the node can be improved by downloading the blocks from
+an out-of-band catchup service before starting the node. While it will still
+take time to process the blocks, it will typically be faster than requesting
+them from peers.</p>
+<p>This feature is enabled by default in all distributions since version 6.1
+and is controlled by the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span></code>
+environment variable in the configuration file. To disable this feature
+unset the environment variable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Subscribe to the <a class="reference external" href="https://status.mainnet.concordium.software/">Mainnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>

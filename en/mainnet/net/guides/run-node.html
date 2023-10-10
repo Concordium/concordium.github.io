@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.a21551f1-24b4-48cf-b190-8244feff1758.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.5076efd9-3b1a-4969-9a77-0aeb8afb719f.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1941,6 +1941,10 @@ sample configurations listed below. If you have done special configuration of
 your node and want to re-use the configuration file and have the new API
 enabled, make sure to edit your configuration, adding <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_LISTEN_PORT</span></code>
 and <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</span></code> as in the sample configurations.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the node is <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2">configured with TLS</a>, then <cite>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</cite> must be configured such that it uses the domain of the certificate, for example, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000</span></code>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-ubuntu.a427dc33-1397-4e8f-a716-4308882e8e5d.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-ubuntu.4b34dbc6-8c74-4afc-8832-f24b82014c6f.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1886,7 +1886,14 @@ details of how this is done will depend on your configuration.</p>
 </div>
 <div class="section" id="synchronize-a-node-with-the-network">
 <h2>Synchronize a node with the network<a class="headerlink" href="#synchronize-a-node-with-the-network" title="Permalink to this headline">#</a></h2>
-<p>If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.</p>
+<p>When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.</p>
+<p>The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. To disable out of band catchup remove the environment
+variables from the configuration file:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Stop the node if it is running</p></li>
@@ -1908,7 +1915,7 @@ details of how this is done will depend on your configuration.</p>
 <li><p>Add the following under the <code class="docutils literal notranslate"><span class="pre">[Service]</span></code> section (create the section if it does not exist)</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">Environment</span><span class="o">=</span><span class="s">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx</span>
+<div><div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">UnsetEnvironment</span><span class="o">=</span><span class="s">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1935,9 +1942,13 @@ details of how this is done will depend on your configuration.</p>
 <span class="na">Environment</span><span class="o">=</span><span class="s">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://localhost:20000</span>
 </pre></div>
 </div>
+<div class="admonition note" id="upgrade-node-ubuntu">
+<p class="admonition-title">Note</p>
+<p>If the node is <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2">configured with TLS</a>, then <cite>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</cite> must be configured such that it uses the domain of the certificate, for example, <code class="docutils literal notranslate"><span class="pre">Environment=CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000</span></code>.</p>
+</div>
 </div>
 <div class="section" id="upgrade-version">
-<span id="upgrade-node-ubuntu"></span><h2>Upgrade version<a class="headerlink" href="#upgrade-version" title="Permalink to this headline">#</a></h2>
+<h2>Upgrade version<a class="headerlink" href="#upgrade-version" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>

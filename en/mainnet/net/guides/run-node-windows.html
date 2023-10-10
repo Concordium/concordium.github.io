@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-windows.5b41360e-702a-4ddf-8ce1-40cb949c96a5.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-windows.d9ae07f8-69c3-45b4-abfa-d18924abf54e.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2025,19 +2025,24 @@ your configuration and add <code class="docutils literal notranslate"><span clas
 </div>
 <div class="section" id="synchronize-a-node-with-the-network">
 <h2>Synchronize a node with the network<a class="headerlink" href="#synchronize-a-node-with-the-network" title="Permalink to this headline">#</a></h2>
-<p>When you start a node for the first time, it can take a while to synchronize the node with the rest of the network, since it has to get all blocks from its peers.</p>
-<p>You can improve the performance by downloading the blocks from an out-of-band catchup service before starting the node. While it will still take time to process the blocks, it will typically be faster than requesting them from peers.</p>
+<p>When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.</p>
+<p>The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. If you wish to disable it do the the following:</p>
 <ol class="arabic">
 <li><p>Search for <em>configure concordium node</em> in the <strong>Search</strong> bar, and then select <strong>Configure Concordium Node Service</strong>. The configuration file opens in <strong>Notepad</strong>.</p></li>
-<li><p>Specify the URL to the block file index in the configuration file:</p>
+<li><p>Remove the environment variables from the configuration file:</p>
 <ul class="simple">
-<li><p>For mainnet, add the following line to the <code class="docutils literal notranslate"><span class="pre">[node.mainnet]</span></code> section:</p></li>
+<li><p>For mainnet, remove the following line from the <code class="docutils literal notranslate"><span class="pre">[node.mainnet]</span></code> section:</p></li>
 </ul>
 <div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.mainnet.concordium.software/blocks.idx&#39;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>For testnet, add the following line to the <code class="docutils literal notranslate"><span class="pre">[node.testnet]</span></code> section:</p></li>
+<li><p>For testnet, remove the following line from the <code class="docutils literal notranslate"><span class="pre">[node.testnet]</span></code> section:</p></li>
 </ul>
 <div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.testnet.concordium.com/blocks.idx&#39;</span>
 </pre></div>
@@ -2045,12 +2050,15 @@ your configuration and add <code class="docutils literal notranslate"><span clas
 <p>Save the configuration file.</p>
 </li>
 <li><p>In the <strong>Search</strong> bar, search for and select <strong>Stop Concordium Service Node</strong> to stop the node, and then search for and select <strong>Start Concordium Service Node</strong> to restart the node.</p></li>
-<li><p>Go to the relevant dashboard to monitor when the node has caught up with its peers on the blockchain. To see this, compare the finalized length of the chain with the length of your node. If they match, your node has caught up.</p></li>
 </ol>
 </div>
 <div class="section" id="node-collector-configuration">
 <h2>Node collector configuration<a class="headerlink" href="#node-collector-configuration" title="Permalink to this headline">#</a></h2>
 <p>Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled. For information about how to do this, see <a class="reference internal" href="#install-upgrade-node-windows"><span class="std std-ref">the note at the top of this topic</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the node is <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2">configured with TLS</a>, then <cite>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</cite> must be configured such that it uses the domain of the certificate.</p>
+</div>
 </div>
 <div class="section" id="baking-on-a-windows-node">
 <h2>Baking on a Windows node<a class="headerlink" href="#baking-on-a-windows-node" title="Permalink to this headline">#</a></h2>
