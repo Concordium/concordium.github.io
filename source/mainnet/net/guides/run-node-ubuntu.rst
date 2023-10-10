@@ -76,7 +76,15 @@ details of how this is done will depend on your configuration.
 Synchronize a node with the network
 ===================================
 
-If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.
+
+The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. To disable out of band catchup remove the environment
+variables from the configuration file:
 
   1. Stop the node if it is running
 
@@ -94,7 +102,7 @@ If the node is well behind the head of the chain, you can speed up the startup b
 
     .. code-block:: ini
 
-      Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
+      UnsetEnvironment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM
 
   4. Start the service again
 
