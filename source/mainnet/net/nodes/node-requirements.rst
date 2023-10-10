@@ -53,7 +53,7 @@ an out-of-band catchup service before starting the node. While it will still
 take time to process the blocks, it will typically be faster than requesting
 them from peers.
 
-This feature is enabled by default in all operating systems since version 6.1
+This feature is enabled by default in all distributions since version 6.1
 and is controlled by the ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM``
 environment variable in the configuration file. To disable this feature
 unset the environment variable.
