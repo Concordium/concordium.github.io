@@ -34,7 +34,7 @@ Then it will ask for a name and a description of your project. Fill them in.
 The result is a basic skeleton of a smart contract.
 Initially, it has a ``State`` struct, an ``init`` function for creating new instances, an ``Error`` enum for custom errors, a ``view`` function, and a ``receive`` function.
 
-.. image:: images/contract.png
+.. image:: images/contract.jpg
     :width: 100%
 
 Add the counter to the state and i8 for integer. Then add the values ``OwnerError``, ``IncrementError``, and ``DecrementError`` to the ``Error`` enum, and specify the counter initial value as zero in the ``init`` function so the counter value starts from 0 when you create a new, fresh instance the contract. Your contract now looks like the example below.
@@ -62,9 +62,9 @@ Add the counter to the state and i8 for integer. Then add the values ``OwnerErro
 
     /// Init function that creates a new smart contract.
     #[init(contract = "counter")]
-    fn init<S: HasStateApi>(
-        _ctx: &impl HasInitContext,
-        _state_builder: &mut StateBuilder<S>,
+    fn init(
+        _ctx: &InitContext,
+        _state_builder: &mut StateBuilder,
     ) -> InitResult<State> {
         // Your code
 
@@ -82,19 +82,19 @@ Then change the update function as described below. Remember that input needs to
 .. code-block:: rust
 
     type IncrementVal = i8;
-    /// Receive function. The input parameter is the increment value `i8`.
+    /// Receive function. The input parameter is the `IncrementVal`.
     ///  If the account owner does not match the contract owner, the receive function will throw [`Error::OwnerError`].
     ///  If the number to increment by is not positive or is zero, the receive function will throw [`Error::IncrementError`].
     #[receive(
         contract = "counter",
         name = "increment",
-        parameter = "i8",
+        parameter = "IncrementVal",
         error = "Error",
         mutable
     )]
-    fn increment<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State, StateApiType = S>,
+    fn increment(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
     ) -> Result<(), Error> {
         // Your code
 
@@ -120,13 +120,13 @@ Add a new mutable function to implement decrement with a similar approach. It wi
     #[receive(
         contract = "counter",
         name = "decrement",
-        parameter = "i8",
+        parameter = "IncrementVal",
         error = "Error",
         mutable
     )]
-    fn decrement<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State, StateApiType = S>,
+    fn decrement(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
     ) -> Result<(), Error> {
         // Your code
 
@@ -151,9 +151,9 @@ The view function will return only the counters value so you need to update its 
 
     /// View function that returns the content of the state.
     #[receive(contract = "counter", name = "view", return_value = "i8")]
-    fn view<'a, 'b, S: HasStateApi>(
-        _ctx: &'a impl HasReceiveContext,
-        host: &'b impl HasHost<State, StateApiType = S>,
+    fn view<'a, 'b>(
+        _ctx: &'a ReceiveContext,
+        host: &'b Host<State>,
     ) -> ReceiveResult<i8> {
         Ok(host.state().counter)
     }
@@ -185,7 +185,7 @@ Initialize it to create your contract instance, so you are ready to invoke the f
 
     concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract counter --grpc-port 20001
 
-.. image:: images/initialize.png
+.. image:: images/initialize.jpg
     :width: 100%
 
 Interact with the contract

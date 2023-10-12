@@ -2,7 +2,7 @@
 .. _build-smart-contract:
 
 ===============================================
-Intialize, build, and deploy the smart contract
+Initialize, build, and deploy the smart contract
 ===============================================
 
 Now you are ready to build your smart contract. You'll be using the ``cis2-nft`` contract template provided by Concordium.

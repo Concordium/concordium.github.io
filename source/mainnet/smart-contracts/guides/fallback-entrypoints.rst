@@ -52,9 +52,9 @@ the ``fallback`` attribute to it:
    :emphasize-lines: 1
 
    #[receive(contract = "MyContract", fallback)]
-   fn receive_fallback<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &impl HasHost<State, StateApiType = S>,
+   fn receive_fallback(
+       ctx: &ReceiveContext,
+       host: &Host<State>,
    ) -> ReceiveResult<MyReturnType> {
        // ...
    }
@@ -74,9 +74,9 @@ name of the entrypoint used to the reach the fallback entrypoint.
    :emphasize-lines: 6
 
    #[receive(contract = "MyContract", fallback)]
-   fn receive_fallback<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &impl HasHost<State, StateApiType = S>,
+   fn receive_fallback(
+       ctx: &ReceiveContext,
+       host: &Host<State>,
    ) -> ReceiveResult<MyReturnType> {
        let entrypoint_invoked = ctx.named_entrypoint();
    }

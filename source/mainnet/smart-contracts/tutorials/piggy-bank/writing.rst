@@ -14,9 +14,9 @@
 .. |ensure| replace:: ``ensure!``
 .. _matches_account: https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html#method.matches_account
 .. |matches_account| replace:: ``matches_account``
-.. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance
+.. _self_balance: https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#tymethod.self_balance
 .. |self_balance| replace:: ``self_balance``
-.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
+.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#tymethod.invoke_transfer
 .. |invoke_transfer| replace:: ``invoke_transfer``
 .. _mutable: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/attr.receive.html#mutable-function-can-mutate-the-state
 .. |mutable| replace:: ``mutable``
@@ -168,9 +168,9 @@ This allows you to create a new piggy bank as follows:
 .. code-block:: rust
 
    #[init(contract = "PiggyBank")]
-   fn piggy_init<S: HasStateApi>(
-       _ctx: &impl HasInitContext,
-       _state_builder: &mut StateBuilder<S>,
+   fn piggy_init(
+       _ctx: &InitContext,
+       _state_builder: &mut StateBuilder,
    ) -> InitResult<PiggyBankState> {
        Ok(PiggyBankState::Intact)
    }
@@ -190,10 +190,10 @@ contracts in your module.
 
 The init function takes two arguments:
 
-- ``ctx: &impl HasInitContext``, which is a trait with a number of
+- ``ctx: &InitContext``, which is a struct with a number of
   getter functions for accessing information about the current context, such as
   the account that invoked this contract, the supplied arguments, and information about the state of the blockchain
-- ``state_builder: &mut StateBuilder<S: HasStateApi>``, which has functions for creating
+- ``state_builder: &mut StateBuilder``, which has functions for creating
   sets, maps, and boxes that effectively utilize the way contract state is
   stored on the chain. It is parameterized by ``S: HasStateApi`` to enable mocking
   the state, which you can use for :ref:`unit testing your contract <unit-test-contract>`.
@@ -252,9 +252,9 @@ a reference to the host (through which you can access the state of the instance)
 .. code-block:: rust
 
    #[receive(contract = "MyContract", name = "some_interaction")]
-   fn some_receive<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &impl HasHost<MyState, StateApiType = S>,
+   fn some_receive(
+       ctx: &ReceiveContext,
+       host: &Host<MyState>,
    ) -> ReceiveResult<MyReturnValue> {
        todo!()
    }
@@ -279,9 +279,9 @@ You start by defining a receive function as:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<S: HasStateApi>(
-       _ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_insert(
+       _ctx: &ReceiveContext,
+       host: &Host<PiggyBankState>,
    ) -> ReceiveResult<()> {
        todo!()
    }
@@ -329,9 +329,9 @@ So far you have the following definition of the receive function:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "insert")]
-   fn piggy_insert<S: HasStateApi>(
-       _ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_insert(
+       _ctx: &ReceiveContext,
+       host: &Host<PiggyBankState>,
    ) -> ReceiveResult<()> {
        ensure!(*host.state() == PiggyBankState::Intact);
        Ok(())
@@ -357,9 +357,9 @@ function.
    :emphasize-lines: 1, 5
 
    #[receive(contract = "PiggyBank", name = "insert", payable)]
-   fn piggy_insert<S: HasStateApi>(
-       _ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_insert(
+       _ctx: &ReceiveContext,
+       host: &Host<PiggyBankState>,
        _amount: Amount,
    ) -> ReceiveResult<()> {
        ensure!(*host.state() == PiggyBankState::Intact);
@@ -389,9 +389,9 @@ Again you use the |receive|_ macro to define the smash function:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "smash")]
-   fn piggy_smash<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_smash(
+       ctx: &ReceiveContext,
+       host: &Host<PiggyBankState>,
    ) -> ReceiveResult<()> {
        todo!()
    }
@@ -444,9 +444,9 @@ adding the |mutable|_ attribute to the |receive|_ macro.
    :emphasize-lines: 1, 4
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_smash(
+       ctx: &ReceiveContext,
+       host: &mut Host<PiggyBankState>,
    ) -> ReceiveResult<()> {
        let owner = ctx.owner();
        let sender = ctx.sender();
@@ -499,9 +499,9 @@ The final definition of the "smash" receive function is then:
 .. code-block:: rust
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_smash(
+       ctx: &ReceiveContext,
+       host: &mut Host<PiggyBankState>,
    ) -> ReceiveResult<()> {
        let owner = ctx.owner();
        let sender = ctx.sender();
@@ -531,9 +531,9 @@ This is what the return values of receive methods are for:
    :emphasize-lines: 5, 8
 
    #[receive(contract = "PiggyBank", name = "view")]
-   fn piggy_view<S: HasStateApi>(
-       _ctx: &impl HasReceiveContext,
-       host: &impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_view(
+       _ctx: &ReceiveContext,
+       host: &Host<PiggyBankState>,
    ) -> ReceiveResult<(PiggyBankState, Amount)> {
        let current_state = *host.state();
        let current_balance = host.self_balance();
