@@ -149,6 +149,7 @@ html_theme_options = {
     # 'prev_next_buttons_location': None,
     # 'style_external_links': False,
     # 'style_nav_header_background': '#235c9b',
+    "use_edit_page_button": True,
     # # Toc options
     "collapse_navigation": False,
     # 'sticky_navigation': True,
@@ -160,7 +161,7 @@ html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
-    "page_sidebar_items": ["page-toc"],
+    "page_sidebar_items": ["page-toc", "edit-this-page"],
     "footer_items": ["footer"],
     "show_prev_next": True,
     "navbar_align": "left",
@@ -186,24 +187,13 @@ html_theme_options = {
             "type": "fontawesome",  # Default is fontawesome
 
         },
-        {    
+        {
             "name": "Discourse",
             "url": "https://support.concordium.software/latest",
-            "icon": "_static/discourse-brands.svg",
-            "type": "local",
+            "icon": "fab fa-discourse",
+            "type": "fontawesome",
         },
-        {
-            # Concordium Email Support
-            "name": "Feedback",
-            # URL where the link will redirect
-            "url": "mailto:documentation@concordium.com",  # required
-            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
-            "icon": "fas fa-bullhorn",
-            # Whether icon should be a FontAwesome class, or a local file
-            "type": "fontawesome",  # Default is fontawesome
-
-        },
-    ]        
+    ]
     }
 
 
@@ -215,11 +205,11 @@ languages = os.environ['all_languages'].split(",") if 'all_languages' in os.envi
 html_show_sourcelink = False
 
 html_context = {
-    "display_github": True,
+    # "display_github": True,
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
     "github_version": current_version,
-    "display_github": False,
+    "doc_path": "source/mainnet",
     "conf_py_path": "/source/",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
@@ -236,7 +226,11 @@ html_context = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["../_static"]
-html_css_files = ["style.css","tippy.css"]
+
+html_css_files = [
+    "css/style.css",
+    "css/tippy.css",
+]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -347,8 +341,71 @@ linkcheck_request_headers = {
 # -- Sphinx-reredirects for redirecting old paths to new ones ----------------
 redirects = {
     "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
+    "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
     "./net/desktop-wallet/shield-gtu-desktop": "/net/guides/shield-ccd-wallets.html",
     "./net/resources/terms-and-conditions-bw": "/net/resources/terms-and-conditions.html",
+    "./net/resources/terms-and-conditions-mw-gen2": "/net/resources/terms-and-conditions.html",
+    "./net/resources/terms-and-conditions-mw-gen2": "/net/resources/terms-and-conditions.html",
+    "./net/desktop-wallet/add-baker-pool-dw": "/net/mobile-wallet/add-baker-mw.html",
+    "./net/concepts/concepts-backup": "/net/guides/recovery.html",
+    "./net/resources/sirius-testnet-reset": "/en/mainnet/index.html",
+    "./net/resources/sirius-testnet-reset-wallets": "/en/mainnet/index.html",
+    "./net/resources/sirius-testnet-reset-client": "/en/mainnet/index.html",
+    "./net/resources/sirius-testnet-reset-nodes": "/en/mainnet/index.html",
+    "./en/mainnet/smart-contracts/index": "/en/mainnet/smart-contracts/general/introduction.html",
+    "./net/resources/release-notes": "net/release-notes/release-notes-lp.html",
+    "./net/resources/release-notes-mainnet": "net/release-notes/release-notes-lp.html",
+    "./en/mainnet/smart-contracts/tutorials/piggy-bank/preparing": "/en/mainnet/smart-contracts/tutorials/piggy-bank/index.html",
+    "./en/mainnet/smart-contracts/tutorials/nft-minting/setup-dev-env": "/en/mainnet/smart-contracts/tutorials/setup-env.html",
+    "./net/guides/overview-baker-process": "/net/concepts/concepts-baker.html",
+    "./en/testnet4/index": "/en/mainnet/index.html",
+    "./en/testnet4/smart-contracts/index": "/en/mainnet/index.html",
+    "./en/testnet4/testnet/guides/accounts-transactions": "/en/mainnet/index.html",
+    "./en/testnet4/testnet/guides/explore-more": "/en/mainnet/index.html",
+    "./en/testnet4/testnet/guides/run-node": "/en/mainnet/index.html",
+    "./en/testnet4/testnet/references/concordium-client": "/en/mainnet/index.html",
+    "./en/testnet4/testnet/references/manage-accounts": "/en/mainnet/index.html",
+    "./en/testnet4/testnet/references/transactions": "/en/mainnet/index.html",
+    "./en/testnet4/testnet/see-also/downloads": "/en/mainnet/index.html",
+    "./en/testnet/net/concepts/concepts": "/en/mainnet/guides/learn-about-concordium.html",
+    "./en/testnet/net/desktop-wallet/change-restake-settings": "/net/mobile-wallet/update-baker-mw.html#update-baker-stake-and-restaking-preference",
+    "./en/testnet/net/desktop-wallet/setup-maintenance-dw": "net/guides/overview-desktop.html",
+    "./en/testnet/net/guides/run-node-macos": "net/guides/run-node-macos.html",
+    "./en/testnet/net/references/developer-tools": "net/references/developer-tools.html",
+    "./en/testnet/net/references/manage-accounts": "net/references/manage-accounts.html",
+    "./en/testnet/smart-contracts/guides/deploy-module": "/en/mainnet/smart-contracts/guides/deploy-module.html",
+    "./net/browser-wallet/index": "net/browser-wallet/setup-browser-wallet.html",
+    "./net/desktop-wallet/remove-baker": "net/mobile-wallet/update-baker-mw.html#stop-baking",
+    "./net/mobile-wallet-gen2/index": "net/mobile-wallet-gen2/setup-mobile-wallet.html",
+    "./net/mobile-wallet/baker-mw": "net/mobile-wallet/add-baker-mw.html",
+    "./net/mobile-wallet/create-identity": "net/guides/create-identity.html",
+    "./net/mobile-wallet/explore-more": "net/mobile-wallet-gen2/faq.html",
+    "./net/mobile-wallet/export-import-mw": "net/guides/export-import.html",
+    "./net/mobile-wallet/make-shielded-transfer-mw": "net/guides/shielded-transfer.html",
+    "./net/mobile-wallet/make-simple-transfer-mw": "net/guides/send-ccd-wallets.html",
+    "./net/mobile-wallet/setup-maintenance-mw": "net/mobile-wallet-gen2/setup-mobile-wallet.html",
+    "./net/mobile-wallet/shield-unshield-mw": "net/guides/shield-ccd-wallets.html",
+    "./classes/Common_GRPC_Client.ConcordiumGRPCClient": "concordium-node-sdk-js/classes/Common_GRPC_Client.ConcordiumGRPCClient.html",
+    "./en/mainnet/index.html-": "en/mainnet/index.html",
+    "./net/guides/delegation": "net/concepts/concepts-delegation.html",
+    "./net/desktop-wallet/account-recovery": "/net/guides/recovery.html",
+    "./net/desktop-wallet/change-baker-stake": "/net/mobile-wallet/update-baker-mw.html#update-baker-stake-and-restaking-preference",
+    "./net/desktop-wallet/create-account-desktop": "net/guides/create-account.html",
+    "./net/desktop-wallet/delegation-dw": "net/guides/add-delegation.html",
+    "./net/desktop-wallet/get-started-desktop": "net/desktop-wallet/accounts-desktop.html",
+    "./net/desktop-wallet/index": "net/guides/overview-desktop.html",
+    "./net/desktop-wallet/make-account-report": "net/guides/transaction-report.html",
+    "./net/desktop-wallet/send-shielded-amount": "net/guides/shielded-transfer.html",
+    "./net/desktop-wallet/shield-ccd-desktop": "net/guides/shield-ccd-wallets.html",
+    "./net/desktop-wallet/transfers-dw": "net/guides/send-ccd-wallets.html",
+    "./net/desktop-wallet/update-baker-keys": "https://developer.concordium.software/en/mainnet/net/mobile-wallet/update-baker-mw.html#update-baker-keys",
+    "./net/desktop-wallet/update-baker-pool-dw": "https://developer.concordium.software/en/mainnet/net/mobile-wallet/update-baker-mw.html#update-pool-settings",
+    "./net/desktop-wallet/update-delegation": "net/guides/update-delegation.html",
+    "./net/guides/add-baker-desktop": "net/mobile-wallet/add-baker-mw.html",
+    "./net/guides/concordium-client": "net/references/concordium-client.html",
+    "./net/installation/downloads-testnet": "net/installation/downloads.html",
+    "./net/resources/legal": "net/resources/terms-and-conditions.html",
+    "./en/mainnet/smart-contracts/onboarding-guide-solana-developers/index": "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview.html",
 }
 
 # -- Tags that enables the .. only option ----------------

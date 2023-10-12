@@ -67,7 +67,7 @@ Install/upgrade and run a node
 .. dropdown:: Mainnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of baker credentials.
 
   #. Go to :ref:`Downloads<node-downloads>`, and download the latest macOS installer package (.pkg file).
 
@@ -107,7 +107,7 @@ Install/upgrade and run a node
 .. dropdown:: Testnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of baker credentials.
 
   #. Go to :ref:`Downloads<testnet-node-downloads>`, and download the latest macOS installer package (.pkg file).
 
@@ -286,6 +286,9 @@ Since the GRPC V2 port is different than the GRPC V1 port, you need to change it
 
 .. _configure-baker-macos:
 
+.. Note::
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+
 Configure a node as a baker
 ===========================
 
@@ -323,25 +326,21 @@ There are two ways to view the logs:
 Synchronize a node with the network
 ===================================
 
-When you start a node for the first time, it can take a while to synchronize the
-node with the rest of the network, since it has to get all blocks from its
-peers.
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.
 
-You can improve the startup time by downloading the blocks from an out-of-band catchup service
-before starting the node. While it will still take time to process the blocks, it will typically be
-faster than requesting them from peers.
+The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. If you wish to disable it do the the following:
 
-.. note::
-
-   Catchup data for mainnet does not work with a testnet node and vice versa.  Make sure to use the
-   correct URL to the block file index for your node.
-
-#. Specify the URL to the block file index in the service file:
+#. Remove the environment variables from the configuration file:
 
    - For mainnet:
 
      - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"`` as an
-       administrator and add the following in the *EnviromentVariables* section:
+       administrator and remove the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
 
@@ -351,20 +350,15 @@ faster than requesting them from peers.
    - For testnet:
 
      - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"`` as an
-       administrator and add the following in the *EnviromentVariables* section:
+       administrator and remove the following in the *EnviromentVariables* section:
 
        .. code-block:: xml
 
          <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
          <string>https://catchup.testnet.concordium.com/blocks.idx</string>
 
-
 #. Restart the appropriate node by running the application **Concordium Node Stop [Mainnet/Testnet]** (if running) and then
    **Concordium Node Start [Mainnet/Testnet]**.
-
-#. Go to the mainnet or testnet dashboard to monitor when the node has caught up with its
-   peers on the blockchain. You do so by comparing the finalized length of the
-   chain with the length of your node. If they match, your node has caught up.
 
 Uninstall a macOS node
 ======================
