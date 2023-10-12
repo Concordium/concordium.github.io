@@ -8,7 +8,7 @@
 .. |init| replace:: ``#[init]``
 .. _receive: https://docs.rs/concordium-std/latest/concordium_std/attr.receive.html
 .. |receive| replace:: ``#[receive]``
-.. _HasActions: https://docs.rs/concordium-std/latest/concordium_std/trait.HasAction.html
+.. _HasActions: https://docs.rs/concordium-std/2.0.0/concordium_std/trait.HasAction.html
 .. |HasActions| replace:: ``HasActions``
 .. _bail: https://docs.rs/concordium-std/latest/concordium_std/macro.bail.html
 .. |bail| replace:: ``bail!``
