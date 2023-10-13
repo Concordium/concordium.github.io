@@ -77,15 +77,15 @@ Migrating advanced state types
 
 If your contract state directly, or indirectly, contains one or more advanced state types, i.e. |StateMap|_, |StateSet|_, or |StateBox|_, then you also need to make a small adjustment.
 The advanced state types are generic over not only the types stored, fx the keys and values in a map, but also over a type that implements the |HasStateApi|_ trait.
-This is because the deprecated |test_infrastructure|_ used a different implementation of the underlying contract state, i.e. a different implementation of |HasStateApi|_, than the Concordium nodes do.
-But |concordium-smart-contract-testing|_ uses the exact same state implementation as the nodes do and it is therefore possible to specify the concrete type, |StateApi|_ as the default.
+This is because the deprecated |test_infrastructure|_ used a different implementation of the underlying contract state, i.e., a different implementation of |HasStateApi|_, than the Concordium nodes do.
+But |concordium-smart-contract-testing|_ uses the exact same state implementation as the nodes do and it is therefore possible to specify the concrete type, |StateApi|_, as the default.
 
 Until the |test_infrastructure|_ module is completely removed, the libraries will still support it, and thus the generic parameter ``S`` must still be present.
 
 To migrate an advanced state type you must change the following:
 
 - Set ``StateApi`` as the default type for the generic parameters that must implement |HasStateApi|_ (typically named ``S``)
-- Remove the generic type parameter for the |HasStateApi|_ type where you use your state type, fx ``MyState`` instead of ``MyState<S>``
+- Remove the generic type parameter for the |HasStateApi|_ type where you use your state type, e.g., ``MyState`` instead of ``MyState<S>``
 
 Here is an example of the change you must make:
 
@@ -121,8 +121,8 @@ Here is an example of the change you must make:
 Reference material for migrating types and tests
 ================================================
 
-The examples above show how to migrate most contracts, but for advanced contracts there may be more types to migrate.
-This list below show how to achieve that.
+The examples above show how to migrate most contracts, but for advanced contracts, there may be more types to migrate.
+The list below shows how to achieve that.
 It also includes types already described above:
 
 - ``&impl HasInitContext`` becomes ``&InitContext``
@@ -140,8 +140,8 @@ It also includes types already described above:
 - ``&impl HasChainMetadata`` becomes ``&ChainMetadata``
 - ``&mut impl HasLogger`` becomes ``&mut Logger``
 
-To migrate your tests, you should read our guide on how to :ref:`integration-test-contract`.
-You can also refer to the `commit <https://github.com/Concordium/concordium-rust-smart-contracts/commit/d26aabae4b0714412cec4347d7ca5b09c8994c0e>`_ where our example contracts were rewritten.
+To migrate your tests, read the how-to guide :ref:`integration-test-contract`.
+You can also refer to the `commit <https://github.com/Concordium/concordium-rust-smart-contracts/commit/d26aabae4b0714412cec4347d7ca5b09c8994c0e>`_ where the example contracts were rewritten.
 This shows both the removal of generics and how to migrate tests from using |test_infrastructure|_ to |concordium-smart-contract-testing|_.
 
 .. |concordium_std| replace:: ``concordium_std``
