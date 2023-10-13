@@ -314,8 +314,9 @@ Automated testing
 
 The Concordium standard library `concordium-std`_ offers several possibilities for testing the smart contract code.
 
-- Use :ref:`Unit testing <unit-test-contract>` to test particular cases where you define what is the valid output.
-- :ref:`Property-based testing <writing_property_based_tests>` is a variant of randomized testing that repeatedly checks a *property* with randomly generated input.
+- Use :ref:`Integration testing <integration-test-contract>` to test particular cases where you define what is the valid output.
+- (**Deprecated**) Use :ref:`Unit testing <unit-test-contract>` to test particular cases where you define what is the valid output.
+- (**Deprecated**) :ref:`Property-based testing <writing_property_based_tests>` is a variant of randomized testing that repeatedly checks a *property* with randomly generated input.
 
 Use the :ref:`smart contract specification <best-practices-specification>` guidelines from this document to come up with cases and properties to test.
 

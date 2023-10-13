@@ -195,8 +195,7 @@ The init function takes two arguments:
   the account that invoked this contract, the supplied arguments, and information about the state of the blockchain
 - ``state_builder: &mut StateBuilder``, which has functions for creating
   sets, maps, and boxes that effectively utilize the way contract state is
-  stored on the chain. It is parameterized by ``S: HasStateApi`` to enable mocking
-  the state, which you can use for :ref:`unit testing your contract <unit-test-contract>`.
+  stored on the chain.
 
 The return type of the function is ``InitResult<PiggyBankState>``, which is an
 alias for ``Result<PiggyBankState, Reject>``. The returned state is serialized
