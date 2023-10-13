@@ -211,7 +211,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Ubuntu |mainnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.1.6-0_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.1.7-0_amd64.deb>`_.
 
          - SHA256 checksum of the download: |node-deb-package-checksum|
 
@@ -223,13 +223,13 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Windows |mainnet-node-version|
 
-      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.0.4-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.1.7-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |mainnet-node-version|
 
-      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.0.4-0.pkg>`_.
+      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.1.7-0.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
@@ -240,7 +240,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Ubuntu |testnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.6-0_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.7-0_amd64.deb>`_.
 
       - SHA256 checksum of the download: ``b668ea82418fc713665c15361e8ab4fc09002ffdee6e7eabe19cce05b14be0e7``
 
@@ -256,13 +256,13 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.1.6-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.1.7-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.1.6-0.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.1.7-0.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 

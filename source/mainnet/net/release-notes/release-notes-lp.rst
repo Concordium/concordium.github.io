@@ -576,9 +576,9 @@ Mainnet
 
     .. _604-mainnet:
 
-    October 17, 2023
+    October 23, 2023
 
-    Concordium Node 6.1.6 contains bug fixes and improvements. **This is the last release of the node that has support for V1 gRPC API.**
+    Concordium Node 6.1.7 contains bug fixes and improvements. **This is the last release of the node that has support for V1 gRPC API.**
 
     **Improvements**
 
@@ -625,6 +625,8 @@ Mainnet
         - Fixed a bug in how the last timeout certificate is recovered at start-up.
 
         - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
+
+        - Added load shedding for gRPC v2. This helps protect the node in case of high number of concurrent requests since they are now dropped immediately as opposed to queued.
 
     .. dropdown:: Previous releases
 
