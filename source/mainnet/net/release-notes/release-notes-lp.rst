@@ -19,11 +19,15 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    October 9, 2023
+    October XX, 2023
 
-        Version 1.2.0 includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+        Version 1.3.0 contains support for deeplinking with WalletConnect and fixes an issue with the shielded balance toggle.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.0 - October 9, 2023
+
+            Version 1.2.0 includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
 
         .. dropdown:: |mw-gen2| 1.1.1 - July 31, 2023
 
