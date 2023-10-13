@@ -75,8 +75,8 @@ Here is an example:
 Migrating advanced state types
 ==============================
 
-If your contract state directly, or indirectly, contains one or more advanced state types, i.e. |StateMap|_, |StateSet|_, or |StateBox|_, then you also need to make a small adjustment.
-The advanced state types are generic over not only the types stored, fx the keys and values in a map, but also over a type that implements the |HasStateApi|_ trait.
+If your contract state directly, or indirectly, contains one or more advanced state types, i.e., |StateMap|_, |StateSet|_, or |StateBox|_, then you also need to make a small adjustment.
+The advanced state types are generic over not only the types stored, such as the keys and values in a map but also over a type that implements the |HasStateApi|_ trait.
 This is because the deprecated |test_infrastructure|_ used a different implementation of the underlying contract state, i.e., a different implementation of |HasStateApi|_, than the Concordium nodes do.
 But |concordium-smart-contract-testing|_ uses the exact same state implementation as the nodes do and it is therefore possible to specify the concrete type, |StateApi|_, as the default.
 
