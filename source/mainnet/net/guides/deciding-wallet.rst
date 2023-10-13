@@ -74,7 +74,9 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 What are the requirements for each wallet?
 ==========================================
 
-- |mw-gen1| or |mw-gen2|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+- |mw-gen1|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+
+- |mw-gen2|: you’ll need an iPhone running iOS 15 or later or an Android phone running Android 8 or later.
 
 - |bw|: you'll need a device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
 
