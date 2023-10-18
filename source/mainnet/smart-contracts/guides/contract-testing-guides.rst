@@ -15,7 +15,7 @@ The contract testing guides help you get started testing smart contracts. Here y
 .. note::
 
    Unit testing your contracts with the |test_infrastructure|_ has been deprecated in favor of |concordium-smart-contract-testing|_.
-   To migrate your contracts and tests see :ref:`migrate-contracts-for-std-9`.
+   To migrate your contracts and tests see :ref:`migrate-contracts-for-std-8.1`.
    You can read the :ref:`old documentation for unit testing here <unit-test-contract>` if you are not ready to migrate your contracts.
 
 .. |test_infrastructure| replace:: ``test_infrastructure``

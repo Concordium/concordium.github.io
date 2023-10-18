@@ -1,10 +1,10 @@
-.. _migrate-contracts-for-std-9:
+.. _migrate-contracts-for-std-8.1:
 
 ==============================================
-Migrate contracts for ``concordium-std`` 9.0.0
+Migrate contracts for ``concordium-std`` 8.1
 ==============================================
 
-With the |concordium_std|_ version ``9.0.0`` release, writing and reading smart contracts is easier than ever before.
+With the |concordium_std|_ version ``8.1`` release, writing and reading smart contracts is easier than ever before.
 The new version of the standard library reduces the need for generics and traits in your init and receive methods.
 These generics and traits were there to support testing with the |test_infrastructure|_, which has been deprecated in favor of the |concordium-smart-contract-testing|_ library.
 
@@ -12,7 +12,7 @@ This guide shows you how to migrate your contract code to use the simpler concre
 
 .. note::
 
-   You should only migrate your contract code if you are also ready to migrate all your tests to use the |concordium-smart-contract-testing|_ library.
+   You should only migrate your contract code if you are also ready to migrate all your tests, that invoke init or receive methods directly, to use the |concordium-smart-contract-testing|_ library.
 
 Migrating ``init`` methods
 ==========================
@@ -141,13 +141,13 @@ It also includes types already described above:
 - ``&mut impl HasLogger`` becomes ``&mut Logger``
 
 To migrate your tests, read the how-to guide :ref:`integration-test-contract`.
-You can also refer to the `commit <https://github.com/Concordium/concordium-rust-smart-contracts/commit/d26aabae4b0714412cec4347d7ca5b09c8994c0e>`_ where the example contracts were rewritten.
+You can also refer to the `pull request <https://github.com/Concordium/concordium-rust-smart-contracts/pull/347>`_, where our example contracts were rewritten.
 This shows both the removal of generics and how to migrate tests from using |test_infrastructure|_ to |concordium-smart-contract-testing|_.
 
 .. |concordium_std| replace:: ``concordium_std``
 .. _concordium_std: https://docs.rs/concordium-std/latest/concordium_std
 .. |test_infrastructure| replace:: ``test_infrastructure``
-.. _test_infrastructure: https://docs.rs/concordium-std/9.0.0/concordium_std/test_infrastructure
+.. _test_infrastructure: https://docs.rs/concordium-std/8.1/concordium_std/test_infrastructure
 .. _concordium-smart-contract-testing: https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing
 .. |concordium-smart-contract-testing| replace:: ``concordium-smart-contract-testing``
 .. _StateBox: https://docs.rs/concordium-std/latest/concordium_std/struct.StateBox.html

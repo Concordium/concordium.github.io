@@ -9,10 +9,19 @@ Unit test a contract in Rust
 .. warning::
 
    Unit testing your contracts with the |test_infrastructure|_ has been deprecated in favor of |concordium-smart-contract-testing|_.
-   To migrate your contracts and tests see :ref:`migrate-contracts-for-std-9` and :ref:`integration-test-contract`.
+   To migrate your contracts and tests see :ref:`migrate-contracts-for-std-8.1` and :ref:`integration-test-contract`.
 
    If you are not ready to migrate your contracts, you can still use the guide below.
-   Just make sure to add ``#[allow(deprecated)]`` attribute above your test module to avoid warnings.
+   Just make sure to add an ``#[allow(deprecated)]`` attribute above your test module to avoid warnings:
+
+   .. code-block:: rust
+
+      #[allow(deprecated)]
+      #[cfg(test)]
+      mod tests{
+          use concordium_std::test_infrastructure::*;
+          // ...
+      }
 
 This guide describes how to write unit tests for a smart contract written in
 Rust.

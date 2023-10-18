@@ -524,6 +524,24 @@ Events
 
         fe0003532a04
 
+.. dropdown::  How does the |Chain|_ record CCD transfer events in the test cases?
+
+    Every time when a transfer occurs by the below code, the |Chain|_ records the `address` and the `amount`.
+
+    .. code-block:: rust
+
+        host.invoke_transfer(address, amount);
+
+    The recorded event data can be used in the test cases to confirm that the CCD was
+    transferred as shown in the below `example code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/recorder/tests/tests.rs#L102>`_.
+
+    .. code-block:: rust
+
+        assert_eq!(update_transfer.account_transfers().collect::<Vec<_>>()[..], [
+            (contract_address, Amount::zero(), ACC_0),
+            (contract_address, Amount::zero(), ACC_1)
+        ]);
+
 Standards
 =========
 
@@ -771,3 +789,6 @@ Miscellaneous
     - It can mean to execute or initiate a function. It is equivalent to Ethereum saying: "Calling a smart contract function".
 
     - In the context of the ``concordium-client`` tool, it means to simulate a transaction locally on your node via the `invoke` command of the ``concordium-client`` tool instead of sending the transaction to the blockchain network and executing it on-chain. Since the transaction was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
+
+.. _Chain: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html
+.. |Chain| replace:: ``Chain``
