@@ -49,9 +49,9 @@ This has the benefit of being in the same transaction as the upgrade itself, mak
         parameter = "UpgradeParams",
         low_level
     )]
-    fn contract_upgrade<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<S>,
+    fn contract_upgrade(
+        ctx: &ReceiveContext,
+        host: &mut LowLevelHost,
     ) -> ReceiveResult<()> {
         // Check that only the owner is authorized to upgrade the smart contract.
         ensure!(ctx.sender().matches_account(&ctx.owner()));

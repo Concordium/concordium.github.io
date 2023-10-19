@@ -17,7 +17,7 @@
 <body>
     <div class="fit-content center margin-tb">
         <a href="https://concordium.com/" target="_blank">
-            <img class="logo" src="_static/concordium-logo.svg" /><h3 class="lp">Documentation</h3>
+            <img class="logo" src="{{pathto('_static/concordium-logo.svg', 1)}}" /><h3 class="lp">Documentation</h3>
         </a>
     </div>
 
@@ -32,7 +32,7 @@
 
     <style>
         body {
-            background: url('_static/background-img.png') no-repeat fixed center;
+            background: url('{{pathto("_static/background-img.png", 1)}}') no-repeat fixed center;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;

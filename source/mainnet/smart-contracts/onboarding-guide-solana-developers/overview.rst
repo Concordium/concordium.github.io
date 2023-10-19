@@ -95,14 +95,16 @@ Concordium
         counter: u32
     }
 
+    ...
+
    #[receive(
         contract = "example",
         name = "some_receive",
         mutable,
     )]
-    fn some_receive<S: HasStateApi>(
-        _ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<MyState, StateApiType = S>,
+    fn some_receive(
+        ctx: &ReceiveContext,
+        host: &mut Host<MyState>,
     ) -> Result<(), Error> {
 
         // Load the contract state; increment and store the counter
