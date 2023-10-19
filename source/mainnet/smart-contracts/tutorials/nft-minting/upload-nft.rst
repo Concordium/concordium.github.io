@@ -59,4 +59,4 @@ The Concordium CIS-2 standard allows the creation of your NFT metadata in the fo
 
 So far you have installed the required libraries, prepared a setup for our development environment, installed Docker and IPFS, and imported your first image to IPFS.
 
-Continue to the :ref:`next part<build-smart-contract>` of the tutorial to build your smart contract and intialize it.
+Continue to the :ref:`next part<build-smart-contract>` of the tutorial to build your smart contract and initialize it.

@@ -41,9 +41,9 @@ Now, you need to update the ``state`` struct which keeps the current state of yo
     /// and this could be structured in a more space efficient way.
     #[derive(Serial, DeserialWithState, StateClone)]
     #[concordium(state_parameter = "S")]
-    struct State<S> {
+    struct State<S = StateApi> {
         /// The state of addresses.
-        state: StateMap<Address, AddressState<S>, S>,
+        state: StateMap<Address, AddressState, S>,
         /// All of the token IDs
         tokens: StateMap<ContractTokenId, MetadataUrl, S>,
         // max supply of the token
@@ -87,7 +87,7 @@ Since you added new maps to your state, you need to handle their initialization 
 
 .. code-block:: rust
 
-    fn empty(state_builder: &mut StateBuilder<S>) -> Self {
+    fn empty(state_builder: &mut StateBuilder) -> Self {
             State {
                 state: state_builder.new_map(),
                 tokens: state_builder.new_map(),
@@ -114,10 +114,10 @@ Unlike the NFT tutorials, this time you actually want the token to be mintable w
         enable_logger,
         mutable
     )]
-    fn contract_mint<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State<S>, StateApiType = S>,
-        logger: &mut impl HasLogger,
+    fn contract_mint(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
+        logger: &mut Logger,
     ) -> ContractResult<()> {
         // Get the contract owner
         let owner = ctx.owner();
@@ -261,10 +261,10 @@ If the ``mint()`` function is not called for the first time, then you need to ch
         enable_logger,
         mutable
     )]
-    fn contract_mint<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State<S>, StateApiType = S>,
-        logger: &mut impl HasLogger,
+    fn contract_mint(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
+        logger: &mut Logger,
     ) -> ContractResult<()> {
         // Get the contract owner
         let owner = ctx.owner();
@@ -341,7 +341,7 @@ There is only one minor change needed in the state’s mint function, which is i
             token_metadata: &TokenMetadata,
             amount: ContractTokenAmount,
             owner: &Address,
-            state_builder: &mut StateBuilder<S>,
+            state_builder: &mut StateBuilder,
         ) {
             self.tokens
                 .insert(*token_id, token_metadata.to_metadata_url());
@@ -384,10 +384,10 @@ When you get the parameters, ensure the token exists with the ``ensure!`` and ``
         enable_logger,
         mutable
     )]
-    fn contract_burn<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State<S>, StateApiType = S>,
-        logger: &mut impl HasLogger,
+    fn contract_burn(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
+        logger: &mut Logger,
     ) -> ContractResult<()> {
         // Get the contract owner
         // let owner = ctx.owner();

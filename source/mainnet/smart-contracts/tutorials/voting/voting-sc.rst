@@ -81,7 +81,7 @@ And if the end time has passed, an error occurs.
 
 ``get_votes`` gets the number of votes for a specific voting option.
 
-``State<S: HasStateApi>`` contains the state of the contract which can be mutated when invoking the ``vote`` entrypoint.
+``State`` contains the state of the contract which can be mutated when invoking the ``vote`` entrypoint.
 
 Initializing
 ------------

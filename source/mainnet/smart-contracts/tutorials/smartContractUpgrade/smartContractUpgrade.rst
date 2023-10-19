@@ -46,9 +46,9 @@ A native smart contract upgrade can be triggered on the ``host`` as seen in the 
       ...
       low_level
    )]
-   fn contract_name<S: HasStateApi>(
+   fn contract_name(
       ...
-      host: &mut impl HasHost<S>,
+      host: &mut LowLevelHost,
       ...
    )  ... {
       ...
@@ -88,9 +88,9 @@ the same smart contract upgrade on mainnet.
          error = "ContractError",
          mutable
       )]
-      fn contract_upgrade<S: HasStateApi>(
-         _ctx: &impl HasReceiveContext,
-         host: &mut impl HasHost<State<S>, StateApiType = S>,
+      fn contract_upgrade(
+         _ctx: &ReceiveContext,
+         host: &mut Host<State>,
       ) -> ContractResult<()> {
          // TODO: Include some authorization checks.
 
