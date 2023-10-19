@@ -393,7 +393,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
         .. code-block:: rust
 
             #[receive(contract = "contractName", name = "receiveToken")]
-            fn contract_receive_Token<S: HasStateApi>( ... ) ... { ... }
+            fn contract_receive_token( ... ) ... { ... }
 
     You can use the smart contract deployed at index 844 on testnet and
     its function entry point name ``receiveToken`` for testing.

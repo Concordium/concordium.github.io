@@ -17,7 +17,7 @@
 .. |InitContextTest| replace:: ``InitContextTest``
 .. _ReceiveContextTest: https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html
 .. |ReceiveContextTest| replace:: ``ReceiveContextTest``
-.. _HasInitContext: https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html
+.. _HasInitContext: https://docs.rs/concordium-std/2.0.0/concordium_std/trait.HasInitContext.html
 .. |HasInitContext| replace:: ``HasInitContext``
 .. _HasActions: https://docs.rs/concordium-std/2.0.0/concordium_std/trait.HasActions.html
 .. |HasActions| replace:: ``HasActions``
