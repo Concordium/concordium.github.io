@@ -36,10 +36,10 @@ Create an instance of the marketplace contract with the command below. Look at t
     /// This function can be called by using InitParams.
     /// The commission should be less than the maximum allowed value of 10000 basis points
     #[init(contract = "Market-NFT", parameter = "InitParams")]
-    fn init<S: HasStateApi>(
-        ctx: &impl HasInitContext,
-        state_builder: &mut StateBuilder<S>,
-    ) -> InitResult<State<S, ContractTokenId, ContractTokenAmount>> {
+    fn init(
+        ctx: &InitContext,
+        state_builder: &mut StateBuilder,
+    ) -> InitResult<State<ContractTokenId, ContractTokenAmount>> {
         let params: InitParams = ctx
             .parameter_cursor()
             .get()
@@ -81,10 +81,10 @@ Now you are going to sell your NFT. In order to do that, you need to give the ma
         enable_logger,
         mutable
     )]
-    fn contract_update_operator<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State<S>, StateApiType = S>,
-        logger: &mut impl HasLogger,
+    fn contract_update_operator(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
+        logger: &mut Logger,
     ) -> ContractResult<()> {
         // Parse the parameter.
         let UpdateOperatorParams(params) = ctx.parameter_cursor().get()?;
@@ -165,9 +165,9 @@ Now you are ready to sell it from the marketplace. If you look what it does you 
         mutable,
         payable
     )]
-    fn transfer<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<ContractState<S>, StateApiType = S>,
+    fn transfer(
+        ctx: &ReceiveContext,
+        host: &mut Host<ContractState>,
         amount: Amount,
     ) -> ContractResult<()> {
         let params: TransferParams = ctx

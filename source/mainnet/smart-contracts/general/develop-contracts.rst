@@ -70,18 +70,18 @@ Here is an example of a smart contract that implements a counter:
    type State = u32;
 
    #[init(contract = "counter")]
-   fn counter_init<S: HasStateApi>(
-       _ctx: &impl HasInitContext,
-       _state_builder: &mut StateBuilder<S>,
+   fn counter_init(
+       _ctx: &InitContext,
+       _state_builder: &mut StateBuilder,
    ) -> InitResult<State> {
        let state = 0;
        Ok(state)
    }
 
    #[receive(contract = "counter", name = "increment", mutable)]
-   fn contract_receive<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<State, StateApiType = S>,
+   fn contract_receive(
+       ctx: &ReceiveContext,
+       host: &mut Host<State>,
    ) -> ReceiveResult<()> {
        ensure!(ctx.sender().matches_account(&ctx.owner())); // Only the owner can increment
        *host.state_mut() += 1;
@@ -97,16 +97,14 @@ There are a number of things to notice:
 
 - The type of the functions:
 
-  * An init function must be of type ``(&impl HasInitContext, &mut StateBuilder) -> InitResult<MyState>``
+  * An init function must be of type ``(&InitContext, &mut StateBuilder) -> InitResult<MyState>``
     where ``MyState`` is a type that implements the ``Serialize`` [#serialize]_ trait.
-  * A receive function, which, by default, cannot mutate the state, must take a ``S: HasStateApi`` type parameter,
-    a ``&impl HasReceiveContext``, and a ``&impl HasHost<MyState, StateApiType = S>`` parameter, and return
-    a ``ReceiveResult<MyReturnValue>``, where ``MyReturnValue`` is type that
-    implements ``Serialize``.
+  * A receive function, which, by default, cannot mutate the state, must take a ``&ReceiveContext``,
+    and a ``&Host<MyState>`` parameter, and return a ``ReceiveResult<MyReturnValue>``, where ``MyReturnValue``
+    is type that implements ``Serialize``.
   * A receive function can be allowed to mutate the state by adding the
-    ``mutable`` attribute, in which case the host parameter becomes mutable: ``&mut impl
-    HasHost<MyState, StateApiType = S>``. The other types and requirements remain
-    unchanged as compared to the immutable receive functions.
+    ``mutable`` attribute, in which case the host parameter becomes mutable: ``&mut Host<MyState>``.
+    The other types and requirements remain unchanged as compared to the immutable receive functions.
 
 - The annotation ``#[init(contract = "counter")]`` marks the function it is
   applied to as the init function of the contract named ``counter``.
@@ -191,7 +189,7 @@ user-defined structs and enums.
 
    #[derive(Serial, DeserialWithState)]
    #[concordium(state_parameter = S)]
-   struct MyState<S, T> {
+   struct MyState<S = StateApi, T> {
        a: StateBox<String, S>,
        b: Vec<T>,
        ...
@@ -203,7 +201,7 @@ the state must implement ``Serialize`` *or* ``Serial + DeserialWithState``.
 .. note::
 
    Strictly speaking you only need to deserialize bytes to your parameter type,
-   but it is convenient to be able to serialize types when writing unit tests.
+   but it is convenient to be able to serialize types when writing tests.
 
 .. _working-with-parameters:
 
@@ -234,8 +232,8 @@ As an example, see the following contract in which the parameter
    }
 
    #[init(contract = "parameter_example")]
-   fn init<S: HasStateApi>(
-       _ctx: &impl HasInitContext,
+   fn init(
+       _ctx: &InitContext,
        _state_builder: &mut StateBuilder,
    ) -> InitResult<State> {
        let initial_state = 0;
@@ -243,9 +241,9 @@ As an example, see the following contract in which the parameter
    }
 
    #[receive(contract = "parameter_example", name = "receive", mutable)]
-   fn receive<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<State, StateApiType = S>,
+   fn receive(
+       ctx: &ReceiveContext,
+       host: &mut Host<State>,
    ) -> ReceiveResult<()> {
        let parameter: ReceiveParameter = ctx.parameter_cursor().get()?;
        if parameter.should_add {
@@ -264,9 +262,9 @@ parameter using the `Read`_ trait:
    :emphasize-lines: 7, 10
 
    #[receive(contract = "parameter_example", name = "receive_optimized", mutable)]
-   fn receive_optimized<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<State, StateApiType = S>,
+   fn receive_optimized(
+       ctx: &ReceiveContext,
+       host: &mut Host<State>,
    ) -> ReceiveResult<()> {
        let mut cursor = ctx.parameter_cursor();
        let should_add: bool = cursor.read_u8()? != 0;

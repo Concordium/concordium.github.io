@@ -12,7 +12,7 @@ specific scenarios.
 
 .. seealso::
 
-   For a guide on automated unit tests, see :ref:`unit-test-contract`.
+   For a guide on automated integration tests, see :ref:`integration-test-contract`.
 
 Preparation
 ===========

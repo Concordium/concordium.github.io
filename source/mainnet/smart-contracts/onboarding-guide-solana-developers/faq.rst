@@ -196,21 +196,13 @@ Concordium smart contracts
     ``host.self_balance()`` returns the current balance of the smart contract.
     Upon entry to a smart contract function, the balance that is returned is the sum of the
     balance of the contract at the time of the invocation and the amount that is being transferred to the contract.
-    Additional documentation can be found in the `self_balance description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.self_balance>`_
+    Additional documentation can be found in the `self_balance description <https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#tymethod.self_balance>`_
     of the ``concordium-std`` crate.
-
-    .. note::
-
-        When writing smart contract test cases, the ``set_self_balance`` function of the ``TestHost`` needs
-        to account for it and you should set it to the sum of the contract’s initial balance
-        and the amount you wish to invoke it with. Additional documentation can be
-        found in the `set_self_balance description <https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/struct.TestHost.html#method.set_self_balance>`_
-        of the TestHost or in the `auction example <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/auction/src/lib.rs>`_.
 
 .. dropdown::  How do I get the address of the smart contract within the Rust code?
 
     ``ctx.self_address()`` returns the address of the smart contract.
-    Additional documentation can be found in the `self_address description <https://docs.rs/concordium-std/latest/concordium_std/trait.HasReceiveContext.html#tymethod.self_address>`_ of the concordium standard crate.
+    Additional documentation can be found in the `self_address description <https://docs.rs/concordium-std/latest/concordium_std/struct.ExternContext.html#tymethod.self_address>`_ of the concordium standard crate.
 
 .. dropdown::  Can I print values from the smart contract code or test cases?
 
@@ -328,9 +320,9 @@ Concordium smart contracts
             parameter = "ContractBalanceOfQueryParams",
             return_value = "ContractBalanceOfQueryResponse"
         )]
-        fn contract_balance_of<S: HasStateApi>(
-            ctx: &impl HasReceiveContext,
-            host: &impl HasHost<StateImplementation, StateApiType = S>,
+        fn contract_balance_of(
+            ctx: &ReceiveContext,
+            host: &Host<StateImplementation>,
         ) -> ContractResult<ContractBalanceOfQueryResponse> { ... }
 
 
@@ -536,24 +528,23 @@ Events
 
         fe0003532a04
 
-.. dropdown::  How does the TestHost record CCD transfer events in the test cases?
+.. dropdown::  How does the |Chain|_ record CCD transfer events in the test cases?
 
-    Every time when a transfer occurs by the below code, the TestHost records the `address` and the `amount`.
+    Every time when a transfer occurs by the below code, the |Chain|_ records the `address` and the `amount`.
 
     .. code-block:: rust
 
         host.invoke_transfer(address, amount);
 
     The recorded event data can be used in the test cases to confirm that the CCD was
-    transferred as shown in the below `example code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/recorder/src/lib.rs#L128>`_.
+    transferred as shown in the below `example code <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/recorder/tests/tests.rs#L102>`_.
 
     .. code-block:: rust
 
-        let transfers_occurred = host.get_transfers();
-        claim_eq!(
-            &transfers_occurred[..],
-            &[(addr0, Amount::from_micro_ccd(0)), (addr1, Amount::from_micro_ccd(0))][..]
-        );
+        assert_eq!(update_transfer.account_transfers().collect::<Vec<_>>()[..], [
+            (contract_address, Amount::zero(), ACC_0),
+            (contract_address, Amount::zero(), ACC_1)
+        ]);
 
 Standards
 =========
@@ -762,3 +753,6 @@ Miscellaneous
     - It can mean to execute or initiate a function. It is equivalent to Solana saying: "Calling a program".
 
     - In the context of the ``concordium-client`` tool, it means to simulate a transaction locally on your node via the `invoke` command of the ``concordium-client`` tool instead of sending the transaction to the blockchain network and executing it on-chain. Since the transaction was simulated it was not inserted by the bakers in a block and is not part of the blockchain and state changes that the `invoke` command makes are discarded afterwards.
+
+.. _Chain: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html
+.. |Chain| replace:: ``Chain``
