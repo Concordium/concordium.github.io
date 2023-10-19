@@ -160,7 +160,7 @@ html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu-academy"],
     "navbar_end": ["navbar-icon-links"],
-    "page_sidebar_items": ["page-toc"],
+    "page_sidebar_items": ["page-toc", "edit-this-page"],
     "footer_items": ["footer"],
     "show_prev_next": True,
     "navbar_align": "left",
@@ -191,17 +191,6 @@ html_theme_options = {
             "url": "https://support.concordium.software/latest",
             "icon": "fab fa-discourse",
             "type": "fontawesome",
-        },
-        {
-            # Concordium Email Support
-            "name": "Feedback",
-            # URL where the link will redirect
-            "url": "mailto:documentation@concordium.com",  # required
-            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
-            "icon": "fas fa-bullhorn",
-            # Whether icon should be a FontAwesome class, or a local file
-            "type": "fontawesome",  # Default is fontawesome
-
         },
     ]
     }
