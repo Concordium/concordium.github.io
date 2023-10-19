@@ -62,7 +62,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |mw-gen2|
 
-   You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen2|. You do this from the **Identities** page.
+   You can submit requests for additional :term:`identities<identity>` in the |mw-gen2|. You do this from the **Identities** page.
 
    #. Tap |wallet-settings|.
 
@@ -94,7 +94,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |bw|
 
-   You can submit requests for additional :ref:`identities<glossary-identity>` in the |bw|. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it. If you do not have any identities, you can click **Request identity**.
+   You can submit requests for additional :term:`identities<identity>` in the |bw|. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it. If you do not have any identities, you can click **Request identity**.
 
    .. image:: ../images/browser-wallet/id-page-no-id.png
       :width: 25%

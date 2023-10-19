@@ -376,7 +376,7 @@ Both |Chain_contract_update|_ and |Chain_contract_invoke|_ have return values wh
 On success, you can access the return value directly, for example ``update.return_value``, which is a byte array, ``Vec<u8>``.
 But the methods can fail in multiple ways, for example if the contract runs out of energy or it panics, and the return value is only available when the contract rejects on its own.
 The helper method |return_value|_ on the |ContractInvokeError|_ struct tries to extract the return value and returns an ``Option<Vec<u8>>``.
-To deserialize the return value into structured data, you can use the helper function |from_bytes|_, which returns a ``Result<T, ParseError>``, where ``T`` is the type you want to parse.
+It is common to deserialize the return values into structered data and thus both the success_ and error_ types have helper methods called ``parse_return_value``, which returns a ``Result<T, ParseError>``, where ``T`` is the type you want to parse.
 For example:
 
 .. code-block:: rust
@@ -386,14 +386,12 @@ For example:
 
    // On success:
    let update = chain.contract_update(..).unwrap();
-   let update_return_value = update.return_value;
-   let returned_string: String = from_bytes(&update_return_value).unwrap();
+   let returned_string: String = update.parse_return_value().unwrap();
    assert_eq!(returned_string, "My expected string");
 
    // On error:
    let update_error = chain.contract_update(..).unwrap_err();
-   let update_error_return_value = update_error.return_value().unwrap(); // Unwrap the `Option`.
-   let returned_contract_error: MyContractError = from_bytes(&update_error_return_value).unwrap();
+   let returned_contract_error: MyContractError = update_error.parse_return_value().unwrap();
    assert_eq!(returned_contract_error, MyContractError::NotOwner);
 
 Balances
@@ -595,3 +593,5 @@ Example:
 .. |ChainBuilder| replace:: ``ChainBuilder``
 .. _DebugTraceElement: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/enum.DebugTraceElement.html
 .. |DebugTraceElement| replace:: ``DebugTraceElement``
+.. _error: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html#method.parse_return_value
+.. _success: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.parse_return_value

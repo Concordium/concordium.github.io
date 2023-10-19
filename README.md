@@ -285,6 +285,11 @@ Example:
 
    This text appears when the reader clicks on the dropdown element.
 ```
+#### Glossary terms
+
+Enter glossary terms in the glossary.rst if they are not already in the glossary. Pay close attention to the indentation in the glossary.
+
+In the topic where the term is referenced, use the `:term:<my term>` directive when writing a glossary term in the text. If you want to use different text than how the term appears in the glossary, use the following format: `:term:My terms<my term>`.
 
 ### Images
 

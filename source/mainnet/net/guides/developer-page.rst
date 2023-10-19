@@ -44,6 +44,11 @@ Official resources
 
 - An external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service
 
+Concordium Proof Explorer
+-------------------------
+
+If you want to familiarize yourself with how proofs work and can be constructed, you can use the `Concordium Proof Explorer <https://web3id-proof-explorer.testnet.concordium.com/>`__ to create proofs and send them to a |bw| to see how they interact with account credentials and verifiable credentials. The Concordium Proof Explorer works on Testnet. You can use the `Web3Id Issuer Front End <https://web3id-issuer-frontend.testnet.concordium.com/>`__ to create verifiable credential to test with the proof explorer.
+
 .. _example-dapps:
 
 Example dApps

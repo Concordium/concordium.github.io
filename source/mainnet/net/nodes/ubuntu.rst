@@ -4,9 +4,10 @@
 Ubuntu nodes
 ============
 
-The following links describe running a node with Ubuntu.
+This section contains topics that describe running a node with Ubuntu.
 
 .. toctree::
+   :hidden:
    :maxdepth: 1
 
    ../guides/run-node-ubuntu

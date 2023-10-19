@@ -34,7 +34,7 @@ List accounts
 
 List the addresses of all accounts on the chain as of a specific block:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :term:`best block`.
 
 Example
 ~~~~~~~
@@ -60,8 +60,8 @@ can also decrypt the shielded balance.
 
 -  ``ACCOUNT``: Address or local name of the account (if not provided,
    will show the account with the local alias ``"default"``).
--  ``BLOCK``: Full hash of target block. Defaults to the current :ref:`glossary-best-block`.
--  ``--shielded``: Show the :ref:`glossary-shielded-balance` (explained below).
+-  ``BLOCK``: Full hash of target block. Defaults to the current :term:`best block`.
+-  ``--shielded``: Show the :term:`shielded balance` (explained below).
 -  ``--reveal-shielded``: Show the shielded balance and reveal it
    (explained below).
 
@@ -90,14 +90,14 @@ The output shows that the account with the local name ``my-account``
 
 -  has address ``2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG``,
 -  has a balance of 1026 CCD,
--  has :ref:`glossary-transaction-sequence-number` ``1``,
+-  has :term:`transaction sequence number` ``1``,
 -  has ``a820662531d...`` as the key for receiving shielded transfers.
--  has no :ref:`glossary-incoming-shielded-amount`.
--  has a :ref:`glossary-self-balance` of ``a9d35bf62442aabad72c...``. By default this
+-  has no :term:`incoming shielded amount<shielded balance>`.
+-  has a :term:`self balance<shielded balance>` of ``a9d35bf62442aabad72c...``. By default this
    only shows the first 20 characters of the encrypted amount. With a
    ``--verbose`` flag the full encryption is shown.
 
-Furthermore, the account's credential reveals no attributes from the :ref:`glossary-identity`
+Furthermore, the account's credential reveals no attributes from the :term:`identity`
 that the account is derived from, and expires at the end of September 2021.
 
 If the flag ``--reveal-shielded`` is provided, each of the shielded amounts
@@ -113,7 +113,7 @@ Transaction status
 
    $concordium-client transaction status TX-HASH
 
-Display the lifecycle state of a :ref:`glossary-transaction` (pending, committed, finalized,
+Display the lifecycle state of a :term:`transaction` (pending, committed, finalized,
 or absent).
 
 If the transaction is committed or finalized, the status (success or rejected)
@@ -141,7 +141,7 @@ Display information about a specific block. Note that some fields (e.g. slot
 time) are objective (i.e. all nodes participating in the Concordium network will
 agree on these) while others (e.g. arrival time) are specific to the local node:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :term:`best block`.
 
 Example
 ~~~~~~~
@@ -179,10 +179,10 @@ Inspect consensus parameters
 
    $concordium-client consensus show-parameters [--include-bakers] [--block BLOCK-HASH]
 
-Show :ref:`election parameters<glossary-leader-election>` for a specific block, optionally including
-bakers and their :ref:`glossary-lottery-power`:
+Show :term:`election parameters<leader election>` for a specific block, optionally including
+bakers and their :term:`lottery power`:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :ref:`glossary-best-block`.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :term:`best block`.
 -  ``--include-bakers``: If set, include table of bakers and their
    lottery power. The lottery power is recomputed periodically, so operations
    that affect them do not take effect immediately.
@@ -267,7 +267,7 @@ ID layer
    $concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
 
 Display the list of identity providers or anonymity revokers at a given block,
-defaulting to the :ref:`best block<glossary-best-block>`.
+defaulting to the :term:`best block`.
 
 .. _exchange-rates:
 
@@ -275,7 +275,7 @@ Exchange rates
 ==============
 
 Conversion rates between NRG, CCD, and Euros can fluctuate between blocks. To get a best estimate of the current
-exchange rates, query the chain parameters of the :ref:`best block<glossary-best-block>`:
+exchange rates, query the chain parameters of the :term:`best block`:
 
 .. code-block:: console
 

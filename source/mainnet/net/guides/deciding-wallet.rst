@@ -8,9 +8,9 @@ Deciding between the wallets
 Why you need a wallet
 =====================
 
-You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :term:`wallet` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
-The wallets are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
+The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
 No import of identities and accounts from one wallet to another
 ===============================================================
@@ -74,7 +74,9 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 What are the requirements for each wallet?
 ==========================================
 
-- |mw-gen1| or |mw-gen2|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+- |mw-gen1|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+
+- |mw-gen2|: you’ll need an iPhone running iOS 15 or later or an Android phone running Android 8 or later.
 
 - |bw|: you'll need a device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
 

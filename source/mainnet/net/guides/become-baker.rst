@@ -12,7 +12,7 @@ This guide takes you through the steps involved in upgrading your node to a bake
 
 The process of becoming a baker involves the following:
 
-#. Create an account in the wallet and acquire CCD.
+#. Create an account in a wallet and acquire CCD.
 #. Create a set of baker keys.
 #. Register the baker keys with the account.
 #. Start the node with the baker keys.
@@ -28,9 +28,14 @@ is added to the chain, the baker receives a reward.
 Prerequisites
 =============
 -  Run a node
--  Create an account
--  Export the JSON file with the account information
--  Install the Concordium Client
+-  Create an account in a wallet
+-  Export a file with the account information
+
+   * To export the JSON file in |mw-gen1|, see :ref:`Make a backup of identities and accounts<export-import>`.
+
+   * To export the private key in |mw-gen2| and |bw|, see :ref:`Export a private key<export-key>`.
+
+-  :ref:`Install the Concordium Client<concordium-node-and-client-download>`
 
 For general information about baking concepts, see :ref:`baker-concept`.
 
@@ -46,7 +51,11 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the |mw-gen2| or |bw| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information from the |mw-gen1|. For more information, see :ref:`Make a backup of identities and accounts<export-import>`.
+   You can only import accounts created in the |mw-gen2|, |bw|, or |mw-gen1| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information.
+
+   * To export the JSON file in |mw-gen1|, see :ref:`Make a backup of identities and accounts<export-import>`.
+
+   * To export the private key in |mw-gen2| and |bw|, see :ref:`Export a private key<export-key>`.
 
 To import an account run:
 
@@ -139,7 +148,7 @@ To start the node with these baker keys and bake blocks, configure the node to
 use the baker keys, and **restart** it. The node will automatically start baking
 when the baker is included in the bakers for the current epoch.
 
-This change is executed immediately, and it will take effect at the next :ref:`pay day<glossary-pay-day>` after the one in which the transaction for adding the baker was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
+This change is executed immediately, and it will take effect at the next :term:`pay day` after the one in which the transaction for adding the baker was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 
 
 +-------------------------------------------+-----------------------------------------+-----------------+
@@ -212,7 +221,7 @@ to bake blocks is also modified.
 When a baker adds a stake for the first time or increases the stake, that
 change is executed on the chain and becomes visible as soon as the transaction
 is included in a block (can be seen through ``concordium-client account show
-bakerAccount``) and takes effect at the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
+bakerAccount``) and takes effect at the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 
 +----------------------------------------+-----------------------------------------+-----------------+
 |                                        | When transaction is included in a block | At next pay day |
@@ -222,7 +231,7 @@ bakerAccount``) and takes effect at the next :ref:`pay day<glossary-pay-day>`. I
 | Baker uses the new stake               |                                         | ✓               |
 +----------------------------------------+-----------------------------------------+-----------------+
 
-When a baker **decreases the staked amount**, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends. It can be consulted through ``concordium-client account show bakerAccount``:
+When a baker **decreases the staked amount**, the change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next :term:`pay day` after the cool-down ends. It can be consulted through ``concordium-client account show bakerAccount``:
 
 .. code-block:: console
 
@@ -280,7 +289,7 @@ the account balance without staking them automatically. You can change this swit
    $concordium-client baker update-restake True --sender bakerAccount
 
 Changes to the restake flag will take effect immediately; however, the changes
-start affecting baking and finalizing power in the next :ref:`pay day<glossary-pay-day>`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using ``concordium-client``:
+start affecting baking and finalizing power in the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using ``concordium-client``:
 
 .. code-block:: console
 
@@ -317,7 +326,7 @@ Finalization
 
 Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the bakers with an effective stake amount of at least 0.1% of the total amount (effective stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
 
-Finalizers sign a block, and their collective signatures are aggregated to form a :ref:`quorum certificate<glossary-quorum-certificate>`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
+Finalizers sign a block, and their collective signatures are aggregated to form a :term:`quorum certificate`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
 
 Finalization happens at a minimum one second after block creation. A new block has to be created descended from that block for finalization to happen.
 
@@ -388,7 +397,7 @@ This removes the baker from the baker list and unlocks the staked amount on
 the baker so that it can be transferred or moved freely.
 
 When removing the baker, the change has the same timeline as decreasing
-the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next :ref:`pay day<glossary-pay-day>` after the cool-down ends. You can check when the change will take effect by querying the account information:
+the staked amount. The change requires a 21 day cool-down to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next :term:`pay day` after the cool-down ends. You can check when the change will take effect by querying the account information:
 
 .. code-block:: console
 

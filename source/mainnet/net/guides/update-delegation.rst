@@ -7,7 +7,7 @@ Update delegation to a baker pool or passive delegation
 
 You can change the delegation amount, target, and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
-If you increase the delegation, the new amount will be applied at the start of the next :ref:`pay day<glossary-pay-day>`. There is one pay day approximately every 24 hours. However, if you decrease the delegation, there is a :ref:`cool-down period<glossary-cool-down-period>` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance at the next pay day after the end of the cool-down period.
+If you increase the delegation, the new amount will be applied at the start of the next :term:`pay day`. There is one pay day approximately every 24 hours. However, if you decrease the delegation, there is a :term:`cool-down period` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance at the next pay day after the end of the cool-down period.
 
 Before delegating stake to a baker pool, it is important to research the pool using :ref:`CCDScan<ccd-scan>`. You can only have one delegation per account.
 
@@ -258,7 +258,7 @@ Once the transaction is finalized, the delegation update is effective from the n
 
 .. Note::
 
-   Reducing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the first pay day after the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+   Reducing your stake in any pool results in a longer :term:`cool-down period`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the first pay day after the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
 
 .. |earn| image:: ../images/earn.png
          :alt: Hand receiving money

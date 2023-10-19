@@ -67,7 +67,7 @@ Always remember, à blockchain itself is a state-keeping machine. If you send a 
     /// and this could be structured in a more space efficient way.
     #[derive(Serial, DeserialWithState, StateClone)]
     #[concordium(state_parameter = "S")]
-    struct State<S> {
+    struct State<S = StateApi> {
         /// The state of addresses.
         state: StateMap<Address, AddressState<S>, S>,
         /// All of the token IDs
@@ -82,7 +82,7 @@ The ``State`` struct above keeps the general state of the contract, which means 
 .. code-block:: rust
 
     /// Construct a state with no tokens
-        fn empty(state_builder: &mut StateBuilder<S>) -> Self {
+        fn empty(state_builder: &mut StateBuilder) -> Self {
             State {
                 state: state_builder.new_map(),
                 tokens: state_builder.new_map(),
@@ -103,7 +103,7 @@ The other minor update is to the ``mint()`` function of the ``State``. Since you
         token_metadata: &TokenMetadata,
         amount: ContractTokenAmount,
         owner: &Address,
-        state_builder: &mut StateBuilder<S>,
+        state_builder: &mut StateBuilder,
     ) {
         self.tokens
             .insert(*token_id, token_metadata.to_metadata_url());
@@ -142,10 +142,10 @@ The next update will be on the ``mint()`` function of the contract. You need to 
         enable_logger,
         mutable
     )]
-    fn contract_mint<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State<S>, StateApiType = S>,
-        logger: &mut impl HasLogger,
+    fn contract_mint(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
+        logger: &mut Logger,
     ) -> ContractResult<()> {
         // Get the contract owner
         let owner = ctx.owner();
@@ -207,9 +207,9 @@ Add one final change to the ``tokenMetadata()`` function. As you can see in :ref
         error = "ContractError"
     )]
 
-    fn contract_token_metadata<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &impl HasHost<State<S>, StateApiType = S>,
+    fn contract_token_metadata(
+        ctx: &ReceiveContext,
+        host: &Host<State>,
     ) -> ContractResult<TokenMetadataQueryResponse> {
         // Parse the parameter.
         let params: ContractTokenMetadataQueryParams = ctx.parameter_cursor().get()?;

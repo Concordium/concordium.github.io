@@ -8,5 +8,6 @@ Here, you can find best practices for smart contract development, audit, informa
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    Development best practices <./development.rst>

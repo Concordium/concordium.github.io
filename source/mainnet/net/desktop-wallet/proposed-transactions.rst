@@ -26,7 +26,7 @@ Transactions can have the following status:
 
 - **Submitted -pending**: The transaction has been submitted to the chain and is awaiting finalization.
 
-- **Finalized**: The proposal has been signed by all co-signers, the signatures have been imported, and the transaction has been submitted to the chain and :ref:`finalized <glossary-finalization>` on the chain.
+- **Finalized**: The proposal has been signed by all co-signers, the signatures have been imported, and the transaction has been submitted to the chain and :term:`finalized<finalization>` on the chain.
 
 - **Expired**: The transaction was not submitted to the chain before the expiry time. You must submit proposals to the chain before the expiry date. Otherwise, the proposal will expire, and you'll have to create a new one.
 

@@ -9,7 +9,7 @@
 Web3 ID in the |bw|
 =====================
 
-Web3 :ref:`verifiable credentials<glossary-verifiable-credential>` are available in the |bw|. They might have any of the following states:
+Web3 :term:`verifiable credentials<verifiable credential>` are available in the |bw|. They might have any of the following states:
 
 - Pending: the verifiable credential is in the process of being issued
 - Active: the verifiable credential is issued and valid
@@ -80,7 +80,7 @@ Recover verifiable credentials
 Use verifiable credentials
 ==========================
 
-In cases where a verifier asks to prove your verifiable credentials, you are asked to generate a :ref:`verifiable presentation<glossary-verifiable-presentation>` in the |bw| to prove or reveal information. Proofs or revealing information can be:
+In cases where a verifier asks to prove your verifiable credentials, you are asked to generate a :term:`verifiable presentation` in the |bw| to prove or reveal information. Proofs or revealing information can be:
 
 - Only verifiable credentials
 - Only account credentials
@@ -108,7 +108,7 @@ The second screen is requesting you prove information from your account credenti
     :alt: window with account credential proof and approve button
     :width: 50%
 
-These are just a few examples of how you might see proof requests in the |bw|, but the possibilities for what a verifier might request are limitless for verifiable credentials. The identity provider issued attributes that can be revealed from :ref:`account credentials<glossary-account-credential>` are:
+These are just a few examples of how you might see proof requests in the |bw|, but the possibilities for what a verifier might request are limitless for verifiable credentials. The identity provider issued attributes that can be revealed from :term:`account credentials<account credential>` are:
 
 - First name
 - Last name

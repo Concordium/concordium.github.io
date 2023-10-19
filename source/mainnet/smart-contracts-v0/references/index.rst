@@ -8,7 +8,7 @@ A number of references exist to help you when creating and testing smart contrac
 
 .. toctree::
    :maxdepth: 1
-   :caption: References
+   :hidden:
 
    schema-json
    simulate-context

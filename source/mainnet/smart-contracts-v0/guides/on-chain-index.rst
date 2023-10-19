@@ -8,7 +8,7 @@ There are several on-chain guides to help you with smart contract actions.
 
 .. toctree::
    :maxdepth: 1
-   :caption: On-chain guides
+   :hidden:
 
    deploy-module
    initialize-contract

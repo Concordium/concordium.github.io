@@ -4,9 +4,10 @@
 MacOS nodes
 ===========
 
-The following links describe running a node with MacOS.
+This section contains topics that describe running a node with MacOS.
 
 .. toctree::
+   :hidden:
    :maxdepth: 1
 
    ../guides/run-node-macos

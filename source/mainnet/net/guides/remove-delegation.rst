@@ -7,7 +7,7 @@ Remove delegation to a baker pool or passive delegation
 
 You can remove the delegation on an account to stop delegating.
 
-If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-down-period>` before the delegation is stopped. During this period, you continue to earn rewards; you cannot change the delegation amount, but you can change other delegation settings. The delegation stop is not effective until the next pay day after cool-down period ends. At that time the amount you had delegated is returned to your disposable balance.
+If you remove the delegation, there is a :term:`cool-down period` before the delegation is stopped. During this period, you continue to earn rewards; you cannot change the delegation amount, but you can change other delegation settings. The delegation stop is not effective until the next pay day after cool-down period ends. At that time the amount you had delegated is returned to your disposable balance.
 
 .. Note::
 
@@ -206,7 +206,7 @@ If you remove the delegation, there is a :ref:`cool-down period<glossary-cool-do
 
 .. Note::
 
-   Removing your stake in any pool results in a longer :ref:`cool-down period<glossary-cool-down-period>`. The delegation amount will be locked during this period and cannot be increased or decreased; you can still change targets or restaking preferences during cool-down. The delegation stop is not effective until the next :ref:`pay day<glossary-pay-day>` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
+   Removing your stake in any pool results in a longer :term:`cool-down period`. The delegation amount will be locked during this period and cannot be increased or decreased; you can still change targets or restaking preferences during cool-down. The delegation stop is not effective until the next :term:`pay day` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
 
 .. |earn| image:: ../images/earn.png
         :alt: Hand receiving money

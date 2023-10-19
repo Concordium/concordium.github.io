@@ -9,7 +9,7 @@
 Web3 ID issuers
 ===============
 
-Web3 ID includes many types of credentials that are not identity credentials. This might be employment history, certifications from educational courses or diplomas, membership in loyalty clubs or rewards programs, and more. Because of this anyone can become an :ref:`issuer<glossary-issuer>`!
+Web3 ID includes many types of credentials that are not identity credentials. This might be employment history, certifications from educational courses or diplomas, membership in loyalty clubs or rewards programs, and more. Because of this anyone can become an :term:`issuer`!
 
 How to become an issuer
 =======================
