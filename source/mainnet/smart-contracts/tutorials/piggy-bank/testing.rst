@@ -1,5 +1,5 @@
 .. _Rust: https://www.rust-lang.org/
-.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
+.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#tymethod.invoke_transfer
 .. |invoke_transfer| replace:: ``invoke_transfer``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
@@ -812,9 +812,9 @@ SmashError>`` instead of ``ReceiveResult<A>``:
    :emphasize-lines: 5
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_smash(
+       ctx: &ReceiveContext,
+       host: &mut Host<PiggyBankState>,
    ) -> Result<(), SmashError> {
       // ...
    }
@@ -826,9 +826,9 @@ the error to produce:
    :emphasize-lines: 9, 10, 16
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_smash(
+       ctx: &ReceiveContext,
+       host: &mut Host<PiggyBankState>,
    ) -> Result<(), SmashError> {
        let owner = ctx.owner();
        let sender = ctx.sender();

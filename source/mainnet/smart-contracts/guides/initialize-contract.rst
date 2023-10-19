@@ -218,6 +218,6 @@ If successful, the output should be similar to the following:
    :ref:`references-on-chain`.
 
 .. _parameter_cursor():
-   https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html#tymethod.parameter_cursor
+   https://docs.rs/concordium-std/latest/concordium_std/struct.ExternContext.html#tymethod.parameter_cursor
 .. _get(): https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html#tymethod.get
 .. _read(): https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html#method.read_u8
