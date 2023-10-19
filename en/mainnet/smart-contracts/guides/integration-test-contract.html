@@ -41,12 +41,12 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/integration-test-contract.09cc64be-3491-4056-aa51-c16604e30308.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/integration-test-contract.012cc6ef-a5e6-4e4e-9ef8-b390a4e84a0a.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="On-chain guides" href="on-chain-index.html" />
-    <link rel="prev" title="Unit test a contract in Rust" href="unit-test-contract.html" />
+    <link rel="prev" title="Contract testing guides" href="contract-testing-guides.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -1024,6 +1024,17 @@ body {margin:0;}
        Work with the JSON parameters
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="migrate-contracts.html">
+       Migrate contracts for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         concordium-std
+        </span>
+       </code>
+       8.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 current active has-children">
@@ -1036,11 +1047,6 @@ body {margin:0;}
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l2">
-      <a class="reference internal" href="unit-test-contract.html">
-       Unit test a contract in Rust
-      </a>
-     </li>
      <li class="toctree-l2 current active">
       <a class="current reference internal" href="#">
        Integration test a contract in Rust
@@ -1296,7 +1302,7 @@ body {margin:0;}
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../tutorials/nft-minting/build-smart-contract.html">
-         Intialize, build, and deploy the smart contract
+         Initialize, build, and deploy the smart contract
         </a>
        </li>
        <li class="toctree-l3">
@@ -1916,7 +1922,53 @@ It represents the blockchain and has methods for creating accounts and deploying
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<p>There are also other constructors which allow you to specify certain chain parameters, such as the block time (slot time) and exchange rates between energy, CCD, and Euro.</p>
+<p>You can also create a <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html"><code class="docutils literal notranslate"><span class="pre">Chain</span></code></a> with custom values for exchange rates and the block time using a builder pattern where you configure a number of options and finish off by calling the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ChainBuilder.html#method.build"><code class="docutils literal notranslate"><span class="pre">build</span></code></a> method.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">my_test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Chain</span>::<span class="n">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Specify a block time.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">block_time</span><span class="p">(</span><span class="n">Timestamp</span>::<span class="n">from_timestamp_millis</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Specify the Euro to energy exchange rate.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">euro_per_energy</span><span class="p">(</span><span class="n">ExchangeRate</span>::<span class="n">new_unchecked</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">50000</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Specify the microCCD to Euro exchange rate.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">micro_ccd_per_euro</span><span class="p">(</span><span class="n">ExchangeRate</span>::<span class="n">new_unchecked</span><span class="p">(</span><span class="mi">50000</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Try to build the Chain using the configured parameters.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// The parameters might be invalid, so it returns a `Result` which is unwrapped.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>It is even possible to connect to an external Concordium node and get the exchange rates or block time from it.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">my_test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Chain</span>::<span class="n">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Connect to the public testnet node on its gRPCv2 port 20000.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">external_node_connection</span><span class="p">(</span><span class="n">Endpoint</span>::<span class="n">from_static</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="s">&quot;http://node.testnet.concordium.com:20000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Specify which block to use for queries. If omitted, the last final block will be used.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">external_query_block</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="s">&quot;b22466d87a273be64df283f8db0435aab945b2dd54f4df07b82fd02418be0c96&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="n">parse</span><span class="p">()</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="n">unwrap</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Specify that the exchange rates and block time should</span>
+<span class="w">        </span><span class="c1">// be set to match the queried values from the node.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">euro_per_energy_from_external</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="n">micro_ccd_per_euro_from_external</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="n">block_time_from_external</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Try to build the Chain using the configured parameters.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">build</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// The parameters might be invalid, so it returns a `Result` which is unwrapped.</span>
+<span class="w">        </span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>When getting values from an external node, it will use the same block for all the queries.
+The block will either be the one you specify with <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ChainBuilder.html#method.external_query_block"><code class="docutils literal notranslate"><span class="pre">external_query_block</span></code></a> or the last final block at the time.
+Also note that you can mix and match configuration options, for example by specifying your own block time while using the microCCD to Euro exchange rate from an external node.
+You can find all the configuration options including examples in the documentation for <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ChainBuilder.html"><code class="docutils literal notranslate"><span class="pre">ChainBuilder</span></code></a>.</p>
 </div>
 <div class="section" id="creating-accounts">
 <h2>Creating accounts<a class="headerlink" href="#creating-accounts" title="Permalink to this headline">#</a></h2>
@@ -2154,21 +2206,19 @@ Next section covers how to access the common data needed for assertions in smart
 On success, you can access the return value directly, for example <code class="docutils literal notranslate"><span class="pre">update.return_value</span></code>, which is a byte array, <code class="docutils literal notranslate"><span class="pre">Vec&lt;u8&gt;</span></code>.
 But the methods can fail in multiple ways, for example if the contract runs out of energy or it panics, and the return value is only available when the contract rejects on its own.
 The helper method <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html#method.return_value"><code class="docutils literal notranslate"><span class="pre">return_value</span></code></a> on the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html"><code class="docutils literal notranslate"><span class="pre">ContractInvokeError</span></code></a> struct tries to extract the return value and returns an <code class="docutils literal notranslate"><span class="pre">Option&lt;Vec&lt;u8&gt;&gt;</span></code>.
-To deserialize the return value into structured data, you can use the helper function <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/fn.from_bytes.html"><code class="docutils literal notranslate"><span class="pre">from_bytes</span></code></a>, which returns a <code class="docutils literal notranslate"><span class="pre">Result&lt;T,</span> <span class="pre">ParseError&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">T</span></code> is the type you want to parse.
+It is common to deserialize the return values into structered data and thus both the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.parse_return_value">success</a> and <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeError.html#method.parse_return_value">error</a> types have helper methods called <code class="docutils literal notranslate"><span class="pre">parse_return_value</span></code>, which returns a <code class="docutils literal notranslate"><span class="pre">Result&lt;T,</span> <span class="pre">ParseError&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">T</span></code> is the type you want to parse.
 For example:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">chain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Chain</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
 <span class="c1">// .. Creation of accounts and contracts omitted for brevity.</span>
 
 <span class="c1">// On success:</span>
 <span class="kd">let</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="n">contract_update</span><span class="p">(</span><span class="o">..</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="n">update_return_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">update</span><span class="p">.</span><span class="n">return_value</span><span class="p">;</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="n">returned_string</span>: <span class="nb">String</span> <span class="o">=</span><span class="w"> </span><span class="n">from_bytes</span><span class="p">(</span><span class="o">&amp;</span><span class="n">update_return_value</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">returned_string</span>: <span class="nb">String</span> <span class="o">=</span><span class="w"> </span><span class="n">update</span><span class="p">.</span><span class="n">parse_return_value</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
 <span class="fm">assert_eq!</span><span class="p">(</span><span class="n">returned_string</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My expected string&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// On error:</span>
 <span class="kd">let</span><span class="w"> </span><span class="n">update_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="n">contract_update</span><span class="p">(</span><span class="o">..</span><span class="p">).</span><span class="n">unwrap_err</span><span class="p">();</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="n">update_error_return_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">update_error</span><span class="p">.</span><span class="n">return_value</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w"> </span><span class="c1">// Unwrap the `Option`.</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">returned_contract_error</span>: <span class="nc">MyContractError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">from_bytes</span><span class="p">(</span><span class="o">&amp;</span><span class="n">update_error_return_value</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">returned_contract_error</span>: <span class="nc">MyContractError</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">update_error</span><span class="p">.</span><span class="n">parse_return_value</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
 <span class="fm">assert_eq!</span><span class="p">(</span><span class="n">returned_contract_error</span><span class="p">,</span><span class="w"> </span><span class="n">MyContractError</span>::<span class="n">NotOwner</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
@@ -2199,8 +2249,22 @@ Since accounts can stake part of their balance and also receive transfers with a
 <div class="section" id="contract-trace-elements">
 <h3>Contract trace elements<a class="headerlink" href="#contract-trace-elements" title="Permalink to this headline">#</a></h3>
 <p>The contract trace elements describe the contract calls, transfers to accounts, module upgrades, and the success of these during a <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.contract_update"><code class="docutils literal notranslate"><span class="pre">contract_update</span></code></a> or <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html#method.contract_invoke"><code class="docutils literal notranslate"><span class="pre">contract_invoke</span></code></a>.</p>
-<p>The struct returned on success from these calls has a <code class="docutils literal notranslate"><span class="pre">trace_elements</span></code> field which is a list of <em>all</em> the elements in the order that they occurred.
-If you want the trace elements grouped per contract address, use the method <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.trace_elements"><code class="docutils literal notranslate"><span class="pre">trace_elements</span></code></a>.</p>
+<p>The struct returned on success from these calls has an <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.effective_trace_elements"><code class="docutils literal notranslate"><span class="pre">effective_trace_elements</span></code></a> method which returns a list of all the <em>effective</em> elements in the order that they occurred.
+To understand what <em>effective</em> refers to, an example is useful:</p>
+<ul class="simple">
+<li><p>Contract <code class="docutils literal notranslate"><span class="pre">A</span></code> calls contract <code class="docutils literal notranslate"><span class="pre">B</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code> then calls contract <code class="docutils literal notranslate"><span class="pre">C</span></code></p></li>
+<li><p>Then <code class="docutils literal notranslate"><span class="pre">B</span></code> fails</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> returns successfully</p></li>
+</ul>
+<p>In this case, the internal call from <code class="docutils literal notranslate"><span class="pre">B</span></code> to <code class="docutils literal notranslate"><span class="pre">C</span></code> is not <em>effective</em> as it has no effect; the only thing that matters for the outcome is that <code class="docutils literal notranslate"><span class="pre">B</span></code> failed and everything <code class="docutils literal notranslate"><span class="pre">B</span></code> did is rolled back as if it never occurred.
+However, in a testing and debugging scenario, it can be useful to see <em>all</em> the calls, effective or not.
+To do this, the returned struct has a field called <code class="docutils literal notranslate"><span class="pre">trace_elements</span></code>, which is a list of <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/enum.DebugTraceElement.html"><code class="docutils literal notranslate"><span class="pre">DebugTraceElement</span></code></a>.
+Debug trace elements include information about the failed traces, e.g. the call from <code class="docutils literal notranslate"><span class="pre">B</span></code> to <code class="docutils literal notranslate"><span class="pre">C</span></code> in the example above, along with additional information such as the energy used when each element was produced.</p>
+<p>Multiple helper methods exist for extracting information from the debug trace elements. To view the effective trace elements grouped per contract address, use the method <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.ContractInvokeSuccess.html#method.trace_elements"><code class="docutils literal notranslate"><span class="pre">trace_elements</span></code></a>.</p>
 <p>Example:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">chain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Chain</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
 <span class="c1">// .. Creation of accounts and contracts omitted for brevity.</span>
@@ -2266,11 +2330,11 @@ With the helper method <a class="reference external" href="https://docs.rs/conco
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="unit-test-contract.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="contract-testing-guides.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Unit test a contract in Rust</p>
+            <p class="prev-next-title">Contract testing guides</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="on-chain-index.html" title="next page">

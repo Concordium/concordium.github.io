@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/fallback-entrypoints.e37c72f2-d2c3-4036-a787-b27e7fef5c37.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/fallback-entrypoints.348cd428-120b-4568-ba40-066f94717314.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1024,6 +1024,17 @@ body {margin:0;}
        Work with the JSON parameters
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="migrate-contracts.html">
+       Migrate contracts for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         concordium-std
+        </span>
+       </code>
+       8.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1036,11 +1047,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="unit-test-contract.html">
-       Unit test a contract in Rust
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="integration-test-contract.html">
        Integration test a contract in Rust
@@ -1296,7 +1302,7 @@ body {margin:0;}
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../tutorials/nft-minting/build-smart-contract.html">
-         Intialize, build, and deploy the smart contract
+         Initialize, build, and deploy the smart contract
         </a>
        </li>
        <li class="toctree-l3">
@@ -1846,9 +1852,9 @@ notably, the name of the entrypoint you attempted to invoke (<code class="docuti
 <p>You can create fallback entrypoints by making a new entrypoint and adding
 the <code class="docutils literal notranslate"><span class="pre">fallback</span></code> attribute to it:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#[receive(contract = </span><span class="s">&quot;MyContract&quot;</span><span class="cp">, fallback)]</span><span class="w"></span>
-</span><span class="k">fn</span> <span class="nf">receive_fallback</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+</span><span class="k">fn</span> <span class="nf">receive_fallback</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
 <span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">MyReturnType</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="p">}</span><span class="w"></span>
@@ -1864,9 +1870,9 @@ name and that is, in fact, how the node recognizes it as a fallback entrypoint.<
 <p>The <code class="docutils literal notranslate"><span class="pre">named_entrypoint</span></code> method on <code class="docutils literal notranslate"><span class="pre">HasReceiveContext</span></code> allows you to get the
 name of the entrypoint used to the reach the fallback entrypoint.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;MyContract&quot;</span><span class="cp">, fallback)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">receive_fallback</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">receive_fallback</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
 <span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">MyReturnType</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">entrypoint_invoked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">named_entrypoint</span><span class="p">();</span><span class="w"></span>
 </span><span class="p">}</span><span class="w"></span>

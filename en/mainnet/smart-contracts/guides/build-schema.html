@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/build-schema.c15bedaf-70fd-4c13-a425-88f5444fbf5b.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/build-schema.13eb994f-e42e-4659-8492-09a570294898.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1024,6 +1024,17 @@ body {margin:0;}
        Work with the JSON parameters
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="migrate-contracts.html">
+       Migrate contracts for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         concordium-std
+        </span>
+       </code>
+       8.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1036,11 +1047,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="unit-test-contract.html">
-       Unit test a contract in Rust
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="integration-test-contract.html">
        Integration test a contract in Rust
@@ -1296,7 +1302,7 @@ body {margin:0;}
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../tutorials/nft-minting/build-smart-contract.html">
-         Intialize, build, and deploy the smart contract
+         Initialize, build, and deploy the smart contract
         </a>
        </li>
        <li class="toctree-l3">
@@ -1929,7 +1935,7 @@ optional <code class="docutils literal notranslate"><span class="pre">parameter<
 
 <span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParameter&quot;</span><span class="cp">,</span>
 <span class="cp">error = </span><span class="s">&quot;InitError&quot;</span><span class="cp">, event = </span><span class="s">&quot;InitEvent&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_init</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="o">&lt;..</span><span class="p">.,</span><span class="w"> </span><span class="n">InitError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_init</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="o">&lt;..</span><span class="p">.,</span><span class="w"> </span><span class="n">InitError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1953,13 +1959,13 @@ functions, set the optional <code class="docutils literal notranslate"><span cla
 <span class="k">enum</span> <span class="nc">ReceiveError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
 <span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_param&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;String&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_just_param</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive_just_param</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
 <span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_return&quot;</span><span class="cp">, return_value = </span><span class="s">&quot;Vec&lt;u64&gt;&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_just_return</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive_just_return</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
 <span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_error&quot;</span><span class="cp">, error = </span><span class="s">&quot;ReceiveError&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_just_error</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive_just_error</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
 <span class="cp">#[receive(</span>
 <span class="cp">    contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">,</span>
@@ -1968,7 +1974,7 @@ functions, set the optional <code class="docutils literal notranslate"><span cla
 <span class="cp">    return_value = </span><span class="s">&quot;ReceiveReturnValue&quot;</span><span class="cp">,</span>
 <span class="cp">    error = </span><span class="s">&quot;ReceiveError&quot;</span><span class="cp"></span>
 <span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ReceiveReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ReceiveReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

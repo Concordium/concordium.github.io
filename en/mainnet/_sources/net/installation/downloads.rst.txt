@@ -45,41 +45,6 @@ The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 15
          :width: 29.5%
          :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
 
-.. _downloads-mwgen1:
-
-|mw-gen1|
-========================
-
-The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13 or later and Android 8 or later.
-
-.. Note::
-
-   The |mw-gen1| is not supported on tablet devices.
-
-.. dropdown:: Mainnet
-
-   You can find |mw-gen1| on App Store and on Google Play.
-
-      .. image:: ../images/mobile-wallet/app-store-badge.svg
-         :width: 23%
-         :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
-      .. image:: ../images/mobile-wallet/google-play-badge.png
-         :width: 29.5%
-         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
-
-.. _downloads-mobile-wallet-testnet:
-
-.. dropdown:: Testnet
-
-   **iOS**
-
-   #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
-   #.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`__ on your iPhone to join our beta. You must have TestFlight installed.
-
-   **Android**
-
-   - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.2.0(111).apk>`_
-
 .. _downloads-browser-wallet:
 .. _downloads-browser-wallet-testnet:
 
@@ -148,6 +113,43 @@ Concordium LEDGER App
 =====================
 
 Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For information, see :ref:`Install the LEDGER app<install-ledger>`.
+
+.. _downloads-mwgen1:
+
+|mw-gen1|
+========================
+
+.. warning:: |mw-gen1| no longer supports creating new accounts and identities. It can only be used to recover a wallet for a user who already has this wallet type and a backup file.
+
+The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13 or later and Android 8 or later.
+
+.. Note::
+
+   The |mw-gen1| is not supported on tablet devices.
+
+.. dropdown:: Mainnet
+
+   You can find |mw-gen1| on App Store and on Google Play.
+
+      .. image:: ../images/mobile-wallet/app-store-badge.svg
+         :width: 23%
+         :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
+      .. image:: ../images/mobile-wallet/google-play-badge.png
+         :width: 29.5%
+         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+
+.. _downloads-mobile-wallet-testnet:
+
+.. dropdown:: Testnet
+
+   **iOS**
+
+   #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
+   #.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`__ on your iPhone to join our beta. You must have TestFlight installed.
+
+   **Android**
+
+   - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.2.0(111).apk>`_
 
 .. _concordium-node-and-client-download:
 

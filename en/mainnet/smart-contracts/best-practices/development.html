@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/best-practices/development.4fcbdaf9-1f33-4912-95c1-801c43feec02.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/best-practices/development.c3b1ac99-9ad3-4a73-b496-15fdde0f6c34.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1024,6 +1024,17 @@ body {margin:0;}
        Work with the JSON parameters
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../guides/migrate-contracts.html">
+       Migrate contracts for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         concordium-std
+        </span>
+       </code>
+       8.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1036,11 +1047,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../guides/unit-test-contract.html">
-       Unit test a contract in Rust
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../guides/integration-test-contract.html">
        Integration test a contract in Rust
@@ -1296,7 +1302,7 @@ body {margin:0;}
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../tutorials/nft-minting/build-smart-contract.html">
-         Intialize, build, and deploy the smart contract
+         Initialize, build, and deploy the smart contract
         </a>
        </li>
        <li class="toctree-l3">
@@ -1938,9 +1944,9 @@ See <a class="reference internal" href="../general/introduction.html#introductio
 <span class="cp">    parameter = </span><span class="s">&quot;MyParameter&quot;</span><span class="cp">,</span>
 <span class="cp">    mutable</span>
 <span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_do_something</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_do_something</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
 <span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// Parse parameters</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">param</span>: <span class="nc">MyParameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">().</span><span class="n">get</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
@@ -1968,9 +1974,9 @@ See a code snippet from the <a class="reference external" href="https://github.c
 <span class="w">  </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="k">fn</span> <span class="nf">contract_receive</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_receive</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
 <span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// Check that contract is not paused.</span>
 <span class="w">  </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">!</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">().</span><span class="n">paused</span><span class="p">,</span><span class="w"> </span><span class="n">ContractError</span>::<span class="n">Custom</span><span class="p">(</span><span class="n">CustomContractError</span>::<span class="n">ContractPaused</span><span class="p">));</span><span class="w"></span>
@@ -1980,9 +1986,9 @@ See a code snippet from the <a class="reference external" href="https://github.c
 
 <span class="o">..</span><span class="p">.</span><span class="w"></span>
 
-<span class="k">fn</span> <span class="nf">contract_set_paused</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">contract_set_paused</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
 <span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// Check that only the admin is authorized to pause/unpause the contract.</span>
 <span class="w">  </span><span class="n">ensure_eq</span><span class="o">!</span><span class="p">(</span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">(),</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">().</span><span class="n">admin</span><span class="p">,</span><span class="w"> </span><span class="n">ContractError</span>::<span class="n">Unauthorized</span><span class="p">);</span><span class="w"></span>
@@ -2020,7 +2026,7 @@ In this case, consider using the <em>Pull over Push</em> pattern.</p>
 <h4>Operations with unknown bound<a class="headerlink" href="#operations-with-unknown-bound" title="Permalink to this headline">#</a></h4>
 <p>Interacting over data structures that store data updated by users can become expensive over time, once it has more and more entries.</p>
 <p>Consider the following map for storing all user bids in an auction contract:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">State</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">State</span><span class="o">&lt;</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StateApi</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">bids</span>: <span class="nc">StateMap</span><span class="o">&lt;</span><span class="n">Address</span><span class="p">,</span><span class="w"> </span><span class="n">Amount</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -2084,7 +2090,7 @@ Once the external call is completed, the contract state and balance might be dif
 See an <a class="reference internal" href="../guides/unit-test-contract.html#reentracny-unit-testing"><span class="std std-ref">example</span></a> based on <a class="reference external" href="https://en.wikipedia.org/wiki/The_DAO_(organization)">the DAO</a> Ethereum smart contract vulnerability of how reentrancy can be discovered using unit testing.</p>
 <ul>
 <li><p>Avoid changing the state after an external call: use the <em>Checks-Effects-Interactions</em> pattern: validate data, update the contract state, make external calls.</p></li>
-<li><p>If you need to perform some state changes after an external call use <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only">invoke_contract_read_only</a>.
+<li><p>If you need to perform some state changes after an external call use <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#method.invoke_contract_read_only">invoke_contract_read_only</a>.
 If the read-only invocation succeeds, it ensures that the state has not been changed after returning from the external call.
 Using <code class="docutils literal notranslate"><span class="pre">invoke_contract_read_only</span></code> covers most of the cases that require protecting the contract state from updating due to reentrancy.</p></li>
 <li><p>Alternatively, consider using a <em>mutex</em>: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy. Reset after the call is complete.</p>
@@ -2093,9 +2099,9 @@ Using <code class="docutils literal notranslate"><span class="pre">invoke_contra
 <span class="w">  </span><span class="n">lock</span><span class="w"> </span>: <span class="kt">bool</span><span class="p">,</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="k">fn</span> <span class="nf">entrypoint_with_mutex</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="k">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="k">fn</span> <span class="nf">entrypoint_with_mutex</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
 <span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">!</span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">().</span><span class="n">lock</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span>::<span class="n">Locked</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">().</span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
@@ -2141,8 +2147,9 @@ Think carefully which entrypoints you want to protect and make sure that the con
 <span id="best-practices-code-automated-testing"></span><h3>Automated testing<a class="headerlink" href="#automated-testing" title="Permalink to this headline">#</a></h3>
 <p>The Concordium standard library <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">concordium-std</a> offers several possibilities for testing the smart contract code.</p>
 <ul class="simple">
-<li><p>Use <a class="reference internal" href="../guides/unit-test-contract.html#unit-test-contract"><span class="std std-ref">Unit testing</span></a> to test particular cases where you define what is the valid output.</p></li>
-<li><p><a class="reference internal" href="../guides/unit-test-contract.html#writing-property-based-tests"><span class="std std-ref">Property-based testing</span></a> is a variant of randomized testing that repeatedly checks a <em>property</em> with randomly generated input.</p></li>
+<li><p>Use <a class="reference internal" href="../guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">Integration testing</span></a> to test particular cases where you define what is the valid output.</p></li>
+<li><p>(<strong>Deprecated</strong>) Use <a class="reference internal" href="../guides/unit-test-contract.html#unit-test-contract"><span class="std std-ref">Unit testing</span></a> to test particular cases where you define what is the valid output.</p></li>
+<li><p>(<strong>Deprecated</strong>) <a class="reference internal" href="../guides/unit-test-contract.html#writing-property-based-tests"><span class="std std-ref">Property-based testing</span></a> is a variant of randomized testing that repeatedly checks a <em>property</em> with randomly generated input.</p></li>
 </ul>
 <p>Use the <a class="reference internal" href="#best-practices-specification"><span class="std std-ref">smart contract specification</span></a> guidelines from this document to come up with cases and properties to test.</p>
 </div>

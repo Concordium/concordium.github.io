@@ -41,12 +41,12 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/contract-testing-guides.8d2407e4-544a-417a-a78e-af090938d99d.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/contract-testing-guides.7535666d-c642-49e5-a725-c38f226a0143.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Unit test a contract in Rust" href="unit-test-contract.html" />
-    <link rel="prev" title="Work with the JSON parameters" href="json-params.html" />
+    <link rel="next" title="Integration test a contract in Rust" href="integration-test-contract.html" />
+    <link rel="prev" title="Migrate contracts for concordium-std 8.1" href="migrate-contracts.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -1024,6 +1024,17 @@ body {margin:0;}
        Work with the JSON parameters
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="migrate-contracts.html">
+       Migrate contracts for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         concordium-std
+        </span>
+       </code>
+       8.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 current active has-children">
@@ -1036,11 +1047,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="unit-test-contract.html">
-       Unit test a contract in Rust
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="integration-test-contract.html">
        Integration test a contract in Rust
@@ -1296,7 +1302,7 @@ body {margin:0;}
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../tutorials/nft-minting/build-smart-contract.html">
-         Intialize, build, and deploy the smart contract
+         Initialize, build, and deploy the smart contract
         </a>
        </li>
        <li class="toctree-l3">
@@ -1787,8 +1793,14 @@ body {margin:0;}
                 
   <div class="section" id="contract-testing-guides">
 <span id="id1"></span><h1>Contract testing guides<a class="headerlink" href="#contract-testing-guides" title="Permalink to this headline">#</a></h1>
-<p>The contract testing guides help you get started testing smart contracts. Here you have guides to help you set up and write unit and integrations tests.</p>
+<p>The contract testing guides help you get started testing smart contracts. Here you have guides to help you set up and write integrations tests.</p>
 <div class="toctree-wrapper compound">
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unit testing your contracts with the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure"><code class="docutils literal notranslate"><span class="pre">test_infrastructure</span></code></a> has been deprecated in favor of <a class="reference external" href="https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing"><code class="docutils literal notranslate"><span class="pre">concordium-smart-contract-testing</span></code></a>.
+To migrate your contracts and tests see <a class="reference internal" href="migrate-contracts.html#migrate-contracts-for-std-8-1"><span class="std std-ref">Migrate contracts for concordium-std 8.1</span></a>.
+You can read the <a class="reference internal" href="unit-test-contract.html#unit-test-contract"><span class="std std-ref">old documentation for unit testing here</span></a> if you are not ready to migrate your contracts.</p>
 </div>
 </div>
 
@@ -1798,17 +1810,17 @@ body {margin:0;}
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="json-params.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="migrate-contracts.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Work with the JSON parameters</p>
+            <p class="prev-next-title">Migrate contracts for <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> 8.1</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="unit-test-contract.html" title="next page">
+    <a class='right-next' id="next-link" href="integration-test-contract.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Unit test a contract in Rust</p>
+        <p class="prev-next-title">Integration test a contract in Rust</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

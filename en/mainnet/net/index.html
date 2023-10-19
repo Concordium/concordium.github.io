@@ -41,7 +41,7 @@
     <script src="../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../_static/tippy/net/index.8a4f7e70-fee1-4cd1-89ec-c37772496096.js"></script>
+    <script loading_method="defer" src="../_static/tippy/net/index.e7401a3b-c715-4872-aeb7-2a3160691440.js"></script>
     <link rel="shortcut icon" href="../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -1024,6 +1024,17 @@ body {margin:0;}
        Work with the JSON parameters
       </a>
      </li>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../smart-contracts/guides/migrate-contracts.html">
+       Migrate contracts for
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         concordium-std
+        </span>
+       </code>
+       8.1
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l1 has-children">
@@ -1036,11 +1047,6 @@ body {margin:0;}
      </i>
     </label>
     <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html">
-       Unit test a contract in Rust
-      </a>
-     </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../smart-contracts/guides/integration-test-contract.html">
        Integration test a contract in Rust
@@ -1296,7 +1302,7 @@ body {margin:0;}
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../smart-contracts/tutorials/nft-minting/build-smart-contract.html">
-         Intialize, build, and deploy the smart contract
+         Initialize, build, and deploy the smart contract
         </a>
        </li>
        <li class="toctree-l3">
@@ -1792,10 +1798,10 @@ body {margin:0;}
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation/downloads.html">Downloads</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#mw-gen2">Concordium Wallet for Mobile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#mw-gen1">Concordium Legacy Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#bw">Concordium Wallet for Web</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-desktop-wallet">Concordium Desktop Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-ledger-app">Concordium LEDGER App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#mw-gen1">Concordium Legacy Wallet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#concordium-client-client-version">Concordium Client 6.1.0-1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/downloads.html#cargo-concordium"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installation/downloads.html#vscode-extension">VSCode extension</a></li>
@@ -2837,24 +2843,16 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/json-params.html#tokenmetadata-and-contracttokenmetadataqueryparams">tokenMetadata() and ContractTokenMetadataQueryParams</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/migrate-contracts.html">Migrate contracts for <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> 8.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/migrate-contracts.html#migrating-init-methods">Migrating <code class="docutils literal notranslate"><span class="pre">init</span></code> methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/migrate-contracts.html#migrating-receive-methods">Migrating <code class="docutils literal notranslate"><span class="pre">receive</span></code> methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/migrate-contracts.html#migrating-advanced-state-types">Migrating advanced state types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/migrate-contracts.html#reference-material-for-migrating-types-and-tests">Reference material for migrating types and tests</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../smart-contracts/guides/contract-testing-guides.html">Contract testing guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html">Unit test a contract in Rust</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#running-tests-in-wasm">Running tests in Wasm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#writing-unit-tests">Writing unit tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#testing-contract-invocations-with-mocks">Testing contract invocations with mocks</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#reentrancy">Reentrancy</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#testing-with-state-rollbacks">Testing with state rollbacks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#testing-transfers">Testing transfers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#writing-property-based-tests">Writing property-based tests</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html#example">Example</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/integration-test-contract.html">Integration test a contract in Rust</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/integration-test-contract.html#creating-a-chain">Creating a chain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../smart-contracts/guides/integration-test-contract.html#creating-accounts">Creating accounts</a></li>
@@ -3177,7 +3175,7 @@ body {margin:0;}
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/nft-minting/upload-nft.html#assign-nft-metadata">Assign NFT Metadata</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/nft-minting/build-smart-contract.html">Intialize, build, and deploy the smart contract</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../smart-contracts/tutorials/nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/nft-minting/build-smart-contract.html#initialize-cis2-nft-contract-template">Initialize Cis2-NFT contract template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/nft-minting/build-smart-contract.html#build-your-smart-contract">Build your smart contract</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../smart-contracts/tutorials/nft-minting/build-smart-contract.html#deploy-your-smart-contract">Deploy your smart contract</a></li>
