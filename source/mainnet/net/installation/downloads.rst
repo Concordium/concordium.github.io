@@ -45,41 +45,6 @@ The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 15
          :width: 29.5%
          :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
 
-.. _downloads-mwgen1:
-
-|mw-gen1|
-========================
-
-The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13 or later and Android 8 or later.
-
-.. Note::
-
-   The |mw-gen1| is not supported on tablet devices.
-
-.. dropdown:: Mainnet
-
-   You can find |mw-gen1| on App Store and on Google Play.
-
-      .. image:: ../images/mobile-wallet/app-store-badge.svg
-         :width: 23%
-         :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
-      .. image:: ../images/mobile-wallet/google-play-badge.png
-         :width: 29.5%
-         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
-
-.. _downloads-mobile-wallet-testnet:
-
-.. dropdown:: Testnet
-
-   **iOS**
-
-   #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
-   #.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`__ on your iPhone to join our beta. You must have TestFlight installed.
-
-   **Android**
-
-   - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.2.0(111).apk>`_
-
 .. _downloads-browser-wallet:
 .. _downloads-browser-wallet-testnet:
 
@@ -149,6 +114,43 @@ Concordium LEDGER App
 
 Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For information, see :ref:`Install the LEDGER app<install-ledger>`.
 
+.. _downloads-mwgen1:
+
+|mw-gen1|
+========================
+
+.. warning:: |mw-gen1| no longer supports creating new accounts and identities. It can only be used to recover a wallet for a user who already has this wallet type and a backup file.
+
+The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13 or later and Android 8 or later.
+
+.. Note::
+
+   The |mw-gen1| is not supported on tablet devices.
+
+.. dropdown:: Mainnet
+
+   You can find |mw-gen1| on App Store and on Google Play.
+
+      .. image:: ../images/mobile-wallet/app-store-badge.svg
+         :width: 23%
+         :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
+      .. image:: ../images/mobile-wallet/google-play-badge.png
+         :width: 29.5%
+         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+
+.. _downloads-mobile-wallet-testnet:
+
+.. dropdown:: Testnet
+
+   **iOS**
+
+   #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
+   #.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`__ on your iPhone to join our beta. You must have TestFlight installed.
+
+   **Android**
+
+   - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.2.0(111).apk>`_
+
 .. _concordium-node-and-client-download:
 
 Concordium Client |client-version|
@@ -211,7 +213,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Ubuntu |mainnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.0.4-0_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.1.7-0_amd64.deb>`_.
 
          - SHA256 checksum of the download: |node-deb-package-checksum|
 
@@ -223,13 +225,13 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Windows |mainnet-node-version|
 
-      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.0.4-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.1.7-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |mainnet-node-version|
 
-      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.0.4-0.pkg>`_.
+      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.1.7-1.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
@@ -240,9 +242,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Ubuntu |testnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.6-0_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.7-0_amd64.deb>`_.
 
-      - SHA256 checksum of the download: ``b668ea82418fc713665c15361e8ab4fc09002ffdee6e7eabe19cce05b14be0e7``
+      - SHA256 checksum of the download: ``b1b1e1c5e2e9e8100094a2e1d9fced47dc98e9dfcf0897e89755011adc44781a``
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -256,13 +258,13 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.1.6-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.1.7-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.1.6-0.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.1.7-1.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 

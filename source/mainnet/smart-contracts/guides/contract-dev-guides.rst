@@ -26,3 +26,4 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    fallback-entrypoints
    upgradeable-contract
    json-params
+   migrate-contracts
