@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _update-baker-mw:
 
-====================
-Change baker options
-====================
+========================
+Change validator options
+========================
 
 .. Note::
 
@@ -14,7 +14,7 @@ Change baker options
 .. Warning::
     Transactions on the blockchain can't be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review transactions before submitting.
 
-The following information describes how to access baker settings to update your stake or restaking preference, to open and manage a baker pool, update baker keys, or stop baking.
+The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
 
 The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They are described below.
 
@@ -22,49 +22,49 @@ The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They 
 
     #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn| on the account transaction overview screen.
 
-    #. In the Baker status screen tap **Update baker settings**.
+    #. In the Validator status screen tap **Update baker settings**.
 
         .. image:: ../images/mobile-wallet/baker-status-mw.png
             :width: 50%
-            :alt: screen showing current baker settings and update button
+            :alt: screen showing current validator settings and update button
 
 .. dropdown:: |mw-gen1|
 
-    #. Go to **Accounts**. Tap on the balance area of the baker account you want update or tap **More** |moredetails|.
+    #. Go to **Accounts**. Tap on the balance area of the validator account you want update or tap **More** |moredetails|.
 
-    #. In the hamburger menu |hamburger| tap **Baking**.
+    #. In the hamburger menu |hamburger| tap **Validation**.
 
-    #. In the Baker status screen tap **Update baker settings**.
+    #. In the Validator status screen tap **Update validator settings**.
 
         .. image:: ../images/mobile-wallet/baker-status-mw.png
             :width: 50%
-            :alt: screen showing current baker settings and update button
+            :alt: screen showing current validator settings and update button
 
-Once you have access baker settings for your wallet, you have four options:
+Once you access the validator settings for your wallet, you have four options:
 
-    - Update baker stake
-    - Update pool settings
-    - Update baker keys
-    - Stop baking
+- Update validator stake
+- Update pool settings
+- Update validator keys
+- Stop validation
 
 .. _update-baker-stake-mw:
 
-Update baker stake and restaking preference
-===========================================
+Update validator stake and restaking preference
+===============================================
 
-You can change the :ref:`staked amount <concepts-baker-stake>` on a baker account except during a :term:`cool-down period`. If you increase the stake, the new stake takes effect at the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you'll not be able to remove the baker account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
+You can change the :ref:`staked amount <concepts-baker-stake>` on a validator account except during a :term:`cool-down period`. If you increase the stake, the new stake takes effect at the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you'll not be able to remove the validator account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
 
-When you change the stake it can influence your :term:`chance of being selected to bake a block<winning probability>` and receive baker rewards and of being included in the :term:`finalization` committee. If you decrease the stake, you decrease your chances of baking blocks and of being included in the finalization committee. Likewise, if you increase the stake, you increase your chances of baking a block and of being included in the finalization committee.
+When you change the stake it can influence your :term:`chance of being selected to produce a block<winning probability>` and receive block rewards. If you decrease the stake, you decrease your chances of producing blocks. Likewise, if you increase the stake, you increase your chances of producing a block.
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
-    If you choose **Update baker stake** you see your balance and the current Baker stake amount. Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
+    If you choose **Update validator stake** you see your balance and the current Validator stake amount. Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
 
     .. image:: ../images/mobile-wallet/update-baker-stake-amt-mw.png
         :width: 50%
-        :alt: screen to update baker stake showing amount and restake preference options
+        :alt: screen to update validator stake showing amount and restake preference options
 
-    On the overview screen, check the information. Once you are satisfied, tap **Submit baker transaction**.
+    On the overview screen, check the information. Once you are satisfied, tap **Submit transaction**.
 
     Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
@@ -79,17 +79,17 @@ When you change the stake it can influence your :term:`chance of being selected 
         .. image:: ../images/browser-wallet/setup-baking-delegation.png
             :width: 40%
 
-    #. You see the current baker setup. Click **Update**.
+    #. You see the current validator setup. Click **Update**.
 
         .. image:: ../images/browser-wallet/update-baker-options.png
             :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+            :alt: screen showing current validator setup and buttons to stop or update
 
-    #. Click **Update baker stake**. Review the information about updating baker stake and click **Continue**.
+    #. Click **Update validator stake**. Review the information about updating validator stake and click **Continue**.
 
         .. image:: ../images/browser-wallet/update-baker-actions.png
             :width: 40%
-            :alt: screen showing actions to update baker
+            :alt: screen showing actions to update validator
 
     #. You can change the restake preference if desired. Click **Continue**.
 
@@ -237,29 +237,29 @@ Update pool settings
 
     .. image:: ../images/mobile-wallet/update-baker-pool-mw.png
         :width: 50%
-        :alt: screen showing three baker pool options
+        :alt: screen showing three staking pool options
 
-    - Open pool: open a pool for a previously closed baker
-    - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
+    - Open pool: open a pool for a previously closed validator
+    - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the validator's responsibility to monitor the stake to make pool management decisions.**
     - Close pool: close a pool permanently.
 
     If you choose **Open pool**:
 
-    #. You can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.
+    #. You can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
 
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
     If you choose **Closed for new**:
 
-    Existing delegators remain in the pool. You have the option to adjust commission fees and your baker information URL.
+    Existing delegators remain in the pool. You have the option to adjust commission fees and your validator information URL.
 
-    #. Enter an optional URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.
+    #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
 
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
     If you choose **Close pool**:
 
@@ -267,7 +267,7 @@ Update pool settings
 
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
-    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
 .. dropdown:: |bw|
 
@@ -276,35 +276,35 @@ Update pool settings
         .. image:: ../images/browser-wallet/setup-baking-delegation.png
             :width: 40%
 
-    #. You see the current baker setup. Click **Update**.
+    #. You see the current validator setup. Click **Update**.
 
         .. image:: ../images/browser-wallet/update-baker-options.png
             :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+            :alt: screen showing current validator setup and buttons to stop or update
 
-    #. Click **Update pool settings**. Review the information about updating baker pool settings and click **Continue**.
+    #. Click **Update pool settings**. Review the information about updating staking pool settings and click **Continue**.
 
         .. image:: ../images/browser-wallet/update-baker-actions.png
             :width: 40%
-            :alt: screen showing actions to update baker
+            :alt: screen showing actions to update validator
 
-    #. You can change the baker pool status, if desired. Click **Continue**. The options are:
+    #. You can change the staking pool status, if desired. Click **Continue**. The options are:
 
-        - Open pool: open a pool for a previously closed baker
-        - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
+        - Open pool: open a pool for a previously closed validator
+        - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the validator's responsibility to monitor the stake to make pool management decisions.**
         - Close pool: close a pool permanently.
 
         .. image:: ../images/browser-wallet/update-baker-pool-status.png
             :width: 40%
-            :alt: screen showing actions to update baker pool status
+            :alt: screen showing actions to update validator pool status
 
-    #. Review the baker commission rates. Click **Continue**.
+    #. Review the validator commission rates. Click **Continue**.
 
-    #. Update the baker pool metadata URL, if desired. Click **Continue**.
+    #. Update the staking pool metadata URL, if desired. Click **Continue**.
 
         .. image:: ../images/browser-wallet/update-baker-pool-url.png
             :width: 40%
-            :alt: screen showing text box to add or update baker pool URL
+            :alt: screen showing text box to add or update staking pool URL
 
     #. Review the transaction details. Click **Send** to submit the transaction.
 

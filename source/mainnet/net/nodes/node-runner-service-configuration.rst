@@ -82,7 +82,7 @@ baker_credentials
 
    baker_credentials = 'baker-credentials.json'
 
-The path to a baker credentials file if the node is to run as a baker.
+The path to a validator credentials file if the node is to run as a validator.
 
 listen.port
 -----------

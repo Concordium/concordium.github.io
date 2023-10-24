@@ -6,7 +6,7 @@ Run a node on Concordium
 
 When you run a node on the Concordium blockchain, you are participating in the Concordium blockchain by validating transactions.
 
-Nodes are required for most things, from using a Concordium wallet to baking. You can choose to run a node yourself or you can have a third-party provider run a node for you. If you choose to run the node yourself, you can
+Nodes are required for most things, from using a Concordium wallet to validation. You can choose to run a node yourself or you can have a third-party provider run a node for you. If you choose to run the node yourself, you can
 choose from four different platforms to run your node: Ubuntu, Windows, MacOS, or Docker/Linux.
 
 System requirements to run a node

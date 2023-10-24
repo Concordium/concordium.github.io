@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _remove-delegation:
 
-=======================================================
-Remove delegation to a baker pool or passive delegation
-=======================================================
+=========================================================
+Remove delegation to a staking pool or passive delegation
+=========================================================
 
 You can remove the delegation on an account to stop delegating.
 

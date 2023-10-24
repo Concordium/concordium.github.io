@@ -10,7 +10,7 @@ In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
 information about blocks and transactions to the nodes in the Concordium
-network. After following this guide, you will be able to
+network. After following this guide, you will be able to:
 
 -  run a Concordium node
 -  observe it on the network dashboard
@@ -261,7 +261,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
@@ -474,7 +474,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
@@ -557,6 +557,10 @@ If you wish to have the node running in the background, then add a ``-d`` option
 
        image: concordium/mainnet-node:4.3.1-0
 
+Run a validator node
+====================
+
+For information about how to run a validator node for Linux/Docker, see :ref:`Run a validator node on Docker<baking-docker>`.
 
 Troubleshooting
 ===============

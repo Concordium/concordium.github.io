@@ -1,15 +1,15 @@
 .. include:: ../../variables.rst
 .. _update-delegation:
 
-=======================================================
-Update delegation to a baker pool or passive delegation
-=======================================================
+=========================================================
+Update delegation to a staking pool or passive delegation
+=========================================================
 
 You can change the delegation amount, target, and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
 If you increase the delegation, the new amount will be applied at the start of the next :term:`pay day`. There is one pay day approximately every 24 hours. However, if you decrease the delegation, there is a :term:`cool-down period` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance at the next pay day after the end of the cool-down period.
 
-Before delegating stake to a baker pool, it is important to research the pool using :ref:`CCDScan<ccd-scan>`. You can only have one delegation per account.
+Before delegating stake to a staking pool, it is important to research the pool using :ref:`CCDScan<ccd-scan>`. You can only have one delegation per account.
 
 .. Note::
 

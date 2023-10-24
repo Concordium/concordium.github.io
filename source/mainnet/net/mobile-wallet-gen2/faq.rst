@@ -80,7 +80,7 @@
 
     It is also important to note that if, for example, you add an account on one wallet that is recovered on two devices in parallel (from the same recovery phrase), nothing is dynamically updated across wallets from the same recovery phrase except balances. To get updates such as a new account or new identity, it is necessary to :ref:`recover<recover-wallet>` from your recovery phrase again; however you do not need to enter the recovery phrase again as the wallet will remember it.
 
-.. dropdown:: Can I use my secret recovery phrase to restore my accounts in third party wallets?
+.. dropdown:: Can I use my secret recovery phrase to restore my accounts in third-party wallets?
 
     At the moment Concordium identities and accounts are only supported in Concordium Wallets. However, Concordium expects to provide support for CCD and CIS-2 tokens in third party wallet in the not too distant future.
 

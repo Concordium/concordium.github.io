@@ -2,10 +2,10 @@
 .. _add-baker-mw:
 
 ====================================
-Add baker
+Add a validator
 ====================================
 
-Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn about best practices for bakers.
+Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to learn about best practices for validators.
 
 .. Note::
 

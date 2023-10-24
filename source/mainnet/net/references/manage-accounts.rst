@@ -6,7 +6,7 @@
 Accounts
 ========
 
-Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`baker` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
 
 You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
 
@@ -132,7 +132,7 @@ At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:
 
 - the account has :term:`staked<staked amount>` some of the public
-  balance in order to become a baker or to delegate
+  balance in order to become a validator or to delegate
 - some of the public balance is locked up because it was received via a
   :term:`transfer with schedule`
 
@@ -148,7 +148,7 @@ December 31 of the same year. At this point, January 2, the account has 100 CCD
 at disposal, the rest being locked. If the account tried to transfer more than
 100 CCD the transaction would be rejected.
 
-On January 3 the account becomes a baker with the initial stake of 125 CCD.
+On January 3 the account becomes a validator with the initial stake of 125 CCD.
 This is successful because the total public balance is 150CCD.
 After this the account still has 25 CCD at disposal, because CCD locked in a release schedule will be prioritized for stakes.
 
@@ -189,12 +189,12 @@ Tools
 The Desktop Wallet
 ------------------
 
-The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
 
 The |mw-gen1|
 -----------------
 
-The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
 
 .. Note::
 
@@ -203,12 +203,12 @@ The |mw-gen1| is a digital smartphone wallet that enables you to create and mana
 The |mw-gen2|
 ------------------
 
-The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities.
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
 
 The |bw|
 ----------------
 
-The |bw| is a web wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
+The |bw| is a web wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to connect to dApps.
 
 Command-line tool
 -----------------

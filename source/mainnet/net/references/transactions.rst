@@ -28,19 +28,19 @@ Transaction commands
 | ``transaction send-scheduled``      | Make a transfer that will be released          |
 |                                     | gradually                                      |
 +-------------------------------------+------------------------------------------------+
-| ``baker add``                       | Add a new baker. For more information, see     |
+| ``baker add``                       | Add a new validator. For more information, see |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker remove``                    | Remove a baker. For more information, see      |
+| ``baker remove``                    | Remove a validator. For more information, see  |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker update-stake``              | Update the staked amount of a baker. For more  |
-|                                     | information, see :ref:`become-a-baker`.        |
-+-------------------------------------+------------------------------------------------+
-| ``baker update-restake``            | Update the restaking switch of a baker. For    |
+| ``baker update-stake``              | Update the staked amount of a validator. For   |
 |                                     | more information, see :ref:`become-a-baker`.   |
 +-------------------------------------+------------------------------------------------+
-| ``baker set-key``                   | Update the keys of a baker. For more           |
+| ``baker update-restake``            | Update the restaking switch of a validator. For|
+|                                     | more information, see :ref:`become-a-baker`.   |
++-------------------------------------+------------------------------------------------+
+| ``baker set-key``                   | Update the keys of a validator. For more       |
 |                                     | information, see :ref:`become-a-baker`.        |
 +-------------------------------------+------------------------------------------------+
 | ``account update-keys``             | Update credentials keys for a specific         |
@@ -96,16 +96,14 @@ Depending on the exact context, all flags are currently optional:
    3 signs with keys 0 and 1. If the sender account is imported to the client, and ``--signers`` is not provided,
    ``concordium-client`` will sign with all keys in the local configuration of the account.
 
-In most cases, you only need to provide the ``--sender`` option
-and use the account by name.
+In most cases, you only need to provide the ``--sender`` option and use the account by name.
 
 In all cases, the command displays the exact parameters of the transaction
 before sending it, and you're asked to confirm that it matches your intent.
 Just before the transaction is sent, you're asked for the password to access
 the signing keys.
 
-Once a transaction has been submitted, the command will continuously poll and
-display its status until it's been :term:`finalized<finalization>`.
+Once a transaction has been submitted, the command will continuously poll and display its status until it's been finalized.
 
 .. _account-commands:
 
@@ -475,7 +473,7 @@ The command has the following required arguments:
 
 - ``--sender`` is the account from which you want to stake.
 - ``--stake`` is an amount of CCD you intend to delegate
-- ``--target`` is either the baker pool ID or ``Passive``.
+- ``--target`` is either the staking pool ID or ``Passive``.
 
 The command has the following optional argument:
 

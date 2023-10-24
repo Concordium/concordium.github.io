@@ -26,7 +26,7 @@ Which wallet is best for you?
 
 The wallets work on two different environments: the Desktop Wallet on a computer, the |bw| on any device with a web browser, and |mw-gen1| and |mw-gen2| on a phone. The |mw-gen1| and |mw-gen2| are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a LEDGER device.
 
-- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-ledger>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
+- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-ledger>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a validator, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
 
 - |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a baker), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
 
@@ -74,7 +74,9 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 What are the requirements for each wallet?
 ==========================================
 
-- |mw-gen1| or |mw-gen2|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+- |mw-gen1|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+
+- |mw-gen2|: you’ll need an iPhone running iOS 15 or later or an Android phone running Android 8 or later.
 
 - |bw|: you'll need a device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
 
@@ -129,14 +131,14 @@ The following table lists the major features of each wallet.
       - Creation of identities
       - Creation of identities
       - Creation of identities
-   *  - Creation and management of baker accounts
-      - Creation and management of baker accounts. Rewards are visible in the wallet.
-      - Creation and management of baker accounts. Rewards are visible in the wallet.
-      - Creation and management of baker accounts. Rewards are visible in the wallet.
+   *  - Creation and management of validator accounts
+      - Creation and management of validator accounts. Rewards are visible in the wallet.
+      - Creation and management of validator accounts. Rewards are visible in the wallet.
+      - Creation and management of validator accounts. Rewards are visible in the wallet.
    *  - A node is required
-      - A node is not needed unless baking
-      - A node is not needed unless baking
-      - A node is not needed unless baking
+      - A node is not needed unless validator
+      - A node is not needed unless validator
+      - A node is not needed unless validator
    *  - Cannot connect to dApps
       - Cannot connect to dApps
       - Can connect to dApps

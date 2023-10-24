@@ -4,26 +4,26 @@
 
 .. _become-a-baker:
 
-==========================================
-Become a baker using the Concordium Client
-==========================================
+==============================================
+Become a validator using the Concordium Client
+==============================================
 
-This guide takes you through the steps involved in upgrading your node to a baker node and managing the node using the Concordium Client.
+This guide takes you through the steps involved in upgrading your node to a validator node and managing the node using the Concordium Client.
 
-The process of becoming a baker involves the following:
+The process of becoming a validator involves the following:
 
 #. Create an account in a wallet and acquire CCD.
-#. Create a set of baker keys.
-#. Register the baker keys with the account.
-#. Start the node with the baker keys.
+#. Run a node
+#. Create a set of validator keys.
+#. Register the validator keys with the account.
+#. Start the node with the validator keys.
 
-After completing these steps, the baker node will bake blocks. If a baked block
-is added to the chain, the baker receives a reward.
+After completing these steps, the validator node will produce blocks. If a produced block
+is added to the chain, the validator receives a reward.
 
 .. note::
 
-   In this section the name ``bakerAccount`` indicates the name of the
-   account that will be used to register and manage a baker.
+   In this section the name ``bakerAccount`` indicates the name of the account that will be used to register and manage a validator.
 
 Prerequisites
 =============
@@ -37,10 +37,10 @@ Prerequisites
 
 -  :ref:`Install the Concordium Client<concordium-node-and-client-download>`
 
-For general information about baking concepts, see :ref:`baker-concept`.
+For general information about validation concepts, see :ref:`baker-concept`.
 
-Start baking
-============
+Start validation
+================
 
 .. _import-baker-account:
 
@@ -69,16 +69,14 @@ For the |bw|, use the following command:
 
     concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
 
-``concordium-client`` asks for a password to decrypt the exported file and
-import all accounts. The same password will be used for encrypting the
-transaction signing keys and the encrypted transfers key.
+``concordium-client`` asks for a password to decrypt the exported file and import all accounts. The same password will be used for encrypting the transaction signing keys and the encrypted transfers key.
 
 .. _create-register-baker-keys:
 
-Create and register baker keys
-------------------------------
+Create and register validator keys
+----------------------------------
 
-Each account has a unique baker ID that is used when registering its baker. This ID has to be provided by the network and currently cannot be precomputed. This ID must be given inside the baker keys file to the node so that it can use the baker keys to create blocks. The ``concordium-client`` will automatically fill this field when performing the following operations.
+Each account has a unique validator ID that is used when registering its validator. This ID has to be provided by the network and currently cannot be precomputed. This ID must be given inside the baker keys file to the node so that it can use the validator keys to create blocks. The ``concordium-client`` will automatically fill this field when performing the following operations.
 
 To create a fresh set of keys run:
 
@@ -86,8 +84,7 @@ To create a fresh set of keys run:
 
    $concordium-client baker generate-keys <keys-file>.json
 
-You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <running-a-node>`
-and send a ``baker add`` transaction to the network:
+You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``baker add`` transaction to the network:
 
 .. code-block:: console
 
@@ -96,9 +93,9 @@ and send a ``baker add`` transaction to the network:
 
 where you replace
 
-- ``MyBakerKeys.json`` with the name of baker keys file you generated
-- ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
-- ``MyBakerURL`` with the URL containing information for your baker pool; can be left as an empty string if you do not want to provide a URL.
+- ``MyBakerKeys.json`` with the name of validator keys file you generated
+- ``<amount-to-stake>`` with the CCD amount for the validator's initial stake
+- ``MyBakerURL`` with the URL containing information for your staking pool; can be left as an empty string if you do not want to provide a URL.
 - ``<concordium-data-dir>`` with any path of your choice.
 
    .. Note::
@@ -108,7 +105,7 @@ where you replace
       * on Linux and MacOS: ``~/.local/share/concordium``
       * on Windows: ``%LOCALAPPDATA%\\concordium``.
 
-      Remember to configure your node to bake using this path:
+      Remember to configure your node for validation using this path:
 
       * using Docker: See :ref:`configure Linux node<baking-docker>`.
       * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
@@ -119,12 +116,11 @@ Keep the output file name as ``baker-credentials.json``.
 
 The following arguments are also required for the ``baker add`` transaction:
 
-- ``--open-delegation-for`` sets whether the baker's pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
-- ``--baker-url`` is the URL for baker information. The URL should resolve to (JSON-formatted) metadata about the baker.
-- ``--out`` can be used to write a baker credential file containing the baker ID (and the supplied keys) to use when starting a baker node.
-- ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the baker pool.
-- ``--delegation-baking-commission`` specifies the baking commission for the baker pool.
-- ``--delegation-finalization-commission`` specifies the finalization commission for the baker pool.
+- ``--open-delegation-for`` sets whether the validator's staking pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
+- ``--baker-url`` is the URL for validator information. The URL should resolve to (JSON-formatted) metadata about the validator.
+- ``--out`` can be used to write a validator credential file containing the validator ID (and the supplied keys) to use when starting a validator node.
+- ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the staking pool.
+- ``--delegation-baking-commission`` specifies the validation commission for the staking pool.
 
 .. Note::
 
