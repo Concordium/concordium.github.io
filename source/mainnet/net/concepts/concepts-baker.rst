@@ -71,8 +71,9 @@ A :term:`cool-down period` describes a period of time during which certain activ
 
 Finalization
 ============
+(SHOULD ALL OF THIS BE REMOVED?)
 
-:term:`Finalization` ensures that produced blocks become finalized as quickly as possible and with 100% certainty.
+Finalization ensures that produced blocks become finalized as quickly as possible and with 100% certainty.
 
 What is finalization?
 ---------------------

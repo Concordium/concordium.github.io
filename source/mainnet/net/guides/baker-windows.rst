@@ -5,7 +5,7 @@
 Run a validator node on Windows
 ===============================
 
-This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a Windows node that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two epochs after the transaction has been approved. 
+This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a Windows node that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two epochs after the transaction has been approved.
 
 Prerequisites
 =============
