@@ -64,7 +64,7 @@ Wallets
 
     October 25, 2023
 
-    Version 1.4.0 contains visual improvements to match the new Concordium brand identity. It also contains the following fixes: 
+    Version 1.4.0 contains visual improvements to match the new Concordium brand identity. It also contains the following fixes:
 
       - parsing of "broken" schema format for contract update transactions when using WalletConnect
 
