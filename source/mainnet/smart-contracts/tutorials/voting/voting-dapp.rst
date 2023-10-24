@@ -39,9 +39,8 @@ need for the user to host their own Concordium node.
 
 A web wallet is a piece of code that can be added as an extension to supported browsers such as ``Chrome``.
 The web wallet allows you to interact with the chain and make transactions.
-Currently, the |bw| does this by connecting to a (JSON-RPC) server that communicates with a node.
-The |bw| hosts the private keys corresponding to the accounts of the user and a link that points
-to a `server  <https://github.com/Concordium/concordium-json-rpc>`_.
+Currently, the |bw| does this by connecting to a (gRPC) server that communicates with a node.
+The |bw| hosts the private keys corresponding to the accounts of the user.
 
 Your front-end code that is run in the browser constructs the transaction object
 and sends it to the |bw|. The transaction object is signed by the private key hosted in the |bw|
