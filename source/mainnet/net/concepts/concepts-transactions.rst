@@ -44,7 +44,8 @@ You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-ge
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 
 - |bw|: supports send CCD, receive CCD, connect to dApps, validator management, delegation.
-- |mw-gen1| and |mw-gen2|: supports send CCD, receive CCD, shield CCD and unshield CCD, validator management, delegation.
+- |mw-gen2|: supports send CCD, receive CCD, shield CCD and unshield CCD, validator management, delegation, connect to dApps, add and manage tokens.
+- |mw-gen1|: supports send CCD, receive CCD, shield CCD and unshield CCD, validator management, delegation
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
 - Concordium Client: supports all transaction types.
 
@@ -82,7 +83,7 @@ The |mw-gen1| is a digital smartphone wallet that enables you to create and mana
 The |mw-gen2|
 ------------------
 
-The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, validate and delegate, and to export and import your accounts and identities.
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, validate and delegate, add and manage tokens, connect to dApps, and to export and import your accounts and identities.
 
 The |bw|
 ----------------

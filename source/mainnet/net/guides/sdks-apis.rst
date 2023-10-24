@@ -24,3 +24,5 @@ The following NPM libraries are useful for building web-based dApps:
   (for connecting to wallets in non-React projects).
 - `@concordium/web-sdk <https://www.npmjs.com/package/@concordium/web-sdk>`_
   (for interacting with a chain).
+- `@concordium/ccd-js-gen <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_
+  (for generating smart contract clients in JavaScript).
