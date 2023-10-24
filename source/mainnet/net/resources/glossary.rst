@@ -46,7 +46,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Best chain
 
-      The chain a :term:`validator` will build upon when making a new block. The best chain selection procedure is determined by the consensus protocol. In particular, the best chain has the most :term:`finalized<finalization>` blocks, and the most blocks after the last finalized block.
+      The chain a :term:`validator` will build upon when making a new block. The best chain selection procedure is determined by the consensus protocol. In particular, the best chain has the most finalized blocks, and the most blocks after the last finalized block.
 
    Block
 
