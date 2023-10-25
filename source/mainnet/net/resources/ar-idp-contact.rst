@@ -19,6 +19,10 @@ Identity Providers
 
 Website: https://www.digitaltrustsolutions.nl/
 
+.. note::
+
+    On Testnet, the Concordium identity provider is a genesis identity provider that exists to provide generic identities for test purposes.
+
 Anonymity Revokers
 ==================
 
