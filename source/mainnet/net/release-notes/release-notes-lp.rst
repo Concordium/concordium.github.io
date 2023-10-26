@@ -62,7 +62,7 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    October 25, 2023
+    October 26, 2023
 
     Version 1.4.0 contains visual improvements to match the new Concordium brand identity. It also contains the following fixes:
 
