@@ -107,7 +107,7 @@ optional ``parameter``, ``error``, and ``event`` attributes for the
 
    #[init(contract = "my_contract", parameter = "InitParameter",
    error = "InitError", event = "InitEvent")]
-   fn contract_init<...>(...) -> <..., InitError> { ... }
+   fn contract_init(...) -> <..., InitError> { ... }
 
 .. note ::
 
@@ -131,13 +131,13 @@ functions, set the optional ``parameter``, ``return_value``, and ``error`` attri
    enum ReceiveError { ... }
 
    #[receive(contract = "my_contract", name = "just_param", parameter = "String")]
-   fn contract_receive_just_param<...> (...) -> ReceiveResult<String> { ... }
+   fn contract_receive_just_param(...) -> ReceiveResult<String> { ... }
 
    #[receive(contract = "my_contract", name = "just_return", return_value = "Vec<u64>")]
-   fn contract_receive_just_return<...> (...) -> ReceiveResult<Vec<u64>> { ... }
+   fn contract_receive_just_return(...) -> ReceiveResult<Vec<u64>> { ... }
 
    #[receive(contract = "my_contract", name = "just_error", error = "ReceiveError")]
-   fn contract_receive_just_error<...> (...) -> Result<Vec<u64>, ReceiveError> { ... }
+   fn contract_receive_just_error(...) -> Result<Vec<u64>, ReceiveError> { ... }
 
    #[receive(
        contract = "my_contract",
@@ -146,7 +146,7 @@ functions, set the optional ``parameter``, ``return_value``, and ``error`` attri
        return_value = "ReceiveReturnValue",
        error = "ReceiveError"
    )]
-   fn contract_receive<...> (...) -> Result<ReceiveReturnValue, ReceiveError> { ... }
+   fn contract_receive(...) -> Result<ReceiveReturnValue, ReceiveError> { ... }
 
 Building the schema
 ===================
