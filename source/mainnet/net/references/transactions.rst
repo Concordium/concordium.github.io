@@ -43,9 +43,6 @@ Transaction commands
 | ``baker set-key``                   | Update the keys of a baker. For more           |
 |                                     | information, see :ref:`become-a-baker`.        |
 +-------------------------------------+------------------------------------------------+
-| ``baker win-time``                  | Show the earliest time the baker may be        |
-|                                     | expected to bake a block.                      |
-+-------------------------------------+------------------------------------------------+
 | ``account update-keys``             | Update credentials keys for a specific         |
 |                                     | credential                                     |
 +-------------------------------------+------------------------------------------------+

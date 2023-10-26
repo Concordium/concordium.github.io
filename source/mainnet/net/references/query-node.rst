@@ -318,3 +318,20 @@ following command:
 
 This prints a JSON list containing any such pending updates. As before you can
 also pass a block hash to the command to query a specific block.
+
+Baker queries
+==============
+
+Earliest time a baker may be expected to bake a block
+-----------------------------------------------------
+
+.. code-block:: console
+    concordium-client baker win-time 1
+    Baker 1 is expected to bake no sooner than:
+    Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)
+
+Show the earliest time the baker may be expected to bake a block.
+
+-  ``BAKER-ID``: Baker ID to query
+-  ``local-time``: Display time in the local time zone (instead of UTC).
+-  ``poll``: Repeatedly poll for the latest time..
