@@ -18,6 +18,7 @@ a backend node:
    and its relation to other blocks on the chain.
 -  Consensus state: Show the parameters of the consensus protocol and
    statistics related to baking and finalization of blocks.
+-  Baker queries: Show baker information.
 
 
 .. _query-account-state:
