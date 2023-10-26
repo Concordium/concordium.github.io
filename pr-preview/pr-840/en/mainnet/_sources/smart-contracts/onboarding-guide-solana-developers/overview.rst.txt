@@ -1,10 +1,10 @@
 .. _solana-overview:
 
-========
-Overview
-========
+================================
+Onboarding for Solana developers
+================================
 
-This overview outlines the main differences of account models and smart contract functionality between Solana and Concordium.
+This overview outlines the main differences of account models and smart contract functionality between Solana and Concordium. :ref:`The FAQ<solana-faq>` answers commonly asked questions.
 
 Accounts
 ========
@@ -95,14 +95,16 @@ Concordium
         counter: u32
     }
 
+    ...
+
    #[receive(
         contract = "example",
         name = "some_receive",
         mutable,
     )]
-    fn some_receive<S: HasStateApi>(
-        _ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<MyState, StateApiType = S>,
+    fn some_receive(
+        ctx: &ReceiveContext,
+        host: &mut Host<MyState>,
     ) -> Result<(), Error> {
 
         // Load the contract state; increment and store the counter
@@ -110,3 +112,9 @@ Concordium
 
         Ok(())
     }
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   faq

@@ -10,7 +10,7 @@ It is a good idea to read the :ref:`Smart contracts best practices<sc-best-pract
 
 .. toctree::
    :maxdepth: 1
-   :caption: References
+   :hidden:
 
    crypto-primitives
    host-fns

@@ -1,5 +1,5 @@
 .. _Rust: https://www.rust-lang.org/
-.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#tymethod.invoke_transfer
+.. _invoke_transfer: https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#tymethod.invoke_transfer
 .. |invoke_transfer| replace:: ``invoke_transfer``
 .. _ensure: https://docs.rs/concordium-std/latest/concordium_std/macro.ensure.html
 .. |ensure| replace:: ``ensure!``
@@ -129,7 +129,7 @@ The library requires the Rust edition ``2021`` or greater, which you must also s
    edition = "2021"
 
    [dev-dependencies]
-   concordium-smart-contract-testing = "1.0"
+   concordium-smart-contract-testing = "3.0"
 
 Add a test module
 =================
@@ -260,7 +260,7 @@ Going back to your test case, use the function |module_load_v1|_ to load the mod
    #[test]
    fn test_init() {
        // .. lines omitted for brevity.
-       let module = load_module_v1("piggy_bank_part2.wasm.v1").expect("Module is valid and exists");
+       let module = module_load_v1("piggy_bank_part2.wasm.v1").expect("Module is valid and exists");
    }
 
 |module_load_v1|_ attempts to load a module from disk, which might be missing or invalid, and it thus returns a ``Result`` type.
@@ -284,7 +284,7 @@ In this tutorial, you will always use a |Signer|_ with one key as that is the mo
    fn test_init() {
        let mut chain = Chain::new();
        // .. lines omitted for brevity.
-       let module = load_module_v1("piggy_bank_part2.wasm.v1").expect("Module is valid and exists");
+       let module = module_load_v1("piggy_bank_part2.wasm.v1").expect("Module is valid and exists");
        let deployment = chain
            .module_deploy_v1(
                Signer::with_one_key(),
@@ -503,7 +503,7 @@ You can then verify the success of the update and the contract balance:
        // .. Lines omitted for brevity.
 
        assert!(update.is_ok(), "Inserting into intact piggy bank failed");
-       assert!(
+       assert_eq!(
            chain.contract_balance(initialization.contract_address),
            Some(insert_amount),
            "Piggy bank balance does not match amount inserted"
@@ -547,7 +547,7 @@ The second test becomes:
            );
 
        assert!(update.is_ok(), "Inserting into intact piggy bank failed");
-       assert!(
+       assert_eq!(
            chain.contract_balance(initialization.contract_address),
            Some(insert_amount)
            "Piggy bank balance does not match amount inserted"
@@ -812,9 +812,9 @@ SmashError>`` instead of ``ReceiveResult<A>``:
    :emphasize-lines: 5
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_smash(
+       ctx: &ReceiveContext,
+       host: &mut Host<PiggyBankState>,
    ) -> Result<(), SmashError> {
       // ...
    }
@@ -826,9 +826,9 @@ the error to produce:
    :emphasize-lines: 9, 10, 16
 
    #[receive(contract = "PiggyBank", name = "smash", mutable)]
-   fn piggy_smash<S: HasStateApi>(
-       ctx: &impl HasReceiveContext,
-       host: &mut impl HasHost<PiggyBankState, StateApiType = S>,
+   fn piggy_smash(
+       ctx: &ReceiveContext,
+       host: &mut Host<PiggyBankState>,
    ) -> Result<(), SmashError> {
        let owner = ctx.owner();
        let sender = ctx.sender();

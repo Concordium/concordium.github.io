@@ -38,7 +38,7 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
 
 .. toctree::
    :maxdepth: 1
-   :caption: Available tutorials:
+   :hidden:
 
    setup-env
    Counter <./counter/counter-contract>

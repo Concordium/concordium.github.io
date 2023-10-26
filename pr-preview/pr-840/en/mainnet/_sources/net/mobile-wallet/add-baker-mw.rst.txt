@@ -195,7 +195,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
        Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
-    4. Choose whether you want to open a :ref:`baker pool<glossary-baker-pool>` or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool.
+    4. Choose whether you want to open a :term:`baker pool` or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
             :alt: screen to register baker for first time showing options to open or close pool for delegation
@@ -229,7 +229,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
             :alt: screen to register baker for first time showing transaction submission and finish option
             :width: 50%
 
-    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
@@ -266,7 +266,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
        Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
-    4. Choose whether you want to open a :ref:`baker pool<glossary-baker-pool>` or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool.
+    4. Choose whether you want to open a :term:`baker pool` or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
             :width: 50%
@@ -300,7 +300,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
             :width: 50%
             :alt: screen to show transaction submitted
 
-    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
@@ -346,7 +346,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
        Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
-    4. Choose whether you want to open a :ref:`baker pool<glossary-baker-pool>` or keep it closed. Choose **Open for delegation** to open a baker pool. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool. Click **Continue**.
+    4. Choose whether you want to open a :term:`baker pool` or keep it closed. Choose **Open for delegation** to open a baker pool. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool. Click **Continue**.
 
         .. image:: ../images/browser-wallet/add-baker-pool.png
             :alt: screen with buttons to open a pool for delegation or close a pool for delegation
@@ -388,7 +388,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
         .. image:: ../images/browser-wallet/add-baker-finish.png
                 :width: 40%
 
-    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :ref:`pay day<glossary-pay-day>` as possible to prevent the node from being down as a baker for a longer time.
+    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`

@@ -37,9 +37,26 @@ You can run a node on :ref:`Ubuntu<ubuntu-node>`, :ref:`Docker<docker-node>`, :r
 Node metrics
 ============
 
-You can use the `Prometheus monitoring system <https://prometheus.io/download/>` to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
+You can use the `Prometheus monitoring system <https://prometheus.io/download/>`__ to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
 
 For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
+
+Synchronize a node with the network
+===================================
+
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers.
+
+The startup time of the node can be improved by downloading the blocks from
+an out-of-band catchup service before starting the node. While it will still
+take time to process the blocks, it will typically be faster than requesting
+them from peers.
+
+This feature is enabled by default in all distributions since version 6.1
+and is controlled by the ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM``
+environment variable in the configuration file. To disable this feature
+unset the environment variable.
 
 .. Note::
 

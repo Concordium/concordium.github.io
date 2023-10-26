@@ -8,7 +8,7 @@ The contract development guides help you get started writing smart contracts. He
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contract development guides
+   :hidden:
 
    setup-tools
    setup-contract

@@ -14,14 +14,6 @@ Rust and Cargo
 First, `install rustup`_, which installs both Rust_ and Cargo_ on your
 machine.
 
-.. _rust-compiler-issue:
-
-Due to a change in the behavior of the rust compiler, you must install the compiler version 1.69 or earlier. To do that, run:
-
-.. code-block:: console
-
-   $rustup default 1.69
-
 Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
 .. code-block:: console
@@ -34,7 +26,7 @@ Then use ``rustup`` to install the Wasm target, which is used for compilation:
 ``cargo-concordium`` is the tool for developing smart contracts for the Concordium
 blockchain.
 It can be used for :ref:`compiling<compile-module>` and
-:ref:`testing<unit-test-contract>` smart contracts, and enables features such as
+:ref:`testing<integration-test-contract>` smart contracts, and enables features such as
 :ref:`building contract schemas<build-schema>`.
 
 To install ``cargo-concordium`` run:

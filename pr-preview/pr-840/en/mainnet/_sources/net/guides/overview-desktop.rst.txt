@@ -65,7 +65,7 @@ Before you start, make sure you’ve completed the following steps:
 
 .. dropdown:: Step 4: Set up an identity and an initial account
 
-    Once you've installed the Desktop Wallet, you must set up an :ref:`identity <glossary-identity>` and an :ref:`initial account <glossary-initial-account>`. If you want to be a baker, Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
+    Once you've installed the Desktop Wallet, you must set up an :term:`identity` and an :term:`initial account`. If you want to be a baker, Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
 
 Once you have completed these four steps, you're ready to start using the Desktop Wallet.
 
@@ -78,14 +78,6 @@ Once you have completed these four steps, you're ready to start using the Deskto
 .. Warning::
 
     Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
-
-.. toctree::
-    :hidden:
-    :maxdepth: 1
-
-    ../desktop-wallet/accounts-desktop
-    ../desktop-wallet/update-application
-    ../desktop-wallet/reset-data
 
 .. |ledger-settings| image:: ../images/desktop-wallet/ledger-live-settings.png
                     :alt: gear wheel on black background

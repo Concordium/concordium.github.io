@@ -38,8 +38,7 @@ On mainnet
 
    (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for mainnet).
 
-#. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
-   Node/LaunchDaemons/software.concordium.mainnet.node.plist``
+#. Edit the service file as an administrator. The service file is found here: ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"``
 
 #. Underneath the ``<dict>`` tag in the *EnviromentVariables* section of the file add the following::
 
@@ -61,8 +60,7 @@ On testnet
 
    (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for testnet).
 
-#. Edit the service file as an administrator. The service file is found here: ``/Library/Concordium
-   Node/LaunchDaemons/software.concordium.testnet.node.plist``
+#. Edit the service file as an administrator. The service file is found here: ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"``
 
 #. In the *EnviromentVariables* section of the file add the following::
 
