@@ -1,8 +1,8 @@
 .. _dapp-using-walletconnect:
 
-========================
-dApp using WalletConnect
-========================
+======================================
+Assignment 2: dApp using WalletConnect
+======================================
 
 Create a simple dApp using WalletConnect for Sign and Auth that stores a signed message on a smart contract and can transfer CCDs between accounts.
 

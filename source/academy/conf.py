@@ -131,7 +131,7 @@ highlight_language = "rust"
 #
 html_theme = "pydata_sphinx_theme"
 
-html_logo = "../_static/concordium-logo-dark.svg"
+html_logo = "../_static/concordium-logo.svg"
 html_favicon = "../_static/concordium-logo-no-text.svg"
 
 # Theme options are theme-specific and customize the look and feel of a theme

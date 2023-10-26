@@ -1,8 +1,8 @@
 .. _fullstack-dapp-using-walletconnect:
 
-========================
-dApp using WalletConnect
-========================
+======================================
+Assignment 3: dApp using WalletConnect
+======================================
 
 Submit a full dApp that allows people to participate in an ongoing auction if they are from an EU country. Auction participation tickets should be in CIS-2 tokens and burned when someone exits the auction.
 

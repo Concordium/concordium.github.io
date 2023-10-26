@@ -1,8 +1,8 @@
 .. _assignment-1:
 
-====================
-Basic smart contract
-====================
+==================================
+Assignment 1: Basic smart contract
+==================================
 
 Create a smart contract that mints a CIS-2 token, transfers, and burns it when invoked by the ``concordium-client``. It should require 20 CCDs for each operation (invokes) as transaction fees and doesn't allow minting the same token ID twice.
 
