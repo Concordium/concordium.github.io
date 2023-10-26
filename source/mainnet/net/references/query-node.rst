@@ -327,7 +327,8 @@ Earliest time a baker may be expected to bake a block
 -----------------------------------------------------
 
 .. code-block:: console
-    concordium-client baker win-time 1
+
+    $concordium-client baker win-time 1
     Baker 1 is expected to bake no sooner than:
     Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)
 
