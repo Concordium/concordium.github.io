@@ -43,8 +43,6 @@ in a fixed container to make the build reproducible. It will additionally produc
 a ``tar`` file with packaged sources that were used for the build. The list of
 available docker images can be found on `DockerHub. <https://hub.docker.com/r/concordium/verifiable-sc>`_
 
-This option is available on ``cargo-concordium`` version 3.1 or newer.
-
 The ``tar`` archive should be uploaded and made publicly available, and its
 link should be embedded into the deployed module using the ``cargo concordium edit-build-info``
 command.
