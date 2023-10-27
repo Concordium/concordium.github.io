@@ -49,7 +49,7 @@ The ``tar`` archive should be uploaded and made publicly available, and its
 link should be embedded into the deployed module using the ``cargo concordium edit-build-info``
 command.
 
-The ``--out`` option is required for verified builds, and instructs ``cargo-concordium`` to output the build artifact at the specified location.
+The ``--out`` option is required for verifiable builds, and instructs ``cargo-concordium`` to output the build artifact at the specified location.
 
 Verifiable builds require a container runtime such as `Docker <https://www.docker.com/>`_ to be installed.
 
