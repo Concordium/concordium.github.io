@@ -90,7 +90,7 @@ copybutton_line_continuation_character = "\\"
 sphinx_tabs_disable_tab_closing = True
 
 # Disable default url prefix "/en/latest/" on every resource.
-notfound_urls_prefix = "/en/mainnet/"
+notfound_urls_prefix = "/"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates', '../_templates']
@@ -262,9 +262,9 @@ html_context = {
     "display_github": True,
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
-    "github_version": current_version,
+    "github_version": "main/source/academy",
     "display_github": False,
-    "conf_py_path": "/source/",
+    "conf_py_path": "/source/academy",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
     "current_version": current_version,
