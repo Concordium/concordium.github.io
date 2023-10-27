@@ -262,9 +262,9 @@ html_context = {
     "display_github": True,
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
-    "github_version": current_version,
+    "github_version": "main/source/academy",
     "display_github": False,
-    "conf_py_path": "/source/",
+    "conf_py_path": "/source/academy",
     # Expose the versions and languages to the template engine
     "current_language": current_language,
     "current_version": current_version,
