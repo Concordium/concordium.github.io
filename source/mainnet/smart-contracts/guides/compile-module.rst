@@ -45,7 +45,12 @@ available docker images can be found on `DockerHub. <https://hub.docker.com/r/co
 
 The ``tar`` archive should be uploaded and made publicly available, and its
 link should be embedded into the deployed module using the ``cargo concordium edit-build-info``
-command.
+command. For example
+
+.. code-block:: console
+
+   $cargo concordium edit-build-info --module module.wasm.v1 --source-link https://link.to/module.wasm.v1.tar --verify
+
 
 The ``--out`` option is required for verifiable builds, and instructs ``cargo-concordium`` to output the build artifact at the specified location.
 
