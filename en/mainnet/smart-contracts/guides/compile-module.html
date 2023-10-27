@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/compile-module.4ffc1771-1e69-443d-8a77-5ee416f5a3d1.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/compile-module.31d3320c-bd71-4f91-8258-54dd7af5600f.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1777,6 +1777,13 @@ body {margin:0;}
   <a class="reference internal nav-link" href="#compiling-to-wasm">
    Compiling to Wasm
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-verifiable-builds">
+     Non-verifiable builds
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1826,11 +1833,24 @@ contract module, you wish to compile.</p>
 <p>To help building smart contract modules and to take advantage of features
 such as <a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">contract schemas</span></a>, Concordium recommends using the
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> tool for building <a class="reference external" href="https://www.rust-lang.org/">Rust</a> smart contracts.</p>
-<p>In order to build a smart contract, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build
+<p>In order to build a smart contract for deployment, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --verifiable docker.io/concordium/verifiable-sc:1.70.0 --out contract.wasm.v1
 </pre></div>
 </div>
 <p>This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--verifiable</span></code> option  is available on <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> version 3.1 or newer. It will cause <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> to build the sources
+in a fixed container to make the build reproducible. It will additionally produce
+a <code class="docutils literal notranslate"><span class="pre">tar</span></code> file with packaged sources that were used for the build. The list of
+available docker images can be found on <a class="reference external" href="https://hub.docker.com/r/concordium/verifiable-sc">DockerHub.</a></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tar</span></code> archive should be uploaded and made publicly available, and its
+link should be embedded into the deployed module using the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">edit-build-info</span></code>
+command. For example</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium edit-build-info --module module.wasm.v1 --source-link https://link.to/module.wasm.v1.tar --verify
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--out</span></code> option is required for verifiable builds, and instructs <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> to output the build artifact at the specified location.</p>
+<p>Verifiable builds require a container runtime such as <a class="reference external" href="https://www.docker.com/">Docker</a> to be installed.</p>
+<p>Additional information about verifiable builds can be found on <a class="reference external" href="https://github.com/Concordium/concordium-smart-contract-tools/blob/main/cargo-concordium/README.md#reproducible-and-verifiable-builds">Github</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you receive an error similiar to the one below, you need to update your <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> to version 3.0 or later.</p>
@@ -1844,13 +1864,14 @@ such as <a class="reference internal" href="../general/contract-schema.html#cont
 </div>
 </div>
 <p>If you want a smaller code footprint, enable the <a class="reference internal" href="setup-contract.html#setup-wee-alloc-feature"><span class="std std-ref">wee_alloc feature</span></a> by using:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --features wee_alloc
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --verifiable docker.io/concordium/verifiable-sc:1.70.0 --out contract.wasm.v1 -- --features wee_alloc
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For building the schema for a smart contract module, some <a class="reference internal" href="build-schema.html#build-schema"><span class="std std-ref">further
-preparation is required</span></a>.</p>
+preparation is required</span></a>.
+Building and embedding the schema can and should be combined with a verifiable build using the <code class="docutils literal notranslate"><span class="pre">--verifiable</span></code> option.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1861,11 +1882,15 @@ preparation is required</span></a>.</p>
 <p>Note that even with <code class="docutils literal notranslate"><span class="pre">--release</span></code> set, the produced Wasm module includes
 debug information.</p>
 </div>
-<p>Running the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> command will produce a smart contract module which can be found
+<div class="section" id="non-verifiable-builds">
+<h3>Non-verifiable builds<a class="headerlink" href="#non-verifiable-builds" title="Permalink to this headline">#</a></h3>
+<p>Omitting the <code class="docutils literal notranslate"><span class="pre">--verifiable</span></code> option from the build command will make a build on the host machine.
+This is typically not verifiable since the Rust toolchain is affected by the build environment.
+However, for local development, non-verifiable builds can be useful.</p>
+<p>By default, running the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> command will produce a smart contract module which can be found
 relative to your project root folder in <code class="docutils literal notranslate"><span class="pre">./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1</span></code>.
-Alternatively, you can supply the location where to store the smart contract module using
-the <code class="docutils literal notranslate"><span class="pre">--out</span></code> option. For example running the following command will output your smart contract module
-into the root folder of your project in a file name <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>.</p>
+The <code class="docutils literal notranslate"><span class="pre">--out</span></code> option can be supplied also for non-verifiable builds.
+For example, running the following command will output your smart contract module into the root folder of your project in a file called <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --out ./my_module.wasm.v1
 </pre></div>
 </div>
@@ -1876,6 +1901,7 @@ to the smart contract version, i.e. <code class="docutils literal notranslate"><
 for V1 contracts. Concordium recommends using the wasm module with the <code class="docutils literal notranslate"><span class="pre">.v1</span></code> extension
 (the most-up-to date smart contract version).
 The file <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code> will be used when <a class="reference internal" href="deploy-module.html#deploy-module"><span class="std std-ref">deploying</span></a> a smart contract on-chain.</p>
+</div>
 </div>
 </div>
 </div>
