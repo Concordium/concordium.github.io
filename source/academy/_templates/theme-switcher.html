@@ -83,7 +83,8 @@ input:checked + .slider:before {
 
   toggleSwitch.addEventListener('change', switchTheme, false);
 
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  const prefersTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : null;
+  const currentTheme = localStorage.getItem('theme') ?? prefersTheme;
 
   if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
