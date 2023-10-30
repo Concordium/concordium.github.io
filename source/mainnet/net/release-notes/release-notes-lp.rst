@@ -19,9 +19,9 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    October XX, 2023
+    October 31, 2023
 
-        Version 1.3.0 contains support for deep linking and universal linking and fixes an issue with the shielded balance toggle.
+        Version 1.3.0 contains support for deep linking and universal linking, and fixes an issue with the shielded balance toggle.
 
     .. dropdown:: Previous releases
 
