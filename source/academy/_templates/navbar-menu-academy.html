@@ -1,0 +1,93 @@
+<style>
+  body {margin:0;}
+  
+  .navbar-menu {
+    position: relative;
+    margin-left: 190px;
+    background: none;
+  }
+  
+  .navbar-light {
+      background: #ededed!important;
+      box-shadow: none;
+  }
+  
+  .navbar-menu a {
+    float: left;
+    display: inline;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    background: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+      float: left;
+    }
+  
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+  /* Large devices (laptops/desktops, 992px to 768px ) */
+  @media only screen and (max-width: 1178px) {
+    .navbar-menu {
+      display: none;}
+  
+  }
+  </style>
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <div class="dropdown">
+    <button class="dropbtn"><a href="{{ pathto('intro') }}">Introduction</a></button>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="{{ pathto('beg-tutorials') }}">Beginner</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="{{ pathto('mid-tutorials') }}">Intermediate</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="{{ pathto('adv-tutorials') }}">Advanced</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit">Claim badge</a></button>
+  </div>
+  </div>
+</div>
