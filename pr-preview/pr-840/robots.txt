@@ -1,3 +1,0 @@
-# Tell crawlers to ignore PR preview builds.
-User-agent: *
-Disallow: /pr-preview/
