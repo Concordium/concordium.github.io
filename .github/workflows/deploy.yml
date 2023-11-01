@@ -47,4 +47,5 @@ jobs:
           external_repository: Concordium/concordium-academy
           publish_branch: gh-pages
           deploy_key: ${{ secrets.CONCORDIUM_ACADEMY_DEPLOY_KEY }}
-          clean: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
