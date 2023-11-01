@@ -41,10 +41,10 @@ jobs:
             pr-preview-academy/
 
       - name: Deploy Concordium Academy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          repository-name: Concordium/concordium-academy
-          ssh-key: ${{ secrets.CONCORDIUM_ACADEMY_DEPLOY_KEY }}
-          folder: build-academy
+          publish_dir: build-academy
+          external_repository: Concordium/concordium-academy
+          publish_branch: gh-pages
+          deploy_key: ${{ secrets.CONCORDIUM_ACADEMY_DEPLOY_KEY }}
           clean: true
