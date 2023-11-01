@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/tutorials/setup-env.44eede58-8c89-4172-8507-0453af2e73a7.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/tutorials/setup-env.5cc7ee4b-e828-4021-a8f7-f41434203ff0.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1806,7 +1806,7 @@ body {margin:0;}
                 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/Concordium/concordium.github.io/edit/mainnet/source/mainnet/smart-contracts/tutorials/setup-env.rst">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/local/source/mainnet/smart-contracts/tutorials/setup-env.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -1838,13 +1838,21 @@ body {margin:0;}
 </div>
 <p>During Wasm installation in your system you should see something similar to below.</p>
 <a class="reference internal image-reference" href="../../_images/mint-wasm-install.png"><img alt="../../_images/mint-wasm-install.png" src="../../_images/mint-wasm-install.png" style="width: 100%;" /></a>
-<p>Now you need to install the Concordium software package. The tool is the same for both testnet and mainnet.</p>
-<p>Run the following command to install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your platform:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo install --locked cargo-concordium
+<p>Now you need to install the Concordium software package. <a class="reference internal" href="../../net/installation/downloads.html#cargo-concordium-testnet"><span class="std std-ref">Click here</span></a> and download the version 2.2.0 or greater of <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your operating system. The tool is the same for both testnet and mainnet.</p>
+<p>First, rename the <code class="docutils literal notranslate"><span class="pre">cargo-congordium-v.x.x</span></code> file to <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> executable to the cargo folder. <a class="reference internal" href="../guides/setup-tools.html#setup-tools"><span class="std std-ref">Follow the information here</span></a> to ensure that your cargo-concordium is configured correctly. The commands below are specifically for MacOS. Remember to adjust the commands based on your operating system.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo chmod +x cargo-concordium</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mv cargo-concordium ~/.cargo/bin</span>
 </pre></div>
 </div>
 <p>If everything is correct, when you enter the command <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">--help</span></code> it shows something similar to the below.</p>
 <a class="reference internal image-reference" href="../../_images/cargo-help.png"><img alt="../../_images/cargo-help.png" src="../../_images/cargo-help.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to <strong>System Preferences → Security</strong> and unlock it with your password and click <strong>Allow Anyway</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/mac-warning.png"><img alt="../../_images/mac-warning.png" src="../../_images/mac-warning.png" style="width: 100%;" /></a>
+</div>
 <div class="section" id="install-concordium-client">
 <span id="interact-with-your-contract"></span><h2>Install Concordium Client<a class="headerlink" href="#install-concordium-client" title="Permalink to this headline">#</a></h2>
 <p>The tutorials use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as a command line tool to deploy, mint, and transfer. <a class="reference internal" href="../../net/installation/downloads.html#concordium-node-and-client-download-testnet"><span class="std std-ref">Download it here</span></a>. Rename the package to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> in case it has some version annotation.</p>
@@ -2010,7 +2018,7 @@ omitting <code class="docutils literal notranslate"><span class="pre">./</span><
 <h3>Import the key<a class="headerlink" href="#import-the-key" title="Permalink to this headline">#</a></h3>
 <p>You are ready to import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration. Transfer your wallet key export file to the place where you are running your <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool. Navigate to the folder as well.</p>
 <p>Import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import &lt;Wallet.export&gt; --name &lt;Your-Wallet-Name&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import &lt;Wallet.export&gt; --name &lt;Your-Wallet-Name&gt;.json</span>
 </pre></div>
 </div>
 </div>
