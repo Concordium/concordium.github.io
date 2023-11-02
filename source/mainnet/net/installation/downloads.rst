@@ -69,22 +69,20 @@ Concordium Desktop Wallet
 
    .. dropdown:: Linux® v1.6.0
 
-      .. dropdown:: Linux® v1.5.0
+      - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.AppImage>`_
 
-         - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.AppImage>`_
+         - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
+         - :ref:`Verification instructions <verification-cdw-appimage>`
 
-            - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
-            - :ref:`Verification instructions <verification-cdw-appimage>`
+      - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.deb>`_
 
-         - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.deb>`_
+         - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
+         - :ref:`Verification instructions <verification-cdw-deb>`
 
-            - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
-            - :ref:`Verification instructions <verification-cdw-deb>`
+      - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.rpm>`_
 
-         - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.rpm>`_
-
-            - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
-            - :ref:`Verification instructions <verification-cdw-rpm>`
+         - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
+         - :ref:`Verification instructions <verification-cdw-rpm>`
 
 .. dropdown:: Testnet
 

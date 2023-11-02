@@ -27,26 +27,22 @@ It can be used for :ref:`compiling<compile-module-v0>` and
 :ref:`testing<unit-test-contract-v0>` smart contracts, and enables features such as
 :ref:`building contract schemas<build-schema-v0>`.
 
-.. todo::
+To install ``cargo-concordium`` run:
 
-   Add links for testing and schemas.
+.. code-block:: console
 
-Cargo Concordium is distributed as part of the :ref:`Concordium software<downloads>` package. Rename the downloaded file to ``cargo-concordium`` for MacOS/Linux, and ``cargo-concordium.exe`` for Windows.
+   $cargo install --locked cargo-concordium
 
-The tool should be placed in your PATH. This can be achieved by either:
-
-* Moving the executable to a folder that is already on your PATH, for example ``%HOMEPATH%\.cargo\bin\`` for Windows, and ``$HOME/.cargo/bin`` for MacOS/Linux.
-* Or, by adding its current location to your PATH environment.
-
-If you are running MacOS, you need to make the tool executable by running ``chmod +x path/to/cargo-concordium`` in a terminal. Make sure to provide the correct path to the downloaded tool. You also need to grant it permission to run in your  `Security & Privacy settings <https://support.apple.com/en-gb/guide/mac-help/mh40616/mac>`_ .
-
-Once cargo-concordium.exe is on your path, you can invoke it with ``cargo concordium`` in the terminal.
-
-For a description of how to use the Cargo Concordium run:
+For a description of how to use the ``cargo-concordium`` run:
 
 .. code-block:: console
 
    $cargo concordium --help
+
+VSCode extension
+----------------
+
+The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
 
 Concordium software
 ===================
