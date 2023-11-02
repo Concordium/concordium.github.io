@@ -158,7 +158,10 @@ The developer documentation is hosted by GitHub Pages and the released files can
 Likewise for the Concordium Academy site, the released files can be viewed on the [`gh-pages`](https://github.com/Concordium/concordium-academy/tree/gh-pages) branch of the [Concordium/concordium-academy repository](https://github.com/Concordium/concordium-academy).
 
 Deployment is triggered manually using the [Deploy workflow](https://github.com/Concordium/concordium.github.io/actions/workflows/deploy.yml) in GitHub Actions of this repository.
-This will build and deploy both the developer documentation and Concordium Academy.
+This will build both the developer documentation and the Concordium Academy site, to ensure that links used by Academy are still valid. But only deploy the the developer documentation.
+
+To deploy the Concordium Academy site trigger the [Deploy workflow](https://github.com/Concordium/concordium-academy/actions/workflows/deploy.yml) in GitHub Actions of [`Concordium/concordium-academy`](https://github.com/Concordium/concordium-academy).
+This workflow will clone this repository, build and only deploy the Academy site.
 
 # Contributing
 
