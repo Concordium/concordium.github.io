@@ -1,0 +1,919 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concordium Wallet for Web Third Party Licenses &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/bw-licenses.37054d19-7033-449f-9c88-8a6633f53a9d.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo" src="../../_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <style>
+body {margin:0;}
+
+.navbar-menu {
+  position: relative;
+  margin-left: 190px;
+  background: none;
+}
+
+.navbar-light {
+    background: #ededed!important;
+    box-shadow: none;
+}
+
+.navbar-menu a {
+  float: left;
+  display: inline;
+  text-align: center;
+  color: var(--font-color);
+  font-size: 15px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 1178px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
+            <label class="sr-only">Monitor</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
+            <label class="sr-only">YouTube</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
+            <label class="sr-only">Medium</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://academy.concordium.software/ccd-academy/getting-started" rel="noopener" target="_blank" title="Academy"><span><i class="fas fa-graduation-cap"></i></span>
+            <label class="sr-only">Academy</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scure-bip39">
+   @scure/bip39
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#axios">
+   axios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#buffer">
+   buffer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-password-strength">
+   check-password-strength
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clsx">
+   clsx
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#framer-motion">
+   framer-motion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i18next">
+   i18next
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i18next-browser-languagedetector-react-i18next">
+   i18next-browser-languagedetector, react-i18next
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jotai">
+   jotai
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-bigint">
+   json-bigint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lodash-groupby">
+   lodash.groupby
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#react-react-dom">
+   react, react-dom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#react-hook-form">
+   react-hook-form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#react-router-dom">
+   react-router-dom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#react-window">
+   react-window
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#react-window-infinite-loader">
+   react-window-infinite-loader
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uuid">
+   uuid
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/local/source/mainnet/net/resources/bw-licenses.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="bw-third-party-licenses">
+<span id="bw-licenses"></span><h1>Concordium Wallet for Web Third Party Licenses<a class="headerlink" href="#bw-third-party-licenses" title="Permalink to this headline">#</a></h1>
+<p>The following sets forth attribution notices for third party software that may be contained in portions of the Concordium Browser Wallet product.</p>
+<div class="section" id="scure-bip39">
+<h2>&#64;scure/bip39<a class="headerlink" href="#scure-bip39" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2022 Patricio Palladino, Paul Miller (paulmillr.com)</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the “Software”), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in</span>
+<span class="go">all copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="go">THE SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="axios">
+<h2>axios<a class="headerlink" href="#axios" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Copyright (c) 2014-present Matt Zabriskie</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in</span>
+<span class="go">all copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="go">THE SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="buffer">
+<h2>buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) Feross Aboukhadijeh, and other contributors.</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in</span>
+<span class="go">all copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="go">THE SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-password-strength">
+<h2>check-password-strength<a class="headerlink" href="#check-password-strength" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MIT License</span>
+
+<span class="go">Copyright (c) 2020 Mark Deanil Vicente</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="clsx">
+<h2>clsx<a class="headerlink" href="#clsx" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MIT License</span>
+
+<span class="go">Copyright (c) Luke Edwards &lt;luke.edwards05@gmail.com&gt; (lukeed.com)</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="framer-motion">
+<h2>framer-motion<a class="headerlink" href="#framer-motion" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2018 Framer B.V.</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="i18next">
+<h2>i18next<a class="headerlink" href="#i18next" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2022 i18next</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="i18next-browser-languagedetector-react-i18next">
+<h2>i18next-browser-languagedetector, react-i18next<a class="headerlink" href="#i18next-browser-languagedetector-react-i18next" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2022 i18next</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="jotai">
+<h2>jotai<a class="headerlink" href="#jotai" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MIT License</span>
+
+<span class="go">Copyright (c) 2020-2022 Poimandres</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json-bigint">
+<h2>json-bigint<a class="headerlink" href="#json-bigint" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2013 Andrey Sidorov</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy of</span>
+<span class="go">this software and associated documentation files (the &quot;Software&quot;), to deal in</span>
+<span class="go">the Software without restriction, including without limitation the rights to</span>
+<span class="go">use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of</span>
+<span class="go">the Software, and to permit persons to whom the Software is furnished to do so,</span>
+<span class="go">subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS</span>
+<span class="go">FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR</span>
+<span class="go">COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER</span>
+<span class="go">IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span>
+<span class="go">CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lodash-groupby">
+<h2>lodash.groupby<a class="headerlink" href="#lodash-groupby" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Copyright jQuery Foundation and other contributors &lt;https://jquery.org/&gt;</span>
+
+<span class="go">Based on Underscore.js, copyright Jeremy Ashkenas,</span>
+<span class="go">DocumentCloud and Investigative Reporters &amp; Editors &lt;http://underscorejs.org/&gt;</span>
+
+<span class="go">This software consists of voluntary contributions made by many</span>
+<span class="go">individuals. For exact contribution history, see the revision history</span>
+<span class="go">available at https://github.com/lodash/lodash</span>
+
+<span class="go">The following license applies to all parts of this software except as</span>
+<span class="go">documented below:</span>
+
+<span class="go">====</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining</span>
+<span class="go">a copy of this software and associated documentation files (the</span>
+<span class="go">&quot;Software&quot;), to deal in the Software without restriction, including</span>
+<span class="go">without limitation the rights to use, copy, modify, merge, publish,</span>
+<span class="go">distribute, sublicense, and/or sell copies of the Software, and to</span>
+<span class="go">permit persons to whom the Software is furnished to do so, subject to</span>
+<span class="go">the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be</span>
+<span class="go">included in all copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span>
+<span class="go">EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF</span>
+<span class="go">MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span>
+<span class="go">NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE</span>
+<span class="go">LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION</span>
+<span class="go">OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION</span>
+<span class="go">WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+
+<span class="go">====</span>
+
+<span class="go">Copyright and related rights for sample code are waived via CC0. Sample</span>
+<span class="go">code is defined as all source code displayed within the prose of the</span>
+<span class="go">documentation.</span>
+
+<span class="go">CC0: http://creativecommons.org/publicdomain/zero/1.0/</span>
+
+<span class="go">====</span>
+
+<span class="go">Files located in the node_modules and vendor directories are externally</span>
+<span class="go">maintained libraries used by this software which have their own</span>
+<span class="go">licenses; we recommend you read them, as their terms may differ from the</span>
+<span class="go">terms above.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="react-react-dom">
+<h2>react, react-dom<a class="headerlink" href="#react-react-dom" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MIT License</span>
+
+<span class="go">Copyright (c) Facebook, Inc. and its affiliates.</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="react-hook-form">
+<h2>react-hook-form<a class="headerlink" href="#react-hook-form" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MIT License</span>
+
+<span class="go">Copyright (c) 2019-present Beier(Bill) Luo</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="react-router-dom">
+<h2>react-router-dom<a class="headerlink" href="#react-router-dom" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MIT License</span>
+
+<span class="go">Copyright (c) React Training 2015-2019</span>
+<span class="go">Copyright (c) Remix Software 2020-2021</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="react-window">
+<h2>react-window<a class="headerlink" href="#react-window" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2018 Brian Vaughn</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="react-window-infinite-loader">
+<h2>react-window-infinite-loader<a class="headerlink" href="#react-window-infinite-loader" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2019 Brian Vaughn</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="go">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="go">in the Software without restriction, including without limitation the rights</span>
+<span class="go">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="go">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="go">furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all</span>
+<span class="go">copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="go">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="go">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="go">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="go">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="go">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="go">SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uuid">
+<h2>uuid<a class="headerlink" href="#uuid" title="Permalink to this headline">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The MIT License (MIT)</span>
+
+<span class="go">Copyright (c) 2010-2020 Robert Kieffer and other contributors</span>
+
+<span class="go">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span>
+
+<span class="go">The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span>
+
+<span class="go">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+  <!-- Script to change the highlighting of the active menu path and put the sidenav into hamburger for mobile-->
+<script>
+    const currentMenu = $('.bd-sidenav.current');
+    currentMenu.parent().addClass('selected');
+
+    let $togglerIcon = $('.navbar-toggler-icon');
+    let $bdSidebar = $('.bd-sidebar');
+
+    $togglerIcon.on( "click", function() {
+        let $togglerAttr = $('.navbar-toggler').attr('aria-expanded');
+        if ($togglerAttr == 'true') {
+            $bdSidebar.parent().removeClass('show');
+        } else {
+            $bdSidebar.parent().addClass('show');
+        }
+    } );
+</script>
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+  </a>
+  <a href="../guides/legal.html">
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+selector_to_html = {"a[href=\"../concepts/concepts-delegation.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Delegation<a class=\"headerlink\" href=\"#delegation\" title=\"Permalink to this headline\">#</a></h1><p>On the Concordium blockchain, <a class=\"reference internal\" href=\"../resources/glossary.html#term-Baker\"><span class=\"xref std std-term\">bakers</span></a> run the protocol that generates blocks, and the action of creating blocks is baking. Bakers are rewarded for every block that they create with a payment of some <a class=\"reference internal\" href=\"../resources/glossary.html#term-CCD\"><span class=\"xref std std-term\">CCD</span></a>. Because Concordium runs a proof-of-stake protocol, each baker needs to <a class=\"reference internal\" href=\"../resources/glossary.html#term-Staked-Amount\"><span class=\"xref std std-term\">stake an amount to bake</span></a>, and the <a class=\"reference internal\" href=\"../resources/glossary.html#term-Lottery-Power\"><span class=\"xref std std-term\">probability of being selected to create the next block</span></a> is proportional to each baker\u2019s stake. So the payment may be seen as an interest on the baker\u2019s capital.</p><p>Not everyone with CCD has the resources needed to run a baker. <a class=\"reference internal\" href=\"../resources/glossary.html#term-Delegator\"><span class=\"xref std std-term\">Delegation</span></a> enables everyone to earn rewards for delegating some stake without the need to run a node or become a baker. Any party with CCD may delegate some of their capital to a baker. This increases the baker\u2019s chance of baking the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a baker, the CCDs are not transferred to the baker and remain under the party\u2019s control; they are just considered part of the baker\u2019s stake for the proof-of-stake protocol. Staked CCDs, both for delegators and bakers, cannot be spent while staked. Unstaking CCDs is subject to a <a class=\"reference internal\" href=\"../resources/glossary.html#term-Cool-down-period\"><span class=\"xref std std-term\">cool-down period</span></a>.</p>", "a[href=\"../snippets/delegation-faq.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Delegation and baking FAQ<a class=\"headerlink\" href=\"#delegation-and-baking-faq\" title=\"Permalink to this headline\">#</a></h1>", "a[href=\"../concepts/concepts-baker.html\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Bakers<a class=\"headerlink\" href=\"#bakers\" title=\"Permalink to this headline\">#</a></h1><p>Baking is key to the Concordium blockchain. A <a class=\"reference internal\" href=\"#baker-concept\"><span class=\"std std-ref\">baker</span></a> is a <a class=\"reference internal\" href=\"../resources/glossary.html#term-Node\"><span class=\"xref std std-term\">node</span></a> that participates in the network by <a class=\"reference internal\" href=\"../resources/glossary.html#term-Baker\"><span class=\"xref std std-term\">baking</span></a> (creating) new <a class=\"reference internal\" href=\"../resources/glossary.html#term-Block\"><span class=\"xref std std-term\">blocks</span></a> that are added to the chain. The blockchain consists of multiple <a class=\"reference internal\" href=\"../resources/glossary.html#term-Baker\"><span class=\"xref std std-term\">baker</span></a> nodes that maintain the blockchain by baking and <a class=\"reference internal\" href=\"../resources/glossary.html#term-Finalization\"><span class=\"xref std std-term\">finalizing</span></a> <a class=\"reference internal\" href=\"../resources/glossary.html#term-Block\"><span class=\"xref std std-term\">blocks</span></a>.</p>"}
+skip_classes = ["headerlink", "sd-stretched-link"]
+
+window.onload = function () {
+    for (const [select, tip_html] of Object.entries(selector_to_html)) {
+        const links = document.querySelectorAll(` ${select}`);
+        for (const link of links) {
+            if (skip_classes.some(c => link.classList.contains(c))) {
+                continue;
+            }
+
+            tippy(link, {
+                content: tip_html,
+                allowHTML: true,
+                arrow: true,
+                placement: 'auto-start', maxWidth: 500, interactive: false,
+
+            });
+        };
+    };
+    console.log("tippy tips loaded!");
+};
