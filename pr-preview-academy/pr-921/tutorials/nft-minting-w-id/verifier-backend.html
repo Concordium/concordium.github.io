@@ -1,0 +1,1032 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The verifier back end &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The minting contract" href="minting-sc.html" />
+    <link rel="prev" title="NFT minting with ID 2.0" href="index.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://academy.concordium.software/">
+        <img class="logo" src="../../_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <style>
+  body {margin:0;}
+  
+  .navbar-menu {
+    position: relative;
+    margin-left: 190px;
+    background: none;
+  }
+  
+  .navbar-light {
+      background: #ededed!important;
+      box-shadow: none;
+  }
+  
+  .navbar-menu a {
+    float: left;
+    display: inline;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    background: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+      float: left;
+    }
+  
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+  /* Large devices (laptops/desktops, 992px to 768px ) */
+  @media only screen and (max-width: 1178px) {
+    .navbar-menu {
+      display: none;}
+  
+  }
+  </style>
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../intro.html">Introduction</a></button>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../beg-tutorials.html">Beginner</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../mid-tutorials.html">Intermediate</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../adv-tutorials.html">Advanced</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit">Claim badge</a></button>
+  </div>
+  </div>
+</div>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
+            <label class="sr-only">Monitor</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
+            <label class="sr-only">YouTube</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
+            <label class="sr-only">Medium</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/index.html" rel="noopener" target="_blank" title="Documentation"><span><i class="fas fa-book"></i></span>
+            <label class="sr-only">Documentation</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   NFT minting with ID 2.0
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     The verifier back end
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="minting-sc.html">
+     The minting contract
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="front-end.html">
+     Front-end development
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="how-it-works.html">
+     How it works
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignment-3/full-stack-dapp.html">
+   Assignment 3: dApp using WalletConnect
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zero-knowledge-proofs-zkp-and-id-proofs">
+   Zero-knowledge proofs (ZKP) and ID proofs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minting-with-id-2-0">
+   Minting with ID 2.0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verifier-back-end">
+   Verifier back end
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concordium-rust-sdk">
+     Concordium Rust-SDK
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation">
+     Implementation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#handlers-rs">
+     Handlers.rs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#main-rs">
+     Main.rs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#get-challenge">
+       Get Challenge
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#get-statement">
+       Get Statement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#prove">
+       Prove
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/academy/tutorials/nft-minting-w-id/verifier-backend.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <span class="target" id="nft-w-id-backend"></span><div class="section" id="the-verifier-back-end">
+<h1>The verifier back end<a class="headerlink" href="#the-verifier-back-end" title="Permalink to this headline">#</a></h1>
+<p>In this first part, you will implement a verifier back-end server that signs a claim if it is verified.</p>
+<div class="section" id="zero-knowledge-proofs-zkp-and-id-proofs">
+<h2>Zero-knowledge proofs (ZKP) and ID proofs<a class="headerlink" href="#zero-knowledge-proofs-zkp-and-id-proofs" title="Permalink to this headline">#</a></h2>
+<p>The Concordium Wallet for Web allows dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age or resides in a specific set of countries or areas. For more information about such proofs, see <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/guides/create-proofs.html#create-proofs" title="(in Concordium)"><span class="xref std std-ref">Create proofs</span></a>. But basically, when you have a Concordium account you have an ID object and the identity credential in your wallet. On-chain (in your account) there is a (list of) commitment(s) to your attributes. No one can know who you are other than being able to see your public address. But with zero-knowledge proof (ZK proof) technology (proving a claim without revealing any information but the claim itself), any dApp that wants to make sure that its users meet some criteria can create a query which uses a ZK proof to show correctness. Here these criteria are called <strong>statements</strong>. These statements can be located in the dApp itself or stored in the verifier which is a back-end HTTP server. For this particular tutorial’s scenario, the dApp statement is whether the user is older than 18.</p>
+<p>When the dApp wants to prove someone meets the criteria, it first communicates with the verifier. The verifier is one of the key elements of this architecture. The dApp uses the verifier to verify the claims but it has a key function above all else. The verifier makes sure that a ZK proof query can’t be reused by someone else, for example, if it’s stolen somehow. When the dApp communicates with the verifier, it asks for a <strong>challenge</strong>, a one-time or time-bound random string, that will be used while creating the proofs. The verifier, when doing verification checks whether the proof is created with the particular challenge issued for the query. If the proof is not created with the particular challenge, it will not be verified.</p>
+<p>When you have your Concordium account, meaning your ID object is created, there is a set of <strong>attributes</strong> that is inside of your encrypted data structure. A full list of the attributes can be <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/guides/create-proofs.html#create-proofs" title="(in Concordium)"><span class="xref std std-ref">found here</span></a>, but some of them are listed below.</p>
+<ul class="simple">
+<li><p>First name, Last name</p></li>
+<li><p>Sex</p></li>
+<li><p>Date of birth</p></li>
+<li><p>Country of nationality</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Using the Concordium Wallet for Web, your dApp can request proofs for any of these attributes from its users. There is no possible way for us to know anything beyond that the statement doesn’t include. When the user agrees to reveal these pieces of information, they will start experiencing true Self-Sovereign Identity.</p>
+</div>
+<div class="section" id="minting-with-id-2-0">
+<h2>Minting with ID 2.0<a class="headerlink" href="#minting-with-id-2-0" title="Permalink to this headline">#</a></h2>
+<p>Let’s get started with technical implementations. It’s always good to define the requirements and the steps that will lead you to implement the solution.</p>
+<ul class="simple">
+<li><p>We want to use the existing NFT minting tool React application for the sake of time and implementation.</p></li>
+<li><p>We will implement a verifier backend and re-use as much as possible that is shared by the Concordium team.</p></li>
+<li><p>Our minting dApp will allow people only older than 18, but we can increase the set of attributes or add new combinations.</p></li>
+</ul>
+<p>Nice, we have a very short requirements list. Now take a look at the flow from the architectural point of view in general.</p>
+<ul class="simple">
+<li><p>When the user wants to mint something, dApp goes to the verifier backend and asks for a challenge alongside the statement(s).</p></li>
+<li><p>The dApp sends a request for proof of the given challenge and statement to the wallet.</p></li>
+<li><p>The user accepts the requests, wallet sends back the proof.</p></li>
+<li><p>The dApp sends it to the verifier, it verifies the proof is correct according to the challenge and statement.</p></li>
+<li><p>The dApp uses the private key of the owner, to sign a message.</p></li>
+<li><p>The smart contract’s _mint()_ function checks the signature created by the owner and allows for mint.</p></li>
+</ul>
+</div>
+<div class="section" id="verifier-back-end">
+<h2>Verifier back end<a class="headerlink" href="#verifier-back-end" title="Permalink to this headline">#</a></h2>
+<p>Use the back-end code in <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery/verifier">Concordium’s dApp examples GitHub repo</a>. You will make some modifications based on your needs.</p>
+<p>First, create an empty project called <strong>backend</strong> using the command below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo new backend</span>
+</pre></div>
+</div>
+<img alt="visual studio code window in dark mode with terminal window open showing command above" src="../../_images/adv-verifier-backend1.png" />
+<div class="section" id="concordium-rust-sdk">
+<h3>Concordium Rust-SDK<a class="headerlink" href="#concordium-rust-sdk" title="Permalink to this headline">#</a></h3>
+<p>Concordium Rust SDK is published on crates.io so you can add   <cite>concordium-rust-sdk = 1 it</cite> directly to your Cargo.toml file. You don’t have to clone and install it.</p>
+<p>For the development, serialization, encryption, and running of an HTTP server, you will need some dependencies below in your <strong>cargo.toml</strong> file.</p>
+<ul class="simple">
+<li><p><strong>tokio</strong>: A runtime for writing reliable, asynchronous, and slim applications with the Rust programming language.</p></li>
+<li><p><strong>warp</strong>: A super-easy, composable web server framework for warp speeds.</p></li>
+<li><p><strong>serde</strong>: A very helpful framework for serializing/deserializing data structures generically.</p></li>
+<li><p><strong>serde_json</strong>: A JSON serialization/deserialization file format.</p></li>
+<li><p><strong>clap</strong>: Command Line Argument Parser for Rust (CLAP)</p></li>
+<li><p><strong>anyhow</strong>: Easy error handling trait.</p></li>
+<li><p><strong>ed25519-dalek:</strong> To produce and consume Ed25519 signatures and for other key operations.</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[dependencies]</span>
+<span class="n">tokio</span> <span class="o">=</span> <span class="p">{</span> <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;full&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="n">warp</span> <span class="o">=</span> <span class="s">&quot;0.3&quot;</span>
+<span class="n">serde</span> <span class="o">=</span> <span class="p">{</span> <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;derive&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="n">serde_json</span> <span class="o">=</span> <span class="s">&quot;1.0&quot;</span>
+<span class="n">log</span> <span class="o">=</span> <span class="s">&quot;0.4.11&quot;</span>
+<span class="n">env_logger</span> <span class="o">=</span> <span class="s">&quot;0.9&quot;</span>
+<span class="n">clap</span> <span class="o">=</span> <span class="p">{</span> <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;4&quot;</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;derive&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="n">anyhow</span> <span class="o">=</span> <span class="s">&quot;1.0&quot;</span>
+<span class="n">chrono</span> <span class="o">=</span> <span class="s">&quot;0.4.19&quot;</span>
+<span class="n">thiserror</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span>
+<span class="n">rand</span> <span class="o">=</span> <span class="s">&quot;0.8&quot;</span>
+<span class="n">ed25519-dalek</span> <span class="o">=</span> <span class="s">&quot;1.0.1&quot;</span>
+<span class="n">hex</span> <span class="o">=</span> <span class="s">&quot;0.4.3&quot;</span>
+
+<span class="k">[dependencies.concordium-rust-sdk]</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s">&quot;../deps/concordium-rust-sdk/&quot;</span>
+</pre></div>
+</div>
+<p>Now you can build it with the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">build</span></code> command in the <strong>concordium-rust-sdk</strong> folder. For Mac users, if you face a protobuf error in this step, you might need to install it manually. Then build it again.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install protobuf</span>
+</pre></div>
+</div>
+<img alt="visual studio code window in dark mode with terminal window open showing error for mac users" src="../../_images/adv-verifier-backend3.png" />
+</div>
+<div class="section" id="implementation">
+<h3>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">#</a></h3>
+<p>Create a <strong>types.rs</strong> file. You will use almost the same code as <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/blob/main/gallery/verifier/src/types.rs">in this link</a>. In this file, you will create the data structures and responses, and manipulate error codes.</p>
+<p>First, you have the <code class="docutils literal notranslate"><span class="pre">Challenge</span></code> struct which is a u8 32 bytes array. This will be re-generated every time a new client connects or the back end gets a request.</p>
+<p><code class="docutils literal notranslate"><span class="pre">WithAccountAddress</span></code> is used for storing the challenge created for a particular account.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ChallengeStatus</span></code> is used for storing the issued challenge, to whom it’s issued(address), and its creation time on the state.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Server</span></code> is the state. When you run the verifier back end, you will create an empty state with an empty hashmap of challenges.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">InjectStatementError</span></code> enum will be used for handling rejections with error codes.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">use concordium_rust_sdk::{</span>
+<span class="go">    common::{</span>
+<span class="go">        self as crypto_common,</span>
+<span class="go">        derive::{SerdeBase16Serialize, Serialize},</span>
+<span class="go">        Buffer, Deserial, ParseResult, ReadBytesExt, SerdeDeserialize, SerdeSerialize, Serial,</span>
+<span class="go">        Versioned,</span>
+<span class="go">    },</span>
+<span class="go">    endpoints::{QueryError, RPCError},</span>
+<span class="go">    id::{</span>
+<span class="go">        constants::{ArCurve, AttributeKind},</span>
+<span class="go">        id_proof_types::Proof,</span>
+<span class="go">        types::{AccountAddress, GlobalContext},</span>
+<span class="go">    },</span>
+<span class="go">    types::CredentialRegistrationID,</span>
+<span class="go">};</span>
+<span class="go">use std::{</span>
+<span class="go">    collections::HashMap,</span>
+<span class="go">    sync::{Arc, Mutex},</span>
+<span class="go">    time::SystemTime,</span>
+<span class="go">};</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>
+<span class="go">    Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Hash, Debug, SerdeBase16Serialize, Serialize,</span>
+<span class="go">)]</span>
+<span class="go">pub struct Challenge(pub [u8; 32]);</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>serde::Deserialize, Debug, Clone<span class="o">)]</span>
+<span class="go">pub struct WithAccountAddress {</span>
+<span class="go">    pub address: AccountAddress,</span>
+<span class="go">}</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>Clone<span class="o">)]</span>
+<span class="go">pub struct ChallengeStatus {</span>
+<span class="go">    pub address: AccountAddress,</span>
+<span class="go">    pub created_at: SystemTime,</span>
+<span class="go">}</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>Clone<span class="o">)]</span>
+<span class="go">pub struct Server {</span>
+<span class="go">    pub challenges: Arc&lt;Mutex&lt;HashMap&lt;String, ChallengeStatus&gt;&gt;&gt;,</span>
+<span class="go">    pub global_context: Arc&lt;GlobalContext&lt;ArCurve&gt;&gt;,</span>
+<span class="go">}</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>Debug<span class="o">)]</span>
+<span class="go">/// An internal error type used by this server to manage error handling.</span>
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>thiserror::Error<span class="o">)]</span>
+<span class="go">pub enum InjectStatementError {</span>
+<span class="gp">    #</span><span class="o">[</span>error<span class="o">(</span><span class="s2">&quot;Not allowed&quot;</span><span class="o">)]</span>
+<span class="go">    NotAllowed,</span>
+<span class="gp">    #</span><span class="o">[</span>error<span class="o">(</span><span class="s2">&quot;Invalid proof&quot;</span><span class="o">)]</span>
+<span class="go">    InvalidProofs,</span>
+<span class="gp">    #</span><span class="o">[</span>error<span class="o">(</span><span class="s2">&quot;Node access error: {0}&quot;</span><span class="o">)]</span>
+<span class="go">    NodeAccess(#[from] QueryError),</span>
+<span class="gp">    #</span><span class="o">[</span>error<span class="o">(</span><span class="s2">&quot;Error acquiring internal lock.&quot;</span><span class="o">)]</span>
+<span class="go">    LockingError,</span>
+<span class="gp">    #</span><span class="o">[</span>error<span class="o">(</span><span class="s2">&quot;Proof provided for an unknown session.&quot;</span><span class="o">)]</span>
+<span class="go">    UnknownSession,</span>
+<span class="gp">    #</span><span class="o">[</span>error<span class="o">(</span><span class="s2">&quot;Issue with credential.&quot;</span><span class="o">)]</span>
+<span class="go">    Credential,</span>
+<span class="go">}</span>
+
+<span class="go">impl warp::reject::Reject for InjectStatementError {}</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>serde::Serialize<span class="o">)]</span>
+<span class="go">/// Response in case of an error. This is going to be encoded as a JSON body</span>
+<span class="go">/// with fields &#39;code&#39; and &#39;message&#39;.</span>
+<span class="go">pub struct ErrorResponse {</span>
+<span class="go">    pub code: u16,</span>
+<span class="go">    pub message: String,</span>
+<span class="go">}</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>serde::Deserialize, serde::Serialize, Debug<span class="o">)]</span>
+<span class="go">pub struct ChallengeResponse {</span>
+<span class="go">    pub challenge: Challenge,</span>
+<span class="go">}</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>serde::Deserialize, serde::Serialize, Debug, Clone<span class="o">)]</span>
+<span class="go">pub struct ChallengedProof {</span>
+<span class="go">    pub challenge: Challenge,</span>
+<span class="go">    pub proof: ProofWithContext,</span>
+<span class="go">}</span>
+
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>serde::Deserialize, serde::Serialize, Debug, Clone<span class="o">)]</span>
+<span class="go">pub struct ProofWithContext {</span>
+<span class="go">    pub credential: CredentialRegistrationID,</span>
+<span class="go">    pub proof: Versioned&lt;Proof&lt;ArCurve, AttributeKind&gt;&gt;,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Finally, you have the <code class="docutils literal notranslate"><span class="pre">ChallengeResponse</span></code> struct which will be used in the API responses, <code class="docutils literal notranslate"><span class="pre">ChallengedProof</span></code> and <code class="docutils literal notranslate"><span class="pre">ProofWithContext</span></code>. When the back end receives the proof, it will use these to validate it using the client object.</p>
+</div>
+<div class="section" id="handlers-rs">
+<h3>Handlers.rs<a class="headerlink" href="#handlers-rs" title="Permalink to this headline">#</a></h3>
+<p>Nice! Now create another file called <strong>handlers.rs</strong>. In this module, we will explain all functions one by one and add them to the file.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">handle_get_challenge()</span></code> function gets input as the <code class="docutils literal notranslate"><span class="pre">state</span></code> and an <code class="docutils literal notranslate"><span class="pre">address</span></code>. It runs asynchronously when someone asks for a challenge using an endpoint. It invokes the <code class="docutils literal notranslate"><span class="pre">get_challenge_worker()</span></code> which generates a random 32 bytes message (a.k.a. <code class="docutils literal notranslate"><span class="pre">Challenge</span></code>), and adds it to the state’s <code class="docutils literal notranslate"><span class="pre">challenges</span></code> after encoding the challenge as a key and the <code class="docutils literal notranslate"><span class="pre">address</span></code> + issuing time as value <code class="docutils literal notranslate"><span class="pre">ChallengeStatus</span></code>. As a result, it returns the challenge as a response to send it back through the endpoint.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">use crate::crypto_common::base16_encode_string;</span>
+<span class="go">use crate::types::*;</span>
+<span class="go">use concordium_rust_sdk::{</span>
+<span class="go">    common::{self as crypto_common, types::KeyPair},</span>
+<span class="go">    id::{</span>
+<span class="go">        constants::{ArCurve, AttributeKind},</span>
+<span class="go">        id_proof_types::Statement,</span>
+<span class="go">        types::{AccountAddress, AccountCredentialWithoutProofs},</span>
+<span class="go">    },</span>
+<span class="go">    v2::BlockIdentifier,</span>
+<span class="go">};</span>
+<span class="go">use log::warn;</span>
+<span class="go">use rand::Rng;</span>
+<span class="go">use std::convert::Infallible;</span>
+<span class="go">use std::time::SystemTime;</span>
+<span class="go">use warp::{http::StatusCode, Rejection};</span>
+
+<span class="go">static CHALLENGE_EXPIRY_SECONDS: u64 = 600;</span>
+<span class="go">static CLEAN_INTERVAL_SECONDS: u64 = 600;</span>
+
+<span class="go">pub async fn handle_get_challenge(</span>
+<span class="go">    state: Server,</span>
+<span class="go">    address: AccountAddress,</span>
+<span class="go">) -&gt; Result&lt;impl warp::Reply, Rejection&gt; {</span>
+<span class="go">    let state = state.clone();</span>
+<span class="go">    log::debug!(&quot;Parsed statement. Generating challenge&quot;);</span>
+<span class="go">    match get_challenge_worker(state, address).await {</span>
+<span class="go">        Ok(r) =&gt; Ok(warp::reply::json(&amp;r)),</span>
+<span class="go">        Err(e) =&gt; {</span>
+<span class="go">            warn!(&quot;Request is invalid {:#?}.&quot;, e);</span>
+<span class="go">            Err(warp::reject::custom(e))</span>
+<span class="go">        }</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+
+<span class="go">/// A common function that produces a challenge and adds it to the state.</span>
+<span class="go">async fn get_challenge_worker(</span>
+<span class="go">    state: Server,</span>
+<span class="go">    address: AccountAddress,</span>
+<span class="go">) -&gt; Result&lt;ChallengeResponse, InjectStatementError&gt; {</span>
+<span class="go">    let mut challenge = [0u8; 32];</span>
+<span class="go">    rand::thread_rng().fill(&amp;mut challenge[..]);</span>
+<span class="go">    let mut sm = state</span>
+<span class="go">        .challenges</span>
+<span class="go">        .lock()</span>
+<span class="go">        .map_err(|_| InjectStatementError::LockingError)?;</span>
+<span class="go">    log::debug!(&quot;Generated challenge: {:?}&quot;, challenge);</span>
+<span class="go">    let challenge = Challenge(challenge);</span>
+
+<span class="go">    sm.insert(</span>
+<span class="go">        base16_encode_string(&amp;challenge.0),</span>
+<span class="go">        ChallengeStatus {</span>
+<span class="go">            address,</span>
+<span class="go">            created_at: SystemTime::now(),</span>
+<span class="go">        },</span>
+<span class="go">    );</span>
+<span class="go">    Ok(ChallengeResponse { challenge })</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">handle_provide_proof()</span></code> function gets the <code class="docutils literal notranslate"><span class="pre">client</span></code>, <code class="docutils literal notranslate"><span class="pre">state</span></code>, <code class="docutils literal notranslate"><span class="pre">statement</span></code>, <code class="docutils literal notranslate"><span class="pre">request</span></code>, and <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">pair</span></code> as input. It serves through an API endpoint and is primarily used for verifying the proof by calling the <code class="docutils literal notranslate"><span class="pre">check_proof_worker()</span></code> function.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">check_proof_worker()</span></code> function validates the cryptographic proof. First, it locks the <code class="docutils literal notranslate"><span class="pre">state</span></code> and gets the <code class="docutils literal notranslate"><span class="pre">status</span></code> from the map using the challenge’s base16 encoded key of the map. Since the request is a <code class="docutils literal notranslate"><span class="pre">ChallengedProof</span></code> type, you can access the challenge, and more than that, it holds the <code class="docutils literal notranslate"><span class="pre">ProofWithContext</span></code> struct meaning both the credential and the proof is available to use in verification. Similarly, the <code class="docutils literal notranslate"><span class="pre">status</span></code> is a <code class="docutils literal notranslate"><span class="pre">ChallengeStatus</span></code>, meaning you know the address issued and the time created. You will need these in the next step. And finally, the <code class="docutils literal notranslate"><span class="pre">Statement</span></code> is a struct that holds a list of atomic statements.</p>
+<p>When this function is invoked with a POST request, you will have the request object and use it to extract the <code class="docutils literal notranslate"><span class="pre">credential_id</span></code>. Note that every account has an account registration ID, which is the Credential ID of the first credential added to the account. Create a variable for the <code class="docutils literal notranslate"><span class="pre">cred_id</span></code> and get the account information using the Concordium Rust-SDK. The function takes mutable <code class="docutils literal notranslate"><span class="pre">client:</span> <span class="pre">concordium_rust_sdk::v2::Client</span></code> as a parameter. You will get the account information using that. Use the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">address</span></code> from the <code class="docutils literal notranslate"><span class="pre">status</span></code> as the first parameter of the <code class="docutils literal notranslate"><span class="pre">client.get_account_info()</span></code> and the <code class="docutils literal notranslate"><span class="pre">BlockIdentifier::LastFinal</span></code> as the second parameter. Basically, this function provides you with the required information for a given account address in the given block. So to give it the <code class="docutils literal notranslate"><span class="pre">LastFinal</span></code> block means the last finalized block at the time of the query.</p>
+<p>Then find the credential by getting the initial element of the <code class="docutils literal notranslate"><span class="pre">account_credentials</span></code> map which is the map of all currently active credentials on the account. This includes public keys that can sign for the given credentials, as well as any revealed attributes. A credential contains commitments to these attributes. The map holds the <code class="docutils literal notranslate"><span class="pre">AccountCredentialWithoutProofs</span></code> which has the <code class="docutils literal notranslate"><span class="pre">InitialCredentialDeploymentValues</span></code> and <code class="docutils literal notranslate"><span class="pre">CredentialDeploymentCommitments</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pub async fn handle_provide_proof(</span>
+<span class="go">    client: concordium_rust_sdk::v2::Client,</span>
+<span class="go">    state: Server,</span>
+<span class="go">    statement: Statement&lt;ArCurve, AttributeKind&gt;,</span>
+<span class="go">    request: ChallengedProof,</span>
+<span class="go">    key_pair: KeyPair,</span>
+<span class="go">) -&gt; Result&lt;impl warp::Reply, Rejection&gt; {</span>
+<span class="go">    let client = client.clone();</span>
+<span class="go">    let state = state.clone();</span>
+<span class="go">    let statement = statement.clone();</span>
+<span class="go">    match check_proof_worker(client, state, request, statement, key_pair).await {</span>
+<span class="go">        Ok(r) =&gt; Ok(warp::reply::json(&amp;r)),</span>
+<span class="go">        Err(e) =&gt; {</span>
+<span class="go">            warn!(&quot;Request is invalid {:#?}.&quot;, e);</span>
+<span class="go">            Err(warp::reject::custom(e))</span>
+<span class="go">        }</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+
+<span class="go">/// A common function that validates the cryptographic proofs in the request.</span>
+<span class="go">async fn check_proof_worker(</span>
+<span class="go">    mut client: concordium_rust_sdk::v2::Client,</span>
+<span class="go">    state: Server,</span>
+<span class="go">    request: ChallengedProof,</span>
+<span class="go">    statement: Statement&lt;ArCurve, AttributeKind&gt;,</span>
+<span class="go">    key_pair: KeyPair,</span>
+<span class="go">) -&gt; Result&lt;String, InjectStatementError&gt; {</span>
+<span class="go">    let status = {</span>
+<span class="go">        let challenges = state</span>
+<span class="go">            .challenges</span>
+<span class="go">            .lock()</span>
+<span class="go">            .map_err(|_| InjectStatementError::LockingError)?;</span>
+
+<span class="go">        challenges</span>
+<span class="go">            .get(&amp;base16_encode_string(&amp;request.challenge.0))</span>
+<span class="go">            .ok_or(InjectStatementError::UnknownSession)?</span>
+<span class="go">            .clone()</span>
+<span class="go">    };</span>
+
+<span class="go">    let cred_id = request.proof.credential;</span>
+<span class="go">    let acc_info = client</span>
+<span class="go">        .get_account_info(&amp;status.address.into(), BlockIdentifier::LastFinal)</span>
+<span class="go">        .await?;</span>
+
+<span class="go">    // TODO Check remaining credentials</span>
+<span class="go">    let credential = acc_info</span>
+<span class="go">        .response</span>
+<span class="go">        .account_credentials</span>
+<span class="go">        .get(&amp;0.into())</span>
+<span class="go">        .ok_or(InjectStatementError::Credential)?;</span>
+
+<span class="go">    if crypto_common::to_bytes(credential.value.cred_id()) != crypto_common::to_bytes(&amp;cred_id) {</span>
+<span class="go">        return Err(InjectStatementError::Credential);</span>
+<span class="go">    }</span>
+
+<span class="go">    let commitments = match &amp;credential.value {</span>
+<span class="go">        AccountCredentialWithoutProofs::Initial { icdv: _, .. } =&gt; {</span>
+<span class="go">            return Err(InjectStatementError::NotAllowed);</span>
+<span class="go">        }</span>
+<span class="go">        AccountCredentialWithoutProofs::Normal { commitments, .. } =&gt; commitments,</span>
+<span class="go">    };</span>
+
+<span class="go">    let mut challenges = state</span>
+<span class="go">        .challenges</span>
+<span class="go">        .lock()</span>
+<span class="go">        .map_err(|_| InjectStatementError::LockingError)?;</span>
+
+<span class="go">    if statement.verify(</span>
+<span class="go">        &amp;request.challenge.0,</span>
+<span class="go">        &amp;state.global_context,</span>
+<span class="go">        cred_id.as_ref(),</span>
+<span class="go">        commitments,</span>
+<span class="go">        &amp;request.proof.proof.value, // TODO: Check version.</span>
+<span class="go">    ) {</span>
+<span class="go">        challenges.remove(&amp;base16_encode_string(&amp;request.challenge.0));</span>
+<span class="go">        let sig = key_pair.sign(&amp;acc_info.response.account_address.0);</span>
+<span class="go">        Ok(hex::encode_upper(sig.sig))</span>
+<span class="go">    } else {</span>
+<span class="go">        Err(InjectStatementError::InvalidProofs)</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>The line below from the code snippet makes sure that the credential sent by the user is the same as the one that the account has.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if crypto_common::to_bytes(credential.value.cred_id()) != crypto_common::to_bytes(&amp;cred_id) {</span>
+<span class="go">        return Err(InjectStatementError::Credential);</span>
+<span class="go">    }</span>
+</pre></div>
+</div>
+<p>Then you will get the commitments, which are the protectors of the attribute credentials in a way. They are the attributes that the user doesn’t want to reveal on the account. So a user can decide to open certain commitments and reveal the attributes.</p>
+<p>There is a great non-cryptographic analogy that explains commitments really well. Assume that you have data that you want to protect: you don’t want others to see it and you don’t want to change it. You put that in an envelope, seal it, and send it to the public. No one can see it because it’s sealed and you can not change it because it’s out now.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">let commitments = match &amp;credential.value {</span>
+<span class="go">        AccountCredentialWithoutProofs::Initial { icdv: _, .. } =&gt; {</span>
+<span class="go">            return Err(InjectStatementError::NotAllowed);</span>
+<span class="go">        }</span>
+<span class="go">        AccountCredentialWithoutProofs::Normal { commitments, .. } =&gt; commitments,</span>
+<span class="go">    };</span>
+</pre></div>
+</div>
+<p>And finally, verify the proof with this part and respond back with the result, which is the signature. You need the <code class="docutils literal notranslate"><span class="pre">request</span></code>, <code class="docutils literal notranslate"><span class="pre">global_context</span></code>, <code class="docutils literal notranslate"><span class="pre">cred_id</span></code>, <code class="docutils literal notranslate"><span class="pre">commitments</span></code>, and the <code class="docutils literal notranslate"><span class="pre">proof</span></code> itself to do that. If it’s successful, you can remove the challenge from the map since it’s a one-time thing and sign the account address (as string) with your private key. You used this approach to create and share the signature but it’s also fine to sign any message. In the smart contract, while minting, you would like to verify that the claim is verified and signed with your private key. It may sound a bit complicated but you will understand it better while implementing the dApp.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if statement.verify(</span>
+<span class="go">        &amp;request.challenge.0,</span>
+<span class="go">        &amp;state.global_context,</span>
+<span class="go">        cred_id.as_ref(),</span>
+<span class="go">        commitments,</span>
+<span class="go">        &amp;request.proof.proof.value, // TODO: Check version.</span>
+<span class="go">    ) {</span>
+<span class="go">        challenges.remove(&amp;base16_encode_string(&amp;request.challenge.0));</span>
+<span class="go">        let sig = key_pair.sign(&amp;acc_info.response.account_address.0);</span>
+<span class="go">        Ok(hex::encode_upper(sig.sig))</span>
+<span class="go">    } else {</span>
+<span class="go">        Err(InjectStatementError::InvalidProofs)</span>
+<span class="go">    }</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="main-rs">
+<h3>Main.rs<a class="headerlink" href="#main-rs" title="Permalink to this headline">#</a></h3>
+<p>Now you need to create the main program to run the HTTP server that listens to all endpoints required to create and send a challenge, share the statement, and verify the claim. Create a file called <strong>main.rs</strong>. Use <strong>warp</strong> to run an async HTTP server in a few easy steps as already mentioned. You definitely need the <strong>handlers.rs</strong> and <strong>types.rs</strong> to invoke the helper functions and the data structures.</p>
+<p>Create a struct called <strong>IdVerifierConfig</strong> that accepts command line parameters while running the application. First, it should have a node <code class="docutils literal notranslate"><span class="pre">endpoint</span></code> to build and configure HTTP/2 channels (which gRPCv2 uses to stream). Second, you need a port for the server to listen and a logger using the <strong>log</strong> crate. Finally, give the <code class="docutils literal notranslate"><span class="pre">statement</span></code>, <code class="docutils literal notranslate"><span class="pre">verify_key</span></code>, and <code class="docutils literal notranslate"><span class="pre">sign_key</span></code> (the keys you get from the exported wallet file) as parameters in string form. Note that for all parameters you specified some default values with the <code class="docutils literal notranslate"><span class="pre">clap</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mod handlers;</span>
+<span class="go">mod types;</span>
+<span class="go">use crate::handlers::*;</span>
+<span class="go">use crate::types::*;</span>
+
+<span class="go">use clap::Parser;</span>
+<span class="go">use concordium_rust_sdk::common::types::KeyPair;</span>
+<span class="go">use concordium_rust_sdk::{</span>
+<span class="go">    common::{self as crypto_common},</span>
+<span class="go">    id::{</span>
+<span class="go">        constants::{ArCurve, AttributeKind},</span>
+<span class="go">        id_proof_types::Statement,</span>
+<span class="go">    },</span>
+<span class="go">    v2::BlockIdentifier,</span>
+<span class="go">};</span>
+<span class="go">use log::info;</span>
+<span class="go">use std::{</span>
+<span class="go">    collections::HashMap,</span>
+<span class="go">    sync::{Arc, Mutex},</span>
+<span class="go">};</span>
+<span class="go">use warp::Filter;</span>
+
+<span class="go">/// Structure used to receive the correct command line arguments.</span>
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>clap::Parser, Debug<span class="o">)]</span>
+<span class="gp">#</span><span class="o">[</span>clap<span class="o">(</span>arg_required_else_help<span class="o">(</span><span class="nb">true</span><span class="o">))]</span>
+<span class="gp">#</span><span class="o">[</span>clap<span class="o">(</span>version, author<span class="o">)]</span>
+<span class="go">struct IdVerifierConfig {</span>
+<span class="gp">    #</span><span class="o">[</span>clap<span class="o">(</span>
+<span class="go">        long = &quot;node&quot;,</span>
+<span class="go">        help = &quot;GRPC V2 interface of the node.&quot;,</span>
+<span class="go">        default_value = &quot;http://localhost:20000&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    endpoint: concordium_rust_sdk::v2::Endpoint,</span>
+<span class="gp">    #</span><span class="o">[</span>clap<span class="o">(</span>
+<span class="go">        long = &quot;port&quot;,</span>
+<span class="go">        default_value = &quot;8100&quot;,</span>
+<span class="go">        help = &quot;Port on which the server will listen on.&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    port: u16,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span>
+<span class="go">        long = &quot;log-level&quot;,</span>
+<span class="go">        default_value = &quot;debug&quot;,</span>
+<span class="go">        help = &quot;Maximum log level.&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    log_level: log::LevelFilter,</span>
+<span class="gp">    #</span><span class="o">[</span>clap<span class="o">(</span>
+<span class="go">        long = &quot;statement&quot;,</span>
+<span class="go">        help = &quot;The statement that the server accepts proofs for.&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    statement: String,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span>
+<span class="go">        long = &quot;sign-key&quot;,</span>
+<span class="go">        help = &quot;Sign key of the first credential of the signer&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    sign_key: String,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span>
+<span class="go">        long = &quot;verify-key&quot;,</span>
+<span class="go">        help = &quot;Verify key of the first credential of the signer&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    verify_key: String,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>As the final step, add the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. Add the <code class="docutils literal notranslate"><span class="pre">#\[tokio::main]</span></code> macro just before main. It transforms the async <code class="docutils literal notranslate"><span class="pre">main()</span></code> function into a synchronous <code class="docutils literal notranslate"><span class="pre">main()</span></code> function that initializes a runtime instance and executes the async <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</p>
+<p>First, parse the parameters given as input while running the executable. After initializing the log file, serialize the statement (see the <a class="reference external" href="https://github.com/Concordium/concordium-rust-sdk">concordium-rust-sdk</a> for more details), create a client, and get the latest cryptographic parameters which are public and the <code class="docutils literal notranslate"><span class="pre">global_context</span></code> until the finalized last block from Concordium (or the request made). Create a state variable (initiate it) with empty challenges and the global context.</p>
+<div class="section" id="get-challenge">
+<h4>Get Challenge<a class="headerlink" href="#get-challenge" title="Permalink to this headline">#</a></h4>
+<p>cors is a standard in HTTP related to the permissions to access and manage a website that you set in the server’s settings, and then implement the first endpoint which is the get challenge. So when someone wants to get a randomly generated challenge for their address, they must call this endpoint. You will get the address from the query payload and invoke <code class="docutils literal notranslate"><span class="pre">handle_get_challange()</span></code>. Since you don’t need input this is a <code class="docutils literal notranslate"><span class="pre">GET</span></code> function that is available at <code class="docutils literal notranslate"><span class="pre">localhost:8000/api/challenge</span></code>, and you will use the same channel when the challenge is generated and stored on the state in a map with its key, such as base16 encoded version, &lt;address, time&gt;.</p>
+</div>
+<div class="section" id="get-statement">
+<h4>Get Statement<a class="headerlink" href="#get-statement" title="Permalink to this headline">#</a></h4>
+<p>The second endpoint is the get statement. When your dApp wants to verify that a user meets some conditions, it needs to know what conditions they are. You will answer with the statement from our input variables using the same channel. You don’t need input, so this is also a <code class="docutils literal notranslate"><span class="pre">GET</span></code> endpoint that is available at <code class="docutils literal notranslate"><span class="pre">localhost:8000/api/statement</span></code>.</p>
+</div>
+<div class="section" id="prove">
+<h4>Prove<a class="headerlink" href="#prove" title="Permalink to this headline">#</a></h4>
+<p>The last endpoint is the prove. Basically, the request that dApp posts (this is a POST endpoint) includes the challenge and the proof. You will send it to the <code class="docutils literal notranslate"><span class="pre">handle_provide_proof()</span></code> helper function to prove and sign it. In order to sign it, weyou need to re-create your key pair which are created using your <code class="docutils literal notranslate"><span class="pre">verify_key</span></code> and <code class="docutils literal notranslate"><span class="pre">sign_key</span></code>. When the proof is verified, this endpoint returns a signature (the public key of the user signed by the back end’s private key) that can be verifiable in the smart contract. Then the user will be able to mint the token because the signature will be verifiable by the smart contract using the public key of the back-end address.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="o">[</span>tokio::main<span class="o">]</span>
+<span class="go">async fn main() -&gt; anyhow::Result&lt;()&gt; {</span>
+<span class="go">    let app = IdVerifierConfig::parse();</span>
+<span class="go">    let mut log_builder = env_logger::Builder::new();</span>
+<span class="go">    // only log the current module (main).</span>
+<span class="go">    log_builder.filter_level(app.log_level); // filter filter_module(module_path!(), app.log_level);</span>
+<span class="go">    log_builder.init();</span>
+<span class="go">    let statement: Statement&lt;ArCurve, AttributeKind&gt; = serde_json::from_str(&amp;app.statement)?;</span>
+
+<span class="go">    let mut client = concordium_rust_sdk::v2::Client::new(app.endpoint).await?;</span>
+<span class="go">    let global_context = client</span>
+<span class="go">        .get_cryptographic_parameters(BlockIdentifier::LastFinal)</span>
+<span class="go">        .await?</span>
+<span class="go">        .response;</span>
+
+<span class="go">    log::debug!(&quot;Acquired data from the node.&quot;);</span>
+
+<span class="go">    let state = Server {</span>
+<span class="go">        challenges: Arc::new(Mutex::new(HashMap::new())),</span>
+<span class="go">        global_context: Arc::new(global_context),</span>
+<span class="go">    };</span>
+<span class="go">    let prove_state = state.clone();</span>
+<span class="go">    let challenge_state = state.clone();</span>
+
+<span class="go">    let cors = warp::cors()</span>
+<span class="go">        .allow_any_origin()</span>
+<span class="go">        .allow_header(&quot;Content-Type&quot;)</span>
+<span class="go">        .allow_method(&quot;POST&quot;);</span>
+
+<span class="go">    // 1a. get challenge</span>
+<span class="go">    let get_challenge = warp::get()</span>
+<span class="go">        .and(warp::path!(&quot;api&quot; / &quot;challenge&quot;))</span>
+<span class="go">        .and(warp::query::&lt;WithAccountAddress&gt;())</span>
+<span class="go">        .and_then(move |query: WithAccountAddress| {</span>
+<span class="go">            handle_get_challenge(challenge_state.clone(), query.address)</span>
+<span class="go">        });</span>
+
+<span class="go">    // 1b. get statement</span>
+<span class="go">    // change it to check older than 18 only.</span>
+<span class="go">    let get_statement = warp::get()</span>
+<span class="go">        .and(warp::path!(&quot;api&quot; / &quot;statement&quot;))</span>
+<span class="go">        .map(move || warp::reply::json(&amp;app.statement));</span>
+
+<span class="go">    // 2. Provide proof</span>
+<span class="go">    let provide_proof = warp::post()</span>
+<span class="go">        .and(warp::filters::body::content_length_limit(50 * 1024))</span>
+<span class="go">        .and(warp::path!(&quot;api&quot; / &quot;prove&quot;))</span>
+<span class="go">        .and(warp::body::json())</span>
+<span class="go">        .and_then(move |request: ChallengedProof| {</span>
+<span class="go">            let kp = KeyPair::from(ed25519_dalek::Keypair {</span>
+<span class="go">                public: ed25519_dalek::PublicKey::from_bytes(</span>
+<span class="go">                    hex::decode(&amp;app.verify_key).unwrap().as_slice(),</span>
+<span class="go">                )</span>
+<span class="go">                .unwrap(),</span>
+<span class="go">                secret: ed25519_dalek::SecretKey::from_bytes(</span>
+<span class="go">                    hex::decode(&amp;app.sign_key).unwrap().as_slice(),</span>
+<span class="go">                )</span>
+<span class="go">                .unwrap(),</span>
+<span class="go">            });</span>
+<span class="go">            handle_provide_proof(</span>
+<span class="go">                client.clone(),</span>
+<span class="go">                prove_state.clone(),</span>
+<span class="go">                statement.clone(),</span>
+<span class="go">                request,</span>
+<span class="go">                kp,</span>
+<span class="go">            )</span>
+<span class="go">        });</span>
+
+<span class="go">    info!(</span>
+<span class="go">        &quot;Starting up HTTP serve</span>
+<span class="go">r. Listening on port {}.&quot;,</span>
+<span class="go">        app.port</span>
+<span class="go">    );</span>
+
+<span class="go">    tokio::spawn(handle_clean_state(state.clone()));</span>
+
+<span class="go">    let server = get_challenge</span>
+<span class="go">        .or(get_statement)</span>
+<span class="go">        .or(provide_proof)</span>
+<span class="go">        .recover(handle_rejection)</span>
+<span class="go">        .with(cors)</span>
+<span class="go">        .with(warp::trace::request());</span>
+<span class="go">    warp::serve(server).run(([0, 0, 0, 0], app.port)).await;</span>
+<span class="go">    Ok(())</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Now you need to <a class="reference internal" href="minting-sc.html#nft-w-id-sc"><span class="std std-ref">create a smart contract for minting NFTs</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">NFT minting with ID 2.0</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="minting-sc.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The minting contract</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
