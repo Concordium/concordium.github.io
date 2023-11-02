@@ -1,0 +1,13 @@
+{# Allows a page to override the template using :template:<file-in-_template-dir> #}
+
+{% extends meta.template|default('!layout.html') if meta is defined else "!layout.html" %}
+
+{# Adds extra headers to the template, such as custom styling #}
+{% block extrahead %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+{% endblock %}
+
+{% block footer %}
+  {% include "footer.html" %}
+  {% include "analytics.html" %}
+{% endblock %}
