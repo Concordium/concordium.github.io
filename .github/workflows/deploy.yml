@@ -40,18 +40,16 @@ jobs:
             pr-preview/
             pr-preview-academy/
 
-      - name: Configure SSH known_hosts 🔧
-        shell: bash
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - name: Install SSH Client 🔑
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.CONCORDIUM_ACADEMY_DEPLOY_KEY }}
 
       - name: Deploy Concordium Academy 🚀
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          publish_dir: build-academy
-          external_repository: Concordium/concordium-academy
-          publish_branch: gh-pages
-          deploy_key: ${{ secrets.CONCORDIUM_ACADEMY_DEPLOY_KEY }}
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          repository-name: Concordium/concordium-academy
+          branch: gh-pages
+          ssh-key: true
+          folder: build-academy
+          clean: true
