@@ -40,6 +40,11 @@ jobs:
             pr-preview/
             pr-preview-academy/
 
+      - name: Configure SSH known_hosts 🔧
+        shell: bash
+        run: |
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
       - name: Deploy Concordium Academy 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
