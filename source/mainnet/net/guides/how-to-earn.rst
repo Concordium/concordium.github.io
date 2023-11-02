@@ -14,13 +14,14 @@ To earn more CCDs, you can either delegate or bake. There are advantages and dis
       - **Delegating**
    *  - Must run a node
       - Node not required
+   *  - Minimum stake required
+      - No minimum stake required
    *  - Earns higher rewards
       - Earns lower rewards
 
 To learn more about baking, see :ref:`Bakers<baker-concept>`. To learn more about delegation, see :ref:`Delegation<delegation-concept>`. There is also an :ref:`FAQ<delegation-faq>` that answers many common questions about delegation and also some about baker pools.
 
 .. toctree::
-   :hidden:
    :maxdepth: 1
 
    ../concepts/concepts-baker

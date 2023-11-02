@@ -9,7 +9,7 @@ The wallet FAQs can help you decide which wallet is best for you.
 
 .. toctree::
     :hidden:
-    :maxdepth: 2
+    :maxdepth: 1
 
     deciding-wallet
     ../mobile-wallet-gen2/faq
