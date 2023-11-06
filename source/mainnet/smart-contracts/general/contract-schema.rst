@@ -166,6 +166,6 @@ This allows Wasm modules to include a named section of bytes, which does not
 affect the semantics of running the Wasm module.
 
 All schemas are collected and added in one custom section named
-``concordium-schema-v2``.
+``concordium-schema``.
 This collection is a list of pairs, containing the name of the contract encoded
 in UTF-8 and the contract schema bytes.
