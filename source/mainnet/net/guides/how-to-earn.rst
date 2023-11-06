@@ -1,10 +1,10 @@
 .. _how-to-earn:
 
-===========================
-How to earn with Concordium
-===========================
+=======================
+Staking with Concordium
+=======================
 
-To earn more CCDs, you can choose either delegation or validation. There are advantages and disadvantages to both options.
+To earn more CCDs, you can stake either as a delegator or validator. There are advantages and disadvantages to both options.
 
 .. list-table::
    :widths: 20 20

@@ -216,7 +216,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Lottery Power
 
-      A validator's lottery power is its relative stake and is therefore proportional to the :term:`staked amount` of that validator. The lottery power is updated each :term:`epoch`, and is based on the stake distribution at the end of the epoch before last. (This delay ensures that the stake distribution is determined before the randomness that fixes the validators for the epoch; otherwise, stakeholders might redistribute their stake to luckier validators, which undermines the security of the system.) :term:`Delegation<delegator>` affects the lottery power of the validator by increasing their stake, thus increasing the odds of that validator being chosen to bake a block.
+      A validator's lottery power is its relative stake and is therefore proportional to the :term:`staked amount` of that validator. The lottery power is updated each :term:`pay day`, and is based on the stake distribution at the end of the epoch before last. (This delay ensures that the stake distribution is determined before the randomness that fixes the validators for the epoch; otherwise, stakeholders might redistribute their stake to luckier validators, which undermines the security of the system.) :term:`Delegation<delegator>` affects the lottery power of the validator by increasing their stake, thus increasing the odds of that validator being chosen to bake a block.
 
    Mainnet
 
@@ -268,7 +268,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Quorum certificate
 
-      When the members of the finalization committee finalize the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the :term:`round`, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a :term:`timeout certificate`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
+      When the validators sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the round leader fails to produce a block in the :term:`round`, or not enough signatures were gathered for a quorum certificate, then the validators will instead send timeout messages, which are aggregated to form a :term:`timeout certificate`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
 
    Range proofs
 

@@ -5,17 +5,37 @@
 Validators
 ==========
 
-Validation is key to the Concordium blockchain. A validator is a :term:`node` that participates in the network by producing new :term:`blocks<block>` that are added to the chain. The blockchain consists of multiple :term:`validator` nodes.
+Validation is key to the Concordium blockchain. A :term:`node` is a validator node when it participates actively in the network by creating new :term:`blocks<block>` that are added to the chain. The blockchain consists of multiple :term:`validator` nodes. A :term:`validator` collects, orders, and validates the :term:`transactions<transaction>` that are included in a block to maintain the integrity of the blockchain. The validators sign each block that they produce so that the block can be verified and executed by the other validators in the network.
 
-How validation works
-====================
+.. _concepts-baker-stake:
 
-A node is a validator node when it participates actively in the network by creating new blocks that are added to the chain. A :term:`validator` collects, orders, and validates the :term:`transactions<transaction>` that are included in a block to maintain the integrity of the blockchain. The validators sign each block that they bake so that the block can be verified and executed by the rest of the participants of the network.
+Stake and lottery
+=================
 
-The chain a validator builds upon is the :term:`best chain` when making a new block. The best chain is selected using :term:`consensus protocol<Concordium Byzantine Fault Tolerance (BFT) protocol>`. In particular, the best chain has the most validated blocks.
+A validator needs to :term:`stake<staked amount>` a part of its CCD balance on the validator account. Later, the validator can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it's released by the validator.
+
+.. note::
+
+   If an account owns an amount that was transferred with a release schedule, the amount can be staked even if it hasn't been released yet.
+
+To be chosen to produce a block, the validator must take part in a *lottery*. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
+
+Time concepts
+=============
+
+The Concordium blockchain divides time into :term:`epochs<epoch>`.
+
+When considering the rewards and other validation-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current validators and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :term:`Genesis block`. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
+
+Epochs are subdivided into :term:`rounds<round>`. In each round either a block is produced by the elected leader and validated by (2/3 of) the other validators, or a timeout is produced if the timeout time is reached before a block and its :term:`quorum certificate` are produced. In the case of a timeout, a :term:`timeout certificate` is produced for the block. The timeout time for the next round may shrink or grow depending on whether a block was finalized or a timeout occurred in the previous round. Using :term:`consensus protocol<Concordium Byzantine Fault Tolerance (BFT) protocol>`, a validator has to add the new block after the block from the previous round, unless a timeout occurred in the previous round, in which case they can add their block to an older round.
+
+A :term:`pay day` is the point at which new CCDs are minted and rewards are distributed to validators and delegators. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new valdiators begin producing blocks, and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of round leaders is finalized at the end of an epoch then one epoch passes before that next epoch where they are eligible to produce blocks for the entire day.
+
+A :term:`cool-down period` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a valiator's stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :term:`pay day` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down period.)
 
 Validator keys
---------------
+==============
+
 A node uses a set of :term:`cryptographic keys<private keys>` called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the :term:`lottery <lottery power>` as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an  account. The validator node will start validation after the next :term:`pay day` once the transaction has been approved.
 
 Validator account
@@ -32,42 +52,15 @@ Rewards are added to the staked amount by default. However, you can choose to re
    It is not possible to have multi-signature validator accounts in |mw-gen2|, |mw-gen1|, or |bw|. If you need this functionality, you need to run Desktop Wallet.
 
 Staking pool
-------------
+============
 
 You have the option to open a :term:`staking pool`. A staking pool allows others who want to earn rewards to do so without the need to run a node or become a validator themselves. To do this they :ref:`delegate<delegation-concept>` an amount of stake to your staking pool which then increases your stake and your :term:`chances of winning the lottery<winning probability>` to produce a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.
 
-The maximum size of a pool is 10% of all stake in pools (i.e., excluding passive delegation).
-
-.. _concepts-baker-stake:
-
-Stake and lottery
------------------
-
-A validator needs to :term:`stake<staked amount>` a part of its CCD balance on the validator account. Later, the validator can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it's released by the validator.
-
-.. note::
-
-   If an account owns an amount that was transferred with a release schedule, the amount can be staked even if it hasn't been released yet.
-
-To be chosen to produce a block, the validator must take part in a *lottery*. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
+The maximum size of a pool is 5% of all stake in pools (i.e., excluding passive delegation). Any stake above this limit will not contribute towards earning rewards. It isn't possible to add more stake to exceed the limit, but reward restaking can push it over the limit, or if a lot of other validators unstake and the thresholds change, the staking pool can exceed the limit.
 
 .. todo::
 
    If a validator misses producing a block, it is known which validator missed it. This is useful information for delegators when choosing a staking pool to delegate to, and node runners.
-
-Time concepts
--------------
-
-The Concordium blockchain divides time into :term:`epochs<epoch>`.
-
-When considering the rewards and other validation-related concepts, the concept of an *epoch* is used as a unit of time that defines a period in which the set of current validators and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :term:`Genesis block`. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
-
-Epochs are subdivided into :term:`rounds<round>`. Rounds have either a block or a timeout. Rounds have a minimum time interval, but the rounds can grow "in time" if a round times out. For example, if round 1 times out, then round 2's duration increases and so on. Then whenever there is a block in a round that manages to get a :term:`quorum certificate` attached, then the "round duration" will shrink, and it will continue to do so if , for example, there have been multiple rounds that have timed out.
-But it cannot shrink below the minimum time interval given by the chain parameters. There can only ever be one block for a certain round across all branches, thus there is a unique leader (potential validator) for a round in an epoch.
-
-A :term:`pay day` is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new valdiators begin producing blocks, and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. Validators are finalized at the end of an epoch then one epoch passes before that next epoch where they are eligible to produce blocks.
-
-A :term:`cool-down period` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a valiator's stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :term:`pay day` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down period.)
 
 Finalization
 ============
@@ -86,21 +79,16 @@ Finalization happens at a minimum two seconds after block creation. A new block 
 
 When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
 
-Finalization committee
-----------------------
-
-The finalization committee is formed by the validators with a staked amount of at least 0.1% of the total stake of CCD in pools. If you are not in the finalization committee,  you will probably have to increase your staked amount to reach the threshold. There is a minimum and maximum size for the finalization committee; it is 0.1% of the effective stake in pools, but always at least 40 validators and always at most 1000 validators.
-
 Overview of the validation process
 ==================================
 
-#. A Proof-of-stake based lottery system produces a list of validators. The higher the validator's stake, the higher the probability of being included on the list more often.
+#. A Proof-of-stake based lottery system produces a list of round leaders for the epoch. The higher the validator's stake, the higher the probability of being included on the list more often.
 
 #. The first validator on the list (Bob) makes a new block that appends to the genesis block.
 
 #. Bob then broadcasts the block to all peers.
 
-#. If the block is valid, the finalizers will sign it.
+#. If the block is valid, the validators will sign it.
 
 #. If the combined effective stake of the finalizers who sign the block is *greater than or equal to* two-thirds of the total stake, the block gets a :term:`Quorum Certificate` (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.
 
@@ -201,7 +189,7 @@ This overview describes the recommended scenario for running a node and becoming
 
    - :ref:`On Docker/Linux<baking-docker>`.
 
-For information about how to update your validator or stop validation, see :ref:`Change baker options<update-baker-mw>`.
+For information about how to update your validator or stop validation, see :ref:`Change validator options<update-baker-mw>`.
 
 Validation with |mw-gen1| and |mw-gen2|
 ---------------------------------------
