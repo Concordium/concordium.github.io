@@ -166,7 +166,7 @@ This allows Wasm modules to include a named section of bytes, which does not
 affect the semantics of running the Wasm module.
 
 The module can contain a schema in one of two different custom sections. This collection is a list of pairs, containing the name of the contract encoded
-in UTF-8 and the contract schema bytes. The section 'concordium-schema' is the most common and is what the current tooling produces.
+in UTF-8 and the contract schema bytes. The section ``concordium-schema`` is the most common and is what the current tooling produces.
 
 The supported sections depend on the module version. The schema version can be either defined by the section name or embedded into the actual schema:
 - Both 'V0' and 'V1' modules support the section 'concordium-schema' where the schema includes the version.
