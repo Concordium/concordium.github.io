@@ -42,15 +42,15 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Best block
 
-      Last block on the :term:`best chain`.
+      This term is no longer used. See :term:`Concordium Byzantine Fault Tolerance (BFT) protocol`.
 
    Best chain
 
-      The chain a :term:`validator` will build upon when making a new block. The best chain selection procedure is determined by the consensus protocol. In particular, the best chain has the most finalized blocks, and the most blocks after the last finalized block.
+      This term is no longer used. See :term:`Concordium Byzantine Fault Tolerance (BFT) protocol`.
 
    Block
 
-      The basic unit of the blockchain, which is produced by a :term:`validator`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a :term:`slot time<slot>` that records when it was baked. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.
+      The basic unit of the blockchain, which is produced by a :term:`validator`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a :term:`slot time<slot>` that records when it was produced. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.
 
    Branch
 
@@ -116,7 +116,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Concordium Byzantine Fault Tolerance (BFT) protocol
 
-      The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
+      The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate (QC). This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate (TC). Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
 
    Credential
 

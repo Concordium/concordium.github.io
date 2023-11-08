@@ -20,6 +20,31 @@ A validator needs to :term:`stake<staked amount>` a part of its CCD balance on t
 
 To be chosen to produce a block, the validator must take part in a *lottery*. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
 
+Overview of the validation process
+==================================
+
+#. A Proof-of-stake based lottery system produces a list of round leaders for the epoch. The higher the validator's stake, the higher the probability of being included on the list more often.
+
+#. The first validator on the list (Bob) makes a new block that appends to the genesis block.
+
+#. Bob then broadcasts the block to all peers.
+
+#. If the block is valid, the validators will sign it.
+
+#. If the combined effective stake of the finalizers who sign the block is *greater than or equal to* two-thirds of the total stake, the block gets a :term:`Quorum Certificate` (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.
+
+.. image:: ../images/concepts/baker-process1.png
+   :alt: diagram of baker process
+
+6. The next validator (Alice) now uses the QC to produce the next block. The new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.
+
+.. image:: ../images/concepts/baker-process2.png
+   :alt: diagram of baker process
+
+If there are no issues, the protocol repeats this process from step 3.
+
+In the case of a faulty validator who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If Bob does not produce a block within a certain time, a :term:`Timeout Certificate` (TC) is issued to move the process forward. Alice can now use the TC instead of the QC to extend the previous block.
+
 Time concepts
 =============
 
@@ -62,47 +87,12 @@ The maximum size of a pool is 5% of all stake in pools (i.e., excluding passive 
 
    If a validator misses producing a block, it is known which validator missed it. This is useful information for delegators when choosing a staking pool to delegate to, and node runners.
 
-Finalization
-============
-(SHOULD ALL OF THIS BE REMOVED?)
+When is a block final?
+======================
 
-Finalization ensures that produced blocks become finalized as quickly as possible and with 100% certainty.
-
-What is finalization?
----------------------
-
-Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the validators with an effective stake amount of at least 0.1% of the total amount (effective stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
-
-Finalizers sign a block, and their collective signatures are aggregated to form a :term:`quorum certificate`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
+Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Finalizers sign a block, and their collective signatures are aggregated to form a :term:`quorum certificate`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
 
 Finalization happens at a minimum two seconds after block creation. A new block has to be created descended from that block for finalization to happen.
-
-When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
-
-Overview of the validation process
-==================================
-
-#. A Proof-of-stake based lottery system produces a list of round leaders for the epoch. The higher the validator's stake, the higher the probability of being included on the list more often.
-
-#. The first validator on the list (Bob) makes a new block that appends to the genesis block.
-
-#. Bob then broadcasts the block to all peers.
-
-#. If the block is valid, the validators will sign it.
-
-#. If the combined effective stake of the finalizers who sign the block is *greater than or equal to* two-thirds of the total stake, the block gets a :term:`Quorum Certificate` (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.
-
-.. image:: ../images/concepts/baker-process1.png
-   :alt: diagram of baker process
-
-6. The next validator (Alice) now uses the QC to produce the next block. The new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.
-
-.. image:: ../images/concepts/baker-process2.png
-   :alt: diagram of baker process
-
-If there are no issues, the protocol repeats this process from step 3.
-
-In the case of a faulty validator who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If Bob does not produce a block within a certain time, a :term:`Timeout Certificate` (TC) is issued to move the process forward. Alice can now use the TC instead of the QC to extend the previous block.
 
 Tools to be a validator
 =======================
