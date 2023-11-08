@@ -39,17 +39,3 @@ jobs:
           clean-exclude: |
             pr-preview/
             pr-preview-academy/
-
-      - name: Install SSH Client 🔑
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.CONCORDIUM_ACADEMY_DEPLOY_KEY }}
-
-      - name: Deploy Concordium Academy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with:
-          repository-name: Concordium/concordium-academy
-          branch: gh-pages
-          ssh-key: true
-          folder: build-academy
-          clean: true

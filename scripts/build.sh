@@ -23,8 +23,8 @@ ln -sf "en/mainnet/404.html" "${build_dir}/404.html"
 
 printf "\nDone building Concordium Developer Documentation to '${build_dir}'\n"
 
-
 # Build Concordium Academy, depends on objects.inv produce by mainnet for checking links.
+# This will also ensure that links to the documentation used by the Academy site are still valid.
 printf "\nBuilding Concordium Academy... \n\n"
 
 academy_build_dir='build-academy'
