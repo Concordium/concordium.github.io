@@ -161,7 +161,7 @@ Wallets
 
     November 9, 2023
 
-    |bw| 1.1.10 deprecates the use of the gRPC v1 API. It also supports changes made to the web-sdk, and it supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
+    |bw| 1.1.11 deprecates the use of the gRPC v1 API. It also supports changes made to the web-sdk, and it supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
     .. dropdown:: Previous releases
 
