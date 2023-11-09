@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/contract-schema.d8bbef34-a54b-4fa4-8adb-f60429f69717.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/contract-schema.639b62d2-be75-4f7e-8270-89ccc3996d47.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1935,10 +1935,20 @@ of a variable length type, such as <code class="docutils literal notranslate"><s
 section</a> feature of Wasm modules.
 This allows Wasm modules to include a named section of bytes, which does not
 affect the semantics of running the Wasm module.</p>
-<p>All schemas are collected and added in one custom section named
-<code class="docutils literal notranslate"><span class="pre">concordium-schema-v2</span></code>.
-This collection is a list of pairs, containing the name of the contract encoded
-in UTF-8 and the contract schema bytes.</p>
+<p>The module can contain a schema in one of two different custom sections. This collection is a list of pairs, containing the name of the contract encoded
+in UTF-8 and the contract schema bytes. The section <code class="docutils literal notranslate"><span class="pre">concordium-schema</span></code> is the most common and is what the current tooling produces.</p>
+<p>The supported sections depend on the module version. The schema version can be either defined by the section name or embedded into the actual schema:
+- Both ‘V0’ and ‘V1’ modules support the section <code class="docutils literal notranslate"><span class="pre">concordium-schema</span></code> where the schema includes the version.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For ‘V0’ modules this is always a ‘V0’ schema.</p></li>
+<li><p>For ‘V1’ modules this can be a ‘V1’, ‘V2’, or ‘V3’ schema.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>‘V0’ modules additionally support section <code class="docutils literal notranslate"><span class="pre">concordium-schema-v1</span></code> which always contain a ‘V0’ schema.</p></li>
+<li><p>‘V1’ modules additionally support section <code class="docutils literal notranslate"><span class="pre">concordium-schema-v2</span></code> which always contain a ‘V1’ schema.</p></li>
+</ul>
 </div>
 </div>
 
