@@ -159,11 +159,15 @@ Wallets
 |bw|
 -------------------------
 
-    September 12, 2023
+    November 9, 2023
 
-        |bw| 1.1.8 contains a simple page for Web3 ID age proofs.
+    |bw| 1.1.11 removes the use of the gRPC v1 API and JSON-RPC. It also supports changes made to the web-sdk, and it supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.1.8 - September 12, 2023
+
+            |bw| 1.1.8 contains a simple page for Web3 ID age proofs.
 
         .. dropdown:: |bw| 1.1.7 - September 11, 2023
 
