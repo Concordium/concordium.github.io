@@ -298,7 +298,7 @@ Update pool settings
             :width: 40%
             :alt: screen showing actions to update validator pool status
 
-    #. Review the validator commission rates. Click **Continue**.
+    #. You can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired. Click **Continue**.
 
     #. Update the staking pool metadata URL, if desired. Click **Continue**.
 

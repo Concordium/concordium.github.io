@@ -46,8 +46,8 @@ This function looks up the public key/keys associated with the signer address an
 
     Ed25519 is an elliptic curve signing algorithm using EdDSA and Curve25519. It belongs to asymmetric cryptography,
     also known as public-key cryptography, where you generate a pair of related keys --
-    one public key and one private key. The sponsoree encrypts/signs a message with its private key
-    and anyone can decrypt the sponsoree's message using its public key. The public key is shared with other entities (e.g., the smart contract) while the private key is only known to the sponsoree.
+    one public key and one private key. The sponsoree signs a message with its private key
+    and anyone can verify the sponsoree's signature using its public key. The public key is shared with other entities (e.g., the smart contract) while the private key is only known to the sponsoree.
     The smart contract needs to know the public key to be able to verify that the sponsoree signed the message with the corresponding private key.
 
 .. note::

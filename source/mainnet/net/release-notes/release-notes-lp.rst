@@ -19,11 +19,15 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    October 9, 2023
+    October 31, 2023
 
-        Version 1.2.0 includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
+        Version 1.3.0 contains support for deep linking and universal linking, and fixes an issue with the shielded balance toggle.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.2.0 - October 9, 2023
+
+            Version 1.2.0 includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.
 
         .. dropdown:: |mw-gen2| 1.1.1 - July 31, 2023
 
@@ -62,15 +66,29 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    October 4, 2023
+    October 26, 2023
 
-        Version 1.3.0 contains several fixes for the WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds. It also contains the ability to view the secret recovery phrase if you need to record it again.
+    Version 1.4.0 contains visual improvements to match the new Concordium brand identity. It also contains the following fixes:
 
-        .. note::
+      - parsing of "broken" schema format for contract update transactions when using WalletConnect
 
-            The option to view the secret recovery phrase is not available simply by upgrading to version 1.3.0. Instead, you must either create a new wallet or recover your wallet to be able to use this option.
+      - changed the incorrect text in the identity name dialog
+
+      - not renaming the account when edited from the settings
+
+      - incorrect CCD token balance if some amount is shielded
+
+      - keyboard not appearing when the authorization dialog opened
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.3.0 - October 4, 2023
+
+            Version 1.3.0 contains several fixes for the WalletConnect functionality, including some fixes to the user interface and error messages, and also a crash when sending funds. It also contains the ability to view the secret recovery phrase if you need to record it again.
+
+            .. note::
+
+                The option to view the secret recovery phrase is not available simply by upgrading to version 1.3.0. Instead, you must either create a new wallet or recover your wallet to be able to use this option.
 
         .. dropdown:: |mw-gen2| 1.2.1 - August 16, 2023
 
@@ -141,11 +159,15 @@ Wallets
 |bw|
 -------------------------
 
-    September 12, 2023
+    November 9, 2023
 
-        |bw| 1.1.8 contains a simple page for Web3 ID age proofs.
+    |bw| 1.1.11 removes the use of the gRPC v1 API and JSON-RPC. It also supports changes made to the web-sdk, and it supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.1.8 - September 12, 2023
+
+            |bw| 1.1.8 contains a simple page for Web3 ID age proofs.
 
         .. dropdown:: |bw| 1.1.7 - September 11, 2023
 
