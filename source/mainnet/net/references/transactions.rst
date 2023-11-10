@@ -511,7 +511,7 @@ The output is:
 
 .. code-block:: console
 
-   # Parameters related to baker pools:
+   # Parameters related to staking pools:
      + minimum equity capital: 14000.000000 CCD
      + maximum fraction of total stake a pool is allowed to hold: 0.1
      + maximum factor a pool may stake relative to the baker's stake: 3 % 1
@@ -585,7 +585,7 @@ The output is:
      - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
    * -
      - pool owner cooldown duration
-     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cool-down has expired.
+     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.
    * -
      - allowed range for finalization commission
      - The allowed range of finalization commissions bakers may select when creating or updating pools.
