@@ -7,7 +7,7 @@ CCDScan Staking overview
 The Staking overview shows information about validators during the selected time range in the filter:
 
 .. image:: ../images/ccd-scan/ccd-scan-bakers.png
-    :alt: dark screen with graphs at top, table at bottom showing baking information
+    :alt: dark screen with graphs at top, table at bottom showing validator information
 
 |
 
@@ -73,9 +73,8 @@ If you select **Passive delegation**  it is possible to see the size of the pass
 - **Delegated stake**: amount of CCD delegated to passive delegation.
 - **APY (7 days)**: the calculated yield of passive delegation based on past 7 days.
 - **APY (30 days)**: the calculated yield of passive delegation based on past 30 days.
-- **Baking commission**: percent of rewards paid as commission to baker.
-- **Finalisation commission**: percentage of finalization rewards that are paid as commission to the baker.
-- **Transaction commission**: percentage of transaction rewards that are paid as commission to the baker.
+- **Validator commission**: percent of rewards paid as commission to validator.
+- **Transaction commission**: percentage of transaction rewards that are paid as commission to the validator.
 - **Rewards**: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table.
     - **Time** shows the date/time the reward was paid
     - **Reference** shows the first six characters of the block hash in which the reward was paid. You can click Copy |copy| to copy the entire hash. Click the hash to see the :ref:`block details<home-screen-block>` for the block where the award payout occurred.

@@ -121,17 +121,17 @@ When you change the stake it can influence your :term:`chance of being selected 
 
         #. Go to **Accounts** and select the account whose baker stake you want to change.
 
-        #. Click **More options** and select **Baking**.
+        #. Click **More options** and select **Validation**.
 
-        #. Click **Update baker stake**.
+        #. Click **Update validator stake**.
 
             .. image:: ../images/desktop-wallet/dw-baker-menu.png
-                :alt: screen showing all baker options
+                :alt: screen showing all validator options
 
         #. Enter the new amount that you want to stake if you want to change the amount. Change the restaking preference if you want to change that. Click **Continue**.
 
             .. image:: ../images/desktop-wallet/dw-baker-stake.png
-                :alt: screen to update baker stake and restake preference options
+                :alt: screen to update validator stake and restake preference options
 
         .. Note::
             If you reduce the staked amount, a :term:`cool-down<cool-down period>` period applies.
@@ -324,33 +324,33 @@ Update pool settings
 
         #. Go to **Accounts** and select the account on which you have a baker pool that you want to update and click **More options**.
 
-        #. Select **Baking**.
+        #. Select **Validation**.
 
-        #. Click **Update baker pool**.
+        #. Click **Update staking pool**.
 
             .. image:: ../images/desktop-wallet/dw-baker-menu.png
-                :alt: screen showing all baker options
+                :alt: screen showing all validator options
 
-        #. Choose the status for your baker pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
+        #. Choose the status for your staking pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
 
-            - Open: open your baker pool to delegators.
+            - Open: open your staking pool to delegators.
 
-            - Closed for new: close the baker pool to new delegators. Existing delegators remain in the pool.
+            - Closed for new: close the staking pool to new delegators. Existing delegators remain in the pool.
 
             - Closed for all: close the pool for all delegators.
 
             .. image:: ../images/desktop-wallet/dw-pool-status.png
-                :alt: screen showing baker pool options
+                :alt: screen showing staking pool options
 
-        #. Review the commission rates. Click **Continue**.
+        #. Review the commission rates and adjust with the sliders or type in the rate. Click **Continue**.
 
             .. image:: ../images/desktop-wallet/dw-pool-commission.png
-                :alt: screen displaying the commission rates for baker pools
+                :alt: screen displaying the commission rates for staking pools
 
-        #. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+        #. Enter your validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
             .. image:: ../images/desktop-wallet/dw-pool-url.png
-                :alt: screen to enter a URL for baker pool metadata
+                :alt: screen to enter a URL for staking pool metadata
 
         #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -364,19 +364,19 @@ Update pool settings
 
     .. dropdown:: Multi signature account
 
-        #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker pool**.
+        #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update staking pool**.
 
-        #. Choose the status for your baker pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
+        #. Choose the status for your staking pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
 
-            - Open: open your baker pool to delegators.
+            - Open: open your staking pool to delegators.
 
-            - Closed for new: close the baker pool to new delegators. Existing delegators remain in the pool.
+            - Closed for new: close the staking pool to new delegators. Existing delegators remain in the pool.
 
             - Closed for all: close the pool for all delegators.
 
-        #. Review the commission rates. Click **Continue**.
+        #. Review the commission rates and adjust with the sliders or type in the rate. Click **Continue**.
 
-        #. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+        #. Enter your validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
         #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
@@ -451,18 +451,18 @@ Update pool settings
 
 .. Note::
 
-   Closing a pool does not mean that baking stops. You continue baking but only using your own stake. If you wish to stop baking, you must :ref:`stop baking<remove-baker-mw>`.
+   Closing a pool does not mean that validation stops. You continue as a validator but only using your own stake. If you wish to stop being a validator, you must :ref:`stop validation<remove-baker-mw>`.
 
 .. _update-baker-keys-mw:
 
-Update baker keys
-=================
+Update validator keys
+=====================
 
-If you believe your baker keys have been compromised or lost, you can generate new baker keys. It is important to remember to update your baker keys on your node once you have exported them.
+If you believe your validator keys have been compromised or lost, you can generate new validator keys. It is important to remember to update your validator keys on your node once you have exported them.
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
-    #. If you choose **Update baker keys**, after the screens explaining reasons for updating baker keys, you see the new baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file.
+    #. If you choose **Update validator keys**, after the screens explaining reasons for updating validator keys, you see the new validator keys. Tap **Export validator keys** and navigate to the place on your device where you want to save the file.
 
         .. image:: ../images/mobile-wallet/update-baker-keys.png
             :width: 50%
@@ -470,13 +470,13 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-    2. Once you have saved the keys, review the information on the overview screen of the add baker transaction then tap **Submit baker transaction**.
+    2. Once you have saved the keys, review the information on the overview screen of the add validator transaction then tap **Submit validator transaction**.
 
-    3. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+    3. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
-    4. You need to import your baker keys file to your node in order to start baking with the new keys. It is preferable to update them on the node as close to :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
+    4. You need to import your validator keys file to your node in order to start producing blocks with the new keys. It is preferable to update them on the node as close to :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
@@ -490,29 +490,29 @@ If you believe your baker keys have been compromised or lost, you can generate n
         .. image:: ../images/browser-wallet/setup-baking-delegation.png
             :width: 40%
 
-    #. You see the current baker setup. Click **Update**.
+    #. You see the current validator setup. Click **Update**.
 
         .. image:: ../images/browser-wallet/update-baker-options.png
             :width: 40%
             :alt: screen showing current baker setup and buttons to stop or update
 
-    #. Click **Update baker keys**. Review the information about updating baker keys and click **Continue**.
+    #. Click **Update validator keys**. Review the information about updating validator keys and click **Continue**.
 
         .. image:: ../images/browser-wallet/update-baker-actions.png
             :width: 40%
-            :alt: screen showing actions to update baker
+            :alt: screen showing actions to update validator
 
-    #. Click **Export baker keys** and the keys are automatically downloaded as `baker-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
+    #. Click **Export validator keys** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
         .. image:: ../images/browser-wallet/update-baker-keys.png
-            :alt: screen with buttons to show keys or export baker keys
+            :alt: screen with buttons to show keys or export validator keys
             :width: 40%
 
         .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
             :alt: screen with buttons to continue after export and wallet screen dimmed behind
             :width: 40%
 
-    #. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then click **Send**.
+    #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then click **Send**.
 
         .. image:: ../images/browser-wallet/update-baker-keys-review.png
                 :width: 40%
@@ -522,7 +522,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
         .. image:: ../images/browser-wallet/update-baker-keys-finish.png
                 :width: 40%
 
-    #. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
+    #. You need to import your baker keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
@@ -534,22 +534,22 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts**, select the account whose baker keys you want to update.
+        #. Go to **Accounts**, select the account whose validator keys you want to update.
 
-        #. Click **More options** and select **Baking**.
+        #. Click **More options** and select **Validation**.
 
-        #. Click **Update baker keys**.
+        #. Click **Update validator keys**.
 
             .. image:: ../images/desktop-wallet/dw-baker-menu.png
-                :alt: screen showing all baker options
+                :alt: screen showing all validator options
 
-        #. You have to export the baker credentials so that you can restart the node with the new baker keys. Select **Export baker credentials**. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+        #. You have to export the validator credentials so that you can restart the node with the new validator keys. Select **Export validator credentials**. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
             .. image:: ../images/desktop-wallet/dw-baker-keys.png
                 :alt: screen showing new keys with button to export
 
         .. Warning::
-            This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else, make sure to do so through a secure channel.
+            This is the only time that you can export the credentials. If you’re going to transfer the validator keys to someone else, make sure to do so through a secure channel.
 
         5. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -563,18 +563,18 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
     .. dropdown:: Multi signature account
 
-        #. Go to **Multi Signature Transactions**, and select **Make new proposal**, and then select **Update Baker Keys**.
+        #. Go to **Multi Signature Transactions**, and select **Make new proposal**, and then select **Update Validator Keys**.
 
-        #. Select the **Account** whose baker keys you want to update, and then select **Continue**. Only baker accounts are listed.
+        #. Select the **Account** whose validator keys you want to update, and then select **Continue**. Only validator accounts are listed.
 
         #. Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select **Generate keys**.
 
-        The baker keys are generated and you can view the transaction details in the left pane. You can see the identity, the account, and the expiry time of the transaction. You can also see the public baker keys.
+        The validator keys are generated and you can view the transaction details in the left pane. You can see the identity, the account, and the expiry time of the transaction. You can also see the public validator keys.
 
-        #. You have to export the baker credentials so that you can restart the node with the new baker keys. Select **Export baker credentials**. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+        #. You have to export the validator credentials so that you can restart the node with the new validator keys. Select **Export validator credentials**. If you're on Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
         .. Warning::
-            This is the only time that you can export the credentials. If you’re going to transfer the baker keys to someone else make sure to do so through a secure channel.
+            This is the only time that you can export the credentials. If you’re going to transfer the validator keys to someone else make sure to do so through a secure channel.
 
         **Generate the Transaction**
 
@@ -647,22 +647,22 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
 .. _remove-baker-mw:
 
-Stop baking
-===========
+Stop validation
+===============
 
-If you remove a baker, the node that is configured with the :term:`baker keys<private keys>` will stop baking after a :term:`cool-down period` of three weeks. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next :term:`pay day`. When you've removed the baker, it is recommended that you also remove the keys from the node. If you want to use the node for baking at a later point in time, you'll then have to create a new set of baker keys.
+If you remove a validator, the node that is configured with the :term:`validator keys<private keys>` will stop producing blocks after a :term:`cool-down period` of three weeks. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next :term:`pay day`. When you've removed the validator, it is recommended that you also remove the keys from the node. If you want to use the node for validation at a later point in time, you'll then have to create a new set of validator keys.
 
-If you no longer wish to bake on this account, you can stop baking.
+If you no longer wish to produce blocks on this account, you can stop validation.
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
-    #. Tap **Stop baking**.
+    #. Tap **Stop validation**.
 
         .. image:: ../images/mobile-wallet/baker-hamburger-menu.png
             :width: 50%
-            :alt: screen showing all baker options
+            :alt: screen showing all validator options
 
-    #. After the screens explaining baker removal, review the information on the overview screen. When you are satisfied, tap **Submit baker transaction**.
+    #. After the screens explaining validator removal, review the information on the overview screen. When you are satisfied, tap **Submit validator transaction**.
 
     #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**.
 
@@ -673,13 +673,13 @@ If you no longer wish to bake on this account, you can stop baking.
         .. image:: ../images/browser-wallet/setup-baking-delegation.png
             :width: 40%
 
-    #. You see the current baker setup. Click **Stop**.
+    #. You see the current validator setup. Click **Stop**.
 
         .. image:: ../images/browser-wallet/update-baker-options.png
             :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+            :alt: screen showing current validator setup and buttons to stop or update
 
-    #. Read the information about what happens when you stop baking. Click **Continue**.
+    #. Read the information about what happens when you stop validation. Click **Continue**.
 
     #. Review the transaction information. Click **Send**.
 
@@ -695,19 +695,19 @@ If you no longer wish to bake on this account, you can stop baking.
 
         #. Go to **Accounts**, select the account that you no longer want to be a baker account then click **More options**.
 
-        #. Select **Baking**.
+        #. Select **Validation**.
 
-        #. Click **Stop baking**.
+        #. Click **Stop validation**.
 
             .. image:: ../images/desktop-wallet/dw-baker-menu.png
                 :width: 50%
-                :alt: screen showing all baker options
+                :alt: screen showing all validator options
 
         #. The cool-down period is displayed. Select **Continue**.
 
             .. image:: ../images/desktop-wallet/dw-remove-baker.png
                 :width: 50%
-                :alt: screen showing that baker will be removed
+                :alt: screen showing that validator will be removed
 
         #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -721,9 +721,9 @@ If you no longer wish to bake on this account, you can stop baking.
 
     .. dropdown:: Multi signature account
 
-        #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Stop baking**.
+        #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Stop validation**.
 
-        #. Select the **Account** that you no longer want to be a baker account, and then select **Continue**.
+        #. Select the **Account** that you no longer want to be a validator account, and then select **Continue**.
 
         #. Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select **Continue**.
 
@@ -799,11 +799,11 @@ If you no longer wish to bake on this account, you can stop baking.
 
 .. Note::
 
-    When you stop baking, there is a longer :term:`cool-down period` before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.
+    When you stop as a validator, there is a longer :term:`cool-down period` before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.
 
 .. Note::
 
-   If you stop baking, remember that this does not shut down your node. You need to shut down the node in a separate action if you no longer wish to run a node on the Concordium blockchain.
+   If you stop as a validator, remember that this does not shut down your node. You need to shut down the node in a separate action if you no longer wish to run a node on the Concordium blockchain.
 
 .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money

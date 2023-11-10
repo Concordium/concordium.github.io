@@ -126,7 +126,7 @@ can only be used in :term:`shielded transfers<shielded transfer>` to
 other accounts.
 
 The public balance of the account is always used for payment of transaction fees,
-baking, finalization, and transfers, even for shielded transfers.
+producing blocks, and transfers, even for shielded transfers.
 
 At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:
@@ -177,7 +177,7 @@ the same account. Thus, accounts can be referred to by any address whose initial
 
 This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.
 
-Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account's canonical address.
+Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account's canonical address.
 
 To show aliases, :ref:`run a transaction in Concordium Client<account-aliases>`.
 

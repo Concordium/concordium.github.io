@@ -351,7 +351,7 @@ Configure baker has the following optional arguments:
 - ``--keys-in`` specifies the name of the file containing the validator keys.
 - ``--keys-out`` can be used to write a validator credential file containing the validator ID (and the supplied keys) to use when starting a validator node. Replace ``<concordium-data-dir>`` with any path of your choice.
 - ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the staking pool.
-- ``--delegation-baking-commission`` specifies the baking commission for the staking pool.
+- ``--delegation-baking-commission`` specifies the validator commission for the staking pool.
 - ``--delegation-finalization-commission`` specifies the finalization commission for the staking pool.
 
 .. Note::

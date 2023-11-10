@@ -188,7 +188,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 1: Set up the node
 
-   For baking you must be running a node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
+   For validation you must be running a node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
 
 .. dropdown:: Step 2: Set up the Wallet
 
@@ -204,7 +204,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 5: Register validator keys
 
-   The last step is to configure the running node with the validator keys so the node can start baking. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.
+   The last step is to configure the running node with the validator keys so the node can start producing blocks. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.
 
    - :ref:`On Windows<baker-windows>`
 

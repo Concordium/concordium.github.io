@@ -17,7 +17,7 @@ a backend node:
 -  Block state: Display a summary of the contents of a specific block
    and its relation to other blocks on the chain.
 -  Consensus state: Show the parameters of the consensus protocol and
-   statistics related to baking and finalization of blocks.
+   statistics related to validation and finalization of blocks.
 
 
 .. _query-account-state:

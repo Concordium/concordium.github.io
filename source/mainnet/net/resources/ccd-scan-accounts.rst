@@ -40,8 +40,8 @@ When you select a sender or account, the following appears.
 
 The following information is shown in the account details:
 
-- **Account**: the first six characters of the account address are shown. Click Copy |copy| to copy the entire account address. If the account is participating in baking or delegation, the staked amount is displayed. Additional information is available on the account: a validator section for validators, a delegation section for delegators, and a rewards section for both bakers and delegators.
-- **Balance**: the current account balance is shown. If the account has a release schedule, the remaining locked amount is displayed here. The same applies if the account is participating in baking or delegation then the amount staked is displayed under the account balance.
+- **Account**: the first six characters of the account address are shown. Click Copy |copy| to copy the entire account address. If the account is participating as a validator or delegator, the staked amount is displayed. Additional information is available on the account: a validator section for validators, a delegation section for delegators, and a rewards section for both bakers and delegators.
+- **Balance**: the current account balance is shown. If the account has a release schedule, the remaining locked amount is displayed here. The same applies if the account is participating as a validator or delegator then the amount staked is displayed under the account balance.
 - **Age**: the age of the account including the exact timestamp for all individual accounts.
 - **Transactions**: a list of all transactions associated with the account, including incoming and outgoing transfers. Use the navigation buttons at the bottom to navigate through transactions.
 - **Release schedule**: shown only for accounts that have transfers with a release schedule to show the remainder of the schedule (non-released assets). The list of release dates and amounts is available, including a drill-through link to the :ref:`underlying transaction(s)<home-screen-transaction>`.

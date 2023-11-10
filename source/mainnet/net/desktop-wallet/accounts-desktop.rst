@@ -29,7 +29,7 @@ The most common tasks on an account are:
 In the account card in the accounts list, you can see the following information:
 
 .. image:: ../images/desktop-wallet/dw-acct-card-in-list.png
-   :alt: example of account card with information, baking icon, ledger icon shown
+   :alt: example of account card with information, validator icon, ledger icon shown
 
 -  The **Account Total** shows the total number of CCDs on the account, which includes the CCDs that are available and any staked CCDs or shielded CCDs. It also includes CCDs that are scheduled to be released to your account on a future date.
 
@@ -37,7 +37,7 @@ In the account card in the accounts list, you can see the following information:
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
--  The **Staked** amount shows the amount staked if baking.
+-  The **Staked** amount shows the amount staked if the account is a validator or delegator.
 
 -  **Shielded balance** shows any shielded amounts on the account.
 
@@ -50,7 +50,7 @@ In addition, you can see the following information about the selected account on
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
--  The **Staked with...** amount shows the amount staked if baking.
+-  The **Staked with...** amount shows the amount staked if the account is a validator or delegator.
 
 -  The **Delegation to...** amount shows the amount delegated to a staking pool or passive delegation.
 

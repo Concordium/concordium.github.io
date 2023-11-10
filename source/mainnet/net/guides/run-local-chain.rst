@@ -83,7 +83,7 @@ Further inspection of the tables at the ``accounts`` keys reveals that the valid
 
 .. Note::
 
-    The staked amount needed for a validator to participate in the finalization committee is some fraction of the total amount of existing CCD set in the configuration. The total amount is the sum of the balances of all the validator and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for baking.
+    The staked amount needed for a validator to participate in the finalization committee is some fraction of the total amount of existing CCD set in the configuration. The total amount is the sum of the balances of all the validator and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for producing blocks.
 
 Save the file as ``single-baker-example-p5.toml`` and generate the genesis data:
 

@@ -62,11 +62,11 @@
 
     For bakers who want to migrate you should:
 
-    #. Stop baking and wait for the :term:`cool-down period` to finish.
+    #. Stop validation and wait for the :term:`cool-down period` to finish.
     #. Set up the |mw-gen2|.
     #. Once cool-down has passed and your funds are unlocked, transfer your funds to the new account in |mw-gen2|.
-    #. Register as a baker again in |mw-gen2|.
-    #. Restart the node with the new baker keys.
+    #. Register as a validator again in |mw-gen2|.
+    #. Restart the node with the new validator keys.
 
     If you have a :term:`baker pool` with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the :ref:`URL for baker information<update-pool-settings>`.
 
