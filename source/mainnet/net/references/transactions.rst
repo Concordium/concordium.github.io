@@ -512,9 +512,9 @@ The output is:
 .. code-block:: console
 
    # Parameters related to staking pools:
-     + minimum equity capital: 14000.000000 CCD
-     + maximum fraction of total stake a pool is allowed to hold: 0.1
-     + maximum factor a pool may stake relative to the baker's stake: 3 % 1
+     + minimum equity capital: 500000.000000 CCD
+     + maximum fraction of total stake a pool is allowed to hold: 0.05
+     + maximum factor a pool may stake relative to the baker's stake: 6 % 1
      + pool owner cooldown duration: 21d
      + allowed range for finalization commission: [1.0, 1.0]
      + allowed range for baking commission: [0.1, 0.1]

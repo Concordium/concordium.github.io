@@ -22,7 +22,7 @@ The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They 
 
     #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn| on the account transaction overview screen.
 
-    #. In the Validator status screen tap **Update baker settings**.
+    #. In the Validator status screen tap **Update validator settings**.
 
         .. image:: ../images/mobile-wallet/baker-status-mw.png
             :width: 50%
@@ -268,6 +268,10 @@ Update pool settings
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
     #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
+
+    .. note::
+
+        In the |mw-gen1| it is not possible for pool owners to set the commissions. They are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
 
 .. dropdown:: |bw|
 

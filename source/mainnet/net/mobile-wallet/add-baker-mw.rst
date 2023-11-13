@@ -189,7 +189,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. Note::
 
-        There is a minimum amount to stake (14000 CCD) to become a validator.
+        There is a minimum amount to stake (500000 CCD) to become a validator.
 
     .. Warning::
 
@@ -260,7 +260,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. Note::
 
-        There is a minimum amount to stake (14000 CCD) to become a validator.
+        There is a minimum amount to stake (500000 CCD) to become a validator.
 
     .. Warning::
 
@@ -271,6 +271,10 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
         .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
             :width: 50%
             :alt: screen to choose whether to open a staking pool
+
+        .. note::
+
+            In the |mw-gen1| it is not possible for pool owners to set the commissions. They are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
 
     5. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research pools. This information is not shared in the case of a closed validator or staking pool.
 
@@ -340,7 +344,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. Note::
 
-        There is a minimum amount to stake (14000 CCD) to become a validator.
+        There is a minimum amount to stake (500000 CCD) to become a validator.
 
     .. Warning::
 

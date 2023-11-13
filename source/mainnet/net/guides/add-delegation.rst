@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _add-delegation:
 
-==============================================
-Delegate to a baker pool or passive delegation
-==============================================
+================================================
+Delegate to a staking pool or passive delegation
+================================================
 
 You can delegate stake from an account to a :term:`staking pool` or to :term:`passive delegation`.
 

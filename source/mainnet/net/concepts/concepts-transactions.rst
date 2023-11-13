@@ -75,11 +75,6 @@ The Desktop Wallet
 
 The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
 
-The |mw-gen1|
------------------
-
-The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, validate and delegate, and to export and import your accounts and identities.
-
 The |mw-gen2|
 ------------------
 
@@ -89,6 +84,11 @@ The |bw|
 ----------------
 
 The |bw| is a web wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, validate and delegate, and to connect to dApps.
+
+The |mw-gen1|
+-----------------
+
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, validate and delegate, and to export and import your accounts and identities. If you are a validator who runs a staking pool, it is not possible for pool owners to set the commissions in the |mw-gen1|; they are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
 
 Command-line tool
 -----------------

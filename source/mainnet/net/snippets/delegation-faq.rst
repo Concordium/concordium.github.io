@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _delegation-faq:
 
 Delegation and validation FAQ
@@ -14,6 +15,12 @@ For delegators
 
     Yes. You can delegate to multiple validators but an account can only have one delegation. To delegate to multiple validators, you need multiple accounts.
 
+.. dropdown:: How can I see what commission rates a staking pool has? And how can I be notified that a pool is changing commission rates?
+
+    To see the commission rates in the pools, go to the Staking page on `CCDScan`_. You can sort the pools by commission rates. If you want to be notified about commission rate changes, sign up for the e-mail notification service on CCDScan (with more info to come once the service is built.)
+
+    If you are unsatisfied with the commission in your current staking pool you can :ref:`move your stake to another pool or to passive delegation<update-delegation>`, or :ref:`stop the delegation<remove-delegation>`.
+
 .. dropdown:: Can I move from one staking pool to another without having to wait for the next pay day?
 
     Changes to the pools take effect every 24 hours. So increasing the stake, moving the stake between pools or between :term:`passive delegation` and a staking pool all take effect at the next :term:`pay day`.
@@ -24,9 +31,9 @@ For delegators
 
 .. dropdown:: How much can I expect to earn as a delegator?
 
-    This depends on how much you delegate, the staking pool you select and how reliable this validator is. It also depends on how much stake the validator has. It is important to use `CCDScan`_ to research validators before delegating stake.
+    This depends on how much you delegate, the staking pool you select, the delegation commissions set by the pool owner, and how reliable this validator is. It also depends on how much stake the validator has. It is important to use `CCDScan`_ to research validators before delegating stake.
 
-    To cover the costs of running the validator node, 10% of the delegators’ share of the pool rewards are awarded to the pool owner. For example, suppose that a pool has 1,000,000 CCD staked and out of that you have delegated 10,000 CCD to the pool (1%). Suppose that in a 24 hour period this pool earns 500 CCD. Your delegation’s share of the rewards is 1% equal to 5 CCD. Of this amount 10% (0.5 CCD) is awarded to the pool owner and you receive the remaining 4.5 CCD.
+    For example, suppose that you have a delegation to a pool where, to cover the costs of running the validator node, the pool owner has set that 10% of the delegators’ share of the pool rewards are awarded to the pool owner. Then suppose that a pool has 1,000,000 CCD staked and out of that you have delegated 10,000 CCD to the pool (1%). Suppose that in a 24 hour period this pool earns 500 CCD. Your delegation’s share of the rewards is 1% equal to 5 CCD. Of this amount 10% (0.5 CCD) is awarded to the pool owner and you receive the remaining 4.5 CCD.
 
 .. dropdown:: If I delegate stake to a staking pool or passive delegation, can I use it for transactions?
 
@@ -72,10 +79,10 @@ For delegators
 
     For CCD holders who do not want to regularly check the performance of a chosen pool but just want a stable way of earning rewards, :term:`passive delegation` offers a low-risk, low-reward alternative. This staking strategy is not associated with a specific validator, so there is no risk of poor validator health. The trade off when choosing passive delegation is that the rewards will be less than what you may receive when delegating to a specific staking pool.
 
-    (THIS WILL BE CHANGING!!!) The commission rates for passive delegation are:
+    The commission rates for passive delegation are:
 
-    - Validator commission: 12.00%
-    - Transaction commission: 12.00%
+    - Block commission: 25.00%
+    - Transaction commission: 25.00%
 
 .. dropdown:: My account is suddenly delegating to passive delegation. Why is that?
 
@@ -112,8 +119,8 @@ For validators
 
     Concordium blockchain imposes two caps on the amount of stake in a single pool:
 
-    - A pool cannot have more than 10% of all stake in pools (i.e., excluding passive delegation)
-    - The total stake of a pool cannot be more than 3x the size of the pool owners own stake
+    - A pool cannot have more than 5% of all stake in pools (i.e., excluding passive delegation)
+    - The total stake of a pool cannot be more than 6x the size of the pool owners own stake
 
     The first limit ensures that the blockchain remains distributed and prevents the crash of one validator from affecting the whole system. A party with lots of capital is welcome to run multiple validators to avoid this cap as in turn this would increase decentralization.
 
@@ -125,9 +132,13 @@ For validators
 
 .. dropdown:: How much less/more can I expect to earn when opening my pool to delegators?
 
-    The amount you earn depends on how much stake your pool has. The more delegators, the more stake you have and the greater your chances of being selected to produce a block are. 10% of the additional rewards the delegators’ stake in your pool attracts will go to the pool owner. As you are able to have 2x your own stake delegated to your pool, you are effectively able to increase your rewards by 20% if your pool is full.
+    The amount you earn depends on how much stake your pool has. The more delegators, the more stake you have and the greater your chances of being selected to produce a block are. Additional rewards to you as the pool owner come from the commissions on the delegators’ stake in your pool. You are able to have 2x your own stake delegated to your pool, you are effectively able to increase your rewards by 20% if your pool is full.
 
     Therefore, attracting delegators and managing your validator responsibly will maximize rewards for all. In :ref:`Validator management<baker-pool>` you'll find information about how to be a responsible validator.
+
+.. dropdown:: How can I change the delegation commissions for my staking pool?
+
+    You can change the commissions for your staking pool within the allowed limits in the |bw|, |mw-gen2|, and Desktop Wallet. See :ref:`update pool settings<update-pool-settings>` for information about how to do this for each type of wallet. In the |mw-gen1| it is not possible for pool owners to set the commissions. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
 
 .. dropdown:: Is there a cool-down period for validators?
 
@@ -154,7 +165,7 @@ For validators, delegators and passive delegators
 
 .. dropdown:: What is better and where can I earn more rewards: by becoming a validator, delegating to a staking pool, or delegating to passive delegation? What is the difference in rewards comparing a validator and a delegator, based on X amount of CCDs?
 
-    If you assume your validator is running 24/7 then all things being equal the rewards for running a validator will be higher than if you delegate to a staking pool, and the delgation to a pool will have higher rewards than :term:`passive delegation`. If you are a validator and at the same time other CCD holders delegate their stake to your staking pool, your rewards will be even higher.
+    If you assume your validator is running 24/7 then all things being equal the rewards for running a validator will be higher than if you delegate to a staking pool, and the delgation to a pool will have higher rewards than :term:`passive delegation` if the selected pool has commission rates less than 25%. If you are a validator and at the same time other CCD holders delegate their stake to your staking pool, your rewards will be even higher.
 
     When evaluating your options looking at the rewards is not sufficient as you also need to consider the costs of running your own validator node and risk of potentially delegating to a node that, e.g., goes offline. Finally, it is worth considering that all rewards are based on a lottery that takes place to decide which validator wins the right to produce the next block. The probability of winning the lottery - disregarding how you stake your CCD - is proportional to the size of the stake. Because of the nature of the lottery mechanism, it is important to keep in mind that the variance in rewards in the short term will greatly deminish over time. For the smallest validators it may take as much as a year for the rewards to align with the lottery power, whereas, very large validators may see consistent rewards within less than a week. No matter what, over time, the fraction of times you win will be proportional to your fraction of stake.
 

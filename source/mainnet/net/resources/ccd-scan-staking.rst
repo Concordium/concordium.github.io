@@ -73,7 +73,7 @@ If you select **Passive delegation**  it is possible to see the size of the pass
 - **Delegated stake**: amount of CCD delegated to passive delegation.
 - **APY (7 days)**: the calculated yield of passive delegation based on past 7 days.
 - **APY (30 days)**: the calculated yield of passive delegation based on past 30 days.
-- **Validator commission**: percent of rewards paid as commission to validator.
+- **Block commission**: percent of rewards paid as commission to validator.
 - **Transaction commission**: percentage of transaction rewards that are paid as commission to the validator.
 - **Rewards**: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table.
     - **Time** shows the date/time the reward was paid
@@ -102,7 +102,7 @@ The validator details shows the following information about the validator.
 - **Staking pool status**: the staking pool status. **Open for all** means that the staking pool is open for delegation. **Closed for all** means that you cannot delegate to that staking pool. **Closed for new** means that new delegators cannot delegate to that pool but existing delegators remain in the pool.
 - **APY Period**: choose between 7 days or 30 days. This seletion affects the **Total APY**, **Validator APY**, and **Delegators APY**.
 - **Validator rank**: the validator's rank out of all validators on Mainnet/Testnet based on the validator's total stake.
-- **Validation commission**: the validator's commission percent.
+- **Block commission**: the validator's commission percent.
 - **Transaction commission**: percentage of transaction rewards that are paid as commission to the validator.
 - **Payday rewards**: shows the sum of rewards earned by the validator and the individual rewards transactions for the time range selected in the filter.
     - **Time**: shows the date/time the reward was distributed.
