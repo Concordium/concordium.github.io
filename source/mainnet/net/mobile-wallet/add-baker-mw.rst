@@ -201,13 +201,15 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
             :alt: screen to register baker for first time showing options to open or close pool for delegation
             :width: 50%
 
-    5. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.
+    5. Set your commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+
+    6. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-url-mw.png
             :alt: screen to register baker for first time showing field to paste URL with metadata for baker pools
             :width: 50%
 
-    6. You have to export the baker credentials so that you can start the node with the baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
+    7. You have to export the baker credentials so that you can start the node with the baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
 
         .. image:: ../images/mobile-wallet/add-baker-export-keys-mw.png
             :alt: screen to register baker for first time showing all of the baker keys with option to export
@@ -217,19 +219,19 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
         This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-    7. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap **Submit baker transaction**.
+    8. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap **Submit baker transaction**.
 
         .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
             :alt: screen to register baker for first time showing transaction details with option to submit
             :width: 50%
 
-    8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+    9. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
         .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
             :alt: screen to register baker for first time showing transaction submission and finish option
             :width: 50%
 
-    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
+    10. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`

@@ -269,6 +269,8 @@ Update pool settings
 
     #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
 
+    Once you have adjusted your pool status, you can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired, in the |mw-gen2| for Android. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+
 .. dropdown:: |bw|
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
@@ -298,7 +300,7 @@ Update pool settings
             :width: 40%
             :alt: screen showing actions to update baker pool status
 
-    #. You can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired. Click **Continue**.
+    #. You can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Click **Continue**.
 
     #. Update the baker pool metadata URL, if desired. Click **Continue**.
 
