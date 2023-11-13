@@ -66,9 +66,9 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    November 20, 2023
+    November XX, 2023
 
-    Version 1.5.0 supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes and contains a change in the way deeplinking is handled.
+    Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
 
     .. dropdown:: Previous releases
 
