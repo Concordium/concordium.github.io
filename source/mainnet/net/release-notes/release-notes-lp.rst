@@ -66,21 +66,25 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    October 26, 2023
+    November 20, 2023
 
-    Version 1.4.0 contains visual improvements to match the new Concordium brand identity. It also contains the following fixes:
-
-      - parsing of "broken" schema format for contract update transactions when using WalletConnect
-
-      - changed the incorrect text in the identity name dialog
-
-      - not renaming the account when edited from the settings
-
-      - incorrect CCD token balance if some amount is shielded
-
-      - keyboard not appearing when the authorization dialog opened
+    Version 1.5.0 supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes and contains a change in the way deeplinking is handled.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.4.0 - October 26, 2023
+
+            Version 1.4.0 contains visual improvements to match the new Concordium brand identity. It also contains the following fixes:
+
+            - parsing of "broken" schema format for contract update transactions when using WalletConnect
+
+            - changed the incorrect text in the identity name dialog
+
+            - not renaming the account when edited from the settings
+
+            - incorrect CCD token balance if some amount is shielded
+
+            - keyboard not appearing when the authorization dialog opened
 
         .. dropdown:: |mw-gen2| 1.3.0 - October 4, 2023
 
