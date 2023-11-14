@@ -132,7 +132,7 @@ For validators
 
 .. dropdown:: How much less/more can I expect to earn when opening my pool to delegators?
 
-    The amount you earn depends on how much stake your pool has. The more delegators, the more stake you have and the greater your chances of being selected to produce a block are. Additional rewards to you as the pool owner come from the commissions on the delegators’ stake in your pool. You are able to have 2x your own stake delegated to your pool, you are effectively able to increase your rewards by 20% if your pool is full.
+    The amount you earn depends on how much stake your pool has. The more delegators, the more stake you have and the greater your chances of being selected to produce a block are. Additional rewards to you as the pool owner come from the commissions on the delegators’ stake in your pool. The leverage bound for the pool is 6x the validator's stake: 5x from delegators and 1x from the validator. So the exact amount you can earn depends on the commissions you set.
 
     Therefore, attracting delegators and managing your validator responsibly will maximize rewards for all. In :ref:`Validator management<baker-pool>` you'll find information about how to be a responsible validator.
 
