@@ -406,6 +406,7 @@ redirects = {
     "./net/installation/downloads-testnet": "net/installation/downloads.html",
     "./net/resources/legal": "net/resources/terms-and-conditions.html",
     "./en/mainnet/smart-contracts/onboarding-guide-solana-developers/index": "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview.html",
+    "./net/references/grpc": "net/references/grpc2.html",
 }
 
 # -- Tags that enables the .. only option ----------------
