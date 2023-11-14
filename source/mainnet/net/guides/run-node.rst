@@ -161,7 +161,7 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for non-baking nodes.
+         # which reduces CPU load for non-validator nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined
@@ -423,7 +423,7 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for non-baking nodes.
+         # which reduces CPU load for non-validator nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined

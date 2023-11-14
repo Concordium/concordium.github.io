@@ -30,7 +30,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
                     :width: 50%
                     :alt: screen with more options expanded
 
-            #. Select your target (a baker pool or passive delegation). Click **Continue**.
+            #. Select your target (a staking pool or passive delegation). Click **Continue**.
 
                .. image:: ../images/desktop-wallet/dw-delegation-target.png
                     :width: 50%
@@ -139,7 +139,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         #. Tap **Register delegation**.
 
-        #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
+        #. If you want to delegate to a specific pool tap **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
                 :width: 50%
@@ -187,7 +187,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         #. Tap **Register delegation**.
 
-        #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
+        #. If you want to delegate to a specific pool tap **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
                     :width: 50%
@@ -233,7 +233,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
             .. image:: ../images/browser-wallet/add-delegation-baking.png
                 :width: 40%
 
-        #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
+        #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
 
             .. image:: ../images/browser-wallet/delegation-target.png
                 :width: 40%

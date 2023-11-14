@@ -14,7 +14,7 @@ System requirements to run a node
 
 The following are the minimum system requirements for running a node. If your system does not meet or exceed these requirements, you might not be able to run the node properly.
 
-You need a broadband connection to run a node, and Concordium strongly recommends that the node is running around the clock in a reliable place. This is especially important if you're running a baker node.
+You need a broadband connection to run a node, and Concordium strongly recommends that the node is running around the clock in a reliable place. This is especially important if you're running a validator node.
 
 If you use a laptop in combination with Docker, sleep mode can cause problems with the Docker container used to run the node.
 

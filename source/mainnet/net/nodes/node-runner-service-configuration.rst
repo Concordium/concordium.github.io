@@ -80,7 +80,7 @@ baker_credentials
 
 .. code-block:: TOML
 
-   baker_credentials = 'baker-credentials.json'
+   baker_credentials = 'validator-credentials.json'
 
 The path to a validator credentials file if the node is to run as a validator.
 

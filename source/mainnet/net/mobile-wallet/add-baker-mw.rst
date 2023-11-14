@@ -21,31 +21,31 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts** and select the account you want to add as baker account and click **More options**.
+        #. Go to **Accounts** and select the account you want to add as validator account and click **More options**.
 
-        #. Select **Register as a baker**.
+        #. Select **Register as a validator**.
 
             .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
                 :width: 50%
                 :alt: screen showing all account options
 
-        #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to bake the next block.
+        #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to produce the next block.
 
-            Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
+            Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
             Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-        #. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
+        #. Choose if you want to open a staking pool so delegators may delegate stake to your validator.
 
-            - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+            - Choose Open to open your staking pool for this validator. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
-            - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
+            - Choose Closed if you do not want to open a staking pool. Click **Continue** after reviewing the commission rates and Validator metadata URL.
 
-        #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+        #. You have to export the validator credentials so that you can start the node with the validator keys. Select **Export validator credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
         .. Warning::
 
-            This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+            This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
         6. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -61,29 +61,29 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
         #. Go to the **Multi Signature Transactions** tab, and then select **Make new proposal**.
 
-        #. Click **Register as a Baker**.
+        #. Click **Register as a Validator**.
 
-        #. Select the account you want to add as baker account, and then select **Continue**.
+        #. Select the account you want to add as validator account, and then select **Continue**.
 
         **Stake an amount**
 
-        You need to stake an amount of CCD on the account that you want to add as baker account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
+        You need to stake an amount of CCD on the account that you want to add as validator account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
 
-        #. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to bake the next block.
+        #. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to produce the next block.
 
-            Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
+            Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
             -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-        #. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
+        #. Choose if you want to open a staking pool so delegators may delegate stake to your validator.
 
-            - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. **Click Continue**.
+            - Choose Open to open your staking pool for this validator. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Validator metadata URL if you want to provide this information to potential delegators. **Click Continue**.
 
-            - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
+            - Choose Closed if you do not want to open a staking pool. Click **Continue** after reviewing the commission rates and Validator metadata URL.
 
         #. When you look at the **Transaction Details** in the left pane, you can see the identity of the account owner, the account where the CCD are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.
 
-        #. Select **Generate keys**. The baker keys are generated and the public keys are displayed in the left pane. There are three public keys:
+        #. Select **Generate keys**. The validator keys are generated and the public keys are displayed in the left pane. There are three public keys:
 
             - Election verify key
             - Signature verify key
@@ -107,7 +107,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
         #. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
-        #. Select **Generate without signing**. You can now :ref:`export the baker credentials<export-baker-credentials>`.
+        #. Select **Generate without signing**. You can now :ref:`export the validator credentials<export-baker-credentials>`.
 
         .. _generate-sign:
 
@@ -130,18 +130,18 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
             .. _export-baker-credentials:
 
-        **Export baker credentials**
+        **Export validator credentials**
 
-        #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file.
+        #. You have to export the validator credentials so that you can start the node with the validator keys. Select **Export validator credentials** and navigate to the place on your computer where you want to save the file.
 
         You can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which includes the status of the transaction, the identicon, and the digest to sign. You can also see the date and time before which you must submit the transaction proposal. If no more signatures are required, you can :ref:`submit the transaction to the blockchain <submit-transaction>`. If more signatures are required, you'll have to export and send the transaction proposal to the co-signers.
 
         .. Warning::
-            This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+            This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
         **Export a transaction proposal**
 
-        If more than one signature is needed to sign off on the baker account proposal, you must share a file of the type JSON with the co-signers. In the **Signatures** pane, you can see how many signatures are required before you can submit the transaction to the blockchain.
+        If more than one signature is needed to sign off on the validator account proposal, you must share a file of the type JSON with the co-signers. In the **Signatures** pane, you can see how many signatures are required before you can submit the transaction to the blockchain.
 
         #. In the Desktop Wallet, select **Export transaction proposal**.
 
@@ -248,7 +248,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
 .. dropdown:: |mw-gen1|
 
-    #. Go to **Accounts**. Tap on the balance area of the account you want to add as a baker account or tap **More** |moredetails|.
+    #. Go to **Accounts**. Tap on the balance area of the account you want to add as a validator account or tap **More** |moredetails|.
 
     #. In the hamburger menu |hamburger| tap **Validator**.
 

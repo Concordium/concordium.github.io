@@ -23,11 +23,11 @@ To register the keys in the network you need to be :ref:`running a node <running
 
 .. code-block:: console
 
-   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/baker-credentials.json
+   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/validator-credentials.json
 
 where you replace
 
-- ``<amount-to-stake>`` with the CCD amount for the baker's initial stake
+- ``<amount-to-stake>`` with the CCD amount for the validators's initial stake
 - ``<concordium-data-dir>`` with the directory specified as the volume mount for the node database. In the :ref:`sample configuration file<run-a-node>` this is ``/var/lib/concordium-testnet`` for the testnet node, and ``/var/lib/concordium-mainnet`` for the mainnet node.
 
 .. Warning::
@@ -55,7 +55,7 @@ To start the node with these validator keys and produce blocks, do the following
 
    .. code-block:: yaml
 
-      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
 

@@ -121,7 +121,7 @@ If you remove the delegation, there is a :term:`cool-down period` before the del
 
          If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
 
-      #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the ledger.
+      #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the LEDGER.
 
       #. Select **Finish** to leave the page.
 

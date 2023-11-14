@@ -412,12 +412,12 @@ Validator
 
 .. function:: GetBakerList(block_hash: BlockHash) -> JsonResponse
 
-   Get a list of all baker IDs registered at that block in ascending order. Or
+   Get a list of all validator IDs registered at that block in ascending order. Or
    ``null``, if the block is invalid.
 
    :param block_hash: The given block.
    :type block_hash: |grpc-block-hash|_
-   :returns: A list of baker IDs, or ``null`` if the block hash is malformed or
+   :returns: A list of validator IDs, or ``null`` if the block hash is malformed or
              doesn't exist.
    :rtype: ``JsonResponse`` with ``?[BakerId]`` (see JSON schema below)
 
@@ -428,16 +428,16 @@ Validator
 
 .. function:: StartBaker() -> Bool
 
-   Start the baker.
+   Start the validator.
 
-   :returns: Whether starting the baker succeeded.
+   :returns: Whether starting the validator succeeded.
    :rtype: Bool
 
 .. function:: StopBaker() -> Bool
 
-   Stop the baker.
+   Stop the validator.
 
-   :returns: Whether stopping the baker succeeded.
+   :returns: Whether stopping the validator succeeded.
    :rtype: Bool
 
 The node

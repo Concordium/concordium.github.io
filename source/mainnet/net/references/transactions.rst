@@ -516,13 +516,11 @@ The output is:
      + maximum fraction of total stake a pool is allowed to hold: 0.05
      + maximum factor a pool may stake relative to the baker's stake: 6 % 1
      + pool owner cooldown duration: 21d
-     + allowed range for finalization commission: [1.0, 1.0]
-     + allowed range for baking commission: [0.1, 0.1]
+     + allowed range for block commission: [0.1, 0.1]
      + allowed range for transaction commission: [0.1, 0.1]
 
    # Passive delegation parameters:
-     + finalization commission: 1.0
-     + baking commission: 0.12
+     + block commission: 0.12
      + transaction commission: 0.12
 
    # Parameters related to delegators:
@@ -536,14 +534,12 @@ The output is:
    # Parameters that affect rewards distribution:
      + mint amount per reward period: 261157877e-12
      + mint distribution:
-         * baking reward: 0.6
-         * finalization reward: 0.3
+         * block reward: 0.6
      + transaction fee distribution:
          * baker: 0.45
          * GAS account: 0.45
      + GAS rewards:
-         * baking a block: 0.25
-         * adding a finalization proof: 5.0e-3
+         * producing a block: 0.25
          * adding a credential deployment: 2.0e-2
          * adding a chain update: 5.0e-3
 
@@ -576,22 +572,19 @@ The output is:
      - Description
    * - Parameters related to baker pools
      - Minimum equity capital
-     - The minimum amount of CCD to stake to become a baker.
+     - The minimum amount of CCD to stake to become a validator.
    * -
      - maximum fraction of total stake a pool is allowed hold
      - The maximum percent of total stake any single baker pool can have.
    * -
-     - maximum factor a pool may stake relative to the baker's stake
-     - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
+     - maximum factor a pool may stake relative to the validators's stake
+     - A staking pool's stake consists of the validators's own equity capital, and delegated capital. This factor determines the maximum stake a staking pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
    * -
      - pool owner cooldown duration
      - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.
    * -
-     - allowed range for finalization commission
-     - The allowed range of finalization commissions bakers may select when creating or updating pools.
-   * -
-     - allowed range for baking commission
-     - The allowed range of baking commissions bakers may select when creating or updating pools.
+     - allowed range for block commission
+     - The allowed range of block commissions validators may select when creating or updating pools.
    * -
      - allowed range for transaction commission
      - The allowed range of transaction commissions bakers may select when creating or updating pools.
@@ -599,8 +592,8 @@ The output is:
      - finalization commission
      - The percentage of finalization rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
-     - baking commission
-     - The percentage of baking rewards retained by the passive delegation, i.e., not given out to delegators.
+     - block commission
+     - The percentage of block rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
      - transaction commission
      - The percentage of transaction rewards retained by the passive delegation, i.e., not given out to delegators.
@@ -620,29 +613,26 @@ The output is:
      - mint amount per reward period
      - The percentage increase in amount of CCD per payday.
    * -
-     - mint distribution: baking reward
-     - The fraction of newly minted CCD that goes towards baker rewards.
+     - mint distribution: block reward
+     - The fraction of newly minted CCD that goes towards block rewards.
    * -
-     - mint distribution: finalization reward
-     - The fraction of newly minted CCD that goes towards finalization rewards.
-   * -
-     - transaction fee distribution: baker
-     - The fraction of block transaction fees allocated to the baker.
+     - transaction fee distribution: validator
+     - The fraction of block transaction fees allocated to the validator.
    * -
      - transaction fee distribution: GAS account
      - The fraction of block transaction fees allocated to the GAS account.
    * -
-     - GAS rewards: baking a block
-     - The fraction of the GAS account that is allocated to the baker for baking a block.
+     - GAS rewards: producing a block
+     - The fraction of the GAS account that is allocated to the validator for producing a block.
    * -
      - GAS rewards: adding a finalization proof
      - The fraction of the GAS account that is allocated to the baker for including a finalization proof in a block.
    * -
      - GAS rewards: adding a credential deployment
-     - The fraction of the GAS account that is allocated to the baker for including an account creation transaction in a block.
+     - The fraction of the GAS account that is allocated to the validator for including an account creation transaction in a block.
    * -
      - Gas rewards: adding a chain update
-     - The fraction of the GAS account that is allocated to the baker for including an update transaction in a block.
+     - The fraction of the GAS account that is allocated to the validator for including an update transaction in a block.
    * - Time parameters
      - reward period length
      - The length of the reward period. All rewards are handed out at the end of each reward period.

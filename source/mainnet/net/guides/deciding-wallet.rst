@@ -28,9 +28,9 @@ The wallets work on two different environments: the Desktop Wallet on a computer
 
 - Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-ledger>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a validator, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
 
-- |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a baker), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
+- |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a validator), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
 
-- |mw-gen1|: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen1| does not require a node (unless you are a baker), and you don’t need a LEDGER device. Requires you to make backups regularly.
+- |mw-gen1|: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen1| does not require a node (unless you are a validator), and you don’t need a LEDGER device. Requires you to make backups regularly.
 
 - |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.
 

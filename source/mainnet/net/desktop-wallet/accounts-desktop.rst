@@ -95,7 +95,7 @@ You'll see a variety of information in **More options** about your account and a
 
 -  **Register data**: Add a small message to the chain, such as a hash. This information is visible on the chain and cannot be removed. Note that adding this message incurs a transaction fee.
 
--  **Register as a validator**: Make the account a validator account. See :ref:`Add a validator account in the Desktop Wallet <add-baker-mw>`. If the account is already a validator account, you'll see **something** which contains a list of options for managing a baker account: :ref:`Remove validator <remove-baker-mw>`, :ref:`Update validator keys<update-baker-keys-mw>`, :ref:`Update validator stake<update-baker-stake-mw>`, and :ref:`Update validator restake earnings<update-baker-stake-mw>`.
+-  **Register as a validator**: Make the account a validator account. See :ref:`Add a validator account in the Desktop Wallet <add-baker-mw>`. If the account is already a validator account, you'll see **something** which contains a list of options for managing a validator account: :ref:`Remove validator <remove-baker-mw>`, :ref:`Update validator keys<update-baker-keys-mw>`, :ref:`Update validator stake<update-baker-stake-mw>`, and :ref:`Update validator restake earnings<update-baker-stake-mw>`.
 
 - **Register as a delegator**: Register the account as a delegator. See :ref:`Delegation<delegation-concept>` for information about delegation. If you are already delegating, you'll see **Delegation** which contains a list of options for managing delegation.
 

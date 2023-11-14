@@ -22,13 +22,13 @@ The Pay Day block details contains the following:
 
 - **Block**: the first six characters of the block hash. Click Copy |copy| to copy the entire hash. The block status is also shown.
 - **Age**: the age of the block and date/time stamp when it was created.
-- **Baker id**: ID of the baker who baked the block. Click the baker IDto see the :ref:`baker details<home-screen-baker>`.
+- **Validator id**: ID of the validator who produced the block. Click the validator ID to see the :ref:`validator details<home-screen-baker>`.
 - **Tokenomics**: contains the following details about the block:
     - Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the baker reward account, finalization reward account, and foundation account.
     - Accrued block rewards: similar to a ‘regular’ :ref:`block<home-screen-block>`; contains the accrued block rewards.
     - Payday foundation rewards: displays the payout to the foundation account for the pay day period and contains the option to drill-through to the :ref:`foundation account<accounts-view>`.
-    - Payday account rewards: lists all the accounts and the rewards broken down by baker reward, finalization reward, and transaction fees.
-    - Payday pool rewards: lists all the pools (including passive delegation) and the rewards broken down by baker reward, finalization reward, and transaction fees.
+    - Payday account rewards: lists all the accounts and the rewards broken down by block reward and transaction fees.
+    - Payday pool rewards: lists all the pools (including passive delegation) and the rewards broken down by block reward and transaction fees.
 - **Transactions**: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click **Hash** for more :ref:`information about the transacation<home-screen-transaction>`, or click **Sender** for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire hash or account number.
 - **Block statistics**: shows the block time (time since last block) and the finalization time of the block (the time before proof of finalization of the selected block was included in a subsequent block).
 

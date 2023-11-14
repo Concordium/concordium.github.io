@@ -27,7 +27,7 @@ Configure a validator node on Windows
 
 
    .. Warning::
-     Do not edit the name or contents of the baker-credentials.json file.
+     Do not edit the name or contents of the validator-credentials.json file.
 
 #. Once you've added validation to an account and exported the validator keys, you have to change the configuration file for the Concordium Node Service. Open **Configure Concordium Node Service** from the **Start** menu, and select **Yes** when you see the message *Do you want to allow this app to make changes to your device?*. The configuration file opens.
 
@@ -35,9 +35,9 @@ Configure a validator node on Windows
 
    .. code-block:: console
 
-     baker_credentials = 'C:\path\to\baker-credentials.json'
+     baker_credentials = 'C:\path\to\validator-credentials.json'
 
-   where you replace ``C:\path\to\baker-credentials.json`` with the full path to the validator credentials file.
+   where you replace ``C:\path\to\validator-credentials.json`` with the full path to the validator credentials file.
 
 #. Save the file.
 
@@ -61,7 +61,7 @@ If a node fails to start, for example because of a configuration issue, or stops
    .. image:: ../images/run-node/Node-setup-win-10.png
          :width: 60%
 
-- The node doesn't start validation, and in the log file you see the message *Baker keys are incorrect* repeatedly. It takes 1-2 hours after validator keys have been added to an account for the keys to be eligible to produce blocks. If this problem persists beyond two hours, then likely the keys are incorrect. Double check that you are not using keys from testnet on mainnet, or vice-versa.
+- The node doesn't start validation, and in the log file you see the message *Validator keys are incorrect* repeatedly. It takes 1-2 hours after validator keys have been added to an account for the keys to be eligible to produce blocks. If this problem persists beyond two hours, then likely the keys are incorrect. Double check that you are not using keys from testnet on mainnet, or vice-versa.
 
 For more information on the logs, see :ref:`Run a node on Windows<view-windows-node-log>`.
 

@@ -35,7 +35,7 @@ The first thing to check before delegating stake to a staking pool is the URL fo
 
 Make sure that the pool isn't close to having too many delegators or close to max capital. Another indicator of good management is reliability, such as whether the node is upgraded to the latest version.
 
-Once you have made a delegation, it is a good idea to monitor baker performance regularly and adjust if needed.
+Once you have made a delegation, it is a good idea to monitor validator performance regularly and adjust if needed.
 
 CCDScan
 =======

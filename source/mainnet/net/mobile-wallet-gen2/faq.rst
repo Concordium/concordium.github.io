@@ -11,7 +11,7 @@
 
 .. dropdown:: What are the features and benefits of the |mw-gen2|?
 
-    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, bake, delegate, and so on. But the |mw-gen2| uses a :term:`secret recovery phrase` that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the |bw|.
+    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, be a validator, delegate, and so on. But the |mw-gen2| uses a :term:`secret recovery phrase` that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the |bw|.
 
     In |mw-gen2| initial accounts are no longer created by the :term:`identity provider` when your identity is verified, ensuring complete privacy of all your accounts. Going forward you :ref:`create all accounts yourself<create-account>` in your Concordium Wallet.
 
@@ -58,9 +58,9 @@
 
     Identity and account creation is disabled in |mw-gen1|, so it is a good idea to download and set up |mw-gen2|.
 
-.. dropdown:: As a baker, what do I need to do to migrate from |mw-gen1| to |mw-gen2|?
+.. dropdown:: As a validator, what do I need to do to migrate from |mw-gen1| to |mw-gen2|?
 
-    For bakers who want to migrate you should:
+    For validators who want to migrate you should:
 
     #. Stop validation and wait for the :term:`cool-down period` to finish.
     #. Set up the |mw-gen2|.
@@ -68,7 +68,7 @@
     #. Register as a validator again in |mw-gen2|.
     #. Restart the node with the new validator keys.
 
-    If you have a :term:`baker pool` with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the :ref:`URL for baker information<update-pool-settings>`.
+    If you have a :term:`staking pool` with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the :ref:`URL for validator information<update-pool-settings>`.
 
 .. dropdown:: If I am awaiting scheduled transfers in an account in |mw-gen1| how should I migrate to |mw-gen2|?
 

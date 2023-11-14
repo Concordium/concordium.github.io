@@ -26,44 +26,44 @@ Once you have generated validator keys, you then need to move the generated vali
 
 .. dropdown:: Mainnet
 
-   #. Move the ``baker-credentials.json`` file to the node's config folder:
+   #. Move the ``validator-credentials.json`` file to the node's config folder:
 
       .. code-block:: console
 
-         $sudo cp "/path/to/mainnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json"
+         $sudo cp "/path/to/mainnet/validator-credentials.json" "/Library/Application Support/Concordium Node/Mainnet/Config/validator-credentials.json"
 
-      (replacing ``/path/to/mainnet/baker-credentials.json`` with the actual file path to your baker credentials for mainnet).
+      (replacing ``/path/to/mainnet/validator-credentials.json`` with the actual file path to your validator credentials for mainnet).
 
    #. Edit the service file as an administrator. The service file is found here: ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"``
 
    #. Underneath the ``<dict>`` tag in the *EnviromentVariables* section of the file add the following::
 
-      <!-- Path to the baker credentials file. -->
+      <!-- Path to the validator credentials file. -->
       <key>CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</key>
-      <string>/Library/Application Support/Concordium Node/Mainnet/Config/baker-credentials.json</string>
+      <string>/Library/Application Support/Concordium Node/Mainnet/Config/validator-credentials.json</string>
 
    #. Restart your node by running **Concordium Node Stop Mainnet** (if running) and then
       **Concordium Node Start Mainnnet**.
 
 .. dropdown:: Testnet
 
-   #. Move the ``baker-credentials.json`` file to the node's config folder:
+   #. Move the ``validator-credentials.json`` file to the node's config folder:
 
       .. code-block:: console
 
-         $sudo cp "/path/to/testnet/baker-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json"
+         $sudo cp "/path/to/testnet/validator-credentials.json" "/Library/Application Support/Concordium Node/Testnet/Config/validator-credentials.json"
 
-      (replacing ``/path/to/testnet/baker-credentials.json`` with the actual file path to your baker credentials for testnet).
+      (replacing ``/path/to/testnet/validator-credentials.json`` with the actual file path to your validator credentials for testnet).
 
    #. Edit the service file as an administrator. The service file is found here: ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"``
 
    #. In the *EnviromentVariables* section of the file add the following::
 
-      <!-- Path to the baker credentials file. -->
+      <!-- Path to the validator credentials file. -->
       <key>CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</key>
-      <string>/Library/Application Support/Concordium Node/Testnet/Config/baker-credentials.json</string>
+      <string>/Library/Application Support/Concordium Node/Testnet/Config/validator-credentials.json</string>
 
    #. Restart your node by running **Concordium Node Stop Testnet** (if running) and then
       **Concordium Node Start Testnet**.
 
-In the wallets, a bread icon is added to the account associated with the baker node. The bread icon appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.
+In the wallets, a badge is added to the account associated with the validator node. The badge appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.

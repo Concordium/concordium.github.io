@@ -70,7 +70,7 @@ For the |bw|, use the following command:
 Create and register validator keys
 ----------------------------------
 
-Each account has a unique validator ID that is used when registering its validator. This ID has to be provided by the network and currently cannot be precomputed. This ID must be given inside the baker keys file to the node so that it can use the validator keys to create blocks. The ``concordium-client`` will automatically fill this field when performing the following operations.
+Each account has a unique validator ID that is used when registering its validator. This ID has to be provided by the network and currently cannot be precomputed. This ID must be given inside the validator keys file to the node so that it can use the validator keys to create blocks. The ``concordium-client`` will automatically fill this field when performing the following operations.
 
 To create a fresh set of keys run:
 
@@ -295,17 +295,6 @@ When the validator is registered, it will automatically restake the earnings, bu
 .. code-block:: console
 
    $concordium-client baker add baker-keys.json --sender validatorAccount --stake <amount-to-stake> --out validator-credentials.json --no-restake
-
-Finalization
-------------
-
-Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the bakers with an effective stake amount of at least 0.1% of the total amount (effective stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.
-
-Finalizers sign a block, and their collective signatures are aggregated to form a :term:`quorum certificate`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
-
-Finalization happens at a minimum one second after block creation. A new block has to be created descended from that block for finalization to happen.
-
-When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.
 
 Update baker keys
 -----------------

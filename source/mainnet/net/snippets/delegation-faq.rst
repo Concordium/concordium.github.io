@@ -63,7 +63,7 @@ For delegators
 
     You can see a list of all pools and some performance metrics on `CCDScan`_.
 
-.. dropdown:: How do I know whether a staking pool is good or bad? Where can I research baker performance and reliability?
+.. dropdown:: How do I know whether a staking pool is good or bad? Where can I research validator performance and reliability?
 
     You can research validator performance and pool reliability on `CCDScan`_. For information about how to judge validator performance and reliability, see :ref:`validator management<baker-pool>`.
 
