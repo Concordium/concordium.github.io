@@ -76,13 +76,13 @@ To create a fresh set of keys run:
 
 .. code-block:: console
 
-   $concordium-client baker generate-keys <keys-file>.json
+   $concordium-client validator generate-keys <keys-file>.json
 
-You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``baker add`` transaction to the network:
+You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``validator add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add MyValidatorKeys.json --sender validatorAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --baker-url https://example.com/validator --out <concordium-data-dir>/validator-credentials.json
+   $concordium-client validator add MyValidatorKeys.json --sender validatorAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --out <concordium-data-dir>/validator-credentials.json
 
 
 where you replace
@@ -108,13 +108,13 @@ where you replace
 
 Keep the output file name as ``validator-credentials.json``.
 
-The following arguments are also required for the ``baker add`` transaction:
+The following arguments are also required for the ``validator add`` transaction:
 
 - ``--open-delegation-for`` sets whether the validator's staking pool is open for delegators. Options are: ``none`` (no delegators will be allowed), ``all`` (any account can delegate), ``existing`` (only existing delegators can delegate).
 - ``--validator-url`` is the URL for validator information. The URL should resolve to (JSON-formatted) metadata about the validator.
 - ``--out`` can be used to write a validator credential file containing the validator ID (and the supplied keys) to use when starting a validator node.
 - ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the staking pool.
-- ``--delegation-baking-commission`` specifies the validation commission for the staking pool.
+- ``--delegation-block-commission`` specifies the block commission for the staking pool.
 
 .. Note::
 
@@ -156,8 +156,8 @@ Check the status of the validator and its lottery power
 
 To see if the node is producing blocks, you can check various sources that offer different degrees of precision in the information displayed.
 
-- In the `network dashboard <https://dashboard.mainnet.concordium.software/>`_, the validator ID of the node is shown in the ``Baker`` column.
-- Using the ``concordium-client`` you can check the list of current validators and the relative staked amount that they hold, that is, their lottery power.  The lottery power determines how likely it is that a given validator will win the lottery and produce a block.
+- In the `network dashboard <https://dashboard.mainnet.concordium.software/>`_, the validator ID of the node is shown in the ``Validator`` column.
+- Using the ``concordium-client`` you can check the list of current validators and the relative staked amount that they hold, that is, their lottery power. The lottery power determines how likely it is that a given validator will win the lottery and produce a block.
 
   .. code-block:: console
 
@@ -198,7 +198,7 @@ To update the validator stake run
 
 .. code-block:: console
 
-   $concordium-client baker update-stake --stake <newAmount> --sender validatorAccount
+   $concordium-client validator update-stake --stake <newAmount> --sender validatorAccount
 
 When the staked amount is modified, the probability that a validator gets elected to produce blocks is also modified.
 
@@ -262,8 +262,8 @@ You can choose to modify this behavior and instead receive the rewards in the ac
 
 .. code-block:: console
 
-   $concordium-client baker update-restake False --sender validatorAccount
-   $concordium-client baker update-restake True --sender validatorAccount
+   $concordium-client validator update-restake False --sender validatorAccount
+   $concordium-client validator update-restake True --sender validatorAccount
 
 Changes to the restake flag will take effect immediately; however, the changes start affecting lottery power in the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using ``concordium-client``:
 
@@ -290,20 +290,20 @@ Changes to the restake flag will take effect immediately; however, the changes s
 | stake affects the lottery power               |                                         |            |
 +-----------------------------------------------+-----------------------------------------+------------+
 
-When the validator is registered, it will automatically restake the earnings, but you can change this by providing the ``--no-restake`` flag to the ``baker add`` command as shown in the following:
+When the validator is registered, it will automatically restake the earnings, but you can change this by providing the ``--no-restake`` flag to the ``validator add`` command as shown in the following:
 
 .. code-block:: console
 
-   $concordium-client baker add baker-keys.json --sender validatorAccount --stake <amount-to-stake> --out validator-credentials.json --no-restake
+   $concordium-client validator add validator-keys.json --sender validatorAccount --stake <amount-to-stake> --out validator-credentials.json --no-restake
 
-Update baker keys
------------------
+Update validator keys
+---------------------
 
 If it is necessary to update your validator keys, you need to first generate new validator keys. To create a fresh set of keys run:
 
 .. code-block:: console
 
-   $concordium-client baker generate-keys <keys-file>.json
+   $concordium-client validator generate-keys <keys-file>.json
 
 You can choose an arbitrary name for the ``keys file``.
 
@@ -311,7 +311,7 @@ Then run the transaction:
 
 .. code-block:: console
 
-   $concordium-client baker set-key <keys-file>.json --sender <account> --out <concordium-data-dir>/baker-credentials.json
+   $concordium-client validator set-key <keys-file>.json --sender <account> --out <concordium-data-dir>/validator-credentials.json
 
 ``--sender`` is the name or address of the transaction's sender account. The name is the one that's used when you :ref:`import the account<concordium-client-import-accounts-keys>` (assuming that this
 was done). It defaults to the account name "default".
@@ -323,15 +323,15 @@ To start the node with these validator keys and produce blocks you need to resta
 Configure a validator
 =====================
 
-Use ``baker configure`` to configure a validator and open a staking pool. The following is an example of how ``configure baker`` might be used:
+Use ``validator configure`` to configure a validator and open a staking pool. The following is an example of how ``configure validator`` might be used:
 
 .. code-block:: console
 
-   $concordium-client baker configure --sender "acc1" --stake 14001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/validator-credentials.json
+   $concordium-client validator configure --sender "acc1" --stake 500001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/validator-credentials.json
 
-Configure baker has the following optional arguments:
+Configure validator has the following optional arguments:
 
-- ``--sender`` is the name or address of the baker account.
+- ``--sender`` is the name or address of the validator account.
 - ``--stake`` is an amount of CCD that is the intended equity capital of the validator
 - ``--restake`` sets that earnings are restaked.
 - ``--no-restake`` sets that earnings are not restaked.
@@ -355,7 +355,7 @@ so you have to execute:
 
 .. code-block:: console
 
-   $concordium-client baker remove --sender validatorAccount
+   $concordium-client validator remove --sender validatorAccount
 
 This removes the validator from the list of validators and unlocks the staked amount on the validator so that it can be transferred or moved freely. When removing the validator, the change has the same timeline as decreasing
 the staked amount. The change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next :term:`pay day` after the cool-down ends. You can check when the change will take effect by querying the account information:

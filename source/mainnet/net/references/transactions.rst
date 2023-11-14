@@ -28,19 +28,19 @@ Transaction commands
 | ``transaction send-scheduled``      | Make a transfer that will be released          |
 |                                     | gradually                                      |
 +-------------------------------------+------------------------------------------------+
-| ``baker add``                       | Add a new validator. For more information, see |
+| ``validator add``                   | Add a new validator. For more information, see |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker remove``                    | Remove a validator. For more information, see  |
+| ``validator remove``                | Remove a validator. For more information, see  |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker update-stake``              | Update the staked amount of a validator. For   |
+| ``validator update-stake``          | Update the staked amount of a validator. For   |
 |                                     | more information, see :ref:`become-a-baker`.   |
 +-------------------------------------+------------------------------------------------+
-| ``baker update-restake``            | Update the restaking switch of a validator. For|
+| ``validator update-restake``        | Update the restaking switch of a validator. For|
 |                                     | more information, see :ref:`become-a-baker`.   |
 +-------------------------------------+------------------------------------------------+
-| ``baker set-key``                   | Update the keys of a validator. For more       |
+| ``validator set-key``               | Update the keys of a validator. For more       |
 |                                     | information, see :ref:`become-a-baker`.        |
 +-------------------------------------+------------------------------------------------+
 | ``account update-keys``             | Update credentials keys for a specific         |
@@ -516,10 +516,12 @@ The output is:
      + maximum fraction of total stake a pool is allowed to hold: 0.05
      + maximum factor a pool may stake relative to the baker's stake: 6 % 1
      + pool owner cooldown duration: 21d
+     + allowed range for finalization commission: [1.0, 1.0]
      + allowed range for block commission: [0.1, 0.1]
      + allowed range for transaction commission: [0.1, 0.1]
 
    # Passive delegation parameters:
+     + finalization commission: 1.0
      + block commission: 0.12
      + transaction commission: 0.12
 
@@ -582,6 +584,9 @@ The output is:
    * -
      - pool owner cooldown duration
      - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.
+   * -
+     - allowed range for finalization commission
+     - The allowed range of finalization commissions bakers may select when creating or updating pools.
    * -
      - allowed range for block commission
      - The allowed range of block commissions validators may select when creating or updating pools.

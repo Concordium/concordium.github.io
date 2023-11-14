@@ -92,7 +92,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
       A rule that selects the best chain based on the following criteria:
 
-      - chain with the most finalized blocks
+      - chain with the most final blocks
       - longest chain
       - which last block has the earliest slot in the chains
       - which last block has the largest block luck in the chains
