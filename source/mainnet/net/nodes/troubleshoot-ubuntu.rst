@@ -14,7 +14,7 @@ This error occurs due to the node running out of memory during the protocol upda
 Your node state directory should look something like this:
 
 .. code-block:: console
-                
+
    accountmap
    blockstate-0.dat
    blockstate-1.dat
