@@ -332,8 +332,18 @@ Earliest time a baker may be expected to bake a block
     Baker 1 is expected to bake no sooner than:
     Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)
 
-Show the earliest time the baker may be expected to bake a block.
+Get the projected earliest time at which a particular baker will be required to bake a block.
 
--  ``BAKER-ID``: Baker ID to query
--  ``local-time``: Display time in the local time zone (instead of UTC).
--  ``poll``: Repeatedly poll for the latest time..
+If the baker is not a baker for the current reward period, this returns a timestamp at the
+start of the next reward period. If the baker is a baker for the current reward period, the
+earliest win time is projected from the current round forward, assuming that each round after
+the last finalized round will take the minimum block time. (If blocks take longer, or timeouts
+occur, the actual time may be later, and the reported time in subsequent queries may reflect
+this.) At the end of an epoch (or if the baker is not projected to bake before the end of the
+epoch) the earliest win time for a (current) baker will be projected as the start of the next
+epoch.
+
+One can supply the ``--poll`` option in order to continuously receive updates of when
+the supplied baker may be expected to bake a block.
+
+This query is only supported from protocol version 6 and onwards.
