@@ -321,7 +321,7 @@ This prints a JSON list containing any such pending updates. As before you can
 also pass a block hash to the command to query a specific block.
 
 Validator queries
-==============
+=================
 
 Earliest time a validator may be expected to make a block
 -----------------------------------------------------
