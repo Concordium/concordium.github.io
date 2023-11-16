@@ -18,7 +18,7 @@ a backend node:
    and its relation to other blocks on the chain.
 -  Consensus state: Show the parameters of the consensus protocol and
    statistics related to baking and finalization of blocks.
--  Baker queries: Show baker information.
+-  Validator queries: Show validator information.
 
 
 .. _query-account-state:
@@ -320,30 +320,30 @@ following command:
 This prints a JSON list containing any such pending updates. As before you can
 also pass a block hash to the command to query a specific block.
 
-Baker queries
+Validator queries
 ==============
 
-Earliest time a baker may be expected to bake a block
+Earliest time a validator may be expected to make a block
 -----------------------------------------------------
 
 .. code-block:: console
 
-    $concordium-client baker win-time 1
-    Baker 1 is expected to bake no sooner than:
+    $concordium-client validator win-time 1
+    Validator 1 is expected to bake no sooner than:
     Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)
 
-Get the projected earliest time at which a particular baker will be required to bake a block.
+Get the projected earliest time at which a particular validator will be required to make a block.
 
-If the baker is not a baker for the current reward period, this returns a timestamp at the
-start of the next reward period. If the baker is a baker for the current reward period, the
+If the validator is not a validator for the current reward period, this returns a timestamp at the
+start of the next reward period. If the validator is a validator for the current reward period, the
 earliest win time is projected from the current round forward, assuming that each round after
 the last finalized round will take the minimum block time. (If blocks take longer, or timeouts
 occur, the actual time may be later, and the reported time in subsequent queries may reflect
-this.) At the end of an epoch (or if the baker is not projected to bake before the end of the
-epoch) the earliest win time for a (current) baker will be projected as the start of the next
+this.) At the end of an epoch (or if the validator is not projected to make a block before the end of the
+epoch) the earliest win time for a (current) validator will be projected as the start of the next
 epoch.
 
 One can supply the ``--poll`` option in order to continuously receive updates of when
-the supplied baker may be expected to bake a block.
+the supplied validator may be expected to make a block.
 
 This query is only supported from protocol version 6 and onwards.
