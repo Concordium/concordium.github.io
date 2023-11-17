@@ -76,44 +76,44 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
 
-        .. image:: ../images/browser-wallet/setup-baking-delegation.png
-            :width: 40%
+       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+           :width: 40%
 
     #. You see the current baker setup. Click **Update**.
 
-        .. image:: ../images/browser-wallet/update-baker-options.png
-            :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+       .. image:: ../images/browser-wallet/update-baker-options.png
+           :width: 40%
+           :alt: screen showing current baker setup and buttons to stop or update
 
     #. Click **Update baker stake**. Review the information about updating baker stake and click **Continue**.
 
-        .. image:: ../images/browser-wallet/update-baker-actions.png
-            :width: 40%
-            :alt: screen showing actions to update baker
+       .. image:: ../images/browser-wallet/update-baker-actions.png
+           :width: 40%
+           :alt: screen showing actions to update baker
 
     #. You can change the restake preference if desired. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/update-baker-restake-pref.png
-            :width: 40%
-            :alt: screen showing buttons to set restake preference
+       .. image:: ../images/browser-wallet/update-baker-restake-pref.png
+           :width: 40%
+           :alt: screen showing buttons to set restake preference
 
     #. You can change the amount staked if desired. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/update-baker-stake.png
-            :width: 40%
-            :alt: screen showing text box to update staked amount
+       .. image:: ../images/browser-wallet/update-baker-stake.png
+           :width: 40%
+           :alt: screen showing text box to update staked amount
 
     #. Review the transaction details. Click **Send** to submit the transaction.
 
-        .. image:: ../images/browser-wallet/update-baker-stake-review.png
-            :width: 40%
-            :alt: screen showing transaction receipt
+       .. image:: ../images/browser-wallet/update-baker-stake-review.png
+           :width: 40%
+           :alt: screen showing transaction receipt
 
     #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
-        .. image:: ../images/browser-wallet/update-baker-stake-finalize.png
-            :width: 40%
-            :alt: screen showing transaction receipt
+       .. image:: ../images/browser-wallet/update-baker-stake-finalize.png
+           :width: 40%
+           :alt: screen showing transaction receipt
 
 .. dropdown:: Desktop Wallet
 
@@ -273,54 +273,54 @@ Update pool settings
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
 
-        .. image:: ../images/browser-wallet/setup-baking-delegation.png
-            :width: 40%
+       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+           :width: 40%
 
     #. You see the current baker setup. Click **Update**.
 
-        .. image:: ../images/browser-wallet/update-baker-options.png
-            :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+       .. image:: ../images/browser-wallet/update-baker-options.png
+           :width: 40%
+           :alt: screen showing current baker setup and buttons to stop or update
 
     #. Click **Update pool settings**. Review the information about updating baker pool settings and click **Continue**.
 
-        .. image:: ../images/browser-wallet/update-baker-actions.png
-            :width: 40%
-            :alt: screen showing actions to update baker
+       .. image:: ../images/browser-wallet/update-baker-actions.png
+           :width: 40%
+           :alt: screen showing actions to update baker
 
     #. You can change the baker pool status, if desired. Click **Continue**. The options are:
 
-        - Open pool: open a pool for a previously closed baker
-        - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
-        - Close pool: close a pool permanently.
+       - Open pool: open a pool for a previously closed baker
+       - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the baker’s responsibility to monitor the stake to make pool management decisions.**
+       - Close pool: close a pool permanently.
 
-        .. image:: ../images/browser-wallet/update-baker-pool-status.png
-            :width: 40%
-            :alt: screen showing actions to update baker pool status
+       .. image:: ../images/browser-wallet/update-baker-pool-status.png
+           :width: 40%
+           :alt: screen showing actions to update baker pool status
 
     #. You can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/update-baker-pool-comms.png
-            :width: 40%
-            :alt: screen showing sliders and text boxes to adjust commissions
+       .. image:: ../images/browser-wallet/update-baker-pool-comms.png
+           :width: 40%
+           :alt: screen showing sliders and text boxes to adjust commissions
 
     #. Update the baker pool metadata URL, if desired. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/update-baker-pool-url.png
-            :width: 40%
-            :alt: screen showing text box to add or update baker pool URL
+       .. image:: ../images/browser-wallet/update-baker-pool-url.png
+           :width: 40%
+           :alt: screen showing text box to add or update baker pool URL
 
     #. Review the transaction details. Click **Send** to submit the transaction.
 
-        .. image:: ../images/browser-wallet/update-baker-pool-review.png
-            :width: 40%
-            :alt: screen showing transaction receipt
+       .. image:: ../images/browser-wallet/update-baker-pool-review.png
+           :width: 40%
+           :alt: screen showing transaction receipt
 
     #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
-        .. image:: ../images/browser-wallet/update-baker-pool-finalize.png
-            :width: 40%
-            :alt: screen showing transaction receipt
+       .. image:: ../images/browser-wallet/update-baker-pool-finalize.png
+           :width: 40%
+           :alt: screen showing transaction receipt
 
 .. dropdown:: Desktop Wallet
 
@@ -491,47 +491,48 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
 
-        .. image:: ../images/browser-wallet/setup-baking-delegation.png
-            :width: 40%
+       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+           :width: 40%
+           :alt: screen showing current baker setup and buttons to stop or update
 
     #. You see the current baker setup. Click **Update**.
 
-        .. image:: ../images/browser-wallet/update-baker-options.png
-            :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+       .. image:: ../images/browser-wallet/update-baker-options.png
+           :width: 40%
+           :alt: screen showing current baker setup and buttons to stop or update
 
     #. Click **Update baker keys**. Review the information about updating baker keys and click **Continue**.
 
-        .. image:: ../images/browser-wallet/update-baker-actions.png
-            :width: 40%
-            :alt: screen showing actions to update baker
+       .. image:: ../images/browser-wallet/update-baker-actions.png
+           :width: 40%
+           :alt: screen showing actions to update baker
 
     #. Click **Export baker keys** and the keys are automatically downloaded as `baker-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
-        .. image:: ../images/browser-wallet/update-baker-keys.png
-            :alt: screen with buttons to show keys or export baker keys
-            :width: 40%
+       .. image:: ../images/browser-wallet/update-baker-keys.png
+           :alt: screen with buttons to show keys or export baker keys
+           :width: 40%
 
-        .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
-            :alt: screen with buttons to continue after export and wallet screen dimmed behind
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
+           :alt: screen with buttons to continue after export and wallet screen dimmed behind
+           :width: 40%
 
     #. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then click **Send**.
 
-        .. image:: ../images/browser-wallet/update-baker-keys-review.png
-                :width: 40%
+       .. image:: ../images/browser-wallet/update-baker-keys-review.png
+            :width: 40%
 
     #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
-        .. image:: ../images/browser-wallet/update-baker-keys-finish.png
-                :width: 40%
+       .. image:: ../images/browser-wallet/update-baker-keys-finish.png
+            :width: 40%
 
     #. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
 
-        - :ref:`Windows<baker-windows>`
-        - :ref:`macOS<baker-macos>`
-        - :ref:`Docker<baking-docker>`
-        - :ref:`Ubuntu<baker-ubuntu>`
+       - :ref:`Windows<baker-windows>`
+       - :ref:`macOS<baker-macos>`
+       - :ref:`Docker<baking-docker>`
+       - :ref:`Ubuntu<baker-ubuntu>`
 
 
 .. dropdown:: Desktop Wallet
@@ -674,22 +675,23 @@ If you no longer wish to bake on this account, you can stop baking.
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
 
-        .. image:: ../images/browser-wallet/setup-baking-delegation.png
-            :width: 40%
+       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+           :width: 40%
+           :alt: screen showing current baker setup and buttons to stop or update
 
     #. You see the current baker setup. Click **Stop**.
 
-        .. image:: ../images/browser-wallet/update-baker-options.png
-            :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+       .. image:: ../images/browser-wallet/update-baker-options.png
+           :width: 40%
+           :alt: screen showing current baker setup and buttons to stop or update
 
     #. Read the information about what happens when you stop baking. Click **Continue**.
 
     #. Review the transaction information. Click **Send**.
 
-        .. image:: ../images/browser-wallet/stop-baking-review.png
-            :width: 40%
-            :alt: screen showing transaction details with send and back buttons
+       .. image:: ../images/browser-wallet/stop-baking-review.png
+           :width: 40%
+           :alt: screen showing transaction details with send and back buttons
 
     #. Click **Finish** to finalize your transaction.
 
