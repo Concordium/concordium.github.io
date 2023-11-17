@@ -22,13 +22,9 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         .. dropdown:: Single signature account
 
-            #. Go to **Accounts** and select the account on which you want to delegate funds.
+            #. Go to **Accounts**, select the account on which you want to delegate funds then click **More options**.
 
-            #. Click **More options** then select **Register as a delegator**.
-
-                .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
-                    :width: 50%
-                    :alt: screen with more options expanded
+            #. Click **Register as a delegator**.
 
             #. Select your target (a staking pool or passive delegation). Click **Continue**.
 
@@ -38,9 +34,9 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
             #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                .. image:: ../images/desktop-wallet/dw-delegation-stake.png
-                    :width: 50%
-                    :alt: screen to enter amount to delegate and restake settings
+               .. image:: ../images/desktop-wallet/dw-delegation-stake.png
+                   :width: 50%
+                   :alt: screen to enter amount to delegate and restake settings
 
             #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 

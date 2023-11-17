@@ -23,23 +23,33 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
         #. Go to **Accounts** and select the account you want to add as validator account and click **More options**.
 
-        #. Select **Register as a validator**.
+           .. image:: ../images/desktop-wallet/dw-more-options.png
+               :width: 50%
+               :alt: screen showing accounts with more options highlighted
 
-            .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
-                :width: 50%
-                :alt: screen showing all account options
+        #. Select **Register as a validator**.
 
         #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to produce the next block.
 
-            Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
+           Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-            Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
+           .. image:: ../images/desktop-wallet/dw-add-baker-stake.png
+               :width: 50%
+               :alt: screen showing amount to stake and restake options
 
         #. Choose if you want to open a staking pool so delegators may delegate stake to your validator.
 
-            - Choose Open to open your staking pool for this validator. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+           - Choose Open to open your staking pool for this validator. Click **Continue**. Click **Continue** after adjusting the commission rates with the sliders or by typing a value. Enter your Validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
-            - Choose Closed if you do not want to open a staking pool. Click **Continue** after reviewing the commission rates and Validator metadata URL.
+           - Choose Closed if you do not want to open a staking pool. Click **Continue** after reviewing the commission rates and Validator metadata URL.
+
+           .. image:: ../images/desktop-wallet/dw-pool-commission.png
+               :width: 50%
+               :alt: screen with pool url field and example
+
+           .. image:: ../images/desktop-wallet/dw-pool-url.png
+               :width: 50%
+               :alt: screen showing accounts with more options highlighted
 
         #. You have to export the validator credentials so that you can start the node with the validator keys. Select **Export validator credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 

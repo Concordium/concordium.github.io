@@ -119,19 +119,21 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts** and select the account whose baker stake you want to change.
+        #. Go to **Accounts** and select the account on which you have a baker pool that you want to update and click **More options**.
 
-        #. Click **More options** and select **Validation**.
+        #. Click **Validation**.
 
         #. Click **Update validator stake**.
 
-            .. image:: ../images/desktop-wallet/dw-baker-menu.png
-                :alt: screen showing all validator options
+           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+               :alt: screen showing all validator options
+               :width: 50%
 
         #. Enter the new amount that you want to stake if you want to change the amount. Change the restaking preference if you want to change that. Click **Continue**.
 
-            .. image:: ../images/desktop-wallet/dw-baker-stake.png
-                :alt: screen to update validator stake and restake preference options
+           .. image:: ../images/desktop-wallet/dw-baker-stake.png
+               :alt: screen to update validator stake and restake preference options
+               :width: 50%
 
         .. Note::
             If you reduce the staked amount, a :term:`cool-down<cool-down period>` period applies.
@@ -332,29 +334,33 @@ Update pool settings
 
         #. Click **Update staking pool**.
 
-            .. image:: ../images/desktop-wallet/dw-baker-menu.png
-                :alt: screen showing all validator options
+           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+               :alt: screen showing all validator options
+               :width: 50%
 
         #. Choose the status for your staking pool if you want to change its status and click **Continue**. If you do not want to change the status, click **Continue**. Options are:
 
-            - Open: open your staking pool to delegators.
+           - Open: open your staking pool to delegators.
 
-            - Closed for new: close the staking pool to new delegators. Existing delegators remain in the pool.
+           - Closed for new: close the staking pool to new delegators. Existing delegators remain in the pool.
 
-            - Closed for all: close the pool for all delegators.
+           - Closed for all: close the pool for all delegators.
 
-            .. image:: ../images/desktop-wallet/dw-pool-status.png
-                :alt: screen showing staking pool options
+           .. image:: ../images/desktop-wallet/dw-pool-status.png
+               :alt: screen showing staking pool options
+               :width: 50%
 
         #. Review the commission rates and adjust with the sliders or type in the rate. Click **Continue**.
 
-            .. image:: ../images/desktop-wallet/dw-pool-commission.png
-                :alt: screen displaying the commission rates for staking pools
+           .. image:: ../images/desktop-wallet/dw-pool-commission.png
+               :alt: screen displaying the commission rates for staking pools
+               :width: 50% 
 
         #. Enter your validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
-            .. image:: ../images/desktop-wallet/dw-pool-url.png
-                :alt: screen to enter a URL for staking pool metadata
+           .. image:: ../images/desktop-wallet/dw-pool-url.png
+               :alt: screen to enter a URL for staking pool metadata
+               :width: 50%
 
         #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -538,19 +544,21 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts**, select the account whose validator keys you want to update.
+        #. Go to **Accounts** and select the account on which you have a baker pool that you want to update and click **More options**.
 
-        #. Click **More options** and select **Validation**.
+        #. Select **Validation**.
 
         #. Click **Update validator keys**.
 
-            .. image:: ../images/desktop-wallet/dw-baker-menu.png
-                :alt: screen showing all validator options
+           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+               :alt: screen showing all validator options
+               :width: 50%
 
         #. You have to export the validator credentials so that you can restart the node with the new validator keys. Select **Export validator credentials**. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
-            .. image:: ../images/desktop-wallet/dw-baker-keys.png
-                :alt: screen showing new keys with button to export
+           .. image:: ../images/desktop-wallet/dw-baker-keys.png
+               :alt: screen showing new keys with button to export
+               :width: 50%
 
         .. Warning::
             This is the only time that you can export the credentials. If you’re going to transfer the validator keys to someone else, make sure to do so through a secure channel.
@@ -703,15 +711,15 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
         #. Click **Stop validation**.
 
-            .. image:: ../images/desktop-wallet/dw-baker-menu.png
-                :width: 50%
-                :alt: screen showing all validator options
+           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+               :width: 50%
+               :alt: screen showing all validator options
 
         #. The cool-down period is displayed. Select **Continue**.
 
-            .. image:: ../images/desktop-wallet/dw-remove-baker.png
-                :width: 50%
-                :alt: screen showing that validator will be removed
+           .. image:: ../images/desktop-wallet/dw-remove-baker.png
+               :width: 50%
+               :alt: screen showing that validator will be removed
 
         #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 

@@ -28,25 +28,25 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts** and select the account on which you want to change your delegation preferences.
+        #. Go to **Accounts** and select the account on which you want to change your delegation preferences then click **More options**.
 
-        #. Click **More options** then select **Delegation** and choose **Update Delegation**.
+        #. Click **Delegation** and choose **Update Delegation**.
 
-            .. image:: ../images/desktop-wallet/dw-delegation-menu.png
-                :width: 50%
-                :alt: screen with options expanded
+           .. image:: ../images/desktop-wallet/dw-delegation-menu.png
+               :width: 50%
+               :alt: screen with options expanded
 
-        #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
+        #. You can enter the validator ID for a different staking pool to delegate to or select passive delegation if you prefer that. Click **Continue**.
 
-            .. image:: ../images/desktop-wallet/dw-update-delegation-target.png
-                :width: 50%
-                :alt: screen to choose delegation type and target
+           .. image:: ../images/desktop-wallet/dw-update-delegation-target.png
+               :width: 50%
+               :alt: screen to choose delegation type and target
 
         #. You can enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-            .. image:: ../images/desktop-wallet/dw-update-delegation-stake.png
-                :width: 50%
-                :alt: screen to set amount and redelegation options
+           .. image:: ../images/desktop-wallet/dw-update-delegation-stake.png
+               :width: 50%
+               :alt: screen to set amount and redelegation options
 
         #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
