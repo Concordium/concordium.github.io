@@ -324,9 +324,9 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
         .. image:: ../images/browser-wallet/setup-baking-delegation.png
             :width: 40%
 
-    #. Click **Setup baking**. If you are baking for the first time on this account, you see some information about baking.
+    #. Click **Setup validation**. If you are setting up validation for the first time on this account, you see some information about being a validator.
 
-    #. Select your restake preference. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+    #. Select your restake preference. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
         .. image:: ../images/browser-wallet/add-baker-restake.png
             :alt: screen with Yes restake or No don't restake text boxes to choose
@@ -352,7 +352,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
             :alt: screen with buttons to open a pool for delegation or close a pool for delegation
             :width: 40%
 
-    5. Review the commissions paid to bakers. When you open your baker as a pool, you earn commissions of stake delegated to your pool from other accounts. Click **Continue**.
+    5. Review and adjust the commissions paid to validators using the sliders or by typing in the percentage. When you open your validator as a pool, you earn commissions of stake delegated to your pool from other accounts. Click **Continue**.
 
         .. image:: ../images/browser-wallet/add-baker-comms.png
             :alt: screen showing commission amounts for bakers in read-only

@@ -159,11 +159,15 @@ Wallets
 |bw|
 -------------------------
 
-    November 9, 2023
+    November XX, 2023
 
-    |bw| 1.1.11 removes the use of the gRPC v1 API and JSON-RPC. It also supports changes made to the web-sdk, and it supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
+    |bw| 1.2.0 implements the renaming of bakers to validators throughout the wallet. The other changes related to tokenomics have also been applied.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.1.11 - November 9, 2023
+
+            |bw| 1.1.11 removes the use of the gRPC v1 API and JSON-RPC. It also supports changes made to the web-sdk, and it supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
         .. dropdown:: |bw| 1.1.8 - September 12, 2023
 

@@ -230,6 +230,11 @@ Before delegating stake to a baker pool, it is important to research the pool us
             :width: 40%
             :alt: screen showing current delegation and buttons to select target
 
+
+        .. image:: ../images/browser-wallet/delegation-update-target1.png
+            :width: 40%
+            :alt: screen showing current delegation and buttons to select target
+
     #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
         .. image:: ../images/browser-wallet/delegation-update-restaking-pref.png

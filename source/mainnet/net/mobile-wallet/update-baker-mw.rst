@@ -300,6 +300,10 @@ Update pool settings
 
     #. You can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired. Click **Continue**.
 
+        .. image:: ../images/browser-wallet/update-baker-pool-comms.png
+            :width: 40%
+            :alt: screen showing sliders and text boxes to adjust commissions
+
     #. Update the baker pool metadata URL, if desired. Click **Continue**.
 
         .. image:: ../images/browser-wallet/update-baker-pool-url.png

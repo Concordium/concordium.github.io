@@ -257,7 +257,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
             .. image:: ../images/browser-wallet/delegated-amount.png
                 :width: 40%
 
-        Accounts with delegation also have an icon in the account list.
+        Accounts with delegation also have a badge in the account list.
 
             .. image:: ../images/browser-wallet/delegation-acct-list.png
                 :width: 40%
