@@ -324,7 +324,7 @@ Validator queries
 =================
 
 Earliest time a validator may be expected to produce a block
------------------------------------------------------
+------------------------------------------------------------
 
 .. code-block:: console
 
