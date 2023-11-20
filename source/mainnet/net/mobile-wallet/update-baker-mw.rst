@@ -354,7 +354,7 @@ Update pool settings
 
            .. image:: ../images/desktop-wallet/dw-pool-commission.png
                :alt: screen displaying the commission rates for staking pools
-               :width: 50% 
+               :width: 50%
 
         #. Enter your validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
