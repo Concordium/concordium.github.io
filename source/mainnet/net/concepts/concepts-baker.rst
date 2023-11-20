@@ -54,14 +54,14 @@ When considering the rewards and other validation-related concepts, the concept 
 
 Epochs are subdivided into :term:`rounds<round>`. In each round either a block is produced by the elected leader and validated by (2/3 of) the other validators, or a timeout is produced if the timeout time is reached before a block and its :term:`quorum certificate` are produced. In the case of a timeout, a :term:`timeout certificate` is produced for the block. The timeout time for the next round may shrink or grow depending on whether a block was finalized or a timeout occurred in the previous round. Using :term:`consensus protocol<Concordium Byzantine Fault Tolerance (BFT) protocol>`, a validator has to add the new block after the block from the previous round, unless a timeout occurred in the previous round, in which case they can add their block to an older round. The list of lottery winners that are :term:`elected to be the leader for every round in that epoch<Leader Election>` is established at the beginning of the epoch.
 
-A :term:`pay day` is the point at which new CCDs are minted and rewards are distributed to validators and delegators. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new valdiators begin producing blocks, and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet.
+A :term:`pay day` is the point at which new CCDs are minted and rewards are distributed to validators and delegators. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin producing blocks, and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet.
 
 A :term:`cool-down period` describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a valiator's stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next :term:`pay day` and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down period.)
 
 Validator keys
 ==============
 
-A node uses a set of :term:`cryptographic keys<private keys>` called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the :term:`lottery <lottery power>` as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an  account. The validator node will start validation after the next :term:`pay day` once the transaction has been approved.
+A node uses a set of :term:`cryptographic keys<private keys>` called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the :term:`lottery <lottery power>` as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an account. The validator node will start validation after the next :term:`pay day` once the transaction has been approved.
 
 Validator account
 -----------------
@@ -74,7 +74,7 @@ Rewards are added to the staked amount by default. However, you can choose to re
 
 .. Note::
 
-   It is not possible to have multi-signature validator accounts in |mw-gen2|, |mw-gen1|, or |bw|. If you need this functionality, you need to run Desktop Wallet.
+   It is not possible to have multi-signature validator accounts in |mw-gen2|, |mw-gen1|, or |bw|. If you need this functionality, you need to run the Desktop Wallet.
 
 Staking pool
 ============

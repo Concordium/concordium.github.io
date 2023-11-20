@@ -14,7 +14,7 @@ Change validator options
 .. Warning::
     Transactions on the blockchain can't be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review transactions before submitting.
 
-The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
+The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
 
 The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They are described below.
 
