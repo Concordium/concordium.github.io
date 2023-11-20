@@ -159,9 +159,9 @@ Wallets
 |bw|
 -------------------------
 
-    November XX, 2023
+    November 21, 2023
 
-    |bw| 1.2.0 implements the renaming of bakers to validators throughout the wallet. The other changes related to tokenomics have also been applied.
+    |bw| 1.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
 
     .. dropdown:: Previous releases
 
