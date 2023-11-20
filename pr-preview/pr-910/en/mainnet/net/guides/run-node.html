@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.801d5b3b-9fe4-464f-bf8d-1c28bae79142.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.184e002c-4889-4ce8-a985-df146f3fd653.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2161,8 +2161,8 @@ existing node database directory for use by the new container, i.e., replacing</
 e.g., <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code> and keeping the configuration files as
 they are.</p>
 </li>
-<li><p>If your node is an existing baker node, update the configuration file above to include</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+<li><p>If your node is an existing validator node, update the configuration file above to include</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
 </pre></div>
 </div>
 <p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
@@ -2359,8 +2359,8 @@ existing node database directory for use by the new container, i.e., replacing</
 e.g., <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> and keeping the configuration files as
 they are.</p>
 </li>
-<li><p>If your node is an existing baker node, update the configuration file above to include</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+<li><p>If your node is an existing validator node, update the configuration file above to include</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
 </pre></div>
 </div>
 <p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>

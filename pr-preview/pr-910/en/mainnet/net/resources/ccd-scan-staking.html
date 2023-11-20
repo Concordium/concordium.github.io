@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-staking.78fe3511-9dba-4d76-bbfc-468b5fd20c87.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-staking.0ce1f5a5-ddc1-4128-a506-c5c0cde241cc.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1840,7 +1840,7 @@ body {margin:0;}
 <li><p><strong>Validator id</strong>: ID of the validator who produced the block. Click the validator ID to see the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">validator details</span></a>.</p></li>
 <li><dl class="simple">
 <dt><strong>Tokenomics</strong>: contains the following details about the block:</dt><dd><ul>
-<li><p>Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the baker reward account, finalization reward account, and foundation account.</p></li>
+<li><p>Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the block reward account, finalization reward account, and foundation account.</p></li>
 <li><p>Accrued block rewards: similar to a ‘regular’ <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block</span></a>; contains the accrued block rewards.</p></li>
 <li><p>Payday foundation rewards: displays the payout to the foundation account for the pay day period and contains the option to drill-through to the <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">foundation account</span></a>.</p></li>
 <li><p>Payday account rewards: lists all the accounts and the rewards broken down by block reward and transaction fees.</p></li>
@@ -1852,7 +1852,7 @@ body {margin:0;}
 <li><p><strong>Transactions</strong>: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click <strong>Hash</strong> for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>, or click <strong>Sender</strong> for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the sender</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash or account number.</p></li>
 <li><p><strong>Block statistics</strong>: shows the block time (time since last block) and the finalization time of the block (the time before proof of finalization of the selected block was included in a subsequent block).</p></li>
 </ul>
-<p>Below the graphs, you can switch between <strong>Baker pools</strong> and <strong>Top delegators</strong>. You can also choose to see details for <strong>Passive delegation</strong>. There is a switch to <strong>Show only open pools</strong> and a filter where you can choose how the data shown in the table should be ordered.</p>
+<p>Below the graphs, you can switch between <strong>Staking pools</strong> and <strong>Top delegators</strong>. You can also choose to see details for <strong>Passive delegation</strong>. There is a switch to <strong>Show only open pools</strong> and a filter where you can choose how the data shown in the table should be ordered.</p>
 <div class="section" id="staking-pools-view">
 <h2>Staking pools view<a class="headerlink" href="#staking-pools-view" title="Permalink to this headline">#</a></h2>
 <p>If you select <strong>Staking pools</strong> the table contains a list of all validators/pools (including historic validators) sorted by their staked amount, containing the following:</p>
@@ -1868,7 +1868,7 @@ body {margin:0;}
 </div>
 <div class="section" id="top-delegators-view">
 <h2>Top delegators view<a class="headerlink" href="#top-delegators-view" title="Permalink to this headline">#</a></h2>
-<p>If you select <strong>Top delegaators</strong> you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (baker pool or passive delegation), and so on. The table contains the following:</p>
+<p>If you select <strong>Top delegaators</strong> you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (staking pool or passive delegation), and so on. The table contains the following:</p>
 <img alt="dark screen showing table of information about top delegators" src="../../_images/ccd-scan-staking-delegators.png" />
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1905,7 +1905,7 @@ body {margin:0;}
 <div class="section" id="validator-details">
 <span id="home-screen-baker"></span><h2>Validator details<a class="headerlink" href="#validator-details" title="Permalink to this headline">#</a></h2>
 <p>When you click a validator ID, the following appears:</p>
-<img alt="dark screen showing details of a single baker" src="../../_images/ccd-scan-baker-details.png" />
+<img alt="dark screen showing details of a single validator" src="../../_images/ccd-scan-baker-details.png" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1931,7 +1931,7 @@ body {margin:0;}
 </li>
 <li><p><strong>Related transactions</strong>: shows other transactions related to this validator ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash number.</p></li>
 <li><p><strong>Delegators</strong>: shows the first six characters of the account delegating to the validator, that account’s delegated stake, and whether earnings are restaked. You can click on the characters of the account for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the delegator</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account number.</p></li>
-<li><p><strong>Metadata</strong>: contains the URL that the baker can optionally provide with information about the staking pool.</p></li>
+<li><p><strong>Metadata</strong>: contains the URL that the validator can optionally provide with information about the staking pool.</p></li>
 </ul>
 </div>
 </div>

@@ -14,7 +14,7 @@ Change validator options
 .. Warning::
     Transactions on the blockchain can't be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review transactions before submitting.
 
-The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
+The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
 
 The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They are described below.
 
@@ -119,7 +119,7 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts** and select the account whose baker stake you want to change.
+        #. Go to **Accounts** and select the account whose validator stake you want to change.
 
         #. Click **More options** and select **Validation**.
 
@@ -148,9 +148,9 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     .. dropdown:: Multi signature account
 
-        #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update baker stake**.
+        #. Go to **Multi Signature Transactions**, select **Make new proposal**, and then select **Update validator stake**.
 
-        #. Select the account whose baker stake you want to change.
+        #. Select the account whose validator stake you want to change.
 
         #. Enter the new amount that you want to stake if you want to change that. Change the restaking preference if you want to change that. Click **Continue**.
 
@@ -302,7 +302,7 @@ Update pool settings
             :width: 40%
             :alt: screen showing actions to update validator pool status
 
-    #. You can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired. Click **Continue**.
+    #. You can use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. Click **Continue**.
 
     #. Update the staking pool metadata URL, if desired. Click **Continue**.
 
@@ -326,7 +326,7 @@ Update pool settings
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts** and select the account on which you have a baker pool that you want to update and click **More options**.
+        #. Go to **Accounts** and select the account on which you have a staking pool that you want to update and click **More options**.
 
         #. Select **Validation**.
 
@@ -498,7 +498,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
         .. image:: ../images/browser-wallet/update-baker-options.png
             :width: 40%
-            :alt: screen showing current baker setup and buttons to stop or update
+            :alt: screen showing current validator setup and buttons to stop or update
 
     #. Click **Update validator keys**. Review the information about updating validator keys and click **Continue**.
 
@@ -526,7 +526,7 @@ If you believe your validator keys have been compromised or lost, you can genera
         .. image:: ../images/browser-wallet/update-baker-keys-finish.png
                 :width: 40%
 
-    #. You need to import your baker keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
+    #. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
@@ -697,7 +697,7 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts**, select the account that you no longer want to be a baker account then click **More options**.
+        #. Go to **Accounts**, select the account that you no longer want to be a validator account then click **More options**.
 
         #. Select **Validation**.
 

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/transactions.491bd6c8-8110-4eba-b319-bd2c5949aa6b.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/transactions.b2e39980-d7fe-42de-83b6-4a996b0b71ab.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2343,7 +2343,7 @@ release schedule.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> # </span>Parameters related to staking pools:
 <span class="go">   + minimum equity capital: 500000.000000 CCD</span>
 <span class="go">   + maximum fraction of total stake a pool is allowed to hold: 0.05</span>
-<span class="go">   + maximum factor a pool may stake relative to the baker&#39;s stake: 6 % 1</span>
+<span class="go">   + maximum factor a pool may stake relative to the validators&#39;s stake: 6 % 1</span>
 <span class="go">   + pool owner cooldown duration: 21d</span>
 <span class="go">   + allowed range for finalization commission: [1.0, 1.0]</span>
 <span class="go">   + allowed range for block commission: [0.1, 0.1]</span>
@@ -2367,7 +2367,7 @@ release schedule.</p>
 <span class="go">   + mint distribution:</span>
 <span class="go">       * block reward: 0.6</span>
 <span class="go">   + transaction fee distribution:</span>
-<span class="go">       * baker: 0.45</span>
+<span class="go">       * validator: 0.45</span>
 <span class="go">       * GAS account: 0.45</span>
 <span class="go">   + GAS rewards:</span>
 <span class="go">       * producing a block: 0.25</span>
@@ -2408,13 +2408,13 @@ release schedule.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Parameters related to baker pools</p></td>
+<tr class="row-even"><td><p>Parameters related to staking pools</p></td>
 <td><p>Minimum equity capital</p></td>
 <td><p>The minimum amount of CCD to stake to become a validator.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>maximum fraction of total stake a pool is allowed hold</p></td>
-<td><p>The maximum percent of total stake any single baker pool can have.</p></td>
+<td><p>The maximum percent of total stake any single staking pool can have.</p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>maximum factor a pool may stake relative to the validators’s stake</p></td>
@@ -2486,7 +2486,7 @@ release schedule.</p>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>GAS rewards: adding a finalization proof</p></td>
-<td><p>The fraction of the GAS account that is allocated to the baker for including a finalization proof in a block.</p></td>
+<td><p>The fraction of the GAS account that is allocated to the validator for including a finalization proof in a block.</p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>GAS rewards: adding a credential deployment</p></td>

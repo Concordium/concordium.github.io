@@ -514,7 +514,7 @@ The output is:
    # Parameters related to staking pools:
      + minimum equity capital: 500000.000000 CCD
      + maximum fraction of total stake a pool is allowed to hold: 0.05
-     + maximum factor a pool may stake relative to the baker's stake: 6 % 1
+     + maximum factor a pool may stake relative to the validators's stake: 6 % 1
      + pool owner cooldown duration: 21d
      + allowed range for finalization commission: [1.0, 1.0]
      + allowed range for block commission: [0.1, 0.1]
@@ -538,7 +538,7 @@ The output is:
      + mint distribution:
          * block reward: 0.6
      + transaction fee distribution:
-         * baker: 0.45
+         * validator: 0.45
          * GAS account: 0.45
      + GAS rewards:
          * producing a block: 0.25
@@ -572,12 +572,12 @@ The output is:
    * - Parameter section
      - Parameter
      - Description
-   * - Parameters related to baker pools
+   * - Parameters related to staking pools
      - Minimum equity capital
      - The minimum amount of CCD to stake to become a validator.
    * -
      - maximum fraction of total stake a pool is allowed hold
-     - The maximum percent of total stake any single baker pool can have.
+     - The maximum percent of total stake any single staking pool can have.
    * -
      - maximum factor a pool may stake relative to the validators's stake
      - A staking pool's stake consists of the validators's own equity capital, and delegated capital. This factor determines the maximum stake a staking pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
@@ -631,7 +631,7 @@ The output is:
      - The fraction of the GAS account that is allocated to the validator for producing a block.
    * -
      - GAS rewards: adding a finalization proof
-     - The fraction of the GAS account that is allocated to the baker for including a finalization proof in a block.
+     - The fraction of the GAS account that is allocated to the validator for including a finalization proof in a block.
    * -
      - GAS rewards: adding a credential deployment
      - The fraction of the GAS account that is allocated to the validator for including an account creation transaction in a block.

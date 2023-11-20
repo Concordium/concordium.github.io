@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-ubuntu.4ee3d8ff-2e06-450a-b442-a880502cc940.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-ubuntu.29b5577e-2f94-4732-972d-1bf2d8cd9e1d.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1829,7 +1829,7 @@ Configure the node with validator keys on Mainnet<div class="sd-summary-down doc
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
 <li><p class="sd-card-text">Move the JSON file with the validator keys you generated to the server that’s running the node.
-Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/home/user/concordium/baker-credentials.json</span></code>.</p></li>
+Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/home/user/concordium/validator-credentials.json</span></code>.</p></li>
 <li><p class="sd-card-text">In the terminal, enter:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl edit concordium-mainnet-node.service
 </pre></div>
@@ -1838,16 +1838,16 @@ Store it, for example, in <code class="docutils literal notranslate"><span class
 <li><p class="sd-card-text">Add the following snippet to the opened file (the file is empty the first time you open it):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
 
-<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json</span>
-<span class="go">BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json</span>
+<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/validator-credentials.json</span>
+<span class="go">BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/validator-credentials.json</span>
 </pre></div>
 </div>
-<p class="sd-card-text">Where you replace the path <cite>/home/user/concordium/baker-credentials.json</cite> with the actual location of the file.</p>
+<p class="sd-card-text">Where you replace the path <cite>/home/user/concordium/validator-credentials.json</cite> with the actual location of the file.</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">The path <cite>%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/</cite> is the default path to the baker’s state directory, where <cite>9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478</cite> is the genesis hash.</p>
+<p class="sd-card-text">The path <cite>%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/</cite> is the default path to the validators’s state directory, where <cite>9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478</cite> is the genesis hash.</p>
 </div>
 <ol class="arabic">
 <li><p class="sd-card-text">Save the edited file.</p></li>
@@ -1871,8 +1871,8 @@ Configure the node with validator keys on Testnet<div class="sd-summary-down doc
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Move the JSON file with the baker keys you generated to the server that’s running the node.
-Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/home/user/concordium/baker-credentials.json</span></code>.</p></li>
+<li><p class="sd-card-text">Move the JSON file with the validator keys you generated to the server that’s running the node.
+Store it, for example, in <code class="docutils literal notranslate"><span class="pre">/home/user/concordium/validator-credentials.json</span></code>.</p></li>
 <li><p class="sd-card-text">In the terminal, enter:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl edit concordium-testnet-node.service
 </pre></div>
@@ -1881,11 +1881,11 @@ Store it, for example, in <code class="docutils literal notranslate"><span class
 <li><p class="sd-card-text">Add the following snippet to the opened file (the file is empty the first time you open it):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
 
-<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json</span>
-<span class="go">BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json</span>
+<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json</span>
+<span class="go">BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json</span>
 </pre></div>
 </div>
-<p class="sd-card-text">Where you replace the path <cite>/home/user/concordium/baker-credentials.json</cite> with the actual location of the file.</p>
+<p class="sd-card-text">Where you replace the path <cite>/home/user/concordium/validator-credentials.json</cite> with the actual location of the file.</p>
 </li>
 </ol>
 <div class="admonition note">
@@ -1920,7 +1920,7 @@ Store it, for example, in <code class="docutils literal notranslate"><span class
 <span class="go">...</span>
 </pre></div>
 </div>
-<p>In the wallets, a bread icon is added to the account associated with the validator node. The bread icon appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.</p>
+<p>In the wallets, a badge is added to the account associated with the validator node. The badge appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.</p>
 </div>
 </div>
 
