@@ -493,7 +493,7 @@ If you believe your baker keys have been compromised or lost, you can generate n
 
        .. image:: ../images/browser-wallet/setup-baking-delegation.png
            :width: 40%
-           :alt: screen showing current baker setup and buttons to stop or update
+           :alt: screen showing current validator setup and buttons to stop or update
 
     #. You see the current baker setup. Click **Update**.
 
