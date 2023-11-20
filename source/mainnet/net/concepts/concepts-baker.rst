@@ -39,7 +39,7 @@ Overview of the validation process
 6. The next validator (Alice) now uses the QC to produce the next block. The new block can only extend the previous block when a QC is presented to Alice.
 
 .. image:: ../images/concepts/baker-process2.png
-   :alt: diagram of baker process
+   :alt: diagram of validator process
 
 If there are no issues, the protocol repeats this process from step 3.
 
