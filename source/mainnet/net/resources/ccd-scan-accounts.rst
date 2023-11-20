@@ -40,7 +40,7 @@ When you select a sender or account, the following appears.
 
 The following information is shown in the account details:
 
-- **Account**: the first six characters of the account address are shown. Click Copy |copy| to copy the entire account address. If the account is participating as a validator or delegator, the staked amount is displayed. Additional information is available on the account: a validator section for validators, a delegation section for delegators, and a rewards section for both bakers and delegators.
+- **Account**: the first six characters of the account address are shown. Click Copy |copy| to copy the entire account address. If the account is participating as a validator or delegator, the staked amount is displayed. Additional information is available on the account: a validator section for validators, a delegation section for delegators, and a rewards section for both validators and delegators.
 - **Balance**: the current account balance is shown. If the account has a release schedule, the remaining locked amount is displayed here. The same applies if the account is participating as a validator or delegator then the amount staked is displayed under the account balance.
 - **Age**: the age of the account including the exact timestamp for all individual accounts.
 - **Transactions**: a list of all transactions associated with the account, including incoming and outgoing transfers. Use the navigation buttons at the bottom to navigate through transactions.
