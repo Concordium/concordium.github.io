@@ -61,7 +61,7 @@ A :term:`cool-down period` describes a period of time during which certain activ
 Validator keys
 ==============
 
-A node uses a set of :term:`cryptographic keys<private keys>` called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the :term:`lottery <lottery power>` as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an  account. The validator node will start validation after the next :term:`pay day` once the transaction has been approved.
+A node uses a set of :term:`cryptographic keys<private keys>` called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the :term:`lottery <lottery power>` as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an account. The validator node will start validation after the next :term:`pay day` once the transaction has been approved.
 
 Validator account
 -----------------
