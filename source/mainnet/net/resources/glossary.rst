@@ -256,7 +256,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Pay day
 
-      A pay day is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin validation and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of lottery winners that are elected the leader for every round in an epoch is established at the beginning of the epoch.
+      A pay day is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin validation and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of lottery winners that are elected to be the leader for every round in that epoch is established at the beginning of the epoch.
 
    Passive delegation
 
@@ -284,7 +284,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Round
 
-      Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the validators should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. Rounds are an index to a block or timeout.
+      Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the validators should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. Rounds are an index to a block or timeout. In every round, each validator checks locally whether they won the lottery, which entitles the winner to produce a block in that round. Zero, one, or multiple validators can win the lottery. The probability of these different events is controlled by the difficulty parameter *f*. For example, with difficulty 0.5 on average every second round will have a lottery winner.
 
    Rust
 
@@ -323,8 +323,6 @@ See also our `whitepaper`_ for more details on the terms described below.
    Slot
 
       See :term:`round`.
-
-      In the blockchain, time is divided into equally sized units called *slots*. On the testnet the duration of slot is one second. In every slot, each validator checks locally whether they won the lottery, which entitles the winner to produce a block in that round. Zero, one, or multiple validators can win the lottery. The probability of these different events is controlled by the difficulty parameter *f*. For example, with difficulty 0.5 on average every second slot will have a lottery winner.
 
    Smart contract
 
