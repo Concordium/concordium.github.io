@@ -74,7 +74,7 @@ Rewards are added to the staked amount by default. However, you can choose to re
 
 .. Note::
 
-   It is not possible to have multi-signature validator accounts in |mw-gen2|, |mw-gen1|, or |bw|. If you need this functionality, you need to run Desktop Wallet.
+   It is not possible to have multi-signature validator accounts in |mw-gen2|, |mw-gen1|, or |bw|. If you need this functionality, you need to run the Desktop Wallet.
 
 Staking pool
 ============
