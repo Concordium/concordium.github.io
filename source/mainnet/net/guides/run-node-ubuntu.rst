@@ -51,7 +51,7 @@ The services are also enabled to start automatically on system start.
 
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.mainnet.concordium.software/>`__ and look for a node with the name you provided.
 
-The ``concordium-mainnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
+The ``concordium-mainnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with validator keys.
 
 .. Note::
    If you want more detailed information about building and maintaining a node, or if your node is not running, see the `Building .deb packages for ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md>`__

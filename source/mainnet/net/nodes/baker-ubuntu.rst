@@ -17,7 +17,7 @@ Prerequisites
 .. dropdown:: Configure the node with validator keys on Mainnet
 
    #. Move the JSON file with the validator keys you generated to the server that's running the node.
-      Store it, for example, in ``/home/user/concordium/baker-credentials.json``.
+      Store it, for example, in ``/home/user/concordium/validator-credentials.json``.
 
    #. In the terminal, enter:
 
@@ -31,13 +31,13 @@ Prerequisites
 
          [Service]
 
-         Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json
-         BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/baker-credentials.json
+         Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/validator-credentials.json
+         BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/validator-credentials.json
 
-      Where you replace the path `/home/user/concordium/baker-credentials.json` with the actual location of the file.
+      Where you replace the path `/home/user/concordium/validator-credentials.json` with the actual location of the file.
 
    .. Note::
-      The path `%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/` is the default path to the baker's state directory, where `9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478` is the genesis hash.
+      The path `%S/concordium-9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478/` is the default path to the validators's state directory, where `9dd9ca4d19e9393877d2c44b70f89acbfc0883c2243e5eeaecc0d1cd0503f478` is the genesis hash.
 
    #. Save the edited file.
 
@@ -55,8 +55,8 @@ Prerequisites
 
 .. dropdown:: Configure the node with validator keys on Testnet
 
-   #. Move the JSON file with the baker keys you generated to the server that's running the node.
-      Store it, for example, in ``/home/user/concordium/baker-credentials.json``.
+   #. Move the JSON file with the validator keys you generated to the server that's running the node.
+      Store it, for example, in ``/home/user/concordium/validator-credentials.json``.
 
    #. In the terminal, enter:
 
@@ -70,10 +70,10 @@ Prerequisites
 
          [Service]
 
-         Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json
-         BindReadOnlyPaths=/home/user/concordium/baker-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/baker-credentials.json
+         Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json
+         BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json
 
-      Where you replace the path `/home/user/concordium/baker-credentials.json` with the actual location of the file.
+      Where you replace the path `/home/user/concordium/validator-credentials.json` with the actual location of the file.
 
    .. Note::
       The path `%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/` is the default path to the validators's state directory, where `b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d` is the genesis hash.
@@ -109,4 +109,4 @@ You can use ``concordium-client`` to see the status of the node. For more inform
 
    ...
 
-In the wallets, a bread icon is added to the account associated with the validator node. The bread icon appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.
+In the wallets, a badge is added to the account associated with the validator node. The badge appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.

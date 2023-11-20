@@ -36,7 +36,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
                 :width: 50%
                 :alt: screen with options expanded
 
-        #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**.
+        #. You can enter the validator ID of a different staking pool to delegate to or select passive if you prefer that. Click **Continue**.
 
             .. image:: ../images/desktop-wallet/dw-update-delegation-target.png
                 :width: 50%
@@ -64,7 +64,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
         #. Select the account on which you want to change your delegation preferences.
 
-        #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+        #. You can enter the validator ID of a different staking pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
         #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
@@ -147,7 +147,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
             :width: 50%
             :alt: screen showing current delegation with options to stop or update
 
-    #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
+    #. If you want to delegate to a specific pool tap **Staking pool** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
             :width: 50%
@@ -185,7 +185,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
             :width: 50%
             :alt: screen showing current delegation with options to stop or update
 
-    #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
+    #. If you want to delegate to a specific pool tap **Staking pool** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
             :width: 50%
@@ -224,7 +224,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
         .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
                 :width: 40%
 
-    #. If you want to delegate to a specific pool click **Baker** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. Click **Continue**.
+    #. If you want to delegate to a specific pool click **Target** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. Click **Continue**.
 
         .. image:: ../images/browser-wallet/delegation-update-target.png
             :width: 40%
