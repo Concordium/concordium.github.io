@@ -677,7 +677,7 @@ If you no longer wish to bake on this account, you can stop baking.
 
        .. image:: ../images/browser-wallet/setup-baking-delegation.png
            :width: 40%
-           :alt: screen showing current baker setup and buttons to stop or update
+           :alt: screen showing current validator setup and buttons to stop or update
 
     #. You see the current baker setup. Click **Stop**.
 
