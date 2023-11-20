@@ -165,7 +165,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 5: Add a validator in the Desktop Wallet
 
-   You're now ready to add a validator in the Desktop Wallet and generate validator keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See :ref:`Add a baker account in the Desktop Wallet <add-baker-mw>`.
+   You're now ready to add a validator in the Desktop Wallet and generate validator keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See :ref:`Add a validator account in the Desktop Wallet <add-baker-mw>`.
 
 .. dropdown:: Step 6: Configure the node with the validator keys
 
