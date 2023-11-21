@@ -19,11 +19,15 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    October 31, 2023
+    November 23, 2023
 
-        Version 1.3.0 contains support for deep linking and universal linking, and fixes an issue with the shielded balance toggle.
+    Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.3.0 - October 31, 2023
+
+            Version 1.3.0 contains support for deep linking and universal linking, and fixes an issue with the shielded balance toggle.
 
         .. dropdown:: |mw-gen2| 1.2.0 - October 9, 2023
 
