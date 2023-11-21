@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/mobile-wallet-gen2/faq.bc142825-3b10-4693-a828-c214a36becc2.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/mobile-wallet-gen2/faq.425c3f53-606e-41e8-8242-aca2963ad866.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1809,7 +1814,7 @@ What are the features and benefits of the Concordium Wallet for Mobile?<div clas
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Much of the functionality is the same as Concordium Legacy Wallet in that you can still send and receive funds, bake, delegate, and so on. But the Concordium Wallet for Mobile uses a <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the Concordium Wallet for Web.</p>
+<p class="sd-card-text">Much of the functionality is the same as Concordium Legacy Wallet in that you can still send and receive funds, be a validator, delegate, and so on. But the Concordium Wallet for Mobile uses a <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a> that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the Concordium Wallet for Web.</p>
 <p class="sd-card-text">In Concordium Wallet for Mobile initial accounts are no longer created by the <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> when your identity is verified, ensuring complete privacy of all your accounts. Going forward you <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">create all accounts yourself</span></a> in your Concordium Wallet.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1890,20 +1895,20 @@ Can I continue to use the Concordium Legacy Wallet? Can I use both the Concordiu
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-As a baker, what do I need to do to migrate from Concordium Legacy Wallet to Concordium Wallet for Mobile?<div class="sd-summary-down docutils">
+As a validator, what do I need to do to migrate from Concordium Legacy Wallet to Concordium Wallet for Mobile?<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For bakers who want to migrate you should:</p>
+<p class="sd-card-text">For validators who want to migrate you should:</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Stop baking and wait for the <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> to finish.</p></li>
+<li><p class="sd-card-text">Stop validation and wait for the <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> to finish.</p></li>
 <li><p class="sd-card-text">Set up the Concordium Wallet for Mobile.</p></li>
 <li><p class="sd-card-text">Once cool-down has passed and your funds are unlocked, transfer your funds to the new account in Concordium Wallet for Mobile.</p></li>
-<li><p class="sd-card-text">Register as a baker again in Concordium Wallet for Mobile.</p></li>
-<li><p class="sd-card-text">Restart the node with the new baker keys.</p></li>
+<li><p class="sd-card-text">Register as a validator again in Concordium Wallet for Mobile.</p></li>
+<li><p class="sd-card-text">Restart the node with the new validator keys.</p></li>
 </ol>
-<p class="sd-card-text">If you have a <a class="reference internal" href="../resources/glossary.html#term-Baker-pool"><span class="xref std std-term">baker pool</span></a> with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-pool-settings"><span class="std std-ref">URL for baker information</span></a>.</p>
+<p class="sd-card-text">If you have a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a> with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-pool-settings"><span class="std std-ref">URL for validator information</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1926,7 +1931,7 @@ Can I access my wallet on multiple devices with the secret recovery phrase?<div 
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Can I use my secret recovery phrase to restore my accounts in third party wallets?<div class="sd-summary-down docutils">
+Can I use my secret recovery phrase to restore my accounts in third-party wallets?<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>

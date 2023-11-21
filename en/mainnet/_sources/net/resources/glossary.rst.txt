@@ -34,23 +34,23 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Baker
 
-      A node that participates in the production of :term:`blocks<block>`, referred to as *baking*.
+      This term is no longer used. See :term:`validator<validator>`.
 
    Baker pool
 
-      A baker and delegators that collectively pool their stake to participate in the consensus protocol and earn rewards. The baker runs a baker node on behalf of the baker pool to bake (and possibly finalize) blocks using the collective stake of the pool to determine its lottery power. Rewards are accrued to the pool each time the baker produces a block. Each pay day, the accrued rewards are distributed to the pool's participants in proportion to their relative stakes in the pool, with the baker (the pool owner) receiving an additional commission from the delegators' rewards.
+      This term is no longer used. See :term:`staking pool<staking pool>`.
 
    Best block
 
-      Last block on the :term:`best chain`.
+      This term is no longer used. See :term:`Concordium Byzantine Fault Tolerance (BFT) protocol`.
 
    Best chain
 
-      The chain a :term:`baker` will build upon when making a new block. The best chain selection procedure is determined by the consensus protocol. In particular, the best chain has the most :term:`finalized<finalization>` blocks, and the most blocks after the last finalized block.
+      This term is no longer used. See :term:`Concordium Byzantine Fault Tolerance (BFT) protocol`.
 
    Block
 
-      The basic unit of the blockchain, which is produced by a :term:`baker`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a :term:`slot time<slot>` that records when it was baked. A block also contains information relating to consensus, for instance establishing which baker created the block, and that the baker was entitled to do so.
+      The basic unit of the blockchain, which is produced by a :term:`validator`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a :term:`slot time<slot>` that records when it was produced. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.
 
    Branch
 
@@ -75,14 +75,14 @@ See also our `whitepaper`_ for more details on the terms described below.
       -  as a form of payment between users via transactions,
       -  as a payment for executing smart contracts,
       -  as a store of value,
-      -  as a reward for honest behaviour (e.g. :term:`baking<baker>` or :term:`finalizing<finalization>`
+      -  as a reward for honest behavior (e.g. :term:`validation<validation>`
          blocks on top of the longest chain), to incentivize blockchain users.
 
       The smallest subdivision of CCD is the µCCD (micro CCD), with 1 CCD = 1,000,000 µCCD. This means that CCD amounts are given with up to six decimal places of precision.
 
    CCDScan
 
-      CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. Often used to research bakers and pools before deciding to delegate funds to a particular pool.
+      CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. Often used to research validators and pools before deciding to delegate funds to a particular pool.
 
    Chain
 
@@ -92,7 +92,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
       A rule that selects the best chain based on the following criteria:
 
-      - chain with the most finalized blocks
+      - chain with the most final blocks
       - longest chain
       - which last block has the earliest slot in the chains
       - which last block has the largest block luck in the chains
@@ -108,15 +108,15 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Consensus
 
-      The process by which nodes agree which :term:`transaction` have occurred and in what order. This consists of :term:`baking<baker>` and :term:`finalization`.
+      The process by which nodes agree which :term:`transactions<transaction>` have occurred and in what order. This consists of :term:`validation<validation>`.
 
    Cool-down period
 
-      A period of time during which a transaction is frozen. Examples of when cool-down periods apply include removing a baker and updating stake. The length of a cool-down period varies between transactions.
+      A period of time during which a transaction is frozen. Examples of when cool-down periods apply include removing a validator and updating stake. The length of a cool-down period varies between transactions.
 
    Concordium Byzantine Fault Tolerance (BFT) protocol
 
-      The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the bakers should produce a block. The members of the finalization committee then sign this block, and their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered finalized. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
+      The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the validators should produce a block. The other validators then sign this block, and their collective signatures are aggregated to form a quorum certificate (QC). This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the validators will instead send timeout messages, which are aggregated to form a timeout certificate (TC). Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
 
    Credential
 
@@ -140,7 +140,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Delegator
 
-      An account that contributes stake to a baker pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the baker, in proportion to their delegated stake.
+      An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
 
    Deploy
 
@@ -162,9 +162,9 @@ See also our `whitepaper`_ for more details on the terms described below.
 
       A time period that is approximately one hour on testnet and mainnet. At the start of each epoch, a :term:`leadership election nonce<leader election>` is computed based on the block nonces of the previous epoch. The leadership election nonce is valid for the duration of the epoch. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.
 
-   Finalization
+   Final block
 
-      The process by which a block is marked to be "finalized", i.e. part of the authoritative :term:`chain`. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block. The finalization process is conducted by the bakers with a staked amount of at least 0.1% of the :term:`total effective stake` in baker pools, known as the Finalization committee. Total effective stake in baker pools does not include passive delegation and any amount that exceeds the :ref:`baker pool bounding caps<delegation-caps>`. Finalization has to happen for each round otherwise the blockchain cannot proceed to the next round.
+      A block is considered final when it cannot be rolled back anymore. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.
 
    Genesis Block
 
@@ -212,19 +212,19 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Leader Election
 
-      In each round, a predetermined leader among the bakers should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. The leaders are determined from a leader election nonce that is updated each epoch. To update the leader election nonce the first block (the trigger block) after the nominal epoch time must be finalized. When this happens the chain starts a new epoch with the new leader election nonce set. When finalizers see the proof for the trigger block they stop signing additional blocks in the current epoch. When a baker sees the finalization proof it will bake in the new epoch. The leader election nonce is based on the block hashes up to the trigger block of the current epoch.
+      In every round a leader is elected among the validators to produce a new block. The leader is chosen by hashing a leader election nonce and the round number, and interpreting the hash as a random number that picks a validator with probability equal to their relative stake. A new leader election nonce is generated every :term:`epoch` by hashing block nonces from the previous epoch. So the sequence of leaders for every epoch is determined at the beginning of the epoch when the leader election nonce is fixed.
 
-      The :term:`winning probability` is proportional to the baker's relative stake.
+      The :term:`winning probability` is proportional to the validator's relative stake.
 
       See :term:`lottery power`.
 
    Lottery Power
 
-      A baker's lottery power is its relative stake and is therefore proportional to the :term:`staked amount` of that baker. The lottery power is updated each :term:`epoch`, and is based on the stake distribution at the end of the epoch before last. (This delay ensures that the stake distribution is determined before the randomness that fixes the bakers for the epoch: otherwise, stakeholders might redistribute their stake to luckier bakers, which undermines the security of the system.) :term:`Delegation<delegator>` affects the lottery power of the baker by increasing their stake, thus increasing the odds of that baker being chosen to bake a block.
+      A validator's lottery power is its relative stake and is therefore proportional to the :term:`staked amount` of that validator. The lottery power is updated each :term:`pay day`, and is based on the stake distribution at the end of the epoch before last. (This delay ensures that the stake distribution is determined before the randomness that fixes the validators for the epoch; otherwise, stakeholders might redistribute their stake to luckier validators, which undermines the security of the system.) :term:`Delegation<delegator>` affects the lottery power of the validator by increasing their stake, thus increasing the odds of that validator being chosen to produce a block.
 
    Mainnet
 
-      The main Concordium network which is expected to launch in early 2021. The mainnet will receive periodic upgrades, but in contrast to the :term:`testnet`, it will never be reset, and accounts created on the mainnet will remain indefinitely.
+      The main Concordium network which launched in June 2021. The mainnet will receive periodic upgrades, but in contrast to the :term:`testnet`, it will never be reset, and accounts created on the mainnet will remain indefinitely.
 
    Membership proof
 
@@ -232,13 +232,13 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Node
 
-      A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A :term:`baker node<baker>` has cryptographic keys that enable it to take part in baking and :term:`finalization`. A node without these keys is referred to as a *passive node*.
+      A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A :term:`validator node<baker>` has cryptographic keys that enable it to take part in validation. A node without these keys is referred to as a *passive node*.
 
    Nonce
 
       May refer to:
 
-      -  *Block Nonce*: a randomized value included by the :term:`baker` in each :term:`block`, and used to determine the leadership election nonce.
+      -  *Block Nonce*: a randomized value included by the :term:`validator` in each :term:`block`, and used to determine the leadership election nonce.
       -  *Leadership Election Nonce*: a randomized value that is updated each :term:`epoch<epoch>` that is used to seed the :term:`leader election` process.
       -  :term:`Transaction sequence number` (same as account sequence number)
 
@@ -252,15 +252,15 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    On-chain
 
-      Refers to an an event or activity that is propagated through the Concordium network and recorded on the Concordium blockchain. The recording can be explicit or implicit as part of the consensus protocol. An example of the former is a transaction such as a CCD transfer, an example of the latter are the rewards given out to, e.g., bakers.
+      Refers to an an event or activity that is propagated through the Concordium network and recorded on the Concordium blockchain. The recording can be explicit or implicit as part of the consensus protocol. An example of the former is a transaction such as a CCD transfer, an example of the latter are the rewards given out to, e.g., validators.
 
    Pay day
 
-      A pay day is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. Bakers are finalized at the end of the epoch before that next epoch where they are eligible to bake.
+      A pay day is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin validation and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of lottery winners that are elected to be the leader for every round in that epoch is established at the beginning of the epoch.
 
    Passive delegation
 
-      A form of delegation where a delegator's stake is effectively distributed among all baker pools. It is not associated with a specific baker. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific baker pool. However, passive delegation is not affected by poor performance of a single baker.
+      A form of delegation where a delegator's stake is effectively distributed among all staking pools. It is not associated with a specific validator. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific staking pool. However, passive delegation is not affected by poor performance of a single validator.
 
    Private keys
 
@@ -272,7 +272,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Quorum certificate
 
-      When the members of the finalization committee finalize the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the leader fails to produce a block in the :term:`round`, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a :term:`timeout certificate`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
+      When the validators sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the round leader fails to produce a block in the :term:`round`, or not enough signatures were gathered for a quorum certificate, then the validators will instead send timeout messages, which are aggregated to form a :term:`timeout certificate`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
 
    Range proofs
 
@@ -284,7 +284,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Round
 
-      Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the bakers should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. Rounds are an index to a block or timeout.
+      Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the validators should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. Rounds are an index to a block or timeout. In every round, each validator checks locally whether they won the lottery, which entitles the winner to produce a block in that round. Zero, one, or multiple validators can win the lottery. The probability of these different events is controlled by the difficulty parameter *f*. For example, with difficulty 0.5 on average every second round will have a lottery winner.
 
    Rust
 
@@ -324,17 +324,19 @@ See also our `whitepaper`_ for more details on the terms described below.
 
       See :term:`round`.
 
-      In the blockchain, time is divided into equally sized units called *slots*. On the testnet the duration of slot is one second. In every slot, each baker checks locally whether they won the lottery, which entitles the winner to bake a block in that slot. Zero, one, or multiple bakers can win the lottery. The probability of these different events is controlled by the difficulty parameter *f*. For example, with difficulty 0.5 on average every second slot will have a lottery winner.
-
    Smart contract
 
       A computer program or a transaction protocol that is intended to automatically execute, control or document events and actions according to the terms of a contract or an agreement. An example is a smart contract for selling NFTs on a marketplace; it may contain information about royalties, selling the NFT on to others, and so on.
 
    Staked Amount
 
-      :term:`Bakers<baker>` can have part of the balance of their account staked. The amount that is staked remains locked while staked and cannot be transferred or moved in any way. The staked amount is proportional to the :term:`lottery power` of a baker.
+      :term:`Validators<validator>` can have part of the balance of their account staked. The amount that is staked remains locked while staked and cannot be transferred or moved in any way. The staked amount is proportional to the :term:`lottery power` of a validator.
 
-      :term:`Delegators<delegator>` can delegate stake to a baker pool or passive delegation. This affects the staked amount of the baker and thus their lottery power.
+      :term:`Delegators<delegator>` can delegate stake to a staking pool or passive delegation. This affects the staked amount of the validator and thus their lottery power.
+
+   Staking pool
+
+      A validator and delegators that collectively pool their stake to participate in the consensus protocol and earn rewards. The validator runs a validator node on behalf of the staking pool to produce blocks using the collective stake of the pool to determine its lottery power. Rewards are accrued to the pool each time the validator produces a block. Each pay day, the accrued rewards are distributed to the pool's participants in proportion to their relative stakes in the pool, with the validator (the pool owner) receiving an additional commission from the delegators' rewards.
 
    Statement
 
@@ -350,7 +352,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Total effective stake
 
-      The total amount of stake in baker pools excluding passive delegation and any amount that exceeds the :ref:`baker pool bounding caps<delegation-caps>`.
+      The total amount of stake in staking pools excluding passive delegation and any amount that exceeds the :ref:`staking pool bounding caps<delegation-caps>`.
 
    Transaction
 
@@ -377,6 +379,14 @@ See also our `whitepaper`_ for more details on the terms described below.
       Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
       The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
+   Validation
+
+      The process of production of :term:`blocks<block>` done by validators. Validation makes the block part of the authoritative :term:`chain`. Transactions that are part of validated blocks are considered authoritative. Validation is conducted by the validators with a staked amount of at least 0.1% of the :term:`total effective stake` in staking pools. Total effective stake in staking pools does not include passive delegation and any amount that exceeds the :ref:`staking pool bounding caps<delegation-caps>`.
+
+   Validator
+
+      A node that participates in the production of :term:`blocks<block>`, referred to as *validation*.
+
    Verifiable credential
 
       Issued to the individual by an :term:`issuer` who has authority for the credential to be issued. A verifiable credential contains some information about the individual that does not necessitate :term:`anonymity revocation<anonymity revoker>`, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :term:`verifier` using :term:`zero-knowledge proofs<zero-knowledge proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
@@ -393,9 +403,9 @@ See also our `whitepaper`_ for more details on the terms described below.
 
       A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has four wallet types.
 
-      - The Desktop Wallet: a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+      - The Desktop Wallet: a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
 
-      - The Mobile Wallet: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, bake and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
+      - The Mobile Wallet: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, be a validator and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
 
       - The |bw|: a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
 
@@ -409,7 +419,7 @@ See also our `whitepaper`_ for more details on the terms described below.
 
    Winning probability
 
-      The winning probability is the probability that a baker wins in a given round. The probability is :math:`\alpha`, which equals the baker's relative stake.
+      The winning probability is the probability that a validator wins in a given round. The probability is :math:`\alpha`, which equals the validator's relative stake.
 
    Zero-knowledge proof
 

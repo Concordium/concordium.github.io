@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Run a baker node on Docker &#8212; Concordium  documentation</title>
+    <title>Run a validator node on Docker &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -41,12 +41,12 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-docker.1021cc38-f145-4f94-b0a1-cc7a0e3fc2c9.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-docker.df66dc3e-91eb-464f-9d7e-31654bc462f1.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Become a baker using the Concordium Client" href="../guides/become-baker.html" />
-    <link rel="prev" title="Run a baker node on Ubuntu" href="baker-ubuntu.html" />
+    <link rel="next" title="Become a validator using the Concordium Client" href="../guides/become-baker.html" />
+    <link rel="prev" title="Run a validator node on Ubuntu" href="baker-ubuntu.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 current active has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul class="current">
      <li class="toctree-l2 current active has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul class="current">
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3 current active">
         <a class="current reference internal" href="#">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1774,8 +1779,8 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#configure-a-node-as-a-baker">
-   Configure a node as a baker
+  <a class="reference internal nav-link" href="#configure-a-node-as-a-validator">
+   Configure a node as a validator
   </a>
  </li>
 </ul>
@@ -1806,39 +1811,34 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="run-a-baker-node-on-docker">
-<span id="baking-docker"></span><h1>Run a baker node on Docker<a class="headerlink" href="#run-a-baker-node-on-docker" title="Permalink to this headline">#</a></h1>
-<p>This guide describes how to configure and manage baking on a Docker/Linux node.</p>
+  <div class="section" id="run-a-validator-node-on-docker">
+<span id="baking-docker"></span><h1>Run a validator node on Docker<a class="headerlink" href="#run-a-validator-node-on-docker" title="Permalink to this headline">#</a></h1>
+<p>This guide describes how to set up the node to run as a <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">validator</span></a> node on a Docker/Linux node that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Install and run the node</span></a></p></li>
-<li><p>Generate baker keys for the account you want to bake</p></li>
+<li><p>If you want to run the node as a validator, you must have generated validator keys. How you generate validator keys depends on which wallet you are using. For an overview of the process, see <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">Validators</span></a>.</p></li>
 </ul>
 </div>
-<div class="section" id="configure-a-node-as-a-baker">
-<h2>Configure a node as a baker<a class="headerlink" href="#configure-a-node-as-a-baker" title="Permalink to this headline">#</a></h2>
-<p>To run a node as baker, you first have to generate baker keys and then register the keys on an account. Depending on whether you are using Desktop Wallet or Concordium Wallet for Mobile / Concordium Legacy Wallet, the process to generate baker keys differs.
-For information about the process for each type of wallet, see <a class="reference internal" href="../concepts/concepts-baker.html#baker-concept"><span class="std std-ref">Bakers</span></a>.
-You then need to move the generated baker keys file to a location accessible by the node,
-and finally specify this location in the service file for the Concordium Node.</p>
-<p>To register the keys in the network you need to be <a class="reference internal" href="../guides/run-node.html#running-a-node"><span class="std std-ref">running a node</span></a>
-and send a <code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client baker add &lt;keys-file&gt;.json --sender bakerAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/baker-credentials.json
+<div class="section" id="configure-a-node-as-a-validator">
+<h2>Configure a node as a validator<a class="headerlink" href="#configure-a-node-as-a-validator" title="Permalink to this headline">#</a></h2>
+<p>Once you have generated validator keys, you then need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.</p>
+<p>To register the keys in the network you need to be <a class="reference internal" href="../guides/run-node.html#running-a-node"><span class="std std-ref">running a node</span></a> and send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction to the network:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator add &lt;keys-file&gt;.json --sender validatorAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the baker’s initial stake</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the validators’s initial stake</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with the directory specified as the volume mount for the node database. In the <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">sample configuration file</span></a> this is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code> for the testnet node, and <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> for the mainnet node.</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
 </div>
-<p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the
-rewards to the staked amount on the baker. Read more about this behavior in the section <a class="reference internal" href="../guides/become-baker.html#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
-<p>To start the node with these baker keys and bake blocks do the following.</p>
+<p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the rewards to the staked amount on the validator account. Read more about this behavior in the section <a class="reference internal" href="../guides/become-baker.html#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
+<p>To start the node with these validator keys and produce blocks, do the following:</p>
 <ol class="arabic">
 <li><p>Stop the currently running node. To do this, press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or run</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker stop testnet-node
@@ -1851,20 +1851,15 @@ rewards to the staked amount on the baker. Read more about this behavior in the 
 <p>depending on the environment.</p>
 </li>
 <li><p>Update the configuration file for the node by adding</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
 </pre></div>
 </div>
 <p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
 </li>
 </ol>
-<p>When you’ve placed the file in the appropriate directory, start the node again in
-the same way as the first time, e.g., <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">testnet-node.yaml</span>
-<span class="pre">up</span></code>. The node will automatically start baking when the baker is included in the
-bakers for the current epoch.</p>
-<p>In the Desktop Wallet, Concordium Wallet for Mobile, and Concordium Legacy Wallet, a bread icon is added to
-the account associated with the baker node. The bread icon appears as
-soon as the transaction has been submitted. That is, before the two
-epochs have elapsed.</p>
+<p>When you’ve placed the file in the appropriate directory, start the node again in the same way as the first time, e.g., <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">-f</span> <span class="pre">testnet-node.yaml</span>
+<span class="pre">up</span></code>. The node will automatically start producing blocks when the validator is included in the validators for the current epoch.</p>
+<p>In the wallets, a badge is added to the account associated with the validator node. The badge appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.</p>
 </div>
 </div>
 
@@ -1878,13 +1873,13 @@ epochs have elapsed.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Run a baker node on Ubuntu</p>
+            <p class="prev-next-title">Run a validator node on Ubuntu</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../guides/become-baker.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Become a baker using the Concordium Client</p>
+        <p class="prev-next-title">Become a validator using the Concordium Client</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

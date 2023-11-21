@@ -29,7 +29,7 @@ The most common tasks on an account are:
 In the account card in the accounts list, you can see the following information:
 
 .. image:: ../images/desktop-wallet/dw-acct-card-in-list.png
-   :alt: example of account card with information, baking icon, ledger icon shown
+   :alt: example of account card with information, validator icon, ledger icon shown
 
 -  The **Account Total** shows the total number of CCDs on the account, which includes the CCDs that are available and any staked CCDs or shielded CCDs. It also includes CCDs that are scheduled to be released to your account on a future date.
 
@@ -37,7 +37,7 @@ In the account card in the accounts list, you can see the following information:
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
--  The **Staked** amount shows the amount staked if baking.
+-  The **Staked** amount shows the amount staked if the account is a validator or delegator.
 
 -  **Shielded balance** shows any shielded amounts on the account.
 
@@ -50,9 +50,9 @@ In addition, you can see the following information about the selected account on
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
--  The **Staked with...** amount shows the amount staked if baking.
+-  The **Staked with...** amount shows the amount staked if the account is a validator or delegator.
 
--  The **Delegation to...** amount shows the amount delegated to a baker pool or passive delegation.
+-  The **Delegation to...** amount shows the amount delegated to a staking pool or passive delegation.
 
 On the Shielded balance tab, you'll see:
 
@@ -95,7 +95,7 @@ You'll see a variety of information in **More options** about your account and a
 
 -  **Register data**: Add a small message to the chain, such as a hash. This information is visible on the chain and cannot be removed. Note that adding this message incurs a transaction fee.
 
--  **Register as a baker**: Make the account a baker account. See :ref:`Add a baker account in the Desktop Wallet <add-baker-mw>`. If the account is already a baker account, you'll see **Baking** which contains a list of options for managing a baker account: :ref:`Remove baker <remove-baker-mw>`, :ref:`Update baker keys<update-baker-keys-mw>`, :ref:`Update baker stake<update-baker-stake-mw>`, and :ref:`Update baker restake earnings<update-baker-stake-mw>`.
+-  **Register as a validator**: Make the account a validator account. See :ref:`Add a validator account in the Desktop Wallet <add-baker-mw>`. If the account is already a validator account, you'll see **Validation** which contains a list of options for managing a validator account: :ref:`Remove validator <remove-baker-mw>`, :ref:`Update validator keys<update-baker-keys-mw>`, :ref:`Update validator stake<update-baker-stake-mw>`, and :ref:`Update validator restake earnings<update-baker-stake-mw>`.
 
 - **Register as a delegator**: Register the account as a delegator. See :ref:`Delegation<delegation-concept>` for information about delegation. If you are already delegating, you'll see **Delegation** which contains a list of options for managing delegation.
 

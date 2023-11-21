@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/desktop-wallet/accounts-desktop.f44dfc22-01d2-4c67-ba8f-6c1bf8481a4f.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/desktop-wallet/accounts-desktop.a79d55c1-7171-4bcc-8cad-813f8fb8e74f.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1840,12 +1845,12 @@ body {margin:0;}
 <li><p><strong>Receive</strong>: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network or let them scan the QR code.</p></li>
 </ul>
 <p>In the account card in the accounts list, you can see the following information:</p>
-<img alt="example of account card with information, baking icon, ledger icon shown" src="../../_images/dw-acct-card-in-list.png" />
+<img alt="example of account card with information, validator icon, ledger icon shown" src="../../_images/dw-acct-card-in-list.png" />
 <ul class="simple">
 <li><p>The <strong>Account Total</strong> shows the total number of CCDs on the account, which includes the CCDs that are available and any staked CCDs or shielded CCDs. It also includes CCDs that are scheduled to be released to your account on a future date.</p></li>
 <li><p>The <strong>Balance Total</strong> shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does <em>not</em> include shielded CCDs.</p></li>
 <li><p>The <strong>At disposal</strong> amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.</p></li>
-<li><p>The <strong>Staked</strong> amount shows the amount staked if baking.</p></li>
+<li><p>The <strong>Staked</strong> amount shows the amount staked if the account is a validator or delegator.</p></li>
 <li><p><strong>Shielded balance</strong> shows any shielded amounts on the account.</p></li>
 </ul>
 <p>In addition, you can see the following information about the selected account on the <strong>Balance</strong> tab in the account details:</p>
@@ -1853,8 +1858,8 @@ body {margin:0;}
 <ul class="simple">
 <li><p>The <strong>Balance Total</strong> shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does <em>not</em> include shielded CCDs.</p></li>
 <li><p>The <strong>At disposal</strong> amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.</p></li>
-<li><p>The <strong>Staked with…</strong> amount shows the amount staked if baking.</p></li>
-<li><p>The <strong>Delegation to…</strong> amount shows the amount delegated to a baker pool or passive delegation.</p></li>
+<li><p>The <strong>Staked with…</strong> amount shows the amount staked if the account is a validator or delegator.</p></li>
+<li><p>The <strong>Delegation to…</strong> amount shows the amount delegated to a staking pool or passive delegation.</p></li>
 </ul>
 <p>On the Shielded balance tab, you’ll see:</p>
 <ul>
@@ -1882,7 +1887,7 @@ body {margin:0;}
 <li><p><strong>Credentials and attribute information</strong>: Here you can see all credential ID that are associated with the account and the attributes that are revealed for each credential ID (if any). You can also see the creation dates and valid to dates of the credentials. One or more credentials can be associated with an account.</p></li>
 <li><p><strong>Update credentials</strong>: Add new credentials to the account. See <a class="reference internal" href="../guides/multi-credentials.html#multi-credentials"><span class="std std-ref">Add credentials to an account</span></a>.</p></li>
 <li><p><strong>Register data</strong>: Add a small message to the chain, such as a hash. This information is visible on the chain and cannot be removed. Note that adding this message incurs a transaction fee.</p></li>
-<li><p><strong>Register as a baker</strong>: Make the account a baker account. See <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>. If the account is already a baker account, you’ll see <strong>Baking</strong> which contains a list of options for managing a baker account: <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#remove-baker-mw"><span class="std std-ref">Remove baker</span></a>, <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-keys-mw"><span class="std std-ref">Update baker keys</span></a>, <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update baker stake</span></a>, and <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update baker restake earnings</span></a>.</p></li>
+<li><p><strong>Register as a validator</strong>: Make the account a validator account. See <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>. If the account is already a validator account, you’ll see <strong>Validation</strong> which contains a list of options for managing a validator account: <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#remove-baker-mw"><span class="std std-ref">Remove validator</span></a>, <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-keys-mw"><span class="std std-ref">Update validator keys</span></a>, <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update validator stake</span></a>, and <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update validator restake earnings</span></a>.</p></li>
 <li><p><strong>Register as a delegator</strong>: Register the account as a delegator. See <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-concept"><span class="std std-ref">Delegation</span></a> for information about delegation. If you are already delegating, you’ll see <strong>Delegation</strong> which contains a list of options for managing delegation.</p></li>
 </ul>
 </div>

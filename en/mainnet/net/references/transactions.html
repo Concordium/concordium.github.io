@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/transactions.00235b45-f28f-449c-8bc1-1c3d9bbb1445.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/transactions.7cde2ddf-f39a-45b6-a61c-40c72c20d0fc.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1928,25 +1933,25 @@ You can see the fee in the transaction log.</p>
 <td><p>Make a transfer that will be released
 gradually</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">add</span></code></p></td>
-<td><p>Add a new baker. For more information, see
-<a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a baker using the Concordium Client</span></a>.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code></p></td>
+<td><p>Add a new validator. For more information, see
+<a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a validator using the Concordium Client</span></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">remove</span></code></p></td>
-<td><p>Remove a baker. For more information, see
-<a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a baker using the Concordium Client</span></a>.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">remove</span></code></p></td>
+<td><p>Remove a validator. For more information, see
+<a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a validator using the Concordium Client</span></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">update-stake</span></code></p></td>
-<td><p>Update the staked amount of a baker. For more
-information, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a baker using the Concordium Client</span></a>.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">update-stake</span></code></p></td>
+<td><p>Update the staked amount of a validator. For
+more information, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a validator using the Concordium Client</span></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">update-restake</span></code></p></td>
-<td><p>Update the restaking switch of a baker. For
-more information, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a baker using the Concordium Client</span></a>.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">update-restake</span></code></p></td>
+<td><p>Update the restaking switch of a validator. For
+more information, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a validator using the Concordium Client</span></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">baker</span> <span class="pre">set-key</span></code></p></td>
-<td><p>Update the keys of a baker. For more
-information, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a baker using the Concordium Client</span></a>.</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">set-key</span></code></p></td>
+<td><p>Update the keys of a validator. For more
+information, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a validator using the Concordium Client</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">update-keys</span></code></p></td>
 <td><p>Update credentials keys for a specific
@@ -2003,14 +2008,12 @@ fetched automatically and should only be specified in special cases.</p></li>
 3 signs with keys 0 and 1. If the sender account is imported to the client, and <code class="docutils literal notranslate"><span class="pre">--signers</span></code> is not provided,
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will sign with all keys in the local configuration of the account.</p></li>
 </ul>
-<p>In most cases, you only need to provide the <code class="docutils literal notranslate"><span class="pre">--sender</span></code> option
-and use the account by name.</p>
+<p>In most cases, you only need to provide the <code class="docutils literal notranslate"><span class="pre">--sender</span></code> option and use the account by name.</p>
 <p>In all cases, the command displays the exact parameters of the transaction
 before sending it, and you’re asked to confirm that it matches your intent.
 Just before the transaction is sent, you’re asked for the password to access
 the signing keys.</p>
-<p>Once a transaction has been submitted, the command will continuously poll and
-display its status until it’s been <a class="reference internal" href="../resources/glossary.html#term-Finalization"><span class="xref std std-term">finalized</span></a>.</p>
+<p>Once a transaction has been submitted, the command will continuously poll and display its status until it’s been finalized.</p>
 </div>
 <div class="section" id="commands-for-showing-account-information">
 <span id="account-commands"></span><h2>Commands for showing account information<a class="headerlink" href="#commands-for-showing-account-information" title="Permalink to this headline">#</a></h2>
@@ -2039,7 +2042,7 @@ also be set manually via the option <code class="docutils literal notranslate"><
 matching account <a class="reference internal" href="../resources/glossary.html#term-Alias"><span class="xref std std-term">aliases</span></a>. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
 <p>This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.</p>
-<p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account’s canonical address.</p>
+<p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account’s canonical address.</p>
 <p>To show aliases, enter:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias <span class="m">17</span>
 </pre></div>
@@ -2309,7 +2312,7 @@ release schedule.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--sender</span></code> is the account from which you want to stake.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--stake</span></code> is an amount of CCD you intend to delegate</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--target</span></code> is either the baker pool ID or <code class="docutils literal notranslate"><span class="pre">Passive</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--target</span></code> is either the staking pool ID or <code class="docutils literal notranslate"><span class="pre">Passive</span></code>.</p></li>
 </ul>
 <p>The command has the following optional argument:</p>
 <ul class="simple">
@@ -2337,18 +2340,18 @@ release schedule.</p>
 </div>
 <p>To see the chain parameters for a specific block use the <code class="docutils literal notranslate"><span class="pre">--block</span></code> flag to specify the block hash.</p>
 <p>The output is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> # </span>Parameters related to baker pools:
-<span class="go">   + minimum equity capital: 14000.000000 CCD</span>
-<span class="go">   + maximum fraction of total stake a pool is allowed to hold: 0.1</span>
-<span class="go">   + maximum factor a pool may stake relative to the baker&#39;s stake: 3 % 1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> # </span>Parameters related to staking pools:
+<span class="go">   + minimum equity capital: 500000.000000 CCD</span>
+<span class="go">   + maximum fraction of total stake a pool is allowed to hold: 0.05</span>
+<span class="go">   + maximum factor a pool may stake relative to the validators&#39;s stake: 6 % 1</span>
 <span class="go">   + pool owner cooldown duration: 21d</span>
 <span class="go">   + allowed range for finalization commission: [1.0, 1.0]</span>
-<span class="go">   + allowed range for baking commission: [0.1, 0.1]</span>
+<span class="go">   + allowed range for block commission: [0.1, 0.1]</span>
 <span class="go">   + allowed range for transaction commission: [0.1, 0.1]</span>
 
 <span class="gp"> # </span>Passive delegation parameters:
 <span class="go">   + finalization commission: 1.0</span>
-<span class="go">   + baking commission: 0.12</span>
+<span class="go">   + block commission: 0.12</span>
 <span class="go">   + transaction commission: 0.12</span>
 
 <span class="gp"> # </span>Parameters related to delegators:
@@ -2362,14 +2365,12 @@ release schedule.</p>
 <span class="gp"> # </span>Parameters that affect rewards distribution:
 <span class="go">   + mint amount per reward period: 261157877e-12</span>
 <span class="go">   + mint distribution:</span>
-<span class="go">       * baking reward: 0.6</span>
-<span class="go">       * finalization reward: 0.3</span>
+<span class="go">       * block reward: 0.6</span>
 <span class="go">   + transaction fee distribution:</span>
-<span class="go">       * baker: 0.45</span>
+<span class="go">       * validator: 0.45</span>
 <span class="go">       * GAS account: 0.45</span>
 <span class="go">   + GAS rewards:</span>
-<span class="go">       * baking a block: 0.25</span>
-<span class="go">       * adding a finalization proof: 5.0e-3</span>
+<span class="go">       * producing a block: 0.25</span>
 <span class="go">       * adding a credential deployment: 2.0e-2</span>
 <span class="go">       * adding a chain update: 5.0e-3</span>
 
@@ -2407,29 +2408,29 @@ release schedule.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Parameters related to baker pools</p></td>
+<tr class="row-even"><td><p>Parameters related to staking pools</p></td>
 <td><p>Minimum equity capital</p></td>
-<td><p>The minimum amount of CCD to stake to become a baker.</p></td>
+<td><p>The minimum amount of CCD to stake to become a validator.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>maximum fraction of total stake a pool is allowed hold</p></td>
-<td><p>The maximum percent of total stake any single baker pool can have.</p></td>
+<td><p>The maximum percent of total stake any single staking pool can have.</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>maximum factor a pool may stake relative to the baker’s stake</p></td>
-<td><p>A baker pool’s stake consists of the baker’s own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.</p></td>
+<td><p>maximum factor a pool may stake relative to the validators’s stake</p></td>
+<td><p>A staking pool’s stake consists of the validators’s own equity capital, and delegated capital. This factor determines the maximum stake a staking pool may have relative to the equity capital. Any delegated stake above this threshold does not count.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>pool owner cooldown duration</p></td>
-<td><p>The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cool-down has expired.</p></td>
+<td><p>The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.</p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>allowed range for finalization commission</p></td>
 <td><p>The allowed range of finalization commissions bakers may select when creating or updating pools.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
-<td><p>allowed range for baking commission</p></td>
-<td><p>The allowed range of baking commissions bakers may select when creating or updating pools.</p></td>
+<td><p>allowed range for block commission</p></td>
+<td><p>The allowed range of block commissions validators may select when creating or updating pools.</p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>allowed range for transaction commission</p></td>
@@ -2440,8 +2441,8 @@ release schedule.</p>
 <td><p>The percentage of finalization rewards retained by the passive delegation, i.e., not given out to delegators.</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>baking commission</p></td>
-<td><p>The percentage of baking rewards retained by the passive delegation, i.e., not given out to delegators.</p></td>
+<td><p>block commission</p></td>
+<td><p>The percentage of block rewards retained by the passive delegation, i.e., not given out to delegators.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>transaction commission</p></td>
@@ -2468,78 +2469,74 @@ release schedule.</p>
 <td><p>The percentage increase in amount of CCD per payday.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
-<td><p>mint distribution: baking reward</p></td>
-<td><p>The fraction of newly minted CCD that goes towards baker rewards.</p></td>
+<td><p>mint distribution: block reward</p></td>
+<td><p>The fraction of newly minted CCD that goes towards block rewards.</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>mint distribution: finalization reward</p></td>
-<td><p>The fraction of newly minted CCD that goes towards finalization rewards.</p></td>
+<td><p>transaction fee distribution: validator</p></td>
+<td><p>The fraction of block transaction fees allocated to the validator.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
-<td><p>transaction fee distribution: baker</p></td>
-<td><p>The fraction of block transaction fees allocated to the baker.</p></td>
-</tr>
-<tr class="row-even"><td></td>
 <td><p>transaction fee distribution: GAS account</p></td>
 <td><p>The fraction of block transaction fees allocated to the GAS account.</p></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>GAS rewards: baking a block</p></td>
-<td><p>The fraction of the GAS account that is allocated to the baker for baking a block.</p></td>
-</tr>
 <tr class="row-even"><td></td>
+<td><p>GAS rewards: producing a block</p></td>
+<td><p>The fraction of the GAS account that is allocated to the validator for producing a block.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
 <td><p>GAS rewards: adding a finalization proof</p></td>
-<td><p>The fraction of the GAS account that is allocated to the baker for including a finalization proof in a block.</p></td>
-</tr>
-<tr class="row-odd"><td></td>
-<td><p>GAS rewards: adding a credential deployment</p></td>
-<td><p>The fraction of the GAS account that is allocated to the baker for including an account creation transaction in a block.</p></td>
+<td><p>The fraction of the GAS account that is allocated to the validator for including a finalization proof in a block.</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>Gas rewards: adding a chain update</p></td>
-<td><p>The fraction of the GAS account that is allocated to the baker for including an update transaction in a block.</p></td>
+<td><p>GAS rewards: adding a credential deployment</p></td>
+<td><p>The fraction of the GAS account that is allocated to the validator for including an account creation transaction in a block.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Time parameters</p></td>
+<tr class="row-odd"><td></td>
+<td><p>Gas rewards: adding a chain update</p></td>
+<td><p>The fraction of the GAS account that is allocated to the validator for including an update transaction in a block.</p></td>
+</tr>
+<tr class="row-even"><td><p>Time parameters</p></td>
 <td><p>reward period length</p></td>
 <td><p>The length of the reward period. All rewards are handed out at the end of each reward period.</p></td>
 </tr>
-<tr class="row-even"><td><p>Consensus parameters</p></td>
+<tr class="row-odd"><td><p>Consensus parameters</p></td>
 <td><p>Timeout parameters: base timeout</p></td>
 <td><p>Time in milliseconds before timeout.</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td><p>Timeout parameters: timeout increase</p></td>
 <td><p>Factor by which base timeout increases in next round if no quorum certificate is produced after a round with a timeout certificate.</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td><p>Timeout parameters: timout decrease</p></td>
 <td><p>Factor by which base timeout decreases in next round if a quorum certificate is produced after a round with timeout certificate.</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td><p>minimum time between blocks</p></td>
 <td><p>minimum time in milliseconds between block creation</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td><p>block energy limit</p></td>
 <td><p>Maximum amount of energy consumed by block</p></td>
 </tr>
-<tr class="row-odd"><td><p>Finalization committee parameters</p></td>
+<tr class="row-even"><td><p>Finalization committee parameters</p></td>
 <td><p>minimum finalizers</p></td>
 <td><p>Minimum number of finalizers that make up the committee</p></td>
 </tr>
-<tr class="row-even"><td></td>
+<tr class="row-odd"><td></td>
 <td><p>maximum finalizers</p></td>
 <td><p>Maximum number of finalizers that make up the committee</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td><p>finalizer relative stake threshold</p></td>
 <td><p>The fraction of stake required to be part of the finalization committee</p></td>
 </tr>
-<tr class="row-even"><td><p>Other parameters</p></td>
+<tr class="row-odd"><td><p>Other parameters</p></td>
 <td><p>foundation account index</p></td>
 <td><p>An index of the designated foundation reward account. The foundation account receives the foundation tax.</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-even"><td></td>
 <td><p>maximum credential deployments per block</p></td>
 <td><p>The maximum amount of accounts that can be created in a block.</p></td>
 </tr>

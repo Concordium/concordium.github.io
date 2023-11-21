@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/dashboards.3bb53665-92a8-43e8-a948-857c1ebb21d4.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/dashboards.fa2de725-d08d-4d81-96f3-b8d74c92fb51.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1852,7 +1857,7 @@ body {margin:0;}
 <p>The table below the tiles shows details per participant in the chain. You can also click on a participant name to see details.</p>
 <ul class="simple">
 <li><p><strong>Name:</strong> participant name</p></li>
-<li><p><strong>Baker:</strong> if the participant is a baker, baker ID</p></li>
+<li><p><strong>Validator:</strong> if the participant is a validator, validator ID</p></li>
 <li><p><strong>Uptime:</strong> amount of uptime in minutes (m), days (d), hours (h), months (mon), or years (y)</p></li>
 <li><p><strong>Client:</strong> client version the participant is running</p></li>
 <li><p><strong>Avg ping:</strong> average ping time between the peers of the participant</p></li>

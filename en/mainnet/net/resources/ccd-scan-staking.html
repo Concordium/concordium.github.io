@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-staking.6e6d3149-273d-476b-8071-910c00cc5a50.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-staking.79639b23-3de4-4322-af9e-23bc924e21ae.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1769,8 +1774,8 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#baker-pools-view">
-   Baker pools view
+  <a class="reference internal nav-link" href="#staking-pools-view">
+   Staking pools view
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1784,8 +1789,8 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#baker-details">
-   Baker details
+  <a class="reference internal nav-link" href="#validator-details">
+   Validator details
   </a>
  </li>
 </ul>
@@ -1818,12 +1823,12 @@ body {margin:0;}
                 
   <div class="section" id="ccdscan-staking-overview">
 <span id="bakers-view"></span><h1>CCDScan Staking overview<a class="headerlink" href="#ccdscan-staking-overview" title="Permalink to this headline">#</a></h1>
-<p>The Staking overview shows information about bakers during the selected time range in the filter:</p>
-<img alt="dark screen with graphs at top, table at bottom showing baking information" src="../../_images/ccd-scan-bakers.png" />
+<p>The Staking overview shows information about validators during the selected time range in the filter:</p>
+<img alt="dark screen with graphs at top, table at bottom showing validator information" src="../../_images/ccd-scan-bakers.png" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>The graphs show when the next payday happens, the amount of staked CCD, the number of bakers, and the total of rewards during the selected time range in the filter. The <strong>Previous payday block</strong> contains information about all rewards paid out for a payday period. If you click <strong>Previous payday block</strong>, a special block details screen for the previous pay day block appears.</p>
+<p>The graphs show when the next pay day happens, the amount of staked CCD, the number of validators, and the total of rewards during the selected time range in the filter. The <strong>Previous payday block</strong> contains information about all rewards paid out for a payday period. If you click <strong>Previous payday block</strong>, a special block details screen for the previous pay day block appears.</p>
 <img alt="dark screen with block details" src="../../_images/ccd-scan-staking-payday-block-details.png" />
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1832,14 +1837,14 @@ body {margin:0;}
 <ul class="simple">
 <li><p><strong>Block</strong>: the first six characters of the block hash. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash. The block status is also shown.</p></li>
 <li><p><strong>Age</strong>: the age of the block and date/time stamp when it was created.</p></li>
-<li><p><strong>Baker id</strong>: ID of the baker who baked the block. Click the baker IDto see the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">baker details</span></a>.</p></li>
+<li><p><strong>Validator id</strong>: ID of the validator who produced the block. Click the validator ID to see the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">validator details</span></a>.</p></li>
 <li><dl class="simple">
 <dt><strong>Tokenomics</strong>: contains the following details about the block:</dt><dd><ul>
-<li><p>Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the baker reward account, finalization reward account, and foundation account.</p></li>
+<li><p>Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the block reward account, finalization reward account, and foundation account.</p></li>
 <li><p>Accrued block rewards: similar to a ‘regular’ <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block</span></a>; contains the accrued block rewards.</p></li>
 <li><p>Payday foundation rewards: displays the payout to the foundation account for the pay day period and contains the option to drill-through to the <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">foundation account</span></a>.</p></li>
-<li><p>Payday account rewards: lists all the accounts and the rewards broken down by baker reward, finalization reward, and transaction fees.</p></li>
-<li><p>Payday pool rewards: lists all the pools (including passive delegation) and the rewards broken down by baker reward, finalization reward, and transaction fees.</p></li>
+<li><p>Payday account rewards: lists all the accounts and the rewards broken down by block reward and transaction fees.</p></li>
+<li><p>Payday pool rewards: lists all the pools (including passive delegation) and the rewards broken down by block reward and transaction fees.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1847,30 +1852,30 @@ body {margin:0;}
 <li><p><strong>Transactions</strong>: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click <strong>Hash</strong> for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>, or click <strong>Sender</strong> for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the sender</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash or account number.</p></li>
 <li><p><strong>Block statistics</strong>: shows the block time (time since last block) and the finalization time of the block (the time before proof of finalization of the selected block was included in a subsequent block).</p></li>
 </ul>
-<p>Below the graphs, you can switch between <strong>Baker pools</strong> and <strong>Top delegators</strong>. You can also choose to see details for <strong>Passive delegation</strong>. There is a switch to <strong>Show only open pools</strong> and a filter where you can choose how the data shown in the table should be ordered.</p>
-<div class="section" id="baker-pools-view">
-<h2>Baker pools view<a class="headerlink" href="#baker-pools-view" title="Permalink to this headline">#</a></h2>
-<p>If you select <strong>Baker pools</strong> the table contains a list of all bakers/pools (including historic bakers) sorted by their staked amount, containing the following:</p>
+<p>Below the graphs, you can switch between <strong>Staking pools</strong> and <strong>Top delegators</strong>. You can also choose to see details for <strong>Passive delegation</strong>. There is a switch to <strong>Show only open pools</strong> and a filter where you can choose how the data shown in the table should be ordered.</p>
+<div class="section" id="staking-pools-view">
+<h2>Staking pools view<a class="headerlink" href="#staking-pools-view" title="Permalink to this headline">#</a></h2>
+<p>If you select <strong>Staking pools</strong> the table contains a list of all validators/pools (including historic validators) sorted by their staked amount, containing the following:</p>
 <ul class="simple">
-<li><p><strong>Baker ID</strong>: ID of the baker. This is the ID you need if you want to delegate to the baker pool in a wallet. Click the baker IDto see the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">baker details</span></a>. If the Baker has been removed (i.e. the baker is no longer active), <strong>Removed</strong> appears next to the ID.</p></li>
-<li><p><strong>Baker APY (30 days)</strong>: the calculated yield of the baker for the past 30 days.</p></li>
+<li><p><strong>Validator ID</strong>: ID of the validator. This is the ID you need if you want to delegate to the staking pool in a wallet. Click the validator ID to see the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">validator details</span></a>. If the validator has been removed (i.e. the validator is no longer active), <strong>Removed</strong> appears next to the ID.</p></li>
+<li><p><strong>Validator APY (30 days)</strong>: the calculated yield of the validator for the past 30 days.</p></li>
 <li><p><strong>Delegators APY (30 days)</strong>: the calculated yield of the delegators for the past 30 days.</p></li>
-<li><p><strong>Delegation pool Status</strong>: the baker’s pool status. Can be <strong>Open for all</strong>, <strong>Closed for all</strong>, or <strong>Closed for new</strong>.</p></li>
-<li><p><strong>Delegators</strong>: the number of delegators that baker has if the baker has an open pool</p></li>
-<li><p><strong>Available for delegation</strong>: shows the maximum number of remaining CCDs available for delegation based on the capital bound and the leverage factor between a baker and associated delegators. Based on the <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-caps"><span class="std std-ref">cap</span></a> imposed.</p></li>
-<li><p><strong>Total stake</strong>:  shows the combined stake of the baker and delegators (if any) and the percentage breakdown of the split between the two.</p></li>
+<li><p><strong>Delegation pool Status</strong>: the staking pool status. Can be <strong>Open for all</strong>, <strong>Closed for all</strong>, or <strong>Closed for new</strong>.</p></li>
+<li><p><strong>Delegators</strong>: the number of delegators that validator has if the validator has an open pool</p></li>
+<li><p><strong>Available for delegation</strong>: shows the maximum number of remaining CCDs available for delegation based on the capital bound and the leverage factor between a validator and associated delegators. Based on the <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-caps"><span class="std std-ref">cap</span></a> imposed.</p></li>
+<li><p><strong>Total stake</strong>:  shows the combined stake of the validator and delegators (if any) and the percentage breakdown of the split between the two.</p></li>
 </ul>
 </div>
 <div class="section" id="top-delegators-view">
 <h2>Top delegators view<a class="headerlink" href="#top-delegators-view" title="Permalink to this headline">#</a></h2>
-<p>If you select <strong>Top delegaators</strong> you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (baker pool or passive delegation), and so on. The table contains the following:</p>
+<p>If you select <strong>Top delegaators</strong> you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (staking pool or passive delegation), and so on. The table contains the following:</p>
 <img alt="dark screen showing table of information about top delegators" src="../../_images/ccd-scan-staking-delegators.png" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <ul class="simple">
 <li><p><strong>Account address</strong>: the first six characters of the account address. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire address. If you click on an account address, the <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">account details</span></a> appears.</p></li>
-<li><p><strong>Delegation target</strong>: the baker whose pool the account has staked. If you click on a baker ID, the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">baker details</span></a> appears.</p></li>
+<li><p><strong>Delegation target</strong>: the validator whose pool the account has staked. If you click on a validator ID, the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">validator details</span></a> appears.</p></li>
 <li><p><strong>Restake earnings</strong>: shows the delegator’s restaking preference.</p></li>
 <li><p><strong>Staked amount</strong>: amount of CCD the delegator has staked.</p></li>
 </ul>
@@ -1883,9 +1888,8 @@ body {margin:0;}
 <li><p><strong>Delegated stake</strong>: amount of CCD delegated to passive delegation.</p></li>
 <li><p><strong>APY (7 days)</strong>: the calculated yield of passive delegation based on past 7 days.</p></li>
 <li><p><strong>APY (30 days)</strong>: the calculated yield of passive delegation based on past 30 days.</p></li>
-<li><p><strong>Baking commission</strong>: percent of rewards paid as commission to baker.</p></li>
-<li><p><strong>Finalisation commission</strong>: percentage of finalization rewards that are paid as commission to the baker.</p></li>
-<li><p><strong>Transaction commission</strong>: percentage of transaction rewards that are paid as commission to the baker.</p></li>
+<li><p><strong>Block commission</strong>: percent of rewards paid as commission to validator.</p></li>
+<li><p><strong>Transaction commission</strong>: percentage of transaction rewards that are paid as commission to the validator.</p></li>
 <li><dl class="simple">
 <dt><strong>Rewards</strong>: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table.</dt><dd><ul>
 <li><p><strong>Time</strong> shows the date/time the reward was paid</p></li>
@@ -1898,37 +1902,36 @@ body {margin:0;}
 <li><p><strong>Delegators</strong>: the delegators staking to passive delegation, their restake preference, and amount staked. Click on a <strong>Hash</strong> to see <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">account details</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account address.</p></li>
 </ul>
 </div>
-<div class="section" id="baker-details">
-<span id="home-screen-baker"></span><h2>Baker details<a class="headerlink" href="#baker-details" title="Permalink to this headline">#</a></h2>
-<p>When you click a baker ID, the following appears:</p>
-<img alt="dark screen showing details of a single baker" src="../../_images/ccd-scan-baker-details.png" />
+<div class="section" id="validator-details">
+<span id="home-screen-baker"></span><h2>Validator details<a class="headerlink" href="#validator-details" title="Permalink to this headline">#</a></h2>
+<p>When you click a validator ID, the following appears:</p>
+<img alt="dark screen showing details of a single validator" src="../../_images/ccd-scan-baker-details.png" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>The baker details shows the following information about the baker.</p>
+<p>The validator details shows the following information about the validator.</p>
 <ul class="simple">
-<li><p><strong>Baker</strong>: the baker ID. This is the ID you need if you want to delegate to the baker pool in a wallet. If the Baker has been removed (i.e. the baker is no longer active), <strong>Removed</strong> appears next to the ID and a timestamp shows when the baker stopped.</p></li>
-<li><p>If there are any pending changes, they are shown here. Events such as stake increase, stake reduction, or baker stop are displayed.</p></li>
-<li><p><strong>Total stake</strong>: the baker’s total stake. Below the total is the amount staked by the baker and the amount of stake that comes from delegators.</p></li>
-<li><p><strong>Account</strong>: the first six characters of the baker account. You can click on the characters for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the sender</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account number.</p></li>
-<li><p><strong>Delegation pool status</strong>: the baker pool status. <strong>Open for all</strong> means that the baker pool is open for delegation. <strong>Closed for all</strong> means that you cannot delegate to that baker pool. <strong>Closed for new</strong> means that new delegators cannot delegate to that pool but existing delegators remain in the pool.</p></li>
-<li><p><strong>APY Period</strong>: choose between 7 days or 30 days. This seletion affects the <strong>Total APY</strong>, <strong>Baker APY</strong>, and <strong>Delegators APY</strong>.</p></li>
-<li><p><strong>Baker rank</strong>: the baker’s rank out of all bakers on Mainnet/Testnet based on the baker’s total stake.</p></li>
-<li><p><strong>Baking commission</strong>: the baker’s baking commission percent.</p></li>
-<li><p><strong>Finalisation commission</strong>: percentage of finalization rewards that are paid as commission to the baker.</p></li>
-<li><p><strong>Transaction commission</strong>: percentage of transaction rewards that are paid as commission to the baker.</p></li>
+<li><p><strong>Validator</strong>: the validator ID. This is the ID you need if you want to delegate to the staking pool in a wallet. If the validator has been removed (i.e. the validator is no longer active), <strong>Removed</strong> appears next to the ID and a timestamp shows when the validator stopped.</p></li>
+<li><p>If there are any pending changes, they are shown here. Events such as stake increase, stake reduction, or validator stop are displayed.</p></li>
+<li><p><strong>Total stake</strong>: the validator’s total stake. Below the total is the amount staked by the validator and the amount of stake that comes from delegators.</p></li>
+<li><p><strong>Account</strong>: the first six characters of the validator account. You can click on the characters for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the sender</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account number.</p></li>
+<li><p><strong>Staking pool status</strong>: the staking pool status. <strong>Open for all</strong> means that the staking pool is open for delegation. <strong>Closed for all</strong> means that you cannot delegate to that staking pool. <strong>Closed for new</strong> means that new delegators cannot delegate to that pool but existing delegators remain in the pool.</p></li>
+<li><p><strong>APY Period</strong>: choose between 7 days or 30 days. This seletion affects the <strong>Total APY</strong>, <strong>Validator APY</strong>, and <strong>Delegators APY</strong>.</p></li>
+<li><p><strong>Validator rank</strong>: the validator’s rank out of all validators on Mainnet/Testnet based on the validator’s total stake.</p></li>
+<li><p><strong>Block commission</strong>: the validator’s commission percent.</p></li>
+<li><p><strong>Transaction commission</strong>: percentage of transaction rewards that are paid as commission to the validator.</p></li>
 <li><dl class="simple">
-<dt><strong>Payday rewards</strong>: shows the sum of rewards earned by the baker and the individual rewards transactions for the time range selected in the filter.</dt><dd><ul>
+<dt><strong>Payday rewards</strong>: shows the sum of rewards earned by the validator and the individual rewards transactions for the time range selected in the filter.</dt><dd><ul>
 <li><p><strong>Time</strong>: shows the date/time the reward was distributed.</p></li>
 <li><p><strong>Reference</strong>: shows the first six characters of the transaction hash. Click on the first six characters of a hash in Reference to see <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transaction</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash number.</p></li>
-<li><p><strong>Amount</strong>: shows the amount of the reward. If you click on Show more you can see the breakdown of the reward by Baking rewards, Finalisation rewards, and Transaction fees.</p></li>
+<li><p><strong>Amount</strong>: shows the amount of the reward. If you click on Show more you can see the breakdown of the reward by validation rewards and transaction fees.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p><strong>Related transactions</strong>: shows other transactions related to this baker ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash number.</p></li>
-<li><p><strong>Delegators</strong>: shows the first six characters of the account delegating to the baker, that account’s delegated stake, and whether earnings are restaked. You can click on the characters of the account for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the delegator</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account number.</p></li>
-<li><p><strong>Metadata</strong>: contains the URL that the baker can optionally provide with information about the baker pool.</p></li>
+<li><p><strong>Related transactions</strong>: shows other transactions related to this validator ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash number.</p></li>
+<li><p><strong>Delegators</strong>: shows the first six characters of the account delegating to the validator, that account’s delegated stake, and whether earnings are restaked. You can click on the characters of the account for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the delegator</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account number.</p></li>
+<li><p><strong>Metadata</strong>: contains the URL that the validator can optionally provide with information about the staking pool.</p></li>
 </ul>
 </div>
 </div>

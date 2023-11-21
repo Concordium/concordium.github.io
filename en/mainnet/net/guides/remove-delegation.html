@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Remove delegation to a baker pool or passive delegation &#8212; Concordium  documentation</title>
+    <title>Remove delegation to a staking pool or passive delegation &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -41,12 +41,12 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/remove-delegation.a943d75b-bd79-4e82-a7f4-2c8425829b69.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/remove-delegation.bdd5196d-577b-42f2-b8ce-f9d789dad223.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Delegation and baking FAQ" href="../snippets/delegation-faq.html" />
-    <link rel="prev" title="Update delegation to a baker pool or passive delegation" href="update-delegation.html" />
+    <link rel="next" title="Delegation and validation FAQ" href="../snippets/delegation-faq.html" />
+    <link rel="prev" title="Update delegation to a staking pool or passive delegation" href="update-delegation.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 current active has-children">
     <a class="reference internal" href="how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul class="current">
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul class="current">
        <li class="toctree-l3">
         <a class="reference internal" href="add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3 current active">
         <a class="current reference internal" href="#">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1791,8 +1796,8 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="remove-delegation-to-a-baker-pool-or-passive-delegation">
-<span id="remove-delegation"></span><h1>Remove delegation to a baker pool or passive delegation<a class="headerlink" href="#remove-delegation-to-a-baker-pool-or-passive-delegation" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="remove-delegation-to-a-staking-pool-or-passive-delegation">
+<span id="remove-delegation"></span><h1>Remove delegation to a staking pool or passive delegation<a class="headerlink" href="#remove-delegation-to-a-staking-pool-or-passive-delegation" title="Permalink to this headline">#</a></h1>
 <p>You can remove the delegation on an account to stop delegating.</p>
 <p>If you remove the delegation, there is a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> before the delegation is stopped. During this period, you continue to earn rewards; you cannot change the delegation amount, but you can change other delegation settings. The delegation stop is not effective until the next pay day after cool-down period ends. At that time the amount you had delegated is returned to your disposable balance.</p>
 <div class="admonition note">
@@ -1895,7 +1900,7 @@ Multi signature account<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">Select <strong>I understand this is the final submission and that it cannot be reverted</strong>.</p>
 <p class="sd-card-text">If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
 </li>
-<li><p class="sd-card-text">Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the ledger.</p></li>
+<li><p class="sd-card-text">Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the LEDGER.</p></li>
 <li><p class="sd-card-text">Select <strong>Finish</strong> to leave the page.</p></li>
 </ol>
 </div>
@@ -1957,9 +1962,7 @@ Concordium Wallet for Web<div class="sd-summary-down docutils">
 <a class="reference internal image-reference" href="../../_images/delegation-update-stop.png"><img alt="screen showing current delegation and buttons to update or stop" src="../../_images/delegation-update-stop.png" style="width: 40%;" /></a>
 </li>
 <li><p class="sd-card-text">You see your current delegation. Click <strong>Stop</strong>. Review the information about the cool-down period.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/update-stop-delegation-baking.png"><img alt="../../_images/update-stop-delegation-baking.png" src="../../_images/update-stop-delegation-baking.png" style="width: 40%;" /></a>
-</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/update-stop-delegation-baking.png"><img alt="screen showing current delegation and buttons to update or stop" src="../../_images/update-stop-delegation-baking.png" style="width: 40%;" /></a>
 </li>
 <li><p class="sd-card-text">Review the information in the transaction overview. When you are satisfied, click <strong>Send</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/delegation-stop-xact-confirm.png"><img alt="screen showing the transaction details that will be submitted to the chain" src="../../_images/delegation-stop-xact-confirm.png" style="width: 40%;" /></a>
@@ -1985,13 +1988,13 @@ Concordium Wallet for Web<div class="sd-summary-down docutils">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Update delegation to a baker pool or passive delegation</p>
+            <p class="prev-next-title">Update delegation to a staking pool or passive delegation</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../snippets/delegation-faq.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Delegation and baking FAQ</p>
+        <p class="prev-next-title">Delegation and validation FAQ</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-blocks.9d7f61bc-b2f7-4346-b4eb-d2e64e4cdb1c.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-blocks.ffd08fd9-d474-4e0d-9329-377523ae98ba.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1815,7 +1820,7 @@ body {margin:0;}
 <li><p><strong>Status</strong>: the block status. Only Finalized blocks are shown.</p></li>
 <li><p><strong>Height</strong>: block height</p></li>
 <li><p><strong>Age</strong>: block age</p></li>
-<li><p><strong>Baker</strong>: the baker ID of the baker who baked the block. Click the baker ID to see <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">baker details</span></a>.</p></li>
+<li><p><strong>Validator</strong>: the validator ID of the validator who produced the block. Click the validator ID to see <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">validator details</span></a>.</p></li>
 <li><p><strong>Transactions</strong>: the number of transactions in the block</p></li>
 </ul>
 <div class="section" id="block-details">
@@ -1830,7 +1835,7 @@ body {margin:0;}
 <li><p><strong>Block</strong>: the first six characters of the block hash. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash.</p></li>
 <li><p><strong>Finalised</strong>: state of the block. Only Finalized blocks are shown.</p></li>
 <li><p><strong>Age</strong>: age of the block with date/time stamp.</p></li>
-<li><p><strong>Baker id</strong>: baker ID of the baker who baked the block. Click on the baker ID for details about the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">baker</span></a>.</p></li>
+<li><p><strong>Validator id</strong>: validator ID of the validator who produced the block. Click on the validator ID for details about the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">validator</span></a>.</p></li>
 <li><p><strong>Tokenomics</strong>: shows the tokenomics of the accrued block rewards.</p></li>
 <li><p><strong>Transactions</strong>: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click <strong>Hash</strong> for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>, or click <strong>Sender</strong> for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the sender</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash or account number.</p></li>
 <li><p><strong>Block statistics</strong>: shows the block time (time since last block) and the finalization time of the block (the time before proof of finalization of the selected block was included in a subsequent block).</p></li>

@@ -17,7 +17,7 @@ a backend node:
 -  Block state: Display a summary of the contents of a specific block
    and its relation to other blocks on the chain.
 -  Consensus state: Show the parameters of the consensus protocol and
-   statistics related to baking and finalization of blocks.
+   statistics related to production of blocks.
 
 
 .. _query-account-state:
@@ -159,7 +159,7 @@ Example
    Height:                     2269771
    Height since last genesis:  396377
    Genesis index:              2
-   Baker:                      0
+   Validator:                  0
    Transaction count:          1
    Transaction energy cost:    112 NRG
    Transactions size:          284
@@ -214,8 +214,7 @@ Inspect consensus status
 
    $concordium-client consensus status
 
-Display key blocks along with various statistics related to block production and
-finalization.
+Display key blocks along with various statistics related to block production.
 
 -  Key blocks: Genesis, "best", and most recently finalized (and their
    heights).

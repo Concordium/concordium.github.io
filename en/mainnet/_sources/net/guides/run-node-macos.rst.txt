@@ -67,7 +67,7 @@ Install/upgrade and run a node
 .. dropdown:: Mainnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of validator credentials.
 
   #. Go to :ref:`Downloads<node-downloads>`, and download the latest macOS installer package (.pkg file).
 
@@ -107,7 +107,7 @@ Install/upgrade and run a node
 .. dropdown:: Testnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of validator credentials.
 
   #. Go to :ref:`Downloads<testnet-node-downloads>`, and download the latest macOS installer package (.pkg file).
 
@@ -180,7 +180,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
@@ -266,6 +266,9 @@ Node collector configuration
 
 Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
 
+.. Note::
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+
 Since the GRPC V2 port is different than the GRPC V1 port, you need to change it in the node configuration:
 
 **Example for Mainnet**
@@ -286,13 +289,10 @@ Since the GRPC V2 port is different than the GRPC V1 port, you need to change it
 
 .. _configure-baker-macos:
 
-.. Note::
-   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+Configure a node as a validator
+===============================
 
-Configure a node as a baker
-===========================
-
-For information about baking on a MacOS node, see :ref:`baker-macos`.
+For information about validation on a MacOS node, see :ref:`baker-macos`.
 
 View node logs
 ==============

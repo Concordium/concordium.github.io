@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/grpc.b48cde68-e982-4a91-8b9f-3a276ff8a0d7.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/grpc.3715c860-0754-4864-a10c-68b07fae7a8d.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1794,8 +1799,8 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#baking">
-   Baking
+  <a class="reference internal nav-link" href="#validator">
+   Validator
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -18736,26 +18741,26 @@ doesn’t exist, or if the contract context is malformed or invalid.</p>
 </details></dd></dl>
 
 </div>
-<div class="section" id="baking">
-<h2>Baking<a class="headerlink" href="#baking" title="Permalink to this headline">#</a></h2>
+<div class="section" id="validator">
+<h2>Validator<a class="headerlink" href="#validator" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="GetPoolStatus">
 <span class="sig-name descname"><span class="pre">GetPoolStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_hash</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BlockHash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passive_delegation</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baker_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">UInt64</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">JsonResponse</span></span></span><a class="headerlink" href="#GetPoolStatus" title="Permalink to this definition">#</a></dt>
 <dd><p>Get the status of a pool.
 If <code class="docutils literal notranslate"><span class="pre">passive_delegation</span> <span class="pre">==</span> <span class="pre">true</span></code>, this returns the status for the passive delegators.
-Otherwise, it returns the status for the baker with the specified ID (if it exists).</p>
+Otherwise, it returns the status for the validator with the specified ID (if it exists).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>block_hash</strong> (<a class="reference internal" href="#grpc-block-hash"><code class="docutils literal notranslate"><span class="pre">BlockHash</span></code></a>) – The given block.</p></li>
 <li><p><strong>passive_delegation</strong> (<em>Bool</em>) – Whether the request is for passive delegation or a
-specific baker.</p></li>
-<li><p><strong>baker_id</strong> (<em>UInt64</em>) – The baker id to get the status of.</p></li>
+specific validator.</p></li>
+<li><p><strong>baker_id</strong> (<em>UInt64</em>) – The validator id to get the status of.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The status of the pool, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if the block hash is malformed,
-or if either the block hash or baker id doesn’t exist.</p>
+or if either the block hash or validator id doesn’t exist.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">JsonResponse</span></code> with <code class="docutils literal notranslate"><span class="pre">?PoolStatus</span></code> (see JSON schema below)</p>
@@ -19295,13 +19300,13 @@ is malformed or doesn’t exist.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GetBirkParameters">
 <span class="sig-name descname"><span class="pre">GetBirkParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_hash</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BlockHash</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">JsonResponse</span></span></span><a class="headerlink" href="#GetBirkParameters" title="Permalink to this definition">#</a></dt>
-<dd><p>Get an overview of the parameters used for baking.</p>
+<dd><p>Get an overview of the parameters used for validators.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>block_hash</strong> (<a class="reference internal" href="#grpc-block-hash"><code class="docutils literal notranslate"><span class="pre">BlockHash</span></code></a>) – The given block.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The parameters used for baking in the given block, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if
+<dd class="field-even"><p>The parameters used for validators in the given block, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if
 the block hash is malformed or doesn’t exist.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
@@ -19402,14 +19407,14 @@ the block hash is malformed or doesn’t exist.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="GetBakerList">
 <span class="sig-name descname"><span class="pre">GetBakerList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_hash</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BlockHash</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">JsonResponse</span></span></span><a class="headerlink" href="#GetBakerList" title="Permalink to this definition">#</a></dt>
-<dd><p>Get a list of all baker IDs registered at that block in ascending order. Or
+<dd><p>Get a list of all validator IDs registered at that block in ascending order. Or
 <code class="docutils literal notranslate"><span class="pre">null</span></code>, if the block is invalid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>block_hash</strong> (<a class="reference internal" href="#grpc-block-hash"><code class="docutils literal notranslate"><span class="pre">BlockHash</span></code></a>) – The given block.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of baker IDs, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if the block hash is malformed or
+<dd class="field-even"><p>A list of validator IDs, or <code class="docutils literal notranslate"><span class="pre">null</span></code> if the block hash is malformed or
 doesn’t exist.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
@@ -19437,10 +19442,10 @@ doesn’t exist.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="StartBaker">
 <span class="sig-name descname"><span class="pre">StartBaker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Bool</span></span></span><a class="headerlink" href="#StartBaker" title="Permalink to this definition">#</a></dt>
-<dd><p>Start the baker.</p>
+<dd><p>Start the validator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Whether starting the baker succeeded.</p>
+<dd class="field-odd"><p>Whether starting the validator succeeded.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>Bool</p>
@@ -19451,10 +19456,10 @@ doesn’t exist.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="StopBaker">
 <span class="sig-name descname"><span class="pre">StopBaker</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Bool</span></span></span><a class="headerlink" href="#StopBaker" title="Permalink to this definition">#</a></dt>
-<dd><p>Stop the baker.</p>
+<dd><p>Stop the validator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Whether stopping the baker succeeded.</p>
+<dd class="field-odd"><p>Whether stopping the validator succeeded.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>Bool</p>

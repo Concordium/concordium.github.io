@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bakers &#8212; Concordium  documentation</title>
+    <title>Validators &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -41,12 +41,12 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/concepts/concepts-baker.01a68cf5-e7e8-4f20-86b7-bca6576354f1.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/concepts/concepts-baker.88783e4a-0376-4ed6-a98b-6bcd12a7d0c3.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Baker management" href="../guides/baker-pool.html" />
-    <link rel="prev" title="How to earn with Concordium" href="../guides/how-to-earn.html" />
+    <link rel="next" title="Validator management" href="../guides/baker-pool.html" />
+    <link rel="prev" title="Staking with Concordium" href="../guides/how-to-earn.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 current active has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul class="current">
      <li class="toctree-l2 current active has-children">
       <a class="current reference internal" href="#">
-       Bakers
+       Validators
       </a>
       <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1769,82 +1774,65 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-baking-works">
-   How baking works
+  <a class="reference internal nav-link" href="#stake-and-lottery">
+   Stake and lottery
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview-of-the-validation-process">
+   Overview of the validation process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-concepts">
+   Time concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validator-keys">
+   Validator keys
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#baker-keys">
-     Baker keys
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#baker-account">
-     Baker account
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#baker-pool">
-     Baker pool
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stake-and-lottery">
-     Stake and lottery
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#time-concepts">
-     Time concepts
+    <a class="reference internal nav-link" href="#validator-account">
+     Validator account
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finalization">
-   Finalization
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-finalization">
-     What is finalization?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finalization-committee">
-     Finalization committee
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview-of-the-baker-process">
-   Overview of the baker process
+  <a class="reference internal nav-link" href="#staking-pool">
+   Staking pool
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#where-to-bake">
-   Where to bake
+  <a class="reference internal nav-link" href="#when-is-a-block-final">
+   When is a block final?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools-to-be-a-validator">
+   Tools to be a validator
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#baking-with-bw">
-     Baking with Concordium Wallet for Web
+    <a class="reference internal nav-link" href="#validation-with-bw">
+     Validation with Concordium Wallet for Web
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#baking-with-desktop-wallet">
-     Baking with Desktop Wallet
+    <a class="reference internal nav-link" href="#validation-with-desktop-wallet">
+     Validation with Desktop Wallet
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#baking-with-mw-gen1-and-mw-gen2">
-     Baking with Concordium Legacy Wallet and Concordium Wallet for Mobile
+    <a class="reference internal nav-link" href="#validation-with-mw-gen1-and-mw-gen2">
+     Validation with Concordium Legacy Wallet and Concordium Wallet for Mobile
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#baking-with-concordium-client">
-     Baking with
+    <a class="reference internal nav-link" href="#validation-with-concordium-client">
+     Validation with
      <code class="docutils literal notranslate">
       <span class="pre">
        Concordium-client
@@ -1887,101 +1875,81 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="bakers">
-<span id="baker-concept"></span><h1>Bakers<a class="headerlink" href="#bakers" title="Permalink to this headline">#</a></h1>
-<p>Baking is key to the Concordium blockchain. A <a class="reference internal" href="#baker-concept"><span class="std std-ref">baker</span></a> is a <a class="reference internal" href="../resources/glossary.html#term-Node"><span class="xref std std-term">node</span></a> that participates in the network by <a class="reference internal" href="../resources/glossary.html#term-Baker"><span class="xref std std-term">baking</span></a> (creating) new <a class="reference internal" href="../resources/glossary.html#term-Block"><span class="xref std std-term">blocks</span></a> that are added to the chain. The blockchain consists of multiple <a class="reference internal" href="../resources/glossary.html#term-Baker"><span class="xref std std-term">baker</span></a> nodes that maintain the blockchain by baking and <a class="reference internal" href="../resources/glossary.html#term-Finalization"><span class="xref std std-term">finalizing</span></a> <a class="reference internal" href="../resources/glossary.html#term-Block"><span class="xref std std-term">blocks</span></a>.</p>
-<div class="section" id="how-baking-works">
-<h2>How baking works<a class="headerlink" href="#how-baking-works" title="Permalink to this headline">#</a></h2>
-<p>A node is a baker node when it participates actively in the network by creating new blocks that are added to the chain. A <a class="reference internal" href="../resources/glossary.html#term-Baker"><span class="xref std std-term">baker</span></a> collects, orders, and validates the <a class="reference internal" href="../resources/glossary.html#term-Transaction"><span class="xref std std-term">transactions</span></a> that are included in a block to maintain the integrity of the blockchain. The bakers sign each block that they bake so that the block can be verified and executed by the rest of the participants of the network.</p>
-<p>The chain a baker builds upon is the <a class="reference internal" href="../resources/glossary.html#term-Best-chain"><span class="xref std std-term">best chain</span></a> when making a new block. The best chain is selected using <a class="reference internal" href="../resources/glossary.html#term-Consensus"><span class="xref std std-term">consensus protocol</span></a>. In particular, the best chain has the most finalized blocks and the most blocks after the last finalized block.</p>
-<div class="section" id="baker-keys">
-<h3>Baker keys<a class="headerlink" href="#baker-keys" title="Permalink to this headline">#</a></h3>
-<p>A node uses a set of <a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">cryptographic keys</span></a> called baker keys to sign the blocks that it bakes. The baker keys are uniquely determined from the associated account. The baker keys are used for signing the block that the node bakes and for verifying whether the baker has won the <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">lottery</span></a> as described below. To become a baker node, the node must be configured with a set of baker keys. You generate the baker keys in the wallet when you add a baker account. The baker node will start baking after the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> once the transaction has been approved.</p>
+  <div class="section" id="validators">
+<span id="baker-concept"></span><h1>Validators<a class="headerlink" href="#validators" title="Permalink to this headline">#</a></h1>
+<p>Validation is key to the Concordium blockchain. A <a class="reference internal" href="../resources/glossary.html#term-Node"><span class="xref std std-term">node</span></a> is a validator node when it participates actively in the network by creating new <a class="reference internal" href="../resources/glossary.html#term-Block"><span class="xref std std-term">blocks</span></a> that are added to the chain. The blockchain consists of multiple <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validator</span></a> nodes. A <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validator</span></a> collects, orders, and validates the <a class="reference internal" href="../resources/glossary.html#term-Transaction"><span class="xref std std-term">transactions</span></a> that are included in a block to maintain the integrity of the blockchain. The validators sign each block that they produce so that the block can be verified and executed by the other validators in the network.</p>
+<div class="section" id="stake-and-lottery">
+<span id="concepts-baker-stake"></span><h2>Stake and lottery<a class="headerlink" href="#stake-and-lottery" title="Permalink to this headline">#</a></h2>
+<p>A validator needs to <a class="reference internal" href="../resources/glossary.html#term-Staked-Amount"><span class="xref std std-term">stake</span></a> a part of its CCD balance on the validator account. Later, the validator can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it’s released by the validator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an account owns an amount that was transferred with a release schedule, the amount can be staked even if it hasn’t been released yet.</p>
 </div>
-<div class="section" id="baker-account">
-<h3>Baker account<a class="headerlink" href="#baker-account" title="Permalink to this headline">#</a></h3>
-<p>Each account can use a set of baker keys to register a baker. Whenever a baker bakes a valid block that gets included in the chain, a reward is paid to the baker’s account (and the baker pool delegators if they have a pool) at <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. The reward is derived from transaction fees paid for transactions included in the block and its predecessors, as well as from newly-minted CCDs.</p>
-<p>The account can be viewed either in the Desktop Wallet, the Concordium Wallet for Mobile, the Concordium Legacy Wallet, or the Concordium Wallet for Web depending on where the account was created.</p>
+<p>To be chosen to produce a block, the validator must take part in a <em>lottery</em>. The greater the validator’s stake, the greater the validator’s chance of <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">winning the lottery</span></a> and being selected to produce a block.</p>
+</div>
+<div class="section" id="overview-of-the-validation-process">
+<h2>Overview of the validation process<a class="headerlink" href="#overview-of-the-validation-process" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>A Proof-of-stake based lottery system produces a list of round leaders for the epoch. The higher the validator’s stake, the higher the probability of being included on the list more often.</p></li>
+<li><p>The first validator on the list (Bob) makes a new block that appends to the genesis block.</p></li>
+<li><p>Bob then broadcasts the block to all peers.</p></li>
+<li><p>If the block is valid, the validators will sign it.</p></li>
+<li><p>If the combined effective stake of the validators who sign the block is <em>greater than or equal to</em> two-thirds of the total stake, the block gets a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">Quorum Certificate</span></a> (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.</p></li>
+</ol>
+<img alt="diagram of validator process" src="../../_images/baker-process1.png" />
+<ol class="arabic simple" start="6">
+<li><p>The next validator (Alice) now uses the QC to produce the next block. The new block can only extend the previous block when a QC is presented to Alice.</p></li>
+</ol>
+<img alt="diagram of validator process" src="../../_images/baker-process2.png" />
+<p>If there are no issues, the protocol repeats this process from step 3.</p>
+<p>In the case of a faulty validator who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If Bob does not produce a block within a certain time, a <a class="reference internal" href="../resources/glossary.html#term-Timeout-certificate"><span class="xref std std-term">Timeout Certificate</span></a> (TC) is issued to move the process forward. Alice can now use the TC to skip the previous round and extend an older block for which she has a QC.</p>
+</div>
+<div class="section" id="time-concepts">
+<h2>Time concepts<a class="headerlink" href="#time-concepts" title="Permalink to this headline">#</a></h2>
+<p>The Concordium blockchain divides time into <a class="reference internal" href="../resources/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a>.</p>
+<p>When considering the rewards and other validation-related concepts, the concept of an <em>epoch</em> is used as a unit of time that defines a period in which the set of current validators and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">Genesis block</span></a>. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.</p>
+<p>Epochs are subdivided into <a class="reference internal" href="../resources/glossary.html#term-Round"><span class="xref std std-term">rounds</span></a>. In each round either a block is produced by the elected leader and validated by (2/3 of) the other validators, or a timeout is produced if the timeout time is reached before a block and its <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a> are produced. In the case of a timeout, a <a class="reference internal" href="../resources/glossary.html#term-Timeout-certificate"><span class="xref std std-term">timeout certificate</span></a> is produced for the block. The timeout time for the next round may shrink or grow depending on whether a block was finalized or a timeout occurred in the previous round. Using <a class="reference internal" href="../resources/glossary.html#term-Concordium-Byzantine-Fault-Tolerance-BFT-protocol"><span class="xref std std-term">consensus protocol</span></a>, a validator has to add the new block after the block from the previous round, unless a timeout occurred in the previous round, in which case they can add their block to an older round. The list of lottery winners that are <a class="reference internal" href="../resources/glossary.html#term-Leader-Election"><span class="xref std std-term">elected to be the leader for every round in that epoch</span></a> is established at the beginning of the epoch.</p>
+<p>A <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> is the point at which new CCDs are minted and rewards are distributed to validators and delegators. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin producing blocks, and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the <strong>next pay day after the cool-down period ends</strong>. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet.</p>
+<p>A <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a valiator’s stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down period.)</p>
+</div>
+<div class="section" id="validator-keys">
+<h2>Validator keys<a class="headerlink" href="#validator-keys" title="Permalink to this headline">#</a></h2>
+<p>A node uses a set of <a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">cryptographic keys</span></a> called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">lottery</span></a> as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an account. The validator node will start validation after the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> once the transaction has been approved.</p>
+<div class="section" id="validator-account">
+<h3>Validator account<a class="headerlink" href="#validator-account" title="Permalink to this headline">#</a></h3>
+<p>Each account can use a set of validator keys to register a validator. Whenever a validator produces a valid block that gets included in the chain, a reward is paid to the validator’s account (and the staking pool delegators if they have a pool) at <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. The reward is derived from transaction fees paid for transactions included in the block and its predecessors, as well as from newly-minted CCDs.</p>
+<p>The account can be viewed in the Desktop Wallet, the Concordium Wallet for Mobile, the Concordium Legacy Wallet, or the Concordium Wallet for Web depending on where the account was created.</p>
 <p>Rewards are added to the staked amount by default. However, you can choose to receive the rewards in the account balance instead of staking them automatically.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is not possible to have multi signature baker accounts in Concordium Wallet for Mobile or Concordium Legacy Wallet. If you need this functionality, you need to run Desktop Wallet.</p>
+<p>It is not possible to have multi-signature validator accounts in Concordium Wallet for Mobile, Concordium Legacy Wallet, or Concordium Wallet for Web. If you need this functionality, you need to run the Desktop Wallet.</p>
 </div>
 </div>
-<div class="section" id="baker-pool">
-<h3>Baker pool<a class="headerlink" href="#baker-pool" title="Permalink to this headline">#</a></h3>
-<p>You have the option when adding a baker to open a <a class="reference internal" href="../resources/glossary.html#term-Baker-pool"><span class="xref std std-term">baker pool</span></a>. A baker pool allows others who want to earn rewards to do so without the need to run a node or become a baker themselves. To do this they <a class="reference internal" href="concepts-delegation.html#delegation-concept"><span class="std std-ref">delegate</span></a> an amount of stake to your baker pool which then increases your stake and your <a class="reference internal" href="../resources/glossary.html#term-Winning-probability"><span class="xref std std-term">chances of winning the lottery</span></a> to bake a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.</p>
-<p>The maximum size of a pool is 10% of all stake in pools (i.e., excluding passive delegation).</p>
 </div>
-<div class="section" id="stake-and-lottery">
-<span id="concepts-baker-stake"></span><h3>Stake and lottery<a class="headerlink" href="#stake-and-lottery" title="Permalink to this headline">#</a></h3>
-<p>A baker needs to <a class="reference internal" href="../resources/glossary.html#term-Staked-Amount"><span class="xref std std-term">stake</span></a> a part of its CCD balance on the baker account. Later, the baker can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it’s released by the baker.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If an account owns an amount that was transferred with a release schedule,
-the amount can be staked even if it hasn’t been released yet.</p>
+<div class="section" id="staking-pool">
+<h2>Staking pool<a class="headerlink" href="#staking-pool" title="Permalink to this headline">#</a></h2>
+<p>You have the option to open a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a>. A staking pool allows others who want to earn rewards to do so without the need to run a node or become a validator themselves. To do this they <a class="reference internal" href="concepts-delegation.html#delegation-concept"><span class="std std-ref">delegate</span></a> an amount of stake to your staking pool which then increases your stake and your <a class="reference internal" href="../resources/glossary.html#term-Winning-probability"><span class="xref std std-term">chances of winning the lottery</span></a> to produce a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.</p>
+<p>The maximum size of a pool is 5% of all stake in pools (i.e., excluding passive delegation). Any stake above this limit will not contribute towards earning rewards. It isn’t possible to add more stake to exceed the limit, but reward restaking can push it over the limit, or if a lot of other validators unstake and the thresholds change, the staking pool can exceed the limit.</p>
 </div>
-<p>To be chosen to bake a block, the baker must take part in a
-<em>lottery</em>. The greater the baker’s stake, the greater the baker’s chance of <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">winning the lottery</span></a> and being selected to bake a block.</p>
-<p>The same stake is used when calculating whether a baker is included in the <a class="reference internal" href="../resources/glossary.html#term-Finalization"><span class="xref std std-term">finalization</span></a> committee or not.</p>
+<div class="section" id="when-is-a-block-final">
+<h2>When is a block final?<a class="headerlink" href="#when-is-a-block-final" title="Permalink to this headline">#</a></h2>
+<p>A block is final when it cannot be rolled back any more, i.e., part of the authoritative chain. Validators sign a block when they have verified that it is valid, and their collective signatures are aggregated to form a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a>. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered final. Why isn’t the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.</p>
+<p>A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.</p>
 </div>
-<div class="section" id="time-concepts">
-<h3>Time concepts<a class="headerlink" href="#time-concepts" title="Permalink to this headline">#</a></h3>
-<p>The Concordium blockchain divides time into <a class="reference internal" href="../resources/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a>.</p>
-<p>When considering the rewards and other baking-related concepts, the concept of an <em>epoch</em> is used as a unit of time that defines a period in which the set of current bakers and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">Genesis block</span></a>. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.</p>
-<p>Epochs are subdivided into <a class="reference internal" href="../resources/glossary.html#term-Round"><span class="xref std std-term">rounds</span></a>. Rounds have either a block or a timeout. Rounds have a minimum time interval, but the rounds can grow “in time” if a round times out. For example, if round 1 times out, then round 2’s duration increases and so on. Then whenever there is a block in a round that manages to get a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a> attached, then the “round duration” will shrink, and it will continue to do so if , for example, there have been multiple rounds that have timed out.
-But it cannot shrink below the minimum time interval given by the chain parameters. There can only ever be one block for a certain round across all branches, thus there is a unique leader (potential baker) for a round in an epoch.</p>
-<p>A <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> is the point at which new CCDs are minted and rewards to bakers and delegators are distributed. The stakes of bakers and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new bakers begin baking, and updates to delegation and baking take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or baking, there is a longer cool-down period, after which the change is executed at the <strong>next pay day after the cool-down period ends</strong>. The cool-down period is 2 weeks for delegators and 3 weeks for bakers. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. Bakers are finalized at the end of an epoch then one epoch passes before that next epoch where they are eligible to bake.</p>
-<p>A <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> describes a period of time during which certain activities or transactions are frozen. For example, if you decrease a baker stake, the stake will be decreased at the first pay day after the cool-down period ends. The cool-down period is 3 weeks. During the cool-down period, you’ll not be able update the stake. After the cool-down period, the amount by which you decreased your stake is returned to your disposable balance at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> and your stake is reduced to the amount you specified. (This also means that any rewards that are earned in this period, if restaking earnings is enabled, will also be unstaked after the cool-down period.)</p>
-</div>
-</div>
-<div class="section" id="finalization">
-<h2>Finalization<a class="headerlink" href="#finalization" title="Permalink to this headline">#</a></h2>
-<p><a class="reference internal" href="../resources/glossary.html#term-Finalization"><span class="xref std std-term">Finalization</span></a> ensures that baked blocks become finalized as quickly as possible and with 100% certainty.</p>
-<div class="section" id="what-is-finalization">
-<h3>What is finalization?<a class="headerlink" href="#what-is-finalization" title="Permalink to this headline">#</a></h3>
-<p>Finalization is the process by which a block is marked to be “finalized”, i.e., part of the authoritative chain. Transactions that are part of finalized blocks are considered authoritative. New blocks can be only added following the last finalized block to ensure the integrity of the chain. The finalization process is conducted by the bakers with an effective stake amount of at least 0.1% of the total amount (effective stake) of CCD in pools, known as the Finalization committee. Total stake in pools is referred to as total stake in pools without Passive Delegation.</p>
-<p>Finalizers sign a block, and their collective signatures are aggregated to form a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a>. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered finalized. Why isn’t the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.</p>
-<p>Finalization happens at a minimum two seconds after block creation. A new block has to be created descended from that block for finalization to happen.</p>
-<p>When a sufficiently large number of members of the committee have received the block and agree on its outcome, the block is finalized. Newer blocks must have the finalized block as an ancestor to ensure the integrity of the chain.</p>
-</div>
-<div class="section" id="finalization-committee">
-<h3>Finalization committee<a class="headerlink" href="#finalization-committee" title="Permalink to this headline">#</a></h3>
-<p>The finalization committee is formed by the bakers with a staked amount of at least 0.1% of the total stake of CCD in pools. If you are not in the finalization committee,  you will probably have to increase your staked amount to reach the threshold. There is a minimum and maximum size for the finalization committee; it is 0.1% of the effective stake in pools, but always at least 40 bakers and always at most 1000 bakers.</p>
-<p>Participating in the finalization committee produces rewards on each block that is finalized. The rewards are paid to the baker account some time after the block is finalized.</p>
-</div>
-</div>
-<div class="section" id="overview-of-the-baker-process">
-<h2>Overview of the baker process<a class="headerlink" href="#overview-of-the-baker-process" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
-<li><p>A Proof of stake based lottery system produces a list of bakers. The higher the baker’s stake, the higher the probability of being included on the list more often.</p></li>
-<li><p>The first baker on the list (Bob) makes a new block that appends to the genesis block.</p></li>
-<li><p>Bob then broadcasts the block to all peers.</p></li>
-<li><p>If the block is valid, the finalizers will sign it.</p></li>
-<li><p>If the combined effective stake of the finalizers who sign the block is <em>greater than or equal to</em> two-thirds of the total stake, the block gets a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">Quorum Certificate</span></a> (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.</p></li>
-</ol>
-<img alt="diagram of baker process" src="../../_images/baker-process1.png" />
-<ol class="arabic simple" start="6">
-<li><p>The next baker (Alice) now uses the QC to produce the next block. The new block can only extend the previous block whose QC is presented to Alice, so fork formation is not possible.</p></li>
-</ol>
-<img alt="diagram of baker process" src="../../_images/baker-process2.png" />
-<p>If there are no issues, the protocol repeats this process from step 3.</p>
-<p>In the case of a faulty baker who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If Bob does not produce a block within a certain time, a <a class="reference internal" href="../resources/glossary.html#term-Timeout-certificate"><span class="xref std std-term">Timeout Certificate</span></a> (TC) is issued to move the process forward. Alice can now use the TC instead of the QC to extend the previous block.</p>
-</div>
-<div class="section" id="where-to-bake">
-<h2>Where to bake<a class="headerlink" href="#where-to-bake" title="Permalink to this headline">#</a></h2>
-<p>Baking is possible with Concordium Wallet for Web, Concordium Wallet for Mobile, Concordium Legacy Wallet, <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.</p>
+<div class="section" id="tools-to-be-a-validator">
+<h2>Tools to be a validator<a class="headerlink" href="#tools-to-be-a-validator" title="Permalink to this headline">#</a></h2>
+<p>Validation is possible with Concordium Wallet for Web, Concordium Wallet for Mobile, Concordium Legacy Wallet, <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Before proceeding, read <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">Baker management</span></a> for information about best practices for bakers.</p>
+<p>Before proceeding, read <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">Validator management</span></a> for information about best practices for validators.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To check the minimum required amount of CCD (currently 14000) to become a baker, see <a class="reference internal" href="../references/transactions.html#consensus-show-chain-parameters"><span class="std std-ref">Show chain parameters</span></a>.</p>
+<p>To check the minimum required amount of CCD (currently 500000) to become a validator, see <a class="reference internal" href="../references/transactions.html#consensus-show-chain-parameters"><span class="std std-ref">Show chain parameters</span></a>.</p>
 </div>
-<div class="section" id="baking-with-bw">
-<h3>Baking with Concordium Wallet for Web<a class="headerlink" href="#baking-with-bw" title="Permalink to this headline">#</a></h3>
-<p>This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain when using Concordium Wallet for Web and running a node.</p>
+<div class="section" id="validation-with-bw">
+<h3>Validation with Concordium Wallet for Web<a class="headerlink" href="#validation-with-bw" title="Permalink to this headline">#</a></h3>
+<p>This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using Concordium Wallet for Web and running a node.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Step 1: Set up the node<div class="sd-summary-down docutils">
@@ -1989,7 +1957,7 @@ Step 1: Set up the node<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For baking you must be running a node on the Concordium blockchain. You can run a node <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
+<p class="sd-card-text">For validation you must be running a node on the Concordium blockchain. You can run a node <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2011,21 +1979,21 @@ Step 3: Set up an identity and account<div class="sd-summary-down docutils">
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Step 4: Add baking to an account<div class="sd-summary-down docutils">
+Step 4: Add validation to an account<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Configure baking for an account. For instructions, see <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add baker</span></a>.</p>
+<p class="sd-card-text">Configure validation for an account. For instructions, see <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Step 5: Register baker keys<div class="sd-summary-down docutils">
+Step 5: Register validator keys<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The last step is to configure the running node with the baker keys so the node can start baking. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your baker keys to the node runner in a secure manner.</p>
+<p class="sd-card-text">The last step is to configure the running node with the validator keys so the node can start producing blocks. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your validator keys to the node runner in a secure manner.</p>
 <ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">On Windows</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">On macOS</span></a></p></li>
@@ -2033,11 +2001,11 @@ Step 5: Register baker keys<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">On Docker/Linux</span></a>.</p></li>
 </ul>
 </div>
-</details><p>For information about how to update your baker or stop baking, see <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change baker options</span></a>.</p>
+</details><p>For information about how to update your validator or stop validating, see <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validation options</span></a>.</p>
 </div>
-<div class="section" id="baking-with-desktop-wallet">
-<h3>Baking with Desktop Wallet<a class="headerlink" href="#baking-with-desktop-wallet" title="Permalink to this headline">#</a></h3>
-<p>This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain, using Desktop Wallet in combination with a LEDGER device to generate baker keys.</p>
+<div class="section" id="validation-with-desktop-wallet">
+<h3>Validation with Desktop Wallet<a class="headerlink" href="#validation-with-desktop-wallet" title="Permalink to this headline">#</a></h3>
+<p>This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain using Desktop Wallet in combination with a LEDGER device to generate validator keys.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Step 1: Set up the node<div class="sd-summary-down docutils">
@@ -2045,7 +2013,7 @@ Step 1: Set up the node<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The Desktop Wallet must be connected to a running node on the Concordium blockchain. You can run a node <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>.</p>
+<p class="sd-card-text">The Desktop Wallet must be connected to a running node on the Concordium blockchain. You can run a node <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2063,7 +2031,7 @@ Step 3: Set up the Concordium Desktop Wallet<div class="sd-summary-down docutils
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You’ll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a baker. See <a class="reference internal" href="../guides/overview-desktop.html#overview-desktop"><span class="std std-ref">Set up the Desktop Wallet</span></a>.</p>
+<p class="sd-card-text">You’ll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a validator. See <a class="reference internal" href="../guides/overview-desktop.html#overview-desktop"><span class="std std-ref">Set up the Desktop Wallet</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2072,25 +2040,25 @@ Step 4: Set up an identity and an initial account<div class="sd-summary-down doc
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Once you’ve installed the Desktop Wallet, you must set up an identity and an initial account. You may want to create a separate account to use as a baker account, since the Identity Provider knows the user who submits the initial account to the chain. See <a class="reference internal" href="../guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a> and <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">Create an account in the Desktop Wallet</span></a>.</p>
+<p class="sd-card-text">Once you’ve installed the Desktop Wallet, you must set up an identity and an initial account. You may want to create a separate account to use as a validator account, since the Identity Provider knows the user who submits the initial account to the chain. See <a class="reference internal" href="../guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a> and <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">Create an account in the Desktop Wallet</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Step 5: Add a baker in the Desktop Wallet<div class="sd-summary-down docutils">
+Step 5: Add a validator in the Desktop Wallet<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You’re now ready to add a baker in the Desktop Wallet and generate baker keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a baker account in the Desktop Wallet</span></a>.</p>
+<p class="sd-card-text">You’re now ready to add a validator in the Desktop Wallet and generate validator keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Step 6: Configure the node with the baker keys<div class="sd-summary-down docutils">
+Step 6: Configure the node with the validator keys<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The last step is to configure the running node with the baker keys so the node can start baking. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your baker keys to the node runner in a secure manner.</p>
+<p class="sd-card-text">The last step is to configure the running node with the validator keys so the node can start producing blocks. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.</p>
 <ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">On Windows</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">On macOS</span></a></p></li>
@@ -2098,11 +2066,11 @@ Step 6: Configure the node with the baker keys<div class="sd-summary-down docuti
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">On Docker/Linux</span></a>.</p></li>
 </ul>
 </div>
-</details><p>For information about how to update your baker or stop baking, see <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change baker options</span></a>.</p>
+</details><p>For information about how to update your validator or stop validation, see <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validator options</span></a>.</p>
 </div>
-<div class="section" id="baking-with-mw-gen1-and-mw-gen2">
-<h3>Baking with Concordium Legacy Wallet and Concordium Wallet for Mobile<a class="headerlink" href="#baking-with-mw-gen1-and-mw-gen2" title="Permalink to this headline">#</a></h3>
-<p>This overview describes the recommended scenario for running a node and becoming a baker on the Concordium blockchain when using Concordium Legacy Wallet or Concordium Wallet for Mobile and running a node.</p>
+<div class="section" id="validation-with-mw-gen1-and-mw-gen2">
+<h3>Validation with Concordium Legacy Wallet and Concordium Wallet for Mobile<a class="headerlink" href="#validation-with-mw-gen1-and-mw-gen2" title="Permalink to this headline">#</a></h3>
+<p>This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using Concordium Legacy Wallet or Concordium Wallet for Mobile and running a node.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Step 1: Set up the node<div class="sd-summary-down docutils">
@@ -2110,7 +2078,7 @@ Step 1: Set up the node<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For baking you must be running a node on the Concordium blockchain. You can run a node <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
+<p class="sd-card-text">For validation you must be running a node on the Concordium blockchain. You can run a node <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -2128,25 +2096,25 @@ Step 3: Set up an identity and account<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Once you’ve installed the Wallet, you must set up an identity and an account. If using Concordium Legacy Wallet it is recommended to create a separate account to use as a baker account. For instructions, see <a class="reference internal" href="../guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a> and <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">Create an account</span></a>.</p>
+<p class="sd-card-text">Once you’ve installed the Wallet, you must set up an identity and an account. If using Concordium Legacy Wallet it is recommended to create a separate account to use as a validator account. For instructions, see <a class="reference internal" href="../guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a> and <a class="reference internal" href="../guides/create-account.html#create-account"><span class="std std-ref">Create an account</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Step 4: Add baking to an account<div class="sd-summary-down docutils">
+Step 4: Add validation to an account<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Configure baking for an account. For instructions, see <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add baker</span></a>.</p>
+<p class="sd-card-text">Configure validation for an account. For instructions, see <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Step 5: Register baker keys<div class="sd-summary-down docutils">
+Step 5: Register validator keys<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The last step is to configure the running node with the baker keys so the node can start baking. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your baker keys to the node runner in a secure manner.</p>
+<p class="sd-card-text">The last step is to configure the running node with the validator keys so the node can start producing blocks. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.</p>
 <ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../guides/baker-windows.html#baker-windows"><span class="std std-ref">On Windows</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-macos.html#baker-macos"><span class="std std-ref">On macOS</span></a></p></li>
@@ -2154,20 +2122,20 @@ Step 5: Register baker keys<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">On Docker/Linux</span></a>.</p></li>
 </ul>
 </div>
-</details><p>For information about how to update your baker or stop baking, see <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change baker options</span></a>.</p>
+</details><p>For information about how to update your validator or stop validation, see <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change baker options</span></a>.</p>
 </div>
-<div class="section" id="baking-with-concordium-client">
-<h3>Baking with <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code><a class="headerlink" href="#baking-with-concordium-client" title="Permalink to this headline">#</a></h3>
-<p>For information about configuring and managing baking in <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a baker using the Concordium Client</span></a>.</p>
+<div class="section" id="validation-with-concordium-client">
+<h3>Validation with <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code><a class="headerlink" href="#validation-with-concordium-client" title="Permalink to this headline">#</a></h3>
+<p>For information about configuring and managing validation in <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>, see <a class="reference internal" href="../guides/become-baker.html#become-a-baker"><span class="std std-ref">Become a validator using the Concordium Client</span></a>.</p>
 </div>
 </div>
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Read the information about <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">baker management</span></a>.</p></li>
-<li><p>If you are interested in a baker pool, read the <a class="reference internal" href="../snippets/delegation-faq.html#delegation-faq"><span class="std std-ref">Delegation FAQ</span></a>.</p></li>
-<li><p>You need to <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">add a baker</span></a> to the account you created. Import the baker keys to your node.</p></li>
-<li><p>You can then <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">update baker settings</span></a> as needed to manage your baker.</p></li>
+<li><p>Read the information about <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">validation management</span></a>.</p></li>
+<li><p>If you are interested in a staking pool, read the <a class="reference internal" href="../snippets/delegation-faq.html#delegation-faq"><span class="std std-ref">Delegation FAQ</span></a>.</p></li>
+<li><p>You need to <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">add a validator</span></a> to the account you created. Import the validator keys to your node.</p></li>
+<li><p>You can then <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">update validator settings</span></a> as needed to manage your validator.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -2184,13 +2152,13 @@ Step 5: Register baker keys<div class="sd-summary-down docutils">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">How to earn with Concordium</p>
+            <p class="prev-next-title">Staking with Concordium</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../guides/baker-pool.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Baker management</p>
+        <p class="prev-next-title">Validator management</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

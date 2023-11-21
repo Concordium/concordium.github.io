@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/concepts/id-accounts.e20a7fe2-96d5-4e14-ae72-dfcc2d1bb3eb.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/concepts/id-accounts.80b384c3-2b0f-467f-8488-f29571bca6f1.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1825,7 +1830,7 @@ body {margin:0;}
                 
   <div class="section" id="reference-id-accounts">
 <span id="identities"></span><h1>Identities<a class="headerlink" href="#reference-id-accounts" title="Permalink to this headline">#</a></h1>
-<p>Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a> or become a baker on the Concordium blockchain, you need an <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">account</span></a> and an identity. This is regardless of whether you are using the Concordium Legacy Wallet, Concordium Wallet for Mobile, Desktop Wallet, or Concordium Client for your transactions.</p>
+<p>Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a> or become a validator on the Concordium blockchain, you need an <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">account</span></a> and an identity. This is regardless of whether you are using the Concordium Legacy Wallet, Concordium Wallet for Mobile, Desktop Wallet, or Concordium Client for your transactions.</p>
 <p>Before you can use the Concordium Platform, an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> must verify and record your real-world identity. This identification is performed when you create your first account.</p>
 <div class="section" id="about-identities">
 <h2>About identities<a class="headerlink" href="#about-identities" title="Permalink to this headline">#</a></h2>
@@ -1875,7 +1880,6 @@ identity to create accounts.</p>
 <div class="section" id="about-accounts">
 <h2>About accounts<a class="headerlink" href="#about-accounts" title="Permalink to this headline">#</a></h2>
 <p>For information about accounts, see <a class="reference internal" href="../references/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
-<p>Any time you create a new account in Concordium Legacy Wallet, you should make a <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">backup</span></a>. Backups protect your account keys, ensuring that you do not lose access to your CCDs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is no longer possible for users of Concordium Legacy Wallet to create new accounts.</p>

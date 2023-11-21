@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.0f6d25ba-ec20-43a9-b5c8-1b61ea8e0754.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.d75923f7-6be9-4f28-bcfd-8bf9f858690a.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1827,6 +1832,11 @@ body {margin:0;}
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-a-validator-node">
+   Run a validator node
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#troubleshooting">
    Troubleshooting
   </a>
@@ -1877,7 +1887,7 @@ body {margin:0;}
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
 information about blocks and transactions to the nodes in the Concordium
-network. After following this guide, you will be able to</p>
+network. After following this guide, you will be able to:</p>
 <ul class="simple">
 <li><p>run a Concordium node</p></li>
 <li><p>observe it on the network dashboard</p></li>
@@ -2014,7 +2024,7 @@ and <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800</span>
       <span class="c1"># Haskell RTS flags to pass to consensus. `-N2` means to use two threads</span>
       <span class="c1"># for consensus operations. `-I0` disables the idle garbage collector</span>
-      <span class="c1"># which reduces CPU load for non-baking nodes.</span>
+      <span class="c1"># which reduces CPU load for non-validator nodes.</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0</span>
     <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/concordium-node&quot;</span><span class="p p-Indicator">]</span>
     <span class="c1"># Exposed ports. The ports the node listens on inside the container (defined</span>
@@ -2114,7 +2124,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to produce blocks.</p>
 <p>However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
 listen on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections. Depending on your network and
@@ -2151,8 +2161,8 @@ existing node database directory for use by the new container, i.e., replacing</
 e.g., <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code> and keeping the configuration files as
 they are.</p>
 </li>
-<li><p>If your node is an existing baker node, update the configuration file above to include</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+<li><p>If your node is an existing validator node, update the configuration file above to include</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
 </pre></div>
 </div>
 <p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
@@ -2258,7 +2268,7 @@ for a list of currently available versions.</p></li>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800</span>
       <span class="c1"># Haskell RTS flags to pass to consensus. `-N2` means to use two threads</span>
       <span class="c1"># for consensus operations. `-I0` disables the idle garbage collector</span>
-      <span class="c1"># which reduces CPU load for non-baking nodes.</span>
+      <span class="c1"># which reduces CPU load for non-validator nodes.</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0</span>
     <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/concordium-node&quot;</span><span class="p p-Indicator">]</span>
     <span class="c1"># Exposed ports. The ports the node listens on inside the container (defined</span>
@@ -2312,7 +2322,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to produce blocks.</p>
 <p>However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
 listen on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections. Depending on your network and
@@ -2349,8 +2359,8 @@ existing node database directory for use by the new container, i.e., replacing</
 e.g., <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> and keeping the configuration files as
 they are.</p>
 </li>
-<li><p>If your node is an existing baker node, update the configuration file above to include</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json</span>
+<li><p>If your node is an existing validator node, update the configuration file above to include</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
 </pre></div>
 </div>
 <p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>
@@ -2384,6 +2394,10 @@ version, find the correct version in
 </div></blockquote>
 </div>
 </div>
+</div>
+<div class="section" id="run-a-validator-node">
+<h2>Run a validator node<a class="headerlink" href="#run-a-validator-node" title="Permalink to this headline">#</a></h2>
+<p>For information about how to run a validator node for Linux/Docker, see <a class="reference internal" href="../nodes/baker-docker.html#baking-docker"><span class="std std-ref">Run a validator node on Docker</span></a>.</p>
 </div>
 <div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>

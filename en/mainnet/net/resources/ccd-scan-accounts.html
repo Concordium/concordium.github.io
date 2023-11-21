@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-accounts.16891ba6-e39d-425e-b650-783fb1c7690d.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-accounts.ab554e1d-8a2f-47e0-8f19-e986421fb3ad.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1828,14 +1833,14 @@ body {margin:0;}
 </div>
 <p>The following information is shown in the account details:</p>
 <ul class="simple">
-<li><p><strong>Account</strong>: the first six characters of the account address are shown. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account address. If the account is participating in baking or delegation, the staked amount is displayed. Additional information is available on the account: a baker section for bakers, a delegation section for delegators, and a rewards section for both bakers and delegators.</p></li>
-<li><p><strong>Balance</strong>: the current account balance is shown. If the account has a release schedule, the remaining locked amount is displayed here. The same applies if the account is participating in baking or delegation then the amount staked is displayed under the account balance.</p></li>
+<li><p><strong>Account</strong>: the first six characters of the account address are shown. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account address. If the account is participating as a validator or delegator, the staked amount is displayed. Additional information is available on the account: a validator section for validators, a delegation section for delegators, and a rewards section for both validators and delegators.</p></li>
+<li><p><strong>Balance</strong>: the current account balance is shown. If the account has a release schedule, the remaining locked amount is displayed here. The same applies if the account is participating as a validator or delegator then the amount staked is displayed under the account balance.</p></li>
 <li><p><strong>Age</strong>: the age of the account including the exact timestamp for all individual accounts.</p></li>
 <li><p><strong>Transactions</strong>: a list of all transactions associated with the account, including incoming and outgoing transfers. Use the navigation buttons at the bottom to navigate through transactions.</p></li>
 <li><p><strong>Release schedule</strong>: shown only for accounts that have transfers with a release schedule to show the remainder of the schedule (non-released assets). The list of release dates and amounts is available, including a drill-through link to the <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">underlying transaction(s)</span></a>.</p></li>
 <li><p><strong>Account statement</strong>: shows how the account balance has changed over time, including the types of changes that have impacted the balance of the account. Use the navigation buttons at the bottom to navigate through account statements. Click <strong>Export</strong> to download a CSV file of all balance changes on the account.</p></li>
-<li><p><strong>Baker</strong>: if an account is also a baker, the baker ID and the staked amount are shown here. Click the baker ID to see <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">baker details</span></a>.</p></li>
-<li><p><strong>Delegation</strong>: shown for accounts that are delegating to a baker pool or passive delegation. Information includes the delegator ID of the account, the staked amount, if the earnings are restaked or not, and the delegation target (a baker or passive delegation) including drill-though to the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">baker</span></a> or passive delegation information.</p></li>
+<li><p><strong>Validator</strong>: if an account is also a validator, the validator ID and the staked amount are shown here. Click the validator ID to see <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">validator details</span></a>.</p></li>
+<li><p><strong>Delegation</strong>: shown for accounts that are delegating to a staking pool or passive delegation. Information includes the delegator ID of the account, the staked amount, if the earnings are restaked or not, and the delegation target (a validator’s staking pool or passive delegation) including drill-though to the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">validator</span></a> or passive delegation information.</p></li>
 <li><p><strong>Rewards</strong>: includes an overview graph that shows the aggregated rewards for an account based on the applied time range filter. The table shows reward details broken down by type. Click the block hash to see <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block details</span></a> for the corresponding block where the reward payout occurred. Use the navigation buttons at the bottom to navigate through reward payouts.</p></li>
 </ul>
 </div>

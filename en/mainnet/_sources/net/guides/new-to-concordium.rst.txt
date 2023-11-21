@@ -11,14 +11,14 @@ Getting started with Concordium
 
     Read about our project on `concordium.com <https://www.concordium.com>`_.
 
-    Read about the various concepts
+    Read about the various concepts:
 
     - :ref:`Identities<reference-id-accounts>`
     - :ref:`Accounts<managing_accounts>`
     - :ref:`Delegation<delegation-concept>`
-    - :ref:`Baking<baker-concept>`
+    - :ref:`Validation<baker-concept>`
 
-    Use the :ref:`glossary of terms<glossary>` to learn the language
+    Use the :ref:`glossary of terms<glossary>` to learn the language.
 
 .. dropdown:: I want to learn more about Concordium wallets
 
@@ -41,11 +41,11 @@ Getting started with Concordium
 
 .. dropdown:: I want to stake CCD to earn more CCD
 
-    The staking options on Concordium are :ref:`baking or delegating<how-to-earn>`. To be a baker you must run a node and have a minimum of 14000 CCDs in an account. There is no minimum amount of CCDs needed to delegate.
+    The staking options on Concordium are :ref:`validation or delegation<how-to-earn>`. To be a validator you must run a node and have a minimum of 500000 CCDs in an account. There is no minimum amount of CCDs needed to delegate.
 
-    - I want to :ref:`learn more about baking and delegating<delegation-faq>` before continuing.
-    - I have enough funds to :ref:`be a baker<baker-concept>`.
-    - I only want to :ref:`delegate to a baker pool or passive delegation<add-delegation>`.
+    - I want to :ref:`learn more about validation and delegation<delegation-faq>` before continuing.
+    - I have enough funds to :ref:`be a validator<baker-concept>`.
+    - I only want to :ref:`delegate to a staking pool or passive delegation<add-delegation>`.
 
 .. dropdown:: I want to build a dApp that uses Concordium's ID layer
 

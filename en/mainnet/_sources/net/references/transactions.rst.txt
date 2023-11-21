@@ -28,19 +28,19 @@ Transaction commands
 | ``transaction send-scheduled``      | Make a transfer that will be released          |
 |                                     | gradually                                      |
 +-------------------------------------+------------------------------------------------+
-| ``baker add``                       | Add a new baker. For more information, see     |
+| ``validator add``                   | Add a new validator. For more information, see |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker remove``                    | Remove a baker. For more information, see      |
+| ``validator remove``                | Remove a validator. For more information, see  |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker update-stake``              | Update the staked amount of a baker. For more  |
-|                                     | information, see :ref:`become-a-baker`.        |
-+-------------------------------------+------------------------------------------------+
-| ``baker update-restake``            | Update the restaking switch of a baker. For    |
+| ``validator update-stake``          | Update the staked amount of a validator. For   |
 |                                     | more information, see :ref:`become-a-baker`.   |
 +-------------------------------------+------------------------------------------------+
-| ``baker set-key``                   | Update the keys of a baker. For more           |
+| ``validator update-restake``        | Update the restaking switch of a validator. For|
+|                                     | more information, see :ref:`become-a-baker`.   |
++-------------------------------------+------------------------------------------------+
+| ``validator set-key``               | Update the keys of a validator. For more       |
 |                                     | information, see :ref:`become-a-baker`.        |
 +-------------------------------------+------------------------------------------------+
 | ``account update-keys``             | Update credentials keys for a specific         |
@@ -96,16 +96,14 @@ Depending on the exact context, all flags are currently optional:
    3 signs with keys 0 and 1. If the sender account is imported to the client, and ``--signers`` is not provided,
    ``concordium-client`` will sign with all keys in the local configuration of the account.
 
-In most cases, you only need to provide the ``--sender`` option
-and use the account by name.
+In most cases, you only need to provide the ``--sender`` option and use the account by name.
 
 In all cases, the command displays the exact parameters of the transaction
 before sending it, and you're asked to confirm that it matches your intent.
 Just before the transaction is sent, you're asked for the password to access
 the signing keys.
 
-Once a transaction has been submitted, the command will continuously poll and
-display its status until it's been :term:`finalized<finalization>`.
+Once a transaction has been submitted, the command will continuously poll and display its status until it's been finalized.
 
 .. _account-commands:
 
@@ -149,7 +147,7 @@ the same account. Thus, accounts can be referred to by any address whose initial
 
 This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.
 
-Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account's canonical address.
+Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account's canonical address.
 
 To show aliases, enter:
 
@@ -475,7 +473,7 @@ The command has the following required arguments:
 
 - ``--sender`` is the account from which you want to stake.
 - ``--stake`` is an amount of CCD you intend to delegate
-- ``--target`` is either the baker pool ID or ``Passive``.
+- ``--target`` is either the staking pool ID or ``Passive``.
 
 The command has the following optional argument:
 
@@ -513,18 +511,18 @@ The output is:
 
 .. code-block:: console
 
-   # Parameters related to baker pools:
-     + minimum equity capital: 14000.000000 CCD
-     + maximum fraction of total stake a pool is allowed to hold: 0.1
-     + maximum factor a pool may stake relative to the baker's stake: 3 % 1
+   # Parameters related to staking pools:
+     + minimum equity capital: 500000.000000 CCD
+     + maximum fraction of total stake a pool is allowed to hold: 0.05
+     + maximum factor a pool may stake relative to the validators's stake: 6 % 1
      + pool owner cooldown duration: 21d
      + allowed range for finalization commission: [1.0, 1.0]
-     + allowed range for baking commission: [0.1, 0.1]
+     + allowed range for block commission: [0.1, 0.1]
      + allowed range for transaction commission: [0.1, 0.1]
 
    # Passive delegation parameters:
      + finalization commission: 1.0
-     + baking commission: 0.12
+     + block commission: 0.12
      + transaction commission: 0.12
 
    # Parameters related to delegators:
@@ -538,14 +536,12 @@ The output is:
    # Parameters that affect rewards distribution:
      + mint amount per reward period: 261157877e-12
      + mint distribution:
-         * baking reward: 0.6
-         * finalization reward: 0.3
+         * block reward: 0.6
      + transaction fee distribution:
-         * baker: 0.45
+         * validator: 0.45
          * GAS account: 0.45
      + GAS rewards:
-         * baking a block: 0.25
-         * adding a finalization proof: 5.0e-3
+         * producing a block: 0.25
          * adding a credential deployment: 2.0e-2
          * adding a chain update: 5.0e-3
 
@@ -576,24 +572,24 @@ The output is:
    * - Parameter section
      - Parameter
      - Description
-   * - Parameters related to baker pools
+   * - Parameters related to staking pools
      - Minimum equity capital
-     - The minimum amount of CCD to stake to become a baker.
+     - The minimum amount of CCD to stake to become a validator.
    * -
      - maximum fraction of total stake a pool is allowed hold
-     - The maximum percent of total stake any single baker pool can have.
+     - The maximum percent of total stake any single staking pool can have.
    * -
-     - maximum factor a pool may stake relative to the baker's stake
-     - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
+     - maximum factor a pool may stake relative to the validators's stake
+     - A staking pool's stake consists of the validators's own equity capital, and delegated capital. This factor determines the maximum stake a staking pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
    * -
      - pool owner cooldown duration
-     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cool-down has expired.
+     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.
    * -
      - allowed range for finalization commission
      - The allowed range of finalization commissions bakers may select when creating or updating pools.
    * -
-     - allowed range for baking commission
-     - The allowed range of baking commissions bakers may select when creating or updating pools.
+     - allowed range for block commission
+     - The allowed range of block commissions validators may select when creating or updating pools.
    * -
      - allowed range for transaction commission
      - The allowed range of transaction commissions bakers may select when creating or updating pools.
@@ -601,8 +597,8 @@ The output is:
      - finalization commission
      - The percentage of finalization rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
-     - baking commission
-     - The percentage of baking rewards retained by the passive delegation, i.e., not given out to delegators.
+     - block commission
+     - The percentage of block rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
      - transaction commission
      - The percentage of transaction rewards retained by the passive delegation, i.e., not given out to delegators.
@@ -622,29 +618,26 @@ The output is:
      - mint amount per reward period
      - The percentage increase in amount of CCD per payday.
    * -
-     - mint distribution: baking reward
-     - The fraction of newly minted CCD that goes towards baker rewards.
+     - mint distribution: block reward
+     - The fraction of newly minted CCD that goes towards block rewards.
    * -
-     - mint distribution: finalization reward
-     - The fraction of newly minted CCD that goes towards finalization rewards.
-   * -
-     - transaction fee distribution: baker
-     - The fraction of block transaction fees allocated to the baker.
+     - transaction fee distribution: validator
+     - The fraction of block transaction fees allocated to the validator.
    * -
      - transaction fee distribution: GAS account
      - The fraction of block transaction fees allocated to the GAS account.
    * -
-     - GAS rewards: baking a block
-     - The fraction of the GAS account that is allocated to the baker for baking a block.
+     - GAS rewards: producing a block
+     - The fraction of the GAS account that is allocated to the validator for producing a block.
    * -
      - GAS rewards: adding a finalization proof
-     - The fraction of the GAS account that is allocated to the baker for including a finalization proof in a block.
+     - The fraction of the GAS account that is allocated to the validator for including a finalization proof in a block.
    * -
      - GAS rewards: adding a credential deployment
-     - The fraction of the GAS account that is allocated to the baker for including an account creation transaction in a block.
+     - The fraction of the GAS account that is allocated to the validator for including an account creation transaction in a block.
    * -
      - Gas rewards: adding a chain update
-     - The fraction of the GAS account that is allocated to the baker for including an update transaction in a block.
+     - The fraction of the GAS account that is allocated to the validator for including an update transaction in a block.
    * - Time parameters
      - reward period length
      - The length of the reward period. All rewards are handed out at the end of each reward period.

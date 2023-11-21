@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-windows.fa63553c-db5e-40db-a0e4-7e59d1ba6464.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-windows.18a00dfc-1e26-4292-8193-323ffdf97049.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1819,8 +1824,8 @@ body {margin:0;}
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#baking-on-a-windows-node">
-   Baking on a Windows node
+  <a class="reference internal nav-link" href="#validation-on-a-windows-node">
+   Validation on a Windows node
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1859,7 +1864,7 @@ body {margin:0;}
   <div class="section" id="run-and-manage-a-node-on-windows">
 <span id="run-node-windows"></span><h1>Run and manage a node on Windows<a class="headerlink" href="#run-and-manage-a-node-on-windows" title="Permalink to this headline">#</a></h1>
 <p>This guide describes how you can run and manage a node on the Concordium network from a Windows computer. You can also run a node using <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>, <a class="reference internal" href="run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p>
-<p>If you want to run a baker node on Windows, see <a class="reference internal" href="baker-windows.html#baker-windows"><span class="std std-ref">Configure a node on Windows as baker</span></a>.</p>
+<p>If you want to run a validator node on Windows, see <a class="reference internal" href="baker-windows.html#baker-windows"><span class="std std-ref">Configure a node on Windows as validator</span></a>.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -1973,7 +1978,7 @@ your configuration and add <code class="docutils literal notranslate"><span clas
 </div>
 <div class="section" id="enable-inbound-connections">
 <h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Permalink to this headline">#</a></h2>
-<p>If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to bake and finalize.</p>
+<p>If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to produce blocks.</p>
 <p>However you can also make your node an even better network participant by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong> and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and platform configuration you will either need to forward an external port to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The details of how this is done will depend on your configuration. See <a class="reference internal" href="../nodes/node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for more information.</p>
 </div>
 <div class="section" id="connect-a-node-to-the-desktop-wallet">
@@ -2066,9 +2071,9 @@ but is not necessary. If you wish to disable it do the the following:</p>
 <p>If the node is <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2">configured with TLS</a>, then <cite>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</cite> must be configured such that it uses the domain of the certificate.</p>
 </div>
 </div>
-<div class="section" id="baking-on-a-windows-node">
-<h2>Baking on a Windows node<a class="headerlink" href="#baking-on-a-windows-node" title="Permalink to this headline">#</a></h2>
-<p>For information about baking on a Windows node, see <a class="reference internal" href="baker-windows.html#baker-windows"><span class="std std-ref">Run a baker node on Windows</span></a>.</p>
+<div class="section" id="validation-on-a-windows-node">
+<h2>Validation on a Windows node<a class="headerlink" href="#validation-on-a-windows-node" title="Permalink to this headline">#</a></h2>
+<p>For information about validation on a Windows node, see <a class="reference internal" href="baker-windows.html#baker-windows"><span class="std std-ref">Run a validator node on Windows</span></a>.</p>
 </div>
 <div class="section" id="uninstall-a-node-running-on-windows">
 <h2>Uninstall a node running on Windows<a class="headerlink" href="#uninstall-a-node-running-on-windows" title="Permalink to this headline">#</a></h2>

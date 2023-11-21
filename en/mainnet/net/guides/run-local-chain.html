@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-local-chain.c53a23b1-46ce-4ea7-9ed8-78c4e74501e4.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-local-chain.d28fa72b-bbc4-49cd-be12-99a8b56fb0bc.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1854,13 +1859,13 @@ body {margin:0;}
 <p>Running your own local chain is an advanced process and not applicable for all use cases. Users with little or no blockchain experience should not attempt to run a local chain. If you run into issues while installing, configuring, and running your local chain, contact <a class="reference external" href="http://support.concordium.software">Concordium support</a>.</p>
 </div>
 <p>This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects, such as the genesis parameters, anonymity revokers, identity providers, and foundation accounts.</p>
-<p>The chain is run by a network of baker nodes that bake and finalize blocks. In the following minimal example you will set up a network comprised of a single baker node that runs <em>locally</em> on your system and <em>does not connect to mainnet or testnet</em>. Note, however, that the concepts demonstrated here equally apply to any number of baker nodes configured in a LAN or WAN setting.</p>
+<p>The chain is run by a network of validator nodes that produce blocks. In the following minimal example you will set up a network comprised of a single validator node that runs <em>locally</em> on your system and <em>does not connect to mainnet or testnet</em>. Note, however, that the concepts demonstrated here equally apply to any number of validator nodes configured in a LAN or WAN setting.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
-<p>You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the baker node(s). You will need <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a> data which defines your local chain and sets of credentials for baker accounts of the chain. The number of sets of baker credentials needed thus depends on the desired number of bakers in the network, which in this example is 1.</p>
+<p>You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the validator node(s). You will need <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a> data which defines your local chain and sets of credentials for validator accounts of the chain. The number of sets of validator credentials needed thus depends on the desired number of validators in the network, which in this example is 1.</p>
 <div class="section" id="install-the-node-distribution">
 <h3>Install the node distribution<a class="headerlink" href="#install-the-node-distribution" title="Permalink to this headline">#</a></h3>
-<p>Concordium Node releases exist for Ubuntu, MacOS and Windows and Docker. See the <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">Node Requirements</span></a> section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a baker, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.</p>
+<p>Concordium Node releases exist for Ubuntu, MacOS and Windows and Docker. See the <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">Node Requirements</span></a> section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a validator, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.</p>
 <p>The name of the binary has <code class="docutils literal notranslate"><span class="pre">concordium-</span></code> as its prefix but depends on the distribution, so you may have to confer with the installation instructions to figure out the exact name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-node --version <span class="c1"># name depends on distribution</span>
 <span class="go">concordium_node 5.3.2</span>
@@ -1873,7 +1878,7 @@ body {margin:0;}
 </div>
 <div class="section" id="generate-genesis-data-and-account-credentials">
 <h3>Generate genesis data and account credentials<a class="headerlink" href="#generate-genesis-data-and-account-credentials" title="Permalink to this headline">#</a></h3>
-<p>Use the <a class="reference external" href="https://github.com/Concordium/concordium-misc-tools/tree/main/genesis-creator">genesis-creator</a> tool to generate genesis block data and credentials for the foundation and (initial) baker accounts.</p>
+<p>Use the <a class="reference external" href="https://github.com/Concordium/concordium-misc-tools/tree/main/genesis-creator">genesis-creator</a> tool to generate genesis block data and credentials for the foundation and (initial) validator accounts.</p>
 <div class="section" id="build-the-tool">
 <h4>Build the tool<a class="headerlink" href="#build-the-tool" title="Permalink to this headline">#</a></h4>
 <p>To build the tool you need a working <a class="reference external" href="https://www.rust-lang.org/tools/install">Rust compiler</a> with version 1.65 or higher. After installing it, verify that <code class="docutils literal notranslate"><span class="pre">rustc</span></code> exists in your path at the required version:</p>
@@ -1906,11 +1911,11 @@ body {margin:0;}
 <li><p>keys for updating the chain</p></li>
 <li><p>various parameters for the genesis</p></li>
 </ul>
-<p>Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback off of the example configuration file <code class="docutils literal notranslate"><span class="pre">single-baker-example-p5.toml</span></code> found <a class="reference external" href="https://raw.githubusercontent.com/Concordium/concordium-misc-tools/9d347761aadd432cbb6211a7d7ba38cdc07f1d11/genesis-creator/examples/single-baker-example-p5.toml">here</a>. Inspecting the configuration reveals that it specifies an initial protocol version of 5 to output credentials for 1 baker account, 1 foundation account, and 100 regular accounts. It specifies the system time at generation for the genesis time, and finally, specifies 5 seconds as the average time per block.</p>
-<p>Further inspection of the tables at the <code class="docutils literal notranslate"><span class="pre">accounts</span></code> keys reveals that the baker account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD, and the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial stake and balances if desired. The number of credentials produced for each type of account can also be adjusted by setting the values of the <code class="docutils literal notranslate"><span class="pre">repeat</span></code> keys to your choosing.</p>
+<p>Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback off of the example configuration file <code class="docutils literal notranslate"><span class="pre">single-baker-example-p5.toml</span></code> found <a class="reference external" href="https://raw.githubusercontent.com/Concordium/concordium-misc-tools/9d347761aadd432cbb6211a7d7ba38cdc07f1d11/genesis-creator/examples/single-baker-example-p5.toml">here</a>. Inspecting the configuration reveals that it specifies an initial protocol version of 5 to output credentials for 1 validator account, 1 foundation account, and 100 regular accounts. It specifies the system time at generation for the genesis time, and finally, specifies 5 seconds as the average time per block.</p>
+<p>Further inspection of the tables at the <code class="docutils literal notranslate"><span class="pre">accounts</span></code> keys reveals that the validator account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD, and the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial stake and balances if desired. The number of credentials produced for each type of account can also be adjusted by setting the values of the <code class="docutils literal notranslate"><span class="pre">repeat</span></code> keys to your choosing.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The staked amount needed for a baker to participate in the finalization committee is some fraction of the total amount of existing CCD set in the configuration. The total amount is the sum of the balances of all the baker and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for baking.</p>
+<p>The staked amount needed for a validator to participate in the finalization committee is some fraction of the total amount of existing CCD set in the configuration. The total amount is the sum of the balances of all the validator and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for producing blocks.</p>
 </div>
 <p>Save the file as <code class="docutils literal notranslate"><span class="pre">single-baker-example-p5.toml</span></code> and generate the genesis data:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>~/.cargo/bin/genesis-creator generate --config ./single-baker-example-p5.toml
@@ -1929,20 +1934,20 @@ body {margin:0;}
 <span class="go">DONE</span>
 </pre></div>
 </div>
-<p>The file <code class="docutils literal notranslate"><span class="pre">./genesis.dat</span></code> contains the generated genesis block data and <code class="docutils literal notranslate"><span class="pre">./bakers/baker-0-credentials.json</span></code> the generated credentials of the single baker account that was created. You supply these to the node binary to run the baker node. Keys for each generated account is output in the <code class="docutils literal notranslate"><span class="pre">./accounts</span></code> directory and are used when submitting transactions on behalf of the accounts, for instance using the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">./genesis.dat</span></code> contains the generated genesis block data and <code class="docutils literal notranslate"><span class="pre">./bakers/baker-0-credentials.json</span></code> the generated credentials of the single validator account that was created. You supply these to the node binary to run the validator node. Keys for each generated account is output in the <code class="docutils literal notranslate"><span class="pre">./accounts</span></code> directory and are used when submitting transactions on behalf of the accounts, for instance using the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool.</p>
 </div>
 </div>
 </div>
 <div class="section" id="run-the-local-chain">
 <h2>Run the local chain<a class="headerlink" href="#run-the-local-chain" title="Permalink to this headline">#</a></h2>
-<p>Your local chain will be run as a single baker node. The node uses a data and configuration directory to store its local state and configuration. In the following you will use the same directory for both. Create it and copy <code class="docutils literal notranslate"><span class="pre">genesis.dat</span></code> to it:</p>
+<p>Your local chain will be run as a single validator node. The node uses a data and configuration directory to store its local state and configuration. In the following you will use the same directory for both. Create it and copy <code class="docutils literal notranslate"><span class="pre">genesis.dat</span></code> to it:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir local-0</span>
 <span class="go">cp genesis.dat local-0/</span>
 </pre></div>
 </div>
 <div class="section" id="run-the-chain-from-a-distribution-binary">
 <h3>Run the chain from a distribution binary<a class="headerlink" href="#run-the-chain-from-a-distribution-binary" title="Permalink to this headline">#</a></h3>
-<p>If you wish to run the baker node as a Docker instance, skip to the next section. Otherwise, the baker can be run from the appropriate node distribution binary directly on your host system:</p>
+<p>If you wish to run the validator node as a Docker instance, skip to the next section. Otherwise, the validator can be run from the appropriate node distribution binary directly on your host system:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-node \</span>
 <span class="go">  --no-bootstrap=true \</span>
 <span class="go">  --listen-port 8169 \</span>
@@ -1953,15 +1958,15 @@ body {margin:0;}
 <span class="go">  --baker-credentials-file bakers/baker-0-credentials.json</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">--no-bootstrap</span></code> flag instructs the node to not connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers partake in the network. The <code class="docutils literal notranslate"><span class="pre">--listen-port</span></code> option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The <code class="docutils literal notranslate"><span class="pre">--grpc2-listen-port</span></code> specifies the port to listen on for <a class="reference internal" href="../references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> connections. This interface is used to manage and query the node. The <code class="docutils literal notranslate"><span class="pre">--data-dir</span></code> and <code class="docutils literal notranslate"><span class="pre">--config-dir</span></code> options specify the working directories of the node instance where its state and configuration are stored. Note that you may specify the same directory for both as in this example. The <code class="docutils literal notranslate"><span class="pre">--baker-credentials-file</span></code> option instructs the node to run as the baker specified by the supplied credentials file. In this case, this is your generated baker credentials output from the <code class="docutils literal notranslate"><span class="pre">genesis-creator</span></code> tool.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">--no-bootstrap</span></code> flag instructs the node to not connect to a bootstrapper node for retrieving peers. It is specified here since no bootstrapper node is configured, and in particular this is not relevant since no other peers partake in the network. The <code class="docutils literal notranslate"><span class="pre">--listen-port</span></code> option specifies the port to listen on for incoming peer-to-peer connections from other nodes. The <code class="docutils literal notranslate"><span class="pre">--grpc2-listen-port</span></code> specifies the port to listen on for <a class="reference internal" href="../references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> connections. This interface is used to manage and query the node. The <code class="docutils literal notranslate"><span class="pre">--data-dir</span></code> and <code class="docutils literal notranslate"><span class="pre">--config-dir</span></code> options specify the working directories of the node instance where its state and configuration are stored. Note that you may specify the same directory for both as in this example. The <code class="docutils literal notranslate"><span class="pre">--baker-credentials-file</span></code> option instructs the node to run as the validator specified by the supplied credentials file. In this case, this is your generated validator credentials output from the <code class="docutils literal notranslate"><span class="pre">genesis-creator</span></code> tool.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If more baker credentials are generated, a baker can be started for each credential by replacing the arguments specified by the <code class="docutils literal notranslate"><span class="pre">--baker-credentials-file</span></code>. If there is no bootstrapper node, nodes must be manually instructed to connect to one another by specifying the IP address and port of the other node(s) using <code class="docutils literal notranslate"><span class="pre">--connect-to</span> <span class="pre">$IP:$PORT</span></code>. Note that node instances using the same network interfaces should each specify different listen ports, and node instances using the same file system should specify different data and config directories.</p>
+<p>If more validator credentials are generated, a validator can be started for each credential by replacing the arguments specified by the <code class="docutils literal notranslate"><span class="pre">--baker-credentials-file</span></code>. If there is no bootstrapper node, nodes must be manually instructed to connect to one another by specifying the IP address and port of the other node(s) using <code class="docutils literal notranslate"><span class="pre">--connect-to</span> <span class="pre">$IP:$PORT</span></code>. Note that node instances using the same network interfaces should each specify different listen ports, and node instances using the same file system should specify different data and config directories.</p>
 </div>
 </div>
 <div class="section" id="run-the-chain-as-a-docker-instance">
 <h3>Run the chain as a Docker instance<a class="headerlink" href="#run-the-chain-as-a-docker-instance" title="Permalink to this headline">#</a></h3>
-<p>If you ran the baker node by invoking the node binary directly on your host, skip this section. To run the baker node as a Docker instance, first save the following <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file to the working directory:</p>
+<p>If you ran the validator node by invoking the node binary directly on your host, skip this section. To run the validator node as a Docker instance, first save the following <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file to the working directory:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example configuration for running a local node</span>
 <span class="nt">version</span><span class="p">:</span> <span class="s">&#39;3&#39;</span>
 <span class="nt">services</span><span class="p">:</span>
@@ -2006,7 +2011,7 @@ body {margin:0;}
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./bakers/baker-0-credentials.json:/mnt/baker-0-credentials.json:Z</span>
 </pre></div>
 </div>
-<p>Pay attention to the host directory mappings specified by the <code class="docutils literal notranslate"><span class="pre">volumes</span></code> key. The values work in this particular example, but in general depend on the location of the <code class="docutils literal notranslate"><span class="pre">genesis-creator</span></code> output. Now run the baker node as a Docker instance:</p>
+<p>Pay attention to the host directory mappings specified by the <code class="docutils literal notranslate"><span class="pre">volumes</span></code> key. The values work in this particular example, but in general depend on the location of the <code class="docutils literal notranslate"><span class="pre">genesis-creator</span></code> output. Now run the validator node as a Docker instance:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker compose up</span>
 </pre></div>
 </div>
@@ -2027,7 +2032,7 @@ body {margin:0;}
 <span class="go">4mUMfBFDqFkr3SCQx3k6x8RuWWFyLQHhE2AnJrdk9XtVto8mnK</span>
 </pre></div>
 </div>
-<p>The two accounts’ addresses in the output correspond to those of the generated baker and foundation account specified in the <code class="docutils literal notranslate"><span class="pre">genesis-creator</span></code> configuration file. You can verify the balance and stake of the baker by supplying the first of the two account addresses to the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> command:</p>
+<p>The two accounts’ addresses in the output correspond to those of the generated validator and foundation account specified in the <code class="docutils literal notranslate"><span class="pre">genesis-creator</span></code> configuration file. You can verify the balance and stake of the validator by supplying the first of the two account addresses to the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client --grpc-ip <span class="m">127</span>.0.0.1 --grpc-port <span class="m">20100</span> account show 44pozJMswBY5NQdh2MdHLTRQhmZg828wmBCvVckBgsHc7xhiGY
 <span class="go">Local names:</span>
 <span class="go">Address:                44pozJMswBY5NQdh2MdHLTRQhmZg828wmBCvVckBgsHc7xhiGY</span>

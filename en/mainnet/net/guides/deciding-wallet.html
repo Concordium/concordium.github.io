@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/deciding-wallet.1cfcd64c-96e8-4910-82fe-815814838eb1.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/deciding-wallet.61a6c25e-beef-4113-9979-16bfaf076b26.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1853,9 +1858,9 @@ body {margin:0;}
 <h2>Which wallet is best for you?<a class="headerlink" href="#which-wallet-is-best-for-you" title="Permalink to this headline">#</a></h2>
 <p>The wallets work on two different environments: the Desktop Wallet on a computer, the Concordium Wallet for Web on any device with a web browser, and Concordium Legacy Wallet and Concordium Wallet for Mobile on a phone. The Concordium Legacy Wallet and Concordium Wallet for Mobile are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a LEDGER device.</p>
 <ul class="simple">
-<li><p>Desktop Wallet: Choose this wallet if you want extra security in the form of a <a class="reference internal" href="overview-desktop.html#install-ledger"><span class="std std-ref">LEDGER</span></a> device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.</p></li>
-<li><p>Concordium Wallet for Mobile: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Concordium Wallet for Mobile does not require a node (unless you are a baker), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.</p></li>
-<li><p>Concordium Legacy Wallet: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Concordium Legacy Wallet does not require a node (unless you are a baker), and you don’t need a LEDGER device. Requires you to make backups regularly.</p></li>
+<li><p>Desktop Wallet: Choose this wallet if you want extra security in the form of a <a class="reference internal" href="overview-desktop.html#install-ledger"><span class="std std-ref">LEDGER</span></a> device, or want to create multi-signature transactions. Desktop wallet requires a node.</p></li>
+<li><p>Concordium Wallet for Mobile: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Concordium Wallet for Mobile does not require a node (unless you are a validator), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.</p></li>
+<li><p>Concordium Legacy Wallet: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. Concordium Legacy Wallet does not require a node (unless you are a validator), and you don’t need a LEDGER device. Requires you to make backups regularly.</p></li>
 <li><p>Concordium Wallet for Web: Choose this wallet if you want to be able to access your accounts on the go from any computer and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.</p></li>
 </ul>
 <div class="admonition note">
@@ -1960,15 +1965,15 @@ body {margin:0;}
 <td><p>Creation of identities</p></td>
 <td><p>Creation of identities</p></td>
 </tr>
-<tr class="row-odd"><td><p>Creation and management of baker accounts</p></td>
-<td><p>Creation and management of baker accounts. Rewards are visible in the wallet.</p></td>
-<td><p>Creation and management of baker accounts. Rewards are visible in the wallet.</p></td>
-<td><p>Creation and management of baker accounts. Rewards are visible in the wallet.</p></td>
+<tr class="row-odd"><td><p>Creation and management of validator accounts</p></td>
+<td><p>Creation and management of validator accounts. Rewards are visible in the wallet.</p></td>
+<td><p>Creation and management of validator accounts. Rewards are visible in the wallet.</p></td>
+<td><p>Creation and management of validator accounts. Rewards are visible in the wallet.</p></td>
 </tr>
 <tr class="row-even"><td><p>A node is required</p></td>
-<td><p>A node is not needed unless baking</p></td>
-<td><p>A node is not needed unless baking</p></td>
-<td><p>A node is not needed unless baking</p></td>
+<td><p>A node is not needed unless validator</p></td>
+<td><p>A node is not needed unless validator</p></td>
+<td><p>A node is not needed unless validator</p></td>
 </tr>
 <tr class="row-odd"><td><p>Cannot connect to dApps</p></td>
 <td><p>Cannot connect to dApps</p></td>

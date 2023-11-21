@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan.ed0743d4-d70e-4829-9392-6a0d2c643efc.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan.eadfbf15-a0eb-41e2-a995-a6f8cdee0717.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1769,8 +1774,8 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#delegation-and-baker-pools">
-   Delegation and baker pools
+  <a class="reference internal nav-link" href="#delegation-and-staking-pools">
+   Delegation and staking pools
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1828,13 +1833,13 @@ body {margin:0;}
 <li><p>A dashboard landing page with real-time updates from the Concordium blockchain</p></li>
 <li><p>Core metrics, graphs, and statistics on blocks, transactions, and accounts</p></li>
 </ul>
-<div class="section" id="delegation-and-baker-pools">
-<h2>Delegation and baker pools<a class="headerlink" href="#delegation-and-baker-pools" title="Permalink to this headline">#</a></h2>
-<p>The CCDScan tool allows bakers to view information that helps them to <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">manage their baker and pool responsibly</span></a>. It also allows potential delegators to <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">research bakers and pools</span></a>.</p>
+<div class="section" id="delegation-and-staking-pools">
+<h2>Delegation and staking pools<a class="headerlink" href="#delegation-and-staking-pools" title="Permalink to this headline">#</a></h2>
+<p>The CCDScan tool allows validators to view information that helps them to <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">manage their validator and pool responsibly</span></a>. It also allows potential delegators to <a class="reference internal" href="../guides/baker-pool.html#baker-pool"><span class="std std-ref">research validators and pools</span></a>.</p>
 </div>
 <div class="section" id="use-ccdscan">
 <h2>Use CCDScan<a class="headerlink" href="#use-ccdscan" title="Permalink to this headline">#</a></h2>
-<p>CCDScan shows information about <a class="reference internal" href="ccd-scan-blocks.html#blocks-view"><span class="std std-ref">blocks</span></a>, <a class="reference internal" href="ccd-scan-transactions.html#transactions-view"><span class="std std-ref">transactions</span></a>, <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">accounts</span></a>, and <a class="reference internal" href="ccd-scan-staking.html#bakers-view"><span class="std std-ref">staking</span></a>.</p>
+<p>CCDScan shows information about <a class="reference internal" href="ccd-scan-blocks.html#blocks-view"><span class="std std-ref">blocks</span></a>, <a class="reference internal" href="ccd-scan-transactions.html#transactions-view"><span class="std std-ref">transactions</span></a>, <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">accounts</span></a>, <a class="reference internal" href="ccd-scan-staking.html#bakers-view"><span class="std std-ref">staking</span></a>, and smart contracts.</p>
 <div class="section" id="home">
 <h3>Home<a class="headerlink" href="#home" title="Permalink to this headline">#</a></h3>
 <p>On the Home page that appears when you navigate to CCDScan, you see the following information:</p>
@@ -1844,7 +1849,7 @@ body {margin:0;}
 </div>
 <ol class="arabic simple">
 <li><p>Mainnet/Testnet selector. The information shown is dependent on whether you have selected Mainnet or Testnet.</p></li>
-<li><p>Search field: search across all relevant blockchain data for specific information, such as a particular account, transaction, block, or baker and see all relevant details associated with that entity.</p></li>
+<li><p>Search field: search across all relevant blockchain data for specific information, such as a particular account, transaction, block, or validator and see all relevant details associated with that entity.</p></li>
 <li><p>Site navigation: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu <img alt="Three horizontal lines on a dark background" class="button" src="../../_images/hamburger-menu1.png" />.</p></li>
 <li><p>Time range filter: controls the time range of the data shown.</p></li>
 <li><p>Total CCD in existence on either Mainnet or Testnet; on Mainnet Total CCD in circulation is also shown.</p></li>
@@ -1852,10 +1857,10 @@ body {margin:0;}
 <li><p>Block Time: average time since last block created in the selected time range.</p></li>
 <li><p>Transactions: total number of transactions in the selected time range.</p></li>
 <li><p>Accounts created: total number of accounts created in the selected time range.</p></li>
-<li><p>Latest blocks: continuously updated list of the latest 10 blocks baked on the blockchain, including links to details for the individual blocks and bakers.</p></li>
+<li><p>Latest blocks: continuously updated list of the latest 10 blocks produced on the blockchain, including links to details for the individual blocks and validators.</p></li>
 <li><p>Latest transactions: continuously updated list of the latest 10 transactions on the blockchain, including links to details for the individual transactions and senders (where available).</p></li>
 </ol>
-<p>In Latest blocks and Latest transactions click on information in the highlighted columns for details about the <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block</span></a>, <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">baker</span></a>, <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">transaction</span></a>, or <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">sender</span></a>.</p>
+<p>In Latest blocks and Latest transactions click on information in the highlighted columns for details about the <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block</span></a>, <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">validator</span></a>, <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">transaction</span></a>, or <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">sender</span></a>.</p>
 <img alt="dark screen with graphs and top and table at bottom; clickable columns highlighted" src="../../_images/ccd-scan-home-clickable.png" />
 <div class="line-block">
 <div class="line"><br /></div>

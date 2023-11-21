@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-nodes.71ef2e42-9509-4c73-a676-abd8fb959bf0.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/ccd-scan-nodes.a35b3e1d-5e01-4aa0-8f2f-ad32c73a1aaf.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -360,6 +360,11 @@ body {margin:0;}
         </a>
        </li>
        <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
+       <li class="toctree-l3">
         <a class="reference internal" href="../guides/overview-desktop.html">
          Set up the Desktop Wallet
         </a>
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../guides/remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1806,7 +1811,7 @@ body {margin:0;}
 <p>Nodes shows information about the nodes on Mainnet/Testnet in alphabetical order. The list contains the following information:</p>
 <ul class="simple">
 <li><p><strong>Node name</strong>: node name as given by the node runner. Click the node name to see the <a class="reference internal" href="#node-details"><span class="std std-ref">node details</span></a>.</p></li>
-<li><p><strong>Baker ID</strong>: if the node is a baker, the baker ID appears. Click the baker ID to see the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">baker details</span></a>.</p></li>
+<li><p><strong>Validator ID</strong>: if the node is a validator, the validator ID appears. Click the validator ID to see the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">validator details</span></a>.</p></li>
 <li><p><strong>Uptime</strong>: amount of time the node has been running since last restart.</p></li>
 <li><p><strong>Node version</strong>: version of Concordium node software that the node is running.</p></li>
 <li><p><strong>Avg. ping</strong>: average network delay between the node and its peers.</p></li>
@@ -1827,13 +1832,13 @@ body {margin:0;}
 </div>
 <ul class="simple">
 <li><p><strong>Node</strong>: shows the name of the node</p></li>
-<li><p><strong>Baker</strong>: baker ID of the node if it is a baker. Click the baker ID to see the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">baker details</span></a>.</p></li>
+<li><p><strong>Validator</strong>: validator ID of the node if it is a validator. Click the validator ID to see the <a class="reference internal" href="ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">validator details</span></a>.</p></li>
 <li><p><strong>Uptime</strong>: amount of time the node has been running.</p></li>
 <li><p><strong>Client version</strong>: version of concordium node software the node is running.</p></li>
 <li><p><strong>Average ping</strong>: average network delay between the node and its peers.</p></li>
 <li><p><strong>Packets sent</strong>: number of packets sent by the participant during uptime. Packets are transactions, blocks, finalization messages.</p></li>
 <li><p><strong>Packets received</strong>: number of packets received by the participant during uptime. Packets are transactions, blocks, finalization messages.</p></li>
-<li><p><strong>Baking committee</strong>: whether the node is currently running as a baker. Will be either <strong>Active member</strong> or <strong>Not a member</strong>.</p></li>
+<li><p><strong>Validator committee</strong>: whether the node is currently running as a validator. Will be either <strong>Active member</strong> or <strong>Not a member</strong>.</p></li>
 <li><p><strong>Best block statistics</strong>: shows statistics about the best block.  Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire block hash. Click the block hash to see <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block details</span></a>.</p></li>
 <li><p><strong>Last finalized block statistics</strong>: shows statistics about the last finalized block in participant’s chain.  Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire block hash. Click the block hash to see <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block details</span></a>.</p></li>
 <li><p><strong>Peers</strong>: shows the current list of peers of the node with the ability to drill-through and inspect peer node information.</p></li>

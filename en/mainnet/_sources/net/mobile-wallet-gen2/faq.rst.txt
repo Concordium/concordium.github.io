@@ -11,7 +11,7 @@
 
 .. dropdown:: What are the features and benefits of the |mw-gen2|?
 
-    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, bake, delegate, and so on. But the |mw-gen2| uses a :term:`secret recovery phrase` that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the |bw|.
+    Much of the functionality is the same as |mw-gen1| in that you can still send and receive funds, be a validator, delegate, and so on. But the |mw-gen2| uses a :term:`secret recovery phrase` that allows you to recover your wallet should you need to replace your phone. That same secret recovery phrase will also allow you to recover the wallet on, for example, the |bw|.
 
     In |mw-gen2| initial accounts are no longer created by the :term:`identity provider` when your identity is verified, ensuring complete privacy of all your accounts. Going forward you :ref:`create all accounts yourself<create-account>` in your Concordium Wallet.
 
@@ -58,17 +58,17 @@
 
     Identity and account creation is disabled in |mw-gen1|, so it is a good idea to download and set up |mw-gen2|.
 
-.. dropdown:: As a baker, what do I need to do to migrate from |mw-gen1| to |mw-gen2|?
+.. dropdown:: As a validator, what do I need to do to migrate from |mw-gen1| to |mw-gen2|?
 
-    For bakers who want to migrate you should:
+    For validators who want to migrate you should:
 
-    #. Stop baking and wait for the :term:`cool-down period` to finish.
+    #. Stop validation and wait for the :term:`cool-down period` to finish.
     #. Set up the |mw-gen2|.
     #. Once cool-down has passed and your funds are unlocked, transfer your funds to the new account in |mw-gen2|.
-    #. Register as a baker again in |mw-gen2|.
-    #. Restart the node with the new baker keys.
+    #. Register as a validator again in |mw-gen2|.
+    #. Restart the node with the new validator keys.
 
-    If you have a :term:`baker pool` with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the :ref:`URL for baker information<update-pool-settings>`.
+    If you have a :term:`staking pool` with delegators it is a good idea to inform them of this change. The best way to do that is by providing information in the :ref:`URL for validator information<update-pool-settings>`.
 
 .. dropdown:: If I am awaiting scheduled transfers in an account in |mw-gen1| how should I migrate to |mw-gen2|?
 
@@ -80,7 +80,7 @@
 
     It is also important to note that if, for example, you add an account on one wallet that is recovered on two devices in parallel (from the same recovery phrase), nothing is dynamically updated across wallets from the same recovery phrase except balances. To get updates such as a new account or new identity, it is necessary to :ref:`recover<recover-wallet>` from your recovery phrase again; however you do not need to enter the recovery phrase again as the wallet will remember it.
 
-.. dropdown:: Can I use my secret recovery phrase to restore my accounts in third party wallets?
+.. dropdown:: Can I use my secret recovery phrase to restore my accounts in third-party wallets?
 
     At the moment Concordium identities and accounts are only supported in Concordium Wallets. However, Concordium expects to provide support for CCD and CIS-2 tokens in third party wallet in the not too distant future.
 

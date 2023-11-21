@@ -41,12 +41,12 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/overview-desktop.5a0a96ac-a040-44e0-8ac8-d0c5b1c60990.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/overview-desktop.ae52a836-8290-4683-930e-fce4feeb2088.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Manage wallets" href="manage-wallets-lp.html" />
-    <link rel="prev" title="Set up the Concordium Wallet for Mobile" href="../mobile-wallet-gen2/setup-mobile-wallet.html" />
+    <link rel="prev" title="Set up the Concordium Legacy Wallet" href="../mobile-wallet/setup-mobile-wallet.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -359,6 +359,11 @@ body {margin:0;}
          Set up the Concordium Wallet for Mobile
         </a>
        </li>
+       <li class="toctree-l3">
+        <a class="reference internal" href="../mobile-wallet/setup-mobile-wallet.html">
+         Set up the Concordium Legacy Wallet
+        </a>
+       </li>
        <li class="toctree-l3 current active">
         <a class="current reference internal" href="#">
          Set up the Desktop Wallet
@@ -499,7 +504,7 @@ body {margin:0;}
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="how-to-earn.html">
-     How to earn with Concordium
+     Staking with Concordium
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
     <label for="toctree-checkbox-10">
@@ -509,7 +514,7 @@ body {margin:0;}
     <ul>
      <li class="toctree-l2 has-children">
       <a class="reference internal" href="../concepts/concepts-baker.html">
-       Bakers
+       Validators
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
       <label for="toctree-checkbox-11">
@@ -519,42 +524,42 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-pool.html">
-         Baker management
+         Validator management
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/add-baker-mw.html">
-         Add baker
+         Add a validator
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../mobile-wallet/update-baker-mw.html">
-         Change baker options
+         Change validator options
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="baker-windows.html">
-         Run a baker node on Windows
+         Run a validator node on Windows
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-macos.html">
-         Run a baker node on macOS
+         Run a validator node on macOS
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-ubuntu.html">
-         Run a baker node on Ubuntu
+         Run a validator node on Ubuntu
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="../nodes/baker-docker.html">
-         Run a baker node on Docker
+         Run a validator node on Docker
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="become-baker.html">
-         Become a baker using the Concordium Client
+         Become a validator using the Concordium Client
         </a>
        </li>
       </ul>
@@ -571,24 +576,24 @@ body {margin:0;}
       <ul>
        <li class="toctree-l3">
         <a class="reference internal" href="add-delegation.html">
-         Delegate to a baker pool or passive delegation
+         Delegate to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="update-delegation.html">
-         Update delegation to a baker pool or passive delegation
+         Update delegation to a staking pool or passive delegation
         </a>
        </li>
        <li class="toctree-l3">
         <a class="reference internal" href="remove-delegation.html">
-         Remove delegation to a baker pool or passive delegation
+         Remove delegation to a staking pool or passive delegation
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../snippets/delegation-faq.html">
-       Delegation and baking FAQ
+       Delegation and validation FAQ
       </a>
      </li>
     </ul>
@@ -1803,7 +1808,7 @@ body {margin:0;}
                 
   <div class="section" id="set-up-the-desktop-wallet">
 <span id="overview-desktop"></span><h1>Set up the Desktop Wallet<a class="headerlink" href="#set-up-the-desktop-wallet" title="Permalink to this headline">#</a></h1>
-<p>The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.</p>
+<p>The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.</p>
 <p>The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S, LEDGER NANO S Plus, and LEDGER Nano X are supported.</p>
 <p>This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you’ll be using the Desktop Wallet in combination with a LEDGER device to generate and store keys and sign transactions.</p>
 <div class="section" id="before-you-start">
@@ -1874,12 +1879,12 @@ Step 4: Set up an identity and an initial account<div class="sd-summary-down doc
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Once you’ve installed the Desktop Wallet, you must set up an <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a> and an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a>. If you want to be a baker, Concordium also recommends that you create a separate account to use as a baker account. See <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a> and <a class="reference internal" href="create-account.html#create-account"><span class="std std-ref">Create an account in the Desktop Wallet</span></a>.</p>
+<p class="sd-card-text">Once you’ve installed the Desktop Wallet, you must set up an <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a> and an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a>. If you want to be a validator, Concordium also recommends that you create a separate account to use as a validator account. See <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">Create an identity and an initial account in the Desktop Wallet</span></a> and <a class="reference internal" href="create-account.html#create-account"><span class="std std-ref">Create an account in the Desktop Wallet</span></a>.</p>
 </div>
 </details><p>Once you have completed these four steps, you’re ready to start using the Desktop Wallet.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Without CCD you can’t submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating baker transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.</p>
+<p>Without CCD you can’t submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating validator transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.</p>
 <p>You can buy CCD on many exchanges. If you are running on testnet, you can request CCD for testing using a button in the wallet.</p>
 </div>
 <div class="admonition warning">
@@ -1895,11 +1900,11 @@ Step 4: Set up an identity and an initial account<div class="sd-summary-down doc
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../mobile-wallet-gen2/setup-mobile-wallet.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../mobile-wallet/setup-mobile-wallet.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Set up the Concordium Wallet for Mobile</p>
+            <p class="prev-next-title">Set up the Concordium Legacy Wallet</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="manage-wallets-lp.html" title="next page">

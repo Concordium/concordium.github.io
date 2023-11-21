@@ -356,22 +356,22 @@ Smart contracts
       .. literalinclude:: grpc-json-schemas/InvokeContract.json
          :language: json
 
-Baking
-======
+Validator
+=========
 
 .. function:: GetPoolStatus(block_hash: BlockHash, passive_delegation: Bool, baker_id: UInt64) -> JsonResponse
 
    Get the status of a pool.
    If ``passive_delegation == true``, this returns the status for the passive delegators.
-   Otherwise, it returns the status for the baker with the specified ID (if it exists).
+   Otherwise, it returns the status for the validator with the specified ID (if it exists).
 
    :param block_hash: The given block.
    :type block_hash: |grpc-block-hash|_
    :param Bool passive_delegation: Whether the request is for passive delegation or a
-                             specific baker.
-   :param UInt64 baker_id: The baker id to get the status of.
+                             specific validator.
+   :param UInt64 baker_id: The validator id to get the status of.
    :returns: The status of the pool, or ``null`` if the block hash is malformed,
-             or if either the block hash or baker id doesn't exist.
+             or if either the block hash or validator id doesn't exist.
    :rtype: ``JsonResponse`` with ``?PoolStatus`` (see JSON schema below)
 
    .. collapse:: View JSON schema
@@ -397,11 +397,11 @@ Baking
 
 .. function:: GetBirkParameters(block_hash: BlockHash) -> JsonResponse
 
-   Get an overview of the parameters used for baking.
+   Get an overview of the parameters used for validators.
 
    :param block_hash: The given block.
    :type block_hash: |grpc-block-hash|_
-   :returns: The parameters used for baking in the given block, or ``null`` if
+   :returns: The parameters used for validators in the given block, or ``null`` if
              the block hash is malformed or doesn't exist.
    :rtype: ``JsonResponse`` with ``?BirkParameters`` (see JSON schema below)
 
@@ -412,12 +412,12 @@ Baking
 
 .. function:: GetBakerList(block_hash: BlockHash) -> JsonResponse
 
-   Get a list of all baker IDs registered at that block in ascending order. Or
+   Get a list of all validator IDs registered at that block in ascending order. Or
    ``null``, if the block is invalid.
 
    :param block_hash: The given block.
    :type block_hash: |grpc-block-hash|_
-   :returns: A list of baker IDs, or ``null`` if the block hash is malformed or
+   :returns: A list of validator IDs, or ``null`` if the block hash is malformed or
              doesn't exist.
    :rtype: ``JsonResponse`` with ``?[BakerId]`` (see JSON schema below)
 
@@ -428,16 +428,16 @@ Baking
 
 .. function:: StartBaker() -> Bool
 
-   Start the baker.
+   Start the validator.
 
-   :returns: Whether starting the baker succeeded.
+   :returns: Whether starting the validator succeeded.
    :rtype: Bool
 
 .. function:: StopBaker() -> Bool
 
-   Stop the baker.
+   Stop the validator.
 
-   :returns: Whether stopping the baker succeeded.
+   :returns: Whether stopping the validator succeeded.
    :rtype: Bool
 
 The node

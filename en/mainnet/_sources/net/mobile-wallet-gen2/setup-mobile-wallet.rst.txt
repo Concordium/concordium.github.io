@@ -109,7 +109,7 @@ In the wallet you have some navigation options.
 3. :ref:`Wallet settings<mw-gen2-wallet-settings>`: contains actions for the wallet.
 4. Scan QR code: tap to :ref:`scan a QR code to connect to a dApp<connect-app-bw>`.
 5. Add: to :ref:`add a new account<create-account>`.
-6. Account actions: range of actions you can perform on the account, such as send, receive, bake/delegate.
+6. Account actions: range of actions you can perform on the account, such as send, receive, and so on.
 
 .. _mw-gen2-wallet-settings:
 
@@ -134,10 +134,10 @@ When you tap on an account, you see the details for the specific account, includ
 
 - Send: :ref:`send funds<send-CCD-wallets>`
 - Receive: find and share your address
-- Earn: configure and manage :ref:`baking<baker-concept>` or :ref:`delegation<delegation-concept>`
+- Earn: configure and manage :ref:`validation<baker-concept>` or :ref:`delegation<delegation-concept>`
 - Scan QR code: scan QR code of a dApp
 - Account settings: perform some less often used actions on an account
-   - Transfer filters: configure filters to show or hide rewards or finalization rewards
+   - Transfer filters: configure filters to show or hide rewards
    - Show shielded balance: Show the shielded balance tab on the account and the shielding action buttons
    - Release schedule: :ref:`inspect a release schedule<inspect-release-schedule-mw>`
    - Change account name: :ref:`customize account names<change-mw-acct-name>`
