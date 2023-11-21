@@ -23,7 +23,7 @@ The Concordium blockchain is a compliance-ready blockchain backed by science tha
 
 The protocol level ID ensures that every wallet is associated with a real-world identity that has been verified through a third-party ID provider so that people and companies can trust one another, while remaining private, with zero-knowledge proof.
 
-You can read more about Identities, Accounts, Baking, Delegation and other concepts of Concordium `in the documentation <https://developer.concordium.software/en/mainnet/net/guides/learn-about-concordium.html>`_.
+You can read more about Identities, Accounts, Staking, and other concepts of Concordium `in the documentation <https://developer.concordium.software/en/mainnet/net/guides/learn-about-concordium.html>`_.
 
 The ID layer
 ------------

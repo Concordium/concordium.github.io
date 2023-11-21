@@ -5,7 +5,7 @@
 Set up the Desktop Wallet
 =========================
 
-The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a baker, and exporting and importing account information.
+The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
 
 The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S, LEDGER NANO S Plus, and LEDGER Nano X are supported.
 
@@ -65,13 +65,13 @@ Before you start, make sure you’ve completed the following steps:
 
 .. dropdown:: Step 4: Set up an identity and an initial account
 
-    Once you've installed the Desktop Wallet, you must set up an :term:`identity` and an :term:`initial account`. If you want to be a baker, Concordium also recommends that you create a separate account to use as a baker account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
+    Once you've installed the Desktop Wallet, you must set up an :term:`identity` and an :term:`initial account`. If you want to be a validator, Concordium also recommends that you create a separate account to use as a validator account. See :ref:`Create an identity and an initial account in the Desktop Wallet <create-initial-account>` and :ref:`Create an account in the Desktop Wallet<create-account>`.
 
 Once you have completed these four steps, you're ready to start using the Desktop Wallet.
 
 .. Note::
 
-    Without CCD you can't submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating baker transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.
+    Without CCD you can't submit transactions on the Concordium blockchain. This includes creating multi-signature accounts and creating validator transactions. However, you can create identities, accounts that only require one signature, and you can add account addresses to your address book.
 
     You can buy CCD on many exchanges. If you are running on testnet, you can request CCD for testing using a button in the wallet.
 

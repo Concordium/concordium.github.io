@@ -7,7 +7,7 @@ Run and manage a node on Windows
 
 This guide describes how you can run and manage a node on the Concordium network from a Windows computer. You can also run a node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`macOS <run-node-macos>`.
 
-If you want to run a baker node on Windows, see :ref:`Configure a node on Windows as baker<baker-windows>`.
+If you want to run a validator node on Windows, see :ref:`Configure a node on Windows as validator<baker-windows>`.
 
 Prerequisites
 =============
@@ -137,7 +137,7 @@ The node runs as a background service with no user interface. To verify that itâ
 Enable inbound connections
 ==========================
 
-If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, :ref:`if so configured<become-a-baker>`, to bake and finalize.
+If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, :ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant by enabling inbound connections. By default, ``concordium-node`` listens on port ``8888`` for inbound connections on **Mainnet** and on port ``8889`` for inbound connections on **Testnet**. Depending on your network and platform configuration you will either need to forward an external port to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The details of how this is done will depend on your configuration. See :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>` for more information.
 
@@ -249,10 +249,10 @@ Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. There
 .. Note::
    If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
 
-Baking on a Windows node
-========================
+Validation on a Windows node
+============================
 
-For information about baking on a Windows node, see :ref:`baker-windows`.
+For information about validation on a Windows node, see :ref:`baker-windows`.
 
 Uninstall a node running on Windows
 ===================================

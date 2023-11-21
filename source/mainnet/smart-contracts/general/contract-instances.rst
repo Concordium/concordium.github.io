@@ -154,7 +154,7 @@ environment.
 
    See :ref:`host-functions-log` for the reference of this function.
 
-These event logs are retained by bakers and included in transaction summaries.
+These event logs are retained by validators and included in transaction summaries.
 
 Logging an event has an associated cost, similar to the cost of writing to the
 contract's state. In most cases it would only make sense to log a few bytes to
