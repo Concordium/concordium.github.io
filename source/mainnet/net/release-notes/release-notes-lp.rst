@@ -293,11 +293,15 @@ Wallets
 Desktop Wallet
 --------------
 
-    September 28, 2023
+    November 22, 2023
 
-        Version 1.6.0 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which was released August 21, 2023 on Testnet and September 25, 2023 on Mainnet. The wallet also now supports gRPC2.
+        Version 1.7.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.6.0 - September 28, 2023
+
+            Version 1.6.0 adds support for the `protocol version 6 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P6.txt>`_ with Concordium BFT consensus which was released August 21, 2023 on Testnet and September 25, 2023 on Mainnet. The wallet also now supports gRPC2.
 
         .. dropdown:: 1.5.0 - August 4, 2022
 
