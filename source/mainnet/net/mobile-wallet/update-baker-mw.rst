@@ -549,7 +549,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts** and select the account on which you have a baker pool that you want to update and click **More options**.
+        #. Go to **Accounts** and select the account on which you have a staking pool that you want to update and click **More options**.
 
         #. Select **Validation**.
 
