@@ -1,6 +1,6 @@
 .. Desktop wallet verification variables
 .. |cdw-appimage| replace:: concordium-desktop-wallet-1.7.1.AppImage
-.. |cdw-appimage-checksum| replace:: ebc8082fa938ebce78fc407eaa0b9f79bc9da71d6d36ecde6c769decdf4f52b6
+.. |cdw-appimage-checksum| replace:: 3dcfab8e69e9fa138ec00b9716e811bac012516795b4f1744aedd69f3dd10777
 .. |cdw-deb| replace:: concordium-desktop-wallet-1.7.1.deb
 .. |cdw-deb-checksum| replace:: ca9f4e38a422ba64e07a89e38cc762005bc31f3f4cbb399657a0adbd0de25a0e
 .. |cdw-rpm| replace:: concordium-desktop-wallet-1.7.1.rpm
