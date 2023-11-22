@@ -181,7 +181,7 @@ To see if the node is producing blocks, you can check various sources that offer
 
   .. code-block:: console
 
-     $./concordium-client account show valdiatorAccount
+     $./concordium-client account show validatorAccount
      ...
 
      Validator: #22

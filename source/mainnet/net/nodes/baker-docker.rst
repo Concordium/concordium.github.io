@@ -19,11 +19,11 @@ Configure a node as a validator
 
 Once you have generated validator keys, you then need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.
 
-To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``baker add`` transaction to the network:
+To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``validator add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amount-to-stake> --out <concordium-data-dir>/validator-credentials.json
+   $concordium-client validator add <keys-file>.json --sender validatorAccount --stake <amount-to-stake> --out <concordium-data-dir>/validator-credentials.json
 
 where you replace
 
@@ -62,4 +62,4 @@ To start the node with these validator keys and produce blocks, do the following
 When you've placed the file in the appropriate directory, start the node again in the same way as the first time, e.g., ``docker-compose -f testnet-node.yaml
 up``. The node will automatically start producing blocks when the validator is included in the validators for the current epoch.
 
-In the wallets, a bread icon is added to the account associated with the validator node. The bread icon appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.
+In the wallets, a badge is added to the account associated with the validator node. The badge appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.

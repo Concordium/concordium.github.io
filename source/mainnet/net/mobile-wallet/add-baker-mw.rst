@@ -335,22 +335,22 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
 
-        .. image:: ../images/browser-wallet/setup-baking-delegation.png
-            :width: 40%
+       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+           :width: 40%
 
-    #. Click **Setup validator**. If you are setting up validation for the first time on this account, you see some information about validation.
+    #. Click **Setup validation**. If you are setting up validation for the first time on this account, you see some information about being a validator.
 
     #. Select your restake preference. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-restake.png
-            :alt: screen with Yes restake or No don't restake text boxes to choose
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-restake.png
+           :alt: screen with Yes restake or No don't restake text boxes to choose
+           :width: 40%
 
     #. Specify the amount that you want to stake. The more you stake, the greater the probability that your account will be chosen to produce the next block. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-staked-amt.png
-            :alt: screen with balances at the top and text box to enter amount to stake
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-staked-amt.png
+           :alt: screen with balances at the top and text box to enter amount to stake
+           :width: 40%
 
     .. Note::
 
@@ -362,11 +362,11 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     4. Choose whether you want to open a :term:`staking pool` or keep it closed. Choose **Open for delegation** to open a staking pool. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-pool.png
-            :alt: screen with buttons to open a pool for delegation or close a pool for delegation
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-pool.png
+           :alt: screen with buttons to open a pool for delegation or close a pool for delegation
+           :width: 40%
 
-    5. Review the commissions paid to validators. You can use the sliders or type the amount of commission for the staking pool. When you open your validator as a pool, you earn commissions of stake delegated to your pool from other accounts. Click **Continue**.
+    5. Review and adjust the commissions paid to validators using the sliders or by typing in the percentage. When you open your validator as a pool, you earn commissions of stake delegated to your pool from other accounts. Click **Continue**.
 
         .. image:: ../images/browser-wallet/add-baker-comms.png
             :alt: screen showing commission amounts for validators in read-only
@@ -374,19 +374,19 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     6. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-url.png
+       .. image:: ../images/browser-wallet/add-baker-url.png
             :alt: screen with text box to enter url for staking pool information
             :width: 40%
 
     7. You have to export the validator keys so that you can start the node with the validator keys. Click **Export validator keys** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
-        .. image:: ../images/browser-wallet/add-baker-export-keys.png
+       .. image:: ../images/browser-wallet/add-baker-export-keys.png
             :alt: screen with buttons to show keys or export validator keys
             :width: 40%
 
-        .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
-            :alt: screen with buttons to continue after export and wallet screen dimmed behind
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
+           :alt: screen with buttons to continue after export and wallet screen dimmed behind
+           :width: 40%
 
     .. Warning::
 
@@ -394,20 +394,20 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then click **Send**.
 
-        .. image:: ../images/browser-wallet/add-baker-review.png
-                :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-review.png
+            :width: 40%
 
     8. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
-        .. image:: ../images/browser-wallet/add-baker-finish.png
-                :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-finish.png
+            :width: 40%
 
     9. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
-        - :ref:`Windows<baker-windows>`
-        - :ref:`macOS<baker-macos>`
-        - :ref:`Docker<baking-docker>`
-        - :ref:`Ubuntu<baker-ubuntu>`
+       - :ref:`Windows<baker-windows>`
+       - :ref:`macOS<baker-macos>`
+       - :ref:`Docker<baking-docker>`
+       - :ref:`Ubuntu<baker-ubuntu>`
 
     Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account card.
 

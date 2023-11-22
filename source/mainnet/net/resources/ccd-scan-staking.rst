@@ -24,7 +24,7 @@ The Pay Day block details contains the following:
 - **Age**: the age of the block and date/time stamp when it was created.
 - **Validator id**: ID of the validator who produced the block. Click the validator ID to see the :ref:`validator details<home-screen-baker>`.
 - **Tokenomics**: contains the following details about the block:
-    - Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the baker reward account, finalization reward account, and foundation account.
+    - Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the block reward account, finalization reward account, and foundation account.
     - Accrued block rewards: similar to a ‘regular’ :ref:`block<home-screen-block>`; contains the accrued block rewards.
     - Payday foundation rewards: displays the payout to the foundation account for the pay day period and contains the option to drill-through to the :ref:`foundation account<accounts-view>`.
     - Payday account rewards: lists all the accounts and the rewards broken down by block reward and transaction fees.
@@ -32,7 +32,7 @@ The Pay Day block details contains the following:
 - **Transactions**: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click **Hash** for more :ref:`information about the transacation<home-screen-transaction>`, or click **Sender** for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire hash or account number.
 - **Block statistics**: shows the block time (time since last block) and the finalization time of the block (the time before proof of finalization of the selected block was included in a subsequent block).
 
-Below the graphs, you can switch between **Baker pools** and **Top delegators**. You can also choose to see details for **Passive delegation**. There is a switch to **Show only open pools** and a filter where you can choose how the data shown in the table should be ordered.
+Below the graphs, you can switch between **Staking pools** and **Top delegators**. You can also choose to see details for **Passive delegation**. There is a switch to **Show only open pools** and a filter where you can choose how the data shown in the table should be ordered.
 
 Staking pools view
 ==================
@@ -50,7 +50,7 @@ If you select **Staking pools** the table contains a list of all validators/pool
 Top delegators view
 ===================
 
-If you select **Top delegaators** you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (baker pool or passive delegation), and so on. The table contains the following:
+If you select **Top delegaators** you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (staking pool or passive delegation), and so on. The table contains the following:
 
 .. image:: ../images/ccd-scan/ccd-scan-staking-delegators.png
     :alt: dark screen showing table of information about top delegators
@@ -89,7 +89,7 @@ Validator details
 When you click a validator ID, the following appears:
 
 .. image:: ../images/ccd-scan/ccd-scan-baker-details.png
-    :alt: dark screen showing details of a single baker
+    :alt: dark screen showing details of a single validator
 
 |
 
@@ -110,7 +110,7 @@ The validator details shows the following information about the validator.
     - **Amount**: shows the amount of the reward. If you click on Show more you can see the breakdown of the reward by validation rewards and transaction fees.
 - **Related transactions**: shows other transactions related to this validator ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more :ref:`information about the transacation<home-screen-transaction>`. Click Copy |copy| to copy the entire hash number.
 - **Delegators**: shows the first six characters of the account delegating to the validator, that account's delegated stake, and whether earnings are restaked. You can click on the characters of the account for more :ref:`information about the delegator<home-screen-sender>`. Click Copy |copy| to copy the entire account number.
-- **Metadata**: contains the URL that the baker can optionally provide with information about the staking pool.
+- **Metadata**: contains the URL that the validator can optionally provide with information about the staking pool.
 
 .. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
              :class: button

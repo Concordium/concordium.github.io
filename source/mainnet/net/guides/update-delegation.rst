@@ -64,7 +64,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
         #. Select the account on which you want to change your delegation preferences.
 
-        #. You can enter the baker ID of a different baker pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
+        #. You can enter the validator ID of a different staking pool to delegate to or select passive if you prefer that. Click **Continue**. Then you enter a new amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
         #. Set an expiry date and time for your proposal. Consider when you set the expiry time so that the co-signers can return their signatures in time. Select Continue. You can now generate the transaction.
 
@@ -147,7 +147,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
             :width: 50%
             :alt: screen showing current delegation with options to stop or update
 
-    #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
+    #. If you want to delegate to a specific pool tap **Staking pool** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
             :width: 50%
@@ -185,7 +185,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
             :width: 50%
             :alt: screen showing current delegation with options to stop or update
 
-    #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
+    #. If you want to delegate to a specific pool tap **Staking pool** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
         .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
             :width: 50%
@@ -209,50 +209,56 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
     #. Bring the account whose delegation you want to update into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
 
-        .. image:: ../images/browser-wallet/select-account.png
-            :width: 40%
-            :alt: screen with accounts drop-down activated and account selection shown
+       .. image:: ../images/browser-wallet/select-account.png
+           :width: 40%
+           :alt: screen with accounts drop-down activated and account selection shown
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
 
-        .. image:: ../images/browser-wallet/delegation-update-stop.png
-            :width: 40%
-            :alt: screen showing current delegation and buttons to update or stop
+       .. image:: ../images/browser-wallet/delegation-update-stop.png
+           :width: 40%
+           :alt: screen showing current delegation and buttons to update or stop
 
     #. You see your current delegation. Click **Update**. Review the information about updating your delegation.
 
-        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
-                :width: 40%
+       .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+           :width: 40%
+           :alt: screen showing current delegation and buttons to update or stop
 
-    #. If you want to delegate to a specific pool click **Baker** and enter the Baker ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. Click **Continue**.
+    #. If you want to delegate to a specific pool click **Target** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/delegation-update-target.png
-            :width: 40%
-            :alt: screen showing current delegation and buttons to select target
+       .. image:: ../images/browser-wallet/delegation-update-target.png
+           :width: 40%
+           :alt: screen showing current delegation and buttons to select target
+
+
+       .. image:: ../images/browser-wallet/delegation-update-target1.png
+           :width: 40%
+           :alt: screen showing current delegation and buttons to select target
 
     #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/delegation-update-restaking-pref.png
-            :width: 40%
-            :alt: screen with buttons to select restaking rewards preference
+       .. image:: ../images/browser-wallet/delegation-update-restaking-pref.png
+           :width: 40%
+           :alt: screen with buttons to select restaking rewards preference
 
     #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/delegation-update-amount.png
-            :width: 40%
-            :alt: screen to enter delegation amount
+       .. image:: ../images/browser-wallet/delegation-update-amount.png
+           :width: 40%
+           :alt: screen to enter delegation amount
 
     #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
-        .. image:: ../images/browser-wallet/delegation-update-xact-confirm.png
-            :width: 40%
-            :alt: screen showing delegation transaction details for review
+       .. image:: ../images/browser-wallet/delegation-update-xact-confirm.png
+           :width: 40%
+           :alt: screen showing delegation transaction details for review
 
     #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
 
-        .. image:: ../images/browser-wallet/delegation-update-submit.png
-            :width: 40%
-            :alt: screen showing transaction details submitted to chain
+       .. image:: ../images/browser-wallet/delegation-update-submit.png
+           :width: 40%
+           :alt: screen showing transaction details submitted to chain
 
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 

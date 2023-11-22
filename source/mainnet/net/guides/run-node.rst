@@ -309,11 +309,11 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-testnet`` and keeping the configuration files as
    they are.
-3. If your node is an existing baker node, update the configuration file above to include
+3. If your node is an existing validator node, update the configuration file above to include
 
    .. code-block:: yaml
 
-      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
 4. Start the node and the collector.
@@ -524,11 +524,11 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
-3. If your node is an existing baker node, update the configuration file above to include
+3. If your node is an existing validator node, update the configuration file above to include
 
    .. code-block:: yaml
 
-      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
 4. Start the node and the collector.

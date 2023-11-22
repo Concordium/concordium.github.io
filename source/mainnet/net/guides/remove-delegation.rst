@@ -189,8 +189,9 @@ If you remove the delegation, there is a :term:`cool-down period` before the del
 
    #. You see your current delegation. Click **Stop**. Review the information about the cool-down period.
 
-        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
-                :width: 40%
+      .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+         :width: 40%
+         :alt: screen showing current delegation and buttons to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
