@@ -4,7 +4,7 @@
 .. |cdw-deb| replace:: concordium-desktop-wallet-1.7.1.deb
 .. |cdw-deb-checksum| replace:: 020eac35b46d55118477766be615504701917502cf04c3f25c86cd090c0b2df7
 .. |cdw-rpm| replace:: concordium-desktop-wallet-1.7.1.rpm
-.. |cdw-rpm-checksum| replace:: 92108b193bc314ba5dc3bd7fe25626645b70d1f7f5f8c0c85fd30aeccc67350f
+.. |cdw-rpm-checksum| replace:: 5b6862f0541cc04d18c625e24f299a105ae8e7670f869c8a1788b5b9965fe484
 .. |ledger-app-public-key| replace:: 04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b
 
 .. Mobile Wallet product names
