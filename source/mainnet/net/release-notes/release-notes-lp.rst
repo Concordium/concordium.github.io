@@ -293,7 +293,7 @@ Wallets
 Desktop Wallet
 --------------
 
-    November 21, 2023
+    November 22, 2023
 
         Version 1.7.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
 
