@@ -231,7 +231,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. Warning::
 
-        f you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
     7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap **Submit validator transaction**.
 
