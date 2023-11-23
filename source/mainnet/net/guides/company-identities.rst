@@ -44,7 +44,7 @@ When the identity has been verified successfully, you will receive an email with
 Create account
 --------------
 
-After obtaining the ``id-object.json`` identity object from the identity provider you can create additional accounts on the chain. The Concordium Company ID tool requires the identity object returned by the identity provider and generates a credential that can be sent to the chain to create an account. 
+After obtaining the ``id-object.json`` identity object from the identity provider you can create additional accounts on the chain. The Concordium Company ID tool requires the identity object returned by the identity provider and generates a credential that can be sent to the chain to create an account.
 
 **Create account** can also be used to regenerate the keys for an old account.
 
