@@ -55,6 +55,12 @@ index
    Using ID tutorial <guides/gallery/index>
 
 .. toctree::
+   :caption: Indexers
+
+   indexers/intro
+   indexers/subquery
+   
+.. toctree::
    :includehidden:
    :caption: Smart Contracts v0
 
