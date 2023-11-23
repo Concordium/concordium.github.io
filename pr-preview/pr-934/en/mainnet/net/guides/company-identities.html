@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/company-identities.d44989ed-6acf-4794-b9bf-da8c961df8f0.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/company-identities.370b7de6-d602-4c07-919a-7f6b8f16bca4.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1845,13 +1845,12 @@ body {margin:0;}
 <p>Once you have dowloaded the Concordium Company ID tool for your platform and installed it, you should choose your network, either Mainnet or Testnet. A default Concordium node URL is used, but you can enter your node URL, if desired.</p>
 <div class="section" id="request-identity">
 <h3>Request identity<a class="headerlink" href="#request-identity" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Click <strong>Request identity</strong>.</p></li>
 <li><p>Read the information and click <strong>Proceed</strong>.</p></li>
-<li><p>Write down or save your seedphrase by clicking the copy button to copy your seedphrase to the clipboard and remember to go to the clipboard and save the file. Keep your seedphrase secure as you will need it to create accounts or recover the identity. Click <strong>Proceed</strong>.</p></li>
-</ol>
-<a class="reference internal image-reference" href="../../_images/company-id-request.png"><img alt="company id tool screen showing identities related to seedphrase and option to select" src="../../_images/company-id-request.png" style="width: 50px;" /></a>
-<ol class="arabic simple">
+<li><p>Write down or save your seedphrase by clicking the copy button to copy your seedphrase to the clipboard and remember to go to the clipboard and save the file. Keep your seedphrase secure as you will need it to create accounts or recover the identity. Click <strong>Proceed</strong>.</p>
+<img alt="company id tool screen showing identities related to seedphrase and option to select" src="../../_images/company-id-request.png" />
+</li>
 <li><p>Enter your seedphrase to verify that you have recorded it correctly. Click <strong>Proceed</strong>.</p></li>
 <li><p>Click <strong>Generate request.json</strong>. The command outputs the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely.</p>
 <ul class="simple">
@@ -1866,12 +1865,11 @@ body {margin:0;}
 <h3>Create account<a class="headerlink" href="#create-account" title="Permalink to this headline">#</a></h3>
 <p>After obtaining the <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> identity object from the identity provider you can create additional accounts on the chain. The Concordium Company ID tool requires the identity object returned by the identity provider and generates a credential that can be sent to the chain to create an account.</p>
 <p><strong>Create account</strong> can also be used to regenerate the keys for an old account.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Click <strong>Create Account</strong>.</p></li>
-<li><p>Enter your seedphrase in the Enter seedphrase field. In the Identity object file field click to navigate to the location of the stored <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> file. Click <strong>Get Accounts</strong>.</p></li>
-</ol>
-<a class="reference internal image-reference" href="../../_images/company-id-create-acct.png"><img alt="company id tool screen showing seedphrase field and file selection box" src="../../_images/company-id-create-acct.png" style="width: 50px;" /></a>
-<ol class="arabic simple">
+<li><p>Enter your seedphrase in the Enter seedphrase field. In the Identity object file field click to navigate to the location of the stored <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> file. Click <strong>Get Accounts</strong>.</p>
+<img alt="company id tool screen showing seedphrase field and file selection box" src="../../_images/company-id-create-acct.png" />
+</li>
 <li><p>On the next screen, click <strong>Create Account</strong> to create an account with this company identity. When prompted, save the <code class="docutils literal notranslate"><span class="pre">account-keys.json</span></code> in a secure location as you will need them to interact with the accounts on-chain. You can click <strong>Create account</strong> again to create another account.</p></li>
 </ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1939,12 +1937,13 @@ Format of the key files<div class="sd-summary-down docutils">
 <div class="section" id="identity-recovery">
 <h3>Identity recovery<a class="headerlink" href="#identity-recovery" title="Permalink to this headline">#</a></h3>
 <p>If the identity object used to create credentials is lost, it can be recovered from the identity provider by generating a recovery request using the 24 words used when the identity was originally created. Recover identity generates an identity recovery request to be sent to the identity provider.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Click <strong>Identity Recovery</strong>.</p></li>
 <li><p>Enter your seedphrase in the Enter seedphrase field. And click <strong>Find identities</strong>.</p></li>
-<li><p>You see a list of identities associated with the seedphrase. In the Identities to recover drop-down, select the identity you want to recover. Click <strong>Generate recovery request</strong>. The command outputs the <code class="docutils literal notranslate"><span class="pre">recovery-request.json</span></code> file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely.</p></li>
+<li><p>You see a list of identities associated with the seedphrase. In the Identities to recover drop-down, select the identity you want to recover. Click <strong>Generate recovery request</strong>. The command outputs the <code class="docutils literal notranslate"><span class="pre">recovery-request.json</span></code> file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely.</p>
+<img alt="company id tool screen showing identities related to seedphrase and option to select" src="../../_images/company-id-recover.png" />
+</li>
 </ol>
-<a class="reference internal image-reference" href="../../_images/company-id-recover.png"><img alt="company id tool screen showing identities related to seedphrase and option to select" src="../../_images/company-id-recover.png" style="width: 50px;" /></a>
 <ul class="simple">
 <li><p>For Mainnet requests: Send the file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a> together with any other required identity data as described in the <a class="reference external" href="https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc">entity verification instructions</a>.</p></li>
 <li><p>For Testnet requests: Send the file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Recover company identity”.</p></li>

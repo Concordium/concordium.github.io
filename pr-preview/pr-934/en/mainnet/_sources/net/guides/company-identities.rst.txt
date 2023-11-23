@@ -27,9 +27,8 @@ Request identity
 
 #. Write down or save your seedphrase by clicking the copy button to copy your seedphrase to the clipboard and remember to go to the clipboard and save the file. Keep your seedphrase secure as you will need it to create accounts or recover the identity. Click **Proceed**.
 
-.. image:: ../images/company-id-request.png
-    :alt: company id tool screen showing identities related to seedphrase and option to select
-    :width: 50px
+   .. image:: ../images/company-id-request.png
+      :alt: company id tool screen showing identities related to seedphrase and option to select
 
 #. Enter your seedphrase to verify that you have recorded it correctly. Click **Proceed**.
 
@@ -52,9 +51,8 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
 #. Enter your seedphrase in the Enter seedphrase field. In the Identity object file field click to navigate to the location of the stored ``id-object.json`` file. Click **Get Accounts**.
 
-.. image:: ../images/company-id-create-acct.png
-    :alt: company id tool screen showing seedphrase field and file selection box
-    :width: 50px
+   .. image:: ../images/company-id-create-acct.png
+      :alt: company id tool screen showing seedphrase field and file selection box
 
 #. On the next screen, click **Create Account** to create an account with this company identity. When prompted, save the ``account-keys.json`` in a secure location as you will need them to interact with the accounts on-chain. You can click **Create account** again to create another account.
 
@@ -130,9 +128,8 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 #. You see a list of identities associated with the seedphrase. In the Identities to recover drop-down, select the identity you want to recover. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely.
 
-.. image:: ../images/company-id-recover.png
-   :alt: company id tool screen showing identities related to seedphrase and option to select
-   :width: 50px
+   .. image:: ../images/company-id-recover.png
+      :alt: company id tool screen showing identities related to seedphrase and option to select
 
 - For Mainnet requests: Send the file to ania@notabene.id together with any other required identity data as described in the `entity verification instructions <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_.
 
