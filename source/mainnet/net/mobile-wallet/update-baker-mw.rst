@@ -275,7 +275,7 @@ Update pool settings
 
         In the |mw-gen1| it is not possible for pool owners to set the commissions. They are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
 
-    Once you have adjusted your pool status, you can use the sliders to update the baker commission rates or type in the percentage you want for your commission rates, if desired, in the |mw-gen2| for Android. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+    Once you have adjusted your pool status, you can use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired, in the |mw-gen2|. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
 
 .. dropdown:: |bw|
 
@@ -486,7 +486,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
     2. Once you have saved the keys, review the information on the overview screen of the add validator transaction then tap **Submit validator transaction**.
 

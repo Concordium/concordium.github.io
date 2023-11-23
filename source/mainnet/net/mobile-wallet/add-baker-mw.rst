@@ -55,7 +55,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
         .. Warning::
 
-            This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+            If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
         6. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -147,7 +147,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
         You can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which includes the status of the transaction, the identicon, and the digest to sign. You can also see the date and time before which you must submit the transaction proposal. If no more signatures are required, you can :ref:`submit the transaction to the blockchain <submit-transaction>`. If more signatures are required, you'll have to export and send the transaction proposal to the co-signers.
 
         .. Warning::
-            This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+            If you're going to transfer the validator keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
         **Export a transaction proposal**
 
@@ -213,6 +213,10 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     5. Set your commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
 
+        .. image:: ../images/mobile-wallet/add-baker-comms.png
+            :alt: screen to register validator for first time showing commission rates for staking pools
+            :width: 50%
+
     6. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your pool to help them research staking pools. This information is not shared in the case of a closed pool or validator.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-url-mw.png
@@ -227,7 +231,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        f you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
     7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap **Submit validator transaction**.
 
@@ -302,7 +306,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
     7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap **Submit validator transaction**.
 
@@ -392,7 +396,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
     7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then click **Send**.
 
