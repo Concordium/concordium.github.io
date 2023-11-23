@@ -191,9 +191,13 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     #. Select **Continue to validator setup**.
 
+        .. image:: ../images/mobile-wallet/earning-add.png
+            :width: 50%
+            :alt: screen with earning options
+
     #. After the screens explaining validation, specify the amount that you want to stake on the Register Validator screen. The more you stake, the greater the probability that your account will be chosen to produce the next block. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select **Don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-        .. image:: ../images/mobile-wallet/add-baker-amt-mw.png
+        .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
             :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
             :width: 50%
 
@@ -207,7 +211,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     4. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool.
 
-        .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
+        .. image:: ../images/mobile-wallet/add-baker-amt-mw.png
             :alt: screen to register validator for first time showing options to open or close pool for delegation
             :width: 50%
 
