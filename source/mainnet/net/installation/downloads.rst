@@ -299,7 +299,7 @@ Download the block separately to inspect it or to run a node in a custom configu
 Auxiliary tools
 ===============
 
-Auxiliary tools are a collection of tools that can be used by developers to perform actions as needed.
+Auxiliary tools are a collection of tools that can be used to perform actions as needed.
 
 Encrypt/decrypt tool v1.0.0
 ---------------------------
@@ -311,6 +311,19 @@ Encrypt/decrypt tool v1.0.0
 - `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
 For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.
+
+Company identity management tool v0.1.0
+---------------------------------------
+
+Use this tool to create a company identity, request accounts using a company identity, and recover a company identity.
+
+- `Download the Company identity management tool for Linux <https://distribution.concordium.software/tools/linux/utils-1.0.0>`_
+
+- `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip>`_
+
+- `Download the Company identity management tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
+
+For information about how to use the company identity management tool, see XXX.
 
 .. toctree::
    :hidden:
