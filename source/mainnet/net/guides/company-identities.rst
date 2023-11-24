@@ -13,7 +13,7 @@ You can't use the Desktop Wallet, |bw|, |mw-gen2|, or |mw-gen1| to create a comp
 
 The information below describes how to create a company identity, how to create accounts with a company identity, and how to recover a company identity. If you experience issues with the Concordium Company ID tool, please contact Concordium’s technical support via support@concordium.software.
 
-Using the company identity tool
+Using the Concordium Company ID tool
 ===============================
 
 Once you have dowloaded the Concordium Company ID tool for your platform and installed it, you should choose your network, either Mainnet or Testnet. A default Concordium node URL is used, but you can enter your node URL, if desired.
