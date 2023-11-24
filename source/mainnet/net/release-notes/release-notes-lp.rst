@@ -988,7 +988,7 @@ Testnet
     November 28, 2023
 
     Version 6.2.3 deprecates the gRPC v1 API. This removes the configuration options ``CONCORDIUM_NODE_RPC_SERVER_PORT``, ``CONCORDIUM_NODE_RPC_SERVER_ADDRESS``, ``CONCORDIUM_NODE_RPC_SERVER_TOKEN``, ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the `standard GRPC health service API <https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto>`__.
-    
+
     As part of the tokenomics changes, new endpoints have been added for validators. The existing endpoints will continue to work.
 
     A ``DryRun`` endpoint has also been that allows simulating the execution of transactions.
