@@ -321,7 +321,7 @@ Use this tool to create a company identity, request accounts using a company ide
 
 - `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip>`_
 
-- `Download the Company identity management tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
+- `Download the Company identity management tool for MacOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
 
 For information about how to use the company identity management tool, see XXX.
 
