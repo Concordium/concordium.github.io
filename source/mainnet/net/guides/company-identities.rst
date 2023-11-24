@@ -45,7 +45,7 @@ Create account
 
 After obtaining the ``id-object.json`` identity object from the identity provider you can create additional accounts on the chain. The Concordium Company ID tool requires the identity object returned by the identity provider and generates a credential that can be sent to the chain to create an account.
 
-**Create account** can also be used to regenerate the keys for an old account.
+**Create account** can also be used to regenerate the keys for an old account. In this case, you would need ``id-object.json`` file again. If you have lost that file, use :ref:`Identity Recovery<id-recovery>` to retrieve it so you can recover your accounts and save the account keys. After selecting Identity Recovery, enter your seed phrase. If there are accounts on chain related to the seed phrase, you will be able to store the keys of those accounts.
 
 #. Click **Create Account**.
 
@@ -56,6 +56,13 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
 #. On the next screen, click **Create Account** to create an account with this company identity. When prompted, save the ``account-keys.json`` in a secure location as you will need them to interact with the accounts on-chain. You can click **Create account** again to create another account.
 
+.. note::
+
+   If you are trying to recover the ``account-keys.json`` file(s), you can also use **Create Account**. After entering your seedphrase and selecting your ``id-object.json`` file you will see a list of account associated with this seedphrase and ID object. Click **Save** to save the ``account-keys.json`` for that account.
+
+   .. image:: ../images/company-id-acct-keys.png
+      :alt: company id tool screen showing seedphrase field and file selection box
+
 .. dropdown:: Format of the key files
 
    Both initial account keys and subsequent account keys are stored in JSON files. The unencrypted data is a JSON record with a number of fields. For sending transactions the fields that are relevant are:
@@ -64,35 +71,39 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
       .. code-block:: json
 
-         "accountKeys": {
-            "keys": {
-               "0": {
-               "keys": {
-                  "0": {
-                     "signKey": "1e16c2e2302023fc5235c60734981a2427004f95b6ace50a1d8a205ee9e5f9e7",
-                     "verifyKey": "7e9983b292cf5e5822b48dbed1c2d498aca97c097f7116511f7dcf6187d218c4"
-                  }
+         {
+            "environment": "testnet",
+            "type": "concordium-browser-wallet-account",
+            "v": 0,
+            "value": {
+               "accountKeys": {
+                  "keys": {
+                     "0": {
+                        "keys": {
+                           "0": {
+                              "signKey": "81e7d8e625a00b6f5b97dd8b0a97807212e6b0ceb4fd206e715b97536c83caea",
+                              "verifyKey": "03164c9e6654c1544a0e7d33780df425c695f6222fda75c047aea5186680e491"
+                           }
+                        },
+                        "threshold": 1
+                     }
+                  },
+                  "threshold": 1
                },
-               "threshold": 1
+               "address": "3LfTBXYtc6TEjuJiKgLpFGEtGRMPhBsKRB76Q4x91LZPWSmQ9Z",
+               "credentials": {
+                  "0": "843785aef9446c8e5b2c6922863e49231b93fb9950909c3166e7c287357a1a495ecfbdcb6ca36ea5998fef2c9dee91f8"
                }
-            },
-            "threshold": 1
+            }
          }
 
-      which contains the account keys. In this example the account has a single credential with index 0, and that credential has a single key with index 0. The private key is 1e16c2e2302023fc5235c60734981a2427004f95b6ace50a1d8a205ee9e5f9e7 and its public key is 7e9983b292cf5e5822b48dbed1c2d498aca97c097f7116511f7dcf6187d218c4.
+      In this example the account has a single credential with index 0, and that credential has a single key with index 0. The private key is 03164c9e6654c1544a0e7d33780df425c695f6222fda75c047aea5186680e491 and its public key is 81e7d8e625a00b6f5b97dd8b0a97807212e6b0ceb4fd206e715b97536c83caea.
 
    - ``address`` is the address of the account, e.g.,
 
       .. code-block:: json
 
-         "address": "2xe6cXEzBJZ8KXSYwb5uXJdHPZfAstbSZjfdAqsoF7VEq6q7AP"
-
-   - keys for encrypted transfers. These are only needed for sending and receiving encrypted transfers.
-
-      .. code-block:: json
-
-         "encryptionPublicKey": "b14cbfe44a02c6b1f78711176d5f437295367aa4f2a8c2551ee10d25a03adc69d61a332a058971919dad7312e1fc94c58a2f44906bda77f42bc3503b53b604a851737829899ffd4895abc0184e2da448e673f5e87367991d4a453a7f562df974",
-         "encryptionSecretKey": "b14cbfe44a02c6b1f78711176d5f437295367aa4f2a8c2551ee10d25a03adc69d61a332a058971919dad7312e1fc94c557da780304fba3b831439243201396e8c83daa83da1acc385a7a28519011e6da"
+         "address": "3LfTBXYtc6TEjuJiKgLpFGEtGRMPhBsKRB76Q4x91LZPWSmQ9Z"
 
 Import created accounts into ``concordium-client``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -116,6 +127,8 @@ The initial account keys cannot be directly imported into ``concordium-client``.
 Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:
 
 ``curl -X PUT https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV`` where you replace 3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV with the account address that should receive the CCDs.
+
+.. _id-recovery:
 
 Identity recovery
 -----------------
