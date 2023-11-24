@@ -20,7 +20,7 @@ At present the following SDKs support gRPC v2:
 
 - `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_
 
-- `.NET SDK <https://github.com/Concordium/concordium-net-sdk>`__ 
+- `.NET SDK <https://github.com/Concordium/concordium-net-sdk>`__
 
 - `Rosetta <https://github.com/Concordium/concordium-rosetta>`__
 
