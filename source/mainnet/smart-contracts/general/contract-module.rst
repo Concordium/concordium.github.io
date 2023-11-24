@@ -42,7 +42,7 @@ On-chain language
 On the Concordium blockchain the smart contract language is a subset of `Web
 Assembly`_ (Wasm in short) which is designed to be a portable compilation
 target and to be run in sandboxed environments. This is useful because smart
-contracts will be run by bakers in the network who do not necessarily trust
+contracts will be run by validators in the network who do not necessarily trust
 the code.
 
 Wasm is a low-level language and it is impractical to write by hand. Instead, one

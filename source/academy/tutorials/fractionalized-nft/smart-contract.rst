@@ -578,7 +578,7 @@ As a final addition to the ``mint()`` function, you need to update the state whe
 Transfer function
 -----------------
 
-You are about to finalize our contract development after one final step which is the ``contract_transfer()`` function. Basically, when you want to send your tokens to another address, you will invoke this function. In addition to that, you want to combine the burning process into this function.
+You are about to finalize contract development after one final step which is the ``contract_transfer()`` function. Basically, when you want to send your tokens to another address, you will invoke this function. In addition to that, you want to combine the burning process into this function.
 
 According to this logic, when you transfer the fractions (tokens minted on this contract) back to the contract, it assumes you want to burn them. You need to be the owner of the asset when calling it. After you ensure that you are authorized (meaning have some tokens), then it checks that you want to send those tokens to the contract itself. The next step is calling the state’s ``burn()`` function which will reduce the token amount from your balance and the state's total supply followed by emitting a ``BurnEvent``. Note that when you call the ``burn()`` function, you need to emit the ``BurnEvent``. For more detail, check the `CIS-2 standard documentation <https://proposals.concordium.software/CIS/cis-2.html#cis-2-concordium-token-standard-2>`_.
 

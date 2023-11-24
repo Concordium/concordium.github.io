@@ -2,10 +2,10 @@
 .. _add-baker-mw:
 
 ====================================
-Add baker
+Add a validator
 ====================================
 
-Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn about best practices for bakers.
+Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to learn about best practices for validators.
 
 .. Note::
 
@@ -21,31 +21,31 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
     .. dropdown:: Single signature account
 
-        #. Go to **Accounts** and select the account you want to add as baker account and click **More options**.
+        #. Go to **Accounts** and select the account you want to add as validator account and click **More options**.
 
-        #. Select **Register as a baker**.
+        #. Select **Register as a validator**.
 
             .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
                 :width: 50%
                 :alt: screen showing all account options
 
-        #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to bake the next block.
+        #. Specify the amount that you want to stake where it says **Amount**. The more you stake, the greater the probability that your account will be chosen to produce the next block.
 
-            Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
+            Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
             Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-        #. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
+        #. Choose if you want to open a staking pool so delegators may delegate stake to your validator.
 
-            - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
+            - Choose Open to open your staking pool for this validator. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
-            - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
+            - Choose Closed if you do not want to open a staking pool. Click **Continue** after reviewing the commission rates and Validator metadata URL.
 
-        #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
+        #. You have to export the validator credentials so that you can start the node with the validator keys. Select **Export validator credentials** and navigate to the place on your computer where you want to save the file. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
         .. Warning::
 
-            This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+            This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
         6. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -61,29 +61,29 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
         #. Go to the **Multi Signature Transactions** tab, and then select **Make new proposal**.
 
-        #. Click **Register as a Baker**.
+        #. Click **Register as a Validator**.
 
-        #. Select the account you want to add as baker account, and then select **Continue**.
+        #. Select the account you want to add as validator account, and then select **Continue**.
 
         **Stake an amount**
 
-        You need to stake an amount of CCD on the account that you want to add as baker account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
+        You need to stake an amount of CCD on the account that you want to add as validator account. When you have staked an amount, the amount is still part of the balance, but you can't transfer it to other accounts. The account always shows how much of the balance that's been staked.
 
-        #. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to bake the next block.
+        #. Specify the amount that you want to stake where it says **Amount**. The more you stake the greater is the probability that your account will be chosen to produce the next block.
 
-            Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
+            Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead.
 
             -  Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-        #. Choose if you want to open a baker pool so delegators may delegate stake to your baker.
+        #. Choose if you want to open a staking pool so delegators may delegate stake to your validator.
 
-            - Choose Open to open your baker pool for this baker. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Baker metadata URL if you want to provide this information to potential delegators. **Click Continue**.
+            - Choose Open to open your staking pool for this validator. Click **Continue**. Click **Continue** after reviewing the commission rates. Enter your Validator metadata URL if you want to provide this information to potential delegators. **Click Continue**.
 
-            - Choose Closed if you do not want to open a baker pool. Click **Continue** after reviewing the commission rates and Baker metadata URL.
+            - Choose Closed if you do not want to open a staking pool. Click **Continue** after reviewing the commission rates and Validator metadata URL.
 
         #. When you look at the **Transaction Details** in the left pane, you can see the identity of the account owner, the account where the CCD are staked from, the staked amount, the estimated fee, and whether rewards are going to be restaked. Verify that the details are as you intended.
 
-        #. Select **Generate keys**. The baker keys are generated and the public keys are displayed in the left pane. There are three public keys:
+        #. Select **Generate keys**. The validator keys are generated and the public keys are displayed in the left pane. There are three public keys:
 
             - Election verify key
             - Signature verify key
@@ -107,7 +107,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
         #. Verify that the Transaction details are as you are as you intended, and then select **I am sure that the proposed changes are correct**.
 
-        #. Select **Generate without signing**. You can now :ref:`export the baker credentials<export-baker-credentials>`.
+        #. Select **Generate without signing**. You can now :ref:`export the validator credentials<export-baker-credentials>`.
 
         .. _generate-sign:
 
@@ -130,18 +130,18 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
             .. _export-baker-credentials:
 
-        **Export baker credentials**
+        **Export validator credentials**
 
-        #. You have to export the baker credentials so that you can start the node with the baker keys. Select **Export baker credentials** and navigate to the place on your computer where you want to save the file.
+        #. You have to export the validator credentials so that you can start the node with the validator keys. Select **Export validator credentials** and navigate to the place on your computer where you want to save the file.
 
         You can now see **Transaction details**, **Signatures**, and **Security & Submission Details**, which includes the status of the transaction, the identicon, and the digest to sign. You can also see the date and time before which you must submit the transaction proposal. If no more signatures are required, you can :ref:`submit the transaction to the blockchain <submit-transaction>`. If more signatures are required, you'll have to export and send the transaction proposal to the co-signers.
 
         .. Warning::
-            This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+            This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
         **Export a transaction proposal**
 
-        If more than one signature is needed to sign off on the baker account proposal, you must share a file of the type JSON with the co-signers. In the **Signatures** pane, you can see how many signatures are required before you can submit the transaction to the blockchain.
+        If more than one signature is needed to sign off on the validator account proposal, you must share a file of the type JSON with the co-signers. In the **Signatures** pane, you can see how many signatures are required before you can submit the transaction to the blockchain.
 
         #. In the Desktop Wallet, select **Export transaction proposal**.
 
@@ -179,223 +179,227 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
     #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn| on the account transaction overview screen.
 
-    #. Select **Continue to baker setup**.
+    #. Select **Continue to validator setup**.
 
-    #. After the screens explaining baking, specify the amount that you want to stake on the Register Baker screen. The more you stake, the greater the probability that your account will be chosen to bake the next block. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select **Don’t restake** if you'd rather add the rewards to the disposable amount on the account.
+    #. After the screens explaining validation, specify the amount that you want to stake on the Register Validator screen. The more you stake, the greater the probability that your account will be chosen to produce the next block. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select **Don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
         .. image:: ../images/mobile-wallet/add-baker-amt-mw.png
-            :alt: screen to register baker for first time showing balance, amount to stake, and restake parameters
+            :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
             :width: 50%
 
     .. Note::
 
-        There is a minimum amount to stake (14000 CCD) to become a baker.
+        There is a minimum amount to stake (500000 CCD) to become a validator.
 
     .. Warning::
 
        Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
-    4. Choose whether you want to open a :term:`baker pool` or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool.
+    4. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
-            :alt: screen to register baker for first time showing options to open or close pool for delegation
+            :alt: screen to register validator for first time showing options to open or close pool for delegation
             :width: 50%
 
-    5. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.
+    5. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your pool to help them research staking pools. This information is not shared in the case of a closed pool or validator.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-url-mw.png
-            :alt: screen to register baker for first time showing field to paste URL with metadata for baker pools
+            :alt: screen to register validator for first time showing field to paste URL with metadata for staking pools
             :width: 50%
 
-    6. You have to export the baker credentials so that you can start the node with the baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
+    6. You have to export the validator credentials so that you can start the node with the validator keys. Tap **Export validator keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
 
         .. image:: ../images/mobile-wallet/add-baker-export-keys-mw.png
-            :alt: screen to register baker for first time showing all of the baker keys with option to export
+            :alt: screen to register validator for first time showing all of the validator keys with option to export
             :width: 50%
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-    7. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap **Submit baker transaction**.
+    7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap **Submit validator transaction**.
 
         .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
-            :alt: screen to register baker for first time showing transaction details with option to submit
+            :alt: screen to register validator for first time showing transaction details with option to submit
             :width: 50%
 
-    8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+    8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
         .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
-            :alt: screen to register baker for first time showing transaction submission and finish option
+            :alt: screen to register validator for first time showing transaction submission and finish option
             :width: 50%
 
-    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
+    9. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
         - :ref:`Docker<baking-docker>`
         - :ref:`Ubuntu<baker-ubuntu>`
 
-    Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.
+    Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account card.
 
     .. image:: ../images/mobile-wallet/account-list-baking.png
-        :alt: account information in list showing baking bread
+        :alt: account information in list showing validator badge
         :width: 40%
 
     .. image:: ../images/mobile-wallet/account-details-baking.png
-        :alt: account card showing staked amount with baker number
+        :alt: account card showing staked amount with validator number
         :width: 40%
 
 .. dropdown:: |mw-gen1|
 
-    #. Go to **Accounts**. Tap on the balance area of the account you want to add as a baker account or tap **More** |moredetails|.
+    #. Go to **Accounts**. Tap on the balance area of the account you want to add as a validator account or tap **More** |moredetails|.
 
-    #. In the hamburger menu |hamburger| tap **Baking**.
+    #. In the hamburger menu |hamburger| tap **Validator**.
 
-    #. After the screens explaining baking, specify the amount that you want to stake on the Register Baker screen. The more you stake, the greater the probability that your account will be chosen to bake the next block. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select **Don’t restake** if you'd rather add the rewards to the disposable amount on the account.
+    #. After the screens explaining validation, specify the amount that you want to stake on the Register Validator screen. The more you stake, the greater the probability that your account will be chosen to produce the next block. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select **Don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
         .. image:: ../images/mobile-wallet/add-baker-amt-mw.png
             :width: 50%
-            :alt: screen to register baker with amount to stake and restake preference
+            :alt: screen to register validator with amount to stake and restake preference
 
     .. Note::
 
-        There is a minimum amount to stake (14000 CCD) to become a baker.
+        There is a minimum amount to stake (500000 CCD) to become a validator.
 
     .. Warning::
 
        Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
-    4. Choose whether you want to open a :term:`baker pool` or keep it closed. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool.
+    4. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-mw.png
             :width: 50%
-            :alt: screen to choose whether to open a baker pool
+            :alt: screen to choose whether to open a staking pool
 
-    5. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. This information is not shared in the case of a closed baker.
+        .. note::
+
+            In the |mw-gen1| it is not possible for pool owners to set the commissions. They are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
+
+    5. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research pools. This information is not shared in the case of a closed validator or staking pool.
 
         .. image:: ../images/mobile-wallet/add-baker-pool-url-mw.png
             :width: 50%
-            :alt: screen to enter optional URL for baker pool metadata
+            :alt: screen to enter optional URL for staking pool metadata
 
-    6. You have to export the baker credentials so that you can start the node with the baker keys. Tap **Export baker keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
+    6. You have to export the validator credentials so that you can start the node with the validator keys. Tap **Export validator keys** and navigate to the place on your device where you want to save the file. Give the file a name and the extension .json.
 
         .. image:: ../images/mobile-wallet/add-baker-export-keys-mw.png
             :width: 50%
-            :alt: screen to export baker keys to import them to node
+            :alt: screen to export validator keys to import them to node
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-    7. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then tap **Submit baker transaction**.
+    7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap **Submit validator transaction**.
 
         .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
             :width: 50%
-            :alt: screen to review baker submit transaction
+            :alt: screen to review validator submit transaction
 
-    8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active baker screen appears where you have the possibility to update baker settings.
+    8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
         .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
             :width: 50%
             :alt: screen to show transaction submitted
 
-    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
+    9. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
         - :ref:`Windows<baker-windows>`
         - :ref:`macOS<baker-macos>`
         - :ref:`Docker<baking-docker>`
         - :ref:`Ubuntu<baker-ubuntu>`
 
-    Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.
+    Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account card.
 
     .. image:: ../images/mobile-wallet/account-list-baking.png
         :width: 40%
-        :alt: account list screen showing a baker account with bread icon
+        :alt: account list screen showing a validator account with badge
 
     .. image:: ../images/mobile-wallet/account-details-baking.png
         :width: 40%
-        :alt: account detail screen showing the account as baker with baker ID and staked amount
+        :alt: account detail screen showing the account as validator with validator ID and staked amount
 
 .. dropdown:: |bw|
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
 
-        .. image:: ../images/browser-wallet/setup-baking-delegation.png
-            :width: 40%
+       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+           :width: 40%
 
-    #. Click **Setup baking**. If you are baking for the first time on this account, you see some information about baking.
+    #. Click **Setup validation**. If you are setting up validation for the first time on this account, you see some information about being a validator.
 
-    #. Select your restake preference. Baker accounts receive a reward when they have baked a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+    #. Select your restake preference. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-restake.png
-            :alt: screen with Yes restake or No don't restake text boxes to choose
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-restake.png
+           :alt: screen with Yes restake or No don't restake text boxes to choose
+           :width: 40%
 
-    #. Specify the amount that you want to stake. The more you stake, the greater the probability that your account will be chosen to bake the next block. Click **Continue**.
+    #. Specify the amount that you want to stake. The more you stake, the greater the probability that your account will be chosen to produce the next block. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-staked-amt.png
-            :alt: screen with balances at the top and text box to enter amount to stake
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-staked-amt.png
+           :alt: screen with balances at the top and text box to enter amount to stake
+           :width: 40%
 
     .. Note::
 
-        There is a minimum amount to stake (14000 CCD) to become a baker.
+        There is a minimum amount to stake (500000 CCD) to become a validator.
 
     .. Warning::
 
        Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
-    4. Choose whether you want to open a :term:`baker pool` or keep it closed. Choose **Open for delegation** to open a baker pool. By opening a baker pool, others can delegate stake to your baker, thus increasing the chance that you are selected to bake a block and earn rewards. If you have a baker pool with delegators, the delegators also earn rewards when you bake blocks. Bakers are also paid a commission by the delegators for baking on their behalf. You can choose **Close for delegation** if you do not wish to run a baker pool. Click **Continue**.
+    4. Choose whether you want to open a :term:`staking pool` or keep it closed. Choose **Open for delegation** to open a staking pool. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-pool.png
-            :alt: screen with buttons to open a pool for delegation or close a pool for delegation
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-pool.png
+           :alt: screen with buttons to open a pool for delegation or close a pool for delegation
+           :width: 40%
 
-    5. Review the commissions paid to bakers. When you open your baker as a pool, you earn commissions of stake delegated to your pool from other accounts. Click **Continue**.
+    5. Review and adjust the commissions paid to validators using the sliders or by typing in the percentage. When you open your validator as a pool, you earn commissions of stake delegated to your pool from other accounts. Click **Continue**.
 
         .. image:: ../images/browser-wallet/add-baker-comms.png
-            :alt: screen showing commission amounts for bakers in read-only
+            :alt: screen showing commission amounts for validators in read-only
             :width: 40%
 
-    6. If you open a baker pool, you can optionally enter a URL with information about your baker to give delegators more information about your baker pool to help them research baker pools. Click **Continue**.
+    6. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. Click **Continue**.
 
-        .. image:: ../images/browser-wallet/add-baker-url.png
-            :alt: screen with text box to enter url for baker pool information
+       .. image:: ../images/browser-wallet/add-baker-url.png
+            :alt: screen with text box to enter url for staking pool information
             :width: 40%
 
-    7. You have to export the baker keys so that you can start the node with the baker keys. Click **Export baker keys** and the keys are automatically downloaded as `baker-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
+    7. You have to export the validator keys so that you can start the node with the validator keys. Click **Export validator keys** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
-        .. image:: ../images/browser-wallet/add-baker-export-keys.png
-            :alt: screen with buttons to show keys or export baker keys
+       .. image:: ../images/browser-wallet/add-baker-export-keys.png
+            :alt: screen with buttons to show keys or export validator keys
             :width: 40%
 
-        .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
-            :alt: screen with buttons to continue after export and wallet screen dimmed behind
-            :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
+           :alt: screen with buttons to continue after export and wallet screen dimmed behind
+           :width: 40%
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the baker keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
-    7. Once you have saved the keys, you see an overview screen of the add baker transaction. Review the information then click **Send**.
+    7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then click **Send**.
 
-        .. image:: ../images/browser-wallet/add-baker-review.png
-                :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-review.png
+            :width: 40%
 
     8. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
 
-        .. image:: ../images/browser-wallet/add-baker-finish.png
-                :width: 40%
+       .. image:: ../images/browser-wallet/add-baker-finish.png
+            :width: 40%
 
-    9. You need to import your baker keys file to your node in order to start baking. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a baker for a longer time.
+    9. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
-        - :ref:`Windows<baker-windows>`
-        - :ref:`macOS<baker-macos>`
-        - :ref:`Docker<baking-docker>`
-        - :ref:`Ubuntu<baker-ubuntu>`
+       - :ref:`Windows<baker-windows>`
+       - :ref:`macOS<baker-macos>`
+       - :ref:`Docker<baking-docker>`
+       - :ref:`Ubuntu<baker-ubuntu>`
 
-    Once the transaction is finalized after importing your baker keys to the node, you see the baking status reflected in the account list and on the account card.
+    Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account card.
 
     .. image:: ../images/browser-wallet/add-baker-acct-list.png
         :width: 40%
@@ -405,7 +409,7 @@ Prior to becoming a baker, read :ref:`Baker management<baker-pool>` to learn abo
 
 .. Warning::
 
-    Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as baker, and that you have entered the correct amount to stake.
+    Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as validator, and that you have entered the correct amount to stake.
 
 .. |earn| image:: ../images/earn.png
     :alt: Hand receiving money

@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _remove-delegation:
 
-=======================================================
-Remove delegation to a baker pool or passive delegation
-=======================================================
+=========================================================
+Remove delegation to a staking pool or passive delegation
+=========================================================
 
 You can remove the delegation on an account to stop delegating.
 
@@ -121,7 +121,7 @@ If you remove the delegation, there is a :term:`cool-down period` before the del
 
          If you don’t want to submit the transaction to the chain, you can select **Cancel**. The proposal is no longer active. However, it is still visible in the list of proposals.
 
-      #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the ledger.
+      #. Select **Submit transaction to chain**. The transaction is submitted to the chain and finalized on the LEDGER.
 
       #. Select **Finish** to leave the page.
 
@@ -189,8 +189,9 @@ If you remove the delegation, there is a :term:`cool-down period` before the del
 
    #. You see your current delegation. Click **Stop**. Review the information about the cool-down period.
 
-        .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
-                :width: 40%
+      .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
+         :width: 40%
+         :alt: screen showing current delegation and buttons to update or stop
 
    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 

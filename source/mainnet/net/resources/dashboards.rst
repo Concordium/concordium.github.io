@@ -45,7 +45,7 @@ The tiles at the top show overall statistics. Due to the nature of this informat
 The table below the tiles shows details per participant in the chain. You can also click on a participant name to see details.
 
 * **Name:** participant name
-* **Baker:** if the participant is a baker, baker ID
+* **Validator:** if the participant is a validator, validator ID
 * **Uptime:** amount of uptime in minutes (m), days (d), hours (h), months (mon), or years (y)
 * **Client:** client version the participant is running
 * **Avg ping:** average ping time between the peers of the participant

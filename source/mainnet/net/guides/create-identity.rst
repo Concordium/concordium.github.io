@@ -53,7 +53,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    #. Press the right button, and then press both buttons to sign the identity provider information.
 
-   #. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
+   #. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a block that is final on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
 
    #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
 
