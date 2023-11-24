@@ -16,18 +16,18 @@ The chain is run by a network of validator nodes that produce blocks. In the fol
 
 Prerequisites
 =============
-You will either need a working installation of the Concordium Node distribution or Docker, instances of which will be used to run the validator node(s). You will need :term:`genesis block` data which defines your local chain and sets of credentials for validator accounts of the chain. The number of sets of validator credentials needed thus depends on the desired number of validators in the network, which in this example is 1.
+You will either need a working installation of the :ref:`Concordium Node distribution<node-downloads>` or `Docker <https://www.docker.com/>`_, instances of which will be used to run the validator node(s). You will need :term:`genesis block` data, which defines your local chain and sets of credentials for validator accounts of the chain. The number of sets of validator credentials needed thus depends on the desired number of validators in the network, which in this example is one.
 
 Install the node distribution
 -----------------------------
-Concordium Node releases exist for Ubuntu, MacOS and Windows and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a validator, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.
+Concordium Node releases exist for Ubuntu, MacOS, Windows and Docker. See the :ref:`Node Requirements<node-requirements>` section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a validator, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.
 
 The name of the binary has ``concordium-`` as its prefix but depends on the distribution, so you may have to confer with the installation instructions to figure out the exact name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:
 
 .. code-block:: console
 
     $ concordium-node --version # name depends on distribution
-    concordium_node 5.3.2
+    concordium_node 6.1.7
 
 .. Note::
 
@@ -77,19 +77,23 @@ The ``genesis-creator`` tool uses a TOML configuration file format for specifyin
 * keys for updating the chain
 * various parameters for the genesis
 
-Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback off of the example configuration file ``single-baker-example-p5.toml`` found `here <https://raw.githubusercontent.com/Concordium/concordium-misc-tools/9d347761aadd432cbb6211a7d7ba38cdc07f1d11/genesis-creator/examples/single-baker-example-p5.toml>`_. Inspecting the configuration reveals that it specifies an initial protocol version of 5 to output credentials for 1 validator account, 1 foundation account, and 100 regular accounts. It specifies the system time at generation for the genesis time, and finally, specifies 5 seconds as the average time per block.
+Furthermore, it specifies where to save the output that is used to invoke the node binary. Most of these options are of little importance when testing smart contracts and the easiest way to get started is to piggyback off of the example configuration file ``single-baker-example-p6.toml`` found `here <https://raw.githubusercontent.com/Concordium/concordium-misc-tools/main/genesis-creator/examples/single-baker-example-p6.toml>`_. Inspecting the configuration reveals that it specifies an initial protocol version of 6 to output credentials for 1 validator account, 1 foundation account, and 100 regular accounts. It specifies the system time at generation for the genesis time, and finally, specifies 2 seconds as the minimum time per block.
 
-Further inspection of the tables at the ``accounts`` keys reveals that the validator account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD, and the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial stake and balances if desired. The number of credentials produced for each type of account can also be adjusted by setting the values of the ``repeat`` keys to your choosing.
+.. note::
+
+   Validators were previously called *bakers*, and remnants of the old name are still present in our tools. Whenever you read *baker*, think *validator*.
+
+Further inspection of the tables at the ``accounts`` keys reveals that the validator account has an initial balance of 3.5 * 10^15 microCCD and stake of 3.0 * 10^15 microCCD, the foundation account has an initial balance of 10^16 microCCD, and the regular accounts each have an initial balance of 2.0 * 10^12. You can change the initial stake and balances if desired. The number of accounts produced of each type can also be adjusted by setting the values of the ``repeat`` keys to your choosing.
 
 .. Note::
 
     The staked amount needed for a validator to participate in the finalization committee is some fraction of the total amount of existing CCD set in the configuration. The total amount is the sum of the balances of all the validator and foundation accounts specified in the genesis configuration file. In this particular example, the stake is sufficient for producing blocks.
 
-Save the file as ``single-baker-example-p5.toml`` and generate the genesis data:
+Save the file as ``single-baker-example-p6.toml`` and generate the genesis data:
 
 .. code-block:: console
 
-    $ ~/.cargo/bin/genesis-creator generate --config ./single-baker-example-p5.toml
+    $ ~/.cargo/bin/genesis-creator generate --config ./single-baker-example-p6.toml
     Deleting any existing directories.
     Account keys will be generated in ./accounts
     Chain update keys will be generated in ./update-keys
@@ -153,25 +157,25 @@ If you ran the validator node by invoking the node binary directly on your host,
             image: concordium/mainnet-node:latest
             pull_policy: always
             environment:
-            # Baker credentials file
+            # Validator credentials file
             - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/baker-0-credentials.json
-            # General node configuration Data and config directories (it's OK if they
+            # General node configuration data and config directories (it's OK if they
             # are the same). This should match the volume mount below. If the location
             # of the mount inside the container is changed, then these should be
             # changed accordingly as well.
             - CONCORDIUM_NODE_DATA_DIR=/mnt/data
             - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
-            # port on which the node will listen for incoming connections. This is a
+            # The port on which the node will listen for incoming connections. This is a
             # port inside the container. It is mapped to an external port by the port
             # mapping in the `ports` section below. If the internal and external ports
             # are going to be different then you should also set
             # `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.
             - CONCORDIUM_NODE_LISTEN_PORT=8169
-            # Address of the V2 GRPC server
+            # Address of the V2 GRPC server.
             - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
-            # And its port
+            # And its port.
             - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20100
-            # Do not bootstrap via DNS
+            # Do not bootstrap via DNS.
             - CONCORDIUM_NODE_CONNECTION_NO_BOOTSTRAP_DNS=true
             entrypoint: ["/concordium-node"]
             # Exposed ports. The ports the node listens on inside the container (defined
@@ -205,7 +209,7 @@ You can now interact with your local chain through the node via the :ref:`Concor
 
 .. code-block:: console
 
-    $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20100  account list
+    $ concordium-client --grpc-ip 127.0.0.1 --grpc-port 20100 account list
     Accounts:
                      Account Address                     Account Names
     --------------------------------------------------------------------
