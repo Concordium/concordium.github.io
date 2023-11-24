@@ -239,15 +239,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap **Submit validator transaction**.
 
-        .. image:: ../images/mobile-wallet/add-baker-submit-mw.png
-            :alt: screen to register validator for first time showing transaction details with option to submit
-            :width: 50%
-
     8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
-
-        .. image:: ../images/mobile-wallet/add-baker-finish-mw.png
-            :alt: screen to register validator for first time showing transaction submission and finish option
-            :width: 50%
 
     9. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 

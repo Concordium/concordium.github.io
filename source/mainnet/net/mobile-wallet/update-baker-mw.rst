@@ -247,7 +247,9 @@ Update pool settings
 
     If you choose **Open pool**:
 
-    #. You can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
+    #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+
+    #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
 
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
@@ -256,6 +258,8 @@ Update pool settings
     If you choose **Closed for new**:
 
     Existing delegators remain in the pool. You have the option to adjust commission fees and your validator information URL.
+
+    #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
 
     #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
 
@@ -274,8 +278,6 @@ Update pool settings
     .. note::
 
         In the |mw-gen1| it is not possible for pool owners to set the commissions. They are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
-
-    Once you have adjusted your pool status, you can use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired, in the |mw-gen2|. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
 
 .. dropdown:: |bw|
 
