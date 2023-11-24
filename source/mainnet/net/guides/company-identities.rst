@@ -65,7 +65,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
 .. dropdown:: Format of the key files
 
-   Both initial account keys and subsequent account keys are stored in JSON files. The unencrypted data is a JSON record with a number of fields. For sending transactions the fields that are relevant are:
+   Both initial account keys and subsequent account keys are stored in JSON files. The unencrypted data is a JSON record with a number of fields. This is the same format as exported by the other Concordium wallets (except Desktop Wallet). For sending transactions the fields that are relevant are:
 
    - ``accountKeys`` contains the account keys. It has the following format:
 
@@ -116,11 +116,9 @@ However, if the ``account-keys.json`` file is not encrypted it can be imported i
 
 .. code-block:: console
 
-   concordium-client config account import account-keys.json --format=genesis --name my-account
+   concordium-client config account import account-keys.json --name my-account
 
-where the ``--name`` option is optional, and if given, will name the account according to the given value ("my-account" in the example above).
-
-If the account-keys.json file is encrypted then it must first be decrypted. This can be done with the :ref:`utils tool<downloads-auxiliary-tools>`.
+``--name`` is mandatory and will name the account according to the given value ("my-account" in the example above).
 
 The initial account keys cannot be directly imported into ``concordium-client``.
 
@@ -139,7 +137,7 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 #. Enter your seedphrase in the Enter seedphrase field. And click **Find identities**.
 
-#. You see a list of accounts associated with the seedphrase. It is possible to save the account keys that can be ussed to interact with the account on the chain. Indices that are to the left of the account address are pointing to the identity index, being the first value and the account index being the second value (0,0). In the Identities to recover drop-down, select the identity you want to recover. There will always be one additional index on the list for selection to be sure that request can be generated for more than one identity. This is mainly useful in cases where first identity object was lost or unused to create accounts. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely. When the request has been verified successfully, you will receive an email with an identity object . Store this file securely as you need it to create accounts on the chain.
+#. You see a list of accounts associated with the seedphrase. It is possible to save the account keys that can be ussed to interact with the account on the chain. Indices that are to the left of the account address are pointing to the identity index, being the first value and the account index being the second value (0,0). In the Identities to recover drop-down, select the identity you want to recover. There will always be one additional index on the list for selection to be sure that request can be generated for more than one identity. This is mainly useful in cases where first identity object was lost or unused to create accounts. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. When the request has been verified successfully, you will receive an email with an identity object. Store this file securely as you need it to create accounts on the chain.
 
    .. image:: ../images/company-id-recover.png
       :alt: company id tool screen showing identities related to seedphrase and option to select
@@ -148,4 +146,4 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 - For Testnet requests: Send the file to support@concordium.software with the subject line "Recover company identity".
 
-When the recovery request has been verified successfully, you will receive an email with the identity object file named ``id-object.json`` that you lost. Store this file securely as you need it to create accounts and regenerate account keys.
+When the recovery request has been verified successfully, you will receive an email with the identity object file named ``id-object.json`` that you lost. Store this file securely as you need it to create accounts.
