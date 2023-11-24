@@ -54,7 +54,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
    .. image:: ../images/company-id-create-acct.png
       :alt: company id tool screen showing seedphrase field and file selection box
 
-#. On the next screen, click **Create Account** to create an account with this company identity. When prompted, save the ``account-keys.json`` in a secure location as you will need them to interact with the accounts on-chain. You can click **Create account** again to create another account.
+#. On the next screen, click **Create Account** to create an account with this company identity. When prompted, save the ``account-keys.json`` in a secure location as you will need them to interact with the account on-chain. You can click **Create account** again to create another account.
 
 .. dropdown:: Format of the key files
 
