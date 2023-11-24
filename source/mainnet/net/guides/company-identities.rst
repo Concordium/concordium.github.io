@@ -9,11 +9,11 @@ Company identity creation
 
 A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
-You can't use the Desktop Wallet, |bw|, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use the Company identity management tool, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
+You can't use the Desktop Wallet, |bw|, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use the Concordium Company ID tool, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
 
 The information below describes how to create a company identity, how to create accounts with a company identity, and how to recover a company identity. If you experience issues with the Concordium Company ID tool, please contact Concordium’s technical support via support@concordium.software.
 
-Using the company identity tool
+Using the Concordium Company ID tool
 ===============================
 
 Once you have dowloaded the Concordium Company ID tool for your platform and installed it, you should choose your network, either Mainnet or Testnet. A default Concordium node URL is used, but you can enter your node URL, if desired.
@@ -43,7 +43,7 @@ When the identity has been verified successfully, you will receive an email with
 Create account
 --------------
 
-After obtaining the ``id-object.json`` identity object from the identity provider you can create additional accounts on the chain. The Concordium Company ID tool requires the identity object returned by the identity provider and generates a credential that can be sent to the chain to create an account.
+After obtaining the ``id-object.json`` identity object from the identity provider you can create accounts on the chain. The Concordium Company ID tool requires the identity object returned by the identity provider to create accounts on chain.
 
 **Create account** can also be used to regenerate the keys for an old account. In this case, you would need ``id-object.json`` file again. If you have lost that file, use :ref:`Identity Recovery<id-recovery>` to retrieve it so you can recover your accounts and save the account keys. After selecting Identity Recovery, enter your seed phrase. If there are accounts on chain related to the seed phrase, you will be able to store the keys of those accounts.
 
@@ -54,7 +54,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
    .. image:: ../images/company-id-create-acct.png
       :alt: company id tool screen showing seedphrase field and file selection box
 
-#. On the next screen, click **Create Account** to create an account with this company identity. When prompted, save the ``account-keys.json`` in a secure location as you will need them to interact with the accounts on-chain. You can click **Create account** again to create another account.
+#. On the next screen, click **Create Account** to create an account with this company identity. When prompted, save the ``account-keys.json`` in a secure location as you will need them to interact with the account on-chain. You can click **Create account** again to create another account.
 
 .. note::
 
@@ -139,7 +139,7 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 #. Enter your seedphrase in the Enter seedphrase field. And click **Find identities**.
 
-#. You see a list of identities associated with the seedphrase. In the Identities to recover drop-down, select the identity you want to recover. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely.
+#. You see a list of accounts associated with the seedphrase. It is possible to save the account keys that can be ussed to interact with the account on the chain. Indices that are to the left of the account address are pointing to the identity index, being the first value and the account index being the second value (0,0). In the Identities to recover drop-down, select the identity you want to recover. There will always be one additional index on the list for selection to be sure that request can be generated for more than one identity. This is mainly useful in cases where first identity object was lost or unused to create accounts. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely. When the request has been verified successfully, you will receive an email with an identity object . Store this file securely as you need it to create accounts on the chain.
 
    .. image:: ../images/company-id-recover.png
       :alt: company id tool screen showing identities related to seedphrase and option to select
