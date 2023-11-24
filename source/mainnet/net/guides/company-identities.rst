@@ -126,7 +126,7 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 #. Enter your seedphrase in the Enter seedphrase field. And click **Find identities**.
 
-#. You see a list of identities associated with the seedphrase. In the Identities to recover drop-down, select the identity you want to recover. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely.
+#. You see a list of accounts associated with the seedphrase. It is possible to save the account keys that can be ussed to interact with the account on the chain. Indices that are to the left of the account address are pointing to the identity index, being the first value and the account index being the second value (0,0). In the Identities to recover drop-down, select the identity you want to recover. There will always be one additional index on the list for selection to be sure that request can be generated for more than one identity. This is mainly useful in cases where first identity object was lost or unused to create accounts. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely. When the request has been verified successfully, you will receive an email with an identity object . Store this file securely as you need it to create accounts on the chain.
 
    .. image:: ../images/company-id-recover.png
       :alt: company id tool screen showing identities related to seedphrase and option to select
