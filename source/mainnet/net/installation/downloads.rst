@@ -299,7 +299,7 @@ Download the block separately to inspect it or to run a node in a custom configu
 Auxiliary tools
 ===============
 
-Auxiliary tools are a collection of tools that can be used by developers to perform actions as needed.
+Auxiliary tools are a collection of tools that can be used to perform actions as needed.
 
 Encrypt/decrypt tool v1.0.0
 ---------------------------
@@ -311,6 +311,37 @@ Encrypt/decrypt tool v1.0.0
 - `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
 For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.
+
+Company identity management tool v1.0.2
+---------------------------------------
+
+Use this tool to create a company identity, request accounts using a company identity, and recover a company identity.
+
+- `Download the Company identity management tool for Linux - Debian package <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.deb>`_
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``c728dbe0b5ab950e4e705d7faceaee4b5ade615acd34b3bc6e75250acdedfaa9``.
+
+- `Download the Company identity management tool for Linux - App image <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.AppImage>`_
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.AppImage
+      #. Verify that the output matches the SHA256 checksum ``8b6964d827808d3a8a9244d202e3aa8cdffeb2462edf44b3e32e7b41549b710f``.
+
+- `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/Concordium_Company_ID_1.0.2_x64_en-US.msi>`_
+
+- `Download the Company identity management tool for MacOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
+
+For information about how to use the company identity management tool, see :ref:`company-identities`.
 
 .. toctree::
    :hidden:
