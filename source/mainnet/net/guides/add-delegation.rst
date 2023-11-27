@@ -177,10 +177,6 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         #. Tap the hamburger menu |hamburger| and tap **Delegation**. If you are delegating for the first time, you see some information about delegation.
 
-            .. image:: ../images/mobile-wallet/account-hamburger-menu.png
-                    :width: 50%
-                    :alt: screen with hamburger menu expanded
-
         #. Tap **Register delegation**.
 
         #. If you want to delegate to a specific pool tap **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
