@@ -59,7 +59,7 @@ index
 
    indexers/intro
    indexers/subquery
-   
+
 .. toctree::
    :includehidden:
    :caption: Smart Contracts v0
