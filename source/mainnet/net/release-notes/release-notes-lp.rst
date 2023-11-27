@@ -1467,7 +1467,7 @@ Concordium Client
 
     November 28, 2023
 
-        Concordium Client 6.2.0 includes support for the following:
+        Concordium Client 6.2.1 includes support for the following:
 
         - Revised client's reconnect handling so that the client will no longer attempt to automatically reconnect on timeouts and node resource exhaustion.
 
