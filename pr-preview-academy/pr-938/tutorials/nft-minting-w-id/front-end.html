@@ -1,0 +1,1473 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front-end development &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How it works" href="how-it-works.html" />
+    <link rel="prev" title="The minting contract" href="minting-sc.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://academy.concordium.software/">
+        <img class="logo" src="../../_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <style>
+  body {margin:0;}
+  
+  .navbar-menu {
+    position: relative;
+    margin-left: 190px;
+    background: none;
+  }
+  
+  .navbar-light {
+      background: #ededed!important;
+      box-shadow: none;
+  }
+  
+  .navbar-menu a {
+    float: left;
+    display: inline;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    background: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+      float: left;
+    }
+  
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+  /* Large devices (laptops/desktops, 992px to 768px ) */
+  @media only screen and (max-width: 1178px) {
+    .navbar-menu {
+      display: none;}
+  
+  }
+  </style>
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../intro.html">Introduction</a></button>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../beg-tutorials.html">Beginner</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../mid-tutorials.html">Intermediate</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../adv-tutorials.html">Advanced</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit">Claim badge</a></button>
+  </div>
+  </div>
+</div>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
+            <label class="sr-only">Monitor</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
+            <label class="sr-only">YouTube</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
+            <label class="sr-only">Medium</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/index.html" rel="noopener" target="_blank" title="Documentation"><span><i class="fas fa-book"></i></span>
+            <label class="sr-only">Documentation</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   NFT minting with ID 2.0
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="verifier-backend.html">
+     The verifier back end
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="minting-sc.html">
+     The minting contract
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Front-end development
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="how-it-works.html">
+     How it works
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignment-3/full-stack-dapp.html">
+   Assignment 3: dApp using WalletConnect
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#header-tsx">
+   Header.tsx
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contract-client">
+   Contract Client
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#init-component">
+   Init component
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-the-signature">
+   Getting the Signature
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mint-component">
+   Mint component
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constants-ts">
+     Constants.ts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#app-tsx">
+     App.tsx
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/academy/tutorials/nft-minting-w-id/front-end.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <span class="target" id="nft-w-id-frontend"></span><div class="section" id="front-end-development">
+<h1>Front-end development<a class="headerlink" href="#front-end-development" title="Permalink to this headline">#</a></h1>
+<p>The user interface will be a simple React application implemented from the template and material-ui, similar to this tutorial.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">npx create-react-app mint-ui --template typescript</span>
+</pre></div>
+</div>
+<p>It will take some time to fetch and install all packages and dependencies, and when it’s all done you will have something similar to the below.</p>
+<img alt="visual studio code window in dark mode with terminal window open showing result of above command" src="../../_images/adv-frontend1.png" />
+<p>And when you run it you will see the template application interface.</p>
+<img alt="browser tab showing result of running the locally built front end" src="../../_images/adv-frontend2.png" />
+<p>Then you will add the dependencies for some React components from material-ui, and necessary libraries from concordium-web-sdk and concordium-web-wallet-helper. To do that, run the command below and <code class="docutils literal notranslate"><span class="pre">yarn</span></code> will install all specified packages.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yarn add @mui/material @emotion/react @mui/icons-material @emotion/styled @concordium/web-sdk @concordium/browser-wallet-api-helpers</span>
+</pre></div>
+</div>
+<p>Once you complete that, it will create a <strong>package.json</strong> file that includes all dependencies in it.</p>
+<img alt="visual studio code window in dark mode with package.json file open" src="../../_images/adv-frontend3.png" />
+<div class="section" id="header-tsx">
+<h2>Header.tsx<a class="headerlink" href="#header-tsx" title="Permalink to this headline">#</a></h2>
+<p>Nice. Create a folder for the <strong>components</strong> and add a file for the <strong>Header.tsx</strong>. This component will be your wallet connection handler button.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { Button } from &quot;@mui/material&quot;;</span>
+
+<span class="go">export default function HeaderButton(props: {</span>
+<span class="go">name: string;</span>
+<span class="go">isSelected: boolean;</span>
+<span class="go">onClick: () =&gt; void;</span>
+<span class="go">}) {</span>
+<span class="go">return (</span>
+<span class="go">&lt;Button</span>
+<span class="go">variant={props.isSelected ? &quot;outlined&quot; : &quot;contained&quot;}</span>
+<span class="go">key={props.name}</span>
+<span class="go">onClick={() =&gt; props.onClick()}</span>
+<span class="go">sx={{</span>
+<span class="go">    my: 2,</span>
+<span class="go">    color: &quot;white&quot;,</span>
+<span class="go">    display: &quot;block&quot;,</span>
+<span class="go">    borderColor: &quot;white&quot;,</span>
+<span class="go">    borderRadius: &quot;4px&quot;,</span>
+<span class="go">    &quot;:hover&quot;: {</span>
+<span class="go">    my: 2,</span>
+<span class="go">    color: &quot;white&quot;,</span>
+<span class="go">    display: &quot;block&quot;,</span>
+<span class="go">    borderColor: &quot;white&quot;,</span>
+<span class="go">    borderRadius: &quot;4px&quot;,</span>
+<span class="go">    },</span>
+<span class="go">}}</span>
+<span class="go">&gt;</span>
+<span class="go">{props.name}</span>
+<span class="go">&lt;/Button&gt;</span>
+<span class="go">);</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Open the <strong>App.tsx</strong> file and remove everything inside the <code class="docutils literal notranslate"><span class="pre">App()</span></code>. First, add the helpers from the concordium-browser-wallet-api-helpers and then add the <code class="docutils literal notranslate"><span class="pre">connect()</span></code> function. When you do that, you will be able to connect your wallet. It looks terrible but you will fix that later.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import React from &#39;react&#39;;</span>
+<span class="go">import logo from &#39;./logo.svg&#39;;</span>
+<span class="go">import &#39;./App.css&#39;;</span>
+<span class="go">import { useEffect, useState } from &quot;react&quot;;</span>
+<span class="go">import {</span>
+<span class="go">detectConcordiumProvider,</span>
+<span class="go">WalletApi,</span>
+<span class="go">} from &quot;@concordium/browser-wallet-api-helpers&quot;;</span>
+
+
+<span class="go">import HeaderButton from &quot;./components/Header&quot;;</span>
+<span class="go">import { AppBar } from &#39;@mui/material&#39;;</span>
+
+<span class="go">function App() {</span>
+<span class="go">const [state, setState] = useState&lt;{</span>
+<span class="go">provider?: WalletApi;</span>
+<span class="go">account?: string;</span>
+<span class="go">}&gt;({});</span>
+
+<span class="go">function connect() {</span>
+<span class="go">detectConcordiumProvider()</span>
+<span class="go">.then((provider) =&gt; {</span>
+<span class="go">    provider</span>
+<span class="go">    .getMostRecentlySelectedAccount()</span>
+<span class="go">    .then((account) =&gt;</span>
+<span class="go">    !!account ? Promise.resolve(account) : provider.connect()</span>
+<span class="go">    )</span>
+<span class="go">    .then((account) =&gt; {</span>
+<span class="go">    setState({ ...state, provider, account });</span>
+<span class="go">    })</span>
+<span class="go">    .catch((_) =&gt; {</span>
+<span class="go">    alert(&quot;Please allow wallet connection&quot;);</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;accountDisconnected&quot;, () =&gt; {</span>
+<span class="go">    setState({ ...state, account: undefined });</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;accountChanged&quot;, (account) =&gt; {</span>
+<span class="go">    setState({ ...state, account });</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;chainChanged&quot;, () =&gt; {</span>
+<span class="go">    setState({ ...state, account: undefined, provider: undefined });</span>
+<span class="go">    });</span>
+<span class="go">})</span>
+<span class="go">.catch((_) =&gt; {</span>
+<span class="go">    console.error(`could not find provider`);</span>
+<span class="go">    alert(&quot;Please download Concordium Wallet&quot;);</span>
+<span class="go">});</span>
+<span class="go">}</span>
+
+
+<span class="go">useEffect(() =&gt; {</span>
+<span class="go">if (!state.provider || !state.account) {</span>
+<span class="go">connect();</span>
+<span class="go">}</span>
+
+<span class="go">return () =&gt; {</span>
+<span class="go">state.provider?.removeAllListeners();</span>
+<span class="go">};</span>
+<span class="go">}, [state.account]);</span>
+
+<span class="go">function isConnected() {</span>
+<span class="go">return !!state.provider &amp;&amp; !!state.account;</span>
+<span class="go">}</span>
+
+<span class="go">const isConnectedVar = isConnected();</span>
+
+<span class="go">return (</span>
+<span class="go">&lt;AppBar&gt;</span>
+<span class="go">&lt;HeaderButton</span>
+<span class="go">        name={isConnectedVar ? &quot;Connected&quot; : &quot;Connect&quot;}</span>
+<span class="go">        isSelected={isConnectedVar}</span>
+<span class="go">        onClick={connect}</span>
+<span class="go">    /&gt;</span>
+<span class="go">&lt;/AppBar&gt;);</span>
+
+<span class="go">}</span>
+
+<span class="go">export default App;</span>
+</pre></div>
+</div>
+<img alt="browser tab showing result of running the locally built front end" src="../../_images/adv-frontend4.png" />
+<p>Now, add some material-ui components to beautify it and change the return function with the one below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import {</span>
+<span class="go">AppBar,</span>
+<span class="go">Box,</span>
+<span class="go">Container,</span>
+<span class="go">Link,</span>
+<span class="go">Paper,</span>
+<span class="go">Toolbar,</span>
+<span class="go">Typography,</span>
+<span class="go">} from &quot;@mui/material&quot;;</span>
+
+<span class="go">/// .....</span>
+<span class="go">///</span>
+<span class="go">/// .....</span>
+
+<span class="go">return (</span>
+<span class="go">&lt;AppBar position=&quot;static&quot;&gt;</span>
+<span class="go">    &lt;Container maxWidth=&quot;xl&quot; sx={{ height: &quot;100%&quot; }}&gt;</span>
+<span class="go">    &lt;Toolbar disableGutters&gt;</span>
+<span class="go">        &lt;Typography</span>
+<span class="go">        variant=&quot;h6&quot;</span>
+<span class="go">        noWrap</span>
+<span class="go">        component=&quot;a&quot;</span>
+<span class="go">        sx={{</span>
+<span class="go">            mr: 2,</span>
+<span class="go">            display: &quot;flex&quot;,</span>
+<span class="go">            fontFamily: &quot;monospace&quot;,</span>
+<span class="go">            fontWeight: 700,</span>
+<span class="go">            letterSpacing: &quot;.3rem&quot;,</span>
+<span class="go">            color: &quot;inherit&quot;,</span>
+<span class="go">            textDecoration: &quot;none&quot;,</span>
+<span class="go">        }}</span>
+<span class="go">        &gt;</span>
+<span class="go">        Concordium</span>
+<span class="go">        &lt;/Typography&gt;</span>
+<span class="go">        &lt;Box</span>
+<span class="go">        sx={{</span>
+<span class="go">            flexGrow: 1,</span>
+<span class="go">            display: &quot;flex&quot;,</span>
+<span class="go">            flexDirection: &quot;row-reverse&quot;,</span>
+<span class="go">        }}</span>
+<span class="go">        &gt;</span>
+<span class="go">        &lt;HeaderButton</span>
+<span class="go">            name={isConnectedVar ? &quot;Connected&quot; : &quot;Connect&quot;}</span>
+<span class="go">            isSelected={isConnectedVar}</span>
+<span class="go">            onClick={connect}</span>
+<span class="go">        /&gt;</span>
+<span class="go">        &lt;/Box&gt;</span>
+<span class="go">    &lt;/Toolbar&gt;</span>
+<span class="go">    &lt;/Container&gt;</span>
+<span class="go">&lt;/AppBar&gt;</span>
+<span class="go">);</span>
+</pre></div>
+</div>
+<img alt="browser tab showing result of running the locally built front end" src="../../_images/adv-frontend5.png" />
+<p>Well, it’s not bad.</p>
+</div>
+<div class="section" id="contract-client">
+<h2>Contract Client<a class="headerlink" href="#contract-client" title="Permalink to this headline">#</a></h2>
+<p>In order to interact with a smart contract deployed on-chain you have to use SDKs and the best way is to implement a client using it. Since our project is a React application, the Concordium web-SDK is the one you need. Almost all of the code is reusable for any project (but it might need some changes depending on SDK updates).</p>
+<p>Create another folder called <strong>modules</strong> and add a file for the client’s helper functions implementation (<strong>CIS2ContractHelper.ts</strong>).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { WalletApi } from &quot;@concordium/browser-wallet-api-helpers&quot;;</span>
+<span class="go">import { Buffer } from &quot;buffer/&quot;;</span>
+
+<span class="go">import {</span>
+<span class="go">    ContractAddress,</span>
+<span class="go">    AccountTransactionType,</span>
+<span class="go">    UpdateContractPayload,</span>
+<span class="go">    serializeUpdateContractParameters,</span>
+<span class="go">    ModuleReference,</span>
+<span class="go">    InitContractPayload,</span>
+<span class="go">    TransactionStatusEnum,</span>
+<span class="go">    TransactionSummary,</span>
+<span class="go">    CcdAmount,</span>
+<span class="go">} from &quot;@concordium/web-sdk&quot;;</span>
+
+
+<span class="go">/**</span>
+<span class="go">* Waits for the input transaction to Finalize.</span>
+<span class="go">* @param provider Wallet Provider.</span>
+<span class="go">* @param txnHash Hash of Transaction.</span>
+<span class="go">* @returns Transaction outcomes.</span>
+<span class="go">*/</span>
+<span class="go">export function waitForTransaction(</span>
+<span class="go">    provider: WalletApi,</span>
+<span class="go">    txnHash: string</span>
+<span class="go">): Promise&lt;Record&lt;string, TransactionSummary&gt; | undefined&gt; {</span>
+<span class="go">    return new Promise((res, rej) =&gt; {</span>
+<span class="go">        _wait(provider, txnHash, res, rej);</span>
+<span class="go">    });</span>
+<span class="go">}</span>
+
+<span class="go">export function ensureValidOutcome(</span>
+<span class="go">    outcomes?: Record&lt;string, TransactionSummary&gt;</span>
+<span class="go">): Record&lt;string, TransactionSummary&gt; {</span>
+<span class="go">    if (!outcomes) {</span>
+<span class="go">        throw Error(&quot;Null Outcome&quot;);</span>
+<span class="go">    }</span>
+
+<span class="go">    let successTxnSummary = Object.keys(outcomes)</span>
+<span class="go">        .map((k) =&gt; outcomes[k])</span>
+<span class="go">        .find((s) =&gt; s.result.outcome === &quot;success&quot;);</span>
+
+<span class="go">    if (!successTxnSummary) {</span>
+<span class="go">        let failures = Object.keys(outcomes)</span>
+<span class="go">            .map((k) =&gt; outcomes[k])</span>
+<span class="go">            .filter((s) =&gt; s.result.outcome === &quot;reject&quot;)</span>
+<span class="go">            .map((s) =&gt; (s.result as any).rejectReason.tag)</span>
+<span class="go">            .join(&quot;,&quot;);</span>
+<span class="go">        throw Error(`Transaction failed, reasons: ${failures}`);</span>
+<span class="go">    }</span>
+
+<span class="go">    return outcomes;</span>
+<span class="go">}</span>
+
+
+<span class="go">/**</span>
+<span class="go">* Uses Contract Schema to serialize the contract parameters.</span>
+<span class="go">* @param contractName Name of the Contract.</span>
+<span class="go">* @param schema  Buffer of Contract Schema.</span>
+<span class="go">* @param methodName Contract method name.</span>
+<span class="go">* @param params Contract Method params in JSON.</span>
+<span class="go">* @returns Serialize buffer of the input params.</span>
+<span class="go">*/</span>
+<span class="go">export function serializeParams&lt;T&gt;(</span>
+<span class="go">    contractName: string,</span>
+<span class="go">    schema: Buffer,</span>
+<span class="go">    methodName: string,</span>
+<span class="go">    params: T</span>
+<span class="go">): Buffer {</span>
+<span class="go">    return serializeUpdateContractParameters(</span>
+<span class="go">        contractName,</span>
+<span class="go">        methodName,</span>
+<span class="go">        params,</span>
+<span class="go">        schema</span>
+<span class="go">    );</span>
+<span class="go">}</span>
+
+
+<span class="go">export function _wait(</span>
+<span class="go">    provider: WalletApi,</span>
+<span class="go">    txnHash: string,</span>
+<span class="go">    res: (p: Record&lt;string, TransactionSummary&gt; | undefined) =&gt; void,</span>
+<span class="go">    rej: (reason: any) =&gt; void</span>
+<span class="go">) {</span>
+<span class="go">    setTimeout(() =&gt; {</span>
+<span class="go">        provider</span>
+<span class="go">            .getJsonRpcClient()</span>
+<span class="go">            .getTransactionStatus(txnHash)</span>
+<span class="go">            .then((txnStatus) =&gt; {</span>
+<span class="go">                if (!txnStatus) {</span>
+<span class="go">                    return rej(&quot;Transaction Status is null&quot;);</span>
+<span class="go">                }</span>
+
+<span class="go">                console.info(`txn : ${txnHash}, status: ${txnStatus?.status}`);</span>
+<span class="go">                if (txnStatus?.status === TransactionStatusEnum.Finalized) {</span>
+<span class="go">                    return res(txnStatus.outcomes);</span>
+<span class="go">                }</span>
+
+<span class="go">                _wait(provider, txnHash, res, rej);</span>
+<span class="go">            })</span>
+<span class="go">            .catch((err) =&gt; rej(err));</span>
+<span class="go">    }, 1000);</span>
+<span class="go">}</span>
+
+<span class="go">export function parseContractAddress(</span>
+<span class="go">    outcomes: Record&lt;string, TransactionSummary&gt;</span>
+<span class="go">): ContractAddress {</span>
+<span class="go">    for (const blockHash in outcomes) {</span>
+<span class="go">        const res = outcomes[blockHash];</span>
+
+<span class="go">        if (res.result.outcome === &quot;success&quot;) {</span>
+<span class="go">            for (const event of res.result.events) {</span>
+<span class="go">                if (event.tag === &quot;ContractInitialized&quot;) {</span>
+<span class="go">                    return {</span>
+<span class="go">                        index: toBigInt((event as any).address.index),</span>
+<span class="go">                        subindex: toBigInt((event as any).address.subindex),</span>
+<span class="go">                    };</span>
+<span class="go">                }</span>
+<span class="go">            }</span>
+<span class="go">        }</span>
+<span class="go">    }</span>
+
+<span class="go">    throw Error(`unable to parse Contract Address from input outcomes`);</span>
+<span class="go">}</span>
+
+<span class="go">export function toBigInt(num: BigInt | number): bigint {</span>
+<span class="go">    return BigInt(num.toString(10));</span>
+<span class="go">}</span>
+
+<span class="go">const MICRO_CCD_IN_CCD = 1000000;</span>
+<span class="go">export function toCcd(ccdAmount: bigint): CcdAmount {</span>
+<span class="go">    return new CcdAmount(ccdAmount * BigInt(MICRO_CCD_IN_CCD));</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Now, you are ready to implement your contract interaction functions including the <code class="docutils literal notranslate"><span class="pre">initContract</span></code> and the <code class="docutils literal notranslate"><span class="pre">updateContract</span></code>. Create a file for <strong>CIS2ContractClient.ts</strong>.</p>
+<p>In the first function, <code class="docutils literal notranslate"><span class="pre">initContract()</span></code>, you invoke the initialize function in the contract using the <code class="docutils literal notranslate"><span class="pre">schema</span></code>, <code class="docutils literal notranslate"><span class="pre">moduleRef</span></code>, and the <code class="docutils literal notranslate"><span class="pre">contractName</span></code>. In order to make the transaction, you need the <code class="docutils literal notranslate"><span class="pre">AccountTransactionType</span></code> and will use the <code class="docutils literal notranslate"><span class="pre">WalletApi</span></code> from the browser-wallet-api-helpers. Using the wallet <code class="docutils literal notranslate"><span class="pre">provider</span></code>, you can send a transaction by providing the parameters. Then you will wait for the transaction to be finalized and parse the return output.</p>
+<p>The second function is the <code class="docutils literal notranslate"><span class="pre">updateContract()</span></code>. Use this function for all operations where you want to make a state change. This could be transferring of an asset, minting a token, or burning it. It uses the <code class="docutils literal notranslate"><span class="pre">schema</span></code>, <code class="docutils literal notranslate"><span class="pre">moduleRef</span></code>, the <code class="docutils literal notranslate"><span class="pre">contractName</span></code>, and the <code class="docutils literal notranslate"><span class="pre">methodName</span></code> (entrypoint) and calls <code class="docutils literal notranslate"><span class="pre">AccountTransaction</span></code>’s <code class="docutils literal notranslate"><span class="pre">Update</span></code> enum which specifies the type of the transaction that is going to be signed.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { WalletApi } from &quot;@concordium/browser-wallet-api-helpers&quot;;</span>
+<span class="go">import { Buffer } from &quot;buffer/&quot;;</span>
+<span class="go">import {</span>
+<span class="go">    waitForTransaction,</span>
+<span class="go">    ensureValidOutcome,</span>
+<span class="go">    serializeParams,</span>
+<span class="go">    _wait,</span>
+<span class="go">    parseContractAddress,</span>
+<span class="go">    toBigInt,</span>
+<span class="go">    toCcd</span>
+<span class="go">} from &quot;./CIS2ContractHelpers&quot;;</span>
+
+<span class="go">import {</span>
+<span class="go">    ContractAddress,</span>
+<span class="go">    AccountTransactionType,</span>
+<span class="go">    UpdateContractPayload,</span>
+<span class="go">    serializeUpdateContractParameters,</span>
+<span class="go">    ModuleReference,</span>
+<span class="go">    InitContractPayload,</span>
+<span class="go">    TransactionStatusEnum,</span>
+<span class="go">    TransactionSummary,</span>
+<span class="go">    CcdAmount,</span>
+<span class="go">} from &quot;@concordium/web-sdk&quot;;</span>
+
+<span class="go">export interface Cis2ContractInfo {</span>
+<span class="go">    schemaBuffer: Buffer;</span>
+<span class="go">    contractName: string;</span>
+<span class="go">    moduleRef: ModuleReference;</span>
+<span class="go">    tokenIdByteSize: number;</span>
+<span class="go">}</span>
+
+<span class="go">/**</span>
+<span class="go">* Initializes a Smart Contract.</span>
+<span class="go">* @param provider Wallet Provider.</span>
+<span class="go">* @param moduleRef Contract Module Reference. Hash of the Deployed Contract Module.</span>
+<span class="go">* @param schemaBuffer Buffer of Contract Schema.</span>
+<span class="go">* @param contractName Name of the Contract.</span>
+<span class="go">* @param account Account to Initialize the contract with.</span>
+<span class="go">* @param maxContractExecutionEnergy Maximum energy allowed to execute.</span>
+<span class="go">* @param ccdAmount CCD Amount to initialize the contract with.</span>
+<span class="go">* @returns Contract Address.</span>
+<span class="go">*/</span>
+
+<span class="go">export async function initContract&lt;T&gt;(provider: WalletApi,</span>
+<span class="go">    contractInfo: Cis2ContractInfo,</span>
+<span class="go">    account: string,</span>
+<span class="go">    params?: T,</span>
+<span class="go">    serializedParams?: Buffer,</span>
+<span class="go">    maxContractExecutionEnergy = BigInt(999),</span>
+<span class="go">    ccdAmount = BigInt(0)): Promise&lt;ContractAddress&gt; {</span>
+
+<span class="go">    const { moduleRef, schemaBuffer, contractName } = contractInfo;</span>
+<span class="go">    let txnHash = await provider.sendTransaction(</span>
+<span class="go">        account,</span>
+<span class="go">        AccountTransactionType.InitContract,</span>
+<span class="go">        {</span>
+<span class="go">            amount: toCcd(ccdAmount),</span>
+<span class="go">            moduleRef,</span>
+<span class="go">            initName: contractName,</span>
+<span class="go">            param: serializedParams || Buffer.from([]),</span>
+<span class="go">            maxContractExecutionEnergy,</span>
+<span class="go">        } as InitContractPayload,</span>
+<span class="go">        params || {},</span>
+<span class="go">        schemaBuffer.toString(&quot;base64&quot;),</span>
+<span class="go">        2 //schema version</span>
+<span class="go">    );</span>
+<span class="go">    let outcomes = await waitForTransaction(provider, txnHash);</span>
+<span class="go">    outcomes = ensureValidOutcome(outcomes);</span>
+<span class="go">    return parseContractAddress(outcomes);</span>
+<span class="go">}</span>
+
+<span class="go">/**</span>
+<span class="go">* Updates a Smart Contract.</span>
+<span class="go">* @param provider Wallet Provider.</span>
+<span class="go">* @param contractName Name of the Contract.</span>
+<span class="go">* @param schema Buffer of Contract Schema.</span>
+<span class="go">* @param paramJson Parameters to call the Contract Method with.</span>
+<span class="go">* @param account  Account to Update the contract with.</span>
+<span class="go">* @param contractAddress Contract Address.</span>
+<span class="go">* @param methodName Contract Method name to Call.</span>
+<span class="go">* @param maxContractExecutionEnergy Maximum energy allowed to execute.</span>
+<span class="go">* @param amount CCD Amount to update the contract with.</span>
+<span class="go">* @returns Update contract Outcomes.</span>
+<span class="go">*/</span>
+
+<span class="go">export async function updateContract&lt;T&gt;(</span>
+<span class="go">    provider: WalletApi,</span>
+<span class="go">    contractInfo: Cis2ContractInfo,</span>
+<span class="go">    paramJson: T,</span>
+<span class="go">    account: string,</span>
+<span class="go">    contractAddress: { index: number; subindex: number },</span>
+<span class="go">    methodName: string,</span>
+<span class="go">    maxContractExecutionEnergy: bigint = BigInt(9999),</span>
+<span class="go">    amount: bigint = BigInt(0)</span>
+<span class="go">): Promise&lt;Record&lt;string, TransactionSummary&gt;&gt; {</span>
+<span class="go">    const { schemaBuffer, contractName } = contractInfo;</span>
+<span class="go">    const parameter = serializeParams(</span>
+<span class="go">        contractName,</span>
+<span class="go">        schemaBuffer,</span>
+<span class="go">        methodName,</span>
+<span class="go">        paramJson</span>
+<span class="go">    );</span>
+<span class="go">    let txnHash = await provider.sendTransaction(</span>
+<span class="go">        account,</span>
+<span class="go">        AccountTransactionType.Update,</span>
+<span class="go">        {</span>
+<span class="go">            maxContractExecutionEnergy,</span>
+<span class="go">            address: {</span>
+<span class="go">                index: BigInt(contractAddress.index),</span>
+<span class="go">                subindex: BigInt(contractAddress.subindex),</span>
+<span class="go">            },</span>
+<span class="go">            message: parameter,</span>
+<span class="go">            amount: toCcd(amount),</span>
+<span class="go">            receiveName: `${contractName}.${methodName}`,</span>
+<span class="go">        } as UpdateContractPayload,</span>
+<span class="go">        paramJson as any,</span>
+<span class="go">        schemaBuffer.toString(&quot;base64&quot;),</span>
+<span class="go">        2 //Schema Version</span>
+<span class="go">    );</span>
+
+<span class="go">    let outcomes = await waitForTransaction(provider, txnHash);</span>
+
+<span class="go">    return ensureValidOutcome(outcomes);</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Since you have the helpers and the client code ready, you can move on to the next section which is implementing contract interactions.</p>
+</div>
+<div class="section" id="init-component">
+<h2>Init component<a class="headerlink" href="#init-component" title="Permalink to this headline">#</a></h2>
+<p>In this component, you will handle the smart contract instance creation. It will extract and give the <code class="docutils literal notranslate"><span class="pre">verify_key</span></code> as a parameter to the cis2-multi smart contract. In the <strong>components</strong> folder create a file called <strong>Init.tsx</strong> which will invoke the <code class="docutils literal notranslate"><span class="pre">init</span></code> method in the contract using the client you implemented in the previous section. It will return a button for creating a new instance, and get inputs from the user including the <code class="docutils literal notranslate"><span class="pre">account</span></code>, <code class="docutils literal notranslate"><span class="pre">schema</span></code>, <code class="docutils literal notranslate"><span class="pre">moduleRef</span></code>, <code class="docutils literal notranslate"><span class="pre">contractName</span></code>, and the <code class="docutils literal notranslate"><span class="pre">verify_key</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { FormEvent, useState } from &quot;react&quot;;</span>
+<span class="go">import { WalletApi } from &#39;@concordium/browser-wallet-api-helpers&#39;;</span>
+<span class="go">// import { ContractAddress } from &quot;@concordium/common-sdk&quot;;</span>
+
+<span class="go">import { Cis2ContractInfo } from &quot;../models/CIS2ContractClient&quot;;</span>
+<span class="go">import { ContractAddress, serializeInitContractParameters } from &#39;@concordium/web-sdk&#39;;</span>
+<span class="go">import * as connClient from &#39;../models/CIS2ContractClient&#39;;</span>
+
+<span class="go">import { Typography, Button, Stack, Container } from &#39;@mui/material&#39;;</span>
+
+<span class="go">export default function Cis2Init(props: {</span>
+<span class="go">    provider: WalletApi;</span>
+<span class="go">    account: string;</span>
+<span class="go">    contractInfo: Cis2ContractInfo;</span>
+<span class="go">    verifyKey: string;</span>
+<span class="go">    onDone: (address: ContractAddress, contractInfo: Cis2ContractInfo) =&gt; void;</span>
+<span class="go">}) {</span>
+<span class="go">    const [state, setState] = useState({</span>
+<span class="go">        error: &#39;&#39;,</span>
+<span class="go">        processing: false,</span>
+<span class="go">    });</span>
+
+<span class="go">    function submit(event: FormEvent&lt;HTMLFormElement&gt;) {</span>
+<span class="go">        event.preventDefault();</span>
+<span class="go">        const initParams = {</span>
+<span class="go">            verify_key: props.verifyKey</span>
+<span class="go">        };</span>
+<span class="go">        const serializedParams = serializeInitContractParameters(props.contractInfo.contractName, initParams, props.contractInfo.schemaBuffer);</span>
+<span class="go">        setState({ ...state, processing: true });</span>
+<span class="go">        connClient</span>
+<span class="go">            .initContract(props.provider, props.contractInfo, props.account, initParams, serializedParams)</span>
+<span class="go">            .then((address) =&gt; {</span>
+<span class="go">                setState({ ...state, processing: false });</span>
+<span class="go">                props.onDone(address, props.contractInfo);</span>
+<span class="go">            })</span>
+<span class="go">            .catch((err: Error) =&gt; {</span>
+<span class="go">                setState({ ...state, processing: false, error: err.message });</span>
+<span class="go">            });</span>
+<span class="go">    }</span>
+
+<span class="go">    return (</span>
+<span class="go">        &lt;Container sx={{ maxWidth: &#39;xl&#39;, pt: &#39;10px&#39; }}&gt;</span>
+<span class="go">            &lt;Stack component={&#39;form&#39;} spacing={2} onSubmit={submit}&gt;</span>
+<span class="go">                {state.error &amp;&amp; (</span>
+<span class="go">                    &lt;Typography component=&quot;div&quot; color=&quot;error&quot; variant=&quot;body1&quot;&gt;</span>
+<span class="go">                        {state.error}</span>
+<span class="go">                    &lt;/Typography&gt;</span>
+<span class="go">                )}</span>
+<span class="go">                {state.processing &amp;&amp; (</span>
+<span class="go">                    &lt;Typography component=&quot;div&quot; variant=&quot;body1&quot;&gt;</span>
+<span class="go">                        Deploying..</span>
+<span class="go">                    &lt;/Typography&gt;</span>
+<span class="go">                )}</span>
+<span class="go">                &lt;Button variant=&quot;contained&quot; disabled={state.processing} type=&quot;submit&quot;&gt;</span>
+<span class="go">                    Deploy New</span>
+<span class="go">                &lt;/Button&gt;</span>
+<span class="go">            &lt;/Stack&gt;</span>
+<span class="go">        &lt;/Container&gt;</span>
+<span class="go">    );</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-the-signature">
+<h2>Getting the Signature<a class="headerlink" href="#getting-the-signature" title="Permalink to this headline">#</a></h2>
+<p>In the next section you will mint the token, but in order to do that you will need a signature because this solution depends on it. By looking at the signature, the contract will understand that the user are verified and older than 18. So you need to communicate with the verifier. Meaning, you will complete all the steps that are required, such as asking for the <code class="docutils literal notranslate"><span class="pre">statement</span></code> and <code class="docutils literal notranslate"><span class="pre">challenge</span></code> from the verifier. When you have these from the server (remember you are going to send HTTP/2 GET requests to the endpoints), you will use the provider again (<strong>WalletApi</strong>) to request proof from the user for a given <code class="docutils literal notranslate"><span class="pre">statement</span></code> using the specific <code class="docutils literal notranslate"><span class="pre">challenge</span></code>. Then you will POST the proof in order to verify it and receive the signature.</p>
+<p>Divide the logic into two parts. First, implement a client that handles all the API requests. Create a file in the <strong>modules</strong> folder for your <strong>VerifierBackendClient.ts</strong>. You will need the <code class="docutils literal notranslate"><span class="pre">IdStatement</span></code> and <code class="docutils literal notranslate"><span class="pre">IdProofOutput</span></code> from the web-SDK, and add the following, including <code class="docutils literal notranslate"><span class="pre">getChallenge()</span></code>, <code class="docutils literal notranslate"><span class="pre">getStatement()</span></code>, and <code class="docutils literal notranslate"><span class="pre">getSignature()</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { IdStatement, IdProofOutput } from &#39;@concordium/web-sdk&#39;;</span>
+
+<span class="go">/**</span>
+<span class="go">* Fetch a challenge from the backend</span>
+<span class="go">*/</span>
+<span class="go">export async function getChallenge(verifier: string, accountAddress: string) {</span>
+<span class="go">    const response = await fetch(`${verifier}/challenge?address=` + accountAddress, { method: &#39;get&#39; });</span>
+<span class="go">    const body = await response.json();</span>
+<span class="go">    return body.challenge;</span>
+<span class="go">}</span>
+
+<span class="go">/**</span>
+<span class="go">* Fetch the statement to prove from the backend</span>
+<span class="go">*/</span>
+<span class="go">export async function getStatement(verifier: string): Promise&lt;IdStatement&gt; {</span>
+<span class="go">    const response = await fetch(`${verifier}/statement`, { method: &#39;get&#39; });</span>
+<span class="go">    const body = await response.json();</span>
+<span class="go">    return JSON.parse(body);</span>
+<span class="go">}</span>
+
+<span class="go">/**</span>
+<span class="go">*  Authorize with the backend, and get a auth token.</span>
+<span class="go">*/</span>
+<span class="go">export async function getSignature(verifier: string, challenge: string, proof: IdProofOutput) {</span>
+<span class="go">    const response = await fetch(`${verifier}/prove`, {</span>
+<span class="go">        method: &#39;post&#39;,</span>
+<span class="go">        headers: new Headers({ &#39;content-type&#39;: &#39;application/json&#39; }),</span>
+<span class="go">        body: JSON.stringify({ challenge, proof }),</span>
+<span class="go">    });</span>
+<span class="go">    if (!response.ok) {</span>
+<span class="go">        throw new Error(&#39;Unable to authorize&#39;);</span>
+<span class="go">    }</span>
+<span class="go">    const body = await response.text();</span>
+<span class="go">    if (body) {</span>
+<span class="go">        return body;</span>
+<span class="go">    }</span>
+<span class="go">    throw new Error(&#39;Unable to authorize&#39;);</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Nice, now you can invoke the verifier using these endpoints. Create a button that calls those endpoints to get the <code class="docutils literal notranslate"><span class="pre">statement</span></code>, <code class="docutils literal notranslate"><span class="pre">challenge</span></code>, and return the proof. Create another component for the <strong>Get Signature</strong> button and add the code below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { WalletApi } from &#39;@concordium/browser-wallet-api-helpers&#39;;</span>
+<span class="go">import { Button } from &#39;@mui/material&#39;;</span>
+<span class="go">import { getChallenge, getSignature, getStatement } from &#39;../models/VerifierBackendClient&#39;;</span>
+
+<span class="go">export default function VerifierGetSignature(props: {</span>
+<span class="go">    provider: WalletApi;</span>
+<span class="go">    account: string;</span>
+<span class="go">    verifierUrl: string;</span>
+<span class="go">    disabled: boolean;</span>
+<span class="go">    onSign: (signature: string) =&gt; void;</span>
+<span class="go">}) {</span>
+<span class="go">    async function sign(e: React.MouseEvent) {</span>
+<span class="go">        e.preventDefault();</span>
+<span class="go">        var challenge = await getChallenge(props.verifierUrl, props.account);</span>
+<span class="go">        const statement = await getStatement(props.verifierUrl);</span>
+<span class="go">        const proof = await props.provider.requestIdProof(props.account, statement, challenge);</span>
+<span class="go">        const signature = await getSignature(props.verifierUrl, challenge, proof);</span>
+<span class="go">        props.onSign(signature.replaceAll(&#39;&quot;&#39;, &#39;&#39;));</span>
+<span class="go">    }</span>
+
+<span class="go">    return (</span>
+<span class="go">        &lt;Button type=&quot;button&quot; variant=&quot;contained&quot; disabled={props.disabled} fullWidth size=&quot;large&quot; onClick={sign}&gt;</span>
+<span class="go">            Get Signature</span>
+<span class="go">        &lt;/Button&gt;</span>
+<span class="go">    );</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mint-component">
+<h2>Mint component<a class="headerlink" href="#mint-component" title="Permalink to this headline">#</a></h2>
+<p>Create a file for the <strong>Mint.tsx</strong> component. You will use this to invoke your <code class="docutils literal notranslate"><span class="pre">mint()</span></code> function implemented in the smart contract. In order to do that, you will need to use the client you implemented in the previous section that calls <code class="docutils literal notranslate"><span class="pre">Update</span></code> type. Look at the <code class="docutils literal notranslate"><span class="pre">MintParams</span></code> struct in the contract. It expects an address, an object/map that holds the tokens in a form of [<code class="docutils literal notranslate"><span class="pre">tokenId</span></code> as a key, and &lt;<code class="docutils literal notranslate"><span class="pre">TokenMetadata</span></code> (which is URL &amp; hash), <code class="docutils literal notranslate"><span class="pre">Amount</span></code>&gt;] as the value. So you have to create this object and send it as a parameter. Then you will just call the client with the <code class="docutils literal notranslate"><span class="pre">provider(Wallet)</span></code>, <code class="docutils literal notranslate"><span class="pre">account</span></code>, <code class="docutils literal notranslate"><span class="pre">parameters</span></code>, <code class="docutils literal notranslate"><span class="pre">contractInfo</span></code> (including <code class="docutils literal notranslate"><span class="pre">schema</span></code>, <code class="docutils literal notranslate"><span class="pre">moduleRef</span></code>, <code class="docutils literal notranslate"><span class="pre">contractName</span></code>), NFT contract’s <code class="docutils literal notranslate"><span class="pre">index</span></code>, method name (<code class="docutils literal notranslate"><span class="pre">mint</span></code>), and <code class="docutils literal notranslate"><span class="pre">maxEnergy</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { Buffer } from &#39;buffer/&#39;;</span>
+<span class="go">import { FormEvent, useState } from &#39;react&#39;;</span>
+<span class="go">import { WalletApi } from &#39;@concordium/browser-wallet-api-helpers&#39;;</span>
+<span class="go">import { Typography, Button, Stack, TextField } from &#39;@mui/material&#39;;</span>
+<span class="go">import { Container } from &#39;@mui/system&#39;;</span>
+<span class="go">import { TransactionSummary, ContractAddress } from &#39;@concordium/web-sdk&#39;;</span>
+
+<span class="go">import * as connClient from &#39;../models/CIS2ContractClient&#39;;</span>
+<span class="go">import { Cis2ContractInfo } from &#39;../models/CIS2ContractClient&#39;;</span>
+
+<span class="go">async function mint(</span>
+<span class="go">    provider: WalletApi,</span>
+<span class="go">    account: string,</span>
+<span class="go">    tokens: { [tokenId: string]: [{ url: string; hash: string }, string] },</span>
+<span class="go">    signature: string,</span>
+<span class="go">    nftContractAddress: { index: number; subindex: number },</span>
+<span class="go">    contractInfo: Cis2ContractInfo,</span>
+<span class="go">    maxContractExecutionEnergy = BigInt(9999)</span>
+<span class="go">): Promise&lt;Record&lt;string, TransactionSummary&gt;&gt; {</span>
+<span class="go">    const paramJson = {</span>
+<span class="go">        owner: {</span>
+<span class="go">            Account: [account],</span>
+<span class="go">        },</span>
+<span class="go">        tokens: Object.keys(tokens).map((tokenId) =&gt; [tokenId, tokens[tokenId]]),</span>
+<span class="go">        signature,</span>
+<span class="go">    };</span>
+
+<span class="go">    return connClient.updateContract(</span>
+<span class="go">        provider,</span>
+<span class="go">        contractInfo,</span>
+<span class="go">        paramJson,</span>
+<span class="go">        account,</span>
+<span class="go">        nftContractAddress,</span>
+<span class="go">        &#39;mint&#39;,</span>
+<span class="go">        maxContractExecutionEnergy,</span>
+<span class="go">        BigInt(0)</span>
+<span class="go">    );</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Create a form to collect required information for minting a token. What do you need? A metadata URL, amount of tokens, a signature that verifies the minter is older than 18, and the contract index, right? Add the following to the <strong>Mint.tsx</strong> file. It is a bit long but the form takes all required values from the user and checks whether are they valid or not. If they are, it calls the <code class="docutils literal notranslate"><span class="pre">mint()</span></code> function with the proper parameters.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">function MintPage(props: {</span>
+<span class="go">    verifierUrl: string;</span>
+<span class="go">    provider: WalletApi;</span>
+<span class="go">    account: string;</span>
+<span class="go">    contractInfo: Cis2ContractInfo;</span>
+<span class="go">    contract?: ContractAddress;</span>
+<span class="go">}) {</span>
+<span class="go">    let [state, setState] = useState({</span>
+<span class="go">        checking: false,</span>
+<span class="go">        error: &#39;&#39;,</span>
+<span class="go">    });</span>
+<span class="go">    const [signature, setSignature] = useState(&#39;&#39;);</span>
+
+<span class="go">    function submit(event: FormEvent&lt;HTMLFormElement&gt;) {</span>
+<span class="go">        event.preventDefault();</span>
+<span class="go">        setState({ ...state, error: &#39;&#39;, checking: true });</span>
+<span class="go">        const formData = new FormData(event.currentTarget);</span>
+
+<span class="go">        var formValues = {</span>
+<span class="go">            index: parseInt(formData.get(&#39;contractIndex&#39;)?.toString() || &#39;-1&#39;),</span>
+<span class="go">            subindex: parseInt(formData.get(&#39;contractSubindex&#39;)?.toString() || &#39;-1&#39;),</span>
+<span class="go">            metadataUrl: formData.get(&#39;metadataUrl&#39;)?.toString() || &#39;&#39;,</span>
+<span class="go">            tokenId: formData.get(&#39;tokenId&#39;)?.toString() || &#39;&#39;,</span>
+<span class="go">            quantity: parseInt(formData.get(&#39;quantity&#39;)?.toString() || &#39;-1&#39;),</span>
+<span class="go">        };</span>
+
+<span class="go">        if (!(formValues.index &gt;= 0)) {</span>
+<span class="go">            setState({ ...state, error: &#39;Invalid Contract Index&#39; });</span>
+<span class="go">            return;</span>
+<span class="go">        }</span>
+
+<span class="go">        if (!(formValues.subindex &gt;= 0)) {</span>
+<span class="go">            setState({ ...state, error: &#39;Invalid Contract Subindex&#39; });</span>
+<span class="go">            return;</span>
+<span class="go">        }</span>
+
+<span class="go">        if (!(formValues.quantity &gt;= 0)) {</span>
+<span class="go">            setState({ ...state, error: &#39;Invalid Quantity&#39; });</span>
+<span class="go">            return;</span>
+<span class="go">        }</span>
+
+<span class="go">        if (!formValues.metadataUrl) {</span>
+<span class="go">            setState({ ...state, error: &#39;Invalid Metadata Url&#39; });</span>
+<span class="go">            return;</span>
+<span class="go">        }</span>
+
+<span class="go">        if (!isValidTokenId(formValues.tokenId, props.contractInfo)) {</span>
+<span class="go">            setState({ ...state, error: &#39;Invalid Token Id&#39; });</span>
+<span class="go">            return;</span>
+<span class="go">        }</span>
+
+<span class="go">        if (!signature) {</span>
+<span class="go">            setState({ ...state, error: &#39;Invalid Signature&#39; });</span>
+<span class="go">            return;</span>
+<span class="go">        }</span>
+
+<span class="go">        const address = { index: formValues.index, subindex: formValues.subindex };</span>
+<span class="go">        mint(</span>
+<span class="go">            props.provider,</span>
+<span class="go">            props.account,</span>
+<span class="go">            {</span>
+<span class="go">                [formValues.tokenId]: [{ url: formValues.metadataUrl, hash: &#39;&#39; }, formValues.quantity.toString()],</span>
+<span class="go">            },</span>
+<span class="go">            signature,</span>
+<span class="go">            address,</span>
+<span class="go">            props.contractInfo</span>
+<span class="go">        )</span>
+<span class="go">            .then((_) =&gt; {</span>
+<span class="go">                setState({ ...state, error: &#39;&#39;, checking: false });</span>
+<span class="go">                alert(&#39;Minted&#39;);</span>
+<span class="go">            })</span>
+<span class="go">            .catch((err: Error) =&gt; setState({ ...state, error: err.message, checking: false }));</span>
+<span class="go">    }</span>
+
+<span class="go">    return (</span>
+<span class="go">        &lt;Container sx={{ maxWidth: &#39;xl&#39;, pt: &#39;10px&#39; }}&gt;</span>
+<span class="go">            &lt;Stack component={&#39;form&#39;} spacing={2} onSubmit={submit} autoComplete={&#39;true&#39;}&gt;</span>
+<span class="go">                &lt;TextField</span>
+<span class="go">                    id=&quot;contract-index&quot;</span>
+<span class="go">                    name=&quot;contractIndex&quot;</span>
+<span class="go">                    label=&quot;Contract Index&quot;</span>
+<span class="go">                    variant=&quot;standard&quot;</span>
+<span class="go">                    type={&#39;number&#39;}</span>
+<span class="go">                    disabled={state.checking}</span>
+<span class="go">                /&gt;</span>
+<span class="go">                &lt;TextField</span>
+<span class="go">                    id=&quot;contract-subindex&quot;</span>
+<span class="go">                    name=&quot;contractSubindex&quot;</span>
+<span class="go">                    label=&quot;Contract Sub Index&quot;</span>
+<span class="go">                    variant=&quot;standard&quot;</span>
+<span class="go">                    type={&#39;number&#39;}</span>
+<span class="go">                    disabled={state.checking}</span>
+<span class="go">                    value={0}</span>
+<span class="go">                /&gt;</span>
+<span class="go">                &lt;TextField</span>
+<span class="go">                    id=&quot;metadata-url&quot;</span>
+<span class="go">                    name=&quot;metadataUrl&quot;</span>
+<span class="go">                    label=&quot;Metadata Url&quot;</span>
+<span class="go">                    variant=&quot;standard&quot;</span>
+<span class="go">                    disabled={state.checking}</span>
+<span class="go">                /&gt;</span>
+<span class="go">                &lt;TextField</span>
+<span class="go">                    id=&quot;token-id&quot;</span>
+<span class="go">                    name=&quot;tokenId&quot;</span>
+<span class="go">                    label=&quot;Token Id&quot;</span>
+<span class="go">                    variant=&quot;standard&quot;</span>
+<span class="go">                    disabled={state.checking}</span>
+<span class="go">                    defaultValue=&quot;01&quot;</span>
+<span class="go">                /&gt;</span>
+<span class="go">                &lt;TextField</span>
+<span class="go">                    id=&quot;quantity&quot;</span>
+<span class="go">                    name=&quot;quantity&quot;</span>
+<span class="go">                    label=&quot;Token Quantity&quot;</span>
+<span class="go">                    variant=&quot;standard&quot;</span>
+<span class="go">                    type=&quot;number&quot;</span>
+<span class="go">                    disabled={state.checking}</span>
+<span class="go">                    defaultValue=&quot;1&quot;</span>
+<span class="go">                /&gt;</span>
+<span class="go">                &lt;TextField</span>
+<span class="go">                    id=&quot;signature&quot;</span>
+<span class="go">                    name=&quot;signature&quot;</span>
+<span class="go">                    label=&quot;Signature&quot;</span>
+<span class="go">                    variant=&quot;standard&quot;</span>
+<span class="go">                    disabled</span>
+<span class="go">                    defaultValue=&quot;&quot;</span>
+<span class="go">                    value={signature}</span>
+<span class="go">                /&gt;</span>
+<span class="go">                &lt;VerifierGetSignature</span>
+<span class="go">                    provider={props.provider}</span>
+<span class="go">                    account={props.account}</span>
+<span class="go">                    verifierUrl={props.verifierUrl}</span>
+<span class="go">                    disabled={state.checking}</span>
+<span class="go">                    onSign={setSignature}</span>
+<span class="go">                /&gt;</span>
+<span class="go">                {state.error &amp;&amp; (</span>
+<span class="go">                    &lt;Typography component=&quot;div&quot; color=&quot;error&quot;&gt;</span>
+<span class="go">                        {state.error}</span>
+<span class="go">                    &lt;/Typography&gt;</span>
+<span class="go">                )}</span>
+<span class="go">                {state.checking &amp;&amp; &lt;Typography component=&quot;div&quot;&gt;Checking..&lt;/Typography&gt;}</span>
+<span class="go">                &lt;Button type=&quot;submit&quot; variant=&quot;contained&quot; disabled={state.checking} fullWidth size=&quot;large&quot;&gt;</span>
+<span class="go">                    Mint</span>
+<span class="go">                &lt;/Button&gt;</span>
+<span class="go">            &lt;/Stack&gt;</span>
+<span class="go">        &lt;/Container&gt;</span>
+<span class="go">    );</span>
+<span class="go">}</span>
+
+<span class="go">export default MintPage;</span>
+
+<span class="go">function isValidTokenId(tokenIdHex: string, contractInfo: Cis2ContractInfo): boolean {</span>
+<span class="go">    try {</span>
+<span class="go">        let buff = Buffer.from(tokenIdHex, &#39;hex&#39;);</span>
+<span class="go">        let parsedTokenIdHex = Buffer.from(buff.subarray(0, contractInfo.tokenIdByteSize)).toString(&#39;hex&#39;);</span>
+<span class="go">        console.log(tokenIdHex, parsedTokenIdHex);</span>
+<span class="go">        return parsedTokenIdHex === tokenIdHex;</span>
+<span class="go">    } catch (error) {</span>
+<span class="go">        console.error(error);</span>
+<span class="go">        return false;</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<div class="section" id="constants-ts">
+<h3>Constants.ts<a class="headerlink" href="#constants-ts" title="Permalink to this headline">#</a></h3>
+<p>You need a <strong>constants</strong> file to store the <code class="docutils literal notranslate"><span class="pre">schema</span></code>, <code class="docutils literal notranslate"><span class="pre">moduleRef</span></code>, <code class="docutils literal notranslate"><span class="pre">contractInfo</span></code>, and the <code class="docutils literal notranslate"><span class="pre">verify_key</span></code> and the <code class="docutils literal notranslate"><span class="pre">verifier_url</span></code>. Create a file to keep these.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { Buffer } from &quot;buffer/&quot;;</span>
+<span class="go">import { ModuleReference } from &quot;@concordium/web-sdk&quot;;</span>
+<span class="go">import {</span>
+<span class="go">    Cis2ContractInfo,</span>
+<span class="go">} from &quot;./models/CIS2ContractClient&quot;;</span>
+
+<span class="go">const MULTI_CONTRACT_MODULE_REF =</span>
+<span class="go">    &quot;27b813fa34babde7a7e337f05a9cc031f81db60f8b88b0200c234e8b48cb7fa3&quot;;</span>
+<span class="go">const MULTI_CONTRACT_SCHEMA =</span>
+<span class="go">    &quot;FFFF02010000000A000000434953322D4D756C746901001400010000000A0000007665726966795F6B65791E200000000A0000000900000062616C616E63654F6606100114000200000008000000746F6B656E5F69641D0007000000616464726573731502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C10011B2500000015040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E74656402040000006D696E7404140003000000050000006F776E65721502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C06000000746F6B656E7312021D000F1400020000000300000075726C1601040000006861736816011B25000000090000007369676E61747572651E4000000015040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E746564020F0000006F6E526563656976696E67434953320315040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E746564020A0000006F70657261746F724F66061001140002000000050000006F776E65721502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C07000000616464726573731502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C10010115040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E746564020F000000736574496D706C656D656E746F72730414000200000002000000696416000C000000696D706C656D656E746F727310020C15040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E7465640208000000737570706F727473061001160010011503000000090000004E6F537570706F72740207000000537570706F72740209000000537570706F72744279010100000010000C15040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E746564020D000000746F6B656E4D657461646174610610011D0010011400020000000300000075726C160104000000686173681502000000040000004E6F6E650204000000536F6D65010100000013200000000215040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E74656402080000007472616E7366657204100114000500000008000000746F6B656E5F69641D0006000000616D6F756E741B250000000400000066726F6D1502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C02000000746F1502000000070000004163636F756E7401010000000B08000000436F6E747261637401020000000C160104000000646174611D0115040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E746564020E0000007570646174654F70657261746F720410011400020000000600000075706461746515020000000600000052656D6F7665020300000041646402080000006F70657261746F721502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C15040000000E000000496E76616C6964546F6B656E49640211000000496E73756666696369656E7446756E6473020C000000556E617574686F72697A65640206000000437573746F6D010100000015080000000B0000005061727365506172616D7302070000004C6F6746756C6C020C0000004C6F674D616C666F726D65640213000000496E76616C6964436F6E74726163744E616D65020C000000436F6E74726163744F6E6C79020B0000004163636F756E744F6E6C790213000000496E766F6B65436F6E74726163744572726F720212000000546F6B656E416C72656164794D696E7465640204000000766965770114000200000005000000737461746510020F1502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C1400020000000800000062616C616E63657310020F1D001B25000000090000006F70657261746F727310021502000000070000004163636F756E7401010000000B08000000436F6E747261637401010000000C06000000746F6B656E7310021D00&quot;;</span>
+<span class="go">export const CIS2_MULTI_CONTRACT_INFO: Cis2ContractInfo = {</span>
+<span class="go">    contractName: &quot;CIS2-Multi&quot;,</span>
+<span class="go">    moduleRef: new ModuleReference(MULTI_CONTRACT_MODULE_REF),</span>
+<span class="go">    schemaBuffer: Buffer.from(MULTI_CONTRACT_SCHEMA, &quot;hex&quot;),</span>
+<span class="go">    tokenIdByteSize: 1,</span>
+<span class="go">};</span>
+<span class="go">export const VERIFY_KEY = &quot;ccc7b73e381125ccc7dbd82f2ccef80c2877ae2eacbd57c536a67a767e94395c&quot;</span>
+<span class="go">export const VERIFIER_URL = &#39;http://localhost:8100/api&#39;;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="app-tsx">
+<h3>App.tsx<a class="headerlink" href="#app-tsx" title="Permalink to this headline">#</a></h3>
+<p>Finally, call these from the <strong>App.tsx</strong> file. Change it with the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import React from &#39;react&#39;;</span>
+<span class="go">import logo from &#39;./logo.svg&#39;;</span>
+<span class="go">import &#39;./App.css&#39;;</span>
+<span class="go">import { useEffect, useState } from &quot;react&quot;;</span>
+<span class="go">import {</span>
+<span class="go">detectConcordiumProvider,</span>
+<span class="go">WalletApi,</span>
+<span class="go">} from &quot;@concordium/browser-wallet-api-helpers&quot;;</span>
+
+<span class="go">import {</span>
+<span class="go">AppBar,</span>
+<span class="go">Box,</span>
+<span class="go">Container,</span>
+<span class="go">Link,</span>
+<span class="go">Paper,</span>
+<span class="go">Toolbar,</span>
+<span class="go">Typography,</span>
+<span class="go">} from &quot;@mui/material&quot;;</span>
+
+<span class="go">import MintPage from &quot;./components/Mint&quot;;</span>
+<span class="go">import { CIS2_MULTI_CONTRACT_INFO, VERIFIER_URL, VERIFY_KEY } from &quot;./Constants&quot;;</span>
+<span class="go">import HeaderButton from &quot;./components/Header&quot;;</span>
+<span class="go">import Cis2Init from &quot;./components/Init&quot;;</span>
+
+<span class="go">function App() {</span>
+<span class="go">const [state, setState] = useState&lt;{</span>
+<span class="go">provider?: WalletApi;</span>
+<span class="go">account?: string;</span>
+<span class="go">}&gt;({});</span>
+
+<span class="go">function connect() {</span>
+<span class="go">detectConcordiumProvider()</span>
+<span class="go">.then((provider) =&gt; {</span>
+<span class="go">    provider</span>
+<span class="go">    .getMostRecentlySelectedAccount()</span>
+<span class="go">    .then((account) =&gt;</span>
+<span class="go">    !!account ? Promise.resolve(account) : provider.connect()</span>
+<span class="go">    )</span>
+<span class="go">    .then((account) =&gt; {</span>
+<span class="go">    setState({ ...state, provider, account });</span>
+<span class="go">    })</span>
+<span class="go">    .catch((_) =&gt; {</span>
+<span class="go">    alert(&quot;Please allow wallet connection&quot;);</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;accountDisconnected&quot;, () =&gt; {</span>
+<span class="go">    setState({ ...state, account: undefined });</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;accountChanged&quot;, (account) =&gt; {</span>
+<span class="go">    setState({ ...state, account });</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;chainChanged&quot;, () =&gt; {</span>
+<span class="go">    setState({ ...state, account: undefined, provider: undefined });</span>
+<span class="go">    });</span>
+<span class="go">})</span>
+<span class="go">.catch((_) =&gt; {</span>
+<span class="go">    console.error(`could not find provider`);</span>
+<span class="go">    alert(&quot;Please download Concordium Wallet&quot;);</span>
+<span class="go">});</span>
+<span class="go">}</span>
+
+<span class="go">useEffect(() =&gt; {</span>
+<span class="go">if (!state.provider || !state.account) {</span>
+<span class="go">connect();</span>
+<span class="go">}</span>
+
+<span class="go">return () =&gt; {</span>
+<span class="go">state.provider?.removeAllListeners();</span>
+<span class="go">};</span>
+<span class="go">}, [state.account]);</span>
+
+<span class="go">function isConnected() {</span>
+<span class="go">return !!state.provider &amp;&amp; !!state.account;</span>
+<span class="go">}</span>
+
+<span class="go">const isConnectedVar = isConnected();</span>
+
+<span class="go">return (</span>
+<span class="go">&lt;&gt;</span>
+<span class="go">&lt;AppBar position=&quot;static&quot;&gt;</span>
+<span class="go">    &lt;Container maxWidth=&quot;xl&quot; sx={{ height: &quot;100%&quot; }}&gt;</span>
+<span class="go">    &lt;Toolbar disableGutters&gt;</span>
+<span class="go">    &lt;Typography</span>
+<span class="go">    variant=&quot;h6&quot;</span>
+<span class="go">    noWrap</span>
+<span class="go">    component=&quot;a&quot;</span>
+<span class="go">    sx={{</span>
+<span class="go">        mr: 2,</span>
+<span class="go">        display: &quot;flex&quot;,</span>
+<span class="go">        fontFamily: &quot;monospace&quot;,</span>
+<span class="go">        fontWeight: 700,</span>
+<span class="go">        letterSpacing: &quot;.3rem&quot;,</span>
+<span class="go">        color: &quot;inherit&quot;,</span>
+<span class="go">        textDecoration: &quot;none&quot;,</span>
+<span class="go">    }}</span>
+<span class="go">    &gt;</span>
+<span class="go">    Concordium</span>
+<span class="go">    &lt;/Typography&gt;</span>
+<span class="go">    &lt;Box</span>
+<span class="go">    sx={{</span>
+<span class="go">        flexGrow: 1,</span>
+<span class="go">        display: &quot;flex&quot;,</span>
+<span class="go">        flexDirection: &quot;row-reverse&quot;,</span>
+<span class="go">    }}</span>
+<span class="go">    &gt;</span>
+<span class="go">    &lt;HeaderButton</span>
+<span class="go">        name={isConnectedVar ? &quot;Connected&quot; : &quot;Connect&quot;}</span>
+<span class="go">        isSelected={isConnectedVar}</span>
+<span class="go">        onClick={connect}</span>
+<span class="go">    /&gt;</span>
+<span class="go">    &lt;/Box&gt;</span>
+<span class="go">    &lt;/Toolbar&gt;</span>
+<span class="go">    &lt;/Container&gt;</span>
+<span class="go">&lt;/AppBar&gt;</span>
+<span class="go">&lt;Box className=&quot;App&quot;&gt;</span>
+<span class="go">    &lt;Paper&gt;</span>
+<span class="go">    &lt;MintPage</span>
+<span class="go">    key={CIS2_MULTI_CONTRACT_INFO.contractName}</span>
+<span class="go">    contractInfo={CIS2_MULTI_CONTRACT_INFO}</span>
+<span class="go">    provider={state.provider!}</span>
+<span class="go">    account={state.account!}</span>
+<span class="go">    verifierUrl={VERIFIER_URL}</span>
+<span class="go">    /&gt;</span>
+<span class="go">    &lt;/Paper&gt;</span>
+<span class="go">    &lt;Paper&gt;</span>
+<span class="go">    &lt;Cis2Init</span>
+<span class="go">    account={state.account!}</span>
+<span class="go">    provider={state.provider!}</span>
+<span class="go">    contractInfo={CIS2_MULTI_CONTRACT_INFO}</span>
+<span class="go">    verifyKey={VERIFY_KEY}</span>
+<span class="go">    onDone={(contract) =&gt;</span>
+<span class="go">    alert(</span>
+<span class="go">        `Contract Initialized index: ${contract.index}, subindex: ${contract.subindex}`</span>
+<span class="go">    )</span>
+<span class="go">    }</span>
+<span class="go">    /&gt;</span>
+<span class="go">    &lt;/Paper&gt;</span>
+<span class="go">&lt;/Box&gt;</span>
+<span class="go">&lt;footer className=&quot;footer&quot;&gt;</span>
+<span class="go">    &lt;Typography textAlign={&quot;center&quot;} sx={{ color: &quot;white&quot; }}&gt;</span>
+<span class="go">    &lt;Link</span>
+<span class="go">    sx={{ color: &quot;white&quot; }}</span>
+<span class="go">    href=&quot;https://developer.concordium.software/en/mainnet/index.html&quot;</span>
+<span class="go">    target={&quot;_blank&quot;}</span>
+<span class="go">    &gt;</span>
+<span class="go">    Concordium Developer Documentation</span>
+<span class="go">    &lt;/Link&gt;</span>
+<span class="go">    &lt;/Typography&gt;</span>
+<span class="go">&lt;/footer&gt;</span>
+<span class="go">&lt;/&gt;</span>
+<span class="go">);</span>
+<span class="go">}</span>
+
+<span class="go">export default App;</span>
+</pre></div>
+</div>
+<p>And now try it in <a class="reference internal" href="how-it-works.html#nft-w-id-demo"><span class="std std-ref">the next part</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="minting-sc.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The minting contract</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="how-it-works.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How it works</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>

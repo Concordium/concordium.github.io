@@ -1,0 +1,691 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Data On-Chain &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/tippy.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simple minting dApp" href="simple-nft-dapp.html" />
+    <link rel="prev" title="Concordium counter smart contract" href="counter-contract.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://academy.concordium.software/">
+        <img class="logo" src="../_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <style>
+  body {margin:0;}
+  
+  .navbar-menu {
+    position: relative;
+    margin-left: 190px;
+    background: none;
+  }
+  
+  .navbar-light {
+      background: #ededed!important;
+      box-shadow: none;
+  }
+  
+  .navbar-menu a {
+    float: left;
+    display: inline;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    background: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+      float: left;
+    }
+  
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+  /* Large devices (laptops/desktops, 992px to 768px ) */
+  @media only screen and (max-width: 1178px) {
+    .navbar-menu {
+      display: none;}
+  
+  }
+  </style>
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../intro.html">Introduction</a></button>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../beg-tutorials.html">Beginner</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../mid-tutorials.html">Intermediate</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../adv-tutorials.html">Advanced</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit">Claim badge</a></button>
+  </div>
+  </div>
+</div>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
+            <label class="sr-only">Monitor</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
+            <label class="sr-only">YouTube</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
+            <label class="sr-only">Medium</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/index.html" rel="noopener" target="_blank" title="Documentation"><span><i class="fas fa-book"></i></span>
+            <label class="sr-only">Documentation</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../setup-env.html">
+   Setup the development environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="counter-contract.html">
+   Concordium counter smart contract
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Register Data On-Chain
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simple-nft-dapp.html">
+   Simple minting dApp
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignment-1/basic-smart-contract.html">
+   Assignment 1: Basic smart contract
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#react-project">
+   React Project
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#header-component">
+     Header component
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#register-component">
+     Register component
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/academy/tutorials/register-data.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <span class="target" id="register-data"></span><div class="section" id="register-data-on-chain">
+<h1>Register Data On-Chain<a class="headerlink" href="#register-data-on-chain" title="Permalink to this headline">#</a></h1>
+<p>In this tutorial, you will implement a very basic React application that can connect to the Concordium blockchain. It will not have any smart contract development and/or interaction, and does not even run a node. Concordium provides a very special transaction type to store data on-chain without even coding a smart contract. The simplest use case could be, for example, if you would like to make sure that a data’s integrity is not tampered with, then you can store that data’s hash on-chain and verify it later!</p>
+<div class="section" id="react-project">
+<h2>React Project<a class="headerlink" href="#react-project" title="Permalink to this headline">#</a></h2>
+<p>First, set up a working directory for our dApp and then create an empty react project from the template inside it. The tutorial assumes you already have <cite>yarn</cite> installed in your system and have a text editor. This tutorial uses <cite>vscode</cite> but you can use any code editor. To create a React project run the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yarn create react-app register-data-dapp --template typescript</span>
+</pre></div>
+</div>
+<p>It will take some time to fetch and install all packages and dependencies, and when it’s all done you will have something similar to the below.</p>
+<img alt="visual studio code window in dark mode after creating project" src="../_images/beg-reg-data1.png" />
+<p>And when you run it you will see the template application interface.</p>
+<img alt="web browser tab with application interface" src="../_images/beg-reg-data2.png" />
+<p>You will start from scratch with an empty React application that is bootstrapped from a React template and will be using <em>material-ui</em>. You will add the dependencies for some React components from <em>material-ui</em> and necessary libraries from concordium-web-sdk and concordium-web-wallet-helper. To do that, run the command below and yarn will install all specified packages.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yarn add @mui/material @emotion/react @mui/icons-material @emotion/styled @concordium/web-sdk @concordium/browser-wallet-api-helpers</span>
+</pre></div>
+</div>
+<p>Once complete, it creates a <strong>package.json</strong> file that includes all dependencies in it.</p>
+<img alt="visual studio code window in dark mode with package.json file open" src="../_images/beg-reg-data3.png" />
+<div class="section" id="header-component">
+<h3>Header component<a class="headerlink" href="#header-component" title="Permalink to this headline">#</a></h3>
+<p>Create a file called <strong>Header.tsx</strong> that will have a button and handle <code class="docutils literal notranslate"><span class="pre">connect()</span></code> to the Concordium Wallet for Web and paste the code below into the file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import {</span>
+<span class="go">detectConcordiumProvider,</span>
+<span class="go">WalletApi,</span>
+<span class="go">} from &quot;@concordium/browser-wallet-api-helpers&quot;;</span>
+<span class="go">import { AppBar, Toolbar, Typography, Button } from &quot;@mui/material&quot;;</span>
+<span class="go">import { useState } from &quot;react&quot;;</span>
+<span class="go">export default function Header(props: {</span>
+<span class="go">onConnected: (provider: WalletApi, account: string) =&gt; void;</span>
+<span class="go">onDisconnected: () =&gt; void;</span>
+<span class="go">}) {</span>
+<span class="go">const [isConnected, setConnected] = useState(false);</span>
+<span class="go">function connect() {</span>
+<span class="go">detectConcordiumProvider()</span>
+<span class="go">.then((provider) =&gt; {</span>
+<span class="go">    provider</span>
+<span class="go">    .connect()</span>
+<span class="go">    .then((account) =&gt; {</span>
+<span class="go">    setConnected(true);</span>
+<span class="go">    props.onConnected(provider, account!);</span>
+<span class="go">    })</span>
+<span class="go">    .catch((_) =&gt; {</span>
+<span class="go">    alert(&quot;Please allow wallet connection&quot;);</span>
+<span class="go">    setConnected(false);</span>
+<span class="go">    });</span>
+<span class="go">    provider.removeAllListeners();</span>
+<span class="go">    provider.on(&quot;accountDisconnected&quot;, () =&gt; {</span>
+<span class="go">    setConnected(false);</span>
+<span class="go">    props.onDisconnected();</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;accountChanged&quot;, (account) =&gt; {</span>
+<span class="go">    props.onDisconnected();</span>
+<span class="go">    props.onConnected(provider, account);</span>
+<span class="go">    setConnected(true);</span>
+<span class="go">    });</span>
+<span class="go">    provider.on(&quot;chainChanged&quot;, () =&gt; {</span>
+<span class="go">    props.onDisconnected();</span>
+<span class="go">    setConnected(false);</span>
+<span class="go">    });</span>
+<span class="go">})</span>
+<span class="go">.catch((_) =&gt; {</span>
+<span class="go">    console.error(`could not find provider`);</span>
+<span class="go">    alert(&quot;Please download Concordium Wallet for Web&quot;);</span>
+<span class="go">});</span>
+<span class="go">}</span>
+<span class="go">return (</span>
+<span class="go">&lt;AppBar&gt;</span>
+<span class="go">&lt;Toolbar&gt;</span>
+<span class="go">    &lt;Typography variant=&quot;h6&quot; component=&quot;div&quot; sx={{ flexGrow: 1 }}&gt;</span>
+<span class="go">    Concordium Register Data</span>
+<span class="go">    &lt;/Typography&gt;</span>
+<span class="go">    &lt;Button color=&quot;inherit&quot; onClick={connect} disabled={isConnected}&gt;</span>
+<span class="go">    {isConnected ? &quot;Connected&quot; : &quot;Connect&quot;}</span>
+<span class="go">    &lt;/Button&gt;</span>
+<span class="go">&lt;/Toolbar&gt;</span>
+<span class="go">&lt;/AppBar&gt;</span>
+<span class="go">);</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="register-component">
+<h3>Register component<a class="headerlink" href="#register-component" title="Permalink to this headline">#</a></h3>
+<p>Now create another file called <strong>Register.tsx</strong>. This component will take input from the user with a text box, calculate its SHA-256, and store it on-chain with a very simple and special type of transaction called <code class="docutils literal notranslate"><span class="pre">registerData</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import { detectConcordiumProvider } from &quot;@concordium/browser-wallet-api-helpers&quot;;</span>
+<span class="go">import {</span>
+<span class="go">AccountTransactionType,</span>
+<span class="go">DataBlob,</span>
+<span class="go">RegisterDataPayload,</span>
+<span class="go">sha256,</span>
+<span class="go">} from &quot;@concordium/web-sdk&quot;;</span>
+<span class="go">import { Button, Link, Stack, TextField, Typography } from &quot;@mui/material&quot;;</span>
+<span class="go">import { FormEvent, useState } from &quot;react&quot;;</span>
+<span class="go">import { Buffer } from &quot;buffer/&quot;;</span>
+
+<span class="go">export default function RegisterData() {</span>
+<span class="go">let [state, setState] = useState({</span>
+<span class="go">checking: false,</span>
+<span class="go">error: &quot;&quot;,</span>
+<span class="go">hash: &quot;&quot;,</span>
+<span class="go">});</span>
+
+<span class="go">const submit = async (event: FormEvent&lt;HTMLFormElement&gt;) =&gt; {</span>
+<span class="go">event.preventDefault();</span>
+<span class="go">setState({ ...state, error: &quot;&quot;, checking: true, hash: &quot;&quot; });</span>
+<span class="go">const formData = new FormData(event.currentTarget);</span>
+
+<span class="go">var formValues = {</span>
+<span class="go">data: formData.get(&quot;data&quot;)?.toString() ?? &quot;&quot;,</span>
+<span class="go">};</span>
+
+<span class="go">if (!formValues.data) {</span>
+<span class="go">setState({ ...state, error: &quot;Invalid Data&quot; });</span>
+<span class="go">return;</span>
+<span class="go">}</span>
+
+<span class="go">const provider = await detectConcordiumProvider();</span>
+<span class="go">const account = await provider.connect();</span>
+
+<span class="go">if (!account) {</span>
+<span class="go">alert(&quot;Please connect&quot;);</span>
+<span class="go">}</span>
+
+<span class="go">try {</span>
+<span class="go">const txnHash = await provider.sendTransaction(</span>
+<span class="go">    account!,</span>
+<span class="go">    AccountTransactionType.RegisterData,</span>
+<span class="go">    {</span>
+<span class="go">    data: new DataBlob(sha256([Buffer.from(formValues.data)])),</span>
+<span class="go">    } as RegisterDataPayload</span>
+<span class="go">);</span>
+
+<span class="go">setState({ checking: false, error: &quot;&quot;, hash: txnHash });</span>
+<span class="go">} catch (error: any) {</span>
+<span class="go">setState({ checking: false, error: error.message || error, hash: &quot;&quot; });</span>
+<span class="go">}</span>
+<span class="go">};</span>
+
+<span class="go">return (</span>
+<span class="go">&lt;Stack</span>
+<span class="go">component={&quot;form&quot;}</span>
+<span class="go">spacing={2}</span>
+<span class="go">onSubmit={submit}</span>
+<span class="go">autoComplete={&quot;true&quot;}</span>
+<span class="go">&gt;</span>
+<span class="go">&lt;TextField</span>
+<span class="go">    id=&quot;data&quot;</span>
+<span class="go">    name=&quot;data&quot;</span>
+<span class="go">    label=&quot;Data&quot;</span>
+<span class="go">    variant=&quot;standard&quot;</span>
+<span class="go">    disabled={state.checking}</span>
+<span class="go">/&gt;</span>
+<span class="go">{state.error &amp;&amp; (</span>
+<span class="go">    &lt;Typography component=&quot;div&quot; color=&quot;error&quot;&gt;</span>
+<span class="go">    {state.error}</span>
+<span class="go">    &lt;/Typography&gt;</span>
+<span class="go">)}</span>
+<span class="go">{state.checking &amp;&amp; &lt;Typography component=&quot;div&quot;&gt;Checking..&lt;/Typography&gt;}</span>
+<span class="go">{state.hash &amp;&amp; (</span>
+<span class="go">    &lt;Link</span>
+<span class="go">    href={`https://dashboard.testnet.concordium.com/lookup/${state.hash}`}</span>
+<span class="go">    target=&quot;_blank&quot;</span>
+<span class="go">    &gt;</span>
+<span class="go">    View Transaction &lt;br /&gt;</span>
+<span class="go">    {state.hash}</span>
+<span class="go">    &lt;/Link&gt;</span>
+<span class="go">)}</span>
+<span class="go">&lt;Button</span>
+<span class="go">    type=&quot;submit&quot;</span>
+<span class="go">    variant=&quot;contained&quot;</span>
+<span class="go">    fullWidth</span>
+<span class="go">    size=&quot;large&quot;</span>
+<span class="go">    disabled={state.checking}</span>
+<span class="go">&gt;</span>
+<span class="go">    Register Data</span>
+<span class="go">&lt;/Button&gt;</span>
+<span class="go">&lt;/Stack&gt;</span>
+<span class="go">);</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Specifically, zoom in on a part of the code shown below. There are two important parts where you need to be careful: first, the connection with the wallet, and second, the transaction parameters. To make sure these are provided, add a control that checks if the wallet is already connected successfully. Then, you need to give the data as a parameter to the <code class="docutils literal notranslate"><span class="pre">AccountTransactionType.RegisterData</span></code> transaction. (convert it to sha256) Keep the returning transaction hash (_txnHash)_ to verify our transaction’s state and what it entails.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">const provider = await detectConcordiumProvider();</span>
+<span class="go">const account = await provider.connect();</span>
+
+<span class="go">if (!account) {</span>
+<span class="go">alert(&quot;Please connect&quot;);</span>
+<span class="go">}</span>
+
+<span class="go">try {</span>
+<span class="go">const txnHash = await provider.sendTransaction(</span>
+<span class="go">    account!,</span>
+<span class="go">    AccountTransactionType.RegisterData,</span>
+<span class="go">    {</span>
+<span class="go">    data: new DataBlob(sha256([Buffer.from(formValues.data)])),</span>
+<span class="go">    } as RegisterDataPayload</span>
+<span class="go">);</span>
+
+<span class="go">setState({ checking: false, error: &quot;&quot;, hash: txnHash });</span>
+<span class="go">} catch (error: any) {</span>
+<span class="go">setState({ checking: false, error: error.message || error, hash: &quot;&quot; });</span>
+<span class="go">}</span>
+<span class="go">};</span>
+</pre></div>
+</div>
+<p>Open the <strong>App.tsx</strong> file and paste the code below into the file. You are calling these two components from the application’s main function.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import &quot;./App.css&quot;;</span>
+<span class="go">import Header from &quot;./Header&quot;;</span>
+<span class="go">import { useState } from &quot;react&quot;;</span>
+<span class="go">import { Container } from &quot;@mui/material&quot;;</span>
+<span class="go">import RegisterData from &quot;./RegisterData&quot;;</span>
+
+<span class="go">export default function App() {</span>
+<span class="go">const [isConnected, setConnected] = useState(false);</span>
+
+<span class="go">return (</span>
+<span class="go">&lt;div className=&quot;App&quot;&gt;</span>
+<span class="go">&lt;Header</span>
+<span class="go">    onConnected={() =&gt; setConnected(true)}</span>
+<span class="go">    onDisconnected={() =&gt; setConnected(false)}</span>
+<span class="go">/&gt;</span>
+<span class="go">&lt;Container sx={{ mt: 15 }}&gt;{isConnected &amp;&amp; &lt;RegisterData /&gt;}&lt;/Container&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">);</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>If everything is correct, you should see something similar to below.</p>
+<img alt="web browser tab with dApp running" src="../_images/beg-reg-data4.png" />
+<p>Connect it and you will have:</p>
+<img alt="web browser tab with dApp running" src="../_images/beg-reg-data5.png" />
+<p>Fill it in with the string <cite>concordium</cite> and click <strong>REGISTER DATA</strong>.</p>
+<img alt="web browser tab with dApp running and web wallet extension open" src="../_images/beg-reg-data6.png" />
+<p>The application will print the <code class="docutils literal notranslate"><span class="pre">TxnHash</span></code> value for you to track on the block explorer. Click that to verify it.</p>
+<img alt="web browser tab with CCDScan running showing transaction lookup" src="../_images/beg-reg-data7.png" />
+<p>It redirects you to that partciular block in CCDScan.</p>
+<img alt="web browser tab with dApp running" src="../_images/beg-reg-data8.png" />
+<p>If you want to compare the data you stored in the Concordium SHA-256 version, you can use <a class="reference external" href="https://emn178.github.io/online-tools/sha256.html">this online tool</a> to calculate any text’s SHA-256.</p>
+<img alt="web browser tab with sha256 tool running" src="../_images/beg-reg-data9.png" />
+<p>As expected, those two values are matched! Step back for one second and think about what you implemented with this dApp. What you have done is store proof of data on-chain and allow everybody who wants to check that your data’s integrity is preserved or not can go and verify it by looking at this brilliant decentralized network. It is stored on-chain now and no one can change it. Full code can be found <a class="reference external" href="https://github.com/bogacyigitbasi/registerdata">here</a>.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="counter-contract.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Concordium counter smart contract</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="simple-nft-dapp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Simple minting dApp</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
