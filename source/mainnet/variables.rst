@@ -14,7 +14,7 @@
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client_6.2.1-0
-.. |client-version| replace:: 6.2.0-0
+.. |client-version| replace:: 6.2.1-0
 .. |client-linux-checksum| replace:: a52a035100d4b72580024b96bd69c750c3f20da8d93f6c405dde70f12c9dd878
 
 .. Cargo verification variables
