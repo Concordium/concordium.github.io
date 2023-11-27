@@ -993,7 +993,7 @@ Testnet
 
     A ``DryRun`` endpoint has also been that allows simulating the execution of transactions.
 
-    The account map is now kept solely on disk in a separate lmdb database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.
+    The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.
 
     .. dropdown:: Previous releases
 
