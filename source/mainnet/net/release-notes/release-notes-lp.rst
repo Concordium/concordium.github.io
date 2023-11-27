@@ -19,7 +19,7 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    November 27, 2023
+    November 28, 2023
 
     Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
