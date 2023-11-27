@@ -989,7 +989,7 @@ Testnet
 
     Version 6.2.3 removes the V1 gRPC API. This removes the configuration options ``CONCORDIUM_NODE_RPC_SERVER_PORT``, ``CONCORDIUM_NODE_RPC_SERVER_ADDRESS``, ``CONCORDIUM_NODE_RPC_SERVER_TOKEN``, ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the `standard GRPC health service API <https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto>`__.
 
-    As part of the tokenomics changes the node has new configuration options that uses the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.
+    As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.
 
     A ``DryRun`` endpoint has also been that allows simulating the execution of transactions.
 

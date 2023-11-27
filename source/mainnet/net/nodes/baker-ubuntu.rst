@@ -70,7 +70,7 @@ Prerequisites
 
          [Service]
 
-         Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json
+         Environment=CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json
          BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json
 
       Where you replace the path `/home/user/concordium/validator-credentials.json` with the actual location of the file.
