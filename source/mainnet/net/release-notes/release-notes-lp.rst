@@ -989,11 +989,21 @@ Mainnet
 Testnet
 -------
 
-    October 16, 2023
+    November 28, 2023
 
-    Version 6.1.7 adds load shedding for gRPC v2. This helps with protecting the node in case of high number of concurrent requests since they are now dropped immediately as opposed to queued.
+    Version 6.2.3 removes the V1 gRPC API. This removes the configuration options ``CONCORDIUM_NODE_RPC_SERVER_PORT``, ``CONCORDIUM_NODE_RPC_SERVER_ADDRESS``, ``CONCORDIUM_NODE_RPC_SERVER_TOKEN``, ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the `standard GRPC health service API <https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto>`__.
+
+    As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.
+
+    A ``DryRun`` endpoint has also been that allows simulating the execution of transactions.
+
+    The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.1.7 - October 16, 2023
+
+            Version 6.1.7 adds load shedding for gRPC v2. This helps with protecting the node in case of high number of concurrent requests since they are now dropped immediately as opposed to queued.
 
         .. dropdown:: 6.1.6 - October 10, 2023
 
@@ -1459,23 +1469,37 @@ Tools
 Concordium Client
 -----------------
 
-    October 10, 2023
+    November 28, 2023
 
-        Concordium Client 6.1.0 includes support for the following:
+        Concordium Client 6.2.1 includes support for the following:
 
-            - Added baker win-time command for determining the earliest time a specified baker is expected to bake.
+        - Revised client's reconnect handling so that the client will no longer attempt to automatically reconnect on timeouts and node resource exhaustion.
 
-            - Added support for the following node version 6.1 queries under the ``raw`` command:
+        - Renamed bakers to validators in output in accordance with the upcoming tokenomics changes.
 
-                - ``GetBakersRewardPeriod``
-                - ``GetBlockCertificates``
-                - ``GetBakerEarliestWinTime``
-                - ``GetWinningBakersEpoch``
-                - ``GetFirstBlockEpoch``
-                - Add support for CommissionRates in ``CurrentPaydayBakerPoolStatus`` (Only available for node versions > 6.0).
-                - Show all options for importing an account.
+        - Added additional configuration options that use validator in place of baker in accordance with the upcoming tokenomics changes. For example, ``concordium-client validator add``. The older options still exist, but are hidden.
+
+        - The ``module inspect`` command now attempts to print any embedded verifiable build information.
+
+        - The ``module deploy`` command now warns if a module is being deployed that does not have embedded verifiable build information.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.1.0 - October 10, 2023
+
+            Concordium Client 6.1.0 includes support for the following:
+
+                - Added baker win-time command for determining the earliest time a specified baker is expected to bake.
+
+                - Added support for the following node version 6.1 queries under the ``raw`` command:
+
+                    - ``GetBakersRewardPeriod``
+                    - ``GetBlockCertificates``
+                    - ``GetBakerEarliestWinTime``
+                    - ``GetWinningBakersEpoch``
+                    - ``GetFirstBlockEpoch``
+                    - Add support for CommissionRates in ``CurrentPaydayBakerPoolStatus`` (Only available for node versions > 6.0).
+                    - Show all options for importing an account.
 
         .. dropdown:: 6.0.1 - August 9, 2023
 

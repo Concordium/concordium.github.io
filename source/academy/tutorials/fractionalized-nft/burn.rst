@@ -41,7 +41,7 @@ Run the command below after the necessary changes in the parameter JSON.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint transfer --parameter-json cis2-fractionalizer/burn-20.json --schema dist/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint transfer --parameter-json cis2-fractionalizer/burn-20.json --schema dist/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 As usual, after a change, check the state.
 
@@ -78,7 +78,7 @@ Run the transfer command below.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint transfer --parameter-json cis2-fractionalizer/transfer-account.json --schema dist/schema.bin --sender <YOUR-ADDRESS>  --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint transfer --parameter-json cis2-fractionalizer/transfer-account.json --schema dist/schema.bin --sender <YOUR-ADDRESS>  --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 .. image:: ../../images/mid-fractnft-burn2.png
 

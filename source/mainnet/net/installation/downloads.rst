@@ -154,7 +154,7 @@ The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13
 Concordium Client |client-version|
 ===================================
 
--  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_6.1.0-1>`_
+-  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_6.2.1-0>`_
 
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
       - :ref:`Verification instructions <verification-client-linux>`
@@ -167,13 +167,13 @@ Concordium Client |client-version|
 
    where you replace `*` with |client-version|.
 
--  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-6.1.0-1.pkg>`_
+-  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-6.2.1-0.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_6.1.0-0.exe>`_
+-  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_6.2.1-0.exe>`_
 
 .. _cargo-concordium-testnet:
 
@@ -240,9 +240,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Ubuntu |testnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.7-0_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.2.3-0_amd64.deb>`_.
 
-      - SHA256 checksum of the download: ``b1b1e1c5e2e9e8100094a2e1d9fced47dc98e9dfcf0897e89755011adc44781a``
+      - SHA256 checksum of the download: ``5e97f77f3dedfd8921045a3ed4623600281b5331d37e527424a2f01068e6b2b1``
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -256,13 +256,13 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.1.7-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.2.3-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.1.7-1.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.2.3-0.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
@@ -299,7 +299,7 @@ Download the block separately to inspect it or to run a node in a custom configu
 Auxiliary tools
 ===============
 
-Auxiliary tools are a collection of tools that can be used by developers to perform actions as needed.
+Auxiliary tools are a collection of tools that can be used to perform actions as needed.
 
 Encrypt/decrypt tool v1.0.0
 ---------------------------
@@ -311,6 +311,37 @@ Encrypt/decrypt tool v1.0.0
 - `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
 For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.
+
+Company identity management tool v1.0.2
+---------------------------------------
+
+Use this tool to create a company identity, request accounts using a company identity, and recover a company identity.
+
+- `Download the Company identity management tool for Linux - Debian package <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.deb>`_
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``c728dbe0b5ab950e4e705d7faceaee4b5ade615acd34b3bc6e75250acdedfaa9``.
+
+- `Download the Company identity management tool for Linux - App image <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.AppImage>`_
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.AppImage
+      #. Verify that the output matches the SHA256 checksum ``8b6964d827808d3a8a9244d202e3aa8cdffeb2462edf44b3e32e7b41549b710f``.
+
+- `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/Concordium_Company_ID_1.0.2_x64_en-US.msi>`_
+
+- `Download the Company identity management tool for MacOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
+
+For information about how to use the company identity management tool, see :ref:`company-identities`.
 
 .. toctree::
    :hidden:
