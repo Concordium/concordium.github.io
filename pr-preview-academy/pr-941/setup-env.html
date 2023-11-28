@@ -1,0 +1,631 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setup the development environment &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/tippy.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Beginner level tutorials and assignment" href="beg-tutorials.html" />
+    <link rel="prev" title="Getting started" href="intro.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://academy.concordium.software/">
+        <img class="logo" src="_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <style>
+  body {margin:0;}
+  
+  .navbar-menu {
+    position: relative;
+    margin-left: 190px;
+    background: none;
+  }
+  
+  .navbar-light {
+      background: #ededed!important;
+      box-shadow: none;
+  }
+  
+  .navbar-menu a {
+    float: left;
+    display: inline;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    background: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+      float: left;
+    }
+  
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+  /* Large devices (laptops/desktops, 992px to 768px ) */
+  @media only screen and (max-width: 1178px) {
+    .navbar-menu {
+      display: none;}
+  
+  }
+  </style>
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <div class="dropdown">
+    <button class="dropbtn"><a href="intro.html">Introduction</a></button>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="beg-tutorials.html">Beginner</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="mid-tutorials.html">Intermediate</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="adv-tutorials.html">Advanced</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit">Claim badge</a></button>
+  </div>
+  </div>
+</div>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
+            <label class="sr-only">Monitor</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
+            <label class="sr-only">YouTube</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
+            <label class="sr-only">Medium</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/index.html" rel="noopener" target="_blank" title="Documentation"><span><i class="fas fa-book"></i></span>
+            <label class="sr-only">Documentation</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-concordium-client">
+   Install Concordium Client
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-a-node">
+   Run a node
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sync-your-node">
+     Sync your node
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-a-wallet">
+   Setup a wallet
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-the-key">
+     Import the key
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/academy/setup-env.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="setup-the-development-environment">
+<span id="setup-env"></span><h1>Setup the development environment<a class="headerlink" href="#setup-the-development-environment" title="Permalink to this headline">#</a></h1>
+<p>First, you need to install <code class="docutils literal notranslate"><span class="pre">rustup</span></code> which installs Rust and Cargo to your computer. Go to <a class="reference external" href="https://rustup.rs/">Rustup</a> to install <code class="docutils literal notranslate"><span class="pre">rustup</span></code> for your platform.</p>
+<p>Select <strong>1</strong> to continue the installation.</p>
+<a class="reference internal image-reference" href="_images/mint-install-rustup.png"><img alt="_images/mint-install-rustup.png" src="_images/mint-install-rustup.png" style="width: 100%;" /></a>
+<p>Finally, when Rust and Cargo are successfully installed in your system, you should see something similar to below.</p>
+<a class="reference internal image-reference" href="_images/mint-rust-install-done.png"><img alt="_images/mint-rust-install-done.png" src="_images/mint-rust-install-done.png" style="width: 100%;" /></a>
+<p>Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rustup target add wasm32-unknown-unknown</span>
+</pre></div>
+</div>
+<p>During Wasm installation in your system you should see something similar to below.</p>
+<a class="reference internal image-reference" href="_images/mint-wasm-install.png"><img alt="_images/mint-wasm-install.png" src="_images/mint-wasm-install.png" style="width: 100%;" /></a>
+<p>Now you need to install the Concordium software package. <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/installation/downloads.html#cargo-concordium-testnet" title="(in Concordium)"><span class="xref std std-ref">Click here</span></a> and download the version 2.2.0 or greater of <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> for your operating system. The tool is the same for both testnet and mainnet.</p>
+<p>First, rename the <code class="docutils literal notranslate"><span class="pre">cargo-congordium-v.x.x</span></code> file to <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>. Then go to the directory where the file is downloaded and run this command to make it executable. You also need to move the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> executable to the cargo folder. <a class="reference external" href="https://developer.concordium.software/en/mainnet/smart-contracts/guides/setup-tools.html#setup-tools" title="(in Concordium)"><span class="xref std std-ref">Follow the information here</span></a> to ensure that your cargo-concordium is configured correctly. The commands below are specifically for MacOS. Remember to adjust the commands based on your operating system.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo chmod +x cargo-concordium</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mv cargo-concordium ~/.cargo/bin</span>
+</pre></div>
+</div>
+<p>If everything is correct, when you enter the command <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">--help</span></code> it shows something similar to the below.</p>
+<a class="reference internal image-reference" href="_images/cargo-help.png"><img alt="_images/cargo-help.png" src="_images/cargo-help.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have a warning on a Mac device that says “cargo-concordium cannot be opened because the developer cannot be verified” that means it requires permission to run and you should go to <strong>System Preferences → Security</strong> and unlock it with your password and click <strong>Allow Anyway</strong>.</p>
+<a class="reference internal image-reference" href="_images/mac-warning.png"><img alt="_images/mac-warning.png" src="_images/mac-warning.png" style="width: 100%;" /></a>
+</div>
+<div class="section" id="install-concordium-client">
+<span id="interact-with-your-contract"></span><h2>Install Concordium Client<a class="headerlink" href="#install-concordium-client" title="Permalink to this headline">#</a></h2>
+<p>The tutorials use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as a command line tool to deploy, mint, and transfer. <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/installation/downloads.html#concordium-node-and-client-download-testnet" title="(in Concordium)"><span class="xref std std-ref">Download it here</span></a>. Rename the package to <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> in case it has some version annotation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not using Ubuntu/Linux as your operating system, the following screenshots will look different.
+Remember to adjust the following commands based on your operating system.</p>
+</div>
+<p>Go to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. You can check if you are in the correct folder when you see the output <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> from the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ls <span class="p">|</span> grep <span class="s1">&#39;concordium-client&#39;</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/pb_tutorial_10.png"><img alt="_images/pb_tutorial_10.png" src="_images/pb_tutorial_10.png" style="width: 70%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Alternatively, if you don’t want to navigate around in the folders, you can add the folder where the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool is located to your PATH variable with the command:
+<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;$HOME/path/to/your/concordium-client:$PATH&quot;</span></code>.
+This allows you to use the following commands (such as <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">--help</span></code>)
+without prepending them with <code class="docutils literal notranslate"><span class="pre">./</span></code>. Effectively,  prepending with <code class="docutils literal notranslate"><span class="pre">./</span></code>
+searches for the executable package in the current directory while
+omitting <code class="docutils literal notranslate"><span class="pre">./</span></code> searches for the executable package in the PATH variable.</p>
+</div>
+<p>The package is not yet executable. You change this with the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod +x concordium-client
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/pb_tutorial_8.png"><img alt="_images/pb_tutorial_8.png" src="_images/pb_tutorial_8.png" style="width: 50%;" /></a>
+<p>Check whether you can execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client --help
+</pre></div>
+</div>
+<p>You should see some output that will help you in getting familiar with the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
+<a class="reference internal image-reference" href="_images/pb_tutorial_9.png"><img alt="_images/pb_tutorial_9.png" src="_images/pb_tutorial_9.png" style="width: 100%;" /></a>
+<p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool allows you to interact with your testnet node. You find important commands that the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool provides <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/references/concordium-client.html#concordium-client" title="(in Concordium)"><span class="xref std std-ref">here</span></a>.</p>
+<p>Your next task enables the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to talk to your testnet node. There are two options to achieve this:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Option 1 (beginners)</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This option explains how to transfer the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool to your instance and execute commands from within the instance.</p>
+<p class="sd-card-text"><strong>Advantage</strong>: You can execute the commands within your instance.</p>
+<p class="sd-card-text"><strong>Disadvantage</strong>: You have to transfer files between your local machine and your instance.</p>
+<p class="sd-card-text">Transfer the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> package from your machine via a file-sharing tool (such as <a class="reference external" href="https://filezilla-project.org/">FileZilla</a> or the <code class="docutils literal notranslate"><span class="pre">sftp</span></code> command) to your instance.</p>
+<p class="sd-card-text">Connect to your instance and make your package executable again as you have done previously already:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod +x concordium-client
+</pre></div>
+</div>
+<p class="sd-card-text">Check if everything is connected correctly by displaying the best/latest block.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<p class="sd-card-text">You should see some block data output.</p>
+<a class="reference internal image-reference" href="_images/pb_tutorial_18.png"><img alt="_images/pb_tutorial_18.png" src="_images/pb_tutorial_18.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Port 20001 is open by default on your testnet node to interact with it.</p>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Option 2 (advanced users)</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This option explains how you can use the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool locally on your machine and connect remotely to your node running on the server.</p>
+<p class="sd-card-text"><strong>Advantage</strong>: You don’t have to transfer files between your local machine and your instance later in the tutorial.</p>
+<p class="sd-card-text"><strong>Disadvantage</strong>: You have to use ssh with port forwarding when you run a command locally.</p>
+<p class="sd-card-text">Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 20001 on your localhost is forwarded to the port 20001 on your instance.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ssh -NL localhost:20001:&lt;IP-address-of-your-instance&gt;:20001 &lt;username&gt;@&lt;host&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/pb_tutorial_26.png"><img alt="_images/pb_tutorial_26.png" src="_images/pb_tutorial_26.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Port 20001 is open by default on your testnet node to interact with it. Cloud providers often use <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> as the default &lt;username&gt; and the &lt;IP-address-of-your-instance&gt; as the default &lt;host&gt;.</p>
+</div>
+<p class="sd-card-text">Go in another terminal B to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. Check if everything is connected correctly by displaying the best/latest block.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">20001</span>
+</pre></div>
+</div>
+<p class="sd-card-text">You should see some block data output.</p>
+<a class="reference internal image-reference" href="_images/pb_tutorial_17.png"><img alt="_images/pb_tutorial_17.png" src="_images/pb_tutorial_17.png" style="width: 100%;" /></a>
+</div>
+</details></div>
+<div class="section" id="run-a-node">
+<h2>Run a node<a class="headerlink" href="#run-a-node" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is technically fine to run your testnet node locally on your machine instead of on a server in the cloud. Since blockchain nodes have to run 24/7 to be up-to-date with the blockchain, you have to run your local machine 24/7. Alternatively, if you don’t want to run your local machine 24/7, you can let your node catch up whenever you start your machine. Because this takes some time, the tutorials recommend a cloud provider setup for convenience.</p>
+</div>
+<p>You will need to run a node. You can run any node platform you wish. You can create an account on your favorite cloud provider to set up your instance unless you intend to run a testnet node locally on your machine. The following are the requirements to run a simple testnet node. See the <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/nodes/node-requirements.html#system-requirements-node-mainnet" title="(in Concordium)"><span class="xref std std-ref">requirements</span></a> for mainnet nodes.</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Hardware (Testnet node)</p></th>
+<th class="head"><p>Recommended</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CPU (Core)</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM (Memory)</p></td>
+<td><p>8 GB</p></td>
+</tr>
+<tr class="row-even"><td><p>Storage</p></td>
+<td><p>25 GB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Operating system</p></td>
+<td><p>Ubuntu 20.04 or 22.04</p></td>
+</tr>
+</tbody>
+</table>
+<p>You can also run a Docker image of a node that can be <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/guides/run-node.html#run-a-node" title="(in Concordium)"><span class="xref std std-ref">found here</span></a>.  Docker file configurations can be found in the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file as described <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/guides/run-node.html#run-a-node" title="(in Concordium)"><span class="xref std std-ref">here</span></a>. Don’t forget the set a name for your node with the parameter <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_COLLECTOR_NODE_NAME</span></code>.</p>
+<div class="section" id="sync-your-node">
+<h3>Sync your node<a class="headerlink" href="#sync-your-node" title="Permalink to this headline">#</a></h3>
+<p>Start the syncing process of the testnet node by following the guide for your platform <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/nodes/ubuntu.html#ubuntu-node" title="(in Concordium)"><span class="xref std std-ref">Ubuntu</span></a>, <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/nodes/docker.html#docker-node" title="(in Concordium)"><span class="xref std std-ref">Docker</span></a>, <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/nodes/windows.html#windows-node" title="(in Concordium)"><span class="xref std std-ref">Windows</span></a>, or <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/nodes/macos.html#macos-node" title="(in Concordium)"><span class="xref std std-ref">MacOS</span></a>. This step currently takes some time, potentially hours based on your device configuration, because your node is freshly started and needs to recover all the previous blocks.</p>
+<p>You should find your node name on the <a class="reference external" href="https://dashboard.testnet.concordium.com/">Concordium testnet dashboard</a>. It will take less than a day until your testnet node is fully synced. You can observe the syncing process by watching the finalization length of your node. Wait until the <code class="docutils literal notranslate"><span class="pre">Fin</span> <span class="pre">Length</span></code> (finalization length) of your node is the same as the highest value used by the majority of nodes. Once the height value is the same as the height in <a class="reference external" href="https://testnet.ccdscan.io/blocks">CCDScan</a>, then you can continue with the development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To allow the network dashboard to display nodes in the network and their current status, a node must run a collector. The collector is enabled by the default start-up script but can be disabled.</p>
+</div>
+<a class="reference internal image-reference" href="_images/pb_tutorial_13.png"><img alt="_images/pb_tutorial_13.png" src="_images/pb_tutorial_13.png" style="width: 100%;" /></a>
+<p>Alternatively, you can query the syncing state of your node with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. Wait until the <code class="docutils literal notranslate"><span class="pre">last</span> <span class="pre">finalized</span> <span class="pre">block</span> <span class="pre">height</span></code> of your node is the same as the highest value used by the majority of nodes.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./concordium-client consensus status --grpc-port 20001</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/pb_tutorial_19.png"><img alt="_images/pb_tutorial_19.png" src="_images/pb_tutorial_19.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is a good practice to enable inbound connections on port 8889 (testnet) in your instance. You can allow inbound connections from any IPv4 and IPv6 address, by selecting <code class="docutils literal notranslate"><span class="pre">0.0.0.0/0</span></code> and <code class="docutils literal notranslate"><span class="pre">::/0</span></code> on the port 8889. This is not mandatory for the node to sync but it will make your node a good network participant. Feel free to skip this step if you are not feeling confident editing the inbound connection rules of your instance.</p>
+</div>
+<a class="reference internal image-reference" href="_images/pb_tutorial_12.png"><img alt="_images/pb_tutorial_12.png" src="_images/pb_tutorial_12.png" style="width: 100%;" /></a>
+<p>Remember you are working on the testnet. Check if your node collector is up and running in CCDScan. Look for the name of your node in the network section of the dashboard.</p>
+<a class="reference internal image-reference" href="_images/node-collector.png"><img alt="_images/node-collector.png" src="_images/node-collector.png" style="width: 100%;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For testing purposes, a node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with GRPC v1, gRPC v2, and gRPC web. The address is node.testnet.concordium.com on port 10000 (GRPCv1) and port 20000 (gRPCv2 and gRPC-web). This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the <a class="reference external" href="https://status.testnet.concordium.software">Testnet status page</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="setup-a-wallet">
+<span id="setup-wallet"></span><h2>Setup a wallet<a class="headerlink" href="#setup-a-wallet" title="Permalink to this headline">#</a></h2>
+<p>Now you need a Concordium wallet. Use the Concordium Wallet for Web. The Concordium Wallet for Web uses a 24 word secret recovery phrase to secure your wallet. Make sure to protect your 24 word secret recovery phrase and store it in a secure place. Anyone who knows the secret recovery phrase can access your wallet.</p>
+<p>Use <a class="reference external" href="https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US">this link</a> to install a Concordium Wallet for Web in a chromium web browser. Follow <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/browser-wallet/setup-browser-wallet.html#setup-bw" title="(in Concordium)"><span class="xref std std-ref">these instructions</span></a> to install the extension. Configure it to run on testnet with an identity created from the Concordium testnet IP (shown below) and an account based on that identity. You don’t have to provide an ID to create an identity on testnet when selecting <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">testnet</span> <span class="pre">IP</span></code>. Test identities are meant for testnet testing only.</p>
+<a class="reference internal image-reference" href="_images/bw-idp-selection.png"><img alt="_images/bw-idp-selection.png" src="_images/bw-idp-selection.png" style="width: 100%;" /></a>
+<p id="testnet-faucet">Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.</p>
+<a class="reference internal image-reference" href="_images/testnet-faucet-bw.png"><img alt="_images/testnet-faucet-bw.png" src="_images/testnet-faucet-bw.png" style="width: 50%;" /></a>
+<p>One thing to note is that if you click <a class="reference internal" href="_images/send-ccd.png"><img alt="button with paper airplane" src="_images/send-ccd.png" style="width: 50px;" /></a>, you enter transaction window. This allows you to transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see just below those textboxes, there is a value highlighting the “Estimated transaction fee” in CCD terms. This allows you to estimate the costs beforehand and it allows helps you to calculate your business expenses in the future.</p>
+<a class="reference internal image-reference" href="_images/tx-fee-in-bw.png"><img alt="_images/tx-fee-in-bw.png" src="_images/tx-fee-in-bw.png" style="width: 100%;" /></a>
+<p>After that step, you need to <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/guides/export-key.html#export-key" title="(in Concordium)"><span class="xref std std-ref">export the keys</span></a> for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this &lt;YOUR PUBLIC ADDRESS&gt;.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.</p>
+<a class="reference internal image-reference" href="_images/bw-export-key.png"><img alt="_images/bw-export-key.png" src="_images/bw-export-key.png" style="width: 100%;" /></a>
+<p>When you export the key it creates a file named <code class="docutils literal notranslate"><span class="pre">&lt;YOUR</span> <span class="pre">PUBLIC</span> <span class="pre">ADDRESS&gt;.export</span></code>. Open it with a text editor and find your <code class="docutils literal notranslate"><span class="pre">signKey</span></code>, <code class="docutils literal notranslate"><span class="pre">verifyKey</span></code> in there. Copy the <code class="docutils literal notranslate"><span class="pre">signKey</span></code> and your address. You will use it while deploying and interacting with your contract.</p>
+<a class="reference internal image-reference" href="_images/bw-exported-key.png"><img alt="_images/bw-exported-key.png" src="_images/bw-exported-key.png" style="width: 100%;" /></a>
+<div class="section" id="import-the-key">
+<h3>Import the key<a class="headerlink" href="#import-the-key" title="Permalink to this headline">#</a></h3>
+<p>You are ready to import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration. Transfer your wallet key export file to the place where you are running your <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool. Navigate to the folder as well.</p>
+<p>Import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import &lt;Wallet.export&gt; --name &lt;Your-Wallet-Name&gt;.json</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Getting started</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="beg-tutorials.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Beginner level tutorials and assignment</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
