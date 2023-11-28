@@ -26,10 +26,9 @@ The solution is to delete the relevant portion of the database.
 
 The database directory should contain matching pairs of ``blockstate-$i.dat`` and ``treestate-$i`` files for some number of consecutive i's starting at 0. The number of the files differs depending on which protocol version is current.
 
-.. image:: ../images/run-node/windows-node-db-files.png
-
 .. code-block:: console
 
+   accountmap
    blockstate-0.dat
    blockstate-1.dat
    blockstate-2.dat
