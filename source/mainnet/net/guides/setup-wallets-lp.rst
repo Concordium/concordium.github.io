@@ -13,4 +13,5 @@ Choose your wallet for instructions about installation and configuration.
 
     ../browser-wallet/setup-browser-wallet
     ../mobile-wallet-gen2/setup-mobile-wallet
+    ../mobile-wallet/setup-mobile-wallet
     overview-desktop

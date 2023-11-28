@@ -67,7 +67,7 @@ possible. While most of the common operations are available via high-level
 commands, the low-level commands provide a more direct interface to the node,
 and some information and capabilities are not available in high-level commands.
 
-The high-level commands are grouped by topic (``account``, ``baker``, ``config``
+The high-level commands are grouped by topic (``account``, ``validator``, ``config``
 etc.). The low-level commands are grouped in the ``raw`` category and have
 CamelCase names.
 
