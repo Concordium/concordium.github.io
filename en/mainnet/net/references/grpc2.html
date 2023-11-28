@@ -41,11 +41,11 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/grpc2.e04f7751-1077-4b9d-8b6b-7bb3a6dc2dcc.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/grpc2.bd1c50b5-2db9-4450-8337-93b19e2b266e.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="gRPC documentation" href="grpc.html" />
+    <link rel="next" title="Run a node on Concordium" href="../nodes/node-requirements.html" />
     <link rel="prev" title="Auxiliary Tools" href="developer-tools.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -645,11 +645,6 @@ body {margin:0;}
      <li class="toctree-l2 current active">
       <a class="current reference internal" href="#">
        gRPC V2 documentation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="grpc.html">
-       gRPC documentation
       </a>
      </li>
     </ul>
@@ -1798,25 +1793,19 @@ body {margin:0;}
                 
   <div class="section" id="grpc-v2-documentation">
 <span id="grpc2-documentation"></span><h1>gRPC V2 documentation<a class="headerlink" href="#grpc-v2-documentation" title="Permalink to this headline">#</a></h1>
-<p>Since version 4.5.0 the Concordium node, in addition to the legacy <a class="reference internal" href="grpc.html#grpc-documentation"><span class="std std-ref">gRPC
-API</span></a>, supports a new API that has a much more detailed
-schema definition, and does not rely on JSON responses. It also supports
-streaming responses in cases where there is a lot of data, and supports
-subscribing to new blocks and finalizations.</p>
-<p>The new V2 interface enables access to the same data as the original V1 interface,
-but in addition supports new endpoints, such as the ability to retrieve the
-entire smart contract state.</p>
-<p>The original gRPC interface is going into maintenance mode and will
-be deprecated in the future.</p>
-<p>The <a class="reference external" href="http://developer.concordium.software/concordium-grpc-api/#v2%2fconcordium%2fservice.proto">in-depth documentation</a>
-of the new interface lists and documents all the endpoints.</p>
-<p>As with the V1 interface, for best experience the interface should be used
-through an SDK. However the new interface makes it substantially easier to build
-an SDK since there is a canonical schema of responses.</p>
-<p>At present the <a class="reference external" href="https://github.com/Concordium/concordium-rust-sdk">Concordium Rust SDK</a>, <a class="reference external" href="https://github.com/Concordium/concordium-node-sdk-js">Concordium Javascript (Node / Web) SDK</a>, <a class="reference external" href="https://github.com/Concordium/concordium-net-sdk">.NET SDK</a> and <a class="reference external" href="https://github.com/Concordium/concordium-rosetta">Rosetta</a> have support for the new
-interface.
-Other SDKs will be migrated in the future, before the V1
-interface is deprecated.</p>
+<p>The gRPC v2 API has a much more detailed schema definition, and does not rely on JSON responses as the now deprecated gRPC v1 API did. It also supports streaming responses in cases where there is a lot of data, and supports subscribing to new blocks.</p>
+<p>The V2 interface enables access to the same data as the now deprecated V1 interface, but in addition supports new endpoints, such as the ability to retrieve the entire smart contract state.</p>
+<p>The original gRPC interface has been deprecated in all node distributions as of December 5th, 2023.</p>
+<p>The <a class="reference external" href="http://developer.concordium.software/concordium-grpc-api/#v2%2fconcordium%2fservice.proto">in-depth documentation</a> of the new interface lists and documents all the endpoints.</p>
+<p>For best experience, the interface should be used through an SDK. However, the new interface makes it substantially easier to build an SDK since there is a canonical schema of responses.</p>
+<p>At present the following SDKs support gRPC v2:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-sdk">Concordium Rust SDK</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-node-sdk-js">Concordium Javascript (Node / Web) SDK</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-net-sdk">.NET SDK</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rosetta">Rosetta</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-java-sdk">Concordium Java SDK</a></p></li>
+</ul>
 </div>
 
 
@@ -1832,10 +1821,10 @@ interface is deprecated.</p>
             <p class="prev-next-title">Auxiliary Tools</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="grpc.html" title="next page">
+    <a class='right-next' id="next-link" href="../nodes/node-requirements.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">gRPC documentation</p>
+        <p class="prev-next-title">Run a node on Concordium</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-ubuntu.c5feea55-630e-4cc5-b81f-75b7c9abb73b.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-ubuntu.e3cbd356-9089-4f88-b0c0-416fb559fa64.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -645,11 +645,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="../references/grpc2.html">
        gRPC V2 documentation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../references/grpc.html">
-       gRPC documentation
       </a>
      </li>
     </ul>
@@ -1881,7 +1876,7 @@ Store it, for example, in <code class="docutils literal notranslate"><span class
 <li><p class="sd-card-text">Add the following snippet to the opened file (the file is empty the first time you open it):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Service]</span>
 
-<span class="go">Environment=CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json</span>
+<span class="go">Environment=CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE=%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json</span>
 <span class="go">BindReadOnlyPaths=/home/user/concordium/validator-credentials.json:%S/concordium-b6078154d6717e909ce0da4a45a25151b592824f31624b755900a74429e3073d/validator-credentials.json</span>
 </pre></div>
 </div>

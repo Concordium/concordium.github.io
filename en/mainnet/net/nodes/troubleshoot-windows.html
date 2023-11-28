@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/troubleshoot-windows.fde83de7-2528-4cfe-a91c-5a4b618746fc.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/troubleshoot-windows.4780f797-2e88-4510-bdc4-dd4d6f12210a.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -645,11 +645,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="../references/grpc2.html">
        gRPC V2 documentation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../references/grpc.html">
-       gRPC documentation
       </a>
      </li>
     </ul>
@@ -1829,8 +1824,8 @@ body {margin:0;}
 </ul>
 <p>The solution is to delete the relevant portion of the database.</p>
 <p>The database directory should contain matching pairs of <code class="docutils literal notranslate"><span class="pre">blockstate-$i.dat</span></code> and <code class="docutils literal notranslate"><span class="pre">treestate-$i</span></code> files for some number of consecutive i’s starting at 0. The number of the files differs depending on which protocol version is current.</p>
-<img alt="../../_images/windows-node-db-files.png" src="../../_images/windows-node-db-files.png" />
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">blockstate-0.dat</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">accountmap</span>
+<span class="go">blockstate-0.dat</span>
 <span class="go">blockstate-1.dat</span>
 <span class="go">blockstate-2.dat</span>
 <span class="go">treestate-0</span>

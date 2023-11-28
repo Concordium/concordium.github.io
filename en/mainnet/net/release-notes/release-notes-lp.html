@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.c282fe22-83ce-4bf7-b835-afafabb5c276.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.f4db870c-272a-44db-a5d2-38fd27735298.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -645,11 +645,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="../references/grpc2.html">
        gRPC V2 documentation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../references/grpc.html">
-       gRPC documentation
       </a>
      </li>
     </ul>
@@ -3260,8 +3255,11 @@ This means that node runners <strong>must upgrade</strong> their nodes before th
 <div class="section" id="testnet">
 <span id="rn-node-testnet"></span><h3>Testnet<a class="headerlink" href="#testnet" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>October 16, 2023</p>
-<p>Version 6.1.7 adds load shedding for gRPC v2. This helps with protecting the node in case of high number of concurrent requests since they are now dropped immediately as opposed to queued.</p>
+<div><p>November 28, 2023</p>
+<p>Version 6.2.3 removes the V1 gRPC API. This removes the configuration options <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_PORT</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_ADDRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_TOKEN</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS</span></code> and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the <a class="reference external" href="https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto">standard GRPC health service API</a>.</p>
+<p>As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">DryRun</span></code> endpoint has also been that allows simulating the execution of transactions.</p>
+<p>The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -3270,6 +3268,15 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+6.1.7 - October 16, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 6.1.7 adds load shedding for gRPC v2. This helps with protecting the node in case of high number of concurrent requests since they are now dropped immediately as opposed to queued.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 6.1.6 - October 10, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -3846,27 +3853,16 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <div class="section" id="concordium-client">
 <span id="rn-client"></span><h3>Concordium Client<a class="headerlink" href="#concordium-client" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>October 10, 2023</p>
+<div><p>November 28, 2023</p>
 <blockquote>
-<div><p>Concordium Client 6.1.0 includes support for the following:</p>
-<blockquote>
-<div><ul>
-<li><p>Added baker win-time command for determining the earliest time a specified baker is expected to bake.</p></li>
-<li><p>Added support for the following node version 6.1 queries under the <code class="docutils literal notranslate"><span class="pre">raw</span></code> command:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GetBakersRewardPeriod</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetBlockCertificates</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetBakerEarliestWinTime</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetWinningBakersEpoch</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetFirstBlockEpoch</span></code></p></li>
-<li><p>Add support for CommissionRates in <code class="docutils literal notranslate"><span class="pre">CurrentPaydayBakerPoolStatus</span></code> (Only available for node versions &gt; 6.0).</p></li>
-<li><p>Show all options for importing an account.</p></li>
+<div><p>Concordium Client 6.2.1 includes support for the following:</p>
+<ul class="simple">
+<li><p>Revised client’s reconnect handling so that the client will no longer attempt to automatically reconnect on timeouts and node resource exhaustion.</p></li>
+<li><p>Renamed bakers to validators in output in accordance with the upcoming tokenomics changes.</p></li>
+<li><p>Added additional configuration options that use validator in place of baker in accordance with the upcoming tokenomics changes. For example, <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">validator</span> <span class="pre">add</span></code>. The older options still exist, but are hidden.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">inspect</span></code> command now attempts to print any embedded verifiable build information.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">deploy</span></code> command now warns if a module is being deployed that does not have embedded verifiable build information.</p></li>
 </ul>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
 </div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -3876,6 +3872,33 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+6.1.0 - October 10, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Client 6.1.0 includes support for the following:</p>
+<blockquote>
+<div><ul>
+<li><p class="sd-card-text">Added baker win-time command for determining the earliest time a specified baker is expected to bake.</p></li>
+<li><p class="sd-card-text">Added support for the following node version 6.1 queries under the <code class="docutils literal notranslate"><span class="pre">raw</span></code> command:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetBakersRewardPeriod</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetBlockCertificates</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetBakerEarliestWinTime</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetWinningBakersEpoch</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">GetFirstBlockEpoch</span></code></p></li>
+<li><p class="sd-card-text">Add support for CommissionRates in <code class="docutils literal notranslate"><span class="pre">CurrentPaydayBakerPoolStatus</span></code> (Only available for node versions &gt; 6.0).</p></li>
+<li><p class="sd-card-text">Show all options for importing an account.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 6.0.1 - August 9, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>

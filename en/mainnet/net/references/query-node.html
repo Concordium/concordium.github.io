@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/query-node.7f75c397-c148-4d6e-84be-0e80501f6144.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/query-node.2dbdd3b6-a568-4a1f-9b81-e1761d8e5ad8.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -645,11 +645,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="grpc2.html">
        gRPC V2 documentation
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="grpc.html">
-       gRPC documentation
       </a>
      </li>
     </ul>
@@ -1876,6 +1871,18 @@ body {margin:0;}
    Exchange rates
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validator-queries">
+   Validator queries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#earliest-time-a-validator-may-be-expected-to-produce-a-block">
+     Earliest time a validator may be expected to produce a block
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
 </nav>
@@ -1917,6 +1924,7 @@ the given transaction hash.</p></li>
 and its relation to other blocks on the chain.</p></li>
 <li><p>Consensus state: Show the parameters of the consensus protocol and
 statistics related to production of blocks.</p></li>
+<li><p>Validator queries: Show validator information.</p></li>
 </ul>
 <div class="section" id="account-state">
 <span id="query-account-state"></span><h2>Account state<a class="headerlink" href="#account-state" title="Permalink to this headline">#</a></h2>
@@ -2182,6 +2190,29 @@ following command:</p>
 </div>
 <p>This prints a JSON list containing any such pending updates. As before you can
 also pass a block hash to the command to query a specific block.</p>
+</div>
+<div class="section" id="validator-queries">
+<h2>Validator queries<a class="headerlink" href="#validator-queries" title="Permalink to this headline">#</a></h2>
+<div class="section" id="earliest-time-a-validator-may-be-expected-to-produce-a-block">
+<h3>Earliest time a validator may be expected to produce a block<a class="headerlink" href="#earliest-time-a-validator-may-be-expected-to-produce-a-block" title="Permalink to this headline">#</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator win-time <span class="m">1</span>
+<span class="go">Validator 1 is expected to produce a block no sooner than:</span>
+<span class="go">Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)</span>
+</pre></div>
+</div>
+<p>Get the projected earliest time at which a particular validator will be required to produce a block.</p>
+<p>If the validator is not a validator for the current reward period, this returns a timestamp at the
+start of the next reward period. If the validator is a validator for the current reward period, the
+earliest win time is projected from the current round forward, assuming that each round after
+the last finalized round will take the minimum block time. (If blocks take longer, or timeouts
+occur, the actual time may be later, and the reported time in subsequent queries may reflect
+this.) At the end of an epoch (or if the validator is not projected to produce a block before the end of the
+epoch) the earliest win time for a (current) validator will be projected as the start of the next
+epoch.</p>
+<p>One can supply the <code class="docutils literal notranslate"><span class="pre">--poll</span></code> option in order to continuously receive updates of when
+the supplied validator may be expected to produce a block.</p>
+<p>This query is only supported from protocol version 6 and onwards.</p>
+</div>
 </div>
 </div>
 
