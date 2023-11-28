@@ -354,6 +354,10 @@ Functions only accessible for smart contract receive functions.
       ``3`` for query a contract balance.
 
       ``4`` for query the exchange rates.
+
+      ``5`` for check the account signature.
+
+      ``6`` for query the account keys.
    :param i32 start: Pointer to the start of the invoke payload.
    :param i32 length: Length of the invoke payload.
    :return: If the last five bytes are ``0`` then the call succeeded. In this

@@ -37,7 +37,7 @@ To resolve a crash or non-starting node, delete files, starting at the largest `
 Service cannot run after editing service (config) file
 ======================================================
 
-When configuring your node to be a baker on Mac, you need to edit the service file (which is owned by root). One way to edit it is to change the ownership to your user and then edit it. But then you cannot run the service.
+When configuring your node to be a validator on Mac, you need to edit the service file (which is owned by root). One way to edit it is to change the ownership to your user and then edit it. But then you cannot run the service.
 
 To see if this is your problem, try to load the service manually:
 
