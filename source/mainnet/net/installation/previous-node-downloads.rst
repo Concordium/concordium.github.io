@@ -86,7 +86,7 @@ macOS - Mainnet and Testnet
 Ubuntu - Mainnet
 ================
 
-Default GRPC port is set to 10000
+Default GRPC port is set to 20000
 Default listen port is set to 8888
 
 `6.0.4 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.0.4-0_amd64.deb>`__
@@ -209,7 +209,7 @@ Default listen port is set to 8888
 Ubuntu - Testnet
 ================
 
-Default GRPC port is set to 10001
+Default GRPC port is set to 20001
 Default listen port is set to 8889
 
 `6.1.7 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.7-0_amd64.deb>`__
