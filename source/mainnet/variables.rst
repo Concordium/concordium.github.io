@@ -1,10 +1,10 @@
 .. Desktop wallet verification variables
-.. |cdw-appimage| replace:: concordium-desktop-wallet-1.6.0.AppImage
-.. |cdw-appimage-checksum| replace:: ebc8082fa938ebce78fc407eaa0b9f79bc9da71d6d36ecde6c769decdf4f52b6
-.. |cdw-deb| replace:: concordium-desktop-wallet-1.6.0.deb
-.. |cdw-deb-checksum| replace:: ca9f4e38a422ba64e07a89e38cc762005bc31f3f4cbb399657a0adbd0de25a0e
-.. |cdw-rpm| replace:: concordium-desktop-wallet-1.6.0.rpm
-.. |cdw-rpm-checksum| replace:: 92108b193bc314ba5dc3bd7fe25626645b70d1f7f5f8c0c85fd30aeccc67350f
+.. |cdw-appimage| replace:: concordium-desktop-wallet-1.7.1.AppImage
+.. |cdw-appimage-checksum| replace:: 3dcfab8e69e9fa138ec00b9716e811bac012516795b4f1744aedd69f3dd10777
+.. |cdw-deb| replace:: concordium-desktop-wallet-1.7.1.deb
+.. |cdw-deb-checksum| replace:: 020eac35b46d55118477766be615504701917502cf04c3f25c86cd090c0b2df7
+.. |cdw-rpm| replace:: concordium-desktop-wallet-1.7.1.rpm
+.. |cdw-rpm-checksum| replace:: 5b6862f0541cc04d18c625e24f299a105ae8e7670f869c8a1788b5b9965fe484
 .. |ledger-app-public-key| replace:: 04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b
 
 .. Mobile Wallet product names
@@ -13,9 +13,9 @@
 .. |bw| replace:: Concordium Wallet for Web
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_6.1.0-1
-.. |client-version| replace:: 6.1.0-1
-.. |client-linux-checksum| replace:: a52a035100d4b72580024b96bd69c750c3f20da8d93f6c405dde70f12c9dd878
+.. |client-linux| replace:: concordium-client_6.2.1-0
+.. |client-version| replace:: 6.2.1-0
+.. |client-linux-checksum| replace:: 20b5b0502c34743d3d30a269b58e47b66982fdb4fd11e82fc510f9e01ba2b161
 
 .. Cargo verification variables
 .. |cargo-linux| replace:: cargo-concordium_2.8.0
@@ -24,7 +24,7 @@
 
 .. Node version variables
 .. |mainnet-node-version| replace:: 6.1.7
-.. |testnet-node-version| replace:: 6.1.7
+.. |testnet-node-version| replace:: 6.2.3
 
 .. Node debian package verification variables
 .. |node-deb-package| replace:: concordium-mainnet-node_6.1.7-0_amd64.deb

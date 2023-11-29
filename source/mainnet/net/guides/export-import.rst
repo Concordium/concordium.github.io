@@ -205,7 +205,7 @@ How to back up and import
 
             The option to view the secret recovery phrase is available in |mw-gen2| for Android version 1.3.0 or greater in the Wallet Settings |wallet-settings|. However you cannot simply upgrade to version 1.3.0 and use this feature. Instead, you must either create a new wallet or recover your wallet to be able to see this option in Wallet Settings.
 
-    If you need to export your private key to use in Concordium Client (for example, to work with smart contracts or to set up baking), see :ref:`Export a private key<export-key>`.
+    If you need to export your private key to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see :ref:`Export a private key<export-key>`.
 
 
 .. |morepage| image:: ../images/more-ellipsis.png

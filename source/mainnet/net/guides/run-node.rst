@@ -10,7 +10,7 @@ In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
 information about blocks and transactions to the nodes in the Concordium
-network. After following this guide, you will be able to
+network. After following this guide, you will be able to:
 
 -  run a Concordium node
 -  observe it on the network dashboard
@@ -161,7 +161,7 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for non-baking nodes.
+         # which reduces CPU load for non-validator nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined
@@ -264,7 +264,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
@@ -309,11 +309,11 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-testnet`` and keeping the configuration files as
    they are.
-3. If your node is an existing baker node, update the configuration file above to include
+3. If your node is an existing validator node, update the configuration file above to include
 
    .. code-block:: yaml
 
-      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
 4. Start the node and the collector.
@@ -423,7 +423,7 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for non-baking nodes.
+         # which reduces CPU load for non-validator nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined
@@ -477,7 +477,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
@@ -524,11 +524,11 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
-3. If your node is an existing baker node, update the configuration file above to include
+3. If your node is an existing validator node, update the configuration file above to include
 
    .. code-block:: yaml
 
-      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
 4. Start the node and the collector.
@@ -560,6 +560,10 @@ If you wish to have the node running in the background, then add a ``-d`` option
 
        image: concordium/mainnet-node:4.3.1-0
 
+Run a validator node
+====================
+
+For information about how to run a validator node for Linux/Docker, see :ref:`Run a validator node on Docker<baking-docker>`.
 
 Troubleshooting
 ===============

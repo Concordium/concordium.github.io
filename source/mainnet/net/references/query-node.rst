@@ -17,8 +17,8 @@ a backend node:
 -  Block state: Display a summary of the contents of a specific block
    and its relation to other blocks on the chain.
 -  Consensus state: Show the parameters of the consensus protocol and
-   statistics related to baking and finalization of blocks.
-
+   statistics related to production of blocks.
+-  Validator queries: Show validator information.
 
 .. _query-account-state:
 
@@ -159,7 +159,7 @@ Example
    Height:                     2269771
    Height since last genesis:  396377
    Genesis index:              2
-   Baker:                      0
+   Validator:                  0
    Transaction count:          1
    Transaction energy cost:    112 NRG
    Transactions size:          284
@@ -214,8 +214,7 @@ Inspect consensus status
 
    $concordium-client consensus status
 
-Display key blocks along with various statistics related to block production and
-finalization.
+Display key blocks along with various statistics related to block production.
 
 -  Key blocks: Genesis, "best", and most recently finalized (and their
    heights).
@@ -318,3 +317,31 @@ following command:
 
 This prints a JSON list containing any such pending updates. As before you can
 also pass a block hash to the command to query a specific block.
+
+Validator queries
+=================
+
+Earliest time a validator may be expected to produce a block
+------------------------------------------------------------
+
+.. code-block:: console
+
+    $concordium-client validator win-time 1
+    Validator 1 is expected to produce a block no sooner than:
+    Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)
+
+Get the projected earliest time at which a particular validator will be required to produce a block.
+
+If the validator is not a validator for the current reward period, this returns a timestamp at the
+start of the next reward period. If the validator is a validator for the current reward period, the
+earliest win time is projected from the current round forward, assuming that each round after
+the last finalized round will take the minimum block time. (If blocks take longer, or timeouts
+occur, the actual time may be later, and the reported time in subsequent queries may reflect
+this.) At the end of an epoch (or if the validator is not projected to produce a block before the end of the
+epoch) the earliest win time for a (current) validator will be projected as the start of the next
+epoch.
+
+One can supply the ``--poll`` option in order to continuously receive updates of when
+the supplied validator may be expected to produce a block.
+
+This query is only supported from protocol version 6 and onwards.

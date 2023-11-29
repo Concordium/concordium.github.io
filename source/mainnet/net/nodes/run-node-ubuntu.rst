@@ -4,7 +4,7 @@
 Run a node on a server with Ubuntu on Testnet
 =============================================
 
-This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`baker node<baker-node-Ubuntu>`.
+This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`validator node<baker-node-Ubuntu>`.
 
 You can also watch the video to learn how to run a node with Ubuntu.
 
@@ -20,7 +20,7 @@ Prerequisites
 
 -  The server must be running around the clock.
 
--  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <add-baker-mw>` or :ref:`Concordium Client<become-a-baker>`.
+-  If you want to run the node as a validator, you must have generated validator keys.
 
 .. Note::
 
@@ -52,7 +52,7 @@ The services are also enabled to start automatically on system start.
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.testnet.concordium.com/>`__ and look for a node with the name you provided.
 
 
-The ``concordium-testnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
+The ``concordium-testnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with validator keys.
 
 .. Note::
    If you want more detailed information about building and maintaining a node, or if your node is not running, see the `Building .deb packages for ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md>`__
@@ -65,7 +65,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<baker-ubuntu>`, to bake and finalize.
+:ref:`if so configured<baker-ubuntu>`, to produce blocks.
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
@@ -156,7 +156,7 @@ To upgrade to a newer version of the `concordium-testnet-node` package you need 
 
 .. _baker-node-Ubuntu-testnet:
 
-Run a baker node on Ubuntu
-==========================
+Run a validator node on Ubuntu
+==============================
 
-For information about how to configure a node to run as a baker, see :ref:`baker-ubuntu`.
+For information about how to configure a node to run as a validator, see :ref:`baker-ubuntu`.

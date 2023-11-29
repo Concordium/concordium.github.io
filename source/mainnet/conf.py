@@ -64,7 +64,7 @@ extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
 extlinks = {
     'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
-    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.6.0.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.1.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
 }
 
 # todo_include_todos = True
@@ -461,6 +461,7 @@ redirects = {
     "./net/installation/downloads-testnet": "net/installation/downloads.html",
     "./net/resources/legal": "net/resources/terms-and-conditions.html",
     "./en/mainnet/smart-contracts/onboarding-guide-solana-developers/index": "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview.html",
+    "./net/references/grpc": "net/references/grpc2.html",
 }
 
 # -- Tags that enables the .. only option ----------------

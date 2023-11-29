@@ -1,13 +1,13 @@
 .. include:: ../../variables.rst
 .. _add-delegation:
 
-==============================================
-Delegate to a baker pool or passive delegation
-==============================================
+================================================
+Delegate to a staking pool or passive delegation
+================================================
 
-You can delegate stake from an account to a :term:`baker pool` or to :term:`passive delegation`.
+You can delegate stake from an account to a :term:`staking pool` or to :term:`passive delegation`.
 
-When you delegate some stake to a baker pool, it can influence the chances of the baker owner of the baker pool being selected to bake a block and receive baker rewards and thus delegation rewards to you.
+When you delegate some stake to a staking pool, it can influence the chances of the pool owner of the staking pool being selected to produce a block and receive block rewards and thus delegation rewards to you.
 
 .. Note::
 
@@ -22,15 +22,11 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         .. dropdown:: Single signature account
 
-            #. Go to **Accounts** and select the account on which you want to delegate funds.
+            #. Go to **Accounts**, select the account on which you want to delegate funds then click **More options**.
 
-            #. Click **More options** then select **Register as a delegator**.
+            #. Click **Register as a delegator**.
 
-                .. image:: ../images/desktop-wallet/dw-account-menu-regular.png
-                    :width: 50%
-                    :alt: screen with more options expanded
-
-            #. Select your target (a baker pool or passive delegation). Click **Continue**.
+            #. Select your target (a staking pool or passive delegation). Click **Continue**.
 
                .. image:: ../images/desktop-wallet/dw-delegation-target.png
                     :width: 50%
@@ -38,9 +34,9 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
             #. Enter the amount that you want to delegate and choose whether rewards should be redelegated or not. Click **Continue**.
 
-                .. image:: ../images/desktop-wallet/dw-delegation-stake.png
-                    :width: 50%
-                    :alt: screen to enter amount to delegate and restake settings
+               .. image:: ../images/desktop-wallet/dw-delegation-stake.png
+                   :width: 50%
+                   :alt: screen to enter amount to delegate and restake settings
 
             #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -137,13 +133,13 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         #. Tap **Continue to delegation setup**. If you are delegating for the first time, you see some information about delegation.
 
+            .. image:: ../images/mobile-wallet/earning-add.png
+                    :width: 50%
+                    :alt: screen with earning options
+
         #. Tap **Register delegation**.
 
-        #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
-
-            .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
-                :width: 50%
-                :alt: screen with options to choose delegation type
+        #. If you want to delegate to a specific pool tap **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
         #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
@@ -153,15 +149,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
-            .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
-                :width: 50%
-                :alt: screen showing overview of the transaction before submission
-
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-            .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
-                :width: 50%
-                :alt: screen showing submitted transaction details
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
@@ -187,7 +175,7 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         #. Tap **Register delegation**.
 
-        #. If you want to delegate to a specific pool tap **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
+        #. If you want to delegate to a specific pool tap **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
 
             .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
                     :width: 50%
@@ -225,28 +213,28 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
 
-            .. image:: ../images/browser-wallet/setup-baking-delegation.png
-                :width: 40%
+           .. image:: ../images/browser-wallet/setup-baking-delegation.png
+               :width: 40%
 
         #. Click **Setup delegation**. If you are delegating for the first time on the account, you see some information about delegation.
 
-            .. image:: ../images/browser-wallet/add-delegation-baking.png
-                :width: 40%
+           .. image:: ../images/browser-wallet/add-delegation-baking.png
+               :width: 40%
 
-        #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Baker pool** and enter the Baker ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
+        #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
 
-            .. image:: ../images/browser-wallet/delegation-target.png
-                :width: 40%
+           .. image:: ../images/browser-wallet/delegation-target.png
+               :width: 40%
 
         #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
 
-            .. image:: ../images/browser-wallet/delegation-restake-preference.png
-                :width: 40%
+           .. image:: ../images/browser-wallet/delegation-restake-preference.png
+               :width: 40%
 
         #. You can see your available balance to delegate on the account that is in focus. You can change the account from the Accounts drop-down at the top of the screen if you want to set up delegation on a different account than the one in focus. **Enter the Amount you want to delegate** in the field. Click **Continue**.
 
-            .. image:: ../images/browser-wallet/create-delegation-amount.png
-                :width: 40%
+           .. image:: ../images/browser-wallet/create-delegation-amount.png
+               :width: 40%
 
         #. Review the information in the transaction overview. When you are satisfied, click **Send**.
 
@@ -254,13 +242,13 @@ When you delegate some stake to a baker pool, it can influence the chances of th
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation type and amount on the account card.
 
-            .. image:: ../images/browser-wallet/delegated-amount.png
-                :width: 40%
+        .. image:: ../images/browser-wallet/delegated-amount.png
+            :width: 40%
 
-        Accounts with delegation also have an icon in the account list.
+        Accounts with delegation also have a badge in the account list.
 
-            .. image:: ../images/browser-wallet/delegation-acct-list.png
-                :width: 40%
+        .. image:: ../images/browser-wallet/delegation-acct-list.png
+            :width: 40%
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money

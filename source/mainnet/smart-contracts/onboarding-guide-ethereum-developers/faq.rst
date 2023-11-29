@@ -187,7 +187,7 @@ Concordium smart contracts
     In contrast, CCD can only get onto a smart contract if it has at least one payable entry point.
 
     - no self-destruct host function.
-    - a smart contract cannot be a baker(miner) of a minted block.
+    - a smart contract cannot be a validator(miner) of a minted block.
     - CCD cannot be transferred to a smart contract address before a smart contract is initialized at that index.
 
 .. dropdown::  Can I print values from the smart contract code or test cases?
