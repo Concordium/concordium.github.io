@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/net/installation/cdw-verification-instructions/cdw-rpm.7f8f264b-a5e3-470c-a2b9-d7fb33eb865e.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/net/installation/cdw-verification-instructions/cdw-rpm.081a213e-23d6-42c8-a002-20a66bbbbc82.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -152,53 +152,6 @@ body {margin:0;}
 
 }
 </style>
-<div class="navbar-menu w3-hide-medium w3-hide-small">
-  <div class="dropdown">
-    <button class="dropbtn">Monitor</button>
-    <div class="dropdown-content">
-      <a href="https://ccdscan.io/" target="_blank">CCDScan</a>
-      <a href="https://dashboard.mainnet.concordium.software" target="_blank">Mainnet dashboard</a>
-      <a href="https://dashboard.testnet.concordium.com" target="_blank">Testnet dashboard</a>
-      <a href="https://status.mainnet.concordium.software" target="_blank">Mainnet status page</a>
-      <a href="https://status.testnet.concordium.software" target="_blank">Testnet status page</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Learn</button>
-    <div class="dropdown-content">
-      <a href="../../concepts/id-accounts.html">Identities</a>
-      <a href="../downloads.html">Accounts</a>
-      <a href="../../guides/wallet-lp.html">Wallets</a>
-      <a href="../../resources/glossary.html">Glossary</a>
-      <a href="https://academy.concordium.software/ccd-academy/getting-started" target="_blank">Academy</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Build</button>
-    <div class="dropdown-content">
-      <a href="../../../smart-contracts/general/introduction.html">Smart contracts</a>
-      <a href="../../web3-id/index.html">Use ID</a>
-      <a href="../../guides/low-code-nft-marketplace/introduction.html">Low-code NFT marketplace</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Discover</button>
-    <div class="dropdown-content">
-      <a href="https://medium.com/concordium" target="_blank">Blogs</a>
-      <a href="../../guides/dapp-examples.html">Example dApps</a>
-      <a href="https://proposals.concordium.software/index.html" target="_blank">Concordium Standards</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Connect</button>
-    <div class="dropdown-content">
-      <a class="nav-link nav-external" href="https://support.concordium.software/latest" target="_blank">Discourse</a>
-      <a href="mailto:support@concordium.software">Contact support</a>
-      <a class="nav-link nav-external" href="https://github.com/Concordium" target="_blank">GitHub</a>
-      <a class="nav-link nav-external" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" target="_blank">YouTube</a>
-    </div>
-  </div>
-</div>
       </div>
       
     </div>
@@ -216,8 +169,24 @@ body {margin:0;}
             <label class="sr-only">Support</label></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
+            <label class="sr-only">Monitor</label></a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
             <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
+            <label class="sr-only">YouTube</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
+            <label class="sr-only">Medium</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://academy.concordium.software/ccd-academy/getting-started" rel="noopener" target="_blank" title="Academy"><span><i class="fas fa-graduation-cap"></i></span>
+            <label class="sr-only">Academy</label></a>
         </li>
       </ul>
       </div>
@@ -336,6 +305,23 @@ body {margin:0;}
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
   <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
+  <!-- Script to change the highlighting of the active menu path and put the sidenav into hamburger for mobile-->
+<script>
+    const currentMenu = $('.bd-sidenav.current');
+    currentMenu.parent().addClass('selected');
+
+    let $togglerIcon = $('.navbar-toggler-icon');
+    let $bdSidebar = $('.bd-sidebar');
+
+    $togglerIcon.on( "click", function() {
+        let $togglerAttr = $('.navbar-toggler').attr('aria-expanded');
+        if ($togglerAttr == 'true') {
+            $bdSidebar.parent().removeClass('show');
+        } else {
+            $bdSidebar.parent().addClass('show');
+        }
+    } );
+</script>
   <style>
     .cc {
       position: relative;
@@ -355,6 +341,9 @@ body {margin:0;}
 <div class="cc">
   <a href="http://creativecommons.org/licenses/by-sa/4.0/">
     <img src="../../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+  </a>
+  <a href="../../guides/legal.html">
+    Legal information
   </a>
 </div>
   <div id="cookie-consent" class="consent">
