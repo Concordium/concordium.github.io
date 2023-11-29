@@ -1,3 +1,5 @@
+:orphan:
+
 .. include:: ../../variables.rst
 .. _bw-licenses:
 

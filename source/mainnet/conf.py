@@ -175,6 +175,10 @@ html_theme_options = {
             "icon": "fab fa-github-square",
             # Whether icon should be a FontAwesome class, or a local file
             "type": "fontawesome",  # Default is fontawesome
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
         },
         {
             # Concordium Email Support
@@ -185,13 +189,64 @@ html_theme_options = {
             "icon": "fas fa-envelope",
             # Whether icon should be a FontAwesome class, or a local file
             "type": "fontawesome",  # Default is fontawesome
-
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
+        },
+        {
+            # Concordium monitoring options
+            "name": "Monitor",
+            # URL where the link will redirect
+            "url": "https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fas fa-chart-line",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
         },
         {
             "name": "Discourse",
             "url": "https://support.concordium.software/latest",
             "icon": "fab fa-discourse",
             "type": "fontawesome",
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
+        },
+        {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A",
+            "icon": "fab fa-youtube",
+            "type": "fontawesome",
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
+        },
+        {
+            "name": "Medium",
+            "url": "https://medium.com/concordium",
+            "icon": "fab fa-medium",
+            "type": "fontawesome",
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
+        },
+        {
+            "name": "Academy",
+            "url": "https://academy.concordium.software/ccd-academy/getting-started",
+            "icon": "fas fa-graduation-cap",
+            "type": "fontawesome",
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
         },
     ]
     }
