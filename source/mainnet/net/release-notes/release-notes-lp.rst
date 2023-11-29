@@ -608,7 +608,8 @@ Nodes
 =====
 
 .. _rn-node-mainnet:
-    .. _604-mainnet:
+.. _604-mainnet:
+
 Mainnet
 -------
 
