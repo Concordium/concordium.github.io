@@ -387,7 +387,7 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    November 28, 2023
+    November 30, 2023
 
     |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
