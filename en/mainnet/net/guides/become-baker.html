@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/become-baker.7ba1caa4-e3ed-4564-bb9a-d3b58d8ac482.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/become-baker.8c5104bb-bf44-4a27-a323-37a8a988e2fd.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2120,7 +2120,7 @@ was done). It defaults to the account name “default”.</p>
 <div class="section" id="configure-a-validator">
 <h2>Configure a validator<a class="headerlink" href="#configure-a-validator" title="Permalink to this headline">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">configure</span></code> to configure a validator and open a staking pool. The following is an example of how <code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">validator</span></code> might be used:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator configure --sender <span class="s2">&quot;acc1&quot;</span> --stake <span class="m">500001</span> --open-delegation-for existing --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/validator-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator configure --sender <span class="s2">&quot;acc1&quot;</span> --stake <span class="m">500001</span> --open-delegation-for existing --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-block-reward-commission <span class="m">0</span>.1 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p>Configure validator has the following optional arguments:</p>
@@ -2134,8 +2134,7 @@ was done). It defaults to the account name “default”.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">--keys-in</span></code> specifies the name of the file containing the validator keys.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--keys-out</span></code> can be used to write a validator credential file containing the validator ID (and the supplied keys) to use when starting a validator node. Replace <code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--delegation-transaction-fee-commission</span></code> specifies the transaction fee commission for the staking pool.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--delegation-baking-commission</span></code> specifies the validator commission for the staking pool.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--delegation-finalization-commission</span></code> specifies the finalization commission for the staking pool.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--delegation-block-reward-commission</span></code> specifies the block commission for the staking pool.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

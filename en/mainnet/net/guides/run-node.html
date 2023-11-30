@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.1966d814-4909-489b-bb27-7f6e33f9de65.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node.be46bb0a-6de1-47f9-840f-a99b95ffcd4a.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2129,7 +2129,6 @@ configuration file should be used.</p>
 <li><p>the image used is the mainnet image. See <a class="reference external" href="https://hub.docker.com/r/concordium/mainnet-node">hub.docker.com/concordium/mainnet-node</a>
 for a list of currently available versions.</p></li>
 <li><p>the node listens on port 8888 instead of 8889 by default</p></li>
-<li><p>the node’s GRPC interface is exposed on port 10000 instead of 10001</p></li>
 <li><p>the node’s GRPC V2 listens on port 20000 instead of 20001</p></li>
 <li><p>the database directory is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testnet</span></code></p></li>
@@ -2169,10 +2168,6 @@ for a list of currently available versions.</p></li>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5</span>
       <span class="c1"># Maximum number of __nodes__ the node will be connected to.</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10</span>
-      <span class="c1"># Address of the GRPC server</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0</span>
-      <span class="c1"># And its port</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_PORT=10000</span>
       <span class="c1"># Address of the V2 GRPC server.</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
       <span class="c1"># And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`</span>
@@ -2206,7 +2201,6 @@ for a list of currently available versions.</p></li>
     <span class="c1"># the node&#39;s gRPC interface will not be available from the host.</span>
     <span class="nt">ports</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;8888:8888&quot;</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;10000:10000&quot;</span>
     <span class="p p-Indicator">-</span> <span class="s">&quot;20000:20000&quot;</span>
     <span class="nt">volumes</span><span class="p">:</span>
     <span class="c1"># The node&#39;s database should be stored in a persistent volume so that it</span>
