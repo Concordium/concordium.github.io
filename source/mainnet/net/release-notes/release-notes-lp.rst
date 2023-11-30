@@ -395,11 +395,15 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    August 8, 2023
+    November 30, 2023
 
-        |mw-gen1| 3.2.1 ensures support for the upcoming protocol version 6.
+    |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen1| 3.2.1 - August 8, 2023
+
+            |mw-gen1| 3.2.1 ensures support for the upcoming protocol version 6.
 
         .. dropdown:: |mw-gen1| 3.2.0 - May 30, 2023
 
@@ -476,9 +480,9 @@ Desktop Wallet
 |mw-gen1| for Android
 ---------------------
 
-    February 6, 2023
+February 6, 2023
 
-    In version 3.2.0 we changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
+In version 3.2.0 we changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
 
     .. dropdown:: Previous releases
 
