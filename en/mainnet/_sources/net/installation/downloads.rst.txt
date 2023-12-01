@@ -147,7 +147,7 @@ The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13
 
    **Android**
 
-   - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.2.0(111).apk>`_
+   - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.2.1(115).apk>`_
 
 .. _concordium-node-and-client-download:
 
