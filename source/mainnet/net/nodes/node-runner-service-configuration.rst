@@ -124,9 +124,9 @@ rpc.port
 
 .. code-block:: TOML
 
-   rpc.port = 10000
+   rpc.port = 20000
 
-The port on which the node accepts incoming GRPC requests. This is the port that the desktop wallet and ``concordium-client`` use to connect to the node. If not specified, this uses the default determined by ``concordium-node.exe`` (which is **10000**). Note that multiple nodes cannot listen on the same port, and a node will fail to start if the port is already in use.
+The port on which the node accepts incoming GRPC requests. This is the port that the desktop wallet and ``concordium-client`` use to connect to the node. If not specified, this uses the default determined by ``concordium-node.exe`` (which is **20000**). Note that multiple nodes cannot listen on the same port, and a node will fail to start if the port is already in use.
 
 rpc.address
 -----------
