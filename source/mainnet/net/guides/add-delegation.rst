@@ -133,13 +133,13 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         #. Tap **Continue to delegation setup**. If you are delegating for the first time, you see some information about delegation.
 
+            .. image:: ../images/mobile-wallet/earning-add.png
+                    :width: 50%
+                    :alt: screen with earning options
+
         #. Tap **Register delegation**.
 
         #. If you want to delegate to a specific pool tap **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, tap **Passive delegation**. Tap **Continue**.
-
-            .. image:: ../images/mobile-wallet/add-delegation-mw.jpg
-                :width: 50%
-                :alt: screen with options to choose delegation type
 
         #. You can see your balance available to delegate. **Enter the Amount you want to delegate** in the field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
 
@@ -149,15 +149,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
-            .. image:: ../images/mobile-wallet/add-delegation-conf-mw.jpg
-                :width: 50%
-                :alt: screen showing overview of the transaction before submission
-
         #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-            .. image:: ../images/mobile-wallet/add-delegation-submit-mw.jpg
-                :width: 50%
-                :alt: screen showing submitted transaction details
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation in the account list and on the account card.
 
@@ -176,10 +168,6 @@ When you delegate some stake to a staking pool, it can influence the chances of 
         #. Tap on the balance area of the account you want to delegate from or tap **More** |moredetails|.
 
         #. Tap the hamburger menu |hamburger| and tap **Delegation**. If you are delegating for the first time, you see some information about delegation.
-
-            .. image:: ../images/mobile-wallet/account-hamburger-menu.png
-                    :width: 50%
-                    :alt: screen with hamburger menu expanded
 
         #. Tap **Register delegation**.
 

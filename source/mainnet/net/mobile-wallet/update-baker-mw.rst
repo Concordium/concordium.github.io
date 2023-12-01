@@ -247,7 +247,9 @@ Update pool settings
 
     If you choose **Open pool**:
 
-    #. You can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
+    #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+
+    #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
 
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
 
@@ -256,6 +258,8 @@ Update pool settings
     If you choose **Closed for new**:
 
     Existing delegators remain in the pool. You have the option to adjust commission fees and your validator information URL.
+
+    #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
 
     #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
 
@@ -484,7 +488,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     .. Warning::
 
-        This is the only time that you can export the credentials. If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+        If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
     2. Once you have saved the keys, review the information on the overview screen of the add validator transaction then tap **Submit validator transaction**.
 

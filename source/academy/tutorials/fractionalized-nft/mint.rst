@@ -25,7 +25,7 @@ Check the state by calling the ``view()`` function as shown below.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-TOKEN-CONTRACT-INDEX>--entrypoint view --schema ../cis2-multi/dist/schema.bin --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract invoke <YOUR-TOKEN-CONTRACT-INDEX>--entrypoint view --schema ../cis2-multi/dist/schema.bin --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 .. image:: ../../images/mid-fractnft-mint2.png
 
@@ -64,7 +64,7 @@ Run the command below to transfer the token to the fractionalizer.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-TOKEN-CONTRACT-INSTANCE> --entrypoint transfer --parameter-json cis2-fractionalizer/cis2-multi-transfer.json --schema multi/dist/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-TOKEN-CONTRACT-INSTANCE> --entrypoint transfer --parameter-json cis2-fractionalizer/cis2-multi-transfer.json --schema multi/dist/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 .. image:: ../../images/mid-fractnft-mint3.png
 
@@ -111,7 +111,7 @@ Then run the following command to mint the fractions.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json ../sample-artifacts/cis2-fractionalizer/mint.json --schema ../cis2-fractionalizer/schema.bin --sender $ACCOUNT --energy 6000 --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json ../sample-artifacts/cis2-fractionalizer/mint.json --schema ../cis2-fractionalizer/schema.bin --sender $ACCOUNT --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 .. image:: ../../images/mid-fractnft-mint6.png
 
@@ -119,7 +119,7 @@ Now, check the fractionalizer’s state with the command below.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-FRACTIONALIZER-CONTRACT-INDEX> --entrypoint view --schema dist/schema.bin  --grpc-port 10000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract invoke <YOUR-FRACTIONALIZER-CONTRACT-INDEX> --entrypoint view --schema dist/schema.bin  --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 .. image:: ../../images/mid-fractnft-mint7.png
 

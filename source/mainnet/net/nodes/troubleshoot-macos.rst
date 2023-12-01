@@ -21,6 +21,7 @@ The database directory should contain matching pairs of ``blockstate-$i.dat`` an
 
 .. code-block:: console
 
+   accountmap
    blockstate-0.dat
    blockstate-1.dat
    blockstate-2.dat

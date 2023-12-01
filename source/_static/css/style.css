@@ -121,6 +121,10 @@ a.current.reference.internal:hover{
     color: var(--pst-color-link);      
 }
 
+.bd-sidebar .nav .active:hover>a{
+    color: unset;
+}
+
 /*Code styling */
 /* Change the highlight color used in code-snippets. This makes them stand out more. */
 .highlight .hll {
@@ -132,6 +136,7 @@ a.current.reference.internal:hover{
     padding-right: 0.5em;
 }
 
+/*Topnav styling*/
 .navbar{
     position: fixed;
     min-height: var(--pst-header-height);
@@ -141,13 +146,16 @@ a.current.reference.internal:hover{
     align-items: center;
 }
 
-/* Sidebar */
-@media (min-width: 720px) {
-    .bd-sidebar {
-        border-right: none;
-    }
+.navbar-end{
+    width: 33%;
 }
-​
+
+/* Sidebar */
+.bd-sidebar .nav .active:hover>label .fa-chevron-down:before,
+.bd-sidebar .nav .active>label .fa-chevron-down:before {
+    color: rgba(var(--pst-color-sidebar-link-active),1);
+}
+
 .bd-sidebar label  {
     left: 0;
     right: unset;
@@ -157,64 +165,64 @@ a.current.reference.internal:hover{
 .bd-sidebar label:hover {
     background: none;
 }
-​
+
 .bd-sidebar .label-parts i {
     left: 0;
-    right: unset;
+    right:unset;
     top: 9px;
 }
-​
+
 .bd-sidebar .nav {
     font-size: 14px;
     padding: 0 0 4px 14px
 }
-​
+
 .nav.bd-sidenav li.has-children {
     padding: 2px 0 2px 10px;
 }
-​
+
 .nav.bd-sidenav li {
     padding: 3px 0 7px 10px;
 }
-​
+
 .bd-sidebar li {
     padding: 2px 0 2px 10px;
 }
-​
+
 .bd-sidebar li.has-children>.reference {
     padding-right: 0;
 }
-​
+
 .bd-sidebar .nav ul {
     padding: 0 0 0 14px;
 }
-​
+
 .bd-sidebar .nav li>a {
     padding: 4px 0 0 22px;
     color: #888888;
 }
-​
+
 .bd-sidebar .nav li.has-children>a {
     padding: 5px 0 5px 22px;
 }
-​
+
 .toctree-checkbox~label i {
     transform: rotate(270deg);
 }
-​
+
 .toctree-checkbox:checked~label i {
     transform: rotate(0deg);
 }
-​
+
 .bd-links {
     margin-right: 0;
     margin-left: 0;
 }
-​
+
 .fa-chevron-down:before {
     color: #888888;
 }
-​
+
 nav.bd-links p.caption {
     text-transform: unset;
     font-weight: unset;
@@ -222,12 +230,12 @@ nav.bd-links p.caption {
     padding: 0 0 0 22px;
     color: #888888;
 }
-​
+
 .bd-sidebar .nav .active:hover>label .fa-chevron-down:before,
 .bd-sidebar .nav .active>label .fa-chevron-down:before {
     color: rgba(var(--pst-color-sidebar-link-active),1);
 }
-​
+
 .bd-search {
     padding: 37px 0 26px 0;
     margin: 0;
@@ -239,15 +247,11 @@ nav.bd-links p.caption {
     padding: 24px 24px 24px 50px;
     font-size: 15px;
 }
-​
-.bd-search .icon {
-    left: 36px;
-}
 
 .toctree-checkbox~label i {
     transform: rotate(270deg);
 }
-​
+
 .toctree-checkbox:checked~label i {
     transform: rotate(0deg);
 }
@@ -275,14 +279,13 @@ nav.bd-links p.caption {
     background-color: #EFEFEF;
 }
 
-.discourse {
-    background: white;
-    color: black;
+ul.list-caption li.selected p.caption {
+    font-weight: 600;
 }
-  
-i.fab fa-github-square:before {
-    background: black;
-    color: white;
+
+ul.list-caption li.selected p.caption,
+ul.list-caption li.selected > label i:before  {
+    color: rgba(var(--pst-color-sidebar-link-active),1);
 }
 
 /* Admonitions */
@@ -303,12 +306,12 @@ div.admonition>.admonition-title:before {
     width: 16px;
     height: 16px;
 }
-​
+
 .admonition p.admonition-title~*,
 div.admonition p.admonition-title~* {
     margin: 20px 30px;
 }
-​
+
 .admonition,
 div.admonition {
     margin: 50px auto;
@@ -387,5 +390,101 @@ div.admonition {
 @media only screen and (max-width: 768px) {
     .consent {
         left: 0;
+    }
+}
+
+@media (min-width: 720px) {
+    .bd-sidebar {
+        border-right: none;
+    }
+}
+
+
+@media (max-width: 961px) {
+    .bd-sidebar {
+        display: none;
+    }
+    
+    .navbar {
+        z-index: 100000;
+    }
+    
+    .navbar-nav {
+        flex-direction: row;
+        margin: 20px;
+        justify-content: right;
+    }
+    
+    .navbar-toggler {
+        border: none;
+    }
+    
+    .row .bd-sidebar {
+        z-index: 10000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        overflow: inherit;
+        padding-top: 0;
+        height: calc(100vh - 60px);
+    }
+    
+    .row.show .bd-sidebar {
+        display: block;
+    }
+    
+    .row .bd-sidebar .sidebar-start-items {
+        width: 100vw;
+        height: 100vh;
+        background-color: #ededed;
+        margin-left: -15px;
+        padding: 0 15px;
+    }
+    
+    .row.show  .bd-content {
+        display: none;
+    }
+    
+    .bd-content {
+        padding-top: 20px!important;
+        padding-left: 20px!important;
+    }
+    
+    .bd-search .icon {
+        left: 22px;
+    }
+    
+    .bd-links {
+        background-color: #ededed;
+        padding-left: 15px;
+    }
+    
+    .bd-search {
+        padding: 19px 0 26px 0;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="uuid-bcc72342-cc46-4424-80f3-1b4ff01a2abe" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.6 4.6"><defs><style> .uuid-21e86d99-dce9-40bd-a1d5-77ef4a5c17f5 { fill: %23808285; } </style></defs><g id="uuid-90538f99-a004-49b0-a1ed-70916f7e6ea0" data-name="Layer 1"><path class="uuid-21e86d99-dce9-40bd-a1d5-77ef4a5c17f5" d="m2.72,2.3l1.79-1.79c.12-.12.12-.31,0-.42s-.31-.12-.42,0l-1.79,1.79L.51.09C.39-.03.21-.03.09.09S-.03.39.09.51l1.79,1.79L.09,4.09c-.12.12-.12.31,0,.42.06.06.14.09.21.09s.15-.03.21-.09l1.79-1.79,1.79,1.79c.06.06.14.09.21.09s.15-.03.21-.09c.12-.12.12-.31,0-.42l-1.79-1.79Z"/></g></svg>');
+        width: 17px;
+        height: 17px;
+    }
+    
+    .navbar-collapse.collapse.show {
+        position: absolute;
+        top: calc(100vh - 65px);
+        width: 100%;
+        background-color: #dbdbdb;
+    }
+    
+    .bd-toc-item.active {
+        margin-bottom: 60px;
+    }
+
+    .bd-search .icon {
+        left: 36px;
+    }
+
+    .navbar-collapse.collapsing {
+        display: none
     }
 }
