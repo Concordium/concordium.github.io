@@ -24,7 +24,7 @@ The Pay Day block details contains the following:
 - **Age**: the age of the block and date/time stamp when it was created.
 - **Validator id**: ID of the validator who produced the block. Click the validator ID to see the :ref:`validator details<home-screen-baker>`.
 - **Tokenomics**: contains the following details about the block:
-    - Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the block reward account, finalization reward account, and foundation account.
+    - Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the block reward account, finalization reward account, and foundation account. Note that finalization rewards are zero as of December 7, 2023.
     - Accrued block rewards: similar to a ‘regular’ :ref:`block<home-screen-block>`; contains the accrued block rewards.
     - Payday foundation rewards: displays the payout to the foundation account for the pay day period and contains the option to drill-through to the :ref:`foundation account<accounts-view>`.
     - Payday account rewards: lists all the accounts and the rewards broken down by block reward and transaction fees.
