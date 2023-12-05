@@ -40,7 +40,7 @@ The following information is shown in the node details:
 - **Average ping**: average network delay between the node and its peers.
 - **Packets sent**: number of packets sent by the participant during uptime. Packets are transactions, blocks, finalization messages.
 - **Packets received**: number of packets received by the participant during uptime. Packets are transactions, blocks, finalization messages.
-- **Validator committee**: whether the node is currently running as a validator. Will be either **Active member** or **Not a member**.
+- **Validation committee**: whether the node is currently running as a validator. Will be either **Active member** or **Not a member**.
 - **Best block statistics**: shows statistics about the best block.  Click Copy |copy| to copy the entire block hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Last finalized block statistics**: shows statistics about the last finalized block in participant’s chain.  Click Copy |copy| to copy the entire block hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Peers**: shows the current list of peers of the node with the ability to drill-through and inspect peer node information.
