@@ -23,12 +23,12 @@
 .. |cargo-linux-checksum| replace:: ea3f603e2a921181cdf323604066444378a955c55e82b206a7d169bf636fa75d
 
 .. Node version variables
-.. |mainnet-node-version| replace:: 6.1.7
+.. |mainnet-node-version| replace:: 6.2.3
 .. |testnet-node-version| replace:: 6.2.3
 
 .. Node debian package verification variables
-.. |node-deb-package| replace:: concordium-mainnet-node_6.1.7-0_amd64.deb
-.. |node-deb-package-checksum| replace:: fb9e4dd31bff676b2f06bed15f66d12b5bc4fd19f815051067dc32348d9447b6
+.. |node-deb-package| replace:: concordium-mainnet-node_6.2.3-0_amd64.deb
+.. |node-deb-package-checksum| replace:: 809dffd12cb075b374f16a36f35245cb5c928941745c6eb2598bcf61a2b60aa6
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat
