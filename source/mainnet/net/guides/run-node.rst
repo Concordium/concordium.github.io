@@ -357,7 +357,6 @@ The main differences from the testnet configuration are:
   <https://hub.docker.com/r/concordium/mainnet-node>`_
   for a list of currently available versions.
 - the node listens on port 8888 instead of 8889 by default
-- the node's GRPC interface is exposed on port 10000 instead of 10001
 - the node’s GRPC V2 listens on port 20000 instead of 20001
 - the database directory is ``/var/lib/concordium-mainnet`` instead of
   ``/var/lib/concordium-testnet``
@@ -401,10 +400,6 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5
          # Maximum number of __nodes__ the node will be connected to.
          - CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10
-         # Address of the GRPC server
-         - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
-         # And its port
-         - CONCORDIUM_NODE_RPC_SERVER_PORT=10000
          # Address of the V2 GRPC server.
          - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
          # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
@@ -438,7 +433,6 @@ To retrieve mainnet node logs run:
        # the node's gRPC interface will not be available from the host.
        ports:
        - "8888:8888"
-       - "10000:10000"
        - "20000:20000"
        volumes:
        # The node's database should be stored in a persistent volume so that it
