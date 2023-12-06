@@ -4,7 +4,7 @@
 Status Pages
 ============
 
-The Concordium dashboards have been removed and now redirect to `CCDScan <https://ccdscan.io/>`__. 
+The Concordium dashboards have been removed and now redirect to `CCDScan <https://ccdscan.io/>`__.
 
 Status pages
 ============
