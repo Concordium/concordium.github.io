@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboards and Status Pages &#8212; Concordium  documentation</title>
+    <title>Status Pages &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/resources/dashboards.0dd63139-7631-4a6d-a337-53644a18b8fd.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/resources/dashboards.7f4e9d81-6689-436f-a09e-983ddea73d38.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -632,7 +632,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 current active">
       <a class="current reference internal" href="#">
-       Dashboards and Status Pages
+       Status Pages
       </a>
      </li>
      <li class="toctree-l2">
@@ -1996,29 +1996,7 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dashboard-pages">
-   Dashboard pages
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#network-dashboard">
-     Network dashboard
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#chain-dashboard">
-     Chain dashboard
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lookup-dashboard">
-     Lookup dashboard
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#status-pages">
+  <a class="reference internal nav-link" href="#id1">
    Status pages
   </a>
  </li>
@@ -2050,72 +2028,11 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="dashboards-and-status-pages">
-<span id="dashboards"></span><h1>Dashboards and Status Pages<a class="headerlink" href="#dashboards-and-status-pages" title="Permalink to this headline">#</a></h1>
-<div class="section" id="dashboard-pages">
-<h2>Dashboard pages<a class="headerlink" href="#dashboard-pages" title="Permalink to this headline">#</a></h2>
-<p>To open the dashboards, click the link for the  <a class="reference external" href="https://dashboard.mainnet.concordium.software/">Mainnet dashboard and block explorer</a> or <a class="reference external" href="https://dashboard.testnet.concordium.com/">Testnet dashboard and block explorer</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You may need to adjust your display resolution to be able to view all columns in the table on the dashboard. Alternatively, use the zoom function in your browser to zoom in and out.</p>
-</div>
-<p>Use the <strong>Network</strong>, <strong>Chain</strong> and <strong>Lookup</strong> options to switch between the three dashboard pages.</p>
-<img alt="../../_images/db-intro.png" src="../../_images/db-intro.png" />
-<p>Click <img alt="Gear wheel" src="../../_images/db-toggle-light-mode.png" /> to switch to light mode. Click <img alt="Dark moon" src="../../_images/db-toggle-dark-mode.png" /> to switch to dark mode.</p>
-<div class="section" id="network-dashboard">
-<h3>Network dashboard<a class="headerlink" href="#network-dashboard" title="Permalink to this headline">#</a></h3>
-<p>The <strong>Network</strong> dashboard page shows the statistics for the chain and the participants on the chain.</p>
-<img alt="../../_images/db-network.png" src="../../_images/db-network.png" />
-<p>The tiles at the top show overall statistics. Due to the nature of this information, it is difficult to validate. Therefore, this information may not be fully accurate.</p>
-<ul class="simple">
-<li><p><strong>Active nodes:</strong> number of currently active nodes.</p></li>
-<li><p><strong>Last block:</strong> time since last block</p></li>
-<li><p><strong>Last finalization:</strong> time since last finalization occurred.</p></li>
-<li><p><strong>Total Length:</strong> Current total length (number of blocks) of the chain</p></li>
-<li><p><strong>Finalized Length:</strong> Current finalized length (number of finalized blocks) of the chain.</p></li>
-<li><p><strong>Block time:</strong> Average time between verified blocks.</p></li>
-<li><p><strong>Finalization time:</strong> Average time between completed finalizations.</p></li>
-</ul>
-<p>The table below the tiles shows details per participant in the chain. You can also click on a participant name to see details.</p>
-<ul class="simple">
-<li><p><strong>Name:</strong> participant name</p></li>
-<li><p><strong>Validator:</strong> if the participant is a validator, validator ID</p></li>
-<li><p><strong>Uptime:</strong> amount of uptime in minutes (m), days (d), hours (h), months (mon), or years (y)</p></li>
-<li><p><strong>Client:</strong> client version the participant is running</p></li>
-<li><p><strong>Avg ping:</strong> average ping time between the peers of the participant</p></li>
-<li><p><strong>Peers:</strong> Number of peers connected to the participant</p></li>
-<li><p><strong>Sent:</strong> number of packets sent by the participant during uptime</p></li>
-<li><p><strong>Received:</strong> number of packets received by the participant during uptime</p></li>
-<li><p><strong>Block:</strong> block hash of the block that is considered the best block by the participant</p></li>
-<li><p><strong>Length:</strong> length of participant’s chain up to the best block</p></li>
-<li><p><strong>Fin Block:</strong> block hash of last finalized block in participant’s chain</p></li>
-<li><p><strong>Fin Length:</strong> length of participant’s chain up to last finalized block</p></li>
-<li><p><strong>Last Fin:</strong> timestamp for when last finalization occurred</p></li>
-<li><p><strong>Block EMA:</strong> Exponential moving average of the period between valid blocks</p></li>
-<li><p><strong>Fin EMA:</strong> Exponential moving average of the period between finalization</p></li>
-</ul>
-</div>
-<div class="section" id="chain-dashboard">
-<h3>Chain dashboard<a class="headerlink" href="#chain-dashboard" title="Permalink to this headline">#</a></h3>
-<p>The <strong>Chain</strong> dashboard page shows a visualization of the chain. Click on any block to see the data for it.</p>
-<p>The purple bar above the block shows the portion of the nodes that think it’s the best block. Sometimes you might see the bar in different sizes above different blocks, because all the nodes are not in agreement.</p>
-<img alt="../../_images/db-chain.png" src="../../_images/db-chain.png" />
-<ul class="simple">
-<li><p><strong>Transactions:</strong> shows the transactions included in the block if there are any.</p></li>
-<li><p><strong>Tokenomics:</strong> shows the events for the block and transaction fees and minted tokens for the block.</p></li>
-<li><p><strong>Updates:</strong> shows the updates queued at the time of the block.</p></li>
-</ul>
-</div>
-<div class="section" id="lookup-dashboard">
-<h3>Lookup dashboard<a class="headerlink" href="#lookup-dashboard" title="Permalink to this headline">#</a></h3>
-<p>The <strong>Lookup</strong> dashboard page contains a search function to search for a transaction by the transaction hash.</p>
-<img alt="../../_images/db-lookup.png" src="../../_images/db-lookup.png" />
-<p>Once the transaction lookup is complete, you see the transaction information.</p>
-<img alt="../../_images/db-lookup-with-transaction.png" src="../../_images/db-lookup-with-transaction.png" />
-</div>
-</div>
-<div class="section" id="status-pages">
-<h2>Status pages<a class="headerlink" href="#status-pages" title="Permalink to this headline">#</a></h2>
+  <div class="section" id="status-pages">
+<span id="dashboards"></span><h1>Status Pages<a class="headerlink" href="#status-pages" title="Permalink to this headline">#</a></h1>
+<p>The Concordium dashboards have been removed and now redirect to <a class="reference external" href="https://ccdscan.io/">CCDScan</a>.</p>
+<div class="section" id="id1">
+<h2>Status pages<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Both Mainnet and Testnet have a status page. The status page shows incidents and planned outages. To open the status page, click the link for the <a class="reference external" href="https://status.mainnet.concordium.software/">Mainnet status page</a> or <a class="reference external" href="https://status.testnet.concordium.software/">Testnet status page</a>.</p>
 <img alt="../../_images/db-status-page.png" src="../../_images/db-status-page.png" />
 <p>To see information about an incident, use your pointing device to hover over a colored block.</p>
