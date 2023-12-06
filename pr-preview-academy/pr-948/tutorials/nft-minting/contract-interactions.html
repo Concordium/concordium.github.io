@@ -1,0 +1,942 @@
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contract interactions with Concordium-Rust-SDK &#8212; Concordium  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assignment 2: dApp using WalletConnect" href="../../assignment-2/dapp-using-walletconnect.html" />
+    <link rel="prev" title="Generate a smart contract with the Concordium VSCode extension" href="smart-contract-template.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    <style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://academy.concordium.software/">
+        <img class="logo" src="../../_static/concordium-logo-dark.svg" />
+    </a>
+</div>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <style>
+  body {margin:0;}
+  
+  .navbar-menu {
+    position: relative;
+    margin-left: 190px;
+    background: none;
+  }
+  
+  .navbar-light {
+      background: #ededed!important;
+      box-shadow: none;
+  }
+  
+  .navbar-menu a {
+    float: left;
+    display: inline;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    background: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+      float: left;
+    }
+  
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+  
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+  /* Large devices (laptops/desktops, 992px to 768px ) */
+  @media only screen and (max-width: 1178px) {
+    .navbar-menu {
+      display: none;}
+  
+  }
+  </style>
+<div class="navbar-menu w3-hide-medium w3-hide-small">
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../intro.html">Introduction</a></button>
+    <div class="dropdown-content">
+      
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../beg-tutorials.html">Beginner</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../mid-tutorials.html">Intermediate</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="../../adv-tutorials.html">Advanced</a></button>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn"><a href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit">Claim badge</a></button>
+  </div>
+  </div>
+</div>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
+            <label class="sr-only">Monitor</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
+            <label class="sr-only">Discourse</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
+            <label class="sr-only">YouTube</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
+            <label class="sr-only">Medium</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/index.html" rel="noopener" target="_blank" title="Documentation"><span><i class="fas fa-book"></i></span>
+            <label class="sr-only">Documentation</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../fractionalized-nft/index.html">
+   Fractionalized NFT tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fractionalized-nft/smart-contract.html">
+     Fractionalized NFT smart contract
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fractionalized-nft/sc-actions.html">
+     Build, deploy, and initialize the fractionalizer smart contract
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fractionalized-nft/mint.html">
+     Mint fractionalized NFTs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fractionalized-nft/burn.html">
+     Burn and unlock fractionalized NFTs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   NFT minting tutorial with Rust-SDK
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="smart-contract-template.html">
+     Generate a smart contract with the Concordium VSCode extension
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Contract interactions with Concordium-Rust-SDK
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignment-2/dapp-using-walletconnect.html">
+   Assignment 2: dApp using WalletConnect
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deploy-contract">
+   Deploy contract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialize-contract">
+   Initialize contract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-schema-in-view-and-state-changing-functions">
+   Using schema in view and state changing functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mint-function">
+   Mint function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tokenmetadata-function">
+   TokenMetadata function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#view-function">
+   View function
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/academy/tutorials/nft-minting/contract-interactions.rst">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="contract-interactions-with-concordium-rust-sdk">
+<span id="mid-tutorial-contract-interactions"></span><h1>Contract interactions with Concordium-Rust-SDK<a class="headerlink" href="#contract-interactions-with-concordium-rust-sdk" title="Permalink to this headline">#</a></h1>
+<p>Now, continue with the client development. First, you will create a new instance of your deployed contract with the module reference you have. To structure things a bit, create another folder for your client with cargo.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo new cis2-rust-sdk-minting</span>
+</pre></div>
+</div>
+<p>As the first step, you need to add dependencies to the <strong>Cargo.toml</strong> file. Add the dependencies shown below, including SDK, web client components, command line and error handlers, serialization, and time libraries.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[dependencies]</span>
+
+<span class="n">concordium-rust-sdk</span><span class="o">=</span><span class="s">&quot;2&quot;</span>
+<span class="n">tokio</span> <span class="o">=</span> <span class="p">{</span> <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;full&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="n">warp</span> <span class="o">=</span> <span class="s">&quot;0.3&quot;</span>
+<span class="n">log</span> <span class="o">=</span> <span class="s">&quot;0.4.11&quot;</span>
+<span class="n">env_logger</span> <span class="o">=</span> <span class="s">&quot;0.9&quot;</span>
+<span class="n">clap</span> <span class="o">=</span> <span class="p">{</span> <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;4&quot;</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;derive&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="n">anyhow</span> <span class="o">=</span> <span class="s">&quot;1.0&quot;</span>
+<span class="n">chrono</span> <span class="o">=</span> <span class="s">&quot;0.4.19&quot;</span>
+<span class="n">thiserror</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span>
+<span class="n">structopt</span> <span class="o">=</span> <span class="s">&quot;0.3.26&quot;</span>
+<span class="n">serde</span> <span class="o">=</span> <span class="p">{</span> <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span> <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;derive&quot;</span><span class="p">]</span> <span class="p">}</span>
+<span class="n">serde_json</span> <span class="o">=</span> <span class="s">&quot;1.0&quot;</span>
+<span class="n">strum</span> <span class="o">=</span> <span class="s">&quot;0.24&quot;</span>
+<span class="n">strum_macros</span> <span class="o">=</span> <span class="s">&quot;0.24&quot;</span>
+</pre></div>
+</div>
+<p>Then in <strong>main.rs</strong> start adding the necessary libraries to your program. You need the command line argument parser (clap) for getting parameters and <strong>structopt</strong> for parsing the input parameters as a struct. You also need the <strong>path</strong> library to manipulate file paths, for example, the path of your wallet file, and many internal concordium-rust-sdk functions for making the transactions, serialization, accounts and more.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">use crate::clap::AppSettings;</span>
+<span class="go">use anyhow::Context;</span>
+<span class="go">use concordium_rust_sdk::{</span>
+<span class="go">    common::{self, types::TransactionTime, SerdeDeserialize, SerdeSerialize},</span>
+<span class="go">    smart_contracts::{</span>
+<span class="go">        common as concordium_std,</span>
+<span class="go">        common::Amount,</span>
+<span class="go">        types::{OwnedContractName, OwnedReceiveName},</span>
+<span class="go">    },</span>
+<span class="go">    types::{</span>
+<span class="go">        smart_contracts::{ModuleReference, OwnedParameter, WasmModule},</span>
+<span class="go">        transactions::{send, BlockItem, InitContractPayload, UpdateContractPayload},</span>
+<span class="go">        AccountInfo, ContractAddress, WalletAccount,</span>
+<span class="go">    },</span>
+<span class="go">    v2,</span>
+<span class="go">};</span>
+<span class="go">use std::path::PathBuf;</span>
+<span class="go">use structopt::*;</span>
+
+<span class="go">use strum_macros::EnumString;</span>
+</pre></div>
+</div>
+<p>For simplicity, create an enum that represents the actions that you would like to do. In that <code class="docutils literal notranslate"><span class="pre">Action</span></code> enum, specify the transaction types as following: <code class="docutils literal notranslate"><span class="pre">Deploy</span></code>, <code class="docutils literal notranslate"><span class="pre">Init</span></code>, <code class="docutils literal notranslate"><span class="pre">WithSchema</span></code>. In the <code class="docutils literal notranslate"><span class="pre">Deploy</span></code> action, specify your module’s path, and in the <code class="docutils literal notranslate"><span class="pre">Init</span></code> action, specify only the deployed module reference. In the <code class="docutils literal notranslate"><span class="pre">WithSchema</span></code> action, specify the transaction parameter for minting, transferring, or viewing the contract state. Note that all will be invokable with the schema file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>StructOpt<span class="o">)]</span>
+<span class="go">enum Action {</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">about</span> <span class="o">=</span> <span class="s2">&quot;Deploy the module&quot;</span><span class="o">)]</span>
+<span class="go">    Deploy {</span>
+<span class="gp">        #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">long</span> <span class="o">=</span> <span class="s2">&quot;module&quot;</span>, <span class="nb">help</span> <span class="o">=</span> <span class="s2">&quot;Path to the contract module.&quot;</span><span class="o">)]</span>
+<span class="go">        module_path: PathBuf,</span>
+<span class="go">    },</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">about</span> <span class="o">=</span> <span class="s2">&quot;Initialize the CIS-2 NFT contract&quot;</span><span class="o">)]</span>
+<span class="go">    Init {</span>
+<span class="gp">        #</span><span class="o">[</span>structopt<span class="o">(</span>
+<span class="go">            long,</span>
+<span class="go">            help = &quot;The module reference used for initializing the contract instance.&quot;</span>
+<span class="go">        )]</span>
+<span class="go">        module_ref: ModuleReference,</span>
+<span class="go">    },</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span>
+<span class="go">        about = &quot;Update the contract and set the provided  using JSON parameters and a \</span>
+<span class="go">                schema.&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    WithSchema {</span>
+<span class="gp">        #</span><span class="o">[</span>structopt<span class="o">(</span>long, <span class="nb">help</span> <span class="o">=</span> <span class="s2">&quot;Path of the JSON parameter.&quot;</span><span class="o">)]</span>
+<span class="go">        parameter: PathBuf,</span>
+<span class="gp">        #</span><span class="o">[</span>structopt<span class="o">(</span>long, <span class="nb">help</span> <span class="o">=</span> <span class="s2">&quot;Path to the schema.&quot;</span><span class="o">)]</span>
+<span class="go">        schema: PathBuf,</span>
+<span class="gp">        #</span><span class="o">[</span>structopt<span class="o">(</span>long, <span class="nb">help</span> <span class="o">=</span> <span class="s2">&quot;The contract to update.&quot;</span><span class="o">)]</span>
+<span class="go">        address: ContractAddress,</span>
+<span class="gp">        #</span><span class="o">[</span>structopt<span class="o">(</span>long, <span class="nb">help</span> <span class="o">=</span> <span class="s2">&quot;Transaction Type&quot;</span><span class="o">)]</span>
+<span class="go">        transaction_type_: TransactionType,</span>
+<span class="go">    },</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Add an enum to distinguish all transactions that require a schema that comes with the <code class="docutils literal notranslate"><span class="pre">WithSchema</span></code> parameter. You need the schema file for both state-changing and view functions (to print in a human-readable form).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>StructOpt, EnumString<span class="o">)]</span>
+<span class="go">enum TransactionType {</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">about</span> <span class="o">=</span> <span class="s2">&quot;Mint&quot;</span><span class="o">)]</span>
+<span class="go">    Mint,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">about</span> <span class="o">=</span> <span class="s2">&quot;Transfer&quot;</span><span class="o">)]</span>
+<span class="go">    Transfer,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">about</span> <span class="o">=</span> <span class="s2">&quot;TokenMetadata&quot;</span><span class="o">)]</span>
+<span class="go">    TokenMetadata,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">about</span> <span class="o">=</span> <span class="s2">&quot;View&quot;</span><span class="o">)]</span>
+<span class="go">    View,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">TransactionResult</span></code> to escape an error for incompatible type error for returning different results from each match. Every state change after each invocation, including <code class="docutils literal notranslate"><span class="pre">init_contract</span></code>, <code class="docutils literal notranslate"><span class="pre">deploy_contract</span></code>, and <code class="docutils literal notranslate"><span class="pre">update_contract</span></code> needs to be treated differently than the <code class="docutils literal notranslate"><span class="pre">tokenMetadata()</span></code> and the <code class="docutils literal notranslate"><span class="pre">view()</span></code> functions. In order to call these view functions (which won’t cause any state changes), call the <code class="docutils literal notranslate"><span class="pre">invoke_instance</span></code> function, which has a return type. So having a parent enum helps you to return the same types, but gives you the ability to manipulate each one individually.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>Debug<span class="o">)]</span>
+<span class="go">enum TransactionResult {</span>
+<span class="go">    StateChanging(AccountTransaction&lt;EncodedPayload&gt;),</span>
+<span class="go">    None,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Now, you need to set the base configurations including node setup. Since you are going to deploy this contract to testnet, use the testnet node gRPC endpoint as the default provided by Concordium which is <strong>testnet.node.concordium.com</strong>. You also need your key file path (the file exported from the wallet) and the <code class="docutils literal notranslate"><span class="pre">Action</span></code>. All of these are configurable from the terminal as an input parameter.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/// Node connection, key path and the action input struct</span>
+<span class="gp">#</span><span class="o">[</span>derive<span class="o">(</span>StructOpt<span class="o">)]</span>
+<span class="go">struct App {</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span>
+<span class="go">        long = &quot;node&quot;,</span>
+<span class="go">        help = &quot;GRPC interface of the node.&quot;,</span>
+<span class="go">        default_value = &quot;http://node.testnet.concordium.com:20000&quot;</span>
+<span class="go">    )]</span>
+<span class="go">    endpoint: v2::Endpoint,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span><span class="nv">long</span> <span class="o">=</span> <span class="s2">&quot;account&quot;</span>, <span class="nb">help</span> <span class="o">=</span> <span class="s2">&quot;Path to the account key file.&quot;</span><span class="o">)]</span>
+<span class="go">    keys_path: PathBuf,</span>
+<span class="gp">    #</span><span class="o">[</span>structopt<span class="o">(</span>subcommand, <span class="nb">help</span> <span class="o">=</span> <span class="s2">&quot;The action you want to perform.&quot;</span><span class="o">)]</span>
+<span class="go">    action: Action,</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Now you can create your <code class="docutils literal notranslate"><span class="pre">main()</span></code> function. As you can see from the code below, it is a multi-threaded runtime that can handle multiple requests simultaneously. It reads the inputs from the terminal and creates a connection with Concordium by creating a client. Upload your key file by providing its path, and get the nonce of the last finalized block to have the full list of the accounts onboarded. Then check the <code class="docutils literal notranslate"><span class="pre">action</span></code> type to decide whether this is going to be a <code class="docutils literal notranslate"><span class="pre">Deploy</span></code>, <code class="docutils literal notranslate"><span class="pre">Init</span></code> or <code class="docutils literal notranslate"><span class="pre">WithSchema</span></code> transaction in a match or switch case statement. (In Rust, there is no switch case statement.) Start coding <code class="docutils literal notranslate"><span class="pre">Deploy</span></code> and <code class="docutils literal notranslate"><span class="pre">Init</span></code> first, then continue with <code class="docutils literal notranslate"><span class="pre">WithSchema</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="o">[</span>tokio::main<span class="o">(</span><span class="nv">flavor</span> <span class="o">=</span> <span class="s2">&quot;multi_thread&quot;</span><span class="o">)]</span>
+<span class="go">async fn main() -&gt; anyhow::Result&lt;()&gt; {</span>
+<span class="go">    use base64::{engine::general_purpose, Engine as _};</span>
+<span class="go">    let app = {</span>
+<span class="go">        let app = App::clap().global_setting(AppSettings::ColoredHelp);</span>
+<span class="go">        let matches = app.get_matches();</span>
+<span class="go">        App::from_clap(&amp;matches)</span>
+<span class="go">    };</span>
+
+<span class="go">    let mut client = v2::Client::new(app.endpoint)</span>
+<span class="go">        .await</span>
+<span class="go">        .context(&quot;Cannot connect.&quot;)?;</span>
+
+<span class="go">    // load account keys and sender address from a file</span>
+<span class="go">    let keys: WalletAccount =</span>
+<span class="go">        WalletAccount::from_json_file(app.keys_path).context(&quot;Could not read the keys file.&quot;)?;</span>
+
+<span class="go">    // Get the initial nonce at the last finalized block.</span>
+<span class="go">    let acc_info: AccountInfo = client</span>
+<span class="go">        .get_account_info(&amp;keys.address.into(), &amp;v2::BlockIdentifier::Best)</span>
+<span class="go">        .await?</span>
+<span class="go">        .response;</span>
+
+<span class="go">    let nonce = acc_info.account_nonce;</span>
+<span class="go">    // set expiry to now + 5min</span>
+<span class="go">    let expiry: TransactionTime =</span>
+<span class="go">        TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);</span>
+</pre></div>
+</div>
+<div class="section" id="deploy-contract">
+<h2>Deploy contract<a class="headerlink" href="#deploy-contract" title="Permalink to this headline">#</a></h2>
+<p>In order to deploy the contract and all other transactions, you use the <code class="docutils literal notranslate"><span class="pre">send()</span></code> wrapper from the concordium-rust-sdk under the <strong>transactions</strong> library. You read the Wasm compiled smart contract module, and after deserializing it, invoke the <code class="docutils literal notranslate"><span class="pre">deploy_module()</span></code> function from the same library. For structuring the directory a bit better, create a folder called <strong>nft-params</strong> and copy and paste the exported wallet file and the module from <strong>concordium-out</strong> into it.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">let tx = match app.action {</span>
+<span class="go">        Action::Deploy { module_path } =&gt; {</span>
+<span class="go">            let contents = std::fs::read(module_path).context(&quot;Could not read contract module.&quot;)?;</span>
+<span class="go">            let payload: WasmModule =</span>
+<span class="go">                common::Deserial::deserial(&amp;mut std::io::Cursor::new(contents))?;</span>
+<span class="go">            TransactionResult::StateChanging(send::deploy_module(</span>
+<span class="go">                &amp;keys,</span>
+<span class="go">                keys.address,</span>
+<span class="go">                nonce,</span>
+<span class="go">                expiry,</span>
+<span class="go">                payload,</span>
+<span class="go">            ))</span>
+<span class="go">        }</span>
+</pre></div>
+</div>
+<img alt="../../_images/mid-nft-scactions1.png" src="../../_images/mid-nft-scactions1.png" />
+<p>Build your file first, then run the executable in the target/debug folder with the command below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo build</span>
+<span class="go">cd target/debug</span>
+<span class="go">./cis2-rust-sdk-minting --account ../../nft-params/wallet.export deploy --module ../../nft-params/module.wasm.v1</span>
+</pre></div>
+</div>
+<img alt="../../_images/mid-nft-scactions2.png" src="../../_images/mid-nft-scactions2.png" />
+<p>Congrats! You have successfully deployed your smart contract!</p>
+</div>
+<div class="section" id="initialize-contract">
+<h2>Initialize contract<a class="headerlink" href="#initialize-contract" title="Permalink to this headline">#</a></h2>
+<p>Now you will create a new instance of the deployed contract. The first <code class="docutils literal notranslate"><span class="pre">match``checks</span> <span class="pre">whether</span> <span class="pre">the</span> <span class="pre">action</span> <span class="pre">is</span> <span class="pre">``Init</span></code>. Then you add an empty <code class="docutils literal notranslate"><span class="pre">OwnedParam</span></code> because your smart contract <code class="docutils literal notranslate"><span class="pre">init</span></code> function doesn’t require an input parameter, and similarly, there is no <code class="docutils literal notranslate"><span class="pre">Amount</span></code> for this function as a payment. But the <code class="docutils literal notranslate"><span class="pre">init</span></code> function itself requires the <code class="docutils literal notranslate"><span class="pre">module_reference</span></code> that you had in the previous step. Use that and call the <code class="docutils literal notranslate"><span class="pre">init_contract()</span></code> function from <code class="docutils literal notranslate"><span class="pre">send</span></code> wrapper of the <strong>transactions</strong> library.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Action::Init {</span>
+<span class="go">            module_ref: mod_ref,</span>
+<span class="go">        } =&gt; {</span>
+<span class="go">            let param = OwnedParameter::empty();</span>
+<span class="go">            //                 .expect(&quot;Known to not exceed parameter size limit.&quot;);</span>
+<span class="go">            let payload = InitContractPayload {</span>
+<span class="go">                amount: Amount::zero(),</span>
+<span class="go">                mod_ref,</span>
+<span class="go">                init_name: OwnedContractName::new_unchecked(</span>
+<span class="go">                    &quot;init_rust_sdk_minting_tutorial&quot;.to_string(),</span>
+<span class="go">                ),</span>
+<span class="go">                param,</span>
+<span class="go">            };</span>
+<span class="go">            TransactionResult::StateChanging(send::init_contract(</span>
+<span class="go">                &amp;keys,</span>
+<span class="go">                keys.address,</span>
+<span class="go">                nonce,</span>
+<span class="go">                expiry,</span>
+<span class="go">                payload,</span>
+<span class="go">                10000u64.into(),</span>
+<span class="go">            ))</span>
+<span class="go">        }</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./cis2-rust-sdk-minting --account ../../nft-params/wallet.export init --module-ref &lt;YOUR-MODULE-REFERENCE&gt;</span>
+</pre></div>
+</div>
+<img alt="../../_images/mid-nft-scactions3.png" src="../../_images/mid-nft-scactions3.png" />
+<p>In the following sections, you will use the schema file either while changing the state with <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> or <code class="docutils literal notranslate"><span class="pre">mint()</span></code> functions, or to print return values in the form of JSON from the contract.</p>
+</div>
+<div class="section" id="using-schema-in-view-and-state-changing-functions">
+<h2>Using schema in view and state changing functions<a class="headerlink" href="#using-schema-in-view-and-state-changing-functions" title="Permalink to this headline">#</a></h2>
+<p>You will need the schema file when calling <code class="docutils literal notranslate"><span class="pre">mint()</span></code> and <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> functions and any view functions printing, including <code class="docutils literal notranslate"><span class="pre">tokenMetadata()</span></code> and <code class="docutils literal notranslate"><span class="pre">view()</span></code>. First, you need to read and load schema from the <strong>.bs64</strong> output file. For convenience, copy and paste it from the <strong>concordium-out</strong> folder to the <strong>nft-params</strong> folder. Note that base64 encoding is without padding, so decode it accordingly. Then you have the <code class="docutils literal notranslate"><span class="pre">TransactionType</span></code> enum which helps you to distinguish the transactions because each one needs different parameters, invokes different functions, and uses different parts of the schema.</p>
+<p>For the sake of the <code class="docutils literal notranslate"><span class="pre">match</span></code> statement’s return type mismatch error, after every transaction the return type is <code class="docutils literal notranslate"><span class="pre">TransactionResult</span></code>. Depending on the transaction, it returns <code class="docutils literal notranslate"><span class="pre">TransactionResult::StateChanging</span></code> (if it’s a mint or transfer), or <code class="docutils literal notranslate"><span class="pre">TransactionResult::None</span></code> (if it’s a view function).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Action::WithSchema {</span>
+<span class="go">            parameter,</span>
+<span class="go">            schema,</span>
+<span class="go">            address,</span>
+<span class="go">            transaction_type_,</span>
+<span class="go">        } =&gt; {</span>
+<span class="go">            let parameter: serde_json::Value = serde_json::from_slice(</span>
+<span class="go">                &amp;std::fs::read(parameter.unwrap()).context(&quot;Unable to read parameter file.&quot;)?,</span>
+<span class="go">            )</span>
+<span class="go">            .context(&quot;Unable to parse parameter JSON.&quot;)?;</span>
+
+<span class="go">            let schemab64 = std::fs::read(schema).context(&quot;Unable to read the schema file.&quot;)?;</span>
+<span class="go">            let schema_source = general_purpose::STANDARD_NO_PAD.decode(schemab64);</span>
+
+<span class="go">            let schema = concordium_std::from_bytes::&lt;concordium_std::schema::VersionedModuleSchema&gt;(</span>
+<span class="go">                &amp;schema_source?,</span>
+<span class="go">            )?;</span>
+<span class="go">            // schema_global = schema;</span>
+<span class="go">            match transaction_type_ {</span>
+<span class="go">                TransactionType::Mint =&gt; {</span>
+<span class="go">                    let param_schema =</span>
+<span class="go">                        schema.get_receive_param_schema(&quot;rust_sdk_minting_tutorial&quot;, &quot;mint&quot;)?;</span>
+<span class="go">                    let serialized_parameter = param_schema.serial_value(&amp;parameter)?;</span>
+<span class="go">                    let message = OwnedParameter::try_from(serialized_parameter).unwrap();</span>
+<span class="go">                    let payload = UpdateContractPayload {</span>
+<span class="go">                        amount: Amount::zero(),</span>
+<span class="go">                        address,</span>
+<span class="go">                        receive_name: OwnedReceiveName::new_unchecked(</span>
+<span class="go">                            &quot;rust_sdk_minting_tutorial.mint&quot;.to_string(),</span>
+<span class="go">                        ),</span>
+<span class="go">                        message,</span>
+<span class="go">                    };</span>
+
+<span class="go">                    TransactionResult::StateChanging(send::update_contract(</span>
+<span class="go">                        &amp;keys,</span>
+<span class="go">                        keys.address,</span>
+<span class="go">                        nonce,</span>
+<span class="go">                        expiry,</span>
+<span class="go">                        payload,</span>
+<span class="go">                        10000u64.into(),</span>
+<span class="go">                    ))</span>
+<span class="go">                }</span>
+<span class="go">                //// Transfer Transaction which changes the state</span>
+<span class="go">                TransactionType::Transfer =&gt; {</span>
+<span class="go">                    let param_schema =</span>
+<span class="go">                        schema.get_receive_param_schema(&quot;rust_sdk_minting_tutorial&quot;, &quot;transfer&quot;)?;</span>
+<span class="go">                    let serialized_parameter = param_schema.serial_value(&amp;parameter)?;</span>
+<span class="go">                    let message = OwnedParameter::try_from(serialized_parameter).unwrap();</span>
+<span class="go">                    let payload = UpdateContractPayload {</span>
+<span class="go">                        amount: Amount::zero(),</span>
+<span class="go">                        address,</span>
+<span class="go">                        receive_name: OwnedReceiveName::new_unchecked(</span>
+<span class="go">                            &quot;rust_sdk_minting_tutorial.transfer&quot;.to_string(),</span>
+<span class="go">                        ),</span>
+<span class="go">                        message,</span>
+<span class="go">                    };</span>
+<span class="go">                    //// call update contract with the payload</span>
+<span class="go">                    TransactionResult::StateChanging(send::update_contract(</span>
+<span class="go">                        &amp;keys,</span>
+<span class="go">                        keys.address,</span>
+<span class="go">                        nonce,</span>
+<span class="go">                        expiry,</span>
+<span class="go">                        payload,</span>
+<span class="go">                        10000u64.into(),</span>
+<span class="go">                    ))</span>
+<span class="go">                }</span>
+<span class="go">                /// Token Metadata function with no state change</span>
+<span class="go">                TransactionType::TokenMetadata =&gt; {</span>
+<span class="go">                    let param_schema = schema</span>
+<span class="go">                        .get_receive_param_schema(&quot;rust_sdk_minting_tutorial&quot;, &quot;tokenMetadata&quot;)?;</span>
+<span class="go">                    let rv_schema = schema.get_receive_return_value_schema(</span>
+<span class="go">                        &quot;rust_sdk_minting_tutorial&quot;,</span>
+<span class="go">                        &quot;tokenMetadata&quot;,</span>
+<span class="go">                    )?;</span>
+
+<span class="go">                    let serialized_parameter = param_schema.serial_value(&amp;parameter)?;</span>
+<span class="go">                    let context = ContractContext {</span>
+<span class="go">                        invoker: None, //Account(AccountAddress),</span>
+<span class="go">                        contract: address,</span>
+<span class="go">                        amount: Amount::zero(),</span>
+<span class="go">                        method: OwnedReceiveName::new_unchecked(</span>
+<span class="go">                            &quot;rust_sdk_minting_tutorial.tokenMetadata&quot;.to_string(),</span>
+<span class="go">                        ),</span>
+<span class="go">                        parameter: OwnedParameter::try_from(serialized_parameter).unwrap(), //Default::default(),</span>
+<span class="go">                        energy: 1000000.into(),</span>
+<span class="go">                    };</span>
+<span class="go">                    // invoke instance</span>
+<span class="go">                    let info = client</span>
+<span class="go">                        .invoke_instance(&amp;BlockIdentifier::Best, &amp;context)</span>
+<span class="go">                        .await?;</span>
+
+<span class="go">                    match info.response {</span>
+<span class="go">                            concordium_rust_sdk::types::smart_contracts::InvokeContractResult::Success { return_value, .. } =&gt; {</span>
+<span class="go">                                let bytes: concordium_rust_sdk::types::smart_contracts::ReturnValue = return_value.unwrap();</span>
+<span class="go">                                // deserialize and print return value</span>
+<span class="go">                                println!( &quot;{}&quot;,rv_schema.to_json_string_pretty(&amp;bytes.value)?);//jsonxf::pretty_print(&amp;param_schema.to_json_string_pretty(&amp;bytes.value)?).unwrap());</span>
+<span class="go">                            }</span>
+<span class="go">                            _ =&gt; {</span>
+<span class="go">                                println!(&quot;Could&#39;nt succesfully invoke the instance. Check the parameters.&quot;)</span>
+<span class="go">                            }</span>
+<span class="go">                        }</span>
+<span class="go">                    TransactionResult::None</span>
+
+<span class="go">                    // info</span>
+<span class="go">                }</span>
+<span class="go">                TransactionType::View =&gt; {</span>
+<span class="go">                    let rv_schema = schema</span>
+<span class="go">                        .get_receive_return_value_schema(&quot;rust_sdk_minting_tutorial&quot;, &quot;view&quot;)?;</span>
+
+<span class="go">                    let context = ContractContext {</span>
+<span class="go">                        invoker: None, //Account(AccountAddress),</span>
+<span class="go">                        contract: address,</span>
+<span class="go">                        amount: Amount::zero(),</span>
+<span class="go">                        method: OwnedReceiveName::new_unchecked(</span>
+<span class="go">                            &quot;rust_sdk_minting_tutorial.view&quot;.to_string(),</span>
+<span class="go">                        ),</span>
+<span class="go">                        parameter: Default::default(),</span>
+<span class="go">                        energy: 1000000.into(),</span>
+<span class="go">                    };</span>
+<span class="go">                    // invoke instance</span>
+<span class="go">                    let info = client</span>
+<span class="go">                        .invoke_instance(&amp;BlockIdentifier::Best, &amp;context)</span>
+<span class="go">                        .await?;</span>
+
+<span class="go">                    match info.response {</span>
+<span class="go">                            concordium_rust_sdk::types::smart_contracts::InvokeContractResult::Success { return_value, .. } =&gt; {</span>
+<span class="go">                                let bytes: concordium_rust_sdk::types::smart_contracts::ReturnValue = return_value.unwrap();</span>
+<span class="go">                                // deserialize and print return value</span>
+<span class="go">                                println!( &quot;{}&quot;,rv_schema.to_json_string_pretty(&amp;bytes.value)?);//jsonxf::pretty_print(&amp;param_schema.to_json_string_pretty(&amp;bytes.value)?).unwrap());</span>
+<span class="go">                            }</span>
+<span class="go">                            _ =&gt; {</span>
+<span class="go">                                println!(&quot;Could&#39;nt succesfully invoke the instance. Check the parameters.&quot;)</span>
+<span class="go">                            }</span>
+<span class="go">                        }</span>
+<span class="go">                    TransactionResult::None</span>
+
+<span class="go">                    // info</span>
+<span class="go">                }</span>
+<span class="go">            }</span>
+<span class="go">        }</span>
+</pre></div>
+</div>
+<p>Finally, for the transaction output, you have one final <code class="docutils literal notranslate"><span class="pre">match</span></code> statement with <code class="docutils literal notranslate"><span class="pre">TransactionResult</span></code>, which will print the transaction details including module reference when deployed, contract address when initialized, and rejection reason if it’s rejected by looking at the <code class="docutils literal notranslate"><span class="pre">BlockSummaryDetails</span></code>. The program will print the view functions’ returns in the previous section so in this final <code class="docutils literal notranslate"><span class="pre">match</span></code> they are just gracefully exiting.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">match tx {</span>
+<span class="go">    TransactionResult::StateChanging(result) =&gt; {</span>
+<span class="go">        let item = BlockItem::AccountTransaction(result);</span>
+<span class="go">        // submit the transaction to the chain</span>
+<span class="go">        let transaction_hash = client.send_block_item(&amp;item).await?;</span>
+<span class="go">        println!(</span>
+<span class="go">            &quot;Transaction {} submitted (nonce = {}).&quot;,</span>
+<span class="go">            transaction_hash, nonce,</span>
+<span class="go">        );</span>
+<span class="go">        let (bh, bs) = client.wait_until_finalized(&amp;transaction_hash).await?;</span>
+<span class="go">        println!(&quot;Transaction finalized in block {}.&quot;, bh);</span>
+
+<span class="go">        match bs.details {</span>
+<span class="go">            BlockItemSummaryDetails::AccountTransaction(ad) =&gt; {</span>
+<span class="go">                match ad.effects {</span>
+<span class="go">                    AccountTransactionEffects::ModuleDeployed { module_ref } =&gt; {</span>
+<span class="go">                        println!(&quot;module ref is {}&quot;, module_ref);</span>
+<span class="go">                    }</span>
+<span class="go">                    AccountTransactionEffects::ContractInitialized { data } =&gt; {</span>
+<span class="go">                        println!(&quot;Contract address is {}&quot;, data.address);</span>
+<span class="go">                    }</span>
+<span class="go">                    AccountTransactionEffects::None {</span>
+<span class="go">                        transaction_type,</span>
+<span class="go">                        reject_reason,</span>
+<span class="go">                    } =&gt; {</span>
+<span class="go">                        println!(&quot;The Rejection Outcome is {:#?}&quot;, reject_reason);</span>
+<span class="go">                    }</span>
+<span class="go">                    _ =&gt; (),</span>
+<span class="go">                };</span>
+<span class="go">            }</span>
+<span class="go">            BlockItemSummaryDetails::AccountCreation(_) =&gt; (),</span>
+<span class="go">            BlockItemSummaryDetails::Update(_) =&gt; {</span>
+<span class="go">                println!(&quot;Transaction finalized in block {:?}.&quot;, bs.details);</span>
+<span class="go">                ()</span>
+<span class="go">            }</span>
+<span class="go">        };</span>
+<span class="go">    }</span>
+<span class="go">     TransactionResult::None =&gt; {</span>
+<span class="go">        println!(&quot;No state changes, already printed, gracefully exiting.&quot;);</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mint-function">
+<h2>Mint function<a class="headerlink" href="#mint-function" title="Permalink to this headline">#</a></h2>
+<p>Now you can call the <code class="docutils literal notranslate"><span class="pre">mint()</span></code> function from your new instance. For the complete minting tutorial you can follow <a class="reference external" href="https://developer.concordium.software/en/mainnet/smart-contracts/tutorials/nft-minting/index.html#nft-index" title="(in Concordium)"><span class="xref std std-ref">the NFT minting tutorial from Concordium’s developer portal</span></a>. Create a file called <strong>nft-params.json</strong> (similar to the tutorial) in the <strong>nft-params</strong> folder to mint your token and add your address and token ID to the file. And copy the schema file from the <strong>concordium-out</strong> folder to the <strong>nft-params</strong> folder.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;YOUR-ACCOUNT-ADDRESS&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;tokens&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;TOKEN-ID&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you want to check the parameters you can always use <code class="docutils literal notranslate"><span class="pre">— help</span></code> keyword.</p>
+<img alt="../../_images/mid-nft-scactions4.png" src="../../_images/mid-nft-scactions4.png" />
+<p>You will call <code class="docutils literal notranslate"><span class="pre">with-schema</span></code> which requires the contract address, parameters, schema, and transaction type. Since there could be multiple transaction types like mint, transfer, view, burn, etc. you have added another enum <code class="docutils literal notranslate"><span class="pre">TransactionType</span></code>. Specification of the transaction type is necessary while starting the program using the command line. You are also expected to provide the JSON parameters and the schema file; both will be read from the provided path. If you need more details use <code class="docutils literal notranslate"><span class="pre">— help</span></code> again.</p>
+<img alt="../../_images/mid-nft-scactions5.png" src="../../_images/mid-nft-scactions5.png" />
+<p>Use the command below to invoke the <code class="docutils literal notranslate"><span class="pre">mint()</span></code> function.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./cis2-rust-sdk-minting --account ../../nft-params/wallet.export with-schema --address &quot;&lt;INDEX,SUBINDEX&gt;&quot; --parameter ../../nft-params/nft-params.json --schema ../../nft-params/module-schema.bs64 --transaction-type Mint</span>
+</pre></div>
+</div>
+<img alt="../../_images/mid-nft-scactions6.png" src="../../_images/mid-nft-scactions6.png" />
+<p>Congrats! You have successfully minted your first token using the Concordium Rust-SDK!</p>
+</div>
+<div class="section" id="tokenmetadata-function">
+<h2>TokenMetadata function<a class="headerlink" href="#tokenmetadata-function" title="Permalink to this headline">#</a></h2>
+<p>Check your token’s metadata URL. Invoke the <code class="docutils literal notranslate"><span class="pre">tokenMetadata()</span></code> function of <strong>cis2-nft</strong>. It requires <code class="docutils literal notranslate"><span class="pre">token_id</span></code>. Create a JSON file like below and add any <code class="docutils literal notranslate"><span class="pre">token_id</span></code> s to send as a parameter.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="s2">&quot;TOKEN-ID&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TOKEN-ID&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./cis2-rust-sdk-minting --account ../../nft-params/wallet.export with-schema --address &quot;&lt;INDEX,SUBINDEX&gt;&quot; --parameter ../../nft-params/token-id.json --schema ../../nft-params/module-schema.bs64 --transaction-type TokenMetadata</span>
+</pre></div>
+</div>
+<img alt="../../_images/mid-nft-scactions7.png" src="../../_images/mid-nft-scactions7.png" />
+</div>
+<div class="section" id="view-function">
+<h2>View function<a class="headerlink" href="#view-function" title="Permalink to this headline">#</a></h2>
+<p>Finally, invoke the <code class="docutils literal notranslate"><span class="pre">view()</span></code> function, which simply returns the current state of the contract instance. It doesn’t necessarily require a parameter to be invoked, but your program waits for a parameter so you can use the same <strong>token_id.json</strong> file to display the state.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./cis2-rust-sdk-minting --account ../../nft-params/wallet.export with-schema --address &quot;&lt;INDEX,SUBINDEX&gt;&quot; --parameter ../../nft-params/token-id.json --schema ../../nft-params/module-schema.bs64 --transaction-type View</span>
+</pre></div>
+</div>
+<img alt="../../_images/mid-nft-scactions8.png" src="../../_images/mid-nft-scactions8.png" />
+<p>Congrats! You have successfully completed the Concordium NFT Minting Tutorial with Rust-SDK! The full code can be found <a class="reference external" href="https://github.com/bogacyigitbasi/nft-rust-sdk">here</a>.</p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="smart-contract-template.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Generate a smart contract with the Concordium VSCode extension</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../assignment-2/dapp-using-walletconnect.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 2: dApp using WalletConnect</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding: 16px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2023, Concordium Software ApS
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+  </body>
+</html>
