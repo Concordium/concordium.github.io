@@ -70,17 +70,10 @@ Block explorers
 
 The following are links to the block, node, and status explorers.
 
-Concordium block explorers
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For a description of the information available on the pages, see :ref:`Dashboards and Status pages <dashboards>`.
-
-    - `Mainnet block explorer <https://dashboard.mainnet.concordium.software>`_
-
-    - `Testnet block explorer <https://dashboard.testnet.concordium.com>`_
-
 Concordium status pages
 ^^^^^^^^^^^^^^^^^^^^^^^
+
+For information about the status pages, see :ref:`Status pages<dashboards>`.
 
     - `Mainnet status page <https://status.mainnet.concordium.software>`_
 
