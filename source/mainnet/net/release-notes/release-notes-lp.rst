@@ -19,11 +19,15 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    November 29, 2023
+    December XX, 2023
 
-    Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
+    Version 1.5.0 fixes several bugs in the CIS-2 functionality.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.4.0 - November 29, 2023
+
+            Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
         .. dropdown:: |mw-gen2| 1.3.0 - October 31, 2023
 
