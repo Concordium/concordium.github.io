@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/net/installation/cdw-verification-instructions/cdw-deb.8386f2a6-bf54-4d22-a06e-2f295ae740b9.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/net/installation/cdw-verification-instructions/cdw-deb.a625dc66-95f3-4b42-80b4-700ef1adcd15.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -265,7 +265,7 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum <span class="p">|</span>cdw-deb<span class="p">|</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span><span class="p">|</span>cdw-deb<span class="p">|</span>
 <span class="go">|cdw-deb-checksum|</span>
 </pre></div>
 </div>
@@ -282,7 +282,7 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl pkeyutl -verify -pubin -inkey concordium-desktop-wallet-pubkey.pem -rawin -in <span class="p">|</span>cdw-deb<span class="p">|</span> -sigfile <span class="p">|</span>cdw-deb<span class="p">|</span>.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span><span class="p">|</span>cdw-deb<span class="p">|</span><span class="w"> </span>-sigfile<span class="w"> </span><span class="p">|</span>cdw-deb<span class="p">|</span>.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>

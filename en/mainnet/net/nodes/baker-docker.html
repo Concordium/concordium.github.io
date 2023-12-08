@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-docker.acbae317-ec67-4eef-982b-b27a7e4c3d32.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-docker.f64718d8-ff17-4983-bcf2-2562c2b6b013.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2047,7 +2047,7 @@ body {margin:0;}
 <h2>Configure a node as a validator<a class="headerlink" href="#configure-a-node-as-a-validator" title="Permalink to this headline">#</a></h2>
 <p>Once you have generated validator keys, you then need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.</p>
 <p>To register the keys in the network you need to be <a class="reference internal" href="../guides/run-node.html#running-a-node"><span class="std std-ref">running a node</span></a> and send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator add &lt;keys-file&gt;.json --sender validatorAccount --stake &lt;amount-to-stake&gt; --out &lt;concordium-data-dir&gt;/validator-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>&lt;keys-file&gt;.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>
@@ -2063,17 +2063,17 @@ body {margin:0;}
 <p>To start the node with these validator keys and produce blocks, do the following:</p>
 <ol class="arabic">
 <li><p>Stop the currently running node. To do this, press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or run</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker stop testnet-node
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>stop<span class="w"> </span>testnet-node
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker stop mainnet-node
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>stop<span class="w"> </span>mainnet-node
 </pre></div>
 </div>
 <p>depending on the environment.</p>
 </li>
 <li><p>Update the configuration file for the node by adding</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json</span>
 </pre></div>
 </div>
 <p>into the <code class="docutils literal notranslate"><span class="pre">environment</span></code> section of the <code class="docutils literal notranslate"><span class="pre">node</span></code> service section of the file.</p>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/query-node.96e7230d-19e0-4ec7-ac03-9e94f538a883.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/query-node.b6ad6800-411c-4acb-9998-8719164c6895.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2157,7 +2157,7 @@ statistics related to production of blocks.</p></li>
 <span id="query-account-state"></span><h2>Account state<a class="headerlink" href="#account-state" title="Permalink to this headline">#</a></h2>
 <div class="section" id="list-accounts">
 <h3>List accounts<a class="headerlink" href="#list-accounts" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account list <span class="o">[</span>--block BLOCK-HASH<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>list<span class="w"> </span><span class="o">[</span>--block<span class="w"> </span>BLOCK-HASH<span class="o">]</span>
 </pre></div>
 </div>
 <p>List the addresses of all accounts on the chain as of a specific block:</p>
@@ -2166,7 +2166,7 @@ statistics related to production of blocks.</p></li>
 </ul>
 <div class="section" id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account list
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>list
 <span class="go">2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG</span>
 <span class="go">33MT5V7LAzbjfRS537nqq9AqHb4ALymQWwYhriE3kcYr8qsDoS</span>
 <span class="go">3GqF3FQPxyxUChnBcwsC5jmY4kqWyi6R8dNXHk88GYqCPKaLGP</span>
@@ -2177,7 +2177,7 @@ statistics related to production of blocks.</p></li>
 </div>
 <div class="section" id="inspect-specific-account">
 <h3>Inspect specific account<a class="headerlink" href="#inspect-specific-account" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show <span class="o">[</span>ACCOUNT<span class="o">]</span> <span class="o">[</span>--block BLOCK<span class="o">]</span> <span class="o">[</span>--encrypted<span class="o">]</span> <span class="o">[</span>--decrypt-encrypted<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span><span class="o">[</span>ACCOUNT<span class="o">]</span><span class="w"> </span><span class="o">[</span>--block<span class="w"> </span>BLOCK<span class="o">]</span><span class="w"> </span><span class="o">[</span>--encrypted<span class="o">]</span><span class="w"> </span><span class="o">[</span>--decrypt-encrypted<span class="o">]</span>
 </pre></div>
 </div>
 <p>Display all publicly available information of a specific account as of a
@@ -2193,7 +2193,7 @@ will show the account with the local alias <code class="docutils literal notrans
 </ul>
 <div class="section" id="id1">
 <h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show my-account --shielded
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>my-account<span class="w"> </span>--shielded
 <span class="go">Local name:            my-account</span>
 <span class="go">Address:               2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG</span>
 <span class="go">Amount:                1026.000000 CCD</span>
@@ -2233,7 +2233,7 @@ accessing the decryption key.</p>
 </div>
 <div class="section" id="transaction-status">
 <h2>Transaction status<a class="headerlink" href="#transaction-status" title="Permalink to this headline">#</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction status TX-HASH
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>status<span class="w"> </span>TX-HASH
 </pre></div>
 </div>
 <p>Display the lifecycle state of a <a class="reference internal" href="../resources/glossary.html#term-Transaction"><span class="xref std std-term">transaction</span></a> (pending, committed, finalized,
@@ -2242,7 +2242,7 @@ or absent).</p>
 and execution cost is included as well.</p>
 <div class="section" id="id2">
 <h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction status 0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>status<span class="w"> </span>0fda6e284f9cd4429c6f76fd1bf6179aad4fa1bb218fe5ec8ad33916bf84a833
 <span class="go">Transaction is finalized into block e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2 with status &quot;success&quot; and cost 0.011200 CCD (112 NRG).</span>
 </pre></div>
 </div>
@@ -2252,7 +2252,7 @@ and execution cost is included as well.</p>
 <h2>Block state<a class="headerlink" href="#block-state" title="Permalink to this headline">#</a></h2>
 <div class="section" id="inspect-specific-block">
 <h3>Inspect specific block<a class="headerlink" href="#inspect-specific-block" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client block show <span class="o">[</span>BLOCK-HASH<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>block<span class="w"> </span>show<span class="w"> </span><span class="o">[</span>BLOCK-HASH<span class="o">]</span>
 </pre></div>
 </div>
 <p>Display information about a specific block. Note that some fields (e.g. slot
@@ -2263,7 +2263,7 @@ agree on these) while others (e.g. arrival time) are specific to the local node:
 </ul>
 <div class="section" id="id3">
 <h4>Example<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client block show e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>block<span class="w"> </span>show<span class="w"> </span>e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2
 <span class="go">Hash:                       e2a12d06273f5641ea8157e04367eae49a72706aa831aa58b60ee5c062cdd6e2</span>
 <span class="go">Parent block:               01aea0ec91fe37cb956aafcd6d0ab7f86cfd0207e5fffc2a87d40657e2c4fa40</span>
 <span class="go">Last finalized block:       dbf61032a23e020dc6793cbf242c8eadcd91586d84873dee4ae92856b29e2b3f</span>
@@ -2291,7 +2291,7 @@ agree on these) while others (e.g. arrival time) are specific to the local node:
 <h2>Consensus state<a class="headerlink" href="#consensus-state" title="Permalink to this headline">#</a></h2>
 <div class="section" id="inspect-consensus-parameters">
 <h3>Inspect consensus parameters<a class="headerlink" href="#inspect-consensus-parameters" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters <span class="o">[</span>--include-bakers<span class="o">]</span> <span class="o">[</span>--block BLOCK-HASH<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>show-parameters<span class="w"> </span><span class="o">[</span>--include-bakers<span class="o">]</span><span class="w"> </span><span class="o">[</span>--block<span class="w"> </span>BLOCK-HASH<span class="o">]</span>
 </pre></div>
 </div>
 <p>Show <a class="reference internal" href="../resources/glossary.html#term-Leader-Election"><span class="xref std std-term">election parameters</span></a> for a specific block, optionally including
@@ -2304,7 +2304,7 @@ that affect them do not take effect immediately.</p></li>
 </ul>
 <div class="section" id="id4">
 <h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-parameters --include-bakers
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>show-parameters<span class="w"> </span>--include-bakers
 <span class="go">Election nonce:      17afce44c8eb1a7e0c48ec28bff50df3f43b36e68155f311f5574108564a2b66</span>
 <span class="go">Bakers:</span>
 <span class="go">                           Account                       Lottery power  Account Name</span>
@@ -2323,7 +2323,7 @@ that affect them do not take effect immediately.</p></li>
 </div>
 <div class="section" id="inspect-consensus-status">
 <h3>Inspect consensus status<a class="headerlink" href="#inspect-consensus-status" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus status
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>status
 </pre></div>
 </div>
 <p>Display key blocks along with various statistics related to block production.</p>
@@ -2335,7 +2335,7 @@ arrived/validated, and finalized.</p></li>
 </ul>
 <div class="section" id="id5">
 <h4>Example<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus status
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>status
 <span class="go">Best block:                  9cd0a5f1dc488b919847e4b3e98aeea567fe80fafd077bacc2901f145f973c6d</span>
 <span class="go">Genesis block:               f97d975f0e92297c51e24c3b0d8fd39dfe8e1b148d993eba6e9389d4083f7a64</span>
 <span class="go">Genesis time:                2022-11-11 12:00:00 UTC</span>
@@ -2371,7 +2371,7 @@ Standard Deviation, respectively.</p>
 </div>
 <div class="section" id="id-layer">
 <h3>ID layer<a class="headerlink" href="#id-layer" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client identity show <span class="o">(</span>identity-providers<span class="p">|</span>anonymity-revokers<span class="o">)</span> <span class="o">[</span>--block BLOCK<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span><span class="o">(</span>identity-providers<span class="p">|</span>anonymity-revokers<span class="o">)</span><span class="w"> </span><span class="o">[</span>--block<span class="w"> </span>BLOCK<span class="o">]</span>
 </pre></div>
 </div>
 <p>Display the list of identity providers or anonymity revokers at a given block,
@@ -2382,7 +2382,7 @@ defaulting to the <a class="reference internal" href="../resources/glossary.html
 <span id="id6"></span><h2>Exchange rates<a class="headerlink" href="#exchange-rates" title="Permalink to this headline">#</a></h2>
 <p>Conversion rates between NRG, CCD, and Euros can fluctuate between blocks. To get a best estimate of the current
 exchange rates, query the chain parameters of the <a class="reference internal" href="../resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockChainParameters
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>raw<span class="w"> </span>GetBlockChainParameters
 </pre></div>
 </div>
 <p>You can also add a block hash at the end of the command to query a specific block.</p>
@@ -2412,7 +2412,7 @@ found in the <code class="docutils literal notranslate"><span class="pre">parame
 If an update transaction has been posted it takes time to take effect. To see
 any pending updates to the chain parameters in the best block, run the
 following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client raw GetBlockPendingUpdates
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>raw<span class="w"> </span>GetBlockPendingUpdates
 </pre></div>
 </div>
 <p>This prints a JSON list containing any such pending updates. As before you can
@@ -2422,7 +2422,7 @@ also pass a block hash to the command to query a specific block.</p>
 <h2>Validator queries<a class="headerlink" href="#validator-queries" title="Permalink to this headline">#</a></h2>
 <div class="section" id="earliest-time-a-validator-may-be-expected-to-produce-a-block">
 <h3>Earliest time a validator may be expected to produce a block<a class="headerlink" href="#earliest-time-a-validator-may-be-expected-to-produce-a-block" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator win-time <span class="m">1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>win-time<span class="w"> </span><span class="m">1</span>
 <span class="go">Validator 1 is expected to produce a block no sooner than:</span>
 <span class="go">Thu, 26 Oct 2023 07:01:26 UTC  (in 34s 699ms)</span>
 </pre></div>

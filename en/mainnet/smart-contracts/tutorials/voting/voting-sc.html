@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/voting/voting-sc.542f5aa7-1a9c-4d1b-a29e-4a37683d80d8.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/voting/voting-sc.0da7cc4f-9047-497f-9ff7-f4c315becd15.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2061,7 +2061,7 @@ to set up your project.</p>
 <p>Open <code class="docutils literal notranslate"><span class="pre">src/lib.rs</span></code> in your editor and you’ll see some code for <a class="reference internal" href="../piggy-bank/testing.html#piggy-bank-testing"><span class="std std-ref">writing tests</span></a>,
 which you can delete for now. You will come back to tests later in this tutorial.</p>
 <p>First, bring everything from the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library into scope by adding the line:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>This library contains everything needed to write a smart contract, such as some parameters, functions, and tests. It provides convenient wrappers around some low-level operations making your code more readable, and although it is not strictly necessary to use this, it will save a lot of code for the vast majority of contract developers.</p>

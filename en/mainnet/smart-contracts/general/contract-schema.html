@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/contract-schema.681fe946-eb13-494e-b92d-af15671bd75e.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/contract-schema.a9dc949e-fb2a-4e8b-ba1e-d1cf2eb68ca0.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2107,51 +2107,51 @@ smart contract.</p>
 optional to include in a schema.</p>
 <p>Currently, the supported schema types are inspired by what is commonly used in
 the Rust programming language:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Unit</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Bool</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U8</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U16</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U32</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U128</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I8</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I16</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I32</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I128</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Amount</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">AccountAddress</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">ContractAddress</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Duration</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Pair</span><span class="p">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">List</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Set</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Map</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Array</span><span class="p">(</span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Struct</span><span class="p">(</span><span class="n">Fields</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Enum</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Fields</span><span class="p">)),</span><span class="w"></span>
-<span class="w">    </span><span class="nb">String</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ContractName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ReceiveName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Unit</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Bool</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U8</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U16</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U32</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U64</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U128</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I8</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I16</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I32</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I64</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I128</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Amount</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AccountAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ContractAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Timestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Duration</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Pair</span><span class="p">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">List</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Set</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Map</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Array</span><span class="p">(</span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Struct</span><span class="p">(</span><span class="n">Fields</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Enum</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Fields</span><span class="p">)),</span>
+<span class="w">    </span><span class="nb">String</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ContractName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ReceiveName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span>
+<span class="p">}</span>
 
-<span class="k">enum</span> <span class="nc">Fields</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Named</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">)),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Unnamed</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Empty</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">enum</span> <span class="nc">Fields</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Named</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">Unnamed</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Empty</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">SizeLength</span></code> describes the number of bytes used to describe the length
 of a variable length type, such as <code class="docutils literal notranslate"><span class="pre">List</span></code>.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">SizeLength</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">One</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Two</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Four</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Eight</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">SizeLength</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">One</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Two</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Four</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Eight</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>For a reference on how a schema type is serialized into bytes, refer to the <a class="reference external" href="https://github.com/Concordium/concordium-contracts-common/blob/main/concordium-contracts-common/src/schema.rs">implementation in Rust</a>.</p>

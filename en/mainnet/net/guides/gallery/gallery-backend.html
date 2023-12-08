@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/net/guides/gallery/gallery-backend.be6696a8-5ae6-4c1b-bbd4-0639d827456b.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/net/guides/gallery/gallery-backend.fde89156-ceeb-4803-995e-a68055d80c9f.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2065,22 +2065,22 @@ body {margin:0;}
 It has some state that keeps track of sent challenges and tokens.</p>
 <p>To only have a single server and allow the front end to assume the location of the backend, the backend serves the front end. This is easily done with Warp.
 Here is how a Warp server that just serves the folder specified by app.public_folder might look:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">serve_public_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warp</span>::<span class="n">get</span><span class="p">().</span><span class="n">and</span><span class="p">(</span><span class="n">warp</span>::<span class="n">fs</span>::<span class="n">dir</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">public_folder</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">serve_public_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warp</span>::<span class="n">get</span><span class="p">().</span><span class="n">and</span><span class="p">(</span><span class="n">warp</span>::<span class="n">fs</span>::<span class="n">dir</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="n">public_folder</span><span class="p">));</span>
 
-<span class="n">warp</span>::<span class="n">serve</span><span class="p">(</span><span class="n">serve_public_files</span><span class="p">).</span><span class="n">run</span><span class="p">(([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">port</span><span class="p">)).</span><span class="k">await</span><span class="p">;</span><span class="w"></span>
+<span class="n">warp</span>::<span class="n">serve</span><span class="p">(</span><span class="n">serve_public_files</span><span class="p">).</span><span class="n">run</span><span class="p">(([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">port</span><span class="p">)).</span><span class="k">await</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>To see how this fits into the actual implementation, see <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/blob/main/gallery/verifier/src/main.rs">here</a>.</p>
 <div class="section" id="serve-statement-and-names">
 <h2>Serve statement and names<a class="headerlink" href="#serve-statement-and-names" title="Permalink to this headline">#</a></h2>
 <p>The statement and the list of names are static, so they can easily be returned as responses to the corresponding requests.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">get_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warp</span>::<span class="n">get</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">and</span><span class="p">(</span><span class="n">warp</span>::<span class="n">path</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;api&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;statement&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">warp</span>::<span class="n">reply</span>::<span class="n">json</span><span class="p">(</span><span class="o">&amp;</span><span class="n">app</span><span class="p">.</span><span class="n">statement</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">get_statement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warp</span>::<span class="n">get</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">and</span><span class="p">(</span><span class="n">warp</span>::<span class="n">path</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;api&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;statement&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">warp</span>::<span class="n">reply</span>::<span class="n">json</span><span class="p">(</span><span class="o">&amp;</span><span class="n">app</span><span class="p">.</span><span class="n">statement</span><span class="p">));</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="n">get_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warp</span>::<span class="n">get</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">and</span><span class="p">(</span><span class="n">warp</span>::<span class="n">path</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;api&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;names&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">warp</span>::<span class="n">reply</span>::<span class="n">json</span><span class="p">(</span><span class="o">&amp;</span><span class="n">app</span><span class="p">.</span><span class="n">names</span><span class="p">));</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="n">get_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warp</span>::<span class="n">get</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">and</span><span class="p">(</span><span class="n">warp</span>::<span class="n">path</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;api&quot;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="s">&quot;names&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">warp</span>::<span class="n">reply</span>::<span class="n">json</span><span class="p">(</span><span class="o">&amp;</span><span class="n">app</span><span class="p">.</span><span class="n">names</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -2099,15 +2099,15 @@ Here is how a Warp server that just serves the folder specified by app.public_fo
 <li><p>the actual proof.</p></li>
 </ul>
 <p>The specific type is the <code class="docutils literal notranslate"><span class="pre">ChallengedProof</span></code> seen here:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">ChallengedProof</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">challenge</span>: <span class="nc">Challenge</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">proof</span>: <span class="nc">ProofWithContext</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">ChallengedProof</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">challenge</span>: <span class="nc">Challenge</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">proof</span>: <span class="nc">ProofWithContext</span><span class="p">,</span>
+<span class="p">}</span>
 
-<span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">ProofWithContext</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">credential</span>: <span class="nc">CredentialRegistrationID</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">proof</span>: <span class="nc">Versioned</span><span class="o">&lt;</span><span class="n">Proof</span><span class="o">&lt;</span><span class="n">ArCurve</span><span class="p">,</span><span class="w"> </span><span class="n">AttributeKind</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">ProofWithContext</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">credential</span>: <span class="nc">CredentialRegistrationID</span><span class="p">,</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">proof</span>: <span class="nc">Versioned</span><span class="o">&lt;</span><span class="n">Proof</span><span class="o">&lt;</span><span class="n">ArCurve</span><span class="p">,</span><span class="w"> </span><span class="n">AttributeKind</span><span class="o">&gt;&gt;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The handler for this request must do the following:</p>

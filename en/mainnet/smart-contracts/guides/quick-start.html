@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/quick-start.a021bf4d-4979-47d6-a08b-48dbd54c3e05.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/quick-start.3859158c-3d81-4496-85be-5f2bf9c40c52.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2048,11 +2048,11 @@ Step 2 - Set up smart contract project<div class="sd-summary-down docutils">
 <p class="sd-card-text">You can choose to start a smart contract project from a <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates">template</a> or from scratch.</p>
 <p class="sd-card-text"><strong>From a template</strong></p>
 <p class="sd-card-text">To generate smart contracts from the templates, the <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> library is required. To install <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo install --locked cargo-generate
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>install<span class="w"> </span>--locked<span class="w"> </span>cargo-generate
 </pre></div>
 </div>
 <p class="sd-card-text">To start a new Concordium smart contract project from a template, run the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium init
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>init
 </pre></div>
 </div>
 <p class="sd-card-text">The path where the project should be created can be provided with the <code class="docutils literal notranslate"><span class="pre">--path</span></code> option.</p>
@@ -2065,7 +2065,7 @@ concordium-std = “5.1”</p>
 <p class="sd-card-text">The library documentation is on <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/">docs.rs</a>.</p>
 <p class="sd-card-text">For information about building contracts from scratch, see <a class="reference internal" href="setup-contract.html#setup-contract"><span class="std std-ref">Setting up a smart contract project</span></a>.</p>
 <p class="sd-card-text">If you’re using the <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> library bring everything from the <a class="reference external" href="https://docs.rs/crate/concordium-std/">concordium-std</a> library into scope by adding the line:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span>
 </pre></div>
 </div>
 <p class="sd-card-text">For information about developing and editing your smart contracts, see <a class="reference internal" href="../general/develop-contracts.html#writing-smart-contracts"><span class="std std-ref">Developing smart contracts</span></a>.</p>
@@ -2113,11 +2113,11 @@ Step 4 - Build your smart contract<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <blockquote>
 <div><p class="sd-card-text">In order to build a smart contract, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build
 </pre></div>
 </div>
 <p class="sd-card-text">This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result. Running the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> command will produce a smart contract module which can be found relative to your project root folder in <code class="docutils literal notranslate"><span class="pre">./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1</span></code>. Alternatively, you can supply the location where to store the smart contract module using the <code class="docutils literal notranslate"><span class="pre">--out</span></code> option. For example running the following command will output your smart contract module into the root folder of your project in a file name <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --out ./my_module.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>./my_module.wasm.v1
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2126,7 +2126,7 @@ Step 4 - Build your smart contract<div class="sd-summary-down docutils">
 </div>
 </div></blockquote>
 <p class="sd-card-text">It is also possible to compile using <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> directly by running:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo build --target<span class="o">=</span>wasm32-unknown-unknown <span class="o">[</span>--release<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>build<span class="w"> </span>--target<span class="o">=</span>wasm32-unknown-unknown<span class="w"> </span><span class="o">[</span>--release<span class="o">]</span>
 </pre></div>
 </div>
 <p class="sd-card-text">Note that even with <code class="docutils literal notranslate"><span class="pre">--release</span></code> set, the produced Wasm module includes
@@ -2145,7 +2145,7 @@ Step 5 - Deploy your smart contract<div class="sd-summary-down docutils">
 <p class="sd-card-text">To ease deployment and initialization, you can use the <a class="reference external" href="https://sctools.mainnet.concordium.software/">Smart contract deploy and initialize tool</a> instead of the process below. It works with the Concordium Wallet for Web to deploy and initialize smart contracts to Mainnet and Testnet.</p>
 </div>
 <p class="sd-card-text">To deploy a smart contract module <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code> using the account with name account-name, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy my_module.wasm.v1 --sender account_name
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>my_module.wasm.v1<span class="w"> </span>--sender<span class="w"> </span>account_name
 </pre></div>
 </div>
 </div></blockquote>
@@ -2164,7 +2164,7 @@ option. These module files will not have the version suffix, e.g.
 </div>
 <p class="sd-card-text">Make note of the module reference as it is used when creating smart contract instances.</p>
 <p class="sd-card-text">A module can be given a local alias, or <em>name</em>, which makes referencing it easier. The name is only stored locally by <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>, and is not visible on-chain. To add a name during deployment, the <code class="docutils literal notranslate"><span class="pre">--name</span></code> parameter is used.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy my_module.wasm.v1 --name my_deployed_module
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>my_module.wasm.v1<span class="w"> </span>--name<span class="w"> </span>my_deployed_module
 </pre></div>
 </div>
 <p class="sd-card-text">If successful, the output will be similar to the following:</p>
@@ -2183,7 +2183,7 @@ Step 6 - Interact with your smart contract<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Since interactions with a smart contract are transactions, make sure to have <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> set up with an account with enough CCD to pay for the transactions. The cost of the transaction depends on the size of the parameters sent to the receive function and the complexity of the function itself.</p>
 <p class="sd-card-text">As an example, to update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the parameterless receive function <code class="docutils literal notranslate"><span class="pre">my_receive</span></code> while allowing up to 10000 energy to be used, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --entrypoint my_receive --energy <span class="m">10000</span> --sender MyAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--energy<span class="w"> </span><span class="m">10000</span><span class="w"> </span>--sender<span class="w"> </span>MyAccount
 </pre></div>
 </div>
 <p class="sd-card-text">If successful, the output will be similar to the following:</p>

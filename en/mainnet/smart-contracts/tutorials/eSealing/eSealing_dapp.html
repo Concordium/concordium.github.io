@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/eSealing/eSealing_dapp.65b837e9-a157-4e07-9d45-8fa6557348fa.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/eSealing/eSealing_dapp.00ab5f73-213c-4dd6-b2ed-87823e4edb50.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2085,7 +2085,7 @@ input parameter because of the used <a class="reference external" href="https://
 with <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing">this source code</a>.</p>
 <p>You can interact directly with the smart contract using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and your local node
 that is running at port 20001 to register a file hash as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">2481</span> --entrypoint registerFile --sender &lt;YourAccount&gt; --energy <span class="m">30000</span> --parameter-json fileHash.json --grpc-port <span class="m">20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">2481</span><span class="w"> </span>--entrypoint<span class="w"> </span>registerFile<span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccount&gt;<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--parameter-json<span class="w"> </span>fileHash.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">fileHash.json</span></code> file with a file hash as content similar to:</p>
@@ -2101,12 +2101,12 @@ and download <code class="docutils literal notranslate"><span class="pre">concor
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In Unix-like systems you can calculate the sha256 hash of a file with the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum ./yourFile.txt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>./yourFile.txt
 </pre></div>
 </div>
 </div>
 <p>You can view the <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> and <code class="docutils literal notranslate"><span class="pre">witness</span></code> (sealer account) of an already timestamped file as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">2481</span> --entrypoint getFile --parameter-json fileHash.json --grpc-port <span class="m">20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">2481</span><span class="w"> </span>--entrypoint<span class="w"> </span>getFile<span class="w"> </span>--parameter-json<span class="w"> </span>fileHash.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <img alt="../../../_images/displayFile.png" class="align-center" src="../../../_images/displayFile.png" />

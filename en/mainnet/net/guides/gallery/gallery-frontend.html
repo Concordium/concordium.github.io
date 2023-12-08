@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/net/guides/gallery/gallery-frontend.1b3810eb-be4f-40f0-8319-6559f8206329.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/net/guides/gallery/gallery-frontend.28e15717-e21b-4ed5-bef3-a888e498c0bf.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2023,41 +2023,41 @@ body {margin:0;}
 <p>The front end is a simple webpage in React that can display the images of the gallery and let the user authenticate.</p>
 <p>When the page is initially opened, it displays the items of the gallery but without the actual images.</p>
 <p>To do that the names of the items must be fetched from the backend. To fetch the items from the backend the <cite>api/names</cite> endpoint of the backend is used. Below is a snippet that shows how the <cite>Gallery</cite> component does that when it loads, given that <code class="docutils literal notranslate"><span class="pre">getNames</span></code> is a function that fetches the names from the backend.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">ItemData</span> <span class="p">{</span>
-    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">location</span>: <span class="kt">string</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">ItemData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Gallery</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="p">[</span><span class="nx">items</span><span class="p">,</span> <span class="nx">setItems</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">ItemData</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">([]);</span>
-    <span class="p">...</span>
-    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">getNames</span><span class="p">(</span><span class="nx">VERIFIER_URL</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">names</span><span class="p">)</span> <span class="o">=&gt;</span>
-            <span class="nx">setItems</span><span class="p">(</span><span class="nx">names</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-                <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">location</span><span class="o">:</span> <span class="sb">`</span><span class="si">${</span><span class="nx">VERIFIER_URL</span><span class="si">}</span><span class="sb">/image/</span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
-            <span class="p">)))</span>
-        <span class="p">);</span>
-    <span class="p">},</span> <span class="p">[]);</span>
-    <span class="p">...</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Gallery</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">setItems</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">&lt;</span><span class="nt">ItemData</span><span class="err">[]</span><span class="p">&gt;([]);</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">getNames</span><span class="p">(</span><span class="nx">VERIFIER_URL</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">names</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">            </span><span class="nx">setItems</span><span class="p">(</span><span class="nx">names</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">VERIFIER_URL</span><span class="si">}</span><span class="sb">/image/</span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
+<span class="w">            </span><span class="p">)))</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+<span class="w">    </span><span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Then there is a component to show the items. In addition to taking the <code class="docutils literal notranslate"><span class="pre">itemData</span></code> as input, it also takes the <code class="docutils literal notranslate"><span class="pre">authToken</span></code> needed to access the images as an optional parameter, and when it is present, the component fetches the image at the location with the token:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">Item</span><span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">location</span><span class="p">,</span> <span class="nx">authToken</span><span class="p">,</span> <span class="nx">onError</span> <span class="p">})</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
-            <span class="p">{</span><span class="nx">authToken</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
-                <span class="p">&lt;</span><span class="nt">img</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Item</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">location</span><span class="p">,</span><span class="w"> </span><span class="nx">authToken</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;item&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">authToken</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">img</span>
                     <span class="na">className</span><span class="o">=</span><span class="s">&quot;restricted-image&quot;</span>
                     <span class="na">alt</span><span class="o">=</span><span class="s">&quot;restricted&quot;</span>
                     <span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">location</span><span class="si">}</span><span class="sb">?auth=</span><span class="si">${</span><span class="nx">authToken</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
                     <span class="na">onError</span><span class="o">=</span><span class="p">{</span><span class="nx">onError</span><span class="p">}</span>
                <span class="p">/&gt;</span>
-            <span class="p">)}</span>
-            <span class="p">{</span><span class="o">!</span><span class="nx">authToken</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;placeholder&quot;</span><span class="p">&gt;</span><span class="nx">Unauthorized</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;}</span>
-            <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;item-name&quot;</span><span class="p">&gt;{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">);</span>
+<span class="w">            </span><span class="p">)}</span>
+<span class="w">            </span><span class="p">{</span><span class="o">!</span><span class="nx">authToken</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;placeholder&quot;</span><span class="p">&gt;</span><span class="nx">Unauthorized</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;}</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;item-name&quot;</span><span class="p">&gt;{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In order to obtain the token, the user has to authenticate. The <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/blob/main/gallery/src/Connection.tsx">Connection component</a> allows the user to do that.</p>

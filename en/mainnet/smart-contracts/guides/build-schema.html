@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/build-schema.decff311-cbdf-456e-84df-404b30665afc.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/build-schema.4b0ab075-1040-4f9d-9deb-1e03053f2223.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2100,10 +2100,10 @@ the return value, and/or the errors.</p>
 trait. This is already done for all base types and some other types (see <a class="reference external" href="https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls">list of types implementing the SchemaType</a>).
 For most other cases, it can also be derived automatically, using
 <code class="docutils literal notranslate"><span class="pre">#[derive(SchemaType)]</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">struct</span> <span class="nc">SomeType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span>
+<span class="k">struct</span> <span class="nc">SomeType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Implementing the <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code> trait manually only requires specifying one
@@ -2113,27 +2113,27 @@ how this type is represented as bytes and how to represent it as JSON.</p>
 implements the <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code> trait manually for a few types that can not derive their <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code> from base types.
 The example below explores the manual <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code> trait implementation of the
 <code class="docutils literal notranslate"><span class="pre">Cis2Event&lt;T,</span> <span class="pre">A&gt;</span></code>:</p>
-<div class="highlight-rust notranslate" id="build-event-schema"><div class="highlight"><pre><span></span><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span>: <span class="nc">IsTokenId</span><span class="p">,</span><span class="w"> </span><span class="n">A</span>: <span class="nc">IsTokenAmount</span><span class="o">&gt;</span><span class="w"> </span><span class="n">schema</span>::<span class="n">SchemaType</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Cis2Event</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="k">fn</span> <span class="nf">get_type</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">schema</span>::<span class="n">Type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">event_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BTreeMap</span>::<span class="n">new</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">event_map</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="w"></span>
-<span class="w">         </span><span class="n">TRANSFER_EVENT_TAG</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="s">&quot;Transfer&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"></span>
-<span class="w">            </span><span class="n">schema</span>::<span class="n">Fields</span>::<span class="n">Named</span><span class="p">(</span><span class="fm">vec!</span><span class="p">[</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;token_id&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">T</span>::<span class="n">get_type</span><span class="p">()),</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">A</span>::<span class="n">get_type</span><span class="p">()),</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;from&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span>::<span class="n">get_type</span><span class="p">()),</span><span class="w"></span>
-<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;to&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span>::<span class="n">get_type</span><span class="p">()),</span><span class="w"></span>
-<span class="w">            </span><span class="p">]),</span><span class="w"></span>
-<span class="w">         </span><span class="p">),</span><span class="w"></span>
-<span class="w">      </span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate" id="build-event-schema"><div class="highlight"><pre><span></span><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span>: <span class="nc">IsTokenId</span><span class="p">,</span><span class="w"> </span><span class="n">A</span>: <span class="nc">IsTokenAmount</span><span class="o">&gt;</span><span class="w"> </span><span class="n">schema</span>::<span class="n">SchemaType</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Cis2Event</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">fn</span> <span class="nf">get_type</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">schema</span>::<span class="n">Type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">event_map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BTreeMap</span>::<span class="n">new</span><span class="p">();</span>
+<span class="w">      </span><span class="n">event_map</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span>
+<span class="w">         </span><span class="n">TRANSFER_EVENT_TAG</span><span class="p">,</span>
+<span class="w">         </span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Transfer&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span>
+<span class="w">            </span><span class="n">schema</span>::<span class="n">Fields</span>::<span class="n">Named</span><span class="p">(</span><span class="fm">vec!</span><span class="p">[</span>
+<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;token_id&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">T</span>::<span class="n">get_type</span><span class="p">()),</span>
+<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">A</span>::<span class="n">get_type</span><span class="p">()),</span>
+<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;from&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span>::<span class="n">get_type</span><span class="p">()),</span>
+<span class="w">               </span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;to&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Address</span>::<span class="n">get_type</span><span class="p">()),</span>
+<span class="w">            </span><span class="p">]),</span>
+<span class="w">         </span><span class="p">),</span>
+<span class="w">      </span><span class="p">);</span>
 
-<span class="w">      </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
+<span class="w">      </span><span class="o">..</span><span class="p">.</span>
 
-<span class="w">      </span><span class="n">schema</span>::<span class="n">Type</span>::<span class="n">TaggedEnum</span><span class="p">(</span><span class="n">event_map</span><span class="p">)</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="n">schema</span>::<span class="n">Type</span>::<span class="n">TaggedEnum</span><span class="p">(</span><span class="n">event_map</span><span class="p">)</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2151,18 +2151,18 @@ Off-chain tools use this tuple to represent the <code class="docutils literal no
 <p>To generate and include the schema for the parameter, the errors, and/or the events for the init function, set the
 optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span></code>, and <code class="docutils literal notranslate"><span class="pre">event</span></code> attributes for the
 <code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code>-macro:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">InitParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">InitParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[derive(Serial, Reject, SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">InitError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[derive(Serial, Reject, SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">InitError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">InitEvent</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[derive(SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">InitEvent</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
 <span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParameter&quot;</span><span class="cp">,</span>
-<span class="cp">error = </span><span class="s">&quot;InitError&quot;</span><span class="cp">, event = </span><span class="s">&quot;InitEvent&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_init</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="o">&lt;..</span><span class="p">.,</span><span class="w"> </span><span class="n">InitError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">error = </span><span class="s">&quot;InitError&quot;</span><span class="cp">, event = </span><span class="s">&quot;InitEvent&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_init</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="o">&lt;..</span><span class="p">.,</span><span class="w"> </span><span class="n">InitError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2176,32 +2176,32 @@ is represented by off-chain tools using this event schema.</p>
 <p>To generate and include the schema for the parameter, the return value, and/or the errors for receive
 functions, set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code>, <code class="docutils literal notranslate"><span class="pre">return_value</span></code>, and <code class="docutils literal notranslate"><span class="pre">error</span></code> attributes for the
 <code class="docutils literal notranslate"><span class="pre">#[receive(..)]</span></code>-macro:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">ReceiveParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">ReceiveParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">ReceiveReturnValue</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[derive(SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">ReceiveReturnValue</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[derive(Serial, Reject, SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">ReceiveError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[derive(Serial, Reject, SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">ReceiveError</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_param&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;String&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_just_param</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_param&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;String&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_receive_just_param</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_return&quot;</span><span class="cp">, return_value = </span><span class="s">&quot;Vec&lt;u64&gt;&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_just_return</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_return&quot;</span><span class="cp">, return_value = </span><span class="s">&quot;Vec&lt;u64&gt;&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_receive_just_return</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_error&quot;</span><span class="cp">, error = </span><span class="s">&quot;ReceiveError&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_just_error</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;just_error&quot;</span><span class="cp">, error = </span><span class="s">&quot;ReceiveError&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_receive_just_error</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
 <span class="cp">#[receive(</span>
 <span class="cp">    contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">,</span>
 <span class="cp">    name = </span><span class="s">&quot;param_and_return_and_error&quot;</span><span class="cp">,</span>
 <span class="cp">    parameter = </span><span class="s">&quot;ReceiveParameter&quot;</span><span class="cp">,</span>
 <span class="cp">    return_value = </span><span class="s">&quot;ReceiveReturnValue&quot;</span><span class="cp">,</span>
-<span class="cp">    error = </span><span class="s">&quot;ReceiveError&quot;</span><span class="cp"></span>
-<span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ReceiveReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">    error = </span><span class="s">&quot;ReceiveError&quot;</span>
+<span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_receive</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ReceiveReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">ReceiveError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2219,7 +2219,7 @@ have the options to embed the schema and/or write the schema to a file and/or pr
 <h3>Embedding the schema<a class="headerlink" href="#embedding-the-schema" title="Permalink to this headline">#</a></h3>
 <p>In order to embed the schema into the smart contract module, add
 <code class="docutils literal notranslate"><span class="pre">--schema-embed</span></code> to the build command by using</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-embed
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-embed
 </pre></div>
 </div>
 <p>If successful the output of the command will tell you the total size of the
@@ -2230,7 +2230,7 @@ schema in bytes.</p>
 <p>To output the schema into a file, use the <code class="docutils literal notranslate"><span class="pre">--schema-out</span> <span class="pre">FILE</span></code>
 where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path and filename. The path
 must exist and the file will be created in following command</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out <span class="s2">&quot;/some/path/schema.bin&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-out<span class="w"> </span><span class="s2">&quot;/some/path/schema.bin&quot;</span>
 </pre></div>
 </div>
 <p>If using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.6.0 or newer then the schema can be
@@ -2239,23 +2239,23 @@ the contract use <code class="docutils literal notranslate"><span class="pre">--
 contract in the module to a JSON file inside the directory <code class="docutils literal notranslate"><span class="pre">DIR</span></code>. The
 directory must exist. The files created will be named after the smart contract
 names that exist in the module or a counter in case of special characters in the smart contract names:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-json-out <span class="s2">&quot;/some/path/&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-json-out<span class="w"> </span><span class="s2">&quot;/some/path/&quot;</span>
 </pre></div>
 </div>
 <p>If using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.7.0 or newer then the schema can be
 output in base64 format that is currently supported in the Concordium Wallet for Web. When building
 the contract use <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span> <span class="pre">FILE</span></code>, where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path and filename. The path
 must exist and the file will be created in following command</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-base64-out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-base64-out<span class="w"> </span><span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
 </pre></div>
 </div>
 <p>Instead of writing the base64 representation of the schema to the file provided with the <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code> flag, you can print it to the console by using a dash character (-) in following command</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-base64-out -
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-base64-out<span class="w"> </span>-
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>, <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code> and <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code> can be used at the same time and
 schemas in all the formats will be output</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out <span class="s2">&quot;/some/path/schema.bin&quot;</span> --schema-json-out <span class="s2">&quot;/some/path/&quot;</span> --schema-base64-out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-out<span class="w"> </span><span class="s2">&quot;/some/path/schema.bin&quot;</span><span class="w"> </span>--schema-json-out<span class="w"> </span><span class="s2">&quot;/some/path/&quot;</span><span class="w"> </span>--schema-base64-out<span class="w"> </span><span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2273,12 +2273,12 @@ schemas in all the formats will be output</p>
 <p>These commands are available in <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.6.0 or newer.</p>
 <p>To convert an existing binary schema (obtained via <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>) use the
 <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">schema-json</span></code> subcommand, e.g.,</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --schema <span class="s2">&quot;/some/path/schema.bin&quot;</span> --out <span class="s2">&quot;/some/path/&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-json<span class="w"> </span>--schema<span class="w"> </span><span class="s2">&quot;/some/path/schema.bin&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="s2">&quot;/some/path/&quot;</span>
 </pre></div>
 </div>
 <p>Alternatively, a schema in JSON can be extracted from an embedded schema in a
 module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span> <span class="pre">--schema-embed</span></code>) by using</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-json --module <span class="s2">&quot;module.wasm.v1&quot;</span> --out <span class="s2">&quot;/some/path/&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-json<span class="w"> </span>--module<span class="w"> </span><span class="s2">&quot;module.wasm.v1&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="s2">&quot;/some/path/&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -2287,24 +2287,24 @@ module (obtained via <code class="docutils literal notranslate"><span class="pre
 <p>These commands are available in <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code> version 2.7.0 or newer.</p>
 <p>To convert an existing binary schema (obtained via <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>) use the
 <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">schema-base64</span></code> subcommand, e.g.,</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-base64 --schema <span class="s2">&quot;/some/path/schema.bin&quot;</span> --out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-base64<span class="w"> </span>--schema<span class="w"> </span><span class="s2">&quot;/some/path/schema.bin&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
 </pre></div>
 </div>
 <p>Alternatively, a schema in base64 format can be extracted from an embedded schema in a
 module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span> <span class="pre">--schema-embed</span></code>) by using</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-base64 --module <span class="s2">&quot;module.wasm.v1&quot;</span> --out <span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-base64<span class="w"> </span>--module<span class="w"> </span><span class="s2">&quot;module.wasm.v1&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
 </pre></div>
 </div>
 <p>Instead of writing the base64 representation of the schema to the file provided with the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag,
 you can print it to the console by using a dash character (-) or by omitting the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag. The following four
 commands print the base64 representation of the schema to the console:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium schema-base64 --schema <span class="s2">&quot;schema.bin&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-base64<span class="w"> </span>--schema<span class="w"> </span><span class="s2">&quot;schema.bin&quot;</span>
 
-<span class="gp">$</span>cargo concordium schema-base64 --schema <span class="s2">&quot;schema.bin&quot;</span> --out -
+<span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-base64<span class="w"> </span>--schema<span class="w"> </span><span class="s2">&quot;schema.bin&quot;</span><span class="w"> </span>--out<span class="w"> </span>-
 
-<span class="gp">$</span>cargo concordium schema-base64 --module <span class="s2">&quot;/some/path/module.wasm.v1&quot;</span>
+<span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-base64<span class="w"> </span>--module<span class="w"> </span><span class="s2">&quot;/some/path/module.wasm.v1&quot;</span>
 
-<span class="gp">$</span>cargo concordium schema-base64 --module <span class="s2">&quot;/some/path/module.wasm.v1&quot;</span> --out -
+<span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-base64<span class="w"> </span>--module<span class="w"> </span><span class="s2">&quot;/some/path/module.wasm.v1&quot;</span><span class="w"> </span>--out<span class="w"> </span>-
 </pre></div>
 </div>
 </div>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/troubleshoot-macos.49daa2ac-9958-43e8-a5bd-120591ef6c96.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/troubleshoot-macos.038bb314-f031-4858-99ca-e215eb96a4eb.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2065,7 +2065,7 @@ body {margin:0;}
 <h2>Service cannot run after editing service (config) file<a class="headerlink" href="#service-cannot-run-after-editing-service-config-file" title="Permalink to this headline">#</a></h2>
 <p>When configuring your node to be a validator on Mac, you need to edit the service file (which is owned by root). One way to edit it is to change the ownership to your user and then edit it. But then you cannot run the service.</p>
 <p>To see if this is your problem, try to load the service manually:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo launchctl load <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>launchctl<span class="w"> </span>load<span class="w"> </span><span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
 </pre></div>
 </div>
 <p>If your file ownership has changed, you will see the following:</p>
@@ -2074,7 +2074,7 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>To resolve the issue, change the file ownership back to root.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo chown root <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>chown<span class="w"> </span>root<span class="w"> </span><span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
 </pre></div>
 </div>
 </div>

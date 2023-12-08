@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/transactions.5dec7eac-4812-4ac6-97ee-279b64186afd.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/transactions.c9f8c936-2635-46af-b75f-57db2969ef3c.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2247,7 +2247,7 @@ to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
 validate transactions.</p>
 <p>The sequence number can be looked up from an up to date node by running</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show <span class="o">[</span>ACCOUNT<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span><span class="o">[</span>ACCOUNT<span class="o">]</span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">[ACCOUNT]</span></code> is an optional argument that is either an address of an
@@ -2266,7 +2266,7 @@ the same account. Thus, accounts can be referred to by any address whose initial
 <p>This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.</p>
 <p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account’s canonical address.</p>
 <p>To show aliases, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias <span class="m">17</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show-alias<span class="w"> </span>3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5<span class="w"> </span>--alias<span class="w"> </span><span class="m">17</span>
 </pre></div>
 </div>
 <p>This generates the output:</p>
@@ -2278,11 +2278,11 @@ the same account. Thus, accounts can be referred to by any address whose initial
 <div class="section" id="commands-for-showing-identity-information">
 <span id="identity-commands"></span><h2>Commands for showing identity information<a class="headerlink" href="#commands-for-showing-identity-information" title="Permalink to this headline">#</a></h2>
 <p>To show the identity providers authorized by Concordium and a URL, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client identity show identity-providers
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>identity-providers
 </pre></div>
 </div>
 <p>To show the anonymity revokers, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client identity show anonymity-revokers
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>anonymity-revokers
 </pre></div>
 </div>
 </div>
@@ -2298,7 +2298,7 @@ are described in the following table.</p>
 <div class="section" id="transfer-ccd">
 <h3>Transfer CCD<a class="headerlink" href="#transfer-ccd" title="Permalink to this headline">#</a></h3>
 <p>Use the following command for transfers:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send
 </pre></div>
 </div>
 <p>Apart from the generic transaction flags above, the parameters are:</p>
@@ -2321,7 +2321,7 @@ are described in the following table.</p>
 </ul>
 <p>If the accounts have both been imported under these names, the command
 to transfer 25 CCD is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send --amount <span class="m">25</span> --sender A --receiver B
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span><span class="m">25</span><span class="w"> </span>--sender<span class="w"> </span>A<span class="w"> </span>--receiver<span class="w"> </span>B
 </pre></div>
 </div>
 <p>The output will look similar to the following. Note that this example assumes that the
@@ -2350,7 +2350,7 @@ sender account A has three transaction signing keys 0, 1, and 3.</p>
 <h3>Make a shielded transfer<a class="headerlink" href="#make-a-shielded-transfer" title="Permalink to this headline">#</a></h3>
 <p>A <a class="reference internal" href="../resources/glossary.html#term-Shielded-transfer"><span class="xref std std-term">shielded transfer</span></a> is a transfer from a <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a> to a shielded
 balance of another account. The command is very similar to a standard transfer.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-shielded --sender A --receiver B --amount <span class="m">8</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-shielded<span class="w"> </span>--sender<span class="w"> </span>A<span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--amount<span class="w"> </span><span class="m">8</span>
 </pre></div>
 </div>
 <p>This command does the following:</p>
@@ -2362,7 +2362,7 @@ Concordium network.</p></li>
 <li><p>sends the transaction.</p></li>
 </ul>
 <p>The interaction looks like the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-shielded --sender A --receiver B --amount <span class="m">8</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-shielded<span class="w"> </span>--sender<span class="w"> </span>A<span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--amount<span class="w"> </span><span class="m">8</span>
 <span class="go">Using default energy amount of 30176 NRG.</span>
 <span class="go">Enter password for decrypting the secret encryption key: ...</span>
 <span class="go">Transferring 8.000000 CCD from shielded balance of account &#39;4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ&#39; (A) to &#39;47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh&#39; (B).</span>
@@ -2409,7 +2409,7 @@ the transaction.</p>
 <p>The command to <a class="reference internal" href="../resources/glossary.html#term-Shielded-amount"><span class="xref std std-term">shield</span></a> an amount with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is <code class="docutils literal notranslate"><span class="pre">account</span>
 <span class="pre">shield</span></code>. For example, an interaction to shield 10 CCD on account A looks like the following.</p>
 <p>The command is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account shield --amount <span class="m">10</span> --sender A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>shield<span class="w"> </span>--amount<span class="w"> </span><span class="m">10</span><span class="w"> </span>--sender<span class="w"> </span>A
 </pre></div>
 </div>
 <p>The command supports all of the same additional flags as the transfer transaction, except the <code class="docutils literal notranslate"><span class="pre">--receiver</span></code> since a transfer from a public to a shielded balance is always on the same account. The output looks like the following:</p>
@@ -2439,7 +2439,7 @@ the transaction.</p>
 <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">unshield</span></code>. For example, an interaction to unshield 7 CCD on
 account B looks like the following:</p>
 <p>The command is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account unshield --sender B --amount <span class="m">7</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>unshield<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--amount<span class="w"> </span><span class="m">7</span>
 </pre></div>
 </div>
 <p>This</p>
@@ -2489,7 +2489,7 @@ There are two ways of specifying the release schedule, either at regular interva
 <li><p>starting on the 10th of February 2021 at 12:00:00 UTC</p></li>
 </ul>
 <p>use the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-scheduled --amount <span class="m">100</span> --every Day --for <span class="m">10</span> --starting <span class="m">2021</span>-02-10T12:00:00Z --receiver B --sender A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-scheduled<span class="w"> </span>--amount<span class="w"> </span><span class="m">100</span><span class="w"> </span>--every<span class="w"> </span>Day<span class="w"> </span>--for<span class="w"> </span><span class="m">10</span><span class="w"> </span>--starting<span class="w"> </span><span class="m">2021</span>-02-10T12:00:00Z<span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--sender<span class="w"> </span>A
 </pre></div>
 </div>
 <p>When you specify an explicit release schedule, you must use the option <code class="docutils literal notranslate"><span class="pre">--schedule</span></code>, which takes a comma-separated list of releases in the form of <code class="docutils literal notranslate"><span class="pre">&lt;amount&gt;</span> <span class="pre">at</span> <span class="pre">&lt;date&gt;</span></code>. For example, to send a transaction from A to B that:</p>
@@ -2499,11 +2499,11 @@ There are two ways of specifying the release schedule, either at regular interva
 <li><p>releases 200 on December 31st 2022 at 12:00:00 UTC</p></li>
 </ul>
 <p>Use the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client transaction send-scheduled --schedule <span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span> --receiver B --sender A
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send-scheduled<span class="w"> </span>--schedule<span class="w"> </span><span class="s2">&quot;100 at 2021-01-01T12:00:00Z, 150 at 2021-02-15T12:00:00Z, 200 at 2021-12-31T12:00:00Z&quot;</span><span class="w"> </span>--receiver<span class="w"> </span>B<span class="w"> </span>--sender<span class="w"> </span>A
 </pre></div>
 </div>
 <p>If you query the account information of the recipient account afterwards, it will show the list of releases that are still pending to be released:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show B
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>B
 <span class="go">Local name:            B</span>
 <span class="go">Address:               3WbgGP2iE21HyrBg5kL429ZXWu2dNDXzzjZ7qwu9neop2bSCRJ</span>
 <span class="go">Balance:               550.000000 CCD</span>
@@ -2527,7 +2527,7 @@ release schedule.</p>
 <p>The command to add delegation on an account with <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is
 <code class="docutils literal notranslate"><span class="pre">delegator</span> <span class="pre">add</span></code>. For example, an interaction to add delegation on an account looks like the following:</p>
 <p>The command is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client delegator add --sender EXAMPLEACCT --stake <span class="m">5000</span> --target <span class="m">12345</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>delegator<span class="w"> </span>add<span class="w"> </span>--sender<span class="w"> </span>EXAMPLEACCT<span class="w"> </span>--stake<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--target<span class="w"> </span><span class="m">12345</span>
 </pre></div>
 </div>
 <p>The command has the following required arguments:</p>
@@ -2557,12 +2557,12 @@ release schedule.</p>
 <div class="section" id="show-chain-parameters">
 <span id="consensus-show-chain-parameters"></span><h3>Show chain parameters<a class="headerlink" href="#show-chain-parameters" title="Permalink to this headline">#</a></h3>
 <p>Use the consensus command <code class="docutils literal notranslate"><span class="pre">show-chain-parameters</span></code> to show a number of parameters for the last known block or a specific block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-chain-parameters
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>show-chain-parameters
 </pre></div>
 </div>
 <p>To see the chain parameters for a specific block use the <code class="docutils literal notranslate"><span class="pre">--block</span></code> flag to specify the block hash.</p>
 <p>The output is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> # </span>Parameters related to staking pools:
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> # </span>Parameters<span class="w"> </span>related<span class="w"> </span>to<span class="w"> </span>staking<span class="w"> </span>pools:
 <span class="go">   + minimum equity capital: 500000.000000 CCD</span>
 <span class="go">   + maximum fraction of total stake a pool is allowed to hold: 0.05</span>
 <span class="go">   + maximum factor a pool may stake relative to the validators&#39;s stake: 6 % 1</span>
@@ -2571,20 +2571,20 @@ release schedule.</p>
 <span class="go">   + allowed range for block commission: [0.1, 0.1]</span>
 <span class="go">   + allowed range for transaction commission: [0.1, 0.1]</span>
 
-<span class="gp"> # </span>Passive delegation parameters:
+<span class="gp"> # </span>Passive<span class="w"> </span>delegation<span class="w"> </span>parameters:
 <span class="go">   + finalization commission: 1.0</span>
 <span class="go">   + block commission: 0.12</span>
 <span class="go">   + transaction commission: 0.12</span>
 
-<span class="gp"> # </span>Parameters related to delegators:
+<span class="gp"> # </span>Parameters<span class="w"> </span>related<span class="w"> </span>to<span class="w"> </span>delegators:
 <span class="go">   + delegator cooldown duration: 14d</span>
 
-<span class="gp"> # </span>Exchange rate parameters:
+<span class="gp"> # </span>Exchange<span class="w"> </span>rate<span class="w"> </span>parameters:
 <span class="go">   - EUR per CCD rate (approx): 0.0200</span>
 <span class="go">   - EUR per Energy rate: 1 / 50000 (approx 2.0e-5)</span>
 <span class="go">   - microCCD per EUR rate: 11803749708081170432 / 236031671743 (approx 5.000917724691426e7)</span>
 
-<span class="gp"> # </span>Parameters that affect rewards distribution:
+<span class="gp"> # </span>Parameters<span class="w"> </span>that<span class="w"> </span>affect<span class="w"> </span>rewards<span class="w"> </span>distribution:
 <span class="go">   + mint amount per reward period: 261157877e-12</span>
 <span class="go">   + mint distribution:</span>
 <span class="go">       * block reward: 0.6</span>
@@ -2596,10 +2596,10 @@ release schedule.</p>
 <span class="go">       * adding a credential deployment: 2.0e-2</span>
 <span class="go">       * adding a chain update: 5.0e-3</span>
 
-<span class="gp"> # </span>Time parameters:
+<span class="gp"> # </span>Time<span class="w"> </span>parameters:
 <span class="go">   + reward period length: 24 epochs</span>
 
-<span class="gp"># </span>Consensus parameters:
+<span class="gp"># </span>Consensus<span class="w"> </span>parameters:
 <span class="go">  + Timeout parameters:</span>
 <span class="go">    * base timeout: 10000 ms.</span>
 <span class="go">    * timeout increase: 5 / 4 (approx 1.25)</span>
@@ -2607,12 +2607,12 @@ release schedule.</p>
 <span class="go">  + minimum time between blocks: 2000 ms.</span>
 <span class="go">  + block energy limit: 3000000</span>
 
-<span class="gp"># </span>Finalization committee parameters:
+<span class="gp"># </span>Finalization<span class="w"> </span>committee<span class="w"> </span>parameters:
 <span class="go">  + minimum finalizers: 40</span>
 <span class="go">  + maximum finalizers: 1000</span>
 <span class="go">  + finalizer relative stake threshold: 1.0e-3</span>
 
-<span class="gp"> # </span>Other parameters:
+<span class="gp"> # </span>Other<span class="w"> </span>parameters:
 <span class="go">   + foundation account index: 10</span>
 <span class="go">   + maximum credential deployments per block: 10</span>
 </pre></div>

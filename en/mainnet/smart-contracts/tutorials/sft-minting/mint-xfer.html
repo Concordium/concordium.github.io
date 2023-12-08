@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/sft-minting/mint-xfer.83ea870c-42aa-42fc-8b5c-2c85c2a7b5fb.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/sft-minting/mint-xfer.079398ab-21cd-41ae-a744-05c4d59d86fb.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2038,23 +2038,23 @@ body {margin:0;}
 <p>You have a contract instance which means you have an empty state and are ready to mint some tokens! You will be using <a class="reference external" href="https://gateway.pinata.cloud/ipfs/QmZ3939dLLFzvYZjFnkdqACe2n9TQA8Rx4efbjaYTXteeu">this metadata</a> and minting 100 of <a class="reference external" href="https://ipfs.io/ipfs/QmNqv1QnZw6j6N3ueqCA6VotciHUopRAvZqY8JBnheoLk6">this cool image</a>.</p>
 <p>Create a folder called <code class="docutils literal notranslate"><span class="pre">nft-artifacts</span></code> and create a JSON file called <code class="docutils literal notranslate"><span class="pre">mint-params.json</span></code> in the folder to execute these steps properly. In the JSON file, you are going to give the minting parameters to the MintParams which you worked on a little in the beginning.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;&lt;YOUR-ACCOUNT-ADDRESS&gt;&quot;</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;tokens&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">[</span>
-            <span class="s2">&quot;01&quot;</span><span class="p">,</span>
-            <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://gateway.pinata.cloud/ipfs/QmZ3939dLLFzvYZjFnkdqACe2n9TQA8Rx4efbjaYTXteeu&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;f982b4603b9c116598d381d1aee90a7b5332377b209b6bbd8d7a4dfab18f2a80&quot;</span>
-                <span class="p">},</span>
-                <span class="s2">&quot;100&quot;</span>
-            <span class="p">]</span>
-        <span class="p">]</span>
-    <span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;&lt;YOUR-ACCOUNT-ADDRESS&gt;&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;01&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://gateway.pinata.cloud/ipfs/QmZ3939dLLFzvYZjFnkdqACe2n9TQA8Rx4efbjaYTXteeu&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f982b4603b9c116598d381d1aee90a7b5332377b209b6bbd8d7a4dfab18f2a80&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="s2">&quot;100&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2081,13 +2081,13 @@ body {margin:0;}
 <h2>Transfer the token<a class="headerlink" href="#transfer-the-token" title="Permalink to this headline">#</a></h2>
 <p>The final step is to send the token this account has to someone else. To do that, create another JSON file called <code class="docutils literal notranslate"><span class="pre">transfer.json</span></code> to give the parameters as input.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;YOUR-TOKEN-ID&gt;&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;from&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;OWNER-ACCOUNT&gt;&quot;</span><span class="p">]},</span>
-        <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;&lt;RECIPIENT-ACCOUNT&gt;&quot;</span><span class="p">]},</span>
-        <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;YOUR-TOKEN-ID&gt;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;OWNER-ACCOUNT&gt;&quot;</span><span class="p">]},</span>
+<span class="w">        </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;RECIPIENT-ACCOUNT&gt;&quot;</span><span class="p">]},</span>
+<span class="w">        </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>

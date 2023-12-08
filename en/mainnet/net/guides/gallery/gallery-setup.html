@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/net/guides/gallery/gallery-setup.d93553ef-d5f7-4203-be6c-21c4d279f386.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/net/guides/gallery/gallery-setup.cf1e410e-b2c9-49c8-ac21-b16714987daf.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2037,14 +2037,14 @@ used in combination with <code class="docutils literal notranslate"><span class=
 </div>
 <p>The front end needs the Concordium Wallet for Web for interaction. Install the extension for your browser as described <a class="reference internal" href="../../browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">here</span></a>.</p>
 <p>Clone this <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples">repository</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git clone --recurse-submodules https://github.com/Concordium/concordium-dapp-examples.git
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/Concordium/concordium-dapp-examples.git
 </pre></div>
 </div>
 <p>The minimal steps to run the example are as follows:</p>
 <ul class="simple">
 <li><p>Navigate to the gallery example folder.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span> ./gallery/
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>./gallery/
 </pre></div>
 </div>
 <ul class="simple">
@@ -2056,19 +2056,19 @@ used in combination with <code class="docutils literal notranslate"><span class=
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">build</span></code> in the gallery folder to build the frontend.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>build
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">build-verifier</span></code> in the gallery folder to build the backend.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn build-verifier
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>build-verifier
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">start</span></code> to run the example.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn start --statement <span class="s2">&quot;</span><span class="k">$(</span>&lt;verifier/config/statement.json<span class="k">)</span><span class="s2">&quot;</span> --names <span class="s2">&quot;</span><span class="k">$(</span>&lt;verifier/config/names.json<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>start<span class="w"> </span>--statement<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>&lt;verifier/config/statement.json<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>--names<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>&lt;verifier/config/names.json<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>The statement and names flags must be provided and they specify the values for these static variables. This runs them with the default values found in the <cite>gallery/verifier/config</cite> folder.</p>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-windows.3f9e5add-b7fb-4c6d-b834-2514b685891e.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-windows.92751715-5663-44ea-b548-6778e1dc7d65.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2109,13 +2109,13 @@ re-use the configuration file and have the new API enabled, make sure to edit
 your configuration and add <code class="docutils literal notranslate"><span class="pre">grpc2.port</span></code> and <code class="docutils literal notranslate"><span class="pre">grpc2.address</span></code> settings. See
 <a class="reference internal" href="../nodes/node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for more information.</p>
 <p><strong>Example for Mainnet:</strong></p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">grpc2</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">20000</span>
-<span class="n">grpc2</span><span class="p">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1&quot;</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">grpc2</span><span class="p">.</span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20000</span>
+<span class="n">grpc2</span><span class="p">.</span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span>
 </pre></div>
 </div>
 <p><strong>Example for Testnet:</strong></p>
-<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">grpc2</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">20001</span>
-<span class="n">grpc2</span><span class="p">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1&quot;</span>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">grpc2</span><span class="p">.</span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20001</span>
+<span class="n">grpc2</span><span class="p">.</span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -2271,13 +2271,13 @@ but is not necessary. If you wish to disable it do the the following:</p>
 <ul class="simple">
 <li><p>For mainnet, remove the following line from the <code class="docutils literal notranslate"><span class="pre">[node.mainnet]</span></code> section:</p></li>
 </ul>
-<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.mainnet.concordium.software/blocks.idx&#39;</span>
+<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://catchup.mainnet.concordium.software/blocks.idx&#39;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>For testnet, remove the following line from the <code class="docutils literal notranslate"><span class="pre">[node.testnet]</span></code> section:</p></li>
 </ul>
-<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span> <span class="o">=</span> <span class="s">&#39;https://catchup.testnet.concordium.com/blocks.idx&#39;</span>
+<div class="highlight-TOML notranslate"><div class="highlight"><pre><span></span><span class="n">node</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;https://catchup.testnet.concordium.com/blocks.idx&#39;</span>
 </pre></div>
 </div>
 <p>Save the configuration file.</p>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/compile-module.735167c7-dbbf-441e-a9f9-21f665670b67.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/compile-module.433a538e-0e2a-4ea0-a269-1180a743bb9a.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2066,7 +2066,7 @@ contract module, you wish to compile.</p>
 such as <a class="reference internal" href="../general/contract-schema.html#contract-schema-v0"><span class="std std-ref">contract schemas</span></a>, Concordium recommends using the
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> tool for building <a class="reference external" href="https://www.rust-lang.org/">Rust</a> smart contracts.</p>
 <p>In order to build a smart contract, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build
 </pre></div>
 </div>
 <p>This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result.</p>
@@ -2078,7 +2078,7 @@ preparation is required</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is also possible to compile using <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> directly by running:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo build --target<span class="o">=</span>wasm32-unknown-unknown <span class="o">[</span>--release<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>build<span class="w"> </span>--target<span class="o">=</span>wasm32-unknown-unknown<span class="w"> </span><span class="o">[</span>--release<span class="o">]</span>
 </pre></div>
 </div>
 <p>Note that even with <code class="docutils literal notranslate"><span class="pre">--release</span></code> set, the produced Wasm module includes
@@ -2102,7 +2102,7 @@ unfortunately not a trivial task in general.</p>
 flag when compiling the contract.
 On Unix-like systems the flag can be passed directly to the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code>
 invocation using the <code class="docutils literal notranslate"><span class="pre">RUSTFLAGS</span></code> environment variable:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">RUSTFLAGS</span><span class="o">=</span><span class="s2">&quot;--remap-path-prefix=</span><span class="nv">$HOME</span><span class="s2">=&quot;</span> cargo concordium build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">RUSTFLAGS</span><span class="o">=</span><span class="s2">&quot;--remap-path-prefix=</span><span class="nv">$HOME</span><span class="s2">=&quot;</span><span class="w"> </span>cargo<span class="w"> </span>concordium<span class="w"> </span>build
 </pre></div>
 </div>
 <p>Which will replace the users home path with the empty string. Other paths could
@@ -2111,7 +2111,7 @@ will map <code class="docutils literal notranslate"><span class="pre">from</span
 <p>The flag can also be set permanently in the <code class="docutils literal notranslate"><span class="pre">.cargo/config</span></code> file in your
 crate, under the build section:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build]</span>
-<span class="n">rustflags</span> <span class="o">=</span> <span class="k">[&quot;--remap-path-prefix=/home/&lt;user&gt;=&quot;]</span>
+<span class="n">rustflags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;--remap-path-prefix=/home/&lt;user&gt;=&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>where <cite>&lt;user&gt;</cite> should be replaced with the user building the wasm module.</p>

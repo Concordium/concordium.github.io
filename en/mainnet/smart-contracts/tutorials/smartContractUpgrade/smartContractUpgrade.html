@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade.47f2e6d9-cacc-4e3b-a84e-97dc86645dff.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade.d4ed497e-764f-4808-8136-fc4fd2b46dd8.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2084,16 +2084,16 @@ The <code class="docutils literal notranslate"><span class="pre">migration</span
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(</span>
 <span class="cp">   ...</span>
 <span class="cp">   low_level</span>
-<span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_name</span><span class="p">(</span><span class="w"></span>
-<span class="w">   </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="w">   </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">LowLevelHost</span><span class="p">,</span><span class="w"></span>
-<span class="w">   </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="p">)</span><span class="w">  </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">upgrade</span><span class="p">(</span><span class="n">moduleReference</span><span class="p">);</span><span class="w"></span>
-<span class="w">   </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_name</span><span class="p">(</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="w">   </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">LowLevelHost</span><span class="p">,</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="p">)</span><span class="w">  </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">upgrade</span><span class="p">(</span><span class="n">moduleReference</span><span class="p">);</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> functions in the example smart contracts are marked as <code class="docutils literal notranslate"><span class="pre">low_level</span></code>. This is <em>necessary</em> since the default (<em>high_level</em>) mutable functions store the state of the contract at the end of
@@ -2122,34 +2122,34 @@ This means, the <code class="docutils literal notranslate"><span class="pre">Sta
 <span class="cp">   name = </span><span class="s">&quot;upgrade&quot;</span><span class="cp">,</span>
 <span class="cp">   error = </span><span class="s">&quot;ContractError&quot;</span><span class="cp">,</span>
 <span class="cp">   mutable</span>
-<span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_upgrade</span><span class="p">(</span><span class="w"></span>
-<span class="w">   </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">   </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_upgrade</span><span class="p">(</span>
+<span class="w">   </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span>
+<span class="w">   </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="c1">// TODO: Include some authorization checks.</span>
 
 <span class="w">   </span><span class="c1">// Trigger the upgrade.</span>
-<span class="w">   </span><span class="n">host</span><span class="p">.</span><span class="n">upgrade</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">module</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="n">host</span><span class="p">.</span><span class="n">upgrade</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">module</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">   </span><span class="c1">// No `migration` function.</span>
 
-<span class="w">   </span><span class="nb">Ok</span><span class="p">(())</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="nb">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function in <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> can be invoked with the following JSON file (input parameter):</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;migrate&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;Some&quot;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-         <span class="s2">&quot;&lt;EntryPointNameOfMigrationFunction&gt;&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;&lt;InputParametersOfMigrationFunction&gt;&quot;</span>
-         <span class="p">]</span>
-      <span class="p">]</span>
-   <span class="p">},</span>
-   <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Some&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">[</span>
+<span class="w">         </span><span class="s2">&quot;&lt;EntryPointNameOfMigrationFunction&gt;&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s2">&quot;&lt;InputParametersOfMigrationFunction&gt;&quot;</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2158,11 +2158,11 @@ This means, the <code class="docutils literal notranslate"><span class="pre">Sta
 <p class="admonition-title">Note</p>
 <p>If the module reference should be upgraded without invoking a <code class="docutils literal notranslate"><span class="pre">migration</span></code> function, use the JSON file (input parameter) below instead:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;migrate&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;None&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">]</span>
-   <span class="p">},</span>
-   <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;None&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2177,15 +2177,15 @@ should be coded and executed by experts that know about the underlying risks. Yo
 <div class="section" id="executing-an-upgrade">
 <h2>Executing an upgrade<a class="headerlink" href="#executing-an-upgrade" title="Permalink to this headline">#</a></h2>
 <p>Clone the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/smart-contract-upgrade">smart contract upgrade example</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git clone --recurse-submodules git@github.com:Concordium/concordium-rust-smart-contracts.git
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>git@github.com:Concordium/concordium-rust-smart-contracts.git
 </pre></div>
 </div>
 <p>Navigate to the <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> example folder:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span> ./examples/smart-contract-upgrade/contract-version1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>./examples/smart-contract-upgrade/contract-version1
 </pre></div>
 </div>
 <p>Compile the smart contract to a Wasm module which you will deploy to testnet in the next step.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build -e --out smart_contract_upgrade.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>-e<span class="w"> </span>--out<span class="w"> </span>smart_contract_upgrade.wasm.v1
 </pre></div>
 </div>
 <img alt="Compile contract version 1" class="align-center" src="../../../_images/compile_contract_version1.png" />
@@ -2194,7 +2194,7 @@ should be coded and executed by experts that know about the underlying risks. Yo
 <p>Comprehensive instructions on how to download and set up <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> can be found in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
 </div>
 <p>This command will create the <code class="docutils literal notranslate"><span class="pre">smart_contract_upgrade.wasm.v1</span></code> file in your current folder. Deploy the smart contract module to testnet with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>./smart_contract_upgrade.wasm.v1<span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="Deploy contract version 1" class="align-center" src="../../../_images/deploy_contract_version1.png" />
@@ -2207,37 +2207,37 @@ for the placeholder <code class="docutils literal notranslate"><span class="pre"
 If the module is already deployed or not deployed, it does not make a
 difference because in both cases the console output will print the <code class="docutils literal notranslate"><span class="pre">moduleReference</span></code> that you need for the next step.</p>
 <p>Initialize a <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> smart contract instance with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init &lt;ModuleReference&gt; --contract smart_contract_upgrade --energy <span class="m">30000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span>  --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;ModuleReference&gt;<span class="w"> </span>--contract<span class="w"> </span>smart_contract_upgrade<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w">  </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <p>For example, when using the module reference from the image above, the command will look as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract init 8fc09d2519f516cfbb3d139b1e567753780fbb52854ecbf9a12c447756d18eb0 --contract smart_contract_upgrade --energy <span class="m">30000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span>  --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>8fc09d2519f516cfbb3d139b1e567753780fbb52854ecbf9a12c447756d18eb0<span class="w"> </span>--contract<span class="w"> </span>smart_contract_upgrade<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w">  </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="Initialize contract version 1" class="align-center" src="../../../_images/initialize_contract.png" />
 <p>As seen in the image above, this command returns your smart contract index <code class="docutils literal notranslate"><span class="pre">4462</span></code>.</p>
 <p>Before upgrading the <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>, you can check its state with the view function as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke &lt;YourContractVersion1Index&gt; --entrypoint view --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;YourContractVersion1Index&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>view<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <p>For example, when using the smart contract index from the image above, the command will look as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">4462</span> --entrypoint view --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">4462</span><span class="w"> </span>--entrypoint<span class="w"> </span>view<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <p>You should see the following output.</p>
 <img alt="View contract version 1" class="align-center" src="../../../_images/view_contract_version1.png" />
 <p>You need to compile and deploy <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> before you can upgrade your smart contract instance <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>.</p>
 <p>Navigate to the <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> example folder:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span> ./examples/smart-contract-upgrade/contract-version2
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>./examples/smart-contract-upgrade/contract-version2
 </pre></div>
 </div>
 <p>Compile the smart contract to a Wasm module which you will deploy to testnet in the next step.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build -e --out smart_contract_upgrade.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>-e<span class="w"> </span>--out<span class="w"> </span>smart_contract_upgrade.wasm.v1
 </pre></div>
 </div>
 <img alt="Compile contract version 2" class="align-center" src="../../../_images/compile_contract_version2.png" />
 <p>This command will create the <code class="docutils literal notranslate"><span class="pre">smart_contract_upgrade.wasm.v1</span></code> file in your current folder. Deploy the smart contract module to testnet with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy ./smart_contract_upgrade.wasm.v1 --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>./smart_contract_upgrade.wasm.v1<span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="Deploy contract version 2" class="align-center" src="../../../_images/deploy_contract_version2.png" />
@@ -2245,29 +2245,29 @@ difference because in both cases the console output will print the <code class="
 This shows that the module’s code is not identical.</p>
 <p>Create a file named <code class="docutils literal notranslate"><span class="pre">upgrade.json</span></code> with the following content by inserting the <code class="docutils literal notranslate"><span class="pre">moduleReference</span></code> returned by the previous step:</p>
 <div class="highlight-json notranslate" id="input-parameters"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;migrate&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;Some&quot;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-         <span class="s2">&quot;migration&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;&quot;</span>
-         <span class="p">]</span>
-      <span class="p">]</span>
-   <span class="p">},</span>
-   <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Some&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">[</span>
+<span class="w">         </span><span class="s2">&quot;migration&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s2">&quot;&quot;</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>For example, when using the module reference from the image above, the file will look as follows:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">&quot;migrate&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;Some&quot;</span><span class="p">:</span> <span class="p">[</span>
-         <span class="p">[</span>
-         <span class="s2">&quot;migration&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;&quot;</span>
-         <span class="p">]</span>
-      <span class="p">]</span>
-   <span class="p">},</span>
-   <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;31539c983f2ee56822041230d7fd20a3516da9271837e23bb77111bb8c4c7dcd&quot;</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Some&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">[</span>
+<span class="w">         </span><span class="s2">&quot;migration&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s2">&quot;&quot;</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;31539c983f2ee56822041230d7fd20a3516da9271837e23bb77111bb8c4c7dcd&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2276,17 +2276,17 @@ code should be upgraded to the module <code class="docutils literal notranslate"
 and the <code class="docutils literal notranslate"><span class="pre">migration</span></code> function should be invoked
 with no input parameters (empty string: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) as part of the upgrade.</p>
 <p>Upgrade the smart contract as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update &lt;YourContractVersion1Index&gt; --entrypoint upgrade --parameter-json upgrade.json --energy <span class="m">5000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;YourContractVersion1Index&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>upgrade<span class="w"> </span>--parameter-json<span class="w"> </span>upgrade.json<span class="w"> </span>--energy<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <p>For example, when using the smart contract index from the image above, the command will look as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">4462</span> --entrypoint upgrade --parameter-json upgrade.json --energy <span class="m">5000</span> --sender &lt;YourAccountAddress&gt; --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">4462</span><span class="w"> </span>--entrypoint<span class="w"> </span>upgrade<span class="w"> </span>--parameter-json<span class="w"> </span>upgrade.json<span class="w"> </span>--energy<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <p>You should see the following output.</p>
 <img alt="Upgrade contract version 1" class="align-center" src="../../../_images/upgrade.png" />
 <p>You can check that the state migration was successful by inspecting the state with the view function:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke &lt;YourContractVersion1Index&gt; --entrypoint view --grpc-port <span class="m">20000</span> --grpc-ip node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;YourContractVersion1Index&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>view<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
 </pre></div>
 </div>
 <img alt="View contract version 2" class="align-center" src="../../../_images/view_contract_version2.png" />

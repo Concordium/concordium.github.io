@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-macos.fafbc6c6-cf4f-4249-ad73-b712561f5385.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/baker-macos.ae321b24-a435-436b-9300-308e9e9e426b.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2060,7 +2060,7 @@ Mainnet<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
 <li><p class="sd-card-text">Move the <code class="docutils literal notranslate"><span class="pre">validator-credentials.json</span></code> file to the node’s config folder:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo cp <span class="s2">&quot;/path/to/mainnet/validator-credentials.json&quot;</span> <span class="s2">&quot;/Library/Application Support/Concordium Node/Mainnet/Config/validator-credentials.json&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;/path/to/mainnet/validator-credentials.json&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/Application Support/Concordium Node/Mainnet/Config/validator-credentials.json&quot;</span>
 </pre></div>
 </div>
 <p class="sd-card-text">(replacing <code class="docutils literal notranslate"><span class="pre">/path/to/mainnet/validator-credentials.json</span></code> with the actual file path to your validator credentials for mainnet).</p>
@@ -2068,8 +2068,8 @@ Mainnet<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">Edit the service file as an administrator. The service file is found here: <code class="docutils literal notranslate"><span class="pre">&quot;/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span></code></p></li>
 <li><p class="sd-card-text">Underneath the <code class="docutils literal notranslate"><span class="pre">&lt;dict&gt;</span></code> tag in the <em>EnviromentVariables</em> section of the file add the following:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">validator</span><span class="w"> </span><span class="n">credentials</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="o">-</span>-&gt;
-<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Mainnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">validator</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Mainnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">validator</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </li>
@@ -2086,7 +2086,7 @@ Testnet<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
 <li><p class="sd-card-text">Move the <code class="docutils literal notranslate"><span class="pre">validator-credentials.json</span></code> file to the node’s config folder:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo cp <span class="s2">&quot;/path/to/testnet/validator-credentials.json&quot;</span> <span class="s2">&quot;/Library/Application Support/Concordium Node/Testnet/Config/validator-credentials.json&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>cp<span class="w"> </span><span class="s2">&quot;/path/to/testnet/validator-credentials.json&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/Application Support/Concordium Node/Testnet/Config/validator-credentials.json&quot;</span>
 </pre></div>
 </div>
 <p class="sd-card-text">(replacing <code class="docutils literal notranslate"><span class="pre">/path/to/testnet/validator-credentials.json</span></code> with the actual file path to your validator credentials for testnet).</p>
@@ -2094,8 +2094,8 @@ Testnet<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">Edit the service file as an administrator. The service file is found here: <code class="docutils literal notranslate"><span class="pre">&quot;/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span></code></p></li>
 <li><p class="sd-card-text">In the <em>EnviromentVariables</em> section of the file add the following:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;!--</span><span class="w"> </span><span class="n">Path</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">validator</span><span class="w"> </span><span class="n">credentials</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="w"> </span><span class="o">-</span>-&gt;
-<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span><span class="w"></span>
-<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Testnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">validator</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;/</span><span class="n">Library</span><span class="o">/</span><span class="n">Application</span><span class="w"> </span><span class="n">Support</span><span class="o">/</span><span class="n">Concordium</span><span class="w"> </span><span class="n">Node</span><span class="o">/</span><span class="n">Testnet</span><span class="o">/</span><span class="n">Config</span><span class="o">/</span><span class="n">validator</span><span class="o">-</span><span class="n">credentials</span><span class="p">.</span><span class="n">json</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </li>

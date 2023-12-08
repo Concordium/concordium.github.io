@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/interact-instance.6e5442e9-83ec-4c56-85e1-caab4927afb6.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/interact-instance.3ccea11d-967a-4cc2-9d39-d191df1aefcd.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2073,7 +2073,7 @@ the receive function and the complexity of the function itself.</p>
 <p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the parameterless
 receive function <code class="docutils literal notranslate"><span class="pre">my_receive</span></code> while allowing up to 1000 energy to be used,
 run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_receive --energy <span class="m">1000</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">0</span><span class="w"> </span>--func<span class="w"> </span>my_receive<span class="w"> </span>--energy<span class="w"> </span><span class="m">1000</span>
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -2091,9 +2091,9 @@ The schema is used to serialize the JSON into binary.</p>
 <p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.json</span></code> in JSON
 format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_parameter_receive <span class="se">\</span>
-<span class="go">         --energy 1000 \</span>
-<span class="go">         --parameter-json my_parameter.json</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">0</span><span class="w"> </span>--func<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--energy<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--parameter-json<span class="w"> </span>my_parameter.json
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -2141,9 +2141,9 @@ using the <code class="docutils literal notranslate"><span class="pre">--schema<
 <p>To update an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.bin</span></code> in binary
 format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract update <span class="m">0</span> --func my_parameter_receive <span class="se">\</span>
-<span class="go">         --energy 1000 \</span>
-<span class="go">         --parameter-bin my_parameter.bin</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">0</span><span class="w"> </span>--func<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--energy<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--parameter-bin<span class="w"> </span>my_parameter.bin
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/build-schema.3242cfa7-8414-42f3-9576-61724985723f.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/build-schema.b1a9abd6-03b1-4605-85cd-f7f194aa24d2.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2085,10 +2085,10 @@ the parameters of init and receive functions.</p>
 trait. This is already done for all base types and some other types (see <a class="reference external" href="https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls">list of types implementing the SchemaType</a>).
 For most other cases, it can also be achieved automatically, using
 <code class="docutils literal notranslate"><span class="pre">#[derive(SchemaType)]</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">struct</span> <span class="nc">SomeType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span>
+<span class="k">struct</span> <span class="nc">SomeType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Implementing the <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code> trait manually only requires specifying one
@@ -2098,16 +2098,16 @@ how this type is represented as bytes and how to represent it.</p>
 <h3>Including contract state<a class="headerlink" href="#including-contract-state" title="Permalink to this headline">#</a></h3>
 <p>To generate and include the schema for the contract state, annotate the type
 with the <code class="docutils literal notranslate"><span class="pre">#[contract_state(contract</span> <span class="pre">=</span> <span class="pre">...)]</span></code> macro:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[contract_state(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">struct</span> <span class="nc">MyState</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="o">..</span><span class="p">.</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[contract_state(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span>
+<span class="cp">#[derive(SchemaType)]</span>
+<span class="k">struct</span> <span class="nc">MyState</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Or even simpler if the contract state is of a type that already implements <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code>, e.g., u32:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[contract_state(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">type</span> <span class="nc">State</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">u32</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[contract_state(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span>
+<span class="k">type</span> <span class="nc">State</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">u32</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -2116,17 +2116,17 @@ with the <code class="docutils literal notranslate"><span class="pre">#[contract
 <p>To generate and include the schema for parameters for init and
 receive functions, set the optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code> attribute for the
 <code class="docutils literal notranslate"><span class="pre">#[init(..)]</span></code>- and <code class="docutils literal notranslate"><span class="pre">#[receive(..)]</span></code>-macro:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">InitParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">InitParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[derive(SchemaType)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">ReceiveParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[derive(SchemaType)]</span>
+<span class="k">enum</span> <span class="nc">ReceiveParameter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParameter&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_init</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.){</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParameter&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_init</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.){</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;ReceiveParameter&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.){</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;ReceiveParameter&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_receive</span><span class="o">&lt;..</span><span class="p">.</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="o">..</span><span class="p">.){</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2144,7 +2144,7 @@ have the options to embed the schema and/or write the schema to a file.</p>
 <h3>Embedding the schema<a class="headerlink" href="#embedding-the-schema" title="Permalink to this headline">#</a></h3>
 <p>In order to embed the schema into the smart contract module, add
 <code class="docutils literal notranslate"><span class="pre">--schema-embed</span></code> to the build command</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-embed
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-embed
 </pre></div>
 </div>
 <p>If successful the output of the command will tell you the total size of the
@@ -2154,7 +2154,7 @@ schema in bytes.</p>
 <h3>Outputting a schema file<a class="headerlink" href="#outputting-a-schema-file" title="Permalink to this headline">#</a></h3>
 <p>To output the schema into a file, use the <code class="docutils literal notranslate"><span class="pre">--schema-out=FILE</span></code>
 where <code class="docutils literal notranslate"><span class="pre">FILE</span></code> is a path of the file to create:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --schema-out<span class="o">=</span><span class="s2">&quot;/some/path/schema.bin&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-out<span class="o">=</span><span class="s2">&quot;/some/path/schema.bin&quot;</span>
 </pre></div>
 </div>
 </div>

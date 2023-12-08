@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/tutorials/setup-env.72af52cf-3041-4d18-8c04-43263e0bb776.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/tutorials/setup-env.ce9d011b-5ebe-4eaf-aedb-ad12a9e11611.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2089,7 +2089,7 @@ body {margin:0;}
 Remember to adjust the following commands based on your operating system.</p>
 </div>
 <p>Go to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. You can check if you are in the correct folder when you see the output <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> from the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ls <span class="p">|</span> grep <span class="s1">&#39;concordium-client&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;concordium-client&#39;</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/pb_tutorial_10.png"><img alt="../../_images/pb_tutorial_10.png" src="../../_images/pb_tutorial_10.png" style="width: 70%;" /></a>
@@ -2103,12 +2103,12 @@ searches for the executable package in the current directory while
 omitting <code class="docutils literal notranslate"><span class="pre">./</span></code> searches for the executable package in the PATH variable.</p>
 </div>
 <p>The package is not yet executable. You change this with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod +x concordium-client
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod<span class="w"> </span>+x<span class="w"> </span>concordium-client
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/pb_tutorial_8.png"><img alt="../../_images/pb_tutorial_8.png" src="../../_images/pb_tutorial_8.png" style="width: 50%;" /></a>
 <p>Check whether you can execute the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client --help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>You should see some output that will help you in getting familiar with the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool.</p>
@@ -2127,11 +2127,11 @@ omitting <code class="docutils literal notranslate"><span class="pre">./</span><
 <p class="sd-card-text"><strong>Disadvantage</strong>: You have to transfer files between your local machine and your instance.</p>
 <p class="sd-card-text">Transfer the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> package from your machine via a file-sharing tool (such as <a class="reference external" href="https://filezilla-project.org/">FileZilla</a> or the <code class="docutils literal notranslate"><span class="pre">sftp</span></code> command) to your instance.</p>
 <p class="sd-card-text">Connect to your instance and make your package executable again as you have done previously already:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod +x concordium-client
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>chmod<span class="w"> </span>+x<span class="w"> </span>concordium-client
 </pre></div>
 </div>
 <p class="sd-card-text">Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client<span class="w"> </span>block<span class="w"> </span>show<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p class="sd-card-text">You should see some block data output.</p>
@@ -2152,7 +2152,7 @@ omitting <code class="docutils literal notranslate"><span class="pre">./</span><
 <p class="sd-card-text"><strong>Advantage</strong>: You don’t have to transfer files between your local machine and your instance later in the tutorial.</p>
 <p class="sd-card-text"><strong>Disadvantage</strong>: You have to use ssh with port forwarding when you run a command locally.</p>
 <p class="sd-card-text">Since you have a remote server your cloud provider usually gives you an option to ssh into it. Add the following port forwarding rule to your method to ssh into your instance in terminal A. The port 20001 on your localhost is forwarded to the port 20001 on your instance.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ssh -NL localhost:20001:&lt;IP-address-of-your-instance&gt;:20001 &lt;username&gt;@&lt;host&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>ssh<span class="w"> </span>-NL<span class="w"> </span>localhost:20001:&lt;IP-address-of-your-instance&gt;:20001<span class="w"> </span>&lt;username&gt;@&lt;host&gt;
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/pb_tutorial_26.png"><img alt="../../_images/pb_tutorial_26.png" src="../../_images/pb_tutorial_26.png" style="width: 100%;" /></a>
@@ -2161,7 +2161,7 @@ omitting <code class="docutils literal notranslate"><span class="pre">./</span><
 <p class="sd-card-text">Port 20001 is open by default on your testnet node to interact with it. Cloud providers often use <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> as the default &lt;username&gt; and the &lt;IP-address-of-your-instance&gt; as the default &lt;host&gt;.</p>
 </div>
 <p class="sd-card-text">Go in another terminal B to the folder where you downloaded the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>. Check if everything is connected correctly by displaying the best/latest block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client block show --grpc-port <span class="m">20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client<span class="w"> </span>block<span class="w"> </span>show<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p class="sd-card-text">You should see some block data output.</p>

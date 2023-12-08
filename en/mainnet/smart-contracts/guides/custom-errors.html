@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/custom-errors.6960cb44-5a16-4f03-b89e-2cffa27a78ef.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/custom-errors.6c003e37-c9ae-4f09-9471-9bc60120b4bc.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2049,11 +2049,11 @@ the type also implements <code class="docutils literal notranslate"><span class=
 needed because the whole data type is serialized and included as the optional
 return value.
 Here is a typical example:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serial, Reject)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">MyError</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ErrOne</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">ErrTwo</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Serial, Reject)]</span>
+<span class="k">enum</span> <span class="nc">MyError</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ErrOne</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ErrTwo</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2071,17 +2071,17 @@ ordering. First variant (<code class="docutils literal notranslate"><span class=
 <div class="section" id="using-custom-errors">
 <h2>Using custom errors<a class="headerlink" href="#using-custom-errors" title="Permalink to this headline">#</a></h2>
 <p>Return custom errors, as you would with any other error type:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_init_my</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">InitContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">_state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrOne</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_init_my</span><span class="p">(</span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">InitContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">_state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrOne</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_my</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">_host</span>: <span class="kp">&amp;</span><span class="nc">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">MyReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrTwo</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_receive_my</span><span class="p">(</span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">_host</span>: <span class="kp">&amp;</span><span class="nc">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">MyReturnValue</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrTwo</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/invoke-instance.fbd8e4c5-a3c0-4f02-8b29-5a860578abec.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/invoke-instance.c7ad8ad8-dfda-4e37-ac79-9306212e36d0.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2069,7 +2069,7 @@ how to create an instance <a class="reference internal" href="initialize-contrac
 <h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this headline">#</a></h2>
 <p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> (the subindex defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>) using the parameterless
 entrypoint <code class="docutils literal notranslate"><span class="pre">my_receive</span></code>, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_receive
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -2097,16 +2097,16 @@ transaction on chain.</p>
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">invoker-account</span></code> parameter to invoke an entrypoint with a specific
 sender account:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_receive --invoker-account &lt;account-address&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--invoker-account<span class="w"> </span>&lt;account-address&gt;
 </pre></div>
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">invoker-contract</span></code> parameter to invoke an entrypoint with a sender contract:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_receive --invoker-contract &lt;contract-index&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--invoker-contract<span class="w"> </span>&lt;contract-index&gt;
 </pre></div>
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">amount</span></code> parameter to invoke an entrypoint with the specified amount
 of CCD.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_receive --amount &lt;CCD&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--amount<span class="w"> </span>&lt;CCD&gt;
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2116,7 +2116,7 @@ was an update transaction at the very end of the current best block on the chain
 </div>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">block</span></code> parameter to specify a different block to run the invocation
 in:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_receive --block &lt;block-hash&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_receive<span class="w"> </span>--block<span class="w"> </span>&lt;block-hash&gt;
 </pre></div>
 </div>
 <div class="section" id="passing-parameters-in-json-format">
@@ -2130,8 +2130,8 @@ The schema is used to serialize the JSON into binary.</p>
 <p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.json</span></code> in JSON
 format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_parameter_receive <span class="se">\</span>
-<span class="go">         --parameter-json my_parameter.json</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--parameter-json<span class="w"> </span>my_parameter.json
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -2176,8 +2176,8 @@ using the <code class="docutils literal notranslate"><span class="pre">--schema<
 <p>To invoke an instance with address index <code class="docutils literal notranslate"><span class="pre">0</span></code> using the receive function
 <code class="docutils literal notranslate"><span class="pre">my_parameter_receive</span></code> with a parameter file <code class="docutils literal notranslate"><span class="pre">my_parameter.bin</span></code> in binary
 format, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client contract invoke <span class="m">0</span> --entrypoint my_parameter_receive <span class="se">\</span>
-<span class="go">         --parameter-bin my_parameter.bin</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">0</span><span class="w"> </span>--entrypoint<span class="w"> </span>my_parameter_receive<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>--parameter-bin<span class="w"> </span>my_parameter.bin
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>

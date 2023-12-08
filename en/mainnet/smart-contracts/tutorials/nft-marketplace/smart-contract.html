@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/nft-marketplace/smart-contract.6ffe247c-6549-4e63-8384-79b6c9136630.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/nft-marketplace/smart-contract.e0311c93-1565-4dc0-9521-d1ab3119cd3c.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2058,22 +2058,22 @@ body {margin:0;}
 <span class="sd">///</span>
 <span class="sd">/// This function can be called by using InitParams.</span>
 <span class="sd">/// The commission should be less than the maximum allowed value of 10000 basis points</span>
-<span class="cp">#[init(contract = </span><span class="s">&quot;Market-NFT&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParams&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">init</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">InitContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&lt;</span><span class="n">ContractTokenId</span><span class="p">,</span><span class="w"> </span><span class="n">ContractTokenAmount</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">params</span>: <span class="nc">InitParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_e</span><span class="o">|</span><span class="w"> </span><span class="n">MarketplaceError</span>::<span class="n">ParseParams</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#[init(contract = </span><span class="s">&quot;Market-NFT&quot;</span><span class="cp">, parameter = </span><span class="s">&quot;InitParams&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">init</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">InitContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&lt;</span><span class="n">ContractTokenId</span><span class="p">,</span><span class="w"> </span><span class="n">ContractTokenAmount</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">params</span>: <span class="nc">InitParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span>
+<span class="w">        </span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_e</span><span class="o">|</span><span class="w"> </span><span class="n">MarketplaceError</span>::<span class="n">ParseParams</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="n">commission</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">MAX_BASIS_POINTS</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">InitResult</span>::<span class="nb">Err</span><span class="p">(</span><span class="n">Reject</span>::<span class="n">from</span><span class="p">(</span><span class="n">MarketplaceError</span>::<span class="n">InvalidCommission</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="n">commission</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">MAX_BASIS_POINTS</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">InitResult</span>::<span class="nb">Err</span><span class="p">(</span><span class="n">Reject</span>::<span class="n">from</span><span class="p">(</span><span class="n">MarketplaceError</span>::<span class="n">InvalidCommission</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">State</span>::<span class="n">new</span><span class="p">(</span><span class="n">state_builder</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="n">commission</span><span class="p">))</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">State</span>::<span class="n">new</span><span class="p">(</span><span class="n">state_builder</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="p">.</span><span class="n">commission</span><span class="p">))</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Run the following command to initialize the contract.</p>
@@ -2097,38 +2097,38 @@ body {margin:0;}
 <span class="cp">    error = </span><span class="s">&quot;ContractError&quot;</span><span class="cp">,</span>
 <span class="cp">    enable_logger,</span>
 <span class="cp">    mutable</span>
-<span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_update_operator</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">logger</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Logger</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_update_operator</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">logger</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Logger</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Parse the parameter.</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">UpdateOperatorParams</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">().</span><span class="n">get</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">UpdateOperatorParams</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">().</span><span class="n">get</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// Get the sender who invoked this contract function.</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state_and_builder</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state_and_builder</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// Update the operator in the state.</span>
-<span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">param</span><span class="p">.</span><span class="n">update</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">OperatorUpdate</span>::<span class="n">Add</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">add_operator</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">param</span><span class="p">.</span><span class="n">operator</span><span class="p">,</span><span class="w"> </span><span class="n">builder</span><span class="p">),</span><span class="w"></span>
-<span class="w">            </span><span class="n">OperatorUpdate</span>::<span class="n">Remove</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">remove_operator</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">param</span><span class="p">.</span><span class="n">operator</span><span class="p">),</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">param</span><span class="p">.</span><span class="n">update</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">OperatorUpdate</span>::<span class="n">Add</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">add_operator</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">param</span><span class="p">.</span><span class="n">operator</span><span class="p">,</span><span class="w"> </span><span class="n">builder</span><span class="p">),</span>
+<span class="w">            </span><span class="n">OperatorUpdate</span>::<span class="n">Remove</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">remove_operator</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">param</span><span class="p">.</span><span class="n">operator</span><span class="p">),</span>
+<span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="c1">// Log the appropriate event</span>
-<span class="w">        </span><span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="o">&amp;</span><span class="n">Cis2Event</span>::<span class="o">&lt;</span><span class="n">ContractTokenId</span><span class="p">,</span><span class="w"> </span><span class="n">ContractTokenAmount</span><span class="o">&gt;</span>::<span class="n">UpdateOperator</span><span class="p">(</span><span class="w"></span>
-<span class="w">                </span><span class="n">UpdateOperatorEvent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">owner</span>: <span class="nc">sender</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="n">operator</span>: <span class="nc">param</span><span class="p">.</span><span class="n">operator</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="n">update</span>: <span class="nc">param</span><span class="p">.</span><span class="n">update</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="p">},</span><span class="w"></span>
-<span class="w">            </span><span class="p">),</span><span class="w"></span>
-<span class="w">        </span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span>
+<span class="w">            </span><span class="o">&amp;</span><span class="n">Cis2Event</span>::<span class="o">&lt;</span><span class="n">ContractTokenId</span><span class="p">,</span><span class="w"> </span><span class="n">ContractTokenAmount</span><span class="o">&gt;</span>::<span class="n">UpdateOperator</span><span class="p">(</span>
+<span class="w">                </span><span class="n">UpdateOperatorEvent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">owner</span>: <span class="nc">sender</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">operator</span>: <span class="nc">param</span><span class="p">.</span><span class="n">operator</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">update</span>: <span class="nc">param</span><span class="p">.</span><span class="n">update</span><span class="p">,</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">        </span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Now run the command below.</p>
@@ -2163,66 +2163,66 @@ body {margin:0;}
 <span class="cp">    parameter = </span><span class="s">&quot;TransferParams&quot;</span><span class="cp">,</span>
 <span class="cp">    mutable,</span>
 <span class="cp">    payable</span>
-<span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">transfer</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">ContractState</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">amount</span>: <span class="nc">Amount</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">params</span>: <span class="nc">TransferParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_e</span><span class="o">|</span><span class="w"> </span><span class="n">MarketplaceError</span>::<span class="n">ParseParams</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">transfer</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">ContractState</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span>: <span class="nc">Amount</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">params</span>: <span class="nc">TransferParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span>
+<span class="w">        </span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_e</span><span class="o">|</span><span class="w"> </span><span class="n">MarketplaceError</span>::<span class="n">ParseParams</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TokenInfo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">id</span>: <span class="nc">params</span><span class="p">.</span><span class="n">token_id</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">address</span>: <span class="nc">params</span><span class="p">.</span><span class="n">nft_contract_address</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TokenInfo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">id</span>: <span class="nc">params</span><span class="p">.</span><span class="n">token_id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">address</span>: <span class="nc">params</span><span class="p">.</span><span class="n">nft_contract_address</span><span class="p">,</span>
+<span class="w">    </span><span class="p">};</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">listed_token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">state</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">get_listed</span><span class="p">(</span><span class="n">token_info</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="n">ok_or</span><span class="p">(</span><span class="n">MarketplaceError</span>::<span class="n">TokenNotListed</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">listed_token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span>
+<span class="w">        </span><span class="p">.</span><span class="n">state</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">get_listed</span><span class="p">(</span><span class="n">token_info</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ok_or</span><span class="p">(</span><span class="n">MarketplaceError</span>::<span class="n">TokenNotListed</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">listed_quantity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listed_token</span><span class="p">.</span><span class="mf">1.</span><span class="n">quantity</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">price_per_unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listed_token</span><span class="p">.</span><span class="mf">1.</span><span class="n">price</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_royalty_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listed_token</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">listed_quantity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listed_token</span><span class="p">.</span><span class="mf">1.</span><span class="n">quantity</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">price_per_unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listed_token</span><span class="p">.</span><span class="mf">1.</span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_royalty_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listed_token</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">listed_quantity</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">).</span><span class="n">is_ge</span><span class="p">(),</span><span class="w"></span>
-<span class="w">        </span><span class="n">MarketplaceError</span>::<span class="n">InvalidTokenQuantity</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span>
+<span class="w">        </span><span class="n">listed_quantity</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">).</span><span class="n">is_ge</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">MarketplaceError</span>::<span class="n">InvalidTokenQuantity</span>
+<span class="w">    </span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price_per_unit</span><span class="p">.</span><span class="n">mul</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">price</span><span class="p">).</span><span class="n">is_ge</span><span class="p">(),</span><span class="w"></span>
-<span class="w">        </span><span class="n">MarketplaceError</span>::<span class="n">InvalidAmountPaid</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price_per_unit</span><span class="p">.</span><span class="n">mul</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span>
+<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">price</span><span class="p">).</span><span class="n">is_ge</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">MarketplaceError</span>::<span class="n">InvalidAmountPaid</span>
+<span class="w">    </span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">Cis2Client</span>::<span class="n">transfer</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">host</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">token_id</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">nft_contract_address</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">concordium_cis2</span>::<span class="n">Receiver</span>::<span class="n">Account</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">to</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">map_err</span><span class="p">(</span><span class="n">MarketplaceError</span>::<span class="n">Cis2ClientError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Cis2Client</span>::<span class="n">transfer</span><span class="p">(</span>
+<span class="w">        </span><span class="n">host</span><span class="p">,</span>
+<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">token_id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">nft_contract_address</span><span class="p">,</span>
+<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span>
+<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">,</span>
+<span class="w">        </span><span class="n">concordium_cis2</span>::<span class="n">Receiver</span>::<span class="n">Account</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">to</span><span class="p">),</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">map_err</span><span class="p">(</span><span class="n">MarketplaceError</span>::<span class="n">Cis2ClientError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">distribute_amounts</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">host</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="n">amount</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">token_royalty_state</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">(),</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">distribute_amounts</span><span class="p">(</span>
+<span class="w">        </span><span class="n">host</span><span class="p">,</span>
+<span class="w">        </span><span class="n">amount</span><span class="p">,</span>
+<span class="w">        </span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">,</span>
+<span class="w">        </span><span class="o">&amp;</span><span class="n">token_royalty_state</span><span class="p">,</span>
+<span class="w">        </span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">(),</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">().</span><span class="n">decrease_listed_quantity</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="o">&amp;</span><span class="n">TokenOwnerInfo</span>::<span class="n">from</span><span class="p">(</span><span class="n">token_info</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">),</span><span class="w"></span>
-<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ContractResult</span>::<span class="nb">Ok</span><span class="p">(())</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">().</span><span class="n">decrease_listed_quantity</span><span class="p">(</span>
+<span class="w">        </span><span class="o">&amp;</span><span class="n">TokenOwnerInfo</span>::<span class="n">from</span><span class="p">(</span><span class="n">token_info</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">params</span><span class="p">.</span><span class="n">owner</span><span class="p">),</span>
+<span class="w">        </span><span class="n">params</span><span class="p">.</span><span class="n">quantity</span><span class="p">,</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="n">ContractResult</span>::<span class="nb">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Run the command below to invoke the <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> function.</p>

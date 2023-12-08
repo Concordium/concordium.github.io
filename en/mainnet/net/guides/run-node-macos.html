@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-macos.7e107a72-de91-4b92-ad75-653dfc69c3c4.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/run-node-macos.6966c309-7897-4f6a-bdf7-a38bba48c7e7.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2109,21 +2109,21 @@ settings files for the relevant network as documented below. The default
 ports set on a fresh install for mainnet and testnet are <code class="docutils literal notranslate"><span class="pre">20000</span></code> and
 <code class="docutils literal notranslate"><span class="pre">20001</span></code>, respectively.</p>
 <p><strong>Example for Mainnet</strong></p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Address of the GRPC V2 server. --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Address of the GRPC V2 server. --&gt;</span>
 <span class="nt">&lt;key&gt;</span>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;string&gt;</span>0.0.0.0<span class="nt">&lt;/string&gt;</span>
 
-<span class="c">&lt;!-- Port of the GRPC V2 server. --&gt;</span>
+<span class="cm">&lt;!-- Port of the GRPC V2 server. --&gt;</span>
 <span class="nt">&lt;key&gt;</span>CONCORDIUM_NODE_GRPC2_LISTEN_PORT<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;string&gt;</span>20000<span class="nt">&lt;/string&gt;</span>
 </pre></div>
 </div>
 <p><strong>Example for Testnet</strong></p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Address of the GRPC V2 server. --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Address of the GRPC V2 server. --&gt;</span>
 <span class="nt">&lt;key&gt;</span>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;string&gt;</span>0.0.0.0<span class="nt">&lt;/string&gt;</span>
 
-<span class="c">&lt;!-- Port of the GRPC V2 server. --&gt;</span>
+<span class="cm">&lt;!-- Port of the GRPC V2 server. --&gt;</span>
 <span class="nt">&lt;key&gt;</span>CONCORDIUM_NODE_GRPC2_LISTEN_PORT<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;string&gt;</span>20001<span class="nt">&lt;/string&gt;</span>
 </pre></div>
@@ -2272,12 +2272,12 @@ details of how this is done will depend on your configuration.</p>
 <li><p>Enable automatic startup of the <em>node</em> by running:</p>
 <ul>
 <li><p>For mainnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo ln -s <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span> <span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>For testnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo ln -s <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span> <span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -2286,12 +2286,12 @@ details of how this is done will depend on your configuration.</p>
 <li><p>Enable automatic startup of the <em>node-collector</em> by running:</p>
 <ul>
 <li><p>For mainnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo ln -s <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node-collector.plist&quot;</span> <span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node-collector.plist&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>For testnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo ln -s <span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node-collector.plist&quot;</span> <span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node-collector.plist&quot;</span><span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -2300,12 +2300,12 @@ details of how this is done will depend on your configuration.</p>
 <li><p>Disable automatic startup of the <em>node</em> by running:</p>
 <ul>
 <li><p>For mainnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>For testnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node.plist&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -2314,12 +2314,12 @@ details of how this is done will depend on your configuration.</p>
 <li><p>Disable automatic startup of <em>node-collector</em> by running:</p>
 <ul>
 <li><p>For mainnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.mainnet.node-collector.plist&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/software.concordium.mainnet.node-collector.plist&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>For testnet:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo rm <span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -2339,7 +2339,7 @@ details of how this is done will depend on your configuration.</p>
 <p>Since the GRPC V2 port is different than the GRPC V1 port, you need to change it in the node configuration:</p>
 <p><strong>Example for Mainnet</strong></p>
 <blockquote>
-<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- gRPC host to collect from. --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- gRPC host to collect from. --&gt;</span>
 <span class="nt">&lt;key&gt;</span>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;string&gt;</span>http://localhost:20000<span class="nt">&lt;/string&gt;</span>
 </pre></div>
@@ -2347,7 +2347,7 @@ details of how this is done will depend on your configuration.</p>
 </div></blockquote>
 <p><strong>Example for Testnet</strong></p>
 <blockquote>
-<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- gRPC host to collect from. --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- gRPC host to collect from. --&gt;</span>
 <span class="nt">&lt;key&gt;</span>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;string&gt;</span>http://localhost:20001<span class="nt">&lt;/string&gt;</span>
 </pre></div>

@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/references/simulate-context.4dbec0d4-2e87-41c0-a8a1-7728d111ae64.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/references/simulate-context.b9dafc1a-abc7-4cbc-bec0-c611fc0aaeed.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2186,15 +2186,15 @@ when <a class="reference internal" href="../guides/local-simulate.html#local-sim
 <p>The context accessible in an init function.</p>
 <p>Example of context</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;initOrigin&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
-    <span class="p">}]</span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;slotTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;initOrigin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;validTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202109&quot;</span>
+<span class="w">    </span><span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2223,22 +2223,22 @@ reference a policy.</p>
 <p>The context accessible in a receive function.</p>
 <p>Example of context:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;invoker&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selfAddress&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
-    <span class="nt">&quot;selfBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;account&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
-    <span class="p">}],</span>
-    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;slotTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;invoker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;selfAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selfBalance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;account&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;validTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202109&quot;</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2262,11 +2262,11 @@ receive function, by updating a smart contract instance.</p>
 Can be either a smart contract instance or an account address, given as a JSON
 object.</p>
 <p>Example of account address:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;account&quot;</span><span class="p">,</span> <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;account&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Example of contract address:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;contract&quot;</span><span class="p">,</span> <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contract&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2290,7 +2290,7 @@ instance.</p>
 instance.
 Must contain the <code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">subindex</span></code> fields with JSON numbers.</p>
 <p>Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2310,7 +2310,7 @@ information of the blockchain at the block the smart contract is executed in.
 This block is referred to as the <em>current block</em> below.</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-      <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+<span class="w">      </span><span class="nt">&quot;slotTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2326,9 +2326,9 @@ format of <a class="reference external" href="https://tools.ietf.org/html/rfc333
 Such a policy is represented as a JSON Object.</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
+<span class="w">    </span><span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;validTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202109&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

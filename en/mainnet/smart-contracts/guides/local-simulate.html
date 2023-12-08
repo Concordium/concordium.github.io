@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/local-simulate.87244322-f5a9-40b1-94d1-57d72ce44880.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/local-simulate.ce9aa1ed-da5e-42aa-aa88-22a2e61464cb.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2059,12 +2059,12 @@ You will also need a smart contract module in Wasm to simulate.</p>
 <span id="id2"></span><h2>Simulating instantiation<a class="headerlink" href="#simulating-instantiation" title="Permalink to this headline">#</a></h2>
 <p>To simulate the instantiation of a smart contract instance using
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium run init --module contract.wasm.v1 <span class="se">\</span>
-<span class="go">                            --contract &quot;my_contract&quot; \</span>
-<span class="go">                            --context init-context.json \</span>
-<span class="go">                            --amount 123456.789 \</span>
-<span class="go">                            --parameter-bin parameter.bin \</span>
-<span class="go">                            --out-bin state.bin</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>run<span class="w"> </span>init<span class="w"> </span>--module<span class="w"> </span>contract.wasm.v1<span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>--contract<span class="w"> </span><span class="s2">&quot;my_contract&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>--context<span class="w"> </span>init-context.json<span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>--amount<span class="w"> </span><span class="m">123456</span>.789<span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>--parameter-bin<span class="w"> </span>parameter.bin<span class="w"> </span><span class="se">\</span>
+<span class="w">                            </span>--out-bin<span class="w"> </span>state.bin
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2081,15 +2081,15 @@ uses.
 unspecified context field.
 An example of a fully specified init context could be:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;initOrigin&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
-    <span class="p">}]</span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;slotTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;initOrigin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;validTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202109&quot;</span>
+<span class="w">    </span><span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2102,14 +2102,14 @@ An example of a fully specified init context could be:</p>
 <h2>Simulating updates<a class="headerlink" href="#simulating-updates" title="Permalink to this headline">#</a></h2>
 <p>To simulate an update to a smart contract instance using
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code>, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium run update --module contract.wasm.v1 <span class="se">\</span>
-<span class="go">                              --contract &quot;my_contract&quot; \</span>
-<span class="go">                              --entrypoint &quot;some_receive&quot; \</span>
-<span class="go">                              --context receive-context.json \</span>
-<span class="go">                              --amount 123456.789 \</span>
-<span class="go">                              --parameter-bin parameter.bin \</span>
-<span class="go">                              --state-bin state-in.bin \</span>
-<span class="go">                              --out-bin state-out.bin</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>run<span class="w"> </span>update<span class="w"> </span>--module<span class="w"> </span>contract.wasm.v1<span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>--contract<span class="w"> </span><span class="s2">&quot;my_contract&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>--entrypoint<span class="w"> </span><span class="s2">&quot;some_receive&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>--context<span class="w"> </span>receive-context.json<span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>--amount<span class="w"> </span><span class="m">123456</span>.789<span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>--parameter-bin<span class="w"> </span>parameter.bin<span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>--state-bin<span class="w"> </span>state-in.bin<span class="w"> </span><span class="se">\</span>
+<span class="w">                              </span>--out-bin<span class="w"> </span>state-out.bin
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2133,22 +2133,22 @@ uses.
 unspecified context field.
 An example of a fully specified receive context could be:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;slotTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;invoker&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selfAddress&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
-    <span class="nt">&quot;selfBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;account&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;202012&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;validTo&quot;</span><span class="p">:</span> <span class="s2">&quot;202109&quot;</span>
-    <span class="p">}],</span>
-    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;slotTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-01-01T00:00:01Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;invoker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;selfAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selfBalance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;account&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;senderPolicies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">        </span><span class="nt">&quot;identityProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202012&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;validTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;202109&quot;</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3uxeCZwa3SxbksPWHwXWxCsaPucZdzNaXsRbkztqUUYRo1MnvF&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

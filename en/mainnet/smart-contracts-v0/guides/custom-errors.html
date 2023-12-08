@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/custom-errors.8aae86d0-cd9a-482f-8fce-5f2644a09e24.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/custom-errors.854eef3f-fc75-482f-ac38-1b930a68d657.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2045,11 +2045,11 @@ also the case when using a custom error type. Therefore, a mapping from the
 custom error type to <code class="docutils literal notranslate"><span class="pre">Reject</span></code>, in the form of an implementation of
 <code class="docutils literal notranslate"><span class="pre">From&lt;MyError&gt;</span> <span class="pre">for</span> <span class="pre">Reject</span></code>, is needed. You can also derive it
 automatically using <code class="docutils literal notranslate"><span class="pre">#[derive(Reject)]</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Reject)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">MyError</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ErrOne</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">ErrTwo</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Reject)]</span>
+<span class="k">enum</span> <span class="nc">MyError</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ErrOne</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ErrTwo</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2069,16 +2069,16 @@ with <a class="reference external" href="https://doc.rust-lang.org/reference/ite
 <div class="section" id="using-custom-errors">
 <h2>Using custom errors<a class="headerlink" href="#using-custom-errors" title="Permalink to this headline">#</a></h2>
 <p>Return custom errors, as you would with any other error type:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_init_my</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrOne</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[init(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_init_my</span><span class="p">(</span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrOne</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">contract_receive_my</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">_state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">State</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrTwo</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">contract_receive_my</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="n">_ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">_state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">State</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">MyError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">MyError</span>::<span class="n">ErrTwo</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>

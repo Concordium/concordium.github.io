@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/desktop-wallet/install-ledger-app.97f54341-d08b-4fae-85a1-daf1395df60c.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/desktop-wallet/install-ledger-app.41f3b75d-0ef7-48b3-9395-cd4e8c95291f.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -455,17 +455,17 @@ body {margin:0;}
 <ol class="arabic">
 <li><p>In the <strong>Start</strong> menu, type <em>PowerShell</em> and select <strong>Windows PowerShell</strong>. The command-line window opens.</p></li>
 <li><p>To confirm that Python3 was installed, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>Python3 --version
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>Python3<span class="w"> </span>--version
 </pre></div>
 </div>
 </li>
 <li><p>To confirm that the package manager named pip is installed, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip --version
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip<span class="w"> </span>--version
 </pre></div>
 </div>
 </li>
 <li><p>To install Python tools for the LEDGER NANO S, enter</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip install ledgerblue
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip<span class="w"> </span>install<span class="w"> </span>ledgerblue
 </pre></div>
 </div>
 </li>
@@ -537,18 +537,18 @@ body {margin:0;}
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the LEDGER install package. For example, this might be <code class="docutils literal notranslate"><span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>. To navigate to this directory in a Terminal, enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads/concordium-governance-ledger-app-1.0.0-nanos-2.1.0.zip</span></code>.</p></li>
 <li><p>Install the package manager <a class="reference external" href="https://brew.sh/">Homebrew</a>; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>To install Python3, Pip3, <a class="reference external" href="https://libusb.info/">libusb</a>, and <a class="reference external" href="http://libjpeg.sourceforge.net/">libjpeg</a>, copy the following into the Terminal and press Enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>brew install python@3.9 libusb libjpeg
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>brew<span class="w"> </span>install<span class="w"> </span>python@3.9<span class="w"> </span>libusb<span class="w"> </span>libjpeg
 </pre></div>
 </div>
 <p>You can use <cite>pyenv&lt;https://github.com/pyenv/pyenv&gt;</cite> if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.</p>
 </li>
 <li><p>To install ledgerblue, copy the following into the Terminal and press Enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip3 install ledgerblue
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip3<span class="w"> </span>install<span class="w"> </span>ledgerblue
 </pre></div>
 </div>
 </li>
@@ -637,29 +637,29 @@ body {margin:0;}
 <h3>Install Python3 and pip on Ubuntu<a class="headerlink" href="#install-python3-and-pip-on-ubuntu" title="Permalink to this headline">#</a></h3>
 <ol class="arabic" id="install-python-pip-ubuntu">
 <li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues">LEDGER ‘s guide Fix connection history</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh <span class="p">|</span> sudo bash
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>wget<span class="w"> </span>-q<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
 </pre></div>
 </div>
 </li>
 </ol>
 <ol class="arabic" start="2">
 <li><p>Install python3:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install python3
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3
 </pre></div>
 </div>
 </li>
 <li><p>Install pip:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install python3-pip
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-pip
 </pre></div>
 </div>
 </li>
 <li><p>Install</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libudev-dev<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>python-dev
 </pre></div>
 </div>
 </li>
 <li><p>Install ledgerblue:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo pip3 install ledgerblue
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>ledgerblue
 </pre></div>
 </div>
 </li>

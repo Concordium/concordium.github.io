@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts-v0/tutorials/piggy-bank/testing.d9ea8cb6-1931-4c66-871d-b661f45be5e3.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts-v0/tutorials/piggy-bank/testing.92aeda57-7c66-4219-9521-f15df2f7e7a8.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2118,11 +2118,11 @@ one would test any library and write unit-tests as part of the Rust module.</p>
 following starting point:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// PiggyBank contract code up here</span>
 
-<span class="cp">#[cfg(test)]</span><span class="w"></span>
-<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#[cfg(test)]</span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
 
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>This is your test module, which is a common pattern for writing unit tests in
@@ -2132,12 +2132,12 @@ calling the functions you have annotated with <a class="reference external" href
 <p>But in order to call them, you will need to first construct the arguments.
 Luckily <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> contains a submodule <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure/index.html"><code class="docutils literal notranslate"><span class="pre">test_infrastructure</span></code></a> with
 stubs for this, so first bring everything from the submodule into scope.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[cfg(test)]</span><span class="w"></span>
-<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
-<span class="hll"><span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[cfg(test)]</span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
+<span class="hll"><span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span>
 </span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Now you can start adding tests to this module.</p>
@@ -2146,17 +2146,17 @@ stubs for this, so first bring everything from the submodule into scope.</p>
 <h2>Testing instantiation of a piggy bank<a class="headerlink" href="#testing-instantiation-of-a-piggy-bank" title="Permalink to this headline">#</a></h2>
 <p>The first test to add is to verify a piggy bank is set up with the correct
 state.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="fm">todo!</span><span class="p">(</span><span class="s">&quot;Implement&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="fm">todo!</span><span class="p">(</span><span class="s">&quot;Implement&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>As mentioned above, you test the initialization by calling the function
 <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code> directly.
 To construct its argument for, you use <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.InitContextTest.html"><code class="docutils literal notranslate"><span class="pre">InitContextTest</span></code></a> which provides a
 placeholder for the context.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Just as the name suggests, the test context is empty and if any of the getter
@@ -2168,50 +2168,50 @@ for now since the piggy bank is not reading anything from the context.</p>
 setter functions, allowing us to partially specify the context.</p>
 </div>
 <p>Now you can call <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code> and get a result containing the initial state.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>First, you want the test to fail if the contract did not result in an
 initial state:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Contract initialization results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Contract initialization results in error.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Next you assert the state is correctly set to <code class="docutils literal notranslate"><span class="pre">Intact</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
-<span class="w">   </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
-<span class="w">   </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"></span>
-<span class="w">   </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="fm">assert_eq!</span><span class="p">(</span>
+<span class="w">   </span><span class="n">state</span><span class="p">,</span>
+<span class="w">   </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span>
+<span class="w">   </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>Putting it all together, you end up with the following test for initializing a
 piggy bank:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// PiggyBank contract code up here</span>
 
-<span class="cp">#[cfg(test)]</span><span class="w"></span>
-<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#[cfg(test)]</span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span>
 
-<span class="w">    </span><span class="cp">#[test]</span><span class="w"></span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="cp">#[test]</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span>
 
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span>
 
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Contract initialization results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Contract initialization results in error.&quot;</span><span class="p">);</span>
 
-<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span>
+<span class="w">            </span><span class="n">state</span><span class="p">,</span>
+<span class="w">            </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span>
+<span class="w">            </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Run the test to check that it compiles and succeeds.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo <span class="nb">test</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span><span class="nb">test</span>
 </pre></div>
 </div>
 </div>
@@ -2222,16 +2222,16 @@ This is done in the same way as initializing, except you use <code class="docuti
 to construct the context.</p>
 <p>To test <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> you also need some amount of CCD and the current state
 of your smart contract instance:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>When calling <code class="docutils literal notranslate"><span class="pre">piggy_insert</span></code> you get back a result with actions instead of an
 initial state as with <code class="docutils literal notranslate"><span class="pre">piggy_init</span></code>. But you will need to help the compiler
 infer which type to use for the generic <code class="docutils literal notranslate"><span class="pre">A</span></code> implementing <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/trait.HasActions.html"><code class="docutils literal notranslate"><span class="pre">HasActions</span></code></a>, so
 add the result type <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;ActionsTree&gt;</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>For testing you can represent the actions as a simple tree structure
@@ -2244,26 +2244,26 @@ by the host environment and is therefore not suitable for unit tests.</p>
 </div>
 <p>Now you need to check if the function succeeded and verify the resulting state and actions.
 In this case the state should remain intact and the function produce only the action for accepting the CCD.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span>
 
-<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The second test becomes:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Again you should verify everything compiles and the tests succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span>
@@ -2280,13 +2280,13 @@ contract owner, the sender of the message triggering the function, and the
 balance of contract.</p>
 <p>If you only supply the function with an empty context it will fail, so instead
 define the context as mutable:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Create an <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/struct.AccountAddress.html"><code class="docutils literal notranslate"><span class="pre">AccountAddress</span></code></a> to represent the owner and use the setter
 <code class="docutils literal notranslate"><span class="pre">set_owner</span></code> implemented on <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html"><code class="docutils literal notranslate"><span class="pre">ReceiveContextTest</span></code></a>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
-<span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
+<span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2299,37 +2299,37 @@ testing it is usually more convenient to specify addresses directly in bytes.</p
 <p>Next set the sender to be the same address as the owner using <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_sender"><code class="docutils literal notranslate"><span class="pre">set_sender</span></code></a>.
 Since the sender can be a contract instance as well, you must wrap the owner
 address in the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/enum.Address.html"><code class="docutils literal notranslate"><span class="pre">Address</span></code></a> type:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Lastly, you need to set the current balance of the piggy bank instance using
 <a class="reference external" href="https://docs.rs/concordium-std/2.0.0/concordium_std/test_infrastructure/type.ReceiveContextTest.html#method.set_self_balance"><code class="docutils literal notranslate"><span class="pre">set_self_balance</span></code></a>.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Now that you have the test context setup, call the contract function
 <code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> and inspect the resulting action tree and state as you did
 in the previous tests:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">));</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Ensure everything compiles and the test succeeds using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
@@ -2346,22 +2346,22 @@ when someone besides the owner of the smart contract tries to smash it.</p>
 <li><p>Check that the result is an error.</p></li>
 </ul>
 <p>The test could look like this:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 
-<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">actions_result</span><span class="p">.</span><span class="n">is_err</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">actions_result</span><span class="p">.</span><span class="n">is_err</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>One thing to notice is that the test is not ensuring <em>why</em> the contract
@@ -2372,11 +2372,11 @@ smart contract with more complex logic and many reasons for rejecting, it would
 be better if you tested this as well.</p>
 <p>To solve this, introduce a <code class="docutils literal notranslate"><span class="pre">SmashError</span></code> enum  to represent the different
 reasons for rejection:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Debug, PartialEq, Eq, Reject)]</span><span class="w"></span>
-<span class="k">enum</span> <span class="nc">SmashError</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">NotOwner</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">AlreadySmashed</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Debug, PartialEq, Eq, Reject)]</span>
+<span class="k">enum</span> <span class="nc">SmashError</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">NotOwner</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AlreadySmashed</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -2385,74 +2385,74 @@ reasons for rejection:</p>
 </div>
 <p>To use this error type, the function <code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> should return <code class="docutils literal notranslate"><span class="pre">Result&lt;A,</span>
 <span class="pre">SmashError&gt;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">ReceiveResult&lt;A&gt;</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
-<span class="hll"><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span>
+<span class="hll"><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">   </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>and you also have to supply the <code class="docutils literal notranslate"><span class="pre">ensure!</span></code> macros with a second argument, which is
 the error to produce:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(contract = </span><span class="s">&quot;PiggyBank&quot;</span><span class="cp">, name = </span><span class="s">&quot;smash&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">piggy_smash</span><span class="o">&lt;</span><span class="n">A</span>: <span class="nc">HasActions</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">state</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">PiggyBankState</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">owner</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">();</span>
 
-<span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">),</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">AlreadySmashed</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="n">sender</span><span class="p">.</span><span class="n">matches_account</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">),</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">AlreadySmashed</span><span class="p">);</span>
 </span>
-<span class="w">    </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="o">*</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">self_balance</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">))</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">self_balance</span><span class="p">();</span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">A</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">))</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Since the return type has changed for the <code class="docutils literal notranslate"><span class="pre">piggy_smash</span></code> function, you have to
 change the type in the tests as well:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
 
-<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 </span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 
-<span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
 
-<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 </span>
 <span class="w">    </span><span class="c1">// ...</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>You can now check which error was produced in the test:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 
-<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err</span><span class="p">(</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner&quot;</span><span class="p">)</span><span class="w"></span>
-</span><span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err</span><span class="p">(</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner&quot;</span><span class="p">)</span>
+</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>It is up to the reader to test whether smashing a piggy bank that has
@@ -2473,31 +2473,31 @@ top of your test module with <a class="reference external" href="https://docs.rs
 macros with <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/attr.concordium_test.html"><code class="docutils literal notranslate"><span class="pre">#[concordium_test]</span></code></a>.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// PiggyBank contract code up here</span>
 
-<span class="hll"><span class="cp">#[concordium_cfg_test]</span><span class="w"></span>
-</span><span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<span class="hll"><span class="cp">#[concordium_cfg_test]</span>
+</span><span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span>
 
-<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span>
+</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// ...</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span>
+</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// ...</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span>
+</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// ...</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="cp">#[concordium_test]</span>
+</span><span class="w">    </span><span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// ...</span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>You also need to modify the tests a bit. Usually a test in <a class="reference external" href="https://www.rust-lang.org/">Rust</a> is failed
@@ -2518,81 +2518,81 @@ except when you build your smart contract for testing in Wasm using
 using <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">test</span></code>.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// PiggyBank contract code up here</span>
 
-<span class="cp">#[concordium_cfg_test]</span><span class="w"></span>
-<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
-<span class="w">   </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#[concordium_cfg_test]</span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
+<span class="w">   </span><span class="k">use</span><span class="w"> </span><span class="n">test_infrastructure</span>::<span class="o">*</span><span class="p">;</span>
 
-<span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-<span class="w">   </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
+<span class="w">   </span><span class="cp">#[concordium_test]</span>
+<span class="w">   </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitContextTest</span>::<span class="n">empty</span><span class="p">();</span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">state_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">);</span>
 
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Contract initialization failed.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Contract initialization failed.&quot;</span><span class="p">);</span>
 </span>
-<span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="w"></span>
-</span><span class="w">             </span><span class="n">state</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"></span>
-<span class="w">             </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span><span class="w"></span>
-<span class="w">       </span><span class="p">);</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span>
+</span><span class="w">             </span><span class="n">state</span><span class="p">,</span>
+<span class="w">             </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span>
+<span class="w">             </span><span class="s">&quot;Piggy bank state should be intact after initialization.&quot;</span>
+<span class="w">       </span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
 
-<span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-<span class="w">   </span><span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="cp">#[concordium_test]</span>
+<span class="w">   </span><span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span>
 </span>
-<span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">accept</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;No action should be produced.&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Piggy bank state should still be intact.&quot;</span><span class="p">);</span>
+</span><span class="w">   </span><span class="p">}</span>
 
-<span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-<span class="w">   </span><span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="cp">#[concordium_test]</span>
+<span class="w">   </span><span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
+<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">));</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">);</span><span class="w"></span>
-</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_report</span><span class="p">(</span><span class="s">&quot;Inserting CCD results in error.&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">actions</span><span class="p">,</span><span class="w"> </span><span class="n">ActionsTree</span>::<span class="n">simple_transfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">owner</span><span class="p">,</span><span class="w"> </span><span class="n">balance</span><span class="p">));</span>
+</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Smashed</span><span class="p">);</span>
+</span><span class="w">   </span><span class="p">}</span>
 
-<span class="w">   </span><span class="cp">#[concordium_test]</span><span class="w"></span>
-<span class="w">   </span><span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span><span class="w"></span>
+<span class="w">   </span><span class="cp">#[concordium_test]</span>
+<span class="w">   </span><span class="k">fn</span> <span class="nf">test_smash_intact_not_owner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ReceiveContextTest</span>::<span class="n">empty</span><span class="p">();</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
+<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_owner</span><span class="p">(</span><span class="n">owner</span><span class="p">);</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]));</span>
+<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_sender</span><span class="p">(</span><span class="n">sender</span><span class="p">);</span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_micro_ccd</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">       </span><span class="n">ctx</span><span class="p">.</span><span class="n">set_self_balance</span><span class="p">(</span><span class="n">balance</span><span class="p">);</span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PiggyBankState</span>::<span class="n">Intact</span><span class="p">;</span>
 
-<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">actions_result</span>: <span class="nb">Result</span><span class="o">&lt;</span><span class="n">ActionsTree</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">piggy_smash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 
-<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err_report</span><span class="p">(</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span><span class="w"></span>
-</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner&quot;</span><span class="p">)</span><span class="w"></span>
-</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="w">       </span><span class="kd">let</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actions_result</span><span class="p">.</span><span class="n">expect_err_report</span><span class="p">(</span><span class="s">&quot;Contract is expected to fail.&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="w">       </span><span class="n">claim_eq</span><span class="o">!</span><span class="p">(</span><span class="n">err</span><span class="p">,</span><span class="w"> </span><span class="n">SmashError</span>::<span class="n">NotOwner</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Expected to fail with error NotOwner&quot;</span><span class="p">)</span>
+</span><span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Compiling and running the tests in Wasm can be done using:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium <span class="nb">test</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span><span class="nb">test</span>
 </pre></div>
 </div>
 <p>This will make a special test build of your smart contract module, exporting all

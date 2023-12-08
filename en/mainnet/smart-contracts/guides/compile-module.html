@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/compile-module.32736b9c-42b1-430a-a65c-d77b9f7414c8.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/compile-module.11feb706-09cd-4f2d-9d0f-30d6832a04d1.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2061,7 +2061,7 @@ contract module, you wish to compile.</p>
 such as <a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">contract schemas</span></a>, Concordium recommends using the
 <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> tool for building <a class="reference external" href="https://www.rust-lang.org/">Rust</a> smart contracts.</p>
 <p>In order to build a smart contract for deployment, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --verifiable docker.io/concordium/verifiable-sc:1.70.0 --out contract.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--verifiable<span class="w"> </span>docker.io/concordium/verifiable-sc:1.70.0<span class="w"> </span>--out<span class="w"> </span>contract.wasm.v1
 </pre></div>
 </div>
 <p>This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result.</p>
@@ -2072,7 +2072,7 @@ available docker images can be found on <a class="reference external" href="http
 <p>The <code class="docutils literal notranslate"><span class="pre">tar</span></code> archive should be uploaded and made publicly available, and its
 link should be embedded into the deployed module using the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">edit-build-info</span></code>
 command. For example</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium edit-build-info --module module.wasm.v1 --source-link https://link.to/module.wasm.v1.tar --verify
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>edit-build-info<span class="w"> </span>--module<span class="w"> </span>module.wasm.v1<span class="w"> </span>--source-link<span class="w"> </span>https://link.to/module.wasm.v1.tar<span class="w"> </span>--verify
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--out</span></code> option is required for verifiable builds, and instructs <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> to output the build artifact at the specified location.</p>
@@ -2091,7 +2091,7 @@ command. For example</p>
 </div>
 </div>
 <p>If you want a smaller code footprint, enable the <a class="reference internal" href="setup-contract.html#setup-wee-alloc-feature"><span class="std std-ref">wee_alloc feature</span></a> by using:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --verifiable docker.io/concordium/verifiable-sc:1.70.0 --out contract.wasm.v1 -- --features wee_alloc
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--verifiable<span class="w"> </span>docker.io/concordium/verifiable-sc:1.70.0<span class="w"> </span>--out<span class="w"> </span>contract.wasm.v1<span class="w"> </span>--<span class="w"> </span>--features<span class="w"> </span>wee_alloc
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -2103,7 +2103,7 @@ Building and embedding the schema can and should be combined with a verifiable b
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is also possible to compile using <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> directly by running:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo build --target<span class="o">=</span>wasm32-unknown-unknown <span class="o">[</span>--release<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>build<span class="w"> </span>--target<span class="o">=</span>wasm32-unknown-unknown<span class="w"> </span><span class="o">[</span>--release<span class="o">]</span>
 </pre></div>
 </div>
 <p>Note that even with <code class="docutils literal notranslate"><span class="pre">--release</span></code> set, the produced Wasm module includes
@@ -2118,7 +2118,7 @@ However, for local development, non-verifiable builds can be useful.</p>
 relative to your project root folder in <code class="docutils literal notranslate"><span class="pre">./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1</span></code>.
 The <code class="docutils literal notranslate"><span class="pre">--out</span></code> option can be supplied also for non-verifiable builds.
 For example, running the following command will output your smart contract module into the root folder of your project in a file called <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium build --out ./my_module.wasm.v1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>./my_module.wasm.v1
 </pre></div>
 </div>
 <div class="admonition note">

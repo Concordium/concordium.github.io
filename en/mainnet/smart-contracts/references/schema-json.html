@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/references/schema-json.15c8dca1-b40f-457e-ab52-9148edea3d67.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/references/schema-json.85007c00-e34c-4098-aec8-f932d19b0c88.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2320,39 +2320,39 @@ be represented as JSON together with a <code class="docutils literal notranslate
 </div>
 <div class="section" id="json-for-schema-type">
 <h2>JSON for schema type<a class="headerlink" href="#json-for-schema-type" title="Permalink to this headline">#</a></h2>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Type</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Unit</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Bool</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U8</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U16</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U32</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">U128</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I8</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I16</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I32</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I64</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">I128</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Amount</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">AccountAddress</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">ContractAddress</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Duration</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">Pair</span><span class="p">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">List</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Set</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Map</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Array</span><span class="p">(</span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Struct</span><span class="p">(</span><span class="n">Fields</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Enum</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Fields</span><span class="p">)),</span><span class="w"></span>
-<span class="w">    </span><span class="nb">String</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ContractName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ReceiveName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ULeb128</span><span class="p">(</span><span class="kt">u32</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ILeb128</span><span class="p">(</span><span class="kt">u32</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ByteList</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">ByteArray</span><span class="p">(</span><span class="kt">u32</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Unit</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Bool</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U8</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U16</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U32</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U64</span><span class="p">,</span>
+<span class="w">    </span><span class="n">U128</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I8</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I16</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I32</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I64</span><span class="p">,</span>
+<span class="w">    </span><span class="n">I128</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Amount</span><span class="p">,</span>
+<span class="w">    </span><span class="n">AccountAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ContractAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Timestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Duration</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Pair</span><span class="p">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">List</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Set</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Map</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Array</span><span class="p">(</span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Struct</span><span class="p">(</span><span class="n">Fields</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Enum</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Fields</span><span class="p">)),</span>
+<span class="w">    </span><span class="nb">String</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ContractName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ReceiveName</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ULeb128</span><span class="p">(</span><span class="kt">u32</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ILeb128</span><span class="p">(</span><span class="kt">u32</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ByteList</span><span class="p">(</span><span class="n">SizeLength</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ByteArray</span><span class="p">(</span><span class="kt">u32</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="section" id="unit">
@@ -2389,7 +2389,7 @@ Example:</p>
 <h3><code class="docutils literal notranslate"><span class="pre">ContractAddress</span></code><a class="headerlink" href="#contractaddress" title="Permalink to this headline">#</a></h3>
 <p>Supplied as a JSON object with <code class="docutils literal notranslate"><span class="pre">index</span></code> field and
 optionally <code class="docutils literal notranslate"><span class="pre">subindex</span></code> field, both JSON numbers. Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">10</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2426,7 +2426,7 @@ contain any number of measures with the same unit in no particular order.</p>
 <h3><code class="docutils literal notranslate"><span class="pre">Pair</span></code><a class="headerlink" href="#pair" title="Permalink to this headline">#</a></h3>
 <p>Supplied as a JSON array with two items, depending on the
 nested types. Example of <code class="docutils literal notranslate"><span class="pre">Pair(U8,</span> <span class="pre">ContractAddress)</span></code>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;subindex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;subindex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}]</span>
 </pre></div>
 </div>
 </div>
@@ -2434,7 +2434,7 @@ nested types. Example of <code class="docutils literal notranslate"><span class=
 <h3><code class="docutils literal notranslate"><span class="pre">List</span></code><a class="headerlink" href="#list" title="Permalink to this headline">#</a></h3>
 <p>Supplied as a JSON array with items, depending on the
 nested type. Example of <code class="docutils literal notranslate"><span class="pre">List(U16)</span></code>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2443,7 +2443,7 @@ nested type. Example of <code class="docutils literal notranslate"><span class="
 <p>Supplied as a JSON array with <em>unique</em> items, depending on the
 nested type.
 Example of <code class="docutils literal notranslate"><span class="pre">List(U16)</span></code>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">29</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2452,9 +2452,9 @@ Example of <code class="docutils literal notranslate"><span class="pre">List(U16
 <p>Supplied as a JSON array with key-value pairs, depending on the type of
 the key and the type of value. Example of <code class="docutils literal notranslate"><span class="pre">Map(AccountAddress,</span> <span class="pre">U64)</span></code>:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-  <span class="p">[</span><span class="s2">&quot;2wkBET2rRgE8pahuaczxKbmv7ciehqsne57F9gtzf1PVdr2VP3&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-  <span class="p">[</span><span class="s2">&quot;2xBimKCq2tcciegw9NsFXgScCQAsK7vhqKQ2yJPyJ5vPsWLGi5&quot;</span><span class="p">,</span> <span class="mi">15000000</span><span class="p">]</span>
-  <span class="p">[</span><span class="s2">&quot;2xdGJBNoe716cifxi8jYjm7JHBd5vPyd2ZgpnutwwATJ5vDsiw&quot;</span><span class="p">,</span> <span class="mi">12400</span><span class="p">]</span>
+<span class="w">  </span><span class="p">[</span><span class="s2">&quot;2wkBET2rRgE8pahuaczxKbmv7ciehqsne57F9gtzf1PVdr2VP3&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span>
+<span class="w">  </span><span class="p">[</span><span class="s2">&quot;2xBimKCq2tcciegw9NsFXgScCQAsK7vhqKQ2yJPyJ5vPsWLGi5&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">15000000</span><span class="p">]</span>
+<span class="w">  </span><span class="p">[</span><span class="s2">&quot;2xdGJBNoe716cifxi8jYjm7JHBd5vPyd2ZgpnutwwATJ5vDsiw&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12400</span><span class="p">]</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -2463,7 +2463,7 @@ the key and the type of value. Example of <code class="docutils literal notransl
 <h3><code class="docutils literal notranslate"><span class="pre">Array</span></code><a class="headerlink" href="#array" title="Permalink to this headline">#</a></h3>
 <p>Supplied as a JSON array with the length specified in the
 schema and items depending on the nested type. Example of <code class="docutils literal notranslate"><span class="pre">Array(12,</span> <span class="pre">U8)</span></code>:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2477,18 +2477,18 @@ schema and items depending on the nested type. Example of <code class="docutils 
 property, where the name of the variant as the property and the fields as the
 value. More about the fields below.</p>
 <p>Example of JSON for an enum <code class="docutils literal notranslate"><span class="pre">Option</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nb">Option</span> <span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nb">None</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">U32</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nb">Option</span> <span class="p">{</span>
+<span class="w">    </span><span class="nb">None</span><span class="p">,</span>
+<span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">U32</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>In JSON the variant <code class="docutils literal notranslate"><span class="pre">Some(9)</span></code> is then:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;Some&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Some&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <p>And a <code class="docutils literal notranslate"><span class="pre">None</span></code> variant is written as:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;None&quot;</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;None&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2500,7 +2500,7 @@ value. More about the fields below.</p>
 <h3><code class="docutils literal notranslate"><span class="pre">ContractName</span></code><a class="headerlink" href="#contractname" title="Permalink to this headline">#</a></h3>
 <p>Supplied as a JSON object with a <code class="docutils literal notranslate"><span class="pre">contract</span></code> field of type JSON string.
 Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;contract&quot;</span><span class="p">:</span> <span class="s2">&quot;my_contract&quot;</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;contract&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_contract&quot;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2508,7 +2508,7 @@ Example:</p>
 <h3><code class="docutils literal notranslate"><span class="pre">ReceiveName</span></code><a class="headerlink" href="#receivename" title="Permalink to this headline">#</a></h3>
 <p>Supplied as a JSON object with the fields <code class="docutils literal notranslate"><span class="pre">contract</span></code> and <code class="docutils literal notranslate"><span class="pre">func</span></code>, both of
 type JSON string. Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nt">&quot;contract&quot;</span><span class="p">:</span> <span class="s2">&quot;my_contract&quot;</span><span class="p">,</span> <span class="nt">&quot;func&quot;</span><span class="p">:</span> <span class="s2">&quot;my_receive&quot;</span> <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;contract&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_contract&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;func&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_receive&quot;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2559,11 +2559,11 @@ Notice the length of the list is specified as the number of bytes, and each byte
 <h2>JSON for schema type fields<a class="headerlink" href="#json-for-schema-type-fields" title="Permalink to this headline">#</a></h2>
 <p>Structs and the different variants in an enum can have fields, and such fields
 can either be named or unnamed. Unnamed fields are referenced by position.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Fields</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Named</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">)),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Unnamed</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">Empty</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nc">Fields</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Named</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="p">(</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">Unnamed</span><span class="p">(</span><span class="n">List</span><span class="w"> </span><span class="n">Type</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Empty</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="section" id="named">
@@ -2573,16 +2573,16 @@ values as property values.
 The ordering of the fields in JSON is rearranged according to the order in the
 schema field type.</p>
 <p>Example of named fields in the Rust struct:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">id</span>: <span class="kt">u32</span><span class="p">,</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">id</span>: <span class="kt">u32</span><span class="p">,</span>
 <span class="w">    </span><span class="n">age</span>: <span class="kt">u8</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>In JSON a <code class="docutils literal notranslate"><span class="pre">Person</span></code> with an id of 500 and age 35 is written as:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
-    <span class="nt">&quot;age&quot;</span><span class="p">:</span> <span class="mi">35</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2592,11 +2592,11 @@ schema field type.</p>
 <p>Supplied as a JSON array, with the fields as items corresponding to the types in
 the field schema.</p>
 <p>Example of unnamed fields in the Rust struct:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Person</span><span class="p">(</span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="kt">u8</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">Person</span><span class="p">(</span><span class="kt">u32</span><span class="p">,</span><span class="w"> </span><span class="kt">u8</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In JSON a <code class="docutils literal notranslate"><span class="pre">Person</span></code> with an id of 500 and age 35 is written as:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>

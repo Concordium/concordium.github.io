@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/fungible-tokens/mint-xfer.f102af5b-02fe-4eaa-9cb3-c1b9e25714b3.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/fungible-tokens/mint-xfer.4b6a3f28-6e16-488f-9e4e-9d2d6fd1975b.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2037,26 +2037,26 @@ body {margin:0;}
 <span id="mint-xfer-ft"></span><h1>Mint, transfer, and burn fungible tokens<a class="headerlink" href="#mint-transfer-and-burn-fungible-tokens" title="Permalink to this headline">#</a></h1>
 <p>Now you are ready to mint your new tokens. Before minting, look at the minting parameters in the JSON file below. You need to specify the owner, then the token data following with its tokenID, metadata location on IPFS with the URL that you got when you uploaded the metadata file, hash value of it, amount to be minted, and maximum supply number. In this case, it uses tokenID <code class="docutils literal notranslate"><span class="pre">01</span></code>, and mint <code class="docutils literal notranslate"><span class="pre">110</span></code> tokens initially with a maximum supply of 1000.</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;3AiAikC2v4H3Rv4L58oHvdX5N8LJoarsQwN3G7oNS7BoFsmt7N&quot;</span>
-        <span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;tokens&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">[</span>
-            <span class="s2">&quot;01&quot;</span><span class="p">,</span>
-            <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://gateway.pinata.cloud/ipfs/QmZBrF6HuoN12HyAznyk7gwFpnefooDbfxq3JeKTWToL1W&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;c00a140ea66af09c343083c0e7ccc77d5e0670d90014569798801bffad637d15&quot;</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;110&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;max_supply&quot;</span><span class="p">:</span> <span class="s2">&quot;1000&quot;</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">]</span>
-    <span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;owner&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;3AiAikC2v4H3Rv4L58oHvdX5N8LJoarsQwN3G7oNS7BoFsmt7N&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;01&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://gateway.pinata.cloud/ipfs/QmZBrF6HuoN12HyAznyk7gwFpnefooDbfxq3JeKTWToL1W&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c00a140ea66af09c343083c0e7ccc77d5e0670d90014569798801bffad637d15&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;110&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;max_supply&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2082,21 +2082,21 @@ body {margin:0;}
 <h2>Transfer tokens<a class="headerlink" href="#transfer-tokens" title="Permalink to this headline">#</a></h2>
 <p>Now you will test transferring some tokens to another account and checking the balances and the max/circulating supplies. Create a JSON file like the one below to set the transfer parameters. Transfer <strong>11</strong> tokens with the ID <strong>01</strong> to an account.</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;from&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">&quot;3AiAikC2v4H3Rv4L58oHvdX5N8LJoarsQwN3G7oNS7BoFsmt7N&quot;</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;to&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;Account&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">&quot;4W59joBQavXqbyiKbPgBS7teZHDtEXsqx2BFUvPo2AzY3yPzeH&quot;</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;3AiAikC2v4H3Rv4L58oHvdX5N8LJoarsQwN3G7oNS7BoFsmt7N&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;4W59joBQavXqbyiKbPgBS7teZHDtEXsqx2BFUvPo2AzY3yPzeH&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -2114,8 +2114,8 @@ body {margin:0;}
 <a class="reference internal image-reference" href="../../../_images/check-before-burn.png"><img alt="dark console screen with result of running contract invoke" src="../../../_images/check-before-burn.png" style="width: 100%;" /></a>
 <p>Create a JSON file for getting burn params like the one below. You need the token ID and the amount to be burned.</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;token_id&quot;</span><span class="p">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="s2">&quot;200&quot;</span>
+<span class="w">    </span><span class="nt">&quot;token_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;200&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

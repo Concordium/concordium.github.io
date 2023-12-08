@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/nodes/run-node-ubuntu.f7d645b2-b293-483c-aee5-4209722c28f3.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/nodes/run-node-ubuntu.34c32c74-21d2-40ba-9968-6babf1d2b14e.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2084,7 +2084,7 @@ The services are also enabled to start automatically on system start.</p>
 <li><p>Download the <a class="reference internal" href="../installation/downloads.html#testnet-node-downloads"><span class="std std-ref">Debian package</span></a></p></li>
 <li><p>Install the package:</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo apt install /path-to-downloaded-package
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>/path-to-downloaded-package
 </pre></div>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">path-to-downloaded-package</span></code> is the location of the downloaded <code class="docutils literal notranslate"><span class="pre">.deb</span></code> file.</p>
@@ -2131,7 +2131,7 @@ but is not necessary. To disable out of band catchup unset the <code class="docu
 <li><p>Stop the node if it is running</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl stop concordium-testnet-node.service
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>concordium-testnet-node.service
 </pre></div>
 </div>
 </div></blockquote>
@@ -2139,7 +2139,7 @@ but is not necessary. To disable out of band catchup unset the <code class="docu
 <li><p>Edit the node service configuration file</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl edit concordium-testnet-node.service
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>edit<span class="w"> </span>concordium-testnet-node.service
 </pre></div>
 </div>
 </div></blockquote>
@@ -2155,7 +2155,7 @@ but is not necessary. To disable out of band catchup unset the <code class="docu
 <li><p>Start the service again</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo systemctl start concordium-testnet-node.service
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>concordium-testnet-node.service
 </pre></div>
 </div>
 </div></blockquote>
@@ -2166,7 +2166,7 @@ but is not necessary. To disable out of band catchup unset the <code class="docu
 <span id="node-collector-ubuntu-testnet"></span><h2>Node collector configuration<a class="headerlink" href="#node-collector-configuration" title="Permalink to this headline">#</a></h2>
 <p>Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.</p>
 <p>Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You <em>only</em> need to change the collector port if you have overridden your node configuration. You can edit your overrides with:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo systemctl edit concordium-testnet-node.service
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>edit<span class="w"> </span>concordium-testnet-node.service
 </pre></div>
 </div>
 <p>This will open your overrides in your default editor. Below is an example for the default testnet port <code class="docutils literal notranslate"><span class="pre">20001</span></code>:</p>
@@ -2189,7 +2189,7 @@ but is not necessary. To disable out of band catchup unset the <code class="docu
 <ul>
 <li><p>Install the new package</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>apt install ./concordium-testnet-node_<span class="o">(</span>version<span class="o">)</span>_amd64.deb
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>apt<span class="w"> </span>install<span class="w"> </span>./concordium-testnet-node_<span class="o">(</span>version<span class="o">)</span>_amd64.deb
 </pre></div>
 </div>
 </div></blockquote>

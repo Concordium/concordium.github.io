@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/guides/become-baker.85943419-6c0c-4b20-a1b6-8a392c9e2304.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/guides/become-baker.743523ff-2db9-4ede-af23-82d784fa4178.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2122,7 +2122,7 @@ body {margin:0;}
 </ul>
 </div>
 <p>To import an account run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import &lt;path/to/exported/file&gt; --name validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>&lt;path/to/exported/file&gt;<span class="w"> </span>--name<span class="w"> </span>validatorAccount
 </pre></div>
 </div>
 <p>For the Concordium Wallet for Web, use the following command:</p>
@@ -2135,11 +2135,11 @@ body {margin:0;}
 <span id="create-register-baker-keys"></span><h3>Create and register validator keys<a class="headerlink" href="#create-and-register-validator-keys" title="Permalink to this headline">#</a></h3>
 <p>Each account has a unique validator ID that is used when registering its validator. This ID has to be provided by the network and currently cannot be precomputed. This ID must be given inside the validator keys file to the node so that it can use the validator keys to create blocks. The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> will automatically fill this field when performing the following operations.</p>
 <p>To create a fresh set of keys run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator generate-keys &lt;keys-file&gt;.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>generate-keys<span class="w"> </span>&lt;keys-file&gt;.json
 </pre></div>
 </div>
 <p>You can choose an arbitrary name for the <code class="docutils literal notranslate"><span class="pre">&lt;keys</span> <span class="pre">file&gt;</span></code>. To register the keys in the network you need to be <a class="reference internal" href="run-node.html#running-a-node"><span class="std std-ref">running a node</span></a> and send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator add MyValidatorKeys.json --sender validatorAccount --stake &lt;amount-to-stake&gt; --open-delegation-for all --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-baking-commission <span class="m">0</span>.1 --delegation-finalization-commission <span class="m">1</span>.0 --validator-url https://example.com/validator --out &lt;concordium-data-dir&gt;/validator-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>MyValidatorKeys.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--open-delegation-for<span class="w"> </span>all<span class="w"> </span>--delegation-transaction-fee-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--delegation-baking-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--delegation-finalization-commission<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>--validator-url<span class="w"> </span>https://example.com/validator<span class="w"> </span>--out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>
@@ -2230,7 +2230,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <ul>
 <li><p>In the <a class="reference external" href="https://dashboard.mainnet.concordium.software/">network dashboard</a>, the validator ID of the node is shown in the <code class="docutils literal notranslate"><span class="pre">Validator</span></code> column.</p></li>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can check the list of current validators and the relative staked amount that they hold, that is, their lottery power. The lottery power determines how likely it is that a given validator will win the lottery and produce a block.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">  $</span>concordium-client consensus show-parameters --include-validators
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">  $</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>show-parameters<span class="w"> </span>--include-validators
 <span class="go">  Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0</span>
 <span class="go">  Validators:</span>
 <span class="go">                          Account                       Lottery power  Account Name</span>
@@ -2249,7 +2249,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 </div>
 </li>
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can check that the account has registered a validator and the current amount that is staked by that validator.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client account show validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>validatorAccount
 <span class="go">...</span>
 
 <span class="go">Validator: #22</span>
@@ -2265,7 +2265,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <div class="section" id="update-the-staked-amount">
 <h3>Update the staked amount<a class="headerlink" href="#update-the-staked-amount" title="Permalink to this headline">#</a></h3>
 <p>To update the validator stake run</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator update-stake --stake &lt;newAmount&gt; --sender validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>update-stake<span class="w"> </span>--stake<span class="w"> </span>&lt;newAmount&gt;<span class="w"> </span>--sender<span class="w"> </span>validatorAccount
 </pre></div>
 </div>
 <p>When the staked amount is modified, the probability that a validator gets elected to produce blocks is also modified.</p>
@@ -2294,7 +2294,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 </tbody>
 </table>
 <p>When a validator <strong>decreases the staked amount</strong>, the change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down period ends. It can be consulted through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">validatorAccount</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>validatorAccount
 <span class="go">...</span>
 
 <span class="go">Validator: #22</span>
@@ -2335,7 +2335,7 @@ or validator can be stopped</p></td>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the Mainnet, the cool-down duration for reducing validator stake is set to 21 days. This value can be checked as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client consensus show-chain-parameters
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>consensus<span class="w"> </span>show-chain-parameters
 <span class="go">...</span>
 <span class="go">      + pool owner cooldown duration: 21d</span>
 <span class="go">...</span>
@@ -2351,12 +2351,12 @@ or validator can be stopped</p></td>
 <span id="restake-earnings"></span><h3>Restake the earnings<a class="headerlink" href="#restake-the-earnings" title="Permalink to this headline">#</a></h3>
 <p>When participating as a validator in the network and producing blocks, the account receives rewards for each produced block. These rewards are automatically added to the staked amount by default.</p>
 <p>You can choose to modify this behavior and instead receive the rewards in the account balance without staking them automatically. You can change this switch through <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator update-restake False --sender validatorAccount
-<span class="gp">$</span>concordium-client validator update-restake True --sender validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>update-restake<span class="w"> </span>False<span class="w"> </span>--sender<span class="w"> </span>validatorAccount
+<span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>update-restake<span class="w"> </span>True<span class="w"> </span>--sender<span class="w"> </span>validatorAccount
 </pre></div>
 </div>
 <p>Changes to the restake flag will take effect immediately; however, the changes start affecting lottery power in the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>validatorAccount
 <span class="go">...</span>
 
 <span class="go">Validator: #22</span>
@@ -2395,19 +2395,19 @@ stake affects the lottery power</p></td>
 </tbody>
 </table>
 <p>When the validator is registered, it will automatically restake the earnings, but you can change this by providing the <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to the <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> command as shown in the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator add validator-keys.json --sender validatorAccount --stake &lt;amount-to-stake&gt; --out validator-credentials.json --no-restake
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>validator-keys.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--out<span class="w"> </span>validator-credentials.json<span class="w"> </span>--no-restake
 </pre></div>
 </div>
 </div>
 <div class="section" id="update-validator-keys">
 <h3>Update validator keys<a class="headerlink" href="#update-validator-keys" title="Permalink to this headline">#</a></h3>
 <p>If it is necessary to update your validator keys, you need to first generate new validator keys. To create a fresh set of keys run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator generate-keys &lt;keys-file&gt;.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>generate-keys<span class="w"> </span>&lt;keys-file&gt;.json
 </pre></div>
 </div>
 <p>You can choose an arbitrary name for the <code class="docutils literal notranslate"><span class="pre">keys</span> <span class="pre">file</span></code>.</p>
 <p>Then run the transaction:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator set-key &lt;keys-file&gt;.json --sender &lt;account&gt; --out &lt;concordium-data-dir&gt;/validator-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>set-key<span class="w"> </span>&lt;keys-file&gt;.json<span class="w"> </span>--sender<span class="w"> </span>&lt;account&gt;<span class="w"> </span>--out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">--sender</span></code> is the name or address of the transaction’s sender account. The name is the one that’s used when you <a class="reference internal" href="../references/concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import the account</span></a> (assuming that this
@@ -2419,7 +2419,7 @@ was done). It defaults to the account name “default”.</p>
 <div class="section" id="configure-a-validator">
 <h2>Configure a validator<a class="headerlink" href="#configure-a-validator" title="Permalink to this headline">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">configure</span></code> to configure a validator and open a staking pool. The following is an example of how <code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">validator</span></code> might be used:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator configure --sender <span class="s2">&quot;acc1&quot;</span> --stake <span class="m">500001</span> --open-delegation-for existing --delegation-transaction-fee-commission <span class="m">0</span>.1 --delegation-block-reward-commission <span class="m">0</span>.1 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out &lt;concordium-data-dir&gt;/validator-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>configure<span class="w"> </span>--sender<span class="w"> </span><span class="s2">&quot;acc1&quot;</span><span class="w"> </span>--stake<span class="w"> </span><span class="m">500001</span><span class="w"> </span>--open-delegation-for<span class="w"> </span>existing<span class="w"> </span>--delegation-transaction-fee-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--delegation-block-reward-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--validator-url<span class="w"> </span>https://example.com/validator<span class="w"> </span>--keys-in<span class="w"> </span>MyBakerKeys.json<span class="w"> </span>--keys-out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p>Configure validator has the following optional arguments:</p>
@@ -2444,12 +2444,12 @@ was done). It defaults to the account name “default”.</p>
 <h2>Remove a validator<a class="headerlink" href="#remove-a-validator" title="Permalink to this headline">#</a></h2>
 <p>The controlling account can choose to de-register its validator on the chain. To do
 so you have to execute:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client validator remove --sender validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>remove<span class="w"> </span>--sender<span class="w"> </span>validatorAccount
 </pre></div>
 </div>
 <p>This removes the validator from the list of validators and unlocks the staked amount on the validator so that it can be transferred or moved freely. When removing the validator, the change has the same timeline as decreasing
 the staked amount. The change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down ends. You can check when the change will take effect by querying the account information:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show validatorAccount
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>validatorAccount
 <span class="go">...</span>
 
 <span class="go">Validator #22 to be removed at epoch 275 (2020-12-24 13:56:26 UTC)</span>

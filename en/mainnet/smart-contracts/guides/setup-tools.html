@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/setup-tools.2108f785-1fe5-4e4a-9d60-b668a3b525c1.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/setup-tools.55b8b611-5447-46c7-a518-9f755bb89d2d.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2058,7 +2058,7 @@ environment.</p>
 <p>First, <a class="reference external" href="https://rustup.rs/">install rustup</a>, which installs both <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> on your
 machine.</p>
 <p>Then use <code class="docutils literal notranslate"><span class="pre">rustup</span></code> to install the Wasm target, which is used for compilation:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup target add wasm32-unknown-unknown
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup<span class="w"> </span>target<span class="w"> </span>add<span class="w"> </span>wasm32-unknown-unknown
 </pre></div>
 </div>
 </div>
@@ -2070,11 +2070,11 @@ It can be used for <a class="reference internal" href="compile-module.html#compi
 <a class="reference internal" href="integration-test-contract.html#integration-test-contract"><span class="std std-ref">testing</span></a> smart contracts, and enables features such as
 <a class="reference internal" href="build-schema.html#build-schema"><span class="std std-ref">building contract schemas</span></a>.</p>
 <p>To install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo install --locked cargo-concordium
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>install<span class="w"> </span>--locked<span class="w"> </span>cargo-concordium
 </pre></div>
 </div>
 <p>For a description of how to use the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo concordium --help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>To use verifiable builds with cargo-concordium a container runtime such as <a class="reference external" href="https://www.docker.com/">Docker</a> is required.</p>

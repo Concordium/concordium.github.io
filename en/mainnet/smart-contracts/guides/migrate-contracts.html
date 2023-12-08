@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/migrate-contracts.fc57fd46-2b35-439b-8562-67a118af4d2f.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/migrate-contracts.4025d753-cd1e-4e12-ba66-1685314eaa10.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2075,18 +2075,18 @@ These generics and traits were there to support testing with the <a class="refer
 </ul>
 <p>Here is an example:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">/// Before</span>
-<span class="cp">#[init(contract = </span><span class="s">&quot;contract_before&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">init_before</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[init(contract = </span><span class="s">&quot;contract_before&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">init_before</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
 
 <span class="sd">/// After</span>
-<span class="cp">#[init(contract = </span><span class="s">&quot;contract_after&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="cp">#[init(contract = </span><span class="s">&quot;contract_after&quot;</span><span class="cp">)]</span>
 <span class="hll"><span class="k">fn</span> <span class="nf">init_after</span><span class="p">(</span><span class="w">                        </span><span class="c1">// `&lt;S: HasStateApi&gt;` removed</span>
 </span><span class="hll"><span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">InitContext</span><span class="p">,</span><span class="w">                </span><span class="c1">// `impl` and `Has` removed</span>
 </span><span class="hll"><span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="p">,</span><span class="w"> </span><span class="c1">// `&lt;S&gt;` removed</span>
-</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2101,18 +2101,18 @@ These generics and traits were there to support testing with the <a class="refer
 </ul>
 <p>Here is an example:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">/// Before</span>
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">receive_before</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">MyReturnValue</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">receive_before</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasReceiveContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasHost</span><span class="o">&lt;</span><span class="n">State</span><span class="p">,</span><span class="w"> </span><span class="n">StateApiType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">MyReturnValue</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
 
 <span class="sd">/// After</span>
-<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="cp">#[receive(contract = </span><span class="s">&quot;my_contract&quot;</span><span class="cp">, name = </span><span class="s">&quot;my_receive&quot;</span><span class="cp">)]</span>
 <span class="hll"><span class="k">fn</span> <span class="nf">receive_after</span><span class="p">(</span><span class="w">           </span><span class="c1">// `&lt;S: HasStateApi&gt;` removed</span>
 </span><span class="hll"><span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span><span class="w">   </span><span class="c1">// `impl` and `Has` removed</span>
 </span><span class="hll"><span class="w">    </span><span class="n">host</span>: <span class="kp">&amp;</span><span class="nc">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span><span class="w">     </span><span class="c1">// `impl Has` and `, StateApiType = S removed</span>
-</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">MyReturnValue</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">ReceiveResult</span><span class="o">&lt;</span><span class="n">MyReturnValue</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="fm">todo!</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -2130,30 +2130,30 @@ But <a class="reference external" href="https://docs.rs/concordium-std-derive/la
 </ul>
 <p>Here is an example of the change you must make:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">/// Before</span>
-<span class="k">struct</span> <span class="nc">MyState</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">my_map</span>: <span class="nc">StateMap</span><span class="o">&lt;</span><span class="n">AccountAddress</span><span class="p">,</span><span class="w"> </span><span class="n">TokenCount</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">MyState</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">my_map</span>: <span class="nc">StateMap</span><span class="o">&lt;</span><span class="n">AccountAddress</span><span class="p">,</span><span class="w"> </span><span class="n">TokenCount</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
 
-<span class="cp">#[init(contract = </span><span class="s">&quot;contract_before&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">init_before</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">MyState</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">MyState</span><span class="p">{</span><span class="w"> </span><span class="n">my_map</span>: <span class="nc">state_builder</span><span class="p">.</span><span class="n">new_map</span><span class="p">()</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cp">#[init(contract = </span><span class="s">&quot;contract_before&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">init_before</span><span class="o">&lt;</span><span class="n">S</span>: <span class="nc">HasStateApi</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">impl</span><span class="w"> </span><span class="n">HasInitContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">MyState</span><span class="o">&lt;</span><span class="n">S</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">MyState</span><span class="p">{</span><span class="w"> </span><span class="n">my_map</span>: <span class="nc">state_builder</span><span class="p">.</span><span class="n">new_map</span><span class="p">()</span><span class="w"> </span><span class="p">})</span>
+<span class="p">}</span>
 
 <span class="sd">/// After</span>
-<span class="hll"><span class="k">struct</span> <span class="nc">MyState</span><span class="o">&lt;</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StateApi</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-</span><span class="w">    </span><span class="n">my_map</span>: <span class="nc">StateMap</span><span class="o">&lt;</span><span class="n">AccountAddress</span><span class="p">,</span><span class="w"> </span><span class="n">TokenCount</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="hll"><span class="k">struct</span> <span class="nc">MyState</span><span class="o">&lt;</span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StateApi</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">    </span><span class="n">my_map</span>: <span class="nc">StateMap</span><span class="o">&lt;</span><span class="n">AccountAddress</span><span class="p">,</span><span class="w"> </span><span class="n">TokenCount</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
 
-<span class="cp">#[init(contract = </span><span class="s">&quot;contract_before&quot;</span><span class="cp">)]</span><span class="w"></span>
-<span class="k">fn</span> <span class="nf">init_before</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">InitContext</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="p">,</span><span class="w"></span>
-<span class="hll"><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">MyState</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-</span><span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">MyState</span><span class="p">{</span><span class="w"> </span><span class="n">my_map</span>: <span class="nc">state_builder</span><span class="p">.</span><span class="n">new_map</span><span class="p">()</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="cp">#[init(contract = </span><span class="s">&quot;contract_before&quot;</span><span class="cp">)]</span>
+<span class="k">fn</span> <span class="nf">init_before</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span>: <span class="kp">&amp;</span><span class="nc">InitContext</span><span class="p">,</span>
+<span class="w">    </span><span class="n">state_builder</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">StateBuilder</span><span class="p">,</span>
+<span class="hll"><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">InitResult</span><span class="o">&lt;</span><span class="n">MyState</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">MyState</span><span class="p">{</span><span class="w"> </span><span class="n">my_map</span>: <span class="nc">state_builder</span><span class="p">.</span><span class="n">new_map</span><span class="p">()</span><span class="w"> </span><span class="p">})</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

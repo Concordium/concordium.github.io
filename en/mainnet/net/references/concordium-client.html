@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/concordium-client.ddb2bd2d-6dfb-491c-b701-16354f872140.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/concordium-client.6e8f2039-d3c0-4370-bda1-a1e3f52a162e.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2159,7 +2159,7 @@ etc.). The low-level commands are grouped in the <code class="docutils literal n
 CamelCase names.</p>
 <p>Invoke <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">--help</span></code> to see the full list of topics. Include the
 topic to see the available commands within that topic:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config --help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>--help
 <span class="go">Usage: concordium-client config COMMAND</span>
 <span class="go">  Commands for inspecting and changing local configuration.</span>
 
@@ -2173,7 +2173,7 @@ topic to see the available commands within that topic:</p>
 </pre></div>
 </div>
 <p>Give the full command to see available options related to that command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import --help
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>--help
 <span class="go">Usage: concordium-client config account import FILE [--name NAME]</span>
 <span class="go">  Import an account to persistent config.</span>
 
@@ -2224,7 +2224,7 @@ for some reason, it may also be able to repair it.</p>
 </div>
 <div class="section" id="display-contents">
 <span id="concordium-client-display"></span><h3>Display contents<a class="headerlink" href="#display-contents" title="Permalink to this headline">#</a></h3>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config show
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>show
 </pre></div>
 </div>
 <p>Display the full contents of the persistent configuration. This will display the
@@ -2233,7 +2233,7 @@ section) and the stored key for sending shielded transfers (under the
 <code class="docutils literal notranslate"><span class="pre">Encryption</span> <span class="pre">secret</span> <span class="pre">key</span></code> section) when they are present.</p>
 <div class="section" id="example">
 <h4>Example:<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config show
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>show
 <span class="go">Base configuration:</span>
 <span class="go">- Verbose:            no</span>
 <span class="go">- Account config dir: /var/lib/concordium/config/accounts</span>
@@ -2298,7 +2298,7 @@ container.</p>
 <p>See also the <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">Managing accounts</span></a> section.</p>
 <div class="section" id="add-named-account">
 <h4>Add named account<a class="headerlink" href="#add-named-account" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account name ADDRESS <span class="o">[</span>--name NAME<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>name<span class="w"> </span>ADDRESS<span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>NAME<span class="o">]</span>
 </pre></div>
 </div>
 <p>Add an account address to persistent configuration, naming it. This name may now be used to refer to the account
@@ -2308,39 +2308,39 @@ considered as just creating an alias for an address.</p>
 </div>
 <div class="section" id="add-key-to-an-account">
 <h4>Add key to an account<a class="headerlink" href="#add-key-to-an-account" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account add-keys --account ACCOUNT --keys KEYS
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>add-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--keys<span class="w"> </span>KEYS
 </pre></div>
 </div>
 <p>Add a sign/verify key-pair to a specific account. The <code class="docutils literal notranslate"><span class="pre">KEYS</span></code> parameter must be
 a JSON file that contains the keys that will be added in the same format as they
 were shown above when printing the configuration:</p>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;cidx&quot;</span><span class="o">:</span> <span class="p">{</span>
-       <span class="s2">&quot;kidx&quot;</span><span class="o">:</span> <span class="p">{</span>
-         <span class="s2">&quot;encryptedSignKey&quot;</span><span class="o">:</span> <span class="p">{</span>
-           <span class="s2">&quot;metadata&quot;</span><span class="o">:</span> <span class="p">{</span>
-             <span class="s2">&quot;encryptionMethod&quot;</span><span class="o">:</span> <span class="s2">&quot;AES-256&quot;</span><span class="p">,</span>
-             <span class="s2">&quot;iterations&quot;</span><span class="o">:</span> <span class="p">...,</span>
-             <span class="s2">&quot;salt&quot;</span><span class="o">:</span> <span class="p">...,</span>
-             <span class="s2">&quot;initializationVector&quot;</span><span class="o">:</span> <span class="p">...,</span>
-             <span class="s2">&quot;keyDerivationMethod&quot;</span><span class="o">:</span> <span class="s2">&quot;PBKDF2WithHmacSHA256&quot;</span>
-           <span class="p">},</span>
-           <span class="s2">&quot;cipherText&quot;</span><span class="o">:</span> <span class="p">...</span>
-         <span class="p">},</span>
-         <span class="s2">&quot;verifyKey&quot;</span><span class="o">:</span> <span class="p">...,</span>
-         <span class="s2">&quot;schemeId&quot;</span><span class="o">:</span> <span class="s2">&quot;Ed25519&quot;</span>
-       <span class="p">},</span>
-       <span class="p">...</span>
-     <span class="p">},</span>
-     <span class="p">...</span>
- <span class="p">}</span>
+<span class="w">   </span><span class="s2">&quot;cidx&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="s2">&quot;kidx&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="s2">&quot;encryptedSignKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">           </span><span class="s2">&quot;metadata&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">             </span><span class="s2">&quot;encryptionMethod&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AES-256&quot;</span><span class="p">,</span>
+<span class="w">             </span><span class="s2">&quot;iterations&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">...,</span>
+<span class="w">             </span><span class="s2">&quot;salt&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">...,</span>
+<span class="w">             </span><span class="s2">&quot;initializationVector&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">...,</span>
+<span class="w">             </span><span class="s2">&quot;keyDerivationMethod&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;PBKDF2WithHmacSHA256&quot;</span>
+<span class="w">           </span><span class="p">},</span>
+<span class="w">           </span><span class="s2">&quot;cipherText&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">...</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="s2">&quot;verifyKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">...,</span>
+<span class="w">         </span><span class="s2">&quot;schemeId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ed25519&quot;</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="p">...</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="p">...</span>
+<span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">cidx</span></code> denotes the credential index, and <code class="docutils literal notranslate"><span class="pre">kidx</span></code> denotes the key index.</p>
 </div>
 <div class="section" id="update-keys-of-an-account">
 <h4>Update keys of an account<a class="headerlink" href="#update-keys-of-an-account" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account update-keys --account ACCOUNT --keys KEYS
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>update-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--keys<span class="w"> </span>KEYS
 </pre></div>
 </div>
 <p>Update a sign/verify key-pair on a specific account. The <code class="docutils literal notranslate"><span class="pre">KEYS</span></code> parameter must be
@@ -2348,14 +2348,14 @@ a JSON file that contains the keys that will be added in the same format as for 
 </div>
 <div class="section" id="remove-keys-of-an-account">
 <h4>Remove keys of an account<a class="headerlink" href="#remove-keys-of-an-account" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account remove-keys --account ACCOUNT --credential-index CREDENTIALINDEX KEYINDICES
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>remove-keys<span class="w"> </span>--account<span class="w"> </span>ACCOUNT<span class="w"> </span>--credential-index<span class="w"> </span>CREDENTIALINDEX<span class="w"> </span>KEYINDICES
 </pre></div>
 </div>
 <p>Remove sign/verify key-pairs from a specific credential of an account. The <code class="docutils literal notranslate"><span class="pre">CREDENTIALINDEX</span></code> specifies the credential that the key pairs should be removed from, and the space-seperated list of key indices specify which of the key pairs that should be removed.</p>
 </div>
 <div class="section" id="import-accounts-and-keys-from-the-wallet-apps">
 <span id="concordium-client-import-accounts-keys"></span><h4>Import accounts and keys from the Wallet apps<a class="headerlink" href="#import-accounts-and-keys-from-the-wallet-apps" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config account import FILE <span class="o">[</span>--name NAME<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>FILE<span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>NAME<span class="o">]</span>
 </pre></div>
 </div>
 <p>Import the keys of one or more accounts from a JSON file exported from the
@@ -2370,7 +2370,7 @@ existing names.</p>
 </div>
 <div class="section" id="show-account-aliases">
 <h4>Show account aliases<a class="headerlink" href="#show-account-aliases" title="Permalink to this headline">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias <span class="m">17</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show-alias<span class="w"> </span>3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5<span class="w"> </span>--alias<span class="w"> </span><span class="m">17</span>
 </pre></div>
 </div>
 <p>This generates the output:</p>
@@ -2385,7 +2385,7 @@ existing names.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> has support for generating completion functions for
 bash, zsh, and fish.</p>
 <p>For bash, the command for installing the completions is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">source</span> &lt;<span class="o">(</span>concordium-client --bash-completion-script <span class="sb">`</span>which concordium-client<span class="sb">`</span><span class="o">)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">source</span><span class="w"> </span>&lt;<span class="o">(</span>concordium-client<span class="w"> </span>--bash-completion-script<span class="w"> </span><span class="sb">`</span>which<span class="w"> </span>concordium-client<span class="sb">`</span><span class="o">)</span>
 </pre></div>
 </div>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">--bash-completion-script</span></code> by <code class="docutils literal notranslate"><span class="pre">--zsh-completion-script</span></code> or

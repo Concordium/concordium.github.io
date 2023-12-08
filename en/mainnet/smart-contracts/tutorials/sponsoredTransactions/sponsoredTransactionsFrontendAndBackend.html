@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.8190987e-9461-44cc-806c-c6488ab377c2.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.cc12ae5a-3ccf-4335-b91e-ca784be3a266.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2089,21 +2089,21 @@ will pay for the transaction fees on behalf of the user.</p>
 <div class="section" id="schemas">
 <h2>Schemas<a class="headerlink" href="#schemas" title="Permalink to this headline">#</a></h2>
 <p>The front end uses several <cite>json</cite> schemas in the <code class="docutils literal notranslate"><span class="pre">./frontend/src/constants.ts</span></code> file such as:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">UPDATE_OPERATOR_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;EAEUAAIAAAAGAAAAdXBkYXRlFQIAAAAGAAAAUmVtb3ZlAgMAAABBZGQCCAAAAG9wZXJhdG9yFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADA&#39;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">UPDATE_OPERATOR_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;EAEUAAIAAAAGAAAAdXBkYXRlFQIAAAAGAAAAUmVtb3ZlAgMAAABBZGQCCAAAAG9wZXJhdG9yFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADA&#39;</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">TRANSFER_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;EAEUAAUAAAAIAAAAdG9rZW5faWQdAAYAAABhbW91bnQbJQAAAAQAAABmcm9tFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADAIAAAB0bxUCAAAABwAAAEFjY291bnQBAQAAAAsIAAAAQ29udHJhY3QBAgAAAAwWAQQAAABkYXRhEAEC&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">TRANSFER_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;EAEUAAUAAAAIAAAAdG9rZW5faWQdAAYAAABhbW91bnQbJQAAAAQAAABmcm9tFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADAIAAAB0bxUCAAAABwAAAEFjY291bnQBAQAAAAsIAAAAQ29udHJhY3QBAgAAAAwWAQQAAABkYXRhEAEC&#39;</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">SERIALIZATION_HELPER_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;FAAFAAAAEAAAAGNvbnRyYWN0X2FkZHJlc3MMBQAAAG5vbmNlBQkAAAB0aW1lc3RhbXANCwAAAGVudHJ5X3BvaW50FgEHAAAAcGF5bG9hZBABAg==&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">SERIALIZATION_HELPER_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;FAAFAAAAEAAAAGNvbnRyYWN0X2FkZHJlc3MMBQAAAG5vbmNlBQkAAAB0aW1lc3RhbXANCwAAAGVudHJ5X3BvaW50FgEHAAAAcGF5bG9hZBABAg==&#39;</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">NONCE_OF_PARAMETER_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;FAABAAAABwAAAHF1ZXJpZXMQARQAAQAAAAcAAABhY2NvdW50Cw==&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NONCE_OF_PARAMETER_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;FAABAAAABwAAAHF1ZXJpZXMQARQAAQAAAAcAAABhY2NvdW50Cw==&#39;</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">NONCE_OF_RETURN_VALUE_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;FAEBAAAAEAEF&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">NONCE_OF_RETURN_VALUE_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;FAEBAAAAEAEF&#39;</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">MINT_PARAMETER_SCHEMA</span> <span class="o">=</span> <span class="s1">&#39;FAABAAAABQAAAG93bmVyFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADA==&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">MINT_PARAMETER_SCHEMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;FAABAAAABQAAAG93bmVyFQIAAAAHAAAAQWNjb3VudAEBAAAACwgAAABDb250cmFjdAEBAAAADA==&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>These schemas can be generated <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs">in the smart contract folder</a> with the command below.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span><span class="w"> </span><span class="n">concordium</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">schema</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="n">out</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span><span class="w"> </span><span class="n">concordium</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">schema</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="n">out</span><span class="w"> </span><span class="p">.</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>This command creates a file with the JSON schema of your smart contract in your current directory.</p>
@@ -2132,40 +2132,40 @@ The transaction should be successfully submitted by the back end to the blockcha
 blockchain explorer by clicking the transaction hash displayed at the front end.</p>
 <p>When exploring the code, you will realize that the input parameter to the <code class="docutils literal notranslate"><span class="pre">permit</span></code> function
 and the <code class="docutils literal notranslate"><span class="pre">message</span></code> that is signed in the wallet are rather complex. For example, the <code class="docutils literal notranslate"><span class="pre">message</span></code> for the sponsored <code class="docutils literal notranslate"><span class="pre">updateOperator</span></code> transaction is as follows:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">operatorAction</span> <span class="o">=</span> <span class="nx">addOperator</span>
-   <span class="o">?</span> <span class="p">{</span>
-      <span class="nx">Add</span><span class="o">:</span> <span class="p">[],</span>
-   <span class="p">}</span>
-   <span class="o">:</span> <span class="p">{</span>
-      <span class="nx">Remove</span><span class="o">:</span> <span class="p">[],</span>
-   <span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">operatorAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">addOperator</span>
+<span class="w">   </span><span class="o">?</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">Add</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">Remove</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">   </span><span class="p">};</span>
 
-<span class="kd">const</span> <span class="nx">updateOperator</span> <span class="o">=</span> <span class="p">[</span>
-   <span class="p">{</span>
-      <span class="nx">operator</span><span class="o">:</span> <span class="p">{</span>
-         <span class="nx">Account</span><span class="o">:</span> <span class="p">[</span><span class="nx">operator</span><span class="p">],</span>
-      <span class="p">},</span>
-      <span class="nx">update</span><span class="o">:</span> <span class="nx">operatorAction</span><span class="p">,</span>
-   <span class="p">},</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">updateOperator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">operator</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nx">Account</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">operator</span><span class="p">],</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">update</span><span class="o">:</span><span class="w"> </span><span class="nx">operatorAction</span><span class="p">,</span>
+<span class="w">   </span><span class="p">},</span>
 <span class="p">];</span>
 
-<span class="kd">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="nx">serializeTypeValue</span><span class="p">(</span><span class="nx">updateOperator</span><span class="p">,</span> <span class="nx">toBuffer</span><span class="p">(</span><span class="nx">UPDATE_OPERATOR_SCHEMA</span><span class="p">,</span> <span class="s1">&#39;base64&#39;</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">serializeTypeValue</span><span class="p">(</span><span class="nx">updateOperator</span><span class="p">,</span><span class="w"> </span><span class="nx">toBuffer</span><span class="p">(</span><span class="nx">UPDATE_OPERATOR_SCHEMA</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;base64&#39;</span><span class="p">));</span>
 
-<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">contract_address</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">index</span><span class="o">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SMART_CONTRACT_INDEX</span><span class="p">),</span>
-      <span class="nx">subindex</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-   <span class="p">},</span>
-   <span class="nx">nonce</span><span class="o">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">nonce</span><span class="p">),</span>
-   <span class="nx">timestamp</span><span class="o">:</span> <span class="nx">expiryTimeSignature</span><span class="p">,</span>
-   <span class="nx">entry_point</span><span class="o">:</span> <span class="s1">&#39;updateOperator&#39;</span><span class="p">,</span>
-   <span class="nx">payload</span><span class="o">:</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">contract_address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SMART_CONTRACT_INDEX</span><span class="p">),</span>
+<span class="w">      </span><span class="nx">subindex</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nx">nonce</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">nonce</span><span class="p">),</span>
+<span class="w">   </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="nx">expiryTimeSignature</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">entry_point</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;updateOperator&#39;</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <p>Because the schema is included in the smart contract, you can use the format returned by the below command to get a
 template for how to create the <code class="docutils literal notranslate"><span class="pre">message</span></code> and input parameters for the functions in the smart contract:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span><span class="w"> </span><span class="n">concordium</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">schema</span><span class="o">-</span><span class="n">template</span><span class="o">-</span><span class="n">out</span><span class="w"> </span><span class="o">-</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span><span class="w"> </span><span class="n">concordium</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">schema</span><span class="o">-</span><span class="n">template</span><span class="o">-</span><span class="n">out</span><span class="w"> </span><span class="o">-</span>
 </pre></div>
 </div>
 <p>The above command will print the schema template to the console. The command has to be executed
@@ -2179,37 +2179,37 @@ The transaction should be successfully submitted by the back end to the blockcha
 blockchain explorer by clicking the transaction hash displayed at the front end. You can also check that your <code class="docutils literal notranslate"><span class="pre">to</span></code> account is now the owner of the <code class="docutils literal notranslate"><span class="pre">token_id</span></code>.</p>
 <p>When exploring the code, you will realize that the input parameter to the <code class="docutils literal notranslate"><span class="pre">permit</span></code> function
 and the <code class="docutils literal notranslate"><span class="pre">message</span></code> that is signed in the wallet are rather complex. For example, the <code class="docutils literal notranslate"><span class="pre">message</span></code> for the sponsored <code class="docutils literal notranslate"><span class="pre">transfer</span></code> transaction is as follows:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">transfer</span> <span class="o">=</span> <span class="p">[</span>
-   <span class="p">{</span>
-      <span class="nx">amount</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
-      <span class="nx">data</span><span class="o">:</span> <span class="p">[],</span>
-      <span class="k">from</span><span class="o">:</span> <span class="p">{</span>
-         <span class="nx">Account</span><span class="o">:</span> <span class="p">[</span><span class="k">from</span><span class="p">],</span>
-      <span class="p">},</span>
-      <span class="nx">to</span><span class="o">:</span> <span class="p">{</span>
-         <span class="nx">Account</span><span class="o">:</span> <span class="p">[</span><span class="nx">to</span><span class="p">],</span>
-      <span class="p">},</span>
-      <span class="nx">token_id</span><span class="o">:</span> <span class="nx">tokenID</span><span class="p">,</span>
-   <span class="p">},</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">transfer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="kr">from</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nx">Account</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kr">from</span><span class="p">],</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">to</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nx">Account</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">to</span><span class="p">],</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">token_id</span><span class="o">:</span><span class="w"> </span><span class="nx">tokenID</span><span class="p">,</span>
+<span class="w">   </span><span class="p">},</span>
 <span class="p">];</span>
 
-<span class="kd">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="nx">serializeTypeValue</span><span class="p">(</span><span class="nx">transfer</span><span class="p">,</span> <span class="nx">toBuffer</span><span class="p">(</span><span class="nx">TRANSFER_SCHEMA</span><span class="p">,</span> <span class="s1">&#39;base64&#39;</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">serializeTypeValue</span><span class="p">(</span><span class="nx">transfer</span><span class="p">,</span><span class="w"> </span><span class="nx">toBuffer</span><span class="p">(</span><span class="nx">TRANSFER_SCHEMA</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;base64&#39;</span><span class="p">));</span>
 
-<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">contract_address</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">index</span><span class="o">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SMART_CONTRACT_INDEX</span><span class="p">),</span>
-      <span class="nx">subindex</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-   <span class="p">},</span>
-   <span class="nx">nonce</span><span class="o">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">nonce</span><span class="p">),</span>
-   <span class="nx">timestamp</span><span class="o">:</span> <span class="nx">expiryTimeSignature</span><span class="p">,</span>
-   <span class="nx">entry_point</span><span class="o">:</span> <span class="s1">&#39;transfer&#39;</span><span class="p">,</span>
-   <span class="nx">payload</span><span class="o">:</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">contract_address</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">index</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">SMART_CONTRACT_INDEX</span><span class="p">),</span>
+<span class="w">      </span><span class="nx">subindex</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nx">nonce</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">nonce</span><span class="p">),</span>
+<span class="w">   </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="nx">expiryTimeSignature</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">entry_point</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;transfer&#39;</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <p>Because the schema is included in the smart contract, you can use the format returned by the below command to get a
 template on how to create the <code class="docutils literal notranslate"><span class="pre">message</span></code> and input parameters for the functions in the smart contract:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span><span class="w"> </span><span class="n">concordium</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">schema</span><span class="o">-</span><span class="n">template</span><span class="o">-</span><span class="n">out</span><span class="w"> </span><span class="o">-</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">cargo</span><span class="w"> </span><span class="n">concordium</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">--</span><span class="n">schema</span><span class="o">-</span><span class="n">template</span><span class="o">-</span><span class="n">out</span><span class="w"> </span><span class="o">-</span>
 </pre></div>
 </div>
 <p>The above command will print the schema template to the console. The command has to be executed
@@ -2240,7 +2240,7 @@ metadata management for Concordium, the NFT smart contract used in the hosted de
 the same metadata hash (<code class="docutils literal notranslate"><span class="pre">TOKEN_METADATA_URL</span></code>) for all <code class="docutils literal notranslate"><span class="pre">token_ids</span></code>.
 The NFT picture in the below URL changes every time you access <code class="docutils literal notranslate"><span class="pre">https://picsum.photos/40/40</span></code>. Hence, the Concordium Wallet for Web depicts random new pictures
 for your minted NFT.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">TOKEN_METADATA_URL</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&quot;https://gist.githubusercontent.com/abizjak/ab5b6fc0afb78acf23ee24d979eb7639/raw/7c03f174d628df1d2fd0dc8cffb319c89e770708/metadata.json&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">TOKEN_METADATA_URL</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&quot;https://gist.githubusercontent.com/abizjak/ab5b6fc0afb78acf23ee24d979eb7639/raw/7c03f174d628df1d2fd0dc8cffb319c89e770708/metadata.json&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>

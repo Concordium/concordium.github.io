@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/deploy-module.91e429a3-99e8-465e-bf02-4303c4b416c7.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/deploy-module.bdec4a01-931f-4179-a1b7-ad4b59a971c6.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2060,7 +2060,7 @@ before it executes any transaction.</p>
 <h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">#</a></h2>
 <p>To deploy a smart contract module <code class="docutils literal notranslate"><span class="pre">my_module.wasm</span></code> using the account
 with name account-name, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy my_module.wasm --sender account_name
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>my_module.wasm<span class="w"> </span>--sender<span class="w"> </span>account_name
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2093,7 +2093,7 @@ stored, see <a class="reference internal" href="../references/local-settings.htm
 </div>
 <p>To add a name during deployment, the <code class="docutils literal notranslate"><span class="pre">--name</span></code> parameter is used.
 Here, you are naming the module <code class="docutils literal notranslate"><span class="pre">my_deployed_module</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module deploy my_module.wasm --name my_deployed_module
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>my_module.wasm<span class="w"> </span>--name<span class="w"> </span>my_deployed_module
 </pre></div>
 </div>
 <p>If successful, the output should be similar to the following:</p>
@@ -2104,9 +2104,9 @@ Here, you are naming the module <code class="docutils literal notranslate"><span
 To name a deployed module with reference
 <code class="docutils literal notranslate"><span class="pre">9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2</span></code> as
 <code class="docutils literal notranslate"><span class="pre">some_deployed_module</span></code>, run the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client module name <span class="se">\</span>
-<span class="go">          9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 \</span>
-<span class="go">          --name some_deployed_module</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>name<span class="w"> </span><span class="se">\</span>
+<span class="w">          </span>9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2<span class="w"> </span><span class="se">\</span>
+<span class="w">          </span>--name<span class="w"> </span>some_deployed_module
 </pre></div>
 </div>
 <p>The output should be similar to the following:</p>

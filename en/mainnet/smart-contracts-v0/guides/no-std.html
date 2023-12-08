@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/no-std.f0f1af26-b368-433d-bb87-7b954f939400.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/no-std.839be2e5-3fde-4923-bdf7-98261cad51e8.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2051,7 +2051,7 @@ potentially reducing the size of the resulting Wasm module by several kilobytes.
 <h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
 <p>Compiling <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> without the <code class="docutils literal notranslate"><span class="pre">std</span></code> feature requires using the rust
 nightly toolchain, which can be installed using <code class="docutils literal notranslate"><span class="pre">rustup</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup toolchain install nightly
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup<span class="w"> </span>toolchain<span class="w"> </span>install<span class="w"> </span>nightly
 </pre></div>
 </div>
 </div>
@@ -2062,14 +2062,14 @@ of the rust standard library.
 This feature is enabled by default.</p>
 <p>To disable it, one must simply disable default features for the
 <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> in the dependencies of your module.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
-<span class="n">concordium</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span>: <span class="s">&quot;=0.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">default</span><span class="o">-</span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">dependencies</span><span class="p">]</span>
+<span class="n">concordium</span><span class="o">-</span><span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span>: <span class="s">&quot;=0.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">default</span><span class="o">-</span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 <p>To be able to toggle between with and without std, also add a <code class="docutils literal notranslate"><span class="pre">std</span></code> to your
 own module, which enables the <code class="docutils literal notranslate"><span class="pre">std</span></code> feature of <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code>:</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">features</span><span class="p">]</span><span class="w"></span>
-<span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/std&quot;</span><span class="p">]</span><span class="w"></span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+<span class="n">std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;concordium-std/std&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>This is the setup of the smart contract examples, where <code class="docutils literal notranslate"><span class="pre">std</span></code> for each
@@ -2079,12 +2079,12 @@ smart contract module is enabled by default.</p>
 <h2>Building the module<a class="headerlink" href="#building-the-module" title="Permalink to this headline">#</a></h2>
 <p>In order to use the nightly toolchain, add <code class="docutils literal notranslate"><span class="pre">+nightly</span></code> right after
 <code class="docutils literal notranslate"><span class="pre">cargo</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo +nightly concordium build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>+nightly<span class="w"> </span>concordium<span class="w"> </span>build
 </pre></div>
 </div>
 <p>If you want to disable the default features of your own smart contract module,
 you can pass extra arguments for <code class="docutils literal notranslate"><span class="pre">cargo</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo +nightly concordium build -- --no-default-features
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>+nightly<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--<span class="w"> </span>--no-default-features
 </pre></div>
 </div>
 </div>

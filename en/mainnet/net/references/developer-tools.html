@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/references/developer-tools.67965932-9997-41cd-98d2-4a0449301814.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/references/developer-tools.5467827e-aa98-4aa3-a1b8-2ca67fa30614.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2042,7 +2042,7 @@ body {margin:0;}
 <h2>Decrypt encrypted output<a class="headerlink" href="#decrypt-encrypted-output" title="Permalink to this headline">#</a></h2>
 <p>Some Concordium tools, such as the Concordium Legacy Wallet, sometimes produce encrypted output. These files can be decrypted and inspected using the <strong>utils</strong> tool . You can download the tool from <a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Installation downloads</span></a>.</p>
 <p>To encrypt, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>utils encrypt --in input.example --out output.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>utils<span class="w"> </span>encrypt<span class="w"> </span>--in<span class="w"> </span>input.example<span class="w"> </span>--out<span class="w"> </span>output.json
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">--in</span> <span class="pre">...</span></code> is the file to encrypt, and <code class="docutils literal notranslate"><span class="pre">--out</span></code> is the file where encrypted data will be written.</p>
@@ -2053,7 +2053,7 @@ body {margin:0;}
 </pre></div>
 </div>
 <p>To decrypt, enter:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>utils decrypt --in output.json --out decrypted-keys
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>utils<span class="w"> </span>decrypt<span class="w"> </span>--in<span class="w"> </span>output.json<span class="w"> </span>--out<span class="w"> </span>decrypted-keys
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">--in</span> <span class="pre">...</span></code> is the encrypted file, and <code class="docutils literal notranslate"><span class="pre">--out</span></code> is the decryption.</p>
@@ -2062,26 +2062,26 @@ body {margin:0;}
 <div class="section" id="getting-your-private-key-from-an-account-already-imported-to-the-concordium-client">
 <h2>Getting your private key from an account already imported to the <cite>concordium-client</cite><a class="headerlink" href="#getting-your-private-key-from-an-account-already-imported-to-the-concordium-client" title="Permalink to this headline">#</a></h2>
 <p>Display your keys with the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client config show
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>show
 </pre></div>
 </div>
 <p>Save the <code class="docutils literal notranslate"><span class="pre">encryptedSignKey</span></code> blob to a file named <code class="docutils literal notranslate"><span class="pre">output.json</span></code>. The content of that file
 should look similar to the below content.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;cipherText&quot;</span><span class="p">:</span> <span class="s2">&quot;K1ylur5Qy+UUYlwyShu1W6rRgRhcN12e91SEGZ9UBboEzTVVQ80cDpsJNBQmU+sBlo1FKrGxKFzPjxhKxxohmZ99yDXgyo9bMDxuTosqcfY=&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;encryptionMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;AES-256&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;initializationVector&quot;</span><span class="p">:</span> <span class="s2">&quot;oJhcClLqUEotJxh4nmuCgA==&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;iterations&quot;</span><span class="p">:</span> <span class="mi">100000</span><span class="p">,</span>
-        <span class="nt">&quot;keyDerivationMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;PBKDF2WithHmacSHA256&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;salt&quot;</span><span class="p">:</span> <span class="s2">&quot;0XSYLtrsLN+XXwYqxD+gDw==&quot;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;cipherText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;K1ylur5Qy+UUYlwyShu1W6rRgRhcN12e91SEGZ9UBboEzTVVQ80cDpsJNBQmU+sBlo1FKrGxKFzPjxhKxxohmZ99yDXgyo9bMDxuTosqcfY=&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;encryptionMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AES-256&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;initializationVector&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oJhcClLqUEotJxh4nmuCgA==&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;iterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;keyDerivationMethod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PBKDF2WithHmacSHA256&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;salt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0XSYLtrsLN+XXwYqxD+gDw==&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Decode your private key by running the decrypt command on the <code class="docutils literal notranslate"><span class="pre">output.json</span></code> file.
 You will need to enter your password from the backup file when it was exported from the mobile wallet.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>utils decrypt --in output.json --out decrypted-keys
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>utils<span class="w"> </span>decrypt<span class="w"> </span>--in<span class="w"> </span>output.json<span class="w"> </span>--out<span class="w"> </span>decrypted-keys
 </pre></div>
 </div>
 <p>Your private key will be saved to the <code class="docutils literal notranslate"><span class="pre">decrypted-keys</span></code> file.</p>
