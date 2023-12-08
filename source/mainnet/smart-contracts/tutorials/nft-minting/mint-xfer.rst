@@ -29,14 +29,15 @@ With a text editor open up that file and place your account address and token ID
         "tokens": ["00000111"]
     }
 
+Then run the command below to invoke the mint function with the given params.
+
+.. code-block:: console
+
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json nft-artifacts/nft-params.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
+
 Minting is successful.
 
 .. image:: images/mint-success.png
-    :width: 100%
-
-You can also check the dashboard to see the status of your operation in a more visual way. To do that, use the transaction status hash from your terminal.
-
-.. image:: images/mint-result-db.png
     :width: 100%
 
 .. _nft-view-fn:
