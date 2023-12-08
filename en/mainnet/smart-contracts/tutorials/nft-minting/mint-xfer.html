@@ -41,7 +41,7 @@
     <script src="../../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/nft-minting/mint-xfer.06d8be22-205e-4bb9-a740-a1b2a578237d.js"></script>
+    <script loading_method="defer" src="../../../_static/tippy/smart-contracts/tutorials/nft-minting/mint-xfer.3eff84d8-7275-40e7-bfae-ef46704aede3.js"></script>
     <link rel="shortcut icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -2054,10 +2054,12 @@ body {margin:0;}
 <span class="go">}</span>
 </pre></div>
 </div>
+<p>Then run the command below to invoke the mint function with the given params.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint mint --parameter-json nft-artifacts/nft-params.json --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 20001</span>
+</pre></div>
+</div>
 <p>Minting is successful.</p>
 <a class="reference internal image-reference" href="../../../_images/mint-success.png"><img alt="../../../_images/mint-success.png" src="../../../_images/mint-success.png" style="width: 100%;" /></a>
-<p>You can also check the dashboard to see the status of your operation in a more visual way. To do that, use the transaction status hash from your terminal.</p>
-<a class="reference internal image-reference" href="../../../_images/mint-result-db.png"><img alt="../../../_images/mint-result-db.png" src="../../../_images/mint-result-db.png" style="width: 100%;" /></a>
 <div class="section" id="view-function">
 <span id="nft-view-fn"></span><h2>View function<a class="headerlink" href="#view-function" title="Permalink to this headline">#</a></h2>
 <p>Now check the current state of the cis2-nft token contract by invoking view function. The schema file you created in the build step is important here, because <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> uses it to deserialize the output while printing it.</p>
