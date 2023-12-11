@@ -180,7 +180,9 @@ For validators
 
         .. code-block:: console
 
-            concordium-client validator configure --sender "MyValidatorAccountName" --delegation-transaction-fee-commission 0.2 --delegation-block-reward-commission 0.3 --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/validator-credentials.json
+            concordium-client validator configure --sender "MyValidatorAccountName" --delegation-transaction-fee-commission 0.2 --delegation-block-reward-commission 0.3
+
+    The commission rates will be effective at the next pay day.
 
 For validators, delegators and passive delegators
 -------------------------------------------------
