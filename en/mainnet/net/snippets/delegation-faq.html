@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/snippets/delegation-faq.545bd29b-4083-402d-85fc-103211911b68.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/snippets/delegation-faq.8ba3f638-486a-47a1-8895-f4bb9b7e0e74.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2355,6 +2355,34 @@ Can I use funds in a release schedule to meet the minimum required amount of CCD
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Yes, the funds locked in a release schedule can be staked.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="comm-update-legacy-mw">
+<summary class="sd-summary-title sd-card-header">
+How can I change the commissions in my staking pool if I am using Concordium Legacy Wallet?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">For users of Concordium Legacy Wallet that want to update commission rates for a staking pool, you must do this in Concordium Client, the Concordium command line tool.</p>
+<ol class="arabic">
+<li><p class="sd-card-text"><a class="reference internal" href="../installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Download and install the Concordium Client for your platform</span></a>.</p></li>
+<li><p class="sd-card-text">Import the keys of one or more accounts from a JSON file exported from the Concordium Legacy Wallet in Concordium Client with the following command:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import FILE [--name NAME]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">--name</span></code> option selects which account to import and imports it with this name. If it’s omitted, all accounts in the file are imported under their existing names.</p>
+</li>
+<li><p class="sd-card-text">Once imported, use the <code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">validator</span></code> command to adjust your commission rates as shown below.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client validator configure --sender &quot;MyValidatorAccountName&quot; --delegation-transaction-fee-commission 0.2 --delegation-block-reward-commission 0.3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p class="sd-card-text">The commission rates will be effective at the next pay day.</p>
 </div>
 </details></div>
 <div class="section" id="for-validators-delegators-and-passive-delegators">
