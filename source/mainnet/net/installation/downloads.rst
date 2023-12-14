@@ -100,7 +100,7 @@ Concordium Desktop Wallet
          -  SHA256 checksum of the download: ``83ba3d857176e056339c48bde9c869ae7485f3fb43ba14fac7c27b04ffc66533``
 
       -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.2.deb>`_
-         -  SHA256 checksum of the download: ``b95461f32221a42ab6ea51f6fa97e0c860def8aa483b399c7e837c210b321d05``
+         -  SHA256 checksum of the download: ``ff06aca0d11af4b2062d84698cd4503ad6c404791974dc41e0112a871892d1a4``
 
       -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.2.rpm>`_
          -  SHA256 checksum of the download: ``8c935b54208ee188d31fedbf5234c53acde8aa589a0afdd6cc53919376065cef``
