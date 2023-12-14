@@ -7,7 +7,7 @@ Learn about Concordium
 
 The Concordium blockchain is a compliance ready blockchain backed by science that enables private and public transactions. It offers high throughput, fast transactions, and predictable fees, allowing businesses, developers, and traders to harness blockchain’s true power and potential.
 
-Before you start using the Concordium blockchain, it's a good idea to understand some basic concepts about our unique blockchain.
+Before you start using the Concordium blockchain, it's a good idea to understand some basic concepts about our unique blockchain, such as :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`. The :ref:`glossary<glossary>` is also a useful resource.
 
 .. toctree::
    :hidden:
