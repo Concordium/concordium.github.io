@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/installation/verification-instructions.0bb5c128-60a8-4560-bb70-c0b6442d3894.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/installation/verification-instructions.d92f587e-1fe3-4327-b388-a2123ffc6db9.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1813,14 +1813,14 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.1.AppImage
-<span class="go">3dcfab8e69e9fa138ec00b9716e811bac012516795b4f1744aedd69f3dd10777</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.2.AppImage
+<span class="go">2699bb0b3f67b456a6d71af35d62092ee2567d2a1b46383b1c3290cd380aafdd</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
 <p>To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.1.AppImage.sig">Download signature</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.AppImage.sig">Download signature</a></p></li>
 <li><p><a class="reference external" href="https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem">Download public key</a></p></li>
 </ul>
 <p>With the <strong>signature</strong>, the <strong>public key</strong>, and the <strong>downloaded file</strong> all in the same directory, execute the following steps to verify that the file has been signed by Concordium.</p>
@@ -1830,7 +1830,7 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.1.AppImage<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.1.AppImage.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.2.AppImage<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.2.AppImage.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
@@ -1845,14 +1845,14 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.1.deb
-<span class="go">020eac35b46d55118477766be615504701917502cf04c3f25c86cd090c0b2df7</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.2.deb
+<span class="go">58b6c676f6a8b4370c66817a98e1bb35c77a2a240f86b1811f5adbc7567b4443</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
 <p>To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.1.deb.sig">Download signature</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.deb.sig">Download signature</a></p></li>
 <li><p><a class="reference external" href="https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem">Download public key</a></p></li>
 </ul>
 <p>With the <strong>signature</strong>, the <strong>public key</strong>, and the <strong>downloaded file</strong> all in the same directory, execute the following steps to verify that the file has been signed by Concordium.</p>
@@ -1862,7 +1862,7 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.1.deb<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.1.deb.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.2.deb<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.2.deb.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
@@ -1877,14 +1877,14 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.1.rpm
-<span class="go">5b6862f0541cc04d18c625e24f299a105ae8e7670f869c8a1788b5b9965fe484</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.2.rpm
+<span class="go">ab65aaadcd3b508a0542ffdc205813032f471dbcbbf92c506025e99837061360</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
 <p>To verify that the downloaded file is an official Concordium release, you can verify that the file is signed by Concordium. To do this, you need a signature of the release and a public key.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.1.rpm.sig">Download signature</a></p></li>
+<li><p><a class="reference external" href="https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.rpm.sig">Download signature</a></p></li>
 <li><p><a class="reference external" href="https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem">Download public key</a></p></li>
 </ul>
 <p>With the <strong>signature</strong>, the <strong>public key</strong>, and the <strong>downloaded file</strong> all in the same directory, execute the following steps to verify that the file has been signed by Concordium.</p>
@@ -1894,7 +1894,7 @@ body {margin:0;}
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.1.rpm<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.1.rpm.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.2.rpm<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.2.rpm.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
