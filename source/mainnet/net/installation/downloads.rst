@@ -103,7 +103,7 @@ Concordium Desktop Wallet
          -  SHA256 checksum of the download: ``ff06aca0d11af4b2062d84698cd4503ad6c404791974dc41e0112a871892d1a4``
 
       -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.2.rpm>`_
-         -  SHA256 checksum of the download: ``8c935b54208ee188d31fedbf5234c53acde8aa589a0afdd6cc53919376065cef``
+         -  SHA256 checksum of the download: ``2e6819065635c889a86810637ebeed8a55e62834bb3ff2526a7f7c8390034b53``
 
 .. _ledger-app-download:
 
