@@ -301,7 +301,7 @@ Wallets
 Desktop Wallet
 --------------
 
-    December XX, 2023
+    December 14, 2023
 
         Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
 
