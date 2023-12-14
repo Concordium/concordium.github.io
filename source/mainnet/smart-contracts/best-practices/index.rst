@@ -11,3 +11,4 @@ Here, you can find best practices for smart contract development, audit, informa
    :hidden:
 
    Development best practices <./development.rst>
+   Cost reduction best practices <./costs.rst>
