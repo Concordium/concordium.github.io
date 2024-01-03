@@ -11,6 +11,7 @@ When the page is initially opened, it displays the items of the gallery but with
 To do that the names of the items must be fetched from the backend. To fetch the items from the backend the `api/names` endpoint of the backend is used. Below is a snippet that shows how the `Gallery` component does that when it loads, given that ``getNames`` is a function that fetches the names from the backend.
 
 .. code-block:: typescript
+   :force:
 
    interface ItemData {
        name: string;
@@ -19,7 +20,7 @@ To do that the names of the items must be fetched from the backend. To fetch the
 
    export default function Gallery() {
        const [items, setItems] = useState<ItemData[]>([]);
-       ...
+       // ...
        useEffect(() => {
            getNames(VERIFIER_URL).then((names) =>
                setItems(names.map((name) => (
@@ -27,7 +28,7 @@ To do that the names of the items must be fetched from the backend. To fetch the
                )))
            );
        }, []);
-       ...
+       // ...
    }
 
 Then there is a component to show the items. In addition to taking the ``itemData`` as input, it also takes the ``authToken`` needed to access the images as an optional parameter, and when it is present, the component fetches the image at the location with the token:

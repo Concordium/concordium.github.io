@@ -37,7 +37,7 @@ When you click a block hash, the following appears:
 The block details shows the following information about the block.
 
 - **Block**: the first six characters of the block hash. You can click Copy |copy| to copy the entire hash.
-- **Finalised**: state of the block. Only Finalized blocks are shown.
+- **Finalized**: state of the block. Only Finalized blocks are shown.
 - **Age**: age of the block with date/time stamp.
 - **Validator id**: validator ID of the validator who produced the block. Click on the validator ID for details about the :ref:`validator<home-screen-baker>`.
 - **Tokenomics**: shows the tokenomics of the accrued block rewards.

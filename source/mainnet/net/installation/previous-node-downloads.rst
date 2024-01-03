@@ -86,8 +86,18 @@ macOS - Mainnet and Testnet
 Ubuntu - Mainnet
 ================
 
-Default GRPC port is set to 10000
+Default GRPC port is set to 20000
 Default listen port is set to 8888
+
+`6.1.7 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.1.7-0_amd64.deb>`__
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_6.1.7-0_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``fb9e4dd31bff676b2f06bed15f66d12b5bc4fd19f815051067dc32348d9447b6``
 
 `6.0.4 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.0.4-0_amd64.deb>`__
 
@@ -209,7 +219,7 @@ Default listen port is set to 8888
 Ubuntu - Testnet
 ================
 
-Default GRPC port is set to 10001
+Default GRPC port is set to 20001
 Default listen port is set to 8889
 
 `6.1.7 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.7-0_amd64.deb>`__

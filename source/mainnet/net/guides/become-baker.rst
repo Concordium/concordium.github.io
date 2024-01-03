@@ -327,7 +327,7 @@ Use ``validator configure`` to configure a validator and open a staking pool. Th
 
 .. code-block:: console
 
-   $concordium-client validator configure --sender "acc1" --stake 500001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/validator-credentials.json
+   $concordium-client validator configure --sender "acc1" --stake 500001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-block-reward-commission 0.1 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/validator-credentials.json
 
 Configure validator has the following optional arguments:
 
@@ -340,8 +340,7 @@ Configure validator has the following optional arguments:
 - ``--keys-in`` specifies the name of the file containing the validator keys.
 - ``--keys-out`` can be used to write a validator credential file containing the validator ID (and the supplied keys) to use when starting a validator node. Replace ``<concordium-data-dir>`` with any path of your choice.
 - ``--delegation-transaction-fee-commission`` specifies the transaction fee commission for the staking pool.
-- ``--delegation-baking-commission`` specifies the validator commission for the staking pool.
-- ``--delegation-finalization-commission`` specifies the finalization commission for the staking pool.
+- ``--delegation-block-reward-commission`` specifies the block commission for the staking pool.
 
 .. Note::
 

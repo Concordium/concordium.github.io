@@ -301,11 +301,15 @@ Wallets
 Desktop Wallet
 --------------
 
-    November 22, 2023
+    December 14, 2023
 
-        Version 1.7.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
+        Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.1 - November 22, 2023
+
+            Version 1.7.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
 
         .. dropdown:: 1.6.0 - September 28, 2023
 
@@ -395,11 +399,15 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    August 8, 2023
+    November 30, 2023
 
-        |mw-gen1| 3.2.1 ensures support for the upcoming protocol version 6.
+    |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen1| 3.2.1 - August 8, 2023
+
+            |mw-gen1| 3.2.1 ensures support for the upcoming protocol version 6.
 
         .. dropdown:: |mw-gen1| 3.2.0 - May 30, 2023
 
@@ -476,11 +484,15 @@ Desktop Wallet
 |mw-gen1| for Android
 ---------------------
 
-    February 6, 2023
+    December 1, 2023
 
-    In version 3.2.0 we changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
+        |mw-gen1| 3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.2.0 - February 6, 2023
+
+            In version 3.2.0 we changed the text in the "Suggest update" alert to suggest that the user update to the |mw-gen2| so it matches the download button.
 
         .. dropdown:: 3.0.3 - November 17, 2022
 
@@ -608,65 +620,74 @@ Nodes
 =====
 
 .. _rn-node-mainnet:
+.. _604-mainnet:
 
 Mainnet
 -------
 
-    .. _604-mainnet:
+    November 28, 2023
 
-    October 23, 2023
+    Version 6.2.3 removes the V1 gRPC API. This removes the configuration options ``CONCORDIUM_NODE_RPC_SERVER_PORT``, ``CONCORDIUM_NODE_RPC_SERVER_ADDRESS``, ``CONCORDIUM_NODE_RPC_SERVER_TOKEN``, ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the `standard GRPC health service API <https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto>`__.
 
-    Concordium Node 6.1.7 contains bug fixes and improvements. **This is the last release of the node that has support for V1 gRPC API.**
+    As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.
 
-    **Improvements**
+    A ``DryRun`` endpoint has also been that allows simulating the execution of transactions.
 
-        - Out-of-band catchup is now enabled by default on all platforms.
-
-        - The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup.
-
-        - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
-
-        - Exposed the health check service via grpc-web when grpc-web is enabled.
-
-        - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
-
-        - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
-
-        - Removed the concept of pending blocks.
-
-        - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
-
-        - Added a number of endpoints to the GRPCV2 API, including:
-
-            - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
-
-            - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate, and epoch finalization entry contained in the block (where present).
-
-            - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
-
-            - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
-
-            - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
-
-    **Fixes**
-
-        - An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
-
-        - Fixed a bug where the block state hash was not returned properly for the genesis block.
-
-        - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
-
-        - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
-
-        - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
-
-        - Fixed a bug in how the last timeout certificate is recovered at start-up.
-
-        - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
-
-        - Added load shedding for gRPC v2. This helps protect the node in case of high number of concurrent requests since they are now dropped immediately as opposed to queued.
+    The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.1.7 - October 23, 2023
+
+            Concordium Node 6.1.7 contains bug fixes and improvements. **This is the last release of the node that has support for V1 gRPC API.**
+
+            **Improvements**
+
+                - Out-of-band catchup is now enabled by default on all platforms.
+
+                - The node remembers peers across restarts. When starting up it will try to connect to stored peers in addition to any supplied bootstrap and given nodes. Use the new flag ``--clear-persisted-peers`` (environment variable ``CONCORDIUM_NODE_CLEAR_PERSISTED_PEERS``) to clear stored peers on startup.
+
+                - If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
+
+                - Exposed the health check service via grpc-web when grpc-web is enabled.
+
+                - Banned peers are no longer reset on startup by default. The flag ``--no-clear-bans`` has been renamed  to ``--clear-bans``; when set it will clear the banned peers on startup.
+
+                - Add debug-level logging when a round is advanced, either due to a quorum certificate or a timeout certificate.
+
+                - Removed the concept of pending blocks.
+
+                - ``GetPoolInfo`` now also returns the commission rates for the current reward period.
+
+                - Added a number of endpoints to the GRPCV2 API, including:
+
+                    - ``GetBakersRewardPeriod``: provided a block, then it returns information about bakers for the reward period of the block.
+
+                    - ``GetBlockCertificates``: provided a block, then it returns quorum certificate, timeout certificate, and epoch finalization entry contained in the block (where present).
+
+                    - ``GetBakerEarliestWinTime``: provided a baker ID, it returns the earliest time at which the node projects that the baker could be required to bake a block.
+
+                    - ``GetFirstBlockEpoch``: returns the block hash of the first block in a given epoch.
+
+                    - ``GetWinningBakersEpoch``: returns a list of the bakers that won rounds in a specified (finalized) epoch. This only supports consensus version 1.
+
+            **Fixes**
+
+                - An incorrect ``peer_bucket_size`` metric calculation exposed by the bootstrapper was fixed. What was counted was not the number of peers in the bucket, but rather, roughly, how many times peers that are in the bucket have reconnected.
+
+                - Fixed a bug where the block state hash was not returned properly for the genesis block.
+
+                - Fixed a bug where credential registration IDs for genesis accounts were not correctly recorded. As a result, the index of accounts by credential IDs was incorrect if the chain was started from genesis by node versions 5.1.3 up to and including 6.0. If a chain was started by an older node version and then the node was upgraded, the index is loaded correctly. This index is used when checking for duplicate credential registration IDs, and when looking up an account via a credential registration ID.
+
+                - Fixed a bug in the ``InvokeInstance`` endpoint where the amount sent was used incorrectly. The consequence was that in some cases the calls would fail with an error indicating insufficient amount on the account where the amount was sufficient for the transaction.
+
+                - Applied fix for processing of chain parameter updates when they occur at the same time retroactively to all protocol versions. This may break compatibility with any local/private chains on which the bug occurs.
+
+                - Fixed a bug in how the last timeout certificate is recovered at start-up.
+
+                - Fixed the behavior of the block last finalized pointer in the ``GetBlockInfo`` so that it consistently returns the last finalized block at the time the block was baked.
+
+                - Added load shedding for gRPC v2. This helps protect the node in case of high number of concurrent requests since they are now dropped immediately as opposed to queued.
 
         .. dropdown:: 6.0.4 - September 11, 2023
 
