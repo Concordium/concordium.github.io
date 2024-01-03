@@ -9,6 +9,12 @@ This guide will show you how to initialize a smart contract from a deployed
 smart contract module with parameters in JSON or binary format.
 Additionally, it will show how to name an instance.
 
+You can also watch a video about initializing smart contract instances.
+
+.. image:: https://img.youtube.com/vi/SNm9xEegBKA/maxresdefault.jpg
+    :alt: video about initializing smart contract instances
+    :target: https://www.youtube.com/watch?v=SNm9xEegBKA
+
 .. Note::
 
    Parameters that are passed to the smart contract must be stored in a file. You cannot pass parameters directly on the command-line using ``concordium-client``.

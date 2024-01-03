@@ -3,6 +3,13 @@
 =================================
 Setup the development environment
 =================================
+.. Note::
+
+    You can also watch a video about installing the smart contract tools.
+
+    .. image:: https://img.youtube.com/vi/0UIyAlZjvLg/maxresdefault.jpg
+        :alt: video about installing smart contract tools
+        :target: https://www.youtube.com/watch?v=0UIyAlZjvLg
 
 First, you need to install ``rustup`` which installs Rust and Cargo to your computer. Go to `Rustup <https://rustup.rs/>`_ to install ``rustup`` for your platform.
 

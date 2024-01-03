@@ -191,6 +191,8 @@ VSCode extension
 
 You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
 
+For information about using the VSCode extension, `watch the video <https://www.youtube.com/watch?v=9qjcsGDeveg>`_.
+
 Smart contract deploy and initialize tool
 =========================================
 

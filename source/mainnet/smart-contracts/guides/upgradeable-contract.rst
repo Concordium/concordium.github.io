@@ -17,6 +17,12 @@ For some decentralized applications this is a problem and these need some way to
 Concordium smart contract instances have the option to upgrade their smart contract module by calling the ``upgrade`` function with a reference to a new smart contract module to use.
 If successful, new invocations to the upgraded smart contract instance will use the new smart contract module.
 
+You can also see a video about how to make contracts upgradeable.
+
+.. image:: https://img.youtube.com/vi/rbr1w3kJYcU/maxresdefault.jpg
+    :alt: video about upgrading smart contracts
+    :target: https://www.youtube.com/watch?v=rbr1w3kJYcU
+
 .. seealso::
 
    To learn more about upgradeability of smart contracts see :ref:`contract-instance-upgradeability`.
