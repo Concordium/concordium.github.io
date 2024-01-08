@@ -158,6 +158,7 @@ html_theme_options = {
     # 'titles_only': False,
     "show_nav_level": 0,
     "show_toc_level": 2,
+    "navigation_depth": 5,
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
