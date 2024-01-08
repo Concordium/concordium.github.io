@@ -42,6 +42,12 @@ Official resources
 
 - The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
 
+You can watch a video about how to use the VSCode extension.
+
+.. image:: https://img.youtube.com/vi/9qjcsGDeveg/maxresdefault.jpg
+    :alt: video about smart contract lifecycle
+    :target: https://www.youtube.com/watch?v=9qjcsGDeveg
+
 - An external `transaction logger <https://github.com/Concordium/concordium-transaction-logger>`_ service
 
 Concordium Proof Explorer
