@@ -167,11 +167,15 @@ Wallets
 |bw|
 -------------------------
 
-    November 21, 2023
+    January 10, 2024
 
-    |bw| 1.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
+    The EuroE token is now added to all accounts by default.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.2.1 - November 21, 2023
+
+            |bw| 1.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
 
         .. dropdown:: |bw| 1.1.11 - November 9, 2023
 
