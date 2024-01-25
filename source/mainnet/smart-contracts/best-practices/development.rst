@@ -4,7 +4,8 @@
 Development best practices
 ==========================
 
-This document provides guidelines for developing smart contracts.
+This document provides guidelines for developing smart contracts, including best practices for smart contract development, audit, information about common pitfalls and security vulnerabilities, and how to avoid them.
+
 It starts with some general thoughts about smart contract development and then gives more details about writing smart contracts in Rust for Concordium.
 
 Mindset
@@ -15,7 +16,7 @@ Smart contract development involves many risks that do not show up in, for examp
 - the cost of mistakes is very high;
 - possibilities for fixing bugs are limited;
 - the area is evolving constantly, with new vulnerabilities being discovered regularly;
-- malicious parties deliberately try to break your contract, for example, to steal the funds from the contract account.
+- malicious parties deliberately try to break your contract, for example, to steal the funds from the contract or account.
 
 Therefore, it is not sufficient to defend your code against known vulnerabilities.
 You can think about smart contracts as mission-critical software, or software for embedded devices rather than a web application.
@@ -66,8 +67,7 @@ Concordium Rust Smart Contracts
 ===============================
 
 This section provides recommendations for developing smart contracts in Rust.
-See :ref:`introduction` for basic information.
-
+See :ref:`Introduction to smart contracts<introduction>` for basic information.
 
 .. _best-practices-code-structure:
 

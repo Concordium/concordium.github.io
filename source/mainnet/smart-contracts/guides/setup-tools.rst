@@ -60,6 +60,11 @@ You can watch a video about how to use the VSCode extension.
     :alt: video about smart contract lifecycle
     :target: https://www.youtube.com/watch?v=9qjcsGDeveg
 
+Typescript smart contract client generator
+------------------------------------------
+
+The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JS clients for the Concordium blockchain.
+
 Concordium software
 ===================
 
@@ -67,7 +72,7 @@ The tool to deploy and interact with smart contracts is
 :ref:`concordium-client<concordium-client>`. It is distributed as part of the
 :ref:`Concordium software<downloads>` package.
 
-To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 .. note::
 

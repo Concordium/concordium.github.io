@@ -7,7 +7,7 @@ Concordium smart contracts quick start guide
 
 This guide is intended to be used by experienced developers who want to get up and running quickly with a smart contract deployed on chain with which they can interact.
 
-Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
+Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-development-best-practices>`.
 
 .. dropdown:: Step 1 - Set up developer environment
 
@@ -16,7 +16,6 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
     #. `rustup`_
     #. :ref:`cargo-concordium<concordium-node-and-client-download>`
     #. :ref:`concordium-client<concordium-node-and-client-download>`
-    #. :ref:`a Mainnet node<concordium-node-and-client-download>` or :ref:`Testnet node<testnet-node-downloads>` for deploying and interacting
 
     For more detailed information, see :ref:`Install tools for development<setup-tools>`.
 
@@ -80,7 +79,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
         $cargo concordium build
 
-    This uses Cargo_ for building, but runs further optimizations on the result. Running the ``cargo concordium build`` command will produce a smart contract module which can be found relative to your project root folder in ``./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1``. Alternatively, you can supply the location where to store the smart contract module using the ``--out`` option. For example running the following command will output your smart contract module into the root folder of your project in a file name ``my_module.wasm.v1``.
+    This uses Cargo_ for building, but runs further optimizations on the result. Running the ``cargo concordium build`` command will produce a smart contract module which can be found relative to your project root folder in ``~./concordium-out/module.wasm.v1~`` by default. Alternatively, you can supply the location where to store the smart contract module using the ``--out`` option. For example running the following command will output your smart contract module into the root folder of your project in a file name ``my_module.wasm.v1``.
 
     .. code-block:: console
 

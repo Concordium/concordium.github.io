@@ -4,8 +4,8 @@
 Smart contract instances
 ========================
 
-A **smart contract instance** is a smart contract module together with a
-specific state and an amount of CCD tokens.
+A :term:`smart contract instance<instance>` is a smart contract module together with a
+specific state and an amount of CCD tokens. A smart contract instance is often just called an *instance*.
 Multiple smart contract instances can be created from the same module.
 For example, for an :ref:`auction <auction>` contract, there could be multiple instances, each
 one dedicated to bidding for a specific item and with its own participants.
@@ -16,10 +16,6 @@ requested function in the smart contract module. This function can take a
 parameter.
 Its end result is required to be the initial smart contract state of the
 instance.
-
-.. note::
-
-   A smart contract instance is often just called an *instance*.
 
 .. graphviz::
    :align: center
@@ -65,8 +61,8 @@ or destroy CCD tokens.
 
 .. _contract-instances-init-on-chain:
 
-Instantiating a smart contract on-chain
-=======================================
+Instantiate a smart contract on-chain
+=====================================
 
 Every smart contract must contain a function for creating smart contract
 instances. Such a function is referred to as the *init function*.
@@ -96,11 +92,11 @@ transaction for attempting to create the instance is visible on-chain.
 .. seealso::
 
    See :ref:`initialize-contract` guide for how to initialize a
-   contract in practice.
+   contract in practice. You can also watch a video about initializing smart contract instances.
 
-.. note::
-
-   The *init function* has no return value.
+   .. image:: https://img.youtube.com/vi/SNm9xEegBKA/maxresdefault.jpg
+      :alt: video about initializing smart contract instances
+      :target: https://www.youtube.com/watch?v=SNm9xEegBKA
 
 Instance state
 ==============
@@ -117,8 +113,8 @@ held by a particular node in the tree.
 
    See :ref:`host-functions-state` for a reference of these functions.
 
-Interacting with an instance
-============================
+Interact with an instance
+=========================
 
 A smart contract can expose zero or more functions for interacting with an
 instance, referred to as *receive functions*.
@@ -140,8 +136,8 @@ To summarize, a transaction for smart-contract interaction includes:
 
 .. _contract-instances-logging-events:
 
-Logging events
-==============
+Log events
+==========
 
 Events can be logged during the execution of smart contract functions. This is
 the case for both init and receive functions. The logs are designed for
@@ -178,8 +174,8 @@ When initializing, updating, or invoking a smart contract, the following limits 
 
    The log item and return value limits can not be reached in practice because the energy limit will kick in earlier.
 
-Invoking operations
-===================
+Invoke operations
+=================
 
 A receive function can use the host environment to invoke two types of
 operations during its execution.
