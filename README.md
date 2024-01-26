@@ -107,16 +107,11 @@ The exact command depends on which terminal type you are using. For example, in 
 **Mainnet**
 
 ```
-make.bat dev-mainnet
+pipenv run make.bat dev-mainnet
 ```
 and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 Before committing, make sure to try to build and fix any warnings that are reported.
-
-```
-./make.bat html
-```
-
 
 > **Note**:
 > When working on changes to the design it can be beneficial to disable
