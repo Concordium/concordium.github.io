@@ -181,7 +181,7 @@ Wallets
 
         .. dropdown:: |bw| 1.3.0 - January 10, 2024
 
-            The EuroE token is now added to all accounts by default.
+            The EUROe token is now added to all accounts by default.
 
         .. dropdown:: |bw| 1.2.1 - November 21, 2023
 
