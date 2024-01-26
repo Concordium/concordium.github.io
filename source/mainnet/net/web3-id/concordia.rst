@@ -35,6 +35,7 @@ To verify that you are using the real Concordium bots configured in our channels
 Telegram - Mainnet - @ConcordiaWeb3IDBot
 
 Discord- Mainnet - Concordia#0667
+You can use `this link for Discord <https://discord.com/api/oauth2/authorize?client_id=1149262289619402842&permissions=3072&scope=bot+applications.commands>`__ to invite this bot to your server.
 
 There is an example of independent issuers with the user interface that can be used to issue verifiable credentials for the account that is owned on the social media network. After verifiable credentials are issued, they can be used to prove ownership of social media accounts and transfer trust between them by using Concordia social media verifier on `Testnet <https://concordia.testnet.concordium.com/>`__ or `Mainnet <https://concordia.mainnet.concordium.software/>`__.
 
