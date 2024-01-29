@@ -28,11 +28,12 @@ jobs:
         shell: bash
         run: |
           apt-get install -y graphviz rsync
-          pip3 install -r requirements.txt
+          pip3 install pipenv
+          pipenv sync
 
       - name: Build 🛠
         shell: bash
-        run: ./scripts/build.sh
+        run: pipenv run ./scripts/build.sh
 
       - name: Deploy preview for Concordium Academy 🚀
         uses: rossjrw/pr-preview-action@v1
