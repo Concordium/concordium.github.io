@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/setup-contract.6ccfe9e7-400a-4bb2-a5ac-786026ddf2e4.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts-v0/guides/setup-contract.d4d3915d-e813-462f-8518-f6aac19536bd.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1853,7 +1853,7 @@ body {margin:0;}
                 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/Concordium/concordium.github.io/edit/local/source/mainnet/smart-contracts-v0/guides/setup-contract.rst">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/smart-contracts-v0/guides/setup-contract.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -1890,7 +1890,7 @@ directory and some hidden files.</p>
 <p>To be able to build Wasm you need to tell cargo the right <code class="docutils literal notranslate"><span class="pre">crate-type</span></code>.
 This is done by adding the following in the <code class="docutils literal notranslate"><span class="pre">Cargo.toml</span></code> file</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[lib]</span>
-<span class="n">crate-type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;cdylib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rlib&quot;</span><span class="p">]</span>
+<span class="n">crate-type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cdylib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rlib&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="section" id="adding-the-smart-contract-standard-library">
@@ -1902,7 +1902,7 @@ writing small and efficient smart contracts.</p>
 <code class="docutils literal notranslate"><span class="pre">concordium-std</span> <span class="pre">=</span> <span class="pre">&quot;*&quot;</span></code> (preferably, replace the <cite>*</cite> with the latest version of <a class="reference external" href="https://docs.rs/crate/concordium-std/">concordium-std</a>) in
 the <code class="docutils literal notranslate"><span class="pre">[dependencies]</span></code> section:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[dependencies]</span>
-<span class="n">concordium-std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.4&quot;</span>
+<span class="n">concordium-std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.4&quot;</span>
 </pre></div>
 </div>
 <p>The crate documentation can be found on <a class="reference external" href="https://docs.rs/crate/concordium-std/">docs.rs</a>.</p>
@@ -1912,7 +1912,7 @@ the <code class="docutils literal notranslate"><span class="pre">[dependencies]<
 the repository with <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> and have the dependency point at the
 directory instead, by adding the following to <code class="docutils literal notranslate"><span class="pre">Cargo.toml</span></code>:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[dependencies]</span>
-<span class="n">concordium-std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;./path/to/concordium-std&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">concordium-std</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;./path/to/concordium-std&quot;</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
