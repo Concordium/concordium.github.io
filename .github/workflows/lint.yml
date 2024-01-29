@@ -24,11 +24,12 @@ jobs:
         run: |
           apt-get update
           apt-get install -y graphviz git rsync
-          pip3 install -r requirements.txt
+          pip3 install pipenv
+          pipenv sync --dev
 
       - name: Lint 🔍
         shell: bash
-        run: doc8 source
+        run: pipenv run doc8 source
 
   build:
     runs-on: ubuntu-latest
@@ -44,8 +45,9 @@ jobs:
         run: |
           apt-get update
           apt-get install -y graphviz git rsync
-          pip3 install -r requirements.txt
+          pip3 install pipenv
+          pipenv sync
 
       - name: Build 🛠
         shell: bash
-        run: ./scripts/build.sh
+        run: pipenv run ./scripts/build.sh

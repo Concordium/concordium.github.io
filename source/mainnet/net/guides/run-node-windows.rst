@@ -227,13 +227,13 @@ but is not necessary. If you wish to disable it do the the following:
 
    - For mainnet, remove the following line from the ``[node.mainnet]`` section:
 
-   .. code-block:: TOML
+   .. code-block:: toml
 
       node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
 
    - For testnet, remove the following line from the ``[node.testnet]`` section:
 
-   .. code-block:: TOML
+   .. code-block:: toml
 
       node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
 
