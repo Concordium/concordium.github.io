@@ -171,11 +171,13 @@ Wallets
 
     Version 1.3.2 includes several changes and bug fixes.
 
-    The CIS-2 token lookup no longer blocks choosing a contract if looking up metadata or balance only fails for some tokens.
-    The missing date for delegation/validation stake decrease/stop has been restored.
-    Changing restake preference is no longer blocked when the validator is below minimum stake threshold.
-    `SendTransaction` in wallet-api now supports `bigint` as part of smart contract parameters, fixing an issue with using large numbers.
-    And users can view their secret recovery phrase in the wallet settings if they need to write it down again.
+    - The CIS-2 token lookup no longer blocks choosing a contract if looking up metadata or balance only fails for some tokens.
+    - The missing date for delegation/validation stake decrease/stop has been restored.
+    - Changing restake preference is no longer blocked when the validator is below minimum stake threshold.
+    - `SendTransaction` in wallet-api now supports `bigint` as part of smart contract parameters, fixing an issue with using large numbers.
+    - Users can view their secret recovery phrase in the wallet settings if they need to write it down again.
+    - Fixed a crash when the value in stake field was larger than a 64 bit integer when updating the stake.
+    - Fixed an issue that would potentially block the wallet from loading or cause a crash if a third-party app blocked extensions.
 
     .. dropdown:: Previous releases
 
