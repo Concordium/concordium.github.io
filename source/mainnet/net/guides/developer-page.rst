@@ -116,6 +116,7 @@ Community resources
     :maxdepth: 2
 
     sdks-apis
+    wallet-sdk/wallet-sdk
     dapp-examples
     ../resources/dashboards
     ../references/developer-tools
