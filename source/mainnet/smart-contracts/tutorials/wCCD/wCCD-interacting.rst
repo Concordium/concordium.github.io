@@ -83,7 +83,8 @@ The ``balanceOf`` function
 
     Create a ``balanceOf.json`` file and insert the following JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {
@@ -169,7 +170,8 @@ The ``operatorOf`` function
 
     Create an ``operatorOf.json`` file and insert the following JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {
@@ -325,7 +327,8 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
 .. dropdown:: Option 1 (Receiver is an account) (click here)
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         {
             "data": DATA_STRING,
@@ -353,7 +356,8 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
 .. dropdown::  Option 2 (Receiver is a smart contract) (click here)
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         {
             "data": DATA_STRING,
@@ -462,7 +466,8 @@ wCCD token in the wCCD smart contract and getting CCD in return.
 
     Create an ``unwrap.json`` file and insert the below JSON object.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         {
             "amount": AMOUNT,
@@ -562,7 +567,8 @@ You can transfer the wCCD tokens from one address to another address.
 
     Create a ``transfer.json`` file and insert the below JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {
@@ -671,7 +677,8 @@ without you having to interact with the smart contract again.
 
     Create an ``updateOperator.json`` file and insert the below JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {

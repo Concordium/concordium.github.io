@@ -201,6 +201,8 @@ How to back up and import
 
     Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
 
+    In |bw| you can view the secret recovery phrase in Wallet Settings if you need to write it down again.
+
         .. note::
 
             The option to view the secret recovery phrase is available in |mw-gen2| for Android version 1.3.0 or greater in the Wallet Settings |wallet-settings|. However you cannot simply upgrade to version 1.3.0 and use this feature. Instead, you must either create a new wallet or recover your wallet to be able to see this option in Wallet Settings.
