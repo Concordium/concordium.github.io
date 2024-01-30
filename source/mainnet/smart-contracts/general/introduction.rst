@@ -119,7 +119,7 @@ The `Typescript smart contract client generator <https://www.npmjs.com/package/@
    :maxdepth: 1
    :caption: General
 
-   contract-lifecycle 
+   contract-lifecycle
    contract-module
    contract-instances
    contract-schema

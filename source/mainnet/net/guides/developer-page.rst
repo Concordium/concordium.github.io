@@ -84,7 +84,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     - `Mainnet status page <https://status.mainnet.concordium.software>`__
 
     - `Testnet status page <https://status.testnet.concordium.software>`__
-    
+
     For information about the status pages, see :ref:`Status pages<dashboards>`.
 
     **CCDScan**
