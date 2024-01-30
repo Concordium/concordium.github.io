@@ -56,9 +56,15 @@ General content such as site images, stylesheets, and other templates are in the
 
 Install `python3` and the python package manager `pip3`.
 
+The project uses `pipenv` and Pipfile to manage dependencies, so make sure to have this installed:
+
+```
+pip3 install pipenv
+```
+
 To install the python dependencies run:
 ```
-pip3 install -r requirements.txt
+pipenv sync
 ```
 
 Install `graphviz`:
@@ -70,7 +76,8 @@ Install `graphviz`:
 On macOS
 ```
 brew install python3 graphviz
-pip3 install -r requirements.txt
+pip3 install pipenv
+pipenv sync
 ```
 
 ### Windows
@@ -81,7 +88,8 @@ Download and run the launcher. Make sure to select "Add Python to PATH" at the b
 
 After that from a terminal run
 ```
-pip3 install -r requirements.txt
+pip3 install pipenv
+pipenv sync
 ```
 from the root of this repository.
 
@@ -91,19 +99,6 @@ If you want the graphs to render properly you also need to install the `dot` too
 
 To watch the doc files and automate the build run:
 
-### macOS and Linux
-**Mainnet**
-
-```
-make dev-mainnet
-```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
-
-Before committing, make sure to run the linter and fix all the errors reported:
-```
-make lint
-```
-
 ### Windows
 
 **Note:**
@@ -112,32 +107,40 @@ The exact command depends on which terminal type you are using. For example, in 
 **Mainnet**
 
 ```
-make.bat dev-mainnet
+pipenv run make.bat dev-mainnet
 ```
 and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 Before committing, make sure to try to build and fix any warnings that are reported.
-
-```
-./make.bat html
-```
-
 
 > **Note**:
 > When working on changes to the design it can be beneficial to disable
 > caching, as it can cause UI problems. To disable it, add the `-E` flag to the
 > `dev` command in the appropriate make file.
 
+### macOS and Linux
+**Mainnet**
+
+```
+pipenv run make dev-mainnet
+```
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
+
+Before committing, make sure to run the linter and fix all the errors reported:
+```
+pipenv run make lint
+```
+
 ## Building the docs
 Run the build script from project root:
 
 ```
-./script/build.sh
+pipenv run ./script/build.sh
 ```
 
 To check for dead links (can also be done by the CI), run:
 ```
-make linkcheck-mainnet
+pipenv run make linkcheck-mainnet
 ```
 
 ### Building the gRPC JSON schemas
