@@ -12,4 +12,5 @@ This section describes functionality provided in the Concordium  Web-SDK, Androi
     :maxdepth: 2
 
     wallet-sdk-account-transaction
+    wallet-sdk-identity-provider
     wallet-sdk-identity-recovery

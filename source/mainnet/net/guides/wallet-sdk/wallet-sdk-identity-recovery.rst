@@ -16,6 +16,8 @@ Generating an identity recovery request
 
 The following example demonstrates how to generate an identity recovery request. Part of the input to the request is a secret value derived from the seed phrase, and this value should be kept secret in a similar manner as the seed phrase and account signing keys are.
 
+In the example below functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, please check out :ref:`RST Overview`.
+
 .. tabs::
 
     .. tab::
@@ -32,21 +34,22 @@ The following example demonstrates how to generate an identity recovery request.
                 IdentityRecoveryRequestWithKeysInput,
             } from '@concordium/web-sdk';
 
-            // The identity provider to attempt to recover an identity from.
-            const selectedIdentityProvider: IdentityProvider = ...;
+            // The identity provider to attempt to recover an identity from. Here we simply select the first available, but
+            // in a recovery process a wallet would usually loop through all possible options.
+            const identityProvider: IdentityProvider = getIdentityProviders(walletProxyTestnetBaseUrl)[0];
 
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
             const network = 'Testnet'; // Or mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
 
-            const idCredSec = wallet.getIdCredSec(selectedIdentityProvider.ipInfo.ipIdentity, identityIndex).toString('hex');
+            const idCredSec = wallet.getIdCredSec(identityProvider.ipInfo.ipIdentity, identityIndex).toString('hex');
 
             const client = new ConcordiumGRPCWebClient(nodeAddress, nodePort);
             const cryptographicParameters = await client.getCryptographicParameters();
 
             const recoveryRequestInput: IdentityRecoveryRequestWithKeysInput = {
                 idCredSec,
-                ipInfo: selectedIdentityProvider.ipInfo,
+                ipInfo: identityProvider.ipInfo,
                 globalContext: cryptographicParameters,
                 timestamp: Math.floor(Date.now() / 1000),
             };
@@ -85,8 +88,9 @@ When the identity recovery request has been generated the next step is to send i
                 Versioned
             } from '@concordium/web-sdk';
 
-            // TODO What about this?
-            const selectedIdentityProvider: IdentityProviderWithMetadata = ...;
+            // This identity provider must be identical to the one used to generate the identity
+            // receovery request, otherwise the request will fail.
+            const identityProvider: IdentityProviderWithMetadata = ...;
 
             // See how to generate in the previous section.
             const recoveryRequest: IdRecoveryRequest = ...;
@@ -94,7 +98,7 @@ When the identity recovery request has been generated the next step is to send i
             const searchParams = new URLSearchParams({
                 state: JSON.stringify({ idRecoveryRequest: recoveryRequest }),
             });
-            const url = `${selectedIdentityProvider.metadata.recoveryStart}?${searchParams.toString()}`;
+            const url = `${identityProvider.metadata.recoveryStart}?${searchParams.toString()}`;
             const response = await fetch(url);
 
             if (!response.ok) {
