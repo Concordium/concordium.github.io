@@ -2,12 +2,12 @@
 <html>
 <head>
 </head>
-<h6>Was this article helpful?</h6>
 
-<form name="user-rating">
-  <input type="radio" id="1" value="yes" onclick="_paq.push(['trackEvent', 'Rating', 'Click', 'Yes']);">
-  <label for="yes">Yes</label><br>
-  <input type="radio" id="0" value="no" onclick="_paq.push(['trackEvent', 'Rating', 'Click', 'No']);">
-  <label for="no">No</label><br>
-</form>
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'Click', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'Click', 'No']);">
+  <label for="No">No</label>
+</fieldset>
 </html>
