@@ -79,7 +79,7 @@ input for this transaction type.
             };
 
             const expiry = TransactionExpiry.fromDate(new Date(Date.now() + 360000));
-            const credentialTransaction = createCredentialTransactionNoSeed(
+            const credentialDeploymentTransaction = createCredentialTransactionNoSeed(
                 credentialInput,
                 expiry
             );
@@ -100,23 +100,40 @@ input for this transaction type.
 Sign a credential deployment transaction
 ++++++++++++++++++++++++++++++++++++++++
 
+With the credential deployment transaction created, the next step is to sign the transaction. It is important that the key used for signing the transaction
+is the signing key that corresponds to the public key used when creating the transaction. If they do not match, then the transaction will be rejected.
+
 .. tabs::
 
     .. tab::
 
         TypeScript (Web)
 
-        .. code-block:: typescript
+        .. code-block:: javascript
 
-            const credentialDeploymentTransaction = e.data;
-            const signingKey = getAccountSigningKey(
-                seedPhrase,
-                credentialDeploymentTransaction.unsignedCdi.ipIdentity
-            );
-            const signature = await signCredentialTransaction(
-                credentialDeploymentTransaction,
-                signingKey
-            );
+            import {
+                ConcordiumHdWallet,
+                CredentialDeploymentDetails,
+                CredentialDeploymentTransaction,
+                signCredentialTransaction
+            } from '@concordium/web-sdk';
+
+            // The credential deployment transaction created in the previous section.
+            const credentialDeploymentTransaction: CredentialDeploymentTransaction = ...;
+
+            // The key used to sign the credential deployment transaction must be the corresponding
+            // secret key for the public key that was used to construct the transaction.
+            const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
+            const network = 'Testnet'; // Or mainnet, if working on mainnet.
+            const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
+
+            // The credNumber and the identityIndex must identical to what was used when deriving
+            // the keys to create the credential deployment transaction.
+            const credNumber = 0;
+            const identityIndex = 0;
+            const signingKey = wallet.getAccountSigningKey(credentialDeploymentTransaction.unsignedCdi.ipIdentity, identityIndex, credNumber);
+
+            const signature = await signCredentialTransaction(credentialDeploymentTransaction, signingKey);
 
     .. tab::
 
@@ -134,20 +151,34 @@ Sign a credential deployment transaction
 Send a credential deployment transaction
 ++++++++++++++++++++++++++++++++++++++++
 
+Having created and signed the credential deployment transaction, the final step is to send it to a Concordium node. The SDKs provide a
+utility function that does this by simply providing it the credential deployment transaction and the signature on the transaction. The result
+of the call is a transaction hash that can then be used to monitor the status of the transaction. 
+
+If successful, the credential will have been deployed, and it is now possible to start creating account transactions. Go to
+:ref:`wallet-sdk-account-transaction` for a guide on how that is done.
+
 .. tabs::
 
     .. tab::
 
         TypeScript (Web)
 
-        .. code-block:: typescript
+        .. code-block:: javascript
 
-            await sendCredentialDeploymentTransaction(
+            import {
+                sendCredentialDeploymentTransaction,
+            } from '@concordium/web-sdk';
+
+            // The credential deployment transaction created in the first section.
+            const credentialDeploymentTransaction: CredentialDeploymentTransaction = ...;
+
+            // The signature on the credential deployment transaction from the previous section.
+            const signature: string = ...;
+
+            const transactionHash = await sendCredentialDeploymentTransaction(
                 credentialDeploymentTransaction,
                 signature
-            );
-            const accountAddress = getAccountAddress(
-                credentialDeploymentTransaction.unsignedCdi.credId
             );
 
     .. tab::

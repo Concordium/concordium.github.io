@@ -21,7 +21,7 @@ The following is an example of how the list of identity providers can be retriev
 
         TypeScript (Web)
 
-        .. code-block:: typescript
+        .. code-block:: javascript
 
             import {
                 IdentityProvider,
@@ -38,11 +38,13 @@ The following is an example of how the list of identity providers can be retriev
                 metadata: IdentityProviderMetaData;
             };
 
+            type IdentityProviderWithMetadataArray = IdentityProviderWithMetadata[];
+
             const walletProxyTestnetBaseUrl = 'https://wallet-proxy.testnet.concordium.com';
             const walletProxyMainnetBaseUrl = 'https://wallet-proxy.mainnet.concordium.software';
 
-            async function getIdentityProviders(walletProxyBaseUrl: string): Promise<IdentityProviderWithMetadata> {
-                const response = await fetch(walletProxyBaseUrl + '/v1/ip_info');
+            async function getIdentityProviders(walletProxyBaseUrl: string): Promise<IdentityProviderWithMetadataArray> {
+                const response = await fetch(walletProxyBaseUrl + '/v1/ip_info'); 
                 return response.json();
             }
 
