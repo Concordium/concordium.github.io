@@ -62,4 +62,3 @@ The following is an example of how the list of identity providers can be retriev
         Swift (iOS)
 
         The Swift SDK for iOS is still in development.
-
