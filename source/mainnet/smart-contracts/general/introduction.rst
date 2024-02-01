@@ -108,7 +108,7 @@ You can watch a video about how to use the VSCode extension.
 
 The :ref:`integration testing library<integration-test-contract>` simplifies testing of your smart contracts before deployment.
 
-`Smart contract libraries <https://crates.io/crates/concordium-std>`_
+The `main library for Smart contract development <https://crates.io/crates/concordium-std>`_ can be found on crates.io.
 
 To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
