@@ -63,7 +63,7 @@ You can watch a video about how to use the VSCode extension.
 Typescript smart contract client generator
 ------------------------------------------
 
-The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JS clients for the Concordium blockchain.
+The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript/TypeScript clients for smart contracts on the Concordium blockchain, providing a lower development time and better type-safety.
 
 Concordium software
 ===================
