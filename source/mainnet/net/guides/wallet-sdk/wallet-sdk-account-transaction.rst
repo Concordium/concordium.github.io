@@ -7,9 +7,9 @@ Submitting a transaction to a Concordium node
 The following sections document the requirements for creating an account transaction, signing it and
 finally sending it to a Concordium node.
 
-* `Construct an account transaction`_,
-* `Sign an account transaction`_,
-* `Send an account transaction to a Concordium node`_.
+* `Construct an account transaction`_
+* `Sign an account transaction`_
+* `Send an account transaction to a Concordium node`_
 
 ++++++++++++++++++++++++++++++++
 Construct an account transaction

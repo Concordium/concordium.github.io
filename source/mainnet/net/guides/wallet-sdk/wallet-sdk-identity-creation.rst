@@ -4,18 +4,20 @@
 Creating an identity
 ====================
 
-A prerequisite for creating an account on the Concordium blockchain is to have an identity. Therefore, a user of a wallet will always have
-to create an identity as an initial step, before being able to send account transactions.
+To create an account on the Concordium blockchain, one must first acquire an identity. Therefore, as an initial step, a user of a wallet will always have to create an identity before being able to send account transactions.
 
-An identity is acquired by generating an identity request and sending that to an identity provider. The user will then be taken through the identity verification
+An identity is acquired by generating an identity request and sending it to an identity provider. The user will then be taken through the identity verification
 process that is specific for that chosen identity provider. This happens outside of the wallet application.
+
+* `Creating an identity request`_
+* `Sending an identity request`_
+* `Retrieving the identity after creation`_
 
 ++++++++++++++++++++++++++++
 Creating an identity request
 ++++++++++++++++++++++++++++
 
-The first step is to create the actual identity request. Doing this requires the list of
-identity providers, see :ref:`RST Overview` for how to retrieve that.
+The first step is to create the actual identity request. To do this, you need the list of identity providers. Refer to :ref:`Identity Provider List` to understand how to retrieve it.
 
 .. tabs::
 
@@ -93,9 +95,7 @@ identity providers, see :ref:`RST Overview` for how to retrieve that.
 Sending an identity request
 +++++++++++++++++++++++++++
 
-When the identity request has been created, the next step is to send the request to the identity
-provider that it was created for. There are multiple ways of doing this and it depends on your
-choice of technologies. Below is an example of how it can be done.
+Once the identity request has been created, the next step is to send it to the corresponding identity provider. There are multiple ways to accomplish this, and it will depend on the technologies you choose. Below is an example of how it can be done.
 
 A part of the request is a `redirectUri`, which tells the identity provider where to redirect the user when the identity verification flow has been completed. A wallet application has to
 choose this in such a way that the user is sent back into the wallet application, where the

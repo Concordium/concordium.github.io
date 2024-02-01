@@ -7,6 +7,10 @@ Creating an account
 Having created an identity the next step is to create an account. On Concordium an account is an entity that can hold multiple credentials, but for the sake of keeping the example simple, the following
 guide will describe how to create an account with a single credential.
 
+* `Create a credential deployment transaction`_
+* `Sign a credential deployment transaction`_
+* `Send a credential deployment transaction`_
+
 ++++++++++++++++++++++++++++++++++++++++++
 Create a credential deployment transaction
 ++++++++++++++++++++++++++++++++++++++++++

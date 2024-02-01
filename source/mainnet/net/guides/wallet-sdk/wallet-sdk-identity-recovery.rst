@@ -4,7 +4,7 @@
 Recovering an identity
 ======================
 
-The following sections document how to create a request for recovering a lost identity from an identity provider. While accounts live on the Concordium blockchain, identities are stored at the identity provider that was chosen when creating it, and recovery happens by sending a request to that identity provider.
+The following sections demonstrate the process of creating a request to recover an identity from an identity provider. While accounts are stored on the Concordium blockchain, identities are stored by the selected identity provider during the creation process, and recovery is initiated by sending a request to that specific identity provider.
 
 * `Generating an identity recovery request`_
 * `Sending an identity recovery request`_
@@ -13,9 +13,9 @@ The following sections document how to create a request for recovering a lost id
 Generating an identity recovery request
 +++++++++++++++++++++++++++++++++++++++
 
-The following example demonstrates how to generate an identity recovery request. Part of the input to the request is a secret value derived from the seed phrase, and this value should be kept secret in a similar manner as the seed phrase and account signing keys are.
+The following example demonstrates the process of generating an identity recovery request. Part of the input to the request is a secret value derived from the seed phrase, and this value should be kept secret in a similar manner as the seed phrase and account signing keys.
 
-In the example below functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, please check out :ref:`RST Overview`.
+In the example below functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, please check out :ref:`Identity Provider List`.
 
 .. tabs::
 
@@ -71,7 +71,7 @@ In the example below functionality for retrieving the list of identity providers
 Sending an identity recovery request
 ++++++++++++++++++++++++++++++++++++
 
-When the identity recovery request has been generated the next step is to send it to the associated identity provider. If successful the identity provider will return with a redirect to the location where the identity can be fetched from.
+The next step is to send the generated identity recovery request to the associated identity provider. If successful, the identity provider will return a redirect to the location from which the identity can be fetched.
 
 .. tabs::
 
