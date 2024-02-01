@@ -50,7 +50,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     See :ref:`Smart contracts <introduction>` for general information about smart contracts, including a list of the available :ref:`smart contract development tools<sc-dev-tools>` to make creation, testing, and deployment easier.
 
-    - `Smart contract libraries <https://crates.io/crates/concordium-std>`_
+`The main library for developing smart contracts can be found on crates.io.<https://crates.io/crates/concordium-std>`_
 
 .. dropdown:: Proofs
 
