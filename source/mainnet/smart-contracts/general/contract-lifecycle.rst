@@ -27,6 +27,6 @@ contract instance can be repeatedly updated according to its own logic.
 
 You can also watch a video about the smart contract lifecycle.
 
-.. image:: https://img.youtube.com/vi/84_-C-4cK4E/maxresdefault.jpg
-    :alt: video about smart contract lifecycle
-    :target: https://www.youtube.com/watch?v=84_-C-4cK4E
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/84_-C-4cK4E?si=v0xd-fkVl63tl2Vg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
