@@ -4,18 +4,17 @@
 Creating an identity
 ====================
 
-A prerequisite for creating an account on the Concordium blockchain is to have an identity. Therefore, a user of a wallet will always have 
+A prerequisite for creating an account on the Concordium blockchain is to have an identity. Therefore, a user of a wallet will always have
 to create an identity as an initial step, before being able to send account transactions.
 
 An identity is acquired by generating an identity request and sending that to an identity provider. The user will then be taken through the identity verification
 process that is specific for that chosen identity provider. This happens outside of the wallet application.
 
-
 ++++++++++++++++++++++++++++
 Creating an identity request
 ++++++++++++++++++++++++++++
 
-The first step is to create the actual identity request. Doing this requires the list of 
+The first step is to create the actual identity request. Doing this requires the list of
 identity providers, see :ref:`RST Overview` for how to retrieve that.
 
 .. tabs::
@@ -45,7 +44,7 @@ identity providers, see :ref:`RST Overview` for how to retrieve that.
             const identityIndex = 0;
 
             // Some global cryptographic properties are required as input. They can be retrieved from
-            // a Concordium node using the gRPC interface. Note that these are not specific for this 
+            // a Concordium node using the gRPC interface. Note that these are not specific for this
             // identity and therefore can be re-used.
             const client = new ConcordiumGRPCWebClient(nodeAddress, nodePort);
             const cryptographicParameters = await client.getCryptographicParameters();
@@ -54,7 +53,7 @@ identity providers, see :ref:`RST Overview` for how to retrieve that.
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
             const network = 'Testnet'; // Or mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
-            
+
             const identityProviderIndex = identityProvider.ipInfo.ipIdentity;
 
             const idCredSec = wallet.getIdCredSec(identityProvider, identityIndex).toString('hex');
@@ -98,6 +97,11 @@ When the identity request has been created, the next step is to send the request
 provider that it was created for. There are multiple ways of doing this and it depends on your
 choice of technologies. Below is an example of how it can be done.
 
+A part of the request is a `redirectUri`, which tells the identity provider where to redirect the user when the identity verification flow has been completed. A wallet application has to
+choose this in such a way that the user is sent back into the wallet application, where the
+actual identity object can then be retrieved from the information provided in the hash property
+of the redirect URL.
+
 .. tabs::
 
     .. tab::
@@ -136,10 +140,95 @@ choice of technologies. Below is an example of how it can be done.
             if (!response.redirected) {
                 throw new Error('The identity provider did not redirect as expected.');
             } else {
-                // The response URL contains the location that the user should be redirected to, 
+                // The response URL contains the location that the user should be redirected to,
                 // e.g. by opening it in a browser. This will start the identity verification at
                 // the identity provider.
                 return response.url;
+            }
+
+    .. tab::
+
+        Kotlin (Android)
+
+        TODO Write the Kotlin example.
+
+    .. tab::
+
+        Swift (iOS)
+
+        The Swift SDK for iOS is still in development.
+
+++++++++++++++++++++++++++++++++++++++
+Retrieving the identity after creation
+++++++++++++++++++++++++++++++++++++++
+
+Upon completing identity verification at the identity provider, the identity provider does a
+redirect of the user back to the `redirectUri` that was provided when sending the identity request to the identity provider. The hash property of the URL that the identity provider
+redirects the user to contains the URL where the identity object can be retrieved from, in the format `redirectUri#code_uri=`, where the URL will be after the equals sign.
+
+.. tabs::
+
+    .. tab::
+
+        TypeScript (Web)
+
+        .. code-block:: javascript
+
+            enum IdentityProviderIdentityStatus {
+                /** Pending identity verification. */
+                Pending = 'pending',
+                /** The identity creation failed or was rejected. */
+                Error = 'error',
+                /** The identity is ready. */
+                Done = 'done',
+            }
+
+            interface PendingIdentityTokenContainer {
+                status: IdentityProviderIdentityStatus.Pending;
+                detail: string;
+            }
+
+            interface DoneIdentityTokenContainer {
+                status: IdentityProviderIdentityStatus.Done;
+                token: { identityObject: Versioned<IdentityObjectV1> };
+                detail: string;
+            }
+            interface ErrorIdentityTokenContainer {
+                status: IdentityProviderIdentityStatus.Error;
+                detail: string;
+            }
+
+            type IdentityTokenContainer =
+                | PendingIdentityTokenContainer
+                | DoneIdentityTokenContainer
+                | ErrorIdentityTokenContainer;
+
+            // The URL that the identity provider redirected to when the user completed
+            // identity verification.
+            const identityProviderRedirectUrl: string = ...;
+
+            // Extract the location where the identity can be retrieved from.
+            const identityUrl = identityProviderRedirectUrl.split('#code_uri=')[1];
+
+            try {
+                const response = (await (await fetch(identityUrl)).json as IdentityTokenContainer;
+
+                if (IdentityProviderIdentityStatus.Done === response.status) {
+                    // The identity is ready and can be extracted and stored locally
+                    // in the user's wallet.
+                    const identity: IdentityObjectV1 = response.token.identityObject.value;
+                } else if (IdentityProviderIdentityStatus.Error === response.status) {
+                    // Something went wrong and the details about the error are available.
+                    const errorDetails: string = response.detail;
+                } else {
+                    // In this case the identity is still pending, and the identity
+                    // should be queried again after some time to check the status again.
+                    // An identity will always resolve to either the done status or the
+                    // error status.
+                }
+            } catch {
+                // Something went wrong while querying the identity provider for the identity.
+                // The wallet should retry after some time if this happens.
             }
 
     .. tab::

@@ -153,7 +153,7 @@ Send a credential deployment transaction
 
 Having created and signed the credential deployment transaction, the final step is to send it to a Concordium node. The SDKs provide a
 utility function that does this by simply providing it the credential deployment transaction and the signature on the transaction. The result
-of the call is a transaction hash that can then be used to monitor the status of the transaction. 
+of the call is a transaction hash that can then be used to monitor the status of the transaction.
 
 If successful, the credential will have been deployed, and it is now possible to start creating account transactions. Go to
 :ref:`wallet-sdk-account-transaction` for a guide on how that is done.

@@ -44,7 +44,7 @@ The following is an example of how the list of identity providers can be retriev
             const walletProxyMainnetBaseUrl = 'https://wallet-proxy.mainnet.concordium.software';
 
             async function getIdentityProviders(walletProxyBaseUrl: string): Promise<IdentityProviderWithMetadataArray> {
-                const response = await fetch(walletProxyBaseUrl + '/v1/ip_info'); 
+                const response = await fetch(walletProxyBaseUrl + '/v1/ip_info');
                 return response.json();
             }
 
