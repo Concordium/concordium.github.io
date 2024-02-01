@@ -11,9 +11,9 @@ Additionally, it will show how to name an instance.
 
 You can also watch a video about initializing smart contract instances.
 
-.. image:: https://img.youtube.com/vi/SNm9xEegBKA/maxresdefault.jpg
-    :alt: video about initializing smart contract instances
-    :target: https://www.youtube.com/watch?v=SNm9xEegBKA
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/SNm9xEegBKA?si=TyZot8yIalZcySRf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 .. Note::
 

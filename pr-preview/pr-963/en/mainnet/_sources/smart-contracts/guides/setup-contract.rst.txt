@@ -15,76 +15,78 @@ The *from scratch* option guides you through the process when you want to start 
 
    Concordium recommends that newcomers choose the *from a template* option.
 
-.. dropdown:: From a template
+.. tabs::
 
-   Concordium maintains several smart contract
-   `templates <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ (currently a ``default`` template and a ``cis2-nft`` template).
-   For generating the smart contracts from the above templates, the ``cargo-generate`` crate is required.
-   ``cargo-generate`` can be installed by running the following command:
+   .. tab:: From a template
 
-   .. code-block:: console
+      Concordium maintains several smart contract
+      `templates <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ (currently a ``default`` template and a ``cis2-nft`` template).
+      For generating the smart contracts from the above templates, the ``cargo-generate`` crate is required.
+      ``cargo-generate`` can be installed by running the following command:
 
-      $cargo install --locked cargo-generate
+      .. code-block:: console
 
-   To start a new Concordium smart contract project from a template, run the command:
+         $cargo install --locked cargo-generate
 
-   .. code-block:: console
+      To start a new Concordium smart contract project from a template, run the command:
 
-      $cargo concordium init
+      .. code-block:: console
 
-   The path where the project should be created can be provided with the ``--path`` option.
+         $cargo concordium init
 
-   You can find additional information on the available templates in the
-   `README file <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates/README.md>`_.
+      The path where the project should be created can be provided with the ``--path`` option.
 
-.. dropdown:: From scratch
+      You can find additional information on the available templates in the
+      `README file <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates/README.md>`_.
 
-   A smart contract in Rust is written as an ordinary Rust library crate.
-   The library is then compiled to Wasm using the Rust target
-   ``wasm32-unknown-unknown`` and, since it is just a Rust library, you can use
-   Cargo_ for dependency management.
+   .. tab:: From scratch
 
-   To set up a new smart contract project, first create a project directory. Inside
-   the project directory run the following in a terminal:
+      A smart contract in Rust is written as an ordinary Rust library crate.
+      The library is then compiled to Wasm using the Rust target
+      ``wasm32-unknown-unknown`` and, since it is just a Rust library, you can use
+      Cargo_ for dependency management.
 
-   .. code-block:: console
+      To set up a new smart contract project, first create a project directory. Inside
+      the project directory run the following in a terminal:
 
-      $cargo init --lib
+      .. code-block:: console
 
-   This will set up a default Rust library project by creating a few files and
-   directories.
-   Your directory should now contain a ``Cargo.toml`` file and a ``src``
-   directory and some hidden files.
+         $cargo init --lib
 
-   To be able to build Wasm you need to tell cargo the right ``crate-type``.
-   This is done by adding the following in the ``Cargo.toml`` file ::
+      This will set up a default Rust library project by creating a few files and
+      directories.
+      Your directory should now contain a ``Cargo.toml`` file and a ``src``
+      directory and some hidden files.
 
-      [lib]
-      crate-type = ["cdylib", "rlib"]
+      To be able to build Wasm you need to tell cargo the right ``crate-type``.
+      This is done by adding the following in the ``Cargo.toml`` file ::
 
-   **Add the smart contract standard library**
+         [lib]
+         crate-type = ["cdylib", "rlib"]
 
-   The next step is to add ``concordium-std`` as a dependency.
-   It is a library for Rust containing procedural macros and functions for
-   writing small and efficient smart contracts.
+      **Add the smart contract standard library**
 
-   To add the library, open ``Cargo.toml`` and add the line
-   ``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in
-   the ``[dependencies]`` section::
+      The next step is to add ``concordium-std`` as a dependency.
+      It is a library for Rust containing procedural macros and functions for
+      writing small and efficient smart contracts.
 
-      [dependencies]
-      concordium-std = "6.0"
-
-   The crate documentation is on docs.rs_.
-
-   .. note::
-
-      If you wish to use a modified version of this crate, you will have to clone
-      the repository with ``concordium-std`` and have the dependency point at the
-      directory instead, by adding the following to ``Cargo.toml``::
+      To add the library, open ``Cargo.toml`` and add the line
+      ``concordium-std = "*"`` (preferably, replace the `*` with the latest version of `concordium-std`_) in
+      the ``[dependencies]`` section::
 
          [dependencies]
-         concordium-std = { path = "./path/to/concordium-std" }
+         concordium-std = "6.0"
+
+      The crate documentation is on docs.rs_.
+
+      .. note::
+
+         If you wish to use a modified version of this crate, you will have to clone
+         the repository with ``concordium-std`` and have the dependency point at the
+         directory instead, by adding the following to ``Cargo.toml``::
+
+            [dependencies]
+            concordium-std = { path = "./path/to/concordium-std" }
 
 .. _setup-wee-alloc-feature:
 

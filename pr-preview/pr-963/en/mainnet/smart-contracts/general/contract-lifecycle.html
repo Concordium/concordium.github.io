@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/contract-lifecycle.3f8e965b-fa4a-48b6-8c62-cd82f058808b.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/contract-lifecycle.e222ccd0-fb40-4623-a351-4f4164ca6b44.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1847,15 +1847,14 @@ contract instance can be repeatedly updated according to its own logic.</p>
 <a class="reference internal image-reference" href="../../_images/smart-contract-lifecycle.png"><img alt="flow diagram with different actions" src="../../_images/smart-contract-lifecycle.png" style="width: 100%;" /></a>
 <ol class="arabic simple">
 <li><p>In <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> <a class="reference internal" href="../guides/setup-contract.html#setup-contract"><span class="std std-ref">run the init command</span></a> to start a new project.</p></li>
-<li><p>Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If <a class="reference internal" href="../guides/build-schema.html#build-schema"><span class="std std-ref">using a schema</span></a>, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes.</p></li>
+<li><p>Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If <a class="reference internal" href="../guides/build-schema.html#build-schema"><span class="std std-ref">using a schema</span></a>, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes with the <a class="reference internal" href="../guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">integration testing library</span></a>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> <a class="reference internal" href="../guides/compile-module.html#compile-module"><span class="std std-ref">run the build command</span></a> to build the Wasm module that can be deployed on chain.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> <a class="reference internal" href="../guides/deploy-module.html#deploy-module"><span class="std std-ref">run the deploy command</span></a> to deploy the Wasm module. This makes the contract available on chain.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> <a class="reference internal" href="../guides/initialize-contract.html#initialize-contract"><span class="std std-ref">run the init command</span></a> to initialize the contract on chain. This gives you a new instance of the smart contract with a fresh state.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can then <a class="reference internal" href="../guides/invoke-instance.html#invoke-instance"><span class="std std-ref">run invoke</span></a> to simulate your contract and see how much energy it uses or to call a view entrypoint which returns some data derived from the contract state; use <a class="reference internal" href="../guides/inspect-instance.html#inspect-instance"><span class="std std-ref">show</span></a> to see the schema or parameters in the contract, or <a class="reference internal" href="../guides/interact-instance.html#interact-instance"><span class="std std-ref">update</span></a> to execute transactions and update the state.</p></li>
 </ol>
 <p>You can also watch a video about the smart contract lifecycle.</p>
-<a class="reference external image-reference" href="https://www.youtube.com/watch?v=84_-C-4cK4E"><img alt="video about smart contract lifecycle" src="https://img.youtube.com/vi/84_-C-4cK4E/maxresdefault.jpg" /></a>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/84_-C-4cK4E?si=v0xd-fkVl63tl2Vg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 
 
               </div>

@@ -15,7 +15,7 @@ contract instance can be repeatedly updated according to its own logic.
 
 #. In ``cargo-concordium`` :ref:`run the init command<setup-contract>` to start a new project.
 
-#. Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If :ref:`using a schema<build-schema>`, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes.
+#. Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If :ref:`using a schema<build-schema>`, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes with the :ref:`integration testing library<integration-test-contract>`.
 
 #. In ``cargo-concordium`` :ref:`run the build command<compile-module>` to build the Wasm module that can be deployed on chain.
 
@@ -27,6 +27,6 @@ contract instance can be repeatedly updated according to its own logic.
 
 You can also watch a video about the smart contract lifecycle.
 
-.. image:: https://img.youtube.com/vi/84_-C-4cK4E/maxresdefault.jpg
-    :alt: video about smart contract lifecycle
-    :target: https://www.youtube.com/watch?v=84_-C-4cK4E
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/84_-C-4cK4E?si=v0xd-fkVl63tl2Vg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
