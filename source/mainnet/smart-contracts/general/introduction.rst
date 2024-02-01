@@ -112,7 +112,7 @@ The `main library for Smart contract development <https://crates.io/crates/conco
 
 To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
-The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JS clients for the Concordium blockchain.
+The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript or TypeScript clients for the Concordium blockchain.
 
 .. toctree::
    :hidden:
