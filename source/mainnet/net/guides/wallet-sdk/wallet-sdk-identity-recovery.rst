@@ -1,4 +1,3 @@
-
 .. _wallet-sdk-identity-recovery:
 
 ======================
