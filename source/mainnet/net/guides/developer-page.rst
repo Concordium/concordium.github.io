@@ -37,7 +37,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     - `Concordium go SDK <https://github.com/Concordium/concordium-go-sdk>`_
 
     There is also a :ref:`Concordium gRPC V2 API<grpc2-documentation>`. It is recommended to use the SDKs.
- 
+
     The following NPM libraries are useful for building web-based dApps:
 
     - `@concordium/web-sdk <https://www.npmjs.com/package/@concordium/web-sdk>`_ (for interacting with a chain).
