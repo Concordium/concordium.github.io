@@ -171,7 +171,6 @@ in UTF-8 and the contract schema bytes. The section ``concordium-schema`` is the
 The supported sections depend on the module version. The schema version can be either defined by the section name or embedded into the actual schema:
 - Both 'V0' and 'V1' modules support the section ``concordium-schema`` where the schema includes the version.
 
-   - For 'V0' modules this is always a 'V0' schema.
-   - For 'V1' modules this can be a 'V1', 'V2', or 'V3' schema.
+   - 'V1', 'V2', or 'V3' schemas are available for on smart contracts.
 
 - 'V1' modules additionally support section ``concordium-schema-v2`` which always contain a 'V1' schema.

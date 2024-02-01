@@ -15,7 +15,7 @@ contract instance can be repeatedly updated according to its own logic.
 
 #. In ``cargo-concordium`` :ref:`run the init command<setup-contract>` to start a new project.
 
-#. Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If :ref:`using a schema<build-schema>`, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes.
+#. Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If :ref:`using a schema<build-schema>`, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes with the :ref:`integration testing library<integration-test-contract>`.
 
 #. In ``cargo-concordium`` :ref:`run the build command<compile-module>` to build the Wasm module that can be deployed on chain.
 

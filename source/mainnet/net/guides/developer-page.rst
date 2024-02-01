@@ -15,11 +15,9 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     - `CIS-0 standard detections <https://proposals.concordium.software/CIS/cis-0.html>`_
 
-    -  Applicable for Smart contracts v1:
+    - `CIS-2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_
 
-        - `CIS-2 token standard <https://proposals.concordium.software/CIS/cis-2.html>`_
-
-        - `CIS-3 sponsored transaction standard <https://proposals.concordium.software/CIS/cis-3.html>`_
+    - `CIS-3 sponsored transaction standard <https://proposals.concordium.software/CIS/cis-3.html>`_
 
 .. dropdown:: Nodes
 
@@ -31,7 +29,6 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     The following SDKs and APIs exist for developing on the Concordium network.
 
-    - :ref:`Concordium gRPC V2 API<grpc2-documentation>`
     - `Concordium Rust SDK <https://github.com/Concordium/concordium-rust-sdk>`_
     - `Concordium Javascript (Node / Web) SDK <https://github.com/Concordium/concordium-node-sdk-js>`_
     - `Concordium Java SDK <https://github.com/Concordium/concordium-java-sdk>`_
@@ -39,6 +36,8 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     - `Concordium Rosetta SDK <https://github.com/Concordium/concordium-rosetta>`_
     - `Concordium go SDK <https://github.com/Concordium/concordium-go-sdk>`_
 
+    There is also a :ref:`Concordium gRPC V2 API<grpc2-documentation>`. It is recommended to use the SDKs.
+ 
     The following NPM libraries are useful for building web-based dApps:
 
     - `@concordium/web-sdk <https://www.npmjs.com/package/@concordium/web-sdk>`_ (for interacting with a chain).
@@ -50,13 +49,13 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     See :ref:`Smart contracts <introduction>` for general information about smart contracts, including a list of the available :ref:`smart contract development tools<sc-dev-tools>` to make creation, testing, and deployment easier.
 
-`The main library for developing smart contracts can be found on crates.io.<https://crates.io/crates/concordium-std>`_
+    `The main library for developing smart contracts can be found on crates.io <https://crates.io/crates/concordium-std>`__.
 
 .. dropdown:: Proofs
 
-    - See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets.
+    See :ref:`How to create proofs for dApps and services <create-proofs>` for information about how to write statements that interact with Concordium wallets.
 
-    - For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
+    For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
 
     If you want to familiarize yourself with how proofs work and can be constructed, you can use the `Concordium Proof Explorer <https://web3id-proof-explorer.testnet.concordium.com/>`__ to create proofs and send them to a |bw| to see how they interact with account credentials and verifiable credentials. The Concordium Proof Explorer works on Testnet. You can use the `Web3Id Issuer Front End <https://web3id-issuer-frontend.testnet.concordium.com/>`__ to create verifiable credential to test with the proof explorer.
 
