@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/quick-start.37931272-a1cc-41b3-8d1f-17e9b668ec23.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/quick-start.73eb4b50-5ad5-4665-bbf9-12be0a9a66ce.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1935,7 +1935,7 @@ Step 4 - Build your smart contract<div class="sd-summary-down docutils">
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build
 </pre></div>
 </div>
-<p class="sd-card-text">This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result. Running the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> command will produce a smart contract module which can be found relative to your project root folder in <code class="docutils literal notranslate"><span class="pre">~./concordium-out/module.wasm.v1~</span></code> by default. Alternatively, you can supply the location where to store the smart contract module using the <code class="docutils literal notranslate"><span class="pre">--out</span></code> option. For example running the following command will output your smart contract module into the root folder of your project in a file name <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>.</p>
+<p class="sd-card-text">This uses <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for building, but runs further optimizations on the result. Running the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> command will produce a smart contract module which can be found relative to your project root folder in <code class="docutils literal notranslate"><span class="pre">./target/concordium/wasm32-unknown-unknown/release/my_module.wasm.v1</span></code>. Alternatively, you can supply the location where to store the smart contract module using the <code class="docutils literal notranslate"><span class="pre">--out</span></code> option. For example running the following command will output your smart contract module into the root folder of your project in a file name <code class="docutils literal notranslate"><span class="pre">my_module.wasm.v1</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>./my_module.wasm.v1
 </pre></div>
 </div>

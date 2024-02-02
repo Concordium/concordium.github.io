@@ -29,4 +29,4 @@ You can also watch a video about the smart contract lifecycle.
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/84_-C-4cK4E?si=v0xd-fkVl63tl2Vg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/84_-C-4cK4E?si=v0xd-fkVl63tl2Vg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
