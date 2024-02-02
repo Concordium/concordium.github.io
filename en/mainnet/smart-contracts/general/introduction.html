@@ -38,14 +38,15 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/introduction.aa5c0fd1-9f09-471e-aafb-060b036c678e.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/general/introduction.c31de466-c53f-4f8b-b57e-466fe3139474.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Smart contract modules" href="contract-module.html" />
+    <link rel="next" title="Life cycle of a smart contract" href="contract-lifecycle.html" />
     <link rel="prev" title="SubQuery" href="../../net/indexers/subquery.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -1060,6 +1061,11 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
+      <a class="reference internal" href="contract-lifecycle.html">
+       Life cycle of a smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="contract-module.html">
        Smart contract modules
       </a>
@@ -1076,7 +1082,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="develop-contracts.html">
-       Developing smart contracts in Rust
+       Develop smart contracts in Rust
       </a>
      </li>
     </ul>
@@ -1086,12 +1092,34 @@ body {margin:0;}
      Quick start guide
     </a>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../onboarding-guide-ethereum-developers/faq.html">
+     Ethereum developer onboarding
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../onboarding-guide-solana-developers/overview.html">
+     Solana developer onboarding
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+    <label for="toctree-checkbox-37">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../onboarding-guide-solana-developers/faq.html">
+       FAQ
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/contract-dev-guides.html">
      Contract development guides
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-    <label for="toctree-checkbox-37">
+    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+    <label for="toctree-checkbox-38">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1103,7 +1131,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../guides/setup-contract.html">
-       Setting up a smart contract project
+       Set up a smart contract project
       </a>
      </li>
      <li class="toctree-l2">
@@ -1114,11 +1142,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="../guides/custom-errors.html">
        Return custom errors
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../guides/local-simulate.html">
-       Locally simulate contract functions
       </a>
      </li>
      <li class="toctree-l2">
@@ -1164,22 +1187,10 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../guides/contract-testing-guides.html">
-     Contract testing guides
+   <li class="toctree-l1">
+    <a class="reference internal" href="../guides/integration-test-contract.html">
+     Test contracts
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-    <label for="toctree-checkbox-38">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../guides/integration-test-contract.html">
-       Integration test a contract in Rust
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../guides/on-chain-index.html">
@@ -1218,51 +1229,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../best-practices/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../best-practices/development.html">
      Best practices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-    <label for="toctree-checkbox-40">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../best-practices/development.html">
-       Development best practices
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../onboarding-guide-ethereum-developers/faq.html">
-     Ethereum developer onboarding
-    </a>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../onboarding-guide-solana-developers/overview.html">
-     Solana developer onboarding
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-    <label for="toctree-checkbox-41">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../onboarding-guide-solana-developers/faq.html">
-       FAQ
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-    <label for="toctree-checkbox-42">
+    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+    <label for="toctree-checkbox-40">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1313,8 +1290,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contracts
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-    <label for="toctree-checkbox-43">
+    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+    <label for="toctree-checkbox-41">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1323,8 +1300,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-      <label for="toctree-checkbox-44">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1355,8 +1332,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-      <label for="toctree-checkbox-45">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1377,8 +1354,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-      <label for="toctree-checkbox-46">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1434,8 +1411,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-      <label for="toctree-checkbox-47">
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1466,8 +1443,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-      <label for="toctree-checkbox-48">
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1519,8 +1496,8 @@ body {margin:0;}
     Tutorials
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-49">
+  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-47">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1529,8 +1506,8 @@ body {margin:0;}
     <a class="reference internal" href="../tutorials/index.html">
      Smart contract tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1549,8 +1526,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/piggy-bank/index.html">
        PiggyBank
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-      <label for="toctree-checkbox-51">
+      <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+      <label for="toctree-checkbox-49">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1581,8 +1558,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/wCCD/index.html">
        wCCD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-      <label for="toctree-checkbox-52">
+      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+      <label for="toctree-checkbox-50">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1613,8 +1590,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/voting/index.html">
        The Voting dApp
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-      <label for="toctree-checkbox-53">
+      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+      <label for="toctree-checkbox-51">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1635,8 +1612,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/nft-minting/index.html">
        Mint an NFT
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-      <label for="toctree-checkbox-54">
+      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+      <label for="toctree-checkbox-52">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1662,8 +1639,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/sft-minting/index.html">
        Mint a semi-fungible token
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+      <label for="toctree-checkbox-53">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1689,8 +1666,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/fungible-tokens/index.html">
        Mint fungible tokens
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1711,8 +1688,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/nft-marketplace/index.html">
        NFT marketplace smart contract tutorial
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1728,8 +1705,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/eSealing/index.html">
        eSealing
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1745,8 +1722,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/sponsoredTransactions/index.html">
        Sponsored Transactions
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1772,8 +1749,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/smartContractUpgrade/index.html">
        Smart Contract Upgrade
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-      <label for="toctree-checkbox-60">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1791,8 +1768,8 @@ body {margin:0;}
     <a class="reference internal" href="../../net/guides/gallery/index.html">
      Using ID tutorial
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-    <label for="toctree-checkbox-61">
+    <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+    <label for="toctree-checkbox-59">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1840,35 +1817,26 @@ body {margin:0;}
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-are-smart-contracts-for">
-   What are smart contracts for?
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#auction-smart-contract-example">
-     Auction smart contract example
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-are-smart-contracts-not-for">
-   What are smart contracts
-   <em>
-    not
-   </em>
-   for?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#life-cycle-of-a-smart-contract">
-   Life cycle of a smart contract
+  <a class="reference internal nav-link" href="#auction-smart-contract-example">
+   Auction smart contract example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-steps">
    Next steps
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-reading">
+     Additional reading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smart-contract-development-tools">
+     Smart contract development tools
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1898,8 +1866,9 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="introduction-to-smart-contracts">
-<span id="introduction"></span><h1>Introduction to smart contracts<a class="headerlink" href="#introduction-to-smart-contracts" title="Permalink to this headline">#</a></h1>
+  <span class="target" id="introduction"></span><div class="section" id="introduction-to-smart-contracts">
+<h1>Introduction to smart contracts<a class="headerlink" href="#introduction-to-smart-contracts" title="Permalink to this headline">#</a></h1>
+<p>Already know what smart contracts are? Go to the <a class="reference internal" href="../guides/quick-start.html#sc-quick-start"><span class="std std-ref">quick guide</span></a> to start building smart contracts on Concordium right away.</p>
 <p>A <a class="reference internal" href="../../net/resources/glossary.html#term-Smart-contract"><span class="xref std std-term">smart contract</span></a> is a user-supplied piece of code submitted to the Concordium
 blockchain, used to define behavior that is not directly part of the core
 protocol. Smart contracts are executed by nodes in the Concordium network
@@ -1909,37 +1878,18 @@ available information.</p>
 <p>A smart contract can receive, hold and send CCD, it is able to observe some
 aspects of the chain, and maintain its own state. Smart contracts are always
 executed as a response to <strong>external</strong> actions, e.g., an account sending a
-message. In practice smart contracts will often be a small part of a larger
+message. In practice, smart contracts will often be a small part of a larger
 system, combining on and off-chain functionality. An example of off-chain
 functionality could be a server that invokes the smart contract based on
 data from the real-world, such as prices of stocks, or weather information.</p>
-<div class="section" id="what-are-smart-contracts-for">
-<h2>What are smart contracts for?<a class="headerlink" href="#what-are-smart-contracts-for" title="Permalink to this headline">#</a></h2>
-<p>Smart contracts can reduce the needed amount of trust in third-parties, in some cases
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">What are smart contracts for?</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">What are smart contracts <em>not</em> for?</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Smart contracts can reduce the needed amount of trust in third-parties, in some cases
 removing the need for a trusted third-party, in other cases reducing their
 capabilities and thus reducing the amount of trust needed in them.</p>
 <p>Because smart contracts are executed completely transparently, in a way that
 anybody with access to a node can verify, they can be very useful for ensuring
 agreement between parties.</p>
-<div class="section" id="auction-smart-contract-example">
-<span id="auction"></span><h3>Auction smart contract example<a class="headerlink" href="#auction-smart-contract-example" title="Permalink to this headline">#</a></h3>
-<p>A use case for smart contracts could be for holding an auction; here you program
-the smart contract to accept different bids from anyone and have it keep track
-of the highest bidder.
-When the auction is over, the smart contract sends the winner bid CCD to the seller and all other bids back. The seller then should send the item to the winner.</p>
-<p>The smart contract replaces the main role of the auctioneer. The contract itself
-only governs the bidding part, and the on-chain distribution of CCDs. It will
-likely also need some logic for reimbursing the highest bidder if the seller
-does not fulfil their obligations. This will most likely mean that the contract
-needs to support some notion of proof that the seller has indeed fulfilled their
-obligation, or some way for the highest bidder to file a complaint. Smart
-contracts cannot resolve these real-world issues automatically, and the best
-solution is likely going to depend on the specifics of the auction.</p>
-</div>
-</div>
-<div class="section" id="what-are-smart-contracts-not-for">
-<h2>What are smart contracts <em>not</em> for?<a class="headerlink" href="#what-are-smart-contracts-not-for" title="Permalink to this headline">#</a></h2>
-<p>Smart contracts are a very exciting technology and people are still finding new
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Smart contracts are a very exciting technology and people are still finding new
 ways to take advantage of them.
 However, there are some cases where smart contracts are not a good solution.</p>
 <p>One of the key advantages of smart contracts is the trust in the code
@@ -1957,30 +1907,39 @@ on the Concordium network, meaning it is difficult to handle sensitive data in a
 smart contract. In some cases it might be possible to use cryptographic tools to
 not work with the data directly, but rather have the smart contracts work with
 derived notions such as encryptions and commitments, which hide the actual data.</p>
-</div>
-<div class="section" id="life-cycle-of-a-smart-contract">
-<h2>Life cycle of a smart contract<a class="headerlink" href="#life-cycle-of-a-smart-contract" title="Permalink to this headline">#</a></h2>
-<p>A smart contract is first deployed to the chain as part of a <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">contract
-module</span></a>. After this a smart contract can be <em>initialized</em> to
-obtain a <a class="reference internal" href="contract-instances.html#contract-instances"><span class="std std-ref">smart contract instance</span></a>. Finally a smart
-contract instance can be repeatedly updated according to its own logic.</p>
-<a class="reference internal image-reference" href="../../_images/smart-contract-lifecycle.png"><img alt="flow diagram with different actions" src="../../_images/smart-contract-lifecycle.png" style="width: 100%;" /></a>
-<ol class="arabic simple">
-<li><p>In <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> <a class="reference internal" href="../guides/setup-contract.html#setup-contract"><span class="std std-ref">run the init command</span></a> to start a new project.</p></li>
-<li><p>Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If <a class="reference internal" href="../guides/build-schema.html#build-schema"><span class="std std-ref">using a schema</span></a>, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> <a class="reference internal" href="../guides/compile-module.html#compile-module"><span class="std std-ref">run the build command</span></a> to build the Wasm module that can be deployed on chain.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> <a class="reference internal" href="../guides/deploy-module.html#deploy-module"><span class="std std-ref">run the deploy command</span></a> to deploy the Wasm module. This makes the contract available on chain.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> <a class="reference internal" href="../guides/initialize-contract.html#initialize-contract"><span class="std std-ref">run the init command</span></a> to initialize the contract on chain. This gives you a new instance of the smart contract with a fresh state.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> you can then <a class="reference internal" href="../guides/invoke-instance.html#invoke-instance"><span class="std std-ref">run invoke</span></a> to simulate your contract and see how much energy it uses or to call a view entrypoint which returns some data derived from the contract state; use <a class="reference internal" href="../guides/inspect-instance.html#inspect-instance"><span class="std std-ref">show</span></a> to see the schema or parameters in the contract, or <a class="reference internal" href="../guides/interact-instance.html#interact-instance"><span class="std std-ref">update</span></a> to execute transactions and update the state.</p></li>
-</ol>
-<p>You can also watch a video about the smart contract lifecycle.</p>
-<a class="reference external image-reference" href="https://www.youtube.com/watch?v=84_-C-4cK4E"><img alt="video about smart contract lifecycle" src="https://img.youtube.com/vi/84_-C-4cK4E/maxresdefault.jpg" /></a>
+</div></div>
+<div class="section" id="auction-smart-contract-example">
+<span id="auction"></span><h2>Auction smart contract example<a class="headerlink" href="#auction-smart-contract-example" title="Permalink to this headline">#</a></h2>
+<p>A use case for smart contracts could be for holding an auction; here you program
+the smart contract to accept different bids from anyone and have it keep track
+of the highest bidder.
+When the auction is over, the smart contract sends the winner bid CCD to the seller and all other bids back. The seller then should send the item to the winner.</p>
+<p>The smart contract replaces the main role of the auctioneer. The contract itself
+only governs the bidding part, and the on-chain distribution of CCDs. It will
+likely also need some logic for reimbursing the highest bidder if the seller
+does not fulfil their obligations. This will most likely mean that the contract
+needs to support some notion of proof that the seller has indeed fulfilled their
+obligation, or some way for the highest bidder to file a complaint. Smart
+contracts cannot resolve these real-world issues automatically, and the best
+solution is likely going to depend on the specifics of the auction.</p>
 </div>
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
-<p>Continue reading about <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">contract modules</span></a>, <a class="reference internal" href="contract-instances.html#contract-instances"><span class="std std-ref">contract instances</span></a>, and <a class="reference internal" href="contract-schema.html#contract-schema"><span class="std std-ref">contract schemas</span></a>.</p>
-<p>Also, read the <a class="reference internal" href="../best-practices/index.html#sc-best-practices"><span class="std std-ref">Smart contracts best practices</span></a>.</p>
+<div class="section" id="additional-reading">
+<h3>Additional reading<a class="headerlink" href="#additional-reading" title="Permalink to this headline">#</a></h3>
+<p>For information about the lifecycle of smart contracts, see <a class="reference internal" href="contract-lifecycle.html#sc-lifecycle"><span class="std std-ref">Lifecycle of a smart contract</span></a>. You can also continue reading about <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">contract modules</span></a>, <a class="reference internal" href="contract-instances.html#contract-instances"><span class="std std-ref">contract instances</span></a>, and <a class="reference internal" href="contract-schema.html#contract-schema"><span class="std std-ref">contract schemas</span></a>. Also, read the <a class="reference internal" href="../best-practices/development.html#sc-development-best-practices"><span class="std std-ref">Smart contracts best practices</span></a>.</p>
+</div>
+<div class="section" id="smart-contract-development-tools">
+<span id="sc-dev-tools"></span><h3>Smart contract development tools<a class="headerlink" href="#smart-contract-development-tools" title="Permalink to this headline">#</a></h3>
+<p>Concordium provides a number of tools to simplify the smart contract creation and deployment process.</p>
+<p>The <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts">VSCode extension</a> can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.</p>
+<p>You can watch a video about how to use the VSCode extension.</p>
+<iframe src="https://www.youtube.com/embed/9qjcsGDeveg?si=zGDkjMAdP5JjRMd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p>The <a class="reference internal" href="../guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">integration testing library</span></a> simplifies testing of your smart contracts before deployment.</p>
+<p>The <a class="reference external" href="https://crates.io/crates/concordium-std">main library for Smart contract development</a> can be found on crates.io.</p>
+<p>To ease deployment and initialization, you can use the <a class="reference external" href="https://sctools.mainnet.concordium.software/">Smart contract deploy and initialize tool</a>. It works with the Concordium Wallet for Web to deploy and initialize smart contracts to Mainnet and Testnet.</p>
+<p>The <a class="reference external" href="https://www.npmjs.com/package/&#64;concordium/ccd-js-gen">Typescript smart contract client generator</a> helps you generate JavaScript or TypeScript clients for the Concordium blockchain.</p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </div>
@@ -1998,10 +1957,10 @@ contract instance can be repeatedly updated according to its own logic.</p>
             <p class="prev-next-title">SubQuery</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="contract-module.html" title="next page">
+    <a class='right-next' id="next-link" href="contract-lifecycle.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Smart contract modules</p>
+        <p class="prev-next-title">Life cycle of a smart contract</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

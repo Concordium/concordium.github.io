@@ -10,9 +10,9 @@ instance.
 
 You can also watch a video about how to update a smart contact instance.
 
-.. image:: https://img.youtube.com/vi/rbr1w3kJYcU/maxresdefault.jpg
-    :alt: video about updating a smart contract
-    :target: https://www.youtube.com/watch?v=rbr1w3kJYcU
+.. raw:: html
+
+   <iframe src="https://www.youtube.com/embed/rbr1w3kJYcU?si=0YHfK1celfvaz-Oo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Preparation
 ===========

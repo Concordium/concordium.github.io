@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setting up a smart contract project &#8212; Concordium  documentation</title>
+    <title>Set up a smart contract project &#8212; Concordium  documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -38,10 +38,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/setup-contract.1e9169b6-bdf2-4617-8274-09882c24ebb4.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/smart-contracts/guides/setup-contract.37ce3bcb-905e-46c1-b688-0108ca28c51c.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1060,6 +1061,11 @@ body {margin:0;}
     </label>
     <ul>
      <li class="toctree-l2">
+      <a class="reference internal" href="../general/contract-lifecycle.html">
+       Life cycle of a smart contract
+      </a>
+     </li>
+     <li class="toctree-l2">
       <a class="reference internal" href="../general/contract-module.html">
        Smart contract modules
       </a>
@@ -1076,7 +1082,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2">
       <a class="reference internal" href="../general/develop-contracts.html">
-       Developing smart contracts in Rust
+       Develop smart contracts in Rust
       </a>
      </li>
     </ul>
@@ -1086,12 +1092,34 @@ body {margin:0;}
      Quick start guide
     </a>
    </li>
+   <li class="toctree-l1">
+    <a class="reference internal" href="../onboarding-guide-ethereum-developers/faq.html">
+     Ethereum developer onboarding
+    </a>
+   </li>
+   <li class="toctree-l1 has-children">
+    <a class="reference internal" href="../onboarding-guide-solana-developers/overview.html">
+     Solana developer onboarding
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+    <label for="toctree-checkbox-37">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l2">
+      <a class="reference internal" href="../onboarding-guide-solana-developers/faq.html">
+       FAQ
+      </a>
+     </li>
+    </ul>
+   </li>
    <li class="toctree-l1 current active has-children">
     <a class="reference internal" href="contract-dev-guides.html">
      Contract development guides
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-    <label for="toctree-checkbox-37">
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+    <label for="toctree-checkbox-38">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1103,7 +1131,7 @@ body {margin:0;}
      </li>
      <li class="toctree-l2 current active">
       <a class="current reference internal" href="#">
-       Setting up a smart contract project
+       Set up a smart contract project
       </a>
      </li>
      <li class="toctree-l2">
@@ -1114,11 +1142,6 @@ body {margin:0;}
      <li class="toctree-l2">
       <a class="reference internal" href="custom-errors.html">
        Return custom errors
-      </a>
-     </li>
-     <li class="toctree-l2">
-      <a class="reference internal" href="local-simulate.html">
-       Locally simulate contract functions
       </a>
      </li>
      <li class="toctree-l2">
@@ -1164,22 +1187,10 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="contract-testing-guides.html">
-     Contract testing guides
+   <li class="toctree-l1">
+    <a class="reference internal" href="integration-test-contract.html">
+     Test contracts
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-    <label for="toctree-checkbox-38">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="integration-test-contract.html">
-       Integration test a contract in Rust
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="on-chain-index.html">
@@ -1218,51 +1229,17 @@ body {margin:0;}
      </li>
     </ul>
    </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../best-practices/index.html">
+   <li class="toctree-l1">
+    <a class="reference internal" href="../best-practices/development.html">
      Best practices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-    <label for="toctree-checkbox-40">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../best-practices/development.html">
-       Development best practices
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l1">
-    <a class="reference internal" href="../onboarding-guide-ethereum-developers/faq.html">
-     Ethereum developer onboarding
-    </a>
-   </li>
-   <li class="toctree-l1 has-children">
-    <a class="reference internal" href="../onboarding-guide-solana-developers/overview.html">
-     Solana developer onboarding
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-    <label for="toctree-checkbox-41">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l2">
-      <a class="reference internal" href="../onboarding-guide-solana-developers/faq.html">
-       FAQ
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toctree-l1 has-children">
     <a class="reference internal" href="../references/index.html">
      References
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-    <label for="toctree-checkbox-42">
+    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+    <label for="toctree-checkbox-40">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1313,8 +1290,8 @@ body {margin:0;}
     <a class="reference internal" href="../../smart-contracts-v0/sc-v0-rollup.html">
      V0 smart contracts
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-    <label for="toctree-checkbox-43">
+    <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+    <label for="toctree-checkbox-41">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1323,8 +1300,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/general/introduction.html">
        Introduction and general guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-      <label for="toctree-checkbox-44">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1355,8 +1332,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/tutorials/piggy-bank/index.html">
        Tutorials
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-      <label for="toctree-checkbox-45">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1377,8 +1354,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/contract-dev-guides.html">
        Contract development guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-      <label for="toctree-checkbox-46">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1434,8 +1411,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/guides/on-chain-index.html">
        On-chain guides
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-      <label for="toctree-checkbox-47">
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1466,8 +1443,8 @@ body {margin:0;}
       <a class="reference internal" href="../../smart-contracts-v0/references/index.html">
        References
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-      <label for="toctree-checkbox-48">
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1519,8 +1496,8 @@ body {margin:0;}
     Tutorials
    </span>
   </p>
-  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-  <label class="label-parts" for="toctree-checkbox-49">
+  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+  <label class="label-parts" for="toctree-checkbox-47">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1529,8 +1506,8 @@ body {margin:0;}
     <a class="reference internal" href="../tutorials/index.html">
      Smart contract tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1549,8 +1526,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/piggy-bank/index.html">
        PiggyBank
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-      <label for="toctree-checkbox-51">
+      <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+      <label for="toctree-checkbox-49">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1581,8 +1558,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/wCCD/index.html">
        wCCD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-      <label for="toctree-checkbox-52">
+      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+      <label for="toctree-checkbox-50">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1613,8 +1590,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/voting/index.html">
        The Voting dApp
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-      <label for="toctree-checkbox-53">
+      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+      <label for="toctree-checkbox-51">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1635,8 +1612,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/nft-minting/index.html">
        Mint an NFT
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-      <label for="toctree-checkbox-54">
+      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+      <label for="toctree-checkbox-52">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1662,8 +1639,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/sft-minting/index.html">
        Mint a semi-fungible token
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-      <label for="toctree-checkbox-55">
+      <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+      <label for="toctree-checkbox-53">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1689,8 +1666,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/fungible-tokens/index.html">
        Mint fungible tokens
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
-      <label for="toctree-checkbox-56">
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1711,8 +1688,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/nft-marketplace/index.html">
        NFT marketplace smart contract tutorial
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
-      <label for="toctree-checkbox-57">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1728,8 +1705,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/eSealing/index.html">
        eSealing
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
-      <label for="toctree-checkbox-58">
+      <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+      <label for="toctree-checkbox-56">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1745,8 +1722,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/sponsoredTransactions/index.html">
        Sponsored Transactions
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
-      <label for="toctree-checkbox-59">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1772,8 +1749,8 @@ body {margin:0;}
       <a class="reference internal" href="../tutorials/smartContractUpgrade/index.html">
        Smart Contract Upgrade
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
-      <label for="toctree-checkbox-60">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1791,8 +1768,8 @@ body {margin:0;}
     <a class="reference internal" href="../../net/guides/gallery/index.html">
      Using ID tutorial
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
-    <label for="toctree-checkbox-61">
+    <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+    <label for="toctree-checkbox-59">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1833,29 +1810,9 @@ body {margin:0;}
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-a-template">
-   From a template
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-scratch">
-   From scratch
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-the-smart-contract-standard-library">
-   Adding the smart contract standard library
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -1882,8 +1839,8 @@ body {margin:0;}
               
               <div>
                 
-  <div class="section" id="setting-up-a-smart-contract-project">
-<span id="setup-contract"></span><h1>Setting up a smart contract project<a class="headerlink" href="#setting-up-a-smart-contract-project" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="set-up-a-smart-contract-project">
+<span id="setup-contract"></span><h1>Set up a smart contract project<a class="headerlink" href="#set-up-a-smart-contract-project" title="Permalink to this headline">#</a></h1>
 <p>This guide documents two different options (<em>from a template</em> or <em>from scratch</em>) to create a new Concordium smart contract project.
 The <em>from a template</em> option is available for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> version 2.2.0 or greater. It provides you with some
 smart contract templates. Choose the template that best fits your project scope.
@@ -1892,9 +1849,8 @@ The <em>from scratch</em> option guides you through the process when you want to
 <p class="admonition-title">Note</p>
 <p>Concordium recommends that newcomers choose the <em>from a template</em> option.</p>
 </div>
-<div class="section" id="from-a-template">
-<h2>From a template<a class="headerlink" href="#from-a-template" title="Permalink to this headline">#</a></h2>
-<p>Concordium maintains several smart contract
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">From a template</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">From scratch</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Concordium maintains several smart contract
 <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates">templates</a> (currently a <code class="docutils literal notranslate"><span class="pre">default</span></code> template and a <code class="docutils literal notranslate"><span class="pre">cis2-nft</span></code> template).
 For generating the smart contracts from the above templates, the <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> crate is required.
 <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> can be installed by running the following command:</p>
@@ -1908,10 +1864,7 @@ For generating the smart contracts from the above templates, the <code class="do
 <p>The path where the project should be created can be provided with the <code class="docutils literal notranslate"><span class="pre">--path</span></code> option.</p>
 <p>You can find additional information on the available templates in the
 <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates/README.md">README file</a>.</p>
-</div>
-<div class="section" id="from-scratch">
-<h2>From scratch<a class="headerlink" href="#from-scratch" title="Permalink to this headline">#</a></h2>
-<p>A smart contract in Rust is written as an ordinary Rust library crate.
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>A smart contract in Rust is written as an ordinary Rust library crate.
 The library is then compiled to Wasm using the Rust target
 <code class="docutils literal notranslate"><span class="pre">wasm32-unknown-unknown</span></code> and, since it is just a Rust library, you can use
 <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for dependency management.</p>
@@ -1930,9 +1883,7 @@ This is done by adding the following in the <code class="docutils literal notran
 <span class="n">crate-type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;cdylib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rlib&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="adding-the-smart-contract-standard-library">
-<h2>Adding the smart contract standard library<a class="headerlink" href="#adding-the-smart-contract-standard-library" title="Permalink to this headline">#</a></h2>
+<p><strong>Add the smart contract standard library</strong></p>
 <p>The next step is to add <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> as a dependency.
 It is a library for Rust containing procedural macros and functions for
 writing small and efficient smart contracts.</p>
@@ -1954,6 +1905,7 @@ directory instead, by adding the following to <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
+</div></div>
 <div class="admonition note" id="setup-wee-alloc-feature">
 <p class="admonition-title">Note</p>
 <p>To compile your smart contracts, a memory <a class="reference external" href="https://docs.rs/concordium-std/6.0.0/concordium_std/#use-a-custom-allocator">allocator</a> is used.
@@ -1990,7 +1942,6 @@ There are other allocators available, for example <a class="reference external" 
 For more information, see <a class="reference internal" href="no-std.html#no-std"><span class="std std-ref">Build using no_std</span></a>.</p>
 </div>
 <p>That is it! You are now ready to develop your own smart contract.</p>
-</div>
 </div>
 
 
