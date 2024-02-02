@@ -1,3 +1,5 @@
+.. _indexers-intro:
+
 =================
 What are indexers
 =================

@@ -10,9 +10,9 @@ environment.
 
 You can also watch a video about installing the smart contract tools.
 
-.. image:: https://img.youtube.com/vi/0UIyAlZjvLg/maxresdefault.jpg
-    :alt: video about installing smart contract tools
-    :target: https://www.youtube.com/watch?v=0UIyAlZjvLg
+.. raw:: html
+
+   <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Rust and Cargo
 ==============
@@ -56,9 +56,14 @@ The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Conco
 
 You can watch a video about how to use the VSCode extension.
 
-.. image:: https://img.youtube.com/vi/9qjcsGDeveg/maxresdefault.jpg
-    :alt: video about smart contract lifecycle
-    :target: https://www.youtube.com/watch?v=9qjcsGDeveg
+.. raw:: html
+
+   <iframe src="https://www.youtube.com/embed/9qjcsGDeveg?si=zGDkjMAdP5JjRMd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Typescript smart contract client generator
+------------------------------------------
+
+The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript/TypeScript clients for smart contracts on the Concordium blockchain, providing a lower development time and better type-safety.
 
 Concordium software
 ===================
@@ -67,7 +72,7 @@ The tool to deploy and interact with smart contracts is
 :ref:`concordium-client<concordium-client>`. It is distributed as part of the
 :ref:`Concordium software<downloads>` package.
 
-To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 .. note::
 

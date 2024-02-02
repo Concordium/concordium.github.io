@@ -136,6 +136,13 @@ a.current.reference.internal:hover{
     padding-right: 0.5em;
 }
 
+/*Video handling*/
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16 /9;
+ }
+
 /*Topnav styling*/
 .navbar{
     position: fixed;

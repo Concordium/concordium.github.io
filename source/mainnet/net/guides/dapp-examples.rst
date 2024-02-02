@@ -7,6 +7,8 @@ dApp examples
 
 Select an example to see more information about it, such as a hosted dApp for you to try, links to tutorials, repositories, and more.
 
+Starting a new project on the Concordium blockchain? Have a look at the `dApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
+
 .. dropdown:: Piggy bank
 
     `Demo front end <https://piggybank.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet
@@ -84,7 +86,8 @@ Select an example to see more information about it, such as a hosted dApp for yo
 .. dropdown:: Wallet test bench
 
     This tool is for testing wallets and shows a great overview of the available interactions between wallets and front end.
-    Deploy and initialize scenarios are available on the browser wallet (will be implemented in the mobile wallets in the future).
+
+    Deploy and initialize scenarios are available on the |bw|.
 
     `Demo front end <https://wallet-test-bench.testnet.concordium.com/>`__ where you can test wallet interactions
 

@@ -7,7 +7,7 @@ Concordium smart contracts quick start guide
 
 This guide is intended to be used by experienced developers who want to get up and running quickly with a smart contract deployed on chain with which they can interact.
 
-Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
+Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-development-best-practices>`.
 
 .. dropdown:: Step 1 - Set up developer environment
 
@@ -16,7 +16,6 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
     #. `rustup`_
     #. :ref:`cargo-concordium<concordium-node-and-client-download>`
     #. :ref:`concordium-client<concordium-node-and-client-download>`
-    #. :ref:`a Mainnet node<concordium-node-and-client-download>` or :ref:`Testnet node<testnet-node-downloads>` for deploying and interacting
 
     For more detailed information, see :ref:`Install tools for development<setup-tools>`.
 
