@@ -32,6 +32,9 @@ Below, you can find a link to the SDK package for your chosen technology, and an
         | Maven Central package
         | `concordium-android-sdk <https://central.sonatype.com/artifact/com.concordium.sdk/concordium-android-sdk>`_
 
+        | Working example implementation of a Concordium wallet for Android
+        | https://github.com/Concordium/concordium-java-sdk/tree/main/concordium-android-wallet-example
+
     .. tab::
 
         Swift (iOS)

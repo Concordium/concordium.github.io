@@ -110,6 +110,11 @@ of the redirect URL.
 
         .. code-block:: javascript
 
+            import {
+                IdObjectRequestV1,
+                Versioned,
+            } from '@concordium/web-sdk';
+
             // The identity provider that the request was created for.
             const identityProvider: IdentityProviderWithMetadata = ...;
             const identityIssuanceStartUrl = identityProvider.metadata.issuanceStart;
