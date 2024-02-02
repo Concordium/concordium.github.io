@@ -15,7 +15,7 @@ Generating an identity recovery request
 
 The following example demonstrates the process of generating an identity recovery request. Part of the input to the request is a secret value derived from the seed phrase, and this value should be kept secret in a similar manner as the seed phrase and account signing keys.
 
-In the example below functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, please check out :ref:`Identity Provider List`.
+In the example below, functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, please check out :ref:`Identity Provider List`.
 
 .. tabs::
 
@@ -38,7 +38,7 @@ In the example below functionality for retrieving the list of identity providers
             const identityProvider: IdentityProvider = getIdentityProviders(walletProxyTestnetBaseUrl)[0];
 
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
-            const network = 'Testnet'; // Or mainnet, if working on mainnet.
+            const network = 'Testnet'; // Or Mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
 
             const idCredSec = wallet.getIdCredSec(identityProvider.ipInfo.ipIdentity, identityIndex).toString('hex');

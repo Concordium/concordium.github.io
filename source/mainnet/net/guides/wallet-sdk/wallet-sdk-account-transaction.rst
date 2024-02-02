@@ -16,7 +16,7 @@ Construct an account transaction
 ++++++++++++++++++++++++++++++++
 
 For the sake of this example we will be constructing a simple transfer, which is an account transaction that moves an amount of CCD from one account to another. For other transaction types the steps are similar,
-but the exact fields that must be provided as the payload will be different.
+but the exact fields that must be provided for the payload will be different.
 
 .. tabs::
 
@@ -40,7 +40,7 @@ but the exact fields that must be provided as the payload will be different.
             } from '@concordium/web-sdk';
 
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
-            const network = 'Testnet'; // Or mainnet, if working on mainnet.
+            const network = 'Testnet'; // Or Mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
 
             const client = new ConcordiumGRPCWebClient(nodeAddress, nodePort);
@@ -90,7 +90,7 @@ but the exact fields that must be provided as the payload will be different.
 Sign an account transaction
 +++++++++++++++++++++++++++
 
-Having constructed an account transaction the next step is to sign it. It is important that the key used to sign an account transaction matches the sender address provided in the account transaction header. We note here that Concordium as a whole support multisignature transactions, but for the purpose of this example we will demonstrate how to do it for an account with a single credential that has a single key.
+Having constructed an account transaction the next step is to sign it. It is important that the key used to sign an account transaction matches the sender address provided in the account transaction header. We note here that Concordium as a whole supports multi-signature transactions, but for the purpose of this example we will demonstrate how to do it for an account with a single credential that has a single key.
 
 Please note that when the transaction has been signed anyone with the signature and the transaction will be able to send it to a Concordium node. Therefore it is very important that a wallet requests user approval before utilizing their signing keys.
 
@@ -109,7 +109,7 @@ Please note that when the transaction has been signed anyone with the signature 
             } from '@concordium/web-sdk';
 
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
-            const network = 'Testnet'; // Or mainnet, if working on mainnet.
+            const network = 'Testnet'; // Or Mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
 
             const signingKey = wallet.getAccountSigningKey(identityProviderIndex, identityIndex, credNumber);

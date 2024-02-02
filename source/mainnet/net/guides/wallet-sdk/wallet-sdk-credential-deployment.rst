@@ -39,7 +39,7 @@ input for this transaction type.
 
             // Set up the wallet.
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
-            const network = 'Testnet'; // Or mainnet, if working on mainnet.
+            const network = 'Testnet'; // Or Mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, net);
 
             const prfKey = wallet.getPrfKey(identityProviderIndex, identityIndex).toString('hex');
@@ -127,7 +127,7 @@ is the signing key that corresponds to the public key used when creating the tra
             // The key used to sign the credential deployment transaction must be the corresponding
             // secret key for the public key that was used to construct the transaction.
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
-            const network = 'Testnet'; // Or mainnet, if working on mainnet.
+            const network = 'Testnet'; // Or Mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
 
             // The credNumber and the identityIndex must identical to what was used when deriving

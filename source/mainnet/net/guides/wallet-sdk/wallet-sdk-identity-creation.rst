@@ -27,7 +27,7 @@ The first step is to create the actual identity request. To do this, you need th
 
         .. code-block:: javascript
 
-              import {
+            import {
                 ConcordiumGRPCWebClient,
                 ConcordiumHdWallet,
                 createIdentityRequestWithKeys,
@@ -53,7 +53,7 @@ The first step is to create the actual identity request. To do this, you need th
 
             // Derive the secret key material and randomness from the Concordium wallet.
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
-            const network = 'Testnet'; // Or mainnet, if working on mainnet.
+            const network = 'Testnet'; // Or Mainnet, if working on mainnet.
             const wallet = ConcordiumHdWallet.fromSeedPhrase(seedPhrase, network);
 
             const identityProviderIndex = identityProvider.ipInfo.ipIdentity;

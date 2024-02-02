@@ -5,7 +5,7 @@ Wallet SDK
 ==========
 
 This integration guide is directed towards developers who want to implement their own wallet for the Concordium blockchain.
-This typically means either a mobile wallet (iOS or Android), or a webtechnology based solution building on TypeScript.
+This typically means either a mobile wallet (iOS or Android), or a solution building on TypeScript or JavaScript.
 
 The SDK provides the necessary functions to derive the correct Concordium keys from a secret recovery phrase, to
 generate the Concordium specific requests to create and recover identities, to create and deploy a credential and
