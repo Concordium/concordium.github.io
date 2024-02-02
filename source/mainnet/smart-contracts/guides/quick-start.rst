@@ -23,6 +23,11 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     You can choose to start a smart contract project from a `template <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ or from scratch.
 
+    .. tip::
+
+       Building a DApp as well? Have a look at the `DApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
+
+
     **From a template**
 
     To generate smart contracts from the templates, the ``cargo-generate`` library is required. To install ``cargo-generate`` run the following command:
