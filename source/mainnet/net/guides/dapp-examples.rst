@@ -7,6 +7,8 @@ dApp examples
 
 Select an example to see more information about it, such as a hosted dApp for you to try, links to tutorials, repositories, and more.
 
+Starting a new project on the Concordium blockchain? Have a look at the `dApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
+
 .. dropdown:: Piggy bank
 
     `Demo front end <https://piggybank.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet

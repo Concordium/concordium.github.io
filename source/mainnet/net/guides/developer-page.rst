@@ -72,6 +72,8 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     For a full list of dApp examples and resources, see :ref:`dApp examples<dapp-examples>`.
 
+    Starting a new project on the Concordium blockchain? Have a look at the `dApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
+
 .. dropdown:: Block explorers and analytics
 
     .. _block-explorers:
