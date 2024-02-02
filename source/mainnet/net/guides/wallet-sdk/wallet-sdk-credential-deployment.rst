@@ -1,4 +1,4 @@
-.. _wallet-sdk-credential-deployment
+.. _wallet-sdk-credential-deployment:
 
 ===================
 Creating an account

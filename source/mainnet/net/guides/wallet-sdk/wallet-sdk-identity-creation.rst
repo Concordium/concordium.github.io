@@ -1,4 +1,4 @@
-.. _wallet-sdk-identity-creation
+.. _wallet-sdk-identity-creation:
 
 ====================
 Creating an identity
