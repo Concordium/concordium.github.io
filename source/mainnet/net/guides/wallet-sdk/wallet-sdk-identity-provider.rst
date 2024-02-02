@@ -12,7 +12,7 @@ The list of identity providers can be retrieved from a Concordium node; however,
 Get list of identity providers and their metadata
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
-Here is an example of how the list of identity providers can be retrieved from the wallet-proxy service. The libraries used here to perform the requests are merely examples, but feel free to use the libraries already utilized in your project.
+Here is an example of how the list of identity providers can be retrieved from the wallet-proxy service. The libraries used here to perform the requests are merely examples, so feel free to use the libraries already utilized in your project.
 
 .. tabs::
 
