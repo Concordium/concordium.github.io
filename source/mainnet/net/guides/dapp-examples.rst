@@ -97,3 +97,7 @@ The dApps are written in React.
 Piggy bank, wCCD, eSealing, sponsored Transactions, smart contract deploy and initialize tool, and wallet test bench use the NPM library
 `@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`__
 to implement integrations to the |bw| and |mw-gen2| using WalletConnect.
+
+.. tip::
+
+   Starting a new project on the Concordium blockchain? Have a look at our `DApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
