@@ -316,6 +316,18 @@ Images must have :alt: text for accessibility. Generally, image width is 100%. F
 
 GIFs can be inserted but should only be used when it gives clarity to more complex actions. When using GIFs, the :alt: text is StreamPlayer and :align: is center.
 
+### Videos
+
+To embed a video in a topic, use the `raw` directive.
+
+``` restructuredtext
+   .. raw:: html
+
+      <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
+
+Remove any fixed dimensions from the embed link information you copied from the video source. The sizing is handled in the stylesheet.
+
 ## Preview
 
 For non-technical users that might not want to install the tools above, you can request a preview in the GitHub pull request. The preview is added as a comment in the pull request and opens as a web page.

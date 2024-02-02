@@ -12,7 +12,7 @@ You can also watch a video about how to update a smart contact instance.
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/rbr1w3kJYcU?si=0YHfK1celfvaz-Oo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <iframe src="https://www.youtube.com/embed/rbr1w3kJYcU?si=0YHfK1celfvaz-Oo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Preparation
 ===========

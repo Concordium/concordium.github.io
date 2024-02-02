@@ -96,7 +96,7 @@ transaction for attempting to create the instance is visible on-chain.
 
    .. raw:: html
 
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/SNm9xEegBKA?si=CQ2PMN7lReuPdyPF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/SNm9xEegBKA?si=CQ2PMN7lReuPdyPF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Instance state
 ==============
