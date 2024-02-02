@@ -368,6 +368,8 @@ redirects = {
     "./net/resources/legal": "net/resources/terms-and-conditions.html",
     "./en/mainnet/smart-contracts/onboarding-guide-solana-developers/index": "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview.html",
     "./net/references/grpc": "net/references/grpc2.html",
+    "./en/mainnet/smart-contracts/guides/contract-testing-guides": "./en/mainnet/smart-contracts/guides/integration-test-contract",
+    "./en/mainnet/smart-contracts/best-practices/index": "./en/mainnet/smart-contracts/best-practices/development",
 }
 
 # -- Tags that enables the .. only option ----------------
