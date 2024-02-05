@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.8bdd10e6-a91c-4866-9ae1-81100ada9dac.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.a1edddd7-4e61-470d-8c3f-e6a9dec78a1a.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2185,17 +2185,8 @@ Concordium Wallet for Mobile 1.0.0 - September 26, 2022<div class="sd-summary-do
 <div class="section" id="bw">
 <span id="rn-bw"></span><h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>January 29, 2024</p>
-<p>Version 1.3.2 includes several changes and bug fixes.</p>
-<ul class="simple">
-<li><p>The CIS-2 token lookup no longer blocks choosing a contract if looking up metadata or balance only fails for some tokens.</p></li>
-<li><p>The missing date for delegation/validation stake decrease/stop has been restored.</p></li>
-<li><p>Changing restake preference is no longer blocked when the validator is below minimum stake threshold.</p></li>
-<li><p><cite>SendTransaction</cite> in wallet-api now supports <cite>bigint</cite> as part of smart contract parameters, fixing an issue with using large numbers.</p></li>
-<li><p>Users can view their secret recovery phrase in the wallet settings if they need to write it down again.</p></li>
-<li><p>Fixed a crash when the value in stake field was larger than a 64 bit integer when updating the stake.</p></li>
-<li><p>Fixed an issue that would potentially block the wallet from loading or cause a crash if a third-party app blocked extensions.</p></li>
-</ul>
+<div><p>February 5, 2024</p>
+<p>Verison 1.4.0 adds support for recovery to be aborted when an identity takes a long time to recover. It also fixes an issue where the wrong list of identity providers was sometimes used when recovering from the wallet settings menu.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2204,6 +2195,24 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web 1.3.2 - January 29, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 1.3.2 includes several changes and bug fixes.</p>
+<ul class="simple">
+<li><p class="sd-card-text">The CIS-2 token lookup no longer blocks choosing a contract if looking up metadata or balance only fails for some tokens.</p></li>
+<li><p class="sd-card-text">The missing date for delegation/validation stake decrease/stop has been restored.</p></li>
+<li><p class="sd-card-text">Changing restake preference is no longer blocked when the validator is below minimum stake threshold.</p></li>
+<li><p class="sd-card-text"><cite>SendTransaction</cite> in wallet-api now supports <cite>bigint</cite> as part of smart contract parameters, fixing an issue with using large numbers.</p></li>
+<li><p class="sd-card-text">Users can view their secret recovery phrase in the wallet settings if they need to write it down again.</p></li>
+<li><p class="sd-card-text">Fixed a crash when the value in stake field was larger than a 64 bit integer when updating the stake.</p></li>
+<li><p class="sd-card-text">Fixed an issue that would potentially block the wallet from loading or cause a crash if a third-party app blocked extensions.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Web 1.3.0 - January 10, 2024<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
