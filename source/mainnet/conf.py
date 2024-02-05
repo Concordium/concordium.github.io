@@ -56,8 +56,8 @@ extensions = [
 extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
 extlinks = {
-    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
-    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem?%s', 'Download public key:%s'),
+    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.%s.sig', 'Download signature:%s') # Supply extension, e.g. exe, dmg, AppImage
 }
 
 # todo_include_todos = True
@@ -148,6 +148,7 @@ html_theme_options = {
     # 'sticky_navigation': True,
     "navigation_depth": 3,
     # 'includehidden': False,
+    "navigation_with_keys": False,
     # 'titles_only': False,
     "show_nav_level": 0,
     "show_toc_level": 2,
@@ -155,10 +156,10 @@ html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
-    "page_sidebar_items": ["page-toc", "edit-this-page"],
-    "footer_items": ["footer"],
+    "secondary_sidebar_items": ["page-toc", "edit-this-page"],
+    "footer_start": ["footer"],
     "show_prev_next": True,
-    "navbar_align": "left",
+    #"navbar_align": "left",
     "icon_links": [
         {
             # Concordium GitHub
@@ -274,7 +275,7 @@ html_css_files = [
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 html_sidebars = {
-    "**": ["search-field", "sidebar-nav-bs"]
+    "**": ["sidebar-nav-bs"]
 }
 
 # html_additional_pages = {}
