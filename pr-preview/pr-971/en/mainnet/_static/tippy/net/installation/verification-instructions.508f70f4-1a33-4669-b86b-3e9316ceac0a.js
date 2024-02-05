@@ -1,0 +1,22 @@
+selector_to_html = {"a[href=\"#concordium-client\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Concordium Client<a class=\"headerlink\" href=\"#concordium-client\" title=\"Link to this heading\">#</a></h2><h3>Linux<a class=\"headerlink\" href=\"#verification-client-linux\" title=\"Link to this heading\">#</a></h3><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#concordium-desktop-wallet\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Concordium Desktop Wallet<a class=\"headerlink\" href=\"#concordium-desktop-wallet\" title=\"Link to this heading\">#</a></h2><h3>Linux<a class=\"headerlink\" href=\"#linux\" title=\"Link to this heading\">#</a></h3><h4>AppImage<a class=\"headerlink\" href=\"#appimage\" title=\"Link to this heading\">#</a></h4><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#verification-cargo-linux\"]": "<h3 class=\"tippy-header\" style=\"margin-top: 0;\">Linux<a class=\"headerlink\" href=\"#verification-cargo-linux\" title=\"Link to this heading\">#</a></h3><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#verification-client-linux\"]": "<h3 class=\"tippy-header\" style=\"margin-top: 0;\">Linux<a class=\"headerlink\" href=\"#verification-client-linux\" title=\"Link to this heading\">#</a></h3><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#automatic-updates\"]": "<h3 class=\"tippy-header\" style=\"margin-top: 0;\">Automatic updates<a class=\"headerlink\" href=\"#automatic-updates\" title=\"Link to this heading\">#</a></h3><p>When the desktop wallet updates itself, it performs the necessary steps to verify both the checksum and signature of the downloaded update. If verification is unsuccessful, the update is rejected.</p>", "a[href=\"#node-debian-package\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Node Debian package<a class=\"headerlink\" href=\"#node-debian-package\" title=\"Link to this heading\">#</a></h2><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#verification-instructions\"]": "<h1 class=\"tippy-header\" style=\"margin-top: 0;\">Verification instructions<a class=\"headerlink\" href=\"#verification-instructions\" title=\"Link to this heading\">#</a></h1><p>To find instructions on how to verify the integrity of the file you have downloaded, navigate to the respective section that outlines the steps needed for that specific file.</p>", "a[href=\"#appimage\"]": "<h4 class=\"tippy-header\" style=\"margin-top: 0;\">AppImage<a class=\"headerlink\" href=\"#appimage\" title=\"Link to this heading\">#</a></h4><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#linux\"]": "<h3 class=\"tippy-header\" style=\"margin-top: 0;\">Linux<a class=\"headerlink\" href=\"#linux\" title=\"Link to this heading\">#</a></h3><h4>AppImage<a class=\"headerlink\" href=\"#appimage\" title=\"Link to this heading\">#</a></h4><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#debian-package\"]": "<h4 class=\"tippy-header\" style=\"margin-top: 0;\">Debian package<a class=\"headerlink\" href=\"#debian-package\" title=\"Link to this heading\">#</a></h4><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#rpm\"]": "<h4 class=\"tippy-header\" style=\"margin-top: 0;\">RPM<a class=\"headerlink\" href=\"#rpm\" title=\"Link to this heading\">#</a></h4><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>", "a[href=\"#mainnet-genesis-block\"]": "<h2 class=\"tippy-header\" style=\"margin-top: 0;\">Mainnet genesis block<a class=\"headerlink\" href=\"#mainnet-genesis-block\" title=\"Link to this heading\">#</a></h2><p><strong>Verify checksum of download</strong></p><p>In a terminal:</p>"}
+skip_classes = ["headerlink", "sd-stretched-link"]
+
+window.onload = function () {
+    for (const [select, tip_html] of Object.entries(selector_to_html)) {
+        const links = document.querySelectorAll(` ${select}`);
+        for (const link of links) {
+            if (skip_classes.some(c => link.classList.contains(c))) {
+                continue;
+            }
+
+            tippy(link, {
+                content: tip_html,
+                allowHTML: true,
+                arrow: true,
+                placement: 'auto-start', maxWidth: 500, interactive: false,
+
+            });
+        };
+    };
+    console.log("tippy tips loaded!");
+};
