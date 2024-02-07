@@ -52,7 +52,30 @@ Here is an example of how the list of identity providers can be retrieved from t
 
         Kotlin (Android)
 
-        TODO Write the Kotlin example.
+        .. code-block:: Kotlin
+
+            import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+            import okhttp3.OkHttpClient
+            import okhttp3.Request
+            
+            val walletProxyTestnetBaseUrl = "https://wallet-proxy.testnet.concordium.com"
+            val walletProxyMainnetBaseUrl = "https://wallet-proxy.mainnet.concordium.software"
+
+            fun getIdentityProviders(walletProxyBaseUrl: String): ArrayList<IdentityProvider> {
+                val request = Request.Builder().url("$walletProxyBaseUrl/v1/ip_info").build()
+                val client = OkHttpClient().newBuilder().build()
+
+                client.newCall(request).execute().use { response ->
+                    response.body()?.use { body ->
+                        val mapper = jacksonObjectMapper()
+                        return mapper.readValue(body.string(), mapper.typeFactory.constructCollectionType(ArrayList::class.java, IdentityProvider::class.java))
+                    }
+                }
+                throw Exception("Something went wrong")
+            }
+
+            val testnetIdentityProviders = getIdentityProviders(walletProxyTestnetBaseUrl)
+            val mainnetIdentityProviders = getIdentityProviders(walletProxyMainnetBaseUrl)
 
     .. tab::
 
