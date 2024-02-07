@@ -1,8 +1,8 @@
 .. _wallet-sdk-identity-provider:
 
-======================================
-Getting the list of identity providers
-======================================
+==================================
+Get the list of identity providers
+==================================
 
 The list of identity providers can be retrieved from a Concordium node; however, the provided list lacks the necessary metadata for creating or recovering an identity from an identity provider. Therefore, Concordium hosts a service called the wallet-proxy that serves this information to wallets.
 

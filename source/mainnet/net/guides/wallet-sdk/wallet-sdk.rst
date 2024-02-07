@@ -8,7 +8,7 @@ This integration guide is directed towards developers who want to implement thei
 This typically means either a mobile wallet (iOS or Android), or a solution building on TypeScript or JavaScript.
 
 The SDK provides the necessary functions to derive the correct Concordium keys from a secret recovery phrase, to
-generate the Concordium specific requests to create and recover identities, to create and deploy a credential and
+generate the Concordium specific requests to create and recover identities, to create and deploy a credential, and
 to create and send transactions to a Concordium node.
 
 Below, you can find a link to the SDK package for your chosen technology, and an example wallet that demonstrates its usage.

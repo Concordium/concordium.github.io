@@ -1,11 +1,11 @@
 .. _wallet-sdk-account-transaction:
 
-=============================================
-Submitting a transaction to a Concordium node
-=============================================
+=========================================
+Submit a transaction to a Concordium node
+=========================================
 
-The following sections document the requirements for creating an account transaction, signing it and
-finally sending it to a Concordium node.
+The following sections document the requirements for creating an account transaction, signing it, and
+sending it to a Concordium node.
 
 * `Construct an account transaction`_
 * `Sign an account transaction`_
@@ -15,8 +15,7 @@ finally sending it to a Concordium node.
 Construct an account transaction
 ++++++++++++++++++++++++++++++++
 
-For the sake of this example we will be constructing a simple transfer, which is an account transaction that moves an amount of CCD from one account to another. For other transaction types the steps are similar,
-but the exact fields that must be provided for the payload will be different.
+This example constructs a simple transfer, which is an account transaction that moves an amount of CCD from one account to another. For other transaction types, the steps are similar, but the exact fields that must be provided for the payload will be different.
 
 .. tabs::
 
@@ -90,9 +89,9 @@ but the exact fields that must be provided for the payload will be different.
 Sign an account transaction
 +++++++++++++++++++++++++++
 
-Having constructed an account transaction the next step is to sign it. It is important that the key used to sign an account transaction matches the sender address provided in the account transaction header. We note here that Concordium as a whole supports multi-signature transactions, but for the purpose of this example we will demonstrate how to do it for an account with a single credential that has a single key.
+Having constructed an account transaction, the next step is to sign it. It is important that the key used to sign an account transaction matches the sender address provided in the account transaction header. Note that Concordium as a whole supports multi-signature transactions, but for the purpose of this example it will demonstrate how to do it for an account with a single credential that has a single key.
 
-Please note that when the transaction has been signed anyone with the signature and the transaction will be able to send it to a Concordium node. Therefore it is very important that a wallet requests user approval before utilizing their signing keys.
+Note that when the transaction has been signed anyone with the signature and the transaction will be able to send it to a Concordium node. Therefore it is very important that a wallet requests user approval before utilizing their signing keys.
 
 .. tabs::
 

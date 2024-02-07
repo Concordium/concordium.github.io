@@ -1,21 +1,21 @@
 .. _wallet-sdk-identity-recovery:
 
-======================
-Recovering an identity
-======================
+===================
+Recover an identity
+===================
 
 The following sections demonstrate the process of creating a request to recover an identity from an identity provider. While accounts are stored on the Concordium blockchain, identities are stored by the selected identity provider during the creation process, and recovery is initiated by sending a request to that specific identity provider.
 
-* `Generating an identity recovery request`_
-* `Sending an identity recovery request`_
+* `Generate an identity recovery request`_
+* `Send an identity recovery request`_
 
-+++++++++++++++++++++++++++++++++++++++
-Generating an identity recovery request
-+++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++
+Generate an identity recovery request
++++++++++++++++++++++++++++++++++++++
 
 The following example demonstrates the process of generating an identity recovery request. Part of the input to the request is a secret value derived from the seed phrase, and this value should be kept secret in a similar manner as the seed phrase and account signing keys.
 
-In the example below, functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, please check out :ref:`Identity Provider List`.
+In the example below, functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, see :ref:`Identity Provider List`.
 
 .. tabs::
 
@@ -67,9 +67,9 @@ In the example below, functionality for retrieving the list of identity provider
 
         The Swift SDK for iOS is still in development.
 
-++++++++++++++++++++++++++++++++++++
-Sending an identity recovery request
-++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++
+Send an identity recovery request
++++++++++++++++++++++++++++++++++
 
 The next step is to send the generated identity recovery request to the associated identity provider. If successful, the identity provider will return a redirect to the location from which the identity can be fetched.
 

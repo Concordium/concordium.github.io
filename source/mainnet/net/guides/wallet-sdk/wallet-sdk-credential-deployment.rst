@@ -1,11 +1,10 @@
 .. _wallet-sdk-credential-deployment:
 
-===================
-Creating an account
-===================
+=================
+Create an account
+=================
 
-Having created an identity the next step is to create an account. On Concordium an account is an entity that can hold multiple credentials, but for the sake of keeping the example simple, the following
-guide will describe how to create an account with a single credential.
+Having created an identity, the next step is to create an account. On Concordium, an account is an entity that can hold multiple credentials, but for the sake of keeping the example simple, the following guide will describe how to create an account with a single credential.
 
 * `Create a credential deployment transaction`_
 * `Sign a credential deployment transaction`_
@@ -15,8 +14,7 @@ guide will describe how to create an account with a single credential.
 Create a credential deployment transaction
 ++++++++++++++++++++++++++++++++++++++++++
 
-The following example demonstrates how a credential deployment transaction is created. Note that you must have saved the identity object and the identity provider that was used to create that identity, as they are required
-input for this transaction type.
+The following example demonstrates how a credential deployment transaction is created. Note that you must have saved the identity object and the identity provider that was used to create that identity, as they are required input for this transaction type.
 
 .. tabs::
 
@@ -158,8 +156,8 @@ Having created and signed the credential deployment transaction, the final step 
 utility function that does this by simply providing it the credential deployment transaction and the signature on the transaction. The result
 of the call is a transaction hash that can then be used to monitor the status of the transaction.
 
-If successful, the credential will have been deployed, and it is now possible to start creating account transactions. Go to
-:ref:`wallet-sdk-account-transaction` for a guide on how that is done.
+If successful, the credential will be deployed, and it is now possible to start creating account transactions. Go to
+:ref:`wallet-sdk-account-transaction` for a guide about creating account transactions.
 
 .. tabs::
 

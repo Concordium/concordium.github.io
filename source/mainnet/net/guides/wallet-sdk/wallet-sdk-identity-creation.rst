@@ -1,21 +1,21 @@
 .. _wallet-sdk-identity-creation:
 
-====================
-Creating an identity
-====================
+==================
+Create an identity
+==================
 
-To create an account on the Concordium blockchain, one must first acquire an identity. Therefore, as an initial step, a user of a wallet will always have to create an identity before being able to send account transactions.
+To create an account on the Concordium blockchain, a user must first acquire an identity. Therefore, as an initial step, a wallet user will always have to create an identity before being able to send account transactions.
 
 An identity is acquired by generating an identity request and sending it to an identity provider. The user will then be taken through the identity verification
 process that is specific for that chosen identity provider. This happens outside of the wallet application.
 
-* `Creating an identity request`_
-* `Sending an identity request`_
-* `Retrieving the identity after creation`_
+* `Create an identity request`_
+* `Send an identity request`_
+* `Retrieve the identity after creation`_
 
-++++++++++++++++++++++++++++
-Creating an identity request
-++++++++++++++++++++++++++++
+++++++++++++++++++++++++++
+Create an identity request
+++++++++++++++++++++++++++
 
 The first step is to create the actual identity request. To do this, you need the list of identity providers. Refer to :ref:`Identity Provider List` to understand how to retrieve it.
 
@@ -91,16 +91,13 @@ The first step is to create the actual identity request. To do this, you need th
 
         The Swift SDK for iOS is still in development.
 
-+++++++++++++++++++++++++++
-Sending an identity request
-+++++++++++++++++++++++++++
+++++++++++++++++++++++++
+Send an identity request
+++++++++++++++++++++++++
 
 Once the identity request has been created, the next step is to send it to the corresponding identity provider. There are multiple ways to accomplish this, and it will depend on the technologies you choose. Below is an example of how it can be done.
 
-A part of the request is a `redirectUri`, which tells the identity provider where to redirect the user when the identity verification flow has been completed. A wallet application has to
-choose this in such a way that the user is sent back into the wallet application, where the
-actual identity object can then be retrieved from the information provided in the hash property
-of the redirect URL.
+A part of the request is a `redirectUri`, which tells the identity provider where to redirect the user when the identity verification flow has been completed. A wallet application has to choose this in such a way that the user is sent back into the wallet application, where the actual identity object can then be retrieved from the information provided in the hash property of the redirect URL.
 
 .. tabs::
 
@@ -163,13 +160,11 @@ of the redirect URL.
 
         The Swift SDK for iOS is still in development.
 
-++++++++++++++++++++++++++++++++++++++
-Retrieving the identity after creation
-++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++
+Retrieve the identity after creation
+++++++++++++++++++++++++++++++++++++
 
-Upon completing identity verification at the identity provider, the identity provider does a
-redirect of the user back to the `redirectUri` that was provided when sending the identity request to the identity provider. The hash property of the URL that the identity provider
-redirects the user to contains the URL where the identity object can be retrieved from, in the format `redirectUri#code_uri=`, where the URL will be after the equals sign.
+Upon completing identity verification with the identity provider, the identity provider does a redirect of the user back to the `redirectUri` that was provided when sending the identity request to the identity provider. The hash property of the URL that the identity provider redirects the user to contains the URL where the identity object can be retrieved from in the format `redirectUri#code_uri=`, where the URL will be after the equals sign.
 
 .. tabs::
 
