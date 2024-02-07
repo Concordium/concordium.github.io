@@ -16,11 +16,12 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sys, os
+from datetime import date
 
 # -- Project information -----------------------------------------------------
 
 project = 'Concordium'
-copyright = '2021 - 2024, Concordium Software ApS'
+copyright = f'2021 - {date.today().year}, Concordium Software ApS'
 author = 'Concordium'
 
 # The short X.Y version
@@ -157,7 +158,7 @@ html_theme_options = {
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
-    "footer_start": ["footer"],
+    "footer_start": ["copyright", "footer"],
     "show_prev_next": True,
     #"navbar_align": "left",
     "icon_links": [
@@ -283,6 +284,7 @@ html_sidebars = {
 # Tippy configuration
 tippy_js = ("https://unpkg.com/@popperjs/core@2", "https://unpkg.com/tippy.js@6")
 tippy_tip_selector = "term"
+tippy_anchor_parent_selector = "article.bd-article"
 
 # -- Options for linkchecking -------------------------------------------------
 
