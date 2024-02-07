@@ -167,19 +167,23 @@ Wallets
 |bw|
 -------------------------
 
-    January 29, 2024
+    February 5, 2024
 
-    Version 1.3.2 includes several changes and bug fixes.
-
-    - The CIS-2 token lookup no longer blocks choosing a contract if looking up metadata or balance only fails for some tokens.
-    - The missing date for delegation/validation stake decrease/stop has been restored.
-    - Changing restake preference is no longer blocked when the validator is below minimum stake threshold.
-    - `SendTransaction` in wallet-api now supports `bigint` as part of smart contract parameters, fixing an issue with using large numbers.
-    - Users can view their secret recovery phrase in the wallet settings if they need to write it down again.
-    - Fixed a crash when the value in stake field was larger than a 64 bit integer when updating the stake.
-    - Fixed an issue that would potentially block the wallet from loading or cause a crash if a third-party app blocked extensions.
+    Verison 1.4.0 adds support for recovery to be aborted when an identity takes a long time to recover. It also fixes an issue where the wrong list of identity providers was sometimes used when recovering from the wallet settings menu.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.3.2 - January 29, 2024
+
+            Version 1.3.2 includes several changes and bug fixes.
+
+            - The CIS-2 token lookup no longer blocks choosing a contract if looking up metadata or balance only fails for some tokens.
+            - The missing date for delegation/validation stake decrease/stop has been restored.
+            - Changing restake preference is no longer blocked when the validator is below minimum stake threshold.
+            - `SendTransaction` in wallet-api now supports `bigint` as part of smart contract parameters, fixing an issue with using large numbers.
+            - Users can view their secret recovery phrase in the wallet settings if they need to write it down again.
+            - Fixed a crash when the value in stake field was larger than a 64 bit integer when updating the stake.
+            - Fixed an issue that would potentially block the wallet from loading or cause a crash if a third-party app blocked extensions.
 
         .. dropdown:: |bw| 1.3.0 - January 10, 2024
 
