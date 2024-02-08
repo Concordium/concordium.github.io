@@ -183,7 +183,7 @@ The next step is to send the generated identity recovery request to the associat
                         ).value
                     }
                 }
-                throw new Exception("Failed to recover identity");
+                throw Exception("Failed to recover identity");
             }
 
     .. tab::
