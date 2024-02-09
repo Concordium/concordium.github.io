@@ -167,11 +167,15 @@ Wallets
 |bw|
 -------------------------
 
-    February 5, 2024
+    February XX, 2024
 
-    Verison 1.4.0 adds support for recovery to be aborted when an identity takes a long time to recover. It also fixes an issue where the wrong list of identity providers was sometimes used when recovering from the wallet settings menu.
+    Version 1.4.1 fixes an issue with backwards compatibility for gRPC and an identity issue.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.4.0 - February 5, 2024
+
+            Verison 1.4.0 adds support for recovery to be aborted when an identity takes a long time to recover. It also fixes an issue where the wrong list of identity providers was sometimes used when recovering from the wallet settings menu.
 
         .. dropdown:: |bw| 1.3.2 - January 29, 2024
 
