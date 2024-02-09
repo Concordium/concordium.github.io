@@ -15,15 +15,12 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sphinx_rtd_theme
 import sys, os
-
-sys.path.append(os.path.abspath('../exts'))
 
 # -- Project information -----------------------------------------------------
 
 project = 'Concordium'
-copyright = '2021 - 2023, Concordium Software ApS'
+copyright = '2021 - 2024, Concordium Software ApS'
 author = 'Concordium'
 
 # The short X.Y version
@@ -42,15 +39,11 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx_rtd_theme",
     "sphinx.ext.todo",
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
     "sphinx.ext.extlinks",
-    # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
-    # "multidoc",
     "sphinx_reredirects",
-    # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
     "sphinx_copybutton",
     "sphinx_toolbox.collapse",
     "sphinx_tabs.tabs",
@@ -64,7 +57,7 @@ extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
 extlinks = {
     'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
-    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.1.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
 }
 
 # todo_include_todos = True
@@ -158,6 +151,7 @@ html_theme_options = {
     # 'titles_only': False,
     "show_nav_level": 0,
     "show_toc_level": 2,
+    "navigation_depth": 5,
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
@@ -251,30 +245,15 @@ html_theme_options = {
     ]
     }
 
-
-current_language = os.environ['current_language'] if 'current_language' in os.environ else 'en'
-current_version = os.environ['current_version'] if 'current_version' in os.environ else 'local'
-versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
-languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
-
 html_show_sourcelink = False
 
 html_context = {
     # "display_github": True,
     "github_user": "Concordium",
     "github_repo": "concordium.github.io",
-    "github_version": current_version,
+    "github_version": "main",
     "doc_path": "source/mainnet",
     "conf_py_path": "/source/",
-    # Expose the versions and languages to the template engine
-    "current_language": current_language,
-    "current_version": current_version,
-    "languages": languages,
-    "versions": list(map(lambda name:
-        {
-        "name": name,
-        "url": "/{lng}/{vsn}/".format(lng = current_language, vsn = name)
-        }, versions))
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -300,82 +279,9 @@ html_sidebars = {
 
 # html_additional_pages = {}
 
-# -- Options for HTMLHelp output ---------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'Concordiumdoc'
-
 # Tippy configuration
 tippy_js = ("https://unpkg.com/@popperjs/core@2", "https://unpkg.com/tippy.js@6")
 tippy_tip_selector = "term"
-
-# -- Options for LaTeX output ------------------------------------------------
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'Concordium.tex', 'Concordium Documentation',
-     'Concordium', 'manual'),
-]
-
-
-# -- Options for manual page output ------------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'concordiumsmartcontracts', 'Concordium Documentation',
-     [author], 1)
-]
-
-
-# -- Options for Texinfo output ----------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'ConcordiumSmartContracts', 'Concordium Documentation',
-     author, 'ConcordiumSmartContracts', 'One line description of project.',
-     'Miscellaneous'),
-]
-
-
-# -- Options for Epub output -------------------------------------------------
-
-# Bibliographic Dublin Core info.
-epub_title = project
-
-# The unique identifier of the text. This can be a ISBN number
-# or the project homepage.
-#
-# epub_identifier = ''
-
-# A unique identification for the text.
-#
-# epub_uid = ''
-
-# A list of files that should not be packed into the epub file.
-epub_exclude_files = ['search.html']
 
 # -- Options for linkchecking -------------------------------------------------
 
@@ -462,6 +368,8 @@ redirects = {
     "./net/resources/legal": "net/resources/terms-and-conditions.html",
     "./en/mainnet/smart-contracts/onboarding-guide-solana-developers/index": "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview.html",
     "./net/references/grpc": "net/references/grpc2.html",
+    "./en/mainnet/smart-contracts/guides/contract-testing-guides": "./en/mainnet/smart-contracts/guides/integration-test-contract",
+    "./en/mainnet/smart-contracts/best-practices/index": "./en/mainnet/smart-contracts/best-practices/development",
 }
 
 # -- Tags that enables the .. only option ----------------

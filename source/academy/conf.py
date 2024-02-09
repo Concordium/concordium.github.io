@@ -15,15 +15,12 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sphinx_rtd_theme
 import sys, os
-
-sys.path.append(os.path.abspath('../exts'))
 
 # -- Project information -----------------------------------------------------
 
 project = 'Concordium'
-copyright = '2021 - 2023, Concordium Software ApS'
+copyright = '2021 - 2024, Concordium Software ApS'
 author = 'Concordium'
 
 # The short X.Y version
@@ -42,15 +39,11 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx_rtd_theme",
     "sphinx.ext.todo",
     "sphinx.ext.graphviz",
     "sphinx.ext.intersphinx",
     "sphinx.ext.extlinks",
-    # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
-    # "multidoc",
     "sphinx_reredirects",
-    # "sphinx_rtd_dark_mode", # A bug in this prevents code blocks from displaying correctly in dark mode
     "sphinx_copybutton",
     "sphinx_toolbox.collapse",
     "sphinx_tabs.tabs",
@@ -250,12 +243,6 @@ html_theme_options = {
     ]
     }
 
-
-current_language = os.environ['current_language'] if 'current_language' in os.environ else 'en'
-current_version = os.environ['current_version'] if 'current_version' in os.environ else 'local'
-versions = os.environ['all_versions'].split(",") if 'all_versions' in os.environ else [current_version]
-languages = os.environ['all_languages'].split(",") if 'all_languages' in os.environ else [current_language]
-
 html_show_sourcelink = False
 
 html_context = {
@@ -265,15 +252,6 @@ html_context = {
     "github_version": "main/source/academy",
     "display_github": False,
     "conf_py_path": "/source/academy",
-    # Expose the versions and languages to the template engine
-    "current_language": current_language,
-    "current_version": current_version,
-    "languages": languages,
-    "versions": list(map(lambda name:
-        {
-        "name": name,
-        "url": "/{lng}/{vsn}/".format(lng = current_language, vsn = name)
-        }, versions))
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -303,75 +281,6 @@ html_sidebars = {
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'Concordiumdoc'
-
-
-# -- Options for LaTeX output ------------------------------------------------
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'Concordium.tex', 'Concordium Documentation',
-     'Concordium', 'manual'),
-]
-
-
-# -- Options for manual page output ------------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'concordiumsmartcontracts', 'Concordium Documentation',
-     [author], 1)
-]
-
-
-# -- Options for Texinfo output ----------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'ConcordiumSmartContracts', 'Concordium Documentation',
-     author, 'ConcordiumSmartContracts', 'One line description of project.',
-     'Miscellaneous'),
-]
-
-
-# -- Options for Epub output -------------------------------------------------
-
-# Bibliographic Dublin Core info.
-epub_title = project
-
-# The unique identifier of the text. This can be a ISBN number
-# or the project homepage.
-#
-# epub_identifier = ''
-
-# A unique identification for the text.
-#
-# epub_uid = ''
-
-# A list of files that should not be packed into the epub file.
-epub_exclude_files = ['search.html']
 
 # -- Options for linkchecking -------------------------------------------------
 

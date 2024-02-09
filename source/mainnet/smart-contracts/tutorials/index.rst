@@ -34,7 +34,7 @@ You will then instruct the backend to submit the transaction on behalf of the us
 
 In the :ref:`Smart Contract Upgrade <intro-smart-contract-upgrade>` tutorial you will deploy a smart contract and upgrade its logic. During the upgrade, you will call a migration function to change the shape of the state.
 
-Once you are familiar with smart contracts, it is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
+Once you are familiar with smart contracts, it is a good idea to read the :ref:`Smart contracts best practices<sc-development-best-practices>`.
 
 .. toctree::
    :maxdepth: 1

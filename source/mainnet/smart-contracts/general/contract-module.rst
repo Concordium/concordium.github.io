@@ -4,15 +4,11 @@
 Smart contract modules
 ======================
 
-Smart contracts are deployed on the chain in *smart contract modules*.
-
-.. note::
-
-   A smart contract module is often referred to simply as a *module*.
+Smart contracts are deployed on the chain in *smart contract modules*. A smart contract module is often referred to simply as a *module*.
 
 A module can contain one or more smart contracts, allowing code to be shared
 among the contracts and can optionally contain :ref:`contract schemas
-<contract-schema>`.
+<contract-schema>` and verification data.
 
 .. graphviz::
    :align: center
@@ -45,9 +41,9 @@ target and to be run in sandboxed environments. This is useful because smart
 contracts will be run by validators in the network who do not necessarily trust
 the code.
 
-Wasm is a low-level language and it is impractical to write by hand. Instead, one
+Wasm is a low-level language and it is impractical to write by hand. Instead, you
 can write smart contracts in a more high-level language that is then
-compiled to Wasm.
+compiled to Wasm. The best supported high-level language on Concordium is Rust.
 
 .. _wasm-limitations:
 
@@ -86,11 +82,7 @@ associated cost. The cost is based on the size of the bytecode and is charged
 for both checking validity of the module and on-chain storage.
 
 The deployment itself does not execute a
-smart contract. To execute, a user must first create an *instance* of a contract.
-
-.. seealso::
-
-   See :ref:`contract-instances` for more information.
+smart contract. To execute, a user must first create an *instance* of a contract. See :ref:`contract-instances` for more information.
 
 .. _smart-contracts-on-chain:
 

@@ -1,8 +1,14 @@
+:orphan:
+
 .. _local-simulate:
 
 ===================================
 Locally simulate contract functions
 ===================================
+
+.. warning::
+
+    If you have stumbled upon this guide, you should instead use the :ref:`integration testing library<integration-test-contract>` as this is easier to use.
 
 This guide is about how to locally simulate an invocation of some init or
 receive function from a Wasm smart contract module in a given context and

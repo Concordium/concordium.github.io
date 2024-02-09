@@ -171,11 +171,31 @@ Wallets
 |bw|
 -------------------------
 
-    November 21, 2023
+    February 5, 2024
 
-    |bw| 1.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
+    Verison 1.4.0 adds support for recovery to be aborted when an identity takes a long time to recover. It also fixes an issue where the wrong list of identity providers was sometimes used when recovering from the wallet settings menu.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.3.2 - January 29, 2024
+
+            Version 1.3.2 includes several changes and bug fixes.
+
+            - The CIS-2 token lookup no longer blocks choosing a contract if looking up metadata or balance only fails for some tokens.
+            - The missing date for delegation/validation stake decrease/stop has been restored.
+            - Changing restake preference is no longer blocked when the validator is below minimum stake threshold.
+            - `SendTransaction` in wallet-api now supports `bigint` as part of smart contract parameters, fixing an issue with using large numbers.
+            - Users can view their secret recovery phrase in the wallet settings if they need to write it down again.
+            - Fixed a crash when the value in stake field was larger than a 64 bit integer when updating the stake.
+            - Fixed an issue that would potentially block the wallet from loading or cause a crash if a third-party app blocked extensions.
+
+        .. dropdown:: |bw| 1.3.0 - January 10, 2024
+
+            The EUROe token is now added to all accounts by default.
+
+        .. dropdown:: |bw| 1.2.1 - November 21, 2023
+
+            |bw| 1.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
 
         .. dropdown:: |bw| 1.1.11 - November 9, 2023
 
@@ -305,11 +325,15 @@ Wallets
 Desktop Wallet
 --------------
 
-    November 22, 2023
+    December 14, 2023
 
-        Version 1.7.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
+        Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.1 - November 22, 2023
+
+            Version 1.7.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied.
 
         .. dropdown:: 1.6.0 - September 28, 2023
 

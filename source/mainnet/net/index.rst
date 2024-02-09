@@ -39,8 +39,16 @@ index
    :includehidden:
    :caption: Smart Contracts
 
-   V1 smart contract documentation <../smart-contracts/v1-sc-rollup>
-   V0 smart contract documentation <../smart-contracts-v0/sc-v0-rollup>
+   Introduction <../smart-contracts/general/introduction>
+   Quick start guide <../smart-contracts/guides/quick-start>
+   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/faq>
+   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/overview>
+   Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   Test contracts <../smart-contracts/guides/integration-test-contract>
+   On-chain guides <../smart-contracts/guides/on-chain-index>
+   Best practices <../smart-contracts/best-practices/development>
+   References <../smart-contracts/references/index>
+   V0 smart contracts <../smart-contracts-v0/sc-v0-rollup>
 
 .. toctree::
    :includehidden:
@@ -48,22 +56,3 @@ index
 
    Smart contract tutorials <../smart-contracts/tutorials/index>
    Using ID tutorial <guides/gallery/index>
-
-.. toctree::
-   :includehidden:
-   :caption: Smart Contracts v0
-
-   V0 smart contract documentation <../smart-contracts-v0/sc-v0-rollup>
-
-.. toctree::
-   :caption: Legal
-
-   resources/terms-and-conditions
-   resources/terms-and-conditions-dw
-   resources/terms-and-conditions-mw
-   resources/terms-and-conditions-concordia
-   resources/third-party-licenses
-   resources/third-party-notices
-   resources/bw-licenses
-   resources/dw-licenses
-   resources/ar-idp-contact

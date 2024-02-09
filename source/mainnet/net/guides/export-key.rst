@@ -31,6 +31,8 @@ In certain situations, such as testing interaction with smart contracts, you may
 
     #. When your private key is shown, copy it with the |copy| button to get the key's value, or click the Export button to get a file compatible with other tools like ``concordium-client``.
 
+    #. |export_keys_browser_wallet_1| |export_keys_browser_wallet_2| |export_keys_browser_wallet_3|
+
 .. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
                     :width: 50px
@@ -41,3 +43,15 @@ In certain situations, such as testing interaction with smart contracts, you may
 .. |copy| image:: ../images/copy.png
              :alt: two documents
              :width: 40px
+
+.. |export_keys_browser_wallet_1| image:: ../images/browser-wallet/export-keys-1.png
+             :alt: export_keys_browser_wallet_1
+             :width: 32%
+
+.. |export_keys_browser_wallet_2| image:: ../images/browser-wallet/export-keys-2.png
+             :alt: export_keys_browser_wallet_2
+             :width: 32%
+
+.. |export_keys_browser_wallet_3| image:: ../images/browser-wallet/export-keys-3.png
+             :alt: export_keys_browser_wallet_3
+             :width: 32%
