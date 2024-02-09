@@ -70,11 +70,17 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    November 28, 2023
+    February XX, 2024
 
-    Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
+    Version 1.5.1 fixes the following issues:
+
+    - Changing restake preference is no longer blocked when the validator is below minimum stake threshold.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.5.0 - November 28, 2023
+
+            Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
 
         .. dropdown:: |mw-gen2| 1.4.0 - October 26, 2023
 
