@@ -61,6 +61,16 @@ In the example below, functionality for retrieving the list of identity provider
 
         .. code-block:: Kotlin
 
+            import cash.z.ecc.android.bip39.Mnemonics
+            import com.concordium.sdk.ClientV2
+            import com.concordium.sdk.Connection
+            import com.concordium.sdk.TLSConfig
+            import com.concordium.sdk.crypto.wallet.ConcordiumHdWallet
+            import com.concordium.sdk.crypto.wallet.Identity
+            import com.concordium.sdk.crypto.wallet.IdentityRecoveryRequestInput
+            import com.concordium.sdk.crypto.wallet.Network
+            import com.concordium.sdk.requests.BlockQuery
+
             fun createRecoveryRequest(): String {
                 // The identity provider to attempt to recover an identity from. Here we simply select the first available, but
                 // in a recovery process a wallet would usually loop through all possible options.
@@ -69,7 +79,6 @@ In the example below, functionality for retrieving the list of identity provider
                 val seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
                 @OptIn(ExperimentalStdlibApi::class)
                 val seedAsHex = Mnemonics.MnemonicCode(seedPhrase!!.toCharArray()).toSeed().toHexString()
-                val network = Network.TESTNET // Or Network.MAINNET, if working on mainnet.
                 val wallet = ConcordiumHdWallet.fromHex(seedAsHex, Network.TESTNET)
 
                 val idCredSec = wallet.getIdCredSec(identityProvider.ipInfo.ipIdentity.value, identityIndex)
