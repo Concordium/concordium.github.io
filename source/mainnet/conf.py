@@ -158,7 +158,7 @@ html_theme_options = {
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
-    "footer_start": ["copyright", "footer"],
+    "footer_start": ["footer", "copyright"],
     "show_prev_next": True,
     #"navbar_align": "left",
     "icon_links": [
@@ -284,6 +284,8 @@ html_sidebars = {
 # Tippy configuration
 tippy_js = ("https://unpkg.com/@popperjs/core@2", "https://unpkg.com/tippy.js@6")
 tippy_tip_selector = "term"
+tippy_skip_anchor_classes = (
+    "headerlink", "sd-stretched-link", "sd-rounded-pill")
 tippy_anchor_parent_selector = "article.bd-article"
 
 # -- Options for linkchecking -------------------------------------------------
