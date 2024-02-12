@@ -211,6 +211,8 @@ A part of the request is a `redirectUri`, which tells the identity provider wher
             import android.content.Context
             import android.net.Uri
             import androidx.browser.customtabs.CustomTabsIntent
+            import okhttp3.OkHttpClient
+            import okhttp3.Request
 
             fun sendIdentityRequest(context: Context, identityProvider: IdentityProvider, identityRequest: String) {
                 // This value determines where the identity provider will redirect the user
@@ -223,9 +225,24 @@ A part of the request is a `redirectUri`, which tells the identity provider wher
                 val delimiter = if (baseUrl.contains('?')) "&" else "?"
                 val url = "${baseUrl}${delimiter}response_type=code&redirect_uri=${redirectUri}&scope=identity&state=$identityRequest"
 
-                // Open the URL in a browser. This is just an example of how that could be done.
-                val customTabsIntent = CustomTabsIntent.Builder().build()
-                customTabsIntent.launchUrl(context, Uri.parse(url))
+                val okHttpClientBuilder = OkHttpClient().newBuilder().followRedirects(false).followSslRedirects(false)
+                val client = okHttpClientBuilder.build()
+                val request = Request.Builder().url(url).build()
+
+                client.newCall(request).execute().use { response ->
+                    // The identity creation protocol dictates that we will receive a redirect.
+                    // If we don't receive a redirect, then something went wrong at the identity
+                    // provider's side.
+                    // The redirected URL contains the location that the user should be redirected to,
+                    // e.g. by opening it in a browser. This will start the identity verification at
+                    // the identity provider.
+                    val redirectedUrl = response.header("Location")
+                        ?: throw Exception("The identity provider did not redirect as expected.")
+
+                    // Open the URL in a browser. This is just an example of how that could be done.
+                    val customTabsIntent = CustomTabsIntent.Builder().build()
+                    customTabsIntent.launchUrl(context, Uri.parse(redirectedUrl))
+                }
             }
 
     .. tab::
