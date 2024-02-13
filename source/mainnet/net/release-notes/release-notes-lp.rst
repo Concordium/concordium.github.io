@@ -167,9 +167,9 @@ Wallets
 |bw|
 -------------------------
 
-    February XX, 2024
+    February 13, 2024
 
-    Version 1.4.1 fixes an issue with backwards compatibility for gRPC and an identity issue.
+    Version 1.4.1 fixes an issue with backward compatibility for gRPC and an identity issue.
 
     .. dropdown:: Previous releases
 
