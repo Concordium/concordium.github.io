@@ -87,7 +87,6 @@ The first step is to create the actual identity request. To do this, you need th
 
             import cash.z.ecc.android.bip39.Mnemonics
             import cash.z.ecc.android.bip39.toSeed
-            import com.concordium.example.wallet.services.ConcordiumWalletProxyService
             import com.concordium.sdk.ClientV2
             import com.concordium.sdk.Connection
             import com.concordium.sdk.TLSConfig
@@ -118,7 +117,7 @@ The first step is to create the actual identity request. To do this, you need th
                 val seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
                 @OptIn(ExperimentalStdlibApi::class)
                 val seedAsHex = Mnemonics.MnemonicCode(seedPhrase.toCharArray()).toSeed().toHexString()
-                val wallet = ConcordiumHdWallet.fromHex(seedAsHex, Network.TESTNET)
+                val wallet = ConcordiumHdWallet.fromHex(seedAsHex, Network.TESTNET) // Or Network.MAINNET, if working on mainnet.
 
                 val identityProviderIndex = identityProvider.ipInfo.ipIdentity.value
                 val idCredSec = wallet.getIdCredSec(identityProviderIndex, identityIndex)

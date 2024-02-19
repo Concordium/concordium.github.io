@@ -33,7 +33,8 @@ The following example demonstrates how a credential deployment transaction is cr
             const identity: IdentityObjectV1 = ...;
 
             // The identity provider that was used when creating the identity.
-            const identityProvider: IdentityProvider = ...;
+            const identity: IdentityProvider = ...;
+            const identityProviderIndex = identityProvider.ipInfo.ipIdentity;
 
             // Set up the wallet.
             const seedPhrase = 'fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position';
@@ -109,12 +110,12 @@ The following example demonstrates how a credential deployment transaction is cr
             import java.util.Collections
             import java.util.EnumMap
 
-            fun createCredentialDeploymentTransaction(): CredentialDeploymentDetails {
+            fun createCredentialDeploymentTransaction(identityIndex: Int, credentialCounter: Int): CredentialDeploymentDetails {
                 // The identity object created previously. See the identity creation section.
                 val identity: IdentityObject = ...
 
-                // The identity provider that was used for creating the identity.
-                val ipIdentity = ...
+                // The index of the identity provider that was used for creating the identity.
+                val identityProviderIndex = ...
 
                 val connection = Connection.newBuilder()
                     .host(nodeAddress)
@@ -125,7 +126,7 @@ The following example demonstrates how a credential deployment transaction is cr
 
                 val anonymityRevokers = Iterable { client.getAnonymityRevokers(BlockQuery.BEST) }.associateBy { it.arIdentity.toString() }
                 val providers = client.getIdentityProviders(BlockQuery.BEST)
-                val provider = Iterable { providers }.find { it.ipIdentity.value == ipIdentity }!!
+                val provider = Iterable { providers }.find { it.ipIdentity.value == identityProviderIndex }!!
                 val global = client.getCryptographicParameters(BlockQuery.BEST)
 
                 val seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
@@ -136,24 +137,24 @@ The following example demonstrates how a credential deployment transaction is cr
                 val attributeRandomness: MutableMap<AttributeType, String> = EnumMap(AttributeType::class.java)
                 for (attrType in identity.attributeList.chosenAttributes.keys) {
                     attributeRandomness[attrType] = wallet.getAttributeCommitmentRandomness(
-                        ipIdentity,
-                        Constants.IDENTITY_INDEX,
-                        Constants.CREDENTIAL_COUNTER,
+                        identityProviderIndex,
+                        identityIndex,
+                        credentialCounter,
                         attrType.ordinal
                     )
                 }
 
-                val blindingRandomness = wallet.getSignatureBlindingRandomness(ipIdentity, Constants.IDENTITY_INDEX)
-                val idCredSec = wallet.getIdCredSec(ipIdentity, Constants.IDENTITY_INDEX)
-                val prfKey = wallet.getPrfKey(ipIdentity, Constants.IDENTITY_INDEX)
+                val blindingRandomness = wallet.getSignatureBlindingRandomness(identityProviderIndex, identityIndex)
+                val idCredSec = wallet.getIdCredSec(identityProviderIndex, identityIndex)
+                val prfKey = wallet.getPrfKey(identityProviderIndex, identityIndex)
 
                 val publicKeys = CredentialPublicKeys.from(
                     Collections.singletonMap(
                         Index.from(0),
                         wallet.getAccountPublicKey(
-                            ipIdentity,
-                            Constants.IDENTITY_INDEX,
-                            Constants.CREDENTIAL_COUNTER
+                            identityProviderIndex,
+                            identityIndex,
+                            credentialCounter
                         )
                     ), 1
                 )
@@ -163,7 +164,7 @@ The following example demonstrates how a credential deployment transaction is cr
                     .globalContext(global)
                     .arsInfos(anonymityRevokers)
                     .idObject(identity)
-                    .credNumber(Constants.CREDENTIAL_COUNTER)
+                    .credNumber(credentialCounter)
                     .attributeRandomness(attributeRandomness)
                     .blindingRandomness(blindingRandomness)
                     .credentialPublicKeys(publicKeys)
@@ -241,11 +242,20 @@ is the signing key that corresponds to the public key used when creating the tra
                 val seedAsHex = Mnemonics.MnemonicCode(seedPhrase.toCharArray()).toSeed().toHexString()
                 val wallet = ConcordiumHdWallet.fromHex(seedAsHex, Network.TESTNET)
 
+                // The credentialCounter and the identityIndex must identical to what was used when deriving
+                // the keys to create the credential deployment transaction.
+                val credentialCounter = 0
+                val identityIndex = 0
+
+                // The indentityProvider index must be indentical to the index of the identity provider
+                // that was used to create the identity that the credential is for.
+                val identityProviderIndex = 0
+
                 val credentialDeploymentSignDigest = Credential.getCredentialDeploymentSignDigest(credentialDeployment)
                 val signingKey = wallet.getAccountSigningKey(
-                    ipIdentity,
-                    Constants.IDENTITY_INDEX,
-                    Constants.CREDENTIAL_COUNTER
+                    identityProviderIndex,
+                    identityIndex,
+                    credentialCounter
                 )
 
                 return signingKey.sign(credentialDeploymentSignDigest)
