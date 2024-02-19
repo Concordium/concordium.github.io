@@ -123,6 +123,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     :maxdepth: 2
 
     sdks-apis
+    wallet-sdk/wallet-sdk
     dapp-examples
     ../resources/dashboards
     ../references/developer-tools
