@@ -52,7 +52,48 @@ Here is an example of how the list of identity providers can be retrieved from t
 
         Kotlin (Android)
 
-        TODO Write the Kotlin example.
+        .. code-block:: Kotlin
+
+            import com.concordium.sdk.responses.blocksummary.updates.queues.AnonymityRevokerInfo
+            import com.concordium.sdk.responses.blocksummary.updates.queues.IdentityProviderInfo
+            import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+            import java.io.Serializable
+            import okhttp3.OkHttpClient
+            import okhttp3.Request
+
+            data class IdentityProvider(
+                val ipInfo: IdentityProviderInfo,
+                val arsInfos: Map<String, AnonymityRevokerInfo>,
+                val metadata: IdentityProviderMetaData
+            ) : Serializable
+
+            data class IdentityProviderMetaData(
+                val icon: String,
+                val issuanceStart: String,
+                val support: String?,
+                val recoveryStart: String?
+            ) : Serializable
+
+            fun getIdentityProviders(walletProxyBaseUrl: String): ArrayList<IdentityProvider> {
+                val request = Request.Builder().url("$walletProxyBaseUrl/v1/ip_info").build()
+                val client = OkHttpClient().newBuilder().build()
+
+                client.newCall(request).execute().use { response ->
+                    response.body()?.use { body ->
+                        val mapper = jacksonObjectMapper()
+                        return mapper.readValue(body.string(), mapper.typeFactory.constructCollectionType(ArrayList::class.java, IdentityProvider::class.java))
+                    }
+                }
+                throw Exception("Something went wrong")
+            }
+
+            fun main() {
+                val walletProxyTestnetBaseUrl = "https://wallet-proxy.testnet.concordium.com"
+                val walletProxyMainnetBaseUrl = "https://wallet-proxy.mainnet.concordium.software"
+
+                val testnetIdentityProviders = getIdentityProviders(walletProxyTestnetBaseUrl)
+                val mainnetIdentityProviders = getIdentityProviders(walletProxyMainnetBaseUrl)
+            }
 
     .. tab::
 

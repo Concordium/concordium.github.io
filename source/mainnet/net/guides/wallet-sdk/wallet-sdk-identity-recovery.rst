@@ -59,7 +59,47 @@ In the example below, functionality for retrieving the list of identity provider
 
         Kotlin (Android)
 
-        TODO Write the Kotlin example.
+        .. code-block:: Kotlin
+
+            import cash.z.ecc.android.bip39.Mnemonics
+            import com.concordium.sdk.ClientV2
+            import com.concordium.sdk.Connection
+            import com.concordium.sdk.TLSConfig
+            import com.concordium.sdk.crypto.wallet.ConcordiumHdWallet
+            import com.concordium.sdk.crypto.wallet.Identity
+            import com.concordium.sdk.crypto.wallet.IdentityRecoveryRequestInput
+            import com.concordium.sdk.crypto.wallet.Network
+            import com.concordium.sdk.requests.BlockQuery
+
+            fun createRecoveryRequest(): String {
+                // The identity provider to attempt to recover an identity from. Here we simply select the first available, but
+                // in a recovery process a wallet would usually loop through all possible options.
+                val identityProvider = getIdentityProviders(walletProxyTestnetBaseUrl)[0]
+
+                val seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
+                @OptIn(ExperimentalStdlibApi::class)
+                val seedAsHex = Mnemonics.MnemonicCode(seedPhrase!!.toCharArray()).toSeed().toHexString()
+                val wallet = ConcordiumHdWallet.fromHex(seedAsHex, Network.TESTNET)
+
+                val idCredSec = wallet.getIdCredSec(identityProvider.ipInfo.ipIdentity.value, identityIndex)
+
+                val connection = Connection.newBuilder()
+                    .host(nodeAddress)
+                    .port(nodePort)
+                    .useTLS(TLSConfig.auto())
+                    .build()
+                val client = ClientV2.from(connection)
+                val cryptographicParameters = client.getCryptographicParameters(BlockQuery.BEST)
+
+                val input = IdentityRecoveryRequestInput.builder()
+                    .globalContext(cryptographicParameters)
+                    .ipInfo(identityProvider.ipInfo)
+                    .idCredSec(idCredSec)
+                    .timestamp(java.time.Instant.now().epochSecond)
+                    .build()
+
+                return Identity.createIdentityRecoveryRequest(input)
+            }
 
     .. tab::
 
@@ -88,7 +128,7 @@ The next step is to send the generated identity recovery request to the associat
             } from '@concordium/web-sdk';
 
             // This identity provider must be identical to the one used to generate the identity
-            // receovery request, otherwise the request will fail.
+            // recovery request, otherwise the request will fail.
             const identityProvider: IdentityProviderWithMetadata = ...;
 
             // See how to generate in the previous section.
@@ -116,7 +156,44 @@ The next step is to send the generated identity recovery request to the associat
 
         Kotlin (Android)
 
-        TODO Write the Kotlin example.
+        .. code-block:: Kotlin
+
+            import com.concordium.sdk.crypto.wallet.identityobject.IdentityObject
+            import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+            import okhttp3.OkHttpClient
+            import okhttp3.Request
+
+            @JsonAutoDetect
+            private data class VersionedIdentity(
+                val v: Number,
+                val value: IdentityObject
+            )
+
+            fun recoverIdentity(): IdentityObject {
+                // This identity provider must be identical to the one used to generate the identity
+                // recovery request, otherwise the request will fail.
+                const identityProvider: IdentityProvider = ...
+
+                // See how to generate in the previous section.
+                val recoveryRequest: String = ...
+
+                val baseUrl = identityProvider.metadata.recoveryStart
+                val recoveryUrl = Uri.parse(baseUrl!!).buildUpon().appendQueryParameter("state", recoveryRequest).build().toString()
+                val request = Request.Builder().url(recoveryUrl).build()
+                val httpClient = OkHttpClient().newBuilder().build()
+
+                httpClient.newCall(request).execute().use { response ->
+                    response.body()?.use { body ->
+
+                        // The identity object has been successfully recovered.
+                        return jacksonObjectMapper().readValue(
+                            body.string(),
+                            VersionedIdentity::class.java
+                        ).value
+                    }
+                }
+                throw Exception("Failed to recover identity");
+            }
 
     .. tab::
 

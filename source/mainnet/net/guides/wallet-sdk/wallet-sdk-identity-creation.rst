@@ -58,7 +58,7 @@ The first step is to create the actual identity request. To do this, you need th
 
             const identityProviderIndex = identityProvider.ipInfo.ipIdentity;
 
-            const idCredSec = wallet.getIdCredSec(identityProvider, identityIndex).toString('hex');
+            const idCredSec = wallet.getIdCredSec(identityProviderIndex, identityIndex).toString('hex');
             const prfKey = wallet.getPrfKey(identityProviderIndex, identityIndex).toString('hex');
             const blindingRandomness = wallet.getSignatureBlindingRandomness(identityProviderIndex, identityIndex).toString('hex');
 
@@ -83,7 +83,60 @@ The first step is to create the actual identity request. To do this, you need th
 
         Kotlin (Android)
 
-        TODO Write the Kotlin example.
+        .. code-block:: Kotlin
+
+            import cash.z.ecc.android.bip39.Mnemonics
+            import cash.z.ecc.android.bip39.toSeed
+            import com.concordium.sdk.ClientV2
+            import com.concordium.sdk.Connection
+            import com.concordium.sdk.TLSConfig
+            import com.concordium.sdk.crypto.wallet.ConcordiumHdWallet
+            import com.concordium.sdk.crypto.wallet.Identity
+            import com.concordium.sdk.crypto.wallet.IdentityRequestInput
+            import com.concordium.sdk.crypto.wallet.Network
+            import com.concordium.sdk.requests.BlockQuery
+
+            fun createIdentityRequest(): String {
+                // Select the identity provider that is to be used for creating the identity. Here we
+                // choose the first one in the list available from the Concordium wallet-proxy.
+                val identityProvider = getIdentityProviders(walletProxyTestnetBaseUrl)[0]
+
+                // The index of the identity to create. The index is incremented per identity created
+                // for a specific identity provider. For the first identity created it should be 0,
+                // for the second it should be 1, and so forth.
+                val identityIndex = 0
+
+                val connection = Connection.newBuilder()
+                    .host(nodeAddress)
+                    .port(nodePort)
+                    .useTLS(TLSConfig.auto())
+                    .build()
+                val client = ClientV2.from(connection)
+                val cryptographicParameters = client.getCryptographicParameters(BlockQuery.BEST)
+
+                val seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
+                @OptIn(ExperimentalStdlibApi::class)
+                val seedAsHex = Mnemonics.MnemonicCode(seedPhrase.toCharArray()).toSeed().toHexString()
+                val wallet = ConcordiumHdWallet.fromHex(seedAsHex, Network.TESTNET) // Or Network.MAINNET, if working on mainnet.
+
+                val identityProviderIndex = identityProvider.ipInfo.ipIdentity.value
+                val idCredSec = wallet.getIdCredSec(identityProviderIndex, identityIndex)
+                val prfKey = wallet.getPrfKey(identityProviderIndex, identityIndex)
+                val blindingRandomness = wallet.getSignatureBlindingRandomness(identityProviderIndex, identityIndex)
+                val arThreshold = (identityProvider.arsInfos.size - 1).coerceAtMost(255)
+
+                val input: IdentityRequestInput = IdentityRequestInput.builder()
+                    .globalContext(cryptographicParameters)
+                    .ipInfo(identityProvider.ipInfo)
+                    .arsInfos(identityProvider.arsInfos)
+                    .arThreshold(arThreshold.toLong())
+                    .idCredSec(idCredSec)
+                    .prfKey(prfKey)
+                    .blindingRandomness(blindingRandomness)
+                    .build()
+
+                return Identity.createIdentityRequest(input)
+            }
 
     .. tab::
 
@@ -152,7 +205,44 @@ A part of the request is a `redirectUri`, which tells the identity provider wher
 
         Kotlin (Android)
 
-        TODO Write the Kotlin example.
+        .. code-block:: Kotlin
+
+            import android.content.Context
+            import android.net.Uri
+            import androidx.browser.customtabs.CustomTabsIntent
+            import okhttp3.OkHttpClient
+            import okhttp3.Request
+
+            fun sendIdentityRequest(context: Context, identityProvider: IdentityProvider, identityRequest: String) {
+                // This value determines where the identity provider will redirect the user
+                // at the end of the identity verification process. This can e.g. be to a deep link
+                // that your application listens for, so that your application is automatically activated
+                // again.
+                val redirectUri = "yourwallet-scheme://identity-issuer/callback"
+
+                val baseUrl = identityProvider.metadata.issuanceStart
+                val delimiter = if (baseUrl.contains('?')) "&" else "?"
+                val url = "${baseUrl}${delimiter}response_type=code&redirect_uri=${redirectUri}&scope=identity&state=$identityRequest"
+
+                val okHttpClientBuilder = OkHttpClient().newBuilder().followRedirects(false).followSslRedirects(false)
+                val client = okHttpClientBuilder.build()
+                val request = Request.Builder().url(url).build()
+
+                client.newCall(request).execute().use { response ->
+                    // The identity creation protocol dictates that we will receive a redirect.
+                    // If we don't receive a redirect, then something went wrong at the identity
+                    // provider's side.
+                    // The redirected URL contains the location that the user should be redirected to,
+                    // e.g. by opening it in a browser. This will start the identity verification at
+                    // the identity provider.
+                    val redirectedUrl = response.header("Location")
+                        ?: throw Exception("The identity provider did not redirect as expected.")
+
+                    // Open the URL in a browser. This is just an example of how that could be done.
+                    val customTabsIntent = CustomTabsIntent.Builder().build()
+                    customTabsIntent.launchUrl(context, Uri.parse(redirectedUrl))
+                }
+            }
 
     .. tab::
 
@@ -235,7 +325,71 @@ Upon completing identity verification with the identity provider, the identity p
 
         Kotlin (Android)
 
-        TODO Write the Kotlin example.
+        .. code-block:: Kotlin
+
+            import com.concordium.sdk.crypto.wallet.identityobject.IdentityObject
+            import com.fasterxml.jackson.annotation.JsonAutoDetect
+            import com.fasterxml.jackson.annotation.JsonProperty
+            import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+            import okhttp3.OkHttpClient
+            import okhttp3.Request
+
+            @JsonAutoDetect
+            private data class VersionedIdentity(
+                val v: Number,
+                val value: IdentityObject
+            )
+
+            private data class IdentityWrapper(val identityObject: VersionedIdentity)
+
+            private data class IdentityResponse(
+                val status: Status,
+                val token: IdentityWrapper?,
+                val detail: String?,
+            ) {
+                enum class Status {
+                    @JsonProperty("done")
+                    DONE,
+
+                    @JsonProperty("pending")
+                    PENDING,
+
+                    @JsonProperty("error")
+                    ERROR,
+                }
+            }
+
+            fun fetchIdentity() {
+                // The URL that the identity provider redirected to when the user completed
+                // identity verification.
+                val uri = ...
+
+                val identityUri = uri.split("#code_uri=").last()
+                val request = Request.Builder().url(identityUri).build()
+                val httpClient = OkHttpClient().newBuilder().build()
+
+                httpClient.newCall(request).execute().use { response ->
+                    response.body()?.use { body ->
+                        val mapper = jacksonObjectMapper()
+                        val identityResponse = mapper.readValue(body.string(), IdentityResponse::class.java)
+
+                        if (IdentityResponse.Status.DONE == identityResponse.status) {
+                            // The identity is ready and can be extracted and stored locally
+                            // in the user's wallet.
+                            val identity: IdentityObject = identityResponse.token!!.identityObject.value
+                        } else if (IdentityResponse.Status.ERROR == identityResponse.status) {
+                            // Something went wrong and the details about the error are available.
+                            val errorDetails = identityResponse.detail
+                        } else {
+                            // In this case the identity is still pending, and the identity
+                            // should be queried again after some time to check the status again.
+                            // An identity will always resolve to either the done status or the
+                            // error status.
+                        }
+                    }
+                }
+            }
+
 
     .. tab::
 
