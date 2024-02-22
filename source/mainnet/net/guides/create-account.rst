@@ -12,6 +12,8 @@ If you are using |bw| or |mw-gen2|, no initial account was created when you crea
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: Desktop Wallet
 
     .. note::

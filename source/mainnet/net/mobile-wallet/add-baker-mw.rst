@@ -13,6 +13,8 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees. A locked-for-staking balance cannot be used to pay for these transactions.
    You can see the fee in the transaction log.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: Desktop wallet
 
     .. Note::

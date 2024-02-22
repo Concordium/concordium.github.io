@@ -7,6 +7,8 @@
 Change account name
 ===================
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |mw-gen2|
 
     #. Tap on the account you want to rename.

@@ -15,22 +15,27 @@ It can be necessary to recover your wallet, for example if you get a new compute
       - |mw-gen1|
       - |mw-gen2|
       - |bw|
+      - |cryptox|
    *  - Backup recommended; can recover without backup
       - Backup required
+      - Secret recovery phrase required
       - Secret recovery phrase required
       - Secret recovery phrase required
    *  - Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.
       - Backup file includes accounts, identities, address book, and private keys.
       - Backup is not necessary but secret recovery phrase is needed.
       - Backup is not necessary but secret recovery phrase is needed.
+      - Backup is not necessary but secret recovery phrase is needed.
    *  - Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase.
       - Private keys are stored in the wallet.
       - Private keys are stored in the wallet and backed up by a secret recovery phrase.
       - Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the secret recovery phrase.
+      - Private keys are stored in the wallet and backed up by a secret recovery phrase.
    *  - Cannot recover in other wallet types
       - Cannot recover in other wallet types
       - Can recover in |mw-gen2| and |bw|
       - Can recover in |bw| and |mw-gen2|
+      - Can recover in |bw| and |mw-gen2|; |mw-gen1|, |mw-gen2|, and |bw| can be recovered in |cryptox|
 
 .. toctree::
    :hidden:

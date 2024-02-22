@@ -55,7 +55,7 @@ But decreasing the stake (whether for delegators or validators) is subject to a 
 Where delegation is available
 =============================
 
-You can :ref:`delegate CCDs<add-delegation>` in the Desktop Wallet, |mw-gen1|, |mw-gen2|, and |bw|. You can also delegate from :ref:`Concordium Client<transactions>`. It is recommended that you use :ref:`CCDScan<ccd-scan>` to research the various validators and pools prior to delegation if you plan to delegate to a specific pool.
+You can :ref:`delegate CCDs<add-delegation>` in the Desktop Wallet, |cryptox|, |mw-gen1|, |mw-gen2|, and |bw|. You can also delegate from :ref:`Concordium Client<transactions>`. It is recommended that you use :ref:`CCDScan<ccd-scan>` to research the various validators and pools prior to delegation if you plan to delegate to a specific pool.
 
 Summary
 =======

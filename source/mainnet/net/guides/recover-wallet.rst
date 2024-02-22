@@ -15,6 +15,8 @@ In case you get a new device or need to restore your existing device, you can re
 
     The recovery process for Desktop Wallet and |mw-gen1| is different. For information about these, see :ref:`Make a backup of identities, accounts, and addresses<export-import>`.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |bw|
 
     #. After :ref:`reinstalling<setup-bw>` the |bw|, open the extension, create a passcode, and when prompted, choose **Restore**.

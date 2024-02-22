@@ -5,7 +5,7 @@
 Identities
 ==========
 
-Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD<ccd>` or become a validator on the Concordium blockchain, you need an :term:`account` and an identity. This is regardless of whether you are using the |mw-gen1|, |mw-gen2|, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and identities are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD<ccd>` or become a validator on the Concordium blockchain, you need an :term:`account` and an identity. This is regardless of which wallet you use for your transactions.
 
 Before you can use the Concordium Platform, an :term:`identity provider` must verify and record your real-world identity. This identification is performed when you create your first account.
 
@@ -38,7 +38,7 @@ You are in control of which attributes are revealed to the public. You can choos
 Obtain an identity
 ------------------
 
-You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, |mw-gen1|, |mw-gen2|, or |bw|. Identity creation is an :term:`off-chain` action. If you are creating your first identity on a mobile device, Concordium strongly recommends using |mw-gen2|.
+You can :ref:`create identities<create-initial-account>` in the |cryptox|, Desktop Wallet, |mw-gen2|, or |bw|. Identity creation is an :term:`off-chain` action.
 
 .. Warning::
    It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
@@ -46,7 +46,7 @@ You can :ref:`create identities<create-initial-account>` in the Desktop Wallet, 
 .. Warning::
    Because of the difference in the way private keys are handled between |mw-gen2| / |bw| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
 
-   It is possible to exchange accounts and identities between the |mw-gen2| and the |bw|.
+   It is possible to exchange accounts and identities between the |cryptox|, |mw-gen2|, and the |bw|. Additionally, |mw-gen1| users can import backup files to |cryptox|.
 
 .. Note::
 
@@ -61,7 +61,7 @@ Upon verification of the user's identification documents and attributes, the Ide
 
 .. Note::
 
-   If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.
+   If using |cryptox|, |bw|, or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.
 
 About accounts
 ==============

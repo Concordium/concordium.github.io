@@ -5,7 +5,9 @@
 Tokens in the wallet
 ========================
 
-You can add, inspect, and send tokens in the |bw| and |mw-gen2|.
+You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
+
+.. dropdown:: |cryptox|
 
 .. dropdown:: |bw|
 

@@ -197,9 +197,9 @@ How to back up and import
 
             #. Review your import and tap **Ok, thanks**.
 
-.. dropdown:: |mw-gen2| and |bw|
+.. dropdown:: |cryptox|, |mw-gen2| and |bw|
 
-    Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
+    Backup is not available in |cryptox|, |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|. You *can* import a backup from |mw-gen1| to |cryptox|.
 
     In |bw| you can view the secret recovery phrase in Wallet Settings if you need to write it down again.
 

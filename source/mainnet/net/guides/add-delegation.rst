@@ -18,6 +18,8 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: Desktop Wallet
 
         .. dropdown:: Single signature account

@@ -18,6 +18,8 @@ If you remove the delegation, there is a :term:`cool-down period` before the del
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: Desktop Wallet
 
    .. dropdown:: Single signature account
