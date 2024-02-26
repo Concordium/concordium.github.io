@@ -5,13 +5,17 @@
 Add a validator
 ====================================
 
-Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to learn about best practices for validators.
+Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to learn about best practices for validators. **There is a minimum amount to stake (500000 CCD) to become a validator**.
 
 .. Note::
 
    All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees. A locked-for-staking balance cannot be used to pay for these transactions.
    You can see the fee in the transaction log.
+
+.. Warning::
+
+   Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
 .. dropdown:: |cryptox|
 
@@ -203,14 +207,6 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
             :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
             :width: 50%
 
-    .. Note::
-
-        There is a minimum amount to stake (500000 CCD) to become a validator.
-
-    .. Warning::
-
-       Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
-
     4. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool.
 
         .. image:: ../images/mobile-wallet/add-baker-amt-mw.png
@@ -347,14 +343,6 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
        .. image:: ../images/browser-wallet/add-baker-staked-amt.png
            :alt: screen with balances at the top and text box to enter amount to stake
            :width: 40%
-
-    .. Note::
-
-        There is a minimum amount to stake (500000 CCD) to become a validator.
-
-    .. Warning::
-
-       Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
 
     4. Choose whether you want to open a :term:`staking pool` or keep it closed. Choose **Open for delegation** to open a staking pool. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool. Click **Continue**.
 
