@@ -41,7 +41,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.b274b221-3ffa-4a6d-bb5e-d2f3e80fcb7b.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.e5974278-6117-4964-bc71-26a0da9a646d.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -2986,11 +2986,14 @@ Previous releases<div class="sd-summary-down docutils">
 <div class="section" id="mainnet">
 <span id="rn-node-mainnet"></span><span id="id3"></span><h3>Mainnet<a class="headerlink" href="#mainnet" title="Permalink to this headline">#</a></h3>
 <blockquote>
-<div><p>November 28, 2023</p>
-<p>Version 6.2.3 removes the V1 gRPC API. This removes the configuration options <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_PORT</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_ADDRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_TOKEN</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS</span></code> and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the <a class="reference external" href="https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto">standard GRPC health service API</a>.</p>
-<p>As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">DryRun</span></code> endpoint has also been that allows simulating the execution of transactions.</p>
-<p>The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.</p>
+<div><p>February 27, 2024</p>
+<p>The 6.3.0 release contains the following fixes and improvements:</p>
+<ul class="simple">
+<li><p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetBlockPendingUpdates</span></code> fails to report pending updates to the finalization committee parameters.</p></li>
+<li><p>GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option <code class="docutils literal notranslate"><span class="pre">--grpc2-max-threads</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_MAX_THREADS</span></code>) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.</p></li>
+<li><p>The option <code class="docutils literal notranslate"><span class="pre">--grpc2-max-concurrent-streams</span></code> now defaults to 200 from the previous unbounded value. This makes the node defaults safer.</p></li>
+<li><p>Startup time of the node has improved on all supported distributions.</p></li>
+</ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2999,6 +3002,18 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+6.2.3 - November 28, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 6.2.3 removes the V1 gRPC API. This removes the configuration options <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_PORT</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_ADDRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_RPC_SERVER_TOKEN</span></code>, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS</span></code> and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the <a class="reference external" href="https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto">standard GRPC health service API</a>.</p>
+<p class="sd-card-text">As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.</p>
+<p class="sd-card-text">A <code class="docutils literal notranslate"><span class="pre">DryRun</span></code> endpoint has also been that allows simulating the execution of transactions.</p>
+<p class="sd-card-text">The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 6.1.7 - October 23, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
