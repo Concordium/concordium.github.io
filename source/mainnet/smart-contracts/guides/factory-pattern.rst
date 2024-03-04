@@ -40,7 +40,7 @@ redeploying the code. This eliminates one of the key motivations for using a fac
     interface would be implemented by `MySqlDatabaseConnectionFactory` and
     `SQLiteDatabaseConnectionFactory` (and potentially others). Which specific database connection
     is constructed depends on which factory is provided.
-    
+
     In the factory method pattern, the code resides in an base class that has an abstract method
     for constructing `DatabaseConnection` objects. The base class is then subclassed to provide
     different implementation of the factory method.
@@ -56,7 +56,7 @@ redeploying the code. This eliminates one of the key motivations for using a fac
     On Concordium, the same problem does not really exist (viewing contract instances as the
     analogue of objects). Contract instances are always created by top-level transactions, and
     the contract being instantiated is always explicitly determined.
-    
+
 
 Another motiviation for using a factory pattern might be for the factory to have some on-going
 relationship with the products that it produces. In particular, the factory could maintain an
@@ -185,7 +185,7 @@ identify the code of the smart contract instance.
 
 Getting the module reference and contract name is done using the host functions
 ``contract_module_reference`` and ``contract_name``, respectively. Note: both of these functions
-are introduced in protocol version 7, and will not work while the chain is running an earlier 
+are introduced in protocol version 7, and will not work while the chain is running an earlier
 protocol version.
 
 In this example, the factory and product contracts are defined in the same module.
@@ -330,7 +330,7 @@ the invoker Adversary does not match the owner User), but success for User:
 
     .. image:: images/factory-tricked.svg
         :alt: sequence diagram showing how a hijacking attempt may succeed if the user is deceived into signing a bad transaction
-        
+
     This is hopefully unlikely. Moreover, the effect of
     such a hijacking should typically be that the product cannot be used as the
     user intended, but the user would still be able to create another product
@@ -354,7 +354,7 @@ At this point, it just remains to initialize the state of the product:
             factory,
         };
         *state = ProductState::Initialized(product);
- 
+
 
 .. Note::
 
