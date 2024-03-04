@@ -17,7 +17,7 @@ How to become an issuer
 An issuer needs to have the following components.
 
 1. Some way of identifying users to whom the credentials will be issued, e.g., an existing database of users.
-2. JSON schemas and metadata for credentials. These are used by the wallet to display and style the credential. This might be a logo, a background color, how the attributes will appear in the credential (e.g., date format, title), and so on. The `Concordium Web3 ID Issuer Front End <https://web3id-issuer-onboarding.mainnet.concordium.software/>`__ helps with setting up your metadata which you then should upload to a public URL. The Concordium Web3 Issuer Front End works on both mainnet and testnet. 
+2. JSON schemas and metadata for credentials. These are used by the wallet to display and style the credential. This might be a logo, a background color, how the attributes will appear in the credential (e.g., date format, title), and so on. The `Concordium Web3 ID Issuer Front End <https://web3id-issuer-onboarding.mainnet.concordium.software/>`__ helps with setting up your metadata which you then should upload to a public URL. The Concordium Web3 Issuer Front End works on both mainnet and testnet.
 3. A smart contract where credential lifetime is managed, together with its metadata such as expiry time. The `Concordium Web3 ID Issuer Front End <https://web3id-issuer-onboarding.mainnet.concordium.software/>`__ helps with setting up your credential registry contract.
 4. A dApp where the user will request credentials with the help of the wallet.
 5. A back end which will issue credentials, which involves registering the credential in the smart contract, and returning it to the holder's wallet.
