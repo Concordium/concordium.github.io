@@ -167,11 +167,15 @@ Wallets
 |bw|
 -------------------------
 
-    February 13, 2024
+    March 5, 2024
 
-    Version 1.4.1 fixes an issue with backward compatibility for gRPC and an identity issue.
+    In version 1.4.2 the token transfer estimate now takes the transfer amount into account and the wallet no longer blocks creating the last possible account for an identity.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.4.1 - February 13, 2024
+
+            Version 1.4.1 fixes an issue with backward compatibility for gRPC and an identity issue.
 
         .. dropdown:: |bw| 1.4.0 - February 5, 2024
 
