@@ -1,4 +1,5 @@
 .. _voting:
+.. include:: ../../variables.rst
 
 ===========
 How to vote
@@ -22,22 +23,22 @@ For Desktop wallet and |mw-gen1| wallet holders, the following applies:
 
 .. dropdown:: Desktop wallet
 
-    Users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. 
-    
+    Users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account.
+
     To delegate your vote:
-    
+
     In the account from which you want to vote send any amount of CCD (1 micro-CCD is enough) to the target account in |bw|, |cryptox|, or |mw-gen2| with a memo that says **delegatevote2024**. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
 
 .. dropdown:: |mw-gen1|
 
     You have two options.
-    
+
     #. You can delegate votes,
-    
+
     #. or you can import (add xref) your accounts into the |cryptox| wallet and vote from there.
 
     To delegate votes, users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account.
 
     To delegate your vote:
-    
+
     In the account from which you want to vote send any amount of CCD (1 micro-CCD is enough) to the target account in |bw|, |cryptox|, or |mw-gen2| with a memo that says **delegatevote2024**. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.

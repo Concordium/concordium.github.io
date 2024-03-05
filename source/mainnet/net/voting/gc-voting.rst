@@ -1,4 +1,5 @@
 .. _gc-voting:
+.. include:: ../../variables.rst
 
 =========================================
 Concordium Governance Committee Elections
@@ -27,7 +28,7 @@ Before the election
 
 #. Candidates are nominated and can "campaign". Candidates can submit a JSON file with information such as name, URL of a site with information about their campaign. This information is shown in the voting dApp.
 
-#. The Election coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract. 
+#. The Election coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract.
 
 #. The election server is started, the indexer is started, and the Guardian app is built and released.
 

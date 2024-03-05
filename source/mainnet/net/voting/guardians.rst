@@ -1,4 +1,5 @@
 .. _guardians:
+.. include:: ../../variables.rst
 
 =========
 Guardians
