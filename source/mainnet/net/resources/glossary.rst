@@ -28,6 +28,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       An authority who has power to know the identity of a participant. The anonymity revokers and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
 
+   Approval voting
+
+      Approval voting is a single-winner electoral system in which the voter can choose or approve any number of candidates, effectively assigning a 0 or a 1 to every candidate. The winner is the single candidate approved by the largest number of voters. Approval voting can be achieved by setting the selection limit to the total number of options in a contest.
+
    Attributes
 
       User data, such as date of birth or country of residence, that is associated with a user :term:`identity`. Users can choose which attributes should be revealed in each of their accounts.
@@ -59,6 +63,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
    Build
 
       Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from :term:`cargo-concordium`.
+
+   Candidate
+
+      Option on the official list of candidates for the election. Since there are only 10 places for the 2024 election, not all nominees are necessarily candidates.
 
    cargo-concordium
 
@@ -138,6 +146,13 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       Dual to :term:`encryption key`. In contrast to the encryption key, which is public, this key is only known to the account holder.
 
+   Decryption share
+
+      A guardian's partial share of a ballot decryption or tally decryption for an election.
+
+   Delegation share
+
+
    Delegator
 
       An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
@@ -145,6 +160,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
    Deploy
 
       Command that takes the built :term:`Wasm<webassembly>` file for a smart contract module and deploys it on chain. This command is run from :term:`Concordium client`.
+
+   Election manifest
+
+      The manifest is the information that uniquely specifies and describes the structure and type of the election, including geopolitical units, contests, candidates, ballot styles, etc. In the Guardian app, it is a file that is created before running an election. The internal manifest is a wrapper around the manifest used in programming code to simplify and avoid processing the same information twice. Unlike the manifest, the internal manifest is not meant for serialization.
 
    Encryption key
 
@@ -169,6 +188,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
    Genesis Block
 
       The first :term:`block` in a :term:`chain`. The genesis block establishes the starting state of the chain, before any transactions have occurred.
+
+   Guardian
+
+      One of a number of independent, trustworthy individuals who serve guardians in the election. All guardians must participate in a key ceremony to create a key to encrypt the election and may participate in the accompanying tally ceremony(s) to decrypt the tally(s). A guardian is available if they are available for the tally ceremony. A guardian is missing if they cannot attend the tally ceremony.
 
    Identity
 
@@ -233,6 +256,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
    Node
 
       A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A :term:`validator node<baker>` has cryptographic keys that enable it to take part in validation. A node without these keys is referred to as a *passive node*.
+
+   Nominee
+
+      Someone who has volunteered to be a candidate in an election.
 
    Nonce
 
@@ -342,6 +369,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.
 
+   Tally
+
+      Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.
+
    Testnet
 
       A test network run by Concordium to test its protocols and software. There can be several test networks in existence at the same time. All the features are tested on the testnet before they are released on the :term:`mainnet`.
@@ -399,6 +430,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       Party that checks users' :term:`verifiable credentials<verifiable credential>`.
 
+   Voting power
+
+      The voting power of an account corresponds to the weight this account has for voting. In the 2024 election, this is computed as the average amount of CCD on the account between the 1st of March and 31st of May 2024.
+
    Wallet
 
       A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has four wallet types.
@@ -416,6 +451,12 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
    WebAssembly
 
       WebAssembly (Wasm) defines a portable binary-code format and a corresponding text format for executable programs as well as software interfaces for facilitating interactions between such programs and their host environment. Smart contracts are deployed on chain as Wasm files.
+
+   Weight
+
+      The weight of an account is the same as the voting power of the account.
+
+      The weight of a vote is the weight assigned to that vote when tallying, i.e., the sum of all account weights that delegated to the account that cast the vote + the weight of the account that cast the vote (unless that account delegated its own weight to another account, but voted anyway).
 
    Winning probability
 

@@ -7,7 +7,7 @@ Concordium Governance Committee Elections
 
 Concordium Governance Committee elections are a vital part of decentralization, allowing the Concordium community to make decisions about the blockchain.
 
-A user with multiple accounts should vote from all accounts for their vote to have maximal weight. If the same account votes multiple times, only the last vote will count.
+A user with multiple accounts should vote from all accounts for their vote to have maximum weight. If the same account votes multiple times, only the last vote will count.
 
 Staked CCD, whether it is by validators or delegators, is still held in the user’s wallet, so it counts towards the weight of the vote. But shielded CCD cannot be seen by anyone other than the wallet owner, so it cannot be part of the weight. And CCD locked in smart contracts cannot be used to vote either. Furthermore tokens that are in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don’t want custodians to vote in their name) to transfer all CCD to wallets of their own.
 
@@ -15,12 +15,14 @@ The voting system chosen for this election is called **approval voting**. The vo
 
 The candidates with the most votes are elected. In case of a tie, which is very unlikely, a fair coin is flipped.
 
-The diagram and descriptions below describe the process during each phase of the election.
+The diagrams and descriptions below describe the process during each phase of the election.
 
 Before the election
 ===================
 
-(insert diagram)
+.. image:: ../images/voting/pre-election.png
+    :alt: diagram showing steps below
+    :width: 50%
 
 #. The Election coordinator uses the coordinator tool to get the initial weight values and initialize an instance of the election smart contract.
 
@@ -37,7 +39,9 @@ Before the election
 During the election
 ===================
 
-(insert diagram)
+.. image:: ../images/voting/election.png
+    :alt: diagram showing steps below
+    :width: 50%
 
 #. Voters open the dApp and cast their votes. The voter must connect their wallet and sign and submit the transaction to register it on the blockchain. In the case of delegated votes, it doesn't matter when voting power is delegated, as long as it happens within the voting "window", i.e., between election start and end time. The latest delegation registration counts and you cannot redelegate voting power delegated to you; only your initial weight can be delegated.
 
@@ -46,7 +50,9 @@ During the election
 After the election
 ==================
 
-(insert diagram)
+.. image:: ../images/voting/post-election.png
+    :alt: diagram showing steps below
+    :width: 50%
 
 #. Once the election closes, the election coordinator uses the coordinator tool to get the final weights and compute the encrypted tally which is registered in the smart contract.
 
