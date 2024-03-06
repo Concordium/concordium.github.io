@@ -42,7 +42,7 @@
     <script src="../../_static/design-tabs.js"></script>
     <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/web3-id/issuer.8289d43a-2f65-4249-b7c6-b3ebd19b04f9.js"></script>
+    <script loading_method="defer" src="../../_static/tippy/net/web3-id/issuer.ec341cd8-6c0f-4fbc-8851-5f9d08b85edb.js"></script>
     <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1901,12 +1901,12 @@ body {margin:0;}
 <p>An issuer needs to have the following components.</p>
 <ol class="arabic simple">
 <li><p>Some way of identifying users to whom the credentials will be issued, e.g., an existing database of users.</p></li>
-<li><p>JSON schemas and metadata for credentials. These are used by the wallet to display and style the credential. This might be a logo, a background color, how the attributes will appear in the credential (e.g., date format, title), and so on. The <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Front End</a> helps with setting up your metadata.</p></li>
+<li><p>JSON schemas and metadata for credentials. These are used by the wallet to display and style the credential. This might be a logo, a background color, how the attributes will appear in the credential (e.g., date format, title), and so on. The <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Front End</a> helps with setting up your metadata which you then should upload to a public URL. The Concordium Web3 Issuer Front End works on both mainnet and testnet.</p></li>
 <li><p>A smart contract where credential lifetime is managed, together with its metadata such as expiry time. The <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Front End</a> helps with setting up your credential registry contract.</p></li>
 <li><p>A dApp where the user will request credentials with the help of the wallet.</p></li>
 <li><p>A back end which will issue credentials, which involves registering the credential in the smart contract, and returning it to the holder’s wallet.</p></li>
 </ol>
-<p>To make it easier to become an issuer, you can use the <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Front End</a>. This tool walks you through steps two and three when becoming an issuer.</p>
+<p>To make it easier to become an issuer, you can use the <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Front End</a>. This tool walks you through steps two and three when becoming an issuer. The Concordium Web3 Issuer Front End works on both mainnet and testnet.</p>
 <div class="section" id="concordium-issuer-tool">
 <h3>Concordium Issuer tool<a class="headerlink" href="#concordium-issuer-tool" title="Permalink to this headline">#</a></h3>
 <p>Concordium also provides a generic issuer for Web3ID credentials. It exposes a REST API for registering credentials, and handles the correct formatting of credentials to submit to the chain, and communication with the node.</p>
