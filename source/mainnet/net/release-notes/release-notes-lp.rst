@@ -167,7 +167,7 @@ Wallets
 |bw|
 -------------------------
 
-    March 5, 2024
+    March 6, 2024
 
     In version 1.4.2 the token transfer estimate now takes the transfer amount into account and the wallet no longer blocks creating the last possible account for an identity.
 
