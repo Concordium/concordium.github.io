@@ -73,7 +73,7 @@ To use verifiable builds with cargo-concordium a container runtime such as `Dock
 Download and run Concordium Client
 ==================================
 
-The ``concordium-client`` tool allows you to interact with a testnet node. The tutorials use ``concordium-client`` as a command line tool to deploy, mint, and transfer. The tools is available for Windows, Mac, and Linux. :ref:`Download it for your operating system here<concordium-node-and-client-download-testnet>`. You find documentation of important commands that the ``concordium-client`` tool provides :ref:`here<concordium-client>`.
+The ``concordium-client`` tool allows you to interact with a Concordium node. The tutorials use ``concordium-client`` as a command line tool to deploy, mint, and transfer. The tools is available for Windows, Mac, and Linux. :ref:`Download it for your operating system here<concordium-node-and-client-download-testnet>`. You find documentation of important commands that the ``concordium-client`` tool provides :ref:`here<concordium-client>`.
 
 Rename the package to ``concordium-client`` in case it has some version annotation. Go to the folder where you downloaded the ``concordium-client``. You can check if you are in the correct folder when you see the output ``concordium-client`` from the command:
 
