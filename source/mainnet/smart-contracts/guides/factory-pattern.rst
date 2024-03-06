@@ -9,14 +9,14 @@ Using the factory pattern on Concordium
     This guide makes use of features that are first available in protocol version 7,
     namely getting the contract name and module reference of a smart contract instance
     from a smart contract.
-    Before the protocol upgrade to version 7, these features will not work.
+    Before the protocol upgrade to version 7 (expected summer 2024), these features will not work.
 
 The factory pattern is a design pattern where one contract (the factory) creates instances of
 another contract (the products). This pattern makes sense on Ethereum, where deploying a smart
 contract typically means deploying the code and instantiating a contract in a single transaction.
 This means that creating a new instance of a smart contract typically means redeploying the code,
 even if it is identical to an already-deployed smart contract. This can be undesirable:
-redeploying the same code repeatedly is a waste of resources. The factory pattern provides a
+redeploying the same code repeatedly wastes resources. The factory pattern provides a
 workaround for this: the contract code is deployed once, creating a factory contract, which then
 can be invoked to create further (product) contracts.
 
@@ -35,7 +35,7 @@ redeploying the code. This eliminates one of the key motivations for using a fac
     to create?
 
     This is where the factory pattern comes in. In the case of the factory class pattern,
-    the code is parametrised by a `DatabaseConnectionFactory` object, which provides a
+    the code is parametrized by a `DatabaseConnectionFactory` object, which provides a
     method for constructing `DatabaseConnection` objects. The `DatabaseConnectionFactory`
     interface would be implemented by `MySqlDatabaseConnectionFactory` and
     `SQLiteDatabaseConnectionFactory` (and potentially others). Which specific database connection
@@ -48,7 +48,7 @@ redeploying the code. This eliminates one of the key motivations for using a fac
     The point of this is that in object-oriented languages, the factory pattern is solving a
     particular problem: creating instances of a type that is not fully determined. While it may
     be idiomatic in one language, it may not be in another. For instance, in Rust the same code
-    could be parametrised by a generic type that implements a `DatabaseConnection` trait, which
+    could be parametrized by a generic type that implements a `DatabaseConnection` trait, which
     provides a `new` function for constructing `DatabaseConnection` instances. The particular
     type of database connection that is created would depend on how the generic type parameter
     is eventually instantiated.
@@ -63,24 +63,24 @@ relationship with the products that it produces. In particular, the factory coul
 index of product instances, or ensure that each instance is created distinctly from the others.
 It could also play a role in logging events signalling the creation of new products.
 
-The sequence diagram below illustrates an idealised factory pattern.
+The sequence diagram below illustrates an idealized factory pattern.
 The user invokes the ``produce`` endpoint on a ``Factory`` contract.
 The factory constructs a new instance of the ``product`` smart contract, invoking the
 ``init_product`` constructor.
 Finally, a reference to the new product instance is returned.
 
 .. image:: images/ideal-factory.svg
-    :alt: sequence diagram showing the idealised interaction for the factory pattern
+    :alt: sequence diagram showing the idealized interaction for the factory pattern
 
 
 Unfortunately, implementing a factory pattern on Concordium is complicated by the fact that one
 smart contract instance cannot create other smart contract instances programmatically.
 On Concordium, every smart contract instance is created by a top-level transaction. To achieve
-something resembling the factory pattern, we have to separately create the new product instances
-in an uninitialized state, and then have the factory initialize them.
+something resembling the factory pattern, the product instances must first be created in an
+uninitialized state, and then the factory must be invoked to initialize them in a separate step.
 
-The sequence diagram below illustrates how the factory pattern is realised on Concordium.
-First of all, the user constructs a new instance of the ``product`` smart contract, invoking the
+The sequence diagram below illustrates how the factory pattern is realized on Concordium.
+First, the user constructs a new instance of the ``product`` smart contract, invoking the
 ``init_product`` constructor.
 This creates the ``Product`` contract in a special uninitialized state.
 The user then invokes the ``produce`` endpoint on the ``Factory`` contract, passing in a reference
@@ -91,7 +91,7 @@ the ``Product`` being fully initialized.
 .. image:: images/concordium-factory.svg
     :alt: sequence diagram showing how the factory pattern might be realised on Concordium
 
-This process is significantly more complex than the idealised factory pattern we started with.
+This process is significantly more complex than the original idealized factory pattern.
 In particular, the user is required to sign two separate transactions, with the second one depending
 on the result of the first one. If this two-step process is presented to the end user, it is likely
 to cause confusion. Additionally, two-step process means that the smart contracts have to be robust
@@ -112,7 +112,7 @@ If the factory does not maintain an on-going relationship with the product,
 then it is generally possible to simply initialize the product entirely in
 the constructor (``init_product``), removing the separate ``initialize`` operation entirely.
 In general, if the factory contract does not need to update its state
-after initializing the product, then it serves no purpose. It would be
+when initializing the product, then it serves no purpose. It would be
 sufficient for the user to construct the product directly in the same way as the factory
 would have.
 
@@ -137,7 +137,7 @@ each product.
 
 For instance, a CIS2 contract can manage multiple NFTs that each have distinct token IDs.
 Rather than each NFT being its own contract instance (created by a factory), they are simply
-handled as part of the state of the overall CIS2 contract. Here, the token ID actts as a
+handled as part of the state of the overall CIS2 contract. Here, the token ID acts as a
 virtual address.
 
 The main disadvantage of this approach is that the isolation between the states of each product
@@ -172,21 +172,21 @@ The ``produce`` endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``produce`` method of the factory expects one parameter that is the address of an uninitialized
-instance of the ``product`` contract. First of all, the parameter is read from the context:
+instance of the ``product`` contract. First, the parameter is read from the context:
 
 .. code-block:: Rust
 
         let product_address = ctx.parameter_cursor().get()?;
 
-The factory needs to be sure that the address does actually refer to an instance of the ``product``
+The factory needs to be sure that the address actually refers to an instance of the ``product``
 contract, in order to ensure correct behavior. This can be achieved by checking the module reference
 and contract name against expected values. Together, the module reference and contract name uniquely
 identify the code of the smart contract instance.
 
 Getting the module reference and contract name is done using the host functions
-``contract_module_reference`` and ``contract_name``, respectively. Note: both of these functions
-are introduced in protocol version 7, and will not work while the chain is running an earlier
-protocol version.
+``contract_module_reference`` and ``contract_name``, respectively. **Note: both of these functions**
+**are introduced in protocol version 7, and will not work while the chain is running an earlier**
+**protocol version.**
 
 In this example, the factory and product contracts are defined in the same module.
 Thus, to check that the module reference of the product is correct, it is sufficient to check that
@@ -208,9 +208,9 @@ module rereference for the product is to be determined later, it could be passed
 when creating the ``factory`` instance.
 
 If the module defining the product is known to only contain one smart contract, then checking the
-module reference is sufficient for identifying the code of the product smart contract. In this case,
-however, both the factory and product contracts are defined in the same module, so it is necessary
-to also check the contract name. This is achieved as follows:
+module reference is sufficient for identifying the code of the product smart contract. In the example smart contract,
+however, both the factory and product contracts are defined in the same module, so it is also necessary
+to check the contract name. This is achieved as follows:
 
 .. code-block:: Rust
 
@@ -218,13 +218,22 @@ to also check the contract name. This is achieved as follows:
             host.contract_name(product_address).or(Err(FactoryError::NonExistentProduct))?;
         ensure_eq!(product_name, PRODUCT_INIT_NAME, FactoryError::InvalidProduct);
 
-Now the contract is known to be an instance of ``product``, the next step is to call
-``initialize``. In this example, ``initialize`` takes as a parameter that is the index assigned to
-it, which will be the current value of ``next_product`` in the state.
+Now the contract is known to be an instance of ``product``, the next step is to update the state of
+the factory contract:
 
 .. code-block:: Rust
 
-        let next_product = host.state().next_product;
+        let state = host.state_mut();
+        let next_product = state.next_product;
+        state.next_product = next_product + 1;
+        state.products.insert(next_product, product_address);
+
+Finally, it remains to invoke ``initialize`` on the product.
+In this example, ``initialize`` takes a parameter that is the index assigned to
+it, which will be the old value of ``next_product`` in the state.
+
+.. code-block:: Rust
+
         host.invoke_contract(
             &product_address,
             &next_product,
@@ -235,13 +244,6 @@ it, which will be the current value of ``next_product`` in the state.
 
 Here, it is assumed that ``initialize`` will fail, for instance, if it is called on a product that
 has previously been initialized.
-It only remains to update the factory contract's state:
-
-.. code-block:: Rust
-
-        let state = host.state_mut();
-        state.next_product = next_product + 1;
-        state.products.insert(next_product, product_address);
 
 The ``product`` contract
 ------------------------
@@ -295,15 +297,15 @@ initialized:
 Since the construction and initialization of the product occur in two
 separate transactions, it is possible that a third party might try to hijack
 the process by inserting their own transaction to initialize the product.
-For instance, an adversary could invoke a different factory instance than indended by the user,
+For instance, an adversary could invoke a different factory instance than intended by the user,
 as illustrated in the following sequence diagram:
 
 .. image:: images/factory-adversary.svg
     :alt: sequence diagram showing how a third party might hijack a product
 
 To prevent this possibility, the product checks in its ``initialize`` method that the invoker of the
-transaction (i.e. the account that originated the transaction as a whole) is the same account as
-created the product contract instance (i.e. the "owner"):
+transaction (i.e., the account that originated the transaction as a whole) is the same account as
+created the product contract instance (i.e., the "owner"):
 
 .. code-block:: Rust
 
@@ -319,7 +321,7 @@ the invoker Adversary does not match the owner User), but success for User:
     Typically, it is wrong to use the invoker of a transaction for
     authorization, rather than the immediate caller. For instance, a user might
     invoke some untrusted smart contract, and expect it is not authorized to
-    transfer tokens she holds on another contract. If the token-holding contract
+    transfer tokens they hold on another contract. If the token-holding contract
     used the invoker for authorization, then the untrusted contract could
     transfer the tokens. In the case of the factory pattern, however, the
     authorization is for a one-time use (initializing the product contract)
@@ -331,7 +333,7 @@ the invoker Adversary does not match the owner User), but success for User:
     .. image:: images/factory-tricked.svg
         :alt: sequence diagram showing how a hijacking attempt may succeed if the user is deceived into signing a bad transaction
 
-    This is hopefully unlikely. Moreover, the effect of
+    Hopefully, this is unlikely. Moreover, the effect of
     such a hijacking should typically be that the product cannot be used as the
     user intended, but the user would still be able to create another product
     and have the factory produce that correctly.
@@ -362,7 +364,7 @@ At this point, it just remains to initialize the state of the product:
     This is because ``initialize`` checks that the immediate caller is a smart contract, and
     records the contract address in the state. The fact that this prevents a user from directly
     invoking ``initialize`` is incidental. The design intent is not to prevent the user from
-    badly initializing products (which they could also do by invoking a "BadFactory" as previously
+    initializing products badly (which they could also do by invoking a "BadFactory" as previously
     noted). The intent is that products that are produced by the factory are produced correctly.
 
 
@@ -379,7 +381,7 @@ product before `initialize` is called, then the consequences and risk of
 hijacking are more sever. Thus, to adhere to the factory pattern, the
 product contract must:
 
-1. Always be constructed in an uninitialized state, with no balance, authority or any other state.
+1. Always be constructed in an uninitialized state, with no balance, authority, or any other state.
 
 2. Only permit the ``initialize`` update operation while it is in the uninitialized state.
 
