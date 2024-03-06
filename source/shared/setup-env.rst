@@ -181,7 +181,7 @@ Your next task enables the ``concordium-client`` tool to talk to a testnet node.
     .. image:: images/pb_tutorial_17.png
         :width: 100 %
 
-Run a node
+Concordium node on Testnet
 ==========
 
 For the purposes of these tutorials and for testing, a node is available on testnet to use when testing smart contracts and dApps so you do not need to run your own node. You can use this node for API calls of chain methods only with gRPC v2 and gRPC web. The address is ``grpc.testnet.concordium.com`` on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of *chain methods only*. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
