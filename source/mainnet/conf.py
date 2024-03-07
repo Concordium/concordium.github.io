@@ -283,9 +283,9 @@ html_sidebars = {
 
 # Tippy configuration
 tippy_js = ("https://unpkg.com/@popperjs/core@2", "https://unpkg.com/tippy.js@6")
-tippy_tip_selector = "term"
-tippy_skip_anchor_classes = (
-    "headerlink", "sd-stretched-link", "sd-rounded-pill")
+tippy_skip_urls = [
+    "(?!.*glossary.html.*)"
+]
 tippy_anchor_parent_selector = "article.bd-article"
 
 # -- Options for linkchecking -------------------------------------------------
