@@ -142,7 +142,7 @@ p.prev-next-title:hover{
     background-color: #052535;
 }
 
-input.search-input.form-control {
+.bd-search input:focus {
     --pst-color-border: #48A2AE;
 }
 
@@ -228,19 +228,11 @@ iframe {
     top: 9px;
 }
 
-.toctree-checkbox~label i {
+.navbar-nav .toctree-checkbox~label .fa-chevron-down {
     transform: rotate(270deg);
 }
 
-.toctree-checkbox:checked~label i {
-    transform: rotate(0deg);
-}
-
-.toctree-checkbox~label i {
-    transform: rotate(270deg);
-}
-
-.toctree-checkbox:checked~label i {
+.navbar-nav .toctree-checkbox:checked~label .fa-chevron-down {
     transform: rotate(0deg);
 }
 
