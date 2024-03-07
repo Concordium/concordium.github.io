@@ -152,7 +152,8 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Delegation share
 
-
+      (TBD)
+   
    Delegator
 
       An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
