@@ -28,7 +28,7 @@ Before the election
 
 #. Each guardian sends their account address to Concordium.
 
-#. Candidates are nominated and can "campaign". Candidates can submit a JSON file with information such as name, URL of a site with information about their campaign. This information is shown in the voting dApp.
+#. Candidates are nominated and can "campaign". Candidates **must** submit a JSON file with information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the voting dApp.
 
 #. The Election coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract.
 
@@ -54,7 +54,7 @@ After the election
     :alt: diagram showing steps below
     :width: 50%
 
-#. Once the election closes, the election coordinator uses the coordinator tool to get the final weights and compute the encrypted tally which is registered in the smart contract.
+#. Once the election closes, the election coordinator uses the coordinator tool to get the final weights (the initial weights plus weights after taking vote delegation into account) and compute the encrypted tally which is registered in the smart contract.
 
 #. The guardians use the Guardian app to generate their decryption share of the tally and post that before the deadline specified. They then generate and register proof of correct decryption. If proof generation fails, manual intervention is required by the election coordinator to reset the tally phase with the option of excluding any number of guardians.
 
