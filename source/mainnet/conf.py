@@ -151,7 +151,7 @@ html_theme_options = {
     # 'includehidden': False,
     "navigation_with_keys": False,
     # 'titles_only': False,
-    "show_nav_level": 0,
+    "show_nav_level": 1,
     "show_toc_level": 2,
     "navigation_depth": 5,
     "navbar_start": ["navbar-logo"],
