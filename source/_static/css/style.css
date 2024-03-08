@@ -103,15 +103,17 @@ h6{
 
 a{
     color: #48A2AE;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 a.reference.internal:hover{
     color: #48A2AE;
+    text-decoration: none;
 }
 
 a.reference.external:hover{
     color: #48A2AE;
+    text-decoration: none;
 }
 
 a.headerlink {
@@ -142,8 +144,8 @@ p.prev-next-title:hover{
     background-color: #052535;
 }
 
-.bd-search input:focus {
-    --pst-color-border: #48A2AE;
+.bd-search input {
+    --pst-color-accent: #48A2AE;
 }
 
 .toc-entry a.nav-link.active {
@@ -222,7 +224,7 @@ iframe {
     color: rgba(var(--pst-color-sidebar-link-active),1);
 }
 
-.bd-sidebar .label-parts i {
+.bd-sidebar .label-parts .fa-chevron-down {
     left: 0;
     right:unset;
     top: 9px;
