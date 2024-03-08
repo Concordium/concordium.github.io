@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css?v=21f5c625" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css?v=87251df2" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=6175c28d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/installation/previous-node-downloads.8d16db7c-fc23-4b58-a7cd-af14710d1ff3.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/installation/previous-node-downloads.7d667c85-b8a0-4161-9165-f3424b2bb088.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/installation/previous-node-downloads';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -614,6 +614,7 @@ body {margin:0;}
 <section id="windows-mainnet-and-testnet">
 <h2>Windows - Mainnet and Testnet<a class="headerlink" href="#windows-mainnet-and-testnet" title="Link to this heading">#</a></h2>
 <p><strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
+<p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-6.2.3-0.msi">Windows 6.2.3</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-6.1.7-0.msi">Windows 6.1.7</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-6.1.6-0.msi">Windows 6.1.6</a> (Testnet only)</p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-6.0.4-0.msi">Windows 6.0.4</a></p>
@@ -634,6 +635,7 @@ body {margin:0;}
 </section>
 <section id="macos-mainnet-and-testnet">
 <h2>macOS - Mainnet and Testnet<a class="headerlink" href="#macos-mainnet-and-testnet" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-6.2.3-0.pkg">macOS 6.2.3</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-6.1.7-1.pkg">macOS 6.1.7</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-6.1.6-0.pkg">macOS 6.1.6</a> (Testnet only)</p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-6.0.4-0.pkg">macOS 6.0.4</a></p>
@@ -655,6 +657,21 @@ body {margin:0;}
 <h2>Ubuntu - Mainnet<a class="headerlink" href="#ubuntu-mainnet" title="Link to this heading">#</a></h2>
 <p>Default GRPC port is set to 20000
 Default listen port is set to 8888</p>
+<p><a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.2.3-0_amd64.deb">6.2.3</a></p>
+<blockquote>
+<div><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_6.2.3-0_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum <code class="docutils literal notranslate"><span class="pre">809dffd12cb075b374f16a36f35245cb5c928941745c6eb2598bcf61a2b60aa6</span></code></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
 <p><a class="reference external" href="https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.1.7-0_amd64.deb">6.1.7</a></p>
 <blockquote>
 <div><ul>
@@ -841,6 +858,21 @@ Default listen port is set to 8888</p>
 <h2>Ubuntu - Testnet<a class="headerlink" href="#ubuntu-testnet" title="Link to this heading">#</a></h2>
 <p>Default GRPC port is set to 20001
 Default listen port is set to 8889</p>
+<p><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.2.3-0_amd64.deb">6.2.3</a></p>
+<blockquote>
+<div><ul>
+<li><p>Verification instructions</p>
+<blockquote>
+<div><p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_6.2.3-0_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum <code class="docutils literal notranslate"><span class="pre">5e97f77f3dedfd8921045a3ed4623600281b5331d37e527424a2f01068e6b2b1</span></code></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
 <p><a class="reference external" href="https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.1.7-0_amd64.deb">6.1.7</a></p>
 <blockquote>
 <div><ul>
@@ -1137,6 +1169,15 @@ Default listen port is set to 8889</p>
         }
     } );
 </script>
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2024, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
   <style>
     .cc {
       position: relative;
@@ -1147,17 +1188,18 @@ Default listen port is set to 8889</p>
     .cc a {
       display: inline-block;
       text-align: left;
-      padding: 16px;
+      padding-left: 16px;
+      padding-bottom: 8px;
       color: black;
       font-size: 8px;
     }
 </style>
 
 <div class="cc">
-  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2024, Concordium Software ApS
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
   </a>
-  <a href="../guides/legal.html">
+  <a text-decoration=none href="../guides/legal.html" >
     Legal information
   </a>
 </div>
