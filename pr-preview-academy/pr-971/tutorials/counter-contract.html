@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/style.css?v=21f5c625" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/style.css?v=87251df2" />
     <link rel="stylesheet" type="text/css" href="../_static/css/tippy.css?v=6175c28d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -703,10 +703,10 @@
 <p class="admonition-title">Note</p>
 <p>The template repository contains <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates">short GIFs</a> that show many of these commands.</p>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo concordium init</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>init
 </pre></div>
 </div>
-<p>Select the <code class="docutils literal notranslate"><span class="pre">Default</span></code> option from the menu.</p>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">default</span></code> option from the menu.</p>
 <a class="reference internal image-reference" href="../_images/select-default.png"><img alt="../_images/select-default.png" src="../_images/select-default.png" style="width: 100%;" /></a>
 <p>Then it will ask for a name and a description of your project. Fill them in.
 The result is a basic skeleton of a smart contract.
@@ -828,17 +828,17 @@ Initially, it has a <code class="docutils literal notranslate"><span class="pre"
 <section id="build-deploy-and-initialize-the-contract">
 <h2>Build, deploy, and initialize the contract<a class="headerlink" href="#build-deploy-and-initialize-the-contract" title="Link to this heading">#</a></h2>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">dist</span></code> folder to keep the schema output file and Wasm compiled contract in and run the build command.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo concordium build --out dist/module.wasm.v1 --schema-out dist/schema.bin</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span>--schema-out<span class="w"> </span>dist/schema.bin
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/build.png"><img alt="../_images/build.png" src="../_images/build.png" style="width: 100%;" /></a>
 <p>Deploy it with the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/module.wasm.v1 --sender &lt;YOUR-ACCOUNT&gt; --name counter --grpc-port 20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span>--sender<span class="w"> </span>&lt;YOUR-ACCOUNT&gt;<span class="w"> </span>--name<span class="w"> </span>counter<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/deploy.png"><img alt="../_images/deploy.png" src="../_images/deploy.png" style="width: 100%;" /></a>
 <p>Initialize it to create your contract instance, so you are ready to invoke the functions in the next section.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;YOUR-MODULE-HASH&gt; --sender &lt;YOUR-ADDRESS&gt; --energy 30000 --contract counter --grpc-port 20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;YOUR-MODULE-HASH&gt;<span class="w"> </span>--sender<span class="w"> </span>&lt;YOUR-ADDRESS&gt;<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--contract<span class="w"> </span>counter<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/initialize.png"><img alt="../_images/initialize.png" src="../_images/initialize.png" style="width: 100%;" /></a>
@@ -848,7 +848,7 @@ Initially, it has a <code class="docutils literal notranslate"><span class="pre"
 <section id="id1">
 <h3>View function<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>First, check the initial state of the contract.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint view --schema dist/schema.bin --grpc-port 20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;YOUR-CONTRACT-INSTANCE&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>view<span class="w"> </span>--schema<span class="w"> </span>dist/schema.bin<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p>Since you just initialized the contract it is 0.</p>
@@ -857,7 +857,7 @@ Initially, it has a <code class="docutils literal notranslate"><span class="pre"
 <section id="increment-function">
 <h3>Increment function<a class="headerlink" href="#increment-function" title="Link to this heading">#</a></h3>
 <p>Create a JSON file that holds your operator that will be given as input to the function and run the command below. Basically, you are saying to the contract instance “with this transaction I will update your state from the increment entrypoint” which is your function name with this parameter.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint increment --parameter-json &lt;PATH-TO-JSON&gt; --schema dist/smart-contract-multi/schema.bin --sender &lt;YOUR-ADDRESS&gt; --energy 6000 --grpc-port 20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;YOUR-CONTRACT-INSTANCE&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>increment<span class="w"> </span>--parameter-json<span class="w"> </span>&lt;PATH-TO-JSON&gt;<span class="w"> </span>--schema<span class="w"> </span>dist/smart-contract-multi/schema.bin<span class="w"> </span>--sender<span class="w"> </span>&lt;YOUR-ADDRESS&gt;<span class="w"> </span>--energy<span class="w"> </span><span class="m">6000</span><span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p>Start by testing with your conditions. First, try another account other than the owner of the contract since you want that only the owner can call this function.</p>
