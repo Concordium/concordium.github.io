@@ -70,11 +70,13 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    February XX, 2024
+    March 11, 2024
 
     Version 1.5.1 fixes the following issues:
 
-    - Changing restake preference is no longer blocked when the validator is below minimum stake threshold.
+    - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
+
+    - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
 
     .. dropdown:: Previous releases
 
