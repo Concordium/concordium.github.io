@@ -61,6 +61,22 @@ Starting a new project on the Concordium blockchain? Have a look at the `dApp st
 
     `Back end and front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/sponsoredTransactions>`__
 
+.. dropdown:: CIS2 Sponsored Transactions
+
+    `Demo front end <https://cis2-sponsored.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    :ref:`Tutorial about the sponsored Transactions dApp<sponsoredTransactions>`
+
+    `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`__
+
+    `Back end and front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/sponsoredTransactionsAuction>`__
+
+.. dropdown:: Track and Trace
+
+    `Smart contract <https://github.com/Concordium/concordium-dapp-examples/tree/main/trackAndTrace/smart-contract>`__
+
+    `Front end and back end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/trackAndTrace>`__
+
 .. dropdown:: Voting
 
     `Demo front end <https://voting.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet
@@ -76,6 +92,12 @@ Starting a new project on the Concordium blockchain? Have a look at the `dApp st
     `Demo front end <http://signmessage.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
 
     `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__
+
+.. dropdown:: EuroE age verification
+
+    `Demo front end <https://euroe-demo.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/euroe-demo>`__
 
 .. dropdown:: Smart contract deploy and initialize tool
 

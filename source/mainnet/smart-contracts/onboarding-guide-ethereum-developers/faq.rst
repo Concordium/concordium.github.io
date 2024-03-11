@@ -625,8 +625,10 @@ Deploying and initializing smart contracts
 
 .. dropdown::  Can I create a factory smart contract on Concordium?
 
-    No. A factory smart contract on the Ethereum chain deploys other smart contracts. In contrast,
+    In short: no. A factory smart contract on the Ethereum chain deploys other smart contracts. In contrast,
     the ``init`` function has to be called by an account (not a smart contract) on the Concordium chain.
+    The guide to :ref:`using the factory pattern on Concordium<factory-pattern>` discusses
+    the alternatives and how to emulate the factory pattern.
 
 .. dropdown::  Can I predict/calculate the address of the smart contract before deploying it? Is there something similar to the Ethereum CREATE2?
 
