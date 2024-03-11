@@ -21,7 +21,7 @@ from datetime import date
 # -- Project information -----------------------------------------------------
 
 project = 'Concordium'
-copyright = f"2021-{date.today().year}, Concordium Software ApS"
+copyright = f'2021 - {date.today().year}, Concordium Software ApS'
 author = 'Concordium'
 
 # The short X.Y version
@@ -57,8 +57,8 @@ extensions = [
 extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
 extlinks = {
-    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
-    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem?%s', 'Download public key:%s'),
+    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.2.%s.sig', 'Download signature:%s') # Supply extension, e.g. exe, dmg, AppImage
 }
 
 # todo_include_todos = True
@@ -149,17 +149,18 @@ html_theme_options = {
     # 'sticky_navigation': True,
     "navigation_depth": 3,
     # 'includehidden': False,
+    "navigation_with_keys": False,
     # 'titles_only': False,
-    "show_nav_level": 0,
+    "show_nav_level": 1,
     "show_toc_level": 2,
     "navigation_depth": 5,
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
     "page_sidebar_items": ["page-toc", "edit-this-page", "footer-article"],
-    "footer_items": ["copyright", "footer"],
+    "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "show_prev_next": True,
-    "navbar_align": "left",
+    #"navbar_align": "left",
     "icon_links": [
         {
             # Concordium GitHub
@@ -275,14 +276,17 @@ html_css_files = [
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 html_sidebars = {
-    "**": ["search-field", "sidebar-nav-bs"]
+    "**": ["sidebar-nav-bs"]
 }
 
 # html_additional_pages = {}
 
 # Tippy configuration
 tippy_js = ("https://unpkg.com/@popperjs/core@2", "https://unpkg.com/tippy.js@6")
-tippy_tip_selector = "term"
+tippy_skip_urls = [
+    "(?!.*glossary.html.*)"
+]
+tippy_anchor_parent_selector = "article.bd-article"
 
 # -- Options for linkchecking -------------------------------------------------
 
@@ -369,4 +373,6 @@ redirects = {
     "./net/resources/legal": "net/resources/terms-and-conditions.html",
     "./en/mainnet/smart-contracts/onboarding-guide-solana-developers/index": "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview.html",
     "./net/references/grpc": "net/references/grpc2.html",
+    "./en/mainnet/smart-contracts/guides/contract-testing-guides": "./en/mainnet/smart-contracts/guides/integration-test-contract",
+    "./en/mainnet/smart-contracts/best-practices/index": "./en/mainnet/smart-contracts/best-practices/development",
 }

@@ -14,9 +14,9 @@
 
 .. _writing-smart-contracts:
 
-==================================
-Developing smart contracts in Rust
-==================================
+===============================
+Develop smart contracts in Rust
+===============================
 
 On the Concordium blockchain smart contracts are deployed as Wasm modules, but
 Wasm is designed primarily as a compilation target and is not convenient to
@@ -51,8 +51,8 @@ To obtain correct exports, the `crate-type` attribute must be set to
    crate-type = ["cdylib", "rlib"]
    ...
 
-Writing a smart contract using ``concordium_std``
-=================================================
+Write a smart contract using ``concordium_std``
+===============================================
 
 It is recommended to use the ``concordium_std`` crate, which provides a
 more Rust-like experience for developing smart contract modules and calling
@@ -195,7 +195,7 @@ user-defined structs and enums.
        ...
    }
 
-Parameters to init and receive functions must implement ``Serialize``, where as
+Parameters to init and receive functions must implement ``Serialize``, whereas
 the state must implement ``Serialize`` *or* ``Serial + DeserialWithState``.
 
 .. note::
@@ -205,8 +205,8 @@ the state must implement ``Serialize`` *or* ``Serial + DeserialWithState``.
 
 .. _working-with-parameters:
 
-Working with parameters
------------------------
+Work with parameters
+--------------------
 
 Parameters to the init and receive functions are represented as byte arrays.
 While the byte arrays can be used directly, they can also be deserialized into
@@ -283,85 +283,80 @@ substantial impact for more complex examples.
 
 Parameters have a size limit of 65535B. There is no return value size limit (apart from energy).
 
-Working with queries
---------------------
+Work with queries
+-----------------
 
 Queries can be called from smart contracts to query an account balance, contract balance,
 or the current exchange rates.
 
-Query an account balance
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. dropdown:: Query an account balance
 
-To query account balances, the following are available:
+    To query account balances, the following are available:
 
-.. code-block:: rust
+    .. code-block:: rust
 
-   // Query the balance of an account.
-   let account_balance = host.account_balance(account_address)?;
+        // Query the balance of an account.
+        let account_balance = host.account_balance(account_address)?;
 
-Assuming the account exists, this returns the public/unshielded balance of an account, the currently staked balance, and balance locked in release schedules.
-Any amount received during the transaction until the point of querying is reflected in the balance.
+    Assuming the account exists, this returns the public/unshielded balance of an account, the currently staked balance, and balance locked in release schedules.
+    Any amount received during the transaction until the point of querying is reflected in the balance.
 
-.. note::
+    When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
+    CCD equivalent to the max energy cost is reserved on the invoker account during the execution of the contract.
+    Because of this, querying the balance of the invoker will result in the current account balance minus the
+    amount of CCD reserved to cover the max energy cost as well as the amount included in the transaction.
 
-   When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
-   CCD equivalent to the max energy cost is reserved on the invoker account during the execution of the contract.
-   Because of this, querying the balance of the invoker will result in the current account balance minus the
-   amount of CCD reserved to cover the max energy cost as well as the amount included in the transaction.
+    Some part of the balance might be used for staking or/and is locked in releases by scheduled transfers.
+    Which makes the amount unavailable for transferring.
+    All of this information can be accessed as:
 
-Some part of the balance might be used for staking or/and is locked in releases by scheduled transfers.
-Which makes the amount unavailable for transferring.
-All of this information can be accessed as:
+    .. code-block:: rust
 
-.. code-block:: rust
+        // The amount which is available for transfers.
+        let available_balance = account_balance.available();
+        // The staked amount.
+        let staked_balance = account_balance.staked();
+        // The amount locked in scheduled transfers.
+        let locked_balance = account_balance.locked();
+        // The total public balance, i.e. including staked and locked_balance.
+        let total_balance = account_balance.total();
 
-   // The amount which is available for transfers.
-   let available_balance = account_balance.available();
-   // The staked amount.
-   let staked_balance = account_balance.staked();
-   // The amount locked in scheduled transfers.
-   let locked_balance = account_balance.locked();
-   // The total public balance, i.e. including staked and locked_balance.
-   let total_balance = account_balance.total();
+.. dropdown:: Query a contract balance
 
-Query a contract balance
-~~~~~~~~~~~~~~~~~~~~~~~~
+    To query the current balance of a contract, the following is available:
 
-To query the current balance of a contract, the following is available:
+    .. code-block:: rust
 
-.. code-block:: rust
+        let contract_balance = host.contract_balance(address)?;
 
-    let contract_balance = host.contract_balance(address)?;
+    Assuming the contract exists, this returns the current amount held by the contract.
+    Any amount transferred or received during the same transaction until the point of querying
+    is reflected in the balance.
 
-Assuming the contract exists, this returns the current amount held by the contract.
-Any amount transferred or received during the same transaction until the point of querying
-is reflected in the balance.
+    .. note::
 
-.. note::
+        Although it is valid for a contract to query its own balance, it is cheaper to use ``host.self_balance()``.
 
-   Although it is valid for a contract to query its own balance, it is cheaper to use ``host.self_balance()``.
+.. dropdown:: Query exchange rates
 
-Query exchange rates
-~~~~~~~~~~~~~~~~~~~~
+    To query exchange rates, the following are available:
 
-To query exchange rates, the following are available:
+    .. code-block:: rust
 
-.. code-block:: rust
+        let exchange_rates = host.exchange_rates();
 
-    let exchange_rates = host.exchange_rates();
+    The result contains the exchange rates currently used by the chain.
+    These are the micro CCD per Euro rate and the Euro per NRG rate.
 
-The result contains the exchange rates currently used by the chain.
-These are the micro CCD per Euro rate and the Euro per NRG rate.
+    .. code-block:: rust
 
-.. code-block:: rust
+        let micro_ccd_per_euro = exchange_rates.micro_ccd_per_euro();
+        let euro_per_energy = exchange_rates.euro_per_energy();
 
-    let micro_ccd_per_euro = exchange_rates.micro_ccd_per_euro();
-    let euro_per_energy = exchange_rates.euro_per_energy();
+    Each rate is a ratio of two 64-bit unsigned integers.
 
-Each rate is a ratio of two 64-bit unsigned integers.
-
-Building a smart contract module with ``cargo-concordium``
-==========================================================
+Build a smart contract module with ``cargo-concordium``
+=======================================================
 
 The Rust compiler has good support for compiling to Wasm using the
 ``wasm32-unknown-unknown`` target.
@@ -381,14 +376,12 @@ recommends using ``cargo-concordium`` to build smart contracts.
 
     Add H2 for Testing smart contracts with H3s for Unit tests with stubs and Simulate contract calls
 
-Best practices
-==============
 .. todo::
 
      Add H3 for Don't panic, Use trap instead.
 
 Avoid creating black holes
---------------------------
+==========================
 
 A smart contract is not required to use the amount of CCD send to it, and by
 default a smart contract does not define any behavior for emptying the balance
@@ -400,7 +393,7 @@ Therefore it is good practice for smart contracts that are not dealing with CCD,
 to ensure the sent amount of CCD is zero and reject any invocations which are
 not.
 Using the ``#[init(...)]`` and ``#[receive(...)]`` macros will help you in this
-endeavour, as they will cause functions to return a ``NotPayble`` error if
+endeavor, as they will cause functions to return a ``NotPayble`` error if
 they receive a non-zero amount of CCD.
 To enable receiving CCD for a function, use the |payable|_ attribute in the
 macro, e.g.: ``#[init(..., payable)]`` and ``#[receive(..., payable)]``.

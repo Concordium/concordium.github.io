@@ -7,6 +7,8 @@ dApp examples
 
 Select an example to see more information about it, such as a hosted dApp for you to try, links to tutorials, repositories, and more.
 
+Starting a new project on the Concordium blockchain? Have a look at the `dApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
+
 .. dropdown:: Piggy bank
 
     `Demo front end <https://piggybank.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet
@@ -59,6 +61,22 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Back end and front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/sponsoredTransactions>`__
 
+.. dropdown:: CIS2 Sponsored Transactions
+
+    `Demo front end <https://cis2-sponsored.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    :ref:`Tutorial about the sponsored Transactions dApp<sponsoredTransactions>`
+
+    `Smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`__
+
+    `Back end and front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/sponsoredTransactionsAuction>`__
+
+.. dropdown:: Track and Trace
+
+    `Smart contract <https://github.com/Concordium/concordium-dapp-examples/tree/main/trackAndTrace/smart-contract>`__
+
+    `Front end and back end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/trackAndTrace>`__
+
 .. dropdown:: Voting
 
     `Demo front end <https://voting.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet
@@ -75,6 +93,12 @@ Select an example to see more information about it, such as a hosted dApp for yo
 
     `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__
 
+.. dropdown:: EuroE age verification
+
+    `Demo front end <https://euroe-demo.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    `Front end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/euroe-demo>`__
+
 .. dropdown:: Smart contract deploy and initialize tool
 
     `Demo front end <https://sctools.mainnet.concordium.software/>`__ where you can deploy and initlize a smart contract on testnet or mainnet
@@ -84,7 +108,8 @@ Select an example to see more information about it, such as a hosted dApp for yo
 .. dropdown:: Wallet test bench
 
     This tool is for testing wallets and shows a great overview of the available interactions between wallets and front end.
-    Deploy and initialize scenarios are available on the browser wallet (will be implemented in the mobile wallets in the future).
+
+    Deploy and initialize scenarios are available on the |bw|.
 
     `Demo front end <https://wallet-test-bench.testnet.concordium.com/>`__ where you can test wallet interactions
 
@@ -97,3 +122,7 @@ The dApps are written in React.
 Piggy bank, wCCD, eSealing, sponsored Transactions, smart contract deploy and initialize tool, and wallet test bench use the NPM library
 `@concordium/react-components <https://www.npmjs.com/package/@concordium/react-components>`__
 to implement integrations to the |bw| and |mw-gen2| using WalletConnect.
+
+.. tip::
+
+   Starting a new project on the Concordium blockchain? Have a look at our `DApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
