@@ -8,17 +8,18 @@
     .cc a {
       display: inline-block;
       text-align: left;
-      padding: 16px;
+      padding-left: 16px;
+      padding-bottom: 8px;
       color: black;
       font-size: 8px;
     }
 </style>
 
 <div class="cc">
-  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img src="{{ pathto('_static/cc-sa-by.png', True) }}" />  Copyright 2021 - 2024, Concordium Software ApS
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="{{ pathto('_static/cc-sa-by.png', True) }}" />
   </a>
-  <a href="{{ pathto('net/guides/legal') }}">
+  <a text-decoration=none href="{{ pathto('net/guides/legal') }}" >
     Legal information
   </a>
 </div>
