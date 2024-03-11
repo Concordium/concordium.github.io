@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
+<style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
 
 <fieldset>
   <legend>Was this article helpful?</legend>
-  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'Click', 'Yes']);">
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
   <label for="Yes">Yes</label>
-  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'Click', 'No']);">
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
   <label for="No">No</label>
 </fieldset>
-</html>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager -->
