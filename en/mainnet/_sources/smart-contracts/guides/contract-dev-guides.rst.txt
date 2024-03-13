@@ -26,3 +26,4 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    upgradeable-contract
    json-params
    migrate-contracts
+   factory-pattern

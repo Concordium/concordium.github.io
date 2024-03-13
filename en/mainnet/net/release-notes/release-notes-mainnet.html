@@ -3,61 +3,121 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Release notes - Mainnet &#8212; Concordium  documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/style.css?v=87251df2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=6175c28d" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script loading_method="defer" src="https://unpkg.com/@popperjs/core@2"></script>
-    <script loading_method="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script loading_method="defer" src="../../_static/tippy/net/release-notes/release-notes-mainnet.df0ef2b7-9e2a-434c-9286-2ec014100216.js"></script>
-    <link rel="shortcut icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-mainnet.f43bd424-c3fb-4d87-b47f-f4b3dd683c93.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-mainnet';</script>
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-  <div id="navbar-start">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
-    <style>
+      <div class="navbar-item"><style>
 .navbar-brand img {
     max-height: 200px;
     width: auto;
@@ -68,20 +128,15 @@
     <a href="https://developer.concordium.software/">
         <img class="logo" src="../../_static/concordium-logo-dark.svg" />
     </a>
-</div>
+</div></div>
     
   </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   
-  <div id="navbar-collapsible" class=" collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <style>
+        <div class="navbar-item"><style>
 body {margin:0;}
 
 .navbar-menu {
@@ -151,656 +206,410 @@ body {margin:0;}
     display: none;}
 
 }
-</style>
-      </div>
+</style></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/Concordium" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mailto:support@concordium.software" rel="noopener" target="_blank" title="Support"><span><i class="fas fa-envelope"></i></span>
-            <label class="sr-only">Support</label></a>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Support</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" rel="noopener" target="_blank" title="Monitor"><span><i class="fas fa-chart-line"></i></span>
-            <label class="sr-only">Monitor</label></a>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Monitor</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://support.concordium.software/latest" rel="noopener" target="_blank" title="Discourse"><span><i class="fab fa-discourse"></i></span>
-            <label class="sr-only">Discourse</label></a>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" rel="noopener" target="_blank" title="YouTube"><span><i class="fab fa-youtube"></i></span>
-            <label class="sr-only">YouTube</label></a>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://medium.com/concordium" rel="noopener" target="_blank" title="Medium"><span><i class="fab fa-medium"></i></span>
-            <label class="sr-only">Medium</label></a>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/concordium" title="Medium" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-medium fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Medium</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://academy.concordium.software/ccd-academy/getting-started" rel="noopener" target="_blank" title="Academy"><span><i class="fas fa-graduation-cap"></i></span>
-            <label class="sr-only">Academy</label></a>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://academy.concordium.software/ccd-academy/getting-started" title="Academy" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Academy</span></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
-  </div>
-</div>
-    </nav>
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
     
   </div>
-</nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  
+  
+    <div class="navbar-persistent--mobile">
 
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
-    <i class="fas fa-list"></i> On this page
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
-<nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-1-2-0-for-android">
-   Concordium Wallet for Mobile 1.2.0 for Android
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-5-4-2">
-   Concordium Node 5.4.2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-5-2-0">
-   Concordium Client 5.2.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-for-android-1-1-8">
-   Concordium Wallet for Mobile for Android 1.1.8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-for-ios-1-0-1">
-   Concordium Wallet for Mobile for iOS 1.0.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen1-for-ios-3-2-0">
-   Concordium Legacy Wallet for iOS 3.2.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-1-0-6">
-   Concordium Wallet for Web 1.0.6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-8-0">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     cargo-concordium
-    </span>
-   </code>
-   2.8.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#smart-contract-integration-testing">
-   Smart contract integration testing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-1-0-4">
-   Concordium Wallet for Web 1.0.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vscode-extension-1-0-1">
-   VSCode extension 1.0.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Cargo-concordium 2.8.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-for-android-1-1-7">
-   Concordium Wallet for Mobile for Android 1.1.7
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-5-3-2">
-   Concordium Node 5.3.2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-7-1">
-   Cargo-concordium 2.7.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-ledger-app-v3-1-0">
-   Concordium Ledger App v3.1.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-0-9-11">
-   Concordium Wallet for Web 0.9.11
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen1-for-ios-3-1-1">
-   Concordium Legacy Wallet for iOS 3.1.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-1-1-6">
-   Concordium Wallet for Mobile 1.1.6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-5-1-1">
-   Concordium Client 5.1.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-5-2-4">
-   Concordium Node 5.2.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-for-ios">
-   Concordium Wallet for Mobile for iOS
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-0-9-8">
-   Concordium Wallet for Web 0.9.8
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-1-1-5">
-   Concordium Wallet for Mobile 1.1.5
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen1-for-android-3-2-0">
-   Concordium Legacy Wallet for Android 3.2.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-7-0">
-   Cargo concordium 2.7.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-1-1-4">
-   Concordium Wallet for Mobile 1.1.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-5-1-3">
-   Concordium Node 5.1.3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-6-0">
-   Cargo concordium 2.6.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-0-9-6">
-   Concordium Wallet for Web 0.9.6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-5-0-7-for-macos">
-   Concordium Node 5.0.7 for MacOS
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-4-sirius">
-     Mainnet 4: Sirius
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-0-9-5">
-   Concordium Wallet for Web 0.9.5
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-0-9-4">
-   Concordium Wallet for Web 0.9.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-5-0">
-   Cargo concordium 2.5.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-5-0-2">
-   Concordium Client 5.0.2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#smart-contract-libraries">
-   Smart contract libraries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2-1-1-0">
-   Concordium Wallet for Mobile 1.1.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw-0-8-5">
-   Concordium Wallet for Web 0.8.5
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-5-0-6">
-   Concordium Node 5.0.6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-4-0">
-   Cargo concordium 2.4.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-5-0-1">
-   Concordium Client 5.0.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen1-for-android">
-   Concordium Legacy Wallet for Android
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-4-5-0">
-   Concordium Node 4.5.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bw">
-   Concordium Wallet for Web
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-2-0">
-   Cargo concordium 2.2.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-4-4-4">
-   Concordium Node 4.4.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-4-2-0">
-   Concordium Client 4.2.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen2">
-   Concordium Wallet for Mobile
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mw-gen1-previously-concordium-mobile-wallet-for-android">
-   Concordium Legacy Wallet (previously Concordium Mobile Wallet) for Android
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-4-3-1">
-   Concordium Node 4.3.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-4-1-0">
-   Concordium Client 4.1.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-1-0">
-   Cargo concordium 2.1.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-4-0-4">
-   Concordium Client 4.0.4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cargo-concordium-2-0-2">
-   Cargo concordium 2.0.2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-4-2-3-for-docker">
-   Concordium Node 4.2.3 for Docker
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-1-5-0">
-   Concordium Desktop Wallet 1.5.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-4-2-3">
-   Concordium Node 4.2.3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-4-2-1">
-   Concordium Node 4.2.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v3-0-0-53">
-   Concordium Mobile Wallet for iOS v3.0.0(53)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v3-0-0-100">
-   Concordium Mobile Wallet for Android v3.0.0(100)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-4-2">
-   Concordium Desktop Wallet v1.4.2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-4-1-1">
-   Concordium Node 4.1.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-4-0-3">
-   Concordium Client 4.0.3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-4-1">
-   Concordium Desktop Wallet v1.4.1
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-3-alpha-centauri-3-0">
-     Mainnet 3: Alpha Centauri 3.0
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ccdscan-release-1">
-   CCDScan release 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-v3-0-2">
-   Concordium Node v3.0.2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v2-0-0-75">
-   Concordium Mobile Wallet for Android v2.0.0(75)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v2-0-0-38">
-   Concordium Mobile Wallet for iOS v2.0.0(38)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-3-34">
-   Concordium Mobile Wallet for iOS v1.3(34)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-2-33">
-   Concordium Mobile Wallet for iOS v1.2(33)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v1-2-6">
-   Concordium Mobile Wallet for Android v1.2.6
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-3-1">
-   Concordium Desktop Wallet v1.3.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-v3-0-1">
-   Concordium Node v3.0.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-3-0">
-   Concordium Desktop Wallet v1.3.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-v3-0-0">
-   Concordium Node v3.0.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v1-0-22">
-   Concordium Mobile Wallet for Android v1.0.22
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-ledger-app-v2-0-3">
-   Concordium Ledger App v2.0.3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-v3-0-4">
-   Concordium Client v3.0.4
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-2-alpha-centauri-2-2">
-     Mainnet 2: Alpha Centauri 2.2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-1-27">
-   Concordium Mobile Wallet for iOS v1.1(27)
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-2-alpha-centauri-2-1">
-     Mainnet 2: Alpha Centauri 2.1
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v-1-0-16">
-   Concordium Mobile Wallet for Android (v. 1.0.16)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">
-   The new version of Concordium Mobile Wallet for iOS is coming soon
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-2-alpha-centauri-2-0">
-     Mainnet 2: Alpha Centauri 2.0
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node-v1-1-3">
-   Concordium Node v1.1.3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-client-v1-1-1">
-   Concordium Client v1.1.1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-2-0">
-   Concordium Desktop Wallet v1.2.0
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-ledger-app-v2-0-1">
-   Concordium Ledger App v2.0.1
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-1-alpha-centauri-1-2">
-     Mainnet 1: Alpha Centauri 1.2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-1-6">
-   Concordium Desktop Wallet v1.1.6
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-1-alpha-centauri-1-1">
-     Mainnet 1: Alpha Centauri 1.1
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-1-5">
-   Concordium Desktop Wallet v1.1.5
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mainnet-1-alpha-centauri-1-0">
-     Mainnet 1: Alpha Centauri 1.0
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#proof-of-stake">
-   Proof of Stake
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#two-layer-consensus-protocol">
-   Two Layer Consensus Protocol
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#built-in-idlayer">
-   Built in IDLayer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#smart-contracts">
-   Smart Contracts
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tokenomics-and-on-chain-incentivization">
-   Tokenomics and On-chain Incentivization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concordium-node">
-   Concordium Node
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mobile-wallet">
-   Mobile Wallet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#desktop-wallet">
-   Desktop Wallet
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#source-code">
-   Source Code
-  </a>
- </li>
-</ul>
+    </header>
+  
 
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><style>
+body {margin:0;}
+
+.navbar-menu {
+  position: relative;
+  margin-left: 190px;
+  background: none;
+}
+
+.navbar-light {
+    background: #ededed!important;
+    box-shadow: none;
+}
+
+.navbar-menu a {
+  float: left;
+  display: inline;
+  text-align: center;
+  color: var(--font-color);
+  font-size: 15px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* The dropdown container */
+.dropdown {
+    float: left;
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/* Large devices (laptops/desktops, 992px to 768px ) */
+@media only screen and (max-width: 1178px) {
+  .navbar-menu {
+    display: none;}
+
+}
+</style></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/concordium" title="Medium" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-medium fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://academy.concordium.software/ccd-academy/getting-started" title="Academy" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Academy</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Release...</li>
+  </ul>
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-
-<div class="tocsection editthispage">
-    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/net/release-notes/release-notes-mainnet.rst">
-        <i class="fas fa-pencil-alt"></i> Edit this page
-    </a>
 </div>
-
-              </div>
+      
+    </div>
+  
+  
+</div>
+</div>
               
-            
-          </div>
-          
-
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
-              <div>
+              
                 
-  <div class="section" id="release-notes-mainnet">
-<span id="mainnet-release-notes"></span><h1>Release notes - Mainnet<a class="headerlink" href="#release-notes-mainnet" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="release-notes-mainnet">
+<span id="mainnet-release-notes"></span><h1>Release notes - Mainnet<a class="headerlink" href="#release-notes-mainnet" title="Link to this heading">#</a></h1>
 <p>This document is deprecated and replaced by the <a class="reference internal" href="release-notes-lp.html#release-notes"><span class="std std-ref">product-separated release notes</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -808,8 +617,8 @@ body {margin:0;}
 <p>To subscribe to updates on the Mainnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
 </div>
 <p>June 27, 2023</p>
-<div class="section" id="mw-gen2-1-2-0-for-android">
-<h2>Concordium Wallet for Mobile 1.2.0 for Android<a class="headerlink" href="#mw-gen2-1-2-0-for-android" title="Permalink to this headline">#</a></h2>
+<section id="mw-gen2-1-2-0-for-android">
+<h2>Concordium Wallet for Mobile 1.2.0 for Android<a class="headerlink" href="#mw-gen2-1-2-0-for-android" title="Link to this heading">#</a></h2>
 <p>The Concordium Wallet for Mobile for Android now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.</p>
 <p>Additionally, the following improvements were made:</p>
 <ul class="simple">
@@ -817,9 +626,9 @@ body {margin:0;}
 <li><p>Fixed a crash when inputting a too large amount as the stake for delegation or baking.</p></li>
 </ul>
 <p>June 14, 2023</p>
-</div>
-<div class="section" id="concordium-node-5-4-2">
-<h2>Concordium Node 5.4.2<a class="headerlink" href="#concordium-node-5-4-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-5-4-2">
+<h2>Concordium Node 5.4.2<a class="headerlink" href="#concordium-node-5-4-2" title="Link to this heading">#</a></h2>
 <p>Concordium node version 5.4.2 contains the following features and bug fixes:</p>
 <ul class="simple">
 <li><p>Enable CORS support in grpc-web. This only applies when grpc-web is enabled.</p></li>
@@ -830,35 +639,35 @@ body {margin:0;}
 <li><p>Fixed a bug that caused an extra byte to be added when running <code class="docutils literal notranslate"><span class="pre">getModuleSource</span></code> in the V1 GRPC API.</p></li>
 </ul>
 <p>June 1, 2023</p>
-</div>
-<div class="section" id="concordium-client-5-2-0">
-<h2>Concordium Client 5.2.0<a class="headerlink" href="#concordium-client-5-2-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-5-2-0">
+<h2>Concordium Client 5.2.0<a class="headerlink" href="#concordium-client-5-2-0" title="Link to this heading">#</a></h2>
 <p>Version 5.2.0 contains the following features and bug fixes:</p>
 <ul class="simple">
 <li><p>Fix a bug in display of <code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">show-chain-parameters</span></code> output for protocol version 6.</p></li>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">GetBlockTransactionEvents</span></code> that prints the list of transaction outcomes in a given block.</p></li>
 </ul>
 <p>May 31, 2023</p>
-</div>
-<div class="section" id="mw-gen2-for-android-1-1-8">
-<h2>Concordium Wallet for Mobile for Android 1.1.8<a class="headerlink" href="#mw-gen2-for-android-1-1-8" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-for-android-1-1-8">
+<h2>Concordium Wallet for Mobile for Android 1.1.8<a class="headerlink" href="#mw-gen2-for-android-1-1-8" title="Link to this heading">#</a></h2>
 <p>The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.</p>
 <p>A minor change to the identity user interface was made to support integration with eID verifiers.</p>
-</div>
-<div class="section" id="mw-gen2-for-ios-1-0-1">
-<h2>Concordium Wallet for Mobile for iOS 1.0.1<a class="headerlink" href="#mw-gen2-for-ios-1-0-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-for-ios-1-0-1">
+<h2>Concordium Wallet for Mobile for iOS 1.0.1<a class="headerlink" href="#mw-gen2-for-ios-1-0-1" title="Link to this heading">#</a></h2>
 <p>The prompt to review the terms and conditions has been updated, and it now points to a link where you can read the newest version of the terms and conditions before accepting. Additionally, a new prompt will be shown in the wallet if the terms and conditions are updated, so it no longer happens only after updating the application.</p>
 <p>Also, a minor change was made to support integration with eID verifiers.</p>
 <p>Fixed a crash caused by a change implemented by identity provider Notabene where the user is asked for access to the microphone, and if denied, crashed the app. Microphone access is required by the identity provider for proof-of-life.</p>
 <p>The Concordium Wallet for Mobile for iOS now requires iOS 15 as the minimum version.</p>
 <p>May 30, 2023</p>
-</div>
-<div class="section" id="mw-gen1-for-ios-3-2-0">
-<h2>Concordium Legacy Wallet for iOS 3.2.0<a class="headerlink" href="#mw-gen1-for-ios-3-2-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen1-for-ios-3-2-0">
+<h2>Concordium Legacy Wallet for iOS 3.2.0<a class="headerlink" href="#mw-gen1-for-ios-3-2-0" title="Link to this heading">#</a></h2>
 <p>Identity and account creation has been locked in Concordium Legacy Wallet for iOS devices. This means that you cannot create new identities or accounts in Concordium Legacy Wallet on an iOS device. You can continue to use Concordium Legacy Wallet, but if you need to create a new identity or account you must use Concordium Wallet for Mobile. You can also still recover your wallet from a backup file in Concordium Legacy Wallet on an iOS device.</p>
-</div>
-<div class="section" id="bw-1-0-6">
-<h2>Concordium Wallet for Web 1.0.6<a class="headerlink" href="#bw-1-0-6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw-1-0-6">
+<h2>Concordium Wallet for Web 1.0.6<a class="headerlink" href="#bw-1-0-6" title="Link to this heading">#</a></h2>
 <p>Concordium Wallet for Web 1.0.6 contains fixes for the following issues:</p>
 <ul>
 <li><p>The About page link to the terms and conditions pointed to the wrong URL. It now uses the value retrieved from the wallet proxy, or the correct default to the unified terms and conditions page.</p></li>
@@ -880,19 +689,19 @@ body {margin:0;}
 <li><p>Messages when confirming baker/delegation transactions no longer appear after the transaction has been submitted.</p></li>
 </ul>
 <p>May 11, 2023</p>
-</div>
-<div class="section" id="cargo-concordium-2-8-0">
-<h2><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0<a class="headerlink" href="#cargo-concordium-2-8-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-8-0">
+<h2><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0<a class="headerlink" href="#cargo-concordium-2-8-0" title="Link to this heading">#</a></h2>
 <p>The distribution method for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. For more information, see <a class="reference internal" href="../../smart-contracts/guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
 <p>If you already have <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> installed, you may need to remove the existing <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> from your PATH to be able to update versions in the future.</p>
 <p>May 8, 2023</p>
-</div>
-<div class="section" id="smart-contract-integration-testing">
-<h2>Smart contract integration testing<a class="headerlink" href="#smart-contract-integration-testing" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="smart-contract-integration-testing">
+<h2>Smart contract integration testing<a class="headerlink" href="#smart-contract-integration-testing" title="Link to this heading">#</a></h2>
 <p>Important new functionality has been added to test your smart contracts: the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing">concordium-smart-contract-testing library</a> makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see <a class="reference internal" href="../../smart-contracts/guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">Integration test a contract in Rust</span></a>.</p>
-</div>
-<div class="section" id="bw-1-0-4">
-<h2>Concordium Wallet for Web 1.0.4<a class="headerlink" href="#bw-1-0-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw-1-0-4">
+<h2>Concordium Wallet for Web 1.0.4<a class="headerlink" href="#bw-1-0-4" title="Link to this heading">#</a></h2>
 <p>Baking and delegation are now available in the Concordium Wallet for Web.</p>
 <p>Additionally, the following improvements have been added:</p>
 <ul class="simple">
@@ -914,26 +723,26 @@ body {margin:0;}
 <li><p>A bug that caused an identity to not be recovered if there was a rejected one present in the same index.</p></li>
 </ul>
 <p>May 1, 2023</p>
-</div>
-<div class="section" id="vscode-extension-1-0-1">
-<h2>VSCode extension 1.0.1<a class="headerlink" href="#vscode-extension-1-0-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="vscode-extension-1-0-1">
+<h2>VSCode extension 1.0.1<a class="headerlink" href="#vscode-extension-1-0-1" title="Link to this heading">#</a></h2>
 <p>The VSCode extension has been developed to help developers get started with smart contract development. The extension sets up the editor for development, installs the <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.</p>
-</div>
-<div class="section" id="id1">
-<h2>Cargo-concordium 2.8.0<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id1">
+<h2>Cargo-concordium 2.8.0<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Non-existing directories in paths provided to the following arguments for when running <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> will now be created instead of causing an error: <code class="docutils literal notranslate"><span class="pre">--out</span></code>, <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code>, <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code>, and <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code>. The same is true for the <code class="docutils literal notranslate"><span class="pre">--out-bin</span></code> and <code class="docutils literal notranslate"><span class="pre">--out-json</span></code> arguments provided to <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">run</span> <span class="pre">init</span></code> and <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">run</span> <span class="pre">update</span></code>.</p>
 <p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> was unable to determine the smart contract package if the package was part of a Cargo workspace.</p>
-</div>
-<div class="section" id="mw-gen2-for-android-1-1-7">
-<h2>Concordium Wallet for Mobile for Android 1.1.7<a class="headerlink" href="#mw-gen2-for-android-1-1-7" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-for-android-1-1-7">
+<h2>Concordium Wallet for Mobile for Android 1.1.7<a class="headerlink" href="#mw-gen2-for-android-1-1-7" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Corrected the message that appeared when stopping baking or delegation. Previously, the message shown when stopping baking stated that the cool-down period was 14 days, but it is 21. This is now correct. The message shown when stopping delegation stated that the cool-down period was 0 days, but it is 14. This is also now correct.</p></li>
 <li><p>Upon update to version 1.1.7 or on installation of version 1.1.7, data that was in SharedPreferences will be moved to EncryptedSharedPreferences to enhance security.</p></li>
 </ul>
 <p>April 27, 2023</p>
-</div>
-<div class="section" id="concordium-node-5-3-2">
-<h2>Concordium Node 5.3.2<a class="headerlink" href="#concordium-node-5-3-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-5-3-2">
+<h2>Concordium Node 5.3.2<a class="headerlink" href="#concordium-node-5-3-2" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>Extended the Prometheus exporter with the following metrics: grpc_request_duration_seconds, grpc_in_flight_requests, consensus_baking_committee, consensus_finalization_committee, consensus_baking_lottery_power, consensus_baked_blocks_total, consensus_finalized_baked_blocks_total, network_soft_banned_peers_total, consensus_non_finalized_transactions and consensus_unsupported_pending_protocol_version. See <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md">docs/prometheus-exporter.md</a> for more details.</p></li>
 <li><p>Also, in the changelog for the node grpc_request_duration_seconds has been renamed to grpc_request_response_time_seconds to match the what is in the code.</p></li>
@@ -951,39 +760,39 @@ body {margin:0;}
 <li><p>The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: <a class="reference internal" href="../guides/run-node.html#run-a-node"><span class="std std-ref">Linux</span></a>, <a class="reference internal" href="../guides/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="../guides/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, or <a class="reference internal" href="../guides/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p></li>
 </ul>
 <p>April 12, 2023</p>
-</div>
-<div class="section" id="cargo-concordium-2-7-1">
-<h2>Cargo-concordium 2.7.1<a class="headerlink" href="#cargo-concordium-2-7-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-7-1">
+<h2>Cargo-concordium 2.7.1<a class="headerlink" href="#cargo-concordium-2-7-1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.</p></li>
 <li><p>Support calling <cite>cargo concordium build</cite> and <cite>cargo concordium test</cite> from any project subdirectory.</p></li>
 </ul>
 <p>March 31, 2023</p>
-</div>
-<div class="section" id="concordium-ledger-app-v3-1-0">
-<h2>Concordium Ledger App v3.1.0<a class="headerlink" href="#concordium-ledger-app-v3-1-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-ledger-app-v3-1-0">
+<h2>Concordium Ledger App v3.1.0<a class="headerlink" href="#concordium-ledger-app-v3-1-0" title="Link to this heading">#</a></h2>
 <p>The Concordium Ledger App now supports Ledger Nano S Plus firmware version 1.1.0.</p>
 <p>March 29, 2023</p>
-</div>
-<div class="section" id="bw-0-9-11">
-<h2>Concordium Wallet for Web 0.9.11<a class="headerlink" href="#bw-0-9-11" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw-0-9-11">
+<h2>Concordium Wallet for Web 0.9.11<a class="headerlink" href="#bw-0-9-11" title="Link to this heading">#</a></h2>
 <p>Fixed a bug where conversion of parameters from JSON to binary did not work for schemas with signed integers when attempting to convert negative values.
 Fixed a bug that prevented users from sending larger amounts of bridged tokens.
 The sign_message wallet API now supports signing arbitrary data.</p>
 <p>March 27, 2023</p>
-</div>
-<div class="section" id="mw-gen1-for-ios-3-1-1">
-<h2>Concordium Legacy Wallet for iOS 3.1.1<a class="headerlink" href="#mw-gen1-for-ios-3-1-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen1-for-ios-3-1-1">
+<h2>Concordium Legacy Wallet for iOS 3.1.1<a class="headerlink" href="#mw-gen1-for-ios-3-1-1" title="Link to this heading">#</a></h2>
 <p>A message has been added to suggest that users download and configure the new Concordium Wallet for Mobile. This is to prepare for when account and identity creation will be disabled in Concordium Legacy Wallet for iOS. For more information, see the Concordium Wallet for Mobile <a class="reference internal" href="../mobile-wallet-gen2/faq.html#wallet-migrate"><span class="std std-ref">FAQ</span></a>.</p>
 <p>March 21, 2023</p>
-</div>
-<div class="section" id="mw-gen2-1-1-6">
-<h2>Concordium Wallet for Mobile 1.1.6<a class="headerlink" href="#mw-gen2-1-1-6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-1-1-6">
+<h2>Concordium Wallet for Mobile 1.1.6<a class="headerlink" href="#mw-gen2-1-1-6" title="Link to this heading">#</a></h2>
 <p>The wallet has been updated so that it is able to sign/send a contract update transaction successfully when it receives the schema as a string, as an object with the field “type”: “module”, or as an object with the field “type”: “parameter”.</p>
 <p>March 16, 2023</p>
-</div>
-<div class="section" id="concordium-client-5-1-1">
-<h2>Concordium Client 5.1.1<a class="headerlink" href="#concordium-client-5-1-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-5-1-1">
+<h2>Concordium Client 5.1.1<a class="headerlink" href="#concordium-client-5-1-1" title="Link to this heading">#</a></h2>
 <p>Concordium Client has been migrated to use version 2 of the node gRPC API.</p>
 <ul class="simple">
 <li><p>Since the node serves the V2 gRPC API on port 20000 by default, the default value of
@@ -992,9 +801,9 @@ the <cite>–grpc-port</cite> option has been updated to reflect this.</p></li>
 <li><p>General improvements to error message information and phrasing.</p></li>
 <li><p>The <cite>–grpc-authentication-token</cite> option has been removed.</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-node-5-2-4">
-<h2>Concordium Node 5.2.4<a class="headerlink" href="#concordium-node-5-2-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-5-2-4">
+<h2>Concordium Node 5.2.4<a class="headerlink" href="#concordium-node-5-2-4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The Prometheus metrics exporter has been improved and systematized, making this API stable from this release onwards to monitor your node metrics. The metrics are now <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md">documented</a> and the node’s Prometheus metrics API stability will adhere to SEMVER guidelines.</p></li>
 <li><p>Fixed an issue where the node configuration file (<code class="docutils literal notranslate"><span class="pre">main.config.json</span></code>) was sometimes corrupted.</p></li>
@@ -1002,15 +811,15 @@ the <cite>–grpc-port</cite> option has been updated to reflect this.</p></li>
 <li><p>Fixed a bug in <code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> endpoint in GRPCv2 where <code class="docutils literal notranslate"><span class="pre">incoming_amounts</span></code> field of encrypted amounts was not set correctly.</p></li>
 </ul>
 <p>March 07, 2023</p>
-</div>
-<div class="section" id="mw-gen2-for-ios">
-<h2>Concordium Wallet for Mobile for iOS<a class="headerlink" href="#mw-gen2-for-ios" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-for-ios">
+<h2>Concordium Wallet for Mobile for iOS<a class="headerlink" href="#mw-gen2-for-ios" title="Link to this heading">#</a></h2>
 <p>Concordium introduces a new wallet for iOS mobile devices: the Concordium Wallet for Mobile. The Concordium Wallet for Mobile offers all of the same functionality you know from Concordium Legacy Wallet, such as sending and receiving CCDs, delegation, baking, and so on. But the Concordium Wallet for Mobile uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the Concordium Wallet for Web. You can read about Concordium Wallet for Mobile and the differences between it and Concordium Legacy Wallet in the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#mw-gen2-faq"><span class="std std-ref">FAQ</span></a>.</p>
 <p>In connection with this new wallet, the iOS mobile wallet previously known as Concordium Mobile Wallet has been renamed Concordium Legacy Wallet 3.1.0.</p>
 <p>March 02, 2023</p>
-</div>
-<div class="section" id="bw-0-9-8">
-<h2>Concordium Wallet for Web 0.9.8<a class="headerlink" href="#bw-0-9-8" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw-0-9-8">
+<h2>Concordium Wallet for Web 0.9.8<a class="headerlink" href="#bw-0-9-8" title="Link to this heading">#</a></h2>
 <p>The following issues are fixed in Concordium Wallet for Web 0.9.8:</p>
 <blockquote>
 <div><ul class="simple">
@@ -1021,33 +830,33 @@ the <cite>–grpc-port</cite> option has been updated to reflect this.</p></li>
 </ul>
 </div></blockquote>
 <p>February 27, 2023</p>
-</div>
-<div class="section" id="mw-gen2-1-1-5">
-<h2>Concordium Wallet for Mobile 1.1.5<a class="headerlink" href="#mw-gen2-1-1-5" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-1-1-5">
+<h2>Concordium Wallet for Mobile 1.1.5<a class="headerlink" href="#mw-gen2-1-1-5" title="Link to this heading">#</a></h2>
 <p>A potential security risk was discovered with the storage of the secret recovery phrase on Android phones. The patch changes the way that the secret recovery phrase is stored in the Android app, and it’s applied automatically once you login to the updated version (1.1.5) on your Android phone. Your secret recovery phrase does not change. We recommend all Android users to update their Concordium Wallet app to the latest version right away. The Concordium Wallet for iOS, desktop, and browser extensions are not affected by this issue.</p>
 <p>February 6, 2023</p>
-</div>
-<div class="section" id="mw-gen1-for-android-3-2-0">
-<h2>Concordium Legacy Wallet for Android 3.2.0<a class="headerlink" href="#mw-gen1-for-android-3-2-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen1-for-android-3-2-0">
+<h2>Concordium Legacy Wallet for Android 3.2.0<a class="headerlink" href="#mw-gen1-for-android-3-2-0" title="Link to this heading">#</a></h2>
 <p>Changed the text in the “Suggest update” alert to suggest that the user update to the Concordium Wallet for Mobile so it matches the download button.</p>
 <p>January 30, 2023</p>
-</div>
-<div class="section" id="cargo-concordium-2-7-0">
-<h2>Cargo concordium 2.7.0<a class="headerlink" href="#cargo-concordium-2-7-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-7-0">
+<h2>Cargo concordium 2.7.0<a class="headerlink" href="#cargo-concordium-2-7-0" title="Link to this heading">#</a></h2>
 <p>Added base64 commands for schemas in <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span></code>. These allow the schema to be
 output in the base64 format that is currently supported in the Concordium Wallet for Web.</p>
 <p>January 26, 2023</p>
-</div>
-<div class="section" id="mw-gen2-1-1-4">
-<h2>Concordium Wallet for Mobile 1.1.4<a class="headerlink" href="#mw-gen2-1-1-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-1-1-4">
+<h2>Concordium Wallet for Mobile 1.1.4<a class="headerlink" href="#mw-gen2-1-1-4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix incorrect display of transactions proposed by dApps using WalletConnect.</p></li>
 <li><p>Fix incorrect NRG calculation performed by the wallet, which could lead to failed transactions.</p></li>
 </ul>
 <p>January 19, 2023</p>
-</div>
-<div class="section" id="concordium-node-5-1-3">
-<h2>Concordium Node 5.1.3<a class="headerlink" href="#concordium-node-5-1-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-5-1-3">
+<h2>Concordium Node 5.1.3<a class="headerlink" href="#concordium-node-5-1-3" title="Link to this heading">#</a></h2>
 <p>Concordium node version 5.1.3 introduces the following new features and improvements:</p>
 <ul class="simple">
 <li><p>Improvements were made to allow greater concurrency with transaction processing.</p></li>
@@ -1058,70 +867,70 @@ output in the base64 format that is currently supported in the Concordium Wallet
 <li><p>Added timeout to downloading out of band catchup files when block indices and catch-up chunk files are specified by an URL. The timeout is controlled by the option <code class="docutils literal notranslate"><span class="pre">--download-blocks-timeout</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_TIMEOUT</span></code>) and defaults to 5 minutes. Timeout is now five minutes per chunk instead of waiting indefinitely.</p></li>
 <li><p>Removed the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_PROMETHEUS_SERVER</span></code> environment variable. The prometheus server is now started if <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT</span></code> is set.</p></li>
 </ul>
-</div>
-<div class="section" id="cargo-concordium-2-6-0">
-<h2>Cargo concordium 2.6.0<a class="headerlink" href="#cargo-concordium-2-6-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-6-0">
+<h2>Cargo concordium 2.6.0<a class="headerlink" href="#cargo-concordium-2-6-0" title="Link to this heading">#</a></h2>
 <p>Added the ability to output the schema in JSON format which can be more suitable for use in dApps.</p>
 <p>January 9, 2023</p>
-</div>
-<div class="section" id="bw-0-9-6">
-<h2>Concordium Wallet for Web 0.9.6<a class="headerlink" href="#bw-0-9-6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw-0-9-6">
+<h2>Concordium Wallet for Web 0.9.6<a class="headerlink" href="#bw-0-9-6" title="Link to this heading">#</a></h2>
 <p>SendTransaction for smart contract transactions can receive schemas that are for the specific parameter.</p>
 <p>January 4, 2023</p>
-</div>
-<div class="section" id="concordium-node-5-0-7-for-macos">
-<h2>Concordium Node 5.0.7 for MacOS<a class="headerlink" href="#concordium-node-5-0-7-for-macos" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-5-0-7-for-macos">
+<h2>Concordium Node 5.0.7 for MacOS<a class="headerlink" href="#concordium-node-5-0-7-for-macos" title="Link to this heading">#</a></h2>
 <p>Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.</p>
-<div class="section" id="mainnet-4-sirius">
-<h3>Mainnet 4: Sirius<a class="headerlink" href="#mainnet-4-sirius" title="Permalink to this headline">#</a></h3>
+<section id="mainnet-4-sirius">
+<h3>Mainnet 4: Sirius<a class="headerlink" href="#mainnet-4-sirius" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Prior to Sirius, the nodes enforced that a transaction could not be deployed until 2 hours before its expiry date. With Sirius, node validation of transactions has been improved and the 2 hour window has been removed.</p>
 </div>
 <p>December 21, 2022</p>
-</div>
-</div>
-<div class="section" id="bw-0-9-5">
-<h2>Concordium Wallet for Web 0.9.5<a class="headerlink" href="#bw-0-9-5" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="bw-0-9-5">
+<h2>Concordium Wallet for Web 0.9.5<a class="headerlink" href="#bw-0-9-5" title="Link to this heading">#</a></h2>
 <p>Minor bugfixes for the Concordium Wallet for Web, including adding a missing background color on ID proof cards, fixing an issue where the transaction list did not update automatically, and a minor adjustment to how proof of age is calculated.</p>
 <p>December 16, 2022</p>
-</div>
-<div class="section" id="bw-0-9-4">
-<h2>Concordium Wallet for Web 0.9.4<a class="headerlink" href="#bw-0-9-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw-0-9-4">
+<h2>Concordium Wallet for Web 0.9.4<a class="headerlink" href="#bw-0-9-4" title="Link to this heading">#</a></h2>
 <p>The Concordium Wallet for Web introduces ID2.0 functionality whereby a dApp or service can use zero knowledge proofs to request proof from a wallet for certain attributes without revealing anything beyond the truth of the statement. It is also possible for a dApp or Service to request that the wallet user reveal attributes.</p>
 <p>December 14, 2022</p>
-</div>
-<div class="section" id="cargo-concordium-2-5-0">
-<h2>Cargo concordium 2.5.0<a class="headerlink" href="#cargo-concordium-2-5-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-5-0">
+<h2>Cargo concordium 2.5.0<a class="headerlink" href="#cargo-concordium-2-5-0" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Add support for sampling random numbers for randomized testing with <cite>cargo concordium test</cite>.</p></li>
 <li><p>Add support for providing a seed to initialize a random generator to <cite>cargo-concordium</cite>. The generator can be used for randomized testing.
 Command format: <cite>cargo concordium test –seed 1234567890</cite>. The provided seed value is a <cite>u64</cite> number. If the seed is not provided, a random one will be sampled.</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-client-5-0-2">
-<h2>Concordium Client 5.0.2<a class="headerlink" href="#concordium-client-5-0-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-5-0-2">
+<h2>Concordium Client 5.0.2<a class="headerlink" href="#concordium-client-5-0-2" title="Link to this heading">#</a></h2>
 <p>Receive function parameters are now displayed as JSON in transaction status whenever they could be succesfully parsed by a smart contract schema embedded in the module or supplied by the user using the <code class="docutils literal notranslate"><span class="pre">--schema</span></code> option.</p>
-</div>
-<div class="section" id="smart-contract-libraries">
-<h2>Smart contract libraries<a class="headerlink" href="#smart-contract-libraries" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="smart-contract-libraries">
+<h2>Smart contract libraries<a class="headerlink" href="#smart-contract-libraries" title="Link to this heading">#</a></h2>
 <p>Smart contract libraries have also been updated.</p>
 <p>December 13, 2022</p>
 <p><a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt">Protocol version 5</a> is effective from today at 08:05 UTC. One important change because of the protocol update is that in the future (from 14 December 2022) pay day for rewards shifts to 08:05 UTC instead of 08:00 UTC.</p>
 <p>December 8, 2022</p>
-</div>
-<div class="section" id="mw-gen2-1-1-0">
-<h2>Concordium Wallet for Mobile 1.1.0<a class="headerlink" href="#mw-gen2-1-1-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2-1-1-0">
+<h2>Concordium Wallet for Mobile 1.1.0<a class="headerlink" href="#mw-gen2-1-1-0" title="Link to this heading">#</a></h2>
 <p>The Concordium Wallet for Mobile introduces functionality to connect to dApps and services using WalletConnect. This functionality is currently in beta mode.</p>
 <p>December 6, 2022</p>
-</div>
-<div class="section" id="bw-0-8-5">
-<h2>Concordium Wallet for Web 0.8.5<a class="headerlink" href="#bw-0-8-5" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw-0-8-5">
+<h2>Concordium Wallet for Web 0.8.5<a class="headerlink" href="#bw-0-8-5" title="Link to this heading">#</a></h2>
 <p>The Concordium Wallet for Web now includes support to manage fungible and non-fungible tokens. This includes adding, inspecting, and removing tokens.</p>
 <p>November 29, 2022</p>
-</div>
-<div class="section" id="concordium-node-5-0-6">
-<h2>Concordium Node 5.0.6<a class="headerlink" href="#concordium-node-5-0-6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-5-0-6">
+<h2>Concordium Node 5.0.6<a class="headerlink" href="#concordium-node-5-0-6" title="Link to this heading">#</a></h2>
 <p>Concordium Node 5.0.6 contains support for <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt">protocol version 5</a> which will be released on Mainnet on December 13, 2022. This adds the following features:</p>
 <blockquote>
 <div><ul class="simple">
@@ -1142,30 +951,30 @@ Command format: <cite>cargo concordium test –seed 1234567890</cite>. The provi
 </div></blockquote>
 <p>Additionally, the node update fixes an issue where the catch-up downloader would fail at a protocol update.</p>
 <p>November 21, 2022</p>
-</div>
-<div class="section" id="cargo-concordium-2-4-0">
-<h2>Cargo concordium 2.4.0<a class="headerlink" href="#cargo-concordium-2-4-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-4-0">
+<h2>Cargo concordium 2.4.0<a class="headerlink" href="#cargo-concordium-2-4-0" title="Link to this heading">#</a></h2>
 <p>Cargo concordium 2.4.0 contains support for the upcoming <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt">protocol version 5</a> which is planned for release on Testnet November 22, 2022. This includes the following new features:</p>
 <ul class="simple">
 <li><p>Build and test contracts using new protocol 5 features, such as upgradability and chain queries.</p></li>
 <li><p>Support for relaxed smart contract resource restrictions in <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">run</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code> now checks contracts with respect to protocol version 5 semantics.</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-client-5-0-1">
-<h2>Concordium Client 5.0.1<a class="headerlink" href="#concordium-client-5-0-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-5-0-1">
+<h2>Concordium Client 5.0.1<a class="headerlink" href="#concordium-client-5-0-1" title="Link to this heading">#</a></h2>
 <p>Concordium Client 5.0.1 adds support for the upcoming <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P5.txt">protocol version 5</a> which is planned for release on Testnet November 22, 2022.
 It also adds a <code class="docutils literal notranslate"><span class="pre">--secure</span></code> flag to enable connecting to gRPC using TLS. All commands that query the node support this.</p>
 <p>Additionally, it supports contract schema V3. V3 schemas offer the same options as V2, but also optionally includes a schema for contract events. <cite>transaction status</cite> now displays contract events, and a schema can be provided with <cite>–schema</cite>, which will be used to parse the contract events. By default events are parsed with the schema embedded in the contract, if present. This enables <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> to interact with contracts and schemas using <cite>concordium-std</cite> version 5. There is also improved formatting of <cite>transaction status</cite> output using contract schemas if they are available for displaying contract events, and output function parameters are shown as hex strings in <cite>transaction status</cite>.</p>
 <p>November 17, 2022</p>
-</div>
-<div class="section" id="mw-gen1-for-android">
-<h2>Concordium Legacy Wallet for Android<a class="headerlink" href="#mw-gen1-for-android" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen1-for-android">
+<h2>Concordium Legacy Wallet for Android<a class="headerlink" href="#mw-gen1-for-android" title="Link to this heading">#</a></h2>
 <p>Identity and account creation has been locked in Concordium Legacy Wallet for Android devices. This means that you cannot create new identities or accounts in Concordium Legacy Wallet on an Android device. You can continue to use Concordium Legacy Wallet, but if you need to create a new identity or account you must use Concordium Wallet for Mobile. You can also still recover your wallet from a backup file in Concordium Legacy Wallet on an Android device.</p>
 <p>October 25, 2022</p>
-</div>
-<div class="section" id="concordium-node-4-5-0">
-<h2>Concordium Node 4.5.0<a class="headerlink" href="#concordium-node-4-5-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-4-5-0">
+<h2>Concordium Node 4.5.0<a class="headerlink" href="#concordium-node-4-5-0" title="Link to this heading">#</a></h2>
 <p>Concordium Node 4.5.0 contains the <a class="reference internal" href="../references/grpc2.html#grpc2-documentation"><span class="std std-ref">updated gRPC API</span></a>
 which is easier to use than the previous version. It also contains bug fixes and
 performance and robustness improvements.</p>
@@ -1175,19 +984,19 @@ performance and robustness improvements.</p>
 <li><p>Fix a memory leak that could occur in certain usage scenarios involving smart contracts.</p></li>
 </ul>
 <p>October 19, 2022</p>
-</div>
-<div class="section" id="bw">
-<h2>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bw">
+<h2>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Link to this heading">#</a></h2>
 <p>The Concordium Wallet for Web extension for Chrome web browsers is released. It provides basic wallet functionality, such as sending and receiving CCDs. It also has the possibility to connect dApps to a wallet to interact with the Concordium blockchain.</p>
 <p>October 12, 2022</p>
-</div>
-<div class="section" id="cargo-concordium-2-2-0">
-<h2>Cargo concordium 2.2.0<a class="headerlink" href="#cargo-concordium-2-2-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-2-0">
+<h2>Cargo concordium 2.2.0<a class="headerlink" href="#cargo-concordium-2-2-0" title="Link to this heading">#</a></h2>
 <p>Cargo concordium 2.2.0 introduces the <code class="docutils literal notranslate"><span class="pre">init</span></code> subcommand that can initialize a new project and use contract templates to set up an initial project.</p>
 <p>October 5, 2022</p>
-</div>
-<div class="section" id="concordium-node-4-4-4">
-<h2>Concordium Node 4.4.4<a class="headerlink" href="#concordium-node-4-4-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-4-4-4">
+<h2>Concordium Node 4.4.4<a class="headerlink" href="#concordium-node-4-4-4" title="Link to this heading">#</a></h2>
 <p>Concordium Node 4.4.4 contains performance improvements and bug fixes.</p>
 <ul class="simple">
 <li><p>Smart contract state is no longer cached on startup and is not cached after
@@ -1210,28 +1019,28 @@ common causes of its database corruption.</p></li>
 <li><p>Fix a bug in Ctrl-C signal handling where a node would fail to stop if
 interrupted early on in the startup if out-of-band catchup was enabled.</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-client-4-2-0">
-<h2>Concordium Client 4.2.0<a class="headerlink" href="#concordium-client-4-2-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-4-2-0">
+<h2>Concordium Client 4.2.0<a class="headerlink" href="#concordium-client-4-2-0" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix handling of <code class="docutils literal notranslate"><span class="pre">--no-confirm</span></code> in <code class="docutils literal notranslate"><span class="pre">contract</span> <span class="pre">init</span></code>, <code class="docutils literal notranslate"><span class="pre">contract</span> <span class="pre">update</span></code>, <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">deploy</span></code>, and <code class="docutils literal notranslate"><span class="pre">register</span> <span class="pre">data</span></code> transactions. This flag is now respected.</p></li>
 <li><p>Add support for import of keys from Concordium Wallet for Web.</p></li>
 <li><p>Fix some inconsistencies in the display format of CCD amounts.</p></li>
 </ul>
 <p>September 26, 2022</p>
-</div>
-<div class="section" id="mw-gen2">
-<h2>Concordium Wallet for Mobile<a class="headerlink" href="#mw-gen2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen2">
+<h2>Concordium Wallet for Mobile<a class="headerlink" href="#mw-gen2" title="Link to this heading">#</a></h2>
 <p>Concordium introduces a new wallet for Android mobile devices: the Concordium Wallet for Mobile. The Concordium Wallet for Mobile offers all of the same functionality you know from Concordium Legacy Wallet, such as sending and receiving CCDs, delegation, baking, and so on. But the Concordium Wallet for Mobile uses a secret recovery phrase to generate your private keys, simplifying any restoration of an account should you lose access to the phone/app. This version also supports easy portability of accounts between this and the soon to be released Concordium Wallet for Web. You can read about Concordium Wallet for Mobile and the differences between it and Concordium Legacy Wallet in the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#mw-gen2-faq"><span class="std std-ref">FAQ</span></a>.</p>
 <p>In connection with this new wallet, the Android mobile wallet previously known as Concordium Mobile Wallet has been renamed Concordium Legacy Wallet.</p>
-</div>
-<div class="section" id="mw-gen1-previously-concordium-mobile-wallet-for-android">
-<h2>Concordium Legacy Wallet (previously Concordium Mobile Wallet) for Android<a class="headerlink" href="#mw-gen1-previously-concordium-mobile-wallet-for-android" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mw-gen1-previously-concordium-mobile-wallet-for-android">
+<h2>Concordium Legacy Wallet (previously Concordium Mobile Wallet) for Android<a class="headerlink" href="#mw-gen1-previously-concordium-mobile-wallet-for-android" title="Link to this heading">#</a></h2>
 <p>The Concordium Mobile Wallet has been renamed to Concordium Legacy Wallet with the release of the Concordium Wallet for Mobile. If you are creating your first identity, Concordium recommends downloading and using Concordium Wallet for Mobile.</p>
 <p>September 5, 2022</p>
-</div>
-<div class="section" id="concordium-node-4-3-1">
-<h2>Concordium Node 4.3.1<a class="headerlink" href="#concordium-node-4-3-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-4-3-1">
+<h2>Concordium Node 4.3.1<a class="headerlink" href="#concordium-node-4-3-1" title="Link to this heading">#</a></h2>
 <p>Concordium Node 4.3.1 introduces a number of performance improvements. The effects of these are that the node on mainnet at the current load will use around 1/4 the memory of the <cite>4.2.3</cite> node. Startup can be up to 50% faster, although exact improvements will be platform dependent.</p>
 <ul class="simple">
 <li><p>Account records are no longer constantly retained in memory. Instead, a limited number are retained in a cache. The number of cached accounts defaults to 10000 and can be configured by the <code class="docutils literal notranslate"><span class="pre">--accounts-cache-size</span></code> command line argument or the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_ACCOUNTS_CACHE_SIZE</span></code> environment variable.</p></li>
@@ -1242,49 +1051,49 @@ interrupted early on in the startup if out-of-band catchup was enabled.</p></li>
 <li><p>Remove transaction logging functionality from the node. It is replaced by an external <a class="reference external" href="https://github.com/Concordium/concordium-transaction-logger">transaction logger</a> service. As a consequence the <code class="docutils literal notranslate"><span class="pre">transaction-outcome-logging</span></code> family of command line options are removed from the node.</p></li>
 </ul>
 <p>August 24, 2022</p>
-</div>
-<div class="section" id="concordium-client-4-1-0">
-<h2>Concordium Client 4.1.0<a class="headerlink" href="#concordium-client-4-1-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-4-1-0">
+<h2>Concordium Client 4.1.0<a class="headerlink" href="#concordium-client-4-1-0" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fix bug in contract schema parsing caused by endiannes confusion.</p></li>
 <li><p>Add support for smart contract schema V2. V2 schemas offer the same options as V1, but can also include a schema for the error type. This enables <cite>concordium-client</cite> to interact with contracts built using <cite>concordium-std</cite> version 4.</p></li>
 </ul>
-</div>
-<div class="section" id="cargo-concordium-2-1-0">
-<h2>Cargo concordium 2.1.0<a class="headerlink" href="#cargo-concordium-2-1-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-1-0">
+<h2>Cargo concordium 2.1.0<a class="headerlink" href="#cargo-concordium-2-1-0" title="Link to this heading">#</a></h2>
 <p>Use schemas for error values when simulating contracts. In particular support building and testing contracts with <cite>concordium-std</cite> version 4.</p>
 <p>August 4, 2022</p>
-</div>
-<div class="section" id="concordium-client-4-0-4">
-<h2>Concordium Client 4.0.4<a class="headerlink" href="#concordium-client-4-0-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-4-0-4">
+<h2>Concordium Client 4.0.4<a class="headerlink" href="#concordium-client-4-0-4" title="Link to this heading">#</a></h2>
 <p>The <cite>concordium-client</cite> has been updated to better support the new smart contract v1 schema.</p>
-</div>
-<div class="section" id="cargo-concordium-2-0-2">
-<h2>Cargo concordium 2.0.2<a class="headerlink" href="#cargo-concordium-2-0-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="cargo-concordium-2-0-2">
+<h2>Cargo concordium 2.0.2<a class="headerlink" href="#cargo-concordium-2-0-2" title="Link to this heading">#</a></h2>
 <p>Cargo concordium has also been updated to better support the new smart contract v1 schema.</p>
-</div>
-<div class="section" id="concordium-node-4-2-3-for-docker">
-<h2>Concordium Node 4.2.3 for Docker<a class="headerlink" href="#concordium-node-4-2-3-for-docker" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-4-2-3-for-docker">
+<h2>Concordium Node 4.2.3 for Docker<a class="headerlink" href="#concordium-node-4-2-3-for-docker" title="Link to this heading">#</a></h2>
 <p>Some improvements have been made to the Docker node version. The new Docker images (one for Mainnet and one for Testnet) are designed for use with docker-compose or a similar driver. The node also requires a database which must be stored on the host system so that it persists when the Docker container is stopped.</p>
 <p>It is not mandatory but <strong>strongly recommended</strong> for Linux node runners to migrate to the new Docker distribution. The old Docker images will be deprecated and future node versions from 4.3 and upwards will only be provided in the new distribution.</p>
-</div>
-<div class="section" id="concordium-desktop-wallet-1-5-0">
-<h2>Concordium Desktop Wallet 1.5.0<a class="headerlink" href="#concordium-desktop-wallet-1-5-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-desktop-wallet-1-5-0">
+<h2>Concordium Desktop Wallet 1.5.0<a class="headerlink" href="#concordium-desktop-wallet-1-5-0" title="Link to this heading">#</a></h2>
 <p>The Concordium Desktop Wallet now supports the Ledger Nano S Plus hardware wallet.</p>
 <p>Fixed an issue on macOS that prevented automatic updates from installing after successfully being downloaded and verified. <strong>This means that macOS users have to download this release manually.</strong></p>
 <p>August 2, 2022</p>
-</div>
-<div class="section" id="concordium-node-4-2-3">
-<h2>Concordium Node 4.2.3<a class="headerlink" href="#concordium-node-4-2-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-4-2-3">
+<h2>Concordium Node 4.2.3<a class="headerlink" href="#concordium-node-4-2-3" title="Link to this heading">#</a></h2>
 <p>Concordium Node 4.2.3 fixes a critical security vulnerability present in all
 previous 4.* node versions. All node runners <strong>must</strong> upgrade as soon as
 possible.</p>
 <p>The security advisory detailing the issue and the patch will be released on
 August 15th.</p>
 <p>July 4, 2022</p>
-</div>
-<div class="section" id="concordium-node-4-2-1">
-<h2>Concordium Node 4.2.1<a class="headerlink" href="#concordium-node-4-2-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-4-2-1">
+<h2>Concordium Node 4.2.1<a class="headerlink" href="#concordium-node-4-2-1" title="Link to this heading">#</a></h2>
 <p>Concordium Node 4.2.1 is a maintenance release, bringing performance improvements and bugfixes. The highlights are:</p>
 <ul class="simple">
 <li><p>A significant decrease in node startup time. The exact improvements are platform dependent, but startup should be at least 6 times faster on mainnet.</p></li>
@@ -1292,33 +1101,33 @@ August 15th.</p>
 <li><p>Reduced CPU use of passive nodes in Windows, Mac, and Linux distributions.</p></li>
 </ul>
 <p>June 30, 2022</p>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-ios-v3-0-0-53">
-<h2>Concordium Mobile Wallet for iOS v3.0.0(53)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v3-0-0-53" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-ios-v3-0-0-53">
+<h2>Concordium Mobile Wallet for iOS v3.0.0(53)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v3-0-0-53" title="Link to this heading">#</a></h2>
 <p>Concordium Mobile Wallet for iOS 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.</p>
 <p>You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.</p>
 <p>If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.</p>
 <p>June 27, 2022</p>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-android-v3-0-0-100">
-<h2>Concordium Mobile Wallet for Android v3.0.0(100)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v3-0-0-100" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-android-v3-0-0-100">
+<h2>Concordium Mobile Wallet for Android v3.0.0(100)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v3-0-0-100" title="Link to this heading">#</a></h2>
 <p>Concordium Mobile Wallet 3.0.0 contains the long-awaited and highly anticipated delegation and baking functionality.</p>
 <p>You can now delegate stake to a baker pool or passive delegation from Mobile Wallet, update delegation, or stop delegation.</p>
 <p>If you have enough stake to become a baker, you can also do that from Mobile Wallet. Additionally, you can open a baker pool, update baker stake and settings, update your baker keys, or stop baking.</p>
 <p>This functionality will be available for iOS shortly.</p>
 <p>June 21, 2022</p>
-</div>
-<div class="section" id="concordium-desktop-wallet-v1-4-2">
-<h2>Concordium Desktop Wallet v1.4.2<a class="headerlink" href="#concordium-desktop-wallet-v1-4-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-desktop-wallet-v1-4-2">
+<h2>Concordium Desktop Wallet v1.4.2<a class="headerlink" href="#concordium-desktop-wallet-v1-4-2" title="Link to this heading">#</a></h2>
 <p>Concordium Desktop Wallet 1.4.2 is a hotfix release specifically for macOS containing the following fixes:</p>
 <ul class="simple">
 <li><p>Fixed an issue on macOS where an error popup would show after closing the main application window and opening it again.</p></li>
 <li><p>Fixed an issue on macOS where identity creation was not possible after closing the main application window and opening it again.</p></li>
 </ul>
 <p>June 15, 2022</p>
-</div>
-<div class="section" id="concordium-node-4-1-1">
-<h2>Concordium Node 4.1.1<a class="headerlink" href="#concordium-node-4-1-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-4-1-1">
+<h2>Concordium Node 4.1.1<a class="headerlink" href="#concordium-node-4-1-1" title="Link to this heading">#</a></h2>
 <p>Concordium Node 4.1.1 introduces new functionality to support delegation to baker pools or passive delegation, and a new version Smart Contracts.</p>
 <p>Note that when the protocol update happens on June 23, 2022 that the cool-down period for reducing baker stake or stopping baking increases from one week to three weeks. If you reduce your stake or stop baking BEFORE the protocol update takes effect, the cool-down remains one week.</p>
 <dl class="simple">
@@ -1347,9 +1156,9 @@ August 15th.</p>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="concordium-client-4-0-3">
-<h2>Concordium Client 4.0.3<a class="headerlink" href="#concordium-client-4-0-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-4-0-3">
+<h2>Concordium Client 4.0.3<a class="headerlink" href="#concordium-client-4-0-3" title="Link to this heading">#</a></h2>
 <p>Concordium Client 4.0.3 supports version 1 Smart Contracts with the following changes.</p>
 <blockquote>
 <div><ul class="simple">
@@ -1368,9 +1177,9 @@ August 15th.</p>
 <li><p>The subcommand <code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">show-chain-parameters</span></code> has been added to show the chain parameters. This subcommand shows useful information, such as the amount needed to become a baker, bounding caps for baker pools, commission percentages for delegation, exchange rate parameters, and more.</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="concordium-desktop-wallet-v1-4-1">
-<h2>Concordium Desktop Wallet v1.4.1<a class="headerlink" href="#concordium-desktop-wallet-v1-4-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-desktop-wallet-v1-4-1">
+<h2>Concordium Desktop Wallet v1.4.1<a class="headerlink" href="#concordium-desktop-wallet-v1-4-1" title="Link to this heading">#</a></h2>
 <p>Concordium Desktop Wallet 1.4.1 contains functionality to support delegation to baker pools or passive delegation. In addition, the Desktop Wallet has an improved user interface. Note that the delegation functionality will not work until the protocol update occurs on June 23, 2022.</p>
 <p>The Concordium Ledger app 3.0.1 is also released. With the Sirius release, Ledger firmware version 2.0.0 is no longer supported.</p>
 <p>In addition, the following changes were made:</p>
@@ -1379,13 +1188,13 @@ August 15th.</p>
 <li><p>Fixed an issue that made it impossible to create a transaction to do passive delegation.</p></li>
 <li><p>Fixed an issue that caused the wallet to crash when inspecting identities with missing date attributes.</p></li>
 </ul>
-<div class="section" id="mainnet-3-alpha-centauri-3-0">
-<h3>Mainnet 3: Alpha Centauri 3.0<a class="headerlink" href="#mainnet-3-alpha-centauri-3-0" title="Permalink to this headline">#</a></h3>
+<section id="mainnet-3-alpha-centauri-3-0">
+<h3>Mainnet 3: Alpha Centauri 3.0<a class="headerlink" href="#mainnet-3-alpha-centauri-3-0" title="Link to this heading">#</a></h3>
 <p>May 4, 2022</p>
-</div>
-</div>
-<div class="section" id="ccdscan-release-1">
-<h2>CCDScan release 1<a class="headerlink" href="#ccdscan-release-1" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="ccdscan-release-1">
+<h2>CCDScan release 1<a class="headerlink" href="#ccdscan-release-1" title="Link to this heading">#</a></h2>
 <p>CCDScan (<a class="reference external" href="https://ccdscan.io">https://ccdscan.io</a>) is a Concordium blockchain explorer available for Concordium users and explorers.</p>
 <p>CCDScan serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data.
 CCDScan release 1 includes core functionality to scan and gain insights into Concordium blockchain data and lays the foundation for additional value adding features to be included on the site.</p>
@@ -1408,16 +1217,16 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 </dd>
 </dl>
 <p>April 21, 2022</p>
-</div>
-<div class="section" id="concordium-node-v3-0-2">
-<h2>Concordium Node v3.0.2<a class="headerlink" href="#concordium-node-v3-0-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-v3-0-2">
+<h2>Concordium Node v3.0.2<a class="headerlink" href="#concordium-node-v3-0-2" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fixed a security vulnerability in the network layer that could be used to crash the node, causing a denial of service.</p></li>
 </ul>
 <p>March 22, 2022</p>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-android-v2-0-0-75">
-<h2>Concordium Mobile Wallet for Android v2.0.0(75)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v2-0-0-75" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-android-v2-0-0-75">
+<h2>Concordium Mobile Wallet for Android v2.0.0(75)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v2-0-0-75" title="Link to this heading">#</a></h2>
 <p>Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.</p>
 <p>The simplified UI involves:</p>
 <ul>
@@ -1434,9 +1243,9 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 <li><p>The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.</p></li>
 </ul>
 <p>March 21, 2022</p>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-ios-v2-0-0-38">
-<h2>Concordium Mobile Wallet for iOS v2.0.0(38)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v2-0-0-38" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-ios-v2-0-0-38">
+<h2>Concordium Mobile Wallet for iOS v2.0.0(38)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v2-0-0-38" title="Link to this heading">#</a></h2>
 <p>Version 2 of the Concordium Mobile Wallet simplifies the UI, bringing the most common interactions forward.</p>
 <p>The simplified UI involves:</p>
 <ul>
@@ -1453,47 +1262,47 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 <li><p>The introduction flow shown when starting the app for the first time now includes more information on the Concordium identity and initial accounts.</p></li>
 </ul>
 <p>February 10, 2022</p>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-ios-v1-3-34">
-<h2>Concordium Mobile Wallet for iOS v1.3(34)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-3-34" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-ios-v1-3-34">
+<h2>Concordium Mobile Wallet for iOS v1.3(34)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-3-34" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fixed a bug related to import of backup files.</p></li>
 </ul>
 <p>February 1, 2022</p>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-ios-v1-2-33">
-<h2>Concordium Mobile Wallet for iOS v1.2(33)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-2-33" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-ios-v1-2-33">
+<h2>Concordium Mobile Wallet for iOS v1.2(33)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-2-33" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Changed name of export file to <code class="docutils literal notranslate"><span class="pre">concordium-backup.concordiumwallet</span></code>.</p></li>
 <li><p>Added prompts and dialogs to remind users to back up.</p></li>
 </ul>
 <p>January 25, 2022</p>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-android-v1-2-6">
-<h2>Concordium Mobile Wallet for Android v1.2.6<a class="headerlink" href="#concordium-mobile-wallet-for-android-v1-2-6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-android-v1-2-6">
+<h2>Concordium Mobile Wallet for Android v1.2.6<a class="headerlink" href="#concordium-mobile-wallet-for-android-v1-2-6" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Changed name of export file to <code class="docutils literal notranslate"><span class="pre">concordium-backup.concordiumwallet</span></code>.</p></li>
 <li><p>Added prompts and dialogs to remind users to back up.</p></li>
 </ul>
 <p>January 13, 2022</p>
-</div>
-<div class="section" id="concordium-desktop-wallet-v1-3-1">
-<h2>Concordium Desktop Wallet v1.3.1<a class="headerlink" href="#concordium-desktop-wallet-v1-3-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-desktop-wallet-v1-3-1">
+<h2>Concordium Desktop Wallet v1.3.1<a class="headerlink" href="#concordium-desktop-wallet-v1-3-1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fixed issue that caused the wallet to crash when inspecting identities with missing date attributes.</p></li>
 <li><p>Fixed identity issuance with DTS.</p></li>
 </ul>
 <p>January 7, 2022</p>
-</div>
-<div class="section" id="concordium-node-v3-0-1">
-<h2>Concordium Node v3.0.1<a class="headerlink" href="#concordium-node-v3-0-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-v3-0-1">
+<h2>Concordium Node v3.0.1<a class="headerlink" href="#concordium-node-v3-0-1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fixed a starvation bug in some cases of parallel node queries.</p></li>
 </ul>
 <p>December 17, 2021</p>
-</div>
-<div class="section" id="concordium-desktop-wallet-v1-3-0">
-<h2>Concordium Desktop Wallet v1.3.0<a class="headerlink" href="#concordium-desktop-wallet-v1-3-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-desktop-wallet-v1-3-0">
+<h2>Concordium Desktop Wallet v1.3.0<a class="headerlink" href="#concordium-desktop-wallet-v1-3-0" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Updated the default node configuration to point to concordiumwalletnode.com.</p></li>
 <li><p>In the case of a failed identity, the error details received from the identity provider are now displayed to the user.</p></li>
@@ -1505,9 +1314,9 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 <li><p>Finalized transactions are no longer stored in the local database, but are instead always fetched from the wallet proxy when needed.</p></li>
 <li><p>Failed database migrations errors are now shown correctly to the user.</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-node-v3-0-0">
-<h2>Concordium Node v3.0.0<a class="headerlink" href="#concordium-node-v3-0-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node-v3-0-0">
+<h2>Concordium Node v3.0.0<a class="headerlink" href="#concordium-node-v3-0-0" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Introduced support for account aliases via protocol P3. Accounts can be queried in <code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">GetAccountNonFinalizedTransactions</span></code>, <code class="docutils literal notranslate"><span class="pre">GetNextAccountNonce</span></code> by any alias.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> object now has an additional field <code class="docutils literal notranslate"><span class="pre">accountAddress</span></code> that contains the canonical address of the account.</p></li>
@@ -1516,26 +1325,26 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 <li><p>Fixed a bug caused by shutting down RPC before the node, which caused the node to crash when attempting a graceful shutdown while processing RPC requests.</p></li>
 <li><p>The node now drops all connections on an unrecognized protocol update and refuses to accept new transactions.</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-android-v1-0-22">
-<h2>Concordium Mobile Wallet for Android v1.0.22<a class="headerlink" href="#concordium-mobile-wallet-for-android-v1-0-22" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-mobile-wallet-for-android-v1-0-22">
+<h2>Concordium Mobile Wallet for Android v1.0.22<a class="headerlink" href="#concordium-mobile-wallet-for-android-v1-0-22" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Changed naming from GTU to CCD.</p></li>
 <li><p>Various bug fixes.</p></li>
 </ul>
 <p>December 13, 2021</p>
-</div>
-<div class="section" id="concordium-ledger-app-v2-0-3">
-<h2>Concordium Ledger App v2.0.3<a class="headerlink" href="#concordium-ledger-app-v2-0-3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-ledger-app-v2-0-3">
+<h2>Concordium Ledger App v2.0.3<a class="headerlink" href="#concordium-ledger-app-v2-0-3" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Supports Ledger Nano S firmware version 2.1.0.</p></li>
 <li><p>Removed references to GTU in the UI.</p></li>
 <li><p>An acceptance step has been added to the export of private key seeds.</p></li>
 </ul>
 <p>December 10, 2021</p>
-</div>
-<div class="section" id="concordium-client-v3-0-4">
-<h2>Concordium Client v3.0.4<a class="headerlink" href="#concordium-client-v3-0-4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-v3-0-4">
+<h2>Concordium Client v3.0.4<a class="headerlink" href="#concordium-client-v3-0-4" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>Credentials revealing the newly introduced attribute LEI can be deployed.</p></li>
 <li><p>Renamed GTU token to CCD.</p></li>
@@ -1566,13 +1375,13 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 </li>
 <li><p>Now allows sending transactions where the sender is an account alias.</p></li>
 </ul>
-<div class="section" id="mainnet-2-alpha-centauri-2-2">
-<h3>Mainnet 2: Alpha Centauri 2.2<a class="headerlink" href="#mainnet-2-alpha-centauri-2-2" title="Permalink to this headline">#</a></h3>
+<section id="mainnet-2-alpha-centauri-2-2">
+<h3>Mainnet 2: Alpha Centauri 2.2<a class="headerlink" href="#mainnet-2-alpha-centauri-2-2" title="Link to this heading">#</a></h3>
 <p>December 9, 2021</p>
-</div>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-ios-v1-1-27">
-<h2>Concordium Mobile Wallet for iOS v1.1(27)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-1-27" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="concordium-mobile-wallet-for-ios-v1-1-27">
+<h2>Concordium Mobile Wallet for iOS v1.1(27)<a class="headerlink" href="#concordium-mobile-wallet-for-ios-v1-1-27" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>Changed GTU/Ǥ naming to CCD/Ͼ.</p></li>
 <li><p>Support for the new memo functionality in simple, shielded, and scheduled transfers:</p>
@@ -1597,13 +1406,13 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 <li><p>Various bug fixes.</p></li>
 <li><p>Various smaller textual updates.</p></li>
 </ul>
-<div class="section" id="mainnet-2-alpha-centauri-2-1">
-<h3>Mainnet 2: Alpha Centauri 2.1<a class="headerlink" href="#mainnet-2-alpha-centauri-2-1" title="Permalink to this headline">#</a></h3>
+<section id="mainnet-2-alpha-centauri-2-1">
+<h3>Mainnet 2: Alpha Centauri 2.1<a class="headerlink" href="#mainnet-2-alpha-centauri-2-1" title="Link to this heading">#</a></h3>
 <p>November 16th, 2021</p>
-</div>
-</div>
-<div class="section" id="concordium-mobile-wallet-for-android-v-1-0-16">
-<h2>Concordium Mobile Wallet for Android (v. 1.0.16)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v-1-0-16" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="concordium-mobile-wallet-for-android-v-1-0-16">
+<h2>Concordium Mobile Wallet for Android (v. 1.0.16)<a class="headerlink" href="#concordium-mobile-wallet-for-android-v-1-0-16" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>Support for the new memo functionality in simple, shielded, and scheduled transfers:</p>
 <blockquote>
@@ -1628,16 +1437,16 @@ containing an issuance reference for better personal support as well as system i
 <li><p>Various smaller textual updates.</p></li>
 <li><p>Mainnet and Testnet versions of the Concordium Mobile Wallet for Android can now both be installed at the same time.</p></li>
 </ul>
-</div>
-<div class="section" id="the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">
-<h2>The new version of Concordium Mobile Wallet for iOS is coming soon<a class="headerlink" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon" title="Permalink to this headline">#</a></h2>
-<div class="section" id="mainnet-2-alpha-centauri-2-0">
-<h3>Mainnet 2: Alpha Centauri 2.0<a class="headerlink" href="#mainnet-2-alpha-centauri-2-0" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">
+<h2>The new version of Concordium Mobile Wallet for iOS is coming soon<a class="headerlink" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon" title="Link to this heading">#</a></h2>
+<section id="mainnet-2-alpha-centauri-2-0">
+<h3>Mainnet 2: Alpha Centauri 2.0<a class="headerlink" href="#mainnet-2-alpha-centauri-2-0" title="Link to this heading">#</a></h3>
 <p>October 6, 2021</p>
-</div>
-</div>
-<div class="section" id="concordium-node-v1-1-3">
-<h2>Concordium Node v1.1.3<a class="headerlink" href="#concordium-node-v1-1-3" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="concordium-node-v1-1-3">
+<h2>Concordium Node v1.1.3<a class="headerlink" href="#concordium-node-v1-1-3" title="Link to this heading">#</a></h2>
 <p>The Concordium node release v1.1.3 implements a protocol update to add memo functionality for simple, shielded and scheduled transfers.
 This means that node runners <strong>must upgrade</strong> their nodes before the new protocol takes effect on testnet on October 13 at 12:00 CEST, 2021. Old nodes will
 stop processing new blocks at that point. See <a class="reference external" href="https://github.com/Concordium/concordium-update-proposals">protocol updates</a> for more details.</p>
@@ -1648,16 +1457,16 @@ stop processing new blocks at that point. See <a class="reference external" href
 <li><p>Mac ARM M1 support for running a node</p></li>
 <li><p>Various bug fixes</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-client-v1-1-1">
-<h2>Concordium Client v1.1.1<a class="headerlink" href="#concordium-client-v1-1-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-client-v1-1-1">
+<h2>Concordium Client v1.1.1<a class="headerlink" href="#concordium-client-v1-1-1" title="Link to this heading">#</a></h2>
 <p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium Client v1.1.1</span></a></p>
 <ul class="simple">
 <li><p>Added memo functionality for transactions</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-desktop-wallet-v1-2-0">
-<h2>Concordium Desktop Wallet v1.2.0<a class="headerlink" href="#concordium-desktop-wallet-v1-2-0" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-desktop-wallet-v1-2-0">
+<h2>Concordium Desktop Wallet v1.2.0<a class="headerlink" href="#concordium-desktop-wallet-v1-2-0" title="Link to this heading">#</a></h2>
 <p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Concordium Desktop Wallet v1.2.0</span></a></p>
 <ul class="simple">
 <li><p>Added memo functionality to simple, shielded and scheduled transfers.</p></li>
@@ -1679,9 +1488,9 @@ stop processing new blocks at that point. See <a class="reference external" href
 <li><p>Various smaller bug fixes.</p></li>
 <li><p>The desktop wallet is now open source.</p></li>
 </ul>
-</div>
-<div class="section" id="concordium-ledger-app-v2-0-1">
-<h2>Concordium Ledger App v2.0.1<a class="headerlink" href="#concordium-ledger-app-v2-0-1" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-ledger-app-v2-0-1">
+<h2>Concordium Ledger App v2.0.1<a class="headerlink" href="#concordium-ledger-app-v2-0-1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Improved state validation to deny instruction changes in multi command transactions.</p></li>
 <li><p>Support building for the Ledger Nano X.</p></li>
@@ -1693,23 +1502,23 @@ stop processing new blocks at that point. See <a class="reference external" href
 <li><p>Improved pagination of account addresses and hexadecimal strings, so that pages are split evenly and consistently.</p></li>
 <li><p>Fixed an issue in the add baker UI, where a response could be sent before signing or declining.</p></li>
 </ul>
-<div class="section" id="mainnet-1-alpha-centauri-1-2">
-<h3>Mainnet 1: Alpha Centauri 1.2<a class="headerlink" href="#mainnet-1-alpha-centauri-1-2" title="Permalink to this headline">#</a></h3>
+<section id="mainnet-1-alpha-centauri-1-2">
+<h3>Mainnet 1: Alpha Centauri 1.2<a class="headerlink" href="#mainnet-1-alpha-centauri-1-2" title="Link to this heading">#</a></h3>
 <p>July 28, 2021</p>
-</div>
-</div>
-<div class="section" id="concordium-desktop-wallet-v1-1-6">
-<h2>Concordium Desktop Wallet v1.1.6<a class="headerlink" href="#concordium-desktop-wallet-v1-1-6" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="concordium-desktop-wallet-v1-1-6">
+<h2>Concordium Desktop Wallet v1.1.6<a class="headerlink" href="#concordium-desktop-wallet-v1-1-6" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fixed an issue where identity creation would fail consistently making it impossible to create new identities.</p></li>
 </ul>
-<div class="section" id="mainnet-1-alpha-centauri-1-1">
-<h3>Mainnet 1: Alpha Centauri 1.1<a class="headerlink" href="#mainnet-1-alpha-centauri-1-1" title="Permalink to this headline">#</a></h3>
+<section id="mainnet-1-alpha-centauri-1-1">
+<h3>Mainnet 1: Alpha Centauri 1.1<a class="headerlink" href="#mainnet-1-alpha-centauri-1-1" title="Link to this heading">#</a></h3>
 <p>July 27, 2021</p>
-</div>
-</div>
-<div class="section" id="concordium-desktop-wallet-v1-1-5">
-<h2>Concordium Desktop Wallet v1.1.5<a class="headerlink" href="#concordium-desktop-wallet-v1-1-5" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="concordium-desktop-wallet-v1-1-5">
+<h2>Concordium Desktop Wallet v1.1.5<a class="headerlink" href="#concordium-desktop-wallet-v1-1-5" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>General improvements to the user interface, in particular for multi signature transaction flows.</p></li>
 <li><p>Change of wallet password now enforces the same length restriction as when initially set.</p></li>
@@ -1726,51 +1535,51 @@ stop processing new blocks at that point. See <a class="reference external" href
 <li><p>Scheduled transfer release times are now shown as human readable UTC date time strings.</p></li>
 <li><p>Fixed a UI bug in remove baker transaction.</p></li>
 </ul>
-<div class="section" id="mainnet-1-alpha-centauri-1-0">
-<h3>Mainnet 1: Alpha Centauri 1.0<a class="headerlink" href="#mainnet-1-alpha-centauri-1-0" title="Permalink to this headline">#</a></h3>
+<section id="mainnet-1-alpha-centauri-1-0">
+<h3>Mainnet 1: Alpha Centauri 1.0<a class="headerlink" href="#mainnet-1-alpha-centauri-1-0" title="Link to this heading">#</a></h3>
 <p>June 9, 2021</p>
 <p>We are proud to announce that version 1 of the Concordium blockchain infrastructure, the “Alpha Centauri” release, is available for download.</p>
 <p>Our Mainnet release has the following main features:</p>
-</div>
-</div>
-<div class="section" id="proof-of-stake">
-<h2>Proof of Stake<a class="headerlink" href="#proof-of-stake" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="proof-of-stake">
+<h2>Proof of Stake<a class="headerlink" href="#proof-of-stake" title="Link to this heading">#</a></h2>
 <p>The Concordium Blockchain uses a proof of stake mechanism to ensure resource-efficient operation of the network.</p>
-</div>
-<div class="section" id="two-layer-consensus-protocol">
-<h2>Two Layer Consensus Protocol<a class="headerlink" href="#two-layer-consensus-protocol" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="two-layer-consensus-protocol">
+<h2>Two Layer Consensus Protocol<a class="headerlink" href="#two-layer-consensus-protocol" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Nakamoto-Style Consensus
 Bakers participate in a form of lottery to win the right to append blocks to the chain.</p></li>
 <li><p>Finality Layer
 Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byzantine agreement to identify and mark common blocks in the chains of honest users as final.</p></li>
 </ul>
-</div>
-<div class="section" id="built-in-idlayer">
-<h2>Built in IDLayer<a class="headerlink" href="#built-in-idlayer" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="built-in-idlayer">
+<h2>Built in IDLayer<a class="headerlink" href="#built-in-idlayer" title="Link to this heading">#</a></h2>
 <p>Account creation is based on a validated identity, but at the same time it provides transactional privacy for users with a mechanism that allows accountability to local regulatory authorities.</p>
 <p>Transactional privacy is further enhanced by support for shielded transfers.</p>
-</div>
-<div class="section" id="smart-contracts">
-<h2>Smart Contracts<a class="headerlink" href="#smart-contracts" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="smart-contracts">
+<h2>Smart Contracts<a class="headerlink" href="#smart-contracts" title="Link to this heading">#</a></h2>
 <p>Concordium blockchain has native support for smart contracts on-chain with our core on-chain language WebAssembly (Wasm), a portable well-defined assembly-like language.</p>
 <p>Rust is the first off-chain high level smart contract language.</p>
-</div>
-<div class="section" id="tokenomics-and-on-chain-incentivization">
-<h2>Tokenomics and On-chain Incentivization<a class="headerlink" href="#tokenomics-and-on-chain-incentivization" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="tokenomics-and-on-chain-incentivization">
+<h2>Tokenomics and On-chain Incentivization<a class="headerlink" href="#tokenomics-and-on-chain-incentivization" title="Link to this heading">#</a></h2>
 <p>The Concordium blockchain comprises a set of transactions and economic roles that interact within the economy. An economic role, such as a baker or account holder, is represented by an account on the Concordium platform.</p>
 <p>The flow of CCD between accounts via transactions creates an economy that is designed to incentivize participation in the network and counter dishonest behaviour. It is the objective of the Concordium Foundation to guide the creation of a sustainable economy that rewards participants for their efforts in developing the network.</p>
-</div>
-<div class="section" id="concordium-node">
-<h2>Concordium Node<a class="headerlink" href="#concordium-node" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="concordium-node">
+<h2>Concordium Node<a class="headerlink" href="#concordium-node" title="Link to this heading">#</a></h2>
 <p>The Concordium node software is available for Linux and available in two different packages:</p>
 <ul class="simple">
 <li><p>A distribution package, which provides wrappers for setting up the node in a Docker image.</p></li>
 <li><p>A Debian package built for Ubuntu 20.04. This package allows for greater customization of the node set up.</p></li>
 </ul>
-</div>
-<div class="section" id="mobile-wallet">
-<h2>Mobile Wallet<a class="headerlink" href="#mobile-wallet" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="mobile-wallet">
+<h2>Mobile Wallet<a class="headerlink" href="#mobile-wallet" title="Link to this heading">#</a></h2>
 <p>The Mobile Wallet is available for iOS and Android with support for:</p>
 <ul class="simple">
 <li><p>identity issuance and management.</p></li>
@@ -1780,9 +1589,9 @@ Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byz
 <li><p>export and import to other mobile wallets.</p></li>
 <li><p>access to the blockchain through a “wallet proxy” operated by Concordium with no need to run a node.</p></li>
 </ul>
-</div>
-<div class="section" id="desktop-wallet">
-<h2>Desktop Wallet<a class="headerlink" href="#desktop-wallet" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="desktop-wallet">
+<h2>Desktop Wallet<a class="headerlink" href="#desktop-wallet" title="Link to this heading">#</a></h2>
 <p>The Desktop Wallet is available for Windows, macOS, and Linux with support for:</p>
 <ul class="simple">
 <li><p>identity issuance and management.</p></li>
@@ -1798,29 +1607,195 @@ Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byz
 <li><p>baker management</p></li>
 <li><p>access to blockchain via a service node, which is usually owned by the user of the Desktop Wallet.</p></li>
 </ul>
-</div>
-<div class="section" id="source-code">
-<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Link to this heading">#</a></h2>
 <p>The source code for the Concordium Blockchain is free open source software. You can access our repositories on the <a class="reference external" href="https://github.com/Concordium">Concordium GitHub organization page</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
-              </div>
+                </article>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
 </div>
+                </footer>
               
-          </main>
-          
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-      </div>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-1-2-0-for-android">Concordium Wallet for Mobile 1.2.0 for Android</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-4-2">Concordium Node 5.4.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-5-2-0">Concordium Client 5.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-android-1-1-8">Concordium Wallet for Mobile for Android 1.1.8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-ios-1-0-1">Concordium Wallet for Mobile for iOS 1.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen1-for-ios-3-2-0">Concordium Legacy Wallet for iOS 3.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-1-0-6">Concordium Wallet for Web 1.0.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-8-0"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-contract-integration-testing">Smart contract integration testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-1-0-4">Concordium Wallet for Web 1.0.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-extension-1-0-1">VSCode extension 1.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cargo-concordium 2.8.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-android-1-1-7">Concordium Wallet for Mobile for Android 1.1.7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-3-2">Concordium Node 5.3.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-7-1">Cargo-concordium 2.7.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-ledger-app-v3-1-0">Concordium Ledger App v3.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-0-9-11">Concordium Wallet for Web 0.9.11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen1-for-ios-3-1-1">Concordium Legacy Wallet for iOS 3.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-1-1-6">Concordium Wallet for Mobile 1.1.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-5-1-1">Concordium Client 5.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-2-4">Concordium Node 5.2.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-ios">Concordium Wallet for Mobile for iOS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-0-9-8">Concordium Wallet for Web 0.9.8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-1-1-5">Concordium Wallet for Mobile 1.1.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen1-for-android-3-2-0">Concordium Legacy Wallet for Android 3.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-7-0">Cargo concordium 2.7.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-1-1-4">Concordium Wallet for Mobile 1.1.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-1-3">Concordium Node 5.1.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-6-0">Cargo concordium 2.6.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-0-9-6">Concordium Wallet for Web 0.9.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-0-7-for-macos">Concordium Node 5.0.7 for MacOS</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-4-sirius">Mainnet 4: Sirius</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-0-9-5">Concordium Wallet for Web 0.9.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-0-9-4">Concordium Wallet for Web 0.9.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-5-0">Cargo concordium 2.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-5-0-2">Concordium Client 5.0.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-contract-libraries">Smart contract libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-1-1-0">Concordium Wallet for Mobile 1.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-0-8-5">Concordium Wallet for Web 0.8.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-0-6">Concordium Node 5.0.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-4-0">Cargo concordium 2.4.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-5-0-1">Concordium Client 5.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen1-for-android">Concordium Legacy Wallet for Android</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-4-5-0">Concordium Node 4.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw">Concordium Wallet for Web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-2-0">Cargo concordium 2.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-4-4-4">Concordium Node 4.4.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-4-2-0">Concordium Client 4.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2">Concordium Wallet for Mobile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen1-previously-concordium-mobile-wallet-for-android">Concordium Legacy Wallet (previously Concordium Mobile Wallet) for Android</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-4-3-1">Concordium Node 4.3.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-4-1-0">Concordium Client 4.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-1-0">Cargo concordium 2.1.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-4-0-4">Concordium Client 4.0.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-0-2">Cargo concordium 2.0.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-4-2-3-for-docker">Concordium Node 4.2.3 for Docker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-1-5-0">Concordium Desktop Wallet 1.5.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-4-2-3">Concordium Node 4.2.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-4-2-1">Concordium Node 4.2.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v3-0-0-53">Concordium Mobile Wallet for iOS v3.0.0(53)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v3-0-0-100">Concordium Mobile Wallet for Android v3.0.0(100)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-4-2">Concordium Desktop Wallet v1.4.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-4-1-1">Concordium Node 4.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-4-0-3">Concordium Client 4.0.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-4-1">Concordium Desktop Wallet v1.4.1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-3-alpha-centauri-3-0">Mainnet 3: Alpha Centauri 3.0</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ccdscan-release-1">CCDScan release 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-v3-0-2">Concordium Node v3.0.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v2-0-0-75">Concordium Mobile Wallet for Android v2.0.0(75)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v2-0-0-38">Concordium Mobile Wallet for iOS v2.0.0(38)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-3-34">Concordium Mobile Wallet for iOS v1.3(34)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-2-33">Concordium Mobile Wallet for iOS v1.2(33)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v1-2-6">Concordium Mobile Wallet for Android v1.2.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-3-1">Concordium Desktop Wallet v1.3.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-v3-0-1">Concordium Node v3.0.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-3-0">Concordium Desktop Wallet v1.3.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-v3-0-0">Concordium Node v3.0.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v1-0-22">Concordium Mobile Wallet for Android v1.0.22</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-ledger-app-v2-0-3">Concordium Ledger App v2.0.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-v3-0-4">Concordium Client v3.0.4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-2-alpha-centauri-2-2">Mainnet 2: Alpha Centauri 2.2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-ios-v1-1-27">Concordium Mobile Wallet for iOS v1.1(27)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-2-alpha-centauri-2-1">Mainnet 2: Alpha Centauri 2.1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-mobile-wallet-for-android-v-1-0-16">Concordium Mobile Wallet for Android (v. 1.0.16)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-new-version-of-concordium-mobile-wallet-for-ios-is-coming-soon">The new version of Concordium Mobile Wallet for iOS is coming soon</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-2-alpha-centauri-2-0">Mainnet 2: Alpha Centauri 2.0</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-v1-1-3">Concordium Node v1.1.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-client-v1-1-1">Concordium Client v1.1.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-2-0">Concordium Desktop Wallet v1.2.0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-ledger-app-v2-0-1">Concordium Ledger App v2.0.1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-1-alpha-centauri-1-2">Mainnet 1: Alpha Centauri 1.2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-1-6">Concordium Desktop Wallet v1.1.6</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-1-alpha-centauri-1-1">Mainnet 1: Alpha Centauri 1.1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-desktop-wallet-v1-1-5">Concordium Desktop Wallet v1.1.5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-1-alpha-centauri-1-0">Mainnet 1: Alpha Centauri 1.0</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-stake">Proof of Stake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-layer-consensus-protocol">Two Layer Consensus Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-idlayer">Built in IDLayer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#smart-contracts">Smart Contracts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenomics-and-on-chain-incentivization">Tokenomics and On-chain Incentivization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node">Concordium Node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mobile-wallet">Mobile Wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desktop-wallet">Desktop Wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/net/release-notes/release-notes-mainnet.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <!-- Script to change the highlighting of the active menu path and put the sidenav into hamburger for mobile-->
 <script>
@@ -1839,6 +1814,15 @@ Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byz
         }
     } );
 </script>
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2024, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
   <style>
     .cc {
       position: relative;
@@ -1849,17 +1833,18 @@ Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byz
     .cc a {
       display: inline-block;
       text-align: left;
-      padding: 16px;
+      padding-left: 16px;
+      padding-bottom: 8px;
       color: black;
       font-size: 8px;
     }
 </style>
 
 <div class="cc">
-  <a href="http://creativecommons.org/licenses/by-sa/4.0/">
-    <img src="../../_static/cc-sa-by.png" />  Copyright 2021 - 2024, Concordium Software ApS
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
   </a>
-  <a href="../guides/legal.html">
+  <a text-decoration=none href="../guides/legal.html" >
     Legal information
   </a>
 </div>
