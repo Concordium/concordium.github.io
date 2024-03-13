@@ -51,3 +51,18 @@ The app retrieves the encrypted tally from the contract automatically.
 #. Find the secret key stored during the Setup phase and decrypt the guardian’s share.
 
 #. Send the decrypted share to the contract.
+
+Uninstall the app
+=================
+
+Once the election is final, guardians should install the app. The instructions below describe how to install the app for each platform.
+
+Windows
+-------
+
+MacOS
+-----
+
+Linux
+-----
+
