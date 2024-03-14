@@ -18,7 +18,7 @@ Pre-setup
 
 The guardians must give account addresses to the organizer of the election. If you need to know how to find your account address, see :ref:`share-address-mw`
 
-Guardians must download and install the Guardian desktop application. (link)
+Guardians must download and install the Guardian desktop application that is created by the election coordinator.
 
 Setup
 =====

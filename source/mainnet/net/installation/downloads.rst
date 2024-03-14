@@ -301,17 +301,12 @@ Download the block separately to inspect it or to run a node in a custom configu
 Voting tools
 ============
 
-Guardian app
-Windows
-Mac
-Ubuntu
-
 Coordinator tool
 Windows
 Mac
 Ubuntu
 
-Election smart contract
+The Guardian app, voting dApp, and election smart contract are created by the election coordinator during the setup phase of the election.
 
 .. _downloads-auxiliary-tools:
 
