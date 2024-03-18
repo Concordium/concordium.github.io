@@ -31,7 +31,7 @@ Before the election opens, the guardians must use the Guardian app to generate a
 
 #. Open the Guardian app.
 
-#. To connect your account to the Guardian app, you must add your export file for your private account keys. For information about how to generate an export file, see :ref:`<export-key>`.
+#. To connect your account to the Guardian app, you must add your export file for your private account keys. For information about how to generate an export file, see :ref:`Export a private key<export-key>`.
 
     .. image:: ../images/voting/guardian-await-key.png
         :alt: screen showing drag-drop or browse to export file
