@@ -167,7 +167,7 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
 
-      For delegation in an election, see :term:`<vote delegation>`.
+      For delegation in an election, see :term:`Vote delegation`.
 
    Deploy
 
@@ -468,7 +468,7 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet and Concordium Legacy Wallet to cast ballots in the 2024 election.
 
-      For delegation related to earning rewards on an account, see :term:`<delegator>`.
+      For delegation related to earning rewards on an account, see :term:`delegator`.
 
    Wallet
 

@@ -32,7 +32,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
     **To delegate your vote:**
 
     #. In the account from which you want to vote, click **Send**.
-    
+
     #. Enter any amount of CCD (1 micro-CCD is enough). The target account in |bw|, |cryptox|, or |mw-gen2| is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says **delegatevote2024**.
 
         .. image:: ../images/voting/dw-vote-delegation.png
@@ -60,7 +60,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
     **To delegate your vote:**
 
     #. Tap **Send** on the account to delegate from.
-    
+
     #. Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in |bw|, |cryptox|, or |mw-gen2|. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In **Optional: Add memo** add a memo that says **delegatevote2024**. Tap **Send amount**.
 
         .. image:: ../images/voting/mwgen1-delegate-vote.png
