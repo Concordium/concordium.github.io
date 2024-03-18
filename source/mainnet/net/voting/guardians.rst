@@ -164,7 +164,7 @@ Once you have registered your decryption proof you must wait until the other gua
 
 After all guardians have registered decryption proofs, the decryption is shown as complete.
 
-.. image:: ../images/voting/guardian-await-decryption-complete.png
+.. image:: ../images/voting/guardian-decryption-complete.png
     :alt: dialog shown when awaiting other guardians
     :width: 50%
 
