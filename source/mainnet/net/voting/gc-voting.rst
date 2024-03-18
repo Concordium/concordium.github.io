@@ -7,7 +7,7 @@ Concordium Governance Committee Elections
 
 Concordium Governance Committee elections are a vital part of decentralization, allowing the Concordium community to make decisions about the blockchain.
 
-A user with multiple accounts should vote from all accounts for their vote to have maximum :term:`weight<voting-weight>`. If the same account votes multiple times, only the last vote will count.
+A user with multiple accounts should vote from all accounts for their vote to have maximum :term:`weight<account weight>`. If the same account votes multiple times, only the last vote will count.
 
 Staked CCD, whether it is by validators or delegators, is still held in the user’s wallet, so it counts towards the weight of the vote. But shielded CCD cannot be seen by anyone other than the wallet owner, so it cannot be part of the weight. And CCD locked in smart contracts cannot be used to vote either. Furthermore tokens that are in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don’t want custodians to vote in their name) to transfer all CCD to wallets of their own.
 
@@ -15,7 +15,7 @@ The voting system chosen for this election is called :term:`approval voting`. Th
 
 The candidates with the most votes are elected. In case of a tie, which is very unlikely, a fair coin is flipped.
 
-:term:`Guardians<guardian>` ensure that election result is fair as well as further decentralizing the election process. A guardian is one of a number of independent, trustworthy individuals who participate in the election to ensure that votes are encrypted before the election and decrypted after the election.
+:term:`Guardians<guardian>` ensure that election result is fair as well as further decentralizing the election process. A guardian is one of a number of independent, trustworthy individuals who participate in the election to ensure that votes are encrypted before the election and decrypted after the election. Guardians may also vote in the election, as may candidates.
 
 The diagrams and descriptions below describe the process during each phase of the election.
 

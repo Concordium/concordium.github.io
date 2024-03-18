@@ -22,6 +22,10 @@ Guardians must download and install the Guardian desktop application that is cre
 
 Setup
 =====
+Before the election opens, the guardians must use the Guardian app to create their key pairs, register encrypted shares, and generate their secret key share to be used to decrypt the tally after the election.
+
+Generate guardian keys
+----------------------
 
 Before the election opens, the guardians must use the Guardian app to generate a pre-key.
 
@@ -57,24 +61,112 @@ Once you have generated your pre-key you must wait until the other guardians hav
     :alt: dialog shown when awaiting other guardians
     :width: 50%
 
-After the steps above are complete, all of the guardians generate the real public key together with shares of encryption.
+Generate and register encrypted shares
+--------------------------------------
 
-    #. Share this (together with proof) in the contract
+Once all guardians have generated their keys as described above, each guardian must go through the steps below to generate encrypted shares of their secret key for the other guardians.
 
-    #. Store private keys securely in a JSON file.
+#. Click **Generate encrypted shares**.
 
-    #. Wait until other guardians have done the same and check their proofs.
+    .. image:: ../images/voting/guardian-generate-encrypted-shares.png
+        :alt: generate encrypted shares dialog
+        :width: 50%
 
-    #. If corruption is detected the guardian should register a complaint in the contract.
+#. Click **Register encrypted shares** to register the encrypted shares information to the election smart contract.
+
+    .. image:: ../images/voting/guardian-reg-encrypted-shares.png
+        :alt: register encrypted shares progress dialog
+        :width: 50%
+
+Once you have generated and registered your encrypted shares you must wait until the other guardians have done the same.
+
+.. image:: ../images/voting/guardian-await-shares.png
+    :alt: dialog shown when awaiting other guardians
+    :width: 50%
+
+Generate secret key share
+-------------------------
+
+The final step is to generate your secret key share. This creates your share of the decryption key using your secret key along with the encrypted shares of the secret keys of the other guardians.
+
+#. Click **Generate secret key share**.
+
+    .. image:: ../images/voting/guardian-generate-secret-key-share.png
+        :alt: generate secret key share dialog
+        :width: 50%
+
+#. Click **Register validation OK**.
+
+Once you have generated your secret key share you must wait until the other guardians have done the same.
+
+.. image:: ../images/voting/guardian-await-key-share.png
+    :alt: dialog shown when awaiting other guardians
+    :width: 50%
+
+After all guardians have complete the process, a screen shows that election setup is complete and a countdown to the election start.
+
+.. image:: ../images/voting/guardian-election-setup-complete.png
+    :alt: dialog shown when election setup is completed by all guardians
+    :width: 50%
+
+If corruption is detected the guardian should register a complaint in the contract.
 
 After the election
 ==================
 
 The app retrieves the encrypted tally from the contract automatically.
 
-#. Find the secret key stored during the Setup phase and decrypt the guardian’s share.
+Generate your decrypted share
+-----------------------------
 
-#. Send the decrypted share to the contract.
+#. Open the Guardian app.
+
+#. Click **Generate decryption share**.
+
+    .. image:: ../images/voting/guardian-generate-decryption-share.png
+        :alt: generate decryption share dialog
+        :width: 50%
+
+#. Click **Send share registration**.
+
+    .. image:: ../images/voting/guardian-register-decryption-share.png
+        :alt: register decryption share dialog
+        :width: 50%
+
+Once you have registered your decryption share you must wait until the other guardians have done the same.
+
+.. image:: ../images/voting/guardian-await-decryption.png
+    :alt: dialog shown when awaiting other guardians
+    :width: 50%
+
+Register the decrypted share in the contract
+--------------------------------------------
+
+The final step creates a proof that can be checked by others to determine that the election has been fair.
+
+#. Click **Generate decryption proof**.
+
+    .. image:: ../images/voting/guardian-generate-decryption-proof.png
+        :alt: generate decryption proof dialog
+        :width: 50%
+
+#. Click **Send proof registration**.
+
+    .. image:: ../images/voting/guardian-register-decryption-proof.png
+        :alt: generate decryption proof dialog
+        :width: 50%
+
+Once you have registered your decryption proof you must wait until the other guardians have done the same.
+
+.. image:: ../images/voting/guardian-await-decryption-proof.png
+    :alt: dialog shown when awaiting other guardians
+    :width: 50%
+
+After all guardians have registered decryption proofs, the decryption is shown as complete.
+
+.. image:: ../images/voting/guardian-await-decryption-complete.png
+    :alt: dialog shown when awaiting other guardians
+    :width: 50%
 
 Uninstall the app
 =================
