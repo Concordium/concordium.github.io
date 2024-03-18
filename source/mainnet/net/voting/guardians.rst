@@ -23,17 +23,41 @@ Guardians must download and install the Guardian desktop application that is cre
 Setup
 =====
 
-Before the election opens, the guardians must generate keys.
+Before the election opens, the guardians must use the Guardian app to generate a pre-key.
 
-#. Use the guardian app to generate pre-key.
+#. Open the Guardian app.
 
-    #. Register the public key in the contract
+#. To connect your account to the Guardian app, you must add your export file for your private account keys. For information about how to generate an export file, see :ref:`<export-key>`.
 
-    #. Store the secrets
+    .. image:: ../images/voting/guardian-await-key.png
+        :alt: screen showing drag-drop or browse to export file
+        :width: 50%
 
-    #. wait until other guardians have done the same
+#. Once you have added the export file, enter a password.
 
-#. After step 1 is complete, generate the real public key together with shares of encryption.
+    .. image:: ../images/voting/guardian-set-pw.png
+        :alt: password dialog
+        :width: 50%
+
+#. Click **Generate guardian key** to create your secret key and register your public key in the election smart contract.
+
+    .. image:: ../images/voting/guardian-generate-keys.png
+        :alt: generate key pair dialog
+        :width: 50%
+
+   The progress dialog shows the status. Click **Send key registration** to complete the process.
+
+    .. image:: ../images/voting/guardian-send-key-reg.png
+        :alt: key pair generation progress dialog
+        :width: 50%
+
+Once you have generated your pre-key you must wait until the other guardians have done the same.
+
+.. image:: ../images/voting/guardian-waiting.png
+    :alt: dialog shown when awaiting other guardians
+    :width: 50%
+
+After the steps above are complete, all of the guardians generate the real public key together with shares of encryption.
 
     #. Share this (together with proof) in the contract
 
@@ -55,13 +79,21 @@ The app retrieves the encrypted tally from the contract automatically.
 Uninstall the app
 =================
 
-Once the election is final, guardians should install the app. The instructions below describe how to install the app for each platform.
+Once the election is final, guardians should uninstall the app. The instructions below describe how to uninstall the app for each platform.
 
 Windows
 -------
 
+Uninstall the app as you uninstall all apps on Microsoft.
+
+Delete the file XXXX to remove all guardian keys.
+
 MacOS
 -----
+
+Uninstall the app as you uninstall all apps on MacOS.
+
+Delete the file XXXX to remove all guardian keys.
 
 Linux
 -----

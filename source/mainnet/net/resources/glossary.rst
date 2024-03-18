@@ -20,6 +20,11 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.
 
+
+   Account weight
+
+      The Account weight of an account corresponds to the weight this account has for voting. In the 2024 election, this is computed as the average amount of CCD on the account between the 1st of March and 31st of May 2024.
+
    Accumulated weight
 
       The weight of a vote is the weight assigned to that vote when tallying, i.e., the sum of all account weights that delegated to the account that cast the vote + the weight of the account that cast the vote (unless that account delegated its own weight to another account, but voted anyway).
@@ -156,11 +161,13 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Delegated weight
 
-      Sum of voting weights that delegated to an account. Delegated weight is made up of the account weight of each account that delegated a vote to the account that cast a ballot.
+      Sum of account weights that delegated to an account. Delegated weight is made up of the account weight of each account that delegated a vote to the account that cast a ballot.
 
    Delegator
 
       An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
+
+      For delegation in an election, see :term:`<vote delegation>`.
 
    Deploy
 
@@ -398,7 +405,7 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Tally phase
 
-      Time period after the election where voting is closed and guardians decrypt their share of the tally and the final election result is produced and registered.
+      Time period after the election where voting is closed and guardians decrypt their share of the tally (tally ceremony is held) and the final election result is produced and registered.
 
    Testnet
 
@@ -457,9 +464,11 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       Party that checks users' :term:`verifiable credentials<verifiable credential>`.
 
-   Voting weight
+   Vote delegation
 
-      The voting weight of an account corresponds to the weight this account has for voting. Also known as account weight. In the 2024 election, this is computed as the average amount of CCD on the account between the 1st of March and 31st of May 2024.
+      Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet and Concordium Legacy Wallet to cast ballots in the 2024 election.
+
+      For delegation related to earning rewards on an account, see :term:`<delegator>`.
 
    Wallet
 
