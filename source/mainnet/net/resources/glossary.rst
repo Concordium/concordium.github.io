@@ -1,4 +1,3 @@
-.. _whitepaper: https://go.concordium.com/hubfs/White%20paper%20-%20RWR/Concordium%20White%20Paper%20v1.8.pdf
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
 .. include:: ../../variables.rst
@@ -8,7 +7,7 @@
 Glossary of Concordium Terms
 ============================
 
-Also see the Concordium `whitepaper`_ for more details on the terms described below.
+Also see the Concordium `Whitepaper <../../../_static/Concordium-White-Paper-latest.pdf>`_ for more details on the terms described below.
 
 .. glossary::
 
