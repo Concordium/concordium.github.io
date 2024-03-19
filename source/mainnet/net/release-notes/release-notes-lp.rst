@@ -329,11 +329,15 @@ Wallets
 Desktop Wallet
 --------------
 
-    December 14, 2023
+    March 20, 2024
 
-        Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
+        Version 1.7.3 fixes an issue reported on Windows where the LEDGER connectivity state was faulty, preventing users from signing transactions.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.2 - December 14, 2023
+
+            Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
 
         .. dropdown:: 1.7.1 - November 22, 2023
 
