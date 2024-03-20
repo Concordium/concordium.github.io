@@ -7,11 +7,11 @@ Concordium Governance Committee Elections
 
 Concordium Governance Committee elections are a vital part of decentralization, allowing the Concordium community to make decisions about the blockchain.
 
-A user with multiple accounts should vote from all accounts for their vote to have maximum :term:`weight<account weight>`. If the same account votes multiple times, only the last vote will count.
+A user with multiple accounts should vote from all accounts for their vote to have maximum :term:`weight<account weight>`. If the *same account* votes multiple times, only the last vote will count.
 
 Staked CCD, whether it is by validators or delegators, is still held in the user’s wallet, so it counts towards the weight of the vote. But shielded CCD cannot be seen by anyone other than the wallet owner, so it cannot be part of the weight. And CCD locked in smart contracts cannot be used to vote either. Furthermore tokens that are in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don’t want custodians to vote in their name) to transfer all CCD to wallets of their own.
 
-The voting system chosen for this election is called :term:`approval voting`. The voter may choose as many :term:`candidates<candidate>` as they like, i.e., they assign either 0 or 1 to every candidate. In standard approval voting, all votes are added up and the candidates with the most votes get the seats. In our weighted case, every candidate that receives a vote receives the corresponding full weight of the account from which the voter was cast—the weights are not split amongst the candidates that receive a vote. For example, suppose that there are four candidates, Peppa Pig, Rebecca Rabbit, Suzy Sheep and Zoe Zebra. And suppose that Alice has 4000 CCD and votes for Peppa, Bob has 2000 CCD and votes for Rebecca and Suzy, and Charlie has 3000 CCD and votes for Suzy and Zoe. Then the final tally is 4000 votes for Peppa, 2000 for Rebecca, 5000 for Suzy and 3000 for Zoe.
+The voting system chosen for this election is called :term:`approval voting`. The voter may choose as many :term:`candidates<candidate>` as they like, i.e., they assign either 0 or 1 to every candidate. In standard approval voting, all votes are added up and the candidates with the most votes get the seats. In our weighted case, every candidate that receives a vote receives the corresponding full weight of the account from which the voter was cast — the weights are not split amongst the candidates that receive a vote. For example, suppose that there are four candidates, Peppa Pig, Rebecca Rabbit, Suzy Sheep and Zoe Zebra. And suppose that Alice has 4000 CCD and votes for Peppa, Bob has 2000 CCD and votes for Rebecca and Suzy, and Charlie has 3000 CCD and votes for Suzy and Zoe. Then the final tally is 4000 votes for Peppa, 2000 for Rebecca, 5000 for Suzy and 3000 for Zoe.
 
 The candidates with the most votes are elected. In case of a tie, which is very unlikely, a fair coin is flipped.
 
@@ -62,9 +62,9 @@ After the election is the :term:`tally phase`.
     :alt: diagram showing steps below
     :width: 50%
 
-#. Once the election closes, the election coordinator uses the coordinator tool to get the final weights (the initial weights plus weights after taking vote delegation into account) and compute the encrypted tally which is registered in the smart contract.
+#. Once the election closes, the election coordinator uses the coordinator tool to get the :term:`final weights<accumulated weight>` (the initial weights plus weights after taking vote delegation into account) and compute the encrypted tally which is registered in the smart contract.
 
-#. The guardians use the Guardian app to generate their decryption share of the tally and post that before the deadline specified. They then generate and register proof of correct decryption. If proof generation fails, manual intervention is required by the election coordinator to reset the tally phase with the option of excluding faulty guardians.
+#. The guardians use the Guardian app to generate their :term:`decryption share<Decryption share>` of the tally and post that before the deadline specified. They then generate and register proof of correct decryption. If proof generation fails, manual intervention is required by the election coordinator to reset the tally phase with the option of excluding faulty guardians.
 
 #. The decryption shares from each guardian and corresponding proofs of correct decryption are used to produce the election result, which is registered in the smart contract. The election coordinator posts the decrypted tally and voters can see the election result in the voting dApp.
 
