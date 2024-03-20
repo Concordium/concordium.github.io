@@ -38,7 +38,7 @@ The period of time before the election is the :term:`setup phase`. Several roles
 
 #. The election server is started, the indexer is started, and the Guardian app is built and released.
 
-#. Guardians download the guardian app and install it. They export their account keys from their wallet and import that file to the Guardian app to generate their key pair. And they generate encrypted shares for each guardian. If any invalid submissions from peers are detected, the guardian files a complaint which requires manual intervention from the election coordinator by setting up a new election.
+#. Guardians download the guardian app and install it. They export their account keys from their wallet and import that file to the Guardian app to generate their guardian key pair. And they generate encrypted shares for each guardian. If any invalid submissions from peers are detected, the guardian files a complaint which requires manual intervention from the election coordinator by setting up a new election.
 
 During the election
 ===================
