@@ -7,7 +7,7 @@
 Glossary of Concordium Terms
 ============================
 
-Also see the Concordium `Whitepaper <Https://concordium.github.io/public/governance/Concordium-White-Paper-latest.pdf>`_ for more details on the terms described below.
+Also see the Concordium `Whitepaper <https://developer.concordium.software/governance/whitepaper/Concordium%20White%20Paper.pdf>`_ for more details on the terms described below.
 
 .. glossary::
 
