@@ -49,7 +49,7 @@ The period of time during the election is the :term:`election phase`.
     :alt: diagram showing steps below
     :width: 50%
 
-#. Voters open the dApp and cast their votes. The voter must connect their wallet and sign and submit the transaction to register it on the blockchain. In the case of delegated votes, it doesn't matter when voting power is delegated, as long as it happens within the voting "window", i.e., between election start and end time. The latest delegation registration counts and you cannot redelegate voting power delegated to you; only your initial weight can be delegated.
+#. Voters using the |bw|, |mw-gen2|, or |cryptox| open the dApp and cast their votes. The voter must connect their wallet and sign and submit the transaction to register it on the blockchain. For voters preferring to delegate their vote to another account (e.g., from a non-dApp enabled account in Desktop Wallet or |mw-gen1| to one with dApp connectivity), it doesn't matter when voting power is delegated, as long as it happens within the voting "window", i.e., between election start and end time. The latest delegation registration counts and you cannot redelegate voting power delegated to you; only your initial weight can be delegated.
 
 #. The votes are registered in the smart contract and the server reads the votes from the contract.
 

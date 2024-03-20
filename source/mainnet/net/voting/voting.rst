@@ -23,7 +23,7 @@ The voting dApp also has a separate page where the user can see the list of all 
 For Desktop wallet and |mw-gen1| wallet holders
 ===============================================
 
-These older wallets do not have the capability to connect to dApps. But you do have options to exercise your vote.
+These older wallets do not have the capability to connect to dApps. But you do have an option to exercise your vote.
 
 .. dropdown:: Desktop wallet
 
@@ -49,15 +49,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
 .. dropdown:: |mw-gen1|
 
-    You have two options.
-
-    #. You can delegate votes,
-
-    #. or you can import your accounts into the |cryptox| wallet and vote from there.
-
-    To delegate votes, users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw|, |cryptox|, or |mw-gen2| at any time before the election.
-
-    **To delegate your vote:**
+    Users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw|, |cryptox|, or |mw-gen2| at any time before the election.
 
     #. Tap **Send** on the account to delegate from.
 
@@ -80,6 +72,4 @@ These older wallets do not have the capability to connect to dApps. But you do h
             :width: 50%
 
     #. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
-
-    **To import your account to |cryptox|:**
 
