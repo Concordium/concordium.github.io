@@ -64,7 +64,7 @@ After the election is the :term:`tally phase`.
 
 #. Once the election closes, the election coordinator uses the coordinator tool to get the final weights (the initial weights plus weights after taking vote delegation into account) and compute the encrypted tally which is registered in the smart contract.
 
-#. The guardians use the Guardian app to generate their decryption share of the tally and post that before the deadline specified. They then generate and register proof of correct decryption. If proof generation fails, manual intervention is required by the election coordinator to reset the tally phase with the option of excluding any number of guardians.
+#. The guardians use the Guardian app to generate their decryption share of the tally and post that before the deadline specified. They then generate and register proof of correct decryption. If proof generation fails, manual intervention is required by the election coordinator to reset the tally phase with the option of excluding faulty guardians.
 
 #. The decryption shares from each guardian and corresponding proofs of correct decryption are used to produce the election result, which is registered in the smart contract. The election coordinator posts the decrypted tally and voters can see the election result in the voting dApp.
 
