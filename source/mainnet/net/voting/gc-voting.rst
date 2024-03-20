@@ -32,7 +32,7 @@ The period of time before the election is the :term:`setup phase`. Several roles
 
 #. Each guardian sends their account address to Concordium.
 
-#. Candidates are nominated and can "campaign". Candidates **must** submit a JSON file with information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the voting dApp.
+#. Candidates are nominated and can "campaign". Candidates can provide information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the voting dApp.
 
 #. The Election coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract.
 
