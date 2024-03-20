@@ -97,13 +97,13 @@ Concordium Desktop Wallet
       Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
       -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.AppImage>`_
-         -  SHA256 checksum of the download: ``83ba3d857176e056339c48bde9c869ae7485f3fb43ba14fac7c27b04ffc66533``
+         -  SHA256 checksum of the download: ``98dd7ec121f5e3ff2825de69533d6a49f9da3a857452845dc7b0bd0f70990ad0``
 
       -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.deb>`_
-         -  SHA256 checksum of the download: ``ff06aca0d11af4b2062d84698cd4503ad6c404791974dc41e0112a871892d1a4``
+         -  SHA256 checksum of the download: ``48b89e1a1c4677694ad28882f771e93cc5234d03e49cbfcfba07c3214aeb4c3c``
 
       -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.rpm>`_
-         -  SHA256 checksum of the download: ``2e6819065635c889a86810637ebeed8a55e62834bb3ff2526a7f7c8390034b53``
+         -  SHA256 checksum of the download: ``a3b47aa43f31705c8d1789e870fab052603afa00a7555ee2f87158da64f29fea``
 
 .. _ledger-app-download:
 
