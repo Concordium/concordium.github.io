@@ -70,11 +70,27 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    November 28, 2023
+    March 20, 2024
 
-    Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
+    Version 1.5.1 fixes the following issues:
+
+    - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
+
+    - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
+
+    -  Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
+
+    - Correct environment value now written to the key export file
+
+    - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
+
+    - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.5.0 - November 28, 2023
+
+            Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
 
         .. dropdown:: |mw-gen2| 1.4.0 - October 26, 2023
 
@@ -167,11 +183,15 @@ Wallets
 |bw|
 -------------------------
 
-    March 6, 2024
+    March 20, 2024
 
-    In version 1.4.2 the token transfer estimate now takes the transfer amount into account and the wallet no longer blocks creating the last possible account for an identity.
+    In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.4.2 - March 6, 2024
+
+            In version 1.4.2 the token transfer estimate now takes the transfer amount into account and the wallet no longer blocks creating the last possible account for an identity.
 
         .. dropdown:: |bw| 1.4.1 - February 13, 2024
 
