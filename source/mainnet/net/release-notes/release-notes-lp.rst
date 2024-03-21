@@ -77,8 +77,10 @@ Wallets
     - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
 
     - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
-- Search for token id will now return the result if the token id is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
-   -  Correct environment value now written to the key export file
+
+   - Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
+   
+   - Correct environment value now written to the key export file
 
    - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
 
