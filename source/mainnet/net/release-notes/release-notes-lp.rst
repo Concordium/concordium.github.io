@@ -329,7 +329,7 @@ Wallets
 Desktop Wallet
 --------------
 
-    March 20, 2024
+    March 21, 2024
 
         Version 1.7.3 fixes an issue reported on Windows where the LEDGER connectivity state was faulty, preventing users from signing transactions.
 
