@@ -70,13 +70,21 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    March 11, 2024
+    March 20, 2024
 
     Version 1.5.1 fixes the following issues:
 
     - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
 
     - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
+
+   -  Correct environment value now written to the key export file
+
+   - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
+
+   - Now possible to search for CIS-2 token by ID on contracts with lots of tokens
+
+   - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
 
     .. dropdown:: Previous releases
 
