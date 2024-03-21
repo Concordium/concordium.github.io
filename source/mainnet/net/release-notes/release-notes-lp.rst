@@ -78,15 +78,13 @@ Wallets
 
     - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
 
-   - Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
-   
-   - Correct environment value now written to the key export file
+    -  Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
 
-   - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
+    - Correct environment value now written to the key export file
 
-   - Now possible to search for CIS-2 token by ID on contracts with lots of tokens
+    - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
 
-   - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
+    - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
 
     .. dropdown:: Previous releases
 
