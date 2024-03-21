@@ -75,7 +75,7 @@ The options are:
 
 ``--guardian`` (repeated) is guardian account addresses. At least one is needed.
 
-``--candidate`` (repeated) is a URL to a candidate. The order here matters, since that will be the order of selections in the election. The link is to the candidate metadata. The hash of the metadata will be embedded in the contract.
+``--candidate`` (repeated) is a URL or a path to a candidate. The order here matters, since that will be the order of selections in the election. The link is to the candidate metadata. The hash of the metadata will be embedded in the contract.
 
 ``--base-url`` the URL where the election server is accessible, e.g., https://gcvoting.testnet.concordium.com
 
