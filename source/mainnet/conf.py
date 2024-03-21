@@ -158,7 +158,7 @@ html_theme_options = {
     "navbar_center": ["navbar-menu"],
     "navbar_end": ["navbar-icon-links"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
-    "footer_start": ["footer", "copyright"],
+    "article_footer_items": ["footer-article"],
     "show_prev_next": True,
     #"navbar_align": "left",
     "icon_links": [
@@ -256,6 +256,7 @@ html_context = {
     "github_version": "main",
     "doc_path": "source/mainnet",
     "conf_py_path": "/source/",
+    "default_mode": "light",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -376,6 +377,3 @@ redirects = {
     "./en/mainnet/smart-contracts/guides/contract-testing-guides": "./en/mainnet/smart-contracts/guides/integration-test-contract",
     "./en/mainnet/smart-contracts/best-practices/index": "./en/mainnet/smart-contracts/best-practices/development",
 }
-
-# -- Tags that enables the .. only option ----------------
-tags.add('mainnet')
