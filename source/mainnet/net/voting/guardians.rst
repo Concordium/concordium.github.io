@@ -191,3 +191,9 @@ Delete the file XXXX to remove all guardian keys.
 Linux
 -----
 
+On linux, the application data is stored in one of two places depending on your system:
+
+- ``$XDG_DATA_HOME/com.concordium.guardian.<network>.<contract-index>.<contract-subindex>``
+- ``$HOME/.local/share/com.concordium.guardian.<network>.<contract-index>.<contract-subindex>``
+
+Delete this folder to remove all guardian keys.
