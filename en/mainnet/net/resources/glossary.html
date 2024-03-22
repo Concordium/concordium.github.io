@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/resources/glossary.a2a23665-78a8-4f0a-8bd8-cdf1c0a21656.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/resources/glossary.e838d247-c76d-4247-87be-af5b0ea2675d.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/resources/glossary';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -921,6 +921,13 @@ body {margin:0;}
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../voting/gc-voting.html">Concordium Governance Committee Elections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/coordinator.html">Election coordinator tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/voting.html">How to vote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/guardians.html">Guardians</a></li>
+</ul>
 </div>
 </nav></div>
     </div>
@@ -988,9 +995,15 @@ body {margin:0;}
 </dd>
 <dt id="term-Account-credential">Account credential<a class="headerlink" href="#term-Account-credential" title="Link to this term">#</a></dt><dd><p>A certificate derived from the <a class="reference internal" href="#term-Identity-Object"><span class="xref std std-term">identity object</span></a> that proves that the owner has been verified by an identity provider. The key feature of the credential is that it <strong>does not</strong> identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.</p>
 </dd>
+<dt id="term-Account-weight">Account weight<a class="headerlink" href="#term-Account-weight" title="Link to this term">#</a></dt><dd><p>The Account weight of an account corresponds to the weight this account has for voting. In the 2024 election, this is computed as the average amount of CCD on the account between the 1st of March and 31st of May 2024.</p>
+</dd>
+<dt id="term-Accumulated-weight">Accumulated weight<a class="headerlink" href="#term-Accumulated-weight" title="Link to this term">#</a></dt><dd><p>The weight of a vote is the weight assigned to that vote when tallying, i.e., the sum of all account weights that delegated to the account that cast the vote + the weight of the account that cast the vote (unless that account delegated its own weight to another account, but voted anyway).</p>
+</dd>
 <dt id="term-Alias">Alias<a class="headerlink" href="#term-Alias" title="Link to this term">#</a></dt><dd><p>A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
 </dd>
 <dt id="term-Anonymity-revoker">Anonymity revoker<a class="headerlink" href="#term-Anonymity-revoker" title="Link to this term">#</a></dt><dd><p>An authority who has power to know the identity of a participant. The anonymity revokers and <a class="reference internal" href="#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.</p>
+</dd>
+<dt id="term-Approval-voting">Approval voting<a class="headerlink" href="#term-Approval-voting" title="Link to this term">#</a></dt><dd><p>Approval voting is a single-winner electoral system in which the voter can choose or approve any number of candidates, effectively assigning a 0 or a 1 to every candidate. The winner is the single candidate approved by the largest number of voters. Approval voting can be achieved by setting the selection limit to the total number of options in a contest.</p>
 </dd>
 <dt id="term-Attributes">Attributes<a class="headerlink" href="#term-Attributes" title="Link to this term">#</a></dt><dd><p>User data, such as date of birth or country of residence, that is associated with a user <a class="reference internal" href="#term-Identity"><span class="xref std std-term">identity</span></a>. Users can choose which attributes should be revealed in each of their accounts.</p>
 </dd>
@@ -1007,6 +1020,8 @@ body {margin:0;}
 <dt id="term-Branch">Branch<a class="headerlink" href="#term-Branch" title="Link to this term">#</a></dt><dd><p>A chain of blocks that has split from the main chain. All branches have the potential to become the main chain. The Chain selection rule determines which branch is the best chain.</p>
 </dd>
 <dt id="term-Build">Build<a class="headerlink" href="#term-Build" title="Link to this term">#</a></dt><dd><p>Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from <a class="reference internal" href="#term-cargo-concordium"><span class="xref std std-term">cargo-concordium</span></a>.</p>
+</dd>
+<dt id="term-Candidate">Candidate<a class="headerlink" href="#term-Candidate" title="Link to this term">#</a></dt><dd><p>Option on the official list of candidates for the election. Since there are only 10 places for the 2024 election, not all nominees are necessarily candidates.</p>
 </dd>
 <dt id="term-cargo-concordium">cargo-concordium<a class="headerlink" href="#term-cargo-concordium" title="Link to this term">#</a></dt><dd><p>An extension of Rust’s <code class="docutils literal notranslate"><span class="pre">cargo</span></code> tool. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.</p>
 </dd>
@@ -1055,9 +1070,18 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 </dd>
 <dt id="term-Decryption-key">Decryption key<a class="headerlink" href="#term-Decryption-key" title="Link to this term">#</a></dt><dd><p>Dual to <a class="reference internal" href="#term-Encryption-key"><span class="xref std std-term">encryption key</span></a>. In contrast to the encryption key, which is public, this key is only known to the account holder.</p>
 </dd>
+<dt id="term-Decryption-share">Decryption share<a class="headerlink" href="#term-Decryption-share" title="Link to this term">#</a></dt><dd><p>A guardian’s partial share of a ballot decryption or tally decryption for an election.</p>
+</dd>
+<dt id="term-Delegated-weight">Delegated weight<a class="headerlink" href="#term-Delegated-weight" title="Link to this term">#</a></dt><dd><p>Sum of account weights that delegated to an account. Delegated weight is made up of the account weight of each account that delegated a vote to the account that cast a ballot.</p>
+</dd>
 <dt id="term-Delegator">Delegator<a class="headerlink" href="#term-Delegator" title="Link to this term">#</a></dt><dd><p>An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.</p>
+<p>For delegation in an election, see <a class="reference internal" href="#term-Vote-delegation"><span class="xref std std-term">Vote delegation</span></a>.</p>
 </dd>
 <dt id="term-Deploy">Deploy<a class="headerlink" href="#term-Deploy" title="Link to this term">#</a></dt><dd><p>Command that takes the built <a class="reference internal" href="#term-WebAssembly"><span class="xref std std-term">Wasm</span></a> file for a smart contract module and deploys it on chain. This command is run from <a class="reference internal" href="#term-Concordium-client"><span class="xref std std-term">Concordium client</span></a>.</p>
+</dd>
+<dt id="term-Election-manifest">Election manifest<a class="headerlink" href="#term-Election-manifest" title="Link to this term">#</a></dt><dd><p>The manifest is the information that uniquely specifies and describes the structure and type of the election, including geopolitical units, contests, candidates, ballot styles, etc. In the Guardian app, it is a file that is created before running an election. The internal manifest is a wrapper around the manifest used in programming code to simplify and avoid processing the same information twice. Unlike the manifest, the internal manifest is not meant for serialization.</p>
+</dd>
+<dt id="term-Election-phase">Election phase<a class="headerlink" href="#term-Election-phase" title="Link to this term">#</a></dt><dd><p>Time period during the election when voting is open, either directly or via delegation.</p>
 </dd>
 <dt id="term-Encryption-key">Encryption key<a class="headerlink" href="#term-Encryption-key" title="Link to this term">#</a></dt><dd><p>An <a class="reference external" href="https://en.wikipedia.org/wiki/ElGamal_encryption">ElGamal</a> public key associated to an account which is used to encrypt all <a class="reference internal" href="#term-Shielded-amount"><span class="xref std std-term">shielded amounts</span></a> on the account.</p>
 </dd>
@@ -1070,6 +1094,10 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <dt id="term-Final-block">Final block<a class="headerlink" href="#term-Final-block" title="Link to this term">#</a></dt><dd><p>A block is considered final when it cannot be rolled back anymore. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.</p>
 </dd>
 <dt id="term-Genesis-Block">Genesis Block<a class="headerlink" href="#term-Genesis-Block" title="Link to this term">#</a></dt><dd><p>The first <a class="reference internal" href="#term-Block"><span class="xref std std-term">block</span></a> in a <a class="reference internal" href="#term-Chain"><span class="xref std std-term">chain</span></a>. The genesis block establishes the starting state of the chain, before any transactions have occurred.</p>
+</dd>
+<dt id="term-Governance-committee-member">Governance committee member<a class="headerlink" href="#term-Governance-committee-member" title="Link to this term">#</a></dt><dd><p>Individual elected to the Concordium governance committee. Also known as member or committee member.</p>
+</dd>
+<dt id="term-Guardian">Guardian<a class="headerlink" href="#term-Guardian" title="Link to this term">#</a></dt><dd><p>One of a number of independent, trustworthy individuals who serve guardians in the election. All guardians must participate in a key ceremony to create a key to encrypt the election and may participate in the accompanying tally ceremony(s) to decrypt the tally(s). A guardian is available if they are available for the tally ceremony. A guardian is missing if they cannot attend the tally ceremony.</p>
 </dd>
 <dt id="term-Identity">Identity<a class="headerlink" href="#term-Identity" title="Link to this term">#</a></dt><dd><p>Before opening an account on the Concordium Platform, one’s real-world identity must be verified and recorded by an <a class="reference internal" href="#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. A user’s identity is anonymous on-chain, however this anonymity can be revoked and their real-world identity revealed in response to a valid request from a government authority.</p>
 </dd>
@@ -1102,6 +1130,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <dt id="term-Membership-proof">Membership proof<a class="headerlink" href="#term-Membership-proof" title="Link to this term">#</a></dt><dd><p>A proof to determine if an attribute of a user’s identity is included in a given set, for example, lives in the EU. Can also be a <a class="reference internal" href="#term-Non-membership-proof"><span class="xref std std-term">non-membership proof</span></a>.</p>
 </dd>
 <dt id="term-Node">Node<a class="headerlink" href="#term-Node" title="Link to this term">#</a></dt><dd><p>A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A <a class="reference internal" href="#term-Baker"><span class="xref std std-term">validator node</span></a> has cryptographic keys that enable it to take part in validation. A node without these keys is referred to as a <em>passive node</em>.</p>
+</dd>
+<dt id="term-Nominee">Nominee<a class="headerlink" href="#term-Nominee" title="Link to this term">#</a></dt><dd><p>Someone who has volunteered to be a candidate in an election.</p>
 </dd>
 <dt id="term-Nonce">Nonce<a class="headerlink" href="#term-Nonce" title="Link to this term">#</a></dt><dd><p>May refer to:</p>
 <ul class="simple">
@@ -1138,6 +1168,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 </dd>
 <dt id="term-Secret-recovery-phrase">Secret recovery phrase<a class="headerlink" href="#term-Secret-recovery-phrase" title="Link to this term">#</a></dt><dd><p>Also known as a seed phrase, recovery phrase, mnemonic phrase, mnemonic seed, or backup phrase. A group of random words generated by the wallet that allows you to access the CCDs stored in it across devices or in case of non-functioning devices. Secret recovery phrase is supported by Concordium Wallet for Mobile.</p>
 </dd>
+<dt id="term-Setup-phase">Setup phase<a class="headerlink" href="#term-Setup-phase" title="Link to this term">#</a></dt><dd><p>Time period prior to election start where setup of necessary election components occurs, candidates are nominated, guardians are selected, etc.</p>
+</dd>
 <dt id="term-Shielded-amount">Shielded amount<a class="headerlink" href="#term-Shielded-amount" title="Link to this term">#</a></dt><dd><p>An amount of <a class="reference internal" href="#term-CCD"><span class="xref std std-term">CCD</span></a> that is encrypted with the public key of an account. Only the owner of the secret key can determine how many CCDs are contained in the encryption.</p>
 </dd>
 <dt id="term-Shielded-balance">Shielded balance<a class="headerlink" href="#term-Shielded-balance" title="Link to this term">#</a></dt><dd><p>The part of the balance of an <a class="reference internal" href="#term-Account"><span class="xref std std-term">account</span></a> that only the owner of the account can see. This is achieved by encrypting transfers to an account with the account’s <a class="reference internal" href="#term-Encryption-key"><span class="xref std std-term">encryption key</span></a>. Every participant of the Concordium network can see the <a class="reference external" href="https://en.wikipedia.org/wiki/Ciphertext">ciphertexts</a> of all the transfers, however they provide no information on how many CCDs were transferred. The receiver of the transfer can use their secret key to decrypt the ciphertexts, and seeing how many CCDs they have received.</p>
@@ -1161,6 +1193,13 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <dt id="term-Staking-pool">Staking pool<a class="headerlink" href="#term-Staking-pool" title="Link to this term">#</a></dt><dd><p>A validator and delegators that collectively pool their stake to participate in the consensus protocol and earn rewards. The validator runs a validator node on behalf of the staking pool to produce blocks using the collective stake of the pool to determine its lottery power. Rewards are accrued to the pool each time the validator produces a block. Each pay day, the accrued rewards are distributed to the pool’s participants in proportion to their relative stakes in the pool, with the validator (the pool owner) receiving an additional commission from the delegators’ rewards.</p>
 </dd>
 <dt id="term-Statement">Statement<a class="headerlink" href="#term-Statement" title="Link to this term">#</a></dt><dd><p>A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.</p>
+</dd>
+<dt id="term-Tally">Tally<a class="headerlink" href="#term-Tally" title="Link to this term">#</a></dt><dd><p>Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.</p>
+</dd>
+<dt id="term-Tally-ceremony">Tally ceremony<a class="headerlink" href="#term-Tally-ceremony" title="Link to this term">#</a></dt><dd><p>The process of decrypting the encrypted tally to the decrypted tally. The guardians from the key ceremony who are available attend this ceremony. There must be at least enough guardians to meet the quorum. Each guardian will decrypt their decryption shares and their share for each missing guardian. These shares will then be combined to create the decrypted spoiled ballots and decrypted tally.</p>
+<p>The tally ceremony is a part of the tally phase.</p>
+</dd>
+<dt id="term-Tally-phase">Tally phase<a class="headerlink" href="#term-Tally-phase" title="Link to this term">#</a></dt><dd><p>Time period after the election where voting is closed and guardians decrypt their share of the tally (tally ceremony is held) and the final election result is produced and registered.</p>
 </dd>
 <dt id="term-Testnet">Testnet<a class="headerlink" href="#term-Testnet" title="Link to this term">#</a></dt><dd><p>A test network run by Concordium to test its protocols and software. There can be several test networks in existence at the same time. All the features are tested on the testnet before they are released on the <a class="reference internal" href="#term-Mainnet"><span class="xref std std-term">mainnet</span></a>.</p>
 </dd>
@@ -1190,6 +1229,9 @@ The user identity certificate includes attributes such as name, age, and nationa
 <dt id="term-Verifiable-presentation">Verifiable presentation<a class="headerlink" href="#term-Verifiable-presentation" title="Link to this term">#</a></dt><dd><p>Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. It contains a link that points to the contract and holder ID. A presentation that contains a <strong>zero-knowledge proof</strong> might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the actual attributes of verifiable credentials.</p>
 </dd>
 <dt id="term-Verifier">Verifier<a class="headerlink" href="#term-Verifier" title="Link to this term">#</a></dt><dd><p>Party that checks users’ <a class="reference internal" href="#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a>.</p>
+</dd>
+<dt id="term-Vote-delegation">Vote delegation<a class="headerlink" href="#term-Vote-delegation" title="Link to this term">#</a></dt><dd><p>Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet and Concordium Legacy Wallet to cast ballots in the 2024 election.</p>
+<p>For delegation related to earning rewards on an account, see <a class="reference internal" href="#term-Delegator"><span class="xref std std-term">delegator</span></a>.</p>
 </dd>
 <dt id="term-Wallet">Wallet<a class="headerlink" href="#term-Wallet" title="Link to this term">#</a></dt><dd><p>A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has four wallet types.</p>
 <ul class="simple">
