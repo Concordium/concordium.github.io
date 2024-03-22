@@ -64,7 +64,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
     #. Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in |bw|, |cryptox|, or |mw-gen2|. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In **Optional: Add memo** add a memo that says **delegatevote2024**. Tap **Send amount**.
 
         .. image:: ../images/voting/mwgen1-delegate-vote.png
-            :alt: send ccd window in old mobile wallet showing how to delegate vote
+            :alt: send CCD window in old mobile wallet showing how to delegate vote
             :width: 100%
 
     #. Tap **Send funds**.
