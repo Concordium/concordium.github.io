@@ -19,6 +19,15 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.
 
+
+   Account weight
+
+      The Account weight of an account corresponds to the weight this account has for voting. In the 2024 election, this is computed as the average amount of CCD on the account between the 1st of March and 31st of May 2024.
+
+   Accumulated weight
+
+      The weight of a vote is the weight assigned to that vote when tallying, i.e., the sum of all account weights that delegated to the account that cast the vote + the weight of the account that cast the vote (unless that account delegated its own weight to another account, but voted anyway).
+
    Alias
 
       A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
@@ -26,6 +35,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Anonymity revoker
 
       An authority who has power to know the identity of a participant. The anonymity revokers and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
+
+   Approval voting
+
+      Approval voting is a single-winner electoral system in which the voter can choose or approve any number of candidates, effectively assigning a 0 or a 1 to every candidate. The winner is the single candidate approved by the largest number of voters. Approval voting can be achieved by setting the selection limit to the total number of options in a contest.
 
    Attributes
 
@@ -58,6 +71,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Build
 
       Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from :term:`cargo-concordium`.
+
+   Candidate
+
+      Option on the official list of candidates for the election. Since there are only 10 places for the 2024 election, not all nominees are necessarily candidates.
 
    cargo-concordium
 
@@ -137,13 +154,31 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Dual to :term:`encryption key`. In contrast to the encryption key, which is public, this key is only known to the account holder.
 
+   Decryption share
+
+      A guardian's partial share of a ballot decryption or tally decryption for an election.
+
+   Delegated weight
+
+      Sum of account weights that delegated to an account. Delegated weight is made up of the account weight of each account that delegated a vote to the account that cast a ballot.
+
    Delegator
 
       An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
 
+      For delegation in an election, see :term:`Vote delegation`.
+
    Deploy
 
       Command that takes the built :term:`Wasm<webassembly>` file for a smart contract module and deploys it on chain. This command is run from :term:`Concordium client`.
+
+   Election manifest
+
+      The manifest is the information that uniquely specifies and describes the structure and type of the election, including geopolitical units, contests, candidates, ballot styles, etc. In the Guardian app, it is a file that is created before running an election. The internal manifest is a wrapper around the manifest used in programming code to simplify and avoid processing the same information twice. Unlike the manifest, the internal manifest is not meant for serialization.
+
+   Election phase
+
+      Time period during the election when voting is open, either directly or via delegation.
 
    Encryption key
 
@@ -168,6 +203,14 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Genesis Block
 
       The first :term:`block` in a :term:`chain`. The genesis block establishes the starting state of the chain, before any transactions have occurred.
+
+   Governance committee member
+
+      Individual elected to the Concordium governance committee. Also known as member or committee member.
+
+   Guardian
+
+      One of a number of independent, trustworthy individuals who serve guardians in the election. All guardians must participate in a key ceremony to create a key to encrypt the election and may participate in the accompanying tally ceremony(s) to decrypt the tally(s). A guardian is available if they are available for the tally ceremony. A guardian is missing if they cannot attend the tally ceremony.
 
    Identity
 
@@ -233,6 +276,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A :term:`validator node<baker>` has cryptographic keys that enable it to take part in validation. A node without these keys is referred to as a *passive node*.
 
+   Nominee
+
+      Someone who has volunteered to be a candidate in an election.
+
    Nonce
 
       May refer to:
@@ -297,6 +344,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Also known as a seed phrase, recovery phrase, mnemonic phrase, mnemonic seed, or backup phrase. A group of random words generated by the wallet that allows you to access the CCDs stored in it across devices or in case of non-functioning devices. Secret recovery phrase is supported by |mw-gen2|.
 
+   Setup phase
+
+      Time period prior to election start where setup of necessary election components occurs, candidates are nominated, guardians are selected, etc.
+
    Shielded amount
 
       An amount of :term:`CCD` that is encrypted with the public key of an account. Only the owner of the secret key can determine how many CCDs are contained in the encryption.
@@ -340,6 +391,20 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Statement
 
       A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.
+
+   Tally
+
+      Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.
+
+   Tally ceremony
+
+      The process of decrypting the encrypted tally to the decrypted tally. The guardians from the key ceremony who are available attend this ceremony. There must be at least enough guardians to meet the quorum. Each guardian will decrypt their decryption shares and their share for each missing guardian. These shares will then be combined to create the decrypted spoiled ballots and decrypted tally.
+
+      The tally ceremony is a part of the tally phase.
+
+   Tally phase
+
+      Time period after the election where voting is closed and guardians decrypt their share of the tally (tally ceremony is held) and the final election result is produced and registered.
 
    Testnet
 
@@ -397,6 +462,12 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Verifier
 
       Party that checks users' :term:`verifiable credentials<verifiable credential>`.
+
+   Vote delegation
+
+      Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet and Concordium Legacy Wallet to cast ballots in the 2024 election.
+
+      For delegation related to earning rewards on an account, see :term:`delegator`.
 
    Wallet
 

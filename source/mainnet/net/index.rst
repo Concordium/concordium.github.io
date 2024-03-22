@@ -56,3 +56,12 @@ index
 
    Smart contract tutorials <../smart-contracts/tutorials/index>
    Using ID tutorial <guides/gallery/index>
+
+.. toctree::
+   :includehidden:
+   :caption: Governance Committee Voting
+
+   voting/gc-voting
+   voting/coordinator
+   voting/voting
+   voting/guardians
