@@ -1075,16 +1075,26 @@ Mainnet
 Testnet
 -------
 
-    February 20, 2024
+    June xx, 2024
 
-    The 6.3.0 release contains the following fixes and improvements:
+    The 7.0.0 release contains support for `protocol version 7 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P7.txt>`_ which will be released on xx xx, 2024. **Node runners should upgrade to version 7.0.0 before the protocol update to ensure that their nodes do not shut down.**
 
-    - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
-    - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
-    - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
-    - Startup time of the node has improved on all supported distributions.
+    Version 7.0.0 contains the following improvements:
+    - Added support for new invoke calls from smart contracts in protocol version 7:
+
+        - query the contract module reference for a given contract address
+        - query the contract name for a given contract address
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.0 - February 20, 2024
+
+            The 6.3.0 release contains the following fixes and improvements:
+
+            - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
+            - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
+            - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
+            - Startup time of the node has improved on all supported distributions.
 
         .. dropdown:: 6.2.3 - November 28, 2023
 
