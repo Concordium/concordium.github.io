@@ -57,7 +57,7 @@ Use the ``new-election`` command to create the necessary files and the contract 
 
 .. code-block:: console
 
-    election-coordinator new-election --module ../contracts/concordium-governance-committee-election/concordium-out/module.wasm.v1 --threshold 1 --admin ../test-scripts/keys/2yJxX711aDXtit7zMu7PHqUMbtwQ8zm7emaikg24uyZtvLTysj.export --election-start '2024-02-01T00:00:00Z' --election-end '2024-02-07T00:00:00Z' --delegation-string 'This is how you delegate' --manifest-out election-manifest.json --parameters-out election-parameters.json --voters-file initial-weights.csv --guardian 31bTNa42u1zZWag2bknEy7VraeJUozXsJMN1DFjQp7E5YR6a3G --guardian 4PF6BH8bKvM48b8KNYdvGW6Sv3B2nqVRiMnWTj9cvaNHJQeX3D --candidate 'http://localhost:7000/candidate1.json' --candidate 'http://localhost:7000/candidate2.json' --node 'https://grpc.testnet.concordium.com:20000' --base-url https://gcvoting.testnet.concordium.com`
+    election-coordinator new-election --module ../contracts/concordium-governance-committee-election/concordium-out/module.wasm.v1 --threshold 1 --admin ../test-scripts/keys/2yJxX711aDXtit7zMu7PHqUMbtwQ8zm7emaikg24uyZtvLTysj.export --election-start '2024-02-01T00:00:00Z' --election-end '2024-02-07T00:00:00Z' --decryption-deadline '2024-02-08T00:00:00Z' --delegation-string 'delegatevote2024' --out election --voters-file initial-weights.csv --guardian 31bTNa42u1zZWag2bknEy7VraeJUozXsJMN1DFjQp7E5YR6a3G --guardian 4PF6BH8bKvM48b8KNYdvGW6Sv3B2nqVRiMnWTj9cvaNHJQeX3D --candidate 'http://candidates/candidate1.json' --candidate 'http://candidates/candidate2.json' --node 'https://grpc.testnet.concordium.com:20000' --base-url https://gcvoting.testnet.concordium.com`
 
 The options are:
 
@@ -68,6 +68,8 @@ The options are:
 ``--threshold`` is the threshold for the number of guardians needed for decryption of the result of the election
 
 ``--election-start`` and ``--election-end`` date and time for election start and end
+
+``decryption-deadline`` is the date and time by which guardians must have decrypted their share of the votes
 
 ``--delegation-string`` is the string that will be used to determine vote delegations. This is the string users delegating a vote in a wallet must enter in a transaction memo.
 
@@ -81,9 +83,7 @@ The options are:
 
 The tool generates three things:
 
-- An election manifest which is output to the location specified by ``--manifest-out``
-
-- Election parameters which are output to the location specified by ``--parameters-out``
+- An election manifest and election parameters which are written to the directory specified by ``--out``
 
 - A new smart contract instance which is printed to stderr, for example, ``Deployed new contract instance with address <7838,0> using transaction hash 3b3e61a01fd3ecefddecbe6760c6ba3d951f4d0a8947d63990ffe9219249de27``.
 

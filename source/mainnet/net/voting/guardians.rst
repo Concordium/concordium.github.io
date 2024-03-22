@@ -36,31 +36,31 @@ Before the election opens, the guardians must use the Guardian app to generate a
 
     .. image:: ../images/voting/guardian-await-key.png
         :alt: screen showing drag-drop or browse to export file
-        :width: 50%
+        :width: 100%
 
 #. Once you have added the export file, enter a password.
 
     .. image:: ../images/voting/guardian-set-pw.png
         :alt: password dialog
-        :width: 50%
+        :width: 100%
 
 #. Click **Generate guardian key** to create your secret key and register your public key in the election smart contract.
 
     .. image:: ../images/voting/guardian-generate-keys.png
         :alt: generate key pair dialog
-        :width: 50%
+        :width: 100%
 
    The progress dialog shows the status. Click **Send key registration** to complete the process.
 
     .. image:: ../images/voting/guardian-send-key-reg.png
         :alt: key pair generation progress dialog
-        :width: 50%
+        :width: 100%
 
 Once you have generated your pre-key you must wait until the other guardians have done the same.
 
 .. image:: ../images/voting/guardian-waiting.png
     :alt: dialog shown when awaiting other guardians
-    :width: 50%
+    :width: 100%
 
 Generate and register encrypted shares
 --------------------------------------
@@ -71,19 +71,19 @@ Once all guardians have generated their keys as described above, each guardian m
 
     .. image:: ../images/voting/guardian-generate-encrypted-shares.png
         :alt: generate encrypted shares dialog
-        :width: 50%
+        :width: 100%
 
 #. Click **Register encrypted shares** to register the encrypted shares information to the election smart contract.
 
     .. image:: ../images/voting/guardian-reg-encrypted-shares.png
         :alt: register encrypted shares progress dialog
-        :width: 50%
+        :width: 100%
 
 Once you have generated and registered your encrypted shares you must wait until the other guardians have done the same.
 
 .. image:: ../images/voting/guardian-await-shares.png
     :alt: dialog shown when awaiting other guardians
-    :width: 50%
+    :width: 100%
 
 Generate secret key share
 -------------------------
@@ -94,7 +94,7 @@ The final step is to generate your secret key share. This creates your share of 
 
     .. image:: ../images/voting/guardian-generate-secret-key-share.png
         :alt: generate secret key share dialog
-        :width: 50%
+        :width: 100%
 
 #. Click **Register validation OK**.
 
@@ -102,13 +102,13 @@ Once you have generated your secret key share you must wait until the other guar
 
 .. image:: ../images/voting/guardian-await-key-share.png
     :alt: dialog shown when awaiting other guardians
-    :width: 50%
+    :width: 100%
 
 After all guardians have complete the process, a screen shows that election setup is complete and a countdown to the election start.
 
 .. image:: ../images/voting/guardian-election-setup-complete.png
     :alt: dialog shown when election setup is completed by all guardians
-    :width: 50%
+    :width: 100%
 
 If corruption is detected the guardian should register a complaint in the contract.
 
@@ -126,19 +126,19 @@ Generate your decrypted share
 
     .. image:: ../images/voting/guardian-generate-decryption-share.png
         :alt: generate decryption share dialog
-        :width: 50%
+        :width: 100%
 
 #. Click **Send share registration**.
 
     .. image:: ../images/voting/guardian-register-decryption-share.png
         :alt: register decryption share dialog
-        :width: 50%
+        :width: 100%
 
 Once you have registered your decryption share you must wait until the other guardians have done the same.
 
 .. image:: ../images/voting/guardian-await-decryption.png
     :alt: dialog shown when awaiting other guardians
-    :width: 50%
+    :width: 100%
 
 Register the decrypted share in the contract
 --------------------------------------------
@@ -149,25 +149,25 @@ The final step creates a proof that can be checked by others to determine that t
 
     .. image:: ../images/voting/guardian-generate-decryption-proof.png
         :alt: generate decryption proof dialog
-        :width: 50%
+        :width: 100%
 
 #. Click **Send proof registration**.
 
     .. image:: ../images/voting/guardian-register-decryption-proof.png
         :alt: generate decryption proof dialog
-        :width: 50%
+        :width: 100%
 
 Once you have registered your decryption proof you must wait until the other guardians have done the same.
 
 .. image:: ../images/voting/guardian-await-decryption-proof.png
     :alt: dialog shown when awaiting other guardians
-    :width: 50%
+    :width: 100%
 
 After all guardians have registered decryption proofs, the decryption is shown as complete.
 
 .. image:: ../images/voting/guardian-decryption-complete.png
     :alt: dialog shown when awaiting other guardians
-    :width: 50%
+    :width: 100%
 
 Uninstall the app
 =================
@@ -179,14 +179,14 @@ Windows
 
 Uninstall the app as you uninstall all apps on Microsoft.
 
-Delete the file XXXX to remove all guardian keys.
+Delete the folder ``C:\Users\<user>\AppData\com.concordium.guardian.<network>.<contract-index>.<contract-subindex>`` to remove all guardian keys.
 
 MacOS
 -----
 
 Uninstall the app as you uninstall all apps on MacOS.
 
-Delete the file XXXX to remove all guardian keys.
+Delete the folder ``~/Library/Application Support/com.concordium.guardian.<network>.<contract-index>.<contract-subindex>`` where ``~`` represents either ``$HOME`` or ``/Users/<username>`` to remove all guardian keys.
 
 Linux
 -----

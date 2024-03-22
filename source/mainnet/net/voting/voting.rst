@@ -12,13 +12,21 @@ For |cryptox|, |bw|, and |mw-gen2| wallet holders
 
 #. Navigate to the voting dApp.
 
-#. The voting dApp presents a list of candidates. Each candidate has a small graphic and a link to a description of their choice.
+#. The voting dApp presents a list of candidates. Each candidate has a small graphic and a link to a description of their choice. **The image below is only an example.**
 
-#. The user selects zero or more candidates for which they want to vote and selects **Submit**. They can vote multiple times.
+    .. image:: ../images/voting/voting-dapp.png
+                :alt: example voting dapp site
+                :width: 100%
 
-#. The user is asked to connect the wallet and send the update transaction to the smart contract. The voting weight that is shown is the average number of CCD in the account that is voting during the past three months.
+#. When the election is open, the user selects zero or more candidates for which they want to vote and selects **Submit**. They can vote multiple times.
 
-The voting dApp also has a separate page where the user can see the list of all their (encrypted) votes.
+#. The user is asked to **connect** the wallet to the voting dApp and send the update transaction to the smart contract. The voting weight that is shown is the average number of CCD in the account that is voting during the past three months.
+
+    .. image:: ../images/voting/voting-dapp-connected.png
+                :alt: voting dapp sidebar when connected to wallet
+                :width: 100%
+
+The voting dApp also has a separate page where the user can see the list of all their (encrypted) ballot submissions.
 
 For Desktop wallet and |mw-gen1| wallet holders
 ===============================================
@@ -37,13 +45,13 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
         .. image:: ../images/voting/dw-vote-delegation.png
             :alt: send ccd window in desktop wallet showing how to delegate vote
-            :width: 50%
+            :width: 100%
 
     #. Continue with the transaction by signing it using your LEDGER device as with all other transactions.
 
         .. image:: ../images/voting/dw-transaction-submitted.png
             :alt: send ccd window in desktop wallet showing how to delegate vote
-            :width: 50%
+            :width: 100%
 
     #. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
 
@@ -57,19 +65,29 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
         .. image:: ../images/voting/mwgen1-delegate-vote.png
             :alt: send ccd window in old mobile wallet showing how to delegate vote
-            :width: 50%
+            :width: 100%
 
     #. Tap **Send funds**.
 
         .. image:: ../images/voting/mwgen1-delegate-vote-confirm.png
             :alt: window in old mobile wallet asking user to confirm transaction
-            :width: 50%
+            :width: 100%
 
     #. Tap **Finish**.
 
         .. image:: ../images/voting/mwgen1-transaction-submitted.png
             :alt: window in old mobile wallet showing successful transaction submission
-            :width: 50%
+            :width: 100%
 
     #. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
 
+How to see delegations
+======================
+
+It is possible to see delegations to an account in the voting dApp. Anyone can check the delegations on an account. You do not need to connect a wallet to do this.
+
+To see delegations, click **Delegations**. Enter or paste the Concordium account number for which you want to see all delegations.
+
+.. image:: ../images/voting/voting-dapp.png
+        :alt: example voting dapp site
+        :width: 100%
