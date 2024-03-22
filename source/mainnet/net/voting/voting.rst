@@ -44,7 +44,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
     #. Enter any amount of CCD (1 micro-CCD is enough). The target account in |bw|, |cryptox|, or |mw-gen2| is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says **delegatevote2024**.
 
         .. image:: ../images/voting/dw-vote-delegation.png
-            :alt: send ccd window in desktop wallet showing how to delegate vote
+            :alt: send CCD window in desktop wallet showing how to delegate vote
             :width: 100%
 
     #. Continue with the transaction by signing it using your LEDGER device as with all other transactions.
