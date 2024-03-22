@@ -1,10 +1,10 @@
 .. Desktop wallet verification variables
-.. |cdw-appimage| replace:: concordium-desktop-wallet-1.7.2.AppImage
-.. |cdw-appimage-checksum| replace:: 2699bb0b3f67b456a6d71af35d62092ee2567d2a1b46383b1c3290cd380aafdd
-.. |cdw-deb| replace:: concordium-desktop-wallet-1.7.2.deb
-.. |cdw-deb-checksum| replace:: 58b6c676f6a8b4370c66817a98e1bb35c77a2a240f86b1811f5adbc7567b4443
-.. |cdw-rpm| replace:: concordium-desktop-wallet-1.7.2.rpm
-.. |cdw-rpm-checksum| replace:: ab65aaadcd3b508a0542ffdc205813032f471dbcbbf92c506025e99837061360
+.. |cdw-appimage| replace:: concordium-desktop-wallet-1.7.3.AppImage
+.. |cdw-appimage-checksum| replace:: 1b0c3c56e17bf765e0a49aff928c63a7b16c2296b46859a8e8865577ba25e954
+.. |cdw-deb| replace:: concordium-desktop-wallet-1.7.3.deb
+.. |cdw-deb-checksum| replace:: 086dd2e1f0451d81583a3b09b8d176432f5d8f15ee730316240b0adb13f212af
+.. |cdw-rpm| replace:: concordium-desktop-wallet-1.7.3.rpm
+.. |cdw-rpm-checksum| replace:: b175c6a01614bb93305d5c49e8c98a1aecc4a495013b88e46a12cdf5499c7874
 .. |ledger-app-public-key| replace:: 04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b
 
 .. Mobile Wallet product names

@@ -70,11 +70,27 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    November 28, 2023
+    March 20, 2024
 
-    Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
+    Version 1.5.1 fixes the following issues:
+
+    - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
+
+    - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
+
+    -  Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
+
+    - Correct environment value now written to the key export file
+
+    - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
+
+    - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.5.0 - November 28, 2023
+
+            Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
 
         .. dropdown:: |mw-gen2| 1.4.0 - October 26, 2023
 
@@ -333,11 +349,15 @@ Wallets
 Desktop Wallet
 --------------
 
-    December 14, 2023
+    March 21, 2024
 
-        Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
+        Version 1.7.3 fixes an issue reported on Windows where the LEDGER connectivity state was faulty, preventing users from signing transactions.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.2 - December 14, 2023
+
+            Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
 
         .. dropdown:: 1.7.1 - November 22, 2023
 
