@@ -11,6 +11,8 @@ The address book helps you select a recipient quickly for transactions.
 
    The |bw| does not have an address book.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |mw-gen2|
 
    #. Tap |wallet-settings|.

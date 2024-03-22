@@ -10,6 +10,8 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 .. Note::
    You can't change your passcode, password, or biometrics if you have pending identities or accounts in your wallet.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |mw-gen2|
 
    #. Tap |wallet-settings|.

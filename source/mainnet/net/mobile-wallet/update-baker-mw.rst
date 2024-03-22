@@ -14,7 +14,7 @@ Change validator options
 .. Warning::
     Transactions on the blockchain can't be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review transactions before submitting.
 
-The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
+The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |cryptox|, |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
 
 The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They are described below.
 
@@ -55,6 +55,8 @@ Update validator stake and restaking preference
 You can change the :ref:`staked amount <concepts-baker-stake>` on a validator account except during a :term:`cool-down period`. If you increase the stake, the new stake takes effect at the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you'll not be able to remove the validator account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
 
 When you change the stake it can influence your :term:`chance of being selected to produce a block<winning probability>` and receive block rewards. If you decrease the stake, you decrease your chances of producing blocks. Likewise, if you increase the stake, you increase your chances of producing a block.
+
+.. dropdown:: |cryptox|
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
@@ -232,6 +234,8 @@ When you change the stake it can influence your :term:`chance of being selected 
 
 Update pool settings
 ====================
+
+.. dropdown:: |cryptox|
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
@@ -478,6 +482,8 @@ Update validator keys
 
 If you believe your validator keys have been compromised or lost, you can generate new validator keys. It is important to remember to update your validator keys on your node once you have exported them.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
     #. If you choose **Update validator keys**, after the screens explaining reasons for updating validator keys, you see the new validator keys. Tap **Export validator keys** and navigate to the place on your device where you want to save the file.
@@ -674,6 +680,8 @@ Stop validation
 If you remove a validator, the node that is configured with the :term:`validator keys<private keys>` will stop producing blocks after a :term:`cool-down period` of three weeks. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next :term:`pay day`. When you've removed the validator, it is recommended that you also remove the keys from the node. If you want to use the node for validation at a later point in time, you'll then have to create a new set of validator keys.
 
 If you no longer wish to produce blocks on this account, you can stop validation.
+
+.. dropdown:: |cryptox|
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 

@@ -16,6 +16,9 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.
 
+.. dropdown:: |cryptox|
+
+
 .. dropdown:: Desktop Wallet
 
    Before you start, you need a LEDGER device that's set up and ready for use.

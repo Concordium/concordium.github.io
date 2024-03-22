@@ -7,6 +7,8 @@
 Change identity name
 ====================
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |mw-gen2|
 
     #. Tap |wallet-settings|. Select **Your identity cards**.

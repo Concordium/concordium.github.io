@@ -7,6 +7,8 @@ Find and share your account address
 
 If you need to share your account address with someone, you can find the address on the account page.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |mw-gen2|
 
    #. In the account overview tap |receive| or in the transaction overview for an account tap |receive|.
