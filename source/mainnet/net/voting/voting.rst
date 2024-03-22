@@ -50,7 +50,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
     #. Continue with the transaction by signing it using your LEDGER device as with all other transactions.
 
         .. image:: ../images/voting/dw-transaction-submitted.png
-            :alt: send ccd window in desktop wallet showing how to delegate vote
+            :alt: send CCD window in desktop wallet showing how to delegate vote
             :width: 100%
 
     #. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
