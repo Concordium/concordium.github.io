@@ -185,7 +185,7 @@ Wallets
 
     April 4, 2024
 
-    Version 1.5.1 fixes a bug related to the injected script being loaded multiple times.
+    Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
 
     .. dropdown:: Previous releases
 
