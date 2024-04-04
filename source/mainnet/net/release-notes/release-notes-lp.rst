@@ -183,11 +183,14 @@ Wallets
 |bw|
 -------------------------
 
-    March 20, 2024
+    April 4, 2024
 
-    In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.
+    Version 1.5.1 fixes a bug related to the injected script being loaded multiple times.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.5.0 - March 20, 2024
+            In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.
 
         .. dropdown:: |bw| 1.4.2 - March 6, 2024
 
