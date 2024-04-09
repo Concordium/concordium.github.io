@@ -46,7 +46,7 @@ You can update your `Cargo.toml` file by using:
    In ``concordium-std`` version in the range of ``>=6.0.0`` and ``<10.0.0``, ``wee_alloc`` is a feature and needs to be explicitly enabled.
    In ``concordium-std`` version ``>=10.0.0``, `bump_alloc <https://docs.rs/concordium-std/10.0.0/concordium_std/#use-a-custom-allocator>`_ is a feature and needs to be explicitly enabled.
    When ``std`` feature is enabled, the allocator provided by the Rust standard library is used
-   by default but when the ``wee_alloc/bump_alloc`` feature is enabled in addition, `bump_alloc <https://docs.rs/concordium-std/10.0.0/concordium_std/#use-a-custom-allocator>`_ ( or `wee_alloc <https://docs.rs/wee_alloc/>`_) is used instead.
+   by default but when the ``wee_alloc``/``bump_alloc`` feature is enabled in addition, `bump_alloc <https://docs.rs/concordium-std/10.0.0/concordium_std/#use-a-custom-allocator>`_ ( or `wee_alloc <https://docs.rs/wee_alloc/>`_) is used instead.
 
    You can enable the ``std`` feature and the ``wee_alloc`` feature in ``concordium-std`` version in the range of ``>=6.0.0`` and ``<10.0.0`` by using:
 
@@ -62,7 +62,7 @@ You can update your `Cargo.toml` file by using:
       [dependencies]
       concordium-std = {version = "10.0", features = ["bump_alloc"]}
 
-   Alternatively, if you want to test with and without ``wee_alloc/bump_alloc`` enabled add a ``wee_alloc/bump_alloc`` feature to the smart contract crate as follows:
+   Alternatively, if you want to test with and without ``wee_alloc``/``bump_alloc`` enabled add a ``wee_alloc``/``bump_alloc`` feature to the smart contract crate as follows:
 
    .. code-block:: rust
 
@@ -78,8 +78,8 @@ You can update your `Cargo.toml` file by using:
 
       $cargo concordium build
 
-When ``no_std`` is used either ``wee_alloc/bump_alloc`` must be enabled, or another global allocator
-must be set in the smart contract. You can add the ``wee_alloc/bump_alloc`` feature by using e.g.:
+When ``no_std`` is used either ``wee_alloc``/``bump_alloc`` must be enabled, or another global allocator
+must be set in the smart contract. You can add the ``wee_alloc``/``bump_alloc`` feature by using e.g.:
 
 .. code-block:: rust
 
