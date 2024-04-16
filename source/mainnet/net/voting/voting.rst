@@ -28,6 +28,30 @@ For |cryptox|, |bw|, and |mw-gen2| wallet holders
 
 The voting dApp also has a separate page where the user can see the list of all their (encrypted) ballot submissions.
 
+Voting from multiple accounts
+-----------------------------
+
+Since the votes are weighted by the number of CCD on the account, for a user to vote with their full weight they need to vote from all their accounts. For |cryptox| and |mw-gen2| wallet holders, it is sufficient to disconnect and reconnect: the user is then given the choice to connect with a different account. With the |bw|, disconnecting and connecting again will always reconnect with the same account. To change accounts, follow the instructions here below.
+
+.. dropdown:: |bw|
+
+    #. In the wallet, click **connected** next to the account address. If you have an account open that is not connected, the button will say **not connected** instead. Clicking this is fine as well.
+
+        .. image:: ../images/voting/connected-account.png
+                    :alt: account connected to a dApp
+                    :width: 50%
+
+    #. This opens the **Allowlist** menu, where the user can check every account that is allowed to connect to the dApp.
+    
+        .. image:: ../images/voting/allow-list.png
+                    :alt: account connected to a dApp
+                    :width: 50%
+
+    #. Return to the main wallet window with the arrow or cross.
+    #. Select the account in the wallet which should connect to the voting dApp
+    #. Disconnect and reconnect in the voting dApp. The user will now be connected to the account that is open in the wallet.
+    #. Repeat the two last steps above to vote with all accounts.
+
 For Desktop wallet and |mw-gen1| wallet holders
 ===============================================
 
