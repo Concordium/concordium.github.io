@@ -42,13 +42,13 @@ Since the votes are weighted by the number of CCD on the account, for a user to 
                     :width: 50%
 
     #. This opens the **Allowlist** menu, where the user can check every account that is allowed to connect to the dApp.
-    
+
         .. image:: ../images/voting/allow-list.png
                     :alt: account connected to a dApp
                     :width: 50%
 
     #. Return to the main wallet window with the arrow or cross.
-    #. Select the account in the wallet which should connect to the voting dApp
+    #. Select the account in the wallet which should connect to the voting dApp.
     #. Disconnect and reconnect in the voting dApp. The user will now be connected to the account that is open in the wallet.
     #. Repeat the two last steps above to vote with all accounts.
 
