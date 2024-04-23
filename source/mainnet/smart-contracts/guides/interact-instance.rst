@@ -8,6 +8,12 @@ This guide will show you, how to interact with a smart contract instance, which
 means triggering a receive function that, possibly, updates the state of the
 instance.
 
+You can also watch a video about how to update a smart contact instance.
+
+.. raw:: html
+
+   <iframe src="https://www.youtube.com/embed/rbr1w3kJYcU?si=0YHfK1celfvaz-Oo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 Preparation
 ===========
 

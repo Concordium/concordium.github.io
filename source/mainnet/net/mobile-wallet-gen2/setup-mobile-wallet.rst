@@ -5,9 +5,9 @@
 Set up the |mw-gen2|
 ========================
 
-The |mw-gen2| is a digital :ref:`wallet<glossary-wallet>` that enables you to create and manage your Concordium
-:ref:`identities<glossary-identity>` and :ref:`accounts<glossary-account>` and to create transactions such as sending CCD, :ref:`shielding<glossary-shielding>` and :ref:`unshielding<glossary-unshielding>` CCD,
-and sending :ref:`shielded transactions<glossary-shielded-transfer>`.
+The |mw-gen2| is a digital :term:`wallet` that enables you to create and manage your Concordium
+:term:`identities<identity>` and :term:`accounts<account>` and to create transactions such as sending CCD, :term:`shielding` and :term:`unshielding` CCD,
+and sending :term:`shielded transactions<shielded transfer>`.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
@@ -16,39 +16,44 @@ Read the following guide to learn how to set up the wallet.
 Get started
 ===========
 
-#. Install the |mw-gen2| on an Android phone. See :ref:`Downloads<downloads-mwgen2>`.
+#. Install the |mw-gen2| on an Android or iOS phone. See :ref:`Downloads<downloads-mwgen2>`.
 
 #. Open the |mw-gen2|; read and accept the Terms and Conditions.
 
 #. Create a six-digit passcode or use a full password.
 
    .. image:: ../images/mobile-wallet-gen2/create-passcode.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with keypad to enter passcode
 
 Secret recovery phrase
 ======================
 
-Now you must write down and confirm your secret recovery phrase. It is important to keep this recovery phrase in a safe location in case you need to recover your wallet on a new device.
+Now you must write down and confirm your :term:`secret recovery phrase`. It is important to keep this recovery phrase in a safe location in case you need to :ref:`recover your wallet<recover-wallet>`.
 
 #. Tap **Set up a fresh wallet**.
 
    .. image:: ../images/mobile-wallet-gen2/choice-start.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with information about setup and options to create a new wallet or recover wallet
 
 #. Tap on the screen to view your secret recovery phrase. Write down all 24 words in the exact order in which they are shown.
 
    .. image:: ../images/mobile-wallet-gen2/recovery-phrase-pre.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with hidden secret recovery phrase
 
 #. Place a check in the box **I confirm I have written down my 24 word secret recovery phrase**.
 
    .. image:: ../images/mobile-wallet-gen2/recovery-phrase-shown.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with 24 word recovery phrase shown and confirmation checkbox
 
 #. On the next screens select the word to enter in each index to confirm your secret recovery phrase. Once correct, tap **Continue**.
 
    .. image:: ../images/mobile-wallet-gen2/recovery-phrase-confirm.png
-      :width: 25%
+      :width: 50%
+      :alt: screen to enter recovery phrase so you can confirm that you have it
 
 Request your identity and account
 =================================
@@ -60,10 +65,11 @@ Request identity
 
 #. Read the next page in the app, shortly explaining the Concordium concepts of initial account and identity. Tap **Continue**.
 
-#. Select a third party identity provider from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
+#. Select a third party :term:`identity provider` from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
 
    .. image:: ../images/mobile-wallet/MW11.png
-      :width: 25%
+      :width: 50%
+      :alt: screen with option to select identity provider
 
 #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider.
    However, they will ask you to provide photos of identification documents and a selfie.
@@ -73,7 +79,8 @@ Request identity
    the result. The result can be retrieved for up to seven days.
 
    .. image:: ../images/mobile-wallet/MW12.png
-      :width: 25%
+      :width: 50%
+      :alt: screen shown after identity verification information is submitted and request is pending
 
 If your identity request is rejected, you see a message. Tap **Make new identity request** to create a new identity request. You can choose another identity provider.
 
@@ -85,7 +92,8 @@ Once the identity provider has verified your identity you can submit an account.
 #. Tap **Submit account**. Enter your wallet passcode when prompted.
 
    .. image:: ../images/mobile-wallet-gen2/submit-acct.png
-      :width: 25%
+      :width: 50%
+      :alt: screen shown after selecting to create account
 
 Basic navigation
 ================
@@ -101,7 +109,7 @@ In the wallet you have some navigation options.
 3. :ref:`Wallet settings<mw-gen2-wallet-settings>`: contains actions for the wallet.
 4. Scan QR code: tap to :ref:`scan a QR code to connect to a dApp<connect-app-bw>`.
 5. Add: to :ref:`add a new account<create-account>`.
-6. Account actions: range of actions you can perform on the account, such as send, receive, bake/delegate.
+6. Account actions: range of actions you can perform on the account, such as send, receive, and so on.
 
 .. _mw-gen2-wallet-settings:
 
@@ -122,13 +130,14 @@ When you tap on an account, you see the details for the specific account, includ
 
 .. image:: ../images/mobile-wallet-gen2/transaction-overview.png
       :width: 50%
+      :alt: account details screen with navigation bar highlighted
 
 - Send: :ref:`send funds<send-CCD-wallets>`
 - Receive: find and share your address
-- Earn: configure and manage :ref:`baking<baker-mw>` or :ref:`delegation<delegation>`
+- Earn: configure and manage :ref:`validation<baker-concept>` or :ref:`delegation<delegation-concept>`
 - Scan QR code: scan QR code of a dApp
 - Account settings: perform some less often used actions on an account
-   - Transfer filters: configure filters to show or hide rewards or finalization rewards
+   - Transfer filters: configure filters to show or hide rewards
    - Show shielded balance: Show the shielded balance tab on the account and the shielding action buttons
    - Release schedule: :ref:`inspect a release schedule<inspect-release-schedule-mw>`
    - Change account name: :ref:`customize account names<change-mw-acct-name>`

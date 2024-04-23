@@ -23,8 +23,7 @@ taking all of the CCD inside.
 In the :ref:`first part<piggy-bank-writing>`, you will learn how to write the very basic piggy bank smart
 contract using the Rust_ programming language.
 
-The :ref:`second part<piggy-bank-testing>` is about how to test your piggy bank smart contract with unit
-tests.
+The :ref:`second part<piggy-bank-testing>` is about how to test your piggy bank smart contract with integration tests.
 
 The :ref:`third part<piggy-bank-deploying>` is about how to deploy your piggy bank smart contract to the Concordium testnet and interact with it.
 

@@ -17,15 +17,15 @@ CCDScan
 - A dashboard landing page with real-time updates from the Concordium blockchain
 - Core metrics, graphs, and statistics on blocks, transactions, and accounts
 
-Delegation and baker pools
-==========================
+Delegation and staking pools
+============================
 
-The CCDScan tool allows bakers to view information that helps them to :ref:`manage their baker and pool responsibly<baker-pool>`. It also allows potential delegators to :ref:`research bakers and pools<baker-pool>`.
+The CCDScan tool allows validators to view information that helps them to :ref:`manage their validator and pool responsibly<baker-pool>`. It also allows potential delegators to :ref:`research validators and pools<baker-pool>`.
 
 Use CCDScan
 ===========
 
-CCDScan shows information about :ref:`blocks<blocks-view>`, :ref:`transactions<transactions-view>`, :ref:`accounts<accounts-view>`, and :ref:`staking<bakers-view>`.
+CCDScan shows information about :ref:`blocks<blocks-view>`, :ref:`transactions<transactions-view>`, :ref:`accounts<accounts-view>`, :ref:`staking<bakers-view>`, and smart contracts.
 
 Home
 ----
@@ -33,11 +33,12 @@ Home
 On the Home page that appears when you navigate to CCDScan, you see the following information:
 
 .. image:: ../images/ccd-scan/ccd-scan-overview.png
+    :alt: dark screen with graphs and top and table at bottom
 
 |
 
 1.  Mainnet/Testnet selector. The information shown is dependent on whether you have selected Mainnet or Testnet.
-2.  Search field: search across all relevant blockchain data for specific information, such as a particular account, transaction, block, or baker and see all relevant details associated with that entity.
+2.  Search field: search across all relevant blockchain data for specific information, such as a particular account, transaction, block, or validator and see all relevant details associated with that entity.
 3.  Site navigation: change between pages to see other information. On a smaller screen, the page selector is available in the hamburger menu |hamburger|.
 4.  Time range filter: controls the time range of the data shown.
 5.  Total CCD in existence on either Mainnet or Testnet; on Mainnet Total CCD in circulation is also shown.
@@ -45,12 +46,13 @@ On the Home page that appears when you navigate to CCDScan, you see the followin
 7.  Block Time: average time since last block created in the selected time range.
 8.  Transactions: total number of transactions in the selected time range.
 9.  Accounts created: total number of accounts created in the selected time range.
-10. Latest blocks: continuously updated list of the latest 10 blocks baked on the blockchain, including links to details for the individual blocks and bakers.
+10. Latest blocks: continuously updated list of the latest 10 blocks produced on the blockchain, including links to details for the individual blocks and validators.
 11. Latest transactions: continuously updated list of the latest 10 transactions on the blockchain, including links to details for the individual transactions and senders (where available).
 
-In Latest blocks and Latest transactions click on information in the highlighted columns for details about the :ref:`block<home-screen-block>`, :ref:`baker<home-screen-baker>`, :ref:`transaction<home-screen-transaction>`, or :ref:`sender<home-screen-sender>`.
+In Latest blocks and Latest transactions click on information in the highlighted columns for details about the :ref:`block<home-screen-block>`, :ref:`validator<home-screen-baker>`, :ref:`transaction<home-screen-transaction>`, or :ref:`sender<home-screen-sender>`.
 
 .. image:: ../images/ccd-scan/ccd-scan-home-clickable.png
+    :alt: dark screen with graphs and top and table at bottom; clickable columns highlighted
 
 |
 

@@ -3,52 +3,18 @@ index
 =====
 
 .. toctree::
-   :caption: Installation
+   :caption: Releases and Installation
 
    installation/downloads
-   installation/downloads-testnet
-   installation/verification-instructions
+   release-notes/release-notes-lp
 
 .. toctree::
    :includehidden:
-   :caption: Learn
+   :caption: Concordium Basics
 
    guides/learn-about-concordium
-
-.. toctree::
-   :includehidden:
-   :caption: Concordium Wallets
-
-   guides/deciding-wallet
-   guides/wallet-faqs
-   browser-wallet/setup-browser-wallet
-   mobile-wallet-gen2/setup-mobile-wallet
-   mobile-wallet/setup-mobile-wallet
-   guides/create-identity
-   guides/create-account
-   guides/send-ccd-wallets
-   browser-wallet/connect-app
-   guides/tokens
-   guides/shield-ccd-wallets
-   guides/shielded-transfer
-   guides/export-import
-   guides/export-key
-   guides/recover-wallet
-   mobile-wallet/share-address-mw
-   mobile-wallet/change-passcode-mw
-   mobile-wallet/inspect-release-schedule-mw
-   guides/address-book
-   desktop-wallet/index
-
-.. toctree::
-   :includehidden:
-   :caption: Earn with Concordium
-
+   guides/wallets-lp
    guides/how-to-earn
-   guides/overview-baker-process
-   desktop-wallet/baking-dw
-   mobile-wallet/baker-mw
-   guides/delegation
 
 .. toctree::
    :includehidden:
@@ -57,46 +23,45 @@ index
    guides/developer-page
    nodes/node-requirements
    references/concordium-client
-   references/transactions
-   references/query-node
+   guides/run-local-chain
+   Use Concordium's ID layer <web3-id/index>
+   guides/low-code-nft-marketplace/introduction.rst
+   resources/ccd-scan
+   Concordium Standards <https://proposals.concordium.software/index.html>
+
+.. toctree::
+   :caption: Indexers
+
+   indexers/intro
+   indexers/subquery
 
 .. toctree::
    :includehidden:
-   :caption: Use Concordium's ID Layer
-
-   guides/create-proofs
-   guides/gallery/index
-
-.. toctree::
-   :includehidden:
-   :caption: Smart Contracts v1
+   :caption: Smart Contracts
 
    Introduction <../smart-contracts/general/introduction>
    Quick start guide <../smart-contracts/guides/quick-start>
-   Best practices <../smart-contracts/best-practices/index>
-   Tutorials <../smart-contracts/tutorials/index>
+   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/faq>
+   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/overview>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   Test contracts <../smart-contracts/guides/integration-test-contract>
    On-chain guides <../smart-contracts/guides/on-chain-index>
+   Best practices <../smart-contracts/best-practices/index>
    References <../smart-contracts/references/index>
-   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/index>
-   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/index>
+   V0 smart contracts <../smart-contracts-v0/sc-v0-rollup>
 
 .. toctree::
    :includehidden:
-   :caption: Smart Contracts v0
+   :caption: Tutorials
 
-   Introduction <../smart-contracts-v0/general/introduction>
-   Tutorials <../smart-contracts-v0/tutorials/piggy-bank/index>
-   Contract development guides <../smart-contracts-v0/guides/contract-dev-guides>
-   On-chain guides <../smart-contracts-v0/guides/on-chain-index>
-   References <../smart-contracts-v0/references/index>
+   Smart contract tutorials <../smart-contracts/tutorials/index>
+   Using ID tutorial <guides/gallery/index>
 
 .. toctree::
-   :caption: Resources
+   :includehidden:
+   :caption: Governance Committee Voting
 
-   resources/ccd-scan
-   resources/release-notes-mainnet
-   resources/release-notes
-   resources/sirius-testnet-reset
-   resources/legal
-   resources/ar-idp-contact
+   voting/gc-voting
+   voting/coordinator
+   voting/voting
+   voting/guardians

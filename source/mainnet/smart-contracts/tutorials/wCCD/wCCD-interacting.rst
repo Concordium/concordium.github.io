@@ -52,7 +52,7 @@ Getting the CCD balance of an address
 
     .. code-block:: console
 
-        $./concordium-client account show ACCOUNT --grpc-port 10001
+        $./concordium-client account show ACCOUNT --grpc-port 20001
 
     .. image:: ./images/wCCD_tutorial_10.png
         :width: 100 %
@@ -63,7 +63,7 @@ Getting the CCD balance of an address
 
     .. code-block:: console
 
-        $./concordium-client contract show INDEX --grpc-port 10001
+        $./concordium-client contract show INDEX --grpc-port 20001
 
     .. image:: ./images/wCCD_tutorial_3.png
         :width: 100 %
@@ -83,7 +83,8 @@ The ``balanceOf`` function
 
     Create a ``balanceOf.json`` file and insert the following JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {
@@ -149,7 +150,7 @@ You are ready now to invoke the ``balanceOf`` function with the following comman
 
 .. code-block:: console
 
-    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint balanceOf --parameter-json balanceOf.json --grpc-port 20001
 
 .. image:: ./images/wCCD_tutorial_4.png
     :width: 100 %
@@ -169,7 +170,8 @@ The ``operatorOf`` function
 
     Create an ``operatorOf.json`` file and insert the following JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {
@@ -238,7 +240,7 @@ You are ready now to invoke the ``operatorOf`` function with the following comma
 
 .. code-block:: console
 
-    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint operatorOf --parameter-json operatorOf.json --grpc-port 20001
 
 .. image:: ./images/wCCD_tutorial_7.png
     :width: 100 %
@@ -263,7 +265,7 @@ You are ready now to invoke the ``tokenMetadata`` function with the following co
 
 .. code-block:: console
 
-    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint tokenMetadata --parameter-json tokenMetadata.json --grpc-port 20001
 
 .. image:: ./images/wCCD_tutorial_8.png
     :width: 100 %
@@ -289,7 +291,7 @@ You are ready now to invoke the ``supports`` function with the following command
 
 .. code-block:: console
 
-    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint supports --parameter-json supports.json --grpc-port 10001
+    $./concordium-client contract invoke WCCD_CONTRACT_INDEX --entrypoint supports --parameter-json supports.json --grpc-port 20001
 
 The below screenshot shows the response of querying if the wCCD
 token contract supports the following standards
@@ -325,7 +327,8 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
 .. dropdown:: Option 1 (Receiver is an account) (click here)
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         {
             "data": DATA_STRING,
@@ -353,7 +356,8 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
 
 .. dropdown::  Option 2 (Receiver is a smart contract) (click here)
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         {
             "data": DATA_STRING,
@@ -393,7 +397,7 @@ from option 1 (Receiver is an account) or option 2 (Receiver is a smart contract
         .. code-block:: rust
 
             #[receive(contract = "contractName", name = "receiveToken")]
-            fn contract_receive_Token<S: HasStateApi>( ... ) ... { ... }
+            fn contract_receive_token( ... ) ... { ... }
 
     You can use the smart contract deployed at index 844 on testnet and
     its function entry point name ``receiveToken`` for testing.
@@ -434,7 +438,7 @@ willing to spend when interacting with the blockchain.
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint wrap --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint wrap --parameter-json wrap.json --amount AMOUNT --sender SENDER_ACCOUNT --energy 25000 --grpc-port 20001
 
 The below screenshot shows the wrapping of 1 CCD (1,000,000 micro CCDs) into 1,000,000 micro wCCD.
 
@@ -462,7 +466,8 @@ wCCD token in the wCCD smart contract and getting CCD in return.
 
     Create an ``unwrap.json`` file and insert the below JSON object.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         {
             "amount": AMOUNT,
@@ -540,7 +545,7 @@ You are ready now to unwrap your wCCD into CCD with the following command.
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint unwrap --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint unwrap --parameter-json unwrap.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 20001
 
 The below screenshot shows the execution of the ``unwrap`` function.
 
@@ -562,7 +567,8 @@ You can transfer the wCCD tokens from one address to another address.
 
     Create a ``transfer.json`` file and insert the below JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {
@@ -644,7 +650,7 @@ You are ready now to transfer your wCCD to another address with the following co
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint transfer --parameter-json transfer.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint transfer --parameter-json transfer.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 20001
 
 The below screenshot shows the execution of the ``transfer`` function.
 
@@ -671,7 +677,8 @@ without you having to interact with the smart contract again.
 
     Create an ``updateOperator.json`` file and insert the below JSON array.
 
-    .. code-block:: toml
+    .. code-block:: json
+        :force:
 
         [
             {
@@ -736,7 +743,7 @@ You are ready now to update the operator on your ``SENDER_ACCOUNT`` address with
 
 .. code-block:: console
 
-    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint updateOperator --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 10001
+    $./concordium-client contract update WCCD_CONTRACT_INDEX --entrypoint updateOperator --parameter-json updateOperator.json --sender SENDER_ACCOUNT --energy 25000 --grpc-port 20001
 
 The below screenshot shows the execution of the ``updateOperator`` function.
 

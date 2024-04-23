@@ -46,7 +46,8 @@ extension](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html).
 
 ## Development
 
-All of the documentation lives in the `source` directory; here there is a subdirectory for Mainnet. General content such as site images, stylesheets, and other templates are in the `source` directory.
+All of the documentation lives in the `source` directory; here there is a subdirectory `mainnet` for the developer document and a subdirectory `academy` for Concordium Academy.
+General content such as site images, stylesheets, and other templates are in the `source` directory.
 
 ## Installation
 
@@ -55,9 +56,15 @@ All of the documentation lives in the `source` directory; here there is a subdir
 
 Install `python3` and the python package manager `pip3`.
 
+The project uses `pipenv` and Pipfile to manage dependencies, so make sure to have this installed:
+
+```
+pip3 install pipenv
+```
+
 To install the python dependencies run:
 ```
-pip3 install -r requirements.txt
+pipenv sync
 ```
 
 Install `graphviz`:
@@ -69,7 +76,8 @@ Install `graphviz`:
 On macOS
 ```
 brew install python3 graphviz
-pip3 install -r requirements.txt
+pip3 install pipenv
+pipenv sync
 ```
 
 ### Windows
@@ -80,7 +88,8 @@ Download and run the launcher. Make sure to select "Add Python to PATH" at the b
 
 After that from a terminal run
 ```
-pip3 install -r requirements.txt
+pip3 install pipenv
+pipenv sync
 ```
 from the root of this repository.
 
@@ -90,19 +99,6 @@ If you want the graphs to render properly you also need to install the `dot` too
 
 To watch the doc files and automate the build run:
 
-### macOS and Linux
-**Mainnet**
-
-```
-make dev-mainnet
-```
-and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
-
-Before committing, make sure to run the linter and fix all the errors reported:
-```
-make lint
-```
-
 ### Windows
 
 **Note:**
@@ -111,32 +107,40 @@ The exact command depends on which terminal type you are using. For example, in 
 **Mainnet**
 
 ```
-make.bat dev-mainnet
+pipenv run make.bat dev-mainnet
 ```
 and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
 
 Before committing, make sure to try to build and fix any warnings that are reported.
-
-```
-./make.bat html
-```
-
 
 > **Note**:
 > When working on changes to the design it can be beneficial to disable
 > caching, as it can cause UI problems. To disable it, add the `-E` flag to the
 > `dev` command in the appropriate make file.
 
+### macOS and Linux
+**Mainnet**
+
+```
+pipenv run make dev-mainnet
+```
+and navigate to [localhost:8000/mainnet](http://localhost:8000/net).
+
+Before committing, make sure to run the linter and fix all the errors reported:
+```
+pipenv run make lint
+```
+
 ## Building the docs
 Run the build script from project root:
 
 ```
-./script/build.sh
+pipenv run ./script/build.sh
 ```
 
 To check for dead links (can also be done by the CI), run:
 ```
-make linkcheck-mainnet
+pipenv run make linkcheck-mainnet
 ```
 
 ### Building the gRPC JSON schemas
@@ -150,6 +154,17 @@ To generate the schemas:
 branch of Concordium Rust
 SDK](https://github.com/Concordium/concordium-rust-sdk/tree/derive-schema).
 2. Run `cargo run generate --output_folder <path-to-grpc-json-schema-folder>`.
+
+# Deployment
+
+The developer documentation is hosted by GitHub Pages and the released files can be viewed on the branch [`gh-pages`](https://github.com/Concordium/concordium.github.io/tree/gh-pages).
+Likewise for the Concordium Academy site, the released files can be viewed on the [`gh-pages`](https://github.com/Concordium/concordium-academy/tree/gh-pages) branch of the [Concordium/concordium-academy repository](https://github.com/Concordium/concordium-academy).
+
+Deployment is triggered manually using the [Deploy workflow](https://github.com/Concordium/concordium.github.io/actions/workflows/deploy.yml) in GitHub Actions of this repository.
+This will build both the developer documentation and the Concordium Academy site, to ensure that links used by Academy are still valid. But only deploy the the developer documentation.
+
+To deploy the Concordium Academy site trigger the [Deploy workflow](https://github.com/Concordium/concordium-academy/actions/workflows/deploy.yml) in GitHub Actions of [`Concordium/concordium-academy`](https://github.com/Concordium/concordium-academy).
+This workflow will clone this repository, build and only deploy the Academy site.
 
 # Contributing
 
@@ -285,6 +300,11 @@ Example:
 
    This text appears when the reader clicks on the dropdown element.
 ```
+#### Glossary terms
+
+Enter glossary terms in the glossary.rst if they are not already in the glossary. Pay close attention to the indentation in the glossary.
+
+In the topic where the term is referenced, use the `:term:<my term>` directive when writing a glossary term in the text. If you want to use different text than how the term appears in the glossary, use the following format: `:term:My terms<my term>`.
 
 ### Images
 
@@ -295,6 +315,24 @@ Captions are not used. Instead the image context should be described in the text
 Images must have :alt: text for accessibility. Generally, image width is 100%. For mobile wallets, browser wallet image width is 25%. For buttons, image width varies depending on whether the button has text and the graphic. Width ranges between 25 and 50 px.
 
 GIFs can be inserted but should only be used when it gives clarity to more complex actions. When using GIFs, the :alt: text is StreamPlayer and :align: is center.
+
+### Videos
+
+To embed a video in a topic, use the `raw` directive.
+
+``` restructuredtext
+   .. raw:: html
+
+      <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+```
+
+Remove any fixed dimensions from the embed link information you copied from the video source. The sizing is handled in the stylesheet.
+
+## Preview
+
+For non-technical users that might not want to install the tools above, you can request a preview in the GitHub pull request. The preview is added as a comment in the pull request and opens as a web page.
+
+Another alternative if you do not want to build the documentation to preview, is to install install Esbonio https://marketplace.visualstudio.com/items?itemName=swyddfa.esbonio into VSCode. Then you can use the command palette to run >Esbonio:OpenPreview. This builds a preview file. This solution still requires that you have VSCode installed and the repository locally on your computer.
 
 ## License
 

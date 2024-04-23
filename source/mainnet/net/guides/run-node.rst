@@ -10,7 +10,7 @@ In this guide, you learn how to run a node on your Linux computer that
 participates in the Concordium network. This means that you receive
 blocks and transactions from other nodes, as well as propagate
 information about blocks and transactions to the nodes in the Concordium
-network. After following this guide, you will be able to
+network. After following this guide, you will be able to:
 
 -  run a Concordium node
 -  observe it on the network dashboard
@@ -48,11 +48,52 @@ The node requires a database which must be stored on the host system so that it 
 
 .. Note::
 
+   Since version 5.3.2 of the node, the collector uses the GRPC V2
+   interface. Therefore, in order to run the collector, it is required that
+   the node which the collector connects to has the GRPC V2 interface
+   enabled.
+
+   Since the GRPC V2 port is different than the GRPC V1 port, you will
+   need to make changes to your configuration. Specifically the
+   ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`` environment variable needs
+   to be changed. Examples can be seen below:
+
+   **Mainnet**
+
+   .. code-block:: yaml
+
+      services:
+        mainnet-node-collector:
+          environment:
+            # The URL where the node can be reached. Note that this will use the
+            # docker created network which maps `mainnet-node` to the internal IP of
+            # the `mainnet-node`. If the name of the node service is changed from
+            # `mainnet-node` then the name here must also be changed.
+            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
+
+   **Testnet**
+
+   .. code-block:: yaml
+
+      services:
+        testnet-node-collector:
+          environment:
+            # The URL where the node can be reached. Note that this will use the
+            # docker created network which maps `testnet-node` to the internal IP of
+            # the `testnet-node`. If the name of the node service is changed from
+            # `testnet-node` then the name here must also be changed.
+            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
+
+.. Note::
+
    Node version 4.5.0 introduced the GRPC V2 interface which is enabled by the
    sample configurations listed below. If you have done special configuration of
    your node and want to re-use the configuration file and have the new API
    enabled, make sure to edit your configuration, adding ``CONCORDIUM_NODE_GRPC2_LISTEN_PORT``
    and ``CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS`` as in the sample configurations.
+
+.. Note::
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
 .. Note::
 
@@ -102,10 +143,11 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
          # And its port
          - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
-         # Address of the V2 GRPC server
-         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
-         # And its port
+         # Address of the V2 GRPC server.
          - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
+         # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
+         # that is defined for the collector.
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -119,7 +161,7 @@ To run a node on testnet use the following configuration file and follow the ste
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for non-baking nodes.
+         # which reduces CPU load for non-validator nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined
@@ -160,7 +202,9 @@ To run a node on testnet use the following configuration file and follow the ste
          # docker created network which maps `testnet-node` to the internal IP of
          # the `testnet-node`. If the name of the node service is changed from
          # `testnet-node` then the name here must also be changed.
-         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:10001
+         # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
+         # that is defined for the node.
+         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
        entrypoint: ["/node-collector"]
 
 1. Save the contents as ``testnet-node.yaml``.
@@ -220,7 +264,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
@@ -265,11 +309,11 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-testnet`` and keeping the configuration files as
    they are.
-3. If your node is an existing baker node, update the configuration file above to include
+3. If your node is an existing validator node, update the configuration file above to include
 
    .. code-block:: yaml
 
-      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
 4. Start the node and the collector.
@@ -313,7 +357,6 @@ The main differences from the testnet configuration are:
   <https://hub.docker.com/r/concordium/mainnet-node>`_
   for a list of currently available versions.
 - the node listens on port 8888 instead of 8889 by default
-- the node's GRPC interface is exposed on port 10000 instead of 10001
 - the node’s GRPC V2 listens on port 20000 instead of 20001
 - the database directory is ``/var/lib/concordium-mainnet`` instead of
   ``/var/lib/concordium-testnet``
@@ -357,14 +400,11 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5
          # Maximum number of __nodes__ the node will be connected to.
          - CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10
-         # Address of the GRPC server
-         - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
-         # And its port
-         - CONCORDIUM_NODE_RPC_SERVER_PORT=10000
-         # Address of the V2 GRPC server
-         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
-         # And its port
+         # Address of the V2 GRPC server.
          - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
+         # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
+         # that is defined for the collector.
+         - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
          # Maximum number of __connections__ the node can have. This can temporarily be more than
          # the number of peers when incoming connections are processed. This limit
          # ensures that there cannot be too many of those.
@@ -378,7 +418,7 @@ To retrieve mainnet node logs run:
          - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
          # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
          # for consensus operations. `-I0` disables the idle garbage collector
-         # which reduces CPU load for non-baking nodes.
+         # which reduces CPU load for non-validator nodes.
          - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
        entrypoint: ["/concordium-node"]
        # Exposed ports. The ports the node listens on inside the container (defined
@@ -393,7 +433,6 @@ To retrieve mainnet node logs run:
        # the node's gRPC interface will not be available from the host.
        ports:
        - "8888:8888"
-       - "10000:10000"
        - "20000:20000"
        volumes:
        # The node's database should be stored in a persistent volume so that it
@@ -419,7 +458,9 @@ To retrieve mainnet node logs run:
          # docker created network which maps `mainnet-node` to the internal IP of
          # the `mainnet-node`. If the name of the node service is changed from
          # `mainnet-node` then the name here must also be changed.
-         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:10000
+         # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
+         # that is defined for the node.
+         - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
        entrypoint: ["/node-collector"]
 
 Enable inbound connections
@@ -430,7 +471,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration above makes the node
@@ -477,11 +518,11 @@ image and running the node. To migrate from that setup:
    Or, alternatively, moving the contents of ``~/.local/share/concordium`` to,
    e.g., ``/var/lib/concordium-mainnet`` and keeping the configuration files as
    they are.
-3. If your node is an existing baker node, update the configuration file above to include
+3. If your node is an existing validator node, update the configuration file above to include
 
    .. code-block:: yaml
 
-      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/baker-credentials.json
+      - CONCORDIUM_NODE_BAKER_CREDENTIALS_FILE=/mnt/data/validator-credentials.json
 
    into the ``environment`` section of the ``node`` service section of the file.
 4. Start the node and the collector.
@@ -513,6 +554,10 @@ If you wish to have the node running in the background, then add a ``-d`` option
 
        image: concordium/mainnet-node:4.3.1-0
 
+Run a validator node
+====================
+
+For information about how to run a validator node for Linux/Docker, see :ref:`Run a validator node on Docker<baking-docker>`.
 
 Troubleshooting
 ===============

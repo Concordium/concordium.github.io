@@ -157,15 +157,19 @@ For a reference on how a schema type is serialized into bytes, refer to the `imp
 
 .. _contract-schema-which-to-choose:
 
-Embedding schemas on-chain
-==========================
+Embed schemas on-chain
+======================
 
 Schemas are embedded into smart contract modules using the `custom
 section`_ feature of Wasm modules.
 This allows Wasm modules to include a named section of bytes, which does not
 affect the semantics of running the Wasm module.
 
-All schemas are collected and added in one custom section named
-``concordium-schema-v2``.
-This collection is a list of pairs, containing the name of the contract encoded
-in UTF-8 and the contract schema bytes.
+The module can contain a schema in one of two different custom sections. This collection is a list of pairs, containing the name of the contract encoded
+in UTF-8 and the contract schema bytes. The section ``concordium-schema`` is the most common and is what the current tooling produces.
+
+'V1', 'V2', or 'V3' schemas are available for on smart contracts. The supported sections depend on the module version. The schema version can be either defined by the section name or embedded into the actual schema:
+
+- Both 'V0' and 'V1' modules support the section ``concordium-schema`` where the schema includes the version.
+
+- 'V1' modules additionally support section ``concordium-schema-v2`` which always contain a 'V1' schema.

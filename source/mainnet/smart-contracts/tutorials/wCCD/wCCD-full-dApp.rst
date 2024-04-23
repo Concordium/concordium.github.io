@@ -6,7 +6,7 @@ Running your first full dApp
 ============================
 
 You are running your own local dApp now. If you want, you can compare it with our
-`wCCD dApp <https://wccd.testnet.concordium.com/>`_ hosted on testnet. You can use your |bw|
+`testnet wCCD dApp <https://wccd.testnet.concordium.com/>`_ hosted on testnet or `mainnet wCCD dApp <https://wccd.mainnet.concordium.software/>`_ hosted on mainnet. You can use your |bw|
 to connect to the dApp.
 
 .. note::

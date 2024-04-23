@@ -17,6 +17,13 @@ Change account name
 
     #. Change the name and click |save| to save the change.
 
+.. dropdown:: Desktop Wallet
+
+    You can edit the name of the account. Click |edit| to edit the account name. Click |save| to save the change.
+
+    .. image:: ../images/desktop-wallet/dw-edit-account-name.png
+        :alt: dark account balance area with edit button highlighted
+
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
              :width: 20px

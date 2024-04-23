@@ -22,15 +22,21 @@ jobs:
         shell: bash
         run: |
           apt-get install -y graphviz rsync
-          pip3 install -r requirements.txt
+          pip3 install pipenv
+          pipenv sync
 
       - name: Build 🛠
         shell: bash
-        run: ./scripts/build.sh
+        run: pipenv run ./scripts/build.sh
 
-      - name: Deploy 🚀
+      - name: Deploy Developer Documentation 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
           folder: build
+          # Prevent the default behavior of force pushing which will remove previews see https://github.com/marketplace/actions/deploy-pr-preview.
+          force: false
           clean: true
+          clean-exclude: |
+            pr-preview/
+            pr-preview-academy/

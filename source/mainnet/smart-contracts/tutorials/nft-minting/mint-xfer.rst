@@ -29,14 +29,15 @@ With a text editor open up that file and place your account address and token ID
         "tokens": ["00000111"]
     }
 
+Then run the command below to invoke the mint function with the given params.
+
+.. code-block:: console
+
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json nft-artifacts/nft-params.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
+
 Minting is successful.
 
 .. image:: images/mint-success.png
-    :width: 100%
-
-You can also check the dashboard to see the status of your operation in a more visual way. To do that, use the transaction status hash from your terminal.
-
-.. image:: images/mint-result-db.png
     :width: 100%
 
 .. _nft-view-fn:
@@ -48,7 +49,7 @@ Now check the current state of the cis2-nft token contract by invoking view func
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-INDEX> --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 10001
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 20001
 
 Your result will be similar to what is shown below where the user is the owner of the token with ID **00000111**.
 
@@ -79,7 +80,7 @@ You can query the metadata with the following command.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 10001
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 20001
 
 This returns the metadata URL combined with your tokenID.
 
@@ -104,7 +105,7 @@ Now you can transfer it. One reminder, you should be the owner of it to be able 
 
 .. code-block:: console
 
-    concordium-client  contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 10001
+    concordium-client  contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 20001
 
 The transfer is successfully completed.
 

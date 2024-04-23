@@ -13,4 +13,5 @@
         "plaintext",
         "restructuredtext"
     ],
+    "esbonio.sphinx.confDir": "${workspaceFolder}/source/mainnet"
 }

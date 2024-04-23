@@ -4,13 +4,13 @@
 Run a node on a server with Ubuntu on Testnet
 =============================================
 
-This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`baker node<baker-node-Ubuntu>`.
+This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`validator node<baker-node-Ubuntu>`.
 
 You can also watch the video to learn how to run a node with Ubuntu.
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/lFqf0tgS_r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe src="https://www.youtube.com/embed/lFqf0tgS_r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Prerequisites
@@ -20,7 +20,7 @@ Prerequisites
 
 -  The server must be running around the clock.
 
--  If you want to run the node as a baker, you must have generated baker keys. You can generate the keys in the :ref:`Desktop Wallet <create-baker-desktop>` or :ref:`Concordium Client<become-a-baker>`.
+-  If you want to run the node as a validator, you must have generated validator keys.
 
 .. Note::
 
@@ -35,7 +35,7 @@ To run the node, you must install a Debian package.
 After installation, the ``concordium-testnet-node`` and ``concordium-testnet-node-collector`` services will be started.
 The services are also enabled to start automatically on system start.
 
-#. Download the :ref:`Debian package <downloads-testnet>`
+#. Download the :ref:`Debian package <testnet-node-downloads>`
 
 #. Install the package:
 
@@ -52,7 +52,7 @@ The services are also enabled to start automatically on system start.
 #. To verify that the node is running, go to the `Concordium dashboard <https://dashboard.testnet.concordium.com/>`__ and look for a node with the name you provided.
 
 
-The ``concordium-testnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with baker keys.
+The ``concordium-testnet-node`` service that you just installed will be running around the clock, except if you’re going to restart the node with validator keys.
 
 .. Note::
    If you want more detailed information about building and maintaining a node, or if your node is not running, see the `Building .deb packages for ubuntu distributions README from Concordium <https://github.com/Concordium/concordium-node/blob/main/scripts/distribution/ubuntu-packages/README.md>`__
@@ -65,7 +65,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<baker-ubuntu>`, to bake and finalize.
+:ref:`if so configured<baker-ubuntu>`, to produce blocks.
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
@@ -77,7 +77,14 @@ details of how this is done will depend on your configuration.
 Synchronize a node with the network
 ===================================
 
-If the node is well behind the head of the chain, you can speed up the startup by using out-of-band catchup.
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.
+
+The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. To disable out of band catchup unset the ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` environment variable as show in step 3 below.
 
   1. Stop the node if it is running
 
@@ -93,51 +100,40 @@ If the node is well behind the head of the chain, you can speed up the startup b
 
   3. Add the following under the ``[Service]`` section (create the section if it does not exist)
 
-    .. code-block::
+    .. code-block:: ini
 
-      Environment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
+      UnsetEnvironment=CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM
 
   4. Start the service again
 
-    .. code-block::
+    .. code-block:: console
 
       $sudo systemctl start concordium-testnet-node.service
 
 After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
 
-For node versions 4.3.0 or earlier
-----------------------------------
+.. _node-collector-ubuntu-testnet:
 
-If you are running the node version 4.3.0 or earlier, catchup up out-of-band requires you to download the catchup data manually.
+Node collector configuration
+============================
 
-  1. Download testnet blocks from `catchup.testnet.concordium.com <https://catchup.testnet.concordium.com/blocks_to_import.mdb>`__. The remaining steps assume that the file is stored in ``~/Downloads/blocks_to_import.mdb``.
+Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
 
-  2. Stop the node if it is running
+Since the GRPC V2 port is different than the GRPC V1 port, you might need make changes to your node configuration. You *only* need to change the collector port if you have overridden your node configuration. You can edit your overrides with:
 
-    .. code-block:: console
+.. code-block:: console
 
-      $sudo systemctl stop concordium-testnet-node.service
+  $ sudo systemctl edit concordium-testnet-node.service
 
-  3. Edit the node service configuration file
+This will open your overrides in your default editor. Below is an example for the default testnet port ``20001``:
 
-    .. code-block:: console
+.. code-block:: ini
 
-      $sudo systemctl edit concordium-testnet-node.service
+  [Service]
+  Environment=CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://localhost:20001
 
-  4. Add the following under the ``[Service]`` section (create the section if it does not exist)
-
-    .. code-block::
-
-      Environment=CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM=%S/concordium-4221332d34e1694168c2a0c0b3fd0f273809612cb13d000d5c2e00e85f50f796/blocks_to_import.mdb
-      BindReadOnlyPaths=~/Downloads/blocks_to_import.mdb:%S/concordium-4221332d34e1694168c2a0c0b3fd0f273809612cb13d000d5c2e00e85f50f796/blocks_to_import.mdb
-
-  5. Start the service again
-
-    .. code-block::
-
-      $sudo systemctl start concordium-testnet-node.service
-
-After the node is caught up remove the out of band catchup configuration to speed up further node restarts.
+.. Note::
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate, for example, ``Environment=CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000``.
 
 .. _upgrade-node-Ubuntu-testnet:
 
@@ -160,7 +156,7 @@ To upgrade to a newer version of the `concordium-testnet-node` package you need 
 
 .. _baker-node-Ubuntu-testnet:
 
-Run a baker node on Ubuntu
-==========================
+Run a validator node on Ubuntu
+==============================
 
-For information about how to configure a node to run as a baker, see :ref:`baker-ubuntu`.
+For information about how to configure a node to run as a validator, see :ref:`baker-ubuntu`.

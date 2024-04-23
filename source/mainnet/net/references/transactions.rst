@@ -9,6 +9,7 @@ Concordium Client transactions
 You can perform all types of transactions with the :ref:`concordium-client<concordium-client>`. To do so, you use specialized subcommands. For an introduction to transactions, see :ref:`Transactions overview <transactions-overview>`.
 
 .. Note::
+
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
@@ -27,19 +28,19 @@ Transaction commands
 | ``transaction send-scheduled``      | Make a transfer that will be released          |
 |                                     | gradually                                      |
 +-------------------------------------+------------------------------------------------+
-| ``baker add``                       | Add a new baker. For more information, see     |
+| ``validator add``                   | Add a new validator. For more information, see |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker remove``                    | Remove a baker. For more information, see      |
+| ``validator remove``                | Remove a validator. For more information, see  |
 |                                     | :ref:`become-a-baker`.                         |
 +-------------------------------------+------------------------------------------------+
-| ``baker update-stake``              | Update the staked amount of a baker. For more  |
-|                                     | information, see :ref:`become-a-baker`.        |
-+-------------------------------------+------------------------------------------------+
-| ``baker update-restake``            | Update the restaking switch of a baker. For    |
+| ``validator update-stake``          | Update the staked amount of a validator. For   |
 |                                     | more information, see :ref:`become-a-baker`.   |
 +-------------------------------------+------------------------------------------------+
-| ``baker set-key``                   | Update the keys of a baker. For more           |
+| ``validator update-restake``        | Update the restaking switch of a validator. For|
+|                                     | more information, see :ref:`become-a-baker`.   |
++-------------------------------------+------------------------------------------------+
+| ``validator set-key``               | Update the keys of a validator. For more       |
 |                                     | information, see :ref:`become-a-baker`.        |
 +-------------------------------------+------------------------------------------------+
 | ``account update-keys``             | Update credentials keys for a specific         |
@@ -95,16 +96,14 @@ Depending on the exact context, all flags are currently optional:
    3 signs with keys 0 and 1. If the sender account is imported to the client, and ``--signers`` is not provided,
    ``concordium-client`` will sign with all keys in the local configuration of the account.
 
-In most cases, you only need to provide the ``--sender`` option
-and use the account by name.
+In most cases, you only need to provide the ``--sender`` option and use the account by name.
 
 In all cases, the command displays the exact parameters of the transaction
 before sending it, and you're asked to confirm that it matches your intent.
 Just before the transaction is sent, you're asked for the password to access
 the signing keys.
 
-Once a transaction has been submitted, the command will continuously poll and
-display its status until it's been :ref:`finalized<glossary-finalization>`.
+Once a transaction has been submitted, the command will continuously poll and display its status until it's been finalized.
 
 .. _account-commands:
 
@@ -116,7 +115,7 @@ Commands for showing account information
 Account sequence number
 -----------------------
 
-Each account on the Concordium blockchain has a :ref:`sequence number<glossary-transaction-sequence-number>` and each
+Each account on the Concordium blockchain has a :term:`sequence number<transaction sequence number>` and each
 transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
@@ -143,12 +142,12 @@ Account aliases
 ---------------
 
 In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
-matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+matching account :term:`aliases<alias>`. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
 This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.
 
-Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Finalization, block, and baking rewards are always received on the account's canonical address.
+Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account's canonical address.
 
 To show aliases, enter:
 
@@ -207,7 +206,7 @@ Apart from the generic transaction flags above, the parameters are:
 -  ``--amount``: number of CCD tokens to send.
 -  ``--receiver``: name or address of the receiver account.
 
-The following flags are for adding a :ref:`transfer memo<glossary-transfer-memo>` to the transfer.
+The following flags are for adding a :term:`transfer memo` to the transfer.
 
 -  ``--memo``: optional flag for providing a transfer memo as a string. The string will be CBOR encoded and included in the memo.
 -  ``--memo-json``: optional flag for providing a transfer memo as a JSON file. The JSON contents of the file will be CBOR encoded and included in the memo.
@@ -254,8 +253,8 @@ sender account A has three transaction signing keys 0, 1, and 3.
 Make a shielded transfer
 ------------------------
 
-A shielded transfer is a transfer from a shielded balance to a shielded
-balance of another account. The command is very similar to a standard  transfer.
+A :term:`shielded transfer` is a transfer from a :term:`shielded balance` to a shielded
+balance of another account. The command is very similar to a standard transfer.
 
 .. code-block:: console
 
@@ -295,7 +294,7 @@ The interaction looks like the following:
 
 This command has all of the additional options of ``send``, as well as an
 additional flag ``--index.`` If given, this flag is used to select which
-:ref:`incoming shielded amounts<glossary-incoming-shielded-amount>` that will be used as input to the transaction.
+:term:`incoming shielded amounts<shielded balance>` that will be used as input to the transaction.
 
 This is illustrated with the following example. :ref:`Querying an account<query-account-state>` can display the
 list of incoming amounts on account. An output could look like this:
@@ -312,7 +311,7 @@ list of incoming amounts on account. An output could look like this:
    ...
 
 If you want to ``send-shielded`` from the account while supplying index 8,
-only the shielded amount ``8c0faff6739bffc531c5...`` and the :ref:`self balance<glossary-self-balance>`
+only the shielded amount ``8c0faff6739bffc531c5...`` and the :term:`self balance<shielded balance>`
 will be used as input of the shielded transfer.
 
 If the supplied index is out of range ``concordium-client`` will refuse to send
@@ -321,8 +320,8 @@ the transaction.
 Shield an amount
 ----------------
 
-The command to shield an amount with ``concordium-client`` is ``account
-shield``. For example, an interaction to shield 10 CCD on account A looks like the following
+The command to :term:`shield<shielded amount>` an amount with ``concordium-client`` is ``account
+shield``. For example, an interaction to shield 10 CCD on account A looks like the following.
 
 The command is:
 
@@ -474,7 +473,7 @@ The command has the following required arguments:
 
 - ``--sender`` is the account from which you want to stake.
 - ``--stake`` is an amount of CCD you intend to delegate
-- ``--target`` is either the baker pool ID or ``Passive``.
+- ``--target`` is either the staking pool ID or ``Passive``.
 
 The command has the following optional argument:
 
@@ -512,18 +511,18 @@ The output is:
 
 .. code-block:: console
 
-   # Parameters related to baker pools:
-     + minimum equity capital: 14000.000000 CCD
-     + maximum fraction of total stake a pool is allowed to hold: 0.1
-     + maximum factor a pool may stake relative to the baker's stake: 3 % 1
+   # Parameters related to staking pools:
+     + minimum equity capital: 500000.000000 CCD
+     + maximum fraction of total stake a pool is allowed to hold: 0.05
+     + maximum factor a pool may stake relative to the validators's stake: 6 % 1
      + pool owner cooldown duration: 21d
      + allowed range for finalization commission: [1.0, 1.0]
-     + allowed range for baking commission: [0.1, 0.1]
+     + allowed range for block commission: [0.1, 0.1]
      + allowed range for transaction commission: [0.1, 0.1]
 
    # Passive delegation parameters:
      + finalization commission: 1.0
-     + baking commission: 0.12
+     + block commission: 0.12
      + transaction commission: 0.12
 
    # Parameters related to delegators:
@@ -537,22 +536,32 @@ The output is:
    # Parameters that affect rewards distribution:
      + mint amount per reward period: 261157877e-12
      + mint distribution:
-         * baking reward: 0.6
-         * finalization reward: 0.3
+         * block reward: 0.6
      + transaction fee distribution:
-         * baker: 0.45
+         * validator: 0.45
          * GAS account: 0.45
      + GAS rewards:
-         * baking a block: 0.25
-         * adding a finalization proof: 5.0e-3
+         * producing a block: 0.25
          * adding a credential deployment: 2.0e-2
          * adding a chain update: 5.0e-3
 
    # Time parameters:
      + reward period length: 24 epochs
 
+  # Consensus parameters:
+    + Timeout parameters:
+      * base timeout: 10000 ms.
+      * timeout increase: 5 / 4 (approx 1.25)
+      * timeout decrease: 4 / 5 (approx 0.8)
+    + minimum time between blocks: 2000 ms.
+    + block energy limit: 3000000
+
+  # Finalization committee parameters:
+    + minimum finalizers: 40
+    + maximum finalizers: 1000
+    + finalizer relative stake threshold: 1.0e-3
+
    # Other parameters:
-     + election difficulty: 2.5e-2
      + foundation account index: 10
      + maximum credential deployments per block: 10
 
@@ -563,24 +572,24 @@ The output is:
    * - Parameter section
      - Parameter
      - Description
-   * - Parameters related to baker pools
+   * - Parameters related to staking pools
      - Minimum equity capital
-     - The minimum amount of CCD to stake to become a baker.
+     - The minimum amount of CCD to stake to become a validator.
    * -
      - maximum fraction of total stake a pool is allowed hold
-     - The maximum percent of total stake any single baker pool can have.
+     - The maximum percent of total stake any single staking pool can have.
    * -
-     - maximum factor a pool may stake relative to the baker's stake
-     - A baker pool's stake consists of the baker's own equity capital, and delegated capital. This factor determines the maximum stake a baker pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
+     - maximum factor a pool may stake relative to the validators's stake
+     - A staking pool's stake consists of the validators's own equity capital, and delegated capital. This factor determines the maximum stake a staking pool may have relative to the equity capital. Any delegated stake above this threshold does not count.
    * -
      - pool owner cooldown duration
-     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first payday after the cool-down has expired.
+     - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.
    * -
      - allowed range for finalization commission
      - The allowed range of finalization commissions bakers may select when creating or updating pools.
    * -
-     - allowed range for baking commission
-     - The allowed range of baking commissions bakers may select when creating or updating pools.
+     - allowed range for block commission
+     - The allowed range of block commissions validators may select when creating or updating pools.
    * -
      - allowed range for transaction commission
      - The allowed range of transaction commissions bakers may select when creating or updating pools.
@@ -588,8 +597,8 @@ The output is:
      - finalization commission
      - The percentage of finalization rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
-     - baking commission
-     - The percentage of baking rewards retained by the passive delegation, i.e., not given out to delegators.
+     - block commission
+     - The percentage of block rewards retained by the passive delegation, i.e., not given out to delegators.
    * -
      - transaction commission
      - The percentage of transaction rewards retained by the passive delegation, i.e., not given out to delegators.
@@ -609,36 +618,54 @@ The output is:
      - mint amount per reward period
      - The percentage increase in amount of CCD per payday.
    * -
-     - mint distribution: baking reward
-     - The fraction of newly minted CCD that goes towards baker rewards.
+     - mint distribution: block reward
+     - The fraction of newly minted CCD that goes towards block rewards.
    * -
-     - mint distribution: finalization reward
-     - The fraction of newly minted CCD that goes towards finalization rewards.
-   * -
-     - transaction fee distribution: baker
-     - The fraction of block transaction fees allocated to the baker.
+     - transaction fee distribution: validator
+     - The fraction of block transaction fees allocated to the validator.
    * -
      - transaction fee distribution: GAS account
      - The fraction of block transaction fees allocated to the GAS account.
    * -
-     - GAS rewards: baking a block
-     - The fraction of the GAS account that is allocated to the baker for baking a block.
+     - GAS rewards: producing a block
+     - The fraction of the GAS account that is allocated to the validator for producing a block.
    * -
      - GAS rewards: adding a finalization proof
-     - The fraction of the GAS account that is allocated to the baker for including a finalization proof in a block.
+     - The fraction of the GAS account that is allocated to the validator for including a finalization proof in a block.
    * -
      - GAS rewards: adding a credential deployment
-     - The fraction of the GAS account that is allocated to the baker for including an account creation transaction in a block.
+     - The fraction of the GAS account that is allocated to the validator for including an account creation transaction in a block.
    * -
      - Gas rewards: adding a chain update
-     - The fraction of the GAS account that is allocated to the baker for including an update transaction in a block.
+     - The fraction of the GAS account that is allocated to the validator for including an update transaction in a block.
    * - Time parameters
      - reward period length
      - The length of the reward period. All rewards are handed out at the end of each reward period.
-   * - Other parameters
-     - election difficulty
-     - The election difficulty determines the probability that there is a block in a slot. Thus together with slot duration it determines average block time.
+   * - Consensus parameters
+     - Timeout parameters: base timeout
+     - Time in milliseconds before timeout.
    * -
+     - Timeout parameters: timeout increase
+     - Factor by which base timeout increases in next round if no quorum certificate is produced after a round with a timeout certificate.
+   * -
+     - Timeout parameters: timout decrease
+     - Factor by which base timeout decreases in next round if a quorum certificate is produced after a round with timeout certificate.
+   * -
+     - minimum time between blocks
+     - minimum time in milliseconds between block creation
+   * -
+     - block energy limit
+     - Maximum amount of energy consumed by block
+   * - Finalization committee parameters
+     - minimum finalizers
+     - Minimum number of finalizers that make up the committee
+   * -
+     - maximum finalizers
+     - Maximum number of finalizers that make up the committee
+   * -
+     - finalizer relative stake threshold
+     - The fraction of stake required to be part of the finalization committee
+   * - Other parameters
      - foundation account index
      - An index of the designated foundation reward account. The foundation account receives the foundation tax.
    * -

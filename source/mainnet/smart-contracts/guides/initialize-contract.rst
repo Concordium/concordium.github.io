@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _initialize-contract:
 
 ====================================
@@ -7,6 +8,12 @@ Initialize a smart contract instance
 This guide will show you how to initialize a smart contract from a deployed
 smart contract module with parameters in JSON or binary format.
 Additionally, it will show how to name an instance.
+
+You can also watch a video about initializing smart contract instances.
+
+.. raw:: html
+
+   <iframe src="https://www.youtube.com/embed/SNm9xEegBKA?si=TyZot8yIalZcySRf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 .. Note::
 
@@ -26,6 +33,8 @@ the transaction.
 
    The cost of this transaction depends on the size of the parameters sent to
    the init function and the complexity of the function itself.
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
 Initialization
 ==============
@@ -215,6 +224,6 @@ If successful, the output should be similar to the following:
    :ref:`references-on-chain`.
 
 .. _parameter_cursor():
-   https://docs.rs/concordium-std/latest/concordium_std/trait.HasInitContext.html#tymethod.parameter_cursor
+   https://docs.rs/concordium-std/latest/concordium_std/struct.ExternContext.html#tymethod.parameter_cursor
 .. _get(): https://docs.rs/concordium-std/latest/concordium_std/trait.Get.html#tymethod.get
 .. _read(): https://docs.rs/concordium-std/latest/concordium_std/trait.Read.html#method.read_u8

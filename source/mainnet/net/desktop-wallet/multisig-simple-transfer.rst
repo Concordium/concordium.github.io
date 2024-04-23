@@ -16,7 +16,7 @@ Prerequisites
 
 -  Set up an :ref:`account with multiple credentials <multi-credentials>`
 
--  Set up a :ref:`LEDGER NANO device identity <install-Ledger-app>`.
+-  Set up a :ref:`LEDGER NANO device identity <install-ledger>`.
 
 :ref:`overview-shared-accounts` explains the steps involved to set up a multiple signature (shared) account.
 

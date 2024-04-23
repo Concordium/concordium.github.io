@@ -5,8 +5,8 @@
 Shield and unshield CCD on an account
 =====================================
 
-Accounts on the Concordium blockchain have two balances, the **Balance** and the :ref:`shielded balance <glossary-shielded-balance>`. You can move funds between these
-two balances using either a :ref:`shield CCD transaction<glossary-shielding>` or an :ref:`unshield CCD transaction<glossary-unshielding>`.
+Accounts on the Concordium blockchain have two balances, the **Balance** and the :term:`shielded balance`. You can move funds between these
+two balances using either a :term:`shield CCD transaction<shielding>` or an :term:`unshield CCD transaction<unshielding>`.
 
 When you shield an amount on an account, only the account's credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can't see the shielded balance or any shielded transfers going in or out of the account. You can't make shielded transfers on multi-signature accounts, only on accounts with a single credential.
 
@@ -27,6 +27,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
    You can see the fee in the transaction log.
 
 .. Note::
+
     On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
 
 .. dropdown:: Desktop Wallet
@@ -255,6 +256,8 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
             You can hide the shielded balance when finished to prevent accidental shielding. In the Account transaction overview tap the |hamburger| menu and tap **Hide shielded balance for account name**. This removes the shielded balance tab and the Shield button from the accounts view. Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
+For information about making shielded transfers, see :ref:`Make a shielded transfer on an account<shielded-transfer>`.
+
     .. |hamburger| image:: ../images/hamburger.png
             :alt: Three horizontal lines
             :width: 20px
@@ -262,3 +265,9 @@ If you have an account with CCD in the shielded balance, you can't add new crede
     .. |moredetails| image:: ../images/more-arrow.png
             :alt: Button with More and double-headed arrow
             :width: 50px
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+
+    shielded-transfer

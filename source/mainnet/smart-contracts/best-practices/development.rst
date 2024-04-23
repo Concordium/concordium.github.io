@@ -4,7 +4,8 @@
 Development best practices
 ==========================
 
-This document provides guidelines for developing smart contracts.
+This document provides guidelines for developing smart contracts, including best practices for smart contract development, audit, information about common pitfalls and security vulnerabilities, and how to avoid them.
+
 It starts with some general thoughts about smart contract development and then gives more details about writing smart contracts in Rust for Concordium.
 
 Mindset
@@ -15,7 +16,7 @@ Smart contract development involves many risks that do not show up in, for examp
 - the cost of mistakes is very high;
 - possibilities for fixing bugs are limited;
 - the area is evolving constantly, with new vulnerabilities being discovered regularly;
-- malicious parties deliberately try to break your contract, for example, to steal the funds from the contract account.
+- malicious parties deliberately try to break your contract, for example, to steal the funds from the contract or account.
 
 Therefore, it is not sufficient to defend your code against known vulnerabilities.
 You can think about smart contracts as mission-critical software, or software for embedded devices rather than a web application.
@@ -66,8 +67,7 @@ Concordium Rust Smart Contracts
 ===============================
 
 This section provides recommendations for developing smart contracts in Rust.
-See :ref:`introduction` for basic information.
-
+See :ref:`Introduction to smart contracts<introduction>` for basic information.
 
 .. _best-practices-code-structure:
 
@@ -97,9 +97,9 @@ Recommended structure
         parameter = "MyParameter",
         mutable
     )]
-    fn contract_do_something<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State<S>, StateApiType = S>,
+    fn contract_do_something(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
     ) -> ReceiveResult<()> {
         // Parse parameters
         let param: MyParameter = ctx.parameter_cursor().get()?;
@@ -128,9 +128,9 @@ Recommended structure
       ...
     }
 
-    fn contract_receive<S: HasStateApi>(
-      ctx: &impl HasReceiveContext,
-      host: &mut impl HasHost<State, StateApiType = S>,
+    fn contract_receive(
+      ctx: &ReceiveContext,
+      host: &mut Host<State>,
     ) -> ContractResult<()> {
       // Check that contract is not paused.
       ensure!(!host.state().paused, ContractError::Custom(CustomContractError::ContractPaused));
@@ -140,9 +140,9 @@ Recommended structure
 
     ...
 
-    fn contract_set_paused<S: HasStateApi>(
-      ctx: &impl HasReceiveContext,
-      host: &mut impl HasHost<State, StateApiType = S>,
+    fn contract_set_paused(
+      ctx: &ReceiveContext,
+      host: &mut Host<State>,
     ) -> ContractResult<()> {
       // Check that only the admin is authorized to pause/unpause the contract.
       ensure_eq!(ctx.sender(), host.state().admin, ContractError::Unauthorized);
@@ -190,7 +190,7 @@ Consider the following map for storing all user bids in an auction contract:
 
 .. code-block:: rust
 
-  pub struct State<S> {
+  pub struct State<S = StateApi> {
     bids: StateMap<Address, Amount, S>
   }
 
@@ -259,7 +259,7 @@ Once the external call is completed, the contract state and balance might be dif
 See an :ref:`example <reentracny-unit-testing>` based on `the DAO <https://en.wikipedia.org/wiki/The_DAO_(organization)>`_ Ethereum smart contract vulnerability of how reentrancy can be discovered using unit testing.
 
 - Avoid changing the state after an external call: use the *Checks-Effects-Interactions* pattern: validate data, update the contract state, make external calls.
-- If you need to perform some state changes after an external call use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/trait.HasHost.html#method.invoke_contract_read_only>`_.
+- If you need to perform some state changes after an external call use `invoke_contract_read_only <https://docs.rs/concordium-std/latest/concordium_std/struct.ExternHost.html#method.invoke_contract_read_only>`_.
   If the read-only invocation succeeds, it ensures that the state has not been changed after returning from the external call.
   Using ``invoke_contract_read_only`` covers most of the cases that require protecting the contract state from updating due to reentrancy.
 - Alternatively, consider using a *mutex*: a boolean flag that is set before making an external call, preventing all entrypoints from reentrancy. Reset after the call is complete.
@@ -271,9 +271,9 @@ See an :ref:`example <reentracny-unit-testing>` based on `the DAO <https://en.wi
       lock : bool,
     }
 
-    fn entrypoint_with_mutex<S: HasStateApi>(
-      ctx: &impl HasReceiveContext,
-      host: &mut impl HasHost<State, StateApiType = S>,
+    fn entrypoint_with_mutex(
+      ctx: &ReceiveContext,
+      host: &mut Host<State>,
     ) -> Result<(), Error> {
       ensure!(!host.state().lock, Error::Locked);
       host.state_mut().lock = true;
@@ -314,8 +314,9 @@ Automated testing
 
 The Concordium standard library `concordium-std`_ offers several possibilities for testing the smart contract code.
 
-- Use :ref:`Unit testing <unit-test-contract>` to test particular cases where you define what is the valid output.
-- :ref:`Property-based testing <writing_property_based_tests>` is a variant of randomized testing that repeatedly checks a *property* with randomly generated input.
+- Use :ref:`Integration testing <integration-test-contract>` to test particular cases where you define what is the valid output.
+- (**Deprecated**) Use :ref:`Unit testing <unit-test-contract>` to test particular cases where you define what is the valid output.
+- (**Deprecated**) :ref:`Property-based testing <writing_property_based_tests>` is a variant of randomized testing that repeatedly checks a *property* with randomly generated input.
 
 Use the :ref:`smart contract specification <best-practices-specification>` guidelines from this document to come up with cases and properties to test.
 

@@ -5,10 +5,10 @@
 Create an account
 =================
 
-If you are using |mw-gen1| or Desktop Wallet, when you created your :ref:`identity<glossary-identity>`, it came with an :ref:`initial account<glossary-initial-account>`. The initial account is a special account that the :ref:`identity provider<glossary-identity-provider>` submits
-to the chain. When you already have an identity, you can create more :ref:`accounts<glossary-account>` with that identity yourself.
+If you are using |mw-gen1| or Desktop Wallet, when you created your :term:`identity`, it came with an :term:`initial account`. The initial account is a special account that the :term:`identity provider` submits
+to the chain. When you already have an identity, you can create more :term:`accounts<account>` with that identity yourself.
 
-If you are using |bw| or |mw-gen2|, no initial account was created when you created your :ref:`identity<glossary-identity>`. You create all :ref:`accounts<glossary-account>` related to your identities.
+If you are using |bw| or |mw-gen2|, no initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -17,7 +17,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
     .. note::
         You can't import accounts that were created on the |mw-gen1|, |mw-gen2|, or |bw|.
 
-    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger-app>`.
+    Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger>`.
 
     #. Go to **Accounts**. You can now see all the accounts that you're the custodian of.
 
@@ -65,6 +65,13 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     16. Select **Finished**. Your new account is now listed along with the other accounts you're the custodian of.
 
+    .. Note::
+
+        To set the currently selected account the default account, click the star icon. Setting this means that this will be the account initially visible when opening the account page.
+
+        .. image:: ../images/desktop-wallet/dw-favorite-account.png
+           :alt: dark account balance area with favorite button highlighted
+
 .. dropdown:: |mw-gen2|
 
     #. Go to the **Accounts** page.
@@ -87,49 +94,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |mw-gen1|
 
-    .. Note::
-
-       It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
-
-    #. Go to the **Accounts** page.
-
-    #. Tap the **+** in the upper right corner.
-
-        .. image:: ../images/mobile-wallet/MW13.png
-            :width: 25%
-
-    #. Enter a name for your new account. Tap **Next**.
-
-        .. image:: ../images/mobile-wallet/MW15.png
-            :width: 25%
-
-    #. Tap the identity you want to use to create the account.
-
-        .. image:: ../images/mobile-wallet/MW16.png
-            :width: 25%
-
-    #. You now have the option to reveal some attributes publicly on the account. Unless you have a good reason to do so, it is recommended not to reveal any attributes.
-
-        - If you want to reveal some attributes, tap **Reveal account attributes**, select the attributes you want to reveal, and then tap **Submit account**.
-        - If you don’t want to reveal any attributes, tap **Submit account**.
-
-        .. image:: ../images/mobile-wallet/MW17.png
-            :width: 25%
-
-    #. Finally, tap **Ok, thanks**.
-
-        .. image:: ../images/mobile-wallet/MW19.png
-            :width: 25%
-
-    Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
-
-    .. Warning::
-        **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
-        **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
-        For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import>`.
-
-    .. Note::
-        To access the **Balance** of the new account, tap the Balance area on the account card or tap |moredetails|.
+    It is no longer possible for users of |mw-gen1| to create new accounts.
 
 .. dropdown:: |bw|
 

@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
 .. _build-smart-contract:
 
-===============================================
-Intialize, build, and deploy the smart contract
-===============================================
+================================================
+Initialize, build, and deploy the smart contract
+================================================
 
 Now you are ready to build your smart contract. You'll be using the ``cis2-nft`` contract template provided by Concordium.
 
@@ -72,7 +72,7 @@ To deploy run the command below:
 
 .. code-block:: console
 
-    concordium-client module deploy dist/cis2-nft/cis2.module.wasm.v1 --sender <YOUR-ADDRESS> --name <YOUR-MODULE-NAME> --grpc-port 10001
+    concordium-client module deploy dist/cis2-nft/cis2.module.wasm.v1 --sender <YOUR-ADDRESS> --name <YOUR-MODULE-NAME> --grpc-port 20001
 
 If the command is successful, you will see something similar to below.
 
@@ -91,7 +91,7 @@ After deploying a contract you have to initialize it. It’s like object-oriente
 
 .. code-block:: console
 
-    concordium-client contract init <YOUR-MODULE-NAME> --sender <YOUR-ADDRESS> --energy 30000  --contract <CONTRACT-NAME> --grpc-ip 127.0.0.1 --grpc-port 10001
+    concordium-client contract init <YOUR-MODULE-NAME> --sender <YOUR-ADDRESS> --energy 30000  --contract <CONTRACT-NAME> --grpc-ip 127.0.0.1 --grpc-port 20001
 
 If successful, you will see something similar to the below.
 

@@ -38,7 +38,7 @@ Install/upgrade and run a node
 
    **Example for Mainnet**
 
-   .. code-block:: console
+   .. code-block:: xml
 
     <!-- Address of the GRPC V2 server. -->
     <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
@@ -50,7 +50,7 @@ Install/upgrade and run a node
 
    **Example for Testnet**
 
-   .. code-block:: console
+   .. code-block:: xml
 
     <!-- Address of the GRPC V2 server. -->
     <key>CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS</key>
@@ -67,9 +67,9 @@ Install/upgrade and run a node
 .. dropdown:: Mainnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of validator credentials.
 
-  #. Go to :ref:`Downloads<downloads>`, and download the latest macOS installer package (.pkg file).
+  #. Go to :ref:`Downloads<node-downloads>`, and download the latest macOS installer package (.pkg file).
 
   #. In the folder where you downloaded the .pkg file, double-click the .pkg file. The **Install Concordium Node** program opens.
 
@@ -107,9 +107,9 @@ Install/upgrade and run a node
 .. dropdown:: Testnet
 
   .. Note::
-    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`configure-baker-macos` for information about how to set the location of baker credentials.
+    See :ref:`change-node-settings` for information about how to change the service configuration settings. See :ref:`baker-macos` for information about how to set the location of validator credentials.
 
-  #. Go to :ref:`Downloads<downloads-testnet>`, and download the latest macOS installer package (.pkg file).
+  #. Go to :ref:`Downloads<testnet-node-downloads>`, and download the latest macOS installer package (.pkg file).
 
   #. In the folder where you downloaded the .pkg file, double-click the .pkg file. The **Install Concordium Node** program opens.
 
@@ -166,9 +166,9 @@ You can also verify that a node is running by connecting it to the Desktop Walle
 
 #. In the Desktop Wallet, go to **Settings**, and then select **Node settings**.
 
-   - If you're running the **mainnet** version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``10000``.
+   - If you're running the **mainnet** version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``20000``.
 
-   - If you're running the **testnet** version of the Desktop Wallet, you must connect to a testnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``10001``.
+   - If you're running the **testnet** version of the Desktop Wallet, you must connect to a testnet node. In the **Address field**, enter ``127.0.0.1`` and in the **Port field** enter ``20001``.
 
 #. Select **Set connection**. If the connection works and the node is running properly, there’s a message saying *Successfully connected*.
 
@@ -180,7 +180,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+:ref:`if so configured<become-a-baker>`, to produce blocks.
 
 However you can also make your node an even better network participant
 by enabling inbound connections. By default, ``concordium-node`` listens
@@ -200,7 +200,8 @@ If you want to change whether the node services start automatically, you have tw
 
 - If you're familiar with using a terminal, the following options are available:
 
-  - Run text prefixed with a ``$`` in a terminal.
+  .. note::
+     The dollar sign (``$``) in a codeblock means that you should run the command that follows the ``$`` in a terminal.
 
   - Enable automatic startup of the *node* by running:
 
@@ -258,12 +259,40 @@ If you want to change whether the node services start automatically, you have tw
 
          $sudo rm "/Library/LaunchDaemons/software.concordium.testnet.node-collector.plist"
 
+.. _node-collector-configuration-macos:
+
+Node collector configuration
+============================
+
+Since version 5.3.2 of the node, the collector uses the GRPC V2 interface. Therefore, in order to run the collector, it is required that the node which the collector connects to has the GRPC V2 interface enabled.
+
+.. Note::
+   If the node is `configured with TLS <https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2>`_, then `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST` must be configured such that it uses the domain of the certificate.
+
+Since the GRPC V2 port is different than the GRPC V1 port, you need to change it in the node configuration:
+
+**Example for Mainnet**
+
+ .. code-block:: xml
+
+    <!-- gRPC host to collect from. -->
+    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
+    <string>http://localhost:20000</string>
+
+**Example for Testnet**
+
+  .. code-block:: xml
+
+    <!-- gRPC host to collect from. -->
+    <key>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</key>
+    <string>http://localhost:20001</string>
+
 .. _configure-baker-macos:
 
-Configure a node as a baker
-===========================
+Configure a node as a validator
+===============================
 
-For information about baking on a MacOS node, see :ref:`baker-macos`.
+For information about validation on a MacOS node, see :ref:`baker-macos`.
 
 View node logs
 ==============
@@ -297,108 +326,39 @@ There are two ways to view the logs:
 Synchronize a node with the network
 ===================================
 
-When you start a node for the first time, it can take a while to synchronize the
-node with the rest of the network, since it has to get all blocks from its
-peers.
+When you start a node for the first time, it can take a while to synchronize
+the node with the rest of the network, since it has to get all blocks from
+its peers. That is why all node distributions since 6.1 come with out of band
+catchup enabled. This will speed up the initial catchup and during out of
+band catchup the node will not have any peers.
 
-You can improve the startup time by downloading the blocks from an out-of-band catchup service
-before starting the node. While it will still take time to process the blocks, it will typically be
-faster than requesting them from peers.
+The out of band catchup can be kept enabled even after the node is caught up,
+but is not necessary. If you wish to disable it do the the following:
 
-.. note::
-
-   Catchup data for mainnet does not work with a testnet node and vice versa.  Make sure to use the
-   correct URL to the block file index for your node.
-
-#. Specify the URL to the block file index in the service file:
+#. Remove the environment variables from the configuration file:
 
    - For mainnet:
 
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section::
+     - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"`` as an
+       administrator and remove the following in the *EnviromentVariables* section:
 
-       <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
-       <string>https://catchup.mainnet.concordium.software/blocks.idx</string>
+       .. code-block:: xml
+
+         <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
+         <string>https://catchup.mainnet.concordium.software/blocks.idx</string>
 
    - For testnet:
 
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section::
+     - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"`` as an
+       administrator and remove the following in the *EnviromentVariables* section:
 
-       <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
-       <string>https://catchup.testnet.concordium.com/blocks.idx</string>
+       .. code-block:: xml
 
+         <key>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</key>
+         <string>https://catchup.testnet.concordium.com/blocks.idx</string>
 
 #. Restart the appropriate node by running the application **Concordium Node Stop [Mainnet/Testnet]** (if running) and then
    **Concordium Node Start [Mainnet/Testnet]**.
-
-#. Go to the mainnet or testnet dashboard to monitor when the node has caught up with its
-   peers on the blockchain. You do so by comparing the finalized length of the
-   chain with the length of your node. If they match, your node has caught up.
-
-For node versions 4.3.0 or earlier
-----------------------------------
-
-.. note::
-
-   A block file for mainnet does not work with a testnet node and vice versa.
-   Make sure to download the appropriate file for your node.
-
-Download the file with the blocks from the following addresses:
-
-- Mainnet: https://catchup.mainnet.concordium.software/blocks_to_import.mdb
-
-- Testnet: https://catchup.testnet.concordium.com/blocks_to_import.mdb
-
-The file is downloaded to your default download location.
-
-#. Move the file to the node's data folder:
-
-   - For mainnet:
-
-     .. code-block:: console
-
-        $sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Mainnet/Data"
-
-     (replacing ``<username>`` with your actual username).
-
-   - For testnet:
-
-     .. code-block:: console
-
-        $sudo cp "/Users/<username>/Downloads/blocks_to_import.mdb" "/Library/Application Support/Concordium Node/Testnet/Data"
-
-     (replacing ``<username>`` with your actual username).
-
-#. Specify the block file path in the service file:
-
-   - For mainnet:
-
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section::
-
-       <key>CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</key>
-       <string>/Library/Application Support/Concordium Node/Mainnet/Data/blocks_to_import.mdb</string>
-
-   - For testnet:
-
-     - Edit ``/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist`` as an
-       administrator and add the following in the *EnviromentVariables* section::
-
-       <key>CONCORDIUM_NODE_CONSENSUS_IMPORT_BLOCKS_FROM</key>
-       <string>/Library/Application Support/Concordium Node/Testnet/Data/blocks_to_import.mdb</string>
-
-
-#. Restart the appropriate node by running the application **Concordium Node Stop [Mainnet/Testnet]** (if running) and then
-   **Concordium Node Start [Mainnet/Testnet]**.
-
-#. Open the appropriate service file again, remove the lines you just added, and then save
-   the file. This ensures that these blocks will not be processed again the next
-   time the node is restarted.
-
-#. Go to the mainnet or testnet dashboard to monitor when the node has caught up with its
-   peers on the blockchain. You do so by comparing the finalized length of the
-   chain with the length of your node. If they match, your node has caught up.
 
 Uninstall a macOS node
 ======================

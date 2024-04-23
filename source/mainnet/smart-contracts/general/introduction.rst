@@ -5,12 +5,15 @@
     - What are not the use cases
 
 .. _introduction:
+.. include:: ../../variables.rst
 
 ===============================
 Introduction to smart contracts
 ===============================
 
-A :ref:`smart contract<glossary-smart-contract>` is a user-supplied piece of code submitted to the Concordium
+Already know what smart contracts are? Go to the :ref:`quick guide<sc-quick-start>` to start building smart contracts on Concordium right away.
+
+A :term:`smart contract` is a user-supplied piece of code submitted to the Concordium
 blockchain, used to define behavior that is not directly part of the core
 protocol. Smart contracts are executed by nodes in the Concordium network
 according to predefined rules. Their execution is fully transparent, and all
@@ -20,26 +23,51 @@ available information.
 A smart contract can receive, hold and send CCD, it is able to observe some
 aspects of the chain, and maintain its own state. Smart contracts are always
 executed as a response to **external** actions, e.g., an account sending a
-message. In practice smart contracts will often be a small part of a larger
+message. In practice, smart contracts will often be a small part of a larger
 system, combining on and off-chain functionality. An example of off-chain
 functionality could be a server that invokes the smart contract based on
 data from the real-world, such as prices of stocks, or weather information.
 
-What are smart contracts for?
-=============================
+.. tabs::
 
-Smart contracts can reduce the needed amount of trust in third-parties, in some cases
-removing the need for a trusted third-party, in other cases reducing their
-capabilities and thus reducing the amount of trust needed in them.
+    .. tab:: What are smart contracts for?
 
-Because smart contracts are executed completely transparently, in a way that
-anybody with access to a node can verify, they can be very useful for ensuring
-agreement between parties.
+        Smart contracts can reduce the needed amount of trust in third-parties, in some cases
+        removing the need for a trusted third-party, in other cases reducing their
+        capabilities and thus reducing the amount of trust needed in them.
+
+        Because smart contracts are executed completely transparently, in a way that
+        anybody with access to a node can verify, they can be very useful for ensuring
+        agreement between parties.
+
+    .. tab:: What are smart contracts *not* for?
+
+        Smart contracts are a very exciting technology and people are still finding new
+        ways to take advantage of them.
+        However, there are some cases where smart contracts are not a good solution.
+
+        One of the key advantages of smart contracts is the trust in the code
+        execution, and to achieve this, a large number of nodes in the blockchain network
+        have to execute the same code and ensure agreement of the result.
+        Naturally, this becomes expensive compared to running the same code on one node
+        in some cloud service.
+
+        In cases where a smart contract depends on heavy calculations, it might be
+        possible moving this calculation out of the smart contract and have the smart
+        contract execute only some key parts of the computation, using cryptographic
+        techniques to ensure the other parts are executed correctly.
+
+        Finally, it is important to remember that smart contracts have no privacy and
+        **everything** the smart contract has access to is accessible to everybody else
+        on the Concordium network, meaning it is difficult to handle sensitive data in a
+        smart contract. In some cases it might be possible to use cryptographic tools to
+        not work with the data directly, but rather have the smart contracts work with
+        derived notions such as encryptions and commitments, which hide the actual data.
 
 .. _auction:
 
 Auction smart contract example
-------------------------------
+==============================
 
 A use case for smart contracts could be for holding an auction; here you program
 the smart contract to accept different bids from anyone and have it keep track
@@ -55,67 +83,43 @@ obligation, or some way for the highest bidder to file a complaint. Smart
 contracts cannot resolve these real-world issues automatically, and the best
 solution is likely going to depend on the specifics of the auction.
 
-What are smart contracts *not* for?
-===================================
-
-Smart contracts are a very exciting technology and people are still finding new
-ways to take advantage of them.
-However, there are some cases where smart contracts are not a good solution.
-
-One of the key advantages of smart contracts is the trust in the code
-execution, and to achieve this, a large number of nodes in the blockchain network
-have to execute the same code and ensure agreement of the result.
-Naturally, this becomes expensive compared to running the same code on one node
-in some cloud service.
-
-In cases where a smart contract depends on heavy calculations, it might be
-possible moving this calculation out of the smart contract and have the smart
-contract execute only some key parts of the computation, using cryptographic
-techniques to ensure the other parts are executed correctly.
-
-Finally, it is important to remember that smart contracts have no privacy and
-**everything** the smart contract has access to is accessible to everybody else
-on the Concordium network, meaning it is difficult to handle sensitive data in a
-smart contract. In some cases it might be possible to use cryptographic tools to
-not work with the data directly, but rather have the smart contracts work with
-derived notions such as encryptions and commitments, which hide the actual data.
-
-Life cycle of a smart contract
-==============================
-
-A smart contract is first deployed to the chain as part of a :ref:`contract
-module <contract-module>`. After this a smart contract can be *initialized* to
-obtain a :ref:`smart contract instance <contract-instances>`. Finally a smart
-contract instance can be repeatedly updated according to its own logic.
-
-.. image:: images/smart-contract-lifecycle.png
-    :width: 100%
-    :alt: flow diagram with different actions
-
-#. In ``cargo-concordium`` :ref:`run the init command<setup-contract>` to start a new project.
-
-#. Edit your contract, including the entrypoints, functions, and parameters necessary to execute what is needed. If :ref:`using a schema<build-schema>`, make sure that the contract is prepared for this. You can also run your code off-chain for testing purposes.
-
-#. In ``cargo-concordium`` :ref:`run the build command<compile-module>` to build the Wasm module that can be deployed on chain.
-
-#. In ``concordium-client`` :ref:`run the deploy command<deploy-module>` to deploy the Wasm module. This makes the contract available on chain.
-
-#. In ``concordium-client`` :ref:`run the init command<initialize-contract>` to initialize the contract on chain. This gives you a new instance of the smart contract with a fresh state.
-
-#. In ``concordium-client`` you can then :ref:`run invoke<invoke-instance>` to simulate your contract and see how much energy it uses or to call a view entrypoint which returns some data derived from the contract state; use :ref:`show<inspect-instance>` to see the schema or parameters in the contract, or :ref:`update<interact-instance>` to execute transactions and update the state.
-
 Next steps
 ==========
 
-Continue reading about :ref:`contract modules<contract-module>`, :ref:`contract instances<contract-instances>`, and :ref:`contract schemas<contract-schema>`.
+Additional reading
+------------------
 
-Also, read the :ref:`Smart contracts best practices<sc-best-practices>`.
+For information about the lifecycle of smart contracts, see :ref:`Lifecycle of a smart contract<sc-lifecycle>`. You can also continue reading about :ref:`contract modules<contract-module>`, :ref:`contract instances<contract-instances>`, and :ref:`contract schemas<contract-schema>`. Also, read the :ref:`Smart contracts best practices<sc-development-best-practices>`.
+
+.. _sc-dev-tools:
+
+Smart contract development tools
+--------------------------------
+
+Concordium provides a number of tools to simplify the smart contract creation and deployment process.
+
+The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
+
+You can watch a video about how to use the VSCode extension.
+
+.. raw:: html
+
+    <iframe src="https://www.youtube.com/embed/9qjcsGDeveg?si=zGDkjMAdP5JjRMd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The :ref:`integration testing library<integration-test-contract>` simplifies testing of your smart contracts before deployment.
+
+The `main library for Smart contract development <https://crates.io/crates/concordium-std>`_ can be found on crates.io.
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
+The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript or TypeScript clients for the Concordium blockchain.
 
 .. toctree::
    :hidden:
    :maxdepth: 1
    :caption: General
 
+   contract-lifecycle
    contract-module
    contract-instances
    contract-schema

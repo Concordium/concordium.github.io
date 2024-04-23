@@ -1,4 +1,4 @@
-.. _eSaeling:
+.. _eSealing:
 
 .. image:: eSealing.png
    :width: 40%

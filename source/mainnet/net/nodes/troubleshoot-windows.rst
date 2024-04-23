@@ -6,6 +6,13 @@ Troubleshoot a node running on Windows
 
 This guide describes how to troubleshoot a node running on Windows on the Concordium network.
 
+Event viewer
+============
+
+Use the Event viewer to get more information about the problem. In the **Search** bar, search for **Event viewer**. In the **Windows Logs** click **Application**. Use the warnings and errors to diagnose the issue.
+
+.. image:: ../images/run-node/windows-event-viewer.png
+
 Node crash or database corruption
 =================================
 
@@ -21,6 +28,7 @@ The database directory should contain matching pairs of ``blockstate-$i.dat`` an
 
 .. code-block:: console
 
+   accountmap
    blockstate-0.dat
    blockstate-1.dat
    blockstate-2.dat

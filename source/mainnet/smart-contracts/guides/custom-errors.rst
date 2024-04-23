@@ -13,11 +13,11 @@ Defining and deriving
 Custom error codes help communicate why a contract rejects and can be returned
 both during initialization and during updates.
 
-On-chain, smart contracts return a numeric error code and an optional serialized
-return value when rejecting. This is also the case when using a custom error type.
+On-chain, smart contracts return `a numeric error code and an optional serialized
+return value when rejecting <https://docs.rs/concordium-std/latest/concordium_std/#signalling-errors>`__. This is also the case when using a custom error type.
 Therefore, a mapping from the custom error type to ``Reject``, in the
 form of an implementation of ``From<MyError> for Reject``, is needed.
-You can derive the implementation automatically with ``#[derive(Reject)]`` if
+You can derive the implementation automatically with `#[derive(Reject)] <https://docs.rs/concordium-std/latest/concordium_std/derive.Reject.html>`__ if
 the type also implements ``Serial`` (also derivable). The ``Serial`` instance is
 needed because the whole data type is serialized and included as the optional
 return value.
@@ -48,15 +48,15 @@ Return custom errors, as you would with any other error type:
 .. code-block:: rust
 
    #[init(contract = "my_contract")]
-   fn contract_init_my<S: HasStateApi>(
-       _ctx: &impl HasInitContext,
-       _state_builder: &mut StateBuilder<S>,
+   fn contract_init_my(
+       _ctx: &InitContext,
+       _state_builder: &mut StateBuilder,
    ) -> Result<State, MyError> { Err(MyError::ErrOne) }
 
    #[receive(contract = "my_contract", name = "my_receive")]
-   fn contract_receive_my<S: HasStateApi>(
-       _ctx: &impl HasReceiveContext,
-       _host: &impl HasHost<State, StateApiType = S>
+   fn contract_receive_my(
+       _ctx: &ReceiveContext,
+       _host: &Host<State>
    ) -> Result<MyReturnValue, MyError> { Err(MyError::ErrTwo) }
 
 .. note::

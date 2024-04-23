@@ -7,22 +7,26 @@ Concordium smart contracts quick start guide
 
 This guide is intended to be used by experienced developers who want to get up and running quickly with a smart contract deployed on chain with which they can interact.
 
-Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-best-practices>`.
+Before starting, it is a good idea to read the :ref:`Smart contracts best practices<sc-development-best-practices>`.
 
 .. dropdown:: Step 1 - Set up developer environment
 
     Download and install the following tools in this order:
 
     #. `rustup`_
-    #. :ref:`cargo-concordium<cargo-concordium-testnet>`
-    #. :ref:`concordium-client<concordium-node-and-client-download-testnet>`
-    #. :ref:`a node<concordium-node-and-client-download-testnet>` for deploying and interacting
+    #. :ref:`cargo-concordium<concordium-node-and-client-download>`
+    #. :ref:`concordium-client<concordium-node-and-client-download>`
 
     For more detailed information, see :ref:`Install tools for development<setup-tools>`.
 
 .. dropdown:: Step 2 - Set up smart contract project
 
     You can choose to start a smart contract project from a `template <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ or from scratch.
+
+    .. tip::
+
+       Building a DApp as well? Have a look at the `DApp starter template <https://github.com/Concordium/concordium-dapp-starter>`__!
+
 
     **From a template**
 
@@ -100,6 +104,10 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
    debug information.
 
 .. dropdown:: Step 5 - Deploy your smart contract
+
+    .. note::
+
+        To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__ instead of the process below. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
 
     To deploy a smart contract module ``my_module.wasm.v1`` using the account with name account-name, run the following command:
 

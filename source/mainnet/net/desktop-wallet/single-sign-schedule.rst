@@ -34,11 +34,13 @@ schedule and an explicit schedule.
 5. Select the recipient and select **Continue**.
 
    .. image:: ../images/desktop-wallet/dw-send-ccd-schedule.png
+      :alt: transaction screen with amount for scheduled transfer
 
 Option 1: Create a regular interval schedule
 --------------------------------------------
 
 .. image:: ../images/desktop-wallet/dw-send-ccd-regular-interval.png
+   :alt: transaction screen with amount for scheduled transfer and transfer options
 
 #.  Select **Regular interval** in **Schedule type**.
 
@@ -68,9 +70,11 @@ Option 2: Create an explicit schedule
 
 .. image:: ../images/desktop-wallet/dw-send-ccd-explicit-schedule1.png
         :width: 35%
+        :alt: screen with amount for explicit transfer
 
 .. image:: ../images/desktop-wallet/dw-send-ccd-explicit-schedule2.png
          :width: 35%
+         :alt: screen with amount for explicit transfer and schedule
 
 #. Select **Explicit schedule**. For each release you want in the schedule, you have to specify the amount and the release time.
 

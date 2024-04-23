@@ -23,9 +23,9 @@ Once you have set up the tools needed you are ready to create your smart contrac
 
 .. code-block:: console
 
-    cargo concordium init
+    $cargo concordium init
 
-Select the ``Default`` option from the menu.
+Select the ``default`` option from the menu.
 
 .. image:: images/select-default.png
     :width: 100%
@@ -62,9 +62,9 @@ Add the counter to the state and i8 for integer. Then add the values ``OwnerErro
 
     /// Init function that creates a new smart contract.
     #[init(contract = "counter")]
-    fn init<S: HasStateApi>(
-        _ctx: &impl HasInitContext,
-        _state_builder: &mut StateBuilder<S>,
+    fn init(
+        _ctx: &InitContext,
+        _state_builder: &mut StateBuilder,
     ) -> InitResult<State> {
         // Your code
 
@@ -82,19 +82,19 @@ Then change the update function as described below. Remember that input needs to
 .. code-block:: rust
 
     type IncrementVal = i8;
-    /// Receive function. The input parameter is the increment value `i8`.
+    /// Receive function. The input parameter is the `IncrementVal`.
     ///  If the account owner does not match the contract owner, the receive function will throw [`Error::OwnerError`].
     ///  If the number to increment by is not positive or is zero, the receive function will throw [`Error::IncrementError`].
     #[receive(
         contract = "counter",
         name = "increment",
-        parameter = "i8",
+        parameter = "IncrementVal",
         error = "Error",
         mutable
     )]
-    fn increment<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State, StateApiType = S>,
+    fn increment(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
     ) -> Result<(), Error> {
         // Your code
 
@@ -120,13 +120,13 @@ Add a new mutable function to implement decrement with a similar approach. It wi
     #[receive(
         contract = "counter",
         name = "decrement",
-        parameter = "i8",
+        parameter = "IncrementVal",
         error = "Error",
         mutable
     )]
-    fn decrement<S: HasStateApi>(
-        ctx: &impl HasReceiveContext,
-        host: &mut impl HasHost<State, StateApiType = S>,
+    fn decrement(
+        ctx: &ReceiveContext,
+        host: &mut Host<State>,
     ) -> Result<(), Error> {
         // Your code
 
@@ -151,9 +151,9 @@ The view function will return only the counters value so you need to update its 
 
     /// View function that returns the content of the state.
     #[receive(contract = "counter", name = "view", return_value = "i8")]
-    fn view<'a, 'b, S: HasStateApi>(
-        _ctx: &'a impl HasReceiveContext,
-        host: &'b impl HasHost<State, StateApiType = S>,
+    fn view<'a, 'b>(
+        _ctx: &'a ReceiveContext,
+        host: &'b Host<State>,
     ) -> ReceiveResult<i8> {
         Ok(host.state().counter)
     }
@@ -165,7 +165,7 @@ Create a ``dist`` folder to keep the schema output file and Wasm compiled contra
 
 .. code-block:: console
 
-    cargo concordium build --out dist/module.wasm.v1 --schema-out dist/schema.bin
+    $cargo concordium build --out dist/module.wasm.v1 --schema-out dist/schema.bin
 
 .. image:: images/build.png
     :width: 100%
@@ -174,7 +174,7 @@ Deploy it with the command below.
 
 .. code-block:: console
 
-    concordium-client module deploy dist/module.wasm.v1 --sender <YOUR-ACCOUNT> --name counter --grpc-port 10001
+    $concordium-client module deploy dist/module.wasm.v1 --sender <YOUR-ACCOUNT> --name counter --grpc-port 20001
 
 .. image:: images/deploy.png
     :width: 100%
@@ -183,7 +183,7 @@ Initialize it to create your contract instance, so you are ready to invoke the f
 
 .. code-block:: console
 
-    concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract counter --grpc-port 10001
+    $concordium-client contract init <YOUR-MODULE-HASH> --sender <YOUR-ADDRESS> --energy 30000 --contract counter --grpc-port 20001
 
 .. image:: images/initialize.png
     :width: 100%
@@ -198,7 +198,7 @@ First, check the initial state of the contract.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --schema dist/schema.bin --grpc-port 10001
+    $concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --schema dist/schema.bin --grpc-port 20001
 
 Since you just initialized the contract it is 0.
 
@@ -212,7 +212,7 @@ Create a JSON file that holds your operator that will be given as input to the f
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint increment --parameter-json <PATH-TO-JSON> --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 10001
+    $concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint increment --parameter-json <PATH-TO-JSON> --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
 
 Start by testing with your conditions. First, try another account other than the owner of the contract since you want that only the owner can call this function.
 

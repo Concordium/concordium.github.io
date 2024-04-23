@@ -12,6 +12,10 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 .. warning::
    You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
 
+.. Note::
+
+   If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.
+
 .. dropdown:: Desktop Wallet
 
    Before you start, you need a LEDGER device that's set up and ready for use.
@@ -49,7 +53,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    #. Press the right button, and then press both buttons to sign the identity provider information.
 
-   #. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a finalized block on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
+   #. In the Desktop Wallet, the **New identity** page is displayed. Enter the identity verification information and select **Submit**. This information will vary depending on the identity provider. The identity provider submits the identity to the blockchain. When the initial account is created in a block that is final on the blockchain, the identity provider confirms the identity, and after confirmation, a green check mark is displayed next to the Concordium logo on the identity.
 
    #. Select **Finished**. When you've created more accounts, you can recognize you initial account by the text **(identity)** next to the name.
 
@@ -58,7 +62,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |mw-gen2|
 
-   You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen2|. You do this from the **Identities** page.
+   You can submit requests for additional :term:`identities<identity>` in the |mw-gen2|. You do this from the **Identities** page.
 
    #. Tap |wallet-settings|.
 
@@ -86,49 +90,11 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |mw-gen1|
 
-   .. Note::
-
-      It is no longer possible for users of |mw-gen1| on an Android device to create new identities.
-
-   You can submit requests for additional :ref:`identities<glossary-identity>` in the |mw-gen1|. You do this from the **Identities** page.
-
-   #. Go to the |morepage| page.
-
-   #. Tap **Your identity cards** page.
-
-   #. Tap the **+** in the upper right corner.
-
-   #. Enter a name for your initial account. This name is only stored locally in the app and is only known by you. Tap **Continue**.
-
-   #. Enter a name for your identity. Again, this name is only stored locally in the app and only known by you. Tap **Continue to identity providers**.
-
-
-      .. image:: ../images/mobile-wallet/MW10.png
-         :width: 25%
-
-   #. Select a third-party identity provider from the list. An external web page opens within the app.
-
-      .. image:: ../images/mobile-wallet/MW11.png
-         :width: 25%
-
-   #. Enter the information requested by the third-party identity provider.  The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
-
-   #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
-
-      .. image:: ../images/mobile-wallet/MW12.png
-         :width: 25%
-
-   .. Warning::
-      **When your identity and initial account has been verified, backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
-      **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
-      For more information, see :ref:`Make a backup of identities and accounts in Mobile Wallet<export-import>`.
-
-   .. Note::
-      To access the **Balance** of the new account, tap the Balance area on the account card or tap More.
+   It is no longer possible for users of |mw-gen1| to create new identities.
 
 .. dropdown:: |bw|
 
-   You can submit requests for additional :ref:`identities<glossary-identity>` in the |bw|. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it. If you do not have any identities, you can click **Request identity**.
+   You can submit requests for additional :term:`identities<identity>` in the |bw|. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it. If you do not have any identities, you can click **Request identity**.
 
    .. image:: ../images/browser-wallet/id-page-no-id.png
       :width: 25%

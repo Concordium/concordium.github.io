@@ -5,7 +5,9 @@
 Concordium Windows node runner service configuration
 ====================================================
 
-The Concordium Node Runner Service ("service" for short) is configured using a TOML file. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.)
+You can change the mainnet or testnet node configuration with the Configure Concordium Node Service. The Concordium Node Runner Service ("service" for short) is configured using a TOML file. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.)
+
+To run the app, search for *configure concordium node* in the **Search** bar, and then select **Configure Concordium Node Service**. If you see a message saying *Do you want to allow this app to make changes to your device?*, select **Yes**. The configuration file opens in Notepad or your default editor.
 
 The service can be configured to run multiple nodes. Each node has its own section **[node.**\ *nodeid*\ **]** (where *nodeid* is a different identifier for each node), which defines the settings for that node.
 
@@ -21,7 +23,7 @@ name
 
 (string; default: *nodeid*)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    name = "Mainnet Node"
 
@@ -32,7 +34,7 @@ enabled
 
 (boolean; default: true)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    enabled = false
 
@@ -43,7 +45,7 @@ bootstrap_nodes
 
 (string; required; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    bootstrap_nodes = "bootstrap.testnet.concordium.com:8888"
 
@@ -54,7 +56,7 @@ config_dir
 
 (string; required)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    config_dir = 'C:\ProgramData\Concordium\Node Runner\mainnet\config'
 
@@ -65,7 +67,7 @@ data_dir
 
 (string; required)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    data_dir = 'C:\ProgramData\Concordium\Node Runner\mainnet\data'
 
@@ -76,18 +78,18 @@ baker_credentials
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
-   baker_credentials = 'baker-credentials.json'
+   baker_credentials = 'validator-credentials.json'
 
-The path to a baker credentials file if the node is to run as a baker.
+The path to a validator credentials file if the node is to run as a validator.
 
 listen.port
 -----------
 
 (integer; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    listen.port = 8888
 
@@ -98,7 +100,7 @@ listen.address
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    listen.address = "0.0.0.0"
 
@@ -109,7 +111,7 @@ rpc.enabled
 
 (boolean; default: true; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    rpc.enabled = true
 
@@ -120,18 +122,18 @@ rpc.port
 
 (integer; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
-   rpc.port = 10000
+   rpc.port = 20000
 
-The port on which the node accepts incoming GRPC requests. This is the port that the desktop wallet and ``concordium-client`` use to connect to the node. If not specified, this uses the default determined by ``concordium-node.exe`` (which is **10000**). Note that multiple nodes cannot listen on the same port, and a node will fail to start if the port is already in use.
+The port on which the node accepts incoming GRPC requests. This is the port that the desktop wallet and ``concordium-client`` use to connect to the node. If not specified, this uses the default determined by ``concordium-node.exe`` (which is **20000**). Note that multiple nodes cannot listen on the same port, and a node will fail to start if the port is already in use.
 
 rpc.address
 -----------
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    rpc.address = "127.0.0.1"
 
@@ -142,7 +144,7 @@ grpc2.port
 
 (integer; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    grpc2.port = 20000
 
@@ -158,7 +160,7 @@ grpc2.address
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    rpc.address = "127.0.0.1"
 
@@ -176,7 +178,7 @@ rpc.token
 
 (string; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    rpc.token = "rpcadmin"
 
@@ -187,7 +189,7 @@ node.exe
 
 (string; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    node.exe = 'C:\Program Files\Concordium\Node\concordium-node.exe'
 
@@ -198,7 +200,7 @@ node.env.*
 
 (string; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    node.env.CONCORDIUM_NODE_CONSENSUS_TRANSACTIONS_PURGING_DELAY = "300"
 
@@ -206,12 +208,30 @@ Environment variables to be set when starting the node. This can be used to set 
 
 Note that a number of environment variables are already set by configuration options, so this should only be used where there is no explicit configuration option provided.
 
+After version 6.1 the node.env.* variable for out-of-band-catchup is now
+enabled by default. Having this variable set means that nodes can synchronize
+faster with the rest of the network. This improves performance and gets your
+node up and running more quickly. It can still be disabled, by removing the
+following lines for Mainnet and Testnet respectively.
+
+For Mainnet:
+
+.. code-block:: toml
+
+   node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.mainnet.concordium.software/blocks.idx'
+
+For Testnet:
+
+.. code-block:: toml
+
+   node.env.CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM = 'https://catchup.testnet.concordium.com/blocks.idx'
+
 node.args
 ---------
 
 (array of strings; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    node.args = ["--transaction-keep-alive", "600"]
 
@@ -224,7 +244,7 @@ collector.enabled
 
 (boolean; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    collector.enabled = true
 
@@ -235,7 +255,7 @@ collector.url
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    collector.url = "https://dashboard.testnet.concordium.com/nodes/post"
 
@@ -246,7 +266,7 @@ collector.node_name
 
 (string; default: name)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    collector.node_name = "my testnet node"
 
@@ -257,7 +277,7 @@ collector.log_file
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    collector.log_file = "collector.log"
 
@@ -268,7 +288,7 @@ collector.exe
 
 (string; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    collector.exe = 'C:\Program Files\Concordium\Node\node-collector.exe'
 
@@ -279,9 +299,9 @@ collector.env.*
 
 (string; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
-   collector.env.CONCORDIUM_NODE_COLLECTOR_ARTIFICIAL_START_DELAY = = "3000"
+   collector.env.CONCORDIUM_NODE_COLLECTOR_ARTIFICIAL_START_DELAY = "3000"
 
 Environment variables to be set when starting the node collector. This can be used to set configuration options that do not have a dedicated setting in the configuration file. For instance, the above example sets the ``CONCORDIUM_NODE_COLLECTOR_ARTIFICIAL_START_DELAY`` environment variable, which determines how long the collector waits after starting before it begins querying the node (in milliseconds).
 
@@ -292,7 +312,7 @@ collector.args
 
 (array of strings; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    collector.args = ["--collect-interval", "2000"]
 
@@ -305,7 +325,7 @@ log.level
 
 (string; optional; common)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    log.level = "info"
 
@@ -316,7 +336,7 @@ log.path
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    log.path = 'node.log'
 
@@ -327,7 +347,7 @@ log.roll.size
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    log.roll.size = "200MB"
 
@@ -338,7 +358,7 @@ log.roll.count
 
 (integer; optional; default: 0)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    log.roll.count = 5
 
@@ -349,7 +369,7 @@ log.roll.pattern
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    log.roll.pattern = 'node.{}.log.gz'
 
@@ -362,7 +382,7 @@ log.config
 
 (string; optional)
 
-.. code-block:: TOML
+.. code-block:: toml
 
    log.config = 'logconfig.toml'
 

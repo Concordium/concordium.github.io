@@ -8,9 +8,9 @@ Deciding between the wallets
 Why you need a wallet
 =====================
 
-You need a :ref:`wallet<glossary-wallet>` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :term:`wallet` to interact with the Concordium blockchain and to manage your CCD. Currently, there are four first party wallets available: the Concordium Desktop Wallet, the |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
-The wallets are developed by Concordium Software and can only be used to hold :ref:`CCD<glossary-CCD>`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
+The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
 No import of identities and accounts from one wallet to another
 ===============================================================
@@ -26,17 +26,17 @@ Which wallet is best for you?
 
 The wallets work on two different environments: the Desktop Wallet on a computer, the |bw| on any device with a web browser, and |mw-gen1| and |mw-gen2| on a phone. The |mw-gen1| and |mw-gen2| are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a LEDGER device.
 
-- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-Ledger-app>` device, or want to create multi-signature transactions. Desktop wallet requires a node. If you plan to become a baker, Concordium recommends the Desktop Wallet because of the extra security of the LEDGER device.
+- Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-ledger>` device, or want to create multi-signature transactions. Desktop wallet requires a node.
 
-- |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a baker), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
+- |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a validator), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
 
-- |mw-gen1|: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen1| does not require a node (unless you are a baker), and you don’t need a LEDGER device. Requires you to make backups regularly.
+- |mw-gen1|: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen1| does not require a node (unless you are a validator), and you don’t need a LEDGER device. Requires you to make backups regularly.
 
-- |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer or device and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.
+- |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.
 
 .. Note::
 
-   If you are a new mobile wallet user, you must use the |mw-gen2|. It is no longer possible for users of |mw-gen1| on an Android device to create new accounts.
+   If you are a new mobile wallet user, you must use the |mw-gen2|. It is no longer possible for users of |mw-gen1| to create new accounts.
 
 The following provides more details on the differences between the wallets.
 
@@ -74,7 +74,9 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 What are the requirements for each wallet?
 ==========================================
 
-- |mw-gen1| or |mw-gen2|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+- |mw-gen1|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+
+- |mw-gen2|: you’ll need an iPhone running iOS 15 or later or an Android phone running Android 8 or later.
 
 - |bw|: you'll need a device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
 
@@ -93,9 +95,13 @@ The following table lists the major features of each wallet.
       - |mw-gen1|
       - |mw-gen2|
       - |bw|
+   *  - Must run on a computer
+      - Runs only on mobile phone
+      - Runs only on mobile phone
+      - Must run on a computer
    *  - Runs on MacOS, Windows, Linux
       - Runs on iOS 13 or later, Android 8 or later
-      - Runs on Android 8 or later
+      - Runs on iOS 15 or later, Android 8 or later
       - Runs on Chrome, Brave, Opera, Edge
    *  - Secured by password and a LEDGER device
       - Secured by password and biometrics
@@ -125,14 +131,14 @@ The following table lists the major features of each wallet.
       - Creation of identities
       - Creation of identities
       - Creation of identities
-   *  - Creation and management of baker accounts
-      - Creation and management of baker accounts. Rewards are visible in the wallet.
-      - No creation and management of baker accounts.
-      - No creation and management of baker accounts.
+   *  - Creation and management of validator accounts
+      - Creation and management of validator accounts. Rewards are visible in the wallet.
+      - Creation and management of validator accounts. Rewards are visible in the wallet.
+      - Creation and management of validator accounts. Rewards are visible in the wallet.
    *  - A node is required
-      - A node is not needed unless baking
-      - A node is not needed unless baking
-      - A node is not needed unless baking
+      - A node is not needed unless validator
+      - A node is not needed unless validator
+      - A node is not needed unless validator
    *  - Cannot connect to dApps
       - Cannot connect to dApps
       - Can connect to dApps
@@ -140,7 +146,7 @@ The following table lists the major features of each wallet.
    *  - Cannot recover in other wallet types
       - Cannot recover in other wallet types
       - Can recover in |mw-gen2| and |bw|
-      - Can reover in |bw| and |mw-gen2|
+      - Can recover in |bw| and |mw-gen2|
 
 Next steps
 ==========
