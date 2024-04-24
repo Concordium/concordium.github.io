@@ -143,9 +143,13 @@ Note that when the transaction has been signed anyone with the signature and the
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            ...
+
 
 ++++++++++++++++++++++++++++++++++++++++++++++++
 Send an account transaction to a Concordium node

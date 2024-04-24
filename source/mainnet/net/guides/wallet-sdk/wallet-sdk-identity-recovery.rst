@@ -197,6 +197,9 @@ The next step is to send the generated identity recovery request to the associat
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            ...

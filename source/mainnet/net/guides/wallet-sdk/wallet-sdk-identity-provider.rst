@@ -97,6 +97,9 @@ Here is an example of how the list of identity providers can be retrieved from t
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            ...

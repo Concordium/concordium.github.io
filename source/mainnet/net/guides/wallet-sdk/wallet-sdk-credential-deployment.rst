@@ -180,9 +180,12 @@ The following example demonstrates how a credential deployment transaction is cr
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            ...
 
 ++++++++++++++++++++++++++++++++++++++++
 Sign a credential deployment transaction

@@ -140,9 +140,12 @@ The first step is to create the actual identity request. To do this, you need th
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            ...
 
 ++++++++++++++++++++++++
 Send an identity request
