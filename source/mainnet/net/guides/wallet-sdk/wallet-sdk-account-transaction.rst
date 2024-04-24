@@ -180,7 +180,7 @@ Note that when the transaction has been signed anyone with the signature and the
             }
 
             /// Construct and sign transfer transaction.
-            public func makeTransfer(
+            func makeTransfer(
                 _ account: Account,
                 _ amount: MicroCCDAmount,
                 _ receiver: AccountAddress,

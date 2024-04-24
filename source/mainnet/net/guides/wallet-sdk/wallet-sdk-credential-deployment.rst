@@ -197,7 +197,7 @@ The following example demonstrates how a credential deployment transaction is cr
             let anonymityRevocationThreshold = RevocationThreshold(2)
             let expiry = TransactionTime(9_999_999_999)
 
-            /// Perform account creation based on the inputs above.
+            /// Perform account creation (on recovered identity) based on the inputs above.
             func createAccount(client: NodeClient) async throws {
                 let seed = try decodeSeed(seedPhrase, network)
                 let walletProxy = WalletProxy(baseURL: walletProxyBaseURL)
