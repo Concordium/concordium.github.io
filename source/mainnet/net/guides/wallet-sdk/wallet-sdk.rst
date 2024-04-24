@@ -45,6 +45,9 @@ Below, you can find a link to the SDK package for your chosen technology, and an
         | Working example implementation of a CLI tool for macOS
         | https://github.com/Concordium/concordium-swift-sdk/tree/main/examples/CLI
 
+        | Code snippets used in this documentation
+        | https://github.com/Concordium/concordium-swift-sdk/tree/main/examples/DocSnippets
+
 .. toctree::
     :hidden:
     :maxdepth: 2
