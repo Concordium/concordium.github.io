@@ -73,6 +73,8 @@ Starting a new project on the Concordium blockchain? Have a look at the `dApp st
 
 .. dropdown:: Track and Trace
 
+    `Demo front end <https://trackntrace.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
     `Smart contract <https://github.com/Concordium/concordium-dapp-examples/tree/main/trackAndTrace/smart-contract>`__
 
     `Front end and back end code <https://github.com/Concordium/concordium-dapp-examples/tree/main/trackAndTrace>`__
