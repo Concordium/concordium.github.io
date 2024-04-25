@@ -50,9 +50,9 @@ There are other allocators available, for example ``dlmalloc``, that can be used
 Use State-* types for maps, sets, and boxes
 ===========================================
 
-If your contract uses maps, sets, or boxes, then *strongly* consider using the alternatives prefixed with ``State`` from ``concordium-std``. For example |StateMap|_, |StateBTreeMap|_, |StateSet|_, |StateBTreeSet|_, or |StateBox|_.
+If your contract uses and stores maps, sets, or boxes, then *strongly* consider using the alternatives prefixed with ``State`` from ``concordium-std``. For example |StateMap|_, |StateBTreeMap|_, |StateSet|_, |StateBTreeSet|_, or |StateBox|_.
 The ``State`` versions efficiently utilize the underlying smart contract state for a vastly improved performance.
-The underlying the smart contract state is a tree of byte arrays.
+The underlying smart contract state is a tree of byte arrays.
 With the regular |BTreeMap|_, the full map is stored in a single node in the state tree. When reading a value from the map, it is necessary to load and deserialize the whole map. And when updating a single entry in the map, the whole map is serialized and overwritten.
 With the |StateMap|_, each entry is stored in a single node in the state tree, which means that if you read a single entry, then you only load and deserialzie a single entry.
 Updating an entry also only affects a single node in the state tree.
