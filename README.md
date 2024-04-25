@@ -89,7 +89,7 @@ Download and run the launcher. Make sure to select "Add Python to PATH" at the b
 After that from a terminal run
 ```
 pip3 install pipenv
-pipenv sync
+pipenv sync --dev
 ```
 from the root of this repository.
 
