@@ -97,6 +97,18 @@ Here is an example of how the list of identity providers can be retrieved from t
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            import Foundation
+
+            // Inputs.
+            let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
+
+            let walletProxy = WalletProxy(baseURL: walletProxyBaseURL)
+            print("Identity providers:")
+            for ip in try await identityProviders(walletProxy) {
+                print("- \(ip.info.description.name)")
+            }
