@@ -52,7 +52,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/net/guides/wallet-sdk/wallet-sdk-identity-provider.6664ada8-d03c-47ba-a3c7-8a716549e97b.js"></script>
+    <script defer="defer" src="../../../_static/tippy/net/guides/wallet-sdk/wallet-sdk-identity-provider.4e931e71-c3aa-440f-986c-efb13cb39964.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/guides/wallet-sdk/wallet-sdk-identity-provider';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -999,7 +999,7 @@ body {margin:0;}
 <span id="identity-provider-list"></span><h2>Get list of identity providers and their metadata<a class="headerlink" href="#get-list-of-identity-providers-and-their-metadata" title="Link to this heading">#</a></h2>
 <p>Here is an example of how the list of identity providers can be retrieved from the wallet-proxy service. The libraries used here to perform the requests are merely examples, so feel free to use the libraries already utilized in your project.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Swift (iOS)</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Swift (macOS, iOS)</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">IdentityProvider</span><span class="p">,</span>
 <span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk&#39;</span><span class="p">;</span>
 
@@ -1068,7 +1068,19 @@ body {margin:0;}
 <span class="p">}</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>The Swift SDK for iOS is still in development.</p>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="c1">// Inputs.</span>
+<span class="kd">let</span> <span class="nv">walletProxyBaseURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://wallet-proxy.testnet.concordium.com&quot;</span><span class="p">)</span><span class="o">!</span>
+
+<span class="kd">let</span> <span class="nv">walletProxy</span> <span class="p">=</span> <span class="n">WalletProxy</span><span class="p">(</span><span class="n">baseURL</span><span class="p">:</span> <span class="n">walletProxyBaseURL</span><span class="p">)</span>
+<span class="bp">print</span><span class="p">(</span><span class="s">&quot;Identity providers:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ip</span> <span class="k">in</span> <span class="k">try</span> <span class="k">await</span> <span class="n">identityProviders</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">)</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;- </span><span class="si">\(</span><span class="n">ip</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">description</span><span class="p">.</span><span class="n">name</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div></div>
 </section>
 </section>

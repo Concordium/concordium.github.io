@@ -52,7 +52,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/net/guides/wallet-sdk/wallet-sdk-identity-creation.ce1ea581-217b-4de2-a94e-6dfc524fceef.js"></script>
+    <script defer="defer" src="../../../_static/tippy/net/guides/wallet-sdk/wallet-sdk-identity-creation.7e1d025f-a891-42c8-a39a-10dae15a3fef.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/guides/wallet-sdk/wallet-sdk-identity-creation';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -1006,7 +1006,7 @@ process that is specific for that chosen identity provider. This happens outside
 <h2>Create an identity request<a class="headerlink" href="#create-an-identity-request" title="Link to this heading">#</a></h2>
 <p>The first step is to create the actual identity request. To do this, you need the list of identity providers. Refer to <a class="reference internal" href="wallet-sdk-identity-provider.html#identity-provider-list"><span class="std std-ref">Get list of identity providers and their metadata</span></a> to understand how to retrieve it.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Swift (iOS)</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Swift (macOS, iOS)</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">ConcordiumGRPCWebClient</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">ConcordiumHdWallet</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">createIdentityRequestWithKeys</span><span class="p">,</span>
@@ -1113,7 +1113,98 @@ process that is specific for that chosen identity provider. This happens outside
 <span class="p">}</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>The Swift SDK for iOS is still in development.</p>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
+<span class="kd">import</span> <span class="nc">Foundation</span>
+
+<span class="c1">// Inputs.</span>
+<span class="kd">let</span> <span class="nv">seedPhrase</span> <span class="p">=</span> <span class="s">&quot;fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position&quot;</span>
+<span class="kd">let</span> <span class="nv">network</span> <span class="p">=</span> <span class="n">Network</span><span class="p">.</span><span class="n">testnet</span>
+<span class="kd">let</span> <span class="nv">identityProviderID</span> <span class="p">=</span> <span class="n">IdentityProviderID</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">identityIndex</span> <span class="p">=</span> <span class="n">IdentityIndex</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">walletProxyBaseURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://wallet-proxy.testnet.concordium.com&quot;</span><span class="p">)</span><span class="o">!</span>
+<span class="kd">let</span> <span class="nv">anonymityRevocationThreshold</span> <span class="p">=</span> <span class="n">RevocationThreshold</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">/// Perform an identity creation based on the inputs above.</span>
+<span class="kd">func</span> <span class="nf">createIdentity</span><span class="p">(</span><span class="n">client</span><span class="p">:</span> <span class="n">NodeClient</span><span class="p">)</span> <span class="k">async</span> <span class="kr">throws</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">seed</span> <span class="p">=</span> <span class="k">try</span> <span class="n">decodeSeed</span><span class="p">(</span><span class="n">seedPhrase</span><span class="p">,</span> <span class="n">network</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">walletProxy</span> <span class="p">=</span> <span class="n">WalletProxy</span><span class="p">(</span><span class="n">baseURL</span><span class="p">:</span> <span class="n">walletProxyBaseURL</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">identityProvider</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">findIdentityProvider</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">,</span> <span class="n">identityProviderID</span><span class="p">)</span><span class="o">!</span>
+
+    <span class="c1">// Construct identity creation request and start verification.</span>
+    <span class="kd">let</span> <span class="nv">cryptoParams</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">cryptographicParameters</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="p">.</span><span class="n">lastFinal</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">identityReq</span> <span class="p">=</span> <span class="k">try</span> <span class="n">issueIdentitySync</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">cryptoParams</span><span class="p">,</span> <span class="n">identityProvider</span><span class="p">,</span> <span class="n">identityIndex</span><span class="p">,</span> <span class="n">anonymityRevocationThreshold</span><span class="p">)</span> <span class="p">{</span> <span class="n">issuanceStartURL</span><span class="p">,</span> <span class="n">requestJSON</span> <span class="k">in</span>
+        <span class="c1">// The URL to be invoked when once the ID verification process has started (i.e. once the data has been filled in).</span>
+        <span class="kd">let</span> <span class="nv">callbackURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;concordiumwallet-example://identity-issuer/callback&quot;</span><span class="p">)</span><span class="o">!</span>
+
+        <span class="kd">let</span> <span class="nv">urlBuilder</span> <span class="p">=</span> <span class="n">IdentityRequestURLBuilder</span><span class="p">(</span><span class="n">callbackURL</span><span class="p">:</span> <span class="n">callbackURL</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">url</span> <span class="p">=</span> <span class="k">try</span> <span class="n">urlBuilder</span><span class="p">.</span><span class="n">issuanceURLToOpen</span><span class="p">(</span><span class="n">baseURL</span><span class="p">:</span> <span class="n">issuanceStartURL</span><span class="p">,</span> <span class="n">requestJSON</span><span class="p">:</span> <span class="n">requestJSON</span><span class="p">)</span>
+        <span class="n">todoOpenURL</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">todoAwaitCallbackWithVerificationPollingURL</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">let</span> <span class="nv">res</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">todoFetchIdentityIssuance</span><span class="p">(</span><span class="n">identityReq</span><span class="p">)</span>
+    <span class="k">if</span> <span class="k">case</span> <span class="kd">let</span> <span class="p">.</span><span class="n">success</span><span class="p">(</span><span class="n">identity</span><span class="p">)</span> <span class="p">=</span> <span class="n">res</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Identity issued successfully: </span><span class="si">\(</span><span class="n">identity</span><span class="si">)</span><span class="s">)&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Verification failed...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">issueIdentitySync</span><span class="p">(</span>
+    <span class="kc">_</span> <span class="n">seed</span><span class="p">:</span> <span class="n">WalletSeed</span><span class="p">,</span>
+    <span class="kc">_</span> <span class="n">cryptoParams</span><span class="p">:</span> <span class="n">CryptographicParameters</span><span class="p">,</span>
+    <span class="kc">_</span> <span class="n">identityProvider</span><span class="p">:</span> <span class="n">IdentityProvider</span><span class="p">,</span>
+    <span class="kc">_</span> <span class="n">identityIndex</span><span class="p">:</span> <span class="n">IdentityIndex</span><span class="p">,</span>
+    <span class="kc">_</span> <span class="n">anonymityRevocationThreshold</span><span class="p">:</span> <span class="n">RevocationThreshold</span><span class="p">,</span>
+    <span class="kc">_</span> <span class="n">runIdentityProviderFlow</span><span class="p">:</span> <span class="p">(</span><span class="kc">_</span> <span class="n">issuanceStartURL</span><span class="p">:</span> <span class="n">URL</span><span class="p">,</span> <span class="kc">_</span> <span class="n">requestJSON</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="n">URL</span>
+<span class="p">)</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="n">IdentityIssuanceRequest</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Preparing identity issuance request.&quot;</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">identityRequestBuilder</span> <span class="p">=</span> <span class="n">SeedBasedIdentityRequestBuilder</span><span class="p">(</span>
+        <span class="n">seed</span><span class="p">:</span> <span class="n">seed</span><span class="p">,</span>
+        <span class="n">cryptoParams</span><span class="p">:</span> <span class="n">cryptoParams</span>
+    <span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">reqJSON</span> <span class="p">=</span> <span class="k">try</span> <span class="n">identityRequestBuilder</span><span class="p">.</span><span class="n">issuanceRequestJSON</span><span class="p">(</span>
+        <span class="n">provider</span><span class="p">:</span> <span class="n">identityProvider</span><span class="p">,</span>
+        <span class="n">index</span><span class="p">:</span> <span class="n">identityIndex</span><span class="p">,</span>
+        <span class="n">anonymityRevocationThreshold</span><span class="p">:</span> <span class="n">anonymityRevocationThreshold</span>
+    <span class="p">)</span>
+
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Start identity provider issuance flow.&quot;</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">url</span> <span class="p">=</span> <span class="k">try</span> <span class="n">runIdentityProviderFlow</span><span class="p">(</span><span class="n">identityProvider</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">issuanceStart</span><span class="p">,</span> <span class="n">reqJSON</span><span class="p">)</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Identity verification process started!&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">todoOpenURL</span><span class="p">(</span><span class="kc">_</span><span class="p">:</span> <span class="n">URL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Open the URL in a web view to start the identity verification flow with the identity provider.</span>
+    <span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;&#39;openURL&#39; not implemented&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">todoAwaitCallbackWithVerificationPollingURL</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">URL</span> <span class="p">{</span>
+    <span class="c1">// Block the thread and wait for the callback URL to be invoked (and somehow capture that event).</span>
+    <span class="c1">// In mobile wallets, the callback URL is probably a deep link that we listen on somewhere else.</span>
+    <span class="c1">// In that case, this snippet would be done now and we would expect the handler to be eventually invoked.</span>
+    <span class="c1">// In either case, the callback is how the IP hands over the URL for polling the verification status -</span>
+    <span class="c1">// and for some reason it does so in the *fragment* part of the URL!</span>
+    <span class="c1">// See &#39;server.swift&#39; of the example CLI for a server-based solution that works in a synchronous context.</span>
+    <span class="c1">// Warning: It ain&#39;t pretty.</span>
+    <span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;&#39;awaitCallbackWithVerificationPollingURL&#39; not implemented&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">todoFetchIdentityIssuance</span><span class="p">(</span><span class="kc">_</span> <span class="n">request</span><span class="p">:</span> <span class="n">IdentityIssuanceRequest</span><span class="p">)</span> <span class="k">async</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="n">IdentityVerificationResult</span> <span class="p">{</span>
+    <span class="c1">// Block the thread, periodically polling for the verification status.</span>
+    <span class="c1">// Return the result once it&#39;s no longer &quot;pending&quot; (i.e. the result is non-nil).</span>
+    <span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">status</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">request</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">session</span><span class="p">:</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">)</span>
+        <span class="k">if</span> <span class="kd">let</span> <span class="nv">r</span> <span class="p">=</span> <span class="n">status</span><span class="p">.</span><span class="n">result</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">r</span>
+        <span class="p">}</span>
+        <span class="k">try</span> <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">nanoseconds</span><span class="p">:</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1_000_000_000</span><span class="p">)</span> <span class="c1">// check once every 10s</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div></div>
 </section>
 <section id="send-an-identity-request">
