@@ -1,0 +1,17 @@
+<!-- Script to change the highlighting of the active menu path and put the sidenav into hamburger for mobile-->
+<script>
+    const currentMenu = $('.bd-sidenav.current');
+    currentMenu.parent().addClass('selected');
+
+    let $togglerIcon = $('.navbar-toggler-icon');
+    let $bdSidebar = $('.bd-sidebar');
+
+    $togglerIcon.on( "click", function() {
+        let $togglerAttr = $('.navbar-toggler').attr('aria-expanded');
+        if ($togglerAttr == 'true') {
+            $bdSidebar.parent().removeClass('show');
+        } else {
+            $bdSidebar.parent().addClass('show');
+        }
+    } );
+</script>

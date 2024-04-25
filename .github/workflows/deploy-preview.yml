@@ -1,0 +1,54 @@
+name: Deploy PR Preview
+# Only run when a PR has the 'preview' label
+on:
+  pull_request:
+    types:
+      - labeled
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  build-and-deploy-preview:
+    if: github.event.label.name == 'preview'
+    runs-on: ubuntu-latest
+    container: sphinxdoc/sphinx
+    steps:
+      - name: Install git 🔧
+        shell: bash
+        run: |
+          apt-get update
+          apt-get install -y git
+
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+
+      - name: Install 🔧
+        shell: bash
+        run: |
+          apt-get install -y graphviz rsync
+          pip3 install pipenv
+          pipenv sync
+
+      - name: Build 🛠
+        shell: bash
+        run: pipenv run ./scripts/build.sh
+
+      - name: Deploy preview for Concordium Academy 🚀
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview-academy
+          custom-url: developer.concordium.software
+          source-dir: ./build-academy
+          action: deploy
+
+      - name: Deploy preview for Developer Documentation 🚀
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          custom-url: developer.concordium.software
+          source-dir: ./build
+          action: deploy

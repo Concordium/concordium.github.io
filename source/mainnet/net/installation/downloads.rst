@@ -6,173 +6,317 @@
 Downloads
 =========
 
-.. contents::
-   :local:
-   :backlinks: none
+This topic contains information about where you can download the Concordium Wallets and tools for Mainnet and Testnet.
 
-This topics contains information about where you can download the Concordium Wallets and tools for |Net|. You can also find out about the hardware requirements for running a node.
+.. _downloads-mwgen2:
 
-Concordium Mobile Wallet
+|mw-gen2|
 ========================
 
-The Concordium Mobile Wallet is available for iOS and Android. The Mobile Wallet supports iOS 13 or later and Android 8 or later.
+The |mw-gen2| is available for iOS and Android™. The |mw-gen2| supports iOS 15 or later and Android 8 or later.
 
-You can find Concordium Mobile Wallet on App Store and Google Play.
+.. Note::
 
-.. image:: ../images/mobile-wallet/app-store-badge.svg
-   :width: 23%
-   :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
-.. image:: ../images/mobile-wallet/google-play-badge.png
-   :width: 29.5%
-   :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+   The |mw-gen2| is not supported on tablet devices.
 
-The Concordium Mobile Wallet has been verified by NowSecure.
+.. dropdown:: Mainnet
 
-.. image:: ../images/mobile-wallet/nowsecure_certificate.png
-      :width: 32%
-      :target: https://www.nowsecure.com/certified-apps/concordium/
+   You can find |mw-gen2| on App Store and on Google Play.
 
+      .. image:: ../images/mobile-wallet/app-store-badge.svg
+         :width: 23%
+         :target: https://apps.apple.com/us/app/concordium-blockchain-wallet/id6444703764
+      .. image:: ../images/mobile-wallet/google-play-badge.png
+         :width: 29.5%
+         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.mainnet
+
+.. dropdown:: Testnet
+
+   **iOS**
+
+   #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the |mw-gen2| for Testnet on iOS.
+   #.  Follow `this link <https://testflight.apple.com/join/YaKKqYMA>`__ on your iPhone to join our beta. You must have TestFlight installed.
+
+   **Android**
+
+   Click below to download the Android version of Concordium Wallet for Mobile for Testnet.
+
+      .. image:: ../images/mobile-wallet/google-play-badge.png
+         :width: 29.5%
+         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.seedphrase.testnet
+
+.. _downloads-browser-wallet:
+.. _downloads-browser-wallet-testnet:
+
+|bw|
+=================================
+
+The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_. The extension supports both Mainnet and Testnet.
 
 .. _downloads-desktop-wallet:
+.. _downloads-desktop-wallet-testnet:
 
 Concordium Desktop Wallet
-=========================
+=================================
 
--  `Download the Desktop Wallet for Windows <https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.2.0.exe>`_
+.. dropdown:: Mainnet
 
--  `Download the Desktop Wallet for macOS <https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.2.0.dmg>`_
+   .. card:: Windows v1.7.3
+      :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.7.3.exe
 
--  Download the Desktop Wallet for Linux:
-   -  `AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.AppImage>`_
+   .. card:: MacOS v1.7.3
+      :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.7.3.dmg
 
-      - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
-      - :ref:`Verification instructions <verification-cdw-appimage>`
+   .. dropdown:: Linux® v1.7.3
 
-   -  `Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.deb>`_
+      - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.AppImage>`_
 
-      - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
-      - :ref:`Verification instructions <verification-cdw-deb>`
+         - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
+         - :ref:`Verification instructions <verification-cdw-appimage>`
 
-   -  `RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.2.0.rpm>`_
+      - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.deb>`_
 
-      - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
-      - :ref:`Verification instructions <verification-cdw-rpm>`
+         - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
+         - :ref:`Verification instructions <verification-cdw-deb>`
 
-Concordium Ledger App
+      - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.rpm>`_
+
+         - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
+         - :ref:`Verification instructions <verification-cdw-rpm>`
+
+.. dropdown:: Testnet
+
+   .. card:: Windows v1.7.3
+      :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.7.3.exe
+
+   .. card:: MacOS v1.7.3
+      :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.7.3.dmg
+
+   .. dropdown:: Linux® v1.7.3
+
+      Download the Testnet version of Concordium Desktop Wallet for Linux®:
+
+      -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.AppImage>`_
+         -  SHA256 checksum of the download: ``98dd7ec121f5e3ff2825de69533d6a49f9da3a857452845dc7b0bd0f70990ad0``
+
+      -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.deb>`_
+         -  SHA256 checksum of the download: ``48b89e1a1c4677694ad28882f771e93cc5234d03e49cbfcfba07c3214aeb4c3c``
+
+      -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.rpm>`_
+         -  SHA256 checksum of the download: ``a3b47aa43f31705c8d1789e870fab052603afa00a7555ee2f87158da64f29fea``
+
+.. _ledger-app-download:
+
+Concordium LEDGER App
 =====================
 
-`Download the Concordium Ledger App <https://distribution.mainnet.concordium.software/tools/concordium-ledger-app-2.0.1-target-2.0.0.zip>`_
+Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For information, see :ref:`Install the LEDGER app<install-ledger>`.
+
+.. _downloads-mwgen1:
+
+|mw-gen1|
+========================
+
+.. warning:: |mw-gen1| no longer supports creating new accounts and identities. It can only be used to recover a wallet for a user who already has this wallet type and a backup file.
+
+The |mw-gen1| is available for iOS and Android™. The |mw-gen1| supports iOS 13 or later and Android 8 or later.
+
+.. Note::
+
+   The |mw-gen1| is not supported on tablet devices.
+
+.. dropdown:: Mainnet
+
+   You can find |mw-gen1| on App Store and on Google Play.
+
+      .. image:: ../images/mobile-wallet/app-store-badge.svg
+         :width: 23%
+         :target: https://apps.apple.com/us/app/concordium-mobile-wallet/id1566996491
+      .. image:: ../images/mobile-wallet/google-play-badge.png
+         :width: 29.5%
+         :target: https://play.google.com/store/apps/details?id=software.concordium.mobilewallet.mainnet
+
+.. _downloads-mobile-wallet-testnet:
+
+.. dropdown:: Testnet
+
+   **iOS**
+
+   #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the Concordium Mobile Wallet for Testnet on iOS.
+   #.  Follow `this link <https://testflight.apple.com/join/HZRi1WDT>`__ on your iPhone to join our beta. You must have TestFlight installed.
+
+   **Android**
+
+   - `Download the Android version of Concordium Mobile Wallet for Testnet <https://distribution.testnet.concordium.com/tools/android/concordium-mobile-wallet_3.2.1(115).apk>`_
 
 .. _concordium-node-and-client-download:
 
-Concordium Client
-=================
-Download the Concordium Client:
+Concordium Client |client-version|
+===================================
 
--  `Download the Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_1.1.1-0>`_
+-  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_6.2.1-0>`_
 
-   - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
-   - :ref:`Verification instructions <verification-client-linux>`
+      - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
+      - :ref:`Verification instructions <verification-client-linux>`
 
--  `Download the Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client_1.1.1-0.zip>`_.
+   Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 
--  `Download the Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_1.1.1-0.exe>`_
+      .. code-block:: console
 
+         chmod +x concordium-client_*
 
-Cargo-concordium
-================
-Download cargo-concordium:
+   where you replace `*` with |client-version|.
 
--  `Download cargo-concordium for Linux <https://distribution.concordium.software/tools/linux/cargo-concordium_1.0.0-2>`_
+-  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-6.2.1-0.pkg>`_
 
--  `Download cargo-concordium for MacOS <https://distribution.concordium.software/tools/macos/cargo-concordium_1.0.0-2>`_
+   - The macOS distribution is an installer that places an alias to the binary
+     into the folder ``/usr/local/bin``. So after installing, you should have
+     ``concordium-client`` on your path.
 
--  `Download cargo-concordium for Windows <https://distribution.concordium.software/tools/windows/cargo-concordium_1.0.0-2.exe>`_
+-  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_6.2.1-0.exe>`_
 
-For information about installing cargo-concordium, see :ref:`Install tools for development <setup-tools>`
+.. _cargo-concordium-testnet:
 
+``cargo-concordium``
+====================
+
+For information about installing ``cargo-concordium``, see :ref:`Install tools for development <setup-tools>`.
+
+.. Note::
+
+   From version 2.8.0 the distribution for ``cargo-concordium`` has been simplified. Now, once you have installed rustup, you can quickly and easily install ``cargo-concordium`` without downloading a separate package or going through many steps. If you already have ``cargo-concordium`` installed, you may need to remove the existing ``cargo-concordium`` from your PATH to be able to update versions in the future.
+
+VSCode extension
+----------------
+
+You can `install the VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ for smart contract development from the VSCode marketplace.
+
+For information about using the VSCode extension, `watch the video <https://www.youtube.com/watch?v=9qjcsGDeveg>`_.
+
+Smart contract deploy and initialize tool
+=========================================
+
+To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
+.. _node-downloads:
 
 Concordium node distributions
 =============================
 
-Node Debian package
--------------------
-To run a node on a server with Ubuntu, you need a Debian package.
+For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
 
-- `Download the Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_1.1.3_amd64.deb>`_
+.. Note::
 
-   - SHA256 checksum of the download: :substitution-code:`|node-deb-package-checksum|`
-   - :ref:`Verification instructions <verification-node-debian-package>`
+   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
-To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
+.. dropdown:: Mainnet
 
-.. _concordium-docker-package-download:
+   .. dropdown:: Ubuntu |mainnet-node-version|
 
-Full suite for running a node on Linux using Docker
----------------------------------------------------
-Download the full suite for running a node on Linux using Docker. The suite contains Concordium Node, Concordium Client and cargo-concordium.
+      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.3.0-0_amd64.deb>`_.
 
-- `Download the suite for Linux <https://distribution.mainnet.concordium.software/tools/linux/concordium-software-linux-1.1.3-0-mainnet.tar.gz>`_
+         - SHA256 checksum of the download: |node-deb-package-checksum|
 
-   - SHA256 checksum of the download: ``1e86ceda79be5bcb84f2615fdcd494fc7bc6e50f5e65c35cf47262e126c3be55``
+         - :ref:`Verification instrcutions<verification-cdw-deb>`
 
-To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
+   .. dropdown:: Linux-Docker |mainnet-node-version|
 
-Native Windows node
--------------------
+      To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`. To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-To run a node on Windows, you need a Windows Installer package.
+   .. dropdown:: Windows |mainnet-node-version|
 
-- `Download the Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-1.1.3.msi>`_
+      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.3.0-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
-To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`
+      To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
-Native Mac node
----------------
+   .. dropdown:: Mac |mainnet-node-version|
 
-To run a node on macOS, you need a macOS installer package.
+      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.3.0.pkg>`_.
 
-- `Download the macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-1.1.3.pkg>`_
+      To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
-To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
+.. _concordium-node-and-client-download-testnet:
+.. _testnet-node-downloads:
 
-Mainnet genesis block
-=====================
+.. dropdown:: Testnet
+
+   .. dropdown:: Ubuntu |testnet-node-version|
+
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_6.3.0-0_amd64.deb>`_.
+
+      - SHA256 checksum of the download: ``92e08a403c78014727be8fb91b305beac403d510e360ea7a73550d8875af068e``
+
+      To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
+
+   .. dropdown:: Linux-Docker |testnet-node-version|
+
+      .. _concordium-docker-package-download-testnet:
+
+      To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
+
+      To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+
+   .. dropdown:: Windows |testnet-node-version|
+
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.3.0-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+
+      To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
+
+   .. dropdown:: Mac |testnet-node-version|
+
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.3.0.pkg>`_.
+
+      To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
+
+Node performance monitoring
+---------------------------
+
+You can use the `Prometheus monitoring system <https://prometheus.io/download/>`__ to export node metrics for monitoring your node performance. For information about configuration and the exposed metrics, see the `documentation in the repository <https://github.com/Concordium/concordium-node/blob/main/docs/prometheus-exporter.md>`__.
+
+For node runners using Grafana®, Concordium provides a node performance dashboard using the exposed Prometheus metrics. You can `download it from the Grafana marketplace <https://grafana.com/grafana/dashboards/18983-concordium-node-external/>`__.
+
+Genesis block
+=============
+
 The genesis block is included in node distributions.
 Download the block separately to inspect it or to run a node in a custom configuration.
 
-- `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
+.. _mainnet-genesis-block:
 
-  - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
-  - :ref:`Verification instructions <verification-mainnet-genesis-block>`
+.. dropdown:: Mainnet
 
-.. _requirements-run-node:
+   `Download the mainnet genesis block <https://distribution.mainnet.concordium.software/data/genesis.dat>`_
 
-Requirements for running a node
-===============================
+      - SHA256 checksum of the download: :substitution-code:`|mainnet-genesis-block-checksum|`
+      - :ref:`Verification instructions <verification-mainnet-genesis-block>`
 
-The following are the minimum system requirements for running a node. If your system does not meet or exceed these requirements, you might not be able to run the node properly.
+.. dropdown:: Testnet
 
-You need a broadband connection to run a node, and we strongly recommend that the node is running around the clock. This is especially important if you're running a baker node.
+   `Download the testnet genesis block <https://distribution.testnet.concordium.com/data/genesis.dat>`_
 
-If you use a laptop in combination with Docker, sleep mode can cause problems with the Docker container used to run the node.
+      - SHA256 checksum of the download: ``69db4360f0a16414db86a920513600cfe29241c0c713a07d8e79dad19103e91d``
 
-System requirements
--------------------
+.. _downloads-voting-tools:
 
--  CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen 5000 series or Intel Core 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).
+Voting tools
+============
 
--  Minimum 16 GB of RAM.
+Coordinator tool
+Windows
+Mac
+Ubuntu
 
--  Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).
+The Guardian app, voting dApp, and election smart contract are created by the election coordinator during the setup phase of the election.
+
+.. _downloads-auxiliary-tools:
 
 Auxiliary tools
 ===============
 
-Auxiliary tools are a collection of tools that can be used by developers to perform actions as needed.
+Auxiliary tools are a collection of tools that can be used to perform actions as needed.
 
-Encrypt/decrypt tool
---------------------
+Encrypt/decrypt tool v1.0.0
+---------------------------
 
 - `Download the Encrypt/decrypt tool for Linux <https://distribution.concordium.software/tools/linux/utils-1.0.0>`_
 
@@ -180,6 +324,41 @@ Encrypt/decrypt tool
 
 - `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
-For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools  <developer-tools>`.
+For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.
 
-*Apple® is a trademark of Apple Inc., registered in the U.S. and other countries*.
+Company identity management tool v1.0.2
+---------------------------------------
+
+Use this tool to create a company identity, request accounts using a company identity, and recover a company identity.
+
+- `Download the Company identity management tool for Linux - Debian package <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.deb>`_
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``c728dbe0b5ab950e4e705d7faceaee4b5ade615acd34b3bc6e75250acdedfaa9``.
+
+- `Download the Company identity management tool for Linux - App image <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.AppImage>`_
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.AppImage
+      #. Verify that the output matches the SHA256 checksum ``8b6964d827808d3a8a9244d202e3aa8cdffeb2462edf44b3e32e7b41549b710f``.
+
+- `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/Concordium_Company_ID_1.0.2_x64_en-US.msi>`_
+
+- `Download the Company identity management tool for MacOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
+
+For information about how to use the company identity management tool, see :ref:`company-identities`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   verification-instructions

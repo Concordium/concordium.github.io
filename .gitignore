@@ -1,8 +1,10 @@
 build/
+build-academy/
 __pycache__
 _build
 /source/.vscode/
 BUILDDIR/
+venv/
 
 ### macOS ###
 .DS_Store

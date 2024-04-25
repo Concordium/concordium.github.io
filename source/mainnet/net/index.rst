@@ -1,103 +1,67 @@
-.. include:: ../variables.rst
-
 =====
-|Net|
+index
 =====
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Installation
+   :caption: Releases and Installation
 
    installation/downloads
-   installation/verification-instructions
+   release-notes/release-notes-lp
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Guides
+   :includehidden:
+   :caption: Concordium Basics
 
-   guides/run-node-ubuntu
-   guides/run-node
-   guides/run-node-windows
-   guides/run-node-macos
-   guides/baker-windows
-   guides/deciding-wallet
-   guides/overview-desktop
-   guides/multisig-transfer
-   guides/overview-baker-process
-   guides/add-baker-desktop
-   guides/become-baker
-   guides/overview-shared-accounts
-   guides/multi-credentials
+   guides/learn-about-concordium
+   guides/wallets-lp
+   guides/how-to-earn
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Concepts
+   :includehidden:
+   :caption: Develop on Concordium
 
-   concepts/id-accounts
-   concepts/concepts-baker
-   concepts/concepts-transactions
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Concordium Mobile Wallet
-
-   mobile-wallet/setup-mobile-wallet
-   mobile-wallet/create-identity
-   mobile-wallet/create-account-mw
-   mobile-wallet/make-simple-transfer-mw
-   mobile-wallet/make-shielded-transfer-mw
-   mobile-wallet/shield-unshield-mw
-   mobile-wallet/export-import-mw
-   mobile-wallet/share-address-mw
-   mobile-wallet/change-passcode-mw
-   mobile-wallet/inspect-release-schedule-mw
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Concordium Desktop Wallet
-
-   desktop-wallet/install-ledger-app
-   desktop-wallet/get-started-desktop
-   desktop-wallet/update-application
-   desktop-wallet/create-identity-desktop
-   desktop-wallet/create-account-desktop
-   desktop-wallet/accounts-desktop
-   desktop-wallet/create-credentials-file
-   desktop-wallet/shield-ccd-desktop
-   desktop-wallet/export-import-desktop
-   desktop-wallet/send-ccd-single-desktop
-   desktop-wallet/single-sign-schedule
-   desktop-wallet/multisig-simple-transfer
-   desktop-wallet/update-baker-keys
-   desktop-wallet/remove-baker
-   desktop-wallet/change-baker-stake
-   desktop-wallet/change-restake-settings
-   desktop-wallet/sign-transaction
-   desktop-wallet/transaction-log-filter
-   desktop-wallet/settings-overview
-   desktop-wallet/overview-addresses
-   desktop-wallet/proposed-transactions
-   desktop-wallet/make-account-report
-   desktop-wallet/send-shielded-amount
-   desktop-wallet/account-recovery
-
-.. toctree::
-   :maxdepth: 1
-   :caption: References
-
+   guides/developer-page
+   nodes/node-requirements
    references/concordium-client
-   references/manage-accounts
-   references/transactions
-   references/query-node
-   references/developer-tools
+   guides/run-local-chain
+   Use Concordium's ID layer <web3-id/index>
+   guides/low-code-nft-marketplace/introduction.rst
+   resources/ccd-scan
+   Concordium Standards <https://proposals.concordium.software/index.html>
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Resources
+   :caption: Indexers
 
-   resources/glossary
-   resources/release-notes-mainnet
-   resources/terms-and-conditions-mw
-   resources/terms-and-conditions-dw
-   resources/third-party-licenses
-   resources/dw-licenses
+   indexers/intro
+   indexers/subquery
+
+.. toctree::
+   :includehidden:
+   :caption: Smart Contracts
+
+   Introduction <../smart-contracts/general/introduction>
+   Quick start guide <../smart-contracts/guides/quick-start>
+   Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/faq>
+   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/overview>
+   Contract development guides <../smart-contracts/guides/contract-dev-guides>
+   Test contracts <../smart-contracts/guides/integration-test-contract>
+   On-chain guides <../smart-contracts/guides/on-chain-index>
+   Best practices <../smart-contracts/best-practices/development>
+   References <../smart-contracts/references/index>
+   V0 smart contracts <../smart-contracts-v0/sc-v0-rollup>
+
+.. toctree::
+   :includehidden:
+   :caption: Tutorials
+
+   Smart contract tutorials <../smart-contracts/tutorials/index>
+   Using ID tutorial <guides/gallery/index>
+
+.. toctree::
+   :includehidden:
+   :caption: Governance Committee Voting
+
+   voting/gc-voting
+   voting/coordinator
+   voting/voting
+   voting/guardians

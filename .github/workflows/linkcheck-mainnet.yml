@@ -7,7 +7,7 @@ jobs:
     container: sphinxdoc/sphinx
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v3.3.0
         with:
           persist-credentials: false
 
@@ -16,8 +16,9 @@ jobs:
         run: |
           apt-get update
           apt-get install -y graphviz git rsync
-          pip3 install -r requirements.txt
+          pip3 install pipenv
+          pipenv sync
 
       - name: Linkcheck 🔍
         shell: bash
-        run: sphinx-build  -b linkcheck -c "source/mainnet" source build/mainnet
+        run: pipenv run sphinx-build  -b linkcheck -c "source/mainnet" source build/mainnet

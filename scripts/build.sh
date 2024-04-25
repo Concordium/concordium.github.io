@@ -1,46 +1,35 @@
 #!/bin/bash
 
-# Builds the different versions and translations of the documentation.
+# Build the developer documentation and the Concordium Academy.
 # This is assumed to be called from the project root.
 
 set -e # Fail script on error
 
-# Branches to include in the build, must be separated by comma and no spaces.
-all_versions='mainnet,testnet'
-# Languages to include in the build
-all_languages='en'
+printf "Building Concordium Developer Documentation... \n\n"
 
 source_dir='source'
 build_dir='build'
 
-# Expose settings for the build to create links between them
-export all_versions
-export all_languages
-
-# Convert the strings to arrays
-IFS="," read -a versions <<< $all_versions
-IFS="," read -a languages <<< $all_languages
-
-printf "Building documentation versions: ${all_versions} for languages ${all_languages}\n"
-
 mkdir -p "${build_dir}"
 
-printf "Copying index.html to ${build_dir}\n"
-cp index.html "${build_dir}/index.html"
+printf "Copying 'public' to '${build_dir}'\n"
+cp -rv public/* ${build_dir}
 
-printf "Copying CLAs to ${build_dir}\n"
-cp -r CLAs "${build_dir}/CLAs"
+printf "\nRunning build 'mainnet'\n"
+sphinx-build "${source_dir}/mainnet" "${build_dir}/en/mainnet" -W
 
-printf "Copying 'extra' directory to ${build_dir}\n"
-cp -r extra "${build_dir}/extra"
+printf "Adding symlink ${build_dir}/404.html to en/mainnet/404.html\n"
+ln -sf "en/mainnet/404.html" "${build_dir}/404.html"
 
-for current_version in ${versions[@]}; do
-  printf "\nVersion '${current_version}':\n-----------------------------\n"
-  export current_version
+printf "\nDone building Concordium Developer Documentation to '${build_dir}'\n"
 
-  for current_language in ${languages[@]}; do
-    export current_language
-    printf "\nRunning build '${current_version}' for language '${current_language}'\n"
-    sphinx-build "${source_dir}/${current_version}" "${build_dir}/${current_language}/${current_version}" -D language="${current_language}" -W
-  done
-done
+# Build Concordium Academy, depends on objects.inv produce by mainnet for checking links.
+# This will also ensure that links to the documentation used by the Academy site are still valid.
+printf "\nBuilding Concordium Academy... \n\n"
+
+academy_build_dir='build-academy'
+
+mkdir -p "${academy_build_dir}"
+sphinx-build "${source_dir}/academy" "${academy_build_dir}" -W
+
+printf "Done building Concordium Academy to '${academy_build_dir}'\n"

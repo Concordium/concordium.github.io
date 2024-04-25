@@ -14,7 +14,7 @@ jobs:
           apt-get install -y git
 
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v3.3.0
         with:
           fetch-depth: 0
 
@@ -22,16 +22,21 @@ jobs:
         shell: bash
         run: |
           apt-get install -y graphviz rsync
-          pip3 install -r requirements.txt
+          pip3 install pipenv
+          pipenv sync
 
       - name: Build 🛠
         shell: bash
-        run: ./scripts/build.sh
+        run: pipenv run ./scripts/build.sh
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+      - name: Deploy Developer Documentation 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
-          CLEAN: true
+          branch: gh-pages
+          folder: build
+          # Prevent the default behavior of force pushing which will remove previews see https://github.com/marketplace/actions/deploy-pr-preview.
+          force: false
+          clean: true
+          clean-exclude: |
+            pr-preview/
+            pr-preview-academy/

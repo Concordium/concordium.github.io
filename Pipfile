@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+sphinx = "*"
+sphinx-design = "*"
+sphinx-substitution-extensions = "*"
+sphinx-reredirects = "*"
+sphinx-copybutton = "*"
+sphinx-toolbox = "*"
+sphinx-tabs = "*"
+sphinx-tippy = "*"
+sphinx-notfound-page = "*"
+pydata-sphinx-theme = "*"
+
+[dev-packages]
+doc8 = "*"
+sphinx-autobuild = "*"
+
+[requires]
+python_version = "3.12"

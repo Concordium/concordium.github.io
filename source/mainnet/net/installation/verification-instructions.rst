@@ -5,11 +5,6 @@
 Verification instructions
 =========================
 
-.. contents::
-   :local:
-   :backlinks: none
-   :depth: 2
-
 To find instructions on how to verify the integrity of the file you have downloaded, navigate to the respective section that outlines the steps needed for that specific file.
 
 Concordium Desktop Wallet
@@ -27,7 +22,7 @@ AppImage
 
 .. _verification-cdw-deb:
 
-Debain package
+Debian package
 ^^^^^^^^^^^^^^
 
 .. include:: cdw-verification-instructions/cdw-deb.rst
@@ -53,6 +48,13 @@ Linux
 -----
 
 .. include:: client-verification-instructions/client-linux.rst
+
+.. _verification-cargo-linux:
+
+Linux
+-----
+
+.. include:: cargo-verification-instructions/cargo-linux.rst
 
 .. _verification-node-debian-package:
 
