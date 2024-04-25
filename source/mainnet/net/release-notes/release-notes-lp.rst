@@ -88,7 +88,7 @@ Wallets
 
     Last but not least, some deprecated Concordium features have been removed:
 
-    - Revealing identity attributes when creating an account 
+    - Revealing identity attributes when creating an account
 
 .. _rn-mwgen2-ios:
 
