@@ -65,3 +65,4 @@ index
    voting/coordinator
    voting/voting
    voting/guardians
+   voting/verify-election-result
