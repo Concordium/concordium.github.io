@@ -42,7 +42,7 @@ Example
 
     election-coordinator --node http://localhost:20001 initial-weights --out . generate --start 2024-01-01T00:00:00Z --end 2024-01-03T00:00:00Z
 
-The weights are stored in the initial-weights.csv file, and the corresponding parameters used to compute them stored in initial-weights-params.json.
+The weights are stored in the initial-weights.csv file, and the corresponding parameters used to compute them are stored in initial-weights-params.json file in the current path directory.
 
 Create a new election instance
 ------------------------------

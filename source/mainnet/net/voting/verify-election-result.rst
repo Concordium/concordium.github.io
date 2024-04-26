@@ -29,7 +29,7 @@ Example
 
     election-coordinator --node https://grpc.testnet.concordium.com:20000 initial-weights --out . verify --contract "<8836,0>"
 
-The weights are stored in the initial-weights.csv file, and the corresponding parameters used to compute them stored in initial-weights-params.json.
+The weights are stored in the initial-weights.csv file, and the corresponding parameters used to compute them are stored in initial-weights-params.json file in the current path directory.
 
 Get the final weights
 ---------------------
@@ -45,7 +45,7 @@ Example
 Verify the encrypted tally registered in the contract
 -----------------------------------------------------
 
-The ``tally`` command uses the final-weights.csv generated above to compute the encrypted tally of the election and optionally post it in the smart contract. This sums up all the votes during the election period and scales them according to the specified weights.
+The ``tally`` command uses the final-weights.csv generated above to compute the encrypted tally of the election and optionally posts it in the smart contract. This sums up all the votes during the election period and scales them according to the specified weights.
 
 .. code-block:: console
 
@@ -58,6 +58,6 @@ Use the ``final-result`` command after the guardians have each decrypted their s
 
 .. code-block:: console
 
-    election-coordinator  --node https://grpc.testnet.concordium.com:20000 final-result --contract "<8836,0>"
+    election-coordinator --node https://grpc.testnet.concordium.com:20000 final-result --contract "<8836,0>"
 
 This will look up all the decryption shares provided by the guardians, check that they are valid, and if there are enough of the valid ones, it will decrypt the final result and publish it in the smart contract.
