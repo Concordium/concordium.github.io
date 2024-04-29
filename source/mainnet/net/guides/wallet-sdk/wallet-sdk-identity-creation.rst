@@ -143,6 +143,7 @@ The first step is to create the actual identity request. To do this, you need th
         Swift (macOS, iOS)
 
         .. code-block:: Swift
+
             import Concordium
             import MnemonicSwift // external package for converting seed phrase to bytes
             import GRPC // external dependency for gRPC client
