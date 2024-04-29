@@ -81,29 +81,42 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
 .. dropdown:: |mw-gen1|
 
-    Users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw|, |cryptox|, or |mw-gen2| at any time before the election.
+   |mw-gen1| users are recommended to migrate to the |cryptox|, as this is actively maintained and supports walletconnect, which is required to interact with dApps such as the application used for voting in the election. The |cryptox| can be installed for either `Android <https://play.google.com/store/apps/details?id=com.pioneeringtechventures.wallet>`_ or `iOS <https://apps.apple.com/dk/app/cryptox-concordium-wallet/id1593386457>`_.
 
-    #. Tap **Send** on the account to delegate from.
+   .. Note::
+       For more information on how to create a backup in the |mw-gen1| and import this into a compatible wallet, see :ref:`backup and restore<mobile-wallet-recover>`
 
-    #. Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in |bw|, |cryptox|, or |mw-gen2|. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In **Optional: Add memo** add a memo that says **delegatevote2024**. Tap **Send amount**.
+   #. **Backup your wallet data** in in your |mw-gen1|. This creates an export file with all the identities and accounts in your wallet.
 
-        .. image:: ../images/voting/mwgen1-delegate-vote.png
-            :alt: send CCD window in old mobile wallet showing how to delegate vote
-            :width: 100%
+   #. If you haven't already done so, download |cryptox| for either `Android <https://play.google.com/store/apps/details?id=com.pioneeringtechventures.wallet>`_ or `iOS <https://apps.apple.com/dk/app/cryptox-concordium-wallet/id1593386457>`_.
 
-    #. Tap **Send funds**.
+   #. **Import the backup** created in step 1 into |cryptox|.
 
-        .. image:: ../images/voting/mwgen1-delegate-vote-confirm.png
-            :alt: window in old mobile wallet asking user to confirm transaction
-            :width: 100%
+   **Alternative route**
 
-    #. Tap **Finish**.
+   Alternatively, users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw|, |cryptox|, or |mw-gen2| at any time before the election.
 
-        .. image:: ../images/voting/mwgen1-transaction-submitted.png
-            :alt: window in old mobile wallet showing successful transaction submission
-            :width: 100%
+   #. Tap **Send** on the account to delegate from.
 
-    #. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
+   #. Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in |bw|, |cryptox|, or |mw-gen2|. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In **Optional: Add memo** add a memo that says **delegatevote2024**. Tap **Send amount**.
+
+       .. image:: ../images/voting/mwgen1-delegate-vote.png
+           :alt: send CCD window in old mobile wallet showing how to delegate vote
+           :width: 100%
+
+   #. Tap **Send funds**.
+
+       .. image:: ../images/voting/mwgen1-delegate-vote-confirm.png
+           :alt: window in old mobile wallet asking user to confirm transaction
+           :width: 100%
+
+   #. Tap **Finish**.
+
+       .. image:: ../images/voting/mwgen1-transaction-submitted.png
+           :alt: window in old mobile wallet showing successful transaction submission
+           :width: 100%
+
+   #. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
 
 How to see delegations
 ======================
