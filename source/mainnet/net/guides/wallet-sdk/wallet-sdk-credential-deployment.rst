@@ -185,7 +185,7 @@ The following example demonstrates how a credential deployment transaction is cr
         .. code-block:: Swift
 
             import Concordium
-            import Foundation
+            import MnemonicSwift // external package for converting seed phrase to bytes
 
             // Inputs.
             let seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
@@ -195,67 +195,31 @@ The following example demonstrates how a credential deployment transaction is cr
             let credentialCounter = CredentialCounter(21)
             let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
             let anonymityRevocationThreshold = RevocationThreshold(2)
-            let expiry = TransactionTime(9_999_999_999)
 
-            /// Perform account creation (on recovered identity) based on the inputs above.
-            func createAccount(client: NodeClient) async throws {
-                let seed = try decodeSeed(seedPhrase, network)
-                let walletProxy = WalletProxy(baseURL: walletProxyBaseURL)
-                let identityProvider = try await findIdentityProvider(walletProxy, identityProviderID)!
+            // Configure seed and Wallet Proxy instance.
+            let seedHex = try Mnemonic.deterministicSeedString(from: seedPhrase)
+            let seed = WalletSeed(seedHex: seedHex, network: network)
 
-                // Recover identity (not necessary if the ID is already stored).
-                // This assumes that the identity already exists, of course.
-                let cryptoParams = try await client.cryptographicParameters(block: .lastFinal)
-                let identityReq = try makeIdentityRecoveryRequest(seed, cryptoParams, identityProvider, identityIndex)
-                let identity = try await identityReq.send(session: URLSession.shared)
+            let identity: IdentityObject = ... // retrieved from storage or identity recovery
 
-                // Derive seed based credential and account from the given coordinates of the given seed.
-                let accountDerivation = SeedBasedAccountDerivation(seed: seed, cryptoParams: cryptoParams)
-                let seedIndexes = AccountCredentialSeedIndexes(
-                    identity: .init(providerID: identityProviderID, index: identityIndex),
-                    counter: credentialCounter
-                )
-                // Credential to deploy.
-                let credential = try accountDerivation.deriveCredential(
-                    seedIndexes: seedIndexes,
-                    identity: identity.value,
-                    provider: identityProvider,
-                    threshold: 1
-                )
-                // Account used to sign the deployment.
-                // The account is composed from just the credential derived above.
-                // From this call the credential's signing key will be derived;
-                // in the previous only the public key was.
-                let account = try accountDerivation.deriveAccount(credentials: [seedIndexes])
-
-                // Construct, sign, and send deployment transaction.
-                let signedTx = try account.keys.sign(deployment: credential, expiry: expiry)
-                let serializedTx = try signedTx.serialize()
-                let hash = try await client.send(deployment: serializedTx)
-                print("Transaction with hash '\(hash.hex)' successfully submitted.")
-            }
-
-            func makeIdentityRecoveryRequest(
-                _ seed: WalletSeed,
-                _ cryptoParams: CryptographicParameters,
-                _ identityProvider: IdentityProvider,
-                _ identityIndex: IdentityIndex
-            ) throws -> IdentityRecoverRequest {
-                let identityRequestBuilder = SeedBasedIdentityRequestBuilder(
-                    seed: seed,
-                    cryptoParams: cryptoParams
-                )
-                let reqJSON = try identityRequestBuilder.recoveryRequestJSON(
-                    provider: identityProvider.info,
-                    index: identityIndex,
-                    time: Date.now
-                )
-                let urlBuilder = IdentityRequestURLBuilder(callbackURL: nil)
-                return try urlBuilder.recoveryRequest(
-                    baseURL: identityProvider.metadata.recoveryStart,
-                    requestJSON: reqJSON
-                )
-            }
+            // Derive seed based credential.
+            let accountDerivation = SeedBasedAccountDerivation(seed: seed, cryptoParams: cryptoParams)
+            let seedIndexes = AccountCredentialSeedIndexes(
+                identity: .init(providerID: identityProviderID, index: identityIndex),
+                counter: credentialCounter
+            )
+            // Credential to deploy.
+            let credential = try accountDerivation.deriveCredential(
+                seedIndexes: seedIndexes,
+                identity: identity,
+                provider: identityProvider,
+                threshold: 1
+            )
+            // Account used to sign the deployment.
+            // The account is composed from just the credential derived above.
+            // From this call the credential's signing key will be derived;
+            // in the previous only the public key was.
+            let account = try accountDerivation.deriveAccount(credentials: [seedIndexes])
 
 ++++++++++++++++++++++++++++++++++++++++
 Sign a credential deployment transaction
@@ -338,7 +302,18 @@ is the signing key that corresponds to the public key used when creating the tra
 
         Swift (iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Kotlin
+
+            import Concordium
+
+            // Inputs.
+            let expiry = TransactionTime(9_999_999_999)
+
+            let credential: AccountCredential // from previous section
+            let signingAccount: Account // from previous section
+
+            // Sign deployment transaction.
+            let signedTx = try signingAccount.keys.sign(deployment: credential, expiry: expiry)
 
 ++++++++++++++++++++++++++++++++++++++++
 Send a credential deployment transaction
@@ -413,6 +388,18 @@ If successful, the credential will be deployed, and it is now possible to start 
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Kotlin
+
+            import Concordium
+            import GRPC // external dependency for gRPC client
+
+            let grpcChannel: GRPCChannel // see docs for package GRPC or examples in SDK repo
+            let client: NodeClient = GRPCNodeClient(channel: grpcChannel)
+
+            let signedTx: SignedAccountCredentialDeployment // from previous section
+
+            let serializedTx = try signedTx.serialize()
+            let hash = try await client.send(deployment: serializedTx)
+            print("Transaction with hash '\(hash.hex)' successfully submitted.")
