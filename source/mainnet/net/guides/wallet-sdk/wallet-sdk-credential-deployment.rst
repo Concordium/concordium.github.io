@@ -390,7 +390,7 @@ If successful, the credential will be deployed, and it is now possible to start 
 
         Swift (macOS, iOS)
 
-        .. code-block:: Kotlin
+        .. code-block:: Swift
 
             import Concordium
             import GRPC // external dependency for gRPC client
