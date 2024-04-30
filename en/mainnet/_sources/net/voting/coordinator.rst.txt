@@ -34,15 +34,15 @@ The tool has the following subcommands. All commands have a ``--help`` option wh
 Get the list of initial weights
 -------------------------------
 
-Use the ``initial-weights`` command to gather the average amount of CCD on an account in the given period. The intention is that this command is used to produce the initial weights of each account prior to the election starting. The output of this command is a CSV file used in the ``final-weights`` command after the election.
+Use the ``initial-weights generate`` command to gather the average amount of CCD on an account in the given period. The intention is that this command is used to produce the initial weights of each account prior to the election starting. The output of this command is a CSV file used in the ``final-weights`` command after the election.
 
 Example
 
 .. code-block:: console
 
-    election-coordinator --node http://localhost:20001 initial-weights  --start 2024-01-01T00:00:00Z --end 2024-01-03T00:00:00Z --out initial-weights.csv
+    election-coordinator --node http://localhost:20001 initial-weights --out . generate --start 2024-01-01T00:00:00Z --end 2024-01-03T00:00:00Z
 
-The weights are stored in the initial-weights.csv file.
+The weights are stored in the initial-weights.csv file, and the corresponding parameters used to compute them are stored in initial-weights-params.json file in the current path directory.
 
 Create a new election instance
 ------------------------------
@@ -57,7 +57,7 @@ Use the ``new-election`` command to create the necessary files and the contract 
 
 .. code-block:: console
 
-    election-coordinator new-election --module ../contracts/concordium-governance-committee-election/concordium-out/module.wasm.v1 --threshold 1 --admin ../test-scripts/keys/2yJxX711aDXtit7zMu7PHqUMbtwQ8zm7emaikg24uyZtvLTysj.export --election-start '2024-02-01T00:00:00Z' --election-end '2024-02-07T00:00:00Z' --decryption-deadline '2024-02-08T00:00:00Z' --delegation-string 'delegatevote2024' --out election --voters-file initial-weights.csv --guardian 31bTNa42u1zZWag2bknEy7VraeJUozXsJMN1DFjQp7E5YR6a3G --guardian 4PF6BH8bKvM48b8KNYdvGW6Sv3B2nqVRiMnWTj9cvaNHJQeX3D --candidate candidate1.json --candidate https://some.url/candidate2.json --node 'https://grpc.testnet.concordium.com:20000' --base-url https://gcvoting.testnet.concordium.com`
+    election-coordinator new-election --module ../contracts/concordium-governance-committee-election/concordium-out/module.wasm.v1 --threshold 1 --admin ../test-scripts/keys/2yJxX711aDXtit7zMu7PHqUMbtwQ8zm7emaikg24uyZtvLTysj.export --election-start '2024-02-01T00:00:00Z' --election-end '2024-02-07T00:00:00Z' --decryption-deadline '2024-02-08T00:00:00Z' --delegation-string 'delegatevote2024' --out election --voters-file initial-weights.csv --voters-params-file initial-weights-params.json --guardian 31bTNa42u1zZWag2bknEy7VraeJUozXsJMN1DFjQp7E5YR6a3G --guardian 4PF6BH8bKvM48b8KNYdvGW6Sv3B2nqVRiMnWTj9cvaNHJQeX3D --candidate candidate1.json --candidate https://some.url/candidate2.json --node 'https://grpc.testnet.concordium.com:20000' --base-url https://gcvoting.testnet.concordium.com`
 
 The options are:
 
@@ -74,6 +74,8 @@ The options are:
 ``--delegation-string`` is the string that will be used to determine vote delegations. This is the string users delegating a vote in a wallet must enter in a transaction memo.
 
 ``--voters-file`` is the initial-weights.csv file for the election
+
+``--voters-params-file`` is the initial-weights-params.json file for the election, containing the params used to compute the initial weights.
 
 ``--guardian`` (repeated) is guardian account addresses. At least one is needed.
 
