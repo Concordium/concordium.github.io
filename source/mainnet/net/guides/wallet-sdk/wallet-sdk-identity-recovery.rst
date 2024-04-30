@@ -103,9 +103,72 @@ In the example below, functionality for retrieving the list of identity provider
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            import MnemonicSwift // external package for converting seed phrase to bytes
+            import GRPC // external dependency for gRPC client
+
+            let grpcChannel: GRPCChannel // see docs for package GRPC or examples in SDK repo
+            let client: NodeClient = GRPCNodeClient(channel: grpcChannel)
+
+            /// Fetch all identity providers.
+            public func identityProviders(_ walletProxy: WalletProxy) async throws -> [IdentityProvider] {
+                let res = try await walletProxy.getIdentityProviders.send(session: URLSession.shared)
+                return res.map { $0.toSDKType() }
+            }
+
+            /// Fetch an identity provider with a specific ID.
+            public func findIdentityProvider(_ walletProxy: WalletProxy, _ id: IdentityProviderID) async throws -> IdentityProvider? {
+                let res = try await identityProviders(walletProxy)
+                return res.first { $0.info.identity == id }
+            }
+
+            // Inputs.
+            let seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
+            let network = Network.testnet
+            let identityProviderID = IdentityProviderID(3)
+            let identityIndex = IdentityIndex(7)
+            let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
+            let anonymityRevocationThreshold = RevocationThreshold(2)
+
+            // Configure seed and Wallet Proxy instance.
+            let seedHex = try Mnemonic.deterministicSeedString(from: seedPhrase)
+            let seed = WalletSeed(seedHex: seedHex, network: network)
+            let walletProxy = WalletProxy(baseURL: walletProxyBaseURL)
+            let identityProvider = try await findIdentityProvider(walletProxy, identityProviderID)!
+
+            // Construct recovery request.
+            let cryptoParams = try await client.cryptographicParameters(block: .lastFinal)
+
+            let identityRequestBuilder = SeedBasedIdentityRequestBuilder(
+                seed: seed,
+                cryptoParams: cryptoParams
+            )
+            let reqJSON = try identityRequestBuilder.recoveryRequestJSON(
+                provider: identityProvider.info,
+                index: identityIndex,
+                time: Date.now
+            )
+
+            func makeIdentityRecoveryRequest(
+                _ seed: WalletSeed,
+                _ cryptoParams: CryptographicParameters,
+                _ identityProvider: IdentityProvider,
+                _ identityIndex: IdentityIndex
+            ) throws -> IdentityRecoverRequest {
+                let identityRequestBuilder = SeedBasedIdentityRequestBuilder(
+                    seed: seed,
+                    cryptoParams: cryptoParams
+                )
+                let reqJSON = try identityRequestBuilder.recoveryRequestJSON(
+                    provider: identityProvider.info,
+                    index: identityIndex,
+                    time: Date.now
+                )
+            }
 
 +++++++++++++++++++++++++++++++++
 Send an identity recovery request
@@ -201,51 +264,13 @@ The next step is to send the generated identity recovery request to the associat
 
         .. code-block:: Swift
 
-            import Concordium
-            import Foundation
+            let reqJSON = ... // computed in previous section
 
-            // Inputs.
-            let seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
-            let network = Network.testnet
-            let identityProviderID = IdentityProviderID(3)
-            let identityIndex = IdentityIndex(7)
-            let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
-            let anonymityRevocationThreshold = RevocationThreshold(2)
-
-            /// Perform identity recovery based on the inputs above.
-            func recoverIdentity(client: NodeClient) async throws {
-                let seed = try decodeSeed(seedPhrase, network)
-                let walletProxy = WalletProxy(baseURL: walletProxyBaseURL)
-                let identityProvider = try await findIdentityProvider(walletProxy, identityProviderID)!
-
-                // Construct recovery request.
-                let cryptoParams = try await client.cryptographicParameters(block: .lastFinal)
-                let identityReq = try makeIdentityRecoveryRequest(seed, cryptoParams, identityProvider, identityIndex)
-
-                // Execute request.
-                let identity = try await identityReq.send(session: URLSession.shared)
-                print("Successfully recovered identity: \(identity)")
-            }
-
-            // Duplicated in 'CreateAccount/main.swift'.
-            func makeIdentityRecoveryRequest(
-                _ seed: WalletSeed,
-                _ cryptoParams: CryptographicParameters,
-                _ identityProvider: IdentityProvider,
-                _ identityIndex: IdentityIndex
-            ) throws -> IdentityRecoverRequest {
-                let identityRequestBuilder = SeedBasedIdentityRequestBuilder(
-                    seed: seed,
-                    cryptoParams: cryptoParams
-                )
-                let reqJSON = try identityRequestBuilder.recoveryRequestJSON(
-                    provider: identityProvider.info,
-                    index: identityIndex,
-                    time: Date.now
-                )
-                let urlBuilder = IdentityRequestURLBuilder(callbackURL: nil)
-                return try urlBuilder.recoveryRequest(
-                    baseURL: identityProvider.metadata.recoveryStart,
-                    requestJSON: reqJSON
-                )
-            }
+            // Wrap recovery request into HTTP request and execute.
+            let urlBuilder = IdentityRequestURLBuilder(callbackURL: nil) // without 'callbackURL' the builder only supports recovery
+            let identityReq = try urlBuilder.recoveryRequest(
+                baseURL: identityProvider.metadata.recoveryStart,
+                requestJSON: reqJSON
+            )
+            let identity = try await identityReq.send(session: URLSession.shared)
+            print("Successfully recovered identity: \(identity)")

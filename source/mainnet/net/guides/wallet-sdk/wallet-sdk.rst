@@ -47,6 +47,7 @@ Below, you can find a link to the SDK package for your chosen technology, and an
 
         | Code snippets used in this documentation
         | https://github.com/Concordium/concordium-swift-sdk/tree/main/examples/DocSnippets
+        | *Note: The snippets are self contained and don't align exactly with the structure of these docs.*
 
 .. toctree::
     :hidden:
