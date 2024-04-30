@@ -225,7 +225,7 @@ Finally, when the transaction has been constructed and signed, it is ready to be
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
         .. code-block:: Swift
 
