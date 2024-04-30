@@ -302,7 +302,7 @@ is the signing key that corresponds to the public key used when creating the tra
 
         Swift (iOS)
 
-        .. code-block:: Kotlin
+        .. code-block:: Swift
 
             import Concordium
 
