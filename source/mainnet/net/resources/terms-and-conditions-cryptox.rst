@@ -7,9 +7,9 @@
 
    Remember to request wallet proxy update when T&C updated
 
-==============================
-End User License for |cryptox|
-==============================
+====================================
+End User License Terms for |cryptox|
+====================================
 
 Effective April 1, 2023
 
