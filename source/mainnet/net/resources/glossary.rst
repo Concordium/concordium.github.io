@@ -13,11 +13,11 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Account
 
-      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key` that can be used to send shielded transfers to the account. An account is also associated with the account holder's :term:`identity`, although this association is encrypted for anonymity. This anonymity can only be revoked by :term:`anonymity revokers<anonymity revoker>`, in cooperation with the account's :term:`identity provider`.
+      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key` that can be used to send shielded transfers to the account. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`identity disclosure authorities<identity disclosure authority>`, in cooperation with the account's :term:`identity provider`.
 
    Account credential
 
-      A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.
+      A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow disclosing an identity in concert with the identity provider to find the owner.
 
 
    Account weight
@@ -32,9 +32,9 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
-   Anonymity revoker
+   Identity disclosure authority
 
-      An authority who has power to know the identity of a participant. The anonymity revokers and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
+      An authority who has power to know the identity of a participant. The identity disclosure authority and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Identity disclosure is a two-stage process, requiring cooperation of multiple parties.
 
    Approval voting
 
@@ -214,7 +214,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Identity
 
-      Before opening an account on the Concordium Platform, one's real-world identity must be verified and recorded by an :term:`identity provider`. A user’s identity is anonymous on-chain, however this anonymity can be revoked and their real-world identity revealed in response to a valid request from a government authority.
+      Before opening an account on the Concordium Platform, one's real-world identity must be verified and recorded by an :term:`identity provider`. A user’s identity is encrypted on-chain, however their real-world identity can be disclosed in response to a valid request from a government authority.
 
    Identity Issuer
 
@@ -230,7 +230,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Initial Account
 
-      An intial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by anonymity revokers working in concert with the identity provider.
+      An intial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by the identity disclosure authority working in concert with the identity provider.
 
       Initial accounts are only relevant for Desktop Wallet and |mw-gen1|.
 
@@ -314,7 +314,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Qualified authority
 
-      A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`anonymity revokers<anonymity revoker>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
+      A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of disclosing the identity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`identity disclosure authorities<identity disclosure authority>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
 
    Quorum certificate
 
@@ -441,7 +441,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    User identity certificate
 
       Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
-      The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
+      The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. disclosing an identity). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
    Validation
 
@@ -453,7 +453,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Verifiable credential
 
-      Issued to the individual by an :term:`issuer` who has authority for the credential to be issued. A verifiable credential contains some information about the individual that does not necessitate :term:`anonymity revocation<anonymity revoker>`, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :term:`verifier` using :term:`zero-knowledge proofs<zero-knowledge proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
+      Issued to the individual by an :term:`issuer` who has authority for the credential to be issued. A verifiable credential contains some information about the individual independent of its identity, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :term:`verifier` using :term:`zero-knowledge proofs<zero-knowledge proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
 
    Verifiable presentation
 
@@ -481,7 +481,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Web3 ID
 
-      Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
+      Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements and won't be part of the identity disclosure process, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
 
    WebAssembly
 

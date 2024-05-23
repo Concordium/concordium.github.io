@@ -62,7 +62,7 @@ The first step is to create the actual identity request. To do this, you need th
             const prfKey = wallet.getPrfKey(identityProviderIndex, identityIndex).toString('hex');
             const blindingRandomness = wallet.getSignatureBlindingRandomness(identityProviderIndex, identityIndex).toString('hex');
 
-            // The anonymity revocation threshold. Here we select the highest possible threshold for
+            // The identity disclosure threshold. Here we select the highest possible threshold for
             // the chosen identity provider.
             const arThreshold = Math.min(Object.keys(identityProvider.arsInfos).length - 1, 255);
 
@@ -169,7 +169,7 @@ The first step is to create the actual identity request. To do this, you need th
             let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
             let identityProviderID = IdentityProviderID(3)
             let identityIndex = IdentityIndex(7)
-            let anonymityRevocationThreshold = RevocationThreshold(2)
+            let identityDisclosureThreshold = RevocationThreshold(2)
 
             // Configure seed and Wallet Proxy instance.
             let seedHex = try Mnemonic.deterministicSeedString(from: seedPhrase)
@@ -186,7 +186,7 @@ The first step is to create the actual identity request. To do this, you need th
             let reqJSON = try identityRequestBuilder.issuanceRequestJSON(
                 provider: identityProvider,
                 index: identityIndex,
-                anonymityRevocationThreshold: anonymityRevocationThreshold
+                anonymityRevocationThreshold: identityDisclosureThreshold
             )
 
 ++++++++++++++++++++++++
