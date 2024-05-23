@@ -67,7 +67,7 @@ All transaction requests are irreversible. You are yourself responsible for ensu
 
 To prevent unauthorized use of |mw-gen1|, you must store your mobile device so that others cannot gain unauthorized access to it. If possible, you should lock your device with a password or keypad lock. Do not disclose the password to third parties.
 
-You are obliged to verify your identity with an identity provider. The identity provider will know the identity of the initial account creator. Your identity can be revealed via the process of anonymity revocation, which can happen under stringent regulations, such as a court order.
+You are obliged to verify your identity with an identity provider. The identity provider will know the identity of the initial account creator. Your identity can be revealed via the process of disclosing an identity, which can happen under stringent regulations, such as a court order.
 
 You are solely responsible for safekeeping your passwords, PINs, account keys, encryption keys, identity, and any other codes you use to access the |mw-gen1| or any information, CCD, or voucher. If you lose access to the |mw-gen1|, private keys, or identity, and you have not separately stored a backup of your accounts and the corresponding password(s), you acknowledge and agree that any tokens you have associated with that account will become inaccessible.
 

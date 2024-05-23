@@ -124,7 +124,7 @@ The following example demonstrates how a credential deployment transaction is cr
                     .build()
                 val client = ClientV2.from(connection)
 
-                val anonymityRevokers = Iterable { client.getAnonymityRevokers(BlockQuery.BEST) }.associateBy { it.arIdentity.toString() }
+                val identityDisclosureAuthorities = Iterable { client.getAnonymityRevokers(BlockQuery.BEST) }.associateBy { it.arIdentity.toString() }
                 val providers = client.getIdentityProviders(BlockQuery.BEST)
                 val provider = Iterable { providers }.find { it.ipIdentity.value == identityProviderIndex }!!
                 val global = client.getCryptographicParameters(BlockQuery.BEST)
@@ -162,7 +162,7 @@ The following example demonstrates how a credential deployment transaction is cr
                 val input: UnsignedCredentialInput = UnsignedCredentialInput.builder()
                     .ipInfo(provider)
                     .globalContext(global)
-                    .arsInfos(anonymityRevokers)
+                    .arsInfos(identityDisclosureAuthorities)
                     .idObject(identity)
                     .credNumber(credentialCounter)
                     .attributeRandomness(attributeRandomness)
@@ -194,7 +194,7 @@ The following example demonstrates how a credential deployment transaction is cr
             let identityIndex = IdentityIndex(7)
             let credentialCounter = CredentialCounter(21)
             let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
-            let anonymityRevocationThreshold = RevocationThreshold(2)
+            let identityDisclosureThreshold = RevocationThreshold(2)
 
             // Configure seed and Wallet Proxy instance.
             let seedHex = try Mnemonic.deterministicSeedString(from: seedPhrase)
