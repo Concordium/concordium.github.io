@@ -132,7 +132,7 @@ In the example below, functionality for retrieving the list of identity provider
             let identityProviderID = IdentityProviderID(3)
             let identityIndex = IdentityIndex(7)
             let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
-            let anonymityRevocationThreshold = RevocationThreshold(2)
+            let identityDisclosureThreshold = RevocationThreshold(2)
 
             // Configure seed and Wallet Proxy instance.
             let seedHex = try Mnemonic.deterministicSeedString(from: seedPhrase)

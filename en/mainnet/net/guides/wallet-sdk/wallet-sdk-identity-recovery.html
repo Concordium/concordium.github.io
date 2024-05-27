@@ -52,7 +52,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/net/guides/wallet-sdk/wallet-sdk-identity-recovery.596e4419-d4f0-4ff5-adc1-d91e16d2a0b9.js"></script>
+    <script defer="defer" src="../../../_static/tippy/net/guides/wallet-sdk/wallet-sdk-identity-recovery.3ab247af-8490-45cb-b549-acebaa4922c8.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/guides/wallet-sdk/wallet-sdk-identity-recovery';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -1106,7 +1106,7 @@ body {margin:0;}
 <span class="kd">let</span> <span class="nv">identityProviderID</span> <span class="p">=</span> <span class="n">IdentityProviderID</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="kd">let</span> <span class="nv">identityIndex</span> <span class="p">=</span> <span class="n">IdentityIndex</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 <span class="kd">let</span> <span class="nv">walletProxyBaseURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://wallet-proxy.testnet.concordium.com&quot;</span><span class="p">)</span><span class="o">!</span>
-<span class="kd">let</span> <span class="nv">anonymityRevocationThreshold</span> <span class="p">=</span> <span class="n">RevocationThreshold</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">identityDisclosureThreshold</span> <span class="p">=</span> <span class="n">RevocationThreshold</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">// Configure seed and Wallet Proxy instance.</span>
 <span class="kd">let</span> <span class="nv">seedHex</span> <span class="p">=</span> <span class="k">try</span> <span class="n">Mnemonic</span><span class="p">.</span><span class="n">deterministicSeedString</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">seedPhrase</span><span class="p">)</span>

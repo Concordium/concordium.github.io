@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/references/manage-accounts.d8b57d8a-b919-4f3b-8a0c-7293998bd534.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/references/manage-accounts.70ba7969-bf4b-4527-83a6-644938492650.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/references/manage-accounts';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1035,8 +1035,8 @@ are valid for the user and stores them locally in an identity object that is spe
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
 by creating a new identity and going through the identity verification process again with an identity provider.</p>
-<p>Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the anonymity revokers and the identity provider are
-involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an <em>identity</em> which is issued <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> by an Identity provider. While an account has to be created from an identity, the user’s privacy is still protected, and the account owner’s identity can only be revealed via the process of <a class="reference internal" href="#revoking-anomity"><span class="std std-ref">anonymity revocation</span></a>, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.</p>
+<p>Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the identity disclosure authorities and the identity provider are
+involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an <em>identity</em> which is issued <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> by an Identity provider. While an account has to be created from an identity, the user’s privacy is still protected, and the account owner’s identity can only be revealed via the process of <a class="reference internal" href="#disclosing-identity"><span class="std std-ref">disclosing an identity</span></a>, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.</p>
 </section>
 <section id="account-creation">
 <h3>Account creation<a class="headerlink" href="#account-creation" title="Link to this heading">#</a></h3>
@@ -1047,7 +1047,7 @@ involved. This gives a user a way to create accounts with an additional layer of
 </div>
 <p>The input to the transaction is a <em>credential</em>, which contains a number of <a class="reference internal" href="../resources/glossary.html#term-Cryptographic-proof"><span class="xref std std-term">cryptographic proofs</span></a>, as well as a selection of <a class="reference internal" href="../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.</p>
 <p>An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
-all other activities completely anonymous.</p>
+all other activities undisclosed.</p>
 <img alt="graphic drawing showing how user creates accounts" src="../../_images/account-creation.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1063,12 +1063,12 @@ attributes are certified by the identity provider. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.</p>
-<p>You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all to maintain your anonymity, which is the general recommendation.</p>
+<p>You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes, which is the general recommendation.</p>
 <section id="benefits-of-revealing-attributes">
 <h4>Benefits of revealing attributes<a class="headerlink" href="#benefits-of-revealing-attributes" title="Link to this heading">#</a></h4>
 <p>Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account and who the anonymity revokers are
+provider issued an identity for an account and who the identity disclosure authority are
 for the account and the identity. In addition to this basic information which
 enables regulatory compliance, an account owner can choose to publicly reveal
 other values on their account, such as their nationality or country of
@@ -1079,18 +1079,18 @@ of risk in the transaction.</p>
 </section>
 </section>
 </section>
-<section id="revoking-anonymity">
-<span id="revoking-anomity"></span><h2>Revoking anonymity<a class="headerlink" href="#revoking-anonymity" title="Link to this heading">#</a></h2>
-<p>The identity of a user can only be revealed to a qualified authority as part of a valid legal process. A qualified authority is a governmental body that has authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct will all have authority to act in their jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant <a class="reference internal" href="../resources/ar-idp-contact.html#ar-idp-contact"><span class="std std-ref">anonymity revokers</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> can the real-world identity of a user be revealed and only to the extent set out in the order.</p>
-<p>When legally obliged, the anonymity revokers and identity provider work together to determine the owner of an account and determine which accounts belong to the same owner. Anonymity revocation is a multi-stage process requiring cooperation of multiple parties.</p>
-<p>Each account has an encryption of a specific user identifier. This number can be decrypted by a sufficient number of the anonymity revokers working together. The set of anonymity revokers and the number of them required to decrypt the user identifier are determined when the identity is issued.</p>
+<section id="disclosing-an-identity">
+<span id="disclosing-identity"></span><h2>Disclosing an identity<a class="headerlink" href="#disclosing-an-identity" title="Link to this heading">#</a></h2>
+<p>The identity of a user can only be disclosed to a qualified authority as part of a valid legal process. A qualified authority is a governmental body that has authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct will all have authority to act in their jurisdictions. These authorities are qualified to begin the process of disclosing the identity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant <a class="reference internal" href="../resources/ar-idp-contact.html#ar-idp-contact"><span class="std std-ref">identity disclosure authorities</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> can the real-world identity of a user be revealed and only to the extent set out in the order.</p>
+<p>When legally obliged, the identity disclosure authorities and identity provider work together to determine the owner of an account and determine which accounts belong to the same owner. Disclosing an identity is a multi-stage process requiring cooperation of multiple parties.</p>
+<p>Each account has an encryption of a specific user identifier. This number can be decrypted by a sufficient number of identity disclosure authorities working together. The set of identity disclosure authorities and the number of them required to decrypt the user identifier are determined when the identity is issued.</p>
 <p>After the authorities have identified an on-chain transaction or account they would like to investigate, in order to reveal the real-world identity of a user, the following process must be followed:</p>
-<img alt="graphic showing anonymity revocation process" src="../../_images/anonymity-revocation.png" />
+<img alt="graphic showing the identity disclosure process" src="../../_images/identity-disclosure.png" />
 <ol class="arabic simple">
-<li><p>The qualified authority must identify the anonymity revokers and identity provider associated with the account they would like to deanonymize and present them with an official order.</p></li>
-<li><p>Per the terms of the official order, the anonymity revokers inspect and decrypt the available on-chain data for the user.</p></li>
-<li><p>The anonymity revokers extract the unique user identifier from the collected data.</p></li>
-<li><p>With this unique user identifier, the qualified authority can work with the relevant identity provider to retrieve the real-world identity of the user. The anonymity revokers can also decrypt a value that is held by the identity provider and allows the revokers to find all accounts the user has created from a given identity. Additionally, this value allows anonymity revokers to see the amount of CCDs in the shielded balance of deanonymized accounts.</p></li>
+<li><p>The qualified authority must identify the identity disclosure authorities and identity provider associated with the account they would like to reveal and present them with an official order.</p></li>
+<li><p>Per the terms of the official order, the identity disclosure authorities inspect and decrypt the available on-chain data for the user.</p></li>
+<li><p>The identity disclosure authorities extract the unique user identifier from the collected data.</p></li>
+<li><p>With this unique user identifier, the qualified authority can work with the relevant identity provider to retrieve the real-world identity of the user. The identity disclosure authorities can also decrypt a value that is held by the identity provider to find all accounts the user has created from a given identity. Additionally, this value allows identity disclosure authorities to see the amount of CCDs in the shielded balance of the revealed accounts.</p></li>
 </ol>
 <p>All of these actions are subject to rules and processes, and only the relevant entities learn any information about the account owner. No information is publicly revealed.</p>
 </section>
@@ -1282,7 +1282,7 @@ send all other <a class="reference internal" href="transactions.html#transaction
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revoking-anonymity">Revoking anonymity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disclosing-an-identity">Disclosing an identity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#account-concepts">Account concepts</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-balances">Account balances</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-sequence-number">Account sequence number</a></li>
