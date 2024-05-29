@@ -318,6 +318,8 @@ The partially-signed transaction is output into the file ``transaction.json`` an
       "version": 1
    }
 
+.. _sign-with-keyfile:
+
 If you want to sign the transaction with keys that are not in the local key directory, you need to provide
 the keys as a separte file with the ``--keys`` flag. Keys provided with a flag take precedence and no
 lookup of local keys in the key directory is performed.
@@ -364,23 +366,80 @@ empty ``keypair.json`` file of the following format:
 
    {}
 
+.. note::
+
+   Choose an ``expiryTime`` for the transaction that takes into account the time it takes to gather all signatures
+   by the different entities. If the ``expiryTime`` has passed, the transaction is no longer valid.
+
 Add an additional signature to a multi-sig transaction
 ======================================================
 
-.. _sign-with-keyfile:
+For example, to sign the partially-signed testnet transaction in the file ``transaction.json`` (created in the
+previous section) on a potentially different device by a different entity, run the following command:
 
-.. Step: Add an additional signature
-.. stack run concordium-client -- transaction add-signature ./transaction.json --signers "0:1" --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+.. code-block:: console
+
+   $concordium-client transaction add-signature ./transaction.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+
+.. note::
+
+   All keys (as present in the local key directory) associated with the ``signer`` account
+   are used to sign the transaction since the ``--signers`` flag is omitted in the above command.
+   Check that the ``signer`` account in the ``transaction.json`` file, is the account you want
+   to lookup its keys and sign with.
+
+.. note::
+
+   If you want to sign with specific keys from the local key directory,
+   you can specify some of them with the ``--signers`` flag (e.g. ``--signer "0:0,0:1"``).
+
+.. note::
+   If you want to sign the transaction with keys that are not in the local key directory,
+   you can checkout the ``--keys`` flag :ref:`here<sign-with-keyfile>`.
+
+The additional signatures generated are added to the partially-signed transaction into the
+file ``transaction.json`` and the file will look similar to the following format:
+
+.. code-block:: json
+   :force:
+
+   {
+      "energy": 5000,
+      "expiryTime": 1716995242,
+      "nonce": 46,
+      "payload": {
+         "amount": "1000000",
+         "toAddress": "4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA",
+         "transactionType": "transfer"
+      },
+      "signature": {
+         "0": {
+            "0": "3099534c5f32daf64dc40b7a0013979b9b74b167d259fc787a363ed2db7f1bcdafdcf06e166b2d915c7f29043186b3015a6064755bf3c3733bca2151b2b19c04",
+            "1": "52271842cd8bacf60bcdea0e7226539079574cef512991bb57bbd09bb27fe16008552f4ce926cac16abbf8190a97264d96ad405a35bd35c466ef86c3ba15680c"
+         },
+      },
+      "signer": "4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix",
+      "version": 1
+   }
 
 Send a multi-sig transaction on-chain
 =====================================
 
-.. Step: Send the fully signed transaction on-chain
-.. stack run concordium-client -- transaction submit ./transaction.json  --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+For example, to send the partially-signed testnet transaction from the file ``transaction.json`` (created in the
+previous section) on chain, run the following command:
+
+.. code-block:: console
+
+   $concordium-client transaction submit ./transaction.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 .. note::
 
-   Additional resources:
+   The node will reject the transaction if the threshold of signatures is not met.
 
-   - `Use multi-sig accounts in the Rust SDK <https://gist.github.com/DOBEN/683fe1a7c82a0551546a7ec242d30cc0>`_
+Additional resources
+====================
+
+.. note::
+
+   `Use multi-sig accounts in the Rust SDK <https://gist.github.com/DOBEN/683fe1a7c82a0551546a7ec242d30cc0>`_
 
