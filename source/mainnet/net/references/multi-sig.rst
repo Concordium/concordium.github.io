@@ -31,13 +31,6 @@ This page will go through the main steps as follows:
 -  Add an additional signature to a multi-sig transaction with the ``concordium-client`` tool.
 -  Send a multi-sig transaction with the ``concordium-client`` tool on chain.
 
-.. note::
-
-   Mutli-sig signing can be used on all active transaction types which are currently: ``DeployModule``, ``InitContract``,
-   ``UpdateContract``, ``Transfer(CCD)``, ``TransferWithMemo``, ``TransferWithSchedule``,
-   ``TransferWithScheduleAndMemo``, ``ConfigureDelegation``, ``ConfigureBaker``, ``RegisterData``, ``UpdateCredential``,
-   and ``UpdateCredentialsKeys``.
-
 Create a multi-sig account
 ==========================
 
@@ -162,8 +155,8 @@ To add additional keys to an existing account on Concordium using the ``concordi
    The ``<number-of-credential-to-sign>`` specifies the minimum number of credentials that are needed to sign the
    transaction after the update.
 
-Configure the ``concordium-client`` tool to use a multi-sig account
-===================================================================
+Configure the tool to use a multi-sig account
+=============================================
 
 To configure the ``concordium-client`` tool to use a multi-sig account, you can either:
 
@@ -274,19 +267,116 @@ tool in this section (Option 2). The first option is covered in the
 
    .. note::
 
-   This command updates the keys in the key directory of your local ``concordium-client`` tool. No transaction is sent on-chain.
+      This command updates the keys in the key directory of your local ``concordium-client`` tool. No transaction
+      is sent on-chain.
 
 
 Create a multi-sig transaction
 ==============================
+
+Multi-sig transactions can be created for all active transaction types which are currently: ``DeployModule``,
+``InitContract``, ``UpdateContract``, ``Transfer(CCD)``, ``TransferWithMemo``, ``TransferWithSchedule``,
+``TransferWithScheduleAndMemo``, ``ConfigureDelegation``, ``ConfigureBaker``, ``RegisterData``,
+``UpdateCredential``, and ``UpdateCredentialsKeys``.
+
+To create a multi-sig transaction, execute a transaction-creating command and add an ``--out`` flag.
+This flag will cause ``concordium-client`` to output the partially-signed
+transaction into the specified file instead of sending it on-chain.
+
+If you omit the ``--signers`` flag, ``concordium-client`` will output
+a transaction signed with all keys associated with the account as present in the local key directory.
+If you want to sign with specific keys from the local key directory,
+you can specify some of them with the ``--signers`` flag (e.g. ``--signer "0:0,0:1"``).
+
+For example, to create a multi-sig transaction to send 1 CCD to an account on testnet using all local keys,
+run the following command:
+
+.. code-block:: console
+
+   $concordium-client transaction send --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA --amount 1 --out ./transaction.json --energy 5000 --sender 4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+
+The partially-signed transaction is output into the file ``transaction.json`` and has the following format:
+
+.. code-block:: json
+   :force:
+
+   {
+      "energy": 5000,
+      "expiryTime": 1716995242,
+      "nonce": 46,
+      "payload": {
+         "amount": "1000000",
+         "toAddress": "4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA",
+         "transactionType": "transfer"
+      },
+      "signature": {
+         "0": {
+            "0": "3099534c5f32daf64dc40b7a0013979b9b74b167d259fc787a363ed2db7f1bcdafdcf06e166b2d915c7f29043186b3015a6064755bf3c3733bca2151b2b19c04"
+         }
+      },
+      "signer": "4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix",
+      "version": 1
+   }
+
+If you want to sign the transaction with keys that are not in the local key directory, you need to provide
+the keys as a separte file with the ``--keys`` flag. Keys provided with a flag take precedence and no
+lookup of local keys in the key directory is performed.
+
+For example, to create a multi-sig transaction to send 1 CCD to an account on testnet using keys for signing
+from a file, run the following command:
+
+.. code-block:: console
+
+   $concordium-client transaction send --keys ./keypair.json --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA --amount 1 --out ./transaction.json --energy 5000 --sender 4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+
+where ``keypair.json`` is a file of the following format:
+
+.. code-block:: json
+   :force:
+
+   {
+      "cidx": {
+         "kidx": {
+            "encryptedSignKey": {
+               "metadata": {
+                  "encryptionMethod": "AES-256",
+                  "iterations": ...,
+                  "salt": ...,
+                  "initializationVector": ...,
+                  "keyDerivationMethod": "PBKDF2WithHmacSHA256"
+               },
+               "cipherText": ...
+            },
+            "verifyKey": ...,
+            "schemeId": "Ed25519"
+         },
+         ...
+      },
+      ...
+   }
+
+
+If you want to create a partially-signed transaction with no signatures at all, you can use an
+empty ``keypair.json`` file of the following format:
+
+.. code-block:: json
+   :force:
+
+   {}
+
 Add an additional signature to a multi-sig transaction
 ======================================================
 
 .. _sign-with-keyfile:
 
+.. Step: Add an additional signature
+.. stack run concordium-client -- transaction add-signature ./transaction.json --signers "0:1" --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+
 Send a multi-sig transaction on-chain
 =====================================
 
+.. Step: Send the fully signed transaction on-chain
+.. stack run concordium-client -- transaction submit ./transaction.json  --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 .. note::
 
