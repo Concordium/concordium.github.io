@@ -31,6 +31,13 @@ This page will go through the main steps as follows:
 -  Add an additional signature to a multi-sig transaction with the ``concordium-client`` tool.
 -  Send a multi-sig transaction with the ``concordium-client`` tool on chain.
 
+.. note::
+
+   Mutli-sig signing can be used on all active transaction types which are currently: ``DeployModule``, ``InitContract``,
+   ``UpdateContract``, ``Transfer(CCD)``, ``TransferWithMemo``, ``TransferWithSchedule``,
+   ``TransferWithScheduleAndMemo``, ``ConfigureDelegation``, ``ConfigureBaker``, ``RegisterData``, ``UpdateCredential``,
+   and ``UpdateCredentialsKeys``.
+
 Create a multi-sig account
 ==========================
 
@@ -54,7 +61,8 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    - Step 1: Create an additional Ed25519 public-private key pair as you feel safe.
 
-   For testing purposes we recommend, the `front-end <https://cyphr.me/ed25519_tool/ed.html>`_ to generate an un-safe additional key pair.
+   For testing purposes we recommend, the `front-end <https://cyphr.me/ed25519_tool/ed.html>`_ to generate an un-safe
+   additional key pair.
 
    - Step 2: Find the credential registration ID of your account that we are updating keys for.
 
@@ -62,7 +70,13 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account show <account-name-or-account-address>
+      $concordium-client account show <account-name-or-account-address> --grpc-port <grpc-port-of-server> --grpc-ip <grpc-ip-url-to-node>
+
+   Using the node connection to the hosted testnet node as an example:
+
+   .. code-block:: console
+
+      $concordium-client account show <account-name-or-account-address> --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
    This will output something like:
 
@@ -88,7 +102,13 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account update-keys --credId <credential-registration-id> --sender <account-name-or-address> ./update-keys.json
+      $concordium-client account update-keys --credId <credential-registration-id> --sender <account-name-or-address> ./update-keys.json --grpc-port <grpc-port-of-server> --grpc-ip <grpc-ip-url-to-node>
+
+   Using the node connection to the hosted testnet node as an example:
+
+   .. code-block:: console
+
+      $concordium-client account update-keys --credId <credential-registration-id> --sender <account-name-or-address> ./update-keys.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
    where ``update-keys.json`` is a file of the following format:
 
@@ -107,38 +127,163 @@ To add additional keys to an existing account on Concordium using the ``concordi
          "threshold": 2
       }
 
-   This will replace the current key tied to the account with the keys in the ``update-keys.json`` file.
-   The above example file adds two keys to your account and sets the ``threshold`` (the number of keys you want
-   to have to sign the transaction) to 2. The above example generates a 2-out-of-2 multi-sig account.
+   This command sends a transaction on-chain to replace the current key tied to the account with the keys
+   in the ``update-keys.json`` file. The above example file adds two keys to your credential 0 of your account and
+   sets the ``threshold`` (the minimum number of keys you specify to sign a transaction) to 2 for this credential.
+   The above example generates a 2-out-of-2 multi-sig account where the key ``0:0 (credentialIndex : keyIndex)``
+   is your old public key and the key ``0:1`` is your newly generated key.
 
-   The above file specifies all keys that are associated with your account after the update and the threshold can be set
-   accordingly to a number between 1 and the number of keys.
+   The above file specifies all keys that are associated with your account for a given credential after the update and
+   the threshold can be set accordingly to a number between 1 and the number of keys.
 
 .. dropdown:: Add an additional credential with at least one public-private key pair
 
    - Step 1: Create an additional credential.
 
-   We recommend to use the flow in the Desktop wallet to :ref:`create a credential file<create-credentials-file>`.
-   Alternativley, you can `clone the project <https://github.com/Concordium/concordium-base/blob/main/rust-bins/src/bin/user_cli.rs>`_
+   We recommend using the flow in the Desktop wallet to :ref:`create a credential file<create-credentials-file>`.
+   Alternatively, you can `clone the project <https://github.com/Concordium/concordium-base/blob/main/rust-bins/src/bin/user_cli.rs>`_
    and run its command locally to generate a credential file.
 
-   - Step 2: Send a transaction to add an credential to your account on-chain.
+   - Step 2: Send a transaction to add a credential to your account on-chain.
 
    .. code-block:: console
 
-      $concordium-client account update-credentials --new-credentials new-credential.json --new-threshold <number-of-credential-to-sign> --sender <account-name-or-address>
+      $concordium-client account update-credentials --new-credentials new-credential.json --new-threshold <number-of-credential-to-sign> --sender <account-name-or-address> --grpc-port <grpc-port-of-server> --grpc-ip <grpc-ip-url-to-node>
+
+   Using the node connection to the hosted testnet node as an example:
+
+   .. code-block:: console
+
+      $concordium-client account update-credentials --new-credentials new-credential.json --new-threshold <number-of-credential-to-sign> --sender <account-name-or-address> --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
    where ``new-credential.json`` is the file from the previous step.
 
-   This will add an additional credential to your account.
-   The ``<number-of-credential-to-sign>`` specifies the minimum number of credentials that need to sign the transaction after the update.
+   This command sends a transaction on-chain to add an additional credential to your account.
+   The ``<number-of-credential-to-sign>`` specifies the minimum number of credentials that are needed to sign the
+   transaction after the update.
 
-Configure the tool to use a multi-sig account
-=============================================
+Configure the ``concordium-client`` tool to use a multi-sig account
+===================================================================
+
+To configure the ``concordium-client`` tool to use a multi-sig account, you can either:
+
+- pass in the signing keys via a file every time you sign a transaction (Option 1).
+-  configure the ``concordium-client`` tool once to include the additional keys in its local key directory (Option 2).
+
+To view the key directory path that the ``concordium-client`` tool is using, run the following command:
+
+   .. code-block:: console
+
+      $concordium-client config show
+
+The goal is to add additional keys for your account to the local key directory of the ``concordium-client``
+tool in this section (Option 2). The first option is covered in the
+:ref:`following section<sign-with-keyfile>`.
+
+.. dropdown:: Import the keys by adapting the key export file format from the browser wallet
+
+   We recommend that you export a key file from a random account on the browser wallet and use this
+   JSON file as a template to generate a corresponding JSON file for the keys of the account you want to update.
+
+   .. note::
+
+      You can read up on how to export a key file from the browser wallet :ref:`here<export-key>`.
+
+   Your ``browser_wallet.export`` file should look similar to the following browser wallet export template:
+
+   .. code-block:: json
+      :force:
+
+      {
+         "type": "concordium-browser-wallet-account",
+         "v": 0,
+         "environment": "testnet",
+         "value": {
+            "accountKeys": {
+               "keys": {
+                  "0": {
+                     "keys": {
+                        "0": {
+                           "signKey": "<Key_0_Private_Key_Without_0x_Prefix>",
+                           "verifyKey": "<Key_0_Public_Key_Without_0x_Prefix>"
+                        },
+                        "1": {
+                           "signKey": "<Key_1_Private_Key_Without_0x_Prefix>",
+                           "verifyKey": "<Key_1_Public_Key_Without_0x_Prefix>"
+                        }
+                     },
+                     "threshold": 2
+                  }
+               },
+               "threshold": 1
+            },
+            "credentials": {
+               "0": "97f325c9f86066ab0c80ff879c21629eb67818841940869308d6a72886d18f8668e62e43ad228fdcbda245d0722454df"
+            },
+            "address": "4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix"
+         }
+      }
+
+   You can import the keys of this ``browser_wallet.export`` file and associate it to your account as follows:
+
+   .. code-block:: console
+
+      $concordium-client config account import browser_wallet.export --name <choose-a-name-for-your-account>
+
+.. dropdown:: Assign an already imported key to your account
+
+   If you already imported the new key to ``concordium-client`` but it is associated with a different account
+   (e.g. because the public-private key pair was generated by creating a new account on Concordium which was imported
+   to ``concordium-client`` and this key pair was re-used in your multi-sig account),
+   you can look up the key in the local key directory of the ``concordium-client`` tool and associate
+   the file's content to your multi-sig account.
+
+   .. note::
+
+      We do not recommend to re-use keys on different accounts in production.
+
+   .. code-block:: console
+
+      $concordium-client config account update-keys --keys new-keys.json --account <account-name-or-address>
+
+   where ``new-keys.json`` is a file of the following format:
+
+   .. code-block:: json
+      :force:
+
+      {
+         "cidx": {
+            "kidx": {
+               "encryptedSignKey": {
+                  "metadata": {
+                     "encryptionMethod": "AES-256",
+                     "iterations": ...,
+                     "salt": ...,
+                     "initializationVector": ...,
+                     "keyDerivationMethod": "PBKDF2WithHmacSHA256"
+                  },
+                  "cipherText": ...
+               },
+               "verifyKey": ...,
+               "schemeId": "Ed25519"
+            },
+            ...
+         },
+         ...
+      }
+
+   .. note::
+
+   This command updates the keys in the key directory of your local ``concordium-client`` tool. No transaction is sent on-chain.
+
+
 Create a multi-sig transaction
 ==============================
 Add an additional signature to a multi-sig transaction
 ======================================================
+
+.. _sign-with-keyfile:
+
 Send a multi-sig transaction on-chain
 =====================================
 
