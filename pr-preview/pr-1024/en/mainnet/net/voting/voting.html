@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/voting/voting.1762ccfe-3879-472d-b3ac-1d6f1207bcb9.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/voting/voting.e6582281-09c9-4969-a65f-b422394ac640.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/voting/voting';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1122,17 +1122,15 @@ Concordium Client<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before the election.</p>
 <p class="sd-card-text"><strong>To delegate your vote:</strong></p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Enter the following command in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough) and ADDRESS is the address of the account to which the vote is delegated.</p></li>
-</ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>ADDRESS<span class="w"> </span>--memo<span class="w"> </span>delegatevote2024
+</div>
+</details><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">    $</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>ADDRESS<span class="w"> </span>--memo<span class="w"> </span>delegatevote2024
+
+<span class="gp">#</span>.<span class="w"> </span>Enter<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>above<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>Concordium<span class="w"> </span>Client,<span class="w"> </span>where<span class="w"> </span>AMOUNT<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>CCD<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>sent<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>micro-CCD<span class="w"> </span>is<span class="w"> </span>enough<span class="o">)</span><span class="w"> </span>and<span class="w"> </span>ADDRESS<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>address<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>account<span class="w"> </span>to<span class="w"> </span>which<span class="w"> </span>the<span class="w"> </span>vote<span class="w"> </span>is<span class="w"> </span>delegated.
+
+<span class="gp">#</span>.<span class="w"> </span>Vote<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>account<span class="w"> </span>that<span class="w"> </span>has<span class="w"> </span>received<span class="w"> </span>the<span class="w"> </span>delegation.
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Vote from the account that has received the delegation.</p></li>
-</ol>
-</div>
-</details></section>
+</section>
 <section id="how-to-see-delegations">
 <h2>How to see delegations<a class="headerlink" href="#how-to-see-delegations" title="Link to this heading">#</a></h2>
 <p>It is possible to see delegations to an account in the voting dApp. Anyone can check the delegations on an account. You do not need to connect a wallet to do this.</p>
