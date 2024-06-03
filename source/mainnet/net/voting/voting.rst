@@ -130,7 +130,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
         $concordium-client transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2024
 
-    #. Enter the command above in the Concordium Client, where AMOUNT' is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is an optional sender name/address, which is needed only if multiple accounts have been imported in the Concordium Client.
+    #. Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is an optional sender name/address, which is needed only if multiple accounts have been imported in the Concordium Client. Note the memo *delegatevote2024* for the delegation to be valid.
 
     #. Vote from the account that has received the delegation.
 
