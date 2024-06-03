@@ -7,8 +7,10 @@ How to vote
 
 The user flow for the voter is as follows. It assumes the user has a wallet on the Concordium blockchain with some CCD, enough to pay for transaction fees.
 
-For |cryptox|, |bw|, and |mw-gen2| wallet holders
-=================================================
+For |cryptox|, |bw|, |mw-gen2| and |cryptox| wallet holders
+===========================================================
+
+Note that |mw-gen2| users with Android 14 might experience a technical bug preventing them from connecting to the voting dApp. They can import their account into the |bw| or the |cryptox| with their seed phrase, and vote from those wallets.  
 
 #. Navigate to the voting dApp.
 
@@ -52,20 +54,20 @@ Since the votes are weighted by the number of CCD on the account, for a user to 
     #. Disconnect and reconnect in the voting dApp. The user will now be connected to the account that is open in the wallet.
     #. Repeat the two last steps above to vote with all accounts.
 
-For Desktop wallet and |mw-gen1| wallet holders
-===============================================
+For Desktop wallet, |mw-gen1| and Concordium Client wallet holders
+==================================================================
 
 These older wallets do not have the capability to connect to dApps. But you do have an option to exercise your vote.
 
 .. dropdown:: Desktop wallet
 
-    Users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in |bw|, |cryptox|, or |mw-gen2| at any time before the election.
+    Users need to create a new account in |bw| or |cryptox| and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before the election.
 
     **To delegate your vote:**
 
     #. In the account from which you want to vote, click **Send**.
 
-    #. Enter any amount of CCD (1 micro-CCD is enough). The target account in |bw|, |cryptox|, or |mw-gen2| is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says **delegatevote2024**.
+    #. Enter any amount of CCD (1 micro-CCD is enough). The target account in |bw| or |cryptox| is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says **delegatevote2024**.
 
         .. image:: ../images/voting/dw-vote-delegation.png
             :alt: send CCD window in desktop wallet showing how to delegate vote
@@ -94,11 +96,11 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
    **Alternative route**
 
-   Alternatively, users need to create a new account in |bw|, |cryptox|, or |mw-gen2| and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw|, |cryptox|, or |mw-gen2| at any time before the election.
+   Alternatively, users need to create a new account in |bw| or |cryptox|, and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before the election.
 
    #. Tap **Send** on the account to delegate from.
 
-   #. Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in |bw|, |cryptox|, or |mw-gen2|. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In **Optional: Add memo** add a memo that says **delegatevote2024**. Tap **Send amount**.
+   #. Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in |bw| or |cryptox|. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In **Optional: Add memo** add a memo that says **delegatevote2024**. Tap **Send amount**.
 
        .. image:: ../images/voting/mwgen1-delegate-vote.png
            :alt: send CCD window in old mobile wallet showing how to delegate vote
@@ -117,6 +119,20 @@ These older wallets do not have the capability to connect to dApps. But you do h
            :width: 100%
 
    #. It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.
+
+.. dropdown:: Concordium Client
+
+    Users need to create a new account in |bw| or |cryptox| and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before the election.
+
+    **To delegate your vote:**
+
+    #. Enter the following command in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough) and ADDRESS is the address of the account to which the vote is delegated.
+
+    .. code-block:: console
+
+        $concordium-client transaction send --amount AMOUNT --receiver ADDRESS --memo delegatevote2024
+
+    #. Vote from the account that has received the delegation.
 
 How to see delegations
 ======================
