@@ -4,10 +4,10 @@
 Multi-sig
 =========
 
-Concordium supports natively multi-sig accounts. Each account address on
-Concordium is controlled by one or several credential(s) (real-world
+Concordium natively supports multi-sig accounts. Each account address on
+Concordium is controlled by one or several credentials (real-world
 identities e.g. a private person with a passport or a company with a registration) and
-each credential has one or several public-private key pair(s).
+each credential has one or several public-private key pairs.
 
 .. note::
 
@@ -65,13 +65,17 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account show <account-name-or-account-address> --grpc-port <grpc-port-of-server> --grpc-ip <grpc-ip-url-to-node>
+      $concordium-client account show <account-name-or-account-address> \
+         --grpc-port <grpc-port-of-server> \
+         --grpc-ip <grpc-ip-url-to-node>
 
    Using the node connection to the hosted testnet node as an example:
 
    .. code-block:: console
 
-      $concordium-client account show <account-name-or-account-address> --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+      $concordium-client account show <account-name-or-account-address> \
+         --grpc-port 20000 \
+         --grpc-ip node.testnet.concordium.com
 
    This will output something like:
 
@@ -97,13 +101,21 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account update-keys --credId <credential-registration-id> --sender <account-name-or-address> ./update-keys.json --grpc-port <grpc-port-of-server> --grpc-ip <grpc-ip-url-to-node>
+      $concordium-client account update-keys ./update-keys.json \
+         --credId <credential-registration-id> \
+         --sender <account-name-or-address> \
+         --grpc-port <grpc-port-of-server> \
+         --grpc-ip <grpc-ip-url-to-node>
 
    Using the node connection to the hosted testnet node as an example:
 
    .. code-block:: console
 
-      $concordium-client account update-keys --credId <credential-registration-id> --sender <account-name-or-address> ./update-keys.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+      $concordium-client account update-keys ./update-keys.json \
+         --credId <credential-registration-id> \
+         --sender <account-name-or-address> \
+         --grpc-port 20000 \
+         --grpc-ip node.testnet.concordium.com
 
    where ``update-keys.json`` is a file of the following format:
 
@@ -143,13 +155,23 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    .. code-block:: console
 
-      $concordium-client account update-credentials --new-credentials new-credential.json --new-threshold <number-of-credential-to-sign> --sender <account-name-or-address> --grpc-port <grpc-port-of-server> --grpc-ip <grpc-ip-url-to-node>
+      $concordium-client account update-credentials \
+         --new-credentials new-credential.json \
+         --new-threshold <number-of-credential-to-sign> \
+         --sender <account-name-or-address> \
+         --grpc-port <grpc-port-of-server> \
+         --grpc-ip <grpc-ip-url-to-node>
 
    Using the node connection to the hosted testnet node as an example:
 
    .. code-block:: console
 
-      $concordium-client account update-credentials --new-credentials new-credential.json --new-threshold <number-of-credential-to-sign> --sender <account-name-or-address> --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+      $concordium-client account update-credentials \
+         --new-credentials new-credential.json \
+         --new-threshold <number-of-credential-to-sign> \
+         --sender <account-name-or-address> \
+         --grpc-port 20000 \
+         --grpc-ip node.testnet.concordium.com
 
    where ``new-credential.json`` is the file from the previous step.
 
@@ -184,7 +206,8 @@ tool in this section (Option 2). The guide for the first option is in the
 
       You can read up on how to export a key file from the browser wallet :ref:`here<export-key>`.
 
-   Your ``browser_wallet.export`` file should look similar to the following browser wallet export template:
+   Your ``browser_wallet.export`` file should look similar to the following browser wallet export template which has
+   two keys for its credential 0 and a threshold of 2 for this credential:
 
    .. code-block:: json
       :force:
@@ -223,7 +246,16 @@ tool in this section (Option 2). The guide for the first option is in the
 
    .. code-block:: console
 
-      $concordium-client config account import browser_wallet.export --name <choose-a-name-for-your-account>
+      $concordium-client config account import browser_wallet.export \
+         --name <choose-a-name-for-your-account>
+
+   A summary of the achievements from this section:
+
+   - We exported a key file from the browser wallet.
+
+   - We added additional keys to the file format.
+
+   - We imported the key file to the local key directory of the ``concordium-client`` tool.
 
 .. dropdown:: Assign an already imported key to your account
 
@@ -236,12 +268,18 @@ tool in this section (Option 2). The guide for the first option is in the
    .. note::
 
       We do not recommend to re-use keys on different accounts in production.
+      Instead, use a newly generated key pair when adding additional keys to an account.
+
+   You can update the keys of your account by running the following command:
 
    .. code-block:: console
 
-      $concordium-client config account update-keys --keys new-keys.json --account <account-name-or-address>
+      $concordium-client config account update-keys \
+         --keys new-keys.json \
+         --account <account-name-or-address>
 
-   where ``new-keys.json`` is a file of the following format:
+   where ``new-keys.json`` contains the content of one of the key files in the stored local key directory of the
+   ``concordium-client`` tool that you want to reuse. The ``new-keys.json`` file has the following format:
 
    .. code-block:: json
       :force:
@@ -267,11 +305,44 @@ tool in this section (Option 2). The guide for the first option is in the
          ...
       }
 
+   For example, when you want to add a key for your `credentialIndex` 0 and the `keyIndex` 1
+   of your account, use the following ``new-keys.json`` file format:
+
+   .. code-block:: json
+      :force:
+
+      {
+         "0": {
+            "1": {
+               "encryptedSignKey": {
+                  "metadata": {
+                     "encryptionMethod": "AES-256",
+                     "iterations": ...,
+                     "salt": ...,
+                     "initializationVector": ...,
+                     "keyDerivationMethod": "PBKDF2WithHmacSHA256"
+                  },
+                  "cipherText": ...
+               },
+               "verifyKey": ...,
+               "schemeId": "Ed25519"
+            },
+            ...
+         }
+      }
+
+   A summary of the achievements from this section:
+
+   - We looked up a key file from the local key directory of the ``concordium-client`` tool.
+
+   - We created a ``new-keys.json`` file containing the looked-up key.
+
+   - We updated the keys in the local key directory of the ``concordium-client`` tool with the ``new-keys.json`` file.
+
 .. note::
 
    These commands update the keys in the key directory of your local ``concordium-client`` tool. No transaction
    is sent on-chain.
-
 
 Create a multi-sig transaction
 ==============================
@@ -288,14 +359,29 @@ transaction into the specified file instead of sending it on-chain.
 If you omit the ``--signers`` flag, ``concordium-client`` will output
 a transaction signed with all keys associated with the account as present in the local key directory.
 If you want to sign with specific keys from the local key directory,
-you can specify some of them with the ``--signers`` flag (e.g. ``--signer "0:0,0:1"``).
+you can specify some of them with the ``--signers`` flag (e.g. ``--signers "0:0,0:1"``).
 
-For example, to create a multi-sig transaction to send 1 CCD to an account on testnet using all local keys,
+For example, to create a multi-sig transaction to send 1 CCD to an account on testnet using the local key "0:0" to sign,
 run the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA --amount 1 --out ./transaction.json --energy 5000 --sender 4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+   $concordium-client transaction send \
+      --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA \
+      --amount 1 \
+      --out ./transaction.json \
+      --energy 5000 \
+      --sender 4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix \
+      --signers "0:0" \
+      --expiry "24h" \
+      --grpc-port 20000 \
+      --grpc-ip node.testnet.concordium.com
+
+.. note::
+
+   Choose an ``expiryTime`` with the ``--expiry`` flag for the transaction that takes into account the time it takes to gather all signatures
+   by the different entities. The expiration time of a transaction is specified as a relative duration (e.g. "30s", "5m")
+   or a UNIX timestamp. If the ``expiryTime`` has passed, the transaction is no longer valid.
 
 The multi-sig transaction is outputted into the ``transaction.json`` file and has the following format:
 
@@ -331,7 +417,15 @@ from a file, run the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction send --keys ./keypair.json --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA --amount 1 --out ./transaction.json --energy 5000 --sender 4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+   $concordium-client transaction send \
+      --keys ./keypair.json \
+      --receiver 4bbdAUCDK2D6cUvUeprGr4FaSaHXKuYmYVjyCa4bXSCu3NUXzA \
+      --amount 1 \
+      --out ./transaction.json \
+      --energy 5000 \
+      --sender 4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix \
+      --signers "0:0" \
+      --grpc-ip node.testnet.concordium.com
 
 where ``keypair.json`` is a file of the following format:
 
@@ -368,11 +462,6 @@ empty ``keypair.json`` file of the following format:
 
    {}
 
-.. note::
-
-   Choose an ``expiryTime`` for the transaction that takes into account the time it takes to gather all signatures
-   by the different entities. If the ``expiryTime`` has passed, the transaction is no longer valid.
-
 Add an additional signature to a multi-sig transaction
 ======================================================
 
@@ -381,7 +470,9 @@ previous section) on a potentially different device by a different entity, run t
 
 .. code-block:: console
 
-   $concordium-client transaction add-signature ./transaction.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+   $concordium-client transaction add-signature ./transaction.json \
+      --grpc-port 20000 \
+      --grpc-ip node.testnet.concordium.com
 
 .. note::
 
@@ -393,7 +484,7 @@ previous section) on a potentially different device by a different entity, run t
 .. note::
 
    If you want to sign with specific keys from the local key directory,
-   you can specify some of them with the ``--signers`` flag (e.g. ``--signer "0:0,0:1"``).
+   you can specify some of them with the ``--signers`` flag (e.g. ``--signers "0:0,0:1"``).
 
 .. note::
 
@@ -433,7 +524,9 @@ previous section) on-chain, run the following command:
 
 .. code-block:: console
 
-   $concordium-client transaction submit ./transaction.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+   $concordium-client transaction submit ./transaction.json \
+      --grpc-port 20000 \
+      --grpc-ip node.testnet.concordium.com
 
 .. note::
 
