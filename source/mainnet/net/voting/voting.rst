@@ -10,7 +10,7 @@ The user flow for the voter is as follows. It assumes the user has a wallet on t
 For |cryptox|, |bw|, |mw-gen2| and |cryptox| wallet holders
 ===========================================================
 
-Note that |mw-gen2| users with Android 14 might experience a technical bug preventing them from connecting to the voting dApp. They can import their account into the |bw| or the |cryptox| with their seed phrase, and vote from those wallets.  
+Note that |mw-gen2| users with Android 14 might experience a technical bug preventing them from connecting to the voting dApp. They can import their account into the |bw| or the |cryptox| with their seed phrase, and vote from those wallets.
 
 #. Navigate to the voting dApp.
 
