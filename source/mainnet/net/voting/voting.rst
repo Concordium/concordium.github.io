@@ -61,7 +61,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
 .. dropdown:: Desktop wallet
 
-    Users need to create a new account in |bw| or |cryptox| and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before delegating your vote.
+    Users need to create a new account in |bw| or |cryptox| and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before delegating your vote. But the memo transaction which effectively delegates the vote and the vote from the new account need to take place within the official voting window.
 
     **To delegate your vote:**
 
@@ -96,7 +96,7 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
    **Alternative route**
 
-   Alternatively, users need to create a new account in |bw| or |cryptox|, and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before delegating your vote.
+   Alternatively, users need to create a new account in |bw| or |cryptox|, and delegate their vote from their |mw-gen1| account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before delegating your vote. But the memo transaction which effectively delegates the vote and the vote from the new account need to take place within the official voting window.
 
    #. Tap **Send** on the account to delegate from.
 
@@ -122,15 +122,15 @@ These older wallets do not have the capability to connect to dApps. But you do h
 
 .. dropdown:: Concordium Client
 
-    Users need to create a new account in |bw| or |cryptox| and delegate their vote from their Concordium Client wallet account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before the election.
+    Users need to create a new account in |bw| or |cryptox| and delegate their vote from their Concordium Client wallet account(s) to the new account, then vote from the new account. You can create the new account in |bw| or |cryptox| at any time before the election. But the memo transaction which effectively delegates the vote and the vote from the new account need to take place within the official voting window.
 
     **To delegate your vote:**
 
     .. code-block:: console
 
-        $concordium-client transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2024
+        $concordium-client --secure --grpc-ip grpc.mainnet.concordium.software transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2024
 
-    #. Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is an optional sender name/address, which is needed only if multiple accounts have been imported in the Concordium Client. Note the memo *delegatevote2024* for the delegation to be valid.
+    #. Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo *delegatevote2024* for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.
 
     #. Vote from the account that has received the delegation.
 
