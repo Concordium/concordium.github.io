@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/voting/voting.aadd60e5-66fc-4819-967d-3524ff563725.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/voting/voting.ab0d25ed-95c5-457a-8b9c-9593988bba99.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/voting/voting';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -727,6 +727,7 @@ body {margin:0;}
 <li class="toctree-l1 has-children"><a class="reference internal" href="../references/concordium-client.html">Concordium Client</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-28"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../references/transactions.html">Concordium Client transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../references/query-node.html">Querying a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../references/multi-sig.html">Multi-sig</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/run-local-chain.html">Run a local chain</a></li>
@@ -1052,7 +1053,7 @@ Desktop wallet<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote.</p>
+<p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote. But the memo transaction which effectively delegates the vote and the vote from the new account need to take place within the official voting window.</p>
 <p class="sd-card-text"><strong>To delegate your vote:</strong></p>
 <ol class="arabic">
 <li><p class="sd-card-text">In the account from which you want to vote, click <strong>Send</strong>.</p></li>
@@ -1089,7 +1090,7 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>Import the backup</strong> created in step 1 into CryptoX Concordium Wallet.</p></li>
 </ol>
 <p class="sd-card-text"><strong>Alternative route</strong></p>
-<p class="sd-card-text">Alternatively, users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet, and delegate their vote from their Concordium Legacy Wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote.</p>
+<p class="sd-card-text">Alternatively, users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet, and delegate their vote from their Concordium Legacy Wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote. But the memo transaction which effectively delegates the vote and the vote from the new account need to take place within the official voting window.</p>
 <ol class="arabic">
 <li><p class="sd-card-text">Tap <strong>Send</strong> on the account to delegate from.</p></li>
 <li><p class="sd-card-text">Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in Concordium Wallet for Web or CryptoX Concordium Wallet. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In <strong>Optional: Add memo</strong> add a memo that says <strong>delegatevote2024</strong>. Tap <strong>Send amount</strong>.</p>
@@ -1120,13 +1121,13 @@ Concordium Client<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Concordium Client wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before the election.</p>
+<p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Concordium Client wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before the election. But the memo transaction which effectively delegates the vote and the vote from the new account need to take place within the official voting window.</p>
 <p class="sd-card-text"><strong>To delegate your vote:</strong></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>A<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--memo<span class="w"> </span>delegatevote2024
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>--secure<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.mainnet.concordium.software<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>A<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--memo<span class="w"> </span>delegatevote2024
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is an optional sender name/address, which is needed only if multiple accounts have been imported in the Concordium Client. Note the memo <em>delegatevote2024</em> for the delegation to be valid.</p></li>
+<li><p class="sd-card-text">Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo <em>delegatevote2024</em> for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.</p></li>
 <li><p class="sd-card-text">Vote from the account that has received the delegation.</p></li>
 </ol>
 </div>
