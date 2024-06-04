@@ -354,3 +354,4 @@ structure of ``concordium-client`` for more details.
 
    transactions
    query-node
+   multi-sig
