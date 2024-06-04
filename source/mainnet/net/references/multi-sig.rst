@@ -54,10 +54,31 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
 .. dropdown:: Add an additional public-private key pair to your current credential
 
-   - Step 1: Create an additional Ed25519 public-private key pair as you feel safe.
+   - Step 1: Create an additional Ed25519 public-private key pair.
 
    For testing purposes we recommend, the `front-end <https://cyphr.me/ed25519_tool/ed.html>`_ to generate an un-safe
    additional key pair.
+
+   For production purposes, we recommend using the following command to generate a safe additional key pair:
+
+   .. code-block:: console
+
+      $openssl genpkey -algorithm ed25519 -out private.pem
+      $openssl pkey -inform pem -in private.pem -noout -text
+
+   This will output your public and private key pairs in a hex format in the console as follows:
+
+   .. code-block:: console
+
+      ED25519 Private-Key:
+      priv:
+         0f:6e:.................................4e:a3:
+         98:f6:.................................61:39:
+         0b:2a
+      pub:
+         aa:bb:79:18:3d:af:e2:6e:fc:5b:81:74:f1:16:37:
+         51:f2:25:d4:64:f7:72:8a:de:48:c0:28:d3:e6:aa:
+         1b:09
 
    - Step 2: Find the credential registration ID of your account that we are updating keys for.
 
@@ -187,6 +208,8 @@ To configure the ``concordium-client`` tool to use a multi-sig account, you can 
 - pass in the signing keys via a file every time you sign a transaction (Option 1).
 - configure the ``concordium-client`` tool once to include the additional keys in its local key directory (Option 2).
 
+.. _key_directory:
+
 To view the key directory path that the ``concordium-client`` tool is using, run the following command:
 
    .. code-block:: console
@@ -206,7 +229,7 @@ tool in this section (Option 2). The guide for the first option is in the
 
       You can read up on how to export a key file from the browser wallet :ref:`here<export-key>`.
 
-   Your ``browser_wallet.export`` file should look similar to the following browser wallet export template which has
+   Your adapted ``browser_wallet.export`` file should look similar to the following browser wallet export template which has
    two keys for its credential 0 and a threshold of 2 for this credential:
 
    .. code-block:: json
@@ -221,15 +244,24 @@ tool in this section (Option 2). The guide for the first option is in the
                "keys": {
                   "0": {
                      "keys": {
+
+                        // "E.g. Add your key already on-chain at keyIndex 0."
+
                         "0": {
                            "signKey": "<Key_0_Private_Key_Without_0x_Prefix>",
                            "verifyKey": "<Key_0_Public_Key_Without_0x_Prefix>"
                         },
+
+                        // "E.g. Add your newly generated key at keyIndex 1."
+
                         "1": {
                            "signKey": "<Key_1_Private_Key_Without_0x_Prefix>",
                            "verifyKey": "<Key_1_Public_Key_Without_0x_Prefix>"
                         }
                      },
+
+                     // "E.g. Update the threshold to 2."
+
                      "threshold": 2
                   }
                },
@@ -264,6 +296,11 @@ tool in this section (Option 2). The guide for the first option is in the
    to ``concordium-client`` and this key pair was re-used in your multi-sig account),
    you can look up the key in the local key directory of the ``concordium-client`` tool and associate
    the file's content to your multi-sig account.
+
+   .. note::
+
+      You can read up on how to view the key directory of the
+      ``concordium-client`` tool :ref:`here<key_directory>`.
 
    .. note::
 
@@ -305,7 +342,7 @@ tool in this section (Option 2). The guide for the first option is in the
          ...
       }
 
-   For example, when you want to add a key for your `credentialIndex` 0 and the `keyIndex` 1
+   For example, when you want to add a key for your ``credentialIndex`` 0 and the ``keyIndex`` 1
    of your account, use the following ``new-keys.json`` file format:
 
    .. code-block:: json
@@ -453,6 +490,12 @@ where ``keypair.json`` is a file of the following format:
       ...
    }
 
+.. note::
+
+   You can read up on how to view the key directory of the
+   ``concordium-client`` tool :ref:`here<key_directory>`.
+   The format of the ``keypair.json`` file is the same as the format of the key files
+   in the local key directory of the  ``concordium-client`` tool.
 
 If you want to create a multi-sig transaction with no signatures at all, you can use an
 empty ``keypair.json`` file of the following format:
