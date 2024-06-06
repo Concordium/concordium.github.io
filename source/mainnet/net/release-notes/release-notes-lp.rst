@@ -1657,13 +1657,7 @@ Concordium Client
 
     - Add command ``transaction add-signature`` to add a signature to a partially-signed transaction.
 
-    - Add optional ``--out`` flag to all transaction-creating commands to output a partially-singed transaction to a file.
-
-    - Add preliminary support for protocol version 7.
-
-    - Update GHC version to 9.6.4 (lts-22.9).
-
-    - Update Rust version to 1.73.
+    - Add optional ``--out`` flag to all transaction-creating commands to output a partially-signed transaction to a file.
 
 
     .. dropdown:: Previous releases
