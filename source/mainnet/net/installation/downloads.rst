@@ -175,6 +175,12 @@ Concordium Client |client-version|
 
 -  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_6.3.0-1.zip>`_
 
+   - The Windows distribution is a zip file that must be extracted before use.
+     To do this, in Windows Explorer, right-click the downloaded file and select
+     "Extract All...". After extraction, you will have a folder containing the
+     Concordium Client executable (``concordium-client.exe``) as well as other files
+     that are required to run the client.
+
 .. _cargo-concordium-testnet:
 
 ``cargo-concordium``
