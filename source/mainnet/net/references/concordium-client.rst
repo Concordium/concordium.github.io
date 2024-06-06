@@ -43,22 +43,22 @@ Run Concordium Client from the command line. On MacOS or Linux, access the comma
 
 On MacOS, you can run the Concordium Client from the command line by typing ``concordium-client``, since the installation adds the client to the PATH.
 
-On Linux, the binary file includes the version and build number, so you can run it by typing ``./concordium-client_6.3.0-0`` from the directory where the file is located. Otherwise, you have to specify the full path to the executable file, or ensure that it is in a directory that is on the PATH. Note that after downloading the file, you may need to make it executable by running ``chmod +x concordium-client_6.3.0-0`` before you can run it.
+On Linux, the binary file includes the version and build number, so you can run it by typing ``./concordium-client_6.3.0-1`` from the directory where the file is located. Otherwise, you have to specify the full path to the executable file, or ensure that it is in a directory that is on the PATH. Note that after downloading the file, you may need to make it executable by running ``chmod +x concordium-client_6.3.0-1`` before you can run it.
 
-On Windows, to run Concordium Client you have to specify the full path to the executable file (unless you are running from the same directory). For example, if you extracted ``concordium-client_6.3.0-0.zip`` to ``C:\Users\User\Downloads\concordium-client_6.3.0-0``, then you can run the client by typing ``C:\Users\User\Downloads\concordium-client_6.3.0-0\concordium-client.exe``.
+On Windows, to run Concordium Client you have to specify the full path to the executable file (unless you are running from the same directory). For example, if you extracted ``concordium-client_6.3.0-1.zip`` to ``C:\Users\User\Downloads\concordium-client_6.3.0-1``, then you can run the client by typing ``C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe``.
 When running commands for the Concordium Client in the terminal, replace ``concordium-client`` with the full path to the executable file as in the following example:
 
 .. code-block:: console
 
-   C:\Users\User\Downloads\concordium-client_6.3.0-0\concordium-client.exe config account import concordium-backup.concordiumwallet --name AccountA
+   C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
 
 .. Note::
 
-   To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.concordiumwallet is saved. If not, you have to specify the full path to the file, for example:
+   To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.export is saved. If not, you have to specify the full path to the file, for example:
 
    .. code-block:: console
 
-      C:\Users\User\Downloads\concordium-client_6.3.0-0\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.concordiumwallet --name AccountA
+      C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
 
 Commands and help
 =================
