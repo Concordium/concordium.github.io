@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/voting/voting.44627161-6e06-494c-a95e-2d679f0d6b3a.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/voting/voting.6af8efe1-5db4-4057-8106-08a065e7d4f9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/voting/voting';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -992,8 +992,9 @@ body {margin:0;}
   <span class="target" id="voting"></span><section id="how-to-vote">
 <h1>How to vote<a class="headerlink" href="#how-to-vote" title="Link to this heading">#</a></h1>
 <p>The user flow for the voter is as follows. It assumes the user has a wallet on the Concordium blockchain with some CCD, enough to pay for transaction fees.</p>
-<section id="for-cryptox-bw-and-mw-gen2-wallet-holders">
-<h2>For CryptoX Concordium Wallet, Concordium Wallet for Web, and Concordium Wallet for Mobile wallet holders<a class="headerlink" href="#for-cryptox-bw-and-mw-gen2-wallet-holders" title="Link to this heading">#</a></h2>
+<section id="for-cryptox-bw-mw-gen2-and-cryptox-wallet-holders">
+<h2>For CryptoX Concordium Wallet, Concordium Wallet for Web, Concordium Wallet for Mobile and CryptoX Concordium Wallet wallet holders<a class="headerlink" href="#for-cryptox-bw-mw-gen2-and-cryptox-wallet-holders" title="Link to this heading">#</a></h2>
+<p>Note that Concordium Wallet for Mobile users with Android 14 might experience a technical bug preventing them from connecting to the voting dApp. They can import their account into the Concordium Wallet for Web or the CryptoX Concordium Wallet with their seed phrase, and vote from those wallets.</p>
 <ol class="arabic">
 <li><p>Navigate to the voting dApp.</p></li>
 <li><p>The voting dApp presents a list of candidates. Each candidate has a small graphic and a link to a description of their choice. <strong>The image below is only an example.</strong></p>
@@ -1042,8 +1043,8 @@ Concordium Wallet for Web<div class="sd-summary-down docutils">
 </div>
 </details></section>
 </section>
-<section id="for-desktop-wallet-and-mw-gen1-wallet-holders">
-<h2>For Desktop wallet and Concordium Legacy Wallet wallet holders<a class="headerlink" href="#for-desktop-wallet-and-mw-gen1-wallet-holders" title="Link to this heading">#</a></h2>
+<section id="for-desktop-wallet-mw-gen1-and-concordium-client-wallet-holders">
+<h2>For Desktop wallet, Concordium Legacy Wallet and Concordium Client wallet holders<a class="headerlink" href="#for-desktop-wallet-mw-gen1-and-concordium-client-wallet-holders" title="Link to this heading">#</a></h2>
 <p>These older wallets do not have the capability to connect to dApps. But you do have an option to exercise your vote.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1052,11 +1053,11 @@ Desktop wallet<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web, CryptoX Concordium Wallet, or Concordium Wallet for Mobile and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web, CryptoX Concordium Wallet, or Concordium Wallet for Mobile at any time before the election.</p>
+<p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Desktop wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote. But the memo transaction, which effectively delegates the vote, and the vote from the new account both need to take place within the official voting window.</p>
 <p class="sd-card-text"><strong>To delegate your vote:</strong></p>
 <ol class="arabic">
 <li><p class="sd-card-text">In the account from which you want to vote, click <strong>Send</strong>.</p></li>
-<li><p class="sd-card-text">Enter any amount of CCD (1 micro-CCD is enough). The target account in Concordium Wallet for Web, CryptoX Concordium Wallet, or Concordium Wallet for Mobile is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says <strong>delegatevote2024</strong>.</p>
+<li><p class="sd-card-text">Enter any amount of CCD (1 micro-CCD is enough). The target account in Concordium Wallet for Web or CryptoX Concordium Wallet is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says <strong>delegatevote2024</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/dw-vote-delegation.png"><img alt="send CCD window in desktop wallet showing how to delegate vote" src="../../_images/dw-vote-delegation.png" style="width: 100%;" />
 </a>
@@ -1089,10 +1090,10 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
 <li><p class="sd-card-text"><strong>Import the backup</strong> created in step 1 into CryptoX Concordium Wallet.</p></li>
 </ol>
 <p class="sd-card-text"><strong>Alternative route</strong></p>
-<p class="sd-card-text">Alternatively, users need to create a new account in Concordium Wallet for Web, CryptoX Concordium Wallet, or Concordium Wallet for Mobile and delegate their vote from their Concordium Legacy Wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web, CryptoX Concordium Wallet, or Concordium Wallet for Mobile at any time before the election.</p>
+<p class="sd-card-text">Alternatively, users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet, and delegate their vote from their Concordium Legacy Wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote. But the memo transaction, which effectively delegates the vote, and the vote from the new account both need to take place within the official voting window.</p>
 <ol class="arabic">
 <li><p class="sd-card-text">Tap <strong>Send</strong> on the account to delegate from.</p></li>
-<li><p class="sd-card-text">Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in Concordium Wallet for Web, CryptoX Concordium Wallet, or Concordium Wallet for Mobile. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In <strong>Optional: Add memo</strong> add a memo that says <strong>delegatevote2024</strong>. Tap <strong>Send amount</strong>.</p>
+<li><p class="sd-card-text">Enter any amount of CCD (1 micro-CCD is enough). Enter the recipient address which is the target account in Concordium Wallet for Web or CryptoX Concordium Wallet. You can paste the address after copying it, scan the QR code of the account, or select it from the address book. In <strong>Optional: Add memo</strong> add a memo that says <strong>delegatevote2024</strong>. Tap <strong>Send amount</strong>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/mwgen1-delegate-vote.png"><img alt="send CCD window in old mobile wallet showing how to delegate vote" src="../../_images/mwgen1-delegate-vote.png" style="width: 100%;" />
 </a>
@@ -1111,6 +1112,23 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
 </div></blockquote>
 </li>
 <li><p class="sd-card-text">It is possible to check from the Voting DApp that the delegation worked. The window for delegating votes is the same as voting with the DApp.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Client<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Concordium Client wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote. But the memo transaction, which effectively delegates the vote, and the vote from the new account both need to take place within the official voting window.</p>
+<p class="sd-card-text"><strong>To delegate your vote:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>--secure<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.mainnet.concordium.software<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>A<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--memo<span class="w"> </span>delegatevote2024
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo <em>delegatevote2024</em> for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.</p></li>
+<li><p class="sd-card-text">Vote from the account that has received the delegation.</p></li>
 </ol>
 </div>
 </details></section>
@@ -1205,11 +1223,11 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-cryptox-bw-and-mw-gen2-wallet-holders">For CryptoX Concordium Wallet, Concordium Wallet for Web, and Concordium Wallet for Mobile wallet holders</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-cryptox-bw-mw-gen2-and-cryptox-wallet-holders">For CryptoX Concordium Wallet, Concordium Wallet for Web, Concordium Wallet for Mobile and CryptoX Concordium Wallet wallet holders</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-from-multiple-accounts">Voting from multiple accounts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-desktop-wallet-and-mw-gen1-wallet-holders">For Desktop wallet and Concordium Legacy Wallet wallet holders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-desktop-wallet-mw-gen1-and-concordium-client-wallet-holders">For Desktop wallet, Concordium Legacy Wallet and Concordium Client wallet holders</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-see-delegations">How to see delegations</a></li>
 </ul>
   </nav></div>
