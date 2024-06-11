@@ -34,7 +34,7 @@ Wallets
 
     - Ability to unshield your balances from the "More" screen
 
-    - Support for WalletConnect binary messages signing
+    - Support for signing WalletConnect binary messages
 
     - Ability to paste the phrase from the clipboard when importing a wallet
 
