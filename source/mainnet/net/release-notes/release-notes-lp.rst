@@ -18,13 +18,11 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.1.1 - June 11, 2024
-    ^^^^^^^^^^^^^^^^^^^^^
+    **1.1.1 - June 11, 2024**
 
     Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor
 
-    1.1.0 - June 06, 2024
-    ^^^^^^^^^^^^^^^^^^^^^
+    **1.1.0 - June 06, 2024**
 
     Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
 
