@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.431c9ea8-6de4-4abf-8ba4-b6357b0667c4.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.8dc6b024-bbf3-4408-a6b0-b87414e4177d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1001,51 +1001,81 @@ body {margin:0;}
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>April 25, 2024</p>
-<p>Version 1.0.0 brings feature parity with Concordium Wallet for Mobile, fixes multiple bugs and improves the overall user experience.</p>
+<div><p><strong>1.1.1 - June 11, 2024</strong></p>
+<p>Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor</p>
+<p><strong>1.1.0 - June 06, 2024</strong></p>
+<p>Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.</p>
+<p>What has been removed:</p>
+<ul class="simple">
+<li><p>Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available</p></li>
+</ul>
 <p>The following features have been added:</p>
 <ul class="simple">
-<li><p>Setting up and updating validator pool commission rates</p></li>
-<li><p>Support for WalletConnect CCD transfer requests</p></li>
-<li><p>Ability to see full details of a WalletConnect transaction to sign</p></li>
-<li><p>Ability to see full details of a Spaceseven transaction to sign</p></li>
-<li><p>Support for WalletConnect verifiable presentation requests (for identity proofs)</p></li>
-<li><p>Validation of metadata checksum when adding CIS-2 tokens</p></li>
-<li><p>Display of balance/ownership when adding CIS-2 tokens</p></li>
+<li><p>Ability to unshield your balances from the “More” screen</p></li>
+<li><p>Support for signing WalletConnect binary messages</p></li>
+<li><p>Ability to paste the phrase from the clipboard when importing a wallet</p></li>
 </ul>
-<p>The issues fixed in this release:</p>
+<p>Other changes:</p>
 <ul class="simple">
-<li><p>Not working signing of a text message through WalletConnect</p></li>
-<li><p>Ability for a dApp to request to get a transaction signed by a different account than the one chosen for the WalletConnect session</p></li>
-<li><p>Crashing when received unexpected error from an identity provider</p></li>
-<li><p>Exiting the wallet after accepting an identity verification error</p></li>
-<li><p>Incorrect environment name in a private key export file for Mainnet</p></li>
-<li><p>Improper handling of rejected identity verification when setting up a new wallet</p></li>
-<li><p>Showing “Address copied” when copying a transaction hash to the clipboard in the scheduled transfer view</p></li>
-<li><p>An issue where the identity name was off-center when the edit name icon was visible</p></li>
-<li><p>An issue where exporting transaction logs for an account without any transactions would be stuck at 0%</p></li>
-<li><p>“Invalid WalletConnect request” message repeatedly shown if received a request with unsupported transaction type</p></li>
-<li><p>Exported private key for file-based initial account being incompatible with concordium-client</p></li>
-<li><p>Inability to search for CIS-2 token by ID on contracts with lots of tokens</p></li>
-<li><p>When managing CIS-2 tokens, removing all of them when only unselecting the visible ones</p></li>
-<li><p>Composing a letter with a malformed recipient when clicking the support email on the About screen</p></li>
-<li><p>Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp</p></li>
+<li><p>The “Watch video” link on the welcome screen now opens the account creation tutorial</p></li>
+<li><p>Updated the Terms and the Privacy Policy</p></li>
+<li><p>Fixed a way to get into an empty wallet without confirming the seed phrase</p></li>
 </ul>
-<p>Some changes have been made to the app behavior:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Previous releases
+.. dropdown:: CryptoX Concordium Wallet 1.0.0 - April 25, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text">Version 1.0.0 brings feature parity with Concordium Wallet for Mobile, fixes multiple bugs and improves the overall user experience.</p>
+<p class="sd-card-text">The following features have been added:</p>
 <ul class="simple">
-<li><p>Running a recovery is suggested when facing account or identity creation errors</p></li>
-<li><p>Baker/baking renamed to Validator/validating</p></li>
-<li><p>WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts.</p></li>
-<li><p>WalletConnect transaction signing request now shows the receiver (either smart contract or an account) and amount of CCD to send (not including CIS-2 tokens)</p></li>
-<li><p>Transfers tab renamed to Activity on the account details screen</p></li>
-<li><p>Identity data tab on the account details screen is no longer shown for accounts without revealed attributes</p></li>
-<li><p>CIS-2 tokens with corrupted or missing metadata can no longer be added</p></li>
+<li><p class="sd-card-text">Setting up and updating validator pool commission rates</p></li>
+<li><p class="sd-card-text">Support for WalletConnect CCD transfer requests</p></li>
+<li><p class="sd-card-text">Ability to see full details of a WalletConnect transaction to sign</p></li>
+<li><p class="sd-card-text">Ability to see full details of a Spaceseven transaction to sign</p></li>
+<li><p class="sd-card-text">Support for WalletConnect verifiable presentation requests (for identity proofs)</p></li>
+<li><p class="sd-card-text">Validation of metadata checksum when adding CIS-2 tokens</p></li>
+<li><p class="sd-card-text">Display of balance/ownership when adding CIS-2 tokens</p></li>
 </ul>
-<p>Last but not least, some deprecated Concordium features have been removed:</p>
+<p class="sd-card-text">The issues fixed in this release:</p>
 <ul class="simple">
-<li><p>Revealing identity attributes when creating an account</p></li>
+<li><p class="sd-card-text">Not working signing of a text message through WalletConnect</p></li>
+<li><p class="sd-card-text">Ability for a dApp to request to get a transaction signed by a different account than the one chosen for the WalletConnect session</p></li>
+<li><p class="sd-card-text">Crashing when received unexpected error from an identity provider</p></li>
+<li><p class="sd-card-text">Exiting the wallet after accepting an identity verification error</p></li>
+<li><p class="sd-card-text">Incorrect environment name in a private key export file for Mainnet</p></li>
+<li><p class="sd-card-text">Improper handling of rejected identity verification when setting up a new wallet</p></li>
+<li><p class="sd-card-text">Showing “Address copied” when copying a transaction hash to the clipboard in the scheduled transfer view</p></li>
+<li><p class="sd-card-text">An issue where the identity name was off-center when the edit name icon was visible</p></li>
+<li><p class="sd-card-text">An issue where exporting transaction logs for an account without any transactions would be stuck at 0%</p></li>
+<li><p class="sd-card-text">“Invalid WalletConnect request” message repeatedly shown if received a request with unsupported transaction type</p></li>
+<li><p class="sd-card-text">Exported private key for file-based initial account being incompatible with concordium-client</p></li>
+<li><p class="sd-card-text">Inability to search for CIS-2 token by ID on contracts with lots of tokens</p></li>
+<li><p class="sd-card-text">When managing CIS-2 tokens, removing all of them when only unselecting the visible ones</p></li>
+<li><p class="sd-card-text">Composing a letter with a malformed recipient when clicking the support email on the About screen</p></li>
+<li><p class="sd-card-text">Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp</p></li>
+</ul>
+<p class="sd-card-text">Some changes have been made to the app behavior:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Running a recovery is suggested when facing account or identity creation errors</p></li>
+<li><p class="sd-card-text">Baker/baking renamed to Validator/validating</p></li>
+<li><p class="sd-card-text">WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts.</p></li>
+<li><p class="sd-card-text">WalletConnect transaction signing request now shows the receiver (either smart contract or an account) and amount of CCD to send (not including CIS-2 tokens)</p></li>
+<li><p class="sd-card-text">Transfers tab renamed to Activity on the account details screen</p></li>
+<li><p class="sd-card-text">Identity data tab on the account details screen is no longer shown for accounts without revealed attributes</p></li>
+<li><p class="sd-card-text">CIS-2 tokens with corrupted or missing metadata can no longer be added</p></li>
+</ul>
+<p class="sd-card-text">Last but not least, some deprecated Concordium features have been removed:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Revealing identity attributes when creating an account</p></li>
 </ul>
 </div></blockquote>
+</div>
+</details></div></blockquote>
 </section>
 <section id="mw-gen2-for-ios">
 <span id="rn-mwgen2-ios"></span><h3>Concordium Wallet for Mobile for iOS<a class="headerlink" href="#mw-gen2-for-ios" title="Link to this heading">#</a></h3>
