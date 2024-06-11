@@ -42,7 +42,7 @@ Wallets
 
     - The "Watch video" link on the welcome screen now opens the account creation tutorial
 
-    - Actualized the Terms and the Privacy Policy
+    - Updated the Terms and the Privacy Policy
 
     - Fixed a way to get into an empty wallet without confirming the seed phrase
 
