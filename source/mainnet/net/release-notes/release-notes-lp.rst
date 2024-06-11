@@ -26,7 +26,7 @@ Wallets
 
     Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
 
-    What have been removed:
+    What has been removed:
 
     - Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available
 
