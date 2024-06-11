@@ -18,77 +18,102 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    April 25, 2024
+    1.1.0 - June 06, 2024
 
-    Version 1.0.0 brings feature parity with |mw-gen2|, fixes multiple bugs and improves the overall user experience.
+    Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
 
+    What have been removed:
+
+    - Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available
+    
     The following features have been added:
+    
+    - Ability to unshield your balances from the "More" screen
+    
+    - Support for WalletConnect binary messages signing
+    
+    - Ability to paste the phrase from the clipboard when importing a wallet
+    
+    Other changes:
+    
+    - The "Watch video" link on the welcome screen now opens the account creation tutorial
+    
+    - Actualized the Terms and the Privacy Policy
+    
+    - Fixed a way to get into an empty wallet without confirming the seed phrase
 
-    - Setting up and updating validator pool commission rates
+    .. dropdown:: Previous releases
+        .. dropdown:: |cryptox| 1.0.0 - April 25, 2024
 
-    - Support for WalletConnect CCD transfer requests
+            Version 1.0.0 brings feature parity with |mw-gen2|, fixes multiple bugs and improves the overall user experience.
 
-    - Ability to see full details of a WalletConnect transaction to sign
+            The following features have been added:
 
-    - Ability to see full details of a Spaceseven transaction to sign
+            - Setting up and updating validator pool commission rates
 
-    - Support for WalletConnect verifiable presentation requests (for identity proofs)
+            - Support for WalletConnect CCD transfer requests
 
-    - Validation of metadata checksum when adding CIS-2 tokens
+            - Ability to see full details of a WalletConnect transaction to sign
 
-    - Display of balance/ownership when adding CIS-2 tokens
+            - Ability to see full details of a Spaceseven transaction to sign
 
-    The issues fixed in this release:
+            - Support for WalletConnect verifiable presentation requests (for identity proofs)
 
-    - Not working signing of a text message through WalletConnect
+            - Validation of metadata checksum when adding CIS-2 tokens
 
-    - Ability for a dApp to request to get a transaction signed by a different account than the one chosen for the WalletConnect session
+            - Display of balance/ownership when adding CIS-2 tokens
 
-    - Crashing when received unexpected error from an identity provider
+            The issues fixed in this release:
 
-    - Exiting the wallet after accepting an identity verification error
+            - Not working signing of a text message through WalletConnect
 
-    - Incorrect environment name in a private key export file for Mainnet
+            - Ability for a dApp to request to get a transaction signed by a different account than the one chosen for the WalletConnect session
 
-    - Improper handling of rejected identity verification when setting up a new wallet
+            - Crashing when received unexpected error from an identity provider
 
-    - Showing "Address copied" when copying a transaction hash to the clipboard in the scheduled transfer view
+            - Exiting the wallet after accepting an identity verification error
 
-    - An issue where the identity name was off-center when the edit name icon was visible
+            - Incorrect environment name in a private key export file for Mainnet
 
-    - An issue where exporting transaction logs for an account without any transactions would be stuck at 0%
+            - Improper handling of rejected identity verification when setting up a new wallet
 
-    - "Invalid WalletConnect request" message repeatedly shown if received a request with unsupported transaction type
+            - Showing "Address copied" when copying a transaction hash to the clipboard in the scheduled transfer view
 
-    - Exported private key for file-based initial account being incompatible with concordium-client
+            - An issue where the identity name was off-center when the edit name icon was visible
 
-    - Inability to search for CIS-2 token by ID on contracts with lots of tokens
+            - An issue where exporting transaction logs for an account without any transactions would be stuck at 0%
 
-    - When managing CIS-2 tokens, removing all of them when only unselecting the visible ones
+            - "Invalid WalletConnect request" message repeatedly shown if received a request with unsupported transaction type
 
-    - Composing a letter with a malformed recipient when clicking the support email on the About screen
+            - Exported private key for file-based initial account being incompatible with concordium-client
 
-    - Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp
+            - Inability to search for CIS-2 token by ID on contracts with lots of tokens
 
-    Some changes have been made to the app behavior:
+            - When managing CIS-2 tokens, removing all of them when only unselecting the visible ones
 
-    - Running a recovery is suggested when facing account or identity creation errors
+            - Composing a letter with a malformed recipient when clicking the support email on the About screen
 
-    - Baker/baking renamed to Validator/validating
+            - Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp
 
-    - WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts.
+            Some changes have been made to the app behavior:
 
-    - WalletConnect transaction signing request now shows the receiver (either smart contract or an account) and amount of CCD to send (not including CIS-2 tokens)
+            - Running a recovery is suggested when facing account or identity creation errors
 
-    - Transfers tab renamed to Activity on the account details screen
+            - Baker/baking renamed to Validator/validating
 
-    - Identity data tab on the account details screen is no longer shown for accounts without revealed attributes
+            - WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts.
 
-    - CIS-2 tokens with corrupted or missing metadata can no longer be added
+            - WalletConnect transaction signing request now shows the receiver (either smart contract or an account) and amount of CCD to send (not including CIS-2 tokens)
 
-    Last but not least, some deprecated Concordium features have been removed:
+            - Transfers tab renamed to Activity on the account details screen
 
-    - Revealing identity attributes when creating an account
+            - Identity data tab on the account details screen is no longer shown for accounts without revealed attributes
+
+            - CIS-2 tokens with corrupted or missing metadata can no longer be added
+
+            Last but not least, some deprecated Concordium features have been removed:
+
+            - Revealing identity attributes when creating an account
 
 .. _rn-mwgen2-ios:
 
