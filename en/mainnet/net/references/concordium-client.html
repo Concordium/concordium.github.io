@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/references/concordium-client.563ebfab-d7ae-43aa-a5a6-8b5ee3edbeff.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/references/concordium-client.a6036339-6158-4d24-8429-237d01b913bc.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/references/concordium-client';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1018,15 +1018,17 @@ You can see the fee in the transaction log.</p>
 <section id="run-concordium-client">
 <h2>Run Concordium Client<a class="headerlink" href="#run-concordium-client" title="Link to this heading">#</a></h2>
 <p>Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.</p>
-<p>To run the Concordium Client, you have to specify its full path unless you are in the same directory. If using MacOS the installation puts it in $PATH so that you can type <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> from anywhere. You must specify the file name, including the version number. For example, assuming that you saved the <code class="docutils literal notranslate"><span class="pre">concordium-client_5.1.1.exe</span></code> in the Downloads folder of a user called User, then the full path is probably <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_5.1.1.exe</span></code>. So you enter the full path at the prompt in the terminal.</p>
-<p>When running commands for the Concordium Client in the terminal, replace concordium-client with <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_&lt;version&gt;.exe</span></code> as in the following example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_5.1.1.exe config account import concordium-backup.concordiumwallet --name AccountA</span>
+<p>On MacOS, you can run the Concordium Client from the command line by typing <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>, since the installation adds the client to the PATH.</p>
+<p>On Linux, the binary file includes the version and build number, so you can run it by typing <code class="docutils literal notranslate"><span class="pre">./concordium-client_6.3.0-1</span></code> from the directory where the file is located. Otherwise, you have to specify the full path to the executable file, or ensure that it is in a directory that is on the PATH. Note that after downloading the file, you may need to make it executable by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">concordium-client_6.3.0-1</span></code> before you can run it.</p>
+<p>On Windows, to run Concordium Client you have to specify the full path to the executable file (unless you are running from the same directory). For example, if you extracted <code class="docutils literal notranslate"><span class="pre">concordium-client_6.3.0-1.zip</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_6.3.0-1</span></code>, then you can run the client by typing <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe</span></code>.
+When running commands for the Concordium Client in the terminal, replace <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> with the full path to the executable file as in the following example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.concordiuwallet is saved. If not, you have to specify the full path to the file, for example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_5.1.1.exe config account import C:\Users\User\Desktop\concordium-backup.concordiumwallet --name AccountA</span>
+<p>To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.export is saved. If not, you have to specify the full path to the file, for example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA</span>
 </pre></div>
 </div>
 </div>

@@ -56,7 +56,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
    - Step 1: Create an additional Ed25519 public-private key pair.
 
-   For testing purposes we recommend, the `front-end <https://cyphr.me/ed25519_tool/ed.html>`_ to generate an un-safe
+   For testing purposes, we recommend the `front-end <https://cyphr.me/ed25519_tool/ed.html>`_ to generate an un-safe
    additional key pair.
 
    For production purposes, we recommend using the following command to generate a safe additional key pair:
@@ -64,6 +64,11 @@ To add additional keys to an existing account on Concordium using the ``concordi
    .. code-block:: console
 
       $openssl genpkey -algorithm ed25519 -out private.pem
+
+   The keys can be output in a hex format in the console as follows:
+
+   .. code-block:: console
+
       $openssl pkey -inform pem -in private.pem -noout -text
 
    This will output your public and private key pairs in a hex format in the console as follows:

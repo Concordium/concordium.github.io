@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.8dc6b024-bbf3-4408-a6b0-b87414e4177d.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.0ee09e51-4323-49f1-bd8d-4e9a0996d4ce.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -3199,17 +3199,16 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <section id="concordium-client">
 <span id="rn-client"></span><h3>Concordium Client<a class="headerlink" href="#concordium-client" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>November 28, 2023</p>
-<blockquote>
-<div><p>Concordium Client 6.2.1 includes support for the following:</p>
+<div><p>June 07, 2024</p>
+<p>Concordium Client 6.3.0 includes support for the following:</p>
 <ul class="simple">
-<li><p>Revised client’s reconnect handling so that the client will no longer attempt to automatically reconnect on timeouts and node resource exhaustion.</p></li>
-<li><p>Renamed bakers to validators in output in accordance with the upcoming tokenomics changes.</p></li>
-<li><p>Added additional configuration options that use validator in place of baker in accordance with the upcoming tokenomics changes. For example, <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">validator</span> <span class="pre">add</span></code>. The older options still exist, but are hidden.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">inspect</span></code> command now attempts to print any embedded verifiable build information.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">deploy</span></code> command now warns if a module is being deployed that does not have embedded verifiable build information.</p></li>
+<li><p>Breaking change: Change command <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">submit</span></code> to submit already-signed transactions to the chain (transactions must now already be signed, e.g. with <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">add-signature</span></code>).</p></li>
+<li><p>Remove command <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">SendTransaction</span></code>.</p></li>
+<li><p>Remove command <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">send-shielded</span></code> to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.</p></li>
+<li><p>Remove command <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">shield</span></code> to disable the transfer of CCD from the public balance to the shielded balance of an account.</p></li>
+<li><p>Add command <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">add-signature</span></code> to add a signature to a partially-signed transaction.</p></li>
+<li><p>Add optional <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag to all transaction-creating commands to output a partially-signed transaction to a file.</p></li>
 </ul>
-</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -3219,14 +3218,29 @@ Previous releases<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
+6.2.1 - November 28, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Client 6.2.1 includes support for the following:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Revised client’s reconnect handling so that the client will no longer attempt to automatically reconnect on timeouts and node resource exhaustion.</p></li>
+<li><p class="sd-card-text">Renamed bakers to validators in output in accordance with the upcoming tokenomics changes.</p></li>
+<li><p class="sd-card-text">Added additional configuration options that use validator in place of baker in accordance with the upcoming tokenomics changes. For example, <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">validator</span> <span class="pre">add</span></code>. The older options still exist, but are hidden.</p></li>
+<li><p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">inspect</span></code> command now attempts to print any embedded verifiable build information.</p></li>
+<li><p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">deploy</span></code> command now warns if a module is being deployed that does not have embedded verifiable build information.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
 6.1.0 - October 10, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium Client 6.1.0 includes support for the following:</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p class="sd-card-text">Added baker win-time command for determining the earliest time a specified baker is expected to bake.</p></li>
 <li><p class="sd-card-text">Added support for the following node version 6.1 queries under the <code class="docutils literal notranslate"><span class="pre">raw</span></code> command:</p>
 <blockquote>
@@ -3242,7 +3256,6 @@ Previous releases<div class="sd-summary-down docutils">
 </div></blockquote>
 </li>
 </ul>
-</div></blockquote>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">

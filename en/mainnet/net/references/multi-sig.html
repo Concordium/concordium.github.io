@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/references/multi-sig.686e2b4f-c398-4a69-accd-9438e4d83934.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/references/multi-sig.5d1f2ae2-bd58-4d1e-8a8e-d1ee12da41e1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/references/multi-sig';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1047,11 +1047,14 @@ Add an additional public-private key pair to your current credential<div class="
 <ul class="simple">
 <li><p class="sd-card-text">Step 1: Create an additional Ed25519 public-private key pair.</p></li>
 </ul>
-<p class="sd-card-text">For testing purposes we recommend, the <a class="reference external" href="https://cyphr.me/ed25519_tool/ed.html">front-end</a> to generate an un-safe
+<p class="sd-card-text">For testing purposes, we recommend the <a class="reference external" href="https://cyphr.me/ed25519_tool/ed.html">front-end</a> to generate an un-safe
 additional key pair.</p>
 <p class="sd-card-text">For production purposes, we recommend using the following command to generate a safe additional key pair:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>genpkey<span class="w"> </span>-algorithm<span class="w"> </span>ed25519<span class="w"> </span>-out<span class="w"> </span>private.pem
-<span class="gp">$</span>openssl<span class="w"> </span>pkey<span class="w"> </span>-inform<span class="w"> </span>pem<span class="w"> </span>-in<span class="w"> </span>private.pem<span class="w"> </span>-noout<span class="w"> </span>-text
+</pre></div>
+</div>
+<p class="sd-card-text">The keys can be output in a hex format in the console as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkey<span class="w"> </span>-inform<span class="w"> </span>pem<span class="w"> </span>-in<span class="w"> </span>private.pem<span class="w"> </span>-noout<span class="w"> </span>-text
 </pre></div>
 </div>
 <p class="sd-card-text">This will output your public and private key pairs in a hex format in the console as follows:</p>
