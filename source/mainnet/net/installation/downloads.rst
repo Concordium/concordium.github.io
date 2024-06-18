@@ -61,48 +61,51 @@ Concordium Desktop Wallet
 
 .. dropdown:: Mainnet
 
-   .. card:: Windows v1.7.3
-      :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.7.3.exe
+   .. card:: Windows v1.7.4
+      :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.7.4.exe
 
-   .. card:: MacOS v1.7.3
-      :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.7.3.dmg
+   .. card:: MacOS v1.7.4
+      :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.7.4.dmg
 
-   .. dropdown:: Linux® v1.7.3
+   .. dropdown:: Linux® v1.7.4
 
-      - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.AppImage>`_
+      - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.4.AppImage>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
          - :ref:`Verification instructions <verification-cdw-appimage>`
 
-      - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.deb>`_
+      - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.4.deb>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
          - :ref:`Verification instructions <verification-cdw-deb>`
 
-      - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.rpm>`_
+      - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.4.rpm>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
          - :ref:`Verification instructions <verification-cdw-rpm>`
 
 .. dropdown:: Testnet
 
-   .. card:: Windows v1.7.3
-      :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.7.3.exe
+   .. card:: Windows v1.7.4
+      :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.7.4.exe
 
-   .. card:: MacOS v1.7.3
-      :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.7.3.dmg
+   .. card:: MacOS v1.7.4
+      :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.7.4.dmg
 
-   .. dropdown:: Linux® v1.7.3
+   .. dropdown:: Linux® v1.7.4
 
       Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-      -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.AppImage>`_
+      -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.4.AppImage>`_
+         // TODO: update checksum
          -  SHA256 checksum of the download: ``98dd7ec121f5e3ff2825de69533d6a49f9da3a857452845dc7b0bd0f70990ad0``
 
-      -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.deb>`_
+      -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.4.deb>`_
+         // TODO: update checksum
          -  SHA256 checksum of the download: ``48b89e1a1c4677694ad28882f771e93cc5234d03e49cbfcfba07c3214aeb4c3c``
 
-      -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.rpm>`_
+      -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.4.rpm>`_
+         // TODO: update checksum
          -  SHA256 checksum of the download: ``a3b47aa43f31705c8d1789e870fab052603afa00a7555ee2f87158da64f29fea``
 
 .. _ledger-app-download:

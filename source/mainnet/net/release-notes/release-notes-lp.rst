@@ -457,11 +457,21 @@ Wallets
 Desktop Wallet
 --------------
 
-    March 21, 2024
+    June 18, 2024
 
-        Version 1.7.3 fixes an issue reported on Windows where the LEDGER connectivity state was faulty, preventing users from signing transactions.
+    Version 1.7.4 contains the following changes:
+
+    - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+
+    - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
+
+    - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.3 - March 21, 2024
+
+            Version 1.7.3 fixes an issue reported on Windows where the LEDGER connectivity state was faulty, preventing users from signing transactions.
 
         .. dropdown:: 1.7.2 - December 14, 2023
 
