@@ -7,6 +7,8 @@ Inspect a release schedule
 
 By inspecting the release schedule, you can see when the releases are unlocked.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: |mw-gen2|
 
       #. Go to the **Accounts** page.

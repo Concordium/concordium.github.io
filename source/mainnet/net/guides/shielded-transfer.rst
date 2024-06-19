@@ -17,9 +17,6 @@ Prerequisites
     Exchanges do not support shielded transfers. Attempting to do a shielded transfer to an exchange may cause missing or inaccessible funds on the exchange wallet.
 
 .. Note::
-   You can't make shielded transfers on multi-signature accounts in the Desktop Wallet.
-
-.. Note::
 
    All transfers and transactions cost a fee, including shielding and unshielding transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
@@ -30,9 +27,14 @@ Prerequisites
    Do not shield or transfer all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
 
 .. Note::
-    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
+    On Testnet you can request CCDs for testing purposes. Use the button in an account to request 20000 CCDs.
+
+.. dropdown:: |cryptox|
 
 .. dropdown:: Desktop Wallet
+
+    .. Note::
+        You can't make shielded transfers on multi-signature accounts in the Desktop Wallet.
 
     .. dropdown:: Send a shielded amount of CCD
 

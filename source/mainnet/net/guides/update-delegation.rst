@@ -24,6 +24,8 @@ Before delegating stake to a staking pool, it is important to research the pool 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
+.. dropdown:: |cryptox|
+
 .. dropdown:: Desktop Wallet
 
     .. dropdown:: Single signature account

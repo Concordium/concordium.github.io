@@ -16,7 +16,9 @@ This topic describes how you can send CCD from an account when only one particip
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
 .. Note::
-    On Testnet you can request CCDs for testing purposes. Use the Request button in an account to request 2000 CCDs.
+    On Testnet you can request CCDs for testing purposes. Use the button in an account to request 20000 CCDs.
+
+.. dropdown:: |cryptox|
 
 .. dropdown:: Desktop Wallet
 
