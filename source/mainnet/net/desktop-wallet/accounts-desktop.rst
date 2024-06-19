@@ -12,17 +12,15 @@ To view information about an account, go to **Accounts** and select the relevant
 .. image:: ../images/desktop-wallet/dw-wallet-totals.png
    :alt: area in desktop wallet showing totals
 
--  **Wallet total** shows the total amount of CCDs in all accounts in this wallet, including shielded balances and CCDs that are scheduled to be released to your account on a future date.
+-  **Wallet total** shows the total amount of CCDs in all accounts in this wallet, including shielded balances (:ref:`deprecated<shielded-balance-feature-deprecation>`) and CCDs that are scheduled to be released to your account on a future date.
 
--  **At disposal** shows the amount of CCDs you have available for transactions in all accounts in this wallet. This includes shielded balances but *not* staked amounts or CCDs that are scheduled to be released to your account on a future date.
+-  **At disposal** shows the amount of CCDs you have available for transactions in all accounts in this wallet. This includes shielded balances (:ref:`deprecated<shielded-balance-feature-deprecation>`) but *not* staked amounts or CCDs that are scheduled to be released to your account on a future date.
 
 -  **Stake** shows the amount of CCDs staked in all accounts for this wallet.
 
 The most common tasks on an account are:
 
 -  **Send**: Send CCD to a recipient in your address book. See :ref:`Create CCD transfer in the Desktop Wallet <send-ccd-wallets>`.
-
--  **Shield**: Transfer CCD from your public balance to your shielded balance. See :ref:`Shield CCD on an account <shield-ccd-wallets>`.
 
 -  **Receive**: Select this to display the account address. Select the icon to the right to copy the address if you want to share it with other participants in the network or let them scan the QR code.
 
@@ -31,22 +29,22 @@ In the account card in the accounts list, you can see the following information:
 .. image:: ../images/desktop-wallet/dw-acct-card-in-list.png
    :alt: example of account card with information, validator icon, ledger icon shown
 
--  The **Account Total** shows the total number of CCDs on the account, which includes the CCDs that are available and any staked CCDs or shielded CCDs. It also includes CCDs that are scheduled to be released to your account on a future date.
+-  The **Account Total** shows the total number of CCDs on the account, which includes the CCDs that are available and any staked CCDs or shielded CCDs (:ref:`deprecated<shielded-balance-feature-deprecation>`). It also includes CCDs that are scheduled to be released to your account on a future date.
 
--  The **Balance Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does *not* include shielded CCDs.
+-  The **Balance Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does *not* include shielded CCDs (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
 -  The **Staked** amount shows the amount staked if the account is a validator or delegator.
 
--  **Shielded balance** shows any shielded amounts on the account.
+-  **Shielded balance** shows any shielded amounts (:ref:`deprecated<shielded-balance-feature-deprecation>`) on the account.
 
 In addition, you can see the following information about the selected account on the **Balance** tab in the account details:
 
 .. image:: ../images/desktop-wallet/dw-balance-details.png
    :alt: dark screen showing balance details for one account
 
--  The **Balance Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does *not* include shielded CCDs.
+-  The **Balance Total** shows the total number of CCD on the account, which includes the CCD that is available and any staked CCD or CCDs that are scheduled to be released to your account on a future date. It does *not* include shielded CCDs (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 
 -  The **At disposal** amount is the amount you can use for transactions, which excludes staked CCD and CCD in a release schedule.
 
@@ -54,14 +52,14 @@ In addition, you can see the following information about the selected account on
 
 -  The **Delegation to...** amount shows the amount delegated to a staking pool or passive delegation.
 
-On the Shielded balance tab, you'll see:
+On the Shielded balance tab (:ref:`deprecated<shielded-balance-feature-deprecation>`), you'll see:
 
--  The **Shielded balance total** shows the amount of CCD that you've shielded. The **Balance total** is visible to all participants on the Concordium Blockchain, while the **Shielded balance total** is visible to you only.
+-  The **Shielded balance total** (:ref:`deprecated<shielded-balance-feature-deprecation>`) shows the amount of CCD that you've shielded (:ref:`deprecated<shielded-balance-feature-deprecation>`). The **Balance total** is visible to all participants on the Concordium Blockchain, while the **Shielded balance total** (:ref:`deprecated<shielded-balance-feature-deprecation>`) is visible to you only.
 
    .. Note::
-      Shielded transfers and Shielded balance is only available on accounts with a single credential. You can't make or receive shielded transfers on multi-signature accounts.
+      Shielded transfers (:ref:`deprecated<shielded-balance-feature-deprecation>`) and Shielded balance is only available on accounts with a single credential. You can't make or receive shielded transfers on multi-signature accounts.
 
-The Transactions box contains the 10 latest transactions on the account including transfers to other accounts, shielded transfers, and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account they are also applied here.
+The Transactions box contains the 10 latest transactions on the account including transfers to other accounts, shielded transfers (:ref:`deprecated<shielded-balance-feature-deprecation>`), and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account they are also applied here.
 
 More options
 ============

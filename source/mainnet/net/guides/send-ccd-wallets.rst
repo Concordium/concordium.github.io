@@ -26,7 +26,7 @@ This topic describes how you can send CCD from an account when only one particip
 
          .. image:: ../images/desktop-wallet/dw-send.png
 
-    #. In the right pane, enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account, and you’ll have to change the amount. Enter a **Memo** if you want to send a message to the recipient along with the shielded amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes. Click **Select Recipient**.
+    #. In the right pane, enter the amount of CCD that you want to send. If the amount you want to transfer including the transfer fee exceeds the amount in your account, you’ll see a message saying **Insufficient funds**. This means that there's not enough CCD in the account, and you’ll have to change the amount. Enter a **Memo** if you want to send a message to the recipient along with the amount. Note that there's a fee associated with sending a memo and the fee depends on the size of the memo in bytes. Click **Select Recipient**.
 
         .. image:: ../images/desktop-wallet/dw-send-ccd.png
 

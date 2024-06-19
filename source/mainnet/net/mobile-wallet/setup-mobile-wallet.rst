@@ -9,8 +9,7 @@ Set up the |mw-gen1|
 ========================
 
 The |mw-gen1| is a digital :term:`wallet` that enables you to create and manage your Concordium
-:term:`identities<identity>` and :term:`accounts<account>` and to create transactions such as sending CCD, :term:`shielding` and :term:`unshielding` CCD,
-and sending :term:`shielded transactions<shielded transfer>`.
+:term:`identities<identity>` and :term:`accounts<account>` and to create transactions such as sending CCD.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
