@@ -1183,16 +1183,20 @@ Mainnet
 Testnet
 -------
 
-    February 20, 2024
+    June 19, 2024
 
-    The 6.3.0 release contains the following fixes and improvements:
-
-    - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
-    - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
-    - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
-    - Startup time of the node has improved on all supported distributions.
+    Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.0 - February 20, 2024
+
+            Version 6.3.0 contains the following fixes and improvements:
+
+            - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
+            - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
+            - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
+            - Startup time of the node has improved on all supported distributions.
 
         .. dropdown:: 6.2.3 - November 28, 2023
 
