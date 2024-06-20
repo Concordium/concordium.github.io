@@ -21,7 +21,7 @@ Sphinx supplies a number of useful
 ["directives"](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html)
 (The sphinx equivalent of LaTeX commands) for stuff like code highlighting,
 remarks, warnings and so on.
-
+export PATH="/Users/ivan/Library/Python/3.9/bin"
 Additionally, we have enabled the [extension for
 todo](https://www.sphinx-doc.org/en/master/usage/extensions/todo.html)
 directives
