@@ -1183,7 +1183,7 @@ Mainnet
 Testnet
 -------
 
-    June 19, 2024
+    June 20, 2024
 
     Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
