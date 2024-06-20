@@ -219,7 +219,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Ubuntu |mainnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.3.0-0_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Mainnet Debian package <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.3.1-0_amd64.deb>`_.
 
          - SHA256 checksum of the download: |node-deb-package-checksum|
 
@@ -229,7 +229,11 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`. To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-   .. dropdown:: Windows |mainnet-node-version|
+   .. dropdown:: Windows 6.3.0
+
+      .. Note::
+
+         The Mainnet Windows installer package is not currently available for version 6.3.1. You can still use the Mainnet Windows installer package for version 6.3.0 to run a node on Windows.
 
       To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.3.0-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
@@ -237,7 +241,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Mac |mainnet-node-version|
 
-      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.3.0.pkg>`_.
+      To run a node on macOS, `download a Mainnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-6.3.1.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS  <run-node-macos>`.
 
