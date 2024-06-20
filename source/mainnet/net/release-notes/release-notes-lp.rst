@@ -288,13 +288,23 @@ Wallets
 |bw|
 -------------------------
 
-    April 4, 2024
+    June 20, 2024
 
-    Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
+    Version 1.5.2 includes several changes and bug fixes.
+        -   Added new option to edit account name. Name saved in local storage. Changed name displayed across all BrowserWallet.
+        -   Additional error message. Now instead of not showing invalid tokens, they displayed in token list with corresponding error. In order to show, that we found tokens in contract, but they have error.
+        -   Display the optional name for ID providers when present, otherwise fallback to the chain name.
+        -   Increased padding for QR code background. In dark mode, QR code not blending with background.
+        -   Remove check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
 
     .. dropdown:: Previous releases
 
+        .. dropdown:: |bw| 1.5.1 - April 4, 2024
+
+            Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
+
         .. dropdown:: |bw| 1.5.0 - March 20, 2024
+
             In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.
 
         .. dropdown:: |bw| 1.4.2 - March 6, 2024
