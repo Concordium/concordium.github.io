@@ -229,13 +229,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`. To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-   .. dropdown:: Windows 6.3.0
+   .. dropdown:: Windows |mainnet-node-version|
 
-      .. Note::
-
-         The Mainnet Windows installer package is not currently available for version 6.3.1. You can still use the Mainnet Windows installer package for version 6.3.0 to run a node on Windows.
-
-      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.3.0-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Mainnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-6.3.1-0.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
