@@ -291,11 +291,11 @@ Wallets
     June 20, 2024
 
     Version 1.5.2 includes several changes and bug fixes.
-        -   Added new option to edit account name. Name saved in local storage. Changed name displayed across all BrowserWallet.
-        -   Additional error message. Now instead of not showing invalid tokens, they displayed in token list with corresponding error. In order to show, that we found tokens in contract, but they have error.
-        -   Display the optional name for ID providers when present, otherwise fallback to the chain name.
-        -   Increased padding for QR code background. In dark mode, QR code not blending with background.
-        -   Remove check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
+        -   Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.
+        -   Added display of the optional name for ID providers when present, otherwise fallback to the chain name.
+        -   Removed check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
+        -   Improved error messages when searching for all tokenIDs in a given smart contract. Invalid tokenIDs in the contract are now displayed with their corresponding reason for being invalid.
+        -   Increased padding of the QR code background element.
 
     .. dropdown:: Previous releases
 
