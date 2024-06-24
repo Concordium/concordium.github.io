@@ -288,7 +288,7 @@ Wallets
 |bw|
 -------------------------
 
-    June 20, 2024
+    June 24, 2024
 
     Version 1.5.2 includes several changes and bug fixes.
         -   Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.
