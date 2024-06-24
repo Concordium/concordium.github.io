@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.e2a7104b-e9db-4c68-ba3e-4ab3fd878e97.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.0430c613-2733-4cbf-b3a7-6f8122e07be4.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -2120,14 +2120,8 @@ Previous releases<div class="sd-summary-down docutils">
 <section id="mainnet">
 <span id="rn-node-mainnet"></span><span id="id3"></span><h3>Mainnet<a class="headerlink" href="#mainnet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>February 27, 2024</p>
-<p>The 6.3.0 release contains the following fixes and improvements:</p>
-<ul class="simple">
-<li><p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetBlockPendingUpdates</span></code> fails to report pending updates to the finalization committee parameters.</p></li>
-<li><p>GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option <code class="docutils literal notranslate"><span class="pre">--grpc2-max-threads</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_MAX_THREADS</span></code>) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.</p></li>
-<li><p>The option <code class="docutils literal notranslate"><span class="pre">--grpc2-max-concurrent-streams</span></code> now defaults to 200 from the previous unbounded value. This makes the node defaults safer.</p></li>
-<li><p>Startup time of the node has improved on all supported distributions.</p></li>
-</ul>
+<div><p>June 24, 2024</p>
+<p>Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -2136,6 +2130,21 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+6.3.0 - February 27, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 6.3.0 contains the following fixes and improvements:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetBlockPendingUpdates</span></code> fails to report pending updates to the finalization committee parameters.</p></li>
+<li><p class="sd-card-text">GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option <code class="docutils literal notranslate"><span class="pre">--grpc2-max-threads</span></code> (environment variable <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_GRPC2_MAX_THREADS</span></code>) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.</p></li>
+<li><p class="sd-card-text">The option <code class="docutils literal notranslate"><span class="pre">--grpc2-max-concurrent-streams</span></code> now defaults to 200 from the previous unbounded value. This makes the node defaults safer.</p></li>
+<li><p class="sd-card-text">Startup time of the node has improved on all supported distributions.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 6.2.3 - November 28, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
