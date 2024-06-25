@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.0430c613-2733-4cbf-b3a7-6f8122e07be4.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.0d314e79-2327-4838-99c2-c5f82a518a28.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1320,8 +1320,18 @@ Concordium Wallet for Mobile 1.0.0 - September 26, 2022<div class="sd-summary-do
 <section id="bw">
 <span id="rn-bw"></span><h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>April 4, 2024</p>
-<p>Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.</p>
+<div><p>June 25, 2024</p>
+<dl class="simple">
+<dt>Version 1.5.2 includes several changes and bug fixes.</dt><dd><ul class="simple">
+<li><p>Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.</p></li>
+<li><p>Added a new sign CIS3 message function in wallet-api, and corresponding view to display decoded payload of CIS3 message in browser wallet.</p></li>
+<li><p>Added display of the optional name for ID providers when present, otherwise fallback to the chain name.</p></li>
+<li><p>Removed check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.</p></li>
+<li><p>Improved error messages when searching for all tokenIDs in a given smart contract. Invalid tokenIDs in the contract are now displayed with their corresponding reason for being invalid.</p></li>
+<li><p>Increased padding of the QR code background element.</p></li>
+</ul>
+</dd>
+</dl>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -1331,12 +1341,21 @@ Previous releases<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Concordium Wallet for Web 1.5.0 - March 20, 2024
-In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.<div class="sd-summary-down docutils">
+Concordium Wallet for Web 1.5.1 - April 4, 2024<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web 1.5.0 - March 20, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">

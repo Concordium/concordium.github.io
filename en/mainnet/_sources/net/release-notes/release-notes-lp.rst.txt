@@ -288,13 +288,24 @@ Wallets
 |bw|
 -------------------------
 
-    April 4, 2024
+    June 25, 2024
 
-    Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
+    Version 1.5.2 includes several changes and bug fixes.
+        -   Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.
+        -   Added a new sign CIS3 message function in wallet-api, and corresponding view to display decoded payload of CIS3 message in browser wallet.
+        -   Added display of the optional name for ID providers when present, otherwise fallback to the chain name.
+        -   Removed check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
+        -   Improved error messages when searching for all tokenIDs in a given smart contract. Invalid tokenIDs in the contract are now displayed with their corresponding reason for being invalid.
+        -   Increased padding of the QR code background element.
 
     .. dropdown:: Previous releases
 
+        .. dropdown:: |bw| 1.5.1 - April 4, 2024
+
+            Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
+
         .. dropdown:: |bw| 1.5.0 - March 20, 2024
+
             In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.
 
         .. dropdown:: |bw| 1.4.2 - March 6, 2024
