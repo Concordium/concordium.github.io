@@ -288,13 +288,24 @@ Wallets
 |bw|
 -------------------------
 
-    April 4, 2024
+    June 25, 2024
 
-    Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
+    Version 1.5.2 includes several changes and bug fixes.
+        -   Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.
+        -   Added a new sign CIS3 message function in wallet-api, and corresponding view to display decoded payload of CIS3 message in browser wallet.
+        -   Added display of the optional name for ID providers when present, otherwise fallback to the chain name.
+        -   Removed check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
+        -   Improved error messages when searching for all tokenIDs in a given smart contract. Invalid tokenIDs in the contract are now displayed with their corresponding reason for being invalid.
+        -   Increased padding of the QR code background element.
 
     .. dropdown:: Previous releases
 
+        .. dropdown:: |bw| 1.5.1 - April 4, 2024
+
+            Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
+
         .. dropdown:: |bw| 1.5.0 - March 20, 2024
+
             In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.
 
         .. dropdown:: |bw| 1.4.2 - March 6, 2024
@@ -795,16 +806,20 @@ Nodes
 Mainnet
 -------
 
-    February 27, 2024
+    June 24, 2024
 
-    The 6.3.0 release contains the following fixes and improvements:
-
-    - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
-    - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
-    - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
-    - Startup time of the node has improved on all supported distributions.
+    Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.0 - February 27, 2024
+
+            Version 6.3.0 contains the following fixes and improvements:
+
+            - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
+            - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
+            - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
+            - Startup time of the node has improved on all supported distributions.
 
         .. dropdown:: 6.2.3 - November 28, 2023
 
@@ -1193,16 +1208,20 @@ Mainnet
 Testnet
 -------
 
-    February 20, 2024
+    June 20, 2024
 
-    The 6.3.0 release contains the following fixes and improvements:
-
-    - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
-    - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
-    - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
-    - Startup time of the node has improved on all supported distributions.
+    Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.0 - February 20, 2024
+
+            Version 6.3.0 contains the following fixes and improvements:
+
+            - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
+            - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
+            - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
+            - Startup time of the node has improved on all supported distributions.
 
         .. dropdown:: 6.2.3 - November 28, 2023
 
