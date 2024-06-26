@@ -56,9 +56,6 @@ On the Shielded balance tab (:ref:`deprecated<shielded-balance-feature-deprecati
 
 -  The **Shielded balance total** (:ref:`deprecated<shielded-balance-feature-deprecation>`) shows the amount of CCD that you've shielded (:ref:`deprecated<shielded-balance-feature-deprecation>`). The **Balance total** is visible to all participants on the Concordium Blockchain, while the **Shielded balance total** (:ref:`deprecated<shielded-balance-feature-deprecation>`) is visible to you only.
 
-   .. Note::
-      Shielded transfers (:ref:`deprecated<shielded-balance-feature-deprecation>`) and Shielded balance is only available on accounts with a single credential. You can't make or receive shielded transfers on multi-signature accounts.
-
 The Transactions box contains the 10 latest transactions on the account including transfers to other accounts, shielded transfers (:ref:`deprecated<shielded-balance-feature-deprecation>`), and scheduled transfers. When you select a transfer, you'll see the sender and recipient address, the transaction hash, and the block hash. Both successful and failed transactions are listed. If you have any log filters on the account they are also applied here.
 
 More options

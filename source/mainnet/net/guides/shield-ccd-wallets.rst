@@ -86,6 +86,13 @@ Unshield CCD on an account
                 :width: 25%
 
         The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+
+        .. Note::
+
+            You can hide the shielded balance. In the Account transaction overview tap |acct-settings| and tap
+            **Hide shielded balance**. This removes the shielded balance tab. Note that the shielded balance still
+            exists on the account; it is just not shown in the interface.
+
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow
         :width: 50px
@@ -138,6 +145,12 @@ Unshield CCD on an account
                 :width: 25%
 
         The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+
+        .. Note::
+
+            You can hide the shielded balance. In the Account transaction overview tap the |hamburger| menu and
+            tap **Hide shielded balance for account name**. This removes the shielded balance tab view.
+            Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
     .. |hamburger| image:: ../images/hamburger.png
             :alt: Three horizontal lines

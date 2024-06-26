@@ -272,9 +272,9 @@ This
 -  decrypts the shielded balance and checks that there is sufficient funds.
 -  sends the transaction.
 
-The command supports the same optional flags as ``shield`` with the addition
-of ``--index``, which has the same meaning as in the
-``send-shielded`` command.
+This command has all of the additional options of ``send``, as well as an
+additional flag ``--index.`` If given, this flag is used to select which
+:term:`incoming shielded amounts<shielded balance>` that will be used as input to the transaction.
 
 .. code-block:: console
 
