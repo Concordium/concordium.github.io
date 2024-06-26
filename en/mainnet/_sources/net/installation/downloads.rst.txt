@@ -61,49 +61,49 @@ Concordium Desktop Wallet
 
 .. dropdown:: Mainnet
 
-   .. card:: Windows v1.7.3
-      :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.7.3.exe
+   .. card:: Windows v1.7.4
+      :link: https://distribution.mainnet.concordium.software/tools/windows/concordium-desktop-wallet-1.7.4.exe
 
-   .. card:: MacOS v1.7.3
-      :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.7.3.dmg
+   .. card:: MacOS v1.7.4
+      :link: https://distribution.mainnet.concordium.software/tools/macos/concordium-desktop-wallet-1.7.4.dmg
 
-   .. dropdown:: Linux® v1.7.3
+   .. dropdown:: Linux® v1.7.4
 
-      - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.AppImage>`_
+      - `Mainnet AppImage <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.4.AppImage>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
          - :ref:`Verification instructions <verification-cdw-appimage>`
 
-      - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.deb>`_
+      - `Mainnet Debian package <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.4.deb>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
          - :ref:`Verification instructions <verification-cdw-deb>`
 
-      - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.3.rpm>`_
+      - `Mainnet RPM <https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.7.4.rpm>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
          - :ref:`Verification instructions <verification-cdw-rpm>`
 
 .. dropdown:: Testnet
 
-   .. card:: Windows v1.7.3
-      :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.7.3.exe
+   .. card:: Windows v1.7.4
+      :link: https://distribution.testnet.concordium.com/tools/windows/concordium-desktop-wallet-testnet-1.7.4.exe
 
-   .. card:: MacOS v1.7.3
-      :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.7.3.dmg
+   .. card:: MacOS v1.7.4
+      :link: https://distribution.testnet.concordium.com/tools/macos/concordium-desktop-wallet-testnet-1.7.4.dmg
 
-   .. dropdown:: Linux® v1.7.3
+   .. dropdown:: Linux® v1.7.4
 
       Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-      -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.AppImage>`_
-         -  SHA256 checksum of the download: ``98dd7ec121f5e3ff2825de69533d6a49f9da3a857452845dc7b0bd0f70990ad0``
+      -  `Testnet AppImage <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.4.AppImage>`_
+         -  SHA256 checksum of the download: ``b82c8c2bc3f9b4109699a0dd97d0ab3d160d22908402720aa4d8f4f07b7796ec``
 
-      -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.deb>`_
-         -  SHA256 checksum of the download: ``48b89e1a1c4677694ad28882f771e93cc5234d03e49cbfcfba07c3214aeb4c3c``
+      -  `Testnet Debian package <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.4.deb>`_
+         -  SHA256 checksum of the download: ``23d0421e56ac99120579b852361cc8799c4b3d1d4e681cefe72fe7dc771286c8``
 
-      -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.3.rpm>`_
-         -  SHA256 checksum of the download: ``a3b47aa43f31705c8d1789e870fab052603afa00a7555ee2f87158da64f29fea``
+      -  `Testnet RPM <https://distribution.testnet.concordium.com/tools/linux/concordium-desktop-wallet-testnet-1.7.4.rpm>`_
+         -  SHA256 checksum of the download: ``cc7063322cb1a86a0c936e1e59995a9252e52e0bdd4c9ec382b3a3ce27c09c75``
 
 .. _ledger-app-download:
 
