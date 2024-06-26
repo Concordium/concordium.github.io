@@ -457,7 +457,7 @@ Wallets
 Desktop Wallet
 --------------
 
-    June 18, 2024
+    June 26, 2024
 
     Version 1.7.4 contains the following changes:
 
