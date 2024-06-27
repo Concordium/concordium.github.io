@@ -178,9 +178,9 @@ Wallets
 
     June 26, 2024
 
-    Version 1.6.0 removed shielding. You can still enable and see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+    Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
 
-    Also fixed sending WalletConnect transaction with 0 energy if its payload is too large.
+    This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.
 
     .. dropdown:: Previous releases
 
@@ -674,7 +674,7 @@ Desktop Wallet
 
     June 26, 2024
 
-    Version 3.3.0 removes shielding. You can still enable and see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+    Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
 
     Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
