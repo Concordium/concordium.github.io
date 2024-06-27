@@ -8,6 +8,41 @@ Downloads
 
 This topic contains information about where you can download the Concordium Wallets and tools for Mainnet and Testnet.
 
+.. _downloads-cryptox:
+
+|cryptox|
+========================
+
+|cryptox| is available for iOS (15 or later) and Android™ (8 or later).
+
+It is the main Concordium mobile wallet and has the widest set of features.
+
+.. dropdown:: Mainnet
+
+   You can find |cryptox| on App Store and on Google Play.
+
+   .. image:: ../images/mobile-wallet/app-store-badge.svg
+      :width: 23%
+      :target: https://apps.apple.com/dk/app/cryptox-concordium-wallet/id1593386457
+   .. image:: ../images/mobile-wallet/google-play-badge.png
+      :width: 29.5%
+      :target: https://play.google.com/store/apps/details?id=com.pioneeringtechventures.wallet
+
+.. dropdown:: Testnet
+
+   **iOS**
+
+   #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the |mw-gen2| for Testnet on iOS.
+   #.  Follow `this link <https://testflight.apple.com/join/gnWggXOz>`__ on your iPhone to join our beta. You must have TestFlight installed.
+
+   **Android**
+
+   Click below to download the Android version of |cryptox| for Testnet.
+
+   .. image:: ../images/mobile-wallet/google-play-badge.png
+      :width: 29.5%
+      :target: https://play.google.com/store/apps/details?id=com.pioneeringtechventures.wallet.testnet
+
 .. _downloads-mwgen2:
 
 |mw-gen2|
