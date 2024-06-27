@@ -47,6 +47,7 @@ Wallets
     - Fixed a way to get into an empty wallet without confirming the seed phrase
 
     .. dropdown:: Previous releases
+        
         .. dropdown:: |cryptox| 1.0.0 - April 25, 2024
 
             Version 1.0.0 brings feature parity with |mw-gen2|, fixes multiple bugs and improves the overall user experience.
