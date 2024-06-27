@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/guides/shield-ccd-wallets.49ae22f7-c564-48c2-82e2-978d100c61bb.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/guides/shield-ccd-wallets.964941d9-533e-459e-8b3c-e40136782460.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/guides/shield-ccd-wallets';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -996,13 +996,31 @@ body {margin:0;}
                   
   <section id="unshield-ccd-on-an-account">
 <span id="shield-ccd-wallets"></span><h1>Unshield CCD on an account<a class="headerlink" href="#unshield-ccd-on-an-account" title="Link to this heading">#</a></h1>
-<div class="admonition note" id="shielded-balance-feature-deprecation">
-<p class="admonition-title">Note</p>
+<div class="admonition warning" id="shielded-balance-feature-deprecation">
+<p class="admonition-title">Warning</p>
 <p>Functionalities related to shielding a balance are deprecated in protocol 7 and above.
 No additional shielded balance can be added to an account and no transfer of shielded balance is possible.
 Only unshielding of an already shielded balance is possible and recommended to be done.
 Wallets and command-line tools will continue to display shielded balances and support the
 unshielding flow to recover already shielded funds.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This box contains some old context regarding the old shielding feature before protocol 7.</p>
+<p>Accounts on the Concordium blockchain had two balances, the <strong>Balance</strong> and the <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a>. You were able to move funds between these
+two balances using either a <a class="reference internal" href="../resources/glossary.html#term-Shielding"><span class="xref std std-term">shield CCD transaction</span></a> or an <a class="reference internal" href="../resources/glossary.html#term-Unshielding"><span class="xref std std-term">unshield CCD transaction</span></a>.</p>
+<p>When you shield an amount on an account, only the account’s credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can’t see the shielded balance or any shielded transfers going in or out of the account. You can’t make shielded transfers on multi-signature accounts, only on accounts with a single credential.</p>
+<p>If you have an account with CCD in the shielded balance, you can’t add new credentials to that account. Furthermore, once a shielded transfer has been logged on an account, you’ll no longer be able to add more credentials to that account. This is also the case even if you unshield all CCD in the shielded balance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not shield all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The amount contained in the Balance is publicly visible, while the amount on the Shielded balance is encrypted and is only visible for
+the account holder. Moving funds between the balances is also publicly visible, including the amount. Only shielded transfers between
+two different accounts have their amounts encrypted.</p>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1017,13 +1035,6 @@ You can see the fee in the transaction log.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Desktop Wallet<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Unshield CCD<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -1047,17 +1058,9 @@ Unshield CCD<div class="sd-summary-down docutils">
 </ol>
 <p class="sd-card-text">When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the <strong>Transfers</strong> list.</p>
 </div>
-</details></div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Mobile<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Unshield CCD<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -1107,17 +1110,9 @@ Unshield CCD<div class="sd-summary-down docutils">
 exists on the account; it is just not shown in the interface.</p>
 </div>
 </div>
-</details></div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Legacy Wallet<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Unshield CCD<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -1172,7 +1167,6 @@ tap <strong>Hide shielded balance for account name</strong>. This removes the sh
 Note that the shielded balance still exists on the account, it is just not shown in the interface.</p>
 </div>
 </div>
-</details></div>
 </details></section>
 
 
