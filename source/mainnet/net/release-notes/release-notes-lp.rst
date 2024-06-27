@@ -673,11 +673,17 @@ Desktop Wallet
 |mw-gen1| for Android
 ---------------------
 
-    December 1, 2023
+    June 26, 2024
 
-        |mw-gen1| 3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+    Version 3.3.0 removes shielding. You can still enable and see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+    Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.2.1 - December 1, 2023
+
+            3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
         .. dropdown:: 3.2.0 - February 6, 2023
 
