@@ -47,6 +47,7 @@ Wallets
     - Fixed a way to get into an empty wallet without confirming the seed phrase
 
     .. dropdown:: Previous releases
+
         .. dropdown:: |cryptox| 1.0.0 - April 25, 2024
 
             Version 1.0.0 brings feature parity with |mw-gen2|, fixes multiple bugs and improves the overall user experience.
@@ -175,23 +176,29 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    March 20, 2024
+    June 26, 2024
 
-    Version 1.5.1 fixes the following issues:
+    Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
 
-    - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
-
-    - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
-
-    -  Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
-
-    - Correct environment value now written to the key export file
-
-    - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
-
-    - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
+    This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.5.1 - March 20, 2024
+
+            Version 1.5.1 fixes the following issues:
+
+            - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
+
+            - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
+
+            -  Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
+
+            - Correct environment value now written to the key export file
+
+            - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
+
+            - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
 
         .. dropdown:: |mw-gen2| 1.5.0 - November 28, 2023
 
@@ -665,11 +672,17 @@ Desktop Wallet
 |mw-gen1| for Android
 ---------------------
 
-    December 1, 2023
+    June 26, 2024
 
-        |mw-gen1| 3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+    Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+    Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.2.1 - December 1, 2023
+
+            3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
         .. dropdown:: 3.2.0 - February 6, 2023
 
