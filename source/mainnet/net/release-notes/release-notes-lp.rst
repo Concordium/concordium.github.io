@@ -182,11 +182,10 @@ Wallets
 
     Also fixed sending WalletConnect transaction with 0 energy if its payload is too large.
 
-
     .. dropdown:: Previous releases
 
         .. dropdown:: |mw-gen2| 1.5.1 - March 20, 2024
-        
+
             Version 1.5.1 fixes the following issues:
 
             - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
