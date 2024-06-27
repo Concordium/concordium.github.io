@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.d4b8a522-4480-48a9-bf0f-e9b99f0520df.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.a0527fa2-fd23-4264-bc79-c88b594a3474.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1023,14 +1023,19 @@ body {margin:0;}
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Previous releases
-.. dropdown:: CryptoX Concordium Wallet 1.0.0 - April 25, 2024<div class="sd-summary-down docutils">
+Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<blockquote>
-<div><p class="sd-card-text">Version 1.0.0 brings feature parity with Concordium Wallet for Mobile, fixes multiple bugs and improves the overall user experience.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+CryptoX Concordium Wallet 1.0.0 - April 25, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 1.0.0 brings feature parity with Concordium Wallet for Mobile, fixes multiple bugs and improves the overall user experience.</p>
 <p class="sd-card-text">The following features have been added:</p>
 <ul class="simple">
 <li><p class="sd-card-text">Setting up and updating validator pool commission rates</p></li>
@@ -1073,8 +1078,8 @@ Previous releases
 <ul class="simple">
 <li><p class="sd-card-text">Revealing identity attributes when creating an account</p></li>
 </ul>
-</div></blockquote>
 </div>
+</details></div>
 </details></div></blockquote>
 </section>
 <section id="mw-gen2-for-ios">
@@ -1161,16 +1166,9 @@ Concordium Wallet for Mobile 1.0.0 - March 7, 2023<div class="sd-summary-down do
 <section id="mw-gen2-for-android">
 <span id="rn-mwgen2-android"></span><h3>Concordium Wallet for Mobile for Android<a class="headerlink" href="#mw-gen2-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>March 20, 2024</p>
-<p>Version 1.5.1 fixes the following issues:</p>
-<ul class="simple">
-<li><p>Changing the restake preference is no longer blocked when the validator’s stake is below minimum stake threshold.</p></li>
-<li><p>The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.</p></li>
-<li><p>Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.</p></li>
-<li><p>Correct environment value now written to the key export file</p></li>
-<li><p>It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.</p></li>
-<li><p>When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed</p></li>
-</ul>
+<div><p>June 26, 2024</p>
+<p>Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds CryptoX Concordium Wallet must be used.</p>
+<p>This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -1179,6 +1177,23 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Mobile 1.5.1 - March 20, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 1.5.1 fixes the following issues:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Changing the restake preference is no longer blocked when the validator’s stake is below minimum stake threshold.</p></li>
+<li><p class="sd-card-text">The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.</p></li>
+<li><p class="sd-card-text">Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.</p></li>
+<li><p class="sd-card-text">Correct environment value now written to the key export file</p></li>
+<li><p class="sd-card-text">It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.</p></li>
+<li><p class="sd-card-text">When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Mobile 1.5.0 - November 28, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -1912,10 +1927,9 @@ Testnet 0.1.52 - October 8, 2020<div class="sd-summary-down docutils">
 <section id="mw-gen1-for-android">
 <span id="rn-mwgen1-android"></span><h3>Concordium Legacy Wallet for Android<a class="headerlink" href="#mw-gen1-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>December 1, 2023</p>
-<blockquote>
-<div><p>Concordium Legacy Wallet 3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium’s tokenomics updates have also been applied. Note that in the Concordium Legacy Wallet wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to Concordium Wallet for Mobile or Concordium Wallet for Web. For information about how to migrate, see the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#wallet-migrate"><span class="std std-ref">FAQ</span></a> for Concordium Wallet for Mobile.</p>
-</div></blockquote>
+<div><p>June 26, 2024</p>
+<p>Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds CryptoX Concordium Wallet must be used.</p>
+<p>Also, the app now suggests installing CryptoX Concordium Wallet. No need to create a new wallet – just import your backup file into CryptoX Concordium Wallet, and you’re good to go!</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -1924,6 +1938,15 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+3.2.1 - December 1, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium’s tokenomics updates have also been applied. Note that in the Concordium Legacy Wallet wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to Concordium Wallet for Mobile or Concordium Wallet for Web. For information about how to migrate, see the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#wallet-migrate"><span class="std std-ref">FAQ</span></a> for Concordium Wallet for Mobile.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 3.2.0 - February 6, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
