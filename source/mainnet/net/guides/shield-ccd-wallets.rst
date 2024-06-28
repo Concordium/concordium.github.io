@@ -15,24 +15,22 @@ Unshield CCD on an account
    Wallets and command-line tools will continue to display shielded balances and support the
    unshielding flow to recover already shielded funds.
 
-.. Warning::
-    This box contains some old context regarding the old shielding feature before protocol 7.
+The next few paragraphs contain some old context regarding the old shielding feature before protocol 7.
 
-    Accounts on the Concordium blockchain had two balances, the **Balance** and the :term:`shielded balance`. You were able to move funds between these
-    two balances using either a :term:`shield CCD transaction<shielding>` or an :term:`unshield CCD transaction<unshielding>`.
+Accounts on the Concordium blockchain had two balances, the **Balance** and the :term:`shielded balance`. You were able to move funds between these
+two balances using either a :term:`shield CCD transaction<shielding>` or an :term:`unshield CCD transaction<unshielding>`.
 
-    When you shield an amount on an account, only the account's credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can't see the shielded balance or any shielded transfers going in or out of the account. You can't make shielded transfers on multi-signature accounts, only on accounts with a single credential.
+When you shield an amount on an account, only the account's credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can't see the shielded balance or any shielded transfers going in or out of the account. You weren't able to make shielded transfers on multi-signature accounts, only on accounts with a single credential.
 
-    If you have an account with CCD in the shielded balance, you can't add new credentials to that account. Furthermore, once a shielded transfer has been logged on an account, you'll no longer be able to add more credentials to that account. This is also the case even if you unshield all CCD in the shielded balance.
+If you have an account with CCD in the shielded balance, you can't add new credentials to that account. Furthermore, once a shielded transfer has been logged on an account, you'll no longer be able to add more credentials to that account. This is also the case even if you unshield all CCD in the shielded balance.
 
-    .. Note::
-        Do not shield all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
+.. Note::
+    Do not shield all of your funds or you will not have enough funds to cover transaction fees for unshielding or sending them.
 
-    .. Note::
-        The amount contained in the Balance is publicly visible, while the amount on the Shielded balance is encrypted and is only visible for
-        the account holder. Moving funds between the balances is also publicly visible, including the amount. Only shielded transfers between
-        two different accounts have their amounts encrypted.
-
+.. Note::
+    The amount contained in the Balance is publicly visible, while the amount on the Shielded balance is encrypted and is only visible for
+    the account holder. Moving funds between the balances is also publicly visible, including the amount. Only shielded transfers between
+    two different accounts have their amounts encrypted.
 
 .. Note::
 
