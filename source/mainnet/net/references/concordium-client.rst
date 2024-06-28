@@ -119,7 +119,7 @@ Each account has
 
 *  for each credential holder of the account, one or more (up to 256) key-pairs for signing transactions. They are
    identified by the key index, which is an integer starting at 0.
-*  decryption key-pair used for decrypting the shielded balance of the
+*  decryption key-pair used for decrypting the shielded balance (:ref:`deprecated<shielded-balance-feature-deprecation>`) of the
    account.
 
 For all those keys, the private part of the key-pair is encrypted in the local
@@ -160,7 +160,7 @@ Display contents
 
 Display the full contents of the persistent configuration. This will display the
 stored keys that are used for signing transactions (under the ``Account Keys``
-section) and the stored key for sending shielded transfers (under the
+section) and the stored key for decrypting its shielded balance (:ref:`deprecated<shielded-balance-feature-deprecation>`) (under the
 ``Encryption secret key`` section) when they are present.
 
 Example:

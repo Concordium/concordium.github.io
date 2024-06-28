@@ -6,8 +6,7 @@ Set up the |mw-gen2|
 ========================
 
 The |mw-gen2| is a digital :term:`wallet` that enables you to create and manage your Concordium
-:term:`identities<identity>` and :term:`accounts<account>` and to create transactions such as sending CCD, :term:`shielding` and :term:`unshielding` CCD,
-and sending :term:`shielded transactions<shielded transfer>`.
+:term:`identities<identity>` and :term:`accounts<account>` and to create transactions such as sending CCD, and :term:`unshielding` CCD (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
@@ -138,7 +137,7 @@ When you tap on an account, you see the details for the specific account, includ
 - Scan QR code: scan QR code of a dApp
 - Account settings: perform some less often used actions on an account
    - Transfer filters: configure filters to show or hide rewards
-   - Show shielded balance: Show the shielded balance tab on the account and the shielding action buttons
+   - Show shielded balance: Show the shielded balance tab on the account (:ref:`deprecated<shielded-balance-feature-deprecation>`)
    - Release schedule: :ref:`inspect a release schedule<inspect-release-schedule-mw>`
    - Change account name: :ref:`customize account names<change-mw-acct-name>`
    - Export private key: :ref:`export your private key<export-key>` for testing smart contracts, for example

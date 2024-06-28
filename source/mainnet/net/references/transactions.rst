@@ -23,8 +23,6 @@ Transaction commands
 +=====================================+================================================+
 | ``transaction send``                | Transfer CCD tokens                            |
 +-------------------------------------+------------------------------------------------+
-| ``transaction send-shielded``       | Transfer CCD tokens between shielded balances  |
-+-------------------------------------+------------------------------------------------+
 | ``transaction send-scheduled``      | Make a transfer that will be released          |
 |                                     | gradually                                      |
 +-------------------------------------+------------------------------------------------+
@@ -45,9 +43,6 @@ Transaction commands
 +-------------------------------------+------------------------------------------------+
 | ``account update-keys``             | Update credentials keys for a specific         |
 |                                     | credential                                     |
-+-------------------------------------+------------------------------------------------+
-| ``account shield``                  | Transfer part of the public balance to the     |
-|                                     | shielded balance                               |
 +-------------------------------------+------------------------------------------------+
 | ``account unshield``                | Transfer part of the shielded balance to the   |
 |                                     | public balance                                 |
@@ -183,7 +178,7 @@ To show the identity disclosure authorities, enter:
 Commands for transferring CCD
 =============================
 
-The commands for transferring CCD (both plain transfers and shielded transfers)
+The commands for transferring CCD
 are described in the following table.
 
 The add, remove, and configure bakers commands are described in the topic :ref:`becoming a baker using the Concordium Client<become-a-baker>`.
@@ -250,109 +245,16 @@ sender account A has three transaction signing keys 0, 1, and 3.
    [13:05:27] Waiting for the transaction to be finalized...
    [13:05:27] Transaction finalized.
 
-Make a shielded transfer
-------------------------
-
-A :term:`shielded transfer` is a transfer from a :term:`shielded balance` to a shielded
-balance of another account. The command is very similar to a standard transfer.
-
-.. code-block:: console
-
-   $concordium-client transaction send-shielded --sender A --receiver B --amount 8
-
-This command does the following:
-
--  queries the chain for the shielded balance of account A from the
-   Concordium network.
--  decrypts it.
--  queries the encryption key of account B from the Concordium network
--  sends the transaction.
-
-The interaction looks like the following:
-
-.. code-block:: console
-
-   $concordium-client transaction send-shielded --sender A --receiver B --amount 8
-   Using default energy amount of 30176 NRG.
-   Enter password for decrypting the secret encryption key: ...
-   Transferring 8.000000 CCD from shielded balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A) to '47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh' (B).
-   Allowing up to 30176 NRG to be spent as transaction fee.
-   Transaction expires at Sun,  4 Oct 2020 11:28:47 UTC.
-   Confirm [yN]: y
-   Enter password for signing key with index 0: ...
-   Enter password for signing key with index 1: ...
-   Enter password for signing key with index 3: ...
-   Transaction 'af220cdeb5c092847de25e4681515d7d318a98223fc4d1dc9c65bda9f2060b19' sent to the baker.
-   Waiting for the transaction to be committed and finalized.
-   You may skip this step by interrupting the command using Ctrl-C (pass flag '--no-wait' to do this by default).
-   The transaction will still get processed and may be queried using
-     'transaction status af220cdeb5c092847de25e4681515d7d318a98223fc4d1dc9c65bda9f2060b19'.
-   [13:20:24] Waiting for the transaction to be committed..............
-   Transaction is finalized into block 552c32da51ca67a6579c1c151ee67440ade5a44f9ca69e13a4a042e7fcc1ee4c with status "success" and cost 3.012300 CCD (30123 NRG).
-   [13:20:46] Waiting for the transaction to be finalized...
-   [13:20:46] Transaction finalized.
-
-This command has all of the additional options of ``send``, as well as an
-additional flag ``--index.`` If given, this flag is used to select which
-:term:`incoming shielded amounts<shielded balance>` that will be used as input to the transaction.
-
-This is illustrated with the following example. :ref:`Querying an account<query-account-state>` can display the
-list of incoming amounts on account. An output could look like this:
-
-.. code-block:: console
-
-   ...
-   Encrypted balance:
-     Incoming amounts:
-       7: 8c0faff6739bffc531c5...
-       8: a7620250f8b4307565a8...
-       9: a67a39e44765e90987c4...
-     Self balance: c0000000000000000000...
-   ...
-
-If you want to ``send-shielded`` from the account while supplying index 8,
-only the shielded amount ``8c0faff6739bffc531c5...`` and the :term:`self balance<shielded balance>`
-will be used as input of the shielded transfer.
-
-If the supplied index is out of range ``concordium-client`` will refuse to send
-the transaction.
-
-Shield an amount
-----------------
-
-The command to :term:`shield<shielded amount>` an amount with ``concordium-client`` is ``account
-shield``. For example, an interaction to shield 10 CCD on account A looks like the following.
-
-The command is:
-
-.. code-block:: console
-
-   $concordium-client account shield --amount 10 --sender A
-
-The command supports all of the same additional flags as the transfer transaction, except the ``--receiver`` since a transfer from a public to a shielded balance is always on the same account. The output looks like the following:
-
-.. code-block:: console
-
-   Using default energy amount of 265 NRG.
-   Transferring 10.000000 CCD from public to shielded balance of account '4s9jugBpiZuDKNJu9PGAj57JseAze8fGaGJC2y3HmtCbBeTLAJ' (A).
-   Allowing up to 265 NRG to be spent as transaction fee.
-   Transaction expires at Sun,  4 Oct 2020 11:25:02 UTC.
-   Confirm [yN]: y
-   Enter password for signing key with index 0: ...
-   Enter password for signing key with index 1: ...
-   Enter password for signing key with index 3: ...
-   Transaction '9a74be8f99e26dfa0c269725205fb63d447c357ea61b8e6e4df8230059ba22f5' sent to the baker.
-   Waiting for the transaction to be committed and finalized.
-   You may skip this step by interrupting the command using Ctrl-C (pass flag '--no-wait' to do this by default).
-   The transaction will still get processed and may be queried using
-     'transaction status 9a74be8f99e26dfa0c269725205fb63d447c357ea61b8e6e4df8230059ba22f5'.
-   [13:15:10] Waiting for the transaction to be committed.....
-   Transaction is finalized into block c12e7772190d1361dc7d59a1cc873906436742e726d12213cb599eb48b97bd2c with status "success" and cost 0.021200 CCD (212 NRG).
-   [13:15:14] Waiting for the transaction to be finalized...
-   [13:15:14] Transaction finalized.
-
 Unshield an amount
 ------------------
+
+.. note::
+
+  Functionalities related to shielding a balance are deprecated in protocol 7 and above.
+  No additional shielded balance can be added to an account and no transfer of shielded balance is possible.
+  Only unshielding of an already shielded balance is possible and recommended to be done.
+  Wallets and command-line tools will continue to display shielded balances and support the
+  unshielding flow to recover already shielded funds.
 
 The command to unshield an amount with ``concordium-client`` is
 ``account unshield``. For example, an interaction to unshield 7 CCD on
@@ -370,9 +272,9 @@ This
 -  decrypts the shielded balance and checks that there is sufficient funds.
 -  sends the transaction.
 
-The command supports the same optional flags as ``shield`` with the addition
-of ``--index``, which has the same meaning as in the
-``send-shielded`` command.
+This command has all of the additional options of ``send``, as well as an
+additional flag ``--index.`` If given, this flag is used to select which
+:term:`incoming shielded amounts<shielded balance>` that will be used as input to the transaction.
 
 .. code-block:: console
 

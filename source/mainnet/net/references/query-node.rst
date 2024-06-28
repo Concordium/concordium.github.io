@@ -56,14 +56,14 @@ Inspect specific account
 
 Display all publicly available information of a specific account as of a
 specific block. For accounts for which secret keys are available this command
-can also decrypt the shielded balance.
+can also decrypt the shielded balance (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 
 -  ``ACCOUNT``: Address or local name of the account (if not provided,
    will show the account with the local alias ``"default"``).
 -  ``BLOCK``: Full hash of target block. Defaults to the current :term:`best block`.
--  ``--shielded``: Show the :term:`shielded balance` (explained below).
+-  ``--shielded``: Show the :term:`shielded balance` (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 -  ``--reveal-shielded``: Show the shielded balance and reveal it
-   (explained below).
+   (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 
 Example
 ~~~~~~~
@@ -91,9 +91,9 @@ The output shows that the account with the local name ``my-account``
 -  has address ``2zgcMk7heVZKaaBfPtxVqmvE3GnrrP7N2nFGHoiC6X9nZT9TaG``,
 -  has a balance of 1026 CCD,
 -  has :term:`transaction sequence number` ``1``,
--  has ``a820662531d...`` as the key for receiving shielded transfers.
--  has no :term:`incoming shielded amount<shielded balance>`.
--  has a :term:`self balance<shielded balance>` of ``a9d35bf62442aabad72c...``. By default this
+-  has ``a820662531d...`` as the key for receiving shielded transfers (:ref:`deprecated<shielded-balance-feature-deprecation>`).
+-  has no :term:`incoming shielded amount<shielded balance>` (:ref:`deprecated<shielded-balance-feature-deprecation>`).
+-  has a :term:`self balance<shielded balance>` of ``a9d35bf62442aabad72c...`` (:ref:`deprecated<shielded-balance-feature-deprecation>`). By default this
    only shows the first 20 characters of the encrypted amount. With a
    ``--verbose`` flag the full encryption is shown.
 
@@ -105,6 +105,14 @@ will be decrypted and the decryption shown. Note that for this operation to
 succeed, the private decryption key of the account must be available in the
 ``concordium-client`` configuration. The user is asked for the password for
 accessing the decryption key.
+
+.. note::
+
+   Functionalities related to shielding a balance are deprecated in protocol 7 and above.
+   No additional shielded balance can be added to an account and no transfer of shielded balance is possible.
+   Only unshielding of an already shielded balance is possible and recommended to be done.
+   Wallets and command-line tools will continue to display shielded balances and support the
+   unshielding flow to recover already shielded funds.
 
 Transaction status
 ==================

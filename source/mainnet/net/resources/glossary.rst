@@ -13,7 +13,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Account
 
-      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key` that can be used to send shielded transfers to the account. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`identity disclosure authorities<identity disclosure authority>`, in cooperation with the account's :term:`identity provider`.
+      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`identity disclosure authorities<identity disclosure authority>`, in cooperation with the account's :term:`identity provider`.
 
    Account credential
 
@@ -182,7 +182,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Encryption key
 
-      An `ElGamal`_ public key associated to an account which is used to encrypt all :term:`shielded amounts<shielded amount>` on the account.
+      An `ElGamal`_ public key associated to an account which is used to encrypt all :term:`shielded amounts<shielded amount>` (:ref:`deprecated<shielded-balance-feature-deprecation>`) on the account.
 
    Endpoint
 
@@ -350,9 +350,13 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Shielded amount
 
+      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
+
       An amount of :term:`CCD` that is encrypted with the public key of an account. Only the owner of the secret key can determine how many CCDs are contained in the encryption.
 
    Shielded balance
+
+      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
 
       The part of the balance of an :term:`account` that only the owner of the account can see. This is achieved by encrypting transfers to an account with the account's :term:`encryption key`. Every participant of the Concordium network can see the `ciphertexts`_ of all the transfers, however they provide no information on how many CCDs were transferred. The receiver of the transfer can use their secret key to decrypt the ciphertexts, and seeing how many CCDs they have received.
 
@@ -364,9 +368,13 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Shielded transfer
 
+      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
+
       Transfer from :term:`shielded balance` of an account to a shielded balance of another account. The amount that is transferred is only visible to the sender and the receiver.
 
    Shielding
+
+      (:ref:`Deprecated<shielded-balance-feature-deprecation>`):
 
       The action of transferring a part of the public balance to the :term:`shielded balance`.
 
@@ -424,7 +432,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Transfer Memo
 
-      Additional data that a user can provide when making a transfer, a shielded transfer or a transfer with schedule. The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings, numbers and JSON values, but this is not enforced.
+      Additional data that a user can provide when making a transfer, or a transfer with schedule. The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings, numbers and JSON values, but this is not enforced.
 
    Transfer with schedule
 
@@ -435,6 +443,8 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
       A sequence number that orders :term:`transaction` on a given :term:`account`. In a ledger, all transactions for an account must be ordered with consecutive transaction sequence numbers, starting from 1. Transaction sequence numbers ensure that a transaction cannot be repeated in the ledger, and that the transactions occur in the order intended by the sender account holder.
 
    Unshielding
+
+      (:ref:`Deprecated<shielded-balance-feature-deprecation>`):
 
       The action of transferring a part of the :term:`shielded balance` to the public balance.
 
@@ -475,7 +485,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       - The Desktop Wallet: a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
 
-      - The Mobile Wallet: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, be a validator and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
+      - The Mobile Wallet: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, be a validator and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
 
       - The |bw|: a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
 
