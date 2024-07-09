@@ -295,17 +295,23 @@ Wallets
 |bw|
 -------------------------
 
-    June 25, 2024
+    July 10, 2024
 
-    Version 1.5.2 includes several changes and bug fixes.
-        -   Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.
-        -   Added a new sign CIS3 message function in wallet-api, and corresponding view to display decoded payload of CIS3 message in browser wallet.
-        -   Added display of the optional name for ID providers when present, otherwise fallback to the chain name.
-        -   Removed check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
-        -   Improved error messages when searching for all tokenIDs in a given smart contract. Invalid tokenIDs in the contract are now displayed with their corresponding reason for being invalid.
-        -   Increased padding of the QR code background element.
+    Version 1.6.0 add support for creating accounts using Company IDs.
+
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.5.2 - June 25, 2024
+
+            Version 1.5.2 includes several changes and bug fixes.
+
+            - Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.
+            - Added a new sign CIS3 message function in wallet-api, and corresponding view to display decoded payload of CIS3 message in browser wallet.
+            - Added display of the optional name for ID providers when present, otherwise fallback to the chain name.
+            - Removed check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
+            - Improved error messages when searching for all tokenIDs in a given smart contract. Invalid tokenIDs in the contract are now displayed with their corresponding reason for being invalid.
+            - Increased padding of the QR code background element.
 
         .. dropdown:: |bw| 1.5.1 - April 4, 2024
 
