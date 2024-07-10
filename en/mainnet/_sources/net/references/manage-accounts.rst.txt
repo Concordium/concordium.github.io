@@ -13,13 +13,12 @@ You must have a verified identity and a user identity certificate issued by an a
 About accounts
 ==============
 
-An account on the Concordium blockchain is owned by one or more :term:`credential holders<credential holder>` and consists of two parts: The :term:`on-chain` part, which is publicly visible and maintained by the bakers, and the :term:`off-chain` part.
+An account on the Concordium blockchain is owned by one or more :term:`credential holders<credential holder>` and consists of two parts: The :term:`on-chain` part, which is publicly visible and maintained by the validators, and the :term:`off-chain` part.
 
 The on-chain part of the account consists of:
 
 - the :term:`credentials<credential>` of the credential holders associated with the account
 - public balance
-- :term:`shielded balance`
 - account sequence number
 - public keys of each credential to verify transaction signatures.
 
@@ -29,7 +28,6 @@ The off-chain part of the account contains:
    account (e.g., sending transfers, deploying smart contracts)
 -  the identity an account is created from (this is needed for managing
    the account on the chain)
--  decryption keys used for :term:`shielded transfers<shielded transfer>`.
 
 Concordium provides several ways of interacting with the on-chain account.
 Off-chain parts of accounts can be transferred between different devices but not between |mw-gen1| and Desktop Wallet, or |mw-gen2| and Desktop Wallet. The same account can be used from multiple devices at the same time.
@@ -120,13 +118,9 @@ Account concepts
 Account balances
 ----------------
 
-Each account has two balances, the *public balance* which can be *seen* by anyone, and a :term:`shielded
-balance`. The shielded balance is only known to the owner of the account. It
-can only be used in :term:`shielded transfers<shielded transfer>` to
-other accounts.
-
-The public balance of the account is always used for payment of transaction fees,
-producing blocks, and transfers, even for shielded transfers.
+An account has a *public balance* which can be *seen* by anyone.
+The public balance of the account is used for payment of transaction fees,
+producing blocks, and transfers.
 
 At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:
@@ -194,7 +188,7 @@ The Desktop Wallet is a digital wallet that enables you to create and manage you
 The |mw-gen1|
 -----------------
 
-The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
 
 .. Note::
 
@@ -203,7 +197,7 @@ The |mw-gen1| is a digital smartphone wallet that enables you to create and mana
 The |mw-gen2|
 ------------------
 
-The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
 
 The |bw|
 ----------------

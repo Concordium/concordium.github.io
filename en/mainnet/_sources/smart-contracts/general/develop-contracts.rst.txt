@@ -298,7 +298,7 @@ or the current exchange rates.
         // Query the balance of an account.
         let account_balance = host.account_balance(account_address)?;
 
-    Assuming the account exists, this returns the public/unshielded balance of an account, the currently staked balance, and balance locked in release schedules.
+    Assuming the account exists, this returns the public balance of an account, the currently staked balance, and balance locked in release schedules.
     Any amount received during the transaction until the point of querying is reflected in the balance.
 
     When sending a smart contract update transaction, the invoker provides a max energy cost for the execution.
