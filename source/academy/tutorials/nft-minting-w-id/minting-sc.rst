@@ -51,7 +51,7 @@ Create a **lib.rs** file and copy\paste the code from the example contract. Star
     ///
     /// Note: The specification does not specify how to structure the contract state
     /// and this could be structured in a more space efficient way.
-    #[derive(Serial, DeserialWithState, StateClone)]
+    #[derive(Serial, DeserialWithState)]
     #[concordium(state_parameter = "S")]
     struct State<S> {
         /// The state of addresses.
