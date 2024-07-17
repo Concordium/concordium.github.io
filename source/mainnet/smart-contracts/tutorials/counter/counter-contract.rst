@@ -111,11 +111,11 @@ The view function will return only the counter's value so you need to update its
 Build, deploy, and initialize the contract
 ==========================================
 
-Create a ``dist`` folder for the schema output file and the compiled WASM contract. Then, run the build command.
+Create a ``dist`` folder for the compiled WASM contract. Then, run the build command.
 
 .. code-block:: console
 
-    $cargo concordium build --out dist/module.wasm.v1 --schema-out dist/schema.bin
+    $cargo concordium build --out dist/module.wasm.v1 --schema-embed
 
 You may get a warning about the build not being verifiable, which you may ignore.
 
@@ -181,7 +181,6 @@ First, check the initial state of the contract. Use this command if you're hosti
 
     $concordium-client contract invoke <CONTRACT-INSTANCE-INDEX> \
         --entrypoint view \
-        --schema dist/schema.bin \
         --grpc-port 20001
 
 Or, use this command to use the Concordium testnet node:
@@ -190,7 +189,6 @@ Or, use this command to use the Concordium testnet node:
 
     $concordium-client contract invoke <CONTRACT-INSTANCE-INDEX> \
         --entrypoint view \
-        --schema dist/schema.bin \
         --grpc-ip grpc.testnet.concordium.com \
         --grpc-port 20000 \
         --secure
@@ -212,7 +210,6 @@ Now we can invoke the update function with that input by using a contract update
     $concordium-client contract update <CONTRACT-INSTANCE-INDEX> \
         --entrypoint update \
         --parameter-json input.json \
-        --schema dist/schema.bin \
         --sender <YOUR-ADDRESS> \
         --energy 6000 \
         --grpc-port 20001
@@ -224,7 +221,6 @@ Or, to use Concordium's testnet node, use this command:
     $concordium-client contract update <CONTRACT-INSTANCE-INDEX> \
         --entrypoint update \
         --parameter-json input.json \
-        --schema dist/schema.bin \
         --sender <YOUR-ADDRESS> \
         --energy 6000 \
         --grpc-ip grpc.testnet.concordium.com \
