@@ -32,9 +32,11 @@ Finally, the :ref:`fourth part<piggy-bank-frontend>` explains how to set up a we
 .. warning::
 
    The reader is assumed to have basic knowledge of what a blockchain and smart
-   contracts are, and to have some experience with Rust_.
+   contracts are, and to have some experience with Rust_. Consider reading the
+   simpler :ref:`Counter smart contract tutorial <counter-sc>` first.
 
 Before starting the tutorial, make sure that you have all of the necessary tools installed and running as described in :ref:`Setup the development environment<setup-env>`.
+Also, make sure to have a text editor for writing Rust.
 
 To start the tutorial click :ref:`here<piggy-bank-writing>`.
 

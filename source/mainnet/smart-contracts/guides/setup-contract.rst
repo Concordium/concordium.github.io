@@ -11,13 +11,9 @@ The *from a template* option is available for ``cargo-concordium`` version 2.2.0
 smart contract templates. Choose the template that best fits your project scope.
 The *from scratch* option guides you through the process when you want to start a new project without any boilerplate code.
 
-.. note::
-
-   Concordium recommends that newcomers choose the *from a template* option.
-
 .. tabs::
 
-   .. tab:: From a template
+   .. tab:: From a template (recommended)
 
       Concordium maintains several smart contract
       `templates <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ (currently a ``default`` template and a ``cis2-nft`` template).

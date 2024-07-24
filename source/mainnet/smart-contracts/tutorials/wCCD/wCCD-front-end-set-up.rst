@@ -195,6 +195,22 @@ This command logs a URL in the console (typically http://127.0.0.1:8080). Open t
 
     Check that your |bw| is connected to the testnet and not to mainnet.
 
-You completed the local front end setup.
+Conclusion
+----------
 
-To continue with the tutorial click :ref:`here<wCCD-full-dApp>`.
+You are now running your own local dApp. If you want, you can compare it with our
+`testnet wCCD dApp <https://wccd.testnet.concordium.com/>`_ hosted on testnet or `mainnet wCCD dApp <https://wccd.mainnet.concordium.software/>`_ hosted on mainnet. You can use your |bw|
+to connect to the dApp.
+
+.. note::
+
+    The |bw| is connected to the testnet.
+    You have an identity and account in your wallet loaded.
+    You can find more information on how to set up the wallet in :ref:`Setup the Concordium Wallet for web<setup-browser-wallet>`.
+
+.. note::
+
+    If you already have an older |bw| extension installed, check its version and download a newer version if applicable.
+    The wCCD front end requires some new features that are supported by the |bw| version 0.8.3 or greater.
+
+Congratulations! You have now completed the wCCD tutorial.

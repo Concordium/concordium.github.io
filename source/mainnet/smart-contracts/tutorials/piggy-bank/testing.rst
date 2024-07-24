@@ -95,12 +95,6 @@ This part will focus on how you can write integration-tests for your piggy bank 
 contract using the |concordium-smart-contract-testing|_ library.
 The library simulates part of a blockchain *locally* to allow you to create one or more contracts and interact with them in the tests.
 
-.. warning::
-
-   The reader is assumed to have basic knowledge of what a blockchain and smart
-   contract is, and some experience with Rust_.
-
-
 Preparation
 ===========
 

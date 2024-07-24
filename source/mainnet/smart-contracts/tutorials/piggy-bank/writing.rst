@@ -31,34 +31,22 @@ This is the first :ref:`part of a tutorial<piggy-bank>` on smart contract
 development. In this part you will focus on how to write a smart contract in the
 Rust_ programming language using the |concordium-std| library.
 
-.. warning::
-
-   The reader is assumed to have basic knowledge of what a blockchain and smart
-   contract is, and some experience with Rust_.
-
-
 Preparation
 ===========
 
-Before you start, make sure to have the necessary tooling to build Rust
-contracts. The guide :ref:`setup-env` shows you how to do this.
-Also, make sure to have a text editor for writing Rust.
-
-You also need to set up a new smart contract project.
-Follow the guide :ref:`setup-contract` and return to this point afterwards.
-
-You are now ready to write a smart contract for the Concordium blockchain!
+Set up a new smart contract project by following the guide :ref:`setup-contract` and return to this point afterwards.
 
 Bring in the standard library
 =============================
 
 The source code of your smart contract is going to be in the ``src`` directory,
-which already contains the file ``lib.rs``, assuming you follow the above guide
+which already contains a ``lib.rs`` file, assuming you follow the above guide
 to set up your project.
-Open ``src/lib.rs`` in your editor and you'll see some code for :ref:`writing tests<piggy-bank-testing>`,
+
+The smart contract template also includes some example tests under the ``tests`` directory,
 which you can delete for now. You will come back to tests later in this tutorial.
 
-First, bring everything from the |concordium-std|_ library into scope
+In ``lib.rs``, start by bringing everything from the |concordium-std|_ library into scope
 by adding the line:
 
 .. code-block:: rust

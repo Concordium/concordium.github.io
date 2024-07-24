@@ -8,7 +8,7 @@ The Voting dApp
 ===============
 
 In this tutorial, you are going to get familiar with the deployed voting dApp on testnet. The voting dApp example is intended to show how you can use Concordium to conduct an election using the |bw| to enable users to cast their vote in your election.
-You are going to write a basic web front-end example that can read from and write to the deployed smart contract on testnet.
+You are going to write a basic web frontend example that can read from and write to the deployed smart contract on testnet.
 
 If you want to try this example before starting the tutorial:
 
@@ -22,15 +22,16 @@ If you want to try this example before starting the tutorial:
 
 #. Click **Vote now**. You can vote and send the link to any other voters. When you click **Cast vote** you must click **Sign & submit** in the |bw|.
 
-#. Click **Results** to see the election results.
+#. Click **Results** to see the election results. Note that your vote may not appear instantaneously after voting, as the vote transaction waits for confirmation. Give it a few seconds and the vote should appear.
 
 In the :ref:`first part<voting-sc>`, you will learn about the voting smart contract.
 
-In the :ref:`second part<voting-frontend>`, you will download the |bw| and set up a basic web front-end locally.
+In the :ref:`second part<voting-frontend>`, you will download the |bw| and set up a basic web frontend locally.
 
 .. warning::
 
-   This tutorial assumes the reader has basic knowledge of what a blockchain and a smart contract is, and some experience with Rust_ and web front-end development.
+   This tutorial assumes the reader has basic knowledge of what a blockchain and a smart contract is, and some experience with Rust_ and web frontend development.
+   Consider reading the simpler :ref:`Counter smart contract tutorial <counter-sc>` first.
 
 To start the tutorial click :ref:`here<voting-sc>`.
 
@@ -39,4 +40,4 @@ To start the tutorial click :ref:`here<voting-sc>`.
    :maxdepth: 1
 
    Writing a voting smart contract <./voting-sc>
-   Setting up the front-end <./voting-dapp>
+   Setting up the frontend <./voting-dapp>
