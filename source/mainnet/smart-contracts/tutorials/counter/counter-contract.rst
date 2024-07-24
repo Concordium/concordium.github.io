@@ -198,7 +198,7 @@ Since you just initialized the contract, you should see that the return value is
 Update function
 ------------------
 
-In order to call the a function that takes input, like our update function, we'll need to create a JSON file that represents the input to the function. Since our input in this simple example is just a number, a simple text file with a number will do, since this is also valid JSON. We can quickly make this file with this command:
+In order to call a function that takes input, like our update function, we'll need to create a JSON file that represents the input to the function. Since our input in this simple example is just a number, a simple text file with a number will do, since this is also valid JSON. We can quickly make this file with this command:
 
 .. code-block:: console
     echo 42 > input.json
