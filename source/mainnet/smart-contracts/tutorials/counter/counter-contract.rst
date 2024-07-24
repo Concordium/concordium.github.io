@@ -201,6 +201,7 @@ Update function
 In order to call a function that takes input, like our update function, we'll need to create a JSON file that represents the input to the function. Since our input in this simple example is just a number, a simple text file with a number will do, since this is also valid JSON. We can quickly make this file with this command:
 
 .. code-block:: console
+
     echo 42 > input.json
 
 Now we can invoke the update function with that input by using a contract update transaction. From the point of this transaction in the blockchain, your smart contract will have its new value. If you have your own node, you can invoke the update function like so:
