@@ -5,7 +5,7 @@
 .. _voting-sc:
 
 =========================
-The voting smart contract
+The Voting Smart Contract
 =========================
 
 This is the first :ref:`part of a tutorial<voting-dapp>` on smart contract development. In this part you will focus on how to write a smart contract in the Rust_ programming language using the |concordium-std| library.
@@ -86,5 +86,19 @@ Initializing
 ------------
 
 The election is open from the point in time that this smart contract is initialized until the deadline.
+
+Performance considerations
+--------------------------
+
+An important aspect of the voting smart contract to highlight is the way that votes are tallied. Note how two ``HashMap``s are used: one for which accounts have voted for which option, and one for how many votes each option has.
+However, if you think about it, only the first ``HashMap``, the ``ballots`` field is necessary. The vote counts can always be determined from those. So why do it in this way?
+
+The answer is that by counting the votes separately, we avoid having to iterate through all the ballots in order to count the votes.
+Unbounded iterations in smart contracts is in general a bad idea. For instance, if there are many votes, executing the smart contract might become costly, as iterating through the ballots takes many operations.
+In the worst case, this may exceed the energy budget of running the functions, which could make the smart contract unusable.
+
+It's important to keep these performance considerations in mind when writing smart contracts. In general, writing smart contracts requires a different methodology than most other usual software development.
+Be sure to think carefully and read up on the common issues and security problems that may occur when you develop smart contracts.
+
 
 In the next part of the tutorial, we will set up a frontend to make it easier to interact with the smart contract.
