@@ -29,7 +29,7 @@ When prompted for which template to expand, select the ``default`` option. You w
 
 The result is a basic skeleton of a smart contract. Initially, it has a ``State`` struct, an ``init`` function for creating new instances, an ``Error`` enum for custom errors, a ``view`` function to read the state, and a dummy ``receive`` function.
 
-To build the counter smart contract, add a counter to the state as an 8-bit signed integer, the ``i8`` type. Then add the variants ``OwnerError`` and ``OverflowError`` to the ``Error`` enum, and specify the counter initial value as zero in the ``init`` function, so the counter value starts from zero when you create a new, fresh instance of the contract. The first part of your contract now looks like this:
+To build the counter smart contract, rename the ``custom_state_field`` of the ``State`` to ``counter``. Then add the variants ``OwnerError`` and ``OverflowError`` to the ``Error`` enum, and specify the counter initial value as zero in the ``init`` function, so the counter value starts from zero when you create a new, fresh instance of the contract. The first part of your contract now looks like this:
 
 .. code-block:: rust
 
@@ -139,7 +139,7 @@ Or, if you just want to try things out on testnet, you can use the testing nodes
         --grpc-port 20000 \
         --secure
 
-The client may also ask you for a password to sign the deployment transaction. If successful, the command should respond with ``Module successfully deployed with reference: <MODULE-HASH>``, where the module hash is a long hex string. Note down this hash, we'll need it when we initialize a new contract instance below.
+The client may also ask you for the password you specified when you :ref:`imported your key into the Concordium client<import-client-key>`. If successful, the command should respond with ``Module successfully deployed with reference: <MODULE-HASH>``, where the module hash is a long hex string. Note down this hash, we'll need it when we initialize a new contract instance below.
 
 Note that you will also pay a small fee from your account to pay for the deployment. If you followed the environment setup to create a testnet account, you should already have some CCD for testing purposes in that account.
 
@@ -196,7 +196,7 @@ Or, use this command to use the Concordium testnet node:
 Since you just initialized the contract, you should see that the return value is 0.
 
 Update function
-------------------
+---------------
 
 In order to call a function that takes input, like our update function, we'll need to create a JSON file that represents the input to the function. Since our input in this simple example is just a number, a simple text file with a number will do, since this is also valid JSON. We can quickly make this file with this command:
 

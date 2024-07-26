@@ -222,6 +222,8 @@ When you export the key it creates a file named ``<YOUR PUBLIC ADDRESS>.export``
 .. image:: images/bw-exported-key.png
     :width: 100%
 
+.. _import-client-key:
+
 Import the key
 --------------
 
