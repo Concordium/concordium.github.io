@@ -83,7 +83,7 @@ Now let's add the function to update the counter. Change the ``receive`` functio
             Error::OwnerError
         );
 
-        // Returns Error::ParseError on failure.
+        // Returns ParseError on failure.
         let input: i8 = ctx.parameter_cursor().get()?;
 
         let state = host.state_mut();
