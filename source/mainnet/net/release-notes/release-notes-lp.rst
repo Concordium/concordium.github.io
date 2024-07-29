@@ -596,9 +596,12 @@ Desktop Wallet
     July 29, 2024
 
     |mw-gen1| 3.2.3 contains the following changes:
-    	- Add Non-Exempt Encryption Version: We've updated the encryption version for enhanced security
-	- Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module for better performance and stability
-	- Minor Bug Fixes: Addressed 12 minor issues in the Concordium Legacy Wallet for iOS to improve your user experience.
+
+    - Add Non-Exempt Encryption Version: We've updated the encryption version for enhanced security
+
+    - Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module for better performance and stability
+
+    - Minor Bug Fixes: Addressed minor issues in the Concordium Legacy Wallet for iOS to improve your user experience.
 
     .. dropdown:: Previous releases
         .. dropdown:: |mw-gen1| 3.2.2 - November 30, 2023
