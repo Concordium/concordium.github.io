@@ -56,7 +56,7 @@ To build the counter smart contract, rename the ``custom_state_field`` of the ``
     }
 
 Update counter
-===============================
+==============
 
 Now let's add the function to update the counter. Change the ``receive`` function as shown below. If the input cannot be parsed, we return ``Error::ParseParams``. The function must be triggered by the owner of the contract instance or it will return ``Error::OwnerError``. Note that the ``receive`` attribute on the function includes the ``mutable`` flag, which makes the ``host`` parameter a mutable reference rather than a shared reference, which enables us to change the state of the contract.
 
@@ -125,7 +125,6 @@ Now we can deploy the smart contract using the Concordium client CLI. If you are
 
     $concordium-client module deploy dist/module.wasm.v1 \
         --sender <YOUR-ADDRESS> \
-        --name counter \
         --grpc-port 20001
 
 Or, if you just want to try things out on testnet, you can use the testing nodes provided by Concordium:
@@ -134,7 +133,6 @@ Or, if you just want to try things out on testnet, you can use the testing nodes
 
     $concordium-client module deploy dist/module.wasm.v1 \
         --sender <YOUR-TESTNET-ADDRESS> \
-        --name counter \
         --grpc-ip grpc.testnet.concordium.com \
         --grpc-port 20000 \
         --secure
@@ -204,7 +202,7 @@ In order to call a function that takes input, like our update function, we'll ne
 
     echo 42 > input.json
 
-Now we can invoke the update function with that input by using a contract update transaction. From the point of this transaction in the blockchain, your smart contract will have its new value. If you have your own node, you can invoke the update function like so:
+Now we can invoke the update function with that input by using a contract update transaction. This will mutate the smart contract state and store the new value. If you have your own node, you can invoke the update function like so:
 
 .. code-block:: console
 
