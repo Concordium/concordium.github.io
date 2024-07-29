@@ -708,7 +708,7 @@
 </div>
 <p>When prompted for which template to expand, select the <code class="docutils literal notranslate"><span class="pre">default</span></code> option. You will then be asked for a name for your project. In this example we’ll use “counter”, but you can choose whatever name you want.</p>
 <p>The result is a basic skeleton of a smart contract. Initially, it has a <code class="docutils literal notranslate"><span class="pre">State</span></code> struct, an <code class="docutils literal notranslate"><span class="pre">init</span></code> function for creating new instances, an <code class="docutils literal notranslate"><span class="pre">Error</span></code> enum for custom errors, a <code class="docutils literal notranslate"><span class="pre">view</span></code> function to read the state, and a dummy <code class="docutils literal notranslate"><span class="pre">receive</span></code> function.</p>
-<p>To build the counter smart contract, add a counter to the state as an 8-bit signed integer, the <code class="docutils literal notranslate"><span class="pre">i8</span></code> type. Then add the variants <code class="docutils literal notranslate"><span class="pre">OwnerError</span></code> and <code class="docutils literal notranslate"><span class="pre">OverflowError</span></code> to the <code class="docutils literal notranslate"><span class="pre">Error</span></code> enum, and specify the counter initial value as zero in the <code class="docutils literal notranslate"><span class="pre">init</span></code> function, so the counter value starts from zero when you create a new, fresh instance of the contract. The first part of your contract now looks like this:</p>
+<p>To build the counter smart contract, rename the <code class="docutils literal notranslate"><span class="pre">custom_state_field</span></code> of the <code class="docutils literal notranslate"><span class="pre">State</span></code> to <code class="docutils literal notranslate"><span class="pre">counter</span></code>. Then add the variants <code class="docutils literal notranslate"><span class="pre">OwnerError</span></code> and <code class="docutils literal notranslate"><span class="pre">OverflowError</span></code> to the <code class="docutils literal notranslate"><span class="pre">Error</span></code> enum, and specify the counter initial value as zero in the <code class="docutils literal notranslate"><span class="pre">init</span></code> function, so the counter value starts from zero when you create a new, fresh instance of the contract. The first part of your contract now looks like this:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">/// The state of the smart contract.</span>
 <span class="cp">#[derive(Serialize, SchemaType)]</span>
 <span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">State</span><span class="w"> </span><span class="p">{</span>
@@ -756,7 +756,7 @@
 <span class="w">        </span><span class="n">Error</span>::<span class="n">OwnerError</span>
 <span class="w">    </span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// Returns Error::ParseError on failure.</span>
+<span class="w">    </span><span class="c1">// Returns ParseError on failure.</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">input</span>: <span class="kt">i8</span> <span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">parameter_cursor</span><span class="p">().</span><span class="n">get</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state_mut</span><span class="p">();</span>
@@ -791,20 +791,18 @@
 <p>Now we can deploy the smart contract using the Concordium client CLI. If you are running your own node, you can use this command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--name<span class="w"> </span>counter<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p>Or, if you just want to try things out on testnet, you can use the testing nodes provided by Concordium:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>dist/module.wasm.v1<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--sender<span class="w"> </span>&lt;YOUR-TESTNET-ADDRESS&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--name<span class="w"> </span>counter<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--secure
 </pre></div>
 </div>
-<p>The client may also ask you for a password to sign the deployment transaction. If successful, the command should respond with <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">successfully</span> <span class="pre">deployed</span> <span class="pre">with</span> <span class="pre">reference:</span> <span class="pre">&lt;MODULE-HASH&gt;</span></code>, where the module hash is a long hex string. Note down this hash, we’ll need it when we initialize a new contract instance below.</p>
+<p>The client may also ask you for the password you specified when you <a class="reference internal" href="../setup-env.html#import-client-key"><span class="std std-ref">imported your key into the Concordium client</span></a>. If successful, the command should respond with <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">successfully</span> <span class="pre">deployed</span> <span class="pre">with</span> <span class="pre">reference:</span> <span class="pre">&lt;MODULE-HASH&gt;</span></code>, where the module hash is a long hex string. Note down this hash, we’ll need it when we initialize a new contract instance below.</p>
 <p>Note that you will also pay a small fee from your account to pay for the deployment. If you followed the environment setup to create a testnet account, you should already have some CCD for testing purposes in that account.</p>
 <p>Finally, let’s initialize a contract instance, so you are ready to invoke the contract functions in the next section. Use this command if you are running your own node:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;MODULE-HASH&gt;<span class="w"> </span><span class="se">\</span>
@@ -853,7 +851,7 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo 42 &gt; input.json</span>
 </pre></div>
 </div>
-<p>Now we can invoke the update function with that input by using a contract update transaction. From the point of this transaction in the blockchain, your smart contract will have its new value. If you have your own node, you can invoke the update function like so:</p>
+<p>Now we can invoke the update function with that input by using a contract update transaction. This will mutate the smart contract state and store the new value. If you have your own node, you can invoke the update function like so:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;CONTRACT-INSTANCE-INDEX&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--entrypoint<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--parameter-json<span class="w"> </span>input.json<span class="w"> </span><span class="se">\</span>
