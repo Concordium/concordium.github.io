@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/voting/voting-sc.beb72d8b-e43d-42fd-8bff-5f8869c03dab.js"></script>
+    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/voting/voting-sc.ef4c509e-6191-42ba-80d7-09b97372d9c2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'smart-contracts/tutorials/voting/voting-sc';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -1003,7 +1003,7 @@ body {margin:0;}
 </div>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>Before you start, make sure to have the necessary tooling to build Rust contracts. The guide <a class="reference internal" href="../../guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> shows you how to do this. Also, make sure to have a text editor for writing Rust.</p>
+<p>Before you start, make sure to have the necessary tooling to build Rust contracts. The guide <a class="reference internal" href="../../guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> shows you how to do this.</p>
 <p>You also need to set up a new smart contract project. Follow the guide <a class="reference internal" href="../../guides/setup-contract.html#setup-contract"><span class="std std-ref">Set up a smart contract project</span></a> and return to this point afterwards.</p>
 </section>
 <section id="basic-setup">
@@ -1012,7 +1012,7 @@ body {margin:0;}
 to set up your project.</p>
 <p>The smart contract template also includes some examples tests under the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory,
 which you can delete for now. You will come back to tests later in this tutorial.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code>, start by bringing everything from the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library into scope by adding the line:</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code> file, start by bringing everything from the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library into scope by adding the line:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -1035,17 +1035,17 @@ which you can delete for now. You will come back to tests later in this tutorial
 <p>The <code class="docutils literal notranslate"><span class="pre">ElectionConfig</span></code> data structure defines the configuration of the smart contract and is an input to the <code class="docutils literal notranslate"><span class="pre">init</span></code> function. In the example code, it contains a description of the election, the voting options, and the deadline of the election. Voting options is provided as a list of strings, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the maximum size of the list of voting options is large, but limited. For more information, see <a class="reference internal" href="../../general/contract-instances.html#contract-instance-operations"><span class="std std-ref">Contract instance limits</span></a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">view</span></code> function also returns the <code class="docutils literal notranslate"><span class="pre">ElectionConfig</span></code> type, so that users can, for instance, see the available options to vote for.</p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">vote</span></code> function, the contract specifies who may vote and when (only accounts may vote and only before the deadline). If a contract tries to vote, an error occurs.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">let acc = match ctx.sender() {</span>
-<span class="go">    Address::Account(acc) =&gt; acc,</span>
-<span class="go">    Address::Contract(_) =&gt; return Err(VotingError::ContractVoter),</span>
-<span class="go">};</span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Address</span>::<span class="n">Account</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">acc</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Address</span>::<span class="n">Contract</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">VotingError</span>::<span class="n">ContractVoter</span><span class="p">),</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 <p>And if the deadline has passed, an error occurs.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ensure!(</span>
-<span class="go">    ctx.metadata().slot_time() &lt;= host.state().config.deadline,</span>
-<span class="go">    VotingError::VotingFinished</span>
-<span class="go">);</span>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="n">ensure</span><span class="o">!</span><span class="p">(</span>
+<span class="w">    </span><span class="n">ctx</span><span class="p">.</span><span class="n">metadata</span><span class="p">().</span><span class="n">slot_time</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">state</span><span class="p">().</span><span class="n">config</span><span class="p">.</span><span class="n">deadline</span><span class="p">,</span>
+<span class="w">    </span><span class="n">VotingError</span>::<span class="n">VotingFinished</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">get_votes</span></code> gets the number of votes for a specific voting option.</p>
@@ -1056,11 +1056,14 @@ which you can delete for now. You will come back to tests later in this tutorial
 </section>
 <section id="performance-considerations">
 <h3>Performance considerations<a class="headerlink" href="#performance-considerations" title="Link to this heading">#</a></h3>
-<p>An important aspect of the voting smart contract to highlight is the way that votes are tallied. Note how two <code class="docutils literal notranslate"><span class="pre">HashMap``s</span> <span class="pre">are</span> <span class="pre">used:</span> <span class="pre">one</span> <span class="pre">for</span> <span class="pre">which</span> <span class="pre">accounts</span> <span class="pre">have</span> <span class="pre">voted</span> <span class="pre">for</span> <span class="pre">which</span> <span class="pre">option,</span> <span class="pre">and</span> <span class="pre">one</span> <span class="pre">for</span> <span class="pre">how</span> <span class="pre">many</span> <span class="pre">votes</span> <span class="pre">each</span> <span class="pre">option</span> <span class="pre">has.</span>
-<span class="pre">However,</span> <span class="pre">if</span> <span class="pre">you</span> <span class="pre">think</span> <span class="pre">about</span> <span class="pre">it,</span> <span class="pre">only</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">``HashMap</span></code>, the <code class="docutils literal notranslate"><span class="pre">ballots</span></code> field is necessary. The vote counts can always be determined from those. So why do it in this way?</p>
-<p>The answer is that by counting the votes separately, we avoid having to iterate through all the ballots in order to count the votes.
-Unbounded iterations in smart contracts is in general a bad idea. For instance, if there are many votes, executing the smart contract might become costly, as iterating through the ballots takes many operations.
-In the worst case, this may exceed the energy budget of running the functions, which could make the smart contract unusable.</p>
+<p>An important aspect of the voting smart contract to highlight is the way that votes are tallied.</p>
+<p>Note the data duplication in the <code class="docutils literal notranslate"><span class="pre">State</span></code> struct. Two <code class="docutils literal notranslate"><span class="pre">HashMap</span></code>s are used: one that maps accounts to the option they voted for,
+and one that maps voting options to the number of votes it has received. However, if you think about it, only the first <code class="docutils literal notranslate"><span class="pre">HashMap</span></code>,
+the <code class="docutils literal notranslate"><span class="pre">ballots</span></code> field is necessary. The tally can of course always be determined by examining the ballots field. This requires looping
+over all ballots, counting how many votes exist for a specific option. However, such a loop would be practically unbounded, as it is only
+limited by the number of votes. Such a loop could exhaust the energy budget of the smart contract functions, potentially making the smart
+contract unusable and vulnerable to a kind of DDoS attack.</p>
+<p>Thus, we favor duplicating the data in another <code class="docutils literal notranslate"><span class="pre">HashMap</span></code> where the vote count can be retrieved and updated in constant time.</p>
 <p>It’s important to keep these performance considerations in mind when writing smart contracts. In general, writing smart contracts requires a different methodology than most other usual software development.
 Be sure to think carefully and read up on the common issues and security problems that may occur when you develop smart contracts.</p>
 <p>In the next part of the tutorial, we will set up a frontend to make it easier to interact with the smart contract.</p>

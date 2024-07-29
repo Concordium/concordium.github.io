@@ -52,7 +52,7 @@ transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
 Installation
--------------------------
+------------
 
 To continue the tutorial, we'll need to install the |bw|. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
 
@@ -104,7 +104,7 @@ Before you can create a new account, you need to create an identity. You can do 
 .. image:: ../wCCD/images/wCCD_tutorial_22.png
     :width: 30 %
 
-Finally, make a new account on testnet.
+Finally, create a new account on testnet.
 
 .. image:: ../wCCD/images/wCCD_tutorial_19.png
     :width: 30 %
@@ -112,7 +112,7 @@ Finally, make a new account on testnet.
 .. image:: ../wCCD/images/wCCD_tutorial_20.png
     :width: 30 %
 
-For testing you'll need some CCD in your account. Send some CCD to your new account or request some CCD from the :ref:`testnet faucet button<testnet-faucet>`.
+For testing you'll need some CCD in your account. Send some CCD to your new account or request some CCD from the :ref:`testnet faucet button<testnet-faucet>` within the wallet.
 Check that your account balance is displayed and you have enough
 CCD to be able to execute transactions.
 
