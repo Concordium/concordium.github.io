@@ -83,7 +83,6 @@ Preparation
 Before you start, make sure to have the necessary tooling to build Rust
 contracts.
 The guide :ref:`setup-tools` shows you how to do this.
-Also, make sure to have a text editor setup to write Rust.
 
 Additionally, to run the tests you need to:
 
