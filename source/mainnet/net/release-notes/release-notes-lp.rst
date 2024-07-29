@@ -593,11 +593,17 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    November 30, 2023
+    July 29, 2024
 
-    |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+    |mw-gen1| 3.2.3 implements:
+    	- Add Non-Exempt Encryption Version: We've updated the encryption version for enhanced security
+	- Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module for better performance and stability
+	- Minor Bug Fixes: Addressed 12 minor issues in the Concordium Legacy Wallet for iOS to improve your user experience.
 
     .. dropdown:: Previous releases
+        .. dropdown:: |mw-gen1| 3.2.2 - November 30, 2023
+
+            |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
         .. dropdown:: |mw-gen1| 3.2.1 - August 8, 2023
 
