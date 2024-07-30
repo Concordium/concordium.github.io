@@ -601,7 +601,7 @@ Desktop Wallet
 
     - Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module since it will be deprecated in protocol version 7
 
-    - Minor Bug Fixes: Addressed minor issues in the Concordium Legacy Wallet for iOS to improve your user experience.
+    - Minor Bug Fixes: Addressed minor issues in the Concordium Legacy Wallet to improve the user experience.
 
     .. dropdown:: Previous releases
         .. dropdown:: |mw-gen1| 3.2.2 - November 30, 2023
