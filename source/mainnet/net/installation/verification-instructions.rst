@@ -49,6 +49,9 @@ Linux
 
 .. include:: client-verification-instructions/client-linux.rst
 
+Cargo Concordium
+================
+
 .. _verification-cargo-linux:
 
 Linux

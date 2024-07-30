@@ -17,9 +17,7 @@ In the :ref:`first part<wCCD-introduction>`, you will learn more about the wCCD 
 
 In the :ref:`second part<wCCD-interacting>`, you will interact with the wCCD token protocol using the ``concordium-client``.
 
-In the :ref:`third part<wCCD-front-end-set-up>`, you will download the browser wallet and set up a basic web front end locally.
-
-In the :ref:`fourth part<wCCD-full-dApp>`, you will interact with the wCCD token protocol using your local front end.
+In the :ref:`third part<wCCD-front-end-set-up>`, you will download the browser wallet and set up a basic web front end locally that you can use to interact with the wCCD token protocol.
 
 .. warning::
 
@@ -39,4 +37,3 @@ To start the tutorial click :ref:`here<wCCD-introduction>`.
    Understanding the wCCD token protocol <./wCCD-introduction>
    Interacting with the wCCD token protocol <./wCCD-interacting>
    Setting up the front end <./wCCD-front-end-set-up>
-   Running your first full dApp <./wCCD-full-dApp>
