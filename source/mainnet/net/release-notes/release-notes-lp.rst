@@ -599,7 +599,7 @@ Desktop Wallet
 
     - Add Non-Exempt Encryption Version: We've updated the encryption version for enhanced security
 
-    - Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module for better performance and stability
+    - Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module since it will be deprecated in protocol version 7
 
     - Minor Bug Fixes: Addressed minor issues in the Concordium Legacy Wallet for iOS to improve your user experience.
 
