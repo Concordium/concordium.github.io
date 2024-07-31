@@ -4,7 +4,7 @@
 The minting contract
 ====================
 
-You will update the `cis2-multi contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`_ . Remember what you want to achieve: you would like to have a minting dApp that uses Concordium’s ID layer and according to the scenario, you should prove that you are older than 18 in order to mint a token. The most obvious solution to this is could be to ask for ID proofs from the smart contract, but the proofs are not available to use like that from directly the contract. Instead, to create the same logic using the verifier back-end server, you will implement it in the following manner:
+You will update the `cis2-multi contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi>`_ . Remember what you want to achieve: you would like to have a minting dApp that uses Concordium’s ID layer and according to the scenario, you should prove that you are older than 18 in order to mint a token. The most obvious solution to this is could be to ask for ID proofs from the smart contract, but the proofs are not available to use like that from directly the contract. Instead, to create the same logic using the verifier backend server, you will implement it in the following manner:
 
 * You assume the owner of the verifier and the smart contract instance owner (dApp owner) is the same person. When you run the verifier backend server, you will use an account's sign and verify keys.
 * While creating a new instance of the contract, the owner has to send its verify key(public key) and the contract will keep it in the state (to verify the signature).
@@ -172,4 +172,4 @@ Finally, update the ``mint()`` function by adding:
         Ok(())
     }
 
-Nice! You are done with the smart contract. Without slowing down, start the :ref:`front-end development<nft-w-id-frontend>`.
+Nice! You are done with the smart contract. Without slowing down, start the :ref:`frontend development<nft-w-id-frontend>`.

@@ -25,8 +25,8 @@ In the :ref:`NFT Minting <nft-index>` tutorial you will mint and transfer non-fu
 In the :ref:`NFT marketplace <nft-marketplace-index>` tutorials you will setup an NFT marketplace.
 
 In the :ref:`eSealing <eSealing>` tutorial, you are going to learn how to seal a document, so you can prove that it was in your possession at the time of sealing.
-You will use a front end and the |bw| to register the file hash of a selected document in a smart contract and then
-display the timestamp and the sealer from an already time-stamped document at the front end.
+You will use a frontend and the |bw| to register the file hash of a selected document in a smart contract and then
+display the timestamp and the sealer from an already time-stamped document at the frontend.
 
 In the :ref:`sponsored Transactions <sponsoredTransactions>` tutorial, you will explore how to sign a
 message in the |bw| (or |mw-gen2| that uses WalletConnect) and how to send the signature to a backend.

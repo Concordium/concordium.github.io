@@ -4,18 +4,18 @@
 Build and deploy the smart contract
 ===================================
 
-The flow will be the same as the previous tutorials. You will build the contract, deploy it, and then create an instance of it. While selling your NFTs there will be some additional steps.
+The flow will be the same as in the previous tutorials. You will build the contract, deploy it, and then create an instance of it. While selling your NFTs, there will be some additional steps.
 
-Now, you have the smart contract and helpers in your project’s folder. In that folder, create another one called ``dist/marketplace-contract`` for your output files. Then run the command below to build the contract and save the schema and Wasm file.
+Now, you have the smart contract and helpers in your project’s folder. In that folder, create another one called ``dist/marketplace-contract`` for your output files. Then run the command below to build the contract WASM module. Note that we embed the schema in the contract by using the ``--schema-embed`` option.
 
 .. code-block:: console
 
-    cargo concordium build --out dist/marketplace-contract/module.wasm.v1 --schema-out dist/marketplace-contract/schema.bin
+    cargo concordium build --out dist/marketplace-contract/module.wasm.v1 --schema-embed
 
 .. image:: images/build-sc.png
     :width: 75%
 
-Deploy the compiled Wasm file with the following command.
+Deploy the compiled WASM module with the following command.
 
 .. code-block:: console
 
@@ -56,7 +56,7 @@ Run the following command to initialize the contract.
 
 .. code-block:: console
 
-    concordium-client contract init market --contract Market-NFT --parameter-json ../sample-artifacts/marketplace/init.json --sender <YOUR-ADDRESS> --energy 3000 --schema dist/marketplace-contract/schema.bin --grpc-port 20001
+    concordium-client contract init market --contract Market-NFT --parameter-json ../sample-artifacts/marketplace/init.json --sender <YOUR-ADDRESS> --energy 3000 --grpc-port 20001
 
 .. image:: images/init-sc.png
     :width: 75%
@@ -64,7 +64,7 @@ Run the following command to initialize the contract.
 UpdateOperator and add token
 ============================
 
-Now you are going to sell your NFT. In order to do that, you need to give the marketplace permission to transfer the token to a particular address. You do this with ``updateOperator()`` function in CIS-2, which is standard function. What you need to be careful about is that you need to call your token contract with its schema. Then you should be able to do an ``add()`` operation. Go to the sample artifacts and ``update-operator.json`` to change the marketplace address. You are allowing the marketplace contract to act on your behalf. If you want to test the logic behind it, skip this and try to call ``add()`` directly from the contract. It won't work because your token’s state is not updated yet. As you can see below, the ``UpdateOperator()`` function updates the state of the token.
+Now you are going to sell your NFT. In order to do that, you need to give the marketplace permission to transfer the token to a particular address. You do this with ``updateOperator()`` function in CIS-2, which is a standard function. What you need to be careful about is that you need to call your token contract with its schema. Then you should be able to do an ``add()`` operation. Go to the sample artifacts and ``update-operator.json`` to change the marketplace address. You are allowing the marketplace contract to act on your behalf. If you want to test the logic behind it, skip this and try to call ``add()`` directly from the contract. It won't work because your token’s state is not updated yet. As you can see below, the ``UpdateOperator()`` function updates the state of the token.
 
 .. code-block:: Rust
 
@@ -117,7 +117,7 @@ Now run the command below.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-TOKEN-INDEX> --entrypoint updateOperator --parameter-json ../sample-artifacts/marketplace/update-operator.json --schema ../cis2-multi/dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
+    concordium-client contract update <YOUR-TOKEN-INDEX> --entrypoint updateOperator --parameter-json ../sample-artifacts/marketplace/update-operator.json --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
 
 If successful, you will see something similar to below.
 
@@ -128,7 +128,7 @@ Before calling the add function, update your ``sample-artifacts/marketplace/add.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT-INDEX> --entrypoint add --parameter-json ../sample-artifacts/marketplace/add.json --schema dist/marketplace-contract/schema.bin --sender <YOUR-ADDRESS> --energy 10000 --grpc-port 20001
+    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT-INDEX> --entrypoint add --parameter-json ../sample-artifacts/marketplace/add.json --sender <YOUR-ADDRESS> --energy 10000 --grpc-port 20001
 
 Now you have successfully added your token to marketplace.
 
@@ -139,7 +139,7 @@ To check if the token is in the marketplace, call the ``list()`` function with t
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-MARKETPLACE-INDEX> --entrypoint list --schema marketplace-contract/dist/marketplace-contract/schema.bin --grpc-port 20001
+    concordium-client contract invoke <YOUR-MARKETPLACE-INDEX> --entrypoint list --grpc-port 20001
 
 In the image below you can see that the token is listed.
 
@@ -229,7 +229,7 @@ Run the command below to invoke the ``transfer()`` function.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT> --entrypoint transfer --parameter-json ../sample-artifacts/marketplace/transfer.json --schema dist/marketplace-contract/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --amount <PRICE> --grpc-port 20001
+    concordium-client contract update <YOUR-MARKETPLACE-CONTRACT> --entrypoint transfer --parameter-json ../sample-artifacts/marketplace/transfer.json --sender <YOUR-ADDRESS> --energy 6000 --amount <PRICE> --grpc-port 20001
 
 Below you can see a successful transfer.
 
@@ -245,7 +245,7 @@ And cross check with the token contract’s latest state with its ``view()`` fun
 
 .. code-block:: console
 
-    concordium-client  contract invoke <TOKEN-CONTRACT-INDEX> --entrypoint view --schema <YOUR-SCHEMA-FILE> --grpc-port 20001
+    concordium-client  contract invoke <TOKEN-CONTRACT-INDEX> --entrypoint view --grpc-port 20001
 
 As you can see, the first account has no balance anymore with the given token ID but the second one has.
 

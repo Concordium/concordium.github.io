@@ -30,7 +30,7 @@ Recordings from previous workshops can be watched here:
 
 - `Building Concordium Smart Contracts <https://www.youtube.com/watch?v=9po12_IavKU>`_.
 
-- `Building A Front-end Integration <https://www.youtube.com/watch?v=ux00M5XLHZk>`_.
+- `Building A Frontend Integration <https://www.youtube.com/watch?v=ux00M5XLHZk>`_.
 
 Quick guide
 ===========

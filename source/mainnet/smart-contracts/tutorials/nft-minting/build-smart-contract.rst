@@ -35,21 +35,19 @@ If everything is correct, the ``init`` command will show something like the belo
 Build your smart contract
 =========================
 
-Now you are ready to build your contract. Create a ``dist/cis2-nft`` folder to keep your Wasm compiled output file and schema file first and then build it with the following command.
+Now you are ready to build your contract. First, open up your lib.rs file under /src. You need to specify the ``TOKEN_METADATA_BASE_URL`` parameter in the contract. Since this is an NFT, you need to store the metadata on chain forever. Add your IPFS link like below.
+
+.. code-block:: rust
+
+    /// The baseurl for the token metadata, gets appended with the token ID as hex
+    /// encoding before emitted in the TokenMetadata event.
+    pub const TOKEN_METADATA_BASE_URL: &str = "<YOUR IPFS METADATA URL HERE>";
+
+Now, create a ``dist/cis2-nft`` folder to keep your compiled WASM module file and then build it with the following command.
 
 .. code-block:: console
 
-    cargo concordium build --out dist/cis2-nft/cis2.module.wasm.v1 --schema-out dist/cis2-nft/schema.bin
-
-Now, open up your lib.rs file under /src, you need to specify the TOKEN_METADATA_BASE_URL parameter in the contract. Since, this is an NFT, you need to store the metadata on chain forever. Add your IPFS link like below.
-
-.. image:: images/add-ipfs-link.png
-    :width: 100%
-
-After these steps, you should be able to see something similar to below.
-
-.. image:: images/build-contract.png
-    :width: 100%
+    cargo concordium build --out dist/cis2-nft/cis2.module.wasm.v1
 
 .. _deploy-nft-sc:
 

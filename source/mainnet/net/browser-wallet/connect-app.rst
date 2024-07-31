@@ -5,13 +5,13 @@
 Connect dApps to wallets
 ===================================
 
-You can connect the |bw| and |mw-gen2| to a `dApp <https://en.wikipedia.org/wiki/Decentralized_application>`__ that has a front end interface so that you can pay for services. You can initiate the request from within the |bw| or |mw-gen2|, or the dApp can initiate a connection request that you must confirm. Connection can be made by either scanning a QR code or from a link to the dApp service.
+You can connect the |bw| and |mw-gen2| to a `dApp <https://en.wikipedia.org/wiki/Decentralized_application>`__ that has a frontend interface so that you can pay for services. You can initiate the request from within the |bw| or |mw-gen2|, or the dApp can initiate a connection request that you must confirm. Connection can be made by either scanning a QR code or from a link to the dApp service.
 
 .. dropdown:: |bw|
 
    To initiate a request to connect to a dApp within the |bw|:
 
-   #. In the browser navigate to your dApp's front end interface.
+   #. In the browser navigate to your dApp's frontend interface.
 
    #. Go to the **Accounts** page.
 
