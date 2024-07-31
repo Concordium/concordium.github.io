@@ -4,7 +4,7 @@
 Smart contract modifications
 ============================
 
-In this tutorial, you will use the example ``cis2-nft`` contract template from Concordium, which you can initialize using the cargo-concordium tool. In this tutorial you will add a couple of things and update some functions to give more flexibility to the template.
+In this tutorial, you will use the example ``cis2-nft`` contract template from Concordium, which you can initialize using the cargo-concordium tool via the ``cargo concordium init`` command. In this tutorial you will add a couple of things and update some functions to give more flexibility to the template.
 
 First, you will add a new struct called ``TokenMetadata``. It needs to implement the ``Serialize`` and ``SchemaType`` traits. For those who are familiar with the Ethereum ecosystem, it's similar to the ABI.
 

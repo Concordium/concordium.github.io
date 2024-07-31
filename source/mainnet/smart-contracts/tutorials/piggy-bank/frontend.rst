@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
 .. _piggy-bank-frontend:
 
-======================
+=====================
 Setting up a frontend
-======================
+=====================
 
 As an alternative to interacting with smart contracts directly,
 users might have a better experience using a web-based application.

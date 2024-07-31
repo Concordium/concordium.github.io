@@ -10,8 +10,9 @@
 A Sponsored Transactions dApp
 =============================
 
-In this tutorial, you are going to get familiar with how to implement a sponsored transaction mechanism in a smart contract, how to sign messages in a wallet and verify the signature in the smart contract,
-how to send a transaction from a backend server to the blockchain, and how to connect your |mw-gen2| via walletConnect to the frontend.
+In this tutorial, you are going to get familiar with how to implement a sponsored transaction mechanism in a smart contract,
+how to sign messages in a wallet and verify the signature in the smart contract and
+how to send a transaction from a backend server to the blockchain.
 
 The dApp consists of three components that you will explore as part of this tutorial:
 
@@ -69,4 +70,3 @@ The third-party creates a valid transaction at the backend server, which is sent
 
    Exploring the sponsored Transactions Smart Contract <./sponsoredTransactionsSmartContract.rst>
    Exploring the sponsored Transactions dApp <./sponsoredTransactionsFrontendAndBackend.rst>
-   Wallet Connect <./walletConnect.rst>

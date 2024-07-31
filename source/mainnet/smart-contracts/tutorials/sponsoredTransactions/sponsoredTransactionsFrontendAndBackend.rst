@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
 .. _sponsoredTransactionsFrontendAndBackend:
 
-=============================================
+===========================================
 Sponsored Transactions Frontend and Backend
-=============================================
+===========================================
 
 The goal of this part of the tutorial is to set up the frontend and the backend locally and to understand the two flows that the dApp provides.
 

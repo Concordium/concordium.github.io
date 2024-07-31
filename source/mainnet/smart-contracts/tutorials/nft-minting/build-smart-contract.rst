@@ -35,7 +35,7 @@ If everything is correct, the ``init`` command will show something like the belo
 Build your smart contract
 =========================
 
-Now you are ready to build your contract. First, open up your lib.rs file under /src. You need to specify the ``TOKEN_METADATA_BASE_URL`` parameter in the contract. Since this is an NFT, you need to store the metadata on chain forever. Add your IPFS link like below.
+Now you are ready to build your contract. First, open up your ``lib.rs`` file under ``/src``. You need to specify the ``TOKEN_METADATA_BASE_URL`` parameter in the contract. Since this is an NFT, you store a URL to its metadata on chain. Add your IPFS link like below.
 
 .. code-block:: rust
 
