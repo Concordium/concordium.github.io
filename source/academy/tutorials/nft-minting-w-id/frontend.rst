@@ -2,7 +2,7 @@
 .. include:: ../../../mainnet/variables.rst
 
 =====================
-Front-end development
+Frontend development
 =====================
 
 The user interface will be a simple React application implemented from the template and material-ui, similar to this tutorial.
@@ -19,7 +19,7 @@ It will take some time to fetch and install all packages and dependencies, and w
 And when you run it you will see the template application interface.
 
 .. image:: ../../images/adv-frontend2.png
-    :alt: browser tab showing result of running the locally built front end
+    :alt: browser tab showing result of running the locally built frontend
 
 Then you will add the dependencies for some React components from material-ui, and necessary libraries from concordium-web-sdk and concordium-web-wallet-helper. To do that, run the command below and ``yarn`` will install all specified packages.
 
@@ -155,7 +155,7 @@ Open the **App.tsx** file and remove everything inside the ``App()``. First, add
     export default App;
 
 .. image:: ../../images/adv-frontend4.png
-    :alt: browser tab showing result of running the locally built front end
+    :alt: browser tab showing result of running the locally built frontend
 
 Now, add some material-ui components to beautify it and change the return function with the one below.
 
@@ -214,7 +214,7 @@ Now, add some material-ui components to beautify it and change the return functi
     );
 
 .. image:: ../../images/adv-frontend5.png
-    :alt: browser tab showing result of running the locally built front end
+    :alt: browser tab showing result of running the locally built frontend
 
 Well, it's not bad.
 

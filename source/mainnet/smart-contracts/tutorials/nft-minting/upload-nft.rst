@@ -4,7 +4,7 @@
 Upload the NFT
 ==============
 
-Now you need to upload your asset and give it metadata. For this tutorial you will use the InterPlanetary File System (IPFS).
+In this part of the tutorial, we will upload your asset and give it metadata. For this, we will use the InterPlanetary File System (IPFS).
 
 Using InterPlanetary File System (IPFS)
 =======================================
@@ -19,7 +19,7 @@ After that, you need to import your NFT. Using the IPFS app click **Import** and
 .. image:: images/ipfs-upload.png
     :width: 100%
 
-Now you should be able to see its CID or URL from the user interface. This is the important part because when you buy an NFT, it will be a hyperlink that refers to the exact location of your digital asset. So you basically are buying a link that points to a location, and you want to make sure that no one can change it. The Content Identifier (CID) value guarantees that by creating unique hash values. When you import something to IPFS it generates a Content Identifier (CID) hash value to represent the asset with strings. A hash value is an output of a one-way cryptic function that takes literally anything as an input like a word, text, image, movie, book, etc. but produces only a string of fixed size to refer to that asset. You can read more about hash from `this link <https://en.wikipedia.org/wiki/InterPlanetary_File_System>`__.
+Now you should be able to see its CID or URL from the user interface. This is the important part because when you buy an NFT, it will be a hyperlink that refers to the exact location of your digital asset. So you basically are buying a link that points to a location, and you want to make sure that no one can change it. The Content Identifier (CID) value guarantees that by creating unique hash values. When you import something to IPFS it generates a Content Identifier (CID) hash value to represent the asset with strings. A hash value is an output of a one-way cryptic function that takes literally anything as an input like a word, text, image, movie, book, etc. but produces only a string of fixed size to refer to that asset. You can read more about this hash from `this link <https://en.wikipedia.org/wiki/InterPlanetary_File_System>`__.
 
 .. _nft-metadata:
 
@@ -30,7 +30,7 @@ The CID of your asset is unique in the IPFS storage, and when you put that value
 
 The Concordium CIS-2 standard allows the creation of your NFT metadata in the following format, and you can find more details in the `Concordium CIS-2 token standard <https://proposals.concordium.software/CIS/cis-2.html#example-token-metadata-non-fungible>`_. For the sake of the minting process, you have to follow the same formatted .json file, but as you can see, you are also allowed to add additional attributes to the metadata file, or remove them.
 
-.. code-block:: console
+.. code-block:: json
 
     {
         "name": "your picture name",
@@ -57,6 +57,6 @@ The Concordium CIS-2 standard allows the creation of your NFT metadata in the fo
         ]
     }
 
-So far you have installed the required libraries, prepared a setup for our development environment, installed Docker and IPFS, and imported your first image to IPFS.
+So far you have installed the required libraries, prepared a setup for our development environment, installed IPFS, and imported your first image to IPFS.
 
 Continue to the :ref:`next part<build-smart-contract>` of the tutorial to build your smart contract and initialize it.

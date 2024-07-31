@@ -4,7 +4,7 @@
 Mint and transfer the NFT
 =========================
 
-Now, you are ready to call the mint function. In order to invoke mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a JSON file and give that file as a parameter to ``concordium-client``. To make it more user-friendly, a JSON file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the JSON file is called ``nft-params.json``. You can either do it manually or with following commands.
+Now, you are ready to call the mint function. In order to invoke the mint function, you need the contract instance and you must set the owner/minter address, the metadata URL, and the token ID. Because you can mint more than one token with this instance address you need to specify the token ID. You can use either your terminal to give these parameters as inputs or you can create a JSON file and give that file as a parameter to ``concordium-client``. To make it more user-friendly, a JSON file is created in this tutorial. In your project file create a folder with any name you want. In this tutorial it is called “nft-artifacts” and the JSON file is called ``nft-params.json``. You can either do it manually or with following commands.
 
 .. code-block:: console
 
@@ -33,7 +33,7 @@ Then run the command below to invoke the mint function with the given params.
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json nft-artifacts/nft-params.json --schema dist/smart-contract-multi/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json nft-artifacts/nft-params.json --sender <YOUR-ADDRESS> --energy 6000 --grpc-port 20001
 
 Minting is successful.
 
@@ -45,34 +45,20 @@ Minting is successful.
 View function
 =============
 
-Now check the current state of the cis2-nft token contract by invoking view function. The schema file you created in the build step is important here, because ``concordium-client`` uses it to deserialize the output while printing it.
+Now check the current state of the cis2-nft token contract by invoking view function.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-INDEX> --entrypoint view --schema dist/cis2-nft/schema.bin --grpc-port 20001
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint view --grpc-port 20001
 
 Your result will be similar to what is shown below where the user is the owner of the token with ID **00000111**.
 
 .. image:: images/view-fn.png
     :width: 100%
 
-You are going to invoke the tokenMetadata function from your contract. It accepts parameters as a vector. (See the function *fn contract_token_metadata()*). To give a list of the tokenIDs create another JSON file and call it as ``token-ids.json`` and add your tokenID(s) as a vector.
+You are going to invoke the tokenMetadata function from your contract. It accepts parameters as a vector. (See the function ``fn contract_token_metadata()``). To give a list of the tokenIDs create another JSON file and call it as ``token-ids.json`` and add your tokenID(s) as a vector, so the content of the ``token-ids.json`` file looks like this:
 
-For Mac/Linux/Unix-like operating systems run the following.
-
-.. code-block:: console
-
-    touch token-ids.json
-
-Or for Windows run the following.
-
-.. code-block:: console
-
-    type nul > token-ids.json
-
-In a text editor, add the tokenID(s) as shown below for the example in this tutorial.
-
-.. code-block:: console
+.. code-block:: json
 
     ["00000111"]
 
@@ -80,7 +66,7 @@ You can query the metadata with the following command.
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --schema dist/cis2-nft/schema.bin --grpc-port 20001
+    concordium-client contract invoke <YOUR-INDEX> --entrypoint tokenMetadata --parameter-json nft-artifacts/token-ids.json --grpc-port 20001
 
 This returns the metadata URL combined with your tokenID.
 
@@ -105,7 +91,7 @@ Now you can transfer it. One reminder, you should be the owner of it to be able 
 
 .. code-block:: console
 
-    concordium-client  contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --schema dist/cis2-nft/schema.bin --sender <YOUR-ADDRESS> --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 20001
+    concordium-client  contract update <YOUR-INDEX> --entrypoint transfer --parameter-json nft-artifacts/transfer-params.json --sender <YOUR-ADDRESS> --energy 6000 --grpc-ip 127.0.0.1 --grpc-port 20001
 
 The transfer is successfully completed.
 
@@ -119,4 +105,4 @@ As you can see the second account is now the owner of the asset and the first ac
 .. image:: images/transfer-view.png
     :width: 100%
 
-You have now completed part one of the NFT minting tutorial.
+You have now completed the NFT minting tutorial.
