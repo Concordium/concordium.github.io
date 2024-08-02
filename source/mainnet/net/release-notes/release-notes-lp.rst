@@ -695,7 +695,7 @@ Desktop Wallet
 
     July 31, 2024
 
-    Version 3.4.0 updates the deprecation notice. 
+    Version 3.4.0 updates the deprecation notice.
     This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
     No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
