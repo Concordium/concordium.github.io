@@ -12,12 +12,6 @@ So far you have written and tested a piggy bank smart contract in the Rust_ prog
 
 This part focuses on how you can deploy your developed piggy bank smart contract to the Concordium testnet and interact with it.
 
-.. warning::
-
-   The reader is assumed to have basic knowledge of what a blockchain and smart
-   contract is, and some experience with Rust_.
-
-
 Preparation
 ===========
 

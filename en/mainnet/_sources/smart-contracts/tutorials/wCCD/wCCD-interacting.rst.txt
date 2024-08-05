@@ -20,7 +20,7 @@ Interacting with the wCCD token protocol
     :ref:`Setup the development environment <setup-env>`
     will guide you through these setup steps.
     If you haven't completed any of the above steps, you can continue
-    with :ref:`part 3 <wCCD-front-end-set-up>` of this tutorial. However, it is recommended
+    with :ref:`part 3 <wCCD-frontend-set-up>` of this tutorial. However, it is recommended
     to complete every part of this tutorial in the given order.
     You need an up-to-date ``concordium-client`` version because the wCCD smart contract uses the newest ``schema_V3``.
 
@@ -155,12 +155,6 @@ You are ready now to invoke the ``balanceOf`` function with the following comman
 .. image:: ./images/wCCD_tutorial_4.png
     :width: 100 %
 
-.. note::
-
-    The smallest unit of CCD is 1 micro CCD and equals 10\ :sup:`−6` (one millionth) of a CCD.
-    CCD has 6 decimal places. 1 CCD is represented by the balance
-    value of 1,000,000 micro CCD on the blockchain and is worth the equivalent of a balance value of 1,000,000 micro wCCD.
-
 .. _operatorOf:
 
 The ``operatorOf`` function
@@ -227,12 +221,12 @@ The ``operatorOf`` function
                     "Account": [
                         "4DH219BXocxeVByKpZAGKNAJx7s2w1HFpwaNu1Ljd1mXFXig22"
                     ]
-                }
+                },
                 "owner": {
                     "Account": [
                         "4phD1qaS3U1nLrzJcgYyiPq1k8aV1wAjTjYVPE3JaqovViXS4j"
                     ]
-                },
+                }
             }
         ]
 
@@ -753,4 +747,4 @@ The below screenshot shows the execution of the ``updateOperator`` function.
 Confirm that the ``updateOperator`` function has added/removed operator addresses by checking
 with the ``operatorOf`` function the state of the smart contract again.
 
-To continue with the tutorial click :ref:`here<wCCD-front-end-set-up>`.
+To continue with the tutorial click :ref:`here<wCCD-frontend-set-up>`.

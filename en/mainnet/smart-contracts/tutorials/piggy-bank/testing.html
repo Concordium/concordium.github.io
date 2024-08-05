@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/piggy-bank/testing.d69d28b9-4717-4259-ba4c-93a6d1550507.js"></script>
+    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/piggy-bank/testing.469c41ab-f5fd-4e79-a855-a1560dac0ca3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'smart-contracts/tutorials/piggy-bank/testing';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -863,19 +863,18 @@ body {margin:0;}
 <li class="toctree-l3"><a class="reference internal" href="writing.html">Writing the piggy bank smart contract</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Testing the piggy bank smart contract</a></li>
 <li class="toctree-l3"><a class="reference internal" href="deploying.html">Deploying the piggy bank smart contract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontend.html">Setting up a front end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontend.html">Setting up a frontend</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wCCD/wCCD-front-end-set-up.html">Setting up the front end</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wCCD/wCCD-full-dApp.html">Running your first full dApp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../voting/index.html">The Voting dApp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-46"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../voting/voting-sc.html">Writing a voting smart contract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the front-end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the frontend</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../nft-minting/index.html">Mint an NFT</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-47"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -906,7 +905,6 @@ body {margin:0;}
 <li class="toctree-l2 has-children"><a class="reference internal" href="../sponsoredTransactions/index.html">Sponsored Transactions</a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-52"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsSmartContract.html">Exploring the sponsored Transactions Smart Contract</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../sponsoredTransactions/walletConnect.html">Wallet Connect</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../smartContractUpgrade/index.html">Smart Contract Upgrade</a><input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-53"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -918,7 +916,7 @@ body {margin:0;}
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../net/guides/gallery/index.html">Using ID tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-54"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../net/guides/gallery/gallery-backend.html">Writing the verifying backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../net/guides/gallery/gallery-frontend.html">Interacting with a wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../net/guides/gallery/gallery-setup.html">Setting up the front end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../net/guides/gallery/gallery-setup.html">Setting up the frontend</a></li>
 </ul>
 </li>
 </ul>
@@ -1003,16 +1001,10 @@ language.
 This part will focus on how you can write integration-tests for your piggy bank smart
 contract using the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/"><code class="docutils literal notranslate"><span class="pre">concordium-smart-contract-testing</span></code></a> library.
 The library simulates part of a blockchain <em>locally</em> to allow you to create one or more contracts and interact with them in the tests.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The reader is assumed to have basic knowledge of what a blockchain and smart
-contract is, and some experience with <a class="reference external" href="https://www.rust-lang.org/">Rust</a>.</p>
-</div>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
 <p>Before you start, make sure to have the necessary tooling to build Rust
-contracts. The guide <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a> shows you how to do this.
-Also, make sure to have a text editor setup to write Rust.</p>
+contracts. The guide <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a> shows you how to do this.</p>
 <p>Since you are going to extend the smart contract code written in the <a class="reference internal" href="writing.html#piggy-bank-writing"><span class="std std-ref">previous
 part</span></a>, either follow the previous part or copy the complete
 example code for part 1 from <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/piggy-bank/part1/src/lib.rs">GitHub</a>.</p>

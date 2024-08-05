@@ -35,7 +35,7 @@ Run the command below to call the contract ``mint()`` function. Remember that th
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json ../nft-artifacts/mint-params.json --schema dist/fungible/schema.bin --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json ../nft-artifacts/mint-params.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
 
 Now you have successfully minted your fungible tokens.
 

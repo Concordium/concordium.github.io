@@ -176,13 +176,19 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    June 26, 2024
+    July 31, 2024
 
-    Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
-
-    This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.
+    Version 1.7.0 adds a deprecation notice.
+    This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
+    No need to create a new wallet – just enter your recovery phrase into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.6.0 - June 26, 2024
+
+            Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+            This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.
 
         .. dropdown:: |mw-gen2| 1.5.1 - March 20, 2024
 
@@ -593,11 +599,20 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    November 30, 2023
+    July 29, 2024
 
-    |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+    |mw-gen1| 3.2.3 contains the following changes:
+
+    - Add Non-Exempt Encryption Version: We've updated the encryption version for enhanced security
+
+    - Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module since it will be deprecated in protocol version 7
+
+    - Minor Bug Fixes: Addressed minor issues in the Concordium Legacy Wallet to improve the user experience.
 
     .. dropdown:: Previous releases
+        .. dropdown:: |mw-gen1| 3.2.2 - November 30, 2023
+
+            |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
         .. dropdown:: |mw-gen1| 3.2.1 - August 8, 2023
 
@@ -663,7 +678,7 @@ Desktop Wallet
             - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
             - Added a small dialogue to remind the user to check for a response on new identity requests.
             - Users will now be notified on successful creation of new accounts inside the app.
-            - Various back-end improvements by the identity provider to make their service more robust.
+            - Various backend improvements by the identity provider to make their service more robust.
             - Various improvements to make the identity issuance and account creation flow more robust.
 
             - Various bug fixes.
@@ -678,13 +693,19 @@ Desktop Wallet
 |mw-gen1| for Android
 ---------------------
 
-    June 26, 2024
+    July 31, 2024
 
-    Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
-
-    Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
+    Version 3.4.0 updates the deprecation notice.
+    This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
+    No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.3.0 - June 26, 2024
+
+            Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+            Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
         .. dropdown:: 3.2.1 - December 1, 2023
 
@@ -752,7 +773,7 @@ Desktop Wallet
                 -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail, containing an issuance reference for better personal support as well as system information of the user for better debugging.
                 -  Added a small dialogue to remind user to check for response on new identity requests.
                 -  User will now be notified on successful creation of new accounts inside the app.
-                -  Various back-end improvements by the identity provider to make their service more robust.
+                -  Various backend improvements by the identity provider to make their service more robust.
 
             -  Various bug fixes.
 

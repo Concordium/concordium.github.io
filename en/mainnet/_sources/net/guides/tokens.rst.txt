@@ -39,7 +39,7 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2|.
 
         Once the tokens are added you can see them on the relevant tab.
 
-        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |bw| and convert some CCD to wrapped CCD. When you do this, you get the a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |bw|.
+        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |bw| and convert some CCD to wrapped CCD. When you do this, you get a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |bw|.
 
     .. dropdown:: Inspect tokens
 
@@ -108,7 +108,7 @@ You can add, inspect, and send tokens in the |bw| and |mw-gen2|.
 
         Once the tokens are added you can see them on the relevant tab.
 
-        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |mw-gen2| and convert some CCD to wrapped CCD. When you do this, you get the a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |mw-gen2|.
+        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |mw-gen2| and convert some CCD to wrapped CCD. When you do this, you get a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |mw-gen2|.
 
     .. dropdown:: Inspect tokens
 
