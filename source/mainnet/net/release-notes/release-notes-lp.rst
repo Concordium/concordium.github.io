@@ -176,13 +176,19 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    June 26, 2024
+    July 31, 2024
 
-    Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
-
-    This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.
+    Version 1.7.0 adds a deprecation notice.
+    This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
+    No need to create a new wallet – just enter your recovery phrase into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.6.0 - June 26, 2024
+
+            Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+            This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.
 
         .. dropdown:: |mw-gen2| 1.5.1 - March 20, 2024
 
@@ -687,13 +693,19 @@ Desktop Wallet
 |mw-gen1| for Android
 ---------------------
 
-    June 26, 2024
+    July 31, 2024
 
-    Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
-
-    Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
+    Version 3.4.0 updates the deprecation notice.
+    This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
+    No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.3.0 - June 26, 2024
+
+            Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+            Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
         .. dropdown:: 3.2.1 - December 1, 2023
 
