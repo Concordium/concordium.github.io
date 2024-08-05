@@ -19,7 +19,7 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    December XX, 2023
+    August 5, 2024
 
     Version 1.5.0 fixes several bugs in the CIS-2 functionality.
 
