@@ -17,7 +17,7 @@ Start with the **state.rs** file. As you already know from the previous tutorial
     ///
     /// Note: The specification does not specify how to structure the contract state
     /// and this could be structured in a more space-efficient way.
-    #[derive(Serial, DeserialWithState, StateClone)]
+    #[derive(Serial, DeserialWithState)]
     #[concordium(state_parameter = "S")]
     pub struct State<S> {
         /// The state of addresses.

@@ -1,27 +1,27 @@
 .. include:: ../../../variables.rst
 .. _gallery-setup:
 
-=====================================
+===================
 Running the example
-=====================================
+===================
 
 .. note::
 
     Before you can run this example, make sure you have:
 
-    - access to :ref:`one of the supported Chromium web browsers<setup-browser-wallet>` on your computer
+    - Access to :ref:`one of the supported Chromium web browsers<setup-browser-wallet>` on your computer.
 
-    - `git <https://git-scm.com/>`_ installed to be able to clone a repository from `GitHub <https://github.com/>`_
+    - `Git <https://git-scm.com/>`_ installed to be able to clone a repository from `GitHub <https://github.com/>`_.
 
-    - `node.js <https://nodejs.org/en/download/>`_ and `yarn <https://yarnpkg.com/getting-started/install>`_ installed
+    - `Node.js <https://nodejs.org/en/download/>`_ and `Yarn <https://yarnpkg.com/getting-started/install>`_ installed.
 
-    ``Node.js`` is a JavaScript runtime environment and ``yarn`` is a package manager
-    used in combination with ``node.js``. You can download `node.js <https://nodejs.org/en/download/>`_  and
-    `yarn <https://yarnpkg.com/getting-started/install>`_  on their official websites.
+    Node.js is a JavaScript runtime environment and Yarn is a package manager
+    used in combination with Node.js. You can download `Node.js <https://nodejs.org/en/download/>`_  and
+    `Yarn <https://yarnpkg.com/getting-started/install>`_  on their official websites.
 
     - `rustup <https://rustup.rs/>`_ installed to build the backend.
 
-The front end needs the |bw| for interaction. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
+The frontend needs the |bw| for interaction. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
 
 Clone this `repository <https://github.com/Concordium/concordium-dapp-examples>`_.
 

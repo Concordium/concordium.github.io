@@ -2,15 +2,15 @@
 .. include:: ../../../mainnet/variables.rst
 
 =====================
-The verifier back end
+The verifier backend
 =====================
 
-In this first part, you will implement a verifier back-end server that signs a claim if it is verified.
+In this first part, you will implement a verifier backend server that signs a claim if it is verified.
 
 Zero-knowledge proofs (ZKP) and ID proofs
 =========================================
 
-The |bw| allows dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age or resides in a specific set of countries or areas. For more information about such proofs, see :ref:`Create proofs<create-proofs>`. But basically, when you have a Concordium account you have an ID object and the identity credential in your wallet. On-chain (in your account) there is a (list of) commitment(s) to your attributes. No one can know who you are other than being able to see your public address. But with zero-knowledge proof (ZK proof) technology (proving a claim without revealing any information but the claim itself), any dApp that wants to make sure that its users meet some criteria can create a query which uses a ZK proof to show correctness. Here these criteria are called **statements**. These statements can be located in the dApp itself or stored in the verifier which is a back-end HTTP server. For this particular tutorial’s scenario, the dApp statement is whether the user is older than 18.
+The |bw| allows dApps or services to request proof that the user meets some requirement, such as proof the user is over a certain age or resides in a specific set of countries or areas. For more information about such proofs, see :ref:`Create proofs<create-proofs>`. But basically, when you have a Concordium account you have an ID object and the identity credential in your wallet. On-chain (in your account) there is a (list of) commitment(s) to your attributes. No one can know who you are other than being able to see your public address. But with zero-knowledge proof (ZK proof) technology (proving a claim without revealing any information but the claim itself), any dApp that wants to make sure that its users meet some criteria can create a query which uses a ZK proof to show correctness. Here these criteria are called **statements**. These statements can be located in the dApp itself or stored in the verifier which is a backend HTTP server. For this particular tutorial’s scenario, the dApp statement is whether the user is older than 18.
 
 When the dApp wants to prove someone meets the criteria, it first communicates with the verifier. The verifier is one of the key elements of this architecture. The dApp uses the verifier to verify the claims but it has a key function above all else. The verifier makes sure that a ZK proof query can't be reused by someone else, for example, if it's stolen somehow. When the dApp communicates with the verifier, it asks for a **challenge**, a one-time or time-bound random string, that will be used while creating the proofs. The verifier, when doing verification checks whether the proof is created with the particular challenge issued for the query. If the proof is not created with the particular challenge, it will not be verified.
 
@@ -42,10 +42,10 @@ Nice, we have a very short requirements list. Now take a look at the flow from t
 * The dApp uses the private key of the owner, to sign a message.
 * The smart contract’s _mint()_ function checks the signature created by the owner and allows for mint.
 
-Verifier back end
+Verifier backend
 =================
 
-Use the back-end code in `Concordium’s dApp examples GitHub repo <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery/verifier>`_. You will make some modifications based on your needs.
+Use the backend code in `Concordium’s dApp examples GitHub repo <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery/verifier>`_. You will make some modifications based on your needs.
 
 First, create an empty project called **backend** using the command below.
 
@@ -111,13 +111,13 @@ Implementation
 
 Create a **types.rs** file. You will use almost the same code as `in this link <https://github.com/Concordium/concordium-dapp-examples/blob/main/gallery/verifier/src/types.rs>`_. In this file, you will create the data structures and responses, and manipulate error codes.
 
-First, you have the ``Challenge`` struct which is a u8 32 bytes array. This will be re-generated every time a new client connects or the back end gets a request.
+First, you have the ``Challenge`` struct which is a u8 32 bytes array. This will be re-generated every time a new client connects or the backend gets a request.
 
 ``WithAccountAddress`` is used for storing the challenge created for a particular account.
 
 ``ChallengeStatus`` is used for storing the issued challenge, to whom it's issued(address), and its creation time on the state.
 
-The ``Server`` is the state. When you run the verifier back end, you will create an empty state with an empty hashmap of challenges.
+The ``Server`` is the state. When you run the verifier backend, you will create an empty state with an empty hashmap of challenges.
 
 The ``InjectStatementError`` enum will be used for handling rejections with error codes.
 
@@ -212,7 +212,7 @@ The ``InjectStatementError`` enum will be used for handling rejections with erro
     }
 
 
-Finally, you have the ``ChallengeResponse`` struct which will be used in the API responses, ``ChallengedProof`` and ``ProofWithContext``. When the back end receives the proof, it will use these to validate it using the client object.
+Finally, you have the ``ChallengeResponse`` struct which will be used in the API responses, ``ChallengedProof`` and ``ProofWithContext``. When the backend receives the proof, it will use these to validate it using the client object.
 
 Handlers.rs
 -----------
@@ -501,7 +501,7 @@ The second endpoint is the get statement. When your dApp wants to verify that a 
 Prove
 ^^^^^
 
-The last endpoint is the prove. Basically, the request that dApp posts (this is a POST endpoint) includes the challenge and the proof. You will send it to the ``handle_provide_proof()`` helper function to prove and sign it. In order to sign it, weyou need to re-create your key pair which are created using your ``verify_key`` and ``sign_key``. When the proof is verified, this endpoint returns a signature (the public key of the user signed by the back end’s private key) that can be verifiable in the smart contract. Then the user will be able to mint the token because the signature will be verifiable by the smart contract using the public key of the back-end address.
+The last endpoint is the prove. Basically, the request that dApp posts (this is a POST endpoint) includes the challenge and the proof. You will send it to the ``handle_provide_proof()`` helper function to prove and sign it. In order to sign it, weyou need to re-create your key pair which are created using your ``verify_key`` and ``sign_key``. When the proof is verified, this endpoint returns a signature (the public key of the user signed by the backend’s private key) that can be verifiable in the smart contract. Then the user will be able to mint the token because the signature will be verifiable by the smart contract using the public key of the backend address.
 
 .. code-block:: console
 

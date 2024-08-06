@@ -9,7 +9,7 @@ In this tutorial,you'll learn how to create a minting platform that allows minti
 
 - The first part includes a lot of cryptographic implementation and an explanation of the backend verifier.
 
-- The second part is about the front-end development and Concordium communication using concordium-web-sdk including |bw| integration.
+- The second part is about the frontend development and Concordium communication using concordium-web-sdk including |bw| integration.
 
 - And the last part is demonstration of the application, including how it works.
 
@@ -20,5 +20,5 @@ Click here to start the tutorial.
 
     verifier-backend
     minting-sc
-    front-end
+    frontend
     how-it-works

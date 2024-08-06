@@ -5,25 +5,23 @@
 .. _voting-sc:
 
 =========================
-The voting smart contract
+The Voting Smart Contract
 =========================
 
 This is the first :ref:`part of a tutorial<voting-dapp>` on smart contract development. In this part you will focus on how to write a smart contract in the Rust_ programming language using the |concordium-std| library.
 
-The `voting smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/voting>`_ allows for conducting an election with several voting options. An `end_time` is set when the election is initialized. Only accounts are eligible to vote. Each account can change its selected voting option as often as it desires until the `end_time` is reached. No voting is possible after the `end_time`.
+The `voting smart contract <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/voting>`_ allows for conducting an election with several voting options. When the election is initialized, a deadline is set, after which no more votes may be cast. Only accounts (not other smart contracts) are eligible to vote. Each account can change its selected voting option as often as it desires until the deadline is reached.
 
 .. warning::
 
-   This contract is not meant for production. It is an example to illustrate how to use the standard library and the tooling Concordium provides. There is no claim that the logic of the contract is reasonable or safe. Do not use these contracts as-is for anything other then experimenting.
+   This contract is not meant for production. It is an example to illustrate how to use the standard library and the tooling Concordium provides. There is no claim that the logic of the contract is reasonable or safe. Do not use these contracts as-is for anything other than experimenting.
 
 Preparation
 ===========
 
-Before you start, make sure to have the necessary tooling to build Rust contracts. The guide :ref:`setup-tools` shows you how to do this. Also, make sure to have a text editor for writing Rust.
+Before you start, make sure to have the necessary tooling to build Rust contracts. The guide :ref:`setup-tools` shows you how to do this.
 
 You also need to set up a new smart contract project. Follow the guide :ref:`setup-contract` and return to this point afterwards.
-
-You are now ready to write a smart contract for the Concordium blockchain!
 
 Basic setup
 ===========
@@ -31,10 +29,10 @@ Basic setup
 The source code of your smart contract is going to be in the ``src`` directory, which already contains the file ``lib.rs``, assuming you follow the above guide
 to set up your project.
 
-Open ``src/lib.rs`` in your editor and you'll see some code for :ref:`writing tests<piggy-bank-testing>`,
+The smart contract template also includes some examples tests under the ``tests`` directory,
 which you can delete for now. You will come back to tests later in this tutorial.
 
-First, bring everything from the |concordium-std|_ library into scope by adding the line:
+In the ``lib.rs`` file, start by bringing everything from the |concordium-std|_ library into scope by adding the line:
 
 .. code-block:: rust
 
@@ -42,42 +40,43 @@ First, bring everything from the |concordium-std|_ library into scope by adding 
 
 This library contains everything needed to write a smart contract, such as some parameters, functions, and tests. It provides convenient wrappers around some low-level operations making your code more readable, and although it is not strictly necessary to use this, it will save a lot of code for the vast majority of contract developers.
 
-The example voting contract allows for the operations:
+The voting contract should allow for the following operations:
 
-- `initializing` the election;
-- `view` general information about the election.
-- `vote` for one of the voting options;
-- `getNumberOfVotes` for a requested voting option;
+- `initializing` the election.
+- `viewing` general information about the election.
+- `voting` for one of the options.
+- `tallying the votes` for a requested voting option.
 
-A few basic functions are necessary for voting to work.
+A few basic functions are necessary for these operations to work:
 
-- init
-- view
-- vote
-- get_votes
+- ``init``
+- ``view``
+- ``vote``
+- ``get_votes``
 
-``InitParameter`` is called by the ``init`` function. In this example, it contains a description of the election, the voting options, and the end time of the election. Voting options is provided as a vector, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the size of ``Vec<VotingOption>`` is limited.
+Now, let's examine the code in `the example voting smart contract here <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/src/lib.rs>`_.
 
-.. Note::
+The ``ElectionConfig`` data structure defines the configuration of the smart contract and is an input to the ``init`` function. In the example code, it contains a description of the election, the voting options, and the deadline of the election. Voting options is provided as a list of strings, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the maximum size of the list of voting options is large, but limited. For more information, see :ref:`Contract instance limits<contract-instance-operations>`.
 
-    Vec<VotingOption> (among other variables) is an input parameter to the `init` function. Since there is a limit to the parameter size (65535 Bytes), the size of the Vec<VotingOption> is limited. For more information, see :ref:`Contract instance limits<contract-instance-operations>`.
+The ``view`` function also returns the ``ElectionConfig`` type, so that users can, for instance, see the available options to vote for.
 
-``VotingView`` is the return value for the ``view`` function.
+In the ``vote`` function, the contract specifies who may vote and when (only accounts may vote and only before the deadline). If a contract tries to vote, an error occurs.
 
-In the ``vote`` function, the contract specifies who may vote and when (accounts and before the end time). If a contract tries to vote, an error occurs.
-
-.. code-block:: console
+.. code-block:: rust
 
     let acc = match ctx.sender() {
         Address::Account(acc) => acc,
         Address::Contract(_) => return Err(VotingError::ContractVoter),
     };
 
-And if the end time has passed, an error occurs.
+And if the deadline has passed, an error occurs.
 
-.. code-block:: console
+.. code-block:: rust
 
-    ensure!(ctx.metadata().slot_time() <= host.state().end_time, VotingError::VotingFinished);
+    ensure!(
+        ctx.metadata().slot_time() <= host.state().config.deadline,
+        VotingError::VotingFinished
+    );
 
 ``get_votes`` gets the number of votes for a specific voting option.
 
@@ -86,4 +85,24 @@ And if the end time has passed, an error occurs.
 Initializing
 ------------
 
-The election is open from the point in time that this smart contract is initialized until the `end_time`.
+The election is open from the point in time that this smart contract is initialized until the deadline.
+
+Performance considerations
+--------------------------
+
+An important aspect of the voting smart contract to highlight is the way that votes are tallied.
+
+Note the data duplication in the ``State`` struct. Two ``HashMap``\ s are used: one that maps accounts to the option they voted for,
+and one that maps voting options to the number of votes it has received. However, if you think about it, only the first ``HashMap``,
+the ``ballots`` field is necessary. The tally can of course always be determined by examining the ballots field. This requires looping
+over all ballots, counting how many votes exist for a specific option. However, such a loop would be practically unbounded, as it is only
+limited by the number of votes. Such a loop could exhaust the energy budget of the smart contract functions, potentially making the smart
+contract unusable and vulnerable to a kind of DDoS attack.
+
+Thus, we favor duplicating the data in another ``HashMap`` where the vote count can be retrieved and updated in constant time.
+
+It's important to keep these performance considerations in mind when writing smart contracts. In general, writing smart contracts requires a different methodology than most other usual software development.
+Be sure to think carefully and read up on the common issues and security problems that may occur when you develop smart contracts.
+
+
+In the next part of the tutorial, we will set up a frontend to make it easier to interact with the smart contract.

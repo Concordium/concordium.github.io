@@ -18,11 +18,7 @@ You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-ge
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Send CCD with a schedule   |               |                |                   | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Shield CCD                 | |check|       | |check|        |                   | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Unshield CCD               | |check|       | |check|        |                   | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Make shielded transfer     | |check|       | |check|        |                   | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 | Add validator              | |check|       | |check|        | |check|           | |check|       | |check|           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
@@ -44,8 +40,8 @@ You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-ge
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+
 
 - |bw|: supports send CCD, receive CCD, connect to dApps, validator management, delegation.
-- |mw-gen2|: supports send CCD, receive CCD, shield CCD and unshield CCD, validator management, delegation, connect to dApps, add and manage tokens.
-- |mw-gen1|: supports send CCD, receive CCD, shield CCD and unshield CCD, validator management, delegation
+- |mw-gen2|: supports send CCD, receive CCD, unshield CCD (:ref:`deprecated<shielded-balance-feature-deprecation>`), validator management, delegation, connect to dApps, add and manage tokens.
+- |mw-gen1|: supports send CCD, receive CCD, unshield CCD (:ref:`deprecated<shielded-balance-feature-deprecation>`), validator management, delegation
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
 - Concordium Client: supports all transaction types.
 

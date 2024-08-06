@@ -8,7 +8,7 @@ Create proofs
 A :term:`verifier` is a business or use-case that provides a service contingent on the holder providing information about themselves using :term:`verifiable credentials<verifiable credential>` or :term:`account credentials<account credential>` they have. A verifier will typically consist of two components:
 
 1. A dApp that interacts with the wallet and requests a :term:`verifiable presentation` from the user.
-2. A back end that will verify the provided presentations, and provide the required service if successful, such as the `Concordia back end <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`_.
+2. A backend that will verify the provided presentations, and provide the required service if successful, such as the `Concordia backend <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`_.
 
 The |bw| allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :term:`attributes<attributes>` to the dApp or service. The dApp or service constructs a list of :term:`statements<statement>` to request a corresponding list of :term:`zero-knowledge proofs<zero-knowledge proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.
 
@@ -21,18 +21,18 @@ The verification of presentations consists of two parts.
 
 Note that the presentation can combine requirements for account credentials and verifiable credentials.
 
-The diagram below shows the interaction between the Rust server/back end, the dApp, and the wallet.
+The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
 
 .. image:: ../images/browser-wallet/proof-concept.png
     :width: 100%
 
-You have a server or back end that contains the :term:`challenge` and the statement.
+You have a server or backend that contains the :term:`challenge` and the statement.
 
-1. The dApp requests the :term:`challenge` from the server/back end.
-2. The server/back end returns the challenge to the dApp. The dApp uses it when sending the :term:`statements<statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the back end that ultimately checks proofs, and so it must be aware of the statement.
+1. The dApp requests the :term:`challenge` from the server/backend.
+2. The server/backend returns the challenge to the dApp. The dApp uses it when sending the :term:`statements<statement>`. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.
 3. The dApp sends a request for proof for the given challenge and statement to the wallet.
 4. The wallet sends proof back to the dApp (if accepted by the user).
-5. The dApp sends the proof to the back end which verifies it with respect to the challenge it has issued.
+5. The dApp sends the proof to the backend which verifies it with respect to the challenge it has issued.
 
 General rules
 =============
@@ -196,7 +196,7 @@ If you do not wish to use the Concordium hosted verifier, you can can either bui
 Concordium Proof Explorer
 =========================
 
-If you want to familiarize yourself with how proofs work and can be constructed, you can use the `Concordium Proof Explorer <https://web3id-proof-explorer.testnet.concordium.com/>`__ to create proofs and send them to a |bw| to see how they interact with account credentials and verifiable credentials. The Concordium Proof Explorer works on Testnet. You can use the `Web3Id Issuer Front End <https://web3id-issuer-frontend.testnet.concordium.com/>`__ to create verifiable credential to test with the proof explorer.
+If you want to familiarize yourself with how proofs work and can be constructed, you can use the `Concordium Proof Explorer <https://web3id-proof-explorer.testnet.concordium.com/>`__ to create proofs and send them to a |bw| to see how they interact with account credentials and verifiable credentials. The Concordium Proof Explorer works on Testnet. You can use the `Web3Id Issuer Frontend <https://web3id-issuer-frontend.testnet.concordium.com/>`__ to create verifiable credential to test with the proof explorer.
 
 Example dApp
 ============

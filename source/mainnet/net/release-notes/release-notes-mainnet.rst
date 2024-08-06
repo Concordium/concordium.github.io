@@ -921,7 +921,7 @@ Concordium Mobile Wallet for iOS v1.1(27)
    - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
    - Added a small dialogue to remind the user to check for a response on new identity requests.
    - Users will now be notified on successful creation of new accounts inside the app.
-   - Various back-end improvements by the identity provider to make their service more robust.
+   - Various backend improvements by the identity provider to make their service more robust.
    - Various improvements to make the identity issuance and account creation flow more robust.
 
 - Various bug fixes.
@@ -947,7 +947,7 @@ Concordium Mobile Wallet for Android (v. 1.0.16)
          containing an issuance reference for better personal support as well as system information of the user for better debugging.
       -  Added a small dialogue to remind user to check for response on new identity requests.
       -  User will now be notified on successful creation of new accounts inside the app.
-      -  Various back-end improvements by the identity provider to make their service more robust.
+      -  Various backend improvements by the identity provider to make their service more robust.
 
 -  Various bug fixes.
 
@@ -1141,4 +1141,3 @@ Source Code
 -----------
 
 The source code for the Concordium Blockchain is free open source software. You can access our repositories on the `Concordium GitHub organization page <https://github.com/Concordium>`_.
-
