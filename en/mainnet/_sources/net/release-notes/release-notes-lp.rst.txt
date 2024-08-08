@@ -125,11 +125,15 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    November 29, 2023
+    August 5, 2024
 
-    Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
+    Version 1.5.0 fixes several bugs in the CIS-2 functionality.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.4.0 - November 29, 2023
+
+            Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
         .. dropdown:: |mw-gen2| 1.3.0 - October 31, 2023
 
@@ -301,12 +305,15 @@ Wallets
 |bw|
 -------------------------
 
-    July 10, 2024
+    August 8, 2024
 
-    Version 1.6.0 add support for creating accounts using Company IDs.
-
+    Version 1.6.1 Fix issue causing the runtime error `unreachable` during account creation for identities with attributes containing special characters (such as `æøå`).
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.6.0 - July 10, 2024
+
+            Add support for creating accounts using Company IDs.
 
         .. dropdown:: |bw| 1.5.2 - June 25, 2024
 
