@@ -14,16 +14,126 @@ Release notes
 Wallets
 =======
 
+.. _rn-cryptox-android:
+
+|cryptox| for Android
+---------------------
+    **1.1.1 - June 11, 2024**
+
+    Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor
+
+    **1.1.0 - June 06, 2024**
+
+    Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
+
+    What has been removed:
+
+    - Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available
+
+    The following features have been added:
+
+    - Ability to unshield your balances from the "More" screen
+
+    - Support for signing WalletConnect binary messages
+
+    - Ability to paste the phrase from the clipboard when importing a wallet
+
+    Other changes:
+
+    - The "Watch video" link on the welcome screen now opens the account creation tutorial
+
+    - Updated the Terms and the Privacy Policy
+
+    - Fixed a way to get into an empty wallet without confirming the seed phrase
+
+    .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.0.0 - April 25, 2024
+
+            Version 1.0.0 brings feature parity with |mw-gen2|, fixes multiple bugs and improves the overall user experience.
+
+            The following features have been added:
+
+            - Setting up and updating validator pool commission rates
+
+            - Support for WalletConnect CCD transfer requests
+
+            - Ability to see full details of a WalletConnect transaction to sign
+
+            - Ability to see full details of a Spaceseven transaction to sign
+
+            - Support for WalletConnect verifiable presentation requests (for identity proofs)
+
+            - Validation of metadata checksum when adding CIS-2 tokens
+
+            - Display of balance/ownership when adding CIS-2 tokens
+
+            The issues fixed in this release:
+
+            - Not working signing of a text message through WalletConnect
+
+            - Ability for a dApp to request to get a transaction signed by a different account than the one chosen for the WalletConnect session
+
+            - Crashing when received unexpected error from an identity provider
+
+            - Exiting the wallet after accepting an identity verification error
+
+            - Incorrect environment name in a private key export file for Mainnet
+
+            - Improper handling of rejected identity verification when setting up a new wallet
+
+            - Showing "Address copied" when copying a transaction hash to the clipboard in the scheduled transfer view
+
+            - An issue where the identity name was off-center when the edit name icon was visible
+
+            - An issue where exporting transaction logs for an account without any transactions would be stuck at 0%
+
+            - "Invalid WalletConnect request" message repeatedly shown if received a request with unsupported transaction type
+
+            - Exported private key for file-based initial account being incompatible with concordium-client
+
+            - Inability to search for CIS-2 token by ID on contracts with lots of tokens
+
+            - When managing CIS-2 tokens, removing all of them when only unselecting the visible ones
+
+            - Composing a letter with a malformed recipient when clicking the support email on the About screen
+
+            - Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp
+
+            Some changes have been made to the app behavior:
+
+            - Running a recovery is suggested when facing account or identity creation errors
+
+            - Baker/baking renamed to Validator/validating
+
+            - WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts.
+
+            - WalletConnect transaction signing request now shows the receiver (either smart contract or an account) and amount of CCD to send (not including CIS-2 tokens)
+
+            - Transfers tab renamed to Activity on the account details screen
+
+            - Identity data tab on the account details screen is no longer shown for accounts without revealed attributes
+
+            - CIS-2 tokens with corrupted or missing metadata can no longer be added
+
+            Last but not least, some deprecated Concordium features have been removed:
+
+            - Revealing identity attributes when creating an account
+
 .. _rn-mwgen2-ios:
 
 |mw-gen2| for iOS
 -----------------
 
-    November 29, 2023
+    August 5, 2024
 
-    Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
+    Version 1.5.0 fixes several bugs in the CIS-2 functionality.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.4.0 - November 29, 2023
+
+            Version 1.4.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes.
 
         .. dropdown:: |mw-gen2| 1.3.0 - October 31, 2023
 
@@ -70,11 +180,39 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    November 28, 2023
+    July 31, 2024
 
-    Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
+    Version 1.7.0 adds a deprecation notice.
+    This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
+    No need to create a new wallet – just enter your recovery phrase into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.6.0 - June 26, 2024
+
+            Version 1.6.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+            This version also fixes sending WalletConnect transaction with 0 energy if its payload is too large.
+
+        .. dropdown:: |mw-gen2| 1.5.1 - March 20, 2024
+
+            Version 1.5.1 fixes the following issues:
+
+            - Changing the restake preference is no longer blocked when the validator's stake is below minimum stake threshold.
+
+            - The token lookup failed if the balance or metadata is not available for any token. This has changed so the lookup only fails if the balance or metadata is missing for all tokens.
+
+            -  Now possible to search for CIS-2 token by ID on contracts with lots of tokens. Search for token ID will now return the result if the token ID is exactly the same as existing one in the contract. This is mainly to support adding tokens from contracts that have a large number of tokens.
+
+            - Correct environment value now written to the key export file
+
+            - It was not possible to edit validator pool commission rates in locales with comma decimal separator; this is now possible.
+
+            - When managing CIS-2 tokens all tokens were removed when only unselecting the visible ones; this has been fixed
+
+        .. dropdown:: |mw-gen2| 1.5.0 - November 28, 2023
+
+            Version 1.5.0 changes the tokenomics terminology used and supports editing of commissions in staking pools in accordance with the upcoming tokenomics changes, and contains a change in the way deeplinking is handled.
 
         .. dropdown:: |mw-gen2| 1.4.0 - October 26, 2023
 
@@ -167,11 +305,39 @@ Wallets
 |bw|
 -------------------------
 
-    February 13, 2024
+    July 10, 2024
 
-    Version 1.4.1 fixes an issue with backward compatibility for gRPC and an identity issue.
+    Version 1.6.0 add support for creating accounts using Company IDs.
+
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.5.2 - June 25, 2024
+
+            Version 1.5.2 includes several changes and bug fixes.
+
+            - Added a new option to edit account names. The set names are used across the browser wallet for referring to the accounts.
+            - Added a new sign CIS3 message function in wallet-api, and corresponding view to display decoded payload of CIS3 message in browser wallet.
+            - Added display of the optional name for ID providers when present, otherwise fallback to the chain name.
+            - Removed check for redirectUri when launching identity issuance. This check was causing issues with an upcoming identity provider and seems to provide no value.
+            - Improved error messages when searching for all tokenIDs in a given smart contract. Invalid tokenIDs in the contract are now displayed with their corresponding reason for being invalid.
+            - Increased padding of the QR code background element.
+
+        .. dropdown:: |bw| 1.5.1 - April 4, 2024
+
+            Version 1.5.1 fixes a bug related to the injected script being loaded multiple times which was causing performance issues on the browser.
+
+        .. dropdown:: |bw| 1.5.0 - March 20, 2024
+
+            In version 1.5.0 a button was added so you can use the wallet in fullscreen mode in a tab in your browser. Additionally, an issue where some proof requests for nationality or country of residence would be misintrepreted as asking whether in the EU or not has been fixed. And, an issue was fixed where an inject script was not loading on the first page of a new tab, causing the API to be unavailable for dApps.
+
+        .. dropdown:: |bw| 1.4.2 - March 6, 2024
+
+            In version 1.4.2 the token transfer estimate now takes the transfer amount into account and the wallet no longer blocks creating the last possible account for an identity.
+
+        .. dropdown:: |bw| 1.4.1 - February 13, 2024
+
+            Version 1.4.1 fixes an issue with backward compatibility for gRPC and an identity issue.
 
         .. dropdown:: |bw| 1.4.0 - February 5, 2024
 
@@ -325,11 +491,25 @@ Wallets
 Desktop Wallet
 --------------
 
-    December 14, 2023
+    June 26, 2024
 
-        Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
+    Version 1.7.4 contains the following changes:
+
+    - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+
+    - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
+
+    - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.3 - March 21, 2024
+
+            Version 1.7.3 fixes an issue reported on Windows where the LEDGER connectivity state was faulty, preventing users from signing transactions.
+
+        .. dropdown:: 1.7.2 - December 14, 2023
+
+            Version 1.7.2 fixes a bug that did not allow a validator whose stake was below the new minimum amount after the tokenomics updates to change their restake preference.
 
         .. dropdown:: 1.7.1 - November 22, 2023
 
@@ -423,11 +603,20 @@ Desktop Wallet
 |mw-gen1| for iOS
 -----------------
 
-    November 30, 2023
+    July 29, 2024
 
-    |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+    |mw-gen1| 3.2.3 contains the following changes:
+
+    - Add Non-Exempt Encryption Version: We've updated the encryption version for enhanced security
+
+    - Remove Shielded Transactions Support: Shielded Transactions support has been removed in the Legacy File-Based module since it will be deprecated in protocol version 7
+
+    - Minor Bug Fixes: Addressed minor issues in the Concordium Legacy Wallet to improve the user experience.
 
     .. dropdown:: Previous releases
+        .. dropdown:: |mw-gen1| 3.2.2 - November 30, 2023
+
+            |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
         .. dropdown:: |mw-gen1| 3.2.1 - August 8, 2023
 
@@ -493,7 +682,7 @@ Desktop Wallet
             - Added a new dialogue shown when an identity request fails. There is now an option to contact the identity provider directly via an auto-filled e-mail, containing an issuance reference for better personal support, as well as system information of the user for better debugging.
             - Added a small dialogue to remind the user to check for a response on new identity requests.
             - Users will now be notified on successful creation of new accounts inside the app.
-            - Various back-end improvements by the identity provider to make their service more robust.
+            - Various backend improvements by the identity provider to make their service more robust.
             - Various improvements to make the identity issuance and account creation flow more robust.
 
             - Various bug fixes.
@@ -508,11 +697,23 @@ Desktop Wallet
 |mw-gen1| for Android
 ---------------------
 
-    December 1, 2023
+    July 31, 2024
 
-        |mw-gen1| 3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+    Version 3.4.0 updates the deprecation notice.
+    This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
+    No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 3.3.0 - June 26, 2024
+
+            Version 3.3.0 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+            Also, the app now suggests installing |cryptox|. No need to create a new wallet – just import your backup file into |cryptox|, and you're good to go!
+
+        .. dropdown:: 3.2.1 - December 1, 2023
+
+            3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
 
         .. dropdown:: 3.2.0 - February 6, 2023
 
@@ -576,7 +777,7 @@ Desktop Wallet
                 -  Added a new dialogue, which is shown when an identity request fails. There is now an option to contact the identity provider directly via an autofilled e-mail, containing an issuance reference for better personal support as well as system information of the user for better debugging.
                 -  Added a small dialogue to remind user to check for response on new identity requests.
                 -  User will now be notified on successful creation of new accounts inside the app.
-                -  Various back-end improvements by the identity provider to make their service more robust.
+                -  Various backend improvements by the identity provider to make their service more robust.
 
             -  Various bug fixes.
 
@@ -649,17 +850,30 @@ Nodes
 Mainnet
 -------
 
-    November 28, 2023
+    June 24, 2024
 
-    Version 6.2.3 removes the V1 gRPC API. This removes the configuration options ``CONCORDIUM_NODE_RPC_SERVER_PORT``, ``CONCORDIUM_NODE_RPC_SERVER_ADDRESS``, ``CONCORDIUM_NODE_RPC_SERVER_TOKEN``, ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the `standard GRPC health service API <https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto>`__.
-
-    As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.
-
-    A ``DryRun`` endpoint has also been that allows simulating the execution of transactions.
-
-    The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.
+    Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.0 - February 27, 2024
+
+            Version 6.3.0 contains the following fixes and improvements:
+
+            - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
+            - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
+            - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
+            - Startup time of the node has improved on all supported distributions.
+
+        .. dropdown:: 6.2.3 - November 28, 2023
+
+            Version 6.2.3 removes the V1 gRPC API. This removes the configuration options ``CONCORDIUM_NODE_RPC_SERVER_PORT``, ``CONCORDIUM_NODE_RPC_SERVER_ADDRESS``, ``CONCORDIUM_NODE_RPC_SERVER_TOKEN``, ``CONCORDIUM_NODE_DISABLE_RPC_SERVER_NODE_ENDPOINTS`` and their command line equivalents. An additional health-check service was also added to the V2 GRPC API. This service conforms to the `standard GRPC health service API <https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto>`__.
+
+            As part of the tokenomics changes the node has new configuration options that use the new terminology. The existing options using the legacy terminology are still supported, however they are hidden.
+
+            A ``DryRun`` endpoint has also been that allows simulating the execution of transactions.
+
+            The account map is now kept solely on disk in a separate LMDB database and it is no longer part of the internal block state database. This change results in significantly reduced resource usage for the node.
 
         .. dropdown:: 6.1.7 - October 23, 2023
 
@@ -1038,16 +1252,20 @@ Mainnet
 Testnet
 -------
 
-    February 20, 2024
+    June 20, 2024
 
-    The 6.3.0 release contains the following fixes and improvements:
-
-    - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
-    - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
-    - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
-    - Startup time of the node has improved on all supported distributions.
+    Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.0 - February 20, 2024
+
+            Version 6.3.0 contains the following fixes and improvements:
+
+            - Fixed a bug where ``GetBlockPendingUpdates`` fails to report pending updates to the finalization committee parameters.
+            - GRPC queries are now run in dedicated threads. This improves node resource management and increases responsiveness of the GRPC server in cases of high number of concurrent queries. To support this a new option ``--grpc2-max-threads`` (environment variable ``CONCORDIUM_NODE_GRPC2_MAX_THREADS``) has been added, which specifies the number of threads that the node should use for processing gRPC requests. If not set this defaults to the number of (logical) CPUs.
+            - The option ``--grpc2-max-concurrent-streams`` now defaults to 200 from the previous unbounded value. This makes the node defaults safer.
+            - Startup time of the node has improved on all supported distributions.
 
         .. dropdown:: 6.2.3 - November 28, 2023
 
@@ -1527,37 +1745,55 @@ Tools
 Concordium Client
 -----------------
 
-    November 28, 2023
+    June 07, 2024
 
-        Concordium Client 6.2.1 includes support for the following:
+    Concordium Client 6.3.0 includes support for the following:
 
-        - Revised client's reconnect handling so that the client will no longer attempt to automatically reconnect on timeouts and node resource exhaustion.
+    - Breaking change: Change command ``transaction submit`` to submit already-signed transactions to the chain (transactions must now already be signed, e.g. with ``transaction add-signature``).
 
-        - Renamed bakers to validators in output in accordance with the upcoming tokenomics changes.
+    - Remove command ``raw SendTransaction``.
 
-        - Added additional configuration options that use validator in place of baker in accordance with the upcoming tokenomics changes. For example, ``concordium-client validator add``. The older options still exist, but are hidden.
+    - Remove command ``transaction send-shielded`` to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
 
-        - The ``module inspect`` command now attempts to print any embedded verifiable build information.
+    - Remove command ``account shield`` to disable the transfer of CCD from the public balance to the shielded balance of an account.
 
-        - The ``module deploy`` command now warns if a module is being deployed that does not have embedded verifiable build information.
+    - Add command ``transaction add-signature`` to add a signature to a partially-signed transaction.
+
+    - Add optional ``--out`` flag to all transaction-creating commands to output a partially-signed transaction to a file.
+
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.2.1 - November 28, 2023
+
+            Concordium Client 6.2.1 includes support for the following:
+
+            - Revised client's reconnect handling so that the client will no longer attempt to automatically reconnect on timeouts and node resource exhaustion.
+
+            - Renamed bakers to validators in output in accordance with the upcoming tokenomics changes.
+
+            - Added additional configuration options that use validator in place of baker in accordance with the upcoming tokenomics changes. For example, ``concordium-client validator add``. The older options still exist, but are hidden.
+
+            - The ``module inspect`` command now attempts to print any embedded verifiable build information.
+
+            - The ``module deploy`` command now warns if a module is being deployed that does not have embedded verifiable build information.
+
 
         .. dropdown:: 6.1.0 - October 10, 2023
 
             Concordium Client 6.1.0 includes support for the following:
 
-                - Added baker win-time command for determining the earliest time a specified baker is expected to bake.
+            - Added baker win-time command for determining the earliest time a specified baker is expected to bake.
 
-                - Added support for the following node version 6.1 queries under the ``raw`` command:
+            - Added support for the following node version 6.1 queries under the ``raw`` command:
 
-                    - ``GetBakersRewardPeriod``
-                    - ``GetBlockCertificates``
-                    - ``GetBakerEarliestWinTime``
-                    - ``GetWinningBakersEpoch``
-                    - ``GetFirstBlockEpoch``
-                    - Add support for CommissionRates in ``CurrentPaydayBakerPoolStatus`` (Only available for node versions > 6.0).
-                    - Show all options for importing an account.
+                - ``GetBakersRewardPeriod``
+                - ``GetBlockCertificates``
+                - ``GetBakerEarliestWinTime``
+                - ``GetWinningBakersEpoch``
+                - ``GetFirstBlockEpoch``
+                - Add support for CommissionRates in ``CurrentPaydayBakerPoolStatus`` (Only available for node versions > 6.0).
+                - Show all options for importing an account.
 
         .. dropdown:: 6.0.1 - August 9, 2023
 

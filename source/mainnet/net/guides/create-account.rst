@@ -61,7 +61,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     13. Verify that the signature threshold on the LEDGER device corresponds to the threshold in the Desktop Wallet.
 
-    14.  Press the right button to verify that the anonymity revoker threshold on the LEDGER device corresponds to the threshold in the Desktop Wallet, and then press both buttons.
+    14.  Press the right button to verify that the identity disclosure threshold on the LEDGER device corresponds to the threshold in the Desktop Wallet, and then press both buttons.
 
     15. The LEDGER device says **Sign details**. Press both buttons to sign the transaction. In the Desktop Wallet you can now see the that the account has been submitted to the blockchain.
 

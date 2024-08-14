@@ -7,7 +7,7 @@ How it works
 
 In this last section, you will learn how to run the dApp to mint an NFT.
 
-Verifier back end
+Verifier backend
 =================
 
 First you need to run the verifier backend. Your dApp will be communicating with it to get the statement, challenge and post the proof and get the signature back. It expects parameters from the terminal but you are free to use all of them from a JSON file. We will use a mixture by giving the keys (verify and sign) as a parameter from the terminal and the statement from a JSON. In order to create a custom statement, you can check read about :ref:`how to create proofs<create-proofs>`. For this tutorial scenario, you will use age proofs to be able to verify if a person is older than 18 or not, but you can also check if the person is from a certain country or not.

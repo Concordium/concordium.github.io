@@ -46,7 +46,7 @@ index
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    Test contracts <../smart-contracts/guides/integration-test-contract>
    On-chain guides <../smart-contracts/guides/on-chain-index>
-   Best practices <../smart-contracts/best-practices/development>
+   Best practices <../smart-contracts/best-practices/index>
    References <../smart-contracts/references/index>
    V0 smart contracts <../smart-contracts-v0/sc-v0-rollup>
 
@@ -56,3 +56,13 @@ index
 
    Smart contract tutorials <../smart-contracts/tutorials/index>
    Using ID tutorial <guides/gallery/index>
+
+.. toctree::
+   :includehidden:
+   :caption: Governance Committee Voting
+
+   voting/gc-voting
+   voting/coordinator
+   voting/voting
+   voting/guardians
+   voting/verify-election-result

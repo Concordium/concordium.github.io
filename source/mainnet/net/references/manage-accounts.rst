@@ -13,13 +13,12 @@ You must have a verified identity and a user identity certificate issued by an a
 About accounts
 ==============
 
-An account on the Concordium blockchain is owned by one or more :term:`credential holders<credential holder>` and consists of two parts: The :term:`on-chain` part, which is publicly visible and maintained by the bakers, and the :term:`off-chain` part.
+An account on the Concordium blockchain is owned by one or more :term:`credential holders<credential holder>` and consists of two parts: The :term:`on-chain` part, which is publicly visible and maintained by the validators, and the :term:`off-chain` part.
 
 The on-chain part of the account consists of:
 
 - the :term:`credentials<credential>` of the credential holders associated with the account
 - public balance
-- :term:`shielded balance`
 - account sequence number
 - public keys of each credential to verify transaction signatures.
 
@@ -29,7 +28,6 @@ The off-chain part of the account contains:
    account (e.g., sending transfers, deploying smart contracts)
 -  the identity an account is created from (this is needed for managing
    the account on the chain)
--  decryption keys used for :term:`shielded transfers<shielded transfer>`.
 
 Concordium provides several ways of interacting with the on-chain account.
 Off-chain parts of accounts can be transferred between different devices but not between |mw-gen1| and Desktop Wallet, or |mw-gen2| and Desktop Wallet. The same account can be used from multiple devices at the same time.
@@ -58,8 +56,8 @@ account, the initial account, on behalf of the user. At the end of the identity 
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
 by creating a new identity and going through the identity verification process again with an identity provider.
 
-Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the anonymity revokers and the identity provider are
-involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`anonymity revocation<revoking-anomity>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
+Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the identity disclosure authorities and the identity provider are
+involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<disclosing-identity>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
 
 Account creation
 ----------------
@@ -72,7 +70,7 @@ Once you have an identity and a user identity certificate from an identity provi
 The input to the transaction is a *credential*, which contains a number of :term:`cryptographic proofs<cryptographic proof>`, as well as a selection of :term:`attributes` the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
 
 An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
-all other activities completely anonymous.
+all other activities undisclosed.
 
 .. image:: ../images/concepts/account-creation.png
    :alt: graphic drawing showing how user creates accounts
@@ -92,14 +90,14 @@ a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all to maintain your anonymity, which is the general recommendation.
+You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes, which is the general recommendation.
 
 Benefits of revealing attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account and who the anonymity revokers are
+provider issued an identity for an account and who the identity disclosure authority are
 for the account and the identity. In addition to this basic information which
 enables regulatory compliance, an account owner can choose to publicly reveal
 other values on their account, such as their nationality or country of
@@ -108,9 +106,9 @@ before interacting with an account. Moreover, being able to see who issued the
 identity enables whoever wishes to interact with an account to judge the level
 of risk in the transaction.
 
-.. _revoking-anomity:
+.. _disclosing-identity:
 
-.. include:: ../snippets/revoking-anonymity.rst
+.. include:: ../snippets/disclosing-identity.rst
 
 Account concepts
 ================
@@ -120,13 +118,9 @@ Account concepts
 Account balances
 ----------------
 
-Each account has two balances, the *public balance* which can be *seen* by anyone, and a :term:`shielded
-balance`. The shielded balance is only known to the owner of the account. It
-can only be used in :term:`shielded transfers<shielded transfer>` to
-other accounts.
-
-The public balance of the account is always used for payment of transaction fees,
-producing blocks, and transfers, even for shielded transfers.
+An account has a *public balance* which can be *seen* by anyone.
+The public balance of the account is used for payment of transaction fees,
+producing blocks, and transfers.
 
 At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:
@@ -194,7 +188,7 @@ The Desktop Wallet is a digital wallet that enables you to create and manage you
 The |mw-gen1|
 -----------------
 
-The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
 
 .. Note::
 
@@ -203,7 +197,7 @@ The |mw-gen1| is a digital smartphone wallet that enables you to create and mana
 The |mw-gen2|
 ------------------
 
-The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
+The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
 
 The |bw|
 ----------------

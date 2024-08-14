@@ -222,7 +222,7 @@ schemas in all the formats will be output
 
    - The flags ``--schema-embed/--schema-out`` convert the schema into bytes. This was the first schema representation used by Concordium and it is how we embed the schema into a module. This byte format is not human-readable but it is a very compact format and suitable to be used for the smart contract on-chain.
 
-   - The command ``schema-base64`` and the flag ``--schema-base64-out`` convert the schema into base64 format. This is the format that is currently used by the |bw| and most of our front-end examples.
+   - The command ``schema-base64`` and the flag ``--schema-base64-out`` convert the schema into base64 format. This is the format that is currently used by the |bw| and most of our frontend examples.
 
    - The command ``schema-json`` and the flag ``--schema-json-out`` convert the schema into JSON format. This is a human-readable format and will make it easier for developers to develop on the Concordium blockchain. Concordium is in the process of updating its tooling and implementing support for this format.
 

@@ -62,7 +62,7 @@ The first step is to create the actual identity request. To do this, you need th
             const prfKey = wallet.getPrfKey(identityProviderIndex, identityIndex).toString('hex');
             const blindingRandomness = wallet.getSignatureBlindingRandomness(identityProviderIndex, identityIndex).toString('hex');
 
-            // The anonymity revocation threshold. Here we select the highest possible threshold for
+            // The identity disclosure threshold. Here we select the highest possible threshold for
             // the chosen identity provider.
             const arThreshold = Math.min(Object.keys(identityProvider.arsInfos).length - 1, 255);
 
@@ -140,9 +140,54 @@ The first step is to create the actual identity request. To do this, you need th
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            import MnemonicSwift // external package for converting seed phrase to bytes
+            import GRPC // external dependency for gRPC client
+
+            let grpcChannel: GRPCChannel // see docs for package GRPC or examples in SDK repo
+            let client: NodeClient = GRPCNodeClient(channel: grpcChannel)
+
+            /// Fetch all identity providers.
+            public func identityProviders(_ walletProxy: WalletProxy) async throws -> [IdentityProvider] {
+                let res = try await walletProxy.getIdentityProviders.send(session: URLSession.shared)
+                return res.map { $0.toSDKType() }
+            }
+
+            /// Fetch an identity provider with a specific ID.
+            public func findIdentityProvider(_ walletProxy: WalletProxy, _ id: IdentityProviderID) async throws -> IdentityProvider? {
+                let res = try await identityProviders(walletProxy)
+                return res.first { $0.info.identity == id }
+            }
+
+            // Inputs.
+            let seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
+            let network = Network.testnet
+            let walletProxyBaseURL = URL(string: "https://wallet-proxy.testnet.concordium.com")!
+            let identityProviderID = IdentityProviderID(3)
+            let identityIndex = IdentityIndex(7)
+            let identityDisclosureThreshold = RevocationThreshold(2)
+
+            // Configure seed and Wallet Proxy instance.
+            let seedHex = try Mnemonic.deterministicSeedString(from: seedPhrase)
+            let seed = WalletSeed(seedHex: seedHex, network: network)
+            let walletProxy = WalletProxy(baseURL: walletProxyBaseURL)
+            let identityProvider = try await findIdentityProvider(walletProxy, identityProviderID)!
+
+            // Construct identity creation request.
+            let cryptoParams = try await client.cryptographicParameters(block: .lastFinal)
+            let identityRequestBuilder = SeedBasedIdentityRequestBuilder(
+                seed: seed,
+                cryptoParams: cryptoParams
+            )
+            let reqJSON = try identityRequestBuilder.issuanceRequestJSON(
+                provider: identityProvider,
+                index: identityIndex,
+                anonymityRevocationThreshold: identityDisclosureThreshold
+            )
 
 ++++++++++++++++++++++++
 Send an identity request
@@ -246,9 +291,20 @@ A part of the request is a `redirectUri`, which tells the identity provider wher
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+
+            let reqJSON: String // from previous section
+
+            // The URL to be invoked when once the ID verification process has started (i.e. once the data has been filled in).
+            let callbackURL = URL(string: "concordiumwallet-example://identity-issuer/callback")!
+
+            let urlBuilder = IdentityRequestURLBuilder(callbackURL: callbackURL)
+            let url = try urlBuilder.issuanceURLToOpen(baseURL: issuanceStartURL, requestJSON: requestJSON)
+
 
 ++++++++++++++++++++++++++++++++++++
 Retrieve the identity after creation
@@ -393,6 +449,38 @@ Upon completing identity verification with the identity provider, the identity p
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+
+            let statusURL = todoAwaitCallbackWithVerificationPollingURL()
+            let res = try await todoAwaitVerification(statusURL)
+            if case let .success(identity) = res {
+                print("Identity issued successfully: \(identity))")
+            } else {
+                // Verification failed...
+            }
+
+            func todoAwaitCallbackWithVerificationPollingURL() -> URL {
+                // Wait for the callback URL to be invoked (and somehow capture that event).
+                // In mobile wallets, the callback URL is probably a deep link that we listen or react to.
+                // Regardless of the strategy, the callback is how the IP hands over the URL for polling the verification status -
+                // and for some reason it does so in the *fragment* part of the URL!
+                // See 'server.swift' of the example CLI for a server-based solution that works in a synchronous context.
+                // Warning: It ain't pretty.
+                fatalError("'awaitCallbackWithVerificationPollingURL' not implemented")
+            }
+
+            func todoAwaitVerification(_ request: IdentityIssuanceRequest) async throws -> IdentityVerificationResult {
+                // Block the thread, periodically polling for the verification status.
+                // Return the result once it's no longer "pending" (i.e. the result is non-nil).
+                while true {
+                    let status = try await request.send(session: URLSession.shared)
+                    if let r = status.result {
+                        return r
+                    }
+                    try await Task.sleep(nanoseconds: 10 * 1_000_000_000) // check once every 10s
+                }
+            }

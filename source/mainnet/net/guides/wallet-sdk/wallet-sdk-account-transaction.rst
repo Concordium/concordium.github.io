@@ -143,9 +143,44 @@ Note that when the transaction has been signed anyone with the signature and the
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+            import GRPC // external dependency for gRPC client
+
+            let grpcChannel: GRPCChannel // see docs for package GRPC or examples in SDK repo
+            let client: NodeClient = GRPCNodeClient(channel: grpcChannel)
+
+            // Inputs.
+            let seedPhrase = "fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position"
+            let network = Network.testnet
+            let identityProviderID = IdentityProviderID(3)
+            let identityIndex = IdentityIndex(7)
+            let credentialCounter = CredentialCounter(21)
+            let amount = MicroCCDAmount(1337)
+            let receiver = try! AccountAddress(base58Check: "33Po4Z5v4DaAHo9Gz9Afc9LRzbZmYikus4Q7gqMaXHtdS17khz")
+            let expiry = TransactionTime(9_999_999_999)
+
+            // Configure seed.
+            let seedHex = try Mnemonic.deterministicSeedString(from: seedPhrase)
+            let seed = WalletSeed(seedHex: seedHex, network: network)
+
+            // Derive seed based account from the given coordinates of the given seed.
+            let cryptoParams = try await client.cryptographicParameters(block: .lastFinal)
+            let accountDerivation = SeedBasedAccountDerivation(seed: seed, cryptoParams: cryptoParams)
+            let credentialIndexes = AccountCredentialSeedIndexes(
+                identity: .init(providerID: identityProviderID, index: identityIndex),
+                counter: credentialCounter
+            )
+            let account = try accountDerivation.deriveAccount(credentials: [credentialIndexes])
+
+            // Construct, sign, and send transfer transaction.
+            let nextSeq = try await client.nextAccountSequenceNumber(address: account.address)
+            let tx = AccountTransaction(sender: account.address, payload: .transfer(amount: amount, receiver: receiver))
+            let signedTx = try account.keys.sign(transaction: tx, sequenceNumber: nextSeq, expiry: expiry)
+
 
 ++++++++++++++++++++++++++++++++++++++++++++++++
 Send an account transaction to a Concordium node
@@ -190,6 +225,14 @@ Finally, when the transaction has been constructed and signed, it is ready to be
 
     .. tab::
 
-        Swift (iOS)
+        Swift (macOS, iOS)
 
-        The Swift SDK for iOS is still in development.
+        .. code-block:: Swift
+
+            import Concordium
+
+            let client: NodeClient // from previous section
+            let signedTx: SignedAccountTransaction // from previous section
+
+            let hash = try await client.send(transaction: signedTx)
+            print("Transaction with hash '\(hash.hex)' successfully submitted.")

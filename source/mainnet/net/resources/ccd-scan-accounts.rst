@@ -19,7 +19,7 @@ Below the graphs, the table contains the following:
 - **Account age**: how long the account has existed.
 - **Transactions**: number of transactions the account has sent.
 - **Delegated stake**: total amount of CCD the account has delegated.
-- **Balance**: The publicly visible balance of the account. Does not include shielded amounts.
+- **Balance**: The publicly visible balance of the account.
 
 You can sort the information in the table using the following sort options:
 

@@ -55,8 +55,8 @@ extensions = [
 extensions += ['sphinx-prompt', 'sphinx_substitution_extensions']
 
 extlinks = {
-    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem', 'Download public key'),
-    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.%s.sig', 'Download signature') # Supply extension, e.g. exe, dmg, AppImage
+    'cdw-pubkey': ('https://distribution.mainnet.concordium.com/tools/concordium-desktop-wallet-pubkey.pem%s', 'Download public key:%s'),
+    'cdw-sig': ('https://distribution.mainnet.concordium.software/tools/linux/concordium-desktop-wallet-1.5.0.%s.sig', 'Download signature:%s') # Supply extension, e.g. exe, dmg, AppImage
 }
 
 # todo_include_todos = True
@@ -146,6 +146,7 @@ html_theme_options = {
     "collapse_navigation": False,
     # 'sticky_navigation': True,
     "navigation_depth": 3,
+    "navigation_with_keys": False,
     # 'includehidden': False,
     # 'titles_only': False,
     "show_nav_level": 0,
@@ -153,8 +154,8 @@ html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-menu-academy"],
     "navbar_end": ["navbar-icon-links"],
-    "page_sidebar_items": ["page-toc", "edit-this-page"],
-    "footer_items": ["footer"],
+    "secondary_sidebar_items": ["page-toc", "edit-this-page"],
+    "footer_start": ["footer"],
     "show_prev_next": True,
     "navbar_align": "left",
     "icon_links": [

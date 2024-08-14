@@ -1,4 +1,3 @@
-.. _whitepaper: https://go.concordium.com/hubfs/White%20paper%20-%20RWR/Concordium%20White%20Paper%20v1.8.pdf
 .. _ElGamal: https://en.wikipedia.org/wiki/ElGamal_encryption
 .. _ciphertexts: https://en.wikipedia.org/wiki/Ciphertext
 .. include:: ../../variables.rst
@@ -8,25 +7,38 @@
 Glossary of Concordium Terms
 ============================
 
-Also see the Concordium `whitepaper`_ for more details on the terms described below.
+Also see the Concordium `Whitepaper <https://developer.concordium.software/governance/whitepaper/Concordium%20White%20Paper.pdf>`_ for more details on the terms described below.
 
 .. glossary::
 
    Account
 
-      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key` that can be used to send shielded transfers to the account. An account is also associated with the account holder's :term:`identity`, although this association is encrypted for anonymity. This anonymity can only be revoked by :term:`anonymity revokers<anonymity revoker>`, in cooperation with the account's :term:`identity provider`.
+      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`identity disclosure authorities<identity disclosure authority>`, in cooperation with the account's :term:`identity provider`.
 
    Account credential
 
-      A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow anonymity revokers in concert with the identity provider to find the owner.
+      A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow disclosing an identity in concert with the identity provider to find the owner.
+
+
+   Account weight
+
+      The Account weight of an account corresponds to the weight this account has for voting. In the 2024 election, this is computed as the average amount of CCD on the account between the 1st of March and 31st of May 2024.
+
+   Accumulated weight
+
+      The weight of a vote is the weight assigned to that vote when tallying, i.e., the sum of all account weights that delegated to the account that cast the vote + the weight of the account that cast the vote (unless that account delegated its own weight to another account, but voted anyway).
 
    Alias
 
       A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
-   Anonymity revoker
+   Identity disclosure authority
 
-      An authority who has power to know the identity of a participant. The anonymity revokers and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Anonymity revocation is a two-stage process, requiring cooperation of multiple parties.
+      An authority who has power to know the identity of a participant. The identity disclosure authority and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Identity disclosure is a two-stage process, requiring cooperation of multiple parties.
+
+   Approval voting
+
+      Approval voting is a single-winner electoral system in which the voter can choose or approve any number of candidates, effectively assigning a 0 or a 1 to every candidate. The winner is the single candidate approved by the largest number of voters. Approval voting can be achieved by setting the selection limit to the total number of options in a contest.
 
    Attributes
 
@@ -59,6 +71,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
    Build
 
       Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from :term:`cargo-concordium`.
+
+   Candidate
+
+      Option on the official list of candidates for the election. Since there are only 10 places for the 2024 election, not all nominees are necessarily candidates.
 
    cargo-concordium
 
@@ -138,17 +154,35 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       Dual to :term:`encryption key`. In contrast to the encryption key, which is public, this key is only known to the account holder.
 
+   Decryption share
+
+      A guardian's partial share of a ballot decryption or tally decryption for an election.
+
+   Delegated weight
+
+      Sum of account weights that delegated to an account. Delegated weight is made up of the account weight of each account that delegated a vote to the account that cast a ballot.
+
    Delegator
 
       An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
+
+      For delegation in an election, see :term:`Vote delegation`.
 
    Deploy
 
       Command that takes the built :term:`Wasm<webassembly>` file for a smart contract module and deploys it on chain. This command is run from :term:`Concordium client`.
 
+   Election manifest
+
+      The manifest is the information that uniquely specifies and describes the structure and type of the election, including geopolitical units, contests, candidates, ballot styles, etc. In the Guardian app, it is a file that is created before running an election. The internal manifest is a wrapper around the manifest used in programming code to simplify and avoid processing the same information twice. Unlike the manifest, the internal manifest is not meant for serialization.
+
+   Election phase
+
+      Time period during the election when voting is open, either directly or via delegation.
+
    Encryption key
 
-      An `ElGamal`_ public key associated to an account which is used to encrypt all :term:`shielded amounts<shielded amount>` on the account.
+      An `ElGamal`_ public key associated to an account which is used to encrypt all :term:`shielded amounts<shielded amount>` (:ref:`deprecated<shielded-balance-feature-deprecation>`) on the account.
 
    Endpoint
 
@@ -170,9 +204,17 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       The first :term:`block` in a :term:`chain`. The genesis block establishes the starting state of the chain, before any transactions have occurred.
 
+   Governance committee member
+
+      Individual elected to the Concordium governance committee. Also known as member or committee member.
+
+   Guardian
+
+      One of a number of independent, trustworthy individuals who serve guardians in the election. All guardians must participate in a key ceremony to create a key to encrypt the election and may participate in the accompanying tally ceremony(s) to decrypt the tally(s). A guardian is available if they are available for the tally ceremony. A guardian is missing if they cannot attend the tally ceremony.
+
    Identity
 
-      Before opening an account on the Concordium Platform, one's real-world identity must be verified and recorded by an :term:`identity provider`. A user’s identity is anonymous on-chain, however this anonymity can be revoked and their real-world identity revealed in response to a valid request from a government authority.
+      Before opening an account on the Concordium Platform, one's real-world identity must be verified and recorded by an :term:`identity provider`. A user’s identity is encrypted on-chain, however their real-world identity can be disclosed in response to a valid request from a government authority.
 
    Identity Issuer
 
@@ -188,7 +230,7 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Initial Account
 
-      An intial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by anonymity revokers working in concert with the identity provider.
+      An intial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by the identity disclosure authority working in concert with the identity provider.
 
       Initial accounts are only relevant for Desktop Wallet and |mw-gen1|.
 
@@ -234,6 +276,10 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A :term:`validator node<baker>` has cryptographic keys that enable it to take part in validation. A node without these keys is referred to as a *passive node*.
 
+   Nominee
+
+      Someone who has volunteered to be a candidate in an election.
+
    Nonce
 
       May refer to:
@@ -268,7 +314,7 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Qualified authority
 
-      A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of revoking the anonymity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`anonymity revokers<anonymity revoker>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
+      A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of disclosing the identity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`identity disclosure authorities<identity disclosure authority>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
 
    Quorum certificate
 
@@ -298,11 +344,19 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       Also known as a seed phrase, recovery phrase, mnemonic phrase, mnemonic seed, or backup phrase. A group of random words generated by the wallet that allows you to access the CCDs stored in it across devices or in case of non-functioning devices. Secret recovery phrase is supported by |mw-gen2|.
 
+   Setup phase
+
+      Time period prior to election start where setup of necessary election components occurs, candidates are nominated, guardians are selected, etc.
+
    Shielded amount
+
+      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
 
       An amount of :term:`CCD` that is encrypted with the public key of an account. Only the owner of the secret key can determine how many CCDs are contained in the encryption.
 
    Shielded balance
+
+      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
 
       The part of the balance of an :term:`account` that only the owner of the account can see. This is achieved by encrypting transfers to an account with the account's :term:`encryption key`. Every participant of the Concordium network can see the `ciphertexts`_ of all the transfers, however they provide no information on how many CCDs were transferred. The receiver of the transfer can use their secret key to decrypt the ciphertexts, and seeing how many CCDs they have received.
 
@@ -314,9 +368,13 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Shielded transfer
 
+      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
+
       Transfer from :term:`shielded balance` of an account to a shielded balance of another account. The amount that is transferred is only visible to the sender and the receiver.
 
    Shielding
+
+      (:ref:`Deprecated<shielded-balance-feature-deprecation>`):
 
       The action of transferring a part of the public balance to the :term:`shielded balance`.
 
@@ -342,6 +400,20 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.
 
+   Tally
+
+      Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.
+
+   Tally ceremony
+
+      The process of decrypting the encrypted tally to the decrypted tally. The guardians from the key ceremony who are available attend this ceremony. There must be at least enough guardians to meet the quorum. Each guardian will decrypt their decryption shares and their share for each missing guardian. These shares will then be combined to create the decrypted spoiled ballots and decrypted tally.
+
+      The tally ceremony is a part of the tally phase.
+
+   Tally phase
+
+      Time period after the election where voting is closed and guardians decrypt their share of the tally (tally ceremony is held) and the final election result is produced and registered.
+
    Testnet
 
       A test network run by Concordium to test its protocols and software. There can be several test networks in existence at the same time. All the features are tested on the testnet before they are released on the :term:`mainnet`.
@@ -360,7 +432,7 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Transfer Memo
 
-      Additional data that a user can provide when making a transfer, a shielded transfer or a transfer with schedule. The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings, numbers and JSON values, but this is not enforced.
+      Additional data that a user can provide when making a transfer, or a transfer with schedule. The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings, numbers and JSON values, but this is not enforced.
 
    Transfer with schedule
 
@@ -372,12 +444,14 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Unshielding
 
+      (:ref:`Deprecated<shielded-balance-feature-deprecation>`):
+
       The action of transferring a part of the :term:`shielded balance` to the public balance.
 
    User identity certificate
 
       Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
-      The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. anonymity revocation). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
+      The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. disclosing an identity). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
    Validation
 
@@ -389,7 +463,7 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
    Verifiable credential
 
-      Issued to the individual by an :term:`issuer` who has authority for the credential to be issued. A verifiable credential contains some information about the individual that does not necessitate :term:`anonymity revocation<anonymity revoker>`, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :term:`verifier` using :term:`zero-knowledge proofs<zero-knowledge proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
+      Issued to the individual by an :term:`issuer` who has authority for the credential to be issued. A verifiable credential contains some information about the individual independent of its identity, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :term:`verifier` using :term:`zero-knowledge proofs<zero-knowledge proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
 
    Verifiable presentation
 
@@ -399,19 +473,25 @@ Also see the Concordium `whitepaper`_ for more details on the terms described be
 
       Party that checks users' :term:`verifiable credentials<verifiable credential>`.
 
+   Vote delegation
+
+      Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet and Concordium Legacy Wallet to cast ballots in the 2024 election.
+
+      For delegation related to earning rewards on an account, see :term:`delegator`.
+
    Wallet
 
       A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has four wallet types.
 
       - The Desktop Wallet: a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
 
-      - The Mobile Wallet: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, be a validator and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
+      - The Mobile Wallet: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, be a validator and delegate, and to export and import your accounts and identities. There are two mobile wallets: |mw-gen2| and |mw-gen1|.
 
       - The |bw|: a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
 
    Web3 ID
 
-      Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
+      Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements and won't be part of the identity disclosure process, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
 
    WebAssembly
 

@@ -6,15 +6,15 @@ eSealing dApp
 =============
 
 You can explore the `hosted eSealing service <https://esealing.testnet.concordium.com>`_ or
-start your own front-end by following the instructions in the README.md file of this
+start your own frontend by following the instructions in the README.md file of this
 `repository <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/eSealing>`_ to get an overview of the dApp flow.
 
 .. note::
 
    Comprehensive instructions on how to set up the |bw|, create an account in the |bw|,
-   get some testnet CCD and run a local front end can be found in :ref:`wCCD front-end-set-up section <wCCD-front-end-set-up>`.
+   get some testnet CCD and run a local frontend can be found in :ref:`wCCD frontend-set-up section <wCCD-frontend-set-up>`.
 
-The front end supports the following two flows with the |bw| (or |mw-gen2| that uses WalletConnect):
+The frontend supports the following two flows with the |bw| (or the |mw-gen2| that uses WalletConnect):
 
 - Compute the file hash of a selected file => register its file hash in the smart contract
 - Compute the file hash of a selected file => retrieve the timestamp and witness (sealer account) that registered the file hash
@@ -51,7 +51,7 @@ Select the **Display tab** to look up the timestamp and witness (sealer account)
 Use Concordium Client
 =====================
 
-The front end is connected to a deployed eSealing smart contract on the Concordium testnet
+The frontend is connected to a deployed eSealing smart contract on the Concordium testnet
 with `this source code <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing>`_.
 
 You can interact directly with the smart contract using ``concordium-client`` and your local node
