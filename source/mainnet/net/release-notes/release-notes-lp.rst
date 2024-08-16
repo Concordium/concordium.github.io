@@ -305,12 +305,19 @@ Wallets
 |bw|
 -------------------------
 
-    July 10, 2024
+    August 14, 2024
 
-    Version 1.6.0 add support for creating accounts using Company IDs.
-
+    Version 1.6.2 Aligned wallet API and wallet web-sdk versions to ensure consistent value serialization. This resolves an issue causing transactions like 'initiate contract' to fail.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.6.1 - August 8, 2024
+
+            Fix issue causing the runtime error `unreachable` during account creation for identities with attributes containing special characters (such as `æøå`).
+
+        .. dropdown:: |bw| 1.6.0 - July 10, 2024
+
+            Add support for creating accounts using Company IDs.
 
         .. dropdown:: |bw| 1.5.2 - June 25, 2024
 
