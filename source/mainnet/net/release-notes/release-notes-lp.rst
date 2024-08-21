@@ -305,15 +305,19 @@ Wallets
 |bw|
 -------------------------
 
-    August 19, 2024
+    August 21, 2024
 
-    Version 1.6.3 Use new wallet proxy endpoint `/v2/ip_info` which include Company ID Providers, as these are now removed from the `/v1/ip_info`.
+    Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint `/v2/ip_info`.
 
     .. dropdown:: Previous releases
 
+        .. dropdown:: |bw| 1.6.3 - August 19, 2024
+
+            Use new wallet proxy endpoint `/v2/ip_info` for Testnet, which includes Company ID Providers, as these are now removed from the `/v1/ip_info`.
+
         .. dropdown:: |bw| 1.6.2 - August 14, 2024
 
-            Version 1.6.2 Aligned wallet API and wallet web-sdk versions to ensure consistent value serialization. This resolves an issue causing transactions like 'initiate contract' to fail.
+            Aligned wallet API and wallet web-sdk versions to ensure consistent value serialization. This resolves an issue causing transactions like 'initiate contract' to fail.
 
         .. dropdown:: |bw| 1.6.1 - August 8, 2024
 
