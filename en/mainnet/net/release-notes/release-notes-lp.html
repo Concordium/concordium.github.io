@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.cc2622f4-0215-48de-a6b1-99100168f5ab.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.0d157390-65a4-4472-9170-d7bdfe2dc8a1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -996,25 +996,24 @@ body {margin:0;}
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p><strong>1.1.1 - June 11, 2024</strong></p>
-<p>Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor</p>
-<p><strong>1.1.0 - June 06, 2024</strong></p>
-<p>Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.</p>
-<p>What has been removed:</p>
+<div><p><strong>1.2.0 - August 27, 2024</strong></p>
+<p>This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.</p>
+<p>Added:</p>
 <ul class="simple">
-<li><p>Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available</p></li>
+<li><p>CCD listings – browse exchanges and services where CCD can be purchased</p></li>
+<li><p>Optional anonymous analytics powered by Matomo</p></li>
+<li><p>Concordium newsfeed</p></li>
+<li><p>Support for company identities created with Global FinReg</p></li>
 </ul>
-<p>The following features have been added:</p>
+<p>Fixed:</p>
 <ul class="simple">
-<li><p>Ability to unshield your balances from the “More” screen</p></li>
-<li><p>Support for signing WalletConnect binary messages</p></li>
-<li><p>Ability to paste the phrase from the clipboard when importing a wallet</p></li>
+<li><p>Visually increasing the balance after sending CCD instead of decreasing it</p></li>
+<li><p>Adding newly created accounts to the address book with a blank name</p></li>
+<li><p>Incorrect text colors in dark theme on Xiaomi</p></li>
 </ul>
-<p>Other changes:</p>
+<p>Changed:</p>
 <ul class="simple">
-<li><p>The “Watch video” link on the welcome screen now opens the account creation tutorial</p></li>
-<li><p>Updated the Terms and the Privacy Policy</p></li>
-<li><p>Fixed a way to get into an empty wallet without confirming the seed phrase</p></li>
+<li><p>The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1024,6 +1023,34 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+CryptoX Concordium Wallet 1.1.0 and 1.1.1 - June, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>1.1.1 - June 11, 2024</strong></p>
+<p class="sd-card-text">Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor</p>
+<p class="sd-card-text"><strong>1.1.0 - June 06, 2024</strong></p>
+<p class="sd-card-text">Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.</p>
+<p class="sd-card-text">What has been removed:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available</p></li>
+</ul>
+<p class="sd-card-text">The following features have been added:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Ability to unshield your balances from the “More” screen</p></li>
+<li><p class="sd-card-text">Support for signing WalletConnect binary messages</p></li>
+<li><p class="sd-card-text">Ability to paste the phrase from the clipboard when importing a wallet</p></li>
+</ul>
+<p class="sd-card-text">Other changes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">The “Watch video” link on the welcome screen now opens the account creation tutorial</p></li>
+<li><p class="sd-card-text">Updated the Terms and the Privacy Policy</p></li>
+<li><p class="sd-card-text">Fixed a way to get into an empty wallet without confirming the seed phrase</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 CryptoX Concordium Wallet 1.0.0 - April 25, 2024<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -1852,16 +1879,21 @@ Previous releases<div class="sd-summary-down docutils">
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Previous releases
-.. dropdown:: Concordium Legacy Wallet 3.2.2 - November 30, 2023<div class="sd-summary-down docutils">
+Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<blockquote>
-<div><p class="sd-card-text">Concordium Legacy Wallet 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium’s tokenomics updates have also been applied. Note that in the Concordium Legacy Wallet wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to Concordium Wallet for Mobile or Concordium Wallet for Web. For information about how to migrate, see the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#wallet-migrate"><span class="std std-ref">FAQ</span></a> for Concordium Wallet for Mobile.</p>
-</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Legacy Wallet 3.2.2 - November 30, 2023<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Legacy Wallet 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium’s tokenomics updates have also been applied. Note that in the Concordium Legacy Wallet wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to Concordium Wallet for Mobile or Concordium Wallet for Web. For information about how to migrate, see the <a class="reference internal" href="../mobile-wallet-gen2/faq.html#wallet-migrate"><span class="std std-ref">FAQ</span></a> for Concordium Wallet for Mobile.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Legacy Wallet 3.2.1 - August 8, 2023<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
