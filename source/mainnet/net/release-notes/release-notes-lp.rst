@@ -18,35 +18,63 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    **1.1.1 - June 11, 2024**
+    **1.2.0 - August 27, 2024**
 
-    Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor
+    This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.
 
-    **1.1.0 - June 06, 2024**
+    Added:
 
-    Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
+    - CCD listings – browse exchanges and services where CCD can be purchased
 
-    What has been removed:
+    - Optional anonymous analytics powered by Matomo
 
-    - Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available
+    - Concordium newsfeed
 
-    The following features have been added:
+    - Support for company identities created with Global FinReg
 
-    - Ability to unshield your balances from the "More" screen
+    Fixed:
 
-    - Support for signing WalletConnect binary messages
+    - Visually increasing the balance after sending CCD instead of decreasing it
 
-    - Ability to paste the phrase from the clipboard when importing a wallet
+    - Adding newly created accounts to the address book with a blank name
 
-    Other changes:
+    - Incorrect text colors in dark theme on Xiaomi
 
-    - The "Watch video" link on the welcome screen now opens the account creation tutorial
+    Changed:
 
-    - Updated the Terms and the Privacy Policy
-
-    - Fixed a way to get into an empty wallet without confirming the seed phrase
+    - The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.1.0 and 1.1.1 - June, 2024
+
+            **1.1.1 - June 11, 2024**
+
+            Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor
+
+            **1.1.0 - June 06, 2024**
+
+            Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
+
+            What has been removed:
+
+            - Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available
+
+            The following features have been added:
+
+            - Ability to unshield your balances from the "More" screen
+
+            - Support for signing WalletConnect binary messages
+
+            - Ability to paste the phrase from the clipboard when importing a wallet
+
+            Other changes:
+
+            - The "Watch video" link on the welcome screen now opens the account creation tutorial
+
+            - Updated the Terms and the Privacy Policy
+
+            - Fixed a way to get into an empty wallet without confirming the seed phrase
 
         .. dropdown:: |cryptox| 1.0.0 - April 25, 2024
 
