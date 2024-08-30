@@ -12,6 +12,22 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 
 .. dropdown:: |cryptox|
 
+
+   #. In the **More** menu tap **Update Passcode & Biometrics**.
+
+   #. On the next page tap **Continue**.
+
+      .. image:: ../images/cryptoX/Update-passcode-and-biometrics.png
+         :width: 50%
+         :alt: screen with settings menu
+
+
+   #. Enter your old passcode or biometrics.
+
+   #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
+
+   #. Choose whether or not to enable biometrics.
+
 .. dropdown:: |mw-gen2|
 
    #. Tap |wallet-settings|.

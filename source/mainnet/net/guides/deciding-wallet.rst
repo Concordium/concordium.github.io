@@ -8,37 +8,44 @@ Deciding between the wallets
 Why you need a wallet
 =====================
 
-You need a :term:`wallet` to interact with the Concordium blockchain and to manage your CCD. Currently, there are several first party wallets available: the Concordium Desktop Wallet, the |cryptox|, |mw-gen2|, |mw-gen1|, and the |bw|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :term:`wallet` to interact with the Concordium blockchain and to manage your CCD. Currently, there are several first party wallets available: the Concordium Desktop Wallet, the |bw|, and three mobile wallets; the |mw-gen1|, the |mw-gen2|, and the |cryptox|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
 
 The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
 No import of identities and accounts between some wallets
 =========================================================
 
-Before you decide which wallet to use, it's important to know that you can’t import identities and accounts from the |mw-gen1|, |mw-gen2|, or |bw| into the Desktop Wallet. Conversely, you can’t import identities and accounts from the Desktop Wallet into |mw-gen1|, |mw-gen2|, or |bw|. You also can't import identities and accounts between |mw-gen1| and |mw-gen2|. This is because they handle private keys in different ways as :ref:`described later<store-private-keys>` in this topic. It’s therefore essential that you choose between the wallets before you start creating identities and accounts.
+Before you decide which wallet to use, notice this: Due to differences in private key handling, identities and accounts cannot be exchanged between the Desktop Wallet and any of the other wallet types. The same applies between |mw-gen1| and |mw-gen2|. 
+For details regarding private key handling :ref:`see below<store-private-keys>`.
 
-You can exchange identities and accounts between the |bw| and the |mw-gen2|. And the |cryptox| supports importing identities and accounts from the |mw-gen2|, |mw-gen1|, and |bw|.
+You can exchange identities and accounts between the |bw| and the |mw-gen2|.
+
+The |cryptox| supports importing identities and accounts from the |mw-gen2|, |mw-gen1|, and |bw|.
 
 You can always send CCD from one wallet to another.
+
+Considering the above, carefully select your wallet before creating identities and accounts.
 
 Which wallet is best for you?
 =============================
 
-The wallets work on different environments: the Desktop Wallet on a computer; the |bw| on any device with a web browser; and |cryptox|, |mw-gen1|, and |mw-gen2| on a phone. The |cryptox|, |mw-gen1| and |mw-gen2| are more accessible and easier to use on a day-to-day basis whereas the Desktop Wallet has an extra layer of security in the form of a LEDGER device.
+The wallets work on different environments: the Desktop Wallet on a computer, the |bw| on any device with a web browser, and |mw-gen1|, |mw-gen2|, and |cryptox| on a phone. The Desktop Wallet has an extra layer of security in the form of LEDGER device, whereas the other wallet types are more accesible and easier to use on a day-to-day basis.
 
 - Desktop Wallet: Choose this wallet if you want extra security in the form of a :ref:`LEDGER<install-ledger>` device, or want to create multi-signature transactions. Desktop wallet requires a node.
 
-- |cryptox|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |cryptox| does not require a node (unless you are a validator), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps. It can import identities and accounts from |mw-gen2|, |mw-gen1|, and |bw|.
-
-- |mw-gen2|: Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen2| does not require a node (unless you are a validator), and you don’t need a LEDGER device. It uses a secret recovery phrase for wallet recovery. It also connects to dApps.
-
-- |mw-gen1|: Is still available for users who have a backup that they need to restore but not for new users. Choose this wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. |mw-gen1| does not require a node (unless you are a validator), and you don’t need a LEDGER device. Requires you to make backups regularly.
-
 - |bw|: Choose this wallet if you want to be able to access your accounts on the go from any computer and you only need to create standard (single signature) transactions. This wallet is also for developers creating dApps to connect to the Concordium blockchain and for dApp users.
+
+- The mobile wallets: Choose a mobile wallet if you want to be able to access your accounts on the go and only need to create standard (single signature) transactions. The mobile wallets do not require a node (unless you are a validator), and you don't need a LEDGER device. The mobile wallets differ in the following aspects:
+
+  - |mw-gen1|: This is the first generation mobile wallet. It is no longer available for new users but is still available for existing users who need to restore backup.
+
+  - |mw-gen2|: This is the second generation mobile wallet. It uses a secret recovery phrase for wallet recovery and also connects to dApps.
+
+  - |cryptox|: This is the third generation mobile wallet. It allows you to choose between wallet recovery from either secret key phrase or key file. It also connects to dApps and can import identities and accounts from |mw-gen2|, |mw-gen1|, and |bw|. With a new design and ongoing feature development, |cryptox| sets a new standard.
 
 .. Note::
 
-   If you are a new mobile wallet user, you must use the |mw-gen2|. It is no longer possible for users of |mw-gen1| to create new accounts.
+   If you are a new mobile wallet user, you must use either |mw-gen2| or |cryptox|. It is no longer possible for users of |mw-gen1| to create new accounts.
 
 The following provides more details on the differences between the wallets.
 
@@ -49,26 +56,32 @@ How the wallets store your private keys
 
 One of the main differences between the wallets lies in how they store your private keys.
 
--  The Desktop Wallet stores your private keys on a LEDGER device that is secured by a PIN code and backed up by a recovery phrase. The private keys never leave the LEDGER device, and the LEDGER device doesn't require internet access, which means you can keep your private keys offline. However, this also means that you need the LEDGER device to sign the transactions you create in the Desktop Wallet, which makes it less convenient than the |mw-gen1| or |mw-gen2|.
+-  The Desktop Wallet stores your private keys on a LEDGER device that is secured by a PIN code and backed up by a recovery phrase. The private keys never leave the LEDGER device, and the LEDGER device doesn't require internet access, which means you can keep your private keys offline. However, this also means that you need the LEDGER device to sign the transactions you create in the Desktop Wallet, which makes it less convenient than the other wallet types.
 
-- The |mw-gen1| creates and stores your private keys on the phone. This means it's easier to use because you don't need a LEDGER device to make transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet. You must back up the private keys on your phone.
+- The other wallet types don't use the LEDGER device for transaction signing and are therefore easier to use. However, because your device is connected to the internet, these wallets are more vulnerable to breaches than the Desktop Wallet. The wallets handle your private keys in different ways:
 
-- The |mw-gen2| uses a secret recovery phrase that is created during setup to generate your private keys. You don't need a LEDGER device for transactions. However, because your phone is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet.
+  - The |bw| stores your private keys in the wallet backed up by a secret recovery phrase that you create during setup.
 
-- The |bw| relies on the secret recovery phrase you created during setup to secure your private keys. You don't need a LEDGER device for transactions. However, because your device is connected to the internet, the wallet is more vulnerable to security breaches than the Desktop Wallet.
+  - The |mw-gen1| creates and stores your private keys on the phone. You must back up the private keys on a file.
+
+  - The |mw-gen2| Creates and stores your private keys on the phone backed up by a secret recovery phrase that is created during setup.
+
+  - The |cryptox| Creates and stores your private keys on the phone and gives you two options for backing them up: either by generating a secret recovery phrase during setup or by storing a copy of your private keys on a file.
 
 How to backup a wallet
 ======================
 
-Concordium strongly recommends that you make a backup of your wallet if you are using |mw-gen1| or Desktop Wallet. Backups are created in different ways in the wallets.
+Concordium strongly recommends that you make a backup of your wallet if you are using the Desktop Wallet or |mw-gen1|. Backups are created in different ways in the wallets.
 
 - Desktop Wallet: You create a backup of your accounts, identities, and addresses by exporting the data to a file from the Desktop Wallet. This is not the same as creating a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the LEDGER device. So for a complete backup, you need both the exported file and the LEDGER device. If you lose the PIN code to the LEDGER device, you can restore the LEDGER device from your recovery phrase. You can also set up a new LEDGER device with the recovery phrase. It's vital that you keep the recovery phrase safe. For more information, see *Recover accounts without a backup file* in :ref:`Make a backup of identities, accounts, and addresses<export-import>`.
 
+- |bw|: Backups are not necessary for the |bw| because the secret recovery phrase created during setup can be used to recover your wallet. You must save the recovery phrase in a safe place.
+
 - |mw-gen1|: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import>`.
 
-- |bw|: Backups are not necessary for the |bw| because the secret recovery phrase created during setup can be used to recover your private keys.
+- |mw-gen2|: Backups are not necessary for the |mw-gen2| because the secret recovery phrase created during setup can be used to recover your wallet. You must save the recovery phrase in a safe place.
 
-- |mw-gen2|: Backups are not necessary for the |mw-gen2| because the secret recovery phrase created during setup can be used to recover your private keys.
+- |cryptox|: |cryptox| offers two options for restoring your wallet. Option 1: You can use the secret recovery phrase created during setup, in which case you don't need to back up your wallet. Option 2: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet.
 
 .. Warning::
    You are solely responsible for keeping your assets secure regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.
@@ -76,13 +89,16 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 What are the requirements for each wallet?
 ==========================================
 
-- |mw-gen1|: you’ll need an iPhone running iOS 13 or later or an Android phone running Android 8 or later.
+- Desktop Wallet: A computer running Windows, macOS, or Linux, and a LEDGER NANO S or LEDGER NANO S PLUS. You also have to connect to a node. You can use the default Virtual Hive node (concordiumwalletnode.com), get a third-party to run a node for you, or run a node yourself. If you run a node yourself, your computer must meet the hardware requirements for this.
 
-- |mw-gen2|: you’ll need an iPhone running iOS 15 or later or an Android phone running Android 8 or later.
+- |bw|: A device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
 
-- |bw|: you'll need a device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
+- |mw-gen1|: An iPhone running iOS 13 or later or an Android phone running Android 8 or later.
 
-- Desktop Wallet: you’ll need a computer running Windows, macOS, or Linux, and you’ll need a LEDGER NANO S or LEDGER NANO S PLUS. You’ll also have to connect to a node. You can use the default Virtual Hive node (concordiumwalletnode.com), get a third-party to run a node for you, or run a node yourself. If you run a node yourself, your computer must meet the hardware requirements for this.
+- |mw-gen2|: An iPhone running iOS 15 or later or an Android phone running Android 8 or later.
+
+- |cryptox|: An iPhone running iOS 15 or later or an Android phone running Android 8 or later.
+
 
 Comparison
 ==========

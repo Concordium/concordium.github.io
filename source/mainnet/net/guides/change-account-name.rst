@@ -9,6 +9,15 @@ Change account name
 
 .. dropdown:: |cryptox|
 
+    #. On the **Accounts** page, tap the account you want to rename.
+
+    #. In the Account details screen, tap |cryptoX-acct-settings|.
+
+    #. Tap **Change account name**.
+
+    #. Enter the new name and tap **SAVE**.
+
+
 .. dropdown:: |mw-gen2|
 
     #. Tap on the account you want to rename.
@@ -42,3 +51,6 @@ Change account name
 .. |acct-settings| image:: ../images/acct-settings.png
                     :alt: gear wheel on blue background
                     :width: 50px
+.. |cryptoX-acct-settings| image:: ../images/cryptoX/cryptoX-acct-settings.png
+                    :alt: gear wheel on blue background
+                    :width: 40px

@@ -9,6 +9,14 @@ Change identity name
 
 .. dropdown:: |cryptox|
 
+    #. In the **More** menu tap **Identities**.
+
+    #. Tap the identity you want to edit.
+
+    #. On the identity card tap |cryptoX-edit| next to the identity name.
+
+    #. Enter the new identity name and tap **SAVE**.
+
 .. dropdown:: |mw-gen2|
 
     #. Tap |wallet-settings|. Select **Your identity cards**.
@@ -42,3 +50,6 @@ Change identity name
 .. |wallet-settings| image:: ../images/settings.png
                         :alt: gear wheel
                         :width: 40px
+.. |cryptoX-edit|    image:: ../images/cryptoX/cryptoX-edit.png
+                    :width: 40px
+                    :alt: small square with pencil

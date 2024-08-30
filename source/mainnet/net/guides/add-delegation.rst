@@ -20,6 +20,47 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
 .. dropdown:: |cryptox|
 
+        #. Tap the account card for the account you want to delegate from.
+        #. Tap |cryptoX-earn| on the account balance screen.
+
+        #. Tap **Continue to delegation setup**. If you are delegating for the first time, you will see some information pages explaining the basics of delegation on the Concordium blockchain. Otherwise, you go directly to registering your delegation.
+
+            .. image:: ../images/cryptoX/cryptoX-continue-to-delegation.png
+                    :width: 50%
+                    :alt: screen with earning options
+
+        #. On the **Register delegation** page, you have two options: If you want to delegate to a specific pool, tap **Validator** and enter the Validator ID of the pool owner. If you want to register a passive delegation, tap **Passive**. Tap **Continue**.
+
+            .. image:: ../images/cryptoX/cryptoX-register-delegation.png
+                    :width: 50%
+                    :alt: screen with earning options
+
+        #. You can see your balance available to delegate. Enter the Amount you want to delegate in the field. Tap **Yes, add** to restake any rewards, or tap **No, don't add** if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Tap **Continue**.
+
+            .. image:: ../images/cryptoX/cryptoX-register-delegation-add-rewards.png
+                :width: 50%
+                :alt: screen to register delegation amount and restake preference
+
+        #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+
+        #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+
+        Once the transaction is finalized, the delegation is effective from the next pay day.
+
+        The account will be marked as Delegator in the account list.
+
+        .. image:: ../images/cryptoX/cryptoX-account-delegating.png
+            :width: 50%
+            :alt: account in list with delegating text and pie icon
+
+
+        You can see information about the delegation on the delegation status screen. Here, you can also make updates to your delegation or stop it.
+
+        .. image:: ../images/cryptoX/cryptoX-account-status-screen.png
+            :width: 50%
+            :alt: account details showing delegation details
+
+
 .. dropdown:: Desktop Wallet
 
         .. dropdown:: Single signature account
@@ -249,6 +290,10 @@ When you delegate some stake to a staking pool, it can influence the chances of 
             :width: 40%
 
         .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+             :width: 50px
+
+        .. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
              :alt: Hand receiving money
              :width: 50px
 
