@@ -26,6 +26,35 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 .. dropdown:: |cryptox|
 
+    #. Tap the account on the Accounts screen.
+
+    #. Tap |cryptoX-earn| on the Account Balance screen.
+
+    #. You see your current delegation. Tap **Update current delegation**.
+
+        .. image:: ../images/cryptoX/cryptoX-delegation-status.png
+            :width: 50%
+            :alt: screen showing current delegation with options to stop or update
+
+    #. You can now go through informational pages explaining the update options releated to delegation. Tap **Next** to navigate through the pages. Tap **Skip** to proceed directly to the update.
+
+    #. If you want to delegate to a specific pool tap **Validator** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive**. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-update-delegation.png
+            :width: 50%
+            :alt: screen with options to choose delegation type
+
+    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount, tap on the field **Optional: Type the new amount** and enter the amount. And tap **Yes, add** to restake any rewards or tap **No, don't add** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-update-delegation-2.png
+            :width: 50%
+            :alt: screen with options to choose delegation type
+
+
+    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+
+    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+
 .. dropdown:: Desktop Wallet
 
     .. dropdown:: Single signature account
@@ -261,6 +290,10 @@ Once the transaction is finalized, the delegation update is effective from the n
    Reducing your stake in any pool results in a longer :term:`cool-down period`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the first pay day after the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
 
 .. |earn| image:: ../images/earn.png
+         :alt: Hand receiving money
+         :width: 50px
+
+.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
          :alt: Hand receiving money
          :width: 50px
 
