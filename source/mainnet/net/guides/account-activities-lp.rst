@@ -17,3 +17,4 @@ If you need to know how to send CCDs, connect dApps, manage fungible and non-fun
     tokens
     shield-ccd-wallets
     scheduled-release
+    export-transaction-logs

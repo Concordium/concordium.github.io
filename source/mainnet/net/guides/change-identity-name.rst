@@ -15,7 +15,7 @@ Change identity name
 
     #. On the identity card tap |cryptoX-edit| next to the identity name.
 
-    #. Enter the new identity name and tap **SAVE**.
+    #. Enter the new identity name and tap **Save**.
 
 .. dropdown:: |mw-gen2|
 

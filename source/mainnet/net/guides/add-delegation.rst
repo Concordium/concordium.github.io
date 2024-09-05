@@ -20,18 +20,18 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
 .. dropdown:: |cryptox|
 
-        #. Tap the account card for the account you want to delegate from.
+        #. Tap the account you want to delegate from on the accounts screen.
         #. Tap |cryptoX-earn| on the account balance screen.
+        #. Tap **Continue to delegation setup**
 
-        #. Tap **Continue to delegation setup**.
-            .. image:: ../images/cryptoX/cryptoX-continue-to-delegation.png
+            .. image:: ../images/cryptoX/cryptoX-earning-rewards.png
                     :width: 50%
                     :alt: screen with earning options
 
-        #. You can now go through informational pages explaining the basics of delegation on the Concordium blockchain. Tap **Next** to navigate through the pages. Tap **Skip** to proceed directly to registering your delegation.
+        #. You can now go through informational screens explaining the key concepts of delegation on the Concordium blockchain. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to registering your delegation.
 
 
-        #. On the **Register delegation** page, you have two options: If you want to delegate to a specific pool, tap **Validator** and enter the Validator ID of the pool owner. If you want to register a passive delegation, tap **Passive**. Tap **Continue**.
+        #. On the **Register delegation** screen, you have two options: If you want to delegate to a specific pool, tap **Validator** and enter the Validator ID of the pool owner. If you want to register a passive delegation, tap **Passive**. Tap **Continue**.
 
             .. image:: ../images/cryptoX/cryptoX-register-delegation.png
                     :width: 50%

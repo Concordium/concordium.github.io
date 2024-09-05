@@ -15,7 +15,7 @@ Change account name
 
     #. Tap **Change account name**.
 
-    #. Enter the new name and tap **SAVE**.
+    #. Enter the new name and tap **Save**.
 
 
 .. dropdown:: |mw-gen2|

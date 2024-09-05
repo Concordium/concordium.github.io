@@ -25,3 +25,137 @@ Get started
    .. image:: ../images/mobile-wallet-gen2/create-passcode.png
       :width: 50%
       :alt: screen with keypad to enter passcode
+
+
+
+Secret recovery phrase
+======================
+
+Now you must write down and confirm your :term:`secret recovery phrase`. It is important to keep this recovery phrase in a safe location in case you need to :ref:`recover your wallet<recover-wallet>`.
+
+#. Tap **Set up a fresh wallet**.
+
+   .. image:: ../images/mobile-wallet-gen2/choice-start.png
+      :width: 50%
+      :alt: screen with information about setup and options to create a new wallet or recover wallet
+
+#. Tap on the screen to view your secret recovery phrase. Write down all 24 words in the exact order in which they are shown.
+
+   .. image:: ../images/mobile-wallet-gen2/recovery-phrase-pre.png
+      :width: 50%
+      :alt: screen with hidden secret recovery phrase
+
+#. Place a check in the box **I confirm I have written down my 24 word secret recovery phrase**.
+
+   .. image:: ../images/mobile-wallet-gen2/recovery-phrase-shown.png
+      :width: 50%
+      :alt: screen with 24 word recovery phrase shown and confirmation checkbox
+
+#. On the next screens select the word to enter in each index to confirm your secret recovery phrase. Once correct, tap **Continue**.
+
+   .. image:: ../images/mobile-wallet-gen2/recovery-phrase-confirm.png
+      :width: 50%
+      :alt: screen to enter recovery phrase so you can confirm that you have it
+
+Request your identity and account
+=================================
+
+Having set up your passcode and your secret recovery phrase, you must then submit a request for an identity and an account.
+
+Request identity
+----------------
+
+#. Read the next page in the app, shortly explaining the Concordium concepts of initial account and identity. Tap **Continue**.
+
+#. Select a third party :term:`identity provider` from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
+
+   .. image:: ../images/mobile-wallet/MW11.png
+      :width: 50%
+      :alt: screen with option to select identity provider
+
+#. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider.
+   However, they will ask you to provide photos of identification documents and a selfie.
+
+#. When you have submitted the information to the identity provider, you will have a pending initial account and identity in your app.
+   The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve
+   the result. The result can be retrieved for up to seven days.
+
+   .. image:: ../images/mobile-wallet/MW12.png
+      :width: 50%
+      :alt: screen shown after identity verification information is submitted and request is pending
+
+If your identity request is rejected, you see a message. Tap **Make new identity request** to create a new identity request. You can choose another identity provider.
+
+Request account
+---------------
+
+Once the identity provider has verified your identity you can submit an account. You can see when your identity has been verified by the green check next to the identity name.
+
+#. Tap **Submit account**. Enter your wallet passcode when prompted.
+
+   .. image:: ../images/mobile-wallet-gen2/submit-acct.png
+      :width: 50%
+      :alt: screen shown after selecting to create account
+
+Basic navigation
+================
+
+In the wallet you have some navigation options.
+
+.. image:: ../images/cryptoX/cryptoX-basic-navigation-callouts.png
+      :alt: main wallet screen with position numbers
+      :width: 60%
+
+1. Balances: shows total balances of all accounts.
+2. Account: shows the identity on which the account was created, and totals.
+3. :ref:`More screen<mw-cryptoX-more-screen>`: contains actions for the wallet.
+4. Scan QR code: tap to :ref:`scan a QR code to connect to a dApp<connect-app-bw>`.
+5. Add: to :ref:`add a new account<create-account>`.
+6. Account actions: range of actions you can perform on the account, such as send and receive.
+7. Shortcut to Concordium News.
+8. NFT administration.
+
+.. _mw-cryptoX-more-screen:
+
+More screen
+-----------
+
+In the More screen |more| you have the following options.
+
+- Identities: view all identities in the wallet and details of the identities, :ref:`edit identity names<change-mw-id-name>`, and :ref:`create new identities<create-initial-account>`.
+- Address book: :ref:`manage your address book<address-book-mw>`.
+- Recovery: :ref:`recover your wallet<recover-wallet>`.
+- Show my seed phrase: :ref:`show my seed phrase<show-seed-phrase>`
+- Update passcode and biometrics: :ref:`change your wallet passcode or activate biometrics<change-passcode-mw>`.
+
+
+Account navigation
+------------------
+
+When you tap an account, you see the details for the specific account, including balances and transactions.
+
+.. image:: ../images/cryptoX/cryptoX-account-balance.png
+      :width: 50%
+      :alt: account details screen with navigation bar highlighted
+
+The toolbar contains actions that can be performed on the account:
+
+- Send: :ref:`send funds<send-CCD-wallets>`
+- Receive: find and share your address
+- Earn: configure and manage :ref:`validation<baker-concept>` or :ref:`delegation<delegation-concept>`
+
+- Account settings: To perform less often used actions on an account tap |cryptoX-account-settings|
+
+   - Transfer filters: configure filters to show or hide rewards
+   - Release schedule: :ref:`inspect a release schedule<inspect-release-schedule-mw>`
+   - Export private key: :ref:`export your private key<export-key>` for testing smart contracts, for example
+   - Export transaction logs: :ref:`export transaction logs<export-transaction-logs>`
+   - Change account name: :ref:`customize account names<change-mw-acct-name>`
+
+.. |cryptoX-account-settings| image:: ../images/cryptoX/cryptoX-acct-settings.png
+                        :alt: gear wheel
+                        :width: 40px
+
+.. |more| image:: ../images/cryptoX/cryptoX-more.png
+                        :alt: more button
+                        :width: 40px

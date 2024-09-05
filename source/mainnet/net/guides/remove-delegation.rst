@@ -20,17 +20,17 @@ If you remove the delegation, there is a :term:`cool-down period` before the del
 
 .. dropdown:: |cryptox|
 
-   #. Tap the account on the Accounts screen.
+   #. Tap the account on the accounts screen.
 
-   #. Tap |cryptoX-earn| on the Account Balance screen.
+   #. Tap |cryptoX-earn| on the account balance screen.
 
-   #. You see your current delegation. Tap **Stop delegation**.
+   #. Now you see your current delegation. Tap **Stop delegation**.
 
       .. image:: ../images/cryptoX/cryptoX-delegation-status.png
          :width: 50%
          :alt: screen showing current delegation status with options to update or stop
 
-   #. You can now go through informational pages explaining the consequenses of stopping your delegation. Tap **Next** to navigate through the pages. Tap **Skip** to proceed directly to stopping the delegation.
+   #. You can now go through informational screens explaining the implications of stopping your delegation. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to stopping the delegation.
 
    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
@@ -38,7 +38,7 @@ If you remove the delegation, there is a :term:`cool-down period` before the del
          :width: 50%
          :alt: screen shown to review delegation stop details
 
-   #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
+   #. Once the transaction is submitted, you see a confirmation screen. Tap **Finish** to complete the action.
 
 
 .. dropdown:: Desktop Wallet

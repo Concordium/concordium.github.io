@@ -181,13 +181,11 @@ This overview describes the recommended scenario for running a node and becoming
 
 For information about how to update your validator or stop validation, see :ref:`Change validator options<update-baker-mw>`.
 
-Validation with |cryptox|
--------------------------------------
 
-Validation with |mw-gen1| and |mw-gen2|
----------------------------------------
+Validation with |mw-gen1|, |mw-gen2|, and |cryptox|
+---------------------------------------------------
 
-This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using |mw-gen1| or |mw-gen2| and running a node.
+This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using |mw-gen1|, |mw-gen2|, or |cryptox|.
 
 .. dropdown:: Step 1: Set up the node
 
@@ -195,7 +193,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 2: Set up the Wallet
 
-   The |mw-gen1| and |mw-gen2| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`.
+   The |mw-gen1|, |mw-gen2|, and |cryptox| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`. For instructions about download and setup of |cryptox|, see :ref:`setup-cryptox-wallet`.
 
 .. dropdown:: Step 3: Set up an identity and account
 

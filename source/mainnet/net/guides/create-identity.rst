@@ -32,7 +32,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
 
-   
+
    You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
 
 .. |wallet-settings| image:: ../images/settings.png
