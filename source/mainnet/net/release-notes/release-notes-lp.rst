@@ -153,11 +153,17 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    August 5, 2024
+    September 5, 2024
 
-    Version 1.5.0 fixes several bugs in the CIS-2 functionality.
+    Version 1.5.1 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+    This version also resolves an issue with the "Send All" button functionality on the Send Funds screen.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.5.0 - August 5, 2024
+
+            Version 1.5.0 fixes several bugs in the CIS-2 functionality.
 
         .. dropdown:: |mw-gen2| 1.4.0 - November 29, 2023
 
