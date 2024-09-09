@@ -1,5 +1,5 @@
-.. _setup-cryptox-wallet:
 .. include:: ../../variables.rst
+.. _setup-cryptox-wallet:
 
 ===============================
 Set up the |cryptox|

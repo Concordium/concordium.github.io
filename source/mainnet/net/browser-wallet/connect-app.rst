@@ -9,6 +9,28 @@ You can connect the |cryptox|, |bw|, and |mw-gen2| to a `dApp <https://en.wikipe
 
 .. dropdown:: |cryptox|
 
+   To connect your |cryptox| to a dApp:
+
+   #. Tap the scan QR code button in the Accounts overview |scan-qr-overview|.
+   #. On the next screen, you can choose the account you want to use. Tap **Allow** to continue using your account with the dApp.
+
+      .. image:: ../images/cryptoX/cryptoX-connect-dapps1.png
+            :alt: screen with text boxes for each account
+            :width: 50%
+
+   #. After making your purchase in a dApp, confirm the purchase in the |cryptox|. On the sign transaction screen review the transaction details. Tap **Sign** if you approve the transaction.
+
+      .. image:: ../images/cryptoX/cryptoX-connect-dapps2.png
+         :alt: screen with information about session and options to accept or decline
+         :width: 50%
+
+   #. When the transaction is submitted, tap **Finish** to teturn to the account screen.
+
+      .. image:: ../images/cryptoX/cryptoX-connect-dapps3.png
+         :alt: screen with information about session and options to accept or decline
+         :width: 50%
+
+
 .. dropdown:: |bw|
 
    To initiate a request to connect to a dApp within the |bw|:

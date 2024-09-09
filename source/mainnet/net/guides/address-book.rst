@@ -19,7 +19,7 @@ The address book helps you select a recipient quickly for transactions.
 
 
          .. image:: ../images/cryptoX/Addressbook.png
-         :width: 25%
+            :width: 50%
 
 
     To add a new recipient

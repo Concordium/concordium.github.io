@@ -18,13 +18,13 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |cryptox|
 
-   You can submit requests for additional :term:`identities<identity>` in the |cryptox|. You do this from the **Identities** page.
+   You can submit requests for additional :term:`identities<identity>` in the |cryptox|. You do this from the **Identities** screen.
 
    #. Tap **More** in the lower right corner.
 
    #. Tap **Identities**.
 
-   #. On the Identities page, tap the **+** in the upper right corner.
+   #. On the Identities screen, tap the **+** in the upper right corner.
 
    #. Select a third-party identity provider from the list. An external web page opens within the app.
 

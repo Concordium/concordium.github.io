@@ -14,7 +14,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |cryptox|
 
-    #. Go to the **Accounts** page.
+    #. Go to the Accounts screen.
 
     #. Tap the **+** in the upper left corner.
 
@@ -34,7 +34,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
             :width: 50%
 
 
-    Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
+    Your new account is now visible on the Accounts screen . It might take a little while for it to finalize on the chain.
 
     You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
 

@@ -39,9 +39,9 @@ The wallets work on different environments: the Desktop Wallet on a computer, th
 
   - |mw-gen1|: This is the first generation mobile wallet. It is no longer available for new users but is still available for existing users who need to restore backup.
 
-  - |mw-gen2|: This is the second generation mobile wallet. It uses a secret recovery phrase for wallet recovery and also connects to dApps.
+  - |mw-gen2|: This is the second generation mobile wallet. It uses a seed phrase for wallet recovery and also connects to dApps.
 
-  - |cryptox|: This is the third generation mobile wallet. It allows you to choose between wallet recovery from either secret key phrase or key file. It also connects to dApps and can import identities and accounts from |mw-gen2|, |mw-gen1|, and |bw|. With a new design and ongoing feature development, |cryptox| sets a new standard.
+  - |cryptox|: This is the third generation mobile wallet. It allows you to choose between wallet recovery from either seed phrase or key file. It also connects to dApps and can import identities and accounts from |mw-gen2|, |mw-gen1|, and |bw|. With a new design and ongoing feature development, |cryptox| sets a new standard.
 
 .. Note::
 
@@ -60,13 +60,13 @@ One of the main differences between the wallets lies in how they store your priv
 
 - The other wallet types don't use the LEDGER device for transaction signing and are therefore easier to use. However, because your device is connected to the internet, these wallets are more vulnerable to breaches than the Desktop Wallet. The wallets handle your private keys in different ways:
 
-  - The |bw| stores your private keys in the wallet backed up by a secret recovery phrase that you create during setup.
+  - The |bw| stores your private keys in the wallet backed up by a seed phrase that you create during setup.
 
   - The |mw-gen1| creates and stores your private keys on the phone. You must back up the private keys on a file.
 
-  - The |mw-gen2| Creates and stores your private keys on the phone backed up by a secret recovery phrase that is created during setup.
+  - The |mw-gen2| Creates and stores your private keys on the phone backed up by a seed phrase that is created during setup.
 
-  - The |cryptox| Creates and stores your private keys on the phone and gives you two options for backing them up: either by generating a secret recovery phrase during setup or by storing a copy of your private keys on a file.
+  - The |cryptox| Creates and stores your private keys on the phone backed up by a seed phrase that is created during setup.
 
 How to backup a wallet
 ======================
@@ -75,13 +75,13 @@ Concordium strongly recommends that you make a backup of your wallet if you are 
 
 - Desktop Wallet: You create a backup of your accounts, identities, and addresses by exporting the data to a file from the Desktop Wallet. This is not the same as creating a backup of your private keys. The backup of your private keys is essentially the 24-word recovery phrase for the LEDGER device. So for a complete backup, you need both the exported file and the LEDGER device. If you lose the PIN code to the LEDGER device, you can restore the LEDGER device from your recovery phrase. You can also set up a new LEDGER device with the recovery phrase. It's vital that you keep the recovery phrase safe. For more information, see *Recover accounts without a backup file* in :ref:`Make a backup of identities, accounts, and addresses<export-import>`.
 
-- |bw|: Backups are not necessary for the |bw| because the secret recovery phrase created during setup can be used to recover your wallet. You must save the recovery phrase in a safe place.
+- |bw|: Backups are not necessary for the |bw| because the seed phrase created during setup can be used to recover your wallet. You must save the recovery phrase in a safe place.
 
 - |mw-gen1|: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet. If you lose your phone or upgrade to a new phone, you can use the file to gain access to your accounts and identities. Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It's also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. For more information, see :ref:`Export or import your identities and accounts <export-import>`.
 
-- |mw-gen2|: Backups are not necessary for the |mw-gen2| because the secret recovery phrase created during setup can be used to recover your wallet. You must save the recovery phrase in a safe place.
+- |mw-gen2|: Backups are not necessary for the |mw-gen2| because the seed phrase created during setup can be used to recover your wallet. You must save the recovery phrase in a safe place.
 
-- |cryptox|: |cryptox| offers two options for restoring your wallet. Option 1: You can use the secret recovery phrase created during setup, in which case you don't need to back up your wallet. Option 2: You create a backup of your accounts, identities, addresses, and private keys by exporting the data to a file from the Mobile Wallet.
+- |cryptox|: Backups are not necessary for the |cryptox| because the seed phrase created during setup can be used to recover your wallet. You must save the recovery phrase in a safe place.
 
 .. Warning::
    You are solely responsible for keeping your assets secure regardless of which wallet you choose to use. You must never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.
@@ -127,7 +127,7 @@ The following table lists the major features of each wallet.
    *  - Secured by password and a LEDGER device
       - Secured by password and biometrics
       - Secured by password and biometrics
-      - Secured by password and secret recovery phrase
+      - Secured by password and seed phrase
       - Secured by password and biometrics
    *  - Encrypted
       - Encrypted
@@ -136,14 +136,14 @@ The following table lists the major features of each wallet.
       - Encrypted
    *  - Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.
       - Backup file includes accounts, identities, address book, and private keys.
-      - Backup is not necessary but secret recovery phrase is needed.
-      - Backup is not necessary but secret recovery phrase is needed.
-      - Backup is not necessary but secret recovery phrase is needed.
+      - Backup is not necessary but seed phrase is needed.
+      - Backup is not necessary but seed phrase is needed.
+      - Backup is not necessary but seed phrase is needed.
    *  - Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase.
       - Private keys are stored in the wallet.
-      - Private keys are stored in the wallet and backed up by a secret recovery phrase.
-      - Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the secret recovery phrase.
-      - Private keys are stored in the wallet and backed up by a secret recovery phrase.
+      - Private keys are stored in the wallet and backed up by a seed phrase.
+      - Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the seed phrase.
+      - Private keys are stored in the wallet and backed up by a seed phrase.
    *  - Creation and management of single signature and multi-signature accounts
       - Creation and management of single signature accounts only
       - Creation and management of single signature accounts only

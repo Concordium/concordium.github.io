@@ -5,7 +5,7 @@
 Recover your Wallet
 ===================
 
-In case you get a new device or need to restore your existing device, you can recover your identities, accounts, and keys with the secret recovery phrase you wrote down during wallet setup.
+In case you get a new device or need to restore your existing device, you can recover your identities, accounts, and keys with the seed phrase you wrote down during wallet setup.
 
 .. Note::
 
@@ -24,7 +24,7 @@ In case you get a new device or need to restore your existing device, you can re
         .. image:: ../images/browser-wallet/wallet-choice.png
             :width: 25%
 
-    #. Enter your 24 word secret recovery phrase. Click **Continue**.
+    #. Enter your 24 word seed phrase. Click **Continue**.
 
     #. Select whether to recover your wallet in Mainnet or Testnet.
 
@@ -47,7 +47,7 @@ In case you get a new device or need to restore your existing device, you can re
 
     .. Note::
 
-        If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your secret recovery phrase to recover the wallet.
+        If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your seed phrase to recover the wallet.
 
 .. dropdown:: |mw-gen2|
 

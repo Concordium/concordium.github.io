@@ -16,7 +16,19 @@ Change validator options
 
 The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |cryptox|, |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
 
-The steps to get to these settings differ between |mw-gen2| and |mw-gen1|. They are described below.
+The steps to get to these settings differ between the mobile wallets. They are described below.
+
+.. dropdown:: |cryptox|
+
+    #. Tap the account.
+
+    #. Tap |cryptoX-earn| on the account balance screen.
+
+    #. Tap **Change validating status**.
+
+        .. image:: ../images/cryptoX/cryptoX-change-validator-status.png
+            :width: 50%
+            :alt: screen showing current validator settings and change button
 
 .. dropdown:: |mw-gen2|
 
@@ -57,6 +69,20 @@ You can change the :ref:`staked amount <concepts-baker-stake>` on a validator ac
 When you change the stake it can influence your :term:`chance of being selected to produce a block<winning probability>` and receive block rewards. If you decrease the stake, you decrease your chances of producing blocks. Likewise, if you increase the stake, you increase your chances of producing a block.
 
 .. dropdown:: |cryptox|
+
+    #. Tap **Update validator stake**.
+
+    #. You can now go through informational screens explaining the options for changing validator status. Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the validator stake.
+
+       .. image:: ../images/cryptoX/cryptoX-update-validator-stake.png
+            :width: 50%
+            :alt: screen to update validator stake showing amount and restake preference options
+
+    #. Now you see your balance and the current Validator stake amount.
+       Enter the total amount you want to stake.
+       You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
+
+    #. On the overview screen, check the information. Once you are satisfied, tap **Submit validator transaction**.
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
@@ -236,6 +262,48 @@ Update pool settings
 ====================
 
 .. dropdown:: |cryptox|
+
+    #. Tap **Update pool settings**
+
+    #. You can now go through informational screens explaining the options for changing validator status.
+       Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the pool settings.
+
+       .. image:: ../images/cryptoX/cryptoX-update-pool-settings1.png
+            :width: 50%
+            :alt: screen showing three staking pool options
+
+       - Open pool: open a pool for a previously closed validator
+       - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the validator's responsibility to monitor the stake to make pool management decisions.**
+       - Close pool: close a pool permanently.
+
+       If you choose **Open pool**:
+
+        #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+
+        #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
+
+        #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
+
+        #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
+
+       If you choose **Closed for new**:
+
+       Existing delegators remain in the pool. You have the option to adjust commission fees and your validator information URL.
+
+        #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+
+        #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
+
+        #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
+
+        #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
+
+       If you choose **Close pool**:
+
+       This closes the pool completely for both existing delegators and new delegators.
+
+    #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
+    #. The |cryptoX| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
@@ -484,6 +552,33 @@ If you believe your validator keys have been compromised or lost, you can genera
 
 .. dropdown:: |cryptox|
 
+    #. Tap **Update validator keys**
+
+    #. You can now go through informational screens explaining the options for changing validator status.
+       Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the validator keys.
+
+        .. image:: ../images/cryptoX/cryptoX-update-validator-keys.png
+            :width: 50%
+            :alt: screen showing new keys with button to export
+
+    #. Tap **Export validator keys**.
+
+        .. Warning::
+
+           If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+
+    #. Once you have saved the keys, review the information on the overview screen of the add validator transaction then tap **Submit validator transaction**.
+
+    #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
+
+    #. You need to import your validator keys file to your node in order to start producing blocks with the new keys. It is preferable to update them on the node as close to :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
+
+        - :ref:`Windows<baker-windows>`
+        - :ref:`macOS<baker-macos>`
+        - :ref:`Docker<baking-docker>`
+        - :ref:`Ubuntu<baker-ubuntu>`
+
+
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
     #. If you choose **Update validator keys**, after the screens explaining reasons for updating validator keys, you see the new validator keys. Tap **Export validator keys** and navigate to the place on your device where you want to save the file.
@@ -683,6 +778,18 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
 .. dropdown:: |cryptox|
 
+    #. Tap **Stop validation**.
+
+        .. image:: ../images/cryptoX/cryptoX-stop-validation.png
+            :width: 50%
+            :alt: screen showing all validator options
+
+    #. After the screens explaining validator removal, tap **Continue**.
+
+    #. Review the information. When you are satisfied, tap **Submit validator transaction**.
+
+    #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**.
+    
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
     #. Tap **Stop validation**.
@@ -836,6 +943,10 @@ If you no longer wish to produce blocks on this account, you can stop validation
    If you stop as a validator, remember that this does not shut down your node. You need to shut down the node in a separate action if you no longer wish to run a node on the Concordium blockchain.
 
 .. |earn| image:: ../images/earn.png
+             :alt: Hand receiving money
+             :width: 50px
+
+.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
              :alt: Hand receiving money
              :width: 50px
 

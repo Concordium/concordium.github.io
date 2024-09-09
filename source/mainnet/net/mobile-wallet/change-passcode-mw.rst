@@ -15,7 +15,7 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 
    #. In the **More** menu tap **Update Passcode & Biometrics**.
 
-   #. On the next page tap **Continue**.
+   #. On the next screen tap **Continue**.
 
       .. image:: ../images/cryptoX/Update-passcode-and-biometrics.png
          :width: 50%
