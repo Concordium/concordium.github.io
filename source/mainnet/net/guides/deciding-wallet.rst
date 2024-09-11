@@ -8,11 +8,18 @@ Deciding between the wallets
 Why you need a wallet
 =====================
 
-You need a :term:`wallet` to interact with the Concordium blockchain and to manage your CCD. Currently, there are several first party wallets available: the Concordium Desktop Wallet, the |bw|, and three mobile wallets; the |mw-gen1|, the |mw-gen2|, and the |cryptox|. This topic outlines the major differences that you should be aware of when you decide which wallet to use.
+You need a :term:`wallet` to interact with the Concordium blockchain and manage your CCD. Currently, the following wallets are available:
+
+    - Concordium Desktop Wallet
+    - |bw|
+    - |mw-gen1|
+    - |mw-gen2|
+    - |cryptox|
+
 
 The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
 
-No import of identities and accounts between some wallets
+Portability limits between wallets
 =========================================================
 
 Before you decide which wallet to use, notice this: Due to differences in private key handling, identities and accounts cannot be exchanged between the Desktop Wallet and any of the other wallet types. The same applies between |mw-gen1| and |mw-gen2|. 
@@ -170,10 +177,10 @@ The following table lists the major features of each wallet.
       - Can connect to dApps
       - Can connect to dApps
    *  - Cannot recover in other wallet types
-      - Cannot recover in other wallet types
+      - Can recover in |cryptox|
       - Can recover in |mw-gen2| and |bw|
       - Can recover in |bw| and |mw-gen2|
-      - Can recover from |mw-gen1|, |mw-gen2|, |bw|; can be recovered in |bw| and |mw-gen2|
+      - Can recover in |bw|, |mw-gen2|, and |cryptox|.
 
 Next steps
 ==========
