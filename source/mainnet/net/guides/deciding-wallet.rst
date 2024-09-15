@@ -10,11 +10,11 @@ Why you need a wallet
 
 You need a :term:`wallet` to interact with the Concordium blockchain and manage your CCD. Currently, the following wallets are available:
 
-    - Concordium Desktop Wallet
-    - |bw|
-    - |mw-gen1|
-    - |mw-gen2|
-    - |cryptox|
+- Concordium Desktop Wallet
+- |bw|
+- |mw-gen1|
+- |mw-gen2|
+- |cryptox|
 
 
 The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, the native token of the Concordium blockchain. You can't use these wallets for any other cryptocurrencies.
@@ -22,16 +22,20 @@ The wallets are developed by Concordium Software and can only be used to hold :t
 Portability limits between wallets
 =========================================================
 
-Before you decide which wallet to use, notice this: Due to differences in private key handling, identities and accounts cannot be exchanged between the Desktop Wallet and any of the other wallet types. The same applies between |mw-gen1| and |mw-gen2|. 
-For details regarding private key handling :ref:`see below<store-private-keys>`.
+Before you decide which wallet to use, notice this: Due to differences in private key handling, there are limitations on exchanging identities and accounts between certain wallet types.
 
-You can exchange identities and accounts between the |bw| and the |mw-gen2|.
+Identities and accounts cannot be exchanged between:
 
-The |cryptox| supports importing identities and accounts from the |mw-gen2|, |mw-gen1|, and |bw|.
+- the Desktop Wallet and any of the other wallet types.
+- |mw-gen1| and |mw-gen2|.
+
+Identities and accounts *can* be exchanged between:
+
+- |bw| and the |mw-gen2|.
+
+|cryptox| supports importing identities and accounts from the |mw-gen2|, |mw-gen1|, and |bw|.
 
 You can always send CCD from one wallet to another.
-
-Considering the above, carefully select your wallet before creating identities and accounts.
 
 Which wallet is best for you?
 =============================

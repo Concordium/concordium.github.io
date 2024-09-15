@@ -18,84 +18,85 @@ Get started
 
 #. Install the |cryptox| on an Android or iOS phone. See :ref:`Downloads<downloads-cryptox>`.
 
-#. Open the |cryptox|; read and accept the Terms and Conditions.
+#. Open the |cryptox|. Read and accept the Terms and Conditions. Tap **Get started**.
 
-#. Create a six-digit passcode or use a full password.
+   .. image:: ../images/cryptox/cryptox-install1.png
+      :width: 50%
+      :alt: screen with terms and conditions
 
-   .. image:: ../images/mobile-wallet-gen2/create-passcode.png
+#. Decide whether or not to allow activity tracking. This tracking only applies to the general app usage, not funds, transactions or any personal data.
+
+   .. image:: ../images/cryptox/cryptox-install1b.png
+      :width: 50%
+      :alt: screen with activate account
+
+
+#. Tap **Activate Account**.
+
+   .. image:: ../images/cryptox/cryptox-install2.png
+      :width: 50%
+      :alt: screen with activate account
+
+#. Tap **Create wallet**.
+
+
+   .. image:: ../images/cryptox/cryptox-install4.png
+      :width: 50%
+      :alt: screen with create wallet
+
+#. Create a six-digit passcode or use a full password. Repeat passcode or password.
+
+   .. image:: ../images/cryptox/cryptox-install5.png
       :width: 50%
       :alt: screen with keypad to enter passcode
 
 
+#. Now you see your seed phrase which is the access key to all the funds in your wallet.
 
-Secret recovery phrase
-======================
+   You can either write it down, make a digital copy, or take a screenshot of it.
+   In either case, make sure to keep it somewhere safe in case you need to recover your wallet.
 
-Now you must write down and confirm your :term:`secret recovery phrase`. It is important to keep this recovery phrase in a safe location in case you need to :ref:`recover your wallet<recover-wallet>`.
+   When done, check the confirmation box and tap **Continue**.
 
-#. Tap **Set up a fresh wallet**.
-
-   .. image:: ../images/mobile-wallet-gen2/choice-start.png
+   .. image:: ../images/cryptox/cryptox-install6.png
       :width: 50%
-      :alt: screen with information about setup and options to create a new wallet or recover wallet
+      :alt: screen with information about saving seed phrase
 
-#. Tap on the screen to view your secret recovery phrase. Write down all 24 words in the exact order in which they are shown.
+#. Now you must submit a request for an identity verification. Select an identity provider.
 
-   .. image:: ../images/mobile-wallet-gen2/recovery-phrase-pre.png
+   .. image:: ../images/cryptox/cryptox-install7.png
       :width: 50%
-      :alt: screen with hidden secret recovery phrase
+      :alt: screen with identity providers
 
-#. Place a check in the box **I confirm I have written down my 24 word secret recovery phrase**.
-
-   .. image:: ../images/mobile-wallet-gen2/recovery-phrase-shown.png
-      :width: 50%
-      :alt: screen with 24 word recovery phrase shown and confirmation checkbox
-
-#. On the next screens select the word to enter in each index to confirm your secret recovery phrase. Once correct, tap **Continue**.
-
-   .. image:: ../images/mobile-wallet-gen2/recovery-phrase-confirm.png
-      :width: 50%
-      :alt: screen to enter recovery phrase so you can confirm that you have it
-
-Request your identity and account
-=================================
-
-Having set up your passcode and your secret recovery phrase, you must then submit a request for an identity and an account.
-
-Request identity
-----------------
-
-#. Read the next page in the app, shortly explaining the Concordium concepts of initial account and identity. Tap **Continue**.
-
-#. Select a third party :term:`identity provider` from the list. Enter your wallet passcode when prompted. An external web page opens within the app.
-
-   .. image:: ../images/mobile-wallet/MW11.png
-      :width: 50%
-      :alt: screen with option to select identity provider
+#. Enter your passcode or password when prompted. An external web page opens within the app.
 
 #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider.
    However, they will ask you to provide photos of identification documents and a selfie.
 
-#. When you have submitted the information to the identity provider, you will have a pending initial account and identity in your app.
-   The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve
+#. When you have submitted the information to the identity provider, the verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve
    the result. The result can be retrieved for up to seven days.
 
-   .. image:: ../images/mobile-wallet/MW12.png
+   If your identity request is rejected, you see a message. Tap **Make new identity request** to create a new identity request. You can choose another identity provider.
+
+#. Once the identity provider has approved your verification request, you can create your first account.
+
+   .. image:: ../images/cryptox/cryptox-install8.png
       :width: 50%
-      :alt: screen shown after identity verification information is submitted and request is pending
+      :alt: screen shown after identity verification information is accepted.
 
-If your identity request is rejected, you see a message. Tap **Make new identity request** to create a new identity request. You can choose another identity provider.
+#. Tap **Create account** and enter your passcode or password when prompted.
 
-Request account
----------------
-
-Once the identity provider has verified your identity you can submit an account. You can see when your identity has been verified by the green check next to the identity name.
-
-#. Tap **Submit account**. Enter your wallet passcode when prompted.
-
-   .. image:: ../images/mobile-wallet-gen2/submit-acct.png
+   .. image:: ../images/cryptox/cryptox-install9.png
       :width: 50%
-      :alt: screen shown after selecting to create account
+      :alt: screen shown after identity verification information is accepted.
+
+#. Your new account will be visible in the Accounts list.
+
+   .. image:: ../images/cryptox/cryptox-install10.png
+      :width: 50%
+      :alt: screen showing first account in list
+
+If you want to, you can :ref:`change the name of the account<change-mw-acct-name>`.
 
 Basic navigation
 ================
@@ -128,6 +129,7 @@ In the More screen |more| you have the following options.
 - Show my seed phrase: :ref:`show my seed phrase<show-seed-phrase>`
 - Update passcode and biometrics: :ref:`change your wallet passcode or activate biometrics<change-passcode-mw>`.
 
+In case you have created your wallet from a backup file, you will not have the **Show my seed phrase** option, but instead the options **Import** and **Export**.
 
 Account navigation
 ------------------
