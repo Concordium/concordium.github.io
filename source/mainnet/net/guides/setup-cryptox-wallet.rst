@@ -129,7 +129,7 @@ In the More screen |more| you have the following options.
 - Show my seed phrase: :ref:`show my seed phrase<show-seed-phrase>`
 - Update passcode and biometrics: :ref:`change your wallet passcode or activate biometrics<change-passcode-mw>`.
 
-In case you have created your wallet from a backup file, you will not have the **Show my seed phrase** option, but instead the options **Import** and **Export**.
+In case you have created your wallet from a backup file, you will not have the Recovery and  Show my seed phrase options, but instead the options :ref:`Import<import-export-file>` and :ref:`Export<import-export-file>`.
 
 Account navigation
 ------------------

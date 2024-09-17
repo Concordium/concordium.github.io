@@ -5,22 +5,58 @@
 Import/export file
 ====================
 
-Your seed phrase is the access key to all the funds in your wallet. It is important that you store a copy of it in a safe location.
+|cryptox| offers you to import or export a backup file of your wallet.
+
+When :ref:`setting up a new wallet<setup-cryptox-wallet>`, you can choose to import a backup file. After setup, the import and export functions can be found in the **More** menu.
 
 
-.. dropdown:: |cryptox|
+Import file
+===========
 
-    #. Tap **More**.
+#. Tap **More**.
 
-    #. Tap **Show my seed phrase**.
+#. Tap **Import** in the More menu.
 
-     .. image:: ../images/cryptoX/cryptoX-copy-seed-phrase.png
-                    :width: 50%
-                    :alt: screen with seed phrase
+#. Browse for the file to import.
+
+#. Choose the file and enter the password created when exporting the file.
+
+#. Enter your passcode to authorize the import.
 
 
-    #. Tap **Show seed phrase**.
+#. Tap **OK**.
 
-    #. Enter your passcode when prompted.
+  .. image:: ../images/cryptox/cryptox-import-file.png
+      :width: 50%
+      :alt: screen showning password entering during export of backup file.
 
-    #. Now you can tap **Copy to clipboard** to copy the seed phrase to the clipboard.
+After sucessfully importing the file, you will have access to your identities and accounts from the |cryptox|.
+
+
+Export file
+===========
+
+#. Tap **More**.
+
+#. Tap **Export** in the More menu.
+
+#. Tap **Export** on the Export screen.
+
+   .. image:: ../images/cryptox/cryptox-export-file1.png
+      :width: 50%
+      :alt: screen showing exporting backup file.
+
+#. Enter an export password.
+
+   Remember to store the password securely. You will need it if you want to import your account later, e.g. if you need to recover it or want to import it into another CCD wallet.
+
+   .. image:: ../images/cryptox/cryptox-export-file2.png
+      :width: 50%
+      :alt: screen showning password entering during export of backup file.
+
+#. Enter the export password once more.
+
+#. Store your file in the desired location.
+
+
+

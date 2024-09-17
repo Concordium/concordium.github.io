@@ -107,9 +107,6 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
 
-.. |wallet-settings| image:: ../images/settings.png
-                        :alt: gear wheel
-                        :width: 40px
 
 .. dropdown:: |mw-gen1|
 

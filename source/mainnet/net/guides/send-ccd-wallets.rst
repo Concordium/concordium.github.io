@@ -155,9 +155,6 @@ This topic describes how you can send CCD from an account when only one particip
          :alt: Paper airplane
          :width: 50px
 
-    .. |send-w-text| image:: ../images/send-w-text.png
-         :alt: Paper airplane with text send
-         :width: 50px
 
 .. dropdown:: |mw-gen1|
 

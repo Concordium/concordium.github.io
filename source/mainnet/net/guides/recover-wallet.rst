@@ -108,7 +108,7 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
         .. image:: ../images/cryptox/cryptox-recover-wallet4b.png
             :width: 40%
 
-    #. Tap **Use exported file **
+    #. Tap **Use exported file**
 
         .. image:: ../images/cryptox/cryptox-recover-wallet5.png
             :width: 40%

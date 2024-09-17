@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _export-transaction-logs:
 
-====================
+=======================
 Export transaction logs
-====================
+=======================
 
 It is possible to export tansaction logs with :ref:`CCD Scan<ccd-scan>` from the |cryptox|.
 
