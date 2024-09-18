@@ -11,9 +11,9 @@ What are the feature and benefits?
 .. dropdown:: What are the features and benefits of the |cryptox|?
 
     The |cryptox| is the third generation of the Concordium mobile wallets. It offers a comprehensive set of features for interacting with the Concordium blockchain.
-    It includes most of the functionality from the previous generations, but also introduces new capabilities like dApp connectivity, support for Protocol7 and an improved user interface.
+    It includes most of the functionality from the previous generations, but also introduces new capabilities like :term:`dApp connectivity`, support for Protocol7 and an improved user interface.
 
-    It offers recovery from both backup file and seed phrase and so it supports import of identities and accounts from both Concordium Wallet for Mobile, Concordium Legacy Wallet, and Concordium Wallet for Web.
+    It offers :ref:`recovery from both backup file and seed phrase<recover-wallet>` and so it supports import of identities and accounts from both Concordium Wallet for Mobile, Concordium Legacy Wallet, and Concordium Wallet for Web.
 
     |cryptox| is the wallet where ongoing development and new features will be continually introduced. If you want to stay updated, this is the version to use.
 

@@ -150,6 +150,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a :term:`zero-knowledge proof`.
 
+   dApp connectivity
+
+      The abiity of a wallet to interact with decentralized applications, dApps, on the blockchain. This allows users to access various services and platforms built on blockchain technology, such as DeFi, NFTs, and gaming.
+
    Decryption key
 
       Dual to :term:`encryption key`. In contrast to the encryption key, which is public, this key is only known to the account holder.

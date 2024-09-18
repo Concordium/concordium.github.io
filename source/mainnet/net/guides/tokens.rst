@@ -9,6 +9,93 @@ You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
 
 .. dropdown:: |cryptox|
 
+    To access tokens and token transactions, tap on an account then tap **Tokens**.
+
+    .. dropdown:: Add tokens
+
+        #. Tap **Manage**.
+
+            .. image:: ../images/cryptox/cryptox-manage-tokens.png
+                :width: 50%
+
+        #. Enter a smart contract address on which to look for tokens. Tap **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
+
+            .. image:: ../images/cryptox/cryptox-look-for-tokens.png
+                :width: 50%
+
+        #. Select the token(s) you want to add. You can tap on a token to see more information about it and then tap **Back to list** to return to the list. Tap **Apply** once you have made your selection(s).
+
+            .. image:: ../images/cryptox/cryptox-select-token.png
+                :width: 50%
+
+        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case, the screen below appears when your wallet is connected and the service suggests the tokens to be added. Tap **Add tokens** to add the selected tokens to your wallet.
+
+        .. Note::
+
+            You can add NFTs that are not owned by your account to your wallet. This does not mean that you have ownership of the NFT.
+
+        Once the tokens are added you can see them in the wallet.
+
+        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |cryptox| and convert some CCD to wrapped CCD. When you do this, you get a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |cryptox|.
+
+    .. dropdown:: Inspect tokens
+
+        Tap on the tokens tab and then tap the token to see details.
+
+         .. image:: ../images/cryptox/cryptox-inspect-tokens.png
+                :width: 50%
+
+        You can also tap **Don't show token in wallet** if you don't want the token to appear in your wallet.
+
+    .. dropdown:: Send tokens
+
+        To access send, either:
+
+        - Tap Send |cryptoX-send| on an account in the accounts overview or in the account balance screen.
+
+        or
+
+        - Tap the token under the Tokens tab in the account balance screen and tap |cryptoX-send|.
+
+        #. Tap the field for what to send.
+
+            .. image:: ../images/cryptox/cryptox-send-tokens.png
+                :width: 50%
+
+        #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token. To find the number of decimal places, you can inspect the token as described in Inspect tokens.
+
+        #. Add the receiver address.
+
+        #. Tap **Continue**.
+
+        #. Review the transaction. When satisfied, tap **Send funds**.
+
+            .. image:: ../images/cryptox/cryptox-send-tokens2.png
+                :width: 50%
+
+        #.Enter your passcode.
+
+        #. Tap **Finish**.
+
+            .. image:: ../images/cryptox/cryptox-send-tokens3.png
+                :width: 50%
+
+    .. dropdown:: Remove tokens
+
+        If you do not want the token to appear in your wallet you can remove it. This does not change the ownership of the token.
+
+        There are two ways to do this.
+
+        In the account balance screen:
+
+        - Tap on the Token tab and then tap on the token you want to remove. Tap **Don't show token in wallet**.
+
+        or
+
+        - Tap the **Manage** tab. Search for the token by the Contract index. Once the tokens on the contract are shown the tokens that are in your account have a checkmark next to them. Remove the check and tap **Apply**.
+
+
+
 .. dropdown:: |bw|
 
     To access tokens and token transactions, click Tokens |token-bw|. Tabs appear for tokens.
@@ -51,7 +138,7 @@ You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
 
     .. dropdown:: Send tokens
 
-        #. Click Send |send-bw|.
+        #. Click Send |send|.
 
         #. Click the field for what to send.
 
@@ -174,5 +261,9 @@ You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
              :width: 150px
 
 .. |send| image:: ../images/send.png
+         :alt: Paper airplane
+         :width: 50px
+
+.. |cryptoX-send| image:: ../images/cryptoX/cryptoX-send.png
          :alt: Paper airplane
          :width: 50px
