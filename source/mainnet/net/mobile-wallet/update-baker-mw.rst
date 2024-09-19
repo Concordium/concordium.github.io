@@ -64,7 +64,10 @@ Once you access the validator settings for your wallet, you have four options:
 Update validator stake and restaking preference
 ===============================================
 
-You can change the :ref:`staked amount <concepts-baker-stake>` on a validator account except during a :term:`cool-down period`. If you increase the stake, the new stake takes effect at the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. However, if you decrease the stake, there is a longer cool-down period of three weeks before the new stake is applied. During this period, you'll not be able to remove the validator account or further update the stake. After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
+You can change the :ref:`staked amount <concepts-baker-stake>` on a validator account. Changes will take effect at the next :term:`pay day`.
+If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
+However, if you decrease the stake, there is a cool-down period of three weeks.
+After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.
 
 When you change the stake it can influence your :term:`chance of being selected to produce a block<winning probability>` and receive block rewards. If you decrease the stake, you decrease your chances of producing blocks. Likewise, if you increase the stake, you increase your chances of producing a block.
 
@@ -95,10 +98,6 @@ When you change the stake it can influence your :term:`chance of being selected 
     On the overview screen, check the information. Once you are satisfied, tap **Submit transaction**.
 
     Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-    .. Note::
-
-        Reducing your stake results in a longer :term:`cool-down period`. The staked amount will be locked during this period and cannot be increased or decreased; you can still change restaking preferences during cool-down. The stake reduction is not effective until the next :term:`pay day` after cool-down period ends. During the cool-down period the staked amount continues earning rewards.
 
 .. dropdown:: |bw|
 
@@ -163,8 +162,6 @@ When you change the stake it can influence your :term:`chance of being selected 
                :alt: screen to update validator stake and restake preference options
                :width: 50%
 
-        .. Note::
-            If you reduce the staked amount, a :term:`cool-down<cool-down period>` period applies.
 
         5. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
@@ -772,7 +769,8 @@ If you believe your validator keys have been compromised or lost, you can genera
 Stop validation
 ===============
 
-If you remove a validator, the node that is configured with the :term:`validator keys<private keys>` will stop producing blocks after a :term:`cool-down period` of three weeks. During this period, you'll not be able update the stake. After the cool-down period, the amount that you previously staked is returned to your disposable balance at the next :term:`pay day`. When you've removed the validator, it is recommended that you also remove the keys from the node. If you want to use the node for validation at a later point in time, you'll then have to create a new set of validator keys.
+If you remove a validator, the node that is configured with the :term:`validator keys<private keys>` will stop producing blocks after the next :term:`pay day`.
+After the :term:`cool-down period`, the amount that you previously staked is returned to your disposable balance at the next pay day. When you've removed the validator, it is recommended that you also remove the keys from the node. If you want to use the node for validation at a later point in time, you'll then have to create a new set of validator keys.
 
 If you no longer wish to produce blocks on this account, you can stop validation.
 
@@ -789,7 +787,7 @@ If you no longer wish to produce blocks on this account, you can stop validation
     #. Review the information. When you are satisfied, tap **Submit validator transaction**.
 
     #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**.
-    
+
 .. dropdown:: |mw-gen2| and |mw-gen1|
 
     #. Tap **Stop validation**.
@@ -934,9 +932,6 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
         #. Select **Finish** to leave the page.
 
-.. Note::
-
-    When you stop as a validator, there is a longer :term:`cool-down period` before the transaction takes effect. During the cool-down period, your stake continues to earn rewards.
 
 .. Note::
 
