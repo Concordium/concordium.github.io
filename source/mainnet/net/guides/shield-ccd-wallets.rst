@@ -44,6 +44,33 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
 .. dropdown:: |cryptox|
 
+    #. On the accounts screen, tap **More**.
+
+    #. Tap **Funds to Unshield**.
+
+    #. Tap **Unshield**.
+
+        .. image:: ../images/cryptox/cryptox-unshield-funds1.png
+            :width: 40%
+
+    #. Enter your passcode.
+
+    #. Tap **Unshield funds**
+
+        .. image:: ../images/cryptoX/cryptox-unshield-funds2.png
+            :width: 40%
+
+    #. Enter your passcode.
+
+    #. Tap **Done, let's move on**.
+
+        .. image:: ../images/cryptoX/cryptox-unshield-funds3.png
+            :width: 40%
+
+    Your transaction has now been submitted to the blockchain. Tap **Finish**.
+
+    The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
+
 .. dropdown:: Desktop Wallet
 
     #. Select **Shielded Balance** on the relevant account, and then select **Unshield**.
