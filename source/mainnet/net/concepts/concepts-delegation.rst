@@ -48,9 +48,10 @@ The commission rates for passive delegation are fixed at 25% for both block comm
 Time and cool-downs
 ===================
 
-Changes to the pools take effect every 24 hours at :term:`pay day`. So opening a pool, increasing the stake, moving the stake between pools or between passive delegation and a stakiing pool all take effect at the :term:`pay day`. At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last :term:`epoch` before pay day, then the change has to wait until the second pay day.
+Changes to the pools take effect every 24 hours at :term:`pay day`. So opening a pool, changing the stake, moving the stake between pools or between passive delegation and a stakiing pool all take effect at the :term:`pay day`.
+At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last :term:`epoch` before pay day, then the change has to wait until the second pay day.
 
-But decreasing the stake (whether for delegators or validators) is subject to a cool-down period. In other words, once the transaction has been included in a block the cool-down period starts. Unstaking takes effect at the pay day event after the cool-down has elapsed, and the party's stake will be unlocked. During the cool down, the stake is still invested in the pool and earns rewards as before.
+When decreasing or removing the stake (whether for delegators or validators), the unstaked funds are not released until after a :term:`cool-down period`.
 
 Where delegation is available
 =============================

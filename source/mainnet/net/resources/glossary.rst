@@ -128,7 +128,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Cool-down period
 
-      A period of time during which a transaction is frozen. Examples of when cool-down periods apply include removing a validator and updating stake. The length of a cool-down period varies between transactions.
+      A period of time during which a transaction is frozen.
 
    Concordium Byzantine Fault Tolerance (BFT) protocol
 
