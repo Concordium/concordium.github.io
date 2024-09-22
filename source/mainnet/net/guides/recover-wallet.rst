@@ -108,7 +108,7 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
         .. image:: ../images/cryptox/cryptox-recover-wallet4b.png
             :width: 40%
 
-    #. Tap **Use exported file**
+    #. Tap **Use exported file** and pick the file in the system dialog
 
         .. image:: ../images/cryptox/cryptox-recover-wallet5.png
             :width: 40%
@@ -191,7 +191,7 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
 
     Recovery of |mw-gen1| requires a valid backup file. For more information about this process, see :ref:`backup and restore<mobile-wallet-recover>`.
 
-    If you want to recover your |mw-gen1| wallet to |cryptox|, se the description above for recovering on |cryptox| with a backup file.
+    If you want to recover your |mw-gen1| wallet to |cryptox|, see the description above for recovering on |cryptox| with a backup file.
 
 .. dropdown:: Desktop Wallet
 

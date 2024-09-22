@@ -73,7 +73,7 @@ You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
             .. image:: ../images/cryptox/cryptox-send-tokens2.png
                 :width: 50%
 
-        #.Enter your passcode.
+        #. Enter your passcode.
 
         #. Tap **Finish**.
 
