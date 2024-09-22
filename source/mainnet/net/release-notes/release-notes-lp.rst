@@ -18,35 +18,63 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    **1.1.1 - June 11, 2024**
+    **1.2.0 - August 27, 2024**
 
-    Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor
+    This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.
 
-    **1.1.0 - June 06, 2024**
+    Added:
 
-    Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
+    - CCD listings – browse exchanges and services where CCD can be purchased
 
-    What has been removed:
+    - Optional anonymous analytics powered by Matomo
 
-    - Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available
+    - Concordium newsfeed
 
-    The following features have been added:
+    - Support for company identities created with Global FinReg
 
-    - Ability to unshield your balances from the "More" screen
+    Fixed:
 
-    - Support for signing WalletConnect binary messages
+    - Visually increasing the balance after sending CCD instead of decreasing it
 
-    - Ability to paste the phrase from the clipboard when importing a wallet
+    - Adding newly created accounts to the address book with a blank name
 
-    Other changes:
+    - Incorrect text colors in dark theme on Xiaomi
 
-    - The "Watch video" link on the welcome screen now opens the account creation tutorial
+    Changed:
 
-    - Updated the Terms and the Privacy Policy
-
-    - Fixed a way to get into an empty wallet without confirming the seed phrase
+    - The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.1.0 and 1.1.1 - June, 2024
+
+            **1.1.1 - June 11, 2024**
+
+            Version 1.1.1 improves WalletConnect pairing stability in situations where the connection is poor
+
+            **1.1.0 - June 06, 2024**
+
+            Version 1.1.0 removes shielding, simplifies restoring a phrase-based wallet and fixes some issues.
+
+            What has been removed:
+
+            - Shielding – now it is only possible to unshield your balances, while shielding and sending shielded funds are no longer available
+
+            The following features have been added:
+
+            - Ability to unshield your balances from the "More" screen
+
+            - Support for signing WalletConnect binary messages
+
+            - Ability to paste the phrase from the clipboard when importing a wallet
+
+            Other changes:
+
+            - The "Watch video" link on the welcome screen now opens the account creation tutorial
+
+            - Updated the Terms and the Privacy Policy
+
+            - Fixed a way to get into an empty wallet without confirming the seed phrase
 
         .. dropdown:: |cryptox| 1.0.0 - April 25, 2024
 
@@ -125,11 +153,17 @@ Wallets
 |mw-gen2| for iOS
 -----------------
 
-    August 5, 2024
+    September 5, 2024
 
-    Version 1.5.0 fixes several bugs in the CIS-2 functionality.
+    Version 1.5.1 removes shielding. You can still see your shielded balance and history, but to unshield the funds |cryptox| must be used.
+
+    This version also resolves an issue with the "Send All" button functionality on the Send Funds screen.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.5.0 - August 5, 2024
+
+            Version 1.5.0 fixes several bugs in the CIS-2 functionality.
 
         .. dropdown:: |mw-gen2| 1.4.0 - November 29, 2023
 
@@ -305,11 +339,19 @@ Wallets
 |bw|
 -------------------------
 
-    August 14, 2024
+    August 21, 2024
 
-    Version 1.6.2 Aligned wallet API and wallet web-sdk versions to ensure consistent value serialization. This resolves an issue causing transactions like 'initiate contract' to fail.
+    Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint `/v2/ip_info`.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.6.3 - August 19, 2024
+
+            Use new wallet proxy endpoint `/v2/ip_info` for Testnet, which includes Company ID Providers, as these are now removed from the `/v1/ip_info`.
+
+        .. dropdown:: |bw| 1.6.2 - August 14, 2024
+
+            Aligned wallet API and wallet web-sdk versions to ensure consistent value serialization. This resolves an issue causing transactions like 'initiate contract' to fail.
 
         .. dropdown:: |bw| 1.6.1 - August 8, 2024
 
@@ -621,6 +663,7 @@ Desktop Wallet
     - Minor Bug Fixes: Addressed minor issues in the Concordium Legacy Wallet to improve the user experience.
 
     .. dropdown:: Previous releases
+
         .. dropdown:: |mw-gen1| 3.2.2 - November 30, 2023
 
             |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
