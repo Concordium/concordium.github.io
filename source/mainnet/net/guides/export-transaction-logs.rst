@@ -21,7 +21,7 @@ It is possible to export tansaction logs with :ref:`CCD Scan<ccd-scan>` from the
                     :alt: screen with seed phrase
 
 
-    #. Tapp **Save transaction logs** and browse to the saving location.
+    #. Tap **Save transaction logs** and browse to the saving location.
 
 .. |cryptoX-acct-settings| image:: ../images/cryptoX/cryptoX-acct-settings.png
                     :alt: gear wheel on blue background
