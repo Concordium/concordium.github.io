@@ -128,7 +128,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Cool-down period
 
-      A period of time during which a transaction is frozen.
+      A period of time during which the funds are frozen and cannot be spent.
 
    Concordium Byzantine Fault Tolerance (BFT) protocol
 

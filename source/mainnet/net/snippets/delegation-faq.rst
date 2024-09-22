@@ -4,6 +4,15 @@
 Delegation and validation FAQ
 =============================
 
+.. Note::
+
+    **Changes from Protocol 6 to Protocol 7**
+
+    - In P6, when you reduce or remove your stake, the effect of the change is delayed for the cooldown period.
+      You can't make other changes to the stake while this change is pending. The stake is still active in this period and cannot be spent.
+    - In P7, when you reduce or remove your stake, it immediately goes into an inactive cooldown state, where it cannot be spent,
+      but won't count as active stake (e.g. for rewards). The stake in cooldown will be available to spend after the cooldown period elapses.
+
 For delegators
 --------------
 
