@@ -5,7 +5,9 @@
 Connect dApps to wallets
 ===================================
 
-You can connect the |cryptox|, |bw|, and |mw-gen2| to a `dApp <https://en.wikipedia.org/wiki/Decentralized_application>`__ that has a frontend interface so that you can pay for services. You can initiate the request from within the |bw| or |mw-gen2|, or the dApp can initiate a connection request that you must confirm. Connection can be made by either scanning a QR code or from a link to the dApp service.
+You can connect the |cryptox|, |bw|, and |mw-gen2| to a `dApp <https://en.wikipedia.org/wiki/Decentralized_application>`__ that has a frontend interface so that you can pay for services.
+Connection can be made by either scanning a QR code or from a link to the dApp service.
+Then, the dApp can initiate a request that you can confirm from within the wallet.
 
 .. dropdown:: |cryptox|
 

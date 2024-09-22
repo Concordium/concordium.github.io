@@ -18,7 +18,7 @@ You can make transactions using either the Desktop Wallet, the |cryptox|, |mw-ge
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
 | Send CCD with a schedule   |               |                |                   | |check|       | |check|           |           |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
-| Unshield CCD               | |check|       | |check|        |                   | |check|       | |check|           |           |
+| Unshield CCD               |               |                |                   |               |                   | |check|   |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
 | Add validator              | |check|       | |check|        | |check|           | |check|       | |check|           | |check|   |
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
@@ -41,7 +41,7 @@ You can make transactions using either the Desktop Wallet, the |cryptox|, |mw-ge
 | Manage tokens              |               | |check|        |                   | |check|       + |check|           + |check|   +
 +----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
 
-- |cryptox|: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage tokens.
+- |cryptox|: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage tokens, and unshielding.
 - |bw|: supports send CCD, receive CCD, connect to dApps, validator management, delegation.
 - |mw-gen2|: supports send CCD, receive CCD, unshield CCD (:ref:`deprecated<shielded-balance-feature-deprecation>`), validator management, delegation, connect to dApps, add and manage tokens.
 - |mw-gen1|: supports send CCD, receive CCD, unshield CCD (:ref:`deprecated<shielded-balance-feature-deprecation>`), validator management, delegation
