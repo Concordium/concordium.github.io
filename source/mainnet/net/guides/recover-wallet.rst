@@ -74,7 +74,7 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
 
     .. Note::
 
-        When you recover your wallet, any account names that you might have edited will be reset to the account number. You can :ref:`edit the account name<change-mw-acct-name>`, if desired.
+        When you recover your wallet, any account or identity names that you might have edited will be reset. You can :ref:`edit the account name<change-mw-acct-name>`, if desired.
 
 
 .. dropdown:: |cryptox| - recover with backup file
