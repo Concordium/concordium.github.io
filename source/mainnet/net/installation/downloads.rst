@@ -28,6 +28,8 @@ It is the main Concordium mobile wallet and has the widest set of features.
       :width: 29.5%
       :target: https://play.google.com/store/apps/details?id=com.pioneeringtechventures.wallet
 
+   You can download standalone installable packages (APKs) for Android here: https://github.com/Concordium/cryptox-android/releases
+
 .. dropdown:: Testnet
 
    **iOS**
@@ -42,6 +44,8 @@ It is the main Concordium mobile wallet and has the widest set of features.
    .. image:: ../images/mobile-wallet/google-play-badge.png
       :width: 29.5%
       :target: https://play.google.com/store/apps/details?id=com.pioneeringtechventures.wallet.testnet
+
+   You can download standalone installable packages (APKs) for Android here: https://github.com/Concordium/cryptox-android/releases
 
 .. _downloads-mwgen2:
 
