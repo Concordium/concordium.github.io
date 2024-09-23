@@ -14,9 +14,9 @@
 .. |cryptox| replace:: CryptoX Concordium Wallet
 
 .. Client verification variables
-.. |client-linux| replace:: concordium-client_6.3.0-1
-.. |client-version| replace:: 6.3.0-1
-.. |client-linux-checksum| replace:: f2957c8cfdad459154e674151008d47e8adfccc19245f54ffb926e98dce52d0e
+.. |client-linux| replace:: concordium-client_7.0.1-0
+.. |client-version| replace:: 7.0.1-0
+.. |client-linux-checksum| replace:: 1fb19a983281fbfd3585849f7c9e93051389214460dc2d917c87fc6533c38958
 
 .. Cargo verification variables
 .. |cargo-linux| replace:: cargo-concordium_2.8.0
@@ -25,7 +25,7 @@
 
 .. Node version variables
 .. |mainnet-node-version| replace:: 6.3.1
-.. |testnet-node-version| replace:: 6.3.1
+.. |testnet-node-version| replace:: 7.0.4
 
 .. Node debian package verification variables
 .. |node-deb-package| replace:: concordium-mainnet-node_6.3.1-0_amd64.deb
