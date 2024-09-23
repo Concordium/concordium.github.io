@@ -42,7 +42,7 @@ What are the feature and benefits?
 
 .. dropdown:: Do I still need to make backups of my wallet?
 
-    For |cryptox|, |mw-gen2| and |bw| you don't need to make backups. Your :term:`seeed phrase` that you write down is the only way to :ref:`recover your accounts and identities<recover-wallet>`.
+    For |cryptox|, |mw-gen2| and |bw| you don't need to make backups. Your :term:`seed phrase` that you write down is the only way to :ref:`recover your accounts and identities<recover-wallet>`.
 
     However, if you migrated your wallet from a |mw-gen1| backup file, you'll need to maintain file-based backups of your |cryptox| as well. This is due to potential legacy dependencies that might still exist within your wallet.
 
