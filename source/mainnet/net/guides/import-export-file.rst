@@ -42,7 +42,7 @@ Export file
 
 #. Tap **Export** on the Export screen.
 
-   .. image:: ../images/cryptox/cryptox-export-file1.png
+   .. image:: ../images/cryptoX/cryptox-export-file1.png
       :width: 50%
       :alt: screen showing exporting backup file.
 
@@ -50,7 +50,7 @@ Export file
 
    Remember to store the password securely. You will need it if you want to import your account later, e.g. if you need to recover it or want to import it into another CCD wallet.
 
-   .. image:: ../images/cryptox/cryptox-export-file2.png
+   .. image:: ../images/cryptoX/cryptox-export-file2.png
       :width: 50%
       :alt: screen showning password entering during export of backup file.
 
