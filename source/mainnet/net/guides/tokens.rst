@@ -28,7 +28,6 @@ You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
             .. image:: ../images/cryptox/cryptox-select-token.png
                 :width: 50%
 
-        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case, the screen below appears when your wallet is connected and the service suggests the tokens to be added. Tap **Add tokens** to add the selected tokens to your wallet.
 
         .. Note::
 

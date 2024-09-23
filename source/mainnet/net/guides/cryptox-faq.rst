@@ -77,8 +77,8 @@ What are the feature and benefits?
 
     Also note that addresses are specific to the device. Only addresses for your own account are added to the address book on the new device, other addresses must be added manually.
 
-    It is also important to note that if you recover a wallet on two devices from the same seed phrase, only account balances are synchronized between the two devices.
-    New accounts or identities created on the one device will not be accessible on the other. If you wish to synchronize, you must recover from the seed phrase again.
+    If you recover a wallet on two devices from the same seed phrase, accounts and identities are synchronized between the two devices at this exact moment.
+    New accounts or identities created on the one device will not be accessible on the other until a recovery is manually started from the **More** screen.
 
 .. dropdown:: Can I use my seed phrase to restore my accounts in third-party wallets?
 
