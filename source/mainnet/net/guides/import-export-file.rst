@@ -26,7 +26,7 @@ Import file
 
 #. Tap **OK**.
 
-  .. image:: ../images/cryptox/cryptox-import-file.png
+  .. image:: ../images/cryptoX/cryptox-import-file.png
       :width: 50%
       :alt: screen showning password entering during export of backup file.
 
