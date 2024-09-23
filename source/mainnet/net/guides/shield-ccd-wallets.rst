@@ -50,7 +50,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
     #. Tap **Unshield**.
 
-        .. image:: ../images/cryptox/cryptox-unshield-funds1.png
+        .. image:: ../images/cryptoX/cryptox-unshield-funds1.png
             :width: 40%
 
     #. Enter your passcode.
