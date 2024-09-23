@@ -15,7 +15,7 @@ You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
 
         #. Tap **Manage**.
 
-            .. image:: ../images/cryptoX/cryptox-manage-tokens.png
+            .. image:: ../images/cryptoX/Cryptox-manage-tokens.png
                 :width: 50%
 
         #. Enter a smart contract address on which to look for tokens. Tap **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
