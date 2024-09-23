@@ -113,7 +113,7 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
         .. image:: ../images/cryptox/cryptox-recover-wallet5.png
             :width: 40%
 
-    #. Enter the password you created when exporting the backup file. Tap **Continue**.
+    #. Enter the password you created when exporting the backup file. Tap **Continue**. It may take a little while for recovery to complete.
 
         .. image:: ../images/cryptox/cryptox-recover-wallet10.png
             :width: 40%
