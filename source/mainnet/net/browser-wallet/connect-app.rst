@@ -28,7 +28,7 @@ Then, the dApp can initiate a request that you can confirm from within the walle
 
    #. When the transaction is submitted, tap **Finish** to teturn to the account screen.
 
-      .. image:: ../images/cryptoX/cryptoX-connect-dapps3.png
+      .. image:: ../images/cryptoX/cryptox-connect-dapps3.png
          :alt: screen with information about session and options to accept or decline
          :width: 50%
 
