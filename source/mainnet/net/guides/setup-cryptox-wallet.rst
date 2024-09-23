@@ -20,33 +20,33 @@ Get started
 
 #. Open the |cryptox|. Read and accept the Terms and Conditions. Tap **Get started**.
 
-   .. image:: ../images/cryptox/cryptox-install1.png
+   .. image:: ../images/cryptoX/cryptox-install1.png
       :width: 50%
       :alt: screen with terms and conditions
 
 #. Decide whether or not to allow activity tracking. This tracking only applies to the general app usage, not funds, transactions or any personal data.
 
-   .. image:: ../images/cryptox/cryptox-install1b.png
+   .. image:: ../images/cryptoX/cryptox-install1b.png
       :width: 50%
       :alt: screen with activate account
 
 
 #. Tap **Activate Account**.
 
-   .. image:: ../images/cryptox/cryptox-install2.png
+   .. image:: ../images/cryptoX/cryptox-install2.png
       :width: 50%
       :alt: screen with activate account
 
 #. Tap **Create wallet**.
 
 
-   .. image:: ../images/cryptox/cryptox-install4.png
+   .. image:: ../images/cryptoX/cryptox-install4.png
       :width: 50%
       :alt: screen with create wallet
 
 #. Create a six-digit passcode or use a full password. Repeat passcode or password.
 
-   .. image:: ../images/cryptox/cryptox-install5.png
+   .. image:: ../images/cryptoX/cryptox-install5.png
       :width: 50%
       :alt: screen with keypad to enter passcode
 
@@ -58,13 +58,13 @@ Get started
 
    When done, check the confirmation box and tap **Continue**.
 
-   .. image:: ../images/cryptox/cryptox-install6.png
+   .. image:: ../images/cryptoX/cryptox-install6.png
       :width: 50%
       :alt: screen with information about saving seed phrase
 
 #. Now you must submit a request for an identity verification. Select an identity provider.
 
-   .. image:: ../images/cryptox/cryptox-install7.png
+   .. image:: ../images/cryptoX/cryptox-install7.png
       :width: 50%
       :alt: screen with identity providers
 
@@ -80,19 +80,19 @@ Get started
 
 #. Once the identity provider has approved your verification request, you can create your first account.
 
-   .. image:: ../images/cryptox/cryptox-install8.png
+   .. image:: ../images/cryptoX/cryptox-install8.png
       :width: 50%
       :alt: screen shown after identity verification information is accepted.
 
 #. Tap **Create account** and enter your passcode or password when prompted.
 
-   .. image:: ../images/cryptox/cryptox-install9.png
+   .. image:: ../images/cryptoX/cryptox-install9.png
       :width: 50%
       :alt: screen shown after identity verification information is accepted.
 
 #. Your new account will be visible in the Accounts list.
 
-   .. image:: ../images/cryptox/cryptox-install10.png
+   .. image:: ../images/cryptoX/cryptox-install10.png
       :width: 50%
       :alt: screen showing first account in list
 
