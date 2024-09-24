@@ -1302,11 +1302,48 @@ Mainnet
 Testnet
 -------
 
-    June 20, 2024
+    September 23, 2024
 
-    Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
+    Concordium node version 7.0.4 contains support for `protocol version 7 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P7.txt>`_.
+    The new consensus protocol will take effect on the testnet on September 30, 2024.
+    **Node runners should upgrade to version 7.0.4 before the protocol update to ensure that their nodes do not shut down.**
+
+    Protocol version 7 introduces the following changes:
+
+    - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
+
+        - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
+          (Previously, the reduction was only effective after the cool-down period.)
+
+        - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
+          This includes registering as a validator when the account was previously a delegator, or vice versa.
+          (Previously, the account had to wait for the cool-down period to end before making further changes.)
+
+    - Shielded transfers are no longer supported in the protocol.
+      It is still possible to unshield a previously shielded balance.
+
+    - Smart contract execution costs are reduced.
+      This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
+
+    - Smart contracts can now query the module reference and contract name of a smart contract instance.
+
+    - The block hashing scheme is redefined to better support light clients.
+
+    Additionaly, the node release includes a number of fixes and improvements:
+
+    - Logging around protocol updates is improved.
+    - Failed gRPC requests are now logged at ``DEBUG`` level.
+    - Fixed a bug where ``GetBakersRewardPeriod`` returns incorrect data.
+    - Fixed a bug where ``GetPoolInfo`` returns incorrect data.
+    - Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.
+    - Improved the behavior of the node in the event of an unrecoverable error in consensus.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.1 - June 20, 2024
+
+            Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
+
 
         .. dropdown:: 6.3.0 - February 20, 2024
 
@@ -1795,24 +1832,43 @@ Tools
 Concordium Client
 -----------------
 
-    June 07, 2024
+    September 23, 2024
 
-    Concordium Client 6.3.0 includes support for the following:
+    Concordium Client 7.0.1 includes the following features and bug fixes:
 
-    - Breaking change: Change command ``transaction submit`` to submit already-signed transactions to the chain (transactions must now already be signed, e.g. with ``transaction add-signature``).
+    - Support node version 7 and protocol version 7.
 
-    - Remove command ``raw SendTransaction``.
+    - Display the "at disposal" balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.
 
-    - Remove command ``transaction send-shielded`` to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
+    - From protocol version 7, list the stake cooldowns that are effective on an account in the account info output.
 
-    - Remove command ``account shield`` to disable the transfer of CCD from the public balance to the shielded balance of an account.
+    - Improved checks when configuring a validator or delegator.
 
-    - Add command ``transaction add-signature`` to add a signature to a partially-signed transaction.
+    - Fix the display of the expected expiry of pending changes to an account's stake.
 
-    - Add optional ``--out`` flag to all transaction-creating commands to output a partially-signed transaction to a file.
+    - Fix a bug in correctly accounting for parsed events.
+
+    - Rename the ``--out`` flag for ``validator add`` to ``--validator-credentials-out`` to fix the conflict with the ``--out`` flag used to write a partially-signed transaction to a file.
 
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.0 - June 07, 2024
+
+            Concordium Client 6.3.0 includes support for the following:
+
+            - Breaking change: Change command ``transaction submit`` to submit already-signed transactions to the chain (transactions must now already be signed, e.g. with ``transaction add-signature``).
+
+            - Remove command ``raw SendTransaction``.
+
+            - Remove command ``transaction send-shielded`` to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
+
+            - Remove command ``account shield`` to disable the transfer of CCD from the public balance to the shielded balance of an account.
+
+            - Add command ``transaction add-signature`` to add a signature to a partially-signed transaction.
+
+            - Add optional ``--out`` flag to all transaction-creating commands to output a partially-signed transaction to a file.
+
 
         .. dropdown:: 6.2.1 - November 28, 2023
 
