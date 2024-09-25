@@ -29,9 +29,10 @@ What are the feature and benefits?
 
 .. dropdown:: What happens if I lose my seed phrase?
 
-    If you accidentally throw away the paper your :term:`seed phrase` is written on, forget where you hid it, or do not pass it on to an heir, you no longer have the ability to :ref:`recover your wallet<recover-wallet>` and can lose access to your CCDs. If someone steals your seed phrase, they can access your CCDs. **If you lose your seed phrase you lose access to your CCDs.**
+    If you accidentally throw away the paper your :term:`seed phrase` is written on, forget where you hid it, or do not pass it on to an heir, you no longer have the ability to :ref:`recover your wallet<recover-wallet>`
+    and can lose access to your funds. If someone steals your seed phrase, they can access your funds. **If you lose your seed phrase, you lose access to your funds.**
 
-    As long as you have your seed phrase, you have your CCDs. If you break a phone containing your wallet, you haven’t lost your CCDs. You can simply :ref:`enter your seed phrase<recover-wallet>` into a newly downloaded |cryptox|, |mw-gen2| or |bw|.
+    As long as you have your seed phrase, you have your funds. If you break a phone containing your wallet, nothing is lost. You can simply :ref:`enter your seed phrase<recover-wallet>` into a newly downloaded |cryptox|, |mw-gen2| or |bw|.
 
 .. dropdown:: How can I keep my seed phrase secure?
 
