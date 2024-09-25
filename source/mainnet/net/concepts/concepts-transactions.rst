@@ -72,7 +72,7 @@ Tools
 The |cryptox|
 ------------------
 
-The |cryptox| is a digital smartphone wallet with a simpler onboarding process that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, validate and delegate, add and manage tokens, connect to dApps, and to export and import your accounts and identities.
+The |cryptox| is a digital smartphone wallet with a simpler onboarding process that enables you to create and manage your Concordium identities and accounts, to create simple transactions, validate and delegate, add and manage tokens, connect to dApps, and to export and import your accounts and identities.
 
 The Desktop Wallet
 ------------------
