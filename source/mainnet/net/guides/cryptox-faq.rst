@@ -5,9 +5,6 @@
 |cryptox| FAQ
 ======================
 
-What are the feature and benefits?
-----------------------------------
-
 .. dropdown:: What are the features and benefits of the |cryptox|?
 
     The |cryptox| is the third generation of the Concordium mobile wallets. It offers a comprehensive set of features for interacting with the Concordium blockchain.
