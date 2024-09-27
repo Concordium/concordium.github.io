@@ -13,6 +13,10 @@ Delegation and validation FAQ
     - In P7, when you reduce or remove your stake, it immediately goes into an inactive cooldown state, where it cannot be spent,
       but won't count as active stake (e.g. for rewards). The stake in cooldown will be available to spend after the cooldown period elapses.
 
+.. Note::
+
+    Some features may function differently until Protocol 7 is fully implemented.
+
 For delegators
 --------------
 
