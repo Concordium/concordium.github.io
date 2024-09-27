@@ -40,7 +40,36 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
 .. Note::
 
-    On Testnet you can request CCDs for testing purposes. Use the button in either Desktop Wallet, |mw-gen2|, or |mw-gen1| to request 2000 CCDs.
+    On Testnet you can request CCDs for testing purposes. Use the button in an account to request 20000 CCDs.
+
+.. dropdown:: |cryptox|
+
+    #. On the accounts screen, tap **More**.
+
+    #. Tap **Funds to Unshield**.
+
+    #. Tap **Unshield**.
+
+        .. image:: ../images/cryptoX/cryptox-unshield-funds1.png
+            :width: 40%
+
+    #. Enter your passcode.
+
+    #. Tap **Unshield funds**
+
+        .. image:: ../images/cryptoX/cryptox-unshield-funds2.png
+            :width: 40%
+
+    #. Enter your passcode.
+
+    #. Tap **Done, let's move on**.
+
+        .. image:: ../images/cryptoX/cryptox-unshield-funds3.png
+            :width: 40%
+
+    Your transaction has now been submitted to the blockchain. Tap **Finish**.
+
+    The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
 
 .. dropdown:: Desktop Wallet
 
@@ -64,47 +93,9 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
     When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the **Transfers** list.
 
-.. dropdown:: |mw-gen2|
+.. Note::
 
-    #. Go to the **Accounts** page.
-
-    #. Tap the account you want to unshield CCD on or tap |more-acct| on the account card.
-
-    #. If the Shielded balance is already shown, tap the Shielded balance tab.
-
-        - If the **Unshield** button and **Shielded balance** tab are not visible, tap |acct-settings| then select **Show shielded balance**.
-
-    #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
-
-    #. Tap |unshield-mw|.
-
-    #. Enter the amount you want to move to the regular balance.
-
-        .. image:: ../images/mobile-wallet/MW48.png
-            :width: 25%
-
-    #. Tap **Unshield amount**.
-
-        .. image:: ../images/mobile-wallet/MW49.png
-            :width: 25%
-
-    #. Confirm your choices and tap **Unshield amount**.
-
-        .. image:: ../images/mobile-wallet/MW50.png
-            :width: 25%
-
-    #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
-
-        .. image:: ../images/mobile-wallet/MW51.png
-            :width: 25%
-
-    The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
-
-    .. Note::
-
-        You can hide the shielded balance. In the Account transaction overview tap |acct-settings| and tap
-        **Hide shielded balance**. This removes the shielded balance tab. Note that the shielded balance still
-        exists on the account; it is just not shown in the interface.
+    Unshielding is no more possible in |mw-gen1| and |mw-gen2|. In order to unshield funds, you must migrate to |cryptox|.
 
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow
@@ -118,50 +109,7 @@ If you have an account with CCD in the shielded balance, you can't add new crede
                     :alt: dissolving shield on blue background
                     :width: 50px
 
-.. dropdown:: |mw-gen1|
 
-    #. Go to the **Accounts** page.
-
-    #. Tap the account you want to unshield CCD on or tap |moredetails| on the account card.
-
-    #. If the Shielded balance is already shown, tap the Shielded balance tab.
-
-        - If the **Unshield** button and **Shielded balance** tab are not visible, tap the |hamburger| menu in the upper right corner. Tap **Show shielded balance on account name**.
-
-    #. Now the totals area contains tabs for both **Balance** and **Shielded Balance** and an **Unhield** button.
-
-    #. Tap **UNSHIELD**.
-
-        .. image:: ../images/mobile-wallet/MW47.png
-            :width: 25%
-
-    #. Enter the amount you want to move to the regular balance.
-
-        .. image:: ../images/mobile-wallet/MW48.png
-            :width: 25%
-
-    #. Tap **Unshield amount**.
-
-        .. image:: ../images/mobile-wallet/MW49.png
-            :width: 25%
-
-    #. Confirm your choices and tap **Unshield amount**.
-
-        .. image:: ../images/mobile-wallet/MW50.png
-            :width: 25%
-
-    #. Your shielding transaction has now been submitted to the blockchain. Tap **Finish**.
-
-        .. image:: ../images/mobile-wallet/MW51.png
-            :width: 25%
-
-    The transaction might take a little while to finalize on the blockchain, and you can follow the status in the transaction log.
-
-    .. Note::
-
-        You can hide the shielded balance. In the Account transaction overview tap the |hamburger| menu and
-        tap **Hide shielded balance for account name**. This removes the shielded balance tab view.
-        Note that the shielded balance still exists on the account, it is just not shown in the interface.
 
     .. |hamburger| image:: ../images/hamburger.png
             :alt: Three horizontal lines

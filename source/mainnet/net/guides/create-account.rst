@@ -8,9 +8,35 @@ Create an account
 If you are using |mw-gen1| or Desktop Wallet, when you created your :term:`identity`, it came with an :term:`initial account`. The initial account is a special account that the :term:`identity provider` submits
 to the chain. When you already have an identity, you can create more :term:`accounts<account>` with that identity yourself.
 
-If you are using |bw| or |mw-gen2|, no initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
+If you are using |bw|, |mw-gen2| or |cryptox|, no initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
+
+.. dropdown:: |cryptox|
+
+    #. Go to the Accounts screen.
+
+    #. Tap the **+** in the upper left corner.
+
+    #. Enter the name of the account and tap **Continue**.
+
+        .. image:: ../images/cryptoX/create-acct-set-name.png
+            :width: 50%
+
+    #. Tap the identity you want to use for the new account.
+
+        .. image:: ../images/cryptoX/create-acct-select-identity.png
+            :width: 50%
+
+    #. Tap **Done** to finalize the account.
+
+        .. image:: ../images/cryptoX/create-acct-finalize.png
+            :width: 50%
+
+
+    Your new account is now visible on the Accounts screen . It might take a little while for it to finalize on the chain.
+
+    You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
 
 .. dropdown:: Desktop Wallet
 

@@ -5,6 +5,7 @@
 |mw-gen2| FAQ
 ======================
 
+
 .. dropdown:: Why was the |mw-gen2| made?
 
     The |mw-gen2| includes the introduction of a :term:`secret recovery phrase`, which simplifies any :ref:`restoration of an account<recover-wallet>` should you lose access to the phone/app. Also, this version supports easy portability of accounts between this and the |bw|.

@@ -4,6 +4,19 @@
 Delegation and validation FAQ
 =============================
 
+.. Note::
+
+    **Changes from Protocol 6 to Protocol 7**
+
+    - In P6, when you reduce or remove your stake, the effect of the change is delayed for the cooldown period.
+      You can't make other changes to the stake while this change is pending. The stake is still active in this period and cannot be spent.
+    - In P7, when you reduce or remove your stake, it immediately goes into an inactive cooldown state, where it cannot be spent,
+      but won't count as active stake (e.g. for rewards). The stake in cooldown will be available to spend after the cooldown period elapses.
+
+.. Note::
+
+    Some features may function differently until Protocol 7 is fully implemented.
+
 For delegators
 --------------
 
@@ -41,7 +54,8 @@ For delegators
 
 .. dropdown:: Is there a “cool-down” period when delegating and how does it work?
 
-    Yes, for certain changes there is a :term:`cool-down<cool-down period>` period built into the pool system. The cool-down period is three weeks. During the cool-down period it is not possible to change the delegated amount or move the delegated amount to a different staking pool. The cool-down period is activated when you decrease the delegated amount or stop delegation entirely.
+    If you decrease or remove delegations, the funds are not released to your account until after a :term:`cool-down<cool-down period>` period.
+    The cool-down period is three weeks. The cool-down period is activated when you decrease the delegated amount or stop delegation entirely.
 
 .. dropdown:: Why is there a cool-down when I decrease / stop my delegation?
 
@@ -53,11 +67,7 @@ For delegators
 
 .. dropdown:: Can I change the delegated amount if I am in a cool-down period?
 
-    No, if you are in a :term:`cool-down<cool-down period>` period, you cannot change the delegated amount until the cool-down period ends. The cool-down period is three weeks.
-
-.. dropdown:: I want to update my delegation amount, but the input is locked. Why is that?
-
-    The amount is locked because you are in a :term:`cool-down<cool-down period>` period and the delegation amount cannot be changed. The cool-down period is three weeks when decreasing your delegation amount or stopping delegation.
+    Yes, you can.
 
 .. dropdown:: Where can I see a list of all the staking pools I can delegate to?
 
@@ -142,11 +152,12 @@ For validators
 
 .. dropdown:: Is there a cool-down period for validators?
 
-    Yes, the :term:`cool-down<cool-down period>` period for validators is three weeks when reducing stake or stopping validation. The stake is locked during the cool-down period and cannot be changed. The stake continues to earn rewards until the end of the cool-down period. The cool-down period is there to provide stability to the blockchain.
+    If you decrease stake or remove validation, the funds are not released to your account until after a :term:`cool-down<cool-down period>` period.
+    The cool-down period is three weeks. The cool-down period is activated when you decrease the staked amount or stop validation entirely.
 
 .. dropdown:: Can I change my restaking preference if I am in a cool-down period?
 
-    Yes, you can. Note that anything that is restaked during the :term:`cool-down<cool-down period>` period will be unstaked after the stake reduction takes effect.
+    Yes, you can.
 
 .. dropdown:: How much does it cost to become a validator?
 
