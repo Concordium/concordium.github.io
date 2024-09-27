@@ -2,7 +2,7 @@
 .. _baker-concept:
 
 ==========
-Validators
+Validation
 ==========
 
 Validation is key to the Concordium blockchain. A :term:`node` is a validator node when it participates actively in the network by creating new :term:`blocks<block>` that are added to the chain. The blockchain consists of multiple :term:`validator` nodes. A :term:`validator` collects, orders, and validates the :term:`transactions<transaction>` that are included in a block to maintain the integrity of the blockchain. The validators sign each block that they produce so that the block can be verified and executed by the other validators in the network.
@@ -78,13 +78,13 @@ Validator account
 
 Each account can use a set of validator keys to register a validator. Whenever a validator produces a valid block that gets included in the chain, a reward is paid to the validator's account (and the staking pool delegators if they have a pool) at :term:`pay day`. The reward is derived from transaction fees paid for transactions included in the block and its predecessors, as well as from newly-minted CCDs.
 
-The account can be viewed in the Desktop Wallet, the |mw-gen2|, the |mw-gen1|, or the |bw| depending on where the account was created.
+The account can be viewed in the |cryptox|, the Desktop Wallet, the |mw-gen2|, the |mw-gen1|, or the |bw| depending on where the account was created.
 
 Rewards are added to the staked amount by default. However, you can choose to receive the rewards in the account balance instead of staking them automatically.
 
 .. Note::
 
-   It is not possible to have multi-signature validator accounts in |mw-gen2|, |mw-gen1|, or |bw|. If you need this functionality, you need to run the Desktop Wallet.
+   It is not possible to have multi-signature validator accounts in |cryptox|, |mw-gen2|, |mw-gen1|, or |bw|. If you need this functionality, you need to run the Desktop Wallet.
 
 Staking pool
 ============
@@ -107,7 +107,7 @@ A block is final at a minimum of two seconds after its creation. A new block has
 Tools to be a validator
 =======================
 
-Validation is possible with |bw|, |mw-gen2|, |mw-gen1|, ``Concordium-client``, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.
+Validation is possible with |cryptox|, |bw|, |mw-gen2|, |mw-gen1|, ``Concordium-client``, and Desktop Wallet, however the process differs between them. The overviews below give a brief description of the process.
 
 .. Attention::
 
@@ -191,10 +191,11 @@ This overview describes the recommended scenario for running a node and becoming
 
 For information about how to update your validator or stop validation, see :ref:`Change validator options<update-baker-mw>`.
 
-Validation with |mw-gen1| and |mw-gen2|
----------------------------------------
 
-This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using |mw-gen1| or |mw-gen2| and running a node.
+Validation with |mw-gen1|, |mw-gen2|, and |cryptox|
+---------------------------------------------------
+
+This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using |mw-gen1|, |mw-gen2|, or |cryptox|.
 
 .. dropdown:: Step 1: Set up the node
 
@@ -202,7 +203,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 2: Set up the Wallet
 
-   The |mw-gen1| and |mw-gen2| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`.
+   The |mw-gen1|, |mw-gen2|, and |cryptox| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`. For instructions about download and setup of |cryptox|, see :ref:`setup-cryptox-wallet`.
 
 .. dropdown:: Step 3: Set up an identity and account
 

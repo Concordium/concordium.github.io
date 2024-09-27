@@ -5,6 +5,11 @@
 Remove delegation to a staking pool or passive delegation
 =========================================================
 
+.. Note::
+
+    Some features may function differently until Protocol 7 is fully implemented.
+    See note in :ref:`Delegation and validation FAQ<delegation-faq>` for information on changes from Protocol 6 to Protocol 7.
+
 You can remove the delegation on an account to stop delegating.
 
 If you remove the delegation, there is a :term:`cool-down period` before the amount you had delegated is returned to your disposable balance.
@@ -17,6 +22,29 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
+
+.. dropdown:: |cryptox|
+
+   #. Tap the account on the accounts screen.
+
+   #. Tap |cryptoX-earn| on the account balance screen.
+
+   #. Now you see your current delegation. Tap **Stop delegation**.
+
+      .. image:: ../images/cryptoX/cryptoX-delegation-status.png
+         :width: 50%
+         :alt: screen showing current delegation status with options to update or stop
+
+   #. You can now go through informational screens explaining the implications of stopping your delegation. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to stopping the delegation.
+
+   #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+
+      .. image:: ../images/cryptoX/cryptoX-stop-delegation.png
+         :width: 50%
+         :alt: screen shown to review delegation stop details
+
+   #. Once the transaction is submitted, you see a confirmation screen. Tap **Finish** to complete the action.
+
 
 .. dropdown:: Desktop Wallet
 
@@ -206,6 +234,10 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
          :alt: screen showing the transaction submitted to the chain and finish button
 
 .. |earn| image:: ../images/earn.png
+        :alt: Hand receiving money
+        :width: 50px
+
+.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
         :alt: Hand receiving money
         :width: 50px
 

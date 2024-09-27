@@ -5,6 +5,11 @@
 Update delegation to a staking pool or passive delegation
 =========================================================
 
+.. Note::
+
+    Some features may function differently until Protocol 7 is fully implemented.
+    See note in :ref:`Delegation and validation FAQ<delegation-faq>` for information on changes from Protocol 6 to Protocol 7.
+
 You can change the delegation amount, target, and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
 If you change the delegation, the new amount will be applied at the start of the next :term:`pay day`. There is one pay day approximately every 24 hours.
@@ -24,6 +29,37 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
+
+.. dropdown:: |cryptox|
+
+    #. Tap the account on the accounts screen.
+
+    #. Tap |cryptoX-earn| on the account balance screen.
+
+    #. Now you see your current delegation. Tap **Update current delegation**.
+
+        .. image:: ../images/cryptoX/cryptoX-delegation-status.png
+            :width: 50%
+            :alt: screen showing current delegation with options to stop or update
+
+    #. You can now go through informational screens explaining the update options releated to delegation. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to updating.
+
+    #. If you want to delegate to a specific pool, tap **Validator** and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, tap **Passive**. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-update-delegation.png
+            :width: 50%
+            :alt: screen with options to choose delegation type
+
+    #. On the next screen you can see your balance available for delegation and the amount of your current delegation. If you want to change the amount, tap on the field **Optional: Type the new amount** and enter the amount. Tap **Yes, add** to restake any rewards or tap **No, don't add** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-update-delegation-2.png
+            :width: 50%
+            :alt: screen with options to choose delegation type
+
+
+    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+
+    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
 .. dropdown:: Desktop Wallet
 
@@ -257,6 +293,10 @@ Once the transaction is finalized, the delegation update is effective from the n
 
 
 .. |earn| image:: ../images/earn.png
+         :alt: Hand receiving money
+         :width: 50px
+
+.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
          :alt: Hand receiving money
          :width: 50px
 

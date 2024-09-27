@@ -7,7 +7,12 @@ Make a backup of identities, accounts, and addresses
 
 .. Note::
 
-    Backup and import cannot be used for |mw-gen2| or |bw| because they use a secret recovery phrase to recover the wallet. For more information, see :ref:`Recover your wallet<recover-wallet>`.
+
+    |mw-gen2| and |bw| use a seed phrase to recover the wallet. Therefore, backup and import features are not available.
+
+    |cryptox| supports both file-based backups and seed phrase recovery.
+
+    For more information, see :ref:`Recover your wallet<recover-wallet>`.
 
 To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that if you are using |mw-gen1| or Desktop Wallet, you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can't access the Wallet.
 
@@ -29,14 +34,17 @@ Concordium is continuously improving the security and reliability of its product
 Final Notes
 ===========
 
-If the wallet does not have the keys for some accounts and you have previously made a wallet backup using the export functionality, uninstall and reinstall the |mw-gen1| or Desktop Wallet. You can then import your wallet backup into the new wallet.
+If the wallet does not have the keys for some accounts and you have previously made a wallet backup using the export functionality, uninstall and reinstall |mw-gen1|, Desktop Wallet or |cryptox|. You can then import your wallet backup into the new wallet.
 
 If the wallet does not have the keys from some accounts and you do not have a backup of the keys on an exported file, these accounts cannot be used. Therefore, you should ensure that you never ask anyone to transfer CCD to such accounts. Instead, go through a new identification process and generate new accounts that can be used in the future. And remember to export a new backup of the account keys each time you have generated a new account in the app.
 
 Keep previous backup files until you have verified that your latest backup is working properly.
 
 .. Warning::
-    You can't import a file created in the |mw-gen1| into the Desktop Wallet or the other way around because the two wallets handle private keys in different ways. You also cannot import a backup from the |mw-gen1| to the |mw-gen2|. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|. For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
+    You can't import a backup file created in |mw-gen1| into Desktop Wallet or the other way around because the two wallets handle private keys in different ways. If you try, the import will fail.
+
+    You also can't import a backup file from |mw-gen1| to |mw-gen2|, but you *can* import it to |cryptox|.
+    For more information, see :ref:`Deciding between the Wallets <choosing-wallet>`.
 
 How to back up and import
 =========================
@@ -126,7 +134,7 @@ How to back up and import
         **Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don't have a backup from the Mobile Wallet, you can't access your wallet and your CCDs are permanently inaccessible.**
         **Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.**
 
-    Because the |mw-gen1| does not use a secret recovery phrase, your backup file is the only way you can restore your account keys should you lose your phone or have to re-install your phone or wallet. You will permanently lose access to your wallet if you do not have a backup of your private key file. Concordium cannot recover your private keys if you lose them. If you don’t make a backup file you will lose access to your tokens forever.
+    Because the |mw-gen1| does not use a seed phrase, your backup file is the only way you can restore your account keys should you lose your phone or have to re-install your phone or wallet. You will permanently lose access to your wallet if you do not have a backup of your private key file. Concordium cannot recover your private keys if you lose them. If you don’t make a backup file you will lose access to your tokens forever.
 
     If you set up a new phone and transfer the wallet, you will lose the private keys; they can only be recovered from the pre-exported backup file.
 
@@ -199,16 +207,27 @@ How to back up and import
 
 .. dropdown:: |mw-gen2| and |bw|
 
-    Backup is not available in |mw-gen2| or |bw|. They use a secret recovery phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`. You cannot import a backup from |mw-gen1| or Desktop Wallet to either |mw-gen2| or |bw|.
+    You cannot back up |mw-gen2| or |bw| to a file. They use a seed phrase to :ref:`recover your accounts, identities, and private keys<recover-wallet>`.
 
-    In |bw| you can view the secret recovery phrase in Wallet Settings if you need to write it down again.
+    You also can't import a back-up file into either of these wallet apps.
 
-        .. note::
 
-            The option to view the secret recovery phrase is available in |mw-gen2| for Android version 1.3.0 or greater in the Wallet Settings |wallet-settings|. However you cannot simply upgrade to version 1.3.0 and use this feature. Instead, you must either create a new wallet or recover your wallet to be able to see this option in Wallet Settings.
+            .. note::
+
+               The option to view the seed phrase is available in |mw-gen2| for Android version 1.3.0 or greater in the Wallet Settings |wallet-settings|. However you cannot simply upgrade to version 1.3.0 and use this feature. Instead, you must either create a new wallet or recover your wallet to be able to see this option in Wallet Settings.
 
     If you need to export your private key to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see :ref:`Export a private key<export-key>`.
 
+.. dropdown:: |cryptox|
+
+   |cryptox| supports both file-based backups and seed phrase recovery.
+
+   If you have set up your wallet with a seed phrase, you will need this for recovering your wallet.
+   You can :ref:`view the seed phrase in Wallet Settings<show-seed-phrase>` if you need to write it down again.
+
+   If you have set up your wallet from an imported back-up file, you will have the functionality for :ref:`exporting and importing back-up files<import-export-file>`.
+
+   See both recovery from seed phrase and recovery from back-up file under :ref:`Recover your wallet<recover-wallet>`.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button

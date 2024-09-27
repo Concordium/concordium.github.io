@@ -13,8 +13,9 @@ If you need to know how to send CCDs, recover your wallet on a new device, or mo
 
     create-identity
     create-account
-    export-key
     recovery
     ../mobile-wallet/change-passcode-mw
     address-book
     transaction-report
+    show-seed-phrase
+    import-export-file
