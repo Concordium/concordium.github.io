@@ -775,9 +775,11 @@ Stop validation
 ===============
 
 If you remove a validator, the node that is configured with the :term:`validator keys<private keys>` will stop producing blocks after the next :term:`pay day`.
+
 After the :term:`cool-down period`, the amount that you previously staked is returned to your disposable balance at the next pay day. When you've removed the validator,
 it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
 If you want to use the node for validation at a later point in time, you'll then have to create a new set of validator keys.
+
 
 If you no longer wish to produce blocks on this account, you can stop validation.
 
