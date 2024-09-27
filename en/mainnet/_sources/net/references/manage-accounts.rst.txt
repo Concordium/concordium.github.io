@@ -6,7 +6,7 @@
 Accounts
 ========
 
-Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |cryptox|, |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
 
 You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
 
@@ -184,6 +184,11 @@ The Desktop Wallet
 ------------------
 
 The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
+
+The |cryptox|
+-----------------
+
+The |cryptox| is a digital smartphone wallet that that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
 
 The |mw-gen1|
 -----------------

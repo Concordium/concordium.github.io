@@ -11,6 +11,24 @@ The address book helps you select a recipient quickly for transactions.
 
    The |bw| does not have an address book.
 
+.. dropdown:: |cryptox|
+
+   #. In the **More** menu tap **Address Book**.
+
+   #. You can search in the address book or scan the QR code of another account.
+
+
+         .. image:: ../images/cryptoX/Addressbook.png
+            :width: 50%
+
+
+    To add a new recipient
+
+    #. Tap **+**.
+
+    #. Enter a recipient name. Enter a recipient address or scan the QR code of the recipient account.
+
+    #. Tap **Save**.
 .. dropdown:: |mw-gen2|
 
    #. Tap |wallet-settings|.

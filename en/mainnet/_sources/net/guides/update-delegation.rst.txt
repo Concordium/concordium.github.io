@@ -5,9 +5,15 @@
 Update delegation to a staking pool or passive delegation
 =========================================================
 
+.. Note::
+
+    Some features may function differently until Protocol 7 is fully implemented.
+    See note in :ref:`Delegation and validation FAQ<delegation-faq>` for information on changes from Protocol 6 to Protocol 7.
+
 You can change the delegation amount, target, and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
-If you increase the delegation, the new amount will be applied at the start of the next :term:`pay day`. There is one pay day approximately every 24 hours. However, if you decrease the delegation, there is a :term:`cool-down period` before the new stake is applied. During this period, you cannot stop delegation or change the amount, but you can change other delegation settings. After the cool-down period, the amount you’ve decreased the delegation by is returned to your disposable balance at the next pay day after the end of the cool-down period.
+If you change the delegation, the new amount will be applied at the start of the next :term:`pay day`. There is one pay day approximately every 24 hours.
+Note that if you decrease or remove the delegation, there is a :term:`cool-down period` before the amount you’ve decreased the delegation by is returned to your disposable balance.
 
 Before delegating stake to a staking pool, it is important to research the pool using :ref:`CCDScan<ccd-scan>`. You can only have one delegation per account.
 
@@ -23,6 +29,37 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
+
+.. dropdown:: |cryptox|
+
+    #. Tap the account on the accounts screen.
+
+    #. Tap |cryptoX-earn| on the account balance screen.
+
+    #. Now you see your current delegation. Tap **Update current delegation**.
+
+        .. image:: ../images/cryptoX/cryptoX-delegation-status.png
+            :width: 50%
+            :alt: screen showing current delegation with options to stop or update
+
+    #. You can now go through informational screens explaining the update options releated to delegation. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to updating.
+
+    #. If you want to delegate to a specific pool, tap **Validator** and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, tap **Passive**. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-update-delegation.png
+            :width: 50%
+            :alt: screen with options to choose delegation type
+
+    #. On the next screen you can see your balance available for delegation and the amount of your current delegation. If you want to change the amount, tap on the field **Optional: Type the new amount** and enter the amount. Tap **Yes, add** to restake any rewards or tap **No, don't add** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-update-delegation-2.png
+            :width: 50%
+            :alt: screen with options to choose delegation type
+
+
+    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+
+    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
 .. dropdown:: Desktop Wallet
 
@@ -254,11 +291,12 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 
-.. Note::
-
-   Reducing your stake in any pool results in a longer :term:`cool-down period`. The delegation amount will be locked during this period and no changes can be made to the amount. The reduction in stake is not effective until the first pay day after the cool-down period ends. During the cool-down period the staked amount continues earning rewards.
 
 .. |earn| image:: ../images/earn.png
+         :alt: Hand receiving money
+         :width: 50px
+
+.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
          :alt: Hand receiving money
          :width: 50px
 

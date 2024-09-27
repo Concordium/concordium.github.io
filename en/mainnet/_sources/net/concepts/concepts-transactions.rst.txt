@@ -9,36 +9,39 @@ A transaction on the Concordium blockchain is an operation which applies some ch
 
 The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.
 
-You can make transactions using either the Desktop Wallet, the |mw-gen2|, |mw-gen1|, |bw|, or the Concordium Client. Note that the |mw-gen1|, |mw-gen2|, and |bw| don’t support all transaction types, and that you need a LEDGER device to submit transactions from the Desktop Wallet.
+You can make transactions using either the Desktop Wallet, the |cryptox|, |mw-gen2|, |mw-gen1|, |bw|, or the Concordium Client. Note that the |mw-gen1|, |mw-gen2|, |cryptox|, and |bw| don’t support all transaction types, and that you need a LEDGER device to submit transactions from the Desktop Wallet.
 
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-|                            | |mw-gen1|     | |mw-gen2|      | |bw|              |Desktop Wallet | Concordium Client |
-+============================+===============+================+===================+===============+===================+
-| Send CCD                   | |check|       | |check|        | |check|           | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Send CCD with a schedule   |               |                |                   | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Unshield CCD               | |check|       | |check|        |                   | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Add validator              | |check|       | |check|        | |check|           | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Remove validator           | |check|       | |check|        | |check|           | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Update validator stake     | |check|       | |check|        | |check|           | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Update restake earnings    | |check|       | |check|        | |check|           | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Update validator keys      | |check|       | |check|        | |check|           | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Update account credentials |               | |check|        |                   | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Connect to dApps           |               | |check|        | |check|           |               |                   |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Delegation                 | |check|       | |check|        | |check|           | |check|       | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
-| Smart contract transactions|               |                |                   |               | |check|           |
-+----------------------------+---------------+----------------+-------------------+---------------+-------------------+
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+|                            | |mw-gen1|     | |mw-gen2|      | |bw|              |Desktop Wallet | Concordium Client | |cryptox| |
++============================+===============+================+===================+===============+===================+===========+
+| Send CCD                   | |check|       | |check|        | |check|           | |check|       | |check|           ||check|    |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Send CCD with a schedule   |               |                |                   | |check|       | |check|           |           |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Unshield CCD               |               |                |                   |               |                   | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Add validator              | |check|       | |check|        | |check|           | |check|       | |check|           | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Remove validator           | |check|       | |check|        | |check|           | |check|       | |check|           | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Update validator stake     | |check|       | |check|        | |check|           | |check|       | |check|           | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Update restake earnings    | |check|       | |check|        | |check|           | |check|       | |check|           | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Update validator keys      | |check|       | |check|        | |check|           | |check|       | |check|           | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Update account credentials |               | |check|        |                   | |check|       | |check|           | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Connect to dApps           |               | |check|        | |check|           |               |                   | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Delegation                 | |check|       | |check|        | |check|           | |check|       | |check|           | |check|   |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Smart contract transactions|               |                |                   |               | |check|           |           |
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
+| Manage tokens              |               | |check|        |                   | |check|       + |check|           + |check|   +
++----------------------------+---------------+----------------+-------------------+---------------+-------------------+-----------+
 
+- |cryptox|: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage tokens, and unshielding.
 - |bw|: supports send CCD, receive CCD, connect to dApps, validator management, delegation.
 - |mw-gen2|: supports send CCD, receive CCD, unshield CCD (:ref:`deprecated<shielded-balance-feature-deprecation>`), validator management, delegation, connect to dApps, add and manage tokens.
 - |mw-gen1|: supports send CCD, receive CCD, unshield CCD (:ref:`deprecated<shielded-balance-feature-deprecation>`), validator management, delegation
@@ -66,6 +69,11 @@ You can see the fee in the transaction log.
 Tools
 =====
 
+The |cryptox|
+------------------
+
+The |cryptox| is a digital smartphone wallet with a simpler onboarding process that enables you to create and manage your Concordium identities and accounts, to create simple transactions, validate and delegate, add and manage tokens, connect to dApps, and to export and import your accounts and identities.
+
 The Desktop Wallet
 ------------------
 
@@ -84,7 +92,7 @@ The |bw| is a web wallet extension that enables you to create and manage your Co
 The |mw-gen1|
 -----------------
 
-The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, validate and delegate, and to export and import your accounts and identities. If you are a validator who runs a staking pool, it is not possible for pool owners to set the commissions in the |mw-gen1|; they are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
+The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple and shielded transactions, validate and delegate, and to export and import your accounts and identities. If you are a validator who runs a staking pool, it is not possible for pool owners to set the commissions in the |mw-gen1|; they are fixed at 10%. If you want to be able to adjust commissions, you must use the |cryptox|, |mw-gen2|, or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
 
 Command-line tool
 -----------------
@@ -99,6 +107,6 @@ To learn more about the differences between the wallets, see :ref:`Deciding betw
 .. Warning::
    Because of the difference in the way private keys are handled between |mw-gen2| / |bw| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
 
-   It is possible to exchange accounts and identities between the |mw-gen2| and the |bw|.
+   It is possible to exchange accounts and identities between the |cryptox|, |mw-gen2|, and the |bw|. Additionally, |mw-gen1| users can import backup files to |cryptox|.
 
 .. |check|  unicode:: U+2713 .. CHECKMARK

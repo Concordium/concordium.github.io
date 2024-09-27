@@ -5,16 +5,39 @@
 Create an identity
 ==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw| and |mw-gen2|, an initial account is not submitted by the identity provider.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of |mw-gen1| and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw|, |mw-gen2|, and |cryptox| an initial account is not submitted by the identity provider.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
 .. warning::
-   You can only exchange identities and accounts between the |bw| and the |mw-gen2|.
+   You can only exchange identities and accounts between the |bw|, the |mw-gen2|, and |cryptox|.
 
 .. Note::
 
-   If using |bw| or |mw-gen2| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.
+   If using |bw|, |mw-gen2|, or |cryptox| with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.
+
+.. dropdown:: |cryptox|
+
+   You can submit requests for additional :term:`identities<identity>` in the |cryptox|. You do this from the **Identities** screen.
+
+   #. Tap **More** in the lower right corner.
+
+   #. Tap **Identities**.
+
+   #. On the Identities screen, tap the **+** in the upper right corner.
+
+   #. Select a third-party identity provider from the list. An external web page opens within the app.
+
+   #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
+
+   #. When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.
+
+
+   You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
+
+.. |wallet-settings| image:: ../images/settings.png
+                        :alt: gear wheel
+                        :width: 40px
 
 .. dropdown:: Desktop Wallet
 
@@ -84,9 +107,6 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see :ref:`Change identity name<change-mw-id-name>`.
 
-.. |wallet-settings| image:: ../images/settings.png
-                        :alt: gear wheel
-                        :width: 40px
 
 .. dropdown:: |mw-gen1|
 

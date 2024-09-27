@@ -79,6 +79,12 @@ Starting a new project on the Concordium blockchain? Have a look at the `dApp st
 
     `Frontend and backend code <https://github.com/Concordium/concordium-dapp-examples/tree/main/trackAndTrace>`__
 
+.. dropdown:: Compliant Reward Distribution
+
+    `Demo frontend <https://compliant-reward-distribution.testnet.concordium.com/>`__ where you can try the functionality on Concordium's testnet
+
+    `Frontend and backend code <https://github.com/Concordium/concordium-dapp-examples/tree/main/compliant-reward-distribution>`__
+
 .. dropdown:: Voting
 
     `Demo frontend <https://voting.testnet.concordium.com>`__ where you can try the functionality on Concordium's testnet

@@ -5,13 +5,84 @@
 Add a validator
 ====================================
 
-Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to learn about best practices for validators.
+Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to learn about best practices for validators. **There is a minimum amount to stake (500000 CCD) to become a validator**.
 
 .. Note::
 
    All transfers and transactions cost a fee, including staking and unstaking transactions. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees. A locked-for-staking balance cannot be used to pay for these transactions.
    You can see the fee in the transaction log.
+
+.. Warning::
+
+   Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
+
+.. dropdown:: |cryptox|
+
+    #. Tap the account on the accounts screen and tap |cryptoX-earn| on the account balance screen.
+
+    #. Select **Continue to validator setup**.
+
+        .. image:: ../images/cryptoX/cryptoX-earning-rewards.png
+            :width: 50%
+            :alt: screen with earning options
+
+    #. You can now go through informational screens explaining the key concepts of validation on the Concordium blockchain. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to registering your validation.
+
+    #. On the register validator screen you can see your available balance. Enter the amount you want to stake in the field. Tap **Yes, add** to restake validator rewards, or tap **No, don't add** if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-register-validator.png
+            :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
+            :width: 50%
+
+    4. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-register-validator-open-del.png
+            :alt: screen to register validator for first time showing options to open or close pool for delegation
+            :width: 50%
+
+    5. Set your commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-register-validator-commissions.png
+            :alt: screen to register validator for first time showing commission rates for staking pools
+            :width: 50%
+
+    6. If you open a staking pool, you can optionally provide a URL with information about your validator. This allows delegators to learn more about your pool and make informed decisions. This information is not shared for closed pools or validators. Tap **Continue**.
+
+        .. image:: ../images/cryptoX/cryptoX-register-validator-metadata.png
+            :alt: screen to register validator for first time showing field to paste URL with metadata for staking pools
+            :width: 50%
+
+    6. Now, export the validator keys. You need the validator keys to start the node. Tap **Export validator keys** and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.
+
+        .. image:: ../images/cryptoX/cryptoX-register-validator-export-validator-keys.png
+            :alt: screen to register validator for first time showing all of the validator keys with option to export
+            :width: 50%
+
+    .. Warning::
+
+        If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+
+    7. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap **Submit validator transaction**.
+
+    8. The wallet shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
+
+    9. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
+
+        - :ref:`Windows<baker-windows>`
+        - :ref:`macOS<baker-macos>`
+        - :ref:`Docker<baking-docker>`
+        - :ref:`Ubuntu<baker-ubuntu>`
+
+    Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account balance screen.
+
+    .. image:: ../images/cryptoX/cryptoX-account-list-validator.png
+        :alt: account information in list showing validator badge
+        :width: 40%
+
+    .. image:: ../images/cryptoX/cryptoX-account-balance-screen-validator.png
+        :alt: account card showing staked amount with validator number
+        :width: 40%
 
 .. dropdown:: Desktop wallet
 
@@ -201,14 +272,6 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
             :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
             :width: 50%
 
-    .. Note::
-
-        There is a minimum amount to stake (500000 CCD) to become a validator.
-
-    .. Warning::
-
-       Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
-
     4. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool.
 
         .. image:: ../images/mobile-wallet/add-baker-amt-mw.png
@@ -346,14 +409,6 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
            :alt: screen with balances at the top and text box to enter amount to stake
            :width: 40%
 
-    .. Note::
-
-        There is a minimum amount to stake (500000 CCD) to become a validator.
-
-    .. Warning::
-
-       Do not stake all of your funds or you will not have enough to cover transaction fees for unstaking or other transactions.
-
     4. Choose whether you want to open a :term:`staking pool` or keep it closed. Choose **Open for delegation** to open a staking pool. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool. Click **Continue**.
 
        .. image:: ../images/browser-wallet/add-baker-pool.png
@@ -416,6 +471,10 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
     Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as validator, and that you have entered the correct amount to stake.
 
 .. |earn| image:: ../images/earn.png
+    :alt: Hand receiving money
+    :width: 50px
+
+.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
     :alt: Hand receiving money
     :width: 50px
 
