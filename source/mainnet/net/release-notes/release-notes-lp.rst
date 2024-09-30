@@ -1325,17 +1325,17 @@ Testnet
             - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
 
                 - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
-                (Previously, the reduction was only effective after the cool-down period.)
+                  (Previously, the reduction was only effective after the cool-down period.)
 
                 - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
-                This includes registering as a validator when the account was previously a delegator, or vice versa.
-                (Previously, the account had to wait for the cool-down period to end before making further changes.)
+                  This includes registering as a validator when the account was previously a delegator, or vice versa.
+                  (Previously, the account had to wait for the cool-down period to end before making further changes.)
 
             - Shielded transfers are no longer supported in the protocol.
-            It is still possible to unshield a previously shielded balance.
+              It is still possible to unshield a previously shielded balance.
 
             - Smart contract execution costs are reduced.
-            This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
+              This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
 
             - Smart contracts can now query the module reference and contract name of a smart contract instance.
 
