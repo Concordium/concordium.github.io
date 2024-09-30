@@ -1316,7 +1316,7 @@ Testnet
 
         .. dropdown:: 7.0.4 - September 23, 2024
 
-            Concordium node version 7.0.4 contains support for `protocol version 7 <https://github.com/Concordium/concordium-update-proposals/blob/main/updates/P7.txt>`_.
+            Concordium node version 7.0.4 contains support for `protocol version 7 <https://proposals.concordium.software/updates/P7.html>`_.
             The new consensus protocol will take effect on the testnet on September 30, 2024.
             **Node runners should upgrade to version 7.0.4 before the protocol update to ensure that their nodes do not shut down.**
 
