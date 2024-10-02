@@ -900,12 +900,48 @@ Nodes
 Mainnet
 -------
 
-    September 30, 2024
+    October 3, 2024
 
-    Concordium node version 6.3.2 fixes a bug in the handling of smart contract names that could cause the node to crash.
-    **This is a critical bug fix, and node runners should update as soon as possible.**
+    Concordium node version 7.0.5 contains support for `protocol version 7 <https://proposals.concordium.software/updates/P7.html>`_.
+    The new consensus protocol will take effect on the mainnet on October 30, 2024.
+    **Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.**
+
+    Protocol version 7 introduces the following changes:
+
+    - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
+
+        - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
+            (Previously, the reduction was only effective after the cool-down period.)
+
+        - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
+            This includes registering as a validator when the account was previously a delegator, or vice versa.
+            (Previously, the account had to wait for the cool-down period to end before making further changes.)
+
+    - Shielded transfers are no longer supported in the protocol.
+        It is still possible to unshield a previously shielded balance.
+
+    - Smart contract execution costs are reduced.
+        This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
+
+    - Smart contracts can now query the module reference and contract name of a smart contract instance.
+
+    - The block hashing scheme is redefined to better support light clients.
+
+    Additionaly, the node release includes a number of fixes and improvements:
+
+    - Logging around protocol updates is improved.
+    - Failed gRPC requests are now logged at ``DEBUG`` level.
+    - Fixed a bug where ``GetBakersRewardPeriod`` returns incorrect data.
+    - Fixed a bug where ``GetPoolInfo`` returns incorrect data.
+    - Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.
+    - Improved the behavior of the node in the event of an unrecoverable error in consensus.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 6.3.2 - September 30, 2024
+
+            Concordium node version 6.3.2 fixes a bug in the handling of smart contract names that could cause the node to crash.
+            **This is a critical bug fix, and node runners should update as soon as possible.**
 
         .. dropdown:: 6.3.1 - June 24, 2024
 
