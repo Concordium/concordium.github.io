@@ -1,0 +1,1010 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Smart contract instances &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=53c713d1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=6175c28d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/smart-contracts/general/contract-instances.f233b4bb-6ff5-49ac-af3b-448bd395fd68.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'smart-contracts/general/contract-instances';</script>
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo" src="../../_static/concordium-logo-dark.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        Docs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tools.html">
+                        Tools
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/concordium" title="Medium" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-medium fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://academy.concordium.software/ccd-academy/getting-started" title="Academy" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Academy</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../docs/index.html">
+                        Docs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tools.html">
+                        Tools
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/concordium" title="Medium" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-medium fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://academy.concordium.software/ccd-academy/getting-started" title="Academy" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Academy</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="contract-lifecycle.html">Life cycle of a smart contract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Smart contract instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop-contracts.html">Develop smart contracts in Rust</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Smart...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="smart-contract-instances">
+<span id="contract-instances"></span><h1>Smart contract instances<a class="headerlink" href="#smart-contract-instances" title="Link to this heading">#</a></h1>
+<p>A <a class="reference internal" href="../../net/resources/glossary.html#term-Instance"><span class="xref std std-term">smart contract instance</span></a> is a smart contract module together with a
+specific state and an amount of CCD tokens. A smart contract instance is often just called an <em>instance</em>.
+Multiple smart contract instances can be created from the same module.
+For example, for an <a class="reference internal" href="introduction.html#auction"><span class="std std-ref">auction</span></a> contract, there could be multiple instances, each
+one dedicated to bidding for a specific item and with its own participants.</p>
+<p>Smart contract instances can be created from a deployed <a class="reference internal" href="contract-module.html#contract-module"><span class="std std-ref">smart contract
+module</span></a> via the <code class="docutils literal notranslate"><span class="pre">init</span></code> transaction which invokes the
+requested function in the smart contract module. This function can take a
+parameter.
+Its end result is required to be the initial smart contract state of the
+instance.</p>
+<figure class="align-center" id="id1">
+<div class="graphviz"><object data="../../_images/graphviz-a1969276dd5f6724d08d587e993efa9348d223c5.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph G {
+    rankdir=&quot;BT&quot;
+
+    subgraph cluster_0 {
+        label = &quot;Module&quot;;
+        labelloc=b;
+        node [fillcolor=white, shape=note]
+        &quot;Crowdfunding&quot;;
+        &quot;Escrow&quot;;
+    }
+
+    subgraph cluster_1 {
+        label = &quot;Instances&quot;;
+        style=dotted;
+        node [shape=box, style=rounded]
+        House;
+        Car;
+        Gadget;
+        Boardgame;
+    }
+
+    House:n -&gt; Escrow;
+    Car:n -&gt; Escrow;
+    Gadget:n -&gt; Crowdfunding;
+    Boardgame:n -&gt; Crowdfunding;
+}</p></object></div>
+<figcaption>
+<p><span class="caption-text">Example of smart contract module containing two smart contracts:
+Escrow and Crowdfunding. Each contract has two instances.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="state-of-a-smart-contract-instance">
+<h2>State of a smart contract instance<a class="headerlink" href="#state-of-a-smart-contract-instance" title="Link to this heading">#</a></h2>
+<p>The state of a smart contract instance consists of two parts, the user-defined
+state and the amount of CCD the contract holds, i.e., its <em>balance</em>. When
+referring to state it typically means only the user-defined state. The reason for
+treating the CCD amount separately is that CCD can only be spent and
+received according to rules of the network, e.g., contracts cannot create
+or destroy CCD tokens.</p>
+</section>
+<section id="instantiate-a-smart-contract-on-chain">
+<span id="contract-instances-init-on-chain"></span><h2>Instantiate a smart contract on-chain<a class="headerlink" href="#instantiate-a-smart-contract-on-chain" title="Link to this heading">#</a></h2>
+<p>Every smart contract must contain a function for creating smart contract
+instances. Such a function is referred to as the <em>init function</em>.</p>
+<p>To create a smart contract instance, an account sends a special transaction with
+a reference to the deployed smart contract module and the name of the
+init function to use for instantiation.</p>
+<p>The transaction can also include an amount of CCD, which is added to the balance
+of the smart contract instance. A parameter to the function is supplied as part
+of the transaction in the form of an array of bytes.</p>
+<p>To summarize, the transaction includes:</p>
+<ul class="simple">
+<li><p>Reference to the smart contract module.</p></li>
+<li><p>Name of the init function.</p></li>
+<li><p>Parameter to the init function.</p></li>
+<li><p>Amount of CCD for the instance.</p></li>
+</ul>
+<p>The init function can signal that it does not wish to create a new instance
+with those parameters. If the init function accepts the parameters, it sets
+up the initial state of the instance and its balance. The instance is given an
+address on the chain and the account who sent the transaction becomes the owner
+of the instance. If the function rejects, no instance is created and only the
+transaction for attempting to create the instance is visible on-chain.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guides/initialize-contract.html#initialize-contract"><span class="std std-ref">Initialize a smart contract instance</span></a> guide for how to initialize a
+contract in practice. You can also watch a video about initializing smart contract instances.</p>
+<iframe src="https://www.youtube.com/embed/SNm9xEegBKA?si=CQ2PMN7lReuPdyPF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+</section>
+<section id="instance-state">
+<h2>Instance state<a class="headerlink" href="#instance-state" title="Link to this heading">#</a></h2>
+<p>Every smart contract instance holds its own state which is represented on-chain
+as a <a class="reference external" href="https://en.wikipedia.org/wiki/Trie">prefix tree</a>, where nodes in the
+tree can have data in the form of a byte array.
+The instance uses functions provided by the host environment to create, delete,
+and find nodes in the tree.
+The host also provides functions for reading, writing, and resizing the byte array
+held by a particular node in the tree.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-state"><span class="std std-ref">Smart contract instance state</span></a> for a reference of these functions.</p>
+</div>
+</section>
+<section id="interact-with-an-instance">
+<h2>Interact with an instance<a class="headerlink" href="#interact-with-an-instance" title="Link to this heading">#</a></h2>
+<p>A smart contract can expose zero or more functions for interacting with an
+instance, referred to as <em>receive functions</em>.</p>
+<p>Just like with init functions, receive functions are triggered using
+transactions, which contain some amount of CCD for the contract and an argument
+to the function in the form of bytes.</p>
+<p>To summarize, a transaction for smart-contract interaction includes:</p>
+<ul class="simple">
+<li><p>Address to smart contract instance.</p></li>
+<li><p>Name of the receive function.</p></li>
+<li><p>Parameter to the receive function.</p></li>
+<li><p>Amount of CCD for the instance.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>receive function</em> can have a return value.</p>
+</div>
+</section>
+<section id="log-events">
+<span id="contract-instances-logging-events"></span><h2>Log events<a class="headerlink" href="#log-events" title="Link to this heading">#</a></h2>
+<p>Events can be logged during the execution of smart contract functions. This is
+the case for both init and receive functions. The logs are designed for
+off-chain use, so that actors outside of the chain can monitor the events and
+react to them. Logs are not accessible to smart contracts, or any other actor on
+the chain. Events can be logged using a function supplied by the host
+environment.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../references/host-fns.html#host-functions-log"><span class="std std-ref">Logging events</span></a> for the reference of this function.</p>
+</div>
+<p>These event logs are retained by validators and included in transaction summaries.</p>
+<p>Logging an event has an associated cost, similar to the cost of writing to the
+contract’s state. In most cases it would only make sense to log a few bytes to
+reduce cost.</p>
+<p>There is no limit to the number of logs per invocation (apart from energy).</p>
+</section>
+<section id="limits">
+<span id="contract-instance-operations"></span><h2>Limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h2>
+<p>When initializing, updating, or invoking a smart contract, the following limits are enforced:</p>
+<ul class="simple">
+<li><p>The maximum input parameter size is 65535 Bytes (<code class="docutils literal notranslate"><span class="pre">u16::MAX</span></code>).</p></li>
+<li><p>The energy limit in a block is 3 million NRG (energy). If only one transaction is in the block, the transaction can consume up to 3 million NRG (energy).</p></li>
+<li><p>The maximum number of log items is <code class="docutils literal notranslate"><span class="pre">u32::MAX</span></code> per execution.</p></li>
+<li><p>The maximum return value size is <code class="docutils literal notranslate"><span class="pre">u32::MAX</span></code> Bytes.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The log item and return value limits can not be reached in practice because the energy limit will kick in earlier.</p>
+</div>
+</section>
+<section id="invoke-operations">
+<h2>Invoke operations<a class="headerlink" href="#invoke-operations" title="Link to this heading">#</a></h2>
+<p>A receive function can use the host environment to invoke two types of
+operations during its execution.
+The possible operations that a contract can perform are:</p>
+<ul class="simple">
+<li><p><strong>invoke_transfer</strong>: transfer CCD from the instance to the specified <em>account</em>.</p></li>
+<li><p><strong>invoke_contract</strong>: invoke receive function of the specified smart contract instance,
+and optionally transfer some CCD from the sending instance to the receiving
+instance.</p></li>
+</ul>
+<p>If an operations fails, it returns an error, which the instance can choose to
+handle, and the state and balance of the instance remain unchanged.
+The account which sent the initiating transaction pays for the execution of the
+entire receive function, including the cost of failed operations.</p>
+</section>
+<section id="upgradeability">
+<span id="contract-instance-upgradeability"></span><h2>Upgradeability<a class="headerlink" href="#upgradeability" title="Link to this heading">#</a></h2>
+<p>A V1 smart contract instance can choose to upgrade its module to a new V1 smart contract
+module using the <strong>upgrade</strong> host function.
+The host function takes a reference to a deployed smart contract module to use for
+the upgraded instance and can only be called from a receive function.
+The host function returns whether the upgrade succeeded, allowing the instance
+to decide the next step. If the upgrade is successful any new invocations of the
+upgraded instance uses the smart contract code in the new module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Upgrading a smart contract can be used to change the behavior completely,
+therefore it is important to carefully restrict access to any endpoint
+triggering a smart contract upgrade.</p>
+</div>
+<figure class="align-center" id="id2">
+<div class="graphviz"><object data="../../_images/graphviz-0fbc8205b7ce2690fd24c218e2b576e5b8af904e.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph G {
+    rankdir=&quot;BT&quot;
+
+    subgraph cluster_0 {
+        label = &quot;My module v1&quot;;
+        labelloc=b;
+        node [fillcolor=white, shape=note]
+        escrow;
+    }
+
+    subgraph cluster_2 {
+        label = &quot;My module v2&quot;;
+        labelloc=b;
+        node [fillcolor=white, shape=note]
+        escrow2;
+    }
+
+    subgraph cluster_1 {
+        label = &quot;Instances&quot;;
+        style=dotted;
+        node [shape=box, style=rounded]
+        House;
+        Car;
+    }
+
+    escrow[label=&quot;Escrow&quot;]
+    escrow2[label=&quot;Escrow&quot;]
+
+    House:n -&gt; escrow;
+    Car:n -&gt; escrow [style=dashed, arrowhead=onormal];
+    Car:n -&gt; escrow2 [style=bold];
+}</p></object></div>
+<figcaption>
+<p><span class="caption-text">Example of a smart contract instance ‘Car’ upgrading to a new module.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="failing-to-upgrade">
+<h3>Failing to upgrade<a class="headerlink" href="#failing-to-upgrade" title="Link to this heading">#</a></h3>
+<p>A smart contract instance can fail to upgrade for one of the following reasons:</p>
+<ul class="simple">
+<li><p>The new module does not exist.</p></li>
+<li><p>The new module does not contain a smart contract with a name matching the instance being upgraded.</p></li>
+<li><p>The new module is a smart contract module version 0.</p></li>
+</ul>
+</section>
+<section id="immutability">
+<h3>Immutability<a class="headerlink" href="#immutability" title="Link to this heading">#</a></h3>
+<p>Only the smart contract itself can trigger an upgrade of its module, meaning that smart contracts
+are immutable when they do not contain any code for triggering an upgrade.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is important to understand that immutable means the code of the smart contract cannot change.
+It does not mean that the behavior of a smart contract cannot change, as the smart contract code
+can include a switch in behavior or even invoke other mutable smart contracts.</p>
+</div>
+</section>
+<section id="migration">
+<h3>Migration<a class="headerlink" href="#migration" title="Link to this heading">#</a></h3>
+<p>Triggering a smart contract instance upgrade changes the smart contract module starting from the next
+invocation, meaning the execution will continue after the point of calling upgrade.
+Since any new invocation of this instance uses the new smart contract module, the instance
+can invoke itself and run code of the new module in the same transaction containing the upgrade.
+This is useful for triggering a migration function in the new smart contract module and rejecting the
+upgrade if the migration fails.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guides/upgradeable-contract.html#guide-upgradable-contract"><span class="std std-ref">Make a contract upgradeable</span></a> for a guide about how to make a Rust smart contract
+upgradeable.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-of-a-smart-contract-instance">State of a smart contract instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiate-a-smart-contract-on-chain">Instantiate a smart contract on-chain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-state">Instance state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interact-with-an-instance">Interact with an instance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-events">Log events</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-operations">Invoke operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgradeability">Upgradeability</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failing-to-upgrade">Failing to upgrade</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#immutability">Immutability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#migration">Migration</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/smart-contracts/general/contract-instances.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2024, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
