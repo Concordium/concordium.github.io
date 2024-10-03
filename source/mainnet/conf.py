@@ -155,7 +155,7 @@ html_theme_options = {
     "show_toc_level": 2,
     "navigation_depth": 5,
     "navbar_start": ["navbar-logo"],
-    "navbar_center": ["navbar-menu"],
+    "navbar_center": ["navbar-nav"],
     "navbar_end": ["navbar-icon-links"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "article_footer_items": ["footer-article"],
@@ -265,7 +265,7 @@ html_context = {
 html_static_path = ["../_static"]
 
 html_css_files = [
-    "css/style.css",
+    "css/custom.css",
     "css/tippy.css",
 ]
 
