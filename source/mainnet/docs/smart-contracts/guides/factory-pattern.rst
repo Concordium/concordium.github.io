@@ -1,7 +1,7 @@
 .. _factory-pattern:
 
 =======================================
-Using the factory pattern on Concordium
+Use the factory pattern on Concordium
 =======================================
 
 .. Warning::
