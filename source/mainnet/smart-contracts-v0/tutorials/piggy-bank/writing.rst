@@ -47,7 +47,7 @@ Preparation
 
 Before you start, make sure to have the necessary tooling to build Rust
 contracts.
-The guide :ref:`setup-tools` shows you how to do this.
+The guide :ref:`build-contract` shows you how to do this.
 
 You also need to set up a new smart contract project.
 Follow the guide :ref:`setup-contract` and return to this point afterwards.

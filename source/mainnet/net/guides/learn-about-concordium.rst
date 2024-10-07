@@ -13,6 +13,4 @@ Before you start using the Concordium blockchain, it's a good idea to understand
    :hidden:
    :maxdepth: 1
 
-   ../concepts/id-accounts
-   ../references/manage-accounts
    ../resources/glossary

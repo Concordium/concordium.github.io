@@ -8,7 +8,7 @@
 .. include:: ../../variables.rst
 
 ===============================
-Introduction to smart contracts
+What is a smart contract
 ===============================
 
 Already know what smart contracts are? Go to the :ref:`quick guide<sc-quick-start>` to start building smart contracts on Concordium right away.

@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _deploy-module:
 
 ==============================
@@ -12,7 +12,7 @@ Preparation
 ===========
 
 Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and
-that you have a :ref:`smart-contract module<setup-tools>` ready to be deployed.
+that you have a :ref:`smart-contract module<build-contract>` ready to be deployed.
 
 Since deploying a smart contract module is done in the form of a transaction,
 you will also need to have ``concordium-client`` setup with an account with
@@ -110,3 +110,13 @@ The output should be similar to the following:
 .. code-block:: console
 
    Module reference 9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 was successfully named 'some_deployed_module'.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   initialize-contract
+   interact-instance
+   inspect-instance
+   invoke-instance
+   

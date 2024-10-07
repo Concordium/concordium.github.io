@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _list of types implementing the SchemaType: https://docs.rs/concordium-contracts-common/latest/concordium_contracts_common/schema/trait.SchemaType.html#foreign-impls
 .. _build-schema:
 
@@ -18,7 +18,7 @@ Preparation
 ===========
 
 First, ensure you have ``cargo-concordium`` installed and if not the guide
-:ref:`setup-tools` will help you.
+:ref:`build-contract` will help you.
 
 You also need the Rust source code of the smart contract you wish to build a
 schema for.

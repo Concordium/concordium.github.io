@@ -72,7 +72,7 @@ The input to the transaction is a *credential*, which contains a number of :term
 An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
 all other activities undisclosed.
 
-.. image:: ../images/concepts/account-creation.png
+.. image:: ../protocol/images/account-creation.png
    :alt: graphic drawing showing how user creates accounts
 
 .. Note::

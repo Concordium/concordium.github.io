@@ -27,7 +27,7 @@ Request identity
 
 #. Write down or save your seedphrase by clicking the copy button to copy your seedphrase to the clipboard and remember to go to the clipboard and save the file. Keep your seedphrase secure as you will need it to create accounts or recover the identity. Click **Proceed**.
 
-   .. image:: ../images/company-id-request.png
+   .. image:: ../protocol/images/company-id-request.png
       :alt: company id tool screen showing identities related to seedphrase and option to select
 
 #. Enter your seedphrase to verify that you have recorded it correctly. Click **Proceed**.
@@ -51,7 +51,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
 #. Enter your seedphrase in the Enter seedphrase field. In the Identity object file field click to navigate to the location of the stored ``id-object.json`` file. Click **Get Accounts**.
 
-   .. image:: ../images/company-id-create-acct.png
+   .. image:: ../protocol/images/company-id-create-acct.png
       :alt: company id tool screen showing seedphrase field and file selection box
 
 #. On the next screen, click **Create Account** to create an account with this company identity. When prompted, save the ``account-keys.json`` in a secure location as you will need them to interact with the account on-chain. You can click **Create account** again to create another account.
@@ -60,7 +60,7 @@ After obtaining the ``id-object.json`` identity object from the identity provide
 
    If you are trying to recover the ``account-keys.json`` file(s), you can also use **Create Account**. After entering your seedphrase and selecting your ``id-object.json`` file you will see a list of account associated with this seedphrase and ID object. Click **Save** to save the ``account-keys.json`` for that account.
 
-   .. image:: ../images/company-id-acct-keys.png
+   .. image:: ../protocol/images/company-id-acct-keys.png
       :alt: company id tool screen showing seedphrase field and file selection box
 
 .. dropdown:: Format of the key files
@@ -139,7 +139,7 @@ If the identity object used to create credentials is lost, it can be recovered f
 
 #. You see a list of accounts associated with the seedphrase. It is possible to save the account keys that can be ussed to interact with the account on the chain. Indices that are to the left of the account address are pointing to the identity index, being the first value and the account index being the second value (0,0). In the Identities to recover drop-down, select the identity you want to recover. There will always be one additional index on the list for selection to be sure that request can be generated for more than one identity. This is mainly useful in cases where first identity object was lost or unused to create accounts. Click **Generate recovery request**. The command outputs the ``recovery-request.json`` file. The request should be sent to the identity provider through a trusted channel. When the request has been verified successfully, you will receive an email with an identity object. Store this file securely as you need it to create accounts on the chain.
 
-   .. image:: ../images/company-id-recover.png
+   .. image:: ../protocol/images/account-creation.png
       :alt: company id tool screen showing identities related to seedphrase and option to select
 
 - For Mainnet requests: Send the file to ania@notabene.id together with any other required identity data as described in the `entity verification instructions <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_.

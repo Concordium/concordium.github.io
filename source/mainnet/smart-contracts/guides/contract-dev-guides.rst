@@ -16,14 +16,5 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    :maxdepth: 1
    :hidden:
 
-   setup-tools
-   setup-contract
-   compile-module
-   custom-errors
-   build-schema
-   no-std
-   fallback-entrypoints
-   upgradeable-contract
-   json-params
    migrate-contracts
-   factory-pattern
+

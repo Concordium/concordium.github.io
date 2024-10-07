@@ -225,7 +225,7 @@ Concordium Client |client-version|
 ``cargo-concordium``
 ====================
 
-For information about installing ``cargo-concordium``, see :ref:`Install tools for development <setup-tools>`.
+For information about installing ``cargo-concordium``, see :ref:`Install tools for development <build-contract>`.
 
 .. Note::
 

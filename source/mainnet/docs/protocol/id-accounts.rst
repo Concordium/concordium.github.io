@@ -56,7 +56,7 @@ Identity issuance requires *Identity Verification*, which is the process of veri
 
 Upon verification of the user's identification documents and attributes, the Identity provider issues a :term:`user identity certificate`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
 
-.. image:: ../images/concepts/identity-creation.png
+.. image:: ./images/identity-creation.png
    :alt: graphic drawing showing how the user interacts with the identity provider
 
 .. Note::
@@ -80,5 +80,6 @@ For information about accounts, see :ref:`Accounts<managing_accounts>`.
    :hidden:
    :maxdepth: 1
 
-   ../guides/company-identities
+   company-identities
+
 

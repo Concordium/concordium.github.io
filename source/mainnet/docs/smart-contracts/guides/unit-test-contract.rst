@@ -77,7 +77,7 @@ uses the same Wasm-interpreter as the one shipped in the Concordium nodes.
 
 .. seealso::
 
-   For instructions about how to install ``cargo-concordium``, see :ref:`setup-tools`.
+   For instructions about how to install ``cargo-concordium``, see :ref:`build-contract`.
 
 The unit test has to be annotated with ``#[concordium_test]`` instead of
 ``#[test]``, and ``#[concordium_cfg_test]`` is used instead of ``#[cfg(test)]``:

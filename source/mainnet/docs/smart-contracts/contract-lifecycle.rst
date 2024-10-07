@@ -1,7 +1,7 @@
 .. _sc-lifecycle:
 
 ==============================
-Life cycle of a smart contract
+Smart contract life cycle
 ==============================
 
 A smart contract is first deployed to the chain as part of a :ref:`contract

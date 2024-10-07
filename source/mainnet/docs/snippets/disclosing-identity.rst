@@ -9,7 +9,7 @@ Each account has an encryption of a specific user identifier. This number can be
 
 After the authorities have identified an on-chain transaction or account they would like to investigate, in order to reveal the real-world identity of a user, the following process must be followed:
 
-.. image:: ../images/concepts/identity-disclosure.png
+.. image:: ./images/identity-disclosure.png
    :alt: graphic showing the identity disclosure process
 
 1. The qualified authority must identify the identity disclosure authorities and identity provider associated with the account they would like to reveal and present them with an official order.

@@ -1,11 +1,10 @@
-:template: index.html
-
-=======
-Mainnet
-=======
+==================================
+Concordium Developer Documentation
+==================================
 
 .. toctree::
-   :hidden:
+   :maxdepth: 2
 
-   net/index
-   smart-contracts/general/introduction
+   docs/index
+   tutorials/index
+   tools

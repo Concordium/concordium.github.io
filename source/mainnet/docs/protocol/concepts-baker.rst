@@ -33,12 +33,12 @@ Overview of the validation process
 
 #. If the combined effective stake of the validators who sign the block is *greater than or equal to* two-thirds of the total stake, the block gets a :term:`Quorum Certificate` (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.
 
-.. image:: ../images/concepts/baker-process1.png
+.. image:: ../protocol/images/baker-process1.png
    :alt: diagram of validator process
 
 6. The next validator (Alice) now uses the QC to produce the next block. The new block can only extend the previous block when a QC is presented to Alice.
 
-.. image:: ../images/concepts/baker-process2.png
+.. image:: ../protocol/images/baker-process2.png
    :alt: diagram of validator process
 
 If there are no issues, the protocol repeats this process from step 3.
@@ -236,19 +236,7 @@ Next steps
 ==========
 
 - Read the information about :ref:`validation management<baker-pool>`.
-- If you are interested in a staking pool, read the :ref:`Delegation FAQ<delegation-faq>`.
+- If you are interested in a staking pool, read the :ref:`Delegation FAQ<delegation-faq-old>`.
 - You need to :ref:`add a validator <add-baker-mw>` to the account you created. Import the validator keys to your node.
 - You can then :ref:`update validator settings <update-baker-mw>` as needed to manage your validator.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   ../guides/baker-pool
-   ../mobile-wallet/add-baker-mw
-   ../mobile-wallet/update-baker-mw
-   ../guides/baker-windows
-   ../nodes/baker-macos
-   ../nodes/baker-ubuntu
-   ../nodes/baker-docker
-   ../guides/become-baker
