@@ -26,7 +26,7 @@ flags are supported by all ``concordium-client`` commands. Note that as of versi
    This page describes the commands that are related with configuration of
    the client, but the rest of available commands will be discussed on the pages
    where the features that use them are documented. Some commands will perform
-   :ref:`queries<testnet-query-node>` and others send :ref:`transactions<transactions>`.
+   :ref:`queries<testnet-query-node>` and others send :ref:`transactions<transactions-old>`.
 
 .. Note::
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
