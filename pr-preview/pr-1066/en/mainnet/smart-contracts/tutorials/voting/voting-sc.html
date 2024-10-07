@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/voting/voting-sc.4ab40d4c-706f-4503-b981-0e9e5b6d882f.js"></script>
+    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/voting/voting-sc.ed1cd818-cd78-4682-b258-7ace75b4f3d0.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'smart-contracts/tutorials/voting/voting-sc';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -591,8 +591,8 @@
 </div>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>Before you start, make sure to have the necessary tooling to build Rust contracts. The guide <a class="reference internal" href="../../guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a> shows you how to do this.</p>
-<p>You also need to set up a new smart contract project. Follow the guide <a class="reference internal" href="../../guides/setup-contract.html#setup-contract"><span class="std std-ref">Set up a smart contract project</span></a> and return to this point afterwards.</p>
+<p>Before you start, make sure to have the necessary tooling to build Rust contracts. The guide <a class="reference internal" href="../../../docs/smart-contracts/guides/build-contract.html#build-contract"><span class="std std-ref">Build a smart contract</span></a> shows you how to do this.</p>
+<p>You also need to set up a new smart contract project. Follow the guide <a class="reference internal" href="../../../docs/smart-contracts/guides/setup-contract.html#setup-contract"><span class="std std-ref">Set up a smart contract project</span></a> and return to this point afterwards.</p>
 </section>
 <section id="basic-setup">
 <h2>Basic setup<a class="headerlink" href="#basic-setup" title="Link to this heading">#</a></h2>
@@ -620,7 +620,7 @@ which you can delete for now. You will come back to tests later in this tutorial
 <li><p><code class="docutils literal notranslate"><span class="pre">get_votes</span></code></p></li>
 </ul>
 <p>Now, let’s examine the code in <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/src/lib.rs">the example voting smart contract here</a>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">ElectionConfig</span></code> data structure defines the configuration of the smart contract and is an input to the <code class="docutils literal notranslate"><span class="pre">init</span></code> function. In the example code, it contains a description of the election, the voting options, and the deadline of the election. Voting options is provided as a list of strings, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the maximum size of the list of voting options is large, but limited. For more information, see <a class="reference internal" href="../../general/contract-instances.html#contract-instance-operations"><span class="std std-ref">Contract instance limits</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ElectionConfig</span></code> data structure defines the configuration of the smart contract and is an input to the <code class="docutils literal notranslate"><span class="pre">init</span></code> function. In the example code, it contains a description of the election, the voting options, and the deadline of the election. Voting options is provided as a list of strings, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the maximum size of the list of voting options is large, but limited. For more information, see <a class="reference internal" href="../../../docs/smart-contracts/contract-instances.html#contract-instance-operations"><span class="std std-ref">Contract instance limits</span></a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">view</span></code> function also returns the <code class="docutils literal notranslate"><span class="pre">ElectionConfig</span></code> type, so that users can, for instance, see the available options to vote for.</p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">vote</span></code> function, the contract specifies who may vote and when (only accounts may vote and only before the deadline). If a contract tries to vote, an error occurs.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="n">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="n">sender</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>

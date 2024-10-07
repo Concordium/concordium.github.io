@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/smart-contracts/onboarding-guide-solana-developers/faq.e4574b65-f661-4bf4-8133-1763176e7eae.js"></script>
+    <script defer="defer" src="../../_static/tippy/smart-contracts/onboarding-guide-solana-developers/faq.ab81ce14-45cc-493a-b0bc-982f539b009d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'smart-contracts/onboarding-guide-solana-developers/faq';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -632,7 +632,7 @@ Is there something similar to Solana’s <cite>Anchor</cite> framework for Conco
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Yes. The Concordium standard library crate <a class="reference external" href="https://crates.io/crates/concordium-std">concordium-std</a> provides a high-level interface for writing smart contracts in Rust.
 It includes convenient ways of working with the contract state, provides macros for exposing Rust functions as entrypoints, handles serialization, provides testing infrastructure, etc.
-Together with <a class="reference internal" href="../guides/setup-tools.html#setup-tools"><span class="std std-ref">cargo-concordium</span></a> it can be used to develop, test and build smart contracts.</p>
+Together with <a class="reference internal" href="../../docs/smart-contracts/guides/build-contract.html#build-contract"><span class="std std-ref">cargo-concordium</span></a> it can be used to develop, test and build smart contracts.</p>
 <p class="sd-card-text">You can follow the chapter <a class="reference internal" href="../tutorials/piggy-bank/writing.html#piggy-bank-writing"><span class="std std-ref">writing a smart contract</span></a> in the piggy bank tutorial to get started with using <a class="reference external" href="https://crates.io/crates/concordium-std">concordium-std</a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -896,7 +896,7 @@ How can I provide the input parameters as a JSON object and get the output param
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">A <a class="reference internal" href="../general/contract-schema.html#contract-schema"><span class="std std-ref">smart contract schema</span></a> is a description of how to represent
+<p class="sd-card-text">A <a class="reference internal" href="../../docs/smart-contracts/contract-schema.html#contract-schema"><span class="std std-ref">smart contract schema</span></a> is a description of how to represent
 bytes in a more structured representation. It is used by
 external tools (such as the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>) when displaying the return value of a receive
 function and for specifying the input parameters to a receive
@@ -1153,7 +1153,7 @@ Does Concordium have upgradable smart contracts?<div class="sd-summary-down docu
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Yes, you can choose to make your smart contracts upgradable. See <a class="reference internal" href="../general/contract-instances.html#contract-instance-upgradeability"><span class="std std-ref">Upgradeability</span></a> for more details.</p>
+<p class="sd-card-text">Yes, you can choose to make your smart contracts upgradable. See <a class="reference internal" href="../../docs/smart-contracts/contract-instances.html#contract-instance-upgradeability"><span class="std std-ref">Upgradeability</span></a> for more details.</p>
 </div>
 </details></section>
 <section id="deploying-and-initializing-smart-contracts">
@@ -1359,7 +1359,7 @@ Each account has 1+ credentials, and each credential has 1+ keys.
 You can set a threshold for the number of signers needed on an account (for example 2/3 signers).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">The desktop wallet supports all transaction types (<a class="reference internal" href="../../net/concepts/concepts-transactions.html#transactions-overview"><span class="std std-ref">except smart contract transactions</span></a>).</p>
+<p class="sd-card-text">The desktop wallet supports all transaction types (<a class="reference internal" href="../../docs/protocol/concepts-transactions.html#transactions-overview"><span class="std std-ref">except smart contract transactions</span></a>).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

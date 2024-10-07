@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Smart contracts &#8212; Concordium  documentation</title>
+    <title>Concordium Protocol &#8212; Concordium  documentation</title>
   
   
   
@@ -51,12 +51,12 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/introduction.d5a51acb-bc06-4316-945e-6b0eb984cd0a.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/introduction.bafec76e-f225-4391-b404-a32d257150f2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/introduction';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Smart contracts" href="../smart-contracts/introduction.html" />
+    <link rel="next" title="Identities" href="id-accounts.html" />
     <link rel="prev" title="Docs" href="../index.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -477,10 +477,55 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">What is the Concordium Protocol?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="id-accounts.html">Identities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="company-identities.html">Company identity creation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="transactions.html">Transactions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html">Transaction anatomy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="network.html">Network</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="networks.html">Networks</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contracts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/introduction.html">What is a Smart Contract?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/introduction.html">What is a smart contract?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-lifecycle.html">Smart contract life cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/develop-contracts.html">Develop smart contracts in Rust</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/guides/quick-start.html">QuickStart to smart contract deployment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/guides/build-contract.html">Build a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/setup-contract.html">Set up a smart contract project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/custom-errors.html">Return custom errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/fallback-entrypoints.html">Fallback entrypoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/upgradeable-contract.html">Make a contract upgradeable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/json-params.html">Work with the JSON parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/factory-pattern.html">Use the factory pattern on Concordium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/development.html">Development best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/costs.html">Cost reduction best practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/guides/deploy-module.html">Deploy a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/inspect-instance.html">Inspect a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/invoke-instance.html">Invoke a smart contract instance</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Network</span></p>
 <ul class="nav bd-sidenav">
@@ -529,7 +574,7 @@
     
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Docs</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Smart contracts</li>
+    <li class="breadcrumb-item active" aria-current="page">Concordium Protocol</li>
   </ul>
 </nav>
 </div>
@@ -546,8 +591,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="smart-contracts">
-<h1>Smart contracts<a class="headerlink" href="#smart-contracts" title="Link to this heading">#</a></h1>
+  <section id="concordium-protocol">
+<h1>Concordium Protocol<a class="headerlink" href="#concordium-protocol" title="Link to this heading">#</a></h1>
 </section>
 
 
@@ -606,11 +651,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../smart-contracts/introduction.html"
+       href="id-accounts.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Smart contracts</p>
+        <p class="prev-next-title">Identities</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

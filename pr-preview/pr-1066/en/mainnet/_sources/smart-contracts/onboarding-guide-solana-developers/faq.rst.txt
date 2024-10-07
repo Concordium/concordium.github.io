@@ -66,7 +66,7 @@ Concordium smart contracts
 
     Yes. The Concordium standard library crate `concordium-std <https://crates.io/crates/concordium-std>`_ provides a high-level interface for writing smart contracts in Rust.
     It includes convenient ways of working with the contract state, provides macros for exposing Rust functions as entrypoints, handles serialization, provides testing infrastructure, etc.
-    Together with :ref:`cargo-concordium<setup-tools>` it can be used to develop, test and build smart contracts.
+    Together with :ref:`cargo-concordium<build-contract>` it can be used to develop, test and build smart contracts.
 
     You can follow the chapter :ref:`writing a smart contract<piggy-bank-writing>` in the piggy bank tutorial to get started with using `concordium-std <https://crates.io/crates/concordium-std>`_.
 

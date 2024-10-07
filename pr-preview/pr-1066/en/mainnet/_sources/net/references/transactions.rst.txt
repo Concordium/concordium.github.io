@@ -1,6 +1,6 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
 .. include:: ../../variables.rst
-.. _transactions:
+.. _transactions-old:
 
 ==============================
 Concordium Client transactions

@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/piggy-bank/writing.5f886143-3819-4d41-af82-08b8bb3b31a7.js"></script>
+    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/piggy-bank/writing.eefd05ea-7af4-4633-a979-ad4d437780c0.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'smart-contracts/tutorials/piggy-bank/writing';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -588,7 +588,7 @@ development. In this part you will focus on how to write a smart contract in the
 <a class="reference external" href="https://www.rust-lang.org/">Rust</a> programming language using the <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> library.</p>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>Set up a new smart contract project by following the guide <a class="reference internal" href="../../guides/setup-contract.html#setup-contract"><span class="std std-ref">Set up a smart contract project</span></a> and return to this point afterwards.</p>
+<p>Set up a new smart contract project by following the guide <a class="reference internal" href="../../../docs/smart-contracts/guides/setup-contract.html#setup-contract"><span class="std std-ref">Set up a smart contract project</span></a> and return to this point afterwards.</p>
 </section>
 <section id="bring-in-the-standard-library">
 <h2>Bring in the standard library<a class="headerlink" href="#bring-in-the-standard-library" title="Link to this heading">#</a></h2>
@@ -664,7 +664,7 @@ return a copy of the state, so you also derive the trait implementation for
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>In certain cases, the <code class="docutils literal notranslate"><span class="pre">Serial</span></code> and <code class="docutils literal notranslate"><span class="pre">DeserialWithState</span></code>
 traits are needed instead of <code class="docutils literal notranslate"><span class="pre">Serialize</span></code>. See
-<a class="reference internal" href="../../general/develop-contracts.html#serialize-state-and-parameters"><span class="std std-ref">Serializable state and parameters</span></a> for more information.</p>
+<a class="reference internal" href="../../../docs/smart-contracts/develop-contracts.html#serialize-state-and-parameters"><span class="std std-ref">Serializable state and parameters</span></a> for more information.</p>
 </aside>
 </aside>
 </section>
@@ -1001,7 +1001,7 @@ the return type.</p>
 different parts of the state or return a value computed from the state.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To view return values of a contract instance on the chain, see the guide <a class="reference internal" href="../../guides/invoke-instance.html#invoke-instance"><span class="std std-ref">Invoke a smart contract instance</span></a>.</p>
+<p>To view return values of a contract instance on the chain, see the guide <a class="reference internal" href="../../../docs/smart-contracts/guides/invoke-instance.html#invoke-instance"><span class="std std-ref">Invoke a smart contract instance</span></a>.</p>
 </div>
 <p id="cargo-concordium-build">You now have all the parts for your piggy bank smart contract. Before you start testing it, check that it builds by running:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build

@@ -51,12 +51,12 @@
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/docs/index.d3d74a1c-d8aa-445e-aad4-4d6404b51f23.js"></script>
+    <script defer="defer" src="../_static/tippy/docs/index.3ac4d2b1-8786-4171-828d-ddc6a3207684.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/index';</script>
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Smart contracts" href="protocol/introduction.html" />
+    <link rel="next" title="Concordium Protocol" href="protocol/introduction.html" />
     <link rel="prev" title="Concordium Developer Documentation" href="../index.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -477,10 +477,55 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="protocol/introduction.html">What is the Concordium Protocol?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="protocol/id-accounts.html">Identities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="protocol/company-identities.html">Company identity creation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protocol/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="protocol/transactions.html">Transactions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="protocol/concepts-transactions.html">Transaction anatomy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="protocol/network.html">Network</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="protocol/concepts-baker.html">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol/concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol/networks.html">Networks</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contracts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="smart-contracts/introduction.html">What is a Smart Contract?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="smart-contracts/introduction.html">What is a smart contract?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/contract-lifecycle.html">Smart contract life cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/develop-contracts.html">Develop smart contracts in Rust</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="smart-contracts/guides/quick-start.html">QuickStart to smart contract deployment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="smart-contracts/guides/build-contract.html">Build a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/setup-contract.html">Set up a smart contract project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/custom-errors.html">Return custom errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/fallback-entrypoints.html">Fallback entrypoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/upgradeable-contract.html">Make a contract upgradeable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/json-params.html">Work with the JSON parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/factory-pattern.html">Use the factory pattern on Concordium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/development.html">Development best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/costs.html">Cost reduction best practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="smart-contracts/guides/deploy-module.html">Deploy a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/inspect-instance.html">Inspect a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/invoke-instance.html">Invoke a smart contract instance</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Network</span></p>
 <ul class="nav bd-sidenav">
@@ -550,12 +595,77 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="protocol/introduction.html">What is the Concordium Protocol?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocol/id-accounts.html">Identities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protocol/id-accounts.html#about-identities">About identities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="protocol/id-accounts.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/id-accounts.html#obtain-an-identity">Obtain an identity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="protocol/id-accounts.html#about-accounts">About accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol/id-accounts.html#disclosing-an-identity">Disclosing an identity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protocol/manage-accounts.html">Accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protocol/manage-accounts.html#about-accounts">About accounts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#initial-account">Initial account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#account-creation">Account creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#attributes">Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="protocol/manage-accounts.html#benefits-of-revealing-attributes">Benefits of revealing attributes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="protocol/manage-accounts.html#disclosing-an-identity">Disclosing an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol/manage-accounts.html#account-concepts">Account concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#account-balances">Account balances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#account-sequence-number">Account sequence number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#account-aliases">Account aliases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="protocol/manage-accounts.html#tools">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#the-desktop-wallet">The Desktop Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#the-cryptox">The CryptoX Concordium Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#the-mw-gen1">The Concordium Legacy Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#the-mw-gen2">The Concordium Wallet for Mobile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#the-bw">The Concordium Wallet for Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol/manage-accounts.html#command-line-tool">Command-line tool</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protocol/transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocol/network.html">Network</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contracts</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="smart-contracts/introduction.html">What is a Smart Contract?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smart-contracts/introduction.html">What is a smart contract?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/introduction.html#auction-smart-contract-example">Auction smart contract example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/introduction.html#next-steps">Next steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts/introduction.html#additional-reading">Additional reading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts/introduction.html#smart-contract-development-tools">Smart contract development tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="smart-contracts/guides/quick-start.html">QuickStart to smart contract deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smart-contracts/guides/build-contract.html">Build a smart contract</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/build-contract.html#rust-and-cargo">Rust and Cargo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/build-contract.html#cargo-concordium"><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts/guides/build-contract.html#vscode-extension">VSCode extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smart-contracts/guides/build-contract.html#typescript-smart-contract-client-generator">Typescript smart contract client generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/build-contract.html#concordium-software">Concordium software</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="smart-contracts/guides/deploy-module.html">Deploy a smart contract</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/deploy-module.html#preparation">Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/deploy-module.html#deployment">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smart-contracts/guides/deploy-module.html#naming-a-module">Naming a module</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -632,7 +742,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Smart contracts</p>
+        <p class="prev-next-title">Concordium Protocol</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

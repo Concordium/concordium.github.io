@@ -24,7 +24,7 @@ Preparation
 ===========
 
 Make sure you have ``cargo-concordium`` installed, if not follow the guide
-:ref:`setup-tools`.
+:ref:`build-contract`.
 You will also need a smart contract module in Wasm to simulate.
 
 .. todo::

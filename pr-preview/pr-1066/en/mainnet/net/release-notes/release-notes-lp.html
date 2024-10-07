@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.e01965bf-0271-4871-bbad-c54440c707f3.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.d8163fe8-e854-455f-82d1-58011a304575.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1835,9 +1835,51 @@ Previous releases<div class="sd-summary-down docutils">
 <section id="mainnet">
 <span id="rn-node-mainnet"></span><span id="id3"></span><h3>Mainnet<a class="headerlink" href="#mainnet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>September 30, 2024</p>
-<p>Concordium node version 6.3.2 fixes a bug in the handling of smart contract names that could cause the node to crash.
-<strong>This is a critical bug fix, and node runners should update as soon as possible.</strong></p>
+<div><p>October 3, 2024</p>
+<p>Concordium node version 7.0.5 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P7.html">protocol version 7</a>.
+The new consensus protocol will take effect on the mainnet on October 30, 2024.
+<strong>Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.</strong></p>
+<p>Protocol version 7 introduces the following changes:</p>
+<ul>
+<li><p>The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.</dt><dd><p>(Previously, the reduction was only effective after the cool-down period.)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Validators and delegators can make further changes to their stake while they already have stake in cooldown.</dt><dd><p>This includes registering as a validator when the account was previously a delegator, or vice versa.
+(Previously, the account had to wait for the cool-down period to end before making further changes.)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Shielded transfers are no longer supported in the protocol.</dt><dd><p>It is still possible to unshield a previously shielded balance.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Smart contract execution costs are reduced.</dt><dd><p>This reflects a more efficient implementation of the smart contract execution engine introduced in this release.</p>
+</dd>
+</dl>
+</li>
+<li><p>Smart contracts can now query the module reference and contract name of a smart contract instance.</p></li>
+<li><p>The block hashing scheme is redefined to better support light clients.</p></li>
+</ul>
+<p>Additionaly, the node release includes a number of fixes and improvements:</p>
+<ul class="simple">
+<li><p>Logging around protocol updates is improved.</p></li>
+<li><p>Failed gRPC requests are now logged at <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level.</p></li>
+<li><p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetBakersRewardPeriod</span></code> returns incorrect data.</p></li>
+<li><p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetPoolInfo</span></code> returns incorrect data.</p></li>
+<li><p>Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.</p></li>
+<li><p>Improved the behavior of the node in the event of an unrecoverable error in consensus.</p></li>
+</ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -1846,6 +1888,16 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+6.3.2 - September 30, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 6.3.2 fixes a bug in the handling of smart contract names that could cause the node to crash.
+<strong>This is a critical bug fix, and node runners should update as soon as possible.</strong></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 6.3.1 - June 24, 2024<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -3232,7 +3284,7 @@ It also adds a <code class="docutils literal notranslate"><span class="pre">--se
 <span id="rn-cargo"></span><h3><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code><a class="headerlink" href="#cargo-concordium" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>May 11, 2023</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0 the distribution method for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. For more information, see <a class="reference internal" href="../../smart-contracts/guides/setup-tools.html#setup-tools"><span class="std std-ref">Install tools for development</span></a>.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0 the distribution method for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. For more information, see <a class="reference internal" href="../../docs/smart-contracts/guides/build-contract.html#build-contract"><span class="std std-ref">Install tools for development</span></a>.</p>
 <p>If you already have <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> installed, you may need to remove the existing <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> from your PATH to be able to update versions in the future.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">

@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/mobile-wallet/update-baker-mw.b2bf2e69-d90b-47ec-949f-ad477d75df77.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/mobile-wallet/update-baker-mw.57e54402-cac4-4993-9046-10117a7e020f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/mobile-wallet/update-baker-mw';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -472,27 +472,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../concepts/concepts-baker.html">Validation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../guides/baker-pool.html">Validator management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Change validator options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/baker-windows.html">Run a validator node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/baker-macos.html">Run a validator node on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/baker-ubuntu.html">Run a validator node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/baker-docker.html">Run a validator node on Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/become-baker.html">Become a validator using the Concordium Client</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../concepts/concepts-delegation.html">Delegation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../snippets/delegation-faq.html">Delegation and validation FAQ</a></li>
-</ul>
-</div>
+  <div class="bd-toc-item navbar-nav"></div>
 </nav></div>
     </div>
   
@@ -550,7 +530,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some features may function differently until Protocol 7 is fully implemented.
-See note in <a class="reference internal" href="../snippets/delegation-faq.html#delegation-faq"><span class="std std-ref">Delegation and validation FAQ</span></a> for information on changes from Protocol 6 to Protocol 7.</p>
+See note in <a class="reference internal" href="../snippets/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation and validation FAQ</span></a> for information on changes from Protocol 6 to Protocol 7.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -626,7 +606,7 @@ Concordium Legacy Wallet<div class="sd-summary-down docutils">
 </ul>
 <section id="update-validator-stake-and-restaking-preference">
 <span id="update-baker-stake-mw"></span><h2>Update validator stake and restaking preference<a class="headerlink" href="#update-validator-stake-and-restaking-preference" title="Link to this heading">#</a></h2>
-<p>You can change the <a class="reference internal" href="../concepts/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a validator account. Changes will take effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.
+<p>You can change the <a class="reference internal" href="../../docs/protocol/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a validator account. Changes will take effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.
 If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 However, if you decrease the stake, there is a cool-down period of three weeks.
 After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.</p>
@@ -819,7 +799,7 @@ Tap Next to navigate through the screens. Tap Skip to proceed directly to updati
 </a>
 <ul class="simple">
 <li><p class="sd-card-text">Open pool: open a pool for a previously closed validator</p></li>
-<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
+<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../../docs/protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
 <li><p class="sd-card-text">Close pool: close a pool permanently.</p></li>
 </ul>
 <p class="sd-card-text">If you choose <strong>Open pool</strong>:</p>
@@ -860,7 +840,7 @@ Concordium Wallet for Mobile and Concordium Legacy Wallet<div class="sd-summary-
 </a>
 <ul class="simple">
 <li><p class="sd-card-text">Open pool: open a pool for a previously closed validator</p></li>
-<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
+<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../../docs/protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
 <li><p class="sd-card-text">Close pool: close a pool permanently.</p></li>
 </ul>
 <p class="sd-card-text">If you choose <strong>Open pool</strong>:</p>
@@ -912,7 +892,7 @@ Concordium Wallet for Web<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">You can change the staking pool status, if desired. Click <strong>Continue</strong>. The options are:</p>
 <ul class="simple">
 <li><p class="sd-card-text">Open pool: open a pool for a previously closed validator</p></li>
-<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../concepts/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
+<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../../docs/protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
 <li><p class="sd-card-text">Close pool: close a pool permanently.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/update-baker-pool-status.png"><img alt="screen showing actions to update validator pool status" src="../../_images/update-baker-pool-status.png" style="width: 40%;" />

@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/references/concordium-client.bdb739e1-6b42-4e2f-b0c5-dc591230840c.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/references/concordium-client.2e684ba1-5a37-4c80-aadf-05f60cf73bfe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/references/concordium-client';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -544,7 +544,7 @@ flags are supported by all <code class="docutils literal notranslate"><span clas
 <p>This page describes the commands that are related with configuration of
 the client, but the rest of available commands will be discussed on the pages
 where the features that use them are documented. Some commands will perform
-<a class="reference internal" href="query-node.html#testnet-query-node"><span class="std std-ref">queries</span></a> and others send <a class="reference internal" href="transactions.html#transactions"><span class="std std-ref">transactions</span></a>.</p>
+<a class="reference internal" href="query-node.html#testnet-query-node"><span class="std std-ref">queries</span></a> and others send <a class="reference internal" href="transactions.html#transactions-old"><span class="std std-ref">transactions</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -631,7 +631,7 @@ account.</p></li>
 storage and a password is required each time the key is needed. The password is
 chosen when the keys are either imported via <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">account</span> <span class="pre">import</span></code> (see
 below), or when keys are added to the account afterwards.</p>
-<p>Read more about accounts <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">here</span></a>.</p>
+<p>Read more about accounts <a class="reference internal" href="../../docs/protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">here</span></a>.</p>
 <section id="location">
 <h3>Location<a class="headerlink" href="#location" title="Link to this heading">#</a></h3>
 <p>The configuration directory is mapped by Docker into a
@@ -723,7 +723,7 @@ container.</p>
 </section>
 <section id="add-accounts-and-keys">
 <h3>Add accounts and keys<a class="headerlink" href="#add-accounts-and-keys" title="Link to this heading">#</a></h3>
-<p>See also the <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">Managing accounts</span></a> section.</p>
+<p>See also the <a class="reference internal" href="../../docs/protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">Managing accounts</span></a> section.</p>
 <section id="add-named-account">
 <h4>Add named account<a class="headerlink" href="#add-named-account" title="Link to this heading">#</a></h4>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>name<span class="w"> </span>ADDRESS<span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>NAME<span class="o">]</span>
