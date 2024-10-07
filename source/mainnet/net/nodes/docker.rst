@@ -12,3 +12,7 @@ This section contains topics that describe running a node with Docker.
 
    ../guides/run-node
    troubleshoot-docker
+   baker-docker
+   baker-macos
+   baker-ubuntu
+

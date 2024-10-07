@@ -66,3 +66,6 @@ index
    voting/voting
    voting/guardians
    voting/verify-election-result
+   mobile-wallet/add-baker-mw
+   mobile-wallet/update-baker-mw
+   
