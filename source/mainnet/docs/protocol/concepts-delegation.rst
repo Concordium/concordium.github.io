@@ -65,10 +65,3 @@ To earn rewards, a CCD holder can either delegate to passive delegation, to a st
 
 See the :ref:`Delegation FAQ<delegation-faq>` for answers to the most frequently asked questions.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-   ../guides/add-delegation
-   ../guides/update-delegation
-   ../guides/remove-delegation

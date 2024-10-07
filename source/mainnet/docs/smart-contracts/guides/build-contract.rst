@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _build-contract:
 
 ==============================
@@ -105,7 +105,6 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
    fallback-entrypoints
    upgradeable-contract
    json-params
-   migrate-contracts
    factory-pattern
    unit-test-contract
    development

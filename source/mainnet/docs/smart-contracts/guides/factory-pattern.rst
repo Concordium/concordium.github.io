@@ -69,7 +69,7 @@ The factory constructs a new instance of the ``product`` smart contract, invokin
 ``init_product`` constructor.
 Finally, a reference to the new product instance is returned.
 
-.. image:: images/ideal-factory.svg
+.. image:: ./images/ideal-factory.svg
     :alt: sequence diagram showing the idealized interaction for the factory pattern
 
 

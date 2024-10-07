@@ -240,15 +240,3 @@ Next steps
 - You need to :ref:`add a validator <add-baker-mw>` to the account you created. Import the validator keys to your node.
 - You can then :ref:`update validator settings <update-baker-mw>` as needed to manage your validator.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   ../guides/baker-pool
-   ../mobile-wallet/add-baker-mw
-   ../mobile-wallet/update-baker-mw
-   ../guides/baker-windows
-   ../nodes/baker-macos
-   ../nodes/baker-ubuntu
-   ../nodes/baker-docker
-   ../guides/become-baker
