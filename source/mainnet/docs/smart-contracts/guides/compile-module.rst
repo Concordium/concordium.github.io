@@ -21,7 +21,7 @@ contract module, you wish to compile.
 .. seealso::
 
    For instructions on how to install the developer tools see
-   :ref:`setup-tools`.
+   :ref:`build-contract`.
 
 Compiling to Wasm
 =================

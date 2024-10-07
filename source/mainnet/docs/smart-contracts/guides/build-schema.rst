@@ -18,7 +18,7 @@ Preparation
 ===========
 
 First, ensure you have ``cargo-concordium`` installed and if not the guide
-:ref:`setup-tools` will help you.
+:ref:`build-contract` will help you.
 
 You also need the Rust source code of the smart contract you wish to build a
 schema for.

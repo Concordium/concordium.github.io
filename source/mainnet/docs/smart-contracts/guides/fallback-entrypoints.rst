@@ -22,7 +22,7 @@ You also need to have the following installed:
 .. seealso::
 
    For instructions on how to install the developer tools, see
-   :ref:`setup-tools`.
+   :ref:`build-contract`.
 
 What are fallback entrypoints
 =============================
