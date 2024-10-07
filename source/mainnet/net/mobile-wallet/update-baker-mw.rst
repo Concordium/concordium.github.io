@@ -8,7 +8,7 @@ Change validator options
 .. Note::
 
     Some features may function differently until Protocol 7 is fully implemented.
-    See note in :ref:`Delegation and validation FAQ<delegation-faq>` for information on changes from Protocol 6 to Protocol 7.
+    See note in :ref:`Delegation and validation FAQ<delegation-faq-old>` for information on changes from Protocol 6 to Protocol 7.
 
 .. Note::
 

@@ -8,7 +8,7 @@ Remove delegation to a staking pool or passive delegation
 .. Note::
 
     Some features may function differently until Protocol 7 is fully implemented.
-    See note in :ref:`Delegation and validation FAQ<delegation-faq>` for information on changes from Protocol 6 to Protocol 7.
+    See note in :ref:`Delegation and validation FAQ<delegation-faq-old>` for information on changes from Protocol 6 to Protocol 7.
 
 You can remove the delegation on an account to stop delegating.
 
