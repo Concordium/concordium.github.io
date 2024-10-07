@@ -17,7 +17,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
     #. :ref:`cargo-concordium<concordium-node-and-client-download>`
     #. :ref:`concordium-client<concordium-node-and-client-download>`
 
-    For more detailed information, see :ref:`Install tools for development<setup-tools>`.
+    For more detailed information, see :ref:`Install tools for development<build-contract>`.
 
 .. dropdown:: Step 2 - Set up smart contract project
 

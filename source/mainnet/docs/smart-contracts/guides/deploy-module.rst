@@ -12,7 +12,7 @@ Preparation
 ===========
 
 Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and
-that you have a :ref:`smart-contract module<setup-tools>` ready to be deployed.
+that you have a :ref:`smart-contract module<build-contract>` ready to be deployed.
 
 Since deploying a smart contract module is done in the form of a transaction,
 you will also need to have ``concordium-client`` setup with an account with
