@@ -236,7 +236,7 @@ Next steps
 ==========
 
 - Read the information about :ref:`validation management<baker-pool>`.
-- If you are interested in a staking pool, read the :ref:`Delegation FAQ<delegation-faq>`.
+- If you are interested in a staking pool, read the :ref:`Delegation FAQ<delegation-faq-old>`.
 - You need to :ref:`add a validator <add-baker-mw>` to the account you created. Import the validator keys to your node.
 - You can then :ref:`update validator settings <update-baker-mw>` as needed to manage your validator.
 
