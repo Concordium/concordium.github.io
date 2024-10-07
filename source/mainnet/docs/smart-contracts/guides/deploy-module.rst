@@ -119,3 +119,4 @@ The output should be similar to the following:
    interact-instance
    inspect-instance
    invoke-instance
+   
