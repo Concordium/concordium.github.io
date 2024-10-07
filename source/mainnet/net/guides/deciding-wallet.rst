@@ -115,8 +115,4 @@ Next steps
 - If you want to use the |bw|, :ref:`install <downloads-browser-wallet>` the Google Chrome extension, and then see :ref:`Set up the Concordium Wallet for Chrome<setup-browser-wallet>` for the next steps.
 - If you want to use the |cryptox|, :ref:`install <downloads-cryptox>` on your mobile phone, and then see :ref:`Set up<setup-cryptox-wallet>` for the next steps.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
 
-   ../concepts/concepts-transactions

@@ -41,8 +41,6 @@ index
    :includehidden:
    :caption: Smart Contracts
 
-   Introduction <../smart-contracts/general/introduction>
-   Quick start guide <../smart-contracts/guides/quick-start>
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/faq>
    Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/overview>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>

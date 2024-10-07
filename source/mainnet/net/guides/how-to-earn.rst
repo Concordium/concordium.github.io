@@ -25,6 +25,4 @@ To learn more about validation, see :ref:`Validation<baker-concept>`. To learn m
    :hidden:
    :maxdepth: 1
 
-   ../concepts/concepts-baker
-   ../concepts/concepts-delegation
    ../snippets/delegation-faq
