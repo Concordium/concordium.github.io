@@ -80,5 +80,6 @@ For information about accounts, see :ref:`Accounts<managing_accounts>`.
    :hidden:
    :maxdepth: 1
 
-   ../guides/company-identities
+   company-identities
+
 

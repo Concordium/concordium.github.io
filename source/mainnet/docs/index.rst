@@ -10,12 +10,14 @@ This is the documentation
    What is the Concordium Protocol? <protocol/introduction>
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
+   Transactions <protocol/transactions>
+   Network <protocol/network>
 
 .. toctree::
    :caption: Smart Contracts
 
    What is a smart contract? <smart-contracts/introduction>
-   QuickStart <smart-contracts/guides/quick-start>
+   QuickStart to smart contract deployment <smart-contracts/guides/quick-start>
    Build a smart contract <smart-contracts/guides/build-contract>
    Deploy a smart contract <smart-contracts/guides/deploy-module>
 

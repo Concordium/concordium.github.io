@@ -2,7 +2,7 @@
 .. _transactions-overview:
 
 =====================
-Transactions overview
+Transaction anatomy
 =====================
 
 A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender :term:`account` and is signed using the :term:`keys<private keys>` of this account.

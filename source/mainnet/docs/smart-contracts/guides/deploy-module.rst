@@ -110,3 +110,12 @@ The output should be similar to the following:
 .. code-block:: console
 
    Module reference 9eb82a01d96453dbf793acebca0ce25c617f6176bf7a564846240c9a68b15fd2 was successfully named 'some_deployed_module'.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   initialize-contract
+   interact-instance
+   inspect-instance
+   invoke-instance
