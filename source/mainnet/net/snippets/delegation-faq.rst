@@ -1,5 +1,5 @@
 .. include:: ../../variables.rst
-.. _delegation-faq:
+.. _delegation-faq-old:
 
 Delegation and validation FAQ
 =============================
