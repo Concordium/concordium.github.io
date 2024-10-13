@@ -1,12 +1,12 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _node-dashboard: http://localhost:8099
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
 .. _become-a-baker:
 
-==============================================
-Become a validator using the Concordium Client
-==============================================
+=====================================
+Validation with the Concordium Client
+=====================================
 
 This guide takes you through the steps involved in upgrading your node to a validator node and managing the node using the Concordium Client.
 

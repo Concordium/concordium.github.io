@@ -1,5 +1,5 @@
 .. _concordia:
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 
 .. meta::
     :description lang=en:

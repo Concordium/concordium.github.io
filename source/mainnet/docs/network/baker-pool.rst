@@ -1,3 +1,4 @@
+.. include:: ../../variables.rst
 .. _baker-pool:
 
 ====================
@@ -31,7 +32,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 The first thing to check before delegating stake to a staking pool is the URL for the staking pool. This is information that the validator can provide about the pool. It is not required that the validator provide this, but recommended. You can find the URLs on :ref:`CCDScan<home-screen-baker>`.
 
-.. image:: ../images/ccd-scan/ccd-scan-pool-metadata.png
+.. image:: ./images/ccd-scan-pool-metadata.png
 
 Make sure that the pool isn't close to having too many delegators or close to max capital. Another indicator of good management is reliability, such as whether the node is upgraded to the latest version.
 
@@ -41,3 +42,16 @@ CCDScan
 =======
 
 The tool for both validator management and research is CCDScan. For more information, see :ref:`CCDScan<ccd-scan>`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   guides/baker-windows
+   guides/baker-macos
+   guides/baker-ubuntu
+   guides/baker-docker
+   guides/become-baker
+   guides/validation-with-wallets
+
+

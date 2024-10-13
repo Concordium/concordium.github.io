@@ -414,5 +414,20 @@ redirects = {
     ".net/smart-contracts/guides/initialize-contract": "docs/smart-contracts/guides/initialize-contract.html",
     ".net/smart-contracts/guides/interact-instance": "docs/smart-contracts/guides/interact-instance.html",
     ".net/smart-contracts/guides/inspect-instance": "docs/smart-contracts/guides/inspect-instance.html",
-    ".net/smart-contracts/guides/invoke-instance": "docs/smart-contracts/guides/invoke-instance.html"
+    ".net/smart-contracts/guides/invoke-instance": "docs/smart-contracts/guides/invoke-instance.html",
+    ".net/guides/baker-pool": "docs/network/baker-pool.html",
+    ".net/guides/baker-windows": "docs/network/baker-windows.html",
+    ".net/nodes/baker-macos": "docs/network/guides/baker-macos.html",
+    ".net/nodes/baker-ubuntu": "docs/network/guides/baker-ubuntu.html",
+    ".net/nodes/baker-docker": "docs/network/guides/baker-docker.html",
+    ".net/guides/become-baker": "docs/network/guides/become-baker.html",
+    ".net/references/concordium-client": "docs/network/concordium-client.html",
+    ".net/references/transactions": "docs/network/transactions.html",
+    ".net/references/query-node": "docs/network/query-node.html",
+    ".net/references/multi-sig": "docs/network/multi-sig.html",
+    ".net/web3-id/index": "docs/network/web3-id/index.html",
+    ".net/web3-id/wallet": "docs/network/web3-id/wallet.html",
+    ".net/web3-id/issuer": "docs/network/web3-id/issuer.html",
+    ".net/guides/create-proofs": "docs/network/guides/create-proofs.html",
+    ".net/web3-id/concordia": "docs/network/web3-id/concordia.html"
     }

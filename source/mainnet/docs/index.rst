@@ -24,7 +24,10 @@ This is the documentation
 .. toctree::
    :caption: Network
 
-   What is the Concordium Network? <network/introduction>
+   What is the Concordium Network? <network/introduction-network>
+   Validator Management <network/baker-pool>
+   Concordium Client <network/concordium-client>
+   Use Concordium's ID layer/<network/web3-id/index.rst>
 
 .. toctree::
    :caption: Help & FAQ

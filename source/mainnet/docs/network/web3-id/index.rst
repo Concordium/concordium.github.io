@@ -1,5 +1,5 @@
 .. _web3id-index:
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 
 .. meta::
     :description lang=en:
@@ -11,7 +11,7 @@ Identity on Concordium
 
 Concordium’s identity layer is built into the protocol. Every account on the chain has one or more credentials issued by specially sanctioned identity providers who are expected to be able to provide full disclosure of the identity (in concert with the identity disclosure authorities). ID 2.0 made it possible to use these identities off-chain: wallets allow using identities to prove properties about the holder, such as their nationality or age. These are known as :term:`account credentials<account credential>`.
 
-.. image:: ../images/mobile-wallet/MW12.png
+.. image:: ../../../net/images/mobile-wallet/MW12.png
    :width: 25%
 
 You can read more about the identity provider issued account credentials in :ref:`Identities<reference-id-accounts>`.
@@ -21,7 +21,7 @@ Web3 ID
 
 Web3 ID is an extension of the existing ID 2.0 infrastructure in Concordium to allow issuance of many different types of :term:`verifiable credentials<verifiable credential>` in addition to the existing :term:`account credentials<account credential>`. Web3 ID allows you to add :term:`verifiable credentials<verifiable credential>` to your |bw|, such as club memberships, education credentials, employment history, rewards programs, customer loyalty programs, and more. :term:`Proofs<zero-knowledge proof>` can be made to verify these credentials, if necessary.
 
-.. image:: ../images/browser-wallet/add-web3id-credential.png
+.. image:: ../../../net/images/browser-wallet/add-web3id-credential.png
    :alt: window with pending credential and option buttons
    :width: 25%
 
@@ -40,14 +40,14 @@ Verifiers ask holders for proofs about their attributes, such as proof of club m
 
 A user/wallet holds verifiable credentials, produces verifiable presentations, and interacts with the issuer and verifier. Verifiable credentials themselves never leave the user's wallet.
 
-.. image:: ../images/web3id/web3id-entities.png
+.. image:: ../../../net/images/web3id/web3id-entities.png
 
 Issuance flow for verifiable credentials
 ========================================
 
 The following diagram shows the issuance flow for verifiable credentials.
 
-.. image:: ../images/browser-wallet/web3id-diagram.png
+.. image:: ../../../net/images/browser-wallet/web3id-diagram.png
    :alt: diagram of verifiable credential flow
    :width: 75%
 

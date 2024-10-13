@@ -24,9 +24,7 @@ index
 
    guides/developer-page
    nodes/node-requirements
-   references/concordium-client
    guides/run-local-chain
-   Use Concordium's ID layer <web3-id/index>
    guides/low-code-nft-marketplace/introduction.rst
    resources/ccd-scan
    Concordium Standards <https://proposals.concordium.software/index.html>

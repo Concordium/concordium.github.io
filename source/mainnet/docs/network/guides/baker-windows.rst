@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _baker-windows:
 
 ===============================
@@ -58,7 +58,7 @@ If a node fails to start, for example because of a configuration issue, or stops
 
 - The node doesn't restart after you've set the credentials in the configuration file. This error can occur when the specified location of the credentials file is incorrect. In the **Event Viewer** an error such as the following might appear. When this happens, change the path in the configuration file.
 
-   .. image:: ../images/run-node/Node-setup-win-10.png
+   .. image:: ./images/Node-setup-win-10.png
          :width: 60%
 
 - The node doesn't start validation, and in the log file you see the message *Validator keys are incorrect* repeatedly. It takes 1-2 hours after validator keys have been added to an account for the keys to be eligible to produce blocks. If this problem persists beyond two hours, then likely the keys are incorrect. Double check that you are not using keys from testnet on mainnet, or vice-versa.
