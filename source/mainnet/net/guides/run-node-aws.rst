@@ -161,3 +161,5 @@ These parameters can be configured in the configuration file located at /etc/sys
   CONCORDIUM_NODE_CONSENSUS_TRANSACTIONS_PURGING_DELAY
   CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE
   CONCORDIUM_NODE_BOOTSTRAPPER_WAIT_UNTIL_MINIMUM_NODES
+
+When done, you can press the "Launch Instance" button and wait for the AWS EC2 instance is running and you have a concordiuim node running.
