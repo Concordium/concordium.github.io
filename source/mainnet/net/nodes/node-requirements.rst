@@ -72,3 +72,4 @@ unset the environment variable.
     macos
     windows
     docker
+    aws
