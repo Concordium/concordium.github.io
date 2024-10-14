@@ -48,7 +48,7 @@ After expanding, you can scroll to the bottom of the page to find the 'user data
 .. image:: ../images/aws-marketplace/marketplace-user-data.png
   :alt: Insert the configuration in the user data
 
-In the user data section, you can also change other configuration parameters or you can do it afterwards by adding one of the following parameters to the config files:
+In the user data section, you can also change other configuration parameters or you can do it afterwards by adding one of the following parameters to the configuration files.
 The following parameters can be configured in the configuration file located at /etc/systemd/system/concordium-<networkname>-node-collector.service.d/override.conf.
 .. code-block::
 
