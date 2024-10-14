@@ -10,4 +10,4 @@ This section contains topics that describe running a node with from AWS marketpl
    :hidden:
    :maxdepth: 1
 
-   ../guides/run-aws-node
+   ../guides/run-node-aws
