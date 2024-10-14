@@ -16,7 +16,7 @@ Before you begin
 Before continuing, you will need to have an AWS account.
 
 
-.. _running-a-node:
+.. _running-a-node-aws:
 
 Running/upgrading a node
 ========================
