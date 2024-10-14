@@ -49,7 +49,7 @@ After expanding, you can scroll to the bottom of the page to find the 'user data
   :alt: Insert the configuration in the user data
 
 In the user data section, you can also change other configuration parameters or you can do it afterwards by adding one of the following parameters to the config files:
-The following parameters can be put into the 
+The following parameters can be configured in the configuration file located at /etc/systemd/system/concordium-<networkname>-node-collector.service.d/override.conf.
 .. code-block::
 
   CONCORDIUM_NODE_COLLECTOR_ARTIFICIAL_START_DELAY
@@ -63,6 +63,7 @@ The following parameters can be put into the
   CONCORDIUM_NODE_COLLECTOR_PRINT_CONFIG
   CONCORDIUM_NODE_COLLECTOR_TRACE
 
+These parameters can be configured in the configuration file located at /etc/systemd/system/concordium-<networkname>-node.service.d/override.conf
 .. code-block::
 
   CONCORDIUM_NODE_CONSENSUS_ACCOUNTS_CACHE_SIZE
