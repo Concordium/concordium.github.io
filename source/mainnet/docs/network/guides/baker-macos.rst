@@ -1,6 +1,6 @@
 .. _`mainnet dashboard`: https://dashboard.mainnet.concordium.software/
 .. _`testnet dashboard`: https://dashboard.testnet.concordium.com/
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _baker-macos:
 
 =============================
