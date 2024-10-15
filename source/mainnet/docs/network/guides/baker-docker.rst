@@ -1,5 +1,5 @@
 .. _Discord: https://discord.gg/xWmQ5tp
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _baking-docker:
 
 ==============================
