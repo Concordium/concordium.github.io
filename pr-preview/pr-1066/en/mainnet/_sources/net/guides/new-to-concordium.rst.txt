@@ -34,10 +34,10 @@ Getting started with Concordium
 
     I want to run a node on:
 
-    - :ref:`Docker<docker-node>`
-    - :ref:`Linux/ubuntu<ubuntu-node>`
-    - :ref:`Windows<windows-node>`
-    - :ref:`Mac<macos-node>`
+    - :ref:`Docker<run-a-node>`
+    - :ref:`Linux/ubuntu<run-node-ubuntu-testnet>`
+    - :ref:`Windows<run-node-windows>`
+    - :ref:`Mac<run-node-macos>`
 
 .. dropdown:: I want to stake CCD to earn more CCD
 

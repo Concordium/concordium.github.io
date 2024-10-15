@@ -10,3 +10,4 @@ Transactions
    :maxdepth: 1
 
    concepts-transactions
+   transaction-fees

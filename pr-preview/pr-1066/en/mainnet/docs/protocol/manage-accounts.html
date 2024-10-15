@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.b4620156-a001-44af-a8c9-0b9dc43fd90e.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.546a298b-7cef-451c-868d-05544be6c72e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/manage-accounts';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -484,6 +484,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Accounts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="transactions.html">Transactions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html">Transaction anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transaction-fees.html">Transaction Fees</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="network.html">Network</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -529,7 +530,52 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Network</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../network/introduction.html">What is the Concordium Network?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/introduction-network.html">What is the Concordium Network?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-windows.html">Run a validator node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Run a validator node on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-ubuntu.html">Run a validator node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-docker.html">Run a validator node on Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/become-baker.html">Validation with the Concordium Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a node on Concordium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu-testnet.html">Run a node on Ubuntu - Testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu.html">Run a node on Ubuntu - Mainnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-macos.html">Run and manage a node on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node.html">Run a node in Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/concordium-client.html">Concordium Client</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/query-node.html">Querying a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/multi-sig.html">Multi-sig</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/web3-id/index.html">Use Concordium's ID layer</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/web3-id/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/web3-id/issuer.html">Web3 ID issuers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/create-proofs.html">Create proofs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/web3-id/concordia.html">Concordia</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../network/guides/run-local-chain.html">Run a local chain</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/low-code-nft-marketplace/introduction.html">Concordium low-code NFT framework</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/indexers/intro.html">Indexers</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/indexers/subquery.html">SubQuery</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
@@ -727,7 +773,7 @@ transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
 validate transactions.</p>
-<p>You can <a class="reference internal" href="../../net/references/transactions.html#account-seqno"><span class="std std-ref">look up the sequence number</span></a> from an up to date node using Concordium Client.</p>
+<p>You can <a class="reference internal" href="../network/transactions.html#account-seqno"><span class="std std-ref">look up the sequence number</span></a> from an up to date node using Concordium Client.</p>
 <p>The Concordium Wallet for Mobile and Concordium Legacy Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tracks the sequence number automatically, but it can
 also be set manually.</p>
@@ -739,7 +785,7 @@ matching <a class="reference internal" href="../../net/resources/glossary.html#t
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
 <p>This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.</p>
 <p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account’s canonical address.</p>
-<p>To show aliases, <a class="reference internal" href="../../net/references/transactions.html#account-aliases"><span class="std std-ref">run a transaction in Concordium Client</span></a>.</p>
+<p>To show aliases, <a class="reference internal" href="../network/transactions.html#account-aliases"><span class="std std-ref">run a transaction in Concordium Client</span></a>.</p>
 </section>
 </section>
 <section id="tools">
@@ -771,9 +817,9 @@ the same account. Thus, accounts can be referred to by any address whose initial
 <section id="command-line-tool">
 <h3>Command-line tool<a class="headerlink" href="#command-line-tool" title="Link to this heading">#</a></h3>
 <p>The Concordium distribution ships with a command-line tool named
-<a class="reference internal" href="../../net/references/concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. It is designed as a low-level interface to the
+<a class="reference internal" href="../network/concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. It is designed as a low-level interface to the
 Concordium blockchain. It cannot be used to create identities, but it can
-<a class="reference internal" href="../../net/references/concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import accounts</span></a> exported from the mobile wallets. Once an account has been
+<a class="reference internal" href="../network/concordium-client.html#concordium-client-import-accounts-keys"><span class="std std-ref">import accounts</span></a> exported from the mobile wallets. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other <a class="reference internal" href="transactions.html#transactions"><span class="std std-ref">transaction</span></a> types supported by the Concordium blockchain.</p>
 <p>To learn more about the differences between the wallets, see <a class="reference internal" href="../../net/guides/deciding-wallet.html#choosing-wallet"><span class="std std-ref">Deciding between the wallets</span></a>.</p>
