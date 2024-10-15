@@ -1,5 +1,5 @@
 .. _web3id-issuer:
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 
 .. meta::
     :description lang=en:
