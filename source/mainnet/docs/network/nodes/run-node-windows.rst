@@ -72,7 +72,7 @@ Install/upgrade and run a node
 
    - In **Install Concordium Node configuration and data to**, specify where to store the node configuration and the blockchain databases and logs. Choose a drive that has sufficient space to accommodate the database and is sufficiently fast. For more information, see :ref:`Requirements for running a node<node-requirements>`.
 
-     .. image:: ../images/run-node/Node-setup-win-2.png
+     .. image:: ../nodes/images/Node-setup-win-2.png
          :width: 60%
 
 #. Select **Next** and configure the **Node Runner Service**. You have the following options:
@@ -91,7 +91,7 @@ Install/upgrade and run a node
 
    - **Public node name**: Specify the name of your node as you want it to appear on the network dashboard if the node reports to the network dashboard.
 
-     .. image:: ../images/run-node/Node-setup-win-1.png
+     .. image:: ../nodes/images/Node-setup-win-1.png
          :width: 60%
 
 #. Select **Next**, and then select **Install** to begin the installation. The Concordium Node is installed. If you see a message saying *Do you want this app from an unknown publisher to make changes to your device?*, select **Yes**. This message appears because the installation requires administrative permissions. If you’re not logged in with an administrative account, you’ll  have to provide credentials for an administrator account to continue the installation.
@@ -103,7 +103,7 @@ Install/upgrade and run a node
    - **Configure Concordium Node Service**: Opens the configuration file.
    - **Third Party Licenses**: Shows the licenses the third party components are distributed under.
 
-     .. image:: ../images/run-node/Node-setup-win-3.png
+     .. image:: ../nodes/images/Node-setup-win-3.png
          :width: 50%
 
 .. _verify-running-node:
@@ -120,12 +120,12 @@ The node runs as a background service with no user interface. To verify that it�
    - ``concordium-node.exe`` for each node you are running. For example, if you’re running a node on both testnet and mainnet, you’ll see two instances of concordium-node.exe.
    - ``node-collector.exe`` for each node that reports to the network dashboard.
 
-     .. image:: ../images/run-node/Node-setup-win-4.png
+     .. image:: ../nodes/images/Node-setup-win-4.png
          :width: 60%
 
 #. Select the **Services** tab and verify that ``ConcordiumNode`` is running.
 
-     .. image:: ../images/run-node/Node-setup-win-5.png
+     .. image:: ../nodes/images/Node-setup-win-5.png
          :width: 60%
 
 #. If the node is running properly and reporting to the network dashboards, you can see it on the dashboard.
@@ -152,7 +152,7 @@ You can also verify that a node is running by connecting it to the Desktop Walle
 
    - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1* and in the **Port field** enter *20001*.
 
-     .. image:: ../images/run-node/Node-setup-win-9.png
+     .. image:: ../nodes/images/Node-setup-win-9.png
          :width: 60%
 
 #. Select **Set connection**. If the connection works and the node is running properly, there’s a message saying *Successfully connected*.
@@ -166,7 +166,7 @@ If you want to change whether the node runner service starts automatically, you 
 
 #. Right-click **Concordium Node Runner Service**, and then select **Properties**.
 
-   .. image:: ../images/run-node/Node-setup-win-6.png
+   .. image:: ../nodes/images/Node-setup-win-6.png
          :width: 50%
 
 #. On the **General** tab, select the relevant **Startup type** from the list, and then select **OK** or **Apply**.
@@ -206,7 +206,7 @@ When nodes are stopped or started, this is also recorded in the system event log
 
 #. Select **Windows Logs**, and then under **Source** look for Concordium Node Runner Service.
 
-   .. image:: ../images/run-node/Node-setup-win-7.png
+   .. image:: ../nodes/images/Node-setup-win-7.png
          :width: 50%
 
 Synchronize a node with the network

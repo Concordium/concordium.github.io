@@ -32,7 +32,7 @@ System requirements
 Platforms
 ---------
 
-You can run a node on :ref:`Ubuntu<ubuntu-node>`, :ref:`Docker<docker-node>`, :ref:`Windows<windows-node>`, or :ref:`MacOS<macos-node>`.
+You can run a node on :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Docker<run-a-node>`, :ref:`Windows<run-node-windows>`, or :ref:`MacOS<run-node-macos>`.
 
 Node metrics
 ============
@@ -68,7 +68,14 @@ unset the environment variable.
     :hidden:
     :maxdepth: 1
 
-    ubuntu
-    macos
-    windows
-    docker
+    run-node-ubuntu-testnet
+    run-node-ubuntu
+    troubleshoot-ubuntu
+    run-node-macos
+    troubleshoot-macos
+    run-node-windows
+    troubleshoot-windows
+    node-runner-service-configuration
+    run-node
+    troubleshoot-docker
+

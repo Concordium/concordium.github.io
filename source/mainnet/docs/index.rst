@@ -26,8 +26,13 @@ This is the documentation
 
    What is the Concordium Network? <network/introduction-network>
    Validator Management <network/baker-pool>
+   Run a node on Concordium <network/nodes/node-requirements>
    Concordium Client <network/concordium-client>
-   Use Concordium's ID layer/<network/web3-id/index.rst>
+   Use Concordium's ID layer <network/web3-id/index.rst>
+   Run a local chain <network/guides/run-local-chain.rst>
+   Concordium low-code NFT framework <network/low-code-nft-marketplace/introduction.rst>
+   Indexers <network/indexers/intro.rst>
+
 
 .. toctree::
    :caption: Help & FAQ

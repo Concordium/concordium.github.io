@@ -66,7 +66,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     #. Connect to the application with your |bw|.
 
-        .. image:: ../../images/low-code-nft-framework/mp-connect-wallet.png
+        .. image:: ../images/low-code-nft-framework/mp-connect-wallet.png
             :width: 100%
             :alt: marketplace web page with wallet popup
 
@@ -76,25 +76,25 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     #. Click **Create My Marketplace**.
 
-        .. image:: ../../images/low-code-nft-framework/mp-create-mp.png
+        .. image:: ../images/low-code-nft-framework/mp-create-mp.png
             :width: 100%
             :alt: marketplace web page with create marketplace highlighted
 
     #. A form appears that allows you to create a marketplace instance with two options. First, you can either create a marketplace instance from the one which is already deployed by you. Second, you can create your marketplace contract instance from the smart contract deployed by Concordium. Specify the commission and click **Deploy New**. This calls the initialize function of the marketplace contract and that instance will be your account's.
 
-        .. image:: ../../images/low-code-nft-framework/mp-deploy-new.png
+        .. image:: ../images/low-code-nft-framework/mp-deploy-new.png
             :width: 100%
             :alt: marketplace web page with deploy new highlighted
 
     #. The |bw| presents a pop up and asks for your approval. To approve the traansaction click **Sign & submit**.
 
-        .. image:: ../../images/low-code-nft-framework/mp-new-mp-wallet.png
+        .. image:: ../images/low-code-nft-framework/mp-new-mp-wallet.png
             :width: 100%
             :alt: marketplace web page with wallet popup shown
 
     When the transaction is finalized, you have your own, empty marketplace. You see the contract instance address in the address bar of the browser or you can check it from your |bw| as described in the following.
 
-    .. image:: ../../images/low-code-nft-framework/mp-new-mp-contract-index.png
+    .. image:: ../images/low-code-nft-framework/mp-new-mp-contract-index.png
         :width: 100%
         :alt: empty marketplace with contract address highlighted in address bar
 
@@ -102,11 +102,11 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     #. Click on an account so that you see the account details and transaction log.
 
-        .. image:: ../../images/low-code-nft-framework/mp-bw-account-details.png
+        .. image:: ../images/low-code-nft-framework/mp-bw-account-details.png
             :width: 50%
             :alt: concordium wallet for web showing account details
 
-        .. image:: ../../images/low-code-nft-framework/mp-bw-transaction-details.png
+        .. image:: ../images/low-code-nft-framework/mp-bw-transaction-details.png
             :width: 50%
             :alt: concordium wallet for web showing transaction details
 
@@ -118,19 +118,19 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     Now you have to configure your code base accordingly. Go to your project's folder/market-ui and open the **Constants.ts** file in a code editor. Update the ``MARKETPLACE_CONTRACT_ADDRESS`` with your contract instance address value generated in the previous section. In this file in general you will find all constant files, such as address, schema, and module references. You can find more details about these constant variables in this section.
 
-    .. image:: ../../images/low-code-nft-framework/mp-configure-index.png
+    .. image:: ../images/low-code-nft-framework/mp-configure-index.png
         :width: 100%
         :alt: constants.ts file open in code editor with address highlighted
 
     When you specify the contract instance address value, the template will be interacting with your instance, meaning it will have a clean marketplace like below to remove new instance creation from your marketplace and change the ``CREATE_NEW__MARKETPLACE`` flag to false.
 
-    .. image:: ../../images/low-code-nft-framework/mp-configure-mp-flag.png
+    .. image:: ../images/low-code-nft-framework/mp-configure-mp-flag.png
         :width: 100%
         :alt: constants.ts file open in code editor with create new marketplace flag highlighted
 
     You now have your own marketplace with the commission rate you specified.
 
-    .. image:: ../../images/low-code-nft-framework/mp-home-page.png
+    .. image:: ../images/low-code-nft-framework/mp-home-page.png
         :width: 100%
         :alt: marketplace home page
 
@@ -140,17 +140,17 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     Click **MINT** in the top navigation bar. You have two options in this step. First, if you already know an NFT contract instance's address and you are the owner, you can specify it in the **Find** section or click to deploy a new button to create a new instance of an already deployed NFT contract.
 
-    .. image:: ../../images/low-code-nft-framework/mp-mint-nft.png
+    .. image:: ../images/low-code-nft-framework/mp-mint-nft.png
         :width: 100%
         :alt: marketplace home page
 
     This opens the |bw| where you click **Sign & submit** to approve the request. After the transaction is finalized you can check your wallet to find out what your token contract instance address is. It is under the **Transaction Log** section and see the details by clicking it.
 
-        .. image:: ../../images/low-code-nft-framework/mp-bw-account-details.png
+        .. image:: ../images/low-code-nft-framework/mp-bw-account-details.png
             :width: 50%
             :alt: concordium wallet for web showing account details
 
-        .. image:: ../../images/low-code-nft-framework/mp-bw-transaction-details.png
+        .. image:: ../images/low-code-nft-framework/mp-bw-transaction-details.png
             :width: 50%
             :alt: concordium wallet for web showing transaction details
 
@@ -205,25 +205,25 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
         #. At the Connect Pinana screen click **SKIP**.  Pinata is described in the next section.
 
-            .. image:: ../../images/low-code-nft-framework/connect-pinata-skip.png
+            .. image:: ../images/low-code-nft-framework/connect-pinata-skip.png
                 :width: 100%
                 :alt: marketplace with connect pinata screen
 
         #. In the **Set metadata Url** text box, provide the URL that redirects you to the JSON formatted metadata. If you also want to store the hash value of the file check **Include Hash?** but remember this storing extra data on-chain comes with an extra cost.
 
-            .. image:: ../../images/low-code-nft-framework/set-metadata-url.png
+            .. image:: ../images/low-code-nft-framework/set-metadata-url.png
                 :width: 100%
                 :alt: marketplace with metadata url screen
 
         #. Set the tokenID and the token quantity which has to be 1 to create a unique Non-Fungible Token. Click **DONE**.
 
-            .. image:: ../../images/low-code-nft-framework/set-token-id-qty.png
+            .. image:: ../images/low-code-nft-framework/set-token-id-qty.png
                 :width: 100%
                 :alt: marketplace with screen to set token id and quantity
 
         #. You see a final screen to review before minting your token. When you click **MINT** your |bw| prompts you for your signature. Click **Sign & submit** to start the transaction. Once it's finalized you will see another pop-up that says **All Minted**.
 
-            .. image:: ../../images/low-code-nft-framework/mint-w-metadata.png
+            .. image:: ../images/low-code-nft-framework/mint-w-metadata.png
                 :width: 100%
                 :alt: marketplace with token ready to mint
 
@@ -235,43 +235,43 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
         Since IPFS and Pinata are widely used in the space, Concordium NFT Marketplace Template has built-in integration with them. To use this functionality create an API key on the platform and copy the JWT (JSON Web Token) to use in the marketplace while minting.
 
-        .. image:: ../../images/low-code-nft-framework/pinata.png
+        .. image:: ../images/low-code-nft-framework/pinata.png
             :width: 100%
             :alt: pinata key screen
 
         Now paste the API key in the textbox as shown below.
 
-        .. image:: ../../images/low-code-nft-framework/connect-pinata.png
+        .. image:: ../images/low-code-nft-framework/connect-pinata.png
             :width: 100%
             :alt: marketplace web page with connect to pinata screen shown
 
         Click **CONNECT**. When the connection is established, you will be able to upload images either by selecting them from a folder or just dragging and dropping them. You are not limited to uploading 1-2 images, and thanks to the template, the metadata generator is easier than creating one for every item.
 
-        .. image:: ../../images/low-code-nft-framework/upload-images.png
+        .. image:: ../images/low-code-nft-framework/upload-images.png
             :width: 100%
             :alt: marketplace web page with upload screen shown
 
         Set your token IDs and click **Upload** for each.
 
-        .. image:: ../../images/low-code-nft-framework/upload-set-token-id.png
+        .. image:: ../images/low-code-nft-framework/upload-set-token-id.png
             :width: 100%
             :alt: marketplace web page with selected images to set token id
 
         The template's backend will use your API key to upload the data, and retrieves the IPFS link of it and then you will just complete the details about your tokens as described below.
 
-        .. image:: ../../images/low-code-nft-framework/edit-metadata-create.png
+        .. image:: ../images/low-code-nft-framework/edit-metadata-create.png
             :width: 100%
             :alt: editing metadata and create option for each image
 
         Fill out them and the marketplace will create metadata for you when you click **CREATE** for each of the tokens. Specify the quantity as **1** and click **DONE**.
 
-        .. image:: ../../images/low-code-nft-framework/fetch-pinata-metadata.png
+        .. image:: ../images/low-code-nft-framework/fetch-pinata-metadata.png
             :width: 100%
             :alt: marketplace web page with images and metadata
 
         Click **MINT**. Your |bw| prompts you to click **Sign and Submit** to approve the transaction and mint your NFTs.
 
-        .. image:: ../../images/low-code-nft-framework/mint-w-wallet-popup.png
+        .. image:: ../images/low-code-nft-framework/mint-w-wallet-popup.png
             :width: 100%
             :alt: mint option shown in background dimmed with wallet popup visible
 
@@ -285,7 +285,7 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     The app asks you either to create your own NFT contract instance or provide the contract instance address that you own. Specify your contract address, such as 2319,0.
 
-    .. image:: ../../images/low-code-nft-framework/mint-sft-sc.png
+    .. image:: ../images/low-code-nft-framework/mint-sft-sc.png
         :width: 100%
         :alt: contract lookup screen in marketplace
 
@@ -295,19 +295,19 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     Click **Find**. When prompted to ontinue with Pinata or metadata option, click **SKIP** and then click **ADD USING METADATA URL**. Paste your metadata JSON file URL in the text box and specify a token ID for your token. Specify the **QUANTITY** of your token which is the amount of this semi-fungible token you will be minting.
 
-    .. image:: ../../images/low-code-nft-framework/prepare-sft-metadata-qty.png
+    .. image:: ../images/low-code-nft-framework/prepare-sft-metadata-qty.png
         :width: 100%
         :alt: enter quantity to mint screen
 
     Click **Metadata URL** in the preview tocheck the created metadata. Click **DONE**.
 
-    .. image:: ../../images/low-code-nft-framework/add-sft-metadata-url.png
+    .. image:: ../images/low-code-nft-framework/add-sft-metadata-url.png
         :width: 100%
         :alt: add metadata url to sft screen
 
     Click **MINT**. Your |bw| prompts you for your signature. Click **Sign & submit** to start the transaction. You can control the information you've provided until this step such as tokenID, owner account, quantity, and URL before minting them.
 
-    .. image:: ../../images/low-code-nft-framework/mint-sft-wallet-conf.png
+    .. image:: ../images/low-code-nft-framework/mint-sft-wallet-conf.png
         :width: 100%
         :alt: sft minting in marketplace in background with wallet confirmation popup visible
 
@@ -317,19 +317,19 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     #. Navigate to the **BUY** page and you will see the listed NFTs for sale.
 
-        .. image:: ../../images/low-code-nft-framework/mp-buy-nft.png
+        .. image:: ../images/low-code-nft-framework/mp-buy-nft.png
             :width: 100%
             :alt: marketplace with buy page open
 
     #. Click the shopping basket on the NFT you wish to buy. If you are the owner of this asset, instead of a basket you will see a checkmark. It will show you how many available amounts are on sale in this marketplace. Since this is a semi-fungible token you can see below that there are 999 available items with a cost of 10000 CCDs. Specify the amount that you'd like to buy and click **BUY**.
 
-        .. image:: ../../images/low-code-nft-framework/mp-buy-nft-quantity.png
+        .. image:: ../images/low-code-nft-framework/mp-buy-nft-quantity.png
             :width: 100%
             :alt: marketplace with buy page open and specify quantity popup visible
 
     #. In the |bw| pop-up it shows the amount of CCDs required to pay. Click **Sign & submit** to approve the transaction.
 
-        .. image:: ../../images/low-code-nft-framework/mp-buy-nft-wallet.png
+        .. image:: ../images/low-code-nft-framework/mp-buy-nft-wallet.png
             :width: 100%
             :alt: marketplace with buy page open and concordium wallet for web popup shown
 
@@ -343,36 +343,36 @@ To make it quicker and easier to develop and run an NFT marketplace, the Low-Cod
 
     #. Specify the token contract instance address. The token smart contract will have all the tokens minted with their owners and other relevant data. After you specify the token contract instance address click **FIND**.
 
-        .. image:: ../../images/low-code-nft-framework/mp-sell-nft.png
+        .. image:: ../images/low-code-nft-framework/mp-sell-nft.png
             :width: 100%
             :alt: marketplace with sell page open and fields to enter contract instance address
 
     #. When the |bw| pop-up prompts you, click **Sign & submit**. It will check if there is an asset on that particular contract, and then you will give permission to the marketplace contract to act on your behalf when someone wants to buy your asset. The tokens will still be owned by your account.
 
-        .. image:: ../../images/low-code-nft-framework/mp-sell-nft-wallet.png
+        .. image:: ../images/low-code-nft-framework/mp-sell-nft-wallet.png
             :width: 100%
             :alt: marketplace with sell page open and wallet popup shown
 
     #. Enter the token ID to verify that you have some amount of that asset. Click **OK**.
 
-        .. image:: ../../images/low-code-nft-framework/mp-sell-nft-verify.png
+        .. image:: ../images/low-code-nft-framework/mp-sell-nft-verify.png
             :width: 100%
             :alt: marketplace with sell page open and verification dialog shown
 
     #. If you have a balance then the **Add Token** window appears. In this screen, you can specify the CCD amount, royalty percentage (creator commission from all secondary sales on this marketplace), and how many of your assets will be put on sale. For example, if you have minted 10000 Semi-Fungible tokens with this ID you might only have 999 be available to sell. Click **ADD**.
 
-        .. image:: ../../images/low-code-nft-framework/mp-sell-nft-details.png
+        .. image:: ../images/low-code-nft-framework/mp-sell-nft-details.png
             :width: 100%
             :alt: marketplace with sell page open and token details for the sale
 
     #. In the |bw| pop-up click **Sign & submit** to allow the marketplace to sell your assets on your behalf.
 
-        .. image:: ../../images/low-code-nft-framework/mp-sell-nft-wallet-confirm.png
+        .. image:: ../images/low-code-nft-framework/mp-sell-nft-wallet-confirm.png
             :width: 100%
             :alt: marketplace with sell page open and concordium wallet for web confirmation popup
 
     Once finalized, if everything is configured correctly, then you see the digital asset listed in the **Buy** section.
 
-    .. image:: ../../images/low-code-nft-framework/mp-sell-nft-success.png
+    .. image:: ../images/low-code-nft-framework/mp-sell-nft-success.png
         :width: 100%
         :alt: marketplace with buy page open and nft shown

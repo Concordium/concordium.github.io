@@ -1,7 +1,7 @@
 .. _run-node-ubuntu-testnet:
 
 =============================================
-Run a node on a server with Ubuntu on Testnet
+Run a node on Ubuntu - Testnet
 =============================================
 
 This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`validator node<baker-node-Ubuntu>`.

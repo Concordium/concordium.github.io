@@ -3,7 +3,7 @@
 .. _run-a-node:
 
 ======================
-Run a node with Docker
+Run a node in Docker
 ======================
 
 In this guide, you learn how to run a node on your Linux computer that

@@ -1,7 +1,7 @@
 .. troubleshoot-node-windows:
 
 ======================================
-Troubleshoot a node running on Windows
+Troubleshoot a node on Windows
 ======================================
 
 This guide describes how to troubleshoot a node running on Windows on the Concordium network.
@@ -11,7 +11,7 @@ Event viewer
 
 Use the Event viewer to get more information about the problem. In the **Search** bar, search for **Event viewer**. In the **Windows Logs** click **Application**. Use the warnings and errors to diagnose the issue.
 
-.. image:: ../images/run-node/windows-event-viewer.png
+.. image:: ../nodes/images/windows-event-viewer.png
 
 Node crash or database corruption
 =================================

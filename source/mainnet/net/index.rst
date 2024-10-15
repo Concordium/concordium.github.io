@@ -23,17 +23,9 @@ index
    :caption: Develop on Concordium
 
    guides/developer-page
-   nodes/node-requirements
-   guides/run-local-chain
-   guides/low-code-nft-marketplace/introduction.rst
    resources/ccd-scan
    Concordium Standards <https://proposals.concordium.software/index.html>
 
-.. toctree::
-   :caption: Indexers
-
-   indexers/intro
-   indexers/subquery
 
 .. toctree::
    :includehidden:

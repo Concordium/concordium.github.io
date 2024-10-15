@@ -9,3 +9,10 @@ Indexers, in a broad context, play a fundamental role in organizing and optimizi
 In the context of blockchain and dApps, indexers go beyond traditional databases, facilitating streamlined access to on-chain data. This includes transaction histories, smart contract states, and event logs. In the dynamic and decentralized world of blockchain, indexers contribute to the efficiency of data queries, supporting real-time updates and ensuring the seamless functionality of diverse applications and platforms.
 
 There are several indexer solutions available, each offering different levels of decentralization, ease of development, and performance for you to consider. These solutions serve as intermediaries to assist in indexing the Concordium network.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   subquery
+

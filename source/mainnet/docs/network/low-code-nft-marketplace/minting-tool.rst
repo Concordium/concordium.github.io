@@ -43,7 +43,7 @@ Once you have the above installed, do the following:
 
         cd Low-Code-NFT-Framework/mint-ui && yarn install
 
-    .. image:: ../../images/low-code-nft-framework/minting-tool-clone-repo.png
+    .. image:: ../images/low-code-nft-framework/minting-tool-clone-repo.png
         :width: 100%
         :alt: black screen of code editor with terminal window open at bottom
 
@@ -55,7 +55,7 @@ Once you have the above installed, do the following:
 
 It will start the minting screen in the example dApp in ``localhost:3000`` automatically, starting with the dashboard page.
 
-.. image:: ../../images/low-code-nft-framework/minting-tool.png
+.. image:: ../images/low-code-nft-framework/minting-tool.png
     :width: 100%
     :alt: minting tool front page
 
@@ -109,19 +109,19 @@ Concordium provides a `library of sample images you can download <https://github
 
     #. When your platform is up and running, click **DEPLOY NEW** to mint your brand-new NFTs as shown below.
 
-        .. image:: ../../images/low-code-nft-framework/minting-tool-deploy-new.png
+        .. image:: ../images/low-code-nft-framework/minting-tool-deploy-new.png
             :width: 100%
             :alt: minting tool screen with deploy new button
 
     #. The wallet pops up and asks for your signature. Click **Sign & Submit**.
 
-        .. image:: ../../images/low-code-nft-framework/minting-tool-wallet-sign.png
+        .. image:: ../images/low-code-nft-framework/minting-tool-wallet-sign.png
             :width: 100%
             :alt: minting tool screen with wallet screen pop up
 
     #. You will see the figure below, since you are going to provide the metadata.json file, you don't need to use the connect Pinata function. Click **SKIP**.
 
-        .. image:: ../../images/low-code-nft-framework/minting-tool-skip-pinata.png
+        .. image:: ../images/low-code-nft-framework/minting-tool-skip-pinata.png
             :width: 100%
             :alt: minting tool screen with connect to pinata shown
 
@@ -157,7 +157,7 @@ Concordium provides a `library of sample images you can download <https://github
 
     Since IPFS and Pinata are widely used in the space, the Concordium NFT Minting Tool has built-in integration with them. To use this functionality create an API key on the platform and copy it.
 
-    .. image:: ../../images/low-code-nft-framework/pinata.png
+    .. image:: ../images/low-code-nft-framework/pinata.png
         :width: 100%
         :alt: pinata screen shown
 
@@ -169,13 +169,13 @@ Concordium provides a `library of sample images you can download <https://github
 
     #. In the Connect Pinata screen paste your API key and click **CONNECT**.
 
-        .. image:: ../../images/low-code-nft-framework/connect-pinata.png
+        .. image:: ../images/low-code-nft-framework/connect-pinata.png
             :width: 100%
             :alt: nft marketplace connection screen after clicking mint
 
     #. Once connected, upload images either by selecting them from a folder or just dragging and dropping them. You are not limited to uploading 1-2 images, and thanks to the template, the metadata generator is easier than creating for one metadata file for every item.
 
-        .. image:: ../../images/low-code-nft-framework/upload-images.png
+        .. image:: ../images/low-code-nft-framework/upload-images.png
             :width: 100%
             :alt: screen showing multiple image selection
 
@@ -183,29 +183,29 @@ Concordium provides a `library of sample images you can download <https://github
 
     #. Set your token IDs and click **Upload** for each.
 
-        .. image:: ../../images/low-code-nft-framework/upload-set-token-id.png
+        .. image:: ../images/low-code-nft-framework/upload-set-token-id.png
             :width: 100%
             :alt: images uploaded and need id before creation
 
         The template's backend will use your API key to upload the data, and retrieves the IPFS link of it and then you will just complete the details about your tokens as described in the next step.
 
-        .. image:: ../../images/low-code-nft-framework/fetch-pinata-metadata.png
+        .. image:: ../images/low-code-nft-framework/fetch-pinata-metadata.png
             :width: 100%
             :alt: images after data fetched
 
     #. Add data to them and the marketplace will create metadata for you when you click **CREATE** for each of the tokens. Specify the quantity as **1** and click **DONE**.
 
-        .. image:: ../../images/low-code-nft-framework/edit-metadata-create.png
+        .. image:: ../images/low-code-nft-framework/edit-metadata-create.png
             :width: 50%
             :alt: editing metadata and create option for each image
 
-        .. image:: ../../images/low-code-nft-framework/metadata-nearly-complete.png
+        .. image:: ../images/low-code-nft-framework/metadata-nearly-complete.png
             :width: 100%
             :alt: editing metadata
 
     #. Click **MINT**. Your |bw| prompts you to click **Sign and Submit** to approve the transaction and mint your NFTs.
 
-        .. image:: ../../images/low-code-nft-framework/mint-w-wallet-popup.png
+        .. image:: ../images/low-code-nft-framework/mint-w-wallet-popup.png
             :width: 100%
             :alt: mint option shown in background dimmed with wallet popup visible
 
@@ -221,12 +221,12 @@ Concordium provides a `library of sample images you can download <https://github
 
     Minting is the same as the previous sections: you need to specify your contract instance address as shown below and click **FIND**.
 
-    .. image:: ../../images/low-code-nft-framework/mint-from-contract-index.png
+    .. image:: ../images/low-code-nft-framework/mint-from-contract-index.png
         :width: 100%
         :alt: prepare to mint tokens from an existing contract by entering contract address
 
     It will check if the contract has some unique CIS-2 methods, like the ``supports()`` function which means the contract is compliant with CIS-2. Basically, you are checking whether the contract is a token contract or not. If you are the owner, you will be able to mint your new tokens exactly :ref:`as in the previous sections<mint-w-metadata>`. If you are not the owner of the contract, then you will end up with the error shown below.
 
-    .. image:: ../../images/low-code-nft-framework/mint-error.png
+    .. image:: ../images/low-code-nft-framework/mint-error.png
         :width: 100%
         :alt: error shown if you are not the owner of the contract you are executing

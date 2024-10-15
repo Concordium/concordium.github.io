@@ -36,7 +36,7 @@ Before you start, make sure you’ve completed the following steps:
 
     - If you're running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the **Address** field, enter *127.0.0.1*, and in the **Port field** enter *20001*.
 
-        .. image:: ../images/run-node/Node-setup-win-9.png
+        .. image:: ../../docs/network/nodes/images/Node-setup-win-9.png
             :width: 60%
 
     #. Select **Set connection**. If the connection is working properly, there’s a message saying *Successfully connected*.

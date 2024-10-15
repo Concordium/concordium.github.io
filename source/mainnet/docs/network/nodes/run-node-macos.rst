@@ -4,7 +4,7 @@
 .. _run-node-macos:
 
 ==============================
-Run and manage a node on macOS
+Run and manage a node on MacOS
 ==============================
 
 This guide describes how to run and manage a node on macOS. You can also run a node using :ref:`Docker <run-a-node>`, :ref:`Ubuntu <run-node-ubuntu>`, or :ref:`Windows <run-node-windows>`.
@@ -83,7 +83,7 @@ Install/upgrade and run a node
 
   #. On the *Configuration* page you have the following options.
 
-    .. image:: ../../../mainnet/net/images/run-node/Node-setup-mac-1.png
+    .. image:: ../nodes/images/Node-setup-mac-1.png
        :width: 60%
 
     - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option,   you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or Concordium Client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.
@@ -123,7 +123,7 @@ Install/upgrade and run a node
 
   #. On the *Configuration* page you have the following options.
 
-    .. image:: ../images/run-node/Node-setup-mac-1.png
+    .. image:: ../nodes/images/Node-setup-mac-1.png
         :width: 60%
 
     - **Run a [mainnet/testnet] node at start-up**: When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option, you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or Concordium Client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.

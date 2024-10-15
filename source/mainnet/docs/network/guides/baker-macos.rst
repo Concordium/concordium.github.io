@@ -4,7 +4,7 @@
 .. _baker-macos:
 
 =============================
-Run a validator node on macOS
+Run a validator node on MacOS
 =============================
 
 This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a macOS node that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks.
