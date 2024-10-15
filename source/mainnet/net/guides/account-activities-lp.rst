@@ -19,3 +19,9 @@ If you need to know how to send CCDs, connect dApps, manage fungible and non-fun
     scheduled-release
     export-key
     export-transaction-logs
+    add-delegation
+    remove-delegation
+    update-delegation
+
+
+

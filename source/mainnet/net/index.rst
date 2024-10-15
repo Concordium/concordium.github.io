@@ -1,3 +1,5 @@
+:orphan:
+
 =====
 index
 =====
@@ -21,26 +23,14 @@ index
    :caption: Develop on Concordium
 
    guides/developer-page
-   nodes/node-requirements
-   references/concordium-client
-   guides/run-local-chain
-   Use Concordium's ID layer <web3-id/index>
-   guides/low-code-nft-marketplace/introduction.rst
    resources/ccd-scan
    Concordium Standards <https://proposals.concordium.software/index.html>
 
-.. toctree::
-   :caption: Indexers
-
-   indexers/intro
-   indexers/subquery
 
 .. toctree::
    :includehidden:
    :caption: Smart Contracts
 
-   Introduction <../smart-contracts/general/introduction>
-   Quick start guide <../smart-contracts/guides/quick-start>
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/faq>
    Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/overview>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
@@ -66,3 +56,6 @@ index
    voting/voting
    voting/guardians
    voting/verify-election-result
+   mobile-wallet/add-baker-mw
+   mobile-wallet/update-baker-mw
+
