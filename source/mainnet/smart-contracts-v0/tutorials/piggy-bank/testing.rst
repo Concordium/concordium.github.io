@@ -86,7 +86,7 @@ The guide :ref:`build-contract` shows you how to do this.
 
 Additionally, to run the tests you need to:
 
-- set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
+- set up a local testnet node using your preferred platform: :ref:`Windows<run-node-windows>`, :ref:`MacOS<run-node-macos>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, or :ref:`Docker/Linux<run-a-node>`
 - :ref:`create an account for testnet<create-account>`. The account will need some CCD to run tests.
 - :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
 - :ref:`deploy the smart contract to your local testnet node<deploy-module-v0>`.
