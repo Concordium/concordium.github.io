@@ -54,7 +54,7 @@ Follow the guide :ref:`setup-contract` and return to this point afterwards.
 
 For testing, you will need the following:
 
-- set up a local testnet node using your preferred platform: :ref:`Windows<windows-node>`, :ref:`MacOS<macos-node>`, :ref:`Ubuntu<ubuntu-node>`, or :ref:`Docker/Linux<docker-node>`
+- set up a local testnet node using your preferred platform: :ref:`Windows<run-node-windows>`, :ref:`MacOS<run-node-macos>`, :ref:`Ubuntu<run-node-ubuntu>`, or :ref:`Docker/Linux<run-a-node>`
 - :ref:`create an account for testnet<create-account>`
 - :ref:`import the created account using concordium-client<concordium-client-import-accounts-keys>`
 
