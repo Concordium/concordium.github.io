@@ -359,7 +359,6 @@ After the refactoring, you end up with the following test for initializing a pig
 .. code-block:: rust
 
    use concordium_smart_contract_testing::*;
-   use piggy_bank_part2::*;
 
    const ACC_ADDR_OWNER: AccountAddress = AccountAddress([0u8; 32]);
    const ACC_ADDR_OTHER: AccountAddress = AccountAddress([1u8; 32]);
@@ -425,7 +424,7 @@ Create a new test case named ``test_insert_intact``, and use the helper method `
 
    #[test]
    fn test_insert_intact() {
-       let (mut chain, initialization) = create_chain_and_contract();
+       let (mut chain, initialization) = setup_chain_and_contract();
    }
 
 Note that you must mark the ``chain`` variable as mutable, since contract updates mutate it.
@@ -467,7 +466,7 @@ Then update the contract with the ``insert`` receive function and pass in ``inse
 
    #[test]
    fn test_insert_intact() {
-       let (mut chain, initialization) = create_chain_and_contract();
+       let (mut chain, initialization) = setup_chain_and_contract();
        let insert_amount = Amount::from_ccd(10);
 
        let update = chain
@@ -522,7 +521,7 @@ The second test becomes:
 
    #[test]
    fn test_insert_intact() {
-       let (mut chain, initialization) = create_chain_and_contract();
+       let (mut chain, initialization) = setup_chain_and_contract();
        let insert_amount = Amount::from_ccd(10);
 
        let update = chain
@@ -542,7 +541,7 @@ The second test becomes:
        assert!(update.is_ok(), "Inserting into intact piggy bank failed");
        assert_eq!(
            chain.contract_balance(initialization.contract_address),
-           Some(insert_amount)
+           Some(insert_amount),
            "Piggy bank balance does not match amount inserted"
        );
    }
@@ -561,7 +560,7 @@ Start by creating a new test case, ``test_smash_intact``, setup the chain and co
    // .. Imports, constants, and other functions omitted for brevity.
    #[test]
    fn test_smash_intact(){
-       let (mut chain, initialization) = create_chain_and_contract();
+       let (mut chain, initialization) = setup_chain_and_contract();
 
        let update = chain
            .contract_update(
