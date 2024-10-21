@@ -21,7 +21,7 @@ Before continuing, you will need to have an AWS account.
 Running/upgrading a node
 ========================
 
-Concordium provides two AWS Marketplace products, a `mainnet <https://aws.amazon.com/marketplace/pp/prodview-vfyzjfpphcciu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa>`_ one and a `testnet <https://aws.amazon.com/marketplace/server/configuration?productId=prod-lumupqjfb6z6o&ref_=psb_cfg_continue>`_ one.
+Concordium provides two AWS Marketplace products, a `mainnet <https://aws.amazon.com/marketplace/pp/prodview-vfyzjfpphcciu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa>`_ one and a `testnet <https://aws.amazon.com/marketplace/pp/prodview-i6wlb6ys5ucwo?sr=0-2&ref_=beagle&applicationId=AWSMPContessa>`_ one.
 
 On the AWS marketplace, you should choose 'Continue to subscribe' and follow the instructions. When you reach the 'Launch this software' step, you should click the 'Choose action' drop-down and choose 'Launch through EC2' as shown.
 
