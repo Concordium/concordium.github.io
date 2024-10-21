@@ -2,9 +2,9 @@
 
 .. _run-a-node-aws:
 
-=================
+=======================================
 Run a node on Amazon Web Services (AWS)
-=================
+=======================================
 
 In this guide, you will learn how to setup a node on an AWS Virtual Private Server (VPS), using the marketplace product.
 The node will be running on the minimum required hardware, but you will be able to configure it to be running on more powerful hardware.
