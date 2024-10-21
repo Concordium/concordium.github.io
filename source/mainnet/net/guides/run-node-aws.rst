@@ -3,11 +3,11 @@
 .. _run-a-node-aws:
 
 =================
-Run a node on AWS
+Run a node on Amazon Web Services (AWS)
 =================
 
 In this guide, you will learn how to setup a node on an AWS VPS, using the marketplace product.
-In this guide, the node will be running on the minimum required hardware, but you will be able to configure it to be running on more powerful hardware.
+The node will be running on the minimum required hardware, but you will be able to configure it to be running on more powerful hardware.
 
 
 Before you begin
@@ -49,7 +49,7 @@ After expanding, you can scroll to the bottom of the page to find the 'user data
   :alt: Insert the configuration in the user data
 
 In the user data section, you can also change other configuration parameters or you can do it afterwards by adding one of the following parameters to the configuration files.
-The following parameters can be configured in the configuration file located at /etc/systemd/system/concordium-<networkname>-node-collector.service.d/override.conf.
+The following parameters can be configured in the configuration file located at ``/etc/systemd/system/concordium-<networkname>-node-collector.service.d/override.conf``.
 .. code-block::
 
   CONCORDIUM_NODE_COLLECTOR_ARTIFICIAL_START_DELAY
@@ -63,7 +63,7 @@ The following parameters can be configured in the configuration file located at 
   CONCORDIUM_NODE_COLLECTOR_PRINT_CONFIG
   CONCORDIUM_NODE_COLLECTOR_TRACE
 
-These parameters can be configured in the configuration file located at /etc/systemd/system/concordium-<networkname>-node.service.d/override.conf
+These parameters can be configured in the configuration file located at ``/etc/systemd/system/concordium-<networkname>-node.service.d/override.conf``
 .. code-block::
 
   CONCORDIUM_NODE_CONSENSUS_ACCOUNTS_CACHE_SIZE
@@ -162,4 +162,4 @@ These parameters can be configured in the configuration file located at /etc/sys
   CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE
   CONCORDIUM_NODE_BOOTSTRAPPER_WAIT_UNTIL_MINIMUM_NODES
 
-When done, you can press the "Launch Instance" button and wait for the AWS EC2 instance is running and you have a concordiuim node running.
+When done, you can press the "Launch Instance" button and wait for the AWS EC2 instance is running and you have a Concordium node running.
