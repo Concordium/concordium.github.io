@@ -6,7 +6,7 @@
 Run a node on Amazon Web Services (AWS)
 =======================================
 
-In this guide, you will learn how to setup a node on an AWS Virtual Private Server (VPS), using the marketplace product.
+In this guide, you will learn how to set up a node on an AWS Virtual Private Server (VPS), using the marketplace product.
 The node will be running on the minimum required hardware, but you will be able to configure it to be running on more powerful hardware.
 
 
@@ -162,4 +162,4 @@ These parameters can be configured in the configuration file located at ``/etc/s
   CONCORDIUM_NODE_VALIDATOR_CREDENTIALS_FILE
   CONCORDIUM_NODE_BOOTSTRAPPER_WAIT_UNTIL_MINIMUM_NODES
 
-When done, you can press the "Launch Instance" button and wait for the AWS EC2 instance is running and you have a Concordium node running.
+When done, you can press the "Launch Instance" button and wait for the AWS EC2 instance to be running and you have a Concordium node running.
