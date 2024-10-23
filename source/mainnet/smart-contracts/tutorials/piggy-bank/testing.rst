@@ -7,6 +7,8 @@
 .. |mutable| replace:: ``mutable``
 .. _concordium-smart-contract-testing: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/
 .. |concordium-smart-contract-testing| replace:: ``concordium-smart-contract-testing``
+.. _concordium-std-derive: https://docs.rs/concordium-std-derive/latest/concordium_std_derive/
+.. |concordium-std-derive| replace:: ``concordium-std-derive``
 .. _Account: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Account.html
 .. |Account| replace:: ``Account``
 .. _Account_new: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Account.html#method.new
@@ -112,8 +114,9 @@ Adding the testing library
 ==========================
 
 Start by adding the |concordium-smart-contract-testing|_ library to the ``Cargo.toml`` located in the project root.
-You should add it under the section ``[dev-dependencies]``, which are dependencies only needed during development, as it is only needed during testing.
-The library requires the Rust edition ``2021`` or greater, which you must also set:
+Then, add the |concordium-std-derive|_ library as well, which contains useful macros for testing.
+You should add them under the section ``[dev-dependencies]``, which are dependencies only needed during development, as it is only needed during testing.
+The libraries requires the Rust edition ``2021`` or greater, which you must also set:
 
 .. code-block:: toml
 
@@ -123,6 +126,7 @@ The library requires the Rust edition ``2021`` or greater, which you must also s
 
    [dev-dependencies]
    concordium-smart-contract-testing = "3.0"
+   concordium-std-derive = "6.0"
 
 Add a test module
 =================
@@ -132,11 +136,12 @@ one would test any library and add integration tests in the ``tests`` folder.
 
 Create the folder ``tests`` in the root of your project and add the file ``tests.rs`` inside it.
 
-Import the testing library and your contract at the top of the file.
+Import the testing libraries and your contract at the top of the file.
 
 .. code-block:: rust
 
    use concordium_smart_contract_testing::*;
+   use concordium_std_derive::*;
    use piggy_bank_part2::*;
 
 Now you can start adding tests to this module.
@@ -153,18 +158,15 @@ Start by creating three constants that you will use in most of the upcoming test
 
    // .. Imports omitted for brevity
 
-   const ACC_ADDR_OWNER: AccountAddress = AccountAddress([0u8; 32]);
-   const ACC_ADDR_OTHER: AccountAddress = AccountAddress([1u8; 32]);
+   const ACC_ADDR_OWNER: AccountAddress = account_address!("<your_cryptoX_wallet_address>");
+   const ACC_ADDR_OTHER: AccountAddress = account_address!("2xdTv8awN1BjgYEw8W1BVXVtiEwG2b29U8KoZQqJrDuEqddseE");
    const ACC_INITIAL_BALANCE: Amount = Amount::from_ccd(1000);
 
 The first two are account addresses and the last one is the initial balance that both accounts will have.
 
 .. note::
 
-   You created the account addresses using an array of 32 bytes, which is
-   how account addresses are represented on the Concordium blockchain.
-   These byte arrays can also be represented as a base58check encoding, but for
-   testing it is usually more convenient to specify addresses directly in bytes.
+   The account addresses are represented as a base58check encoded string.
 
 Next, create the init test:
 
