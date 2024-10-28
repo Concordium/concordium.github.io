@@ -461,7 +461,9 @@ redirects = {
     ".net/installation/cdw-verification-instructions/cdw-appimage": "docs/installation/cdw-verification-instructions/cdw-appimage.html",
     ".net/installation/cdw-verification-instructions/cdw-deb": "docs/installation/cdw-verification-instructions/cdw-deb.html",
     ".net/installation/cdw-verification-instructions/cdw-rpm": "docs/installation/cdw-verification-instructions/cdw-rpm.html",
-    ".net/installation/clientw-verification-instructions/client-linux": "docs/installation/client-verification-instructions/client-linux.html",
+    ".net/installation/client-verification-instructions/client-linux": "docs/installation/client-verification-instructions/client-linux.html",
+    ".net/installation/snippets/delegation-faq": "docs/help/delegation-faq.html",
+    ".net/resources/glossary": "docs/resources/glossary.html"
 
 
     }
