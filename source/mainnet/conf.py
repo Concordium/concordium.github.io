@@ -450,5 +450,18 @@ redirects = {
     ".net/nodes/ubuntu": "docs/network/nodes/run-node-ubuntu.html",
     ".net/nodes/macos": "docs/network/nodes/run-node-macos.html",
     ".net/nodes/windows": "docs/network/nodes/run-node-windows.html",
-    ".net/nodes/docker": "docs/network/nodes/run-node.html"
+    ".net/nodes/docker": "docs/network/nodes/run-node.html",
+    ".net/release-notes/release-notes-lp": "docs/release-notes/release-notes-lp.html",
+    ".net/release-notes/release-notes-mainnet": "docs/release-notes/release-notes-mainnet.html",
+    ".net/release-notes/release-notes": "docs/release-notes/release-notes.html",
+    ".net/installation/downloads": "docs/installation/downloads.html",
+    ".net/installation/previous-node-downloads": "docs/installation/previous-node-downloads.html",
+    ".net/installation/verification-instructuions": "docs/installation/verification-instructions.html",
+    ".net/installation/cargo-verification-instructions/cargo-linux": "docs/installation/cargo-verification-instructions/cargo-linux.html",
+    ".net/installation/cdw-verification-instructions/cdw-appimage": "docs/installation/cdw-verification-instructions/cdw-appimage.html",
+    ".net/installation/cdw-verification-instructions/cdw-deb": "docs/installation/cdw-verification-instructions/cdw-deb.html",
+    ".net/installation/cdw-verification-instructions/cdw-rpm": "docs/installation/cdw-verification-instructions/cdw-rpm.html",
+    ".net/installation/clientw-verification-instructions/client-linux": "docs/installation/client-verification-instructions/client-linux.html",
+
+
     }

@@ -7,8 +7,6 @@ index
 .. toctree::
    :caption: Releases and Installation
 
-   installation/downloads
-   release-notes/release-notes-lp
 
 .. toctree::
    :includehidden:

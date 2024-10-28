@@ -37,4 +37,7 @@ This is the documentation
 .. toctree::
    :caption: Help & FAQ
 
+   Downloads <installation/downloads>
+   Release notes <release-notes/release-notes-lp>
+
    todo <help/introduction>
