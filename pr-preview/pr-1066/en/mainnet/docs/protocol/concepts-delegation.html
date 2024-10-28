@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-delegation.009321ab-fa99-47e0-91a7-e9bf0ee8eb86.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-delegation.c7a4d875-ba4d-4ba5-a4d7-f742956a0181.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-delegation';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -642,8 +651,8 @@
                   
   <section id="delegation">
 <span id="delegation-concept"></span><h1>Delegation<a class="headerlink" href="#delegation" title="Link to this heading">#</a></h1>
-<p>On the Concordium blockchain, <a class="reference internal" href="../../net/resources/glossary.html#term-Validator"><span class="xref std std-term">validators</span></a> run the protocol that generates blocks, and the action of creating and verifying blocks is an important part of what validators do. Validators are rewarded for every block that they create with a payment of some <a class="reference internal" href="../../net/resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a>. Because Concordium runs a proof-of-stake protocol, each validator needs to <a class="reference internal" href="../../net/resources/glossary.html#term-Staked-Amount"><span class="xref std std-term">stake an amount to produce blocks</span></a>, and the <a class="reference internal" href="../../net/resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">probability of being selected to create the next block</span></a> is proportional to each validator’s stake. So the payment may be seen as an interest on the validator’s capital.</p>
-<p>Not everyone with CCD has the resources needed to run a validator. <a class="reference internal" href="../../net/resources/glossary.html#term-Delegator"><span class="xref std std-term">Delegation</span></a> enables everyone to earn rewards for delegating some stake without the need to run a node or become a validator. Any party with CCD may delegate some of their capital to a validator. This increases the validator’s chance of producing the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under the party’s control; they are just considered part of the validator’s stake for the proof-of-stake protocol. Staked CCDs, both for delegators and validators, cannot be spent while staked. Unstaking CCDs is subject to a <a class="reference internal" href="../../net/resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>.</p>
+<p>On the Concordium blockchain, <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validators</span></a> run the protocol that generates blocks, and the action of creating and verifying blocks is an important part of what validators do. Validators are rewarded for every block that they create with a payment of some <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a>. Because Concordium runs a proof-of-stake protocol, each validator needs to <a class="reference internal" href="../resources/glossary.html#term-Staked-Amount"><span class="xref std std-term">stake an amount to produce blocks</span></a>, and the <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">probability of being selected to create the next block</span></a> is proportional to each validator’s stake. So the payment may be seen as an interest on the validator’s capital.</p>
+<p>Not everyone with CCD has the resources needed to run a validator. <a class="reference internal" href="../resources/glossary.html#term-Delegator"><span class="xref std std-term">Delegation</span></a> enables everyone to earn rewards for delegating some stake without the need to run a node or become a validator. Any party with CCD may delegate some of their capital to a validator. This increases the validator’s chance of producing the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under the party’s control; they are just considered part of the validator’s stake for the proof-of-stake protocol. Staked CCDs, both for delegators and validators, cannot be spent while staked. Unstaking CCDs is subject to a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>.</p>
 <p>You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -651,7 +660,7 @@
 </div>
 <section id="pools-and-rewards">
 <h2>Pools and Rewards<a class="headerlink" href="#pools-and-rewards" title="Link to this heading">#</a></h2>
-<p>A validator opens a <a class="reference internal" href="../../net/resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a>, and other CCD holders delegate some stake to this pool. The probability that the validator running the pool is chosen to produce the next block is then proportional to the total stake in the pool. When the pool rewards are distributed, the validator takes a commission and the rest of the rewards are distributed to the pool members in proportion to their stakes in the pool. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the validator is 10%. The validator receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.</p>
+<p>A validator opens a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a>, and other CCD holders delegate some stake to this pool. The probability that the validator running the pool is chosen to produce the next block is then proportional to the total stake in the pool. When the pool rewards are distributed, the validator takes a commission and the rest of the rewards are distributed to the pool members in proportion to their stakes in the pool. For example, suppose that a pool has 10,000 CCD. And suppose that in a 24 hour period this pool earns 30 CCD as reward and the commission of the validator is 10%. The validator receives 3 CCD as commission. The rest (27 CCD) is distributed to the members of the pool according to their relative stake in their pool. This means a party with 1,000 CCD in the pool will receive 2.7 CCD.</p>
 <p>Pool rewards are in two categories: block rewards and transaction fee rewards. These can have separate commission rates. A validator sets the delegation commission for their pool. They can set both values to anything between 0% and 100%.</p>
 <section id="bounding-the-size-of-pools">
 <span id="delegation-caps"></span><h3>Bounding the size of pools<a class="headerlink" href="#bounding-the-size-of-pools" title="Link to this heading">#</a></h3>
@@ -665,15 +674,15 @@
 </section>
 <section id="passive-delegation">
 <h3>Passive delegation<a class="headerlink" href="#passive-delegation" title="Link to this heading">#</a></h3>
-<p>For CCD holders who do not want to regularly check the performance of their pool, but just want a safe way of earning interest, <a class="reference internal" href="../../net/resources/glossary.html#term-Passive-delegation"><span class="xref std std-term">passive delegation</span></a> offers a low-risk low-reward alternative. Passive delegation is not associated with a specific validator; it can be thought of as distributing its capital to each staking pool in proportion to the pool’s stake. It is not affected by the poor performance of a single validator. But the parameters are set in such a way that a party delegating to passive delegation earns less than by delegating to a reliable validator.</p>
+<p>For CCD holders who do not want to regularly check the performance of their pool, but just want a safe way of earning interest, <a class="reference internal" href="../resources/glossary.html#term-Passive-delegation"><span class="xref std std-term">passive delegation</span></a> offers a low-risk low-reward alternative. Passive delegation is not associated with a specific validator; it can be thought of as distributing its capital to each staking pool in proportion to the pool’s stake. It is not affected by the poor performance of a single validator. But the parameters are set in such a way that a party delegating to passive delegation earns less than by delegating to a reliable validator.</p>
 <p>The commission rates for passive delegation are fixed at 25% for both block commissions and transaction commissions.</p>
 </section>
 </section>
 <section id="time-and-cool-downs">
 <h2>Time and cool-downs<a class="headerlink" href="#time-and-cool-downs" title="Link to this heading">#</a></h2>
-<p>Changes to the pools take effect every 24 hours at <a class="reference internal" href="../../net/resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. So opening a pool, changing the stake, moving the stake between pools or between passive delegation and a stakiing pool all take effect at the <a class="reference internal" href="../../net/resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.
-At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last <a class="reference internal" href="../../net/resources/glossary.html#term-Epoch"><span class="xref std std-term">epoch</span></a> before pay day, then the change has to wait until the second pay day.</p>
-<p>When decreasing or removing the stake (whether for delegators or validators), the unstaked funds are not released until after a <a class="reference internal" href="../../net/resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>.</p>
+<p>Changes to the pools take effect every 24 hours at <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. So opening a pool, changing the stake, moving the stake between pools or between passive delegation and a stakiing pool all take effect at the <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.
+At pay day, rewards gathered over a 24 hour period are distributed at the same time. If, however, you make a change in delegation in the last <a class="reference internal" href="../resources/glossary.html#term-Epoch"><span class="xref std std-term">epoch</span></a> before pay day, then the change has to wait until the second pay day.</p>
+<p>When decreasing or removing the stake (whether for delegators or validators), the unstaked funds are not released until after a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>.</p>
 </section>
 <section id="where-delegation-is-available">
 <h2>Where delegation is available<a class="headerlink" href="#where-delegation-is-available" title="Link to this heading">#</a></h2>
@@ -682,7 +691,7 @@ At pay day, rewards gathered over a 24 hour period are distributed at the same t
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>To earn rewards, a CCD holder can either delegate to passive delegation, to a staking pool, or become a validator. Being a validator oneself is the most challenging, as it requires resources to take part in the protocol, but it also provides the most rewards. Delegating to passive delegation provides the least rewards and requires the least actions from the investor. Delegating to a staking pool is somewhere between the two, both in terms of rewards and work, as it is recommended for a delegator to regularly check the performance of their pool’s validator, and change pool if it underperforms.</p>
-<p>See the <a class="reference internal" href="../../net/snippets/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation FAQ</span></a> for answers to the most frequently asked questions.</p>
+<p>See the <a class="reference internal" href="../help-and-faq/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation FAQ</span></a> for answers to the most frequently asked questions.</p>
 </section>
 </section>
 

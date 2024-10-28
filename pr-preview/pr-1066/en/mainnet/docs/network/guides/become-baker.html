@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/become-baker.8e618b3f-ea7a-41f1-b5a3-2bfc15f5c90f.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/become-baker.c83f8adc-91d7-47a5-a36c-27d5ebc9f4f2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/become-baker';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -662,7 +671,7 @@
 <li><p>Run a node</p></li>
 <li><p>Create an account in a wallet</p></li>
 <li><p>Export a file with the account information</p></li>
-<li><p><a class="reference internal" href="../../../net/installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Install the Concordium Client</span></a></p></li>
+<li><p><a class="reference internal" href="../../installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Install the Concordium Client</span></a></p></li>
 </ul>
 <p>For general information about validation concepts, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Validation</span></a>.</p>
 </section>
@@ -754,7 +763,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <p>Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
 </div>
 <p>To start the node with these validator keys and produce blocks, configure the node to use the validator keys, and <strong>restart</strong> it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.</p>
-<p>This change is executed immediately, and it will take effect at the next <a class="reference internal" href="../../../net/resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the one in which the transaction for adding the validator was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
+<p>This change is executed immediately, and it will take effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the one in which the transaction for adding the validator was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"></th>
@@ -822,7 +831,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 </pre></div>
 </div>
 <p>When the staked amount is modified, the probability that a validator gets elected to produce blocks is also modified.</p>
-<p>When a validator adds a stake for the first time or increases the stake, that change is executed on the chain and becomes visible as soon as the transaction is included in a block (can be seen through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">validatorAccount</span></code>) and takes effect at the next <a class="reference internal" href="../../../net/resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
+<p>When a validator adds a stake for the first time or increases the stake, that change is executed on the chain and becomes visible as soon as the transaction is included in a block (can be seen through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">validatorAccount</span></code>) and takes effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"></th>
@@ -841,7 +850,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 </tr>
 </tbody>
 </table>
-<p>When a validator <strong>decreases the staked amount</strong>, the change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next <a class="reference internal" href="../../../net/resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down period ends. It can be consulted through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">validatorAccount</span></code>:</p>
+<p>When a validator <strong>decreases the staked amount</strong>, the change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transacton is included in a block and takes effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down period ends. It can be consulted through <code class="docutils literal notranslate"><span class="pre">concordium-client</span> <span class="pre">account</span> <span class="pre">show</span> <span class="pre">validatorAccount</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>validatorAccount
 <span class="go">...</span>
 
@@ -898,7 +907,7 @@ or validator can be stopped</p></td>
 <span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>update-restake<span class="w"> </span>True<span class="w"> </span>--sender<span class="w"> </span>validatorAccount
 </pre></div>
 </div>
-<p>Changes to the restake flag will take effect immediately; however, the changes start affecting lottery power in the next <a class="reference internal" href="../../../net/resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
+<p>Changes to the restake flag will take effect immediately; however, the changes start affecting lottery power in the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>validatorAccount
 <span class="go">...</span>
 
@@ -986,7 +995,7 @@ so you have to execute:</p>
 </pre></div>
 </div>
 <p>This removes the validator from the list of validators and unlocks the staked amount on the validator so that it can be transferred or moved freely. When removing the validator, the change has the same timeline as decreasing
-the staked amount. The change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next <a class="reference internal" href="../../../net/resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down ends. You can check when the change will take effect by querying the account information:</p>
+the staked amount. The change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the cool-down ends. You can check when the change will take effect by querying the account information:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>validatorAccount
 <span class="go">...</span>
 

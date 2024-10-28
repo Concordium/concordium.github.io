@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/piggy-bank/testing.bd741344-2c37-49b6-9b4b-3a7d5d846f32.js"></script>
+    <script defer="defer" src="../../../_static/tippy/smart-contracts/tutorials/piggy-bank/testing.7a6cc32e-1e05-41e3-b6f1-07445183cd2d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'smart-contracts/tutorials/piggy-bank/testing';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -806,7 +806,6 @@ Use the method <a class="reference external" href="https://docs.rs/concordium-sm
 To avoid duplicating code across the test cases, you will <em>refactor</em> nearly all of <code class="docutils literal notranslate"><span class="pre">test_init</span></code> into a separate helper function, <code class="docutils literal notranslate"><span class="pre">setup_chain_and_contract</span></code>, which you will use in the tests.</p>
 <p>After the refactoring, you end up with the following test for initializing a piggy bank:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_smart_contract_testing</span>::<span class="o">*</span><span class="p">;</span>
-<span class="k">use</span><span class="w"> </span><span class="n">piggy_bank_part2</span>::<span class="o">*</span><span class="p">;</span>
 
 <span class="k">const</span><span class="w"> </span><span class="n">ACC_ADDR_OWNER</span>: <span class="nc">AccountAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
 <span class="k">const</span><span class="w"> </span><span class="n">ACC_ADDR_OTHER</span>: <span class="nc">AccountAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">([</span><span class="mi">1</span><span class="k">u8</span><span class="p">;</span><span class="w"> </span><span class="mi">32</span><span class="p">]);</span>
@@ -866,7 +865,7 @@ You will start by testing the <code class="docutils literal notranslate"><span c
 
 <span class="cp">#[test]</span>
 <span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_chain_and_contract</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setup_chain_and_contract</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -910,7 +909,7 @@ Then update the contract with the <code class="docutils literal notranslate"><sp
 
 <span class="cp">#[test]</span>
 <span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_chain_and_contract</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setup_chain_and_contract</span><span class="p">();</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">insert_amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_ccd</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chain</span>
@@ -960,7 +959,7 @@ receive methods <a class="reference external" href="https://docs.rs/concordium-s
 
 <span class="cp">#[test]</span>
 <span class="k">fn</span> <span class="nf">test_insert_intact</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_chain_and_contract</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setup_chain_and_contract</span><span class="p">();</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">insert_amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Amount</span>::<span class="n">from_ccd</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chain</span>
@@ -980,7 +979,7 @@ receive methods <a class="reference external" href="https://docs.rs/concordium-s
 <span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">update</span><span class="p">.</span><span class="n">is_ok</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Inserting into intact piggy bank failed&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span>
 <span class="w">        </span><span class="n">chain</span><span class="p">.</span><span class="n">contract_balance</span><span class="p">(</span><span class="n">initialization</span><span class="p">.</span><span class="n">contract_address</span><span class="p">),</span>
-<span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">insert_amount</span><span class="p">)</span>
+<span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">insert_amount</span><span class="p">),</span>
 <span class="w">        </span><span class="s">&quot;Piggy bank balance does not match amount inserted&quot;</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="p">}</span>
@@ -995,7 +994,7 @@ receive methods <a class="reference external" href="https://docs.rs/concordium-s
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="c1">// .. Imports, constants, and other functions omitted for brevity.</span>
 <span class="cp">#[test]</span>
 <span class="k">fn</span> <span class="nf">test_smash_intact</span><span class="p">(){</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_chain_and_contract</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">chain</span><span class="p">,</span><span class="w"> </span><span class="n">initialization</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setup_chain_and_contract</span><span class="p">();</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chain</span>
 <span class="w">        </span><span class="p">.</span><span class="n">contract_update</span><span class="p">(</span>

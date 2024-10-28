@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/guides/shield-ccd-wallets.32d77054-b57a-45de-80d0-69cee5575f5b.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/guides/shield-ccd-wallets.87eb34ef-954e-48bb-9662-3426984dd36a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/guides/shield-ccd-wallets';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -612,8 +612,8 @@ Wallets and command-line tools will continue to display shielded balances and su
 unshielding flow to recover already shielded funds.</p>
 </div>
 <p>The next few paragraphs contain some old context regarding the old shielding feature before protocol 7.</p>
-<p>Accounts on the Concordium blockchain had two balances, the <strong>Balance</strong> and the <a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a>. You were able to move funds between these
-two balances using either a <a class="reference internal" href="../resources/glossary.html#term-Shielding"><span class="xref std std-term">shield CCD transaction</span></a> or an <a class="reference internal" href="../resources/glossary.html#term-Unshielding"><span class="xref std std-term">unshield CCD transaction</span></a>.</p>
+<p>Accounts on the Concordium blockchain had two balances, the <strong>Balance</strong> and the <a class="reference internal" href="../../docs/resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a>. You were able to move funds between these
+two balances using either a <a class="reference internal" href="../../docs/resources/glossary.html#term-Shielding"><span class="xref std std-term">shield CCD transaction</span></a> or an <a class="reference internal" href="../../docs/resources/glossary.html#term-Unshielding"><span class="xref std std-term">unshield CCD transaction</span></a>.</p>
 <p>When you shield an amount on an account, only the account’s credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can’t see the shielded balance or any shielded transfers going in or out of the account. You weren’t able to make shielded transfers on multi-signature accounts, only on accounts with a single credential.</p>
 <p>If you have an account with CCD in the shielded balance, you can’t add new credentials to that account. Furthermore, once a shielded transfer has been logged on an account, you’ll no longer be able to add more credentials to that account. This is also the case even if you unshield all CCD in the shielded balance.</p>
 <div class="admonition note">

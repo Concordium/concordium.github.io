@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.4f617f35-a64e-4520-856e-bf0fba07bc2e.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.d5160d76-0056-4ce8-8b6a-f248f7dcf96f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/run-local-chain';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -647,7 +656,7 @@
 <p>The chain is run by a network of validator nodes that produce blocks. In the following minimal example you will set up a network comprised of a single validator node that runs <em>locally</em> on your system and <em>does not connect to mainnet or testnet</em>. Note, however, that the concepts demonstrated here equally apply to any number of validator nodes configured in a LAN or WAN setting.</p>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
-<p>You will either need a working installation of the <a class="reference internal" href="../../../net/installation/downloads.html#node-downloads"><span class="std std-ref">Concordium Node distribution</span></a> or <a class="reference external" href="https://www.docker.com/">Docker</a>, instances of which will be used to run the validator node(s). You will need <a class="reference internal" href="../../../net/resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a> data, which defines your local chain and sets of credentials for validator accounts of the chain. The number of sets of validator credentials needed thus depends on the desired number of validators in the network, which in this example is one.</p>
+<p>You will either need a working installation of the <a class="reference internal" href="../../installation/downloads.html#node-downloads"><span class="std std-ref">Concordium Node distribution</span></a> or <a class="reference external" href="https://www.docker.com/">Docker</a>, instances of which will be used to run the validator node(s). You will need <a class="reference internal" href="../../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a> data, which defines your local chain and sets of credentials for validator accounts of the chain. The number of sets of validator credentials needed thus depends on the desired number of validators in the network, which in this example is one.</p>
 <section id="install-the-node-distribution">
 <h3>Install the node distribution<a class="headerlink" href="#install-the-node-distribution" title="Link to this heading">#</a></h3>
 <p>Concordium Node releases exist for Ubuntu, MacOS, Windows and Docker. See the <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">Node Requirements</span></a> section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a validator, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.</p>
@@ -658,7 +667,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The node distributions provide commands for running and managing nodes on <a class="reference internal" href="../../../net/resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> and <a class="reference internal" href="../../../net/resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a>. Ignore these since you are targeting your own chain and only need the binary.</p>
+<p>The node distributions provide commands for running and managing nodes on <a class="reference internal" href="../../resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> and <a class="reference internal" href="../../resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a>. Ignore these since you are targeting your own chain and only need the binary.</p>
 </div>
 </section>
 <section id="generate-genesis-data-and-account-credentials">
@@ -812,7 +821,7 @@
 </section>
 <section id="interact-with-the-local-chain">
 <h2>Interact with the local chain<a class="headerlink" href="#interact-with-the-local-chain" title="Link to this heading">#</a></h2>
-<p>You can now interact with your local chain through the node via the <a class="reference internal" href="../../../net/references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> exposed on port 20100 as you would with <a class="reference internal" href="../../../net/resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> or <a class="reference internal" href="../../../net/resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a> nodes. Concordium provides various <a class="reference internal" href="../../../net/guides/sdks-apis.html#sdks-apis"><span class="std std-ref">SDKs and APIs</span></a> that facilitate this as well as the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool. Assuming you have the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> binary version 5.1.1 or higher in your path, list the accounts using the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">list</span></code> command:</p>
+<p>You can now interact with your local chain through the node via the <a class="reference internal" href="../../../net/references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> exposed on port 20100 as you would with <a class="reference internal" href="../../resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> or <a class="reference internal" href="../../resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a> nodes. Concordium provides various <a class="reference internal" href="../../../net/guides/sdks-apis.html#sdks-apis"><span class="std std-ref">SDKs and APIs</span></a> that facilitate this as well as the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool. Assuming you have the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> binary version 5.1.1 or higher in your path, list the accounts using the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">list</span></code> command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>--grpc-ip<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20100</span><span class="w"> </span>account<span class="w"> </span>list
 <span class="go">Accounts:</span>
 <span class="go">                 Account Address                     Account Names</span>

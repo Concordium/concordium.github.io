@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/baker-ubuntu.a0b4bf59-c4a4-4c3d-8b65-5ad1e8bfeec1.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/baker-ubuntu.d1278318-1ed7-4bcd-8114-ec6ac8b06622.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/baker-ubuntu';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -738,7 +747,7 @@ Store it, for example, in <code class="docutils literal notranslate"><span class
 </details></section>
 <section id="verify-that-a-node-is-a-validator-node">
 <h2>Verify that a node is a validator node<a class="headerlink" href="#verify-that-a-node-is-a-validator-node" title="Link to this heading">#</a></h2>
-<p>Two <a class="reference internal" href="../../../net/resources/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a> must have elapsed before you can see the validator ID of the node on the dashboard.</p>
+<p>Two <a class="reference internal" href="../../resources/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a> must have elapsed before you can see the validator ID of the node on the dashboard.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> to see the status of the node. For more information, see <a class="reference internal" href="../concordium-client.html#concordium-client"><span class="std std-ref">Concordium Client</span></a>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>raw<span class="w"> </span>GetNodeInfo
 

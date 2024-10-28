@@ -37,4 +37,9 @@ This is the documentation
 .. toctree::
    :caption: Help & FAQ
 
-   todo <help/introduction>
+   Downloads <installation/downloads>
+   Release notes <release-notes/release-notes-lp>
+   FAQs <help-and-faq/faqs>
+   Glossary of Concordium terms <resources/glossary>
+
+

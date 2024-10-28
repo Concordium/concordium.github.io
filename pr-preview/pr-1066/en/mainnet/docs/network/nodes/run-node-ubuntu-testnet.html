@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/run-node-ubuntu-testnet.73c920ac-5177-4a47-8d61-9d6cf6afe16a.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/run-node-ubuntu-testnet.793d54dd-1d93-4d11-a3c4-6e9571257899.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-ubuntu-testnet';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -663,7 +672,7 @@
 After installation, the <code class="docutils literal notranslate"><span class="pre">concordium-testnet-node</span></code> and <code class="docutils literal notranslate"><span class="pre">concordium-testnet-node-collector</span></code> services will be started.
 The services are also enabled to start automatically on system start.</p>
 <ol class="arabic">
-<li><p>Download the <a class="reference internal" href="../../../net/installation/downloads.html#testnet-node-downloads"><span class="std std-ref">Debian package</span></a></p></li>
+<li><p>Download the <a class="reference internal" href="../../installation/downloads.html#testnet-node-downloads"><span class="std std-ref">Debian package</span></a></p></li>
 <li><p>Install the package:</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>/path-to-downloaded-package
@@ -765,7 +774,7 @@ but is not necessary. To disable out of band catchup unset the <code class="docu
 <span id="upgrade-node-ubuntu-testnet"></span><h2>Upgrade version<a class="headerlink" href="#upgrade-version" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../../../net/installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
+<p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
 </div>
 <p>To upgrade to a newer version of the <cite>concordium-testnet-node</cite> package you need to:</p>
 <ul>

@@ -52,7 +52,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/web3-id/index.4a08bc5e-a792-4568-a0a4-21c42e855c91.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/web3-id/index.c6fddc8a-7905-4c42-9d6c-77f0959333aa.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/web3-id/index';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -580,7 +580,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -640,23 +649,23 @@
                   
   <span class="target" id="web3id-index"></span><section id="identity-on-concordium">
 <h1>Identity on Concordium<a class="headerlink" href="#identity-on-concordium" title="Link to this heading">#</a></h1>
-<p>Concordium’s identity layer is built into the protocol. Every account on the chain has one or more credentials issued by specially sanctioned identity providers who are expected to be able to provide full disclosure of the identity (in concert with the identity disclosure authorities). ID 2.0 made it possible to use these identities off-chain: wallets allow using identities to prove properties about the holder, such as their nationality or age. These are known as <a class="reference internal" href="../../../net/resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a>.</p>
+<p>Concordium’s identity layer is built into the protocol. Every account on the chain has one or more credentials issued by specially sanctioned identity providers who are expected to be able to provide full disclosure of the identity (in concert with the identity disclosure authorities). ID 2.0 made it possible to use these identities off-chain: wallets allow using identities to prove properties about the holder, such as their nationality or age. These are known as <a class="reference internal" href="../../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a>.</p>
 <a class="reference internal image-reference" href="../../../_images/MW12.png"><img alt="../../../_images/MW12.png" src="../../../_images/MW12.png" style="width: 25%;" />
 </a>
 <p>You can read more about the identity provider issued account credentials in <a class="reference internal" href="../../protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a>.</p>
 <section id="web3-id">
 <h2>Web3 ID<a class="headerlink" href="#web3-id" title="Link to this heading">#</a></h2>
-<p>Web3 ID is an extension of the existing ID 2.0 infrastructure in Concordium to allow issuance of many different types of <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a> in addition to the existing <a class="reference internal" href="../../../net/resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a>. Web3 ID allows you to add <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a> to your Concordium Wallet for Web, such as club memberships, education credentials, employment history, rewards programs, customer loyalty programs, and more. <a class="reference internal" href="../../../net/resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Proofs</span></a> can be made to verify these credentials, if necessary.</p>
+<p>Web3 ID is an extension of the existing ID 2.0 infrastructure in Concordium to allow issuance of many different types of <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a> in addition to the existing <a class="reference internal" href="../../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a>. Web3 ID allows you to add <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a> to your Concordium Wallet for Web, such as club memberships, education credentials, employment history, rewards programs, customer loyalty programs, and more. <a class="reference internal" href="../../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Proofs</span></a> can be made to verify these credentials, if necessary.</p>
 <a class="reference internal image-reference" href="../../../_images/add-web3id-credential.png"><img alt="window with pending credential and option buttons" src="../../../_images/add-web3id-credential.png" style="width: 25%;" />
 </a>
 <p>Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements and won’t be part of the identity disclosure process, but can also prove a number of other attributes of the holder. Examples of this could be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the verifiable credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.</p>
-<p>Verifiable credentials, like account credentials, will contain commitments to a variety of attributes. <a class="reference internal" href="../../../net/resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Zero-knowledge proofs</span></a> can be constructed to verify the committed values. The Concordium Wallet for Web supports construction of these proofs. The proofs can contain a mix of verifiable credentials and account credentials.</p>
+<p>Verifiable credentials, like account credentials, will contain commitments to a variety of attributes. <a class="reference internal" href="../../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Zero-knowledge proofs</span></a> can be constructed to verify the committed values. The Concordium Wallet for Web supports construction of these proofs. The proofs can contain a mix of verifiable credentials and account credentials.</p>
 </section>
 <section id="entities">
 <h2>Entities<a class="headerlink" href="#entities" title="Link to this heading">#</a></h2>
-<p>The core entities of the Web3 ID ecosystem are <a class="reference internal" href="../../../net/resources/glossary.html#term-Issuer"><span class="xref std std-term">issuers</span></a> which issue and manage the lifetime of verifiable credentials, and <a class="reference internal" href="../../../net/resources/glossary.html#term-Credential-holder"><span class="xref std std-term">holders</span></a> that have verifiable credentials in their wallets, and use them to prove properties about themselves to <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifier"><span class="xref std std-term">verifiers</span></a>.</p>
+<p>The core entities of the Web3 ID ecosystem are <a class="reference internal" href="../../resources/glossary.html#term-Issuer"><span class="xref std std-term">issuers</span></a> which issue and manage the lifetime of verifiable credentials, and <a class="reference internal" href="../../resources/glossary.html#term-Credential-holder"><span class="xref std std-term">holders</span></a> that have verifiable credentials in their wallets, and use them to prove properties about themselves to <a class="reference internal" href="../../resources/glossary.html#term-Verifier"><span class="xref std std-term">verifiers</span></a>.</p>
 <p>The issuer is an entity that issues verifiable credentials. Issuers have a smart contract that holds credential lifetime metadata, a backend service that has logic for identifying users and sending transactions to the smart contract, and a dApp that interacts with the user’s wallet and the backend to facilitate issuance of credentials.</p>
-<p>Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials. Verifiers have a backend service that checks <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifiable-presentation"><span class="xref std std-term">verifiable presentations</span></a> and provides a service, And a dApp that facilitates interaction with the wallet, making requests.</p>
+<p>Verifiers ask holders for proofs about their attributes, such as proof of club membership, and holders respond with zero knowledge proofs created using their verifiable credentials. Verifiers have a backend service that checks <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-presentation"><span class="xref std std-term">verifiable presentations</span></a> and provides a service, And a dApp that facilitates interaction with the wallet, making requests.</p>
 <p>A user/wallet holds verifiable credentials, produces verifiable presentations, and interacts with the issuer and verifier. Verifiable credentials themselves never leave the user’s wallet.</p>
 <img alt="../../../_images/web3id-entities.png" src="../../../_images/web3id-entities.png" />
 </section>
@@ -666,12 +675,12 @@
 <a class="reference internal image-reference" href="../../../_images/web3id-diagram.png"><img alt="diagram of verifiable credential flow" src="../../../_images/web3id-diagram.png" style="width: 75%;" />
 </a>
 <ol class="arabic simple">
-<li><p>A user initiates a request for a verifiable credential from an <a class="reference internal" href="../../../net/resources/glossary.html#term-Issuer"><span class="xref std std-term">issuer’s</span></a> dApp.</p></li>
+<li><p>A user initiates a request for a verifiable credential from an <a class="reference internal" href="../../resources/glossary.html#term-Issuer"><span class="xref std std-term">issuer’s</span></a> dApp.</p></li>
 <li><p>The issuer makes a request to the user’s wallet for adding Web3ID credential. The request contains attributes and metadata.</p></li>
 <li><p>After reviewing what has been sent by the issuer, the user accepts or rejects the request.  If denied, the process stops here.</p></li>
 <li><p>If accepted, they generate a fresh credential holder ID and the wallet sends their credential ID (public key) to the issuer backend.</p></li>
 <li><p>The issuer verifies the request, and if OK, registers the credential metadata (validity period, styling, logo, colors) in the smart contract under the received credential ID.</p></li>
-<li><p>The issuer signs the attributes and returns a verifiable credential to the dApp which then sends it to the wallet, thus making the user a <a class="reference internal" href="../../../net/resources/glossary.html#term-Credential-holder"><span class="xref std std-term">holder</span></a>.</p></li>
+<li><p>The issuer signs the attributes and returns a verifiable credential to the dApp which then sends it to the wallet, thus making the user a <a class="reference internal" href="../../resources/glossary.html#term-Credential-holder"><span class="xref std std-term">holder</span></a>.</p></li>
 </ol>
 </section>
 <section id="support-for-issuers-and-verifiers">
@@ -696,7 +705,7 @@ So tooling is provided that enables you to become an issuer and verify credentia
 <p>A verifier is expected to be a business or another use-case that will only provide a service provided specific proofs can be provided by the holder, for example proof of ownership of specific credential, such as a concert ticket.
 This will typically consist of two components.</p>
 <ol class="arabic simple">
-<li><p>A dApp that will interact with the wallet to request from the user to attest to specific properties of their credentials. The result of such a request is a <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifiable-presentation"><span class="xref std std-term">verifiable presentation</span></a>.</p></li>
+<li><p>A dApp that will interact with the wallet to request from the user to attest to specific properties of their credentials. The result of such a request is a <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-presentation"><span class="xref std std-term">verifiable presentation</span></a>.</p></li>
 <li><p>A backend component that will verify the provided verifiable presentation and allow the desired action or not.</p></li>
 </ol>
 <p>Verification of presentations has two components, the cryptographic verification of the zero-knowledge proofs contained within, which establish that the holder indeed owns the relevant credentials and they are issued by the stated issuer, and the business logic checking that the required property was attested.

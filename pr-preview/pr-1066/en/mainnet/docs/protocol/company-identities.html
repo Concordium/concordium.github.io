@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/company-identities.edbfdd4d-57a4-4c89-865d-917fe7d9c68e.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/company-identities.36eeb0b4-be89-4722-8fb6-667111fbb544.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/company-identities';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -734,7 +743,7 @@ Format of the key files<div class="sd-summary-down docutils">
 </div>
 </details><section id="import-created-accounts-into-concordium-client">
 <h4>Import created accounts into <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code><a class="headerlink" href="#import-created-accounts-into-concordium-client" title="Link to this heading">#</a></h4>
-<p>To use the accounts created in the Concordium Company ID tool, you must use Concordium Client. You can download it <a class="reference internal" href="../../net/installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">here</span></a>. For information about how to use it, see <a class="reference internal" href="../network/concordium-client.html#concordium-client"><span class="std std-ref">Concordium Client</span></a>.</p>
+<p>To use the accounts created in the Concordium Company ID tool, you must use Concordium Client. You can download it <a class="reference internal" href="../installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">here</span></a>. For information about how to use it, see <a class="reference internal" href="../network/concordium-client.html#concordium-client"><span class="std std-ref">Concordium Client</span></a>.</p>
 <p>The account keys are primarily meant for clients to integrate into their key management solution and their software, e.g., an exchange integrating their trading platform with the Concordium chain.</p>
 <p>However, if the <code class="docutils literal notranslate"><span class="pre">account-keys.json</span></code> file is not encrypted it can be imported into <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> with the command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import account-keys.json --name my-account</span>

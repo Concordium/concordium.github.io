@@ -9,8 +9,3 @@ The Concordium blockchain is a compliance ready blockchain backed by science tha
 
 Before you start using the Concordium blockchain, it's a good idea to understand some basic concepts about our unique blockchain, such as :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`. The :ref:`glossary<glossary>` is also a useful resource.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-   ../resources/glossary

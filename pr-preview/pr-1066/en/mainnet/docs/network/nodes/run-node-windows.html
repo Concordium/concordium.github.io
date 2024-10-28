@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/run-node-windows.a7cbb007-9829-4847-86a4-09aa4684e595.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/run-node-windows.c511e4e2-a456-4e88-ab43-9c92876dc3e7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-windows';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -678,14 +687,14 @@ your configuration and add <code class="docutils literal notranslate"><span clas
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../../../net/installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
+<p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="../../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
 </div>
 <ol class="arabic">
 <li><p>IF UPGRADING: if you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. This file is typically located at <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\nodes.toml.</span></code> (The path on your system is determined by the <code class="docutils literal notranslate"><span class="pre">Config</span></code> value in the registry key <code class="docutils literal notranslate"><span class="pre">HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node</span> <span class="pre">Runner</span></code>.) Or you can re-enter your values after upgrading. See <a class="reference internal" href="node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for information about how to change the service configuration settings.</p></li>
 <li><p>Download the latest Windows Installer package (.msi file).</p>
 <ul class="simple">
-<li><p>For Mainnet go to <a class="reference internal" href="../../../net/installation/downloads.html#node-downloads"><span class="std std-ref">Downloads</span></a>.</p></li>
-<li><p>For Testnet go to <a class="reference internal" href="../../../net/installation/downloads.html#testnet-node-downloads"><span class="std std-ref">Downloads</span></a>.</p></li>
+<li><p>For Mainnet go to <a class="reference internal" href="../../installation/downloads.html#node-downloads"><span class="std std-ref">Downloads</span></a>.</p></li>
+<li><p>For Testnet go to <a class="reference internal" href="../../installation/downloads.html#testnet-node-downloads"><span class="std std-ref">Downloads</span></a>.</p></li>
 </ul>
 </li>
 <li><p>IF UPGRADING: it is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, open Task Manager and stop the concordium-node.exe program for the node you want to upgrade. See <a class="reference internal" href="#verify-running-node"><span class="std std-ref">Verify that the node is running</span></a> for details about how to do this.</p></li>

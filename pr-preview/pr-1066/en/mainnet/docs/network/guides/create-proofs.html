@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/create-proofs.257bdf2f-1b29-44e0-8c6d-7ffba5a0f937.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/create-proofs.20a20a73-29bb-425b-8283-bca9967551f9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/create-proofs';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -642,13 +651,13 @@
                   
   <section id="create-proofs">
 <span id="id1"></span><h1>Create proofs<a class="headerlink" href="#create-proofs" title="Link to this heading">#</a></h1>
-<p>A <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifier"><span class="xref std std-term">verifier</span></a> is a business or use-case that provides a service contingent on the holder providing information about themselves using <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a> or <a class="reference internal" href="../../../net/resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> they have. A verifier will typically consist of two components:</p>
+<p>A <a class="reference internal" href="../../resources/glossary.html#term-Verifier"><span class="xref std std-term">verifier</span></a> is a business or use-case that provides a service contingent on the holder providing information about themselves using <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a> or <a class="reference internal" href="../../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> they have. A verifier will typically consist of two components:</p>
 <ol class="arabic simple">
-<li><p>A dApp that interacts with the wallet and requests a <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifiable-presentation"><span class="xref std std-term">verifiable presentation</span></a> from the user.</p></li>
+<li><p>A dApp that interacts with the wallet and requests a <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-presentation"><span class="xref std std-term">verifiable presentation</span></a> from the user.</p></li>
 <li><p>A backend that will verify the provided presentations, and provide the required service if successful, such as the <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier">Concordia backend</a>.</p></li>
 </ol>
-<p>The Concordium Wallet for Web allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these <a class="reference internal" href="../../../net/resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service. The dApp or service constructs a list of <a class="reference internal" href="../../../net/resources/glossary.html#term-Statement"><span class="xref std std-term">statements</span></a> to request a corresponding list of <a class="reference internal" href="../../../net/resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proofs</span></a> of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.</p>
-<p>The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these <a class="reference internal" href="../../../net/resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service. The verifiable credentials themselves never leave the holder’s wallet, only the information requested by the verifier does.</p>
+<p>The Concordium Wallet for Web allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these <a class="reference internal" href="../../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service. The dApp or service constructs a list of <a class="reference internal" href="../../resources/glossary.html#term-Statement"><span class="xref std std-term">statements</span></a> to request a corresponding list of <a class="reference internal" href="../../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proofs</span></a> of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.</p>
+<p>The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these <a class="reference internal" href="../../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service. The verifiable credentials themselves never leave the holder’s wallet, only the information requested by the verifier does.</p>
 <p>The verification of presentations consists of two parts.</p>
 <ol class="arabic simple">
 <li><p>The cryptographic verification of zero-knowledge proofs, and checks that the verifiable credential is valid, which involves checks in smart contracts.</p></li>
@@ -658,10 +667,10 @@
 <p>The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.</p>
 <a class="reference internal image-reference" href="../../../_images/proof-concept.png"><img alt="../../../_images/proof-concept.png" src="../../../_images/proof-concept.png" style="width: 100%;" />
 </a>
-<p>You have a server or backend that contains the <a class="reference internal" href="../../../net/resources/glossary.html#term-Challenge"><span class="xref std std-term">challenge</span></a> and the statement.</p>
+<p>You have a server or backend that contains the <a class="reference internal" href="../../resources/glossary.html#term-Challenge"><span class="xref std std-term">challenge</span></a> and the statement.</p>
 <ol class="arabic simple">
-<li><p>The dApp requests the <a class="reference internal" href="../../../net/resources/glossary.html#term-Challenge"><span class="xref std std-term">challenge</span></a> from the server/backend.</p></li>
-<li><p>The server/backend returns the challenge to the dApp. The dApp uses it when sending the <a class="reference internal" href="../../../net/resources/glossary.html#term-Statement"><span class="xref std std-term">statements</span></a>. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.</p></li>
+<li><p>The dApp requests the <a class="reference internal" href="../../resources/glossary.html#term-Challenge"><span class="xref std std-term">challenge</span></a> from the server/backend.</p></li>
+<li><p>The server/backend returns the challenge to the dApp. The dApp uses it when sending the <a class="reference internal" href="../../resources/glossary.html#term-Statement"><span class="xref std std-term">statements</span></a>. Your dApp can request the statement from the server or it can contain the statement. Note however that it is the backend that ultimately checks proofs, and so it must be aware of the statement.</p></li>
 <li><p>The dApp sends a request for proof for the given challenge and statement to the wallet.</p></li>
 <li><p>The wallet sends proof back to the dApp (if accepted by the user).</p></li>
 <li><p>The dApp sends the proof to the backend which verifies it with respect to the challenge it has issued.</p></li>
@@ -673,7 +682,7 @@
 <li><p>There is no limit to the amount of attributes that can be revealed.</p></li>
 <li><p>An attribute can only be used in one proof at a time.</p></li>
 </ul>
-<p>The identity provider issued attributes that can be revealed from <a class="reference internal" href="../../../net/resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> are:</p>
+<p>The identity provider issued attributes that can be revealed from <a class="reference internal" href="../../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> are:</p>
 <ul class="simple">
 <li><p>First name</p></li>
 <li><p>Last name</p></li>
@@ -689,7 +698,7 @@
 <li><p>National ID number</p></li>
 <li><p>Tax ID number</p></li>
 </ul>
-<p>You can also build statements that include proofs for attributes in <a class="reference internal" href="../../../net/resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a>. In this case, there is not a fixed list of attributes; it depends on the <a class="reference internal" href="../web3-id/issuer.html#web3id-issuer"><span class="std std-ref">issuer’s needs</span></a>.</p>
+<p>You can also build statements that include proofs for attributes in <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a>. In this case, there is not a fixed list of attributes; it depends on the <a class="reference internal" href="../web3-id/issuer.html#web3id-issuer"><span class="std std-ref">issuer’s needs</span></a>.</p>
 <p>You can find more information about building proof statements in the <a class="reference external" href="https://github.com/Concordium/concordium-node-sdk-js/tree/main/packages/common#identity-proofs">Concordium node SDK js repository</a>.</p>
 </section>
 <section id="asking-a-user-to-reveal-attributes">
@@ -708,7 +717,7 @@
 </section>
 <section id="range-proofs">
 <h2>Range proofs<a class="headerlink" href="#range-proofs" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="../../../net/resources/glossary.html#term-Range-proofs"><span class="xref std std-term">Range proofs</span></a> allow you to present a range of values to the user’s wallet to determine whether the user meets the required attribute. For example, you might want to know if a user over 18 years of age but under 30 years of age. You can present this as a range proof to be verified by the wallet.</p>
+<p><a class="reference internal" href="../../resources/glossary.html#term-Range-proofs"><span class="xref std std-term">Range proofs</span></a> allow you to present a range of values to the user’s wallet to determine whether the user meets the required attribute. For example, you might want to know if a user over 18 years of age but under 30 years of age. You can present this as a range proof to be verified by the wallet.</p>
 <p>Relevant attributes for range proofs are:</p>
 <ul class="simple">
 <li><p>Date of birth</p></li>
@@ -739,7 +748,7 @@
 </section>
 <section id="membership-proofs">
 <h2>Membership proofs<a class="headerlink" href="#membership-proofs" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="../../../net/resources/glossary.html#term-Membership-proof"><span class="xref std std-term">Membership proofs</span></a> allow you to present a list of values to the user’s wallet to determine whether the user has one of the required attributes in the list. For example, you might want to know if a user is a resident of the EU. You can present this as a membership proof to be verified by the wallet.</p>
+<p><a class="reference internal" href="../../resources/glossary.html#term-Membership-proof"><span class="xref std std-term">Membership proofs</span></a> allow you to present a list of values to the user’s wallet to determine whether the user has one of the required attributes in the list. For example, you might want to know if a user is a resident of the EU. You can present this as a membership proof to be verified by the wallet.</p>
 <p>Relevant attributes for membership proofs are:</p>
 <ul class="simple">
 <li><p>Country of residence</p></li>
@@ -772,7 +781,7 @@
 <span class="go">}</span>
 </pre></div>
 </div>
-<p>Membership proofs can also prove that a user does NOT have an attribute or attributes in a set, in other words a <a class="reference internal" href="../../../net/resources/glossary.html#term-Non-membership-proof"><span class="xref std std-term">non-membership proof</span></a>. For example, if you need to know that a user is <strong>not</strong> a resident of a country that is subject to trade sanctions to use your service, you might request a proof that the wallet owner does not reside in the relevant countries.</p>
+<p>Membership proofs can also prove that a user does NOT have an attribute or attributes in a set, in other words a <a class="reference internal" href="../../resources/glossary.html#term-Non-membership-proof"><span class="xref std std-term">non-membership proof</span></a>. For example, if you need to know that a user is <strong>not</strong> a resident of a country that is subject to trade sanctions to use your service, you might request a proof that the wallet owner does not reside in the relevant countries.</p>
 <p>For example, the statement below asks if the wallet owner is a citizen of China or North Korea.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
 <span class="go">    &quot;challenge&quot;: &quot;4de5faf3d68c09e3e76fd8d82ce251c1ff0e49fdcc2661a2f875db35eba02f4d&quot;,</span>

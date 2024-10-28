@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/network/transactions.a35ee5a4-fad8-4b00-bedf-5cdee3b67f5a.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/network/transactions.d652ad76-ca6b-4fa8-9313-8e0d42b71e08.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/transactions';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -579,7 +579,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../help/introduction.html">todo</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
 </ul>
 </div>
 </nav></div>
@@ -747,7 +756,7 @@ the signing keys.</p>
 <span id="account-commands"></span><h2>Commands for showing account information<a class="headerlink" href="#commands-for-showing-account-information" title="Link to this heading">#</a></h2>
 <section id="account-sequence-number">
 <span id="account-seqno"></span><h3>Account sequence number<a class="headerlink" href="#account-sequence-number" title="Link to this heading">#</a></h3>
-<p>Each account on the Concordium blockchain has a <a class="reference internal" href="../../net/resources/glossary.html#term-Transaction-Sequence-Number"><span class="xref std std-term">sequence number</span></a> and each
+<p>Each account on the Concordium blockchain has a <a class="reference internal" href="../resources/glossary.html#term-Transaction-Sequence-Number"><span class="xref std std-term">sequence number</span></a> and each
 transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
@@ -767,7 +776,7 @@ also be set manually via the option <code class="docutils literal notranslate"><
 <section id="account-aliases">
 <span id="id1"></span><h3>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h3>
 <p>In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
-matching account <a class="reference internal" href="../../net/resources/glossary.html#term-Alias"><span class="xref std std-term">aliases</span></a>. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
+matching account <a class="reference internal" href="../resources/glossary.html#term-Alias"><span class="xref std std-term">aliases</span></a>. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
 <p>This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning.</p>
 <p>Each account still has one total account balance. Hence, transfers to and from aliases of an account add to and subtract from that total account balance, respectively. Transfers between different aliases of the same account do not change the balance of the account, apart from cost. Rewards are always received on the account’s canonical address.</p>
@@ -812,7 +821,7 @@ are described in the following table.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">--amount</span></code>: number of CCD tokens to send.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--receiver</span></code>: name or address of the receiver account.</p></li>
 </ul>
-<p>The following flags are for adding a <a class="reference internal" href="../../net/resources/glossary.html#term-Transfer-Memo"><span class="xref std std-term">transfer memo</span></a> to the transfer.</p>
+<p>The following flags are for adding a <a class="reference internal" href="../resources/glossary.html#term-Transfer-Memo"><span class="xref std std-term">transfer memo</span></a> to the transfer.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--memo</span></code>: optional flag for providing a transfer memo as a string. The string will be CBOR encoded and included in the memo.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--memo-json</span></code>: optional flag for providing a transfer memo as a JSON file. The JSON contents of the file will be CBOR encoded and included in the memo.</p></li>
@@ -877,7 +886,7 @@ account B looks like the following:</p>
 </ul>
 <p>This command has all of the additional options of <code class="docutils literal notranslate"><span class="pre">send</span></code>, as well as an
 additional flag <code class="docutils literal notranslate"><span class="pre">--index.</span></code> If given, this flag is used to select which
-<a class="reference internal" href="../../net/resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">incoming shielded amounts</span></a> that will be used as input to the transaction.</p>
+<a class="reference internal" href="../resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">incoming shielded amounts</span></a> that will be used as input to the transaction.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Using default energy amount of 16171 NRG.</span>
 <span class="go">Enter password for decrypting the secret encryption key:</span>
 <span class="go">Transferring 7.000000 CCD from shielded to public balance of account &#39;47JNHkJZo9ShomDypbiSJzdGN7FNxo8MwtUFsPa49KGvejf7Wh&#39; (B).</span>
