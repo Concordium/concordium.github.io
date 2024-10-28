@@ -5,23 +5,21 @@ jobs:
   build-and-deploy:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    container: sphinxdoc/sphinx
     steps:
-      - name: Install git 🔧
-        shell: bash
-        run: |
-          apt-get update
-          apt-get install -y git
-
       - name: Checkout 🛎️
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+            python-version: '3.12'
 
       - name: Install 🔧
         shell: bash
         run: |
-          apt-get install -y graphviz rsync
+          sudo apt-get install -y graphviz
           pip3 install pipenv
           pipenv sync
 
