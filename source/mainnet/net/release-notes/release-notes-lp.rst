@@ -24,31 +24,25 @@ Wallets
 
     Added:
 
-    - Support for Protocol 7
+    - Notifications for CCD and CIS-2 token transactions
 
-    - Support for push notifications
+    - Concordex exchange and Wert service where CCD can be purchased
 
-    - Support for wallet private key (seed) import and export
+    - Ability to reveal the wallet private key for those having no ability to reveal the seed phrase
+
+    - Ability to use the wallet private key to restore the wallet
+
+    - Support for Protocol 7 - reducing validation/delegation stake no longer locks the whole amount
 
     Fixed:
 
-    - Incorrect redirection to token list for existing tokens. Now redirects to the specific token page.
+    - Inability to configure a validator closed for delegation
 
-    - Overlapping "No token have been added to account yet" text with the button when removing all tokens from the tray.
+    - Incorrect state of the account tokens page when there are no tokens
 
-    - Incorrect redirection to transaction list after clicking notifications. Now redirects to the specific transaction details page.
+    - Crash caused by a malformed WalletConnect verifiable presentation request
 
-    - Push notification state is not persisting properly.
-
-    - Mismatched text in the Update cooldown screen of the update delegation flow. Now aligns with the design specifications.
-
-    - Removed unnecessary text "While in the cooldown period, that full delegation amount will keep earning rewards." from the setup delegator flow.
-
-    - Missing visibility of stack cooldowns and their expiry times in the wallet app. Now, users can view the status of their cooling down stacks.
-
-    Changed:
-
-    - Added notification expiry of 1 hour.
+    - Validation/delegation text notices
 
     .. dropdown:: Previous releases
 
