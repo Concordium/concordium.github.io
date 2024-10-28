@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.9c18b75a-a405-426d-a171-382d0a4c4855.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.b2f01b91-abfb-42b5-9f1a-39c3979d21f2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1005,24 +1005,22 @@ body {margin:0;}
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p><strong>1.2.0 - August 27, 2024</strong></p>
-<p>This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.</p>
+<div><p><strong>1.3.0 - October 28, 2024</strong></p>
+<p>This update introduces support for Protocol 7, push notifications, and seed import and export. It also fixes several bugs.</p>
 <p>Added:</p>
 <ul class="simple">
-<li><p>CCD listings – browse exchanges and services where CCD can be purchased</p></li>
-<li><p>Optional anonymous analytics powered by Matomo</p></li>
-<li><p>Concordium newsfeed</p></li>
-<li><p>Support for company identities created with Global FinReg</p></li>
+<li><p>Notifications for CCD and CIS-2 token transactions</p></li>
+<li><p>Concordex exchange and Wert service where CCD can be purchased</p></li>
+<li><p>Ability to reveal the wallet private key for those having no ability to reveal the seed phrase</p></li>
+<li><p>Ability to use the wallet private key to restore the wallet</p></li>
+<li><p>Support for Protocol 7 - reducing validation/delegation stake no longer locks the whole amount</p></li>
 </ul>
 <p>Fixed:</p>
 <ul class="simple">
-<li><p>Visually increasing the balance after sending CCD instead of decreasing it</p></li>
-<li><p>Adding newly created accounts to the address book with a blank name</p></li>
-<li><p>Incorrect text colors in dark theme on Xiaomi</p></li>
-</ul>
-<p>Changed:</p>
-<ul class="simple">
-<li><p>The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible</p></li>
+<li><p>Inability to configure a validator closed for delegation</p></li>
+<li><p>Incorrect state of the account tokens page when there are no tokens</p></li>
+<li><p>Crash caused by a malformed WalletConnect verifiable presentation request</p></li>
+<li><p>Validation/delegation text notices</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1032,6 +1030,32 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+CryptoX Concordium Wallet 1.2.0 - August 27, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.</p>
+<p class="sd-card-text">Added:</p>
+<ul class="simple">
+<li><p class="sd-card-text">CCD listings – browse exchanges and services where CCD can be purchased</p></li>
+<li><p class="sd-card-text">Optional anonymous analytics powered by Matomo</p></li>
+<li><p class="sd-card-text">Concordium newsfeed</p></li>
+<li><p class="sd-card-text">Support for company identities created with Global FinReg</p></li>
+</ul>
+<p class="sd-card-text">Fixed:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Visually increasing the balance after sending CCD instead of decreasing it</p></li>
+<li><p class="sd-card-text">Adding newly created accounts to the address book with a blank name</p></li>
+<li><p class="sd-card-text">Incorrect text colors in dark theme on Xiaomi</p></li>
+</ul>
+<p class="sd-card-text">Changed:</p>
+<ul class="simple">
+<li><p class="sd-card-text">The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 CryptoX Concordium Wallet 1.1.0 and 1.1.1 - June, 2024<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>

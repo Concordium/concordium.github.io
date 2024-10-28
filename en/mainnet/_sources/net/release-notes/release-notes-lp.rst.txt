@@ -18,33 +18,59 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    **1.2.0 - August 27, 2024**
+    **1.3.0 - October 28, 2024**
 
-    This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.
+    This update introduces support for Protocol 7, push notifications, and seed import and export. It also fixes several bugs.
 
     Added:
 
-    - CCD listings – browse exchanges and services where CCD can be purchased
+    - Notifications for CCD and CIS-2 token transactions
 
-    - Optional anonymous analytics powered by Matomo
+    - Concordex exchange and Wert service where CCD can be purchased
 
-    - Concordium newsfeed
+    - Ability to reveal the wallet private key for those having no ability to reveal the seed phrase
 
-    - Support for company identities created with Global FinReg
+    - Ability to use the wallet private key to restore the wallet
+
+    - Support for Protocol 7 - reducing validation/delegation stake no longer locks the whole amount
 
     Fixed:
 
-    - Visually increasing the balance after sending CCD instead of decreasing it
+    - Inability to configure a validator closed for delegation
 
-    - Adding newly created accounts to the address book with a blank name
+    - Incorrect state of the account tokens page when there are no tokens
 
-    - Incorrect text colors in dark theme on Xiaomi
+    - Crash caused by a malformed WalletConnect verifiable presentation request
 
-    Changed:
-
-    - The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible
+    - Validation/delegation text notices
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.2.0 - August 27, 2024
+
+            This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.
+
+            Added:
+
+            - CCD listings – browse exchanges and services where CCD can be purchased
+
+            - Optional anonymous analytics powered by Matomo
+
+            - Concordium newsfeed
+
+            - Support for company identities created with Global FinReg
+
+            Fixed:
+
+            - Visually increasing the balance after sending CCD instead of decreasing it
+
+            - Adding newly created accounts to the address book with a blank name
+
+            - Incorrect text colors in dark theme on Xiaomi
+
+            Changed:
+
+            - The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible
 
         .. dropdown:: |cryptox| 1.1.0 and 1.1.1 - June, 2024
 
