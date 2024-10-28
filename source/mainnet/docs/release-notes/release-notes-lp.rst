@@ -365,11 +365,22 @@ Wallets
 |bw|
 -------------------------
 
-    August 21, 2024
+    October 30, 2024
 
-    Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint `/v2/ip_info`.
+    Version 1.7.1 includes several changes and bug fixes.
+
+    -   Updated version of @concordium/web-sdk to ver.8 (with new protocol ver.7 update)
+    -   Added cooldown card at delegation page with info about pending changes, if delegation was updated
+    -   Updated screens mentioning stake cooldowns to reflect protocol ver.7 cooldown changes
+    -   Updated properties checks in `poolStatus` according to new types
+    -   Updated `accountAvailableBalance` value which is now received from the web-sdk
+    -   Fixed window height change on modal open
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.6.4 - August 21, 2024
+
+            Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint `/v2/ip_info`.
 
         .. dropdown:: |bw| 1.6.3 - August 19, 2024
 
