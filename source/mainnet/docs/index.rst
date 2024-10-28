@@ -39,7 +39,7 @@ This is the documentation
 
    Downloads <installation/downloads>
    Release notes <release-notes/release-notes-lp>
-   FAQs <help/faqs>
+   FAQs <help-and-faq/faqs>
    Glossary of Concordium terms <resources/glossary>
 
 

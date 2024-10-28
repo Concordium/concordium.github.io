@@ -6,4 +6,4 @@ FAQs
    :hidden:
    :maxdepth: 1
 
-   delegation-faq
+   ./delegation-faq
