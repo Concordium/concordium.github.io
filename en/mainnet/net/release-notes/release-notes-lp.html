@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.b2f01b91-abfb-42b5-9f1a-39c3979d21f2.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.1b4abfd8-b035-40b4-9974-4b58c22e3a04.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1002,6 +1002,53 @@ body {margin:0;}
 </div>
 <section id="wallets">
 <h2>Wallets<a class="headerlink" href="#wallets" title="Link to this heading">#</a></h2>
+<section id="cryptox-for-ios">
+<span id="rn-cryptox-ios"></span><h3>CryptoX Concordium Wallet for iOS<a class="headerlink" href="#cryptox-for-ios" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><strong>2.0.0 - October 29, 2024</strong></p>
+<p>Removed:</p>
+<ul class="simple">
+<li><p>Shielding functionalty</p></li>
+<li><p>Old-legacy Send Assets flow</p></li>
+</ul>
+<p>Added:</p>
+<ul class="simple">
+<li><p>Mainnet, Stagenet, and Testnet schemas</p></li>
+<li><p>Setting up and updating validator pool commission rates</p></li>
+<li><p>Support for WalletConnect CCD transfer requests</p></li>
+<li><p>Ability to see full details of a WalletConnect transaction to sign</p></li>
+<li><p>Validation of metadata checksum when adding CIS-2 tokens</p></li>
+<li><p>Display of balance/ownership when adding CIS-2 tokens</p></li>
+<li><p>Wallet Connect, add sign message functionality</p></li>
+<li><p>New Unshield Assets flow</p></li>
+<li><p>CCD onramp flow</p></li>
+<li><p>News Tab</p></li>
+<li><p>Expport/Import Wallet Private key</p></li>
+<li><p>Push Notifications for incoming transactions both ccd and CIS2Token</p></li>
+<li><p>Support for Protocol 7 – reducing validation/delegation stake no longer locks the whole amount</p></li>
+</ul>
+<p>Fixed:</p>
+<ul class="simple">
+<li><p>Issue where signing a text message through WalletConnect did not work</p></li>
+<li><p>Issue where a dApp could request to get a transaction signed by a different account than the one chosen for the WalletConnect session</p></li>
+<li><p>Issue where the identity name was off-center when the edit name icon was visible</p></li>
+<li><p>“Invalid WalletConnect request” message repeatedly shown if received a request with unsupported transaction type</p></li>
+<li><p>Exported private key for file-based initial account being incompatible with concordium-client</p></li>
+<li><p>Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp</p></li>
+<li><p>Changing restaking options</p></li>
+<li><p>App crash during identities recover process</p></li>
+<li><p>Send Assets Flow</p></li>
+<li><p>Wallet Connect connection issue</p></li>
+</ul>
+<p>Changed:</p>
+<ul class="simple">
+<li><p>Baker/baking renamed to Validator/validating</p></li>
+<li><p>All anon* references removed</p></li>
+<li><p>WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts</p></li>
+<li><p>WalletConnect transaction signing request now shows the receiver, either smart contract or an account, and amount of CCD to send, not including CIS-2 tokens</p></li>
+</ul>
+</div></blockquote>
+</section>
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
@@ -1420,8 +1467,16 @@ Concordium Wallet for Mobile 1.0.0 - September 26, 2022<div class="sd-summary-do
 <section id="bw">
 <span id="rn-bw"></span><h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>August 21, 2024</p>
-<p>Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint <cite>/v2/ip_info</cite>.</p>
+<div><p>October 30, 2024</p>
+<p>Version 1.7.1 includes several changes and bug fixes.</p>
+<ul class="simple">
+<li><p>Updated version of &#64;concordium/web-sdk to ver.8 (with new protocol ver.7 update)</p></li>
+<li><p>Added cooldown card at delegation page with info about pending changes, if delegation was updated</p></li>
+<li><p>Updated screens mentioning stake cooldowns to reflect protocol ver.7 cooldown changes</p></li>
+<li><p>Updated properties checks in <cite>poolStatus</cite> according to new types</p></li>
+<li><p>Updated <cite>accountAvailableBalance</cite> value which is now received from the web-sdk</p></li>
+<li><p>Fixed window height change on modal open</p></li>
+</ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Previous releases<div class="sd-summary-down docutils">
@@ -1430,6 +1485,15 @@ Previous releases<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Concordium Wallet for Web 1.6.4 - August 21, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint <cite>/v2/ip_info</cite>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Concordium Wallet for Web 1.6.3 - August 19, 2024<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -4023,6 +4087,7 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wallets">Wallets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox-for-ios">CryptoX Concordium Wallet for iOS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox-for-android">CryptoX Concordium Wallet for Android</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-ios">Concordium Wallet for Mobile for iOS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-android">Concordium Wallet for Mobile for Android</a></li>
