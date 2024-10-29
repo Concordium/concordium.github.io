@@ -376,6 +376,7 @@ Wallets
     -   Updated `accountAvailableBalance` value which is now received from the web-sdk
     -   Fixed window height change on modal open
 
+
     .. dropdown:: Previous releases
 
         .. dropdown:: |bw| 1.6.4 - August 21, 2024
