@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 
 .. _solana-faq:
 
@@ -254,7 +254,7 @@ Concordium smart contracts
         Error: Updating contract instance failed:
         'smash' in 'PiggyBank' at {"index":12345,"subindex":0} failed with code -2147483636.
 
-    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_21.png
+    .. image:: ../../../smart-contracts/tutorials/piggy-bank/images/pb_tutorial_21.png
             :width: 100 %
 
     You can find the meaning of common error codes in this `list <https://docs.rs/concordium-std/latest/concordium_std/#signalling-errors>`_.
@@ -270,7 +270,7 @@ Concordium smart contracts
         Error: Updating contract instance failed:
         'smash' in 'PiggyBank' at {"index":12345,"subindex":0} failed with code -1.
 
-    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_27.png
+    .. image:: ../../../smart-contracts/tutorials/piggy-bank/images/pb_tutorial_27.png
         :width: 100 %
 
     You can find the meaning of the piggy bank error codes in this :ref:`section<piggy-bank-smash-error>`.
@@ -557,7 +557,7 @@ Standards
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
     Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    .. include:: ../snippets/tokens.rst
+    .. include:: ../../../smart-contracts/snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the Solana's wrapped token wSOL?
 
@@ -650,9 +650,9 @@ Miscellaneous
     If you just created your account in the mobile app wallet, you
     find a button to request 2000 testnet CCD to get started with your new account.
 
-    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_5.png
+    .. image:: ../../../smart-contracts/tutorials/piggy-bank/images/pb_tutorial_5.png
         :width: 20 %
-    .. image:: ../tutorials/piggy-bank/images/pb_tutorial_6.png
+    .. image:: ../../../smart-contracts/tutorials/piggy-bank/images/pb_tutorial_6.png
         :width: 20 %
 
     **Option 2:** If you have the curl package installed on your Unix-like operating systems,

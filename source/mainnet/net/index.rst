@@ -30,7 +30,6 @@ index
    :caption: Smart Contracts
 
    Ethereum developer onboarding <../smart-contracts/onboarding-guide-ethereum-developers/faq>
-   Solana developer onboarding <../smart-contracts/onboarding-guide-solana-developers/overview>
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
    Test contracts <../smart-contracts/guides/integration-test-contract>
    On-chain guides <../smart-contracts/guides/on-chain-index>

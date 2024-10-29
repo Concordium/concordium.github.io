@@ -41,5 +41,6 @@ This is the documentation
    Release notes <release-notes/release-notes-lp>
    FAQs <help-and-faq/faqs>
    Glossary of Concordium terms <resources/glossary>
+   Onboarding for Solana Developers <help-and-faq/onboarding-guide-solana-developers/overview>
 
 

@@ -463,7 +463,9 @@ redirects = {
     ".net/installation/cdw-verification-instructions/cdw-rpm": "docs/installation/cdw-verification-instructions/cdw-rpm.html",
     ".net/installation/client-verification-instructions/client-linux": "docs/installation/client-verification-instructions/client-linux.html",
     ".net/installation/snippets/delegation-faq": "docs/help/delegation-faq.html",
-    ".net/resources/glossary": "docs/resources/glossary.html"
+    ".net/resources/glossary": "docs/resources/glossary.html",
+    ".en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq": "en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/faq.html",
+    "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview": "en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/overview.html"
 
 
     }

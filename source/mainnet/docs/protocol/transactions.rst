@@ -49,6 +49,7 @@ You can make transactions using one of the Concordium wallets or the Concordium 
 - Desktop Wallet: supports all transaction types (except smart contract transactions).
 - Concordium Client: supports all transaction types.
 
+.. |check|  unicode:: U+2713 .. CHECKMARK
 
 .. toctree::
    :hidden:
