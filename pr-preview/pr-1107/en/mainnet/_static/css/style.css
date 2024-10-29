@@ -1,0 +1,523 @@
+:root {
+
+    /*****************************************************************************
+    * Font family
+    **/
+    /* These are adapted from https://systemfontstack.com/ */
+    --pst-font-family-base-system: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    --pst-font-family-monospace-system: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', Courier, monospace;
+  
+    --pst-font-family-base: var(--pst-font-family-base-system);
+    --pst-font-family-heading: var(--pst-font-family-base);
+    --pst-font-family-monospace: var(--pst-font-family-monospace-system);
+
+    /*****************************************************************************
+    * Colors
+    **/
+    /* specified with RGB or hexcodes */
+    --pst-color-primary: #48A2AE;
+    --pst-color-primary-text: #333333;
+    --pst-color-secondary: #052535;
+    --pst-color-link: #48A2AE;
+    --pst-color-link-hover: #48A2AE;
+    --pst-color-inline-code: 178, 34, 34;
+    --pst-color-sidebar-link-hover: #48A2AE;
+    --pst-color-toc-link-hover: #48A2AE;
+    --pst-color-toc-link-active: #48A2AE;
+    --pst-color-headerlink: #48A2AE;
+    --pst-color-headerlink-hover: #48A2AE;
+    --bg-color: #ffffff;
+    --heading-color: #333333;
+}
+
+html {
+    --pst-color-primary: #48A2AE;
+    --pst-color-primary-text: #333333;
+    --pst-color-secondary: #052535;
+    --pst-color-link: #48A2AE;
+    --pst-color-link-hover: #48A2AE;
+    --pst-color-inline-code: 178, 34, 34;
+    --pst-color-sidebar-link-hover: #48A2AE;
+    --pst-color-toc-link-hover: #48A2AE;
+    --pst-color-toc-link-active: #48A2AE;
+    --pst-color-headerlink: #48A2AE;
+    --pst-color-headerlink-hover: #48A2AE;
+    --bg-color: #ffffff;
+    --heading-color: #333333;
+}
+
+html {
+    --pst-font-family-base: var(--pst-font-family-base-system);
+    --pst-font-family-heading: var(--pst-font-family-base-system);
+    --pst-font-family-monospace: var(--pst-font-family-monospace-system);
+}
+
+body{
+    font-family: var(--pst-font-family-base-system);
+    background-color: var(--bg-color);
+    color: #333333;
+    ;
+  }
+
+/* Text styling */
+p{
+    line-height: 1.7em;
+    font-size: 16px;
+    color: #333333;
+    font-family: var(--pst-font-family-base-system);
+}
+
+h1{
+    font-family: var(--pst-font-family-base-system);
+    color: #333333;
+    margin-bottom: 34px;
+}
+
+h2{
+    font-family: var(--pst-font-family-base-system);
+    color: #333333;
+    margin-bottom: 28px;
+}
+
+h3{
+    font-family: var(--pst-font-family-base-system);
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+h4{
+    font-family: var(--pst-font-family-base-system);
+    color: #333333;
+}
+
+h5{
+    font-family: var(--pst-font-family-base-system);
+    color: #333333;
+}
+
+h6{
+    font-family: var(--pst-font-family-base-system);
+    color: #333333;
+}
+
+a{
+    color: #48A2AE;
+    text-decoration: none;
+}
+
+a.reference.internal:hover{
+    color: #48A2AE;
+    text-decoration: none;
+}
+
+a.reference.external:hover{
+    color: #48A2AE;
+    text-decoration: none;
+}
+
+a.headerlink {
+    --pst-color-secondary: #48A2AE;
+}
+
+a.headerlink:active{
+    --pst-color-link-hover: #48A2AE;
+}
+
+p.copyright{
+    font-size: 8px;
+    display: inline-block;
+    text-align: left;
+    padding-left: 16px;
+}
+
+.prev-next-area a p.prev-next-title{
+    text-decoration: none;
+    color: #48A2AE;
+}
+
+p.prev-next-title:hover{
+    --pst-color-link-hover: #48A2AE;
+}
+
+#pst-back-to-top{
+    background-color: #052535;
+}
+
+.bd-search input {
+    --pst-color-accent: #48A2AE;
+}
+
+.toc-entry a.nav-link.active {
+    box-shadow: none;
+}
+
+/*Code styling */
+/* Change the highlight color used in code-snippets. This makes them stand out more. */
+.highlight .hll {
+    background-color: #ccddcc;
+}
+
+/* Adds padding to the right of '$' in code-blocks with terminal commands. */
+.gp {
+    padding-right: 0.5em;
+}
+
+/*Video handling*/
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16 /9;
+ }
+
+/*Topnav styling*/
+.navbar{
+    position: fixed;
+    min-height: var(--pst-header-height);
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item{
+    --pst-color-link-hover: #48A2AE;
+}
+
+.search-button__button{
+    --pst-color-link-hover: #48A2AE;
+}
+
+.navbar-end{
+    width: 33%;
+}
+
+/* Sidebar */
+.bd-sidebar{
+    text-decoration: none;
+}
+
+.bd-links__title {
+    visibility: hidden;
+}
+
+.bd-sidebar .nav .active:hover>a{
+    color: unset;
+}
+
+.fa-chevron-down:before {
+    color: #888888;
+}
+
+.bd-sidebar label  {
+    left: 0;
+    right: unset;
+    height: 35px;
+}
+
+.bd-sidebar label:hover {
+    background: none;
+}
+
+.bd-sidebar .nav .active:hover>label .fa-chevron-down:before,
+.bd-sidebar .nav .active>label .fa-chevron-down:before {
+    color: rgba(var(--pst-color-sidebar-link-active),1);
+}
+
+.bd-sidebar .label-parts .fa-chevron-down {
+    left: 0;
+    right:unset;
+    top: 9px;
+}
+
+.navbar-nav .toctree-checkbox~label .fa-chevron-down {
+    transform: rotate(270deg);
+}
+
+.navbar-nav .toctree-checkbox:checked~label .fa-chevron-down {
+    transform: rotate(0deg);
+}
+
+ul.list-caption li.selected p.caption,
+ul.list-caption li.selected > label i:before  {
+    color: rgba(var(--pst-color-sidebar-link-active),1);
+}
+
+.bd-sidebar .nav {
+    font-size: 14px;
+    padding: 0 0 4px 14px
+}
+
+.nav.bd-sidenav li.has-children {
+    padding: 2px 0 2px 10px;
+}
+
+.nav.bd-sidenav li {
+    padding: 3px 0 7px 10px;
+}
+
+.bd-sidebar li {
+    padding: 2px 0 2px 10px;
+}
+
+.bd-sidebar li.has-children>.reference {
+    padding-right: 0;
+}
+
+.bd-sidebar .nav ul {
+    padding: 0 0 0 14px;
+}
+
+.bd-sidebar .nav li>a {
+    padding: 4px 0 0 22px;
+    color: #888888;
+}
+
+.bd-sidebar .nav li.has-children>a {
+    padding: 5px 0 5px 22px;
+}
+
+.bd-links {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+nav.bd-links p.caption {
+    text-transform: unset;
+    font-weight: unset;
+    font-size: 14px;
+    color: #888888;
+}
+
+nav.bd-links .current>a {
+    box-shadow: none;
+}
+
+.bd-search {
+    padding: 37px 0 26px 0;
+    margin: 0;
+}
+
+.bd-search input {
+    border-radius: 16px;
+    border: 1px solid #e7e7e7;
+    padding: 24px 24px 24px 50px;
+    font-size: 15px;
+}
+
+.rst-versions.shift-up {
+    overflow-y: auto;
+}
+
+ul.list-caption li.selected p.caption {
+    font-weight: 600;
+}
+
+/* Admonitions */
+.section {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+.admonition>.admonition-title,
+div.admonition>.admonition-title {
+    margin: 0;
+    padding: 10px 20px 10px 50px;
+}
+
+.admonition>.admonition-title:before,
+div.admonition>.admonition-title:before {
+    left: 24px;
+    width: 16px;
+    height: 16px;
+}
+
+.admonition p.admonition-title~*,
+div.admonition p.admonition-title~* {
+    margin: 20px 30px;
+}
+
+.admonition,
+div.admonition {
+    margin: 50px auto;
+    padding: 0 0 15px;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.admonition.warning {
+    background: #ffffff;
+    border-color: #F6DB9A;
+    border: 1px solid;
+}
+
+.admonition.warning .admonition-title {
+    background: #F6DB9A;
+}
+
+.admonition.note {
+    background: #ffffff;
+    border-color: #acceed;
+    border: 1px solid;
+}
+
+.admonition.note .admonition-title {
+    background: #e5f2ff;
+}
+
+/* Consent dialog */
+.consent {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    max-width: 530px;
+    padding: 30px 45px 25px;
+    background: linear-gradient(157deg, #005A78 -18.68%, #2E8894 95.63%);
+    color: #fff;
+}
+
+.consent p {
+    margin-bottom: 0.5em;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.consent button {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: .5em;
+    margin-right: .5em;
+    background-color: #48A2AE;
+    border-radius: 12px;
+    border-width: 0;
+    color: #fff;
+}
+
+.consent a:link {
+    margin-left: .5em;
+    color: #ffffff;
+
+}
+
+.consent a:visited {
+    color: lightgrey;
+}
+
+.consent   a:hover {
+    color: lightgrey;
+}
+
+.consent a:active {
+    color: #d9d9d9;
+}
+
+@media only screen and (max-width: 768px) {
+    .consent {
+        left: 0;
+    }
+}
+
+@media (min-width: 720px) {
+    .bd-sidebar {
+        border-right: none;
+    }
+}
+
+
+@media (max-width: 961px) {
+    .bd-sidebar {
+        display: none;
+    }
+    
+    .navbar {
+        z-index: 100000;
+    }
+    
+    .navbar-nav {
+        flex-direction: row;
+        margin: 20px;
+        justify-content: right;
+    }
+    
+    .navbar-toggler {
+        border: none;
+    }
+
+    label.sidebar-toggle.primary-toggle:hover {
+        --pst-color-link-hover: #48A2AE; 
+    }
+
+    label.sidebar-toggle.secondary-toggle:hover {
+        --pst-color-link-hover: #48A2AE; 
+    }
+
+    .row .bd-sidebar {
+        z-index: 10000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        overflow: inherit;
+        padding-top: 0;
+        height: calc(100vh - 60px);
+    }
+    
+    .row.show .bd-sidebar {
+        display: block;
+    }
+    
+    .row .bd-sidebar .sidebar-start-items {
+        width: 100vw;
+        height: 100vh;
+        background-color: #ededed;
+        margin-left: -15px;
+        padding: 0 15px;
+    }
+    
+    .row.show  .bd-content {
+        display: none;
+    }
+    
+    .bd-content {
+        padding-top: 20px!important;
+        padding-left: 20px!important;
+    }
+    
+    .bd-search .icon {
+        left: 22px;
+    }
+    
+    .bd-links {
+        background-color: #ededed;
+        padding-left: 15px;
+    }
+    
+    .bd-search {
+        padding: 19px 0 26px 0;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="uuid-bcc72342-cc46-4424-80f3-1b4ff01a2abe" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.6 4.6"><defs><style> .uuid-21e86d99-dce9-40bd-a1d5-77ef4a5c17f5 { fill: %23808285; } </style></defs><g id="uuid-90538f99-a004-49b0-a1ed-70916f7e6ea0" data-name="Layer 1"><path class="uuid-21e86d99-dce9-40bd-a1d5-77ef4a5c17f5" d="m2.72,2.3l1.79-1.79c.12-.12.12-.31,0-.42s-.31-.12-.42,0l-1.79,1.79L.51.09C.39-.03.21-.03.09.09S-.03.39.09.51l1.79,1.79L.09,4.09c-.12.12-.12.31,0,.42.06.06.14.09.21.09s.15-.03.21-.09l1.79-1.79,1.79,1.79c.06.06.14.09.21.09s.15-.03.21-.09c.12-.12.12-.31,0-.42l-1.79-1.79Z"/></g></svg>');
+        width: 17px;
+        height: 17px;
+    }
+    
+    .navbar-collapse.collapse.show {
+        position: absolute;
+        top: calc(100vh - 65px);
+        width: 100%;
+        background-color: #dbdbdb;
+    }
+    
+    .bd-toc-item.active {
+        margin-bottom: 60px;
+    }
+
+    .bd-search .icon {
+        left: 36px;
+    }
+
+    .navbar-collapse.collapsing {
+        display: none
+    }
+}
