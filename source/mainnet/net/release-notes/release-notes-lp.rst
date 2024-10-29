@@ -15,8 +15,6 @@ Wallets
 =======
 
 .. _rn-cryptox-ios:
--------------------
-
 
 |cryptox| for iOS
 -----------------
