@@ -1,4 +1,4 @@
-.. include:: ../../../variables.rst
+.. include:: ../../variables.rst
 .. _intro-smart-contract-upgrade:
 
 .. image:: smartContractUpgrade.png

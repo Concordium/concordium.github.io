@@ -1,6 +1,14 @@
+.. include:: ../variables.rst
+.. _tutorials:
 
-=========
+==========
 Tutorials
-=========
+==========
 
-These are the tutorials
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+    Smart Contract Tutorials<./smart-contracts-tutorials.rst>
+    dApp examples
+    How to Create Company Identity

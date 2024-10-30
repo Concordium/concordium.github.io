@@ -1,9 +1,9 @@
-.. include:: ../../variables.rst
+.. include:: ../variables.rst
 .. _sc-tutorials:
 
-==========
-Tutorials
-==========
+========================
+Smart Contract Tutorials
+========================
 
 You can go through a number of different tutorials to sharpen your skills as
 a dApp (decentralized application) developer on the Concordium blockchain.

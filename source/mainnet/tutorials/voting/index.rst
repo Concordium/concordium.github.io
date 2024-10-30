@@ -1,4 +1,4 @@
-.. include:: ../../../variables.rst
+.. include:: ../../variables.rst
 .. _Rust: https://www.rust-lang.org/
 .. _voting-dapp:
 
