@@ -417,6 +417,7 @@ Wallets
     Version 1.7.1 includes several changes and bug fixes.
 
     -   Updated version of @concordium/web-sdk to ver.8 (with new protocol ver.7 update)
+    -   Added support of company identities with new web-sdk ver.8
     -   Added cooldown card at delegation page with info about pending changes, if delegation was updated
     -   Updated screens mentioning stake cooldowns to reflect protocol ver.7 cooldown changes
     -   Updated properties checks in `poolStatus` according to new types
