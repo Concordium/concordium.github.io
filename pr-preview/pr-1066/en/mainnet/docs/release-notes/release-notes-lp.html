@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.0a07f3ba-8a68-471e-a90c-d74804688727.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.60274a25-ac7c-4b0f-88c0-44ad28890ef1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -157,7 +157,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tools.html">
+                      <a class="nav-link nav-internal" href="../../tools/index.html">
                         Tools
                       </a>
                     </li>
@@ -349,7 +349,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tools.html">
+                      <a class="nav-link nav-internal" href="../../tools/index.html">
                         Tools
                       </a>
                     </li>
@@ -484,6 +484,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/transactions.html">Transactions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/concepts-transactions.html">Transaction anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction Fees</a></li>
 </ul>
 </li>
@@ -586,9 +587,21 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Release notes</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/onboarding-guide-ethereum-developers/faq.html">FAQ for Ethereum developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/onboarding-guide-solana-developers/faq.html">FAQ for Solana developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/onboarding-guide-solana-developers/overview.html">Onboarding for Solana developers</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../voting/gc-voting.html">Concordium Governance Committee Elections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/coordinator.html">Election coordinator tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/voting.html">How to vote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/guardians.html">Guardians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/verify-election-result.html">Verify election result</a></li>
 </ul>
 </div>
 </nav></div>
@@ -655,6 +668,53 @@
 </div>
 <section id="wallets">
 <h2>Wallets<a class="headerlink" href="#wallets" title="Link to this heading">#</a></h2>
+<section id="cryptox-for-ios">
+<span id="rn-cryptox-ios"></span><h3>CryptoX Concordium Wallet for iOS<a class="headerlink" href="#cryptox-for-ios" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><strong>2.0.0 - October 29, 2024</strong></p>
+<p>Removed:</p>
+<ul class="simple">
+<li><p>Shielding functionalty</p></li>
+<li><p>Old-legacy Send Assets flow</p></li>
+</ul>
+<p>Added:</p>
+<ul class="simple">
+<li><p>Mainnet, Stagenet, and Testnet schemas</p></li>
+<li><p>Setting up and updating validator pool commission rates</p></li>
+<li><p>Support for WalletConnect CCD transfer requests</p></li>
+<li><p>Ability to see full details of a WalletConnect transaction to sign</p></li>
+<li><p>Validation of metadata checksum when adding CIS-2 tokens</p></li>
+<li><p>Display of balance/ownership when adding CIS-2 tokens</p></li>
+<li><p>Wallet Connect, add sign message functionality</p></li>
+<li><p>New Unshield Assets flow</p></li>
+<li><p>CCD onramp flow</p></li>
+<li><p>News Tab</p></li>
+<li><p>Expport/Import Wallet Private key</p></li>
+<li><p>Push Notifications for incoming transactions both ccd and CIS2Token</p></li>
+<li><p>Support for Protocol 7 – reducing validation/delegation stake no longer locks the whole amount</p></li>
+</ul>
+<p>Fixed:</p>
+<ul class="simple">
+<li><p>Issue where signing a text message through WalletConnect did not work</p></li>
+<li><p>Issue where a dApp could request to get a transaction signed by a different account than the one chosen for the WalletConnect session</p></li>
+<li><p>Issue where the identity name was off-center when the edit name icon was visible</p></li>
+<li><p>“Invalid WalletConnect request” message repeatedly shown if received a request with unsupported transaction type</p></li>
+<li><p>Exported private key for file-based initial account being incompatible with concordium-client</p></li>
+<li><p>Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp</p></li>
+<li><p>Changing restaking options</p></li>
+<li><p>App crash during identities recover process</p></li>
+<li><p>Send Assets Flow</p></li>
+<li><p>Wallet Connect connection issue</p></li>
+</ul>
+<p>Changed:</p>
+<ul class="simple">
+<li><p>Baker/baking renamed to Validator/validating</p></li>
+<li><p>All anon* references removed</p></li>
+<li><p>WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts</p></li>
+<li><p>WalletConnect transaction signing request now shows the receiver, either smart contract or an account, and amount of CCD to send, not including CIS-2 tokens</p></li>
+</ul>
+</div></blockquote>
+</section>
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
@@ -1077,6 +1137,7 @@ Concordium Wallet for Mobile 1.0.0 - September 26, 2022<div class="sd-summary-do
 <p>Version 1.7.1 includes several changes and bug fixes.</p>
 <ul class="simple">
 <li><p>Updated version of &#64;concordium/web-sdk to ver.8 (with new protocol ver.7 update)</p></li>
+<li><p>Added support of company identities with new web-sdk ver.8</p></li>
 <li><p>Added cooldown card at delegation page with info about pending changes, if delegation was updated</p></li>
 <li><p>Updated screens mentioning stake cooldowns to reflect protocol ver.7 cooldown changes</p></li>
 <li><p>Updated properties checks in <cite>poolStatus</cite> according to new types</p></li>
@@ -3693,6 +3754,7 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wallets">Wallets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox-for-ios">CryptoX Concordium Wallet for iOS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox-for-android">CryptoX Concordium Wallet for Android</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-ios">Concordium Wallet for Mobile for iOS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mw-gen2-for-android">Concordium Wallet for Mobile for Android</a></li>

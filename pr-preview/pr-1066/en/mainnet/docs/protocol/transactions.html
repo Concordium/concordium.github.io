@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/transactions.7320b465-b44b-4a3a-b296-7b890ff94411.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/transactions.3323f37d-f748-4620-87c7-17a501f9f382.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/transactions';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -157,7 +157,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tools.html">
+                      <a class="nav-link nav-internal" href="../../tools/index.html">
                         Tools
                       </a>
                     </li>
@@ -349,7 +349,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tools.html">
+                      <a class="nav-link nav-internal" href="../../tools/index.html">
                         Tools
                       </a>
                     </li>
@@ -484,6 +484,7 @@
 <li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Transactions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="concepts-transactions.html">Transaction anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transaction%20lifecycle.html">Transaction lifecycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transaction-fees.html">Transaction Fees</a></li>
 </ul>
 </li>
@@ -586,9 +587,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../release-notes/release-notes-lp.html">Release notes</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../help-and-faq/faqs.html">FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help-and-faq/delegation-faq.html">Delegation and validation FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/onboarding-guide-ethereum-developers/faq.html">FAQ for Ethereum developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/onboarding-guide-solana-developers/faq.html">FAQ for Solana developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help-and-faq/onboarding-guide-solana-developers/overview.html">Onboarding for Solana developers</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../voting/gc-voting.html">Concordium Governance Committee Elections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/coordinator.html">Election coordinator tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/voting.html">How to vote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/guardians.html">Guardians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/verify-election-result.html">Verify election result</a></li>
 </ul>
 </div>
 </nav></div>
@@ -648,6 +661,136 @@
                   
   <section id="transactions">
 <span id="id1"></span><h1>Transactions<a class="headerlink" href="#transactions" title="Link to this heading">#</a></h1>
+<p>A transaction on the Concordium blockchain is an operation which applies some change to the chain. All transactions are recorded on the chain and once recorded, they are immutable. A transaction always has one sender <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">account</span></a> and is signed using the <a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">keys</span></a> of this account.</p>
+<p>The most basic transaction is the CCD transfer that is used to send CCD from one account to another. However, there are several transaction types on the Concordium blockchain.</p>
+<p>You can make transactions using one of the Concordium wallets or the Concordium Client. Note that some wallets do not support all transaction types, and that you need a LEDGER device to submit transactions from the Desktop Wallet.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Concordium Legacy Wallet</p></th>
+<th class="head"><p>Concordium Wallet for Mobile</p></th>
+<th class="head"><p>Concordium Wallet for Web</p></th>
+<th class="head"><p>Desktop Wallet</p></th>
+<th class="head"><p>Concordium Client</p></th>
+<th class="head"><p>CryptoX Concordium Wallet</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Send CCD</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Send CCD with a schedule</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Unshield CCD</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add validator</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Remove validator</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Update validator stake</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Update restake earnings</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Update validator keys</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Update account credentials</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Connect to dApps</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Delegation</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Smart contract transactions</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Manage tokens</p></td>
+<td rowspan="2"></td>
+<td rowspan="2"><p>✓</p></td>
+<td rowspan="2"></td>
+<td rowspan="2"><p>✓</p></td>
+<td rowspan="2"><p>✓</p></td>
+<td rowspan="2"><p>✓</p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>CryptoX Concordium Wallet: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage tokens, and unshielding.</p></li>
+<li><p>Concordium Wallet for Web: supports send CCD, receive CCD, connect to dApps, validator management, delegation.</p></li>
+<li><p>Concordium Wallet for Mobile: supports send CCD, receive CCD, unshield CCD (<a class="reference internal" href="../../net/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>), validator management, delegation, connect to dApps, add and manage tokens.</p></li>
+<li><p>Concordium Legacy Wallet: supports send CCD, receive CCD, unshield CCD (<a class="reference internal" href="../../net/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>), validator management, delegation</p></li>
+<li><p>Desktop Wallet: supports all transaction types (except smart contract transactions).</p></li>
+<li><p>Concordium Client: supports all transaction types.</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </section>

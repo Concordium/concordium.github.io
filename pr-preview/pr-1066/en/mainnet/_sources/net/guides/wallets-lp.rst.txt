@@ -9,7 +9,7 @@ Concordium offers its wallets for several different platforms, enabling you to m
 
 .. toctree::
     :hidden:
-    :maxdepth: 1
+    :maxdepth: 2
 
     wallet-faqs
     setup-wallets-lp

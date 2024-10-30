@@ -40,6 +40,17 @@ This is the documentation
    Downloads <installation/downloads>
    Release notes <release-notes/release-notes-lp>
    FAQs <help-and-faq/faqs>
+   Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
+
+
+.. toctree::
+   :caption: Governance Committee Voting
+
+   Concordium Governance Committee Elections <voting/gc-voting>
+   Election coordinator tool <voting/coordinator>
+   How to vote <voting/voting>
+   Guardians <voting/guardians>
+   Verify election result <voting/verify-election-result>
 
 
