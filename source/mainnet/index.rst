@@ -7,4 +7,4 @@ Concordium Developer Documentation
 
    docs/index
    tutorials/index
-   tools
+   tools/index
