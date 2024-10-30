@@ -2,9 +2,9 @@
 
 .. _solana-faq:
 
-====
-FAQ
-====
+=========================
+FAQ for Solana developers
+=========================
 
 The following Frequently Asked Questions about Concordium focuses on helping developers with a Solana background to understand the Concordium blockchain and its smart contract ecosystem.
 
@@ -756,3 +756,6 @@ Miscellaneous
 
 .. _Chain: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html
 .. |Chain| replace:: ``Chain``
+
+
+

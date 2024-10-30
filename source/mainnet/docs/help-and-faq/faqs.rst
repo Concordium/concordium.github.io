@@ -7,3 +7,9 @@ FAQs
    :maxdepth: 1
 
    ./delegation-faq
+   onboarding-guide-ethereum-developers/faq
+   onboarding-guide-solana-developers/faq
+   onboarding-guide-solana-developers/overview
+
+
+

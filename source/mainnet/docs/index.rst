@@ -40,10 +40,8 @@ This is the documentation
    Downloads <installation/downloads>
    Release notes <release-notes/release-notes-lp>
    FAQs <help-and-faq/faqs>
-   Concordium Standards <https://proposals.concordium.software/index.html>
+   Concordium standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
-   Onboarding for Solana developers <help-and-faq/onboarding-guide-solana-developers/overview>
-   Onboarding for Ethereum developers <help-and-faq/onboarding-guide-ethereum-developers/faq>
 
 
 .. toctree::

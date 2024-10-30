@@ -113,8 +113,3 @@ Concordium
         Ok(())
     }
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   faq
