@@ -40,7 +40,7 @@ This is the documentation
    Downloads <installation/downloads>
    Release notes <release-notes/release-notes-lp>
    FAQs <help-and-faq/faqs>
-   Concordium standards <https://proposals.concordium.software/index.html>
+   Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
 
 
