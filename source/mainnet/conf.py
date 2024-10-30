@@ -465,7 +465,14 @@ redirects = {
     ".net/installation/snippets/delegation-faq": "docs/help/delegation-faq.html",
     ".net/resources/glossary": "docs/resources/glossary.html",
     ".en/mainnet/smart-contracts/onboarding-guide-solana-developers/faq": "en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/faq.html",
-    "en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview": "en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/overview.html"
+    ".en/mainnet/smart-contracts/onboarding-guide-solana-developers/overview": "en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/overview.html",
+    ".en/mainnet/smart-contracts/onboarding-guide-ethereum-developers/faq": "en/mainnet/docs/help-and-faq/onboarding-guide-ethereum-developers/faq.html",
+    ".net/voting/gc-voting": "docs/voting/gc-voting.html",
+    ".net/voting/coordinator": "docs/voting/coordinator.html",
+    ".net/voting/gc-voting": "docs/voting/gc-voting.html",
+    ".net/voting/voting": "docs/voting/voting.html",
+    ".net/voting/guardians": "docs/voting/guardians.html",
+    ".net/voting/verify-election-result": "docs/voting/verify-election-result.html"
 
 
     }

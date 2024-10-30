@@ -46,4 +46,13 @@ This is the documentation
    Onboarding for Ethereum developers <help-and-faq/onboarding-guide-ethereum-developers/faq>
 
 
+.. toctree::
+   :caption: Governance Committee Voting
+
+   Concordium Governance Committee Elections <voting/gc-voting>
+   Election coordinator tool <voting/coordinator>
+   How to vote <voting/voting>
+   Guardians <voting/guardians>
+   Verify election result <voting/verify-election-result>
+
 
