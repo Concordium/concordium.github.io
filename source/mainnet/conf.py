@@ -506,7 +506,7 @@ redirects = {
     ".en/mainnet/smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract": "en/mainnet/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract.html",
     ".en/mainnet/smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsFrontendAndBackend": "en/mainnet/tutorials/sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html",
     ".en/mainnet/smart-contracts/tutorials/smartContractUpgrade/index": "en/mainnet/tutorials/smartContractUpgrade/index.html",
-     ".en/mainnet/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade": "en/mainnet/tutorials/smartContractUpgrade/smartContractUpgrade.html"
+    ".en/mainnet/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade": "en/mainnet/tutorials/smartContractUpgrade/smartContractUpgrade.html"
 
 
 
