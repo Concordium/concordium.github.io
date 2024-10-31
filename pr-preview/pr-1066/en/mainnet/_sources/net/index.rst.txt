@@ -40,7 +40,6 @@ index
    :includehidden:
    :caption: Tutorials
 
-   Smart contract tutorials <../smart-contracts/tutorials/index>
    Using ID tutorial <guides/gallery/index>
 
 .. toctree::

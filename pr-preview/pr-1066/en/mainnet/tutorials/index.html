@@ -51,12 +51,12 @@
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tutorials/index.6e763ff2-2716-482c-849f-effcbde5ea8d.js"></script>
+    <script defer="defer" src="../_static/tippy/tutorials/index.e9a5bfb1-1f48-4182-a286-82fc5ec5e0d7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/index';</script>
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tools" href="../tools/index.html" />
+    <link rel="next" title="Smart Contract Tutorials" href="smart-contracts-tutorials.html" />
     <link rel="prev" title="Verify election result" href="../docs/voting/verify-election-result.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -474,7 +474,68 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="smart-contracts-tutorials.html"> Smart contract tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup-env.html">Setup the development environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="counter/counter-contract.html">Counter</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="piggy-bank/index.html">PiggyBank</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="piggy-bank/frontend.html">Setting up a frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="wCCD/index.html">wCCD</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="voting/index.html">The Voting dApp</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="voting/voting-sc.html">Writing a voting smart contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="voting/voting-dapp.html">Setting up the frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="nft-minting/index.html">Mint an NFT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="nft-minting/upload-nft.html">Upload the NFT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="sft-minting/index.html">Mint a semi-fungible token</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="sft-minting/setup.html">Setup the development environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="fungible-tokens/index.html">Mint fungible tokens</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="nft-marketplace/index.html">NFT marketplace smart contract tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="nft-marketplace/smart-contract.html">Build and deploy the smart contract</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="eSealing/index.html">eSealing</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="sponsoredTransactions/index.html">Sponsored Transactions</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="sponsoredTransactions/sponsoredTransactionsSmartContract.html">Exploring the sponsored Transactions Smart Contract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="smartContractUpgrade/index.html">Smart Contract Upgrade</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="smartContractUpgrade/smartContractUpgrade.html">Native upgradability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="daap-examples/dapp-examples.html"> dApp examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="company-identity/company-identities.html"> How to create a company identity</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -528,8 +589,9 @@
                 <article class="bd-article">
                   
   <section id="tutorials">
-<h1>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading">#</a></h1>
-<p>These are the tutorials</p>
+<span id="id1"></span><h1>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
 
@@ -588,11 +650,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../tools/index.html"
+       href="smart-contracts-tutorials.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tools</p>
+        <p class="prev-next-title">Smart Contract Tutorials</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

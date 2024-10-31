@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.0a6b1970-8c44-4c2f-985f-e91819815089.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.016ef3fd-593a-479d-87ed-7503c6cd8cd3.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/resources/glossary';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -478,8 +478,7 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../protocol/introduction.html">What is the Concordium Protocol?</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/id-accounts.html">Identities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../protocol/company-identities.html">Company identity creation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/id-accounts.html">Identities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
@@ -790,7 +789,7 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <dt id="term-Instance">Instance<a class="headerlink" href="#term-Instance" title="Link to this term">#</a></dt><dd><p>A smart contract module together with a specific state and an amount of CCD tokens. Multiple smart contract instances can be created from the same module. Smart contract instances can be created from a deployed <a class="reference internal" href="../smart-contracts/contract-module.html#contract-module"><span class="std std-ref">smart contract module</span></a> via the <code class="docutils literal notranslate"><span class="pre">init</span></code> transaction which invokes the requested function in the smart contract module. This function can take a parameter. Its end result is the state of the smart contract instance.</p>
 </dd>
 <dt id="term-Invoke">Invoke<a class="headerlink" href="#term-Invoke" title="Link to this term">#</a></dt><dd><p>Invoke means to call something into effect.</p>
-<p>Invoke is also the act of triggering a receive function in a smart contract from <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click <a class="reference internal" href="../../smart-contracts/tutorials/nft-minting/mint-xfer.html#nft-view-fn"><span class="std std-ref">here to see examples of how to use invoke to view information about the instance</span></a>.</p>
+<p>Invoke is also the act of triggering a receive function in a smart contract from <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click <a class="reference internal" href="../../tutorials/nft-minting/mint-xfer.html#nft-view-fn"><span class="std std-ref">here to see examples of how to use invoke to view information about the instance</span></a>.</p>
 </dd>
 <dt id="term-Issuer">Issuer<a class="headerlink" href="#term-Issuer" title="Link to this term">#</a></dt><dd><p>Party that issues Web3 ID credentials to users. May also revoke Web3 ID credentials.</p>
 </dd>

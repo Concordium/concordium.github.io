@@ -6,6 +6,7 @@ This is the documentation
 
 .. toctree::
    :caption: Concordium Protocol
+   :hidden:
 
    What is the Concordium Protocol? <protocol/introduction>
    Identities <protocol/id-accounts>
@@ -15,6 +16,7 @@ This is the documentation
 
 .. toctree::
    :caption: Smart Contracts
+   :hidden:
 
    What is a smart contract? <smart-contracts/introduction>
    QuickStart to smart contract deployment <smart-contracts/guides/quick-start>
@@ -23,6 +25,7 @@ This is the documentation
 
 .. toctree::
    :caption: Network
+   :hidden:
 
    What is the Concordium Network? <network/introduction-network>
    Validator Management <network/baker-pool>
@@ -36,6 +39,7 @@ This is the documentation
 
 .. toctree::
    :caption: Help & FAQ
+   :hidden:
 
    Downloads <installation/downloads>
    Release notes <release-notes/release-notes-lp>
@@ -46,6 +50,7 @@ This is the documentation
 
 .. toctree::
    :caption: Governance Committee Voting
+   :hidden:
 
    Concordium Governance Committee Elections <voting/gc-voting>
    Election coordinator tool <voting/coordinator>
