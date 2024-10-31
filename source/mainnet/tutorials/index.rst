@@ -6,9 +6,9 @@ Tutorials
 ==========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
-    Smart Contract Tutorials<./smart-contracts-tutorials.rst>
-    dApp examples
-    How to Create Company Identity
+    Smart contract tutorials<./smart-contracts-tutorials.rst>
+    dApp examples<daap-examples/dapp-examples>
+    How to create a company identity<company-identity/company-identities>
