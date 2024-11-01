@@ -14,7 +14,7 @@ Nodes shows information about the nodes on Mainnet/Testnet in alphabetical order
 - **Peers**: number of peers connected to the participant.
 - **Fin. length**: height of the node's most recent finalized block.
 
-.. image:: ../images/ccd-scan/ccd-scan-nodes.png
+.. image:: images/ccd-scan-nodes.png
     :alt: dark screen with table of nodes
 
 |
@@ -28,7 +28,7 @@ When you click a node name on the Nodes page, the following appears:
 
 The following information is shown in the node details:
 
-.. image:: ../images/ccd-scan/ccd-scan-node-details.png
+.. image:: images/ccd-scan-node-details.png
     :alt: dark screen showing details of a single node
 
 |
@@ -45,11 +45,11 @@ The following information is shown in the node details:
 - **Last finalized block statistics**: shows statistics about the last finalized block in participant’s chain.  Click Copy |copy| to copy the entire block hash. Click the block hash to see :ref:`block details<home-screen-block>`.
 - **Peers**: shows the current list of peers of the node with the ability to drill-through and inspect peer node information.
 
-.. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
+.. |copy| image:: images/ccd-scan-account-sort.png
              :class: button
              :alt: Green document on top of another green document
 
-.. |hamburger| image:: ../images/ccd-scan/hamburger-menu.png
+.. |hamburger| image:: images/hamburger-menu.png
              :class: button
              :alt: Three horizontal lines on a dark background
 

@@ -6,7 +6,7 @@ CCDScan Blocks overview
 
 The Blocks overview shows information about the blocks created during the selected time range in the filter.
 
-.. image:: ../images/ccd-scan/ccd-scan-blocks.png
+.. image:: images/ccd-scan-blocks.png
     :alt: dark screen with graphs at top, table at bottom with overview of blocks
 
 |
@@ -29,7 +29,7 @@ Block details
 
 When you click a block hash, the following appears:
 
-.. image:: ../images/ccd-scan/ccd-scan-home-block-hash.png
+.. image:: images/ccd-scan-home-block-hash.png
     :alt: dark screen with details of a single block
 
 |
@@ -44,10 +44,10 @@ The block details shows the following information about the block.
 - **Transactions**: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click **Hash** for more :ref:`information about the transacation<home-screen-transaction>`, or click **Sender** for more :ref:`information about the sender<home-screen-sender>`. You can click Copy |copy| to copy the entire hash or account number.
 - **Block statistics**: shows the block time (time since last block) and the finalization time of the block (the time before proof of finalization of the selected block was included in a subsequent block).
 
-.. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
+.. |copy| image:: images/ccd-scan-copy.png
              :class: button
              :alt: Green document on top of another green document
 
-.. |hamburger| image:: ../images/ccd-scan/hamburger-menu.png
+.. |hamburger| image:: images/hamburger-menu.png
              :class: button
              :alt: Three horizontal lines on a dark background

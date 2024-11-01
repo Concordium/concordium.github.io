@@ -6,7 +6,7 @@ CCDScan Transactions overview
 
 The Transactions overview shows information about the transactions during the selected time range in the filter.
 
-.. image:: ../images/ccd-scan/ccd-scan-transactions.png
+.. image:: images/ccd-scan-transactions.png
     :alt: dark transactions screen with graphs at top and table at bottom
 
 |
@@ -30,7 +30,7 @@ Transaction details
 
 When you click a transaction hash, transaction information appears. The information is different depending upon whether the transaction was successful or rejected.
 
-.. image:: ../images/ccd-scan/ccd-scan-home-transaction-success.png
+.. image:: images/ccd-scan-home-transaction-success.png
     :alt: dark screen showing details of single successful transaction
 
 |
@@ -48,17 +48,17 @@ A successful transaction shows the **Events** that were the result of the transa
 
 If the transaction was rejected, you see something similar to the following:
 
-.. image:: ../images/ccd-scan/ccd-scan-home-transaction-reject.png
+.. image:: images/ccd-scan-home-transaction-reject.png
     :alt: dark screen showing dtails of a single rejected transaction
 
 |
 
 The only effect of a rejected transaction is the payment for execution cost. In contrast, a successful transaction affects the state of the chain. The effects are described by the generated events.
 
-.. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
+.. |copy| image:: images/ccd-scan-copy.png
              :class: button
              :alt: Green document on top of another green document
 
-.. |hamburger| image:: ../images/ccd-scan/hamburger-menu.png
+.. |hamburger| image:: images/hamburger-menu.png
              :class: button
              :alt: Three horizontal lines on a dark background

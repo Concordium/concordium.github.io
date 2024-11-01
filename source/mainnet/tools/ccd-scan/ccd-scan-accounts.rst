@@ -6,7 +6,7 @@ CCDScan Accounts overview
 
 The Accounts overview shows information about accounts during the selected time range in the filter.
 
-.. image:: ../images/ccd-scan/ccd-scan-accounts.png
+.. image:: images/ccd-scan-accounts.png
     :alt: dark screen with graphs at top, table at bottom of account information
 
 |
@@ -23,7 +23,7 @@ Below the graphs, the table contains the following:
 
 You can sort the information in the table using the following sort options:
 
-.. image:: ../images/ccd-scan/ccd-scan-account-sort.png
+.. image:: images/ccd-scan-account-sort.png
     :alt: dark screen with options to sort the accounts overview
 
 .. _home-screen-sender:
@@ -33,7 +33,7 @@ Sender/Account details
 
 When you select a sender or account, the following appears.
 
-.. image:: ../images/ccd-scan/ccd-scan-home-sender.png
+.. image:: images/ccd-scan-home-sender.png
     :alt: dark screen showing details of single account
 
 |
@@ -50,10 +50,10 @@ The following information is shown in the account details:
 - **Delegation**: shown for accounts that are delegating to a staking pool or passive delegation. Information includes the delegator ID of the account, the staked amount, if the earnings are restaked or not, and the delegation target (a validator's staking pool or passive delegation) including drill-though to the :ref:`validator<home-screen-baker>` or passive delegation information.
 - **Rewards**: includes an overview graph that shows the aggregated rewards for an account based on the applied time range filter. The table shows reward details broken down by type. Click the block hash to see :ref:`block details<home-screen-block>` for the corresponding block where the reward payout occurred. Use the navigation buttons at the bottom to navigate through reward payouts.
 
-.. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
+.. |copy| image:: images/ccd-scan-copy.png
              :class: button
              :alt: Green document on top of another green document
 
-.. |hamburger| image:: ../images/ccd-scan/hamburger-menu.png
+.. |hamburger| image:: images/hamburger-menu.png
              :class: button
              :alt: Three horizontal lines on a dark background

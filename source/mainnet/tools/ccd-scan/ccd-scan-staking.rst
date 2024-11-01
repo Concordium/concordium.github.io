@@ -6,14 +6,14 @@ CCDScan Staking overview
 
 The Staking overview shows information about validators during the selected time range in the filter:
 
-.. image:: ../images/ccd-scan/ccd-scan-bakers.png
+.. image:: images/ccd-scan-bakers.png
     :alt: dark screen with graphs at top, table at bottom showing validator information
 
 |
 
 The graphs show when the next pay day happens, the amount of staked CCD, the number of validators, and the total of rewards during the selected time range in the filter. The **Previous payday block** contains information about all rewards paid out for a payday period. If you click **Previous payday block**, a special block details screen for the previous pay day block appears.
 
-.. image:: ../images/ccd-scan/ccd-scan-staking-payday-block-details.png
+.. image:: images/ccd-scan-staking-payday-block-details.png
     :alt: dark screen with block details
 
 |
@@ -52,7 +52,7 @@ Top delegators view
 
 If you select **Top delegaators** you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (staking pool or passive delegation), and so on. The table contains the following:
 
-.. image:: ../images/ccd-scan/ccd-scan-staking-delegators.png
+.. image:: images/ccd-scan-staking-delegators.png
     :alt: dark screen showing table of information about top delegators
 
 |
@@ -67,7 +67,7 @@ Passive delegation view
 
 If you select **Passive delegation**  it is possible to see the size of the passive delegation in total and information about the yield from delegating to passive delegation. Furthermore it is possible to see the commission rates for passive delegation.
 
-.. image:: ../images/ccd-scan/ccd-scan-passive-delegation.png
+.. image:: images/ccd-scan-passive-delegation.png
     :alt: dark screen with details about passive delegation
 
 - **Delegated stake**: amount of CCD delegated to passive delegation.
@@ -88,7 +88,7 @@ Validator details
 
 When you click a validator ID, the following appears:
 
-.. image:: ../images/ccd-scan/ccd-scan-baker-details.png
+.. image:: images/ccd-scan-baker-details.png
     :alt: dark screen showing details of a single validator
 
 |
@@ -112,10 +112,10 @@ The validator details shows the following information about the validator.
 - **Delegators**: shows the first six characters of the account delegating to the validator, that account's delegated stake, and whether earnings are restaked. You can click on the characters of the account for more :ref:`information about the delegator<home-screen-sender>`. Click Copy |copy| to copy the entire account number.
 - **Metadata**: contains the URL that the validator can optionally provide with information about the staking pool.
 
-.. |copy| image:: ../images/ccd-scan/ccd-scan-copy.png
+.. |copy| image:: images/ccd-scan-copy.png
              :class: button
              :alt: Green document on top of another green document
 
-.. |hamburger| image:: ../images/ccd-scan/hamburger-menu.png
+.. |hamburger| image:: images/hamburger-menu.png
              :class: button
              :alt: Three horizontal lines on a dark background
