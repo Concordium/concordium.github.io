@@ -137,8 +137,9 @@ Editing the Documentation
 2. Edit ``.rst`` files using reStructuredText syntax, which supports Sphinx directives for code snippets, warnings, notes, etc. Reference materials for reStructuredText basics can be found here:
    https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
- Handling TODOs
- ^^^^^^^^^^^^^^
+Handling TODOs
+^^^^^^^^^^^^^^
+
  To display TODO items as warnings when building the documentation, uncomment this line in the ``source/mainnet/conf.py`` file:
 
 .. code-block:: console
