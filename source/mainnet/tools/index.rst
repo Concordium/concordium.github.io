@@ -2,7 +2,7 @@
 
 
 .. include:: ../variables.rst
-.. _tools:
+.. _tools2:
 
 =====
 Tools
