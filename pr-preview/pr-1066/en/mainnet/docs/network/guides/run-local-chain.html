@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.1e862c2a-cda7-437d-843b-a9d245a8811f.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.ffaba05c-835e-44b7-be1f-806472416b48.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/run-local-chain';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -589,6 +589,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/onboarding-guide-ethereum-developers/faq.html">FAQ for Ethereum developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/onboarding-guide-solana-developers/faq.html">FAQ for Solana developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/onboarding-guide-solana-developers/overview.html">Onboarding for Solana developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/set-up-doc-env-MacOs.html">Set up Concordium documentation environment on MacOs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
@@ -833,7 +834,7 @@
 </section>
 <section id="interact-with-the-local-chain">
 <h2>Interact with the local chain<a class="headerlink" href="#interact-with-the-local-chain" title="Link to this heading">#</a></h2>
-<p>You can now interact with your local chain through the node via the <a class="reference internal" href="../../../net/references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> exposed on port 20100 as you would with <a class="reference internal" href="../../resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> or <a class="reference internal" href="../../resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a> nodes. Concordium provides various <a class="reference internal" href="../../../net/guides/sdks-apis.html#sdks-apis"><span class="std std-ref">SDKs and APIs</span></a> that facilitate this as well as the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool. Assuming you have the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> binary version 5.1.1 or higher in your path, list the accounts using the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">list</span></code> command:</p>
+<p>You can now interact with your local chain through the node via the <a class="reference internal" href="../../../net/references/grpc2.html#grpc2-documentation"><span class="std std-ref">Concordium Node gRPC API V2</span></a> exposed on port 20100 as you would with <a class="reference internal" href="../../resources/glossary.html#term-Mainnet"><span class="xref std std-term">Mainnet</span></a> or <a class="reference internal" href="../../resources/glossary.html#term-Testnet"><span class="xref std std-term">Testnet</span></a> nodes. Concordium provides various <a class="reference internal" href="../../../tools/sdks-apis.html#sdks-apis"><span class="std std-ref">SDKs and APIs</span></a> that facilitate this as well as the <a class="reference external" href="concordium-client">Concordium Client</a> command-line tool. Assuming you have the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> binary version 5.1.1 or higher in your path, list the accounts using the <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">list</span></code> command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>--grpc-ip<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20100</span><span class="w"> </span>account<span class="w"> </span>list
 <span class="go">Accounts:</span>
 <span class="go">                 Account Address                     Account Names</span>

@@ -10,6 +10,7 @@ FAQs
    onboarding-guide-ethereum-developers/faq
    onboarding-guide-solana-developers/faq
    onboarding-guide-solana-developers/overview
+   set-up-doc-env-MacOs
 
 
 

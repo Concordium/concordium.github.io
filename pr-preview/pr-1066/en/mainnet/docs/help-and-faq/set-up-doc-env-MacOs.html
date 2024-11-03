@@ -1,0 +1,1090 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Set up Concordium documentation environment on MacOs &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=53c713d1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=6175c28d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/set-up-doc-env-MacOs.ead9f866-711d-4875-8bf5-b225e5015b38.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/help-and-faq/set-up-doc-env-MacOs';</script>
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Glossary of Concordium Terms" href="../resources/glossary.html" />
+    <link rel="prev" title="Onboarding for Solana developers" href="onboarding-guide-solana-developers/overview.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo" src="../../_static/concordium-logo-dark.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Docs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tools/index.html">
+                        Tools
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/concordium" title="Medium" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-medium fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://academy.concordium.software/ccd-academy/getting-started" title="Academy" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Academy</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Docs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../tools/index.html">
+                        Tools
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-discourse fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/concordium" title="Medium" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-medium fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Medium</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://academy.concordium.software/ccd-academy/getting-started" title="Academy" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-graduation-cap fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Academy</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../protocol/introduction.html">What is the Concordium Protocol?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/id-accounts.html">Identities</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/transactions.html">Transactions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/concepts-transactions.html">Transaction anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction Fees</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/network.html">Network</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/networks.html">Networks</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contracts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/introduction.html">What is a smart contract?</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-lifecycle.html">Smart contract life cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-module.html">Smart contract modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-instances.html">Smart contract instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/contract-schema.html">Smart contract schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/develop-contracts.html">Develop smart contracts in Rust</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/guides/quick-start.html">QuickStart to smart contract deployment</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/guides/build-contract.html">Build a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/setup-contract.html">Set up a smart contract project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/compile-module.html">Compile a Rust smart contract module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/custom-errors.html">Return custom errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/build-schema.html">Build a contract schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/no-std.html">Build using <code class="docutils literal notranslate"><span class="pre">no_std</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/fallback-entrypoints.html">Fallback entrypoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/upgradeable-contract.html">Make a contract upgradeable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/json-params.html">Work with the JSON parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/factory-pattern.html">Use the factory pattern on Concordium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/development.html">Development best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/costs.html">Cost reduction best practices</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/guides/deploy-module.html">Deploy a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/initialize-contract.html">Initialize a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/interact-instance.html">Interact with a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/inspect-instance.html">Inspect a smart contract instance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/invoke-instance.html">Invoke a smart contract instance</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Network</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../network/introduction-network.html">What is the Concordium Network?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-windows.html">Run a validator node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Run a validator node on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-ubuntu.html">Run a validator node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-docker.html">Run a validator node on Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/become-baker.html">Validation with the Concordium Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a node on Concordium</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu-testnet.html">Run a node on Ubuntu - Testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu.html">Run a node on Ubuntu - Mainnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-macos.html">Run and manage a node on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-windows.html">Run and manage a node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node.html">Run a node in Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/concordium-client.html">Concordium Client</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/query-node.html">Querying a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/multi-sig.html">Multi-sig</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/web3-id/index.html">Use Concordium's ID layer</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/web3-id/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/web3-id/issuer.html">Web3 ID issuers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/create-proofs.html">Create proofs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/web3-id/concordia.html">Concordia</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../network/guides/run-local-chain.html">Run a local chain</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/low-code-nft-marketplace/introduction.html">Concordium low-code NFT framework</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/indexers/intro.html">Indexers</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/indexers/subquery.html">SubQuery</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Help &amp; FAQ</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../installation/downloads.html">Downloads</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/verification-instructions.html">Verification instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/release-notes-lp.html">Release notes</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="faqs.html">FAQs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="delegation-faq.html">Delegation and validation FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onboarding-guide-ethereum-developers/faq.html">FAQ for Ethereum developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onboarding-guide-solana-developers/faq.html">FAQ for Solana developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onboarding-guide-solana-developers/overview.html">Onboarding for Solana developers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Set up Concordium documentation environment on MacOs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../voting/gc-voting.html">Concordium Governance Committee Elections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/coordinator.html">Election coordinator tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/voting.html">How to vote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/guardians.html">Guardians</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../voting/verify-election-result.html">Verify election result</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Docs</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="faqs.html" class="nav-link">FAQs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Set up...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="set-up-concordium-documentation-environment-on-macos">
+<span id="set-up-doc-env-macos"></span><h1>Set up Concordium documentation environment on MacOs<a class="headerlink" href="#set-up-concordium-documentation-environment-on-macos" title="Link to this heading">#</a></h1>
+<ul>
+<li><p>Step 1: Install Python3 and Pip
+Ensure Python 3 and pip are installed. Check with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 --version</span>
+</pre></div>
+</div>
+<p>If not installed, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install python</span>
+</pre></div>
+</div>
+</li>
+<li><p>Step 2: Step 2: Install Pipenv</p>
+<p>You need <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> for managing Python dependencies:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip3 install pipenv</span>
+</pre></div>
+</div>
+<p>If you get the error “command not found: pipenv”, it is because the PATH for pipenv is not set.
+In order to set it, run the following command to see where the user based bin directory is located:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3 -m site --user-base</span>
+</pre></div>
+</div>
+<p>Then, copy the resulting location, it will be used to set the path.
+Now, open the .zshrc file with your preferred editor, in this tutorial we shall use nano:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nano ~/.zshrc</span>
+</pre></div>
+</div>
+<p>Next, write the following line, which will include the location you copied previously, followed by /bin in order to export the PATH:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export PATH=&quot;$PATH:/Users/&lt;your_user_name&gt;/Library/Python/3.9/bin&quot;</span>
+</pre></div>
+</div>
+<p>Save the file, restart your terminal and run the following command to check if pipenv is installed:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv --version</span>
+</pre></div>
+</div>
+<p>You should get the installed version outputted now.
+Finally, it is also a good idea to install pyenv in order for pipenv to work properly:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install pyenv</span>
+</pre></div>
+</div>
+</li>
+<li><p>Step 3: Clone the Concordium Documentation Repository</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/Concordium/concordium.github.io</span>
+<span class="go">cd concordium.github.io</span>
+</pre></div>
+</div>
+</li>
+<li><p>Step 4: Install Dependencies
+Use <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> to install the required dependencies:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv sync --dev</span>
+</pre></div>
+</div>
+</li>
+<li><p>Step 5: Install Graphviz
+Graphviz is needed to render diagrams:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">brew install graphviz</span>
+</pre></div>
+</div>
+</li>
+<li><p>Step 6: Build the Documentation (Text Version)
+For building the “mainnet” documentation”:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run make dev-mainnet</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>For building the “academy” version:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run make dev-academy</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Open your browser and visit <a class="reference external" href="http://localhost:8000">http://localhost:8000</a> to view the documentation. To stop the server, you can use CRTL+C.</p>
+<ul>
+<li><p>Step 8: Building Documentation for Deployment
+To build the final version of the documentation:(optional)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run ./script/build.sh</span>
+</pre></div>
+</div>
+<p>This compiles the documentation into a format that can be hosted and accessed by users.</p>
+</li>
+<li><p>Step: Checking for Dead Links
+This step focuses specifically on ensuring that all hyperlinks within the documentation are functional and lead to valid pages. You can run this command:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run make linkcheck-mainnet</span>
+</pre></div>
+</div>
+<section id="how-to-modify-the-documentation">
+<h2>How to Modify the documentation<a class="headerlink" href="#how-to-modify-the-documentation" title="Link to this heading">#</a></h2>
+<p>The documentation is written in reStructuredText <code class="docutils literal notranslate"><span class="pre">(.rst</span> <span class="pre">files)</span></code> and lives in the <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory, with separate folders for the mainnet and academy documentation:</p>
+<ul class="simple">
+<li><p>Mainnet documentation: <code class="docutils literal notranslate"><span class="pre">source/mainnet/</span></code></p></li>
+<li><p>Concordium Academy documentation: <code class="docutils literal notranslate"><span class="pre">source/academy/</span></code></p></li>
+</ul>
+<section id="editing-the-documentation">
+<h3>Editing the Documentation<a class="headerlink" href="#editing-the-documentation" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Locate the relevant <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file in either source/mainnet or source/academy to edit the corresponding text.</p></li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files using reStructuredText syntax, which supports Sphinx directives for code snippets, warnings, notes, etc. Reference materials for reStructuredText basics can be found here:
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html</a></p></li>
+</ol>
+</section>
+<section id="handling-todos">
+<h3>Handling TODOs<a class="headerlink" href="#handling-todos" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>To display TODO items as warnings when building the documentation, uncomment this line in the <code class="docutils literal notranslate"><span class="pre">source/mainnet/conf.py</span></code> file:</p>
+</div></blockquote>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nv">todo_emit_warnings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>True
+</pre></div>
+</div>
+<p>When writing a TODO directive, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.. todo::</span>
+<span class="go">   Add details here.</span>
+</pre></div>
+</div>
+</section>
+<section id="writing-style-guide">
+<h3>Writing Style Guide<a class="headerlink" href="#writing-style-guide" title="Link to this heading">#</a></h3>
+<p>Before contributing please read and follow the principles outlined in:</p>
+<ul class="simple">
+<li><p>the Divio documentation guide:
+<a class="reference external" href="https://docs.divio.com/documentation-system/">https://docs.divio.com/documentation-system/</a></p></li>
+<li><p>our style guide:
+<a class="github reference external" href="https://github.com/Concordium/concordium.github.io?tab=readme-ov-file#style-guide">Concordium/concordium.github.io</a></p></li>
+</ul>
+</section>
+</section>
+<section id="how-to-contribute-changes-and-open-a-pr">
+<h2>How to Contribute Changes and Open a PR<a class="headerlink" href="#how-to-contribute-changes-and-open-a-pr" title="Link to this heading">#</a></h2>
+<p>Now that you have the Concordium development environment set up, follow these steps to make changes to the documentation and open a pull request (PR) to contribute your updates.</p>
+<ul>
+<li><p>Step 1: Create a New Branch</p>
+<p>Before making any changes, create a new branch in your local repository. This ensures that your changes are isolated from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git checkout -b &lt;your-branch-name&gt;</span>
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;your-branch-name&gt;</span></code> with a descriptive name related to the changes you plan to make (e.g., <code class="docutils literal notranslate"><span class="pre">update-installation-guide</span></code>).</p>
+</li>
+<li><p>Step 2: Make changes</p>
+<ol class="arabic simple">
+<li><p>Navigate to the appropriate <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file in the <code class="docutils literal notranslate"><span class="pre">source/mainnet/</span></code> or <code class="docutils literal notranslate"><span class="pre">source/academy/</span></code> directory, depending on the documentation you want to update.</p></li>
+<li><p>Edit the <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files using any text editor. Follow the reStructuredText syntax and the Concordium style guide.</p></li>
+</ol>
+</li>
+<li><p>Step 3: Run Linter and Check Links</p>
+<p>Before committing your changes, ensure the documentation passes linting and contains no dead links.</p>
+<ol class="arabic simple">
+<li><p>Linting the documentation:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run make lint</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Checking for dead links (for the mainnet version):</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run make linkcheck-mainnet</span>
+</pre></div>
+</div>
+<p>Resolve any issues that appear during linting or link checking.</p>
+</li>
+<li><p>Step 4: Commit &amp; Push your Changes</p>
+<p>Once you are satisfied with your changes, commit them to your branch with a descriptive message.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git checkout -b &#39;&lt;your-branch-name&gt;&#39;</span>
+<span class="go">git add .</span>
+<span class="go">git commit -m &quot;Updated installation guide and fixed issues&quot;</span>
+</pre></div>
+</div>
+<p>Now, you can push your changes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git push origin &lt;your-branch-name&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Step 5: Open a Pull Request</p>
+<ol class="arabic simple">
+<li><p>Go to the Concordium documentation <a class="reference external" href="https://github.com/Concordium/concordium.github.io">repository</a> on GitHub.</p></li>
+<li><p>You should see a prompt to create a pull request for your recently pushed branch. Click on the “Compare &amp; pull request” button.</p></li>
+<li><p>Add a title and a clear description of the changes you’ve made, including references to any issues or guidelines.</p></li>
+<li><p>Submit the pull request.</p></li>
+</ol>
+</li>
+<li><p>Step 6: Address Review Feedback</p>
+<p>After submitting the pull request, a reviewer may leave feedback or request changes. Follow the feedback to make any necessary adjustments, then push the changes to your branch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git add .</span>
+<span class="go">git commit -m &quot;Fixed review comments&quot;</span>
+<span class="go">git push origin &lt;your-branch-name&gt;</span>
+</pre></div>
+</div>
+<p>Once all changes are approved, the pull request will be merged, and your contributions will be included in the official documentation.</p>
+</li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="onboarding-guide-solana-developers/overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Onboarding for Solana developers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../resources/glossary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Glossary of Concordium Terms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-modify-the-documentation">How to Modify the documentation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-documentation">Editing the Documentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-todos">Handling TODOs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-style-guide">Writing Style Guide</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-contribute-changes-and-open-a-pr">How to Contribute Changes and Open a PR</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/docs/help-and-faq/set-up-doc-env-MacOs.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2024, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
