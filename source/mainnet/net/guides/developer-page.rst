@@ -126,5 +126,4 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     wallet-sdk/wallet-sdk
     ../resources/dashboards
-    ../references/developer-tools
     ../references/grpc2
