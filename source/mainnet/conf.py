@@ -506,7 +506,14 @@ redirects = {
     ".en/mainnet/smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract": "en/mainnet/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract.html",
     ".en/mainnet/smart-contracts/tutorials/sponsoredTransactions/sponsoredTransactionsFrontendAndBackend": "en/mainnet/tutorials/sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html",
     ".en/mainnet/smart-contracts/tutorials/smartContractUpgrade/index": "en/mainnet/tutorials/smartContractUpgrade/index.html",
-    ".en/mainnet/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade": "en/mainnet/tutorials/smartContractUpgrade/smartContractUpgrade.html"
+    ".en/mainnet/smart-contracts/tutorials/smartContractUpgrade/smartContractUpgrade": "en/mainnet/tutorials/smartContractUpgrade/smartContractUpgrade.html",
+    ".net/resources/ccd-scan": "tools/ccd-scan/ccd-scan",
+    ".net/resources/ccd-scan-accounts": "tools/ccd-scan/ccd-scan-accounts",
+    ".net/resources/ccd-scan-blocks": "tools/ccd-scan/ccd-scan-blocks",
+    ".net/resources/ccd-scan-nodes": "tools/ccd-scan/ccd-scan-nodes",
+    ".net/resources/ccd-scan-staking": "tools/ccd-scan/ccd-scan-staking",
+    ".net/resources/ccd-scan-transactions": "tools/ccd-scan/ccd-scan-transactions",
+    ".net/guides/sdks-apis": "tools/sdks-apis.html"
 
 
 

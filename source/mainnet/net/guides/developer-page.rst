@@ -124,7 +124,6 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     :hidden:
     :maxdepth: 2
 
-    sdks-apis
     wallet-sdk/wallet-sdk
     ../resources/dashboards
     ../references/developer-tools

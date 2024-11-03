@@ -21,7 +21,6 @@ index
    :caption: Develop on Concordium
 
    guides/developer-page
-   resources/ccd-scan
    Concordium Standards <https://proposals.concordium.software/index.html>
 
 
