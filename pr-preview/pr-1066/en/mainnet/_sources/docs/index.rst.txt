@@ -22,6 +22,7 @@ This is the documentation
    QuickStart to smart contract deployment <smart-contracts/guides/quick-start>
    Build a smart contract <smart-contracts/guides/build-contract>
    Deploy a smart contract <smart-contracts/guides/deploy-module>
+   References <smart-contracts/references/index>
 
 .. toctree::
    :caption: Network
