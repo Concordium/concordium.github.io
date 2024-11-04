@@ -23,7 +23,7 @@ Note that the presentation can combine requirements for account credentials and 
 
 The diagram below shows the interaction between the Rust server/backend, the dApp, and the wallet.
 
-.. image:: ../../../net/images/browser-wallet/proof-concept.png
+.. image:: ../../../docs/images/browser-wallet/proof-concept.png
     :width: 100%
 
 You have a server or backend that contains the :term:`challenge` and the statement.

@@ -19,6 +19,8 @@ If you need to know how to send CCDs, connect dApps, manage fungible and non-fun
     scheduled-release
     export-key
     export-transaction-logs
+    ../mobile-wallet/add-baker-mw
+    ../mobile-wallet/update-baker-mw
     add-delegation
     remove-delegation
     update-delegation

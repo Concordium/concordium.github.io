@@ -13,7 +13,6 @@ index
    :caption: Concordium Basics
 
    guides/learn-about-concordium
-   guides/wallets-lp
    guides/how-to-earn
 
 .. toctree::
@@ -43,6 +42,4 @@ index
    :includehidden:
    :caption: Governance Committee Voting
 
-   mobile-wallet/add-baker-mw
-   mobile-wallet/update-baker-mw
 

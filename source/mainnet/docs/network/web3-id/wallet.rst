@@ -26,7 +26,7 @@ When choosing to add verifiable credentials from an issuer, make sure that you *
 
 #. The issuer sends a request to your |bw| to issue a verifiable credential. Click **Cancel** to stop the process or click **Add credential** to continue. You will see the verifiable credential as **Pending**.
 
-    .. image:: ../../../net/images/browser-wallet/add-web3id-credential.png
+    .. image:: ../../../docs/images/browser-wallet/add-web3id-credential.png
         :alt: window with pending credential and option buttons
         :width: 50%
 
@@ -38,7 +38,7 @@ To see the details of the verifiable credential:
 
 #. Click |actions-bw| and select **Details**.
 
-    .. image:: ../../../net/images/browser-wallet/vc-details.png
+    .. image:: ../../../docs/images/browser-wallet/vc-details.png
         :alt: window with card showing details of the verifiable credential
         :width: 50%
 
@@ -71,7 +71,7 @@ Recover verifiable credentials
 
 #. Click **Select file to import**. Navigate to the location that the *web3IdCredentials.export* file is located and select the file.
 
-    .. image:: ../../../net/images/browser-wallet/vc-import.png
+    .. image:: ../../../docs/images/browser-wallet/vc-import.png
         :alt: window with button to navigate to import file location
         :width: 50%
 
@@ -92,19 +92,19 @@ It is important to understand the difference between a proof request and a revea
 
 In the case below, the proof from the verifier is a mixed proof that requests you reveal the degree name and you prove that were born within a date range. This is a mixed proof because it asks you to reveal and prove information, and also because it asks to prove/reveal information from your verifiable credential and your account credential. Because your date of birth is not in the date range that statement cannot be proven and your only option is to reject the request. You never see the reveal request because you do not meet the requirement from the other part of the proof.
 
-.. image:: ../../../net/images/browser-wallet/proof-not-proved.png
+.. image:: ../../../docs/images/browser-wallet/proof-not-proved.png
     :alt: window with button to reject proof request
     :width: 50%
 
 Another example of a mixed proof includes a request to prove information from your verifiable credential and from your identity. The first screen is requesting you prove information from your verifiable credential. Click **Continue**.
 
-.. image:: ../../../net/images/browser-wallet/vc-mixed-proof-1.png
+.. image:: ../../../docs/images/browser-wallet/vc-mixed-proof-1.png
     :alt: window with verifiable credential proof and continue button
     :width: 50%
 
 The second screen is requesting you prove information from your account credential. You can choose which account (and thus identity) you want to use for the proof. Click **Approve** if you agree to prove the information. Click |reject| to reject the proof request.
 
-.. image:: ../../../net/images/browser-wallet/vc-mixed-proof-2.png
+.. image:: ../../../docs/images/browser-wallet/vc-mixed-proof-2.png
     :alt: window with account credential proof and approve button
     :width: 50%
 
@@ -126,14 +126,14 @@ These are just a few examples of how you might see proof requests in the |bw|, b
 
 
 
-.. |hamburger-bw| image:: ../../../net/images/browser-wallet/hamburger-menu.png
+.. |hamburger-bw| image:: ../../../docs/images/browser-wallet/hamburger-menu.png
     :width: 20px
     :alt: three horizontal lines
 
-.. |actions-bw| image:: ../../../net/images/browser-wallet/page-actions.png
+.. |actions-bw| image:: ../../../docs/images/browser-wallet/page-actions.png
                     :width: 20px
                     :alt: three horizontal lines
 
-.. |reject| image:: ../../../net/images/browser-wallet/vc-reject-proof-button.png
+.. |reject| image:: ../../../docs/images/browser-wallet/vc-reject-proof-button.png
                     :width: 20px
                     :alt: white x on red background
