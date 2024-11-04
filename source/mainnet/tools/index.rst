@@ -13,7 +13,7 @@ Tools
    :maxdepth: 2
    :hidden:
 
-    SDKs and APIs<sdks-apis>
+    Developer resources<developer-page>
     Wallet SDK<./wallet-sdk/wallet-sdk.rst>
     CCDScan<./ccd-scan/ccd-scan.rst>
     Auxiliary Tools<developer-tools>

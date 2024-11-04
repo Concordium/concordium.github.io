@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../variables.rst
 .. _developer-page:
 
 ===================
@@ -124,5 +124,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     :hidden:
     :maxdepth: 2
 
-    ../resources/dashboards
-    ../references/grpc2
+    sdks-apis
+    dashboards
+    grpc2
+
