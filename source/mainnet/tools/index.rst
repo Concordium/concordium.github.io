@@ -14,6 +14,7 @@ Tools
    :hidden:
 
     SDKs and APIs<sdks-apis>
+    Wallet SDK<./wallet-sdk/wallet-sdk.rst>
     CCDScan<./ccd-scan/ccd-scan.rst>
     Auxiliary Tools<developer-tools>
 
