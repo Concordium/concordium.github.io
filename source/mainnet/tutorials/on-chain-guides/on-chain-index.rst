@@ -14,5 +14,4 @@ There are several on-chain guides to help you with smart contract actions.
    initialize-contract
    interact-instance
    inspect-instance
-   invoke-instance
 
