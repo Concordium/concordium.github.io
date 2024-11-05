@@ -78,4 +78,5 @@ unset the environment variable.
     node-runner-service-configuration
     run-node
     troubleshoot-docker
+    run-node-aws
 
