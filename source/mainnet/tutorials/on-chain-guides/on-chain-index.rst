@@ -15,4 +15,4 @@ There are several on-chain guides to help you with smart contract actions.
    interact-instance
    inspect-instance
    invoke-instance
-   
+

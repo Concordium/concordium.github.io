@@ -110,4 +110,4 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
    factory-pattern
    unit-test-contract
    integration-test-contract
-   
+
