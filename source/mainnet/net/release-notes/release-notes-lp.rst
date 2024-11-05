@@ -14,37 +14,110 @@ Release notes
 Wallets
 =======
 
+.. _rn-cryptox-ios:
+
+|cryptox| for iOS
+-----------------
+    **2.0.0 - October 29, 2024**
+
+    Removed:
+
+    - Shielding functionalty
+    - Old-legacy Send Assets flow
+
+    Added:
+
+    - Mainnet, Stagenet, and Testnet schemas
+    - Setting up and updating validator pool commission rates
+    - Support for WalletConnect CCD transfer requests
+    - Ability to see full details of a WalletConnect transaction to sign
+    - Validation of metadata checksum when adding CIS-2 tokens
+    - Display of balance/ownership when adding CIS-2 tokens
+    - Wallet Connect, add sign message functionality
+    - New Unshield Assets flow
+    - CCD onramp flow
+    - News Tab
+    - Expport/Import Wallet Private key
+    - Push Notifications for incoming transactions both ccd and CIS2Token
+    - Support for Protocol 7 – reducing validation/delegation stake no longer locks the whole amount
+
+    Fixed:
+
+    - Issue where signing a text message through WalletConnect did not work
+    - Issue where a dApp could request to get a transaction signed by a different account than the one chosen for the WalletConnect session
+    - Issue where the identity name was off-center when the edit name icon was visible
+    - "Invalid WalletConnect request" message repeatedly shown if received a request with unsupported transaction type
+    - Exported private key for file-based initial account being incompatible with concordium-client
+    - Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp
+    - Changing restaking options
+    - App crash during identities recover process
+    - Send Assets Flow
+    - Wallet Connect connection issue
+
+    Changed:
+
+    - Baker/baking renamed to Validator/validating
+    - All anon* references removed
+    - WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts
+    - WalletConnect transaction signing request now shows the receiver, either smart contract or an account, and amount of CCD to send, not including CIS-2 tokens
+
 .. _rn-cryptox-android:
 
 |cryptox| for Android
 ---------------------
-    **1.2.0 - August 27, 2024**
+    **1.3.0 - October 28, 2024**
 
-    This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.
+    This update introduces support for Protocol 7, push notifications, and seed import and export. It also fixes several bugs.
 
     Added:
 
-    - CCD listings – browse exchanges and services where CCD can be purchased
+    - Notifications for CCD and CIS-2 token transactions
 
-    - Optional anonymous analytics powered by Matomo
+    - Concordex exchange and Wert service where CCD can be purchased
 
-    - Concordium newsfeed
+    - Ability to reveal the wallet private key for those having no ability to reveal the seed phrase
 
-    - Support for company identities created with Global FinReg
+    - Ability to use the wallet private key to restore the wallet
+
+    - Support for Protocol 7 - reducing validation/delegation stake no longer locks the whole amount
 
     Fixed:
 
-    - Visually increasing the balance after sending CCD instead of decreasing it
+    - Inability to configure a validator closed for delegation
 
-    - Adding newly created accounts to the address book with a blank name
+    - Incorrect state of the account tokens page when there are no tokens
 
-    - Incorrect text colors in dark theme on Xiaomi
+    - Crash caused by a malformed WalletConnect verifiable presentation request
 
-    Changed:
-
-    - The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible
+    - Validation/delegation text notices
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.2.0 - August 27, 2024
+
+            This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.
+
+            Added:
+
+            - CCD listings – browse exchanges and services where CCD can be purchased
+
+            - Optional anonymous analytics powered by Matomo
+
+            - Concordium newsfeed
+
+            - Support for company identities created with Global FinReg
+
+            Fixed:
+
+            - Visually increasing the balance after sending CCD instead of decreasing it
+
+            - Adding newly created accounts to the address book with a blank name
+
+            - Incorrect text colors in dark theme on Xiaomi
+
+            Changed:
+
+            - The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible
 
         .. dropdown:: |cryptox| 1.1.0 and 1.1.1 - June, 2024
 
@@ -339,11 +412,23 @@ Wallets
 |bw|
 -------------------------
 
-    August 21, 2024
+    October 30, 2024
 
-    Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint `/v2/ip_info`.
+    Version 1.7.1 includes several changes and bug fixes.
+
+    -   Updated version of @concordium/web-sdk to ver.8 (with new protocol ver.7 update)
+    -   Added support of company identities with new web-sdk ver.8
+    -   Added cooldown card at delegation page with info about pending changes, if delegation was updated
+    -   Updated screens mentioning stake cooldowns to reflect protocol ver.7 cooldown changes
+    -   Updated properties checks in `poolStatus` according to new types
+    -   Updated `accountAvailableBalance` value which is now received from the web-sdk
+    -   Fixed window height change on modal open
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.6.4 - August 21, 2024
+
+            Version 1.6.4 Prepare for Company ID providers on Mainnet by using wallet proxy endpoint `/v2/ip_info`.
 
         .. dropdown:: |bw| 1.6.3 - August 19, 2024
 
@@ -2165,3 +2250,4 @@ Smart contract Libraries
     May 8, 2023
 
     Smart contract integration testing has been added to test your smart contracts: the `concordium-smart-contract-testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing>`__ makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see :ref:`Integration test a contract in Rust<integration-test-contract>`.
+
