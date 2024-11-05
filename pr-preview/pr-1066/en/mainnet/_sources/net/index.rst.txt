@@ -27,7 +27,6 @@ index
    :caption: Smart Contracts
 
    Contract development guides <../smart-contracts/guides/contract-dev-guides>
-   Test contracts <../smart-contracts/guides/integration-test-contract>
    On-chain guides <../smart-contracts/guides/on-chain-index>
    Best practices <../smart-contracts/best-practices/index>
    V0 smart contracts <../smart-contracts-v0/sc-v0-rollup>

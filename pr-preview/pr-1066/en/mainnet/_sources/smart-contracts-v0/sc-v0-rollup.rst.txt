@@ -14,5 +14,4 @@ V0 smart contracts can still be used on the Concordium blockchain, however, ther
    Introduction and general guides<../smart-contracts-v0/general/introduction>
    Tutorials <../smart-contracts-v0/tutorials/piggy-bank/index>
    Contract development guides <../smart-contracts-v0/guides/contract-dev-guides>
-   On-chain guides <../smart-contracts-v0/guides/on-chain-index>
    References <../smart-contracts-v0/references/index>

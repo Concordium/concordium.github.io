@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.b1ff4ddb-a9f5-4d07-a70d-c20fa1aee3dd.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.59b480fb-239e-4741-b41b-64d86d9db57d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -506,6 +506,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../smart-contracts/guides/quick-start.html">QuickStart to smart contract deployment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/guides/build-contract.html">Build a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/setup-contract.html">Set up a smart contract project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/compile-module.html">Compile a Rust smart contract module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/custom-errors.html">Return custom errors</a></li>
@@ -514,10 +515,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/fallback-entrypoints.html">Fallback entrypoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/upgradeable-contract.html">Make a contract upgradeable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/json-params.html">Work with the JSON parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/migrate-contracts.html">Migrate contracts for <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> 8.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/factory-pattern.html">Use the factory pattern on Concordium</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/unit-test-contract.html">Unit test a contract in Rust</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/development.html">Development best practices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/costs.html">Cost reduction best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/integration-test-contract.html">Integration test a contract in Rust</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/guides/deploy-module.html">Deploy a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -527,6 +528,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/guides/invoke-instance.html">Invoke a smart contract instance</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/guides/development.html">Development best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../smart-contracts/guides/costs.html">Cost reduction best practices</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../smart-contracts/references/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/references/crypto-primitives.html">Cryptographic primitives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../smart-contracts/references/host-fns.html">Contract host functions</a></li>
@@ -3597,7 +3600,7 @@ It also adds a <code class="docutils literal notranslate"><span class="pre">--se
 <span id="rn-cargo"></span><h3><code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code><a class="headerlink" href="#cargo-concordium" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>May 11, 2023</p>
-<p>For <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0 the distribution method for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. For more information, see <a class="reference internal" href="../../smart-contracts-v0/guides/setup-tools.html#setup-tools-v0"><span class="std std-ref">Install tools for development</span></a>.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> 2.8.0 the distribution method for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> has been simplified. Now, once you have installed rustup, you can quickly and easily install <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> without downloading a separate package or going through many steps. For more information, see <a class="reference internal" href="../smart-contracts/guides/setup-tools.html#setup-tools-v0"><span class="std std-ref">Install tools for development</span></a>.</p>
 <p>If you already have <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> installed, you may need to remove the existing <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> from your PATH to be able to update versions in the future.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -3755,7 +3758,7 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
 <span id="rn-sclibraries"></span><h3>Smart contract Libraries<a class="headerlink" href="#smart-contract-libraries" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>May 8, 2023</p>
-<p>Smart contract integration testing has been added to test your smart contracts: the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing">concordium-smart-contract-testing library</a> makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see <a class="reference internal" href="../../smart-contracts/guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">Integration test a contract in Rust</span></a>.</p>
+<p>Smart contract integration testing has been added to test your smart contracts: the <a class="reference external" href="https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing">concordium-smart-contract-testing library</a> makes it possible to create and run automatic integration tests of smart contracts. This will allow a smart contract developer to write code that runs multiple contracts in a locally-controlled environment, interacts with them, and asserts that the eventual output and state of the contracts are as expected. For more information about how to enable this, see <a class="reference internal" href="../smart-contracts/guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">Integration test a contract in Rust</span></a>.</p>
 </div></blockquote>
 </section>
 </section>

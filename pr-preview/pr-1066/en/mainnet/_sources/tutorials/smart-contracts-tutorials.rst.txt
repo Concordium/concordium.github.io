@@ -52,3 +52,4 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    eSealing <./eSealing/index>
    Sponsored Transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>
+   On-chain guides <./on-chain-guides/on-chain-index>

@@ -10,7 +10,6 @@ The contract development guides help you get started writing smart contracts. He
    :maxdepth: 1
    :hidden:
 
-   setup-tools
    setup-contract
    compile-module
    unit-test-contract

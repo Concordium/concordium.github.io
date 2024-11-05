@@ -51,12 +51,12 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/invoke-instance.8e5be0aa-ef71-48c7-a102-763a7e6bebd6.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/invoke-instance.ecc9cc09-5fb0-46c0-9da8-e83d65c389ab.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/invoke-instance';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="References" href="../references/index.html" />
+    <link rel="next" title="Development best practices" href="development.html" />
     <link rel="prev" title="Inspect a smart contract instance" href="inspect-instance.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -506,6 +506,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">QuickStart to smart contract deployment</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="build-contract.html">Build a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup-contract.html">Set up a smart contract project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compile-module.html">Compile a Rust smart contract module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="custom-errors.html">Return custom errors</a></li>
@@ -514,10 +515,10 @@
 <li class="toctree-l2"><a class="reference internal" href="fallback-entrypoints.html">Fallback entrypoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgradeable-contract.html">Make a contract upgradeable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json-params.html">Work with the JSON parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate-contracts.html">Migrate contracts for <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> 8.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="factory-pattern.html">Use the factory pattern on Concordium</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit-test-contract.html">Unit test a contract in Rust</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html">Development best practices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="costs.html">Cost reduction best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-test-contract.html">Integration test a contract in Rust</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="deploy-module.html">Deploy a smart contract</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -527,6 +528,8 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Invoke a smart contract instance</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="costs.html">Cost reduction best practices</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../references/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../references/crypto-primitives.html">Cryptographic primitives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../references/host-fns.html">Contract host functions</a></li>
@@ -761,7 +764,7 @@ Invoking can be useful to either view information about the instance or to test
 a receive method before running an update. Because invoking is not a transaction, there is no fee to run <code class="docutils literal notranslate"><span class="pre">invoke</span></code>.
 The view functions are regular receive functions that return information about
 the contract, ideally with schemas on the return values.</p>
-<p>There is no limit to the number of logs per invocation (apart from energy).</p>
+<p>There is no limit to the number of logs per invocation (apart from energy)</p>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
 <p>Make sure that you are <a class="reference internal" href="../../network/nodes/run-node.html#run-a-node"><span class="std std-ref">running a node</span></a> using the latest <a class="reference internal" href="../../installation/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> and that you have a
@@ -959,11 +962,11 @@ format, run the following command:</p>
       </div>
     </a>
     <a class="right-next"
-       href="../references/index.html"
+       href="development.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">References</p>
+        <p class="prev-next-title">Development best practices</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

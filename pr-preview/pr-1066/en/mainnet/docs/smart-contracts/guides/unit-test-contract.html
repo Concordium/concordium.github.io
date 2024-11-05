@@ -51,12 +51,12 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/unit-test-contract.c1bb6c80-6067-44bb-9731-91aeb2800c77.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/unit-test-contract.d3d0e070-3cbd-40a7-8a20-a949b5be4252.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/unit-test-contract';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Development best practices" href="development.html" />
+    <link rel="next" title="Integration test a contract in Rust" href="integration-test-contract.html" />
     <link rel="prev" title="Use the factory pattern on Concordium" href="factory-pattern.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -506,6 +506,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">QuickStart to smart contract deployment</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="build-contract.html">Build a smart contract</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup-tools.html">Install tools for development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup-contract.html">Set up a smart contract project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compile-module.html">Compile a Rust smart contract module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="custom-errors.html">Return custom errors</a></li>
@@ -514,10 +515,10 @@
 <li class="toctree-l2"><a class="reference internal" href="fallback-entrypoints.html">Fallback entrypoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgradeable-contract.html">Make a contract upgradeable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json-params.html">Work with the JSON parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate-contracts.html">Migrate contracts for <code class="docutils literal notranslate"><span class="pre">concordium-std</span></code> 8.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="factory-pattern.html">Use the factory pattern on Concordium</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Unit test a contract in Rust</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html">Development best practices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="costs.html">Cost reduction best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integration-test-contract.html">Integration test a contract in Rust</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="deploy-module.html">Deploy a smart contract</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -527,6 +528,8 @@
 <li class="toctree-l2"><a class="reference internal" href="invoke-instance.html">Invoke a smart contract instance</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="costs.html">Cost reduction best practices</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../references/index.html">References</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../references/crypto-primitives.html">Cryptographic primitives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../references/host-fns.html">Contract host functions</a></li>
@@ -757,7 +760,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Unit testing your contracts with the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/test_infrastructure"><code class="docutils literal notranslate"><span class="pre">test_infrastructure</span></code></a> has been deprecated in favor of <a class="reference external" href="https://docs.rs/concordium-std-derive/latest/concordium_smart-contract-testing"><code class="docutils literal notranslate"><span class="pre">concordium-smart-contract-testing</span></code></a>.
-To migrate your contracts and tests see <a class="reference internal" href="../../../smart-contracts/guides/migrate-contracts.html#migrate-contracts-for-std-8-1"><span class="std std-ref">Migrate contracts for concordium-std 8.1</span></a> and <a class="reference internal" href="../../../smart-contracts/guides/integration-test-contract.html#integration-test-contract"><span class="std std-ref">Integration test a contract in Rust</span></a>.</p>
+To migrate your contracts and tests see <a class="reference internal" href="migrate-contracts.html#migrate-contracts-for-std-8-1"><span class="std std-ref">Migrate contracts for concordium-std 8.1</span></a> and <a class="reference internal" href="integration-test-contract.html#integration-test-contract"><span class="std std-ref">Integration test a contract in Rust</span></a>.</p>
 <p>If you are not ready to migrate your contracts, you can still use the guide below.
 Just make sure to add an <code class="docutils literal notranslate"><span class="pre">#[allow(deprecated)]</span></code> attribute above your test module to avoid warnings:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[allow(deprecated)]</span>
@@ -1521,11 +1524,11 @@ If you change the highlighted lines in the code above to:</p>
       </div>
     </a>
     <a class="right-next"
-       href="development.html"
+       href="integration-test-contract.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Development best practices</p>
+        <p class="prev-next-title">Integration test a contract in Rust</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
