@@ -116,7 +116,7 @@ Adding the testing library
 Start by adding the |concordium-smart-contract-testing|_ library to the ``Cargo.toml`` located in the project root.
 Then, add the |concordium-std-derive|_ library as well, which contains useful macros for testing.
 You should add them under the section ``[dev-dependencies]``, which are dependencies only needed during development, as it is only needed during testing.
-The libraries requires the Rust edition ``2021`` or greater, which you must also set:
+The libraries require the Rust edition ``2021`` or greater, which you must also set:
 
 .. code-block:: toml
 
