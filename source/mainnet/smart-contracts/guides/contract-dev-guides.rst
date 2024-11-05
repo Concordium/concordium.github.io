@@ -16,5 +16,4 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    :maxdepth: 1
    :hidden:
 
-   migrate-contracts
 

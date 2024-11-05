@@ -97,6 +97,7 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
    :maxdepth: 1
    :hidden:
 
+   setup-tools
    setup-contract
    compile-module
    custom-errors
@@ -105,7 +106,8 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
    fallback-entrypoints
    upgradeable-contract
    json-params
+   migrate-contracts
    factory-pattern
    unit-test-contract
-   development
-   costs
+   integration-test-contract
+   
