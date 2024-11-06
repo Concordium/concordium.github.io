@@ -37,6 +37,7 @@ index
 
    Using ID tutorial <guides/gallery/index>
    On-chain guides<guides/on-chain-guides/on-chain-index>
+   Status pages<resources/dashboards>
 
 .. toctree::
    :includehidden:
