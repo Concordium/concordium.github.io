@@ -527,7 +527,16 @@ redirects = {
     "./smart-contracts/smart-contracts-v0/guides/deploy-module": "tutorials/on-chain-guides/deploy-module.html",
     "./smart-contracts/smart-contracts-v0/guides/initialize-contract": "tutorials/on-chain-guides/initialize-contract.html",
     "./smart-contracts/smart-contracts-v0/guides/interact-instance": "tutorials/on-chain-guides/interact-instance.html",
-    "./smart-contracts/smart-contracts-v0/guides/inspect-instance": "tutorials/on-chain-guides/inspect-instance.html"
+    "./smart-contracts/smart-contracts-v0/guides/inspect-instance": "tutorials/on-chain-guides/inspect-instance.html",
+    "./net/guides/dapp-examples": "tutorials/daap-examples/dapp-examples.html",
+    "./net/guides/wallets-lp": "docs/guides/wallets-lp.html",
+    "./net/guides/wallets-faqs": "docs/guides/wallets-faqs.html",
+    "./net/guides/wallets-deciding-wallets": "docs/guides/deciding-wallets.html",
+    "./net/guides/cryptox-faq": "docs/guides/cryptox-faq.html",
+    "./net/mobile-wallet-gen2/faq": "docs/guides/mobule-wallet-gen2/faq.html",
+    "./net/browser-wallet/browser-wallet-faq": "docs/browser-wallet/browser-wallet-faq.html",
+    "./net/concepts/concepts-transactions": "docs/protocol/transactions.html"
+
 
 
 

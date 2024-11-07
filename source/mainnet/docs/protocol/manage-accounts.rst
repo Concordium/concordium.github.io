@@ -106,9 +106,6 @@ before interacting with an account. Moreover, being able to see who issued the
 identity enables whoever wishes to interact with an account to judge the level
 of risk in the transaction.
 
-.. _disclosing-identity:
-
-.. include:: ../snippets/disclosing-identity.rst
 
 Account concepts
 ================
