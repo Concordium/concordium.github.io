@@ -1,4 +1,5 @@
 .. include:: ../../variables.rst
+
 .. _reference-id-accounts:
 
 ==========
@@ -19,7 +20,7 @@ Identities are issued by an :term:`identity provider`. There is a :ref:`registry
    It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
    Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see `Company identity creation <https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities>`_.
 
-While identities facilitate compliance with relevant regulations, they also allow users to be represented :term:`on-chain` in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of :ref:`disclosing an identity<disclosing-identity>`. Disclosing an identity can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more identity disclosure authorities and the identity provider who issued the account's identity.
+While identities facilitate compliance with relevant regulations, they also allow users to be represented :term:`on-chain` in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of disclosing an identity. Disclosing an identity can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more identity disclosure authorities and the identity provider who issued the account's identity.
 
 Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the :term:`identity disclosure authorities<Identity disclosure authority>` are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called :term:`attributes` and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction. If you choose to reveal attributes, you should have a good reason to do so. The general recommendation is not to reveal attributes.
 

@@ -6,7 +6,7 @@
 Contact Identity Disclosure Authorities and Identity Providers
 ==============================================================
 
-To begin the process of disclosing an identity, you must contact the identity disclosure authorities and identity provider associated with the account with appropriate documentation. To learn about this process, see :ref:`disclosing an identity<disclosing-identity>`.
+To begin the process of disclosing an identity, you must contact the identity disclosure authorities and identity provider associated with the account with appropriate documentation. To learn about this process, see :ref:`disclosing an identity<reference-id-accounts>`.
 
 Identity Providers
 ==================

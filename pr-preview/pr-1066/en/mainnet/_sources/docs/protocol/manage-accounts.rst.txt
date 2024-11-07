@@ -6,7 +6,7 @@
 Accounts
 ========
 
-Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |cryptox|, |mw-gen2|, the |mw-gen1|, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |cryptox|, Desktop Wallet, or Concordium Client for your transactions.
 
 You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
 
@@ -57,7 +57,7 @@ additional accounts and the user gets access to the initial account on the Conco
 by creating a new identity and going through the identity verification process again with an identity provider.
 
 Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the identity disclosure authorities and the identity provider are
-involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<disclosing-identity>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
+involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<reference-id-accounts>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
 
 Account creation
 ----------------
@@ -106,9 +106,6 @@ before interacting with an account. Moreover, being able to see who issued the
 identity enables whoever wishes to interact with an account to judge the level
 of risk in the transaction.
 
-.. _disclosing-identity:
-
-.. include:: ../snippets/disclosing-identity.rst
 
 Account concepts
 ================
@@ -180,34 +177,12 @@ To show aliases, :ref:`run a transaction in Concordium Client<account-aliases>`.
 Tools
 =====
 
-The Desktop Wallet
-------------------
+Wallets
+-------
 
-The Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
+You can use one of the :ref:`Concordium wallets<wallets-lp>` to create and manage your Concordium identities, credentials, and accounts and to create transactions.
 
-The |cryptox|
------------------
-
-The |cryptox| is a digital smartphone wallet that that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
-
-The |mw-gen1|
------------------
-
-The |mw-gen1| is a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
-
-.. Note::
-
-   It is no longer possible for users of |mw-gen1| to create new accounts.
-
-The |mw-gen2|
-------------------
-
-The |mw-gen2| is a second generation digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to export and import your accounts and identities.
-
-The |bw|
-----------------
-
-The |bw| is a web wallet extension that enables you to create and manage your Concordium identities and accounts, to create simple transactions, produce blocks (validation) and delegate, and to connect to dApps.
+To learn more about the differences between the wallets, see :ref:`Deciding between the wallets<choosing-wallet>`.
 
 Command-line tool
 -----------------
@@ -215,16 +190,6 @@ Command-line tool
 The Concordium distribution ships with a command-line tool named
 :ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
 Concordium blockchain. It cannot be used to create identities, but it can
-:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been
+:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallet. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
-
-To learn more about the differences between the wallets, see :ref:`Deciding between the wallets<choosing-wallet>`.
-
-.. Warning::
-   It is not possible to exchange identities and accounts between the |mw-gen1| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
-
-.. Warning::
-   Because of the difference in the way private keys are handled between |mw-gen2| / |bw| and the first generation wallets (|mw-gen1| and Desktop Wallet), you cannot exchange identities and accounts between them.
-
-   It is possible to exchange accounts and identities between the |mw-gen2| and the |bw|.
