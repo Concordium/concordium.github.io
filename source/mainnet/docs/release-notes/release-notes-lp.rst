@@ -65,33 +65,39 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    **1.3.0 - October 28, 2024**
+    **1.3.1 - November 7, 2024**
 
-    This update introduces support for Protocol 7, push notifications, and seed import and export. It also fixes several bugs.
+    This version fixes the following UI issue:
 
-    Added:
-
-    - Notifications for CCD and CIS-2 token transactions
-
-    - Concordex exchange and Wert service where CCD can be purchased
-
-    - Ability to reveal the wallet private key for those having no ability to reveal the seed phrase
-
-    - Ability to use the wallet private key to restore the wallet
-
-    - Support for Protocol 7 - reducing validation/delegation stake no longer locks the whole amount
-
-    Fixed:
-
-    - Inability to configure a validator closed for delegation
-
-    - Incorrect state of the account tokens page when there are no tokens
-
-    - Crash caused by a malformed WalletConnect verifiable presentation request
-
-    - Validation/delegation text notices
+    While updating validator stakes, the app shows invalid commission.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.3.0 - October 28, 2024
+
+            This update introduces support for Protocol 7, push notifications, and seed import and export. It also fixes several bugs.
+
+            Added:
+
+            - Notifications for CCD and CIS-2 token transactions
+
+            - Concordex exchange and Wert service where CCD can be purchased
+
+            - Ability to reveal the wallet private key for those having no ability to reveal the seed phrase
+
+            - Ability to use the wallet private key to restore the wallet
+
+            - Support for Protocol 7 - reducing validation/delegation stake no longer locks the whole amount
+
+            Fixed:
+
+            - Inability to configure a validator closed for delegation
+
+            - Incorrect state of the account tokens page when there are no tokens
+
+            - Crash caused by a malformed WalletConnect verifiable presentation request
+
+            - Validation/delegation text notices
 
         .. dropdown:: |cryptox| 1.2.0 - August 27, 2024
 
