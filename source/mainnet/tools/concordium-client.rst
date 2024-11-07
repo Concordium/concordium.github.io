@@ -1,5 +1,5 @@
 
-.. include:: ../../variables.rst
+.. include:: ../variables.rst
 .. _framework: https://github.com/pcapriotti/optparse-applicative#user-content-bash-zsh-and-fish-completions
 .. _Discord: https://discord.com/invite/xWmQ5tp
 .. _IP address: https://en.wikipedia.org/wiki/IP_address

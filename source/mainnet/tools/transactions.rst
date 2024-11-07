@@ -1,5 +1,5 @@
 .. _Discord: https://discord.com/invite/xWmQ5tp
-.. include:: ../../variables.rst
+.. include:: ../variables.rst
 .. _transactions-old:
 
 ==============================

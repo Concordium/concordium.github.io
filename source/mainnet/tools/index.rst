@@ -16,5 +16,8 @@ Tools
     Developer resources<developer-page>
     Wallet SDK<./wallet-sdk/wallet-sdk.rst>
     CCDScan<./ccd-scan/ccd-scan.rst>
+    Concordium Client<concordium-client>
     Auxiliary Tools<developer-tools>
+
+
 
