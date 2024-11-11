@@ -2,12 +2,6 @@
 Docs
 ====
 
-This is the documentation
-
-.. image:: ../frontpage.png
-   :width: 600px
-   :alt: frontpage image
-   :align: center
 
 .. toctree::
    :caption: Concordium Protocol
