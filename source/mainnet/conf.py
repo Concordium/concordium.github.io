@@ -307,7 +307,7 @@ linkcheck_request_headers = {
 
 # -- Sphinx-reredirects for redirecting old paths to new ones ----------------
 redirects = {
-    "index": "/docs/index.html",
+    "index": "docs/index.html",
     "./net/guides/shielded-transfer": "/net/guides/shield-ccd-wallets.html",
     "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
     "./net/desktop-wallet/send-gtu-single-desktop": "/net/guides/send-ccd-wallets.html",
