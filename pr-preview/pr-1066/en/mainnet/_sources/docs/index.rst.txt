@@ -60,4 +60,3 @@ Docs
    Guardians <voting/guardians>
    Verify election result <voting/verify-election-result>
 
-
