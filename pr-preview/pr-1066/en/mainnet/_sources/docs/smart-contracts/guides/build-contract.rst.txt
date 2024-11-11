@@ -97,7 +97,6 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
    :maxdepth: 1
    :hidden:
 
-   setup-tools
    setup-contract
    compile-module
    custom-errors

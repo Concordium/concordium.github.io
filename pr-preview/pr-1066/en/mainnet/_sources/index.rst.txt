@@ -6,7 +6,7 @@ Concordium is a public blockchain platform designed for security, privacy, and s
 
 Explore our developer resources, including detailed documentation, tutorials, and a suite of tools to support your development journey.
 
-.. image:: frontpage.png
+.. image:: docs/images/frontpage.png
    :width: 400px
    :alt: frontpage image
    :align: center
@@ -61,6 +61,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :maxdepth: 2
    :hidden:
 
-   docs/index
+   Docs <docs/index>
    tutorials/index
    tools/index
