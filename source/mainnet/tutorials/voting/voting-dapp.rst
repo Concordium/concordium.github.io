@@ -58,60 +58,6 @@ To continue the tutorial, we'll need to install the |bw|. Install the extension 
 
 The wallet connects to a server hosted by Concordium which will take care of the Concordium node on your behalf.
 
-Start the browser wallet by clicking on the Concordium icon at the top right of the Chrome browser.
-
-.. image:: ../wCCD/images/wCCD_tutorial_18.png
-    :width: 100 %
-
-.. note::
-
-    The puzzle icon at the top right of Google Chrome allows you to manage your browser extensions.
-    Here, you can enable pinning of the wallet extension to always have it handy.
-
-    .. image:: ../wCCD/images/wCCD_tutorial_13.png
-        :width: 30 %
-
-Create a new account on testnet by going through the setup steps.
-You have to choose a password to secure the wallet.
-This password is needed to log in to the wallet.
-
-.. image:: ../wCCD/images/wCCD_tutorial_15.png
-    :width: 30 %
-
-The wallet creates a unique secret recovery phrase. Write down the secret recovery phrase
-and keep it in a safe place to be able to recover your accounts in case
-you lose access to your device.
-
-You have now completed the setup. Please verify that your wallet is connected to the Concordium Testnet.
-
-.. image:: ../wCCD/images/wCCD_tutorial_16.png
-    :width: 30 %
-
-.. image:: ../wCCD/images/wCCD_tutorial_17.png
-    :width: 30 %
-
-Before you can create a new account, you need to create an identity. You can do this easily on testnet via the Concordium testnet ID provider.
-
-.. image:: ../wCCD/images/wCCD_tutorial_19.png
-    :width: 30 %
-
-.. image:: ../wCCD/images/wCCD_tutorial_20.png
-    :width: 30 %
-
-.. image:: ../wCCD/images/wCCD_tutorial_21.png
-    :width: 30 %
-
-.. image:: ../wCCD/images/wCCD_tutorial_22.png
-    :width: 30 %
-
-Finally, create a new account on testnet.
-
-.. image:: ../wCCD/images/wCCD_tutorial_19.png
-    :width: 30 %
-
-.. image:: ../wCCD/images/wCCD_tutorial_20.png
-    :width: 30 %
-
 For testing you'll need some CCD in your account. Send some CCD to your new account or request some CCD from the :ref:`testnet faucet button<testnet-faucet>` within the wallet.
 Check that your account balance is displayed and you have enough
 CCD to be able to execute transactions.
@@ -122,8 +68,6 @@ CCD to be able to execute transactions.
 
 .. image:: ../wCCD/images/wCCD_tutorial_14.png
     :width: 40 %
-
-You can find more information on how to set up the wallet in :ref:`Setup the Concordium Wallet for Web<setup-browser-wallet>`.
 
 Running the web frontend
 -------------------------

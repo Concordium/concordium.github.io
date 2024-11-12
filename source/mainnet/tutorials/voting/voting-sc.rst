@@ -32,7 +32,7 @@ to set up your project.
 The smart contract template also includes some examples tests under the ``tests`` directory,
 which you can delete for now. You will come back to tests later in this tutorial.
 
-In the ``lib.rs`` file, start by bringing everything from the |concordium-std|_ library into scope by adding the line:
+In the ``lib.rs`` file, the first line brings everything from the |concordium-std|_ library into scope:
 
 .. code-block:: rust
 
