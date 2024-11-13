@@ -1,3 +1,4 @@
+.. _sc-tutorials
 .. include:: ../variables.rst
 .. _tutorials:
 
