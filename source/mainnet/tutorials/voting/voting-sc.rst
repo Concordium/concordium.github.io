@@ -29,9 +29,6 @@ Basic setup
 The source code of your smart contract is going to be in the ``src`` directory, which already contains the file ``lib.rs``, assuming you follow the above guide
 to set up your project.
 
-The smart contract template also includes some examples tests under the ``tests`` directory,
-which you can delete for now. You will come back to tests later in this tutorial.
-
 In the ``lib.rs`` file, the first line brings everything from the |concordium-std|_ library into scope:
 
 .. code-block:: rust
@@ -54,7 +51,7 @@ A few basic functions are necessary for these operations to work:
 - ``vote``
 - ``get_votes``
 
-Now, let's examine the code in `the example voting smart contract here <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/src/lib.rs>`_.
+Now, let's examine the code in `the example voting smart contract here <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/src/lib.rs>`_. `Tests <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/tests/tests.rs>`_ are also written along with the contract, but will not be further explained in this tutorial.
 
 The ``ElectionConfig`` data structure defines the configuration of the smart contract and is an input to the ``init`` function. In the example code, it contains a description of the election, the voting options, and the deadline of the election. Voting options is provided as a list of strings, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the maximum size of the list of voting options is large, but limited. For more information, see :ref:`Contract instance limits<contract-instance-operations>`.
 
