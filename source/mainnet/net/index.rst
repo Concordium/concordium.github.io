@@ -31,6 +31,7 @@ index
    Best practices <../smart-contracts/best-practices/index>
    V0 smart contracts <../smart-contracts-v0/sc-v0-rollup>
    Set up Tools <guides/setup-tools>
+   Smart Contract Tutorials <./archive/smart-contracts-tutorials>
 
 .. toctree::
    :includehidden:
