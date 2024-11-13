@@ -1,6 +1,6 @@
-.. _sc-tutorials
 .. include:: ../variables.rst
 .. _tutorials:
+.. _sc-tutorials:
 
 ==========
 Tutorials
