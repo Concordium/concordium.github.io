@@ -128,3 +128,35 @@ html {
 .bd-links__title {
     display: none !important;
 }
+
+/* Tutorial page styling */
+.tutorial-section {
+    background-color: #edf2f7;    /* Slightly darker background */
+    padding: 25px 25px 25px 40px !important;    /* top right bottom left - more padding on left */
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;    /* More visible border */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+/* Blue container */
+.tutorial-section-blue {
+    background-color: #edf2f7 !important;
+    border: 1px solid #cbd5e0 !important;
+}
+
+/* Green container */
+.tutorial-section-green {
+    background-color: #f0fdf4 !important;    /* Light green */
+    border: 1px solid #dcfce7 !important;
+}
+
+/* Purple container */
+.tutorial-section-purple {
+    background-color: #faf5ff !important;    /* Light purple */
+    border: 1px solid #f3e8ff !important;
+}
+/* Yellow container */
+.tutorial-section-yellow {
+    background-color: #fefce8 !important;    /* Light yellow */
+    border: 1px solid #fef9c3 !important;
+}
