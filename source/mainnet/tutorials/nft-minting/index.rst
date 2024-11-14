@@ -13,7 +13,7 @@ All development is completed using ``concordium-client`` and includes the follow
 - :ref:`Checking token owner<nft-view-fn>`
 - :ref:`Transfering the NFT and checking the new owner<transfer-nft>`
 
-This tutorial uses a photograph stored on the InterPlanetary File System (IPFS). In order to store the photograph on IPFS, you will need to install and run a node on your computer. There are other options like pinning services, but they are not in the scope of this tutorial. You will also create a metadata file that will be stored on IPFS. By doing this, you eliminate the risk of deletion of the photo on a centralized photo album and protect your asset. You will store this metadata’s URL on-chain and be able to read it.
+This tutorial uses a photograph stored on the `InterPlanetary File System (IPFS) <https://docs.ipfs.tech/concepts/what-is-ipfs/>`_. In order to store the photograph on IPFS, you will need to install and run a `IPFS node <https://docs.ipfs.tech/concepts/nodes/>`_ on your computer. There are other options like pinning services, but they are not in the scope of this tutorial. You will also create a metadata file that will be stored on IPFS. By doing this, you eliminate the risk of deletion of the photo on a centralized photo album and protect your asset. You will store this metadata’s URL on-chain and be able to read it.
 
 .. Attention::
 
