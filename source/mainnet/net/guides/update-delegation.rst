@@ -5,11 +5,6 @@
 Update delegation to a staking pool or passive delegation
 =========================================================
 
-.. Note::
-
-    Some features may function differently until Protocol 7 is fully implemented.
-    See note in :ref:`Delegation and validation FAQ<delegation-faq>` for information on changes from Protocol 6 to Protocol 7.
-
 You can change the delegation amount, target, and preferences on an account. You do not have to change all selections. For example, you might only want to change if rewards are restaked or not.
 
 If you change the delegation, the new amount will be applied at the start of the next :term:`pay day`. There is one pay day approximately every 24 hours.
