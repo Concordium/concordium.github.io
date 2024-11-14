@@ -16,7 +16,7 @@ First, you need to install the ``cargo-generate`` tool and then initialize the f
 
 .. code-block:: console
 
-    cargo install --locked cargo-generate --version 0.16.0
+    cargo install --locked cargo-generate
 
 .. code-block:: console
 
@@ -27,7 +27,7 @@ If you try the init command before installing cargo-generate you will get an err
 .. image:: images/init-error.png
     :width: 100%
 
-If everything is correct, the ``init`` command will show something like the below. You will have cargo project with the project name and cis2-nft contract in it.
+If everything is correct, the ``init`` command will show something like the following. You will have a cargo project with the project name and cis2-nft contract in it.
 
 .. image:: images/init-success.png
     :width: 100%
@@ -54,7 +54,7 @@ Now, create a ``dist/cis2-nft`` folder to keep your compiled WASM module file an
 Deploy your smart contract
 ==========================
 
-To deploy your smart contract you will use the ``concordium client`` command line tool.
+To deploy your smart contract you will use the ``concordium client`` command line tool. You can read more about this tool in :ref:`this article<concordium-client>`.
 
 Before deploying your smart contract, make sure that you have imported your wallet. When you export it from your wallet run the command below in the same directory where your wallet export is.
 
