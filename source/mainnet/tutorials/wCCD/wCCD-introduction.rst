@@ -29,8 +29,8 @@ blockchain network and does not comply with the ``CIS-2`` token standard.
     - `dynamic-nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-dynamic-nft/src/lib.rs>`_
     - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
     - `multi-royalties <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi-royalties/src/lib.rs>`_
-    
-    
+
+
 Implementing two interfaces (one for CCD and another for ``CIS-2`` tokens)
 within the same smart contract can be cumbersome for developers and adds
 complexity. You need a process that converts CCD into a token (named wCCD) that is ``CIS-2``

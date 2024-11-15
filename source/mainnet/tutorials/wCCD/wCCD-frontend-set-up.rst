@@ -50,7 +50,7 @@ to a request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
-Comprehensive instructions on how to set up the wallet can be found in :ref:`this tutorial <setup-wallet>`. 
+Comprehensive instructions on how to set up the wallet can be found in :ref:`this tutorial <setup-wallet>`.
 
 Running the web frontend
 -------------------------
