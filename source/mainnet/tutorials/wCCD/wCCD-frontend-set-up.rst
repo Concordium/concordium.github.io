@@ -50,82 +50,7 @@ to a request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.
 
-.. note::
-
-    If you already have an older |bw| extension installed, check its version and download a newer version if applicable.
-    The wCCD frontend requires some new features that are supported by the |bw| version 0.8.3 or greater.
-
-.. dropdown:: Setup wallet connected to hosted node (click here)
-
-    You are ready now to install the |bw|. Install the extension for your browser as described :ref:`here<setup-browser-wallet>`.
-
-    The |bw| connects to a server hosted by Concordium which will take care of the Concordium node on your behalf.
-
-    You are ready now to start the |bw| by clicking on the Concordium icon at the top right of the
-    ``Chrome`` browser.
-
-    .. image:: ./images/wCCD_tutorial_18.png
-        :width: 100 %
-
-    .. note::
-
-        The puzzle icon at the top right of the ``Chrome`` browser allows you to manage your browser extensions.
-        You can enable pinning of the |bw|.
-
-        .. image:: ./images/wCCD_tutorial_13.png
-            :width: 30 %
-
-    Create a new account on testnet by going through the setup steps of the |bw|.
-    You have to choose a password to secure your |bw|.
-    This password is needed to log in to your |bw|.
-
-    .. image:: ./images/wCCD_tutorial_15.png
-        :width: 30 %
-
-    The |bw| creates a unique secret recovery phrase. Write down the secret recovery phrase
-    and keep it in a safe place to be able to recover your accounts in case
-    you lose access to your device.
-
-    You have completed the setup. Check that your |bw| is connected to the testnet.
-
-    .. image:: ./images/wCCD_tutorial_16.png
-        :width: 30 %
-
-    .. image:: ./images/wCCD_tutorial_17.png
-        :width: 30 %
-
-    Before you can create a new account. You need to create an identity.
-
-    .. image:: ./images/wCCD_tutorial_19.png
-        :width: 30 %
-
-    .. image:: ./images/wCCD_tutorial_20.png
-        :width: 30 %
-
-    .. image:: ./images/wCCD_tutorial_21.png
-        :width: 30 %
-
-    .. image:: ./images/wCCD_tutorial_22.png
-        :width: 30 %
-
-    You are ready now to create a new account on testnet.
-
-    .. image:: ./images/wCCD_tutorial_19.png
-        :width: 30 %
-
-    .. image:: ./images/wCCD_tutorial_20.png
-        :width: 30 %
-
-    You completed the |bw| setup. Send some CCD to your new account or request some CCD from the testnet faucet button within the |bw|.
-    Check that your account balance is displayed and you have enough
-    CCD to be able to execute transactions.
-
-    .. note::
-        You are connected to a website with your |bw| when you see the green ``Connected`` button.
-        You can toggle on/off the connection by clicking on the button.
-
-    .. image:: ./images/wCCD_tutorial_14.png
-        :width: 40 %
+Comprehensive instructions on how to set up the wallet can be found in :ref:`this tutorial <setup-wallet>`. 
 
 Running the web frontend
 -------------------------
@@ -146,7 +71,7 @@ Clone this `repository <https://github.com/Concordium/concordium-browser-wallet>
 
 .. code-block:: console
 
-    $git clone https://github.com/Concordium/concordium-browser-wallet.git
+    $ git clone https://github.com/Concordium/concordium-browser-wallet.git
 
 Build and run the frontend as described in the README file of the
 `wCCD frontend demo <https://github.com/Concordium/concordium-browser-wallet/tree/main/examples/wCCD>`_.
@@ -157,39 +82,39 @@ The steps in the README file are as follows:
 
 .. code-block:: console
 
-    $yarn
+    $ yarn
 
 - Build the Concordium helpers by running ``yarn build:api-helpers``. You can run this from anywhere in your cloned repository.
 
 .. code-block:: console
 
-    $yarn build:api-helpers
+    $ yarn build:api-helpers
 
 - Navigate to the wCCD example folder.
 
 .. code-block:: console
 
-    $cd ./examples/wCCD/
+    $ cd ./examples/wCCD/
 
 - Run ``yarn build`` in the wCCD folder.
 
 .. code-block:: console
 
-    $yarn build
+    $ yarn build
 
 - Run ``yarn watch`` to enable hot-reload (useful for development) of the web frontend whenever you do any changes to the code.
 
 .. code-block:: console
 
-    $yarn watch
+    $ yarn watch
 
 - Run ``yarn start`` in another terminal to start the web frontend.
 
 .. code-block:: console
 
-    $yarn start
+    $ yarn start
 
-This command logs a URL in the console (typically http://127.0.0.1:8080). Open this URL in the ``Chrome`` browser.
+This command logs a URL in the console, in our case http://127.0.0.1:4173 since the app is built using Vite and that is the default port. Open this URL in the ``Chrome`` browser.
 
 .. note::
 

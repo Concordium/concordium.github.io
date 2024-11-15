@@ -21,15 +21,16 @@ blockchain network and does not comply with the ``CIS-2`` token standard.
     It combines the Ethereum ``ERC20`` and ``ERC721`` standards with some modifications.
     The `CIS-2 library <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs>`_
     is meant to be imported by ``CIS-2`` tokens.
-    Please explore the four ``CIS-2`` token standard implementation examples in the Concordium
+    Please explore the five ``CIS-2`` token standard implementation examples in the Concordium
     smart contract repo:
 
     - `natively-upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_
-    - `proxy-implementation-upgradable wccd <https://github.com/Concordium/concordium-rust-smart-contracts/pull/128>`_
     - `nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs>`_
+    - `dynamic-nft <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-dynamic-nft/src/lib.rs>`_
     - `multi <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
-
-
+    - `multi-royalties <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi-royalties/src/lib.rs>`_
+    
+    
 Implementing two interfaces (one for CCD and another for ``CIS-2`` tokens)
 within the same smart contract can be cumbersome for developers and adds
 complexity. You need a process that converts CCD into a token (named wCCD) that is ``CIS-2``
