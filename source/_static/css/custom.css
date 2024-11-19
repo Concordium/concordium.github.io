@@ -160,3 +160,39 @@ html {
     background-color: #fefce8 !important;    /* Light yellow */
     border: 1px solid #fef9c3 !important;
 }
+.bd-container__inner.bd-page-width {
+    max-width: none;
+    width: 100%;
+}
+
+.bd-main .bd-content {
+    max-width: none;
+    padding: 0 3rem;
+}
+
+.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Header fixes */
+.bd-header {
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+/* Logo positioning */
+.navbar-header-items__start {
+    position: fixed;
+    left: 1rem;
+    z-index: 1000;
+}
