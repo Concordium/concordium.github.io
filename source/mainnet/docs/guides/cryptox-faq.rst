@@ -5,11 +5,6 @@
 |cryptox| FAQ
 ======================
 
-.. Note::
-
-    Some features may function differently until Protocol 7 is fully implemented.
-    See note in :ref:`Delegation and validation FAQ<delegation-faq-old>` for information on changes from Protocol 6 to Protocol 7.
-
 .. dropdown:: What are the features and benefits of the |cryptox|?
 
     The |cryptox| is the third generation of the Concordium mobile wallets. It offers a comprehensive set of features for interacting with the Concordium blockchain.
