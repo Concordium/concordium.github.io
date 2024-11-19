@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=69fad6d5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=947382ac" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=6175c28d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/nft-minting/upload-nft.39e85336-1d63-41cd-aff6-008afad7660d.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/nft-minting/upload-nft.0596535e-33fe-410f-b9a6-3a859c0fe71f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/nft-minting/upload-nft';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -597,7 +597,7 @@
                   
   <section id="upload-the-nft">
 <span id="upload-nft"></span><h1>Upload the NFT<a class="headerlink" href="#upload-the-nft" title="Link to this heading">#</a></h1>
-<p>In this part of the tutorial, we will upload your asset and give it metadata. For this, we will use the InterPlanetary File System (IPFS).</p>
+<p>In this part of the tutorial, we will upload your asset and give it metadata. For this, we will use the <a class="reference external" href="https://docs.ipfs.tech/concepts/what-is-ipfs/">InterPlanetary File System (IPFS)</a>.</p>
 <section id="using-interplanetary-file-system-ipfs">
 <h2>Using InterPlanetary File System (IPFS)<a class="headerlink" href="#using-interplanetary-file-system-ipfs" title="Link to this heading">#</a></h2>
 <p>There are multiple ways of storing data in IPFS. You can do it from a user interface by running a node or you can use a pinning service. For this tutorial, you will download and run the IPFS and store the both NFT metadata and image itself. <a class="reference external" href="https://docs.ipfs.tech/install/">Click here to download and install IPFS</a>.</p>
@@ -613,21 +613,21 @@
 <p>The CID of your asset is unique in the IPFS storage, and when you put that value in your metadata file, the buyer will always be able to check it using the URL and compare it to what you have and what IPFS shows.</p>
 <p>The Concordium CIS-2 standard allows the creation of your NFT metadata in the following format, and you can find more details in the <a class="reference external" href="https://proposals.concordium.software/CIS/cis-2.html#example-token-metadata-non-fungible">Concordium CIS-2 token standard</a>. For the sake of the minting process, you have to follow the same formatted .json file, but as you can see, you are also allowed to add additional attributes to the metadata file, or remove them.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your picture name&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my picture description&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your picture name, e.g. Moon Landing&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my picture description, e.g. Commemorating the moon landing&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ipfs.io/ipfs....paste your url here&quot;</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;attributes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some attribute&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;999&quot;</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Event Date&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1969-07-20&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;another attribute&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Achievement Level&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unprecedented&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;third attribute&quot;</span><span class="p">,</span>

@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=69fad6d5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=947382ac" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=6175c28d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/voting/voting-sc.8e204be2-95c2-4e10-ad9c-db1dd437180c.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/voting/voting-sc.ba7e91ab-496c-40ad-95a3-8c20c6ef819e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/voting/voting-sc';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -612,9 +612,7 @@
 <h2>Basic setup<a class="headerlink" href="#basic-setup" title="Link to this heading">#</a></h2>
 <p>The source code of your smart contract is going to be in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory, which already contains the file <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code>, assuming you follow the above guide
 to set up your project.</p>
-<p>The smart contract template also includes some examples tests under the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory,
-which you can delete for now. You will come back to tests later in this tutorial.</p>
-<p>In the <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code> file, start by bringing everything from the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library into scope by adding the line:</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">lib.rs</span></code> file, the first line brings everything from the <a class="reference external" href="https://docs.rs/concordium-std/latest/concordium_std/index.html"><code class="docutils literal notranslate"><span class="pre">concordium-std</span></code></a> library into scope:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="k">use</span><span class="w"> </span><span class="n">concordium_std</span>::<span class="o">*</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -633,7 +631,7 @@ which you can delete for now. You will come back to tests later in this tutorial
 <li><p><code class="docutils literal notranslate"><span class="pre">vote</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">get_votes</span></code></p></li>
 </ul>
-<p>Now, let’s examine the code in <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/src/lib.rs">the example voting smart contract here</a>.</p>
+<p>Now, let’s examine the code in <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/src/lib.rs">the example voting smart contract here</a>. <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/voting/tests/tests.rs">Tests</a> are also written along with the contract, but will not be further explained in this tutorial.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ElectionConfig</span></code> data structure defines the configuration of the smart contract and is an input to the <code class="docutils literal notranslate"><span class="pre">init</span></code> function. In the example code, it contains a description of the election, the voting options, and the deadline of the election. Voting options is provided as a list of strings, however, it is important to remember that there is a limit to the parameter size (65535 bytes), so the maximum size of the list of voting options is large, but limited. For more information, see <a class="reference internal" href="../../docs/smart-contracts/contract-instances.html#contract-instance-operations"><span class="std std-ref">Contract instance limits</span></a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">view</span></code> function also returns the <code class="docutils literal notranslate"><span class="pre">ElectionConfig</span></code> type, so that users can, for instance, see the available options to vote for.</p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">vote</span></code> function, the contract specifies who may vote and when (only accounts may vote and only before the deadline). If a contract tries to vote, an error occurs.</p>

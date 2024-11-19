@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=69fad6d5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=947382ac" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=6175c28d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/nft-minting/build-smart-contract.21aaaea2-6ced-4389-9946-eef36bde4171.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/nft-minting/build-smart-contract.83437683-c7f7-49f8-8db6-c814eb7d67ec.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/nft-minting/build-smart-contract';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -602,7 +602,7 @@
 <h2>Initialize Cis2-NFT contract template<a class="headerlink" href="#initialize-cis2-nft-contract-template" title="Link to this heading">#</a></h2>
 <p>You will use <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> that you installed in the first part to initialize the template.</p>
 <p>First, you need to install the <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> tool and then initialize the folder. By default, it’ll create a cis2-nft contract template.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo install --locked cargo-generate --version 0.16.0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo install --locked cargo-generate</span>
 </pre></div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo concordium init</span>
@@ -611,7 +611,7 @@
 <p>If you try the init command before installing cargo-generate you will get an error similar to the one below. And you may need to update your <code class="docutils literal notranslate"><span class="pre">rustc</span></code> version before installing <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code>. To do this, use <code class="docutils literal notranslate"><span class="pre">rustup</span> <span class="pre">update</span></code>.</p>
 <a class="reference internal image-reference" href="../../_images/init-error.png"><img alt="../../_images/init-error.png" src="../../_images/init-error.png" style="width: 100%;" />
 </a>
-<p>If everything is correct, the <code class="docutils literal notranslate"><span class="pre">init</span></code> command will show something like the below. You will have cargo project with the project name and cis2-nft contract in it.</p>
+<p>If everything is correct, the <code class="docutils literal notranslate"><span class="pre">init</span></code> command will show something like the following. You will have a cargo project with the project name and cis2-nft contract in it.</p>
 <a class="reference internal image-reference" href="../../_images/init-success.png"><img alt="../../_images/init-success.png" src="../../_images/init-success.png" style="width: 100%;" />
 </a>
 </section>
@@ -630,7 +630,7 @@
 </section>
 <section id="deploy-your-smart-contract">
 <span id="deploy-nft-sc"></span><h2>Deploy your smart contract<a class="headerlink" href="#deploy-your-smart-contract" title="Link to this heading">#</a></h2>
-<p>To deploy your smart contract you will use the <code class="docutils literal notranslate"><span class="pre">concordium</span> <span class="pre">client</span></code> command line tool.</p>
+<p>To deploy your smart contract you will use the <code class="docutils literal notranslate"><span class="pre">concordium</span> <span class="pre">client</span></code> command line tool. You can read more about this tool in <a class="reference internal" href="../../tools/concordium-client.html#concordium-client"><span class="std std-ref">this article</span></a>.</p>
 <p>Before deploying your smart contract, make sure that you have imported your wallet. When you export it from your wallet run the command below in the same directory where your wallet export is.</p>
 <p>For the Concordium Wallet for Web, use the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import &lt;Wallet.export&gt; --name &lt;Your-Wallet-Name&gt;.json</span>

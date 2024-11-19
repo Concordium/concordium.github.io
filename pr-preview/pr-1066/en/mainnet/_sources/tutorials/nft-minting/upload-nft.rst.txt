@@ -4,7 +4,7 @@
 Upload the NFT
 ==============
 
-In this part of the tutorial, we will upload your asset and give it metadata. For this, we will use the InterPlanetary File System (IPFS).
+In this part of the tutorial, we will upload your asset and give it metadata. For this, we will use the `InterPlanetary File System (IPFS) <https://docs.ipfs.tech/concepts/what-is-ipfs/>`_.
 
 Using InterPlanetary File System (IPFS)
 =======================================
@@ -33,21 +33,21 @@ The Concordium CIS-2 standard allows the creation of your NFT metadata in the fo
 .. code-block:: json
 
     {
-        "name": "your picture name",
-        "description": "my picture description",
+        "name": "your picture name, e.g. Moon Landing",
+        "description": "my picture description, e.g. Commemorating the moon landing",
         "display": {
             "url": "https://ipfs.io/ipfs....paste your url here"
         },
         "attributes": [
             {
-                "name": "some attribute",
-                "type": "string",
-                "value": "999"
+                "name": "Event Date",
+                "type": "date",
+                "value": "1969-07-20"
             }
             {
-                "name": "another attribute",
+                "name": "Achievement Level",
                 "type": "string",
-                "value": "1"
+                "value": "Unprecedented"
             }
             {
                 "name": "third attribute",
