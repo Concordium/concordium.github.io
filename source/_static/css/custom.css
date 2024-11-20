@@ -184,3 +184,16 @@ html {
     max-width: 20%;
     flex: 0 0 auto;
 }
+/* Prevent text selection in sidebar navigation */
+.bd-sidebar-primary .bd-links .bd-links__item,
+.bd-sidebar-primary .bd-links .bd-links__item *,
+.bd-sidebar-primary .current,
+.bd-sidebar-primary .toctree-l1,
+.bd-sidebar-primary .toctree-l2,
+.bd-sidebar-primary .reference.internal,
+.bd-sidebar-primary .nav-link {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
