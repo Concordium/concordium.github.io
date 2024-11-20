@@ -197,3 +197,32 @@ html {
     -moz-user-select: none;
     -ms-user-select: none;
 }
+/* Logo positioning */
+.navbar-header-items__start {
+    position: absolute;
+    left: 0;
+    padding-left: 1rem;
+    z-index: 1;  /* Reduced z-index */
+    background: white;
+    max-width: 20%;
+}
+
+/* Menu positioning */
+.navbar-header-items:not(.navbar-header-items__start) {
+    margin-left: 200px;
+    position: relative;
+    z-index: 2;  /* Higher than logo */
+    background: white;
+}
+
+img.logo {
+    max-height: 35px;
+    width: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-header-items:not(.navbar-header-items__start) {
+        margin-left: 150px;
+    }
+}
