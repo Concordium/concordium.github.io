@@ -494,7 +494,6 @@ redirects = {
     ".smart-contracts/tutorials/nft-minting/build-smart-contract": "tutorials/nft-minting/build-smart-contract.html",
     "./smart-contracts/tutorials/nft-minting/mint-xfer": "tutorials/nft-minting/mint-xfer.html",
     "./smart-contracts/tutorials/sft-minting/index": "tutorials/sft-minting/index.html",
-    "./smart-contracts/tutorials/sft-minting/setup": "tutorials/sft-minting/setup.html",
     "./smart-contracts/tutorials/sft-minting/build-smart-contract": "tutorials/sft-minting/build-smart-contract.html",
     "./smart-contracts/tutorials/sft-minting/mint-xfer": "tutorials/sft-minting/mint-xfer.html",
     "./smart-contracts/tutorials/fungible-tokens/index": "tutorials/fungible-tokens/index.html",
