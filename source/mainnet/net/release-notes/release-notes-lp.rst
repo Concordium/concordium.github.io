@@ -293,13 +293,19 @@ Wallets
 |mw-gen2| for Android
 ---------------------
 
-    July 31, 2024
+    November 20, 2024
 
-    Version 1.7.0 adds a deprecation notice.
-    This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
-    No need to create a new wallet – just enter your recovery phrase into |cryptox|, and you're good to go!
+    Version 1.8.0 includes the following update:
+
+    Added ability to reveal the wallet private key (seed) if the seed phrase can't be revealed.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |mw-gen2| 1.7.0 - July 31, 2024
+
+            Version 1.7.0 adds a deprecation notice.
+            This wallet is going away soon, move your account to |cryptox| to continue using Concordium.
+            No need to create a new wallet – just enter your recovery phrase into |cryptox|, and you're good to go!
 
         .. dropdown:: |mw-gen2| 1.6.0 - June 26, 2024
 
