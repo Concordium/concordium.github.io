@@ -89,7 +89,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Run a node on Concordium <network/nodes/node-requirements>
    Use Concordium's ID layer <network/web3-id/index.rst>
    Run a local chain <network/guides/run-local-chain.rst>
-   Concordium low-code NFT framework <network/low-code-nft-marketplace/introduction.rst>
    Indexers <network/indexers/intro.rst>
 
 

@@ -77,9 +77,3 @@ For information about accounts, see :ref:`Accounts<managing_accounts>`.
 
 .. include:: ../snippets/disclosing-identity.rst
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-
-
