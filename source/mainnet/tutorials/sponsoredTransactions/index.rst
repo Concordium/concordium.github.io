@@ -47,7 +47,7 @@ What is the difference between a normal transaction vs. a sponsored transaction?
 
 A normal transaction sent to a smart contract is signed by the user's wallet and authorizes the blockchain to subtract the transaction fee from the user's wallet as well as to execute a specific action. For example, the action could be to transfer some tokens from the user's address to another address.
 
-The user creates a normal transaction by signing its ``account`` address, its ``nonce``, and the ``action``. The ``nonce`` increases sequentially every time the user sends a transaction to the blockchain to prevent replay attacks. The nonce is of type u64 (8 bytes) and by design >= 1.
+The user creates a normal transaction by signing its ``account`` address, its ``nonce``, and the ``action``. The ``nonce`` increases sequentially every time the user sends a transaction to the blockchain to prevent replay attacks. The `nonce <https://en.wikipedia.org/wiki/Cryptographic_nonce>`_ is of type u64 (8 bytes) and by design >= 1.
 
 .. image:: ./images/NormalSmartContractTransactionFlow.png
    :alt: Normal Smart Contract Transaction Flow

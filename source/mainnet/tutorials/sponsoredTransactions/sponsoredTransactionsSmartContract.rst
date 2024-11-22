@@ -9,17 +9,17 @@ The goal of this part of the tutorial is to understand how the sponsored
 transaction mechanism is implemented in the smart contract and how to create and verify an Ed25519 signature in the smart contract code.
 
 Clone the `sponsored transaction example <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_
-which you will modify in this tutorial.
+which you will modify in this tutorial. The ``recurse-submodules`` parameter is needed because the git repository contains `submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ which need to be cloned along with the example.
 
 .. code-block:: console
 
-    $git clone --recurse-submodules git@github.com:Concordium/concordium-rust-smart-contracts.git
+    $ git clone --recurse-submodules git@github.com:Concordium/concordium-rust-smart-contracts.git
 
 Navigate to the correct example folder:
 
 .. code-block:: console
 
-    $cd ./examples/cis3-nft-sponsored-txs
+    $ cd ./examples/cis3-nft-sponsored-txs
 
 The ``cis3_nft`` contract implements the `CIS-3 standard (sponsored transactions) <https://proposals.concordium.software/CIS/cis-3.html>`_. The standard defines that the contract has to expose the
 ``permit`` and the ``supportsPermit`` functions.
@@ -79,7 +79,9 @@ You can explore the function by invoking it with the ``concordium-client`` as fo
 
 .. code-block:: console
 
-    $concordium-client contract invoke 6372 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    $ concordium-client contract invoke 6372 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+
+``6372`` is the index of the smart contract. A smart contract address consists of an index and subindex, in the current protocol the subindex will always be 0. So, in other words, the command above means invoke contract with index 6372 on the testnet.
 
 For example, this ``supportsPermit.json`` file results in the below screenshot.
 
@@ -120,9 +122,9 @@ Run the test cases to confirm that they pass before you start modifying the code
 
 .. code-block:: console
 
-    $cargo test
+    $ cargo test
     or
-    $cargo concordium test
+    $ cargo concordium test
 
 .. image:: ./images/testCases.png
    :alt: Running the test cases
@@ -146,7 +148,9 @@ This prints the ``message_hash`` when running the test cases as follows:
 
 .. code-block:: console
 
-    $cargo test -- --nocapture
+    $ cargo test -- --nocapture
+
+To learn more about the ``nocapture`` flag you can follow `this link <https://doc.rust-lang.org/cargo/commands/cargo-test.html#display-options>`_
 
 .. image:: ./images/messageHash.png
    :alt: Printing the message hash
@@ -184,13 +188,13 @@ Add the above code snippet to the top of a test case and run the test cases agai
 
 .. code-block:: console
 
-    $cargo test -- --nocapture
+    $ cargo test -- --nocapture
 
 The output should look similar to:
 
 .. code-block:: console
 
-    $signature: [252, 135, 206, 148, 151, 203, 217, 221, 223, 182, 206, 211, 25, 20, 212, 251, 147, 221, 21, 142, 239, 231, 175, 146, 122, 179, 27, 180, 113, 120, 230, 26, 51, 190, 165, 37, 104, 71, 92, 22, 30, 197, 183, 165, 232, 107, 159, 95, 2, 116, 39, 65, 146, 102, 93, 131, 25, 124, 76, 233, 162, 76, 124, 6]
+    $ signature: [252, 135, 206, 148, 151, 203, 217, 221, 223, 182, 206, 211, 25, 20, 212, 251, 147, 221, 21, 142, 239, 231, 175, 146, 122, 179, 27, 180, 113, 120, 230, 26, 51, 190, 165, 37, 104, 71, 92, 22, 30, 197, 183, 165, 232, 107, 159, 95, 2, 116, 39, 65, 146, 102, 93, 131, 25, 124, 76, 233, 162, 76, 124, 6]
 
 You can create the below signature constant. This signature can be used in test cases to check if your signature verification logic in the smart contract works.
 
@@ -209,13 +213,13 @@ Add the above code snippet to the top of a test case and run the test cases agai
 
 .. code-block:: console
 
-    $cargo test -- --nocapture
+    $ cargo test -- --nocapture
 
 The output should look similar to:
 
 .. code-block:: console
 
-    $public_key: [135, 40, 213, 241, 57, 171, 239, 135, 24, 139, 191, 24, 185, 167, 91, 78, 39, 223, 129, 189, 107, 201, 204, 27, 117, 130, 160, 157, 116, 188, 60, 136]
+    $ public_key: [135, 40, 213, 241, 57, 171, 239, 135, 24, 139, 191, 24, 185, 167, 91, 78, 39, 223, 129, 189, 107, 201, 204, 27, 117, 130, 160, 157, 116, 188, 60, 136]
 
 You can create the below public key constant. This public key can be used in test cases to check if your signature verification logic in the smart contract works.
 
