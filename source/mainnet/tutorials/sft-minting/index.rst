@@ -25,6 +25,5 @@ One of the best use cases of semi-fungible tokens is in gaming and the metaverse
    :maxdepth: 1
    :caption: Semi-fungible token minting
 
-   setup
    build-smart-contract
    mint-xfer
