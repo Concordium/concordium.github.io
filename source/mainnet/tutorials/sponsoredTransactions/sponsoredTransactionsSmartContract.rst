@@ -9,7 +9,7 @@ The goal of this part of the tutorial is to understand how the sponsored
 transaction mechanism is implemented in the smart contract and how to create and verify an Ed25519 signature in the smart contract code.
 
 Clone the `sponsored transaction example <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis3-nft-sponsored-txs>`_
-which you will modify in this tutorial. The ``recurse-submodules`` parameter is needed because the git repository contains `submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ which need to be cloned along with the example.
+which you will modify in this tutorial. The ``recurse-submodules`` flag is needed because the git repository contains `submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ which need to be cloned along with the example.
 
 .. code-block:: console
 
