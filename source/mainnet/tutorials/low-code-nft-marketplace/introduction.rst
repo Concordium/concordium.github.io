@@ -1,4 +1,4 @@
-.. include:: ../../../variables.rst
+.. include:: ../../variables.rst
 
 .. _low-code-nft-mp-intro:
 
