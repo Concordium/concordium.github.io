@@ -51,13 +51,13 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/sft-minting/build-smart-contract.1d68893a-2929-4d45-81c5-f61e11167276.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/sft-minting/build-smart-contract.29470103-9bc7-4e9d-84c9-315d5ae2f8f4.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/sft-minting/build-smart-contract';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Mint and transfer semi-fungible token" href="mint-xfer.html" />
-    <link rel="prev" title="Setup the development environment" href="setup.html" />
+    <link rel="prev" title="Mint a semi-fungible token" href="index.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -503,7 +503,6 @@
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Mint a semi-fungible token</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup.html">Setup the development environment</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Smart contract modifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mint-xfer.html">Mint and transfer semi-fungible token</a></li>
 </ul>
@@ -597,7 +596,7 @@
                   
   <section id="smart-contract-modifications">
 <span id="build-sft-sc"></span><h1>Smart contract modifications<a class="headerlink" href="#smart-contract-modifications" title="Link to this heading">#</a></h1>
-<p>In this tutorial, you will use the example <code class="docutils literal notranslate"><span class="pre">cis2-nft</span></code> contract template from Concordium, which you can initialize using the cargo-concordium tool via the <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">init</span></code> command. In this tutorial you will add a couple of things and update some functions to give more flexibility to the template.</p>
+<p>In this tutorial, you will use the example <code class="docutils literal notranslate"><span class="pre">cis2-multi</span></code> contract template from Concordium, which can be found <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi">here</a> for further reading. In this tutorial you will add a couple of things and update some functions to give more flexibility to the template.</p>
 <p>First, you will add a new struct called <code class="docutils literal notranslate"><span class="pre">TokenMetadata</span></code>. It needs to implement the <code class="docutils literal notranslate"><span class="pre">Serialize</span></code> and <code class="docutils literal notranslate"><span class="pre">SchemaType</span></code> traits. For those who are familiar with the Ethereum ecosystem, it’s similar to the ABI.</p>
 <p>Two functions of this struct are implemented to get the provided <code class="docutils literal notranslate"><span class="pre">metadata_url</span></code> and <code class="docutils literal notranslate"><span class="pre">hash</span></code> values. See the <code class="docutils literal notranslate"><span class="pre">to_metadata_url()</span></code> function, which returns MetadataUrl struct which is the part of the CIS-2 standard of the metadata and an optional hash of the content and you need this while minting.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[derive(Debug, Serialize, Clone, SchemaType)]</span>
@@ -644,7 +643,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Always remember, à blockchain itself is a state-keeping machine. If you send a transaction, you change the state. If you mint an NFT or transfer it, the state is changed again. Basically, if you make any change to the data structure, you change the state. So what is this state? Look at the code snippet below.</p>
+<p>Always remember, a blockchain itself is a state-keeping machine. If you send a transaction, you change the state. If you mint an NFT or transfer it, the state is changed again. Basically, if you make any change to the data structure, you change the state. So what is this state? Look at the code snippet below.</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">/// The contract state,</span>
 <span class="sd">///</span>
 <span class="sd">/// Note: The specification does not specify how to structure the contract state</span>
@@ -890,12 +889,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="setup.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Setup the development environment</p>
+        <p class="prev-next-title">Mint a semi-fungible token</p>
       </div>
     </a>
     <a class="right-next"

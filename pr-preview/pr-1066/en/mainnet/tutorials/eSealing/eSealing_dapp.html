@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/eSealing/eSealing_dapp.0bcc42e4-d83d-435d-858a-7b0b0394bcc2.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/eSealing/eSealing_dapp.b2413c06-49e4-453d-8cff-c6ecea123e39.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/eSealing/eSealing_dapp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -503,7 +503,6 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">Mint a semi-fungible token</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sft-minting/setup.html">Setup the development environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
 </ul>
@@ -603,7 +602,7 @@ start your own frontend by following the instructions in the README.md file of t
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Comprehensive instructions on how to set up the Concordium Wallet for Web, create an account in the Concordium Wallet for Web,
-get some testnet CCD and run a local frontend can be found in <a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html#wccd-frontend-set-up"><span class="std std-ref">wCCD frontend-set-up section</span></a>.</p>
+get some testnet CCD and run a local frontend can be found in <a class="reference internal" href="../setup-env.html#setup-wallet"><span class="std std-ref">setup a wallet</span></a>.</p>
 </div>
 <p>The frontend supports the following two flows with the Concordium Wallet for Web (or the Concordium Wallet for Mobile that uses WalletConnect):</p>
 <ul class="simple">
@@ -637,7 +636,7 @@ input parameter because of the used <a class="reference external" href="https://
 with <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/eSealing">this source code</a>.</p>
 <p>You can interact directly with the smart contract using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and your local node
 that is running at port 20001 to register a file hash as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">2481</span><span class="w"> </span>--entrypoint<span class="w"> </span>registerFile<span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccount&gt;<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--parameter-json<span class="w"> </span>fileHash.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">2481</span><span class="w"> </span>--entrypoint<span class="w"> </span>registerFile<span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccount&gt;<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--parameter-json<span class="w"> </span>fileHash.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">fileHash.json</span></code> file with a file hash as content similar to:</p>
@@ -653,12 +652,12 @@ and download <code class="docutils literal notranslate"><span class="pre">concor
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In Unix-like systems you can calculate the sha256 hash of a file with the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>./yourFile.txt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sha256sum<span class="w"> </span>./yourFile.txt
 </pre></div>
 </div>
 </div>
 <p>You can view the <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> and <code class="docutils literal notranslate"><span class="pre">witness</span></code> (sealer account) of an already timestamped file as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">2481</span><span class="w"> </span>--entrypoint<span class="w"> </span>getFile<span class="w"> </span>--parameter-json<span class="w"> </span>fileHash.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">2481</span><span class="w"> </span>--entrypoint<span class="w"> </span>getFile<span class="w"> </span>--parameter-json<span class="w"> </span>fileHash.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20001</span>
 </pre></div>
 </div>
 <img alt="../../_images/displayFile.png" class="align-center" src="../../_images/displayFile.png" />

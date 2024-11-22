@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/wCCD/wCCD-introduction.3973cabe-ef80-4165-b626-efd00188f1e6.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/wCCD/wCCD-introduction.bf74bd3c-e660-4005-b8fb-166e074eca13.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/wCCD/wCCD-introduction';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -503,7 +503,6 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">Mint a semi-fungible token</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sft-minting/setup.html">Setup the development environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
 </ul>
@@ -611,13 +610,14 @@ can represent fungible and non-fungible tokens.
 It combines the Ethereum <code class="docutils literal notranslate"><span class="pre">ERC20</span></code> and <code class="docutils literal notranslate"><span class="pre">ERC721</span></code> standards with some modifications.
 The <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/concordium-cis2/src/lib.rs">CIS-2 library</a>
 is meant to be imported by <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> tokens.
-Please explore the four <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> token standard implementation examples in the Concordium
+Please explore the five <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> token standard implementation examples in the Concordium
 smart contract repo:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs">natively-upgradable wccd</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/pull/128">proxy-implementation-upgradable wccd</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-nft/src/lib.rs">nft</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-dynamic-nft/src/lib.rs">dynamic-nft</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs">multi</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi-royalties/src/lib.rs">multi-royalties</a></p></li>
 </ul>
 </div>
 <p>Implementing two interfaces (one for CCD and another for <code class="docutils literal notranslate"><span class="pre">CIS-2</span></code> tokens)

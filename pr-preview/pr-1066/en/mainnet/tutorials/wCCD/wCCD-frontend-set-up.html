@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/wCCD/wCCD-frontend-set-up.9cf52040-f1f2-441c-bb22-cc047efd4d31.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/wCCD/wCCD-frontend-set-up.1797978d-5b01-4920-a707-354e6b81956a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/wCCD/wCCD-frontend-set-up';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -503,7 +503,6 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">Mint a semi-fungible token</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sft-minting/setup.html">Setup the development environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
 </ul>
@@ -635,70 +634,8 @@ the request (including the signed transaction object) that comes via <code class
 to a request that the Concordium node can execute. The signed transaction is
 transmitted via peer-to-peer communication to other Concordium nodes and becomes
 part of the Concordium blockchain.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you already have an older Concordium Wallet for Web extension installed, check its version and download a newer version if applicable.
-The wCCD frontend requires some new features that are supported by the Concordium Wallet for Web version 0.8.3 or greater.</p>
-</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Setup wallet connected to hosted node (click here)<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You are ready now to install the Concordium Wallet for Web. Install the extension for your browser as described <a class="reference internal" href="../../docs/browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">here</span></a>.</p>
-<p class="sd-card-text">The Concordium Wallet for Web connects to a server hosted by Concordium which will take care of the Concordium node on your behalf.</p>
-<p class="sd-card-text">You are ready now to start the Concordium Wallet for Web by clicking on the Concordium icon at the top right of the
-<code class="docutils literal notranslate"><span class="pre">Chrome</span></code> browser.</p>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_18.png"><img alt="../../_images/wCCD_tutorial_18.png" src="../../_images/wCCD_tutorial_18.png" style="width: 100%;" />
-</a>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">The puzzle icon at the top right of the <code class="docutils literal notranslate"><span class="pre">Chrome</span></code> browser allows you to manage your browser extensions.
-You can enable pinning of the Concordium Wallet for Web.</p>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_13.png"><img alt="../../_images/wCCD_tutorial_13.png" src="../../_images/wCCD_tutorial_13.png" style="width: 30%;" />
-</a>
-</div>
-<p class="sd-card-text">Create a new account on testnet by going through the setup steps of the Concordium Wallet for Web.
-You have to choose a password to secure your Concordium Wallet for Web.
-This password is needed to log in to your Concordium Wallet for Web.</p>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_15.png"><img alt="../../_images/wCCD_tutorial_15.png" src="../../_images/wCCD_tutorial_15.png" style="width: 30%;" />
-</a>
-<p class="sd-card-text">The Concordium Wallet for Web creates a unique secret recovery phrase. Write down the secret recovery phrase
-and keep it in a safe place to be able to recover your accounts in case
-you lose access to your device.</p>
-<p class="sd-card-text">You have completed the setup. Check that your Concordium Wallet for Web is connected to the testnet.</p>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_16.png"><img alt="../../_images/wCCD_tutorial_16.png" src="../../_images/wCCD_tutorial_16.png" style="width: 30%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_17.png"><img alt="../../_images/wCCD_tutorial_17.png" src="../../_images/wCCD_tutorial_17.png" style="width: 30%;" />
-</a>
-<p class="sd-card-text">Before you can create a new account. You need to create an identity.</p>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_19.png"><img alt="../../_images/wCCD_tutorial_19.png" src="../../_images/wCCD_tutorial_19.png" style="width: 30%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_20.png"><img alt="../../_images/wCCD_tutorial_20.png" src="../../_images/wCCD_tutorial_20.png" style="width: 30%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_21.png"><img alt="../../_images/wCCD_tutorial_21.png" src="../../_images/wCCD_tutorial_21.png" style="width: 30%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_22.png"><img alt="../../_images/wCCD_tutorial_22.png" src="../../_images/wCCD_tutorial_22.png" style="width: 30%;" />
-</a>
-<p class="sd-card-text">You are ready now to create a new account on testnet.</p>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_19.png"><img alt="../../_images/wCCD_tutorial_19.png" src="../../_images/wCCD_tutorial_19.png" style="width: 30%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_20.png"><img alt="../../_images/wCCD_tutorial_20.png" src="../../_images/wCCD_tutorial_20.png" style="width: 30%;" />
-</a>
-<p class="sd-card-text">You completed the Concordium Wallet for Web setup. Send some CCD to your new account or request some CCD from the testnet faucet button within the Concordium Wallet for Web.
-Check that your account balance is displayed and you have enough
-CCD to be able to execute transactions.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">You are connected to a website with your Concordium Wallet for Web when you see the green <code class="docutils literal notranslate"><span class="pre">Connected</span></code> button.
-You can toggle on/off the connection by clicking on the button.</p>
-</div>
-<a class="reference internal image-reference" href="../../_images/wCCD_tutorial_14.png"><img alt="../../_images/wCCD_tutorial_14.png" src="../../_images/wCCD_tutorial_14.png" style="width: 40%;" />
-</a>
-</div>
-</details></section>
+<p>Comprehensive instructions on how to set up the wallet can be found in <a class="reference internal" href="../setup-env.html#setup-wallet"><span class="std std-ref">this tutorial</span></a>.</p>
+</section>
 <section id="running-the-web-frontend">
 <h2>Running the web frontend<a class="headerlink" href="#running-the-web-frontend" title="Link to this heading">#</a></h2>
 <p>You have successfully added the Concordium Wallet for Web to your browser in the previous section.
@@ -713,7 +650,7 @@ connects/disconnects an account in the Concordium Wallet for Web to update the f
 <p>React is a popular open-source frontend JavaScript library.</p>
 </div>
 <p>Clone this <a class="reference external" href="https://github.com/Concordium/concordium-browser-wallet">repository</a>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Concordium/concordium-browser-wallet.git
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Concordium/concordium-browser-wallet.git
 </pre></div>
 </div>
 <p>Build and run the frontend as described in the README file of the
@@ -722,40 +659,40 @@ connects/disconnects an account in the Concordium Wallet for Web to update the f
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span></code> in the root folder to install all dependencies.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Build the Concordium helpers by running <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">build:api-helpers</span></code>. You can run this from anywhere in your cloned repository.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>build:api-helpers
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>build:api-helpers
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Navigate to the wCCD example folder.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>./examples/wCCD/
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>./examples/wCCD/
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">build</span></code> in the wCCD folder.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>build
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>build
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">watch</span></code> to enable hot-reload (useful for development) of the web frontend whenever you do any changes to the code.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>watch
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>watch
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">start</span></code> in another terminal to start the web frontend.</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>yarn<span class="w"> </span>start
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>start
 </pre></div>
 </div>
-<p>This command logs a URL in the console (typically <a class="reference external" href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>). Open this URL in the <code class="docutils literal notranslate"><span class="pre">Chrome</span></code> browser.</p>
+<p>This command logs a URL in the console, in our case <a class="reference external" href="http://127.0.0.1:4173">http://127.0.0.1:4173</a> since the app is built using Vite and that is the default port. Open this URL in the <code class="docutils literal notranslate"><span class="pre">Chrome</span></code> browser.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Check that your Concordium Wallet for Web is connected to the testnet and not to mainnet.</p>
