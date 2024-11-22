@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/sponsoredTransactions/index.5705e6b2-b925-46d4-9bbc-7897a087bf5b.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/sponsoredTransactions/index.dbbe6ede-dbc7-4d57-954e-512924a199a0.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/sponsoredTransactions/index';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -625,7 +625,7 @@ The third-party pays the transaction fee to execute the transaction on-chain.</p
 <section id="what-is-the-difference-between-a-normal-transaction-vs-a-sponsored-transaction">
 <h2>What is the difference between a normal transaction vs. a sponsored transaction?<a class="headerlink" href="#what-is-the-difference-between-a-normal-transaction-vs-a-sponsored-transaction" title="Link to this heading">#</a></h2>
 <p>A normal transaction sent to a smart contract is signed by the user’s wallet and authorizes the blockchain to subtract the transaction fee from the user’s wallet as well as to execute a specific action. For example, the action could be to transfer some tokens from the user’s address to another address.</p>
-<p>The user creates a normal transaction by signing its <code class="docutils literal notranslate"><span class="pre">account</span></code> address, its <code class="docutils literal notranslate"><span class="pre">nonce</span></code>, and the <code class="docutils literal notranslate"><span class="pre">action</span></code>. The <code class="docutils literal notranslate"><span class="pre">nonce</span></code> increases sequentially every time the user sends a transaction to the blockchain to prevent replay attacks. The nonce is of type u64 (8 bytes) and by design &gt;= 1.</p>
+<p>The user creates a normal transaction by signing its <code class="docutils literal notranslate"><span class="pre">account</span></code> address, its <code class="docutils literal notranslate"><span class="pre">nonce</span></code>, and the <code class="docutils literal notranslate"><span class="pre">action</span></code>. The <code class="docutils literal notranslate"><span class="pre">nonce</span></code> increases sequentially every time the user sends a transaction to the blockchain to prevent replay attacks. The <a class="reference external" href="https://en.wikipedia.org/wiki/Cryptographic_nonce">nonce</a> is of type u64 (8 bytes) and by design &gt;= 1.</p>
 <img alt="Normal Smart Contract Transaction Flow" class="align-center" src="../../_images/NormalSmartContractTransactionFlow.png" />
 <p>A sponsored transaction decouples the transaction fee authorization (third-party wallet) from the action authorization (user’s wallet).
 The user signs a message (in that case the prepend is <code class="docutils literal notranslate"><span class="pre">account</span></code> address and 8 zero bytes) to authorize the <code class="docutils literal notranslate"><span class="pre">action</span></code>. Hence, the 8 zero bytes ensure that the user does not accidentally sign a valid transaction. This means the red signature is not a transaction, while the black signature is a valid transaction in the image below. The user’s signature is sent to the backend server.
