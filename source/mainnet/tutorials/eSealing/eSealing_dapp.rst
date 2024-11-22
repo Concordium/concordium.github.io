@@ -12,7 +12,7 @@ start your own frontend by following the instructions in the README.md file of t
 .. note::
 
    Comprehensive instructions on how to set up the |bw|, create an account in the |bw|,
-   get some testnet CCD and run a local frontend can be found in :ref:`setup a wallet<setup-wallet>`.
+   get some testnet CCD and run a local frontend can be found in :ref:`setup a wallet <setup-wallet>`.
 
 The frontend supports the following two flows with the |bw| (or the |mw-gen2| that uses WalletConnect):
 
