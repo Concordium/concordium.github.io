@@ -12,7 +12,7 @@ start your own frontend by following the instructions in the README.md file of t
 .. note::
 
    Comprehensive instructions on how to set up the |bw|, create an account in the |bw|,
-   get some testnet CCD and run a local frontend can be found in :ref:`wCCD frontend-set-up section <wCCD-frontend-set-up>`.
+   get some testnet CCD and run a local frontend can be found in :ref:`setup a wallet<setup-wallet>`.
 
 The frontend supports the following two flows with the |bw| (or the |mw-gen2| that uses WalletConnect):
 
@@ -59,7 +59,7 @@ that is running at port 20001 to register a file hash as follows:
 
 .. code-block:: console
 
-   $concordium-client contract update 2481 --entrypoint registerFile --sender <YourAccount> --energy 30000 --parameter-json fileHash.json --grpc-port 20001
+   $ concordium-client contract update 2481 --entrypoint registerFile --sender <YourAccount> --energy 30000 --parameter-json fileHash.json --grpc-port 20001
 
 Create a ``fileHash.json`` file with a file hash as content similar to:
 
@@ -81,13 +81,13 @@ Create a ``fileHash.json`` file with a file hash as content similar to:
 
    .. code-block:: console
 
-      $sha256sum ./yourFile.txt
+      $ sha256sum ./yourFile.txt
 
 You can view the ``timestamp`` and ``witness`` (sealer account) of an already timestamped file as follows:
 
 .. code-block:: console
 
-    $concordium-client contract invoke 2481 --entrypoint getFile --parameter-json fileHash.json --grpc-port 20001
+    $ concordium-client contract invoke 2481 --entrypoint getFile --parameter-json fileHash.json --grpc-port 20001
 
 .. image:: ./images/displayFile.png
    :align: center
