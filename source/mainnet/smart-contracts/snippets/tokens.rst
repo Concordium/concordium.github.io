@@ -3,4 +3,3 @@
 - `multi contract <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs>`_
 - :ref:`nft-index`
 - :ref:`sft-index`
-- :ref:`nft-marketplace-index`

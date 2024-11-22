@@ -47,7 +47,7 @@ Advanced Applications
    Learn how to create decentralized solutions for voting and NFT trading.
 
    * :ref:`Voting dApp <voting-dapp>` - Build a complete voting system
-   * :ref:`NFT Marketplace <nft-marketplace-index>` - Create a marketplace for trading NFTs
+   * :ref:`Low Code NFT Marketplace <low-code-nft-mp-intro>` - Create a marketplace for trading NFTs
 
 Document Sealing
 ----------------
@@ -88,7 +88,7 @@ Additional Resources
    nft-minting/index
    sft-minting/index
    fungible-tokens/index
-   nft-marketplace/index
+   Concordium low-code NFT framework <./low-code-nft-marketplace/introduction.rst>
    eSealing <./eSealing/index>
    Sponsored Transactions <./sponsoredTransactions/index>
    Smart Contract Upgrade <./smartContractUpgrade/index>

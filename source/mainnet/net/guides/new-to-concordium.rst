@@ -73,4 +73,4 @@ Getting started with Concordium
 
 .. dropdown:: I want to make an NFT marketplace
 
-    See the :ref:`NFT marketplace tutorial<nft-marketplace-index>`.
+    See the :ref:`NFT marketplace tutorial<low-code-nft-mp-intro>`.
