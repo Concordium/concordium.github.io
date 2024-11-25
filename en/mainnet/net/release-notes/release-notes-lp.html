@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.052d5b46-06ec-495f-92ad-1350f297ada7.js"></script>
+    <script defer="defer" src="../../_static/tippy/net/release-notes/release-notes-lp.dba411ee-0ae2-430b-8384-c2e60e43e4f9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'net/release-notes/release-notes-lp';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1005,55 +1005,76 @@ body {margin:0;}
 <section id="cryptox-for-ios">
 <span id="rn-cryptox-ios"></span><h3>CryptoX Concordium Wallet for iOS<a class="headerlink" href="#cryptox-for-ios" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p><strong>2.0.0 - October 29, 2024</strong></p>
-<p>Removed:</p>
+<div><p>November 25, 2024</p>
+<p>Version 2.0.1 addresses the following issues:</p>
 <ul class="simple">
-<li><p>Shielding functionalty</p></li>
-<li><p>Old-legacy Send Assets flow</p></li>
+<li><p>Fixed Concordex connectivity Issue</p></li>
+<li><p>Improved recover from file journey</p></li>
 </ul>
-<p>Added:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Previous releases<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+CryptoX Concordium Wallet 2.0.0 - October 29, 2024<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Removed:</p>
 <ul class="simple">
-<li><p>Mainnet, Stagenet, and Testnet schemas</p></li>
-<li><p>Setting up and updating validator pool commission rates</p></li>
-<li><p>Support for WalletConnect CCD transfer requests</p></li>
-<li><p>Ability to see full details of a WalletConnect transaction to sign</p></li>
-<li><p>Validation of metadata checksum when adding CIS-2 tokens</p></li>
-<li><p>Display of balance/ownership when adding CIS-2 tokens</p></li>
-<li><p>Wallet Connect, add sign message functionality</p></li>
-<li><p>New Unshield Assets flow</p></li>
-<li><p>CCD onramp flow</p></li>
-<li><p>News Tab</p></li>
-<li><p>Expport/Import Wallet Private key</p></li>
-<li><p>Push Notifications for incoming transactions both ccd and CIS2Token</p></li>
-<li><p>Support for Protocol 7 – reducing validation/delegation stake no longer locks the whole amount</p></li>
+<li><p class="sd-card-text">Shielding functionality</p></li>
+<li><p class="sd-card-text">Old-legacy Send Assets flow</p></li>
 </ul>
-<p>Fixed:</p>
+<p class="sd-card-text">Added:</p>
 <ul class="simple">
-<li><p>Issue where signing a text message through WalletConnect did not work</p></li>
-<li><p>Issue where a dApp could request to get a transaction signed by a different account than the one chosen for the WalletConnect session</p></li>
-<li><p>Issue where the identity name was off-center when the edit name icon was visible</p></li>
-<li><p>“Invalid WalletConnect request” message repeatedly shown if received a request with unsupported transaction type</p></li>
-<li><p>Exported private key for file-based initial account being incompatible with concordium-client</p></li>
-<li><p>Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp</p></li>
-<li><p>Changing restaking options</p></li>
-<li><p>App crash during identities recover process</p></li>
-<li><p>Send Assets Flow</p></li>
-<li><p>Wallet Connect connection issue</p></li>
+<li><p class="sd-card-text">Mainnet, Stagenet, and Testnet schemas</p></li>
+<li><p class="sd-card-text">Setting up and updating validator pool commission rates</p></li>
+<li><p class="sd-card-text">Support for WalletConnect CCD transfer requests</p></li>
+<li><p class="sd-card-text">Ability to see full details of a WalletConnect transaction to sign</p></li>
+<li><p class="sd-card-text">Validation of metadata checksum when adding CIS-2 tokens</p></li>
+<li><p class="sd-card-text">Display of balance/ownership when adding CIS-2 tokens</p></li>
+<li><p class="sd-card-text">Wallet Connect, add sign message functionality</p></li>
+<li><p class="sd-card-text">New Unshield Assets flow</p></li>
+<li><p class="sd-card-text">CCD onramp flow</p></li>
+<li><p class="sd-card-text">News Tab</p></li>
+<li><p class="sd-card-text">Expport/Import Wallet Private key</p></li>
+<li><p class="sd-card-text">Push Notifications for incoming transactions both ccd and CIS2Token</p></li>
+<li><p class="sd-card-text">Support for Protocol 7 – reducing validation/delegation stake no longer locks the whole amount</p></li>
 </ul>
-<p>Changed:</p>
+<p class="sd-card-text">Fixed:</p>
 <ul class="simple">
-<li><p>Baker/baking renamed to Validator/validating</p></li>
-<li><p>All anon* references removed</p></li>
-<li><p>WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts</p></li>
-<li><p>WalletConnect transaction signing request now shows the receiver, either smart contract or an account, and amount of CCD to send, not including CIS-2 tokens</p></li>
+<li><p class="sd-card-text">Issue where signing a text message through WalletConnect did not work</p></li>
+<li><p class="sd-card-text">Issue where a dApp could request to get a transaction signed by a different account than the one chosen for the WalletConnect session</p></li>
+<li><p class="sd-card-text">Issue where the identity name was off-center when the edit name icon was visible</p></li>
+<li><p class="sd-card-text">“Invalid WalletConnect request” message repeatedly shown if received a request with unsupported transaction type</p></li>
+<li><p class="sd-card-text">Exported private key for file-based initial account being incompatible with concordium-client</p></li>
+<li><p class="sd-card-text">Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp</p></li>
+<li><p class="sd-card-text">Changing restaking options</p></li>
+<li><p class="sd-card-text">App crash during identities recover process</p></li>
+<li><p class="sd-card-text">Send Assets Flow</p></li>
+<li><p class="sd-card-text">Wallet Connect connection issue</p></li>
 </ul>
-</div></blockquote>
+<p class="sd-card-text">Changed:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Baker/baking renamed to Validator/validating</p></li>
+<li><p class="sd-card-text">All anon* references removed</p></li>
+<li><p class="sd-card-text">WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts</p></li>
+<li><p class="sd-card-text">WalletConnect transaction signing request now shows the receiver, either smart contract or an account, and amount of CCD to send, not including CIS-2 tokens</p></li>
+</ul>
+</div>
+</details></div>
+</details></div></blockquote>
 </section>
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p><strong>1.3.1 - November 7, 2024</strong></p>
-<p>This version fixes the following UI issue:</p>
+<div><p>November 7, 2024</p>
+<p>Version 1.3.1 fixes the following UI issue:</p>
 <p>While updating validator stakes, the app shows invalid commission.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
