@@ -18,56 +18,65 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    **2.0.0 - October 29, 2024**
+    November 25, 2024
 
-    Removed:
+    Version 2.0.1 addresses the following issues:
 
-    - Shielding functionalty
-    - Old-legacy Send Assets flow
+    - Fixed Concordex connectivity Issue
+    - Improved recover from file journey
 
-    Added:
+    .. dropdown:: Previous releases
 
-    - Mainnet, Stagenet, and Testnet schemas
-    - Setting up and updating validator pool commission rates
-    - Support for WalletConnect CCD transfer requests
-    - Ability to see full details of a WalletConnect transaction to sign
-    - Validation of metadata checksum when adding CIS-2 tokens
-    - Display of balance/ownership when adding CIS-2 tokens
-    - Wallet Connect, add sign message functionality
-    - New Unshield Assets flow
-    - CCD onramp flow
-    - News Tab
-    - Expport/Import Wallet Private key
-    - Push Notifications for incoming transactions both ccd and CIS2Token
-    - Support for Protocol 7 – reducing validation/delegation stake no longer locks the whole amount
+        .. dropdown:: |cryptox| 2.0.0 - October 29, 2024
 
-    Fixed:
+            Removed:
 
-    - Issue where signing a text message through WalletConnect did not work
-    - Issue where a dApp could request to get a transaction signed by a different account than the one chosen for the WalletConnect session
-    - Issue where the identity name was off-center when the edit name icon was visible
-    - "Invalid WalletConnect request" message repeatedly shown if received a request with unsupported transaction type
-    - Exported private key for file-based initial account being incompatible with concordium-client
-    - Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp
-    - Changing restaking options
-    - App crash during identities recover process
-    - Send Assets Flow
-    - Wallet Connect connection issue
+            - Shielding functionality
+            - Old-legacy Send Assets flow
 
-    Changed:
+            Added:
 
-    - Baker/baking renamed to Validator/validating
-    - All anon* references removed
-    - WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts
-    - WalletConnect transaction signing request now shows the receiver, either smart contract or an account, and amount of CCD to send, not including CIS-2 tokens
+            - Mainnet, Stagenet, and Testnet schemas
+            - Setting up and updating validator pool commission rates
+            - Support for WalletConnect CCD transfer requests
+            - Ability to see full details of a WalletConnect transaction to sign
+            - Validation of metadata checksum when adding CIS-2 tokens
+            - Display of balance/ownership when adding CIS-2 tokens
+            - Wallet Connect, add sign message functionality
+            - New Unshield Assets flow
+            - CCD onramp flow
+            - News Tab
+            - Expport/Import Wallet Private key
+            - Push Notifications for incoming transactions both ccd and CIS2Token
+            - Support for Protocol 7 – reducing validation/delegation stake no longer locks the whole amount
+
+            Fixed:
+
+            - Issue where signing a text message through WalletConnect did not work
+            - Issue where a dApp could request to get a transaction signed by a different account than the one chosen for the WalletConnect session
+            - Issue where the identity name was off-center when the edit name icon was visible
+            - "Invalid WalletConnect request" message repeatedly shown if received a request with unsupported transaction type
+            - Exported private key for file-based initial account being incompatible with concordium-client
+            - Possibility of spamming the app with WalletConnect requests from a malfunctioning dApp
+            - Changing restaking options
+            - App crash during identities recover process
+            - Send Assets Flow
+            - Wallet Connect connection issue
+
+            Changed:
+
+            - Baker/baking renamed to Validator/validating
+            - All anon* references removed
+            - WalletConnect session proposals are now rejected if the namespace or methods are not supported, or if the wallet contains no accounts
+            - WalletConnect transaction signing request now shows the receiver, either smart contract or an account, and amount of CCD to send, not including CIS-2 tokens
 
 .. _rn-cryptox-android:
 
 |cryptox| for Android
 ---------------------
-    **1.3.1 - November 7, 2024**
+    November 7, 2024
 
-    This version fixes the following UI issue:
+    Version 1.3.1 fixes the following UI issue:
 
     While updating validator stakes, the app shows invalid commission.
 
