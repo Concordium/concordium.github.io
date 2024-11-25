@@ -199,12 +199,12 @@ html {
 }
 /* Logo positioning */
 .navbar-header-items__start {
-    position: absolute;
+    position: relative;
     left: 0;
     padding-left: 1rem;
     z-index: 1;  /* Reduced z-index */
     background: white;
-    max-width: 20%;
+    max-width: 167px; /* Match logo's natural width*/
 }
 
 /* Menu positioning */
@@ -222,7 +222,13 @@ img.logo {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .navbar-header-items:not(.navbar-header-items__start) {
-        margin-left: 150px;
+    .navbar-header-items__start{
+        max-width: 120px; /* Smaller width on mobile */
+        margin-left: 3rem; /* Make space for menu button */
+    }
+    
+    img.logo{
+        width: 100%;
+        height: auto;
     }
 }
