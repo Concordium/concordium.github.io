@@ -1,25 +1,26 @@
 .. include:: ../../../variables.rst
 .. _baker-windows:
 
-===============================
-Run a validator node on Windows
-===============================
+================================
+Import validator keys on Windows
+================================
 
 This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a Windows node that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two epochs after the transaction has been approved.
 
 Prerequisites
 =============
 
--  Run Windows 10 or later or Windows Server 2019 or later.
--  :ref:`Run a node on Windows<run-node-windows>`
-- If you want to run the node as a validator, you must have generated validator keys. How you generate validator keys depends on which wallet you are using. For an overview of the process, see :ref:`baker-concept`.
+- Run Windows 10 or later or Windows Server 2019 or later.
+- Have the administrator password to your computer.
+- :ref:`Run a node on Windows<run-node-windows>`
+- If you want to run the node as a validator, you must have generated validator keys, see :ref:`add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
 .. _configure-baker-windows:
 
 Configure a validator node on Windows
 =====================================
 
-#. Create validator keys in |bw|, |mw-gen2|, |mw-gen1|, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet.
+#. Create validator keys in |bw|, |mw-gen2|, |mw-gen1|, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet. Follow :ref:`this <add-baker-mw>` article for help.
 
    .. Note::
 

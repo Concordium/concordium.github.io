@@ -1,18 +1,19 @@
 .. include:: ../../../variables.rst
 .. _baker-ubuntu:
 
-==============================
-Run a validator node on Ubuntu
-==============================
+===============================
+Import validator keys on Ubuntu
+===============================
 
-This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a server that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks.
+This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a server that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two epochs after the transaction has been approved.
 
 Prerequisites
 =============
 
--  The node is installed and running.
-
--  If you want to run the node as a validator, you must have generated validator keys. How you generate validator keys depends on which wallet you are using. For an overview of the process, see :ref:`baker-concept`.
+- Run Ubuntu 20.04 or later
+- Have the administrator password to your computer.
+- :ref:`Run a node on ubuntu - Mainnet <run-node-ubuntu>` or :ref:`Run a node on ubuntu - Testnet <run-node-ubuntu-testnet>`
+-  If you want to run the node as a validator, you must have generated validator keys, see :ref:`add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
 .. dropdown:: Configure the node with validator keys on Mainnet
 
