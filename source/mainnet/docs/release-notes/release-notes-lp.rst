@@ -74,13 +74,22 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    November 7, 2024
+    November 28, 2024
 
-    Version 1.3.1 fixes the following UI issue:
+    Version 1.3.2 fixes the following issues:
 
-    While updating validator stakes, the app shows invalid commission.
+    - Crashing on launch when Google Play Services is disabled
+    - Inconsistent transaction fee for smart contract invocation
+    - Crashing when first launching the app offline
+    - Not receiving CIS-2 transaction notifications when they are disabled for CCD transactions
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.3.1 - November 7, 2024
+
+            Version 1.3.1 fixes the following UI issue:
+
+            While updating validator stakes, the app shows invalid commission.
 
         .. dropdown:: |cryptox| 1.3.0 - October 28, 2024
 
