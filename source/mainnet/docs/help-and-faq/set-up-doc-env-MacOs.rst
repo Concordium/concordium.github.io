@@ -247,16 +247,3 @@ Now that you have the Concordium development environment set up, follow these st
     git push origin <your-branch-name>
 
   Once all changes are approved, the pull request will be merged, and your contributions will be included in the official documentation.
-
-
-
-
-
-
-
-
-
-
-
-
-
