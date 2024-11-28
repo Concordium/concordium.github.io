@@ -1,6 +1,3 @@
-
-
-
 .. include:: ../variables.rst
 .. _tools2:
 
