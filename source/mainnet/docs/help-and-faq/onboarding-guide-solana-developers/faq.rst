@@ -756,6 +756,3 @@ Miscellaneous
 
 .. _Chain: https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/struct.Chain.html
 .. |Chain| replace:: ``Chain``
-
-
-
