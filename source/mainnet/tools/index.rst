@@ -1,6 +1,3 @@
-
-
-
 .. include:: ../variables.rst
 .. _tools2:
 
@@ -76,6 +73,3 @@ Auxiliary Tools
     CCDScan<./ccd-scan/ccd-scan.rst>
     Concordium Client<concordium-client>
     Auxiliary Tools<developer-tools>
-
-
-

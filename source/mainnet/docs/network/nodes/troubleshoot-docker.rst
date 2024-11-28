@@ -2,7 +2,7 @@
 
 ===========================================
 Troubleshoot a node in Docker
-===========================================
+==========================
 
 This guide describes how to troubleshoot a node on the Concordium network running in Docker.
 
