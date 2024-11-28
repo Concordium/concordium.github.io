@@ -73,6 +73,3 @@ Auxiliary Tools
     CCDScan<./ccd-scan/ccd-scan.rst>
     Concordium Client<concordium-client>
     Auxiliary Tools<developer-tools>
-
-
-
