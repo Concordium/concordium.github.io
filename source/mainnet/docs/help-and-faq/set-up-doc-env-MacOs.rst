@@ -113,7 +113,7 @@ Open your browser and visit http://localhost:8000 to view the documentation. To 
 
   This compiles the documentation into a format that can be hosted and accessed by users.
 
-- Step: Checking for Dead Links
+- Step 9: Checking for Dead Links
   This step focuses specifically on ensuring that all hyperlinks within the documentation are functional and lead to valid pages. You can run this command:
 
 .. code-block:: console
