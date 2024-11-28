@@ -24,6 +24,3 @@ If you need to know how to send CCDs, connect dApps, manage fungible and non-fun
     add-delegation
     remove-delegation
     update-delegation
-
-
-
