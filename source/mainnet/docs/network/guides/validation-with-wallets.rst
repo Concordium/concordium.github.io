@@ -18,7 +18,7 @@ Validation is possible with the Concordium wallets as well as with the ``Concord
    To check the minimum required amount of CCD (currently 500000) to become a validator, see :ref:`consensus show-chain-parameters`.
 
 Validation with |bw|
-------------------------
+---------------------
 
 This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using |bw| and running a node.
 
