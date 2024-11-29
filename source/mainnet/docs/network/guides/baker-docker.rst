@@ -2,17 +2,17 @@
 .. include:: ../../../variables.rst
 .. _baking-docker:
 
-==============================
-Run a validator node on Docker
-==============================
+===============================
+Import validator keys on Docker
+===============================
 
-This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a Docker/Linux node that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks.
+This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a Docker/Linux node that participates in the Concordium network. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two epochs after the transaction has been approved.
 
 Prerequisites
 =============
 
-- :ref:`Install and run the node<run-a-node>`
-- If you want to run the node as a validator, you must have generated validator keys. How you generate validator keys depends on which wallet you are using. For an overview of the process, see :ref:`baker-concept`.
+- :ref:`Run a node on Docker<run-a-node>`
+- If you want to run the node as a validator, you must have generated validator keys, see :ref:`add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
 Configure a node as a validator
 ===============================

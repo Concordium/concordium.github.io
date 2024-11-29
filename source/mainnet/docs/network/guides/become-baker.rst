@@ -26,8 +26,8 @@ After completing these steps, the validator node will produce blocks. If a produ
 
 Prerequisites
 =============
--  Run a node
--  Create an account in a wallet
+-  :ref:`Run a node <node-requirements>`
+-  :ref:`Create an account in a wallet <setup-wallets-lp>`
 -  Export a file with the account information
 -  :ref:`Install the Concordium Client<concordium-node-and-client-download>`
 
@@ -55,13 +55,13 @@ To import an account run:
 
 .. code-block:: console
 
-   $concordium-client config account import <path/to/exported/file> --name validatorAccount
+   $ concordium-client config account import <path/to/exported/file> --name validatorAccount
 
 For the |bw|, use the following command:
 
 .. code-block:: console
 
-    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
+   $ concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
 
 ``concordium-client`` asks for a password to decrypt the exported file and import all accounts. The same password will be used for encrypting the transaction signing keys and the encrypted transfers key.
 
@@ -76,13 +76,13 @@ To create a fresh set of keys run:
 
 .. code-block:: console
 
-   $concordium-client validator generate-keys <keys-file>.json
+   $ concordium-client validator generate-keys <keys-file>.json
 
 You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``validator add`` transaction to the network:
 
 .. code-block:: console
 
-   $concordium-client validator add MyValidatorKeys.json --sender validatorAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --out <concordium-data-dir>/validator-credentials.json
+   $ concordium-client validator add MyValidatorKeys.json --sender validatorAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --out <concordium-data-dir>/validator-credentials.json
 
 
 where you replace
@@ -161,7 +161,7 @@ To see if the node is producing blocks, you can check various sources that offer
 
   .. code-block:: console
 
-     $concordium-client consensus show-parameters --include-validators
+     $ concordium-client consensus show-parameters --include-validators
      Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0
      Validators:
                              Account                       Lottery power  Account Name
@@ -181,7 +181,7 @@ To see if the node is producing blocks, you can check various sources that offer
 
   .. code-block:: console
 
-     $./concordium-client account show validatorAccount
+     $ concordium-client account show validatorAccount
      ...
 
      Validator: #22
@@ -198,7 +198,7 @@ To update the validator stake run
 
 .. code-block:: console
 
-   $concordium-client validator update-stake --stake <newAmount> --sender validatorAccount
+   $ concordium-client validator update-stake --stake <newAmount> --sender validatorAccount
 
 When the staked amount is modified, the probability that a validator gets elected to produce blocks is also modified.
 
@@ -216,7 +216,7 @@ When a validator **decreases the staked amount**, the change requires a 21 day c
 
 .. code-block:: console
 
-   $concordium-client account show validatorAccount
+   $ concordium-client account show validatorAccount
    ...
 
    Validator: #22
@@ -242,7 +242,7 @@ When a validator **decreases the staked amount**, the change requires a 21 day c
 
    .. code-block:: console
 
-      $concordium-client consensus show-chain-parameters
+      $ concordium-client consensus show-chain-parameters
       ...
             + pool owner cooldown duration: 21d
       ...
@@ -262,14 +262,14 @@ You can choose to modify this behavior and instead receive the rewards in the ac
 
 .. code-block:: console
 
-   $concordium-client validator update-restake False --sender validatorAccount
-   $concordium-client validator update-restake True --sender validatorAccount
+   $ concordium-client validator update-restake False --sender validatorAccount
+   $ concordium-client validator update-restake True --sender validatorAccount
 
 Changes to the restake flag will take effect immediately; however, the changes start affecting lottery power in the next :term:`pay day`. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day. The current value of the switch can be seen in the account information which you can query using ``concordium-client``:
 
 .. code-block:: console
 
-   $concordium-client account show validatorAccount
+   $ concordium-client account show validatorAccount
    ...
 
    Validator: #22
@@ -294,7 +294,7 @@ When the validator is registered, it will automatically restake the earnings, bu
 
 .. code-block:: console
 
-   $concordium-client validator add validator-keys.json --sender validatorAccount --stake <amount-to-stake> --out validator-credentials.json --no-restake
+   $ concordium-client validator add validator-keys.json --sender validatorAccount --stake <amount-to-stake> --out validator-credentials.json --no-restake
 
 Update validator keys
 ---------------------
@@ -303,7 +303,7 @@ If it is necessary to update your validator keys, you need to first generate new
 
 .. code-block:: console
 
-   $concordium-client validator generate-keys <keys-file>.json
+   $ concordium-client validator generate-keys <keys-file>.json
 
 You can choose an arbitrary name for the ``keys file``.
 
@@ -311,7 +311,7 @@ Then run the transaction:
 
 .. code-block:: console
 
-   $concordium-client validator set-key <keys-file>.json --sender <account> --out <concordium-data-dir>/validator-credentials.json
+   $ concordium-client validator set-key <keys-file>.json --sender <account> --out <concordium-data-dir>/validator-credentials.json
 
 ``--sender`` is the name or address of the transaction's sender account. The name is the one that's used when you :ref:`import the account<concordium-client-import-accounts-keys>` (assuming that this
 was done). It defaults to the account name "default".
@@ -327,7 +327,7 @@ Use ``validator configure`` to configure a validator and open a staking pool. Th
 
 .. code-block:: console
 
-   $concordium-client validator configure --sender "acc1" --stake 500001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-block-reward-commission 0.1 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/validator-credentials.json
+   $ concordium-client validator configure --sender "acc1" --stake 500001 --open-delegation-for existing --delegation-transaction-fee-commission 0.1 --delegation-block-reward-commission 0.1 --validator-url https://example.com/validator --keys-in MyBakerKeys.json --keys-out <concordium-data-dir>/validator-credentials.json
 
 Configure validator has the following optional arguments:
 
@@ -354,14 +354,14 @@ so you have to execute:
 
 .. code-block:: console
 
-   $concordium-client validator remove --sender validatorAccount
+   $ concordium-client validator remove --sender validatorAccount
 
 This removes the validator from the list of validators and unlocks the staked amount on the validator so that it can be transferred or moved freely. When removing the validator, the change has the same timeline as decreasing
 the staked amount. The change requires a 21 day cool-down period to take effect. The change becomes visible on the chain when the transaction is included in a block and takes effect at the next :term:`pay day` after the cool-down ends. You can check when the change will take effect by querying the account information:
 
 .. code-block:: console
 
-   $concordium-client account show validatorAccount
+   $ concordium-client account show validatorAccount
    ...
 
    Validator #22 to be removed at epoch 275 (2020-12-24 13:56:26 UTC)

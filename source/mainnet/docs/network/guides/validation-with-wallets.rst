@@ -17,10 +17,11 @@ Validation is possible with the Concordium wallets as well as with the ``Concord
 
    To check the minimum required amount of CCD (currently 500000) to become a validator, see :ref:`consensus show-chain-parameters`.
 
-Validation with |bw|
----------------------
 
-This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using |bw| and running a node.
+Validation with |bw|, |cryptox|, |mw-gen1| and |mw-gen2|
+--------------------------------------------------------
+
+This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using all wallets aside from the Desktop Wallet
 
 .. dropdown:: Step 1: Set up the node
 
@@ -28,11 +29,13 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 2: Set up the Wallet
 
-   The |bw| is available for chromium browsers. For instructions about download and setup, see :ref:`setup-browser-wallet`.
+   The |bw| is available for chromium browsers. For instructions about download and setup, see :ref:`setup-browser-wallet`. For instructions about download and setup of |cryptox|, see :ref:`setup-cryptox-wallet`.
+   The |mw-gen1|, |mw-gen2|, and |cryptox| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`.
 
 .. dropdown:: Step 3: Set up an identity and account
 
    Once you've installed the Wallet, you must set up an identity and an account.
+   If using |mw-gen1| it is recommended to create a separate account to use as a validator account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
 
 .. dropdown:: Step 4: Add validation to an account
 
@@ -91,40 +94,6 @@ This overview describes the recommended scenario for running a node and becoming
 
 For information about how to update your validator or stop validation, see :ref:`Change validator options<update-baker-mw>`.
 
-
-Validation with |mw-gen1|, |mw-gen2|, and |cryptox|
----------------------------------------------------
-
-This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using |mw-gen1|, |mw-gen2|, or |cryptox|.
-
-.. dropdown:: Step 1: Set up the node
-
-   For validation you must be running a node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
-
-.. dropdown:: Step 2: Set up the Wallet
-
-   The |mw-gen1|, |mw-gen2|, and |cryptox| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`. For instructions about download and setup of |cryptox|, see :ref:`setup-cryptox-wallet`.
-
-.. dropdown:: Step 3: Set up an identity and account
-
-   Once you've installed the Wallet, you must set up an identity and an account. If using |mw-gen1| it is recommended to create a separate account to use as a validator account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
-
-.. dropdown:: Step 4: Add validation to an account
-
-   Configure validation for an account. For instructions, see :ref:`add-baker-mw`.
-
-.. dropdown:: Step 5: Register validator keys
-
-   The last step is to configure the running node with the validator keys so the node can start producing blocks. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.
-
-   - :ref:`On Windows<baker-windows>`
-
-   - :ref:`On macOS<baker-macos>`
-
-   - :ref:`On Ubuntu<baker-Ubuntu>`
-
-   - :ref:`On Docker/Linux<baking-docker>`.
-
 For information about how to update your validator or stop validation, see :ref:`Change baker options<update-baker-mw>`.
 
 Validation with ``Concordium-client``
@@ -137,6 +106,5 @@ Next steps
 
 - Read the information about :ref:`validation management<baker-pool>`.
 - If you are interested in a staking pool, read the :ref:`Delegation FAQ<delegation-faq-old>`.
-- You need to :ref:`add a validator <add-baker-mw>` to the account you created. Import the validator keys to your node.
 - You can then :ref:`update validator settings <update-baker-mw>` as needed to manage your validator.
 
