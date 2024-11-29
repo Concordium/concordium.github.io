@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
 .. _build-contract:
 
-==============================
+=======================
 Build a smart contract
-================
+=======================
 
 The contract development guides help you get started writing smart contracts. Here you have guides to help you set up your tools, test your contract, and more.
 
