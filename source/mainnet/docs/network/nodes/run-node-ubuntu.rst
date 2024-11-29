@@ -1,8 +1,8 @@
 .. _run-node-ubuntu:
 
-=============================================
+==============================
 Run a node on Ubuntu - Mainnet
-===========================
+==============================
 
 This guide describes how organizations can run a node on the Concordium network from a server and how to set up the node to run as a :ref:`validator node<baker-node-Ubuntu>`.
 
