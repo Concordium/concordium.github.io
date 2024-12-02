@@ -23,7 +23,7 @@ Recommendations for staking pool owners
 
 If you are running a staking pool, you are responsible for managing your pool to maximize returns, both for yourself and those who have delegated stake to your pool.
 
-To help potential delegators with their choice, it is a good idea to create a website with information and add this URL to your staking pool configuration. The information you need is available on `CCDScan <https://ccdscan.io>`_ , read :ref:`this staking article <home-screen-baker>` for more details on and the tool. Through it, potential delegators can read about the pool and understand your goals. Having a URL on your staking pool configuration is not required.
+To help potential delegators with their choice, it is a good idea to create a website with information and add this URL to your staking pool configuration. The information you need is available on `CCDScan <https://ccdscan.io>`_ , read :ref:`this staking article <home-screen-baker>` for more details on and the tool. Through it, potential delegators can read about the pool, leading to a better understaing your goals. Having a URL on your staking pool configuration is not required.
 
 Research a staking pool
 =======================
