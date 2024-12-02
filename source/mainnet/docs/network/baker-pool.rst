@@ -16,7 +16,7 @@ As a validator you should manage your validator node responsibily for the benefi
 - Protect your validator keys so that they are not lost or compromised.
 - Check regularly to make sure that you are not close to the bounding cap for max capital for a validator. If you're getting close to the max capital, you can split and make another validator to divide the capital.
 - Open a staking pool. This allows others to delegate stake to you, thus increasing your effective stake and your odds of getting selected to produce a block. You also receive a commission on the delegator's rewards.
-- Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and read the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a validator, including node software releases and protocol updates. To subscribe on the Mainnet status page click **Get updates**, choose your preferred communication medium, then choose whether to get all updates or only updates for specific products and click **Subscribe** 
+- Subscribe to the `Mainnet status page <https://status.mainnet.concordium.software/>`_ and read the `release information on Discourse <https://support.concordium.software/c/releases/9>`_ to stay informed about updates and changes that may affect you as a validator, including node software releases and protocol updates. To subscribe on the Mainnet status page click **Get updates**, choose your preferred communication medium, then choose whether to get all updates or only updates for specific products and click **Subscribe**
 
 Recommendations for staking pool owners
 ---------------------------------------
