@@ -513,7 +513,7 @@ redirects = {
     "./net/resources/ccd-scan-staking": "tools/ccd-scan/ccd-scan-staking",
     "./net/resources/ccd-scan-transactions": "tools/ccd-scan/ccd-scan-transactions",
     "./net/guides/sdks-apis": "tools/sdks-apis.html",
-    "./net/references/grcp2": "tools/sdk-apis.html",
+    "./net/references/grcp2": "tools/sdks-apis.html",
     "./net/guides/wallet-sdk/wallet-sdk": "tools/wallet-sdk/wallet-sdk.html",
     "./net/guides/wallet-sdk/wallet-sdk-identity-creation": "tools/wallet-sdk/wallet-sdk-identity-creation.html",
     "./net/guides/wallet-sdk/wallet-sdk-identity-recovery": "tools/wallet-sdk/wallet-sdk-identity-recovery.html",
