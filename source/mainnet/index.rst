@@ -1,11 +1,8 @@
-:template: index.html
-
-=======
-Mainnet
-=======
 
 .. toctree::
+   :maxdepth: 2
    :hidden:
 
-   net/index
-   smart-contracts/general/introduction
+   Docs <docs/index>
+   tutorials/index
+   tools/index
