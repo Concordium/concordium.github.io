@@ -25,7 +25,6 @@ Unit test a contract in Rust
 
 This guide describes how to write unit tests for a smart contract written in
 Rust.
-For information about how to test a smart contract Wasm module, see :ref:`local-simulate`.
 
 A smart contract in Rust is written as a library and you can unit test it like a
 library by annotating functions with a ``#[test]`` attribute.
