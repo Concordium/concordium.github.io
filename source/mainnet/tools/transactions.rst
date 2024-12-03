@@ -6,7 +6,7 @@
 Concordium Client transactions
 ==============================
 
-You can perform all types of transactions with the :ref:`concordium-client<concordium-client>`. To do so, you use specialized subcommands. For an introduction to transactions, see :ref:`Transactions overview <transactions-overview>`.
+You can perform all types of transactions with the :ref:`concordium-client<concordium-client>`. To do so, you use specialized subcommands.
 
 .. Note::
 
