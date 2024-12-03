@@ -68,7 +68,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     - Piggy bank: :ref:`Piggy bank tutorial<piggy-bank>` / `Piggy bank dApp <https://piggybank.testnet.concordium.com>`__
     - wCCD: :ref:`wCCD tutorial<wCCD>` / `wCCD dApp <https://wccd.testnet.concordium.com/>`_
     - Voting: :ref:`Voting tutorial<voting-dapp>` / `Voting dApp <https://voting.testnet.concordium.com/>`_
-    - ID2.0: :ref:`Create proofs tutorial<gallery>` / `Gallery dApp <https://gallery.testnet.concordium.com/>`_
+    - ID2.0: `Backend and Frontend <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery>`_ / `Gallery dApp <https://gallery.testnet.concordium.com/>`_
     - eSealing: :ref:`eSealing tutorial<eSealing>` / `eSealing dApp <https://esealing.testnet.concordium.com>`_
     - signMessage: `Frontend code <https://github.com/Concordium/concordium-dapp-examples/tree/main/signMessage>`__ / `signMessage dApp <http://signmessage.testnet.concordium.com/>`__
 
@@ -87,8 +87,6 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
     - `Mainnet status page <https://status.mainnet.concordium.software>`__
 
     - `Testnet status page <https://status.testnet.concordium.software>`__
-
-    For information about the status pages, see :ref:`Status pages<dashboards>`.
 
     **CCDScan**
 
