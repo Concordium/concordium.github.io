@@ -62,7 +62,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Concordium Protocol
    :hidden:
 
-   What is the Concordium Protocol? <protocol/introduction>
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
@@ -84,7 +83,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Network
    :hidden:
 
-   What is the Concordium Network? <network/introduction-network>
    Validator Management <network/baker-pool>
    Run a node on Concordium <network/nodes/node-requirements>
    Use Concordium's ID layer <network/web3-id/index.rst>

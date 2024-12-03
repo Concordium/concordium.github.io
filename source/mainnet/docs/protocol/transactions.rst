@@ -55,6 +55,5 @@ You can make transactions using one of the Concordium wallets or the Concordium 
    :hidden:
    :maxdepth: 1
 
-   concepts-transactions
    transaction lifecycle
    transaction-fees
