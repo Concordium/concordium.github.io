@@ -37,8 +37,6 @@ Starting a new project on the Concordium blockchain? Have a look at the `dApp st
 
     :ref:`Information about ID proofs<create-proofs>`
 
-    :ref:`Tutorial about the gallery dApp<gallery>`
-
     `Backend and frontend code <https://github.com/Concordium/concordium-dapp-examples/tree/main/gallery>`__
 
 .. dropdown:: eSealing
