@@ -739,7 +739,7 @@ Miscellaneous
 
     .. note::
 
-        The desktop wallet supports all transaction types (:ref:`except smart contract transactions<transactions-overview>`).
+        The desktop wallet supports all transaction types, except smart contract transactions.
 
     .. note::
 
