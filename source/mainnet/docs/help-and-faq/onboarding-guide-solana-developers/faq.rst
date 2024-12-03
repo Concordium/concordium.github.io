@@ -557,7 +557,7 @@ Standards
     The `CIS-2` library is meant to be imported by `CIS-2` tokens.
     Please explore the `CIS-2` token standard implementations that import the `CIS-2` library:
 
-    .. include:: ../../../smart-contracts/snippets/tokens.rst
+    .. include:: ../snippets/tokens.rst
 
 .. dropdown::  Is there something similar to the Solana's wrapped token wSOL?
 

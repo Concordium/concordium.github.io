@@ -7,8 +7,8 @@
 Simulation contexts
 ===================
 
-This is a reference of how the init- and receive-context is specified as JSON,
-when :ref:`simulating contract functions locally<local-simulate>`.
+This is a reference of how the init and receive context is specified as JSON,
+when simulating contract functions locally.
 
 Init context
 ============
