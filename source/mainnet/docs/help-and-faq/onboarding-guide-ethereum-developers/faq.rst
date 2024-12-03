@@ -772,7 +772,7 @@ Miscellaneous
 
     .. note::
 
-        The desktop wallet supports all transaction types (:ref:`except smart contract transactions<transactions-overview>`).
+        The desktop wallet supports all transaction types, except smart contract transactions.
 
     In contrast, on Ethereum, an externally owned account cannot hold more than one key, and no externally
     owned account multiSig wallet exists.
