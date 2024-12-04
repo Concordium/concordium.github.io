@@ -535,7 +535,7 @@ redirects = {
     "./net/browser-wallet/browser-wallet-faq": "docs/browser-wallet/browser-wallet-faq.html",
     "./net/concepts/concepts-transactions": "docs/protocol/transactions.html",
     "net/guides/developer-page": "/en/mainnet/tools/developer-page.html",
-    "net/mobile-wallet-gen2/setup-mobile-wallet": "/en/mainnet/docs/guides/setup-cryptox-wallet.html"
+    "net/mobile-wallet-gen2/setup-mobile-wallet": "/en/mainnet/docs/guides/setup-cryptox-wallet.html",
     "smart-contracts/guides/setup-tools": "/en/mainnet/docs/smart-contracts/guides/setup-contract.html",
     "smart-contracts/guides/build-schema": "/en/mainnet/docs/smart-contracts/guides/build-schema.html",
     "smart-contracts/guides/contract-dev-guides": "/en/mainnet/docs/smart-contracts/guides/build-contract.html",
