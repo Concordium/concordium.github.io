@@ -533,5 +533,6 @@ redirects = {
     "./net/guides/cryptox-faq": "docs/guides/cryptox-faq.html",
     "./net/mobile-wallet-gen2/faq": "docs/guides/mobule-wallet-gen2/faq.html",
     "./net/browser-wallet/browser-wallet-faq": "docs/browser-wallet/browser-wallet-faq.html",
-    "./net/concepts/concepts-transactions": "docs/protocol/transactions.html"
+    "./net/concepts/concepts-transactions": "docs/protocol/transactions.html",
+    "./net/guides/developer-page": "tools/developer-page.html"
     }
