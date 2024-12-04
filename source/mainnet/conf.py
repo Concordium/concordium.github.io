@@ -534,11 +534,10 @@ redirects = {
     "./net/mobile-wallet-gen2/faq": "docs/guides/mobule-wallet-gen2/faq.html",
     "./net/browser-wallet/browser-wallet-faq": "docs/browser-wallet/browser-wallet-faq.html",
     "./net/concepts/concepts-transactions": "docs/protocol/transactions.html",
-    "./en/mainnet/net/guides/developer-page": "tools/developer-page.html",
-    "./en/mainnet/smart-contracts/guides/setup-tools": "docs/smart-contracts/guides/setup-contract.html",
-    "./en/mainnet/smart-contracts/guides/build-schema": "docs/smart-contracts/build-schema.html",
-    "./en/mainnet/smart-contracts/guides/contract-dev-guides": "docs/smart-contracts/build-contract.html",
-    "./en/mainnet/smart-contracts/guides/quick-start": "docs/smart-contracts/guides/quick-start.html",
-    "./en/mainnet/smart-contracts/tutorials/index": "tutorials/index.html"
-
+    "./en/mainnet/net/guides/developer-page": "en/mainnet/tools/developer-page.html",
+    "./en/mainnet/smart-contracts/guides/setup-tools": "en/mainnet/docs/smart-contracts/guides/setup-contract.html",
+    "./en/mainnet/smart-contracts/guides/build-schema": "en/mainnet/docs/smart-contracts/guides/build-schema.html",
+    "./en/mainnet/smart-contracts/guides/contract-dev-guides": "en/mainnet/docs/smart-contracts/guides/build-contract.html",
+    "./en/mainnet/smart-contracts/guides/quick-start": "en/mainnet/docs/smart-contracts/guides/quickstart.html", 
+    "./en/mainnet/smart-contracts/tutorials/index": "en/mainnet/tutorials/index.html"
     }
