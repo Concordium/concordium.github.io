@@ -474,7 +474,7 @@ redirects = {
     "./net/voting/voting": "docs/voting/voting.html",
     "./net/voting/guardians": "docs/voting/guardians.html",
     "./net/voting/verify-election-result": "docs/voting/verify-election-result.html",
-    "./en/mainnet/smart-contracts/tutorials/index": "en/mainnet/tutorials/smart-contract-tutorials.html",
+    #"./en/mainnet/smart-contracts/tutorials/index": "en/mainnet/tutorials/smart-contract-tutorials.html", Comment for a hotfix test
     "./smart-contracts/tutorials/setup-env": "tutorials/setup-env.html",
     "./smart-contracts/tutorials/counter/counter-contract": "tutorials/counter/counter-contract",
     "./smart-contracts/tutorials/piggy-bank/index": "tutorials/piggy-bank/index.html",
@@ -539,5 +539,5 @@ redirects = {
     "./en/mainnet/smart-contracts/guides/build-schema": "en/mainnet/docs/smart-contracts/guides/build-schema.html",
     "./en/mainnet/smart-contracts/guides/contract-dev-guides": "en/mainnet/docs/smart-contracts/guides/build-contract.html",
     "./en/mainnet/smart-contracts/guides/quick-start": "en/mainnet/docs/smart-contracts/guides/quickstart.html", 
-    "en/mainnet/smart-contracts/tutorials/index": "tutorials/index.html"
+    "smart-contracts/tutorials/index": "tutorials/index.html"
     }
