@@ -539,6 +539,6 @@ redirects = {
     "smart-contracts/guides/setup-tools": "/en/mainnet/docs/smart-contracts/guides/setup-contract.html",
     "smart-contracts/guides/build-schema": "/en/mainnet/docs/smart-contracts/guides/build-schema.html",
     "smart-contracts/guides/contract-dev-guides": "/en/mainnet/docs/smart-contracts/guides/build-contract.html",
-    "smart-contracts/guides/quick-start": "/en/mainnet/docs/smart-contracts/guides/quickstart.html", 
+    "smart-contracts/guides/quick-start": "/en/mainnet/docs/smart-contracts/guides/quick-start.html", 
     "smart-contracts/tutorials/index": "/en/mainnet/tutorials/index.html"
     }
