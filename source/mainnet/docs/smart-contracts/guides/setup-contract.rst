@@ -2,9 +2,9 @@
 
 .. _setup-contract:
 
-===============================
-Set up a smart contract project
-===============================
+================
+Set up a project
+================
 
 This guide documents two different options (*from a template* or *from scratch*) to create a new Concordium smart contract project.
 The *from a template* option is available for ``cargo-concordium`` version 2.2.0 or greater. It provides you with some

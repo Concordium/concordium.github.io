@@ -1,8 +1,8 @@
 .. _sc-development-best-practices:
 
-==========================
-Development best practices
-==========================
+===========
+Development
+===========
 
 This document provides guidelines for developing smart contracts, including best practices for smart contract development, audit, information about common pitfalls and security vulnerabilities, and how to avoid them.
 
