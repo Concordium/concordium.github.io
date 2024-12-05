@@ -65,7 +65,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript or TypeScript clients for the Concordium blockchain.
 
-    See :ref:`Smart contracts <introduction>` for general information about smart contracts. 
+    See :ref:`Smart contracts <introduction>` for general information about smart contracts.
 
 .. dropdown:: Proofs
 
