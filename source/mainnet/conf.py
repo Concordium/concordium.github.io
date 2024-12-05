@@ -476,7 +476,7 @@ redirects = {
     #"./en/mainnet/smart-contracts/tutorials/index": "en/mainnet/tutorials/smart-contract-tutorials.html", Comment for a hotfix test
     "smart-contracts/tutorials/setup-env": "en/mainnet/tutorials/setup-env.html",
     "smart-contracts/tutorials/counter/counter-contract": "en/mainnet/tutorials/counter/counter-contract",
-    "smart-contracts/tutorials/piggy-bank/index": "en/mainnet/tutorials/piggy-bank/index.html",#changed by tkt
+    "smart-contracts/tutorials/piggy-bank/index": "/en/mainnet/tutorials/piggy-bank/index.html",#changed by tkt
     "smart-contracts/tutorials/piggy-bank/writing": "en/mainnet/tutorials/piggy-bank/writing.html",
     "smart-contracts/tutorials/piggy-bank/testing": "en/mainnet/tutorials/piggy-bank/testing.html",
     "smart-contracts/tutorials/piggy-bank/deploying": "en/mainnet/tutorials/piggy-bank/deploying.html",
