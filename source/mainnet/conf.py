@@ -423,7 +423,7 @@ redirects = {
     "net/nodes/baker-docker": "/en/mainnet/docs/network/guides/baker-docker.html",
     "net/guides/become-baker": "/en/mainnet/docs/network/guides/become-baker.html",
     "net/references/concordium-client": "/en/mainnet/docs/network/concordium-client.html",
-    "net/references/transactions": "/en/mainnet/docs/network/transactions.html",
+    "net/references/transactions": "/en/mainnet/docs/protocol/transactions.html",
     "net/references/query-node": "/en/mainnet/docs/network/query-node.html",
     "net/references/multi-sig": "/en/mainnet/docs/network/multi-sig.html",
     "net/web3-id/index": "/en/mainnet/docs/network/web3-id/index.html",
