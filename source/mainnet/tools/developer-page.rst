@@ -47,9 +47,25 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
 .. dropdown:: Smart contracts
 
-    See :ref:`Smart contracts <introduction>` for general information about smart contracts, including a list of the available :ref:`smart contract development tools<sc-dev-tools>` to make creation, testing, and deployment easier.
+    Concordium provides a number of tools to simplify the smart contract creation and deployment process.
 
-    `The main library for developing smart contracts can be found on crates.io <https://crates.io/crates/concordium-std>`__.
+    The `VSCode extension <https://marketplace.visualstudio.com/items?itemName=Concordium.concordium-smart-contracts>`__ can help you develop Concordium smart contracts. The extension sets up the editor for development, installs the ``cargo-concordium`` smart contract development tool for all supported platforms, and provides commands in the editor for the essential workflows, such as building and testing smart contracts.
+
+    You can watch a video about how to use the VSCode extension.
+
+    .. raw:: html
+
+        <iframe src="https://www.youtube.com/embed/9qjcsGDeveg?si=zGDkjMAdP5JjRMd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    The :ref:`integration testing library<integration-test-contract>` simplifies testing of your smart contracts before deployment.
+
+    The `main library for Smart contract development <https://crates.io/crates/concordium-std>`_ can be found on crates.io.
+
+    To ease deployment and initialization, you can use the `Smart contract deploy and initialize tool <https://sctools.mainnet.concordium.software/>`__. It works with the |bw| to deploy and initialize smart contracts to Mainnet and Testnet.
+
+    The `Typescript smart contract client generator <https://www.npmjs.com/package/@concordium/ccd-js-gen>`_ helps you generate JavaScript or TypeScript clients for the Concordium blockchain.
+
+    See :ref:`Smart contracts <introduction>` for general information about smart contracts.
 
 .. dropdown:: Proofs
 
