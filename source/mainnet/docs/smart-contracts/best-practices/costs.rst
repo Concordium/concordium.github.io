@@ -1,7 +1,7 @@
 .. _sc-costs-best-practices:
 
 ==============
-Cost reduction 
+Cost reduction
 ==============
 
 There are several ways that you can reduce transaction costs when developing your smart contracts.
