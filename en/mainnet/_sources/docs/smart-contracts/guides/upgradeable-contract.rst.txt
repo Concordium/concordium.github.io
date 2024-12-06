@@ -1,8 +1,8 @@
 .. _guide-upgradable-contract:
 
-===========================
-Make a contract upgradeable
-===========================
+====================
+Upgradeability Guide
+====================
 
 This guide shows how to make a Rust smart contract upgradeable.
 

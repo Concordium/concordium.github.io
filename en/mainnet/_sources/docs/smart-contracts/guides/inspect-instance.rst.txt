@@ -1,8 +1,8 @@
 .. _inspect-instance:
 
-=================================
-Inspect a smart contract instance
-=================================
+=======
+Inspect
+=======
 
 This guide explains how to inspect a smart contract instance.
 Inspecting an instance shows you its name, owner, module reference, balance,

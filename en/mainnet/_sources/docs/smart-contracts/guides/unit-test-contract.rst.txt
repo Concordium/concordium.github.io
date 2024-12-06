@@ -2,9 +2,9 @@
 
 .. _unit-test-contract:
 
-============================
-Unit test a contract in Rust
-============================
+============
+Unit testing
+============
 
 .. warning::
 

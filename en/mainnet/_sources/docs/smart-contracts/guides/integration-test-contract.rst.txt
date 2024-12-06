@@ -1,8 +1,8 @@
 .. _integration-test-contract:
 
-===================================
-Integration test a contract in Rust
-===================================
+=================
+Integration tests
+=================
 
 This guide describes how to write *integration tests* in Rust for your smart contracts using the `Concordium smart contract testing library <https://docs.rs/concordium-smart-contract-testing/latest/concordium_smart_contract_testing/>`_.
 

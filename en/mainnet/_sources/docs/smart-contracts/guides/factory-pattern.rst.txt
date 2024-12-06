@@ -1,15 +1,8 @@
 .. _factory-pattern:
 
-=======================================
-Use the factory pattern on Concordium
-=======================================
-
-.. Warning::
-
-    This guide makes use of features that are first available in protocol version 7,
-    namely getting the contract name and module reference of a smart contract instance
-    from a smart contract.
-    Before the protocol upgrade to version 7 (expected summer 2024), these features will not work.
+===============
+Factory pattern
+===============
 
 The factory pattern is a design pattern where one contract (the factory) creates instances of
 another contract (the products). This pattern makes sense on Ethereum, where deploying a smart
