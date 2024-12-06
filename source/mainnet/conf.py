@@ -380,7 +380,7 @@ redirects = {
     "./en/mainnet/smart-contracts/best-practices/index": "./en/mainnet/smart-contracts/best-practices/development",
     "net/smart-contracts/guides/quick-start": "/en/mainnet/docs/smart-contracts/guides/quickstart.html",
     "net/smart-contracts/guides/deploy-module": "/en/mainnet/docs/smart-contracts/guides/deploy-module.html",
-    "net/concepts/id-accounts": "/en/mainnet/docs/protocol/id.accounts.html",
+    "net/concepts/id-accounts": "/en/mainnet/docs/protocol/id-accounts.html",
     "net/smart-contracts/general/introduction": "/en/mainnet/docs/smart-contracts/introduction.html",
     "net/smart-contracts/general/contract-instances": "/en/mainnet/docs/smart-contracts/contract-instances.html",
     "net/smart-contracts/general/contract-lifecycle": "/en/mainnet/docs/smart-contracts/contract-lifecycle.html",
@@ -535,4 +535,5 @@ redirects = {
     "smart-contracts/guides/contract-dev-guides": "/en/mainnet/docs/smart-contracts/guides/build-contract.html",
     "smart-contracts/guides/quick-start": "/en/mainnet/docs/smart-contracts/guides/quick-start.html",
     "smart-contracts/tutorials/index": "/en/mainnet/tutorials/index.html"
+    "docs/protocol/id.accounts": "en/mainnet/docs/protocol/id-accounts.html"
     }
