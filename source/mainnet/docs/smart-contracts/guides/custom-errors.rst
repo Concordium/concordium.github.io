@@ -1,9 +1,9 @@
 .. _custom discriminant values: https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations
 .. _custom-errors:
 
-====================
-Return custom errors
-====================
+=============
+Custom errors
+=============
 
 This guide shows how to return custom errors from your Rust smart contract.
 

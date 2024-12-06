@@ -1,8 +1,8 @@
 .. _contract-instances:
 
-========================
-Smart contract instances
-========================
+=========
+Instances
+=========
 
 A :term:`smart contract instance<instance>` is a smart contract module together with a
 specific state and an amount of CCD tokens. A smart contract instance is often just called an *instance*.

@@ -4,9 +4,9 @@
 
 .. _compile-module:
 
-====================================
-Compile a Rust smart contract module
-====================================
+==================
+Module Compilation
+==================
 
 This guide will show you how to compile smart contract module written in Rust to
 a Wasm module.

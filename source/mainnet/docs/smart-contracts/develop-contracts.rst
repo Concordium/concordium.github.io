@@ -14,9 +14,9 @@
 
 .. _writing-smart-contracts:
 
-===============================
-Develop smart contracts in Rust
-===============================
+==========
+Using Rust
+==========
 
 On the Concordium blockchain smart contracts are deployed as Wasm modules, but
 Wasm is designed primarily as a compilation target and is not convenient to
@@ -142,6 +142,10 @@ There are a number of things to notice:
                 state, and when serialized, only the pointer is written, while
                 the values are stored in the state. To load
                 the values again, the state context is needed, hence the ``DeserialWithState``.
+
+.. note::
+
+   There is also the option of building a contract using ``no_std``. For more information, read :ref:`no-std`
 
 .. _serialize-state-and-parameters:
 

@@ -71,12 +71,11 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Smart Contracts
    :hidden:
 
+   QuickStart <smart-contracts/guides/quick-start>
    What is a smart contract? <smart-contracts/introduction>
-   QuickStart to smart contract deployment <smart-contracts/guides/quick-start>
-   Build a smart contract <smart-contracts/guides/build-contract>
-   Deploy a smart contract <smart-contracts/guides/deploy-module>
-   Development best practices <smart-contracts/guides/development>
-   Cost reduction best practices <smart-contracts/guides/costs>
+   Build <smart-contracts/guides/build-contract>
+   Deploy <smart-contracts/guides/deploy-module>
+   Best practices <smart-contracts/best-practices/index>
    References <smart-contracts/references/index>
 
 .. toctree::

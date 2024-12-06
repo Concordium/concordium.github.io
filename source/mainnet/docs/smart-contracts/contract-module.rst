@@ -1,7 +1,7 @@
 .. _contract-module:
 
 ======================
-Smart contract modules
+Modules
 ======================
 
 Smart contracts are deployed on the chain in *smart contract modules*. A smart contract module is often referred to simply as a *module*.
