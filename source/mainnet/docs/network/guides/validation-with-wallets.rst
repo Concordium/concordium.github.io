@@ -18,8 +18,8 @@ Validation is possible with the Concordium wallets as well as with the ``Concord
    To check the minimum required amount of CCD (currently 500000) to become a validator, see :ref:`consensus show-chain-parameters`.
 
 
-Validation with |bw|, |cryptox|, |mw-gen1| and |mw-gen2|
---------------------------------------------------------
+Validation with |bw| and |cryptox|
+----------------------------------
 
 This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using all wallets aside from the Desktop Wallet
 
@@ -29,13 +29,14 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 2: Set up the Wallet
 
-   The |bw| is available for chromium browsers. For instructions about download and setup, see :ref:`setup-browser-wallet`. For instructions about download and setup of |cryptox|, see :ref:`setup-cryptox-wallet`.
-   The |mw-gen1|, |mw-gen2|, and |cryptox| are available for iOS and Android devices. For instructions about download and setup of |mw-gen2|, see :ref:`setup-g2-mobile-wallet`.
+   The |bw| is available for chromium browsers. For instructions about download and setup, see :ref:`setup-browser-wallet`.
+
+   The |cryptox| is available for iOS and Android devices. For instructions about download and setup of |cryptox|, see :ref:`setup-cryptox-wallet`.
 
 .. dropdown:: Step 3: Set up an identity and account
 
    Once you've installed the Wallet, you must set up an identity and an account.
-   If using |mw-gen1| it is recommended to create a separate account to use as a validator account. For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
+   For instructions, see :ref:`create-initial-account` and :ref:`create-account`.
 
 .. dropdown:: Step 4: Add validation to an account
 
