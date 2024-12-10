@@ -156,7 +156,7 @@ html_theme_options = {
     "navigation_depth": 5,
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-nav"],
-    "navbar_end": ["navbar-icon-links"],
+    "navbar_end": ["navbar-icon-links", "theme-switcher"],
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "article_footer_items": ["footer-article"],
     "show_prev_next": True,
@@ -256,7 +256,7 @@ html_context = {
     "github_version": "main",
     "doc_path": "source/mainnet",
     "conf_py_path": "/source/",
-    "default_mode": "light",
+    "default_mode": "auto",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

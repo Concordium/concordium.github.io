@@ -11,7 +11,10 @@
     --pst-font-family-base: var(--pst-font-family-base-system);
     --pst-font-family-heading: var(--pst-font-family-base);
     --pst-font-family-monospace: var(--pst-font-family-monospace-system);
+}
 
+/* Light theme (default) - keeping previous values*/
+html[data-theme="light"] {
     /*****************************************************************************
     * Colors
     **/
@@ -31,20 +34,21 @@
     --heading-color: #333333;
 }
 
-html {
-    --pst-color-primary: #48A2AE;
-    --pst-color-primary-text: #333333;
-    --pst-color-secondary: #052535;
-    --pst-color-link: #48A2AE;
-    --pst-color-link-hover: #48A2AE;
-    --pst-color-inline-code: 178, 34, 34;
-    --pst-color-sidebar-link-hover: #48A2AE;
-    --pst-color-toc-link-hover: #48A2AE;
-    --pst-color-toc-link-active: #48A2AE;
-    --pst-color-headerlink: #48A2AE;
-    --pst-color-headerlink-hover: #48A2AE;
-    --bg-color: #ffffff;
-    --heading-color: #333333;
+/* Dark theme */
+html[data-theme="dark"] {
+    --pst-color-primary: #5CBFCC;
+    --pst-color-primary-text: #ffffff;
+    --pst-color-secondary: #7FB9C2;
+    --pst-color-link: #5CBFCC;
+    --pst-color-link-hover: #7FB9C2;
+    --pst-color-inline-code: rgb(255, 99, 99);
+    --pst-color-sidebar-link-hover: #5CBFCC;
+    --pst-color-toc-link-hover: #5CBFCC;
+    --pst-color-toc-link-active: #5CBFCC;
+    --pst-color-headerlink: #5CBFCC;
+    --pst-color-headerlink-hover: #5CBFCC;
+    --bg-color: #1a1a1a;
+    --heading-color: #ffffff;
 }
 
 html {
@@ -56,49 +60,48 @@ html {
 body{
     font-family: var(--pst-font-family-base-system);
     background-color: var(--bg-color);
-    color: #333333;
-    ;
+    color: var(--pst-color-primary-text);
   }
 
 /* Text styling */
 p{
     line-height: 1.7em;
     font-size: 16px;
-    color: #333333;
+    color: var(--pst-color-primary-text);
     font-family: var(--pst-font-family-base-system);
 }
 
 h1{
     font-family: var(--pst-font-family-base-system);
-    color: #333333;
+    color: var(--pst-color-on-background);
     margin-bottom: 34px;
 }
 
 h2{
     font-family: var(--pst-font-family-base-system);
-    color: #333333;
+    color: var(--pst-color-on-background);
     margin-bottom: 28px;
 }
 
 h3{
     font-family: var(--pst-font-family-base-system);
-    color: #333333;
+    color: var(--pst-color-on-background);
     margin-bottom: 24px;
 }
 
 h4{
     font-family: var(--pst-font-family-base-system);
-    color: #333333;
+    color: var(--pst-color-on-background);
 }
 
 h5{
     font-family: var(--pst-font-family-base-system);
-    color: #333333;
+    color: var(--pst-color-on-background);
 }
 
 h6{
     font-family: var(--pst-font-family-base-system);
-    color: #333333;
+    color: var(--pst-color-on-background);
 }
 
 a{
@@ -148,6 +151,10 @@ p.prev-next-title:hover{
     --pst-color-accent: #48A2AE;
 }
 
+html[data-theme="dark"] .bd-search input {
+    --pst-color-accent: #5CBFCC;
+}
+
 .toc-entry a.nav-link.active {
     box-shadow: none;
 }
@@ -161,6 +168,20 @@ p.prev-next-title:hover{
 /* Adds padding to the right of '$' in code-blocks with terminal commands. */
 .gp {
     padding-right: 0.5em;
+}
+
+/* Dark mode styles for code */
+html[data-theme="dark"] .highlight .hll {
+    background-color: #1e3d1e;
+}
+
+html[data-theme="dark"] pre {
+    background-color: var(--pst-color-on-background);
+    color: var(--pst-color-primary-text);
+}
+
+html[data-theme="dark"] .highlight {
+    background-color: var(--pst-color-on-background);
 }
 
 /*Video handling*/
@@ -178,14 +199,24 @@ iframe {
     padding: 0;
     display: flex;
     align-items: center;
+    background-color: var(--pst-color-on-background);
+    background: var(--pst-color-background);  
 }
 
 .nav-item{
     --pst-color-link-hover: #48A2AE;
 }
 
+html[data-theme="dark"] .nav-item {
+    --pst-color-link-hover: #5CBFCC;
+}
+
 .search-button__button{
     --pst-color-link-hover: #48A2AE;
+}
+
+html[data-theme="dark"] .search-button__button {
+    --pst-color-link-hover: #5CBFCC;
 }
 
 .navbar-end{
@@ -206,7 +237,7 @@ iframe {
 }
 
 .fa-chevron-down:before {
-    color: #888888;
+    color: var(--pst-color-text-muted, #888888);  /* Add variable with fallback */
 }
 
 .bd-sidebar label  {
@@ -270,7 +301,7 @@ ul.list-caption li.selected > label i:before  {
 
 .bd-sidebar .nav li>a {
     padding: 4px 0 0 22px;
-    color: #888888;
+    color: var(--pst-color-text-muted, #888888);  /* Add variable with fallback */
 }
 
 .bd-sidebar .nav li.has-children>a {
@@ -286,7 +317,7 @@ nav.bd-links p.caption {
     text-transform: unset;
     font-weight: unset;
     font-size: 14px;
-    color: #888888;
+    color: var(--pst-color-text-muted, #888888);  /* Add variable with fallback */
 }
 
 nav.bd-links .current>a {
@@ -300,9 +331,15 @@ nav.bd-links .current>a {
 
 .bd-search input {
     border-radius: 16px;
-    border: 1px solid #e7e7e7;
+    border: 1px solid var(--pst-color-border, #e7e7e7);
     padding: 24px 24px 24px 50px;
     font-size: 15px;
+    background-color: var(--pst-color-background);
+    color: var(--pst-color-text);
+}
+
+html[data-theme="dark"] .bd-search input {
+    border-color: var(--pst-color-border, #404040);
 }
 
 .rst-versions.shift-up {
@@ -346,7 +383,7 @@ div.admonition {
 }
 
 .admonition.warning {
-    background: #ffffff;
+    background: var(--pst-color-on-background);
     border-color: #F6DB9A;
     border: 1px solid;
 }
@@ -356,7 +393,7 @@ div.admonition {
 }
 
 .admonition.note {
-    background: #ffffff;
+    background: var(--pst-color-on-background);
     border-color: #acceed;
     border: 1px solid;
 }
@@ -469,7 +506,7 @@ div.admonition {
     .row .bd-sidebar .sidebar-start-items {
         width: 100vw;
         height: 100vh;
-        background-color: #ededed;
+        background-color: var(--pst-color-background);
         margin-left: -15px;
         padding: 0 15px;
     }
@@ -485,11 +522,12 @@ div.admonition {
     
     .bd-search .icon {
         left: 22px;
+        color: var(--pst-color-text-muted);
     }
     
     .bd-links {
-        background-color: #ededed;
         padding-left: 15px;
+        background-color: var(--pst-color-background);
     }
     
     .bd-search {
@@ -506,7 +544,6 @@ div.admonition {
         position: absolute;
         top: calc(100vh - 65px);
         width: 100%;
-        background-color: #dbdbdb;
     }
     
     .bd-toc-item.active {
