@@ -1,8 +1,8 @@
 .. _invoke-instance:
 
-================================
-Invoke a smart contract instance
-================================
+======
+Invoke
+======
 
 This guide explains how to invoke a smart contract instance, which
 means triggering a receive function and viewing its return value. Invoking an

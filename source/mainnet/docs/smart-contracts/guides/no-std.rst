@@ -1,8 +1,8 @@
 .. _no-std:
 
-======================
-Build using ``no_std``
-======================
+================
+Using ``no_std``
+================
 
 This guide shows how to enable ``no_std`` for your rust smart contract,
 potentially reducing the size of the resulting Wasm module by several kilobytes.

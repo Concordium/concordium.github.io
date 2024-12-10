@@ -109,7 +109,7 @@ Open your browser and visit http://localhost:8000 to view the documentation. To 
 
   .. code-block:: console
 
-    pipenv run ./script/build.sh
+    pipenv run ./scripts/build.sh
 
   This compiles the documentation into a format that can be hosted and accessed by users.
 

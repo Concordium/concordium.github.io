@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
 .. _initialize-contract:
 
-====================================
-Initialize a smart contract instance
-====================================
+==========
+Initialize
+==========
 
 This guide will show you how to initialize a smart contract from a deployed
 smart contract module with parameters in JSON or binary format.

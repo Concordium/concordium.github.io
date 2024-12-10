@@ -1,8 +1,8 @@
 .. _interact-instance:
 
-=======================================
-Interact with a smart contract instance
-=======================================
+========
+Interact
+========
 
 This guide will show you, how to interact with a smart contract instance, which
 means triggering a receive function that, possibly, updates the state of the
