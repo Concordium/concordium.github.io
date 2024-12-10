@@ -131,7 +131,7 @@ html {
 
 /* Tutorial page styling */
 .tutorial-section {
-    background-color: var(--pst-color-surface);
+    background-color: var(--pst-color-on-background);
     border-color: var(--pst-color-border);
     padding: 25px 25px 25px 40px !important;    /* top right bottom left - more padding on left */
     margin: 20px 0;
@@ -226,7 +226,7 @@ html[data-theme="dark"] .tutorial-section-yellow {
     left: 0;
     padding-left: 1rem;
     z-index: 1;  /* Reduced z-index */
-    background: var(--pst-color-surface);  
+    background: var(--pst-color-on-background);  
     max-width: 167px; /* Match logo's natural width*/
 }
 
@@ -244,7 +244,7 @@ html[data-theme="dark"] .dark-logo {
     margin-left: 200px;
     position: relative;
     z-index: 2;  /* Higher than logo */
-    background: var(--pst-color-surface);  
+    background: var(--pst-color-on-background);  
 }
 
 /* Logo handling for dark/light mode */
@@ -266,7 +266,7 @@ img.logo {
     .navbar-header-items__start{
         max-width: 120px; /* Smaller width on mobile */
         margin-left: 3rem; /* Make space for menu button */
-        background: var(--pst-color-surface);  /* Single background property */ 
+        background: var(--pst-color-on-background);  /* Single background property */ 
     }
     
     img.logo{
@@ -278,5 +278,5 @@ img.logo {
 /* Dark mode specific adjustments if needed */
 html[data-theme="dark"] .navbar-header-items__start,
 html[data-theme="dark"] .navbar-header-items:not(.navbar-header-items__start) {
-    background: var(--pst-color-surface);  /* Ensures correct dark mode background */
+    background: var(--pst-color-on-background);  /* Ensures correct dark mode background */
 }

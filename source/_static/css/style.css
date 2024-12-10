@@ -176,12 +176,12 @@ html[data-theme="dark"] .highlight .hll {
 }
 
 html[data-theme="dark"] pre {
-    background-color: var(--pst-color-surface);
+    background-color: var(--pst-color-on-background);
     color: var(--pst-color-primary-text);
 }
 
 html[data-theme="dark"] .highlight {
-    background-color: var(--pst-color-surface);
+    background-color: var(--pst-color-on-background);
 }
 
 /*Video handling*/
@@ -199,7 +199,7 @@ iframe {
     padding: 0;
     display: flex;
     align-items: center;
-    background-color: var(--pst-color-surface);
+    background-color: var(--pst-color-on-background);
     background: var(--pst-color-background);  
 }
 
@@ -383,7 +383,7 @@ div.admonition {
 }
 
 .admonition.warning {
-    background: var(--pst-color-surface);
+    background: var(--pst-color-on-background);
     border-color: #F6DB9A;
     border: 1px solid;
 }
@@ -393,7 +393,7 @@ div.admonition {
 }
 
 .admonition.note {
-    background: var(--pst-color-surface);
+    background: var(--pst-color-on-background);
     border-color: #acceed;
     border: 1px solid;
 }
