@@ -256,7 +256,7 @@ html_context = {
     "github_version": "main",
     "doc_path": "source/mainnet",
     "conf_py_path": "/source/",
-    "default_mode": "auto",
+    "default_mode": "light",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
