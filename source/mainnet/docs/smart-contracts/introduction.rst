@@ -81,7 +81,7 @@ does not fulfil their obligations. This will most likely mean that the contract
 needs to support some notion of proof that the seller has indeed fulfilled their
 obligation, or some way for the highest bidder to file a complaint. Smart
 contracts cannot resolve these real-world issues automatically, and the best
-solution is likely going to depend on the specifics of the auction. You can find 
+solution is likely going to depend on the specifics of the auction. You can find
 an example implementation of the auction contract on `this repository <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/auction>`_
 
 Additional reading
