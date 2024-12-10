@@ -91,7 +91,7 @@ transaction for attempting to create the instance is visible on-chain.
 
 .. seealso::
 
-   See :ref:`initialize-contract` guide for how to initialize a
+   See the :ref:`initialize-contract` guide for how to initialize a
    contract in practice. You can also watch a video about initializing smart contract instances.
 
    .. raw:: html
