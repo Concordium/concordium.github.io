@@ -28,9 +28,9 @@ system, combining on and off-chain functionality. An example of off-chain
 functionality could be a server that invokes the smart contract based on
 data from the real-world, such as prices of stocks, or weather information.
 
-.. tabs::
+.. tab-set::
 
-    .. tab:: What are smart contracts for?
+    .. tab-item:: What are smart contracts for?
 
         Smart contracts can reduce the needed amount of trust in third-parties, in some cases
         removing the need for a trusted third-party, in other cases reducing their
@@ -40,7 +40,7 @@ data from the real-world, such as prices of stocks, or weather information.
         anybody with access to a node can verify, they can be very useful for ensuring
         agreement between parties.
 
-    .. tab:: What are smart contracts *not* for?
+    .. tab-item:: What are smart contracts *not* for?
 
         Smart contracts are a very exciting technology and people are still finding new
         ways to take advantage of them.
