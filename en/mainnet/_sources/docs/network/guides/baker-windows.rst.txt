@@ -20,7 +20,7 @@ Prerequisites
 Configure a validator node on Windows
 =====================================
 
-#. Create validator keys in |bw|, |mw-gen2|, |mw-gen1|, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet. Follow :ref:`this <add-baker-mw>` article for help.
+#. Create validator keys in |bw|, |cryptox|, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet. Follow :ref:`this <add-baker-mw>` article for help.
 
    .. Note::
 

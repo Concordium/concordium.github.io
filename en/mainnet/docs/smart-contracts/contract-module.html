@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/smart-contracts/contract-module.8e1a52d2-776c-4705-8b9a-53878cc6ffd1.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/smart-contracts/contract-module.61bfb4f4-68a4-43ec-8484-0c3e972cc9d8.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/contract-module';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -770,7 +770,8 @@ contracts will be run by validators in the network who do not necessarily trust
 the code.</p>
 <p>Wasm is a low-level language and it is impractical to write by hand. Instead, you
 can write smart contracts in a more high-level language that is then
-compiled to Wasm. The best supported high-level language on Concordium is Rust.</p>
+compiled to Wasm. The best supported high-level language on Concordium is Rust.
+You can read <a class="reference internal" href="develop-contracts.html#writing-smart-contracts"><span class="std std-ref">this article</span></a> for more information regarding using Rust on Concordium.</p>
 <section id="limitations">
 <span id="wasm-limitations"></span><h3>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h3>
 <p>The blockchain environment is very particular in the sense that each node must
@@ -791,7 +792,7 @@ point values.</p>
 </section>
 <section id="deployment">
 <h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
-<p>Deploying a module to the chain means submitting the module bytecode as a
+<p><a class="reference internal" href="guides/deploy-module.html#deploy-module"><span class="std std-ref">Deploying</span></a> a module to the chain means submitting the module bytecode as a
 transaction to the Concordium network. If <em>valid</em>, this transaction will be
 included in a block. This transaction, as every other transaction, has an
 associated cost. The cost is based on the size of the bytecode and is charged

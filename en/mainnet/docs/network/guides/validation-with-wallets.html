@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.9e3afa70-1947-4df9-bb20-34db3d0433fb.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.cda48a83-ee70-4e09-8a82-81972b13871b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/validation-with-wallets';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -745,8 +745,8 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>To check the minimum required amount of CCD (currently 500000) to become a validator, see <a class="reference internal" href="../../../tools/transactions.html#consensus-show-chain-parameters"><span class="std std-ref">Show chain parameters</span></a>.</p>
 </div>
-<section id="validation-with-bw-cryptox-mw-gen1-and-mw-gen2">
-<h2>Validation with Concordium Wallet for Web, CryptoX Concordium Wallet, Concordium Legacy Wallet and Concordium Wallet for Mobile<a class="headerlink" href="#validation-with-bw-cryptox-mw-gen1-and-mw-gen2" title="Link to this heading">#</a></h2>
+<section id="validation-with-bw-and-cryptox">
+<h2>Validation with Concordium Wallet for Web and CryptoX Concordium Wallet<a class="headerlink" href="#validation-with-bw-and-cryptox" title="Link to this heading">#</a></h2>
 <p>This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using all wallets aside from the Desktop Wallet</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -764,8 +764,8 @@ Step 2: Set up the Wallet<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The Concordium Wallet for Web is available for chromium browsers. For instructions about download and setup, see <a class="reference internal" href="../../browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">Set up the Concordium Wallet for Web</span></a>. For instructions about download and setup of CryptoX Concordium Wallet, see <a class="reference internal" href="../../guides/setup-cryptox-wallet.html#setup-cryptox-wallet"><span class="std std-ref">Set up the CryptoX Concordium Wallet</span></a>.
-The Concordium Legacy Wallet, Concordium Wallet for Mobile, and CryptoX Concordium Wallet are available for iOS and Android devices. For instructions about download and setup of Concordium Wallet for Mobile, see <a class="reference internal" href="../../mobile-wallet-gen2/setup-mobile-wallet.html#setup-g2-mobile-wallet"><span class="std std-ref">Set up the Concordium Wallet for Mobile</span></a>.</p>
+<p class="sd-card-text">The Concordium Wallet for Web is available for chromium browsers. For instructions about download and setup, see <a class="reference internal" href="../../browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">Set up the Concordium Wallet for Web</span></a>.</p>
+<p class="sd-card-text">The CryptoX Concordium Wallet is available for iOS and Android devices. For instructions about download and setup of CryptoX Concordium Wallet, see <a class="reference internal" href="../../guides/setup-cryptox-wallet.html#setup-cryptox-wallet"><span class="std std-ref">Set up the CryptoX Concordium Wallet</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -775,7 +775,7 @@ Step 3: Set up an identity and account<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Once you’ve installed the Wallet, you must set up an identity and an account.
-If using Concordium Legacy Wallet it is recommended to create a separate account to use as a validator account. For instructions, see <a class="reference internal" href="../../guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a> and <a class="reference internal" href="../../guides/create-account.html#create-account"><span class="std std-ref">Create an account</span></a>.</p>
+For instructions, see <a class="reference internal" href="../../guides/create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a> and <a class="reference internal" href="../../guides/create-account.html#create-account"><span class="std std-ref">Create an account</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -965,7 +965,7 @@ Step 6: Configure the node with the validator keys<div class="sd-summary-down do
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-with-bw-cryptox-mw-gen1-and-mw-gen2">Validation with Concordium Wallet for Web, CryptoX Concordium Wallet, Concordium Legacy Wallet and Concordium Wallet for Mobile</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-with-bw-and-cryptox">Validation with Concordium Wallet for Web and CryptoX Concordium Wallet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-with-desktop-wallet">Validation with Desktop Wallet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-with-concordium-client">Validation with <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>

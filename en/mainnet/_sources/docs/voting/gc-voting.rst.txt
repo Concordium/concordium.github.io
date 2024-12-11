@@ -71,4 +71,4 @@ After the election is the :term:`tally phase`.
 Components for voting
 =====================
 
-There are a number of components used during voting, including the coordinator tool, the voting dApp, and the Guardian application. You can explore the `repository for the components <https://github.com/Concordium/concordium-governance-committee-voting>`.
+There are a number of components used during voting, including the coordinator tool, the voting dApp, and the Guardian application. You can explore the `repository for the components <https://github.com/Concordium/concordium-governance-committee-voting>`_.
