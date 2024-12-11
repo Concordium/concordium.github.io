@@ -17,11 +17,9 @@ The following example demonstrates the process of generating an identity recover
 
 In the example below, functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, see :ref:`Identity Provider List`.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -55,9 +53,7 @@ In the example below, functionality for retrieving the list of identity provider
 
             const recoveryRequest: IdRecoveryRequest = createIdentityRecoveryRequestWithKeys(recoveryRequestInput);
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -101,9 +97,7 @@ In the example below, functionality for retrieving the list of identity provider
                 return Identity.createIdentityRecoveryRequest(input)
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 
@@ -176,11 +170,9 @@ Send an identity recovery request
 
 The next step is to send the generated identity recovery request to the associated identity provider. If successful, the identity provider will return a redirect to the location from which the identity can be fetched.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -215,9 +207,7 @@ The next step is to send the generated identity recovery request to the associat
                 const identity: IdentityObjectV1 = versionedIdentity.value;
             }
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -258,9 +248,7 @@ The next step is to send the generated identity recovery request to the associat
                 throw Exception("Failed to recover identity");
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 

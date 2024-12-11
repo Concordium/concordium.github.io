@@ -11,9 +11,9 @@ The *from a template* option is available for ``cargo-concordium`` version 2.2.0
 smart contract templates. Choose the template that best fits your project scope.
 The *from scratch* option guides you through the process when you want to start a new project without any boilerplate code.
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: From a template (recommended)
+   .. tab-item:: From a template (recommended)
 
       Concordium maintains several smart contract
       `templates <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates>`_ (currently a ``default`` template and a ``cis2-nft`` template).
@@ -35,7 +35,7 @@ The *from scratch* option guides you through the process when you want to start 
       You can find additional information on the available templates in the
       `README file <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates/README.md>`_.
 
-   .. tab:: From scratch
+   .. tab-item:: From scratch
 
       A smart contract in Rust is written as an ordinary Rust library crate.
       The library is then compiled to Wasm using the Rust target

@@ -14,11 +14,9 @@ Get list of identity providers and their metadata
 
 Here is an example of how the list of identity providers can be retrieved from the wallet-proxy service. The libraries used here to perform the requests are merely examples, so feel free to use the libraries already utilized in your project.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: typescript
 
@@ -48,9 +46,7 @@ Here is an example of how the list of identity providers can be retrieved from t
             const testnetIdentityProviders = getIdentityProviders(walletProxyTestnetBaseUrl);
             const mainnetIdentityProviders = getIdentityProviders(walletProxyMainnetBaseUrl);
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -95,9 +91,7 @@ Here is an example of how the list of identity providers can be retrieved from t
                 val mainnetIdentityProviders = getIdentityProviders(walletProxyMainnetBaseUrl)
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 
