@@ -16,11 +16,9 @@ Create a credential deployment transaction
 
 The following example demonstrates how a credential deployment transaction is created. Note that you must have saved the identity object and the identity provider that was used to create that identity, as they are required input for this transaction type.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: typescript
 
@@ -86,9 +84,7 @@ The following example demonstrates how a credential deployment transaction is cr
                 expiry
             );
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -178,9 +174,7 @@ The following example demonstrates how a credential deployment transaction is cr
                 return CredentialDeploymentDetails(Credential.createUnsignedCredential(input).unsignedCdi, expiry)
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 
@@ -228,11 +222,9 @@ Sign a credential deployment transaction
 With the credential deployment transaction created, the next step is to sign the transaction. It is important that the key used for signing the transaction
 is the signing key that corresponds to the public key used when creating the transaction. If they do not match, then the transaction will be rejected.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -260,9 +252,7 @@ is the signing key that corresponds to the public key used when creating the tra
 
             const signature = await signCredentialTransaction(credentialDeploymentTransaction, signingKey);
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -298,9 +288,7 @@ is the signing key that corresponds to the public key used when creating the tra
                 return signingKey.sign(credentialDeploymentSignDigest)
             }
 
-    .. tab::
-
-        Swift (iOS)
+    .. tab-item:: Swift (iOS)
 
         .. code-block:: Swift
 
@@ -326,11 +314,9 @@ of the call is a transaction hash that can then be used to monitor the status of
 If successful, the credential will be deployed, and it is now possible to start creating account transactions. Go to
 :ref:`wallet-sdk-account-transaction` for a guide about creating account transactions.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -349,9 +335,7 @@ If successful, the credential will be deployed, and it is now possible to start 
                 signature
             );
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -386,9 +370,7 @@ If successful, the credential will be deployed, and it is now possible to start 
                 return client.sendCredentialDeploymentTransaction(credentialDeploymentTransaction)
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 

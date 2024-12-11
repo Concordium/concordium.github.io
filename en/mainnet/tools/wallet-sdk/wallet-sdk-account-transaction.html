@@ -48,11 +48,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=716d1818"></script>
-    <script src="../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-account-transaction.2a6f9fb9-e6df-44f0-8d0c-42081dd0c59b.js"></script>
+    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-account-transaction.bb59d633-76ae-4aa6-94fe-ae897ef6d563.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/wallet-sdk/wallet-sdk-account-transaction';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -569,8 +568,11 @@ sending it to a Concordium node.</p>
 <h2>Construct and sign an account transaction<a class="headerlink" href="#construct-and-sign-an-account-transaction" title="Link to this heading">#</a></h2>
 <p>This example constructs and signs a simple transfer, which is an account transaction that moves an amount of CCD from one account to another. For other transaction types, the steps are similar, but the exact fields that must be provided for the payload will be different. Note that Concordium as a whole supports multi-signature transactions, but for the purpose of this example it will demonstrate how to sign for an account with a single credential that has a single key.</p>
 <p>Note that when the transaction has been signed anyone with the signature and the transaction will be able to send it to a Concordium node. Therefore it is very important that a wallet requests user approval before utilizing their signing keys.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Swift (macOS, iOS)</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+TypeScript (Web)</label><div class="sd-tab-content docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">AccountTransaction</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">AccountTransactionHeader</span><span class="p">,</span>
@@ -625,7 +627,11 @@ sending it to a Concordium node.</p>
 <span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">signTransaction</span><span class="p">(</span><span class="nx">accountTransaction</span><span class="p">,</span><span class="w"> </span><span class="nx">signer</span><span class="p">);</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">cash.z.ecc.android.bip39.Mnemonics</span>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Kotlin (Android)</label><div class="sd-tab-content docutils">
+<div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">cash.z.ecc.android.bip39.Mnemonics</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">cash.z.ecc.android.bip39.toSeed</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.ClientV2</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.Connection</span>
@@ -681,7 +687,11 @@ sending it to a Concordium node.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
 <span class="kd">import</span> <span class="nc">GRPC</span> <span class="c1">// external dependency for gRPC client</span>
 
 <span class="kd">let</span> <span class="nv">grpcChannel</span><span class="p">:</span> <span class="n">GRPCChannel</span> <span class="c1">// see docs for package GRPC or examples in SDK repo</span>
@@ -716,13 +726,17 @@ sending it to a Concordium node.</p>
 <span class="kd">let</span> <span class="nv">signedTx</span> <span class="p">=</span> <span class="k">try</span> <span class="n">account</span><span class="p">.</span><span class="n">keys</span><span class="p">.</span><span class="n">sign</span><span class="p">(</span><span class="n">transaction</span><span class="p">:</span> <span class="n">tx</span><span class="p">,</span> <span class="n">sequenceNumber</span><span class="p">:</span> <span class="n">nextSeq</span><span class="p">,</span> <span class="n">expiry</span><span class="p">:</span> <span class="n">expiry</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="send-an-account-transaction-to-a-concordium-node">
 <h2>Send an account transaction to a Concordium node<a class="headerlink" href="#send-an-account-transaction-to-a-concordium-node" title="Link to this heading">#</a></h2>
 <p>Finally, when the transaction has been constructed and signed, it is ready to be sent to a Concordium node. The output of the function sending a transaction to a Concordium node is the transaction hash. The transaction hash can then be used to monitor the status of the submitted transaction.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Swift (macOS, iOS)</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+TypeScript (Web)</label><div class="sd-tab-content docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">ConcordiumGRPCWebClient</span><span class="p">,</span>
 <span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk&#39;</span><span class="p">;</span>
 
@@ -730,7 +744,11 @@ sending it to a Concordium node.</p>
 <span class="kd">const</span><span class="w"> </span><span class="nx">transactionHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">sendAccountTransaction</span><span class="p">(</span><span class="nx">accountTransaction</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">);</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.ClientV2</span>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Kotlin (Android)</label><div class="sd-tab-content docutils">
+<div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.ClientV2</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.Connection</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.TLSConfig</span>
 
@@ -745,7 +763,11 @@ sending it to a Concordium node.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
 
 <span class="kd">let</span> <span class="nv">client</span><span class="p">:</span> <span class="n">NodeClient</span> <span class="c1">// from previous section</span>
 <span class="kd">let</span> <span class="nv">signedTx</span><span class="p">:</span> <span class="n">SignedAccountTransaction</span> <span class="c1">// from previous section</span>
@@ -754,7 +776,8 @@ sending it to a Concordium node.</p>
 <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Transaction with hash &#39;</span><span class="si">\(</span><span class="n">hash</span><span class="p">.</span><span class="n">hex</span><span class="si">)</span><span class="s">&#39; successfully submitted.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 </section>
 

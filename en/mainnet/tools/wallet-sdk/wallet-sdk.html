@@ -48,11 +48,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=716d1818"></script>
-    <script src="../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk.fe8905f6-aab0-4532-9487-8cd1b62b2f2d.js"></script>
+    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk.f75f9f72-5ea2-4d88-95ab-678b4cbcf1d2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/wallet-sdk/wallet-sdk';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -565,8 +564,11 @@ This typically means either a mobile wallet (iOS or Android), or a solution buil
 generate the Concordium specific requests to create and recover identities, to create and deploy a credential, and
 to create and send transactions to a Concordium node.</p>
 <p>Below, you can find a link to the SDK package for your chosen technology, and an example wallet that demonstrates its usage.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Swift (macOS, iOS)</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+TypeScript (Web)</label><div class="sd-tab-content docutils">
+<div class="line-block">
 <div class="line">NPM package</div>
 <div class="line"><a class="reference external" href="https://www.npmjs.com/package/&#64;concordium/web-sdk">&#64;concordium/web-sdk</a></div>
 </div>
@@ -574,7 +576,11 @@ to create and send transactions to a Concordium node.</p>
 <div class="line">Working example implementation of a Concordium wallet for web</div>
 <div class="line"><a class="github reference external" href="https://github.com/Concordium/concordium-node-sdk-js/tree/main/examples/wallet">Concordium/concordium-node-sdk-js</a></div>
 </div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="line-block">
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Kotlin (Android)</label><div class="sd-tab-content docutils">
+<div class="line-block">
 <div class="line">Maven Central package</div>
 <div class="line"><a class="reference external" href="https://central.sonatype.com/artifact/com.concordium.sdk/concordium-android-sdk">concordium-android-sdk</a></div>
 </div>
@@ -582,7 +588,11 @@ to create and send transactions to a Concordium node.</p>
 <div class="line">Working example implementation of a Concordium wallet for Android</div>
 <div class="line"><a class="github reference external" href="https://github.com/Concordium/concordium-java-sdk/tree/main/concordium-android-wallet-example">Concordium/concordium-java-sdk</a></div>
 </div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="line-block">
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
+<div class="line-block">
 <div class="line">Swift Package</div>
 <div class="line"><cite>concordium-swift-sdk &lt;https://github.com/Concordium/concordium-swift-sdk&gt;</cite></div>
 </div>
@@ -595,7 +605,8 @@ to create and send transactions to a Concordium node.</p>
 <div class="line"><a class="github reference external" href="https://github.com/Concordium/concordium-swift-sdk/tree/main/examples/DocSnippets">Concordium/concordium-swift-sdk</a></div>
 <div class="line"><em>Note: The snippets are self contained and don’t align exactly with the structure of these docs.</em></div>
 </div>
-</div></div>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>

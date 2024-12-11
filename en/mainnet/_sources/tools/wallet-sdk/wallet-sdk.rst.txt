@@ -13,11 +13,9 @@ to create and send transactions to a Concordium node.
 
 Below, you can find a link to the SDK package for your chosen technology, and an example wallet that demonstrates its usage.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         | NPM package
         | `@concordium/web-sdk <https://www.npmjs.com/package/@concordium/web-sdk>`_
@@ -25,9 +23,7 @@ Below, you can find a link to the SDK package for your chosen technology, and an
         | Working example implementation of a Concordium wallet for web
         | https://github.com/Concordium/concordium-node-sdk-js/tree/main/examples/wallet
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         | Maven Central package
         | `concordium-android-sdk <https://central.sonatype.com/artifact/com.concordium.sdk/concordium-android-sdk>`_
@@ -35,9 +31,7 @@ Below, you can find a link to the SDK package for your chosen technology, and an
         | Working example implementation of a Concordium wallet for Android
         | https://github.com/Concordium/concordium-java-sdk/tree/main/concordium-android-wallet-example
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         | Swift Package
         | `concordium-swift-sdk <https://github.com/Concordium/concordium-swift-sdk>`

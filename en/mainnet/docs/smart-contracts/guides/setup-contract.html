@@ -48,11 +48,10 @@
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=716d1818"></script>
-    <script src="../../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/setup-contract.d82afaeb-29a4-46a4-b936-d741bbd8c99a.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/setup-contract.4fbdee5f-eb69-4f75-9247-2c7d9f5c05b6.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/setup-contract';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -741,8 +740,11 @@ document.write(`
 The <em>from a template</em> option is available for <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> version 2.2.0 or greater. It provides you with some
 smart contract templates. Choose the template that best fits your project scope.
 The <em>from scratch</em> option guides you through the process when you want to start a new project without any boilerplate code.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">From a template (recommended)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">From scratch</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Concordium maintains several smart contract
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+From a template (recommended)</label><div class="sd-tab-content docutils">
+<p>Concordium maintains several smart contract
 <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates">templates</a> (currently a <code class="docutils literal notranslate"><span class="pre">default</span></code> template and a <code class="docutils literal notranslate"><span class="pre">cis2-nft</span></code> template).
 For generating the smart contracts from the above templates, the <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> crate is required.
 <code class="docutils literal notranslate"><span class="pre">cargo-generate</span></code> can be installed by running the following command:</p>
@@ -756,7 +758,11 @@ For generating the smart contracts from the above templates, the <code class="do
 <p>The path where the project should be created can be provided with the <code class="docutils literal notranslate"><span class="pre">--path</span></code> option.</p>
 <p>You can find additional information on the available templates in the
 <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/templates/README.md">README file</a>.</p>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>A smart contract in Rust is written as an ordinary Rust library crate.
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+From scratch</label><div class="sd-tab-content docutils">
+<p>A smart contract in Rust is written as an ordinary Rust library crate.
 The library is then compiled to Wasm using the Rust target
 <code class="docutils literal notranslate"><span class="pre">wasm32-unknown-unknown</span></code> and, since it is just a Rust library, you can use
 <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> for dependency management.</p>
@@ -797,7 +803,8 @@ directory instead, by adding the following to <code class="docutils literal notr
 </pre></div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 <div class="admonition note" id="setup-wee-alloc-feature">
 <p class="admonition-title">Note</p>
 <p>To compile your smart contracts, a memory <a class="reference external" href="https://docs.rs/concordium-std/6.0.0/concordium_std/#use-a-custom-allocator">allocator</a> is used.

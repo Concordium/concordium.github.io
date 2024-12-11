@@ -48,11 +48,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=716d1818"></script>
-    <script src="../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/smart-contracts/introduction.70dd13bd-05a6-4599-ac0b-9d63809a15fb.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/smart-contracts/introduction.e4f74b1d-a744-4230-8d46-d4c6f8a38790.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/introduction';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -751,14 +750,21 @@ message. In practice, smart contracts will often be a small part of a larger
 system, combining on and off-chain functionality. An example of off-chain
 functionality could be a server that invokes the smart contract based on
 data from the real-world, such as prices of stocks, or weather information.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">What are smart contracts for?</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">What are smart contracts <em>not</em> for?</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Smart contracts can reduce the needed amount of trust in third-parties, in some cases
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+What are smart contracts for?</label><div class="sd-tab-content docutils">
+<p>Smart contracts can reduce the needed amount of trust in third-parties, in some cases
 removing the need for a trusted third-party, in other cases reducing their
 capabilities and thus reducing the amount of trust needed in them.</p>
 <p>Because smart contracts are executed completely transparently, in a way that
 anybody with access to a node can verify, they can be very useful for ensuring
 agreement between parties.</p>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Smart contracts are a very exciting technology and people are still finding new
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+What are smart contracts <em>not</em> for?</label><div class="sd-tab-content docutils">
+<p>Smart contracts are a very exciting technology and people are still finding new
 ways to take advantage of them.
 However, there are some cases where smart contracts are not a good solution.</p>
 <p>One of the key advantages of smart contracts is the trust in the code
@@ -776,7 +782,8 @@ on the Concordium network, meaning it is difficult to handle sensitive data in a
 smart contract. In some cases it might be possible to use cryptographic tools to
 not work with the data directly, but rather have the smart contracts work with
 derived notions such as encryptions and commitments, which hide the actual data.</p>
-</div></div>
+</div>
+</div>
 <section id="auction-smart-contract-example">
 <span id="auction"></span><h2>Auction smart contract example<a class="headerlink" href="#auction-smart-contract-example" title="Link to this heading">#</a></h2>
 <p>A use case for smart contracts could be for holding an auction; here you program

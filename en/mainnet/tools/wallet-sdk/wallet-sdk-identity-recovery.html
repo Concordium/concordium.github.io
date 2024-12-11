@@ -48,11 +48,10 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=716d1818"></script>
-    <script src="../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-identity-recovery.505bcf09-0f96-4836-958a-ed40259caac2.js"></script>
+    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-identity-recovery.08d66cdf-5f23-48e3-a30b-64670678b46e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/wallet-sdk/wallet-sdk-identity-recovery';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -568,8 +567,11 @@ document.write(`
 <h2>Generate an identity recovery request<a class="headerlink" href="#generate-an-identity-recovery-request" title="Link to this heading">#</a></h2>
 <p>The following example demonstrates the process of generating an identity recovery request. Part of the input to the request is a secret value derived from the seed phrase, and this value should be kept secret in a similar manner as the seed phrase and account signing keys.</p>
 <p>In the example below, functionality for retrieving the list of identity providers is present. To see an example of how to implement this function, see <a class="reference internal" href="wallet-sdk-identity-provider.html#identity-provider-list"><span class="std std-ref">Get list of identity providers and their metadata</span></a>.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Swift (macOS, iOS)</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+TypeScript (Web)</label><div class="sd-tab-content docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">ConcordiumGRPCWebClient</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">ConcordiumHdWallet</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">createIdentityRecoveryRequestWithKeys</span><span class="p">,</span>
@@ -600,7 +602,11 @@ document.write(`
 <span class="kd">const</span><span class="w"> </span><span class="nx">recoveryRequest</span><span class="o">:</span><span class="w"> </span><span class="nx">IdRecoveryRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createIdentityRecoveryRequestWithKeys</span><span class="p">(</span><span class="nx">recoveryRequestInput</span><span class="p">);</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">cash.z.ecc.android.bip39.Mnemonics</span>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Kotlin (Android)</label><div class="sd-tab-content docutils">
+<div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">cash.z.ecc.android.bip39.Mnemonics</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.ClientV2</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.Connection</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.TLSConfig</span>
@@ -641,7 +647,11 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
 <span class="kd">import</span> <span class="nc">MnemonicSwift</span> <span class="c1">// external package for converting seed phrase to bytes</span>
 <span class="nc">import</span> <span class="nc">GRPC</span> <span class="c1">// external dependency for gRPC client</span>
 
@@ -705,13 +715,17 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="send-an-identity-recovery-request">
 <h2>Send an identity recovery request<a class="headerlink" href="#send-an-identity-recovery-request" title="Link to this heading">#</a></h2>
 <p>The next step is to send the generated identity recovery request to the associated identity provider. If successful, the identity provider will return a redirect to the location from which the identity can be fetched.</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">TypeScript (Web)</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Kotlin (Android)</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Swift (macOS, iOS)</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+TypeScript (Web)</label><div class="sd-tab-content docutils">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">IdentityObjectV1</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">IdRecoveryRequest</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">Versioned</span>
@@ -743,7 +757,11 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.crypto.wallet.identityobject.IdentityObject</span>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Kotlin (Android)</label><div class="sd-tab-content docutils">
+<div class="highlight-Kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">com.concordium.sdk.crypto.wallet.identityobject.IdentityObject</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">com.fasterxml.jackson.module.kotlin.jacksonObjectMapper</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">okhttp3.OkHttpClient</span>
 <span class="k">import</span><span class="w"> </span><span class="nn">okhttp3.Request</span>
@@ -781,7 +799,11 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">reqJSON</span> <span class="p">=</span> <span class="p">...</span> <span class="c1">// computed in previous section</span>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">reqJSON</span> <span class="p">=</span> <span class="p">...</span> <span class="c1">// computed in previous section</span>
 
 <span class="c1">// Wrap recovery request into HTTP request and execute.</span>
 <span class="kd">let</span> <span class="nv">urlBuilder</span> <span class="p">=</span> <span class="n">IdentityRequestURLBuilder</span><span class="p">(</span><span class="n">callbackURL</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">// without &#39;callbackURL&#39; the builder only supports recovery</span>
@@ -793,7 +815,8 @@ document.write(`
 <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Successfully recovered identity: </span><span class="si">\(</span><span class="n">identity</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 </section>
 

@@ -19,11 +19,9 @@ Create an identity request
 
 The first step is to create the actual identity request. To do this, you need the list of identity providers. Refer to :ref:`Identity Provider List` to understand how to retrieve it.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -79,9 +77,7 @@ The first step is to create the actual identity request. To do this, you need th
 
             const identityRequest: Versioned<IdObjectRequestV1> = createIdentityRequestWithKeys(input);
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -138,9 +134,7 @@ The first step is to create the actual identity request. To do this, you need th
                 return Identity.createIdentityRequest(input)
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 
@@ -197,11 +191,9 @@ Once the identity request has been created, the next step is to send it to the c
 
 A part of the request is a `redirectUri`, which tells the identity provider where to redirect the user when the identity verification flow has been completed. A wallet application has to choose this in such a way that the user is sent back into the wallet application, where the actual identity object can then be retrieved from the information provided in the hash property of the redirect URL.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -246,15 +238,13 @@ A part of the request is a `redirectUri`, which tells the identity provider wher
                 return response.url;
             }
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
             import android.content.Context
             import android.net.Uri
-            import androidx.browser.customtabs.CustomTabsIntent
+            import androidx.browser.customtab-set.Customtab-setIntent
             import okhttp3.OkHttpClient
             import okhttp3.Request
 
@@ -284,14 +274,12 @@ A part of the request is a `redirectUri`, which tells the identity provider wher
                         ?: throw Exception("The identity provider did not redirect as expected.")
 
                     // Open the URL in a browser. This is just an example of how that could be done.
-                    val customTabsIntent = CustomTabsIntent.Builder().build()
-                    customTabsIntent.launchUrl(context, Uri.parse(redirectedUrl))
+                    val customtab-setIntent = Customtab-setIntent.Builder().build()
+                    customtab-setIntent.launchUrl(context, Uri.parse(redirectedUrl))
                 }
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 
@@ -312,11 +300,9 @@ Retrieve the identity after creation
 
 Upon completing identity verification with the identity provider, the identity provider does a redirect of the user back to the `redirectUri` that was provided when sending the identity request to the identity provider. The hash property of the URL that the identity provider redirects the user to contains the URL where the identity object can be retrieved from in the format `redirectUri#code_uri=`, where the URL will be after the equals sign.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -377,9 +363,7 @@ Upon completing identity verification with the identity provider, the identity p
                 // The wallet should retry after some time if this happens.
             }
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -447,9 +431,7 @@ Upon completing identity verification with the identity provider, the identity p
             }
 
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 
