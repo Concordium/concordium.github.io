@@ -647,14 +647,9 @@ Miscellaneous
     There are several options to request test CCD:
 
     **Option 1:**
-    If you just created your account in the mobile app wallet, you
+    If you just created your account in the |cryptox| app, you
     find a button to request 2000 testnet CCD to get started with your new account.
-
-    .. image:: ../../../tutorials/piggy-bank/images/pb_tutorial_5.png
-        :width: 20 %
-    .. image:: ../../../tutorials/piggy-bank/images/pb_tutorial_6.png
-        :width: 20 %
-
+    
     **Option 2:** If you have the curl package installed on your Unix-like operating systems,
     you can request CCD in the terminal directly from the wallet proxy via the below command.
 
