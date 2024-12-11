@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/delegation-faq.e4d43366-abec-4bf1-bc48-c0864d314e55.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/delegation-faq.6cae21da-4d8b-40cd-9cf0-5b7471beaa09.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/help-and-faq/delegation-faq';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -1007,7 +1007,7 @@ How can I change the delegation commissions for my staking pool?<div class="sd-s
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You can change the commissions for your staking pool within the allowed limits in the Concordium Wallet for Web, Concordium Wallet for Mobile, and Desktop Wallet. See <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-pool-settings"><span class="std std-ref">update pool settings</span></a> for information about how to do this for each type of wallet. In the Concordium Legacy Wallet it is not possible for pool owners to set the commissions. If you want to be able to adjust commissions, you must use the Concordium Wallet for Mobile or Concordium Wallet for Web. For information about the process, see <a class="reference internal" href="../mobile-wallet-gen2/faq.html#wallet-migrate"><span class="std std-ref">the delegation FAQ</span></a>.</p>
+<p class="sd-card-text">You can change the commissions for your staking pool within the allowed limits in the Concordium Wallet for Web, CryptoX Concordium Wallet, and Desktop Wallet. See <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-pool-settings"><span class="std std-ref">update pool settings</span></a> for information about how to do this for each type of wallet.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1054,34 +1054,6 @@ Can I use funds in a release schedule to meet the minimum required amount of CCD
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Yes, the funds locked in a release schedule can be staked.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="comm-update-legacy-mw">
-<summary class="sd-summary-title sd-card-header">
-How can I change the commissions in my staking pool if I am using Concordium Legacy Wallet?<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For users of Concordium Legacy Wallet that want to update commission rates for a staking pool, you must do this in Concordium Client, the Concordium command line tool.</p>
-<ol class="arabic">
-<li><p class="sd-card-text"><a class="reference internal" href="../installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Download and install the Concordium Client for your platform</span></a>.</p></li>
-<li><p class="sd-card-text">Import the keys of one or more accounts from a JSON file exported from the Concordium Legacy Wallet in Concordium Client with the following command:</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import FILE [--name NAME]</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">--name</span></code> option selects which account to import and imports it with this name. If it’s omitted, all accounts in the file are imported under their existing names.</p>
-</li>
-<li><p class="sd-card-text">Once imported, use the <code class="docutils literal notranslate"><span class="pre">configure</span> <span class="pre">validator</span></code> command to adjust your commission rates as shown below.</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client validator configure --sender &quot;MyValidatorAccountName&quot; --delegation-transaction-fee-commission 0.2 --delegation-block-reward-commission 0.3</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<p class="sd-card-text">The commission rates will be effective at the next pay day.</p>
 </div>
 </details></section>
 <section id="for-validators-delegators-and-passive-delegators">
