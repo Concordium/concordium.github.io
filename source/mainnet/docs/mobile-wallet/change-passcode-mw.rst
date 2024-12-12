@@ -28,49 +28,6 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 
    #. Choose whether or not to enable biometrics.
 
-.. dropdown:: |mw-gen2|
-
-   #. Tap |wallet-settings|.
-
-   #. Select **Update Passcode & Biometrics**.
-
-      .. image:: ../images/mobile-wallet-gen2/more-options.jpg
-         :width: 50%
-         :alt: screen with settings menu
-
-   #. Tap **Continue**.
-
-   #. Enter your old passcode or biometrics.
-
-   #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
-
-   #. Choose whether or not to enable biometrics.
-
-.. dropdown:: |bw|
-
-   #. Click |hamburger-bw| and select **Wallet Settings**.
-
-   #. Click **Change passcode**.
-
-   #. Enter and confirm your new passcode.
-
-.. dropdown:: |mw-gen1|
-
-   #. Go to the |morepage| page.
-
-   #. Select **Update Passcode & Biometrics**.
-
-      .. image:: ../images/mobile-wallet/MW58.png
-         :width: 50%
-         :alt: screen with settings menu
-
-   #. Tap **Continue**.
-
-   #. Enter your old passcode or biometrics.
-
-   #. Enter a new six-digit passcode, or choose **Use full password instead** if you’d rather use a full password.
-
-   #. Choose whether or not to enable biometrics.
 
 .. dropdown::  Desktop Wallet
 
