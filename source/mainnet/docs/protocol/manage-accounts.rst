@@ -75,7 +75,7 @@ The input to the transaction is a *credential*, which contains a number of :term
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account using Desktop Wallet, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 Each identity contains a number of cryptographic values. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
