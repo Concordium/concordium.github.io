@@ -15,7 +15,7 @@ Preparation
 ===========
 
 Make sure to have Rust and Cargo installed and the ``wasm32-unknown-unknown``
-target, together with ``cargo-concordium`` and the Rust source code for a smart
+target, together with |cargo-concordium|_ and the Rust source code for a smart
 contract module, you wish to compile.
 
 .. seealso::
@@ -117,3 +117,6 @@ For example, running the following command will output your smart contract modul
    for V1 contracts. Concordium recommends using the wasm module with the ``.v1`` extension
    (the most-up-to date smart contract version).
    The file ``my_module.wasm.v1`` will be used when :ref:`deploying <deploy-module>` a smart contract on-chain.
+
+.. _cargo-concordium: https://crates.io/crates/cargo-concordium
+.. |cargo-concordium| replace:: ``cargo-concordium``

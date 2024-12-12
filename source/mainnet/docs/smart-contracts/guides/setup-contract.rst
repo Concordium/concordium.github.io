@@ -119,7 +119,7 @@ The *from scratch* option guides you through the process when you want to start 
 .. note::
 
    ``Wee_alloc`` is unmaintained currently and hence an optional feature for backward compatibility.
-   There are other allocators available, for example `dlmalloc <https://docs.rs/dlmalloc/>`_.
+   There are other allocators available, read :ref:`sc-costs-custom-allocator` for a guide on how to use one.
 
 .. seealso::
 
