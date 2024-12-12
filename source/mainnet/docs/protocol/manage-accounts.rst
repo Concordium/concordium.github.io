@@ -50,8 +50,8 @@ Initial account
 
 The user gets an :term:`initial account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :term:`identity provider`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
-The user additionally :ref:`creates account keys<export-import>` for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
-are valid for the user and stores them locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
+The user additionally :ref:`creates account keys<export-import>` for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
+and stores it locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
 by creating a new identity and going through the identity verification process again with an identity provider.
@@ -67,10 +67,7 @@ Once you have an identity and a user identity certificate from an identity provi
 .. Note::
    |cryptoX| does not submit the transaction directly to a node, but via a proxy. |cryptox| does not need to be connected to a node.
 
-The input to the transaction is a *credential*, which contains a number of :term:`cryptographic proofs<cryptographic proof>`, as well as a selection of :term:`attributes` the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
-
-An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
-all other activities undisclosed.
+The input to the transaction is a *credential*, which contains a number of :term:`cryptographic proofs<cryptographic proof>`. The proofs reveal no information about the owner of the account. In particular, the identity provider itself cannot determine the owner of the account.
 
 .. image:: ../protocol/images/account-creation.png
    :alt: graphic drawing showing how user creates accounts
@@ -80,31 +77,16 @@ all other activities undisclosed.
 
 Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
-Attributes
-----------
-
-Each identity contains a number of cryptographic values and a number of
-user-chosen attributes, such as nationality or country of residence. These
-attributes are certified by the identity provider. The cryptographic values are
+Each identity contains a number of cryptographic values. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes, which is the general recommendation.
-
-Benefits of revealing attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
 provider issued an identity for an account and who the identity disclosure authority are
-for the account and the identity. In addition to this basic information which
-enables regulatory compliance, an account owner can choose to publicly reveal
-other values on their account, such as their nationality or country of
-residence. Since this information is publicly accessible, anybody can check it
-before interacting with an account. Moreover, being able to see who issued the
-identity enables whoever wishes to interact with an account to judge the level
-of risk in the transaction.
+for the account and the identity. This means that anybody can check it
+before interacting with an account to judge the level of risk in the transaction.
 
 
 Account concepts

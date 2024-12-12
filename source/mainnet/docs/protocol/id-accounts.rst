@@ -25,9 +25,7 @@ While identities facilitate compliance with relevant regulations, they also allo
 Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the :term:`identity disclosure authorities<Identity disclosure authority>` are for the account and the identity. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction.
 
 An identity contains a number of cryptographic values, i.e. a number of public and private keys, a signature from the identity provider, as
-well as a number of secret values the user must use to be able to use the identity to create accounts.
-
-In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called :term:`attributes` and can be, for example, nationality or country of residence. The attributes are also certified by the identity provider. If you choose to reveal attributes, you should have a good reason to do so. The general recommendation is not to reveal attributes.
+well as a number of secret values required to use the identity for account creation.
 
 Obtain an identity
 ------------------
@@ -37,9 +35,9 @@ You can :ref:`create identities<create-initial-account>` in the |cryptox|, Deskt
 .. Warning::
    Because of difference in the way private keys are handled, you cannot exchange identities and accounts between Desktop Wallet and other wallets.
 
-Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.
+Identity issuance requires *Identity Verification*, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport.
 
-Upon verification of the user's identification documents and attributes, the Identity provider issues a :term:`user identity certificate`. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.
+Upon verification of the user's identification documents, the Identity provider issues a :term:`user identity certificate`. The User identity certificate is basically the Identity Provider’s signature over some cryptographic keys of the user.
 
 .. image:: ./images/identity-creation.png
    :alt: graphic drawing showing how the user interacts with the identity provider
