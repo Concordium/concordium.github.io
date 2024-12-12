@@ -781,7 +781,7 @@ Desktop Wallet
 
         .. dropdown:: |mw-gen1| 3.2.2 - November 30, 2023
 
-            |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+            |mw-gen1| 3.2.2 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|.
 
         .. dropdown:: |mw-gen1| 3.2.1 - August 8, 2023
 
@@ -793,7 +793,7 @@ Desktop Wallet
 
         .. dropdown:: |mw-gen1| 3.1.1 - March 27, 2023
 
-            A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS. For more information, see the |mw-gen2| :ref:`FAQ<wallet-migrate>`.
+            A message has been added to suggest that users download and configure the new |mw-gen2|. This is to prepare for when account and identity creation will be disabled in |mw-gen1| for iOS.
 
         .. dropdown:: |mw-gen1| 3.1.0 - March 7, 2023
 
@@ -878,7 +878,7 @@ Desktop Wallet
 
         .. dropdown:: 3.2.1 - December 1, 2023
 
-            3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|. For information about how to migrate, see the :ref:`FAQ<wallet-migrate>` for |mw-gen2|.
+            3.2.1 implements the renaming of bakers to validators throughout the wallet. The other changes related to Concordium's tokenomics updates have also been applied. Note that in the |mw-gen1| wallet staking pool commissions are locked at 10%. If you have a staking pool and you want to change your commissions, you must migrate to |mw-gen2| or |bw|.
 
         .. dropdown:: 3.2.0 - February 6, 2023
 
