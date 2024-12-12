@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/id-accounts.b97c9feb-2902-4907-8947-949f47d23e22.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/id-accounts.76c0d03b-6546-4863-871b-1cc0b13baf57.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/id-accounts';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -740,56 +740,31 @@ document.write(`
 <p>Before you can use the Concordium Platform, an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> must verify and record your real-world identity. This identification is performed when you create your first account.</p>
 <section id="about-identities">
 <h2>About identities<a class="headerlink" href="#about-identities" title="Link to this heading">#</a></h2>
-<p>Identities are issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. There is a <a class="reference internal" href="../../tools/transactions.html#identity-commands"><span class="std std-ref">registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain</span></a>. Concordium Foundation will maintain the list in the beginning.</p>
+<p>Identities are issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. There is a <a class="reference internal" href="../../tools/transactions.html#identity-commands"><span class="std std-ref">registry of selected identity providers and their contact information publicly accessible from the Concordium blockchain</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to create a company identity that is not associated with a specific individual but is issued with documents that identify a company.
 Company identities are only relevant for a few companies. The way they are created differs from how individual identities are created. For more information, see <a class="reference external" href="https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities">Company identity creation</a>.</p>
 </div>
-<p>While identities facilitate compliance with relevant regulations, they also allow users to be represented <a class="reference internal" href="../resources/glossary.html#term-On-chain"><span class="xref std std-term">on-chain</span></a> in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of disclosing an identity. Disclosing an identity can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more identity disclosure authorities and the identity provider who issued the account’s identity.</p>
-<p>Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the <a class="reference internal" href="../resources/glossary.html#term-Identity-disclosure-authority"><span class="xref std std-term">identity disclosure authorities</span></a> are for the account and the identity. In addition to this basic information which enables regulatory compliance, an account owner can choose to publicly reveal other values on their account. These values are called <a class="reference internal" href="../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> and can be, for example, nationality or country of residence. Publicly accessible attributes enable anybody to check the attributes before interacting with an account. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction. If you choose to reveal attributes, you should have a good reason to do so. The general recommendation is not to reveal attributes.</p>
-<section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h3>
-<p>Each identity contains a number of cryptographic values and a number of
-user-chosen attributes, such as nationality or country of residence. These
-attributes are certified by the identity provider. The cryptographic values are
-a number of public and private keys, a signature from the identity provider, as
-well as a number of secret values the user must use to be able to use the
-identity to create accounts.</p>
-<p>You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes at all, which is the general recommendation.</p>
-</section>
+<p>While identities facilitate compliance with relevant regulations, they also allow users to be represented <a class="reference internal" href="../resources/glossary.html#term-On-chain"><span class="xref std std-term">on-chain</span></a> in a way that protects users’ privacy. That is, transactions on the chain are processed without exposing the identity of the sender or receiver. The identity of an account owner can only be revealed via the process of <a class="reference internal" href="#revoke-anomity"><span class="std std-ref">disclosing an identity</span></a>. Disclosing an identity can only happen in exceptional circumstances, for example if authorities have detected suspicious activity on the account, and requires action by one or more identity disclosure authorities and the identity provider who issued the account’s identity.</p>
+<p>Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account, and who the <a class="reference internal" href="../resources/glossary.html#term-Identity-disclosure-authority"><span class="xref std std-term">identity disclosure authorities</span></a> are for the account and the identity. Being able to see who issued the identity enables whoever wishes to interact with an account to judge the level of risk in the transaction.</p>
+<p>An identity contains a number of cryptographic values, i.e. a number of public and private keys, a signature from the identity provider, as
+well as a number of secret values required to use the identity for account creation.</p>
 <section id="obtain-an-identity">
 <h3>Obtain an identity<a class="headerlink" href="#obtain-an-identity" title="Link to this heading">#</a></h3>
-<p>You can <a class="reference internal" href="../guides/create-identity.html#create-initial-account"><span class="std std-ref">create identities</span></a> in the CryptoX Concordium Wallet, Desktop Wallet, Concordium Wallet for Mobile, or Concordium Wallet for Web. Identity creation is an <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> action.</p>
+<p>You can <a class="reference internal" href="../guides/create-identity.html#create-initial-account"><span class="std std-ref">create identities</span></a> in the CryptoX Concordium Wallet, Desktop Wallet, or Concordium Wallet for Web. Identity creation is an <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> action.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>It is not possible to exchange identities and accounts between the Concordium Legacy Wallet and the Desktop Wallet. If you try to import a file that has been exported from the Concordium Legacy Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Concordium Legacy Wallet.</p>
+<p>Because of difference in the way private keys are handled, you cannot exchange identities and accounts between Desktop Wallet and other wallets.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Because of the difference in the way private keys are handled between Concordium Wallet for Mobile / Concordium Wallet for Web and the first generation wallets (Concordium Legacy Wallet and Desktop Wallet), you cannot exchange identities and accounts between them.</p>
-<p>It is possible to exchange accounts and identities between the CryptoX Concordium Wallet, Concordium Wallet for Mobile, and the Concordium Wallet for Web. Additionally, Concordium Legacy Wallet users can import backup files to CryptoX Concordium Wallet.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is no longer possible for users of Concordium Legacy Wallet to create new identities.</p>
-</div>
-<p>Identity issuance requires <em>Identity Verification</em>, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport. Identity verification also checks that the user-chosen attributes are valid for the user.</p>
-<p>Upon verification of the user’s identification documents and attributes, the Identity provider issues a <a class="reference internal" href="../resources/glossary.html#term-User-identity-certificate"><span class="xref std std-term">user identity certificate</span></a>. The User identity certificate contains attributes about the user. It is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes.</p>
+<p>Identity issuance requires <em>Identity Verification</em>, which is the process of verifying the real-life identity of the user. This typically requires taking photographs or scans of identification documents, such as a passport.</p>
+<p>Upon verification of the user’s identification documents, the Identity provider issues a <a class="reference internal" href="../resources/glossary.html#term-User-identity-certificate"><span class="xref std std-term">user identity certificate</span></a>. The User identity certificate is basically the Identity Provider’s signature over some cryptographic keys of the user.</p>
 <img alt="graphic drawing showing how the user interacts with the identity provider" src="../../_images/identity-creation.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If using CryptoX Concordium Wallet, Concordium Wallet for Web, or Concordium Wallet for Mobile with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.</p>
+<p>If using CryptoX Concordium Wallet or Concordium Wallet for Web with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.</p>
 </div>
 </section>
-</section>
-<section id="about-accounts">
-<h2>About accounts<a class="headerlink" href="#about-accounts" title="Link to this heading">#</a></h2>
-<p>For information about accounts, see <a class="reference internal" href="manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is no longer possible for users of Concordium Legacy Wallet to create new accounts.</p>
-</div>
 </section>
 <section id="disclosing-an-identity">
 <span id="revoke-anomity"></span><h2>Disclosing an identity<a class="headerlink" href="#disclosing-an-identity" title="Link to this heading">#</a></h2>
@@ -891,11 +866,9 @@ identity to create accounts.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-identities">About identities</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-an-identity">Obtain an identity</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-accounts">About accounts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disclosing-an-identity">Disclosing an identity</a></li>
 </ul>
   </nav></div>
