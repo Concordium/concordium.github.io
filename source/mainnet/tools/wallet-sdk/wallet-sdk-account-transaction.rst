@@ -18,11 +18,9 @@ This example constructs and signs a simple transfer, which is an account transac
 
 Note that when the transaction has been signed anyone with the signature and the transaction will be able to send it to a Concordium node. Therefore it is very important that a wallet requests user approval before utilizing their signing keys.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -80,9 +78,7 @@ Note that when the transaction has been signed anyone with the signature and the
 
             const signature = await signTransaction(accountTransaction, signer);
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -141,9 +137,7 @@ Note that when the transaction has been signed anyone with the signature and the
                     .nonce(nonce).expiry(expiry).signer(signer).build()
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 
@@ -188,11 +182,9 @@ Send an account transaction to a Concordium node
 
 Finally, when the transaction has been constructed and signed, it is ready to be sent to a Concordium node. The output of the function sending a transaction to a Concordium node is the transaction hash. The transaction hash can then be used to monitor the status of the submitted transaction.
 
-.. tabs::
+.. tab-set::
 
-    .. tab::
-
-        TypeScript (Web)
+    .. tab-item:: TypeScript (Web)
 
         .. code-block:: javascript
 
@@ -203,9 +195,7 @@ Finally, when the transaction has been constructed and signed, it is ready to be
             const client = new ConcordiumGRPCWebClient(nodeAddress, nodePort);
             const transactionHash = await client.sendAccountTransaction(accountTransaction, signature);
 
-    .. tab::
-
-        Kotlin (Android)
+    .. tab-item:: Kotlin (Android)
 
         .. code-block:: Kotlin
 
@@ -223,9 +213,7 @@ Finally, when the transaction has been constructed and signed, it is ready to be
                 val transactionHash = client.sendTransaction(transaction)
             }
 
-    .. tab::
-
-        Swift (macOS, iOS)
+    .. tab-item:: Swift (macOS, iOS)
 
         .. code-block:: Swift
 

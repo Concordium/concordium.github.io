@@ -44,6 +44,7 @@ the code.
 Wasm is a low-level language and it is impractical to write by hand. Instead, you
 can write smart contracts in a more high-level language that is then
 compiled to Wasm. The best supported high-level language on Concordium is Rust.
+You can read :ref:`this article <writing-smart-contracts>` for more information regarding using Rust on Concordium.
 
 .. _wasm-limitations:
 
@@ -75,7 +76,7 @@ point values.
 Deployment
 ==========
 
-Deploying a module to the chain means submitting the module bytecode as a
+:ref:`Deploying <deploy-module>` a module to the chain means submitting the module bytecode as a
 transaction to the Concordium network. If *valid*, this transaction will be
 included in a block. This transaction, as every other transaction, has an
 associated cost. The cost is based on the size of the bytecode and is charged

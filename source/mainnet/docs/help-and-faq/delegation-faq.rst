@@ -145,7 +145,7 @@ For validators
 
 .. dropdown:: How can I change the delegation commissions for my staking pool?
 
-    You can change the commissions for your staking pool within the allowed limits in the |bw|, |mw-gen2|, and Desktop Wallet. See :ref:`update pool settings<update-pool-settings>` for information about how to do this for each type of wallet. In the |mw-gen1| it is not possible for pool owners to set the commissions. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
+    You can change the commissions for your staking pool within the allowed limits in the |bw|, |cryptox|, and Desktop Wallet. See :ref:`update pool settings<update-pool-settings>` for information about how to do this for each type of wallet.
 
 .. dropdown:: Is there a cool-down period for validators?
 
@@ -167,30 +167,6 @@ For validators
 .. dropdown:: Can I use funds in a release schedule to meet the minimum required amount of CCDs to become a validator?
 
     Yes, the funds locked in a release schedule can be staked.
-
-.. _comm-update-legacy-mw:
-
-.. dropdown:: How can I change the commissions in my staking pool if I am using |mw-gen1|?
-
-    For users of |mw-gen1| that want to update commission rates for a staking pool, you must do this in Concordium Client, the Concordium command line tool.
-
-    #. :ref:`Download and install the Concordium Client for your platform<concordium-node-and-client-download>`.
-
-    #. Import the keys of one or more accounts from a JSON file exported from the |mw-gen1| in Concordium Client with the following command:
-
-        .. code-block:: console
-
-            concordium-client config account import FILE [--name NAME]
-
-       The ``--name`` option selects which account to import and imports it with this name. If it’s omitted, all accounts in the file are imported under their existing names.
-
-    #. Once imported, use the ``configure validator`` command to adjust your commission rates as shown below.
-
-        .. code-block:: console
-
-            concordium-client validator configure --sender "MyValidatorAccountName" --delegation-transaction-fee-commission 0.2 --delegation-block-reward-commission 0.3
-
-    The commission rates will be effective at the next pay day.
 
 For validators, delegators and passive delegators
 -------------------------------------------------

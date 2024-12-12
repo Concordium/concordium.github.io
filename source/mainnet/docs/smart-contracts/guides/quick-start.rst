@@ -64,14 +64,12 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
 .. dropdown:: Step 3 - Set up a Concordium Wallet
 
-    You need to set up a Concordium wallet and export the keys to import them to `concordium client`. You can only import keys from |bw|, |mw-gen2|, or |mw-gen1| into `concordium-client`, so you must choose one of those wallets to set up.
+    You need to set up a Concordium wallet and export the keys to import them to `concordium client`. You can only import keys from |bw| or |cryptox| into `concordium-client`, so you must choose to set up one of those wallets.
 
     - |bw| :ref:`setup<setup-browser-wallet>`
         - :ref:`Key export<export-key>`
-    - |mw-gen2| :ref:`setup<setup-g2-mobile-wallet>`
+    - |cryptox| :ref:`setup<setup-cryptox-wallet>`
         - :ref:`Key export<export-key>`
-    - |mw-gen1| :ref:`setup<setup-mobile-wallet>`
-        - :ref:`Key export<export-import>`
     - :ref:`Import keys to concordium-client<concordium-client-import-accounts-keys>`
 
     Use the testnet faucet in your wallet to get some CCDs for testing. The testnet faucet is available once you create an account.

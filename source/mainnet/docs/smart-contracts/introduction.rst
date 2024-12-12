@@ -11,7 +11,7 @@
 What is a smart contract
 ===============================
 
-Already know what smart contracts are? Go to the :ref:`quick guide<sc-quick-start>` to start building smart contracts on Concordium right away.
+Already know what smart contracts are? Go to the :ref:`quick start guide<sc-quick-start>` to start building smart contracts on Concordium right away.
 
 A :term:`smart contract` is a user-supplied piece of code submitted to the Concordium
 blockchain, used to define behavior that is not directly part of the core
@@ -28,9 +28,9 @@ system, combining on and off-chain functionality. An example of off-chain
 functionality could be a server that invokes the smart contract based on
 data from the real-world, such as prices of stocks, or weather information.
 
-.. tabs::
+.. tab-set::
 
-    .. tab:: What are smart contracts for?
+    .. tab-item:: What are smart contracts for?
 
         Smart contracts can reduce the needed amount of trust in third-parties, in some cases
         removing the need for a trusted third-party, in other cases reducing their
@@ -40,7 +40,7 @@ data from the real-world, such as prices of stocks, or weather information.
         anybody with access to a node can verify, they can be very useful for ensuring
         agreement between parties.
 
-    .. tab:: What are smart contracts *not* for?
+    .. tab-item:: What are smart contracts *not* for?
 
         Smart contracts are a very exciting technology and people are still finding new
         ways to take advantage of them.
@@ -81,7 +81,8 @@ does not fulfil their obligations. This will most likely mean that the contract
 needs to support some notion of proof that the seller has indeed fulfilled their
 obligation, or some way for the highest bidder to file a complaint. Smart
 contracts cannot resolve these real-world issues automatically, and the best
-solution is likely going to depend on the specifics of the auction.
+solution is likely going to depend on the specifics of the auction. You can find
+an example implementation of the auction contract on `this repository <https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/auction>`_
 
 Additional reading
 ------------------

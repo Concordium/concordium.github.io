@@ -14,8 +14,7 @@ Once you are familiar with smart contracts, it is a good idea to read the :ref:`
    To request CCDs for testing, use the buttons in the Concordium Wallets when running Testnet.
 
 
-Before you can start developing smart contracts, you need to setup the
-environment.
+Before you can start developing smart contracts, you need to :ref:`setup the development environment <setup-env>`.
 
 You can also watch a video about installing the smart contract tools.
 
