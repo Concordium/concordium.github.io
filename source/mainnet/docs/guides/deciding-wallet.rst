@@ -5,9 +5,6 @@
 Deciding between the wallets
 ============================
 
-.. Note::
-   The Concordium Legacy Wallet and Concordium Wallet for Mobile are no longer available for creating new accounts.
-   Existing users can still access their accounts with these wallets, but for new users, the recommended option is the CryptoX Concordium Wallet.
 
 Why you need a wallet
 =====================
@@ -38,7 +35,7 @@ Portability limits between wallets
 =========================================================
 
 - Identities and accounts cannot be directly transferred between Desktop Wallet and other wallets.
-- |cryptox| can import accounts from Concordium Wallet for Mobile, Concordium Legacy Wallet, and |bw|.
+- |cryptox| can import accounts from other Concordium wallets via seed phrase of backup file.
 - You can always send CCD tokens between any wallets.
 
 Wallet Backups
@@ -104,8 +101,8 @@ The following table lists the major features of each wallet.
       - Can connect to dApps
       - Can connect to dApps
    *  - Cannot recover in other wallet types
-      - Can recover in |bw| and |mw-gen2|
-      - Can recover in |bw|, |mw-gen2|, and |cryptox|.
+      - Can recover in |bw|
+      - Can recover in |bw| and |cryptox|.
 
 Next steps
 ==========
