@@ -6,6 +6,8 @@ Cost reduction
 
 There are several ways that you can reduce transaction costs when developing your smart contracts.
 
+.. _sc-costs-custom-allocator:
+
 Use a custom allocator
 ======================
 
@@ -45,7 +47,14 @@ For very complex contracts it may be beneficial to run benchmarks to see
 whether ``bump_alloc`` is the best option. See the Rust `allocator <https://doc.rust-lang.org/std/alloc/index.html#the-global_allocator-attribute>`_
 documentation for more context and details on using custom allocators.
 
+.. note::
+
+   One interesting thing to know is that you need to be careful to not enable ``bump_alloc``
+   when using the smart contract types in other programs (e.g. `a long-lived indexer <https://github.com/Concordium/concordium-dapp-examples/blob/main/trackAndTrace/indexer/Cargo.toml#L27>`_)
+
 There are other allocators available, for example ``dlmalloc``, that can be used instead.
+
+.. _sc-costs-use-state:
 
 Use State-* types for maps, sets, and boxes
 ===========================================
