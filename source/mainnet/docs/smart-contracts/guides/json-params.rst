@@ -8,8 +8,7 @@ This guide explains how to interact with the CIS-2 smart contract functions by p
 
 .. seealso::
 
-   For a guide on how to send interact with a smart contract using JSON see :ref:`interact-instance-json-parameters`.
-   
+   For a guide on how to interact with a smart contract using JSON parameters see :ref:`interact-instance-json-parameters`.
 
 A smart contract implementing CIS-2 must export the following functions: ``transfer()``, ``updateOperator()``, ``balanceOf()``, ``operatorOf()``, and ``tokenMetadata()``. This topic briefly describes what the required functions do and how to interact with them using JSON parameters one by one.
 
