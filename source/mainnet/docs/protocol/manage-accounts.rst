@@ -6,7 +6,7 @@
 Accounts
 ========
 
-Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the |cryptox|, Desktop Wallet, or Concordium Client for your transactions.
+Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the one of the Concordium wallets or Concordium Client for your transactions.
 
 You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
 
@@ -30,7 +30,7 @@ The off-chain part of the account contains:
    the account on the chain)
 
 Concordium provides several ways of interacting with the on-chain account.
-Off-chain parts of accounts can be transferred between different devices but not between |mw-gen1| and Desktop Wallet, or |mw-gen2| and Desktop Wallet. The same account can be used from multiple devices at the same time.
+The same account can be used from multiple devices at the same time, and off-chain parts of accounts can be transferred between different devices, however not between Desktop Wallet and other wallet types.
 
 Accounts on the chain are identified via an account address, which is a 32-byte
 sequence. The address is usually displayed in Base58Check encoding with version
@@ -46,12 +46,12 @@ Initial account
 
 .. Note::
 
-   Initial accounts are not created by the identity provider when using |mw-gen2| or |bw|. You create all accounts yourself.
+   Initial accounts are not created by the identity provider when using |cryptox| or |bw|. You create all accounts yourself.
 
 The user gets an :term:`initial account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :term:`identity provider`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
-The user additionally :ref:`creates account keys<export-import>` for an initial account, which the user stores privately. The identity provider then verifies that the attributes in the user identity information
-are valid for the user and stores them locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
+The user additionally :ref:`creates account keys<export-import>` for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
+and stores it locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
 by creating a new identity and going through the identity verification process again with an identity provider.
@@ -65,12 +65,9 @@ Account creation
 Once you have an identity and a user identity certificate from an identity provider, you can use it to create more accounts on the Concordium Platform. This is typically done using an :ref:`app or wallet<tools>` that guides users through the account creation process. The creation of an account is an :term:`on-chain` action that requires sending a transaction to a node that participates in the Concordium network.
 
 .. Note::
-   |mw-gen2| and |mw-gen1| do not submit the transaction directly to a node, but via a proxy. |mw-gen2| and |mw-gen1| do not need to be connected to a node.
+   |cryptoX| does not submit the transaction directly to a node, but via a proxy. |cryptox| does not need to be connected to a node.
 
-The input to the transaction is a *credential*, which contains a number of :term:`cryptographic proofs<cryptographic proof>`, as well as a selection of :term:`attributes` the user wishes to reveal publicly. The proofs establish that the attributes the user revealed publicly are the ones approved by the identity provider. The proofs reveal no other information. In particular, the identity provider itself cannot determine the owner of the account. Note that revealing attributes publicly is completely optional. The benefit gained from revealing attributes is that other users may decide whether to trust the account based on the publicly available information.
-
-An example is that you might need to reveal your nationality sometimes. So you might have one account with no attributes revealed, and another account that reveals your nationality. When required, you can use the account with the nationality revealed while keeping
-all other activities undisclosed.
+The input to the transaction is a *credential*, which contains a number of :term:`cryptographic proofs<cryptographic proof>`. The proofs reveal no information about the owner of the account. In particular, the identity provider itself cannot determine the owner of the account.
 
 .. image:: ../protocol/images/account-creation.png
    :alt: graphic drawing showing how user creates accounts
@@ -80,31 +77,16 @@ all other activities undisclosed.
 
 Any time you create a new account when using |mw-gen1| or Desktop Wallet, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
-Attributes
-----------
-
-Each identity contains a number of cryptographic values and a number of
-user-chosen attributes, such as nationality or country of residence. These
-attributes are certified by the identity provider. The cryptographic values are
+Each identity contains a number of cryptographic values. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
 identity to create accounts.
 
-You are in control of which attributes are revealed to the public. You can choose not to reveal any attributes, which is the general recommendation.
-
-Benefits of revealing attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
 provider issued an identity for an account and who the identity disclosure authority are
-for the account and the identity. In addition to this basic information which
-enables regulatory compliance, an account owner can choose to publicly reveal
-other values on their account, such as their nationality or country of
-residence. Since this information is publicly accessible, anybody can check it
-before interacting with an account. Moreover, being able to see who issued the
-identity enables whoever wishes to interact with an account to judge the level
-of risk in the transaction.
+for the account and the identity. This means that anybody can check it
+before interacting with an account to judge the level of risk in the transaction.
 
 
 Account concepts
@@ -155,7 +137,7 @@ validate transactions.
 
 You can :ref:`look up the sequence number<account-seqno>` from an up to date node using Concordium Client.
 
-The |mw-gen2| and |mw-gen1| keeps track of the sequence number and assigns the correct one when sending transactions.
+The |cryptox| keeps track of the sequence number and assigns the correct one when sending transactions.
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually.
 
@@ -190,6 +172,6 @@ Command-line tool
 The Concordium distribution ships with a command-line tool named
 :ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
 Concordium blockchain. It cannot be used to create identities, but it can
-:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallet. Once an account has been
+:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the |cryptox|. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
