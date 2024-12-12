@@ -8,7 +8,7 @@ Build a contract schema
 
 This guide will show you how to build a smart contract schema, how to export it
 to a file, and/or embed the schema into the smart contract module, all using
-``cargo-concordium``.
+|cargo-concordium|_.
 
 .. note ::
 
@@ -277,3 +277,6 @@ commands print the base64 representation of the schema to the console:
    $cargo concordium schema-base64 --module "/some/path/module.wasm.v1"
 
    $cargo concordium schema-base64 --module "/some/path/module.wasm.v1" --out -
+
+.. _cargo-concordium: https://crates.io/crates/cargo-concordium
+.. |cargo-concordium| replace:: ``cargo-concordium``

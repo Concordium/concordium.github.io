@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/json-params.997985b2-1576-4f2c-aa92-bb3e80119cf8.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/json-params.66560084-cab5-4868-8b2c-bac4a2168a41.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/json-params';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -613,7 +613,6 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/wallet-faqs.html">Wallet FAQs</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/deciding-wallet.html">Deciding between the wallets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/cryptox-faq.html">CryptoX Concordium Wallet FAQ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet-gen2/faq.html">Concordium Wallet for Mobile FAQ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../browser-wallet/browser-wallet-faq.html">Concordium Wallet for Web FAQ</a></li>
 </ul>
 </li>
@@ -737,6 +736,10 @@ document.write(`
   <section id="json-parameters">
 <span id="json-params"></span><h1>JSON parameters<a class="headerlink" href="#json-parameters" title="Link to this heading">#</a></h1>
 <p>This guide explains how to interact with the CIS-2 smart contract functions by providing input JSON parameters. This guide uses the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/cis2-multi">cis2-multi smart contract</a> as a starting point, and then continues with a couple of custom input types.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For a guide on how to interact with a smart contract using JSON parameters see <a class="reference internal" href="interact-instance.html#interact-instance-json-parameters"><span class="std std-ref">Passing parameters in JSON format</span></a>.</p>
+</div>
 <p>A smart contract implementing CIS-2 must export the following functions: <code class="docutils literal notranslate"><span class="pre">transfer()</span></code>, <code class="docutils literal notranslate"><span class="pre">updateOperator()</span></code>, <code class="docutils literal notranslate"><span class="pre">balanceOf()</span></code>, <code class="docutils literal notranslate"><span class="pre">operatorOf()</span></code>, and <code class="docutils literal notranslate"><span class="pre">tokenMetadata()</span></code>. This topic briefly describes what the required functions do and how to interact with them using JSON parameters one by one.</p>
 <section id="transfer-and-transferparams">
 <h2>transfer() and TransferParams<a class="headerlink" href="#transfer-and-transferparams" title="Link to this heading">#</a></h2>
