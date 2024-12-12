@@ -47,6 +47,7 @@ You can update your `Cargo.toml` file by using:
    In ``concordium-std`` version ``>=10.0.0``, `bump_alloc <https://docs.rs/concordium-std/10.0.0/concordium_std/#use-a-custom-allocator>`_ is a feature and needs to be explicitly enabled.
    When ``std`` feature is enabled, the allocator provided by the Rust standard library is used
    by default but when the ``wee_alloc``/``bump_alloc`` feature is enabled in addition, `bump_alloc <https://docs.rs/concordium-std/10.0.0/concordium_std/#use-a-custom-allocator>`_ ( or `wee_alloc <https://docs.rs/wee_alloc/>`_) is used instead.
+   Read :ref:`sc-costs-custom-allocator` for more information on custom allocators.
 
    You can enable the ``std`` feature and the ``wee_alloc`` feature in ``concordium-std`` version in the range of ``>=6.0.0`` and ``<10.0.0`` by using:
 
