@@ -5,10 +5,10 @@
 Create an account
 =================
 
-If you are using |mw-gen1| or Desktop Wallet, when you created your :term:`identity`, it came with an :term:`initial account`. The initial account is a special account that the :term:`identity provider` submits
+If you are using Desktop Wallet, when you created your :term:`identity`, it came with an :term:`initial account`. The initial account is a special account that the :term:`identity provider` submits
 to the chain. When you already have an identity, you can create more :term:`accounts<account>` with that identity yourself.
 
-If you are using |bw|, |mw-gen2| or |cryptox|, no initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
+If you are using |bw| or |cryptox|, no initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -41,7 +41,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 .. dropdown:: Desktop Wallet
 
     .. note::
-        You can't import accounts that were created on the |mw-gen1|, |mw-gen2|, or |bw|.
+        You can't import accounts that were created on |bw|.
 
     Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See :ref:`Set up the LEDGER device and install the Concordium LEDGER App<install-ledger>`.
 
@@ -98,29 +98,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
         .. image:: ../images/desktop-wallet/dw-favorite-account.png
            :alt: dark account balance area with favorite button highlighted
 
-.. dropdown:: |mw-gen2|
 
-    #. Go to the **Accounts** page.
-
-    #. Tap the **+** in the upper right corner.
-
-    #. Tap the identity you want to use to create the account.
-
-        .. image:: ../images/mobile-wallet-gen2/create-acct-select-id.png
-            :width: 25%
-
-    #. Finally, tap **Submit account**.
-
-        .. image:: ../images/mobile-wallet-gen2/create-acct-submit.png
-            :width: 25%
-
-    Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.
-
-    You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
-
-.. dropdown:: |mw-gen1|
-
-    It is no longer possible for users of |mw-gen1| to create new accounts.
 
 .. dropdown:: |bw|
 

@@ -17,15 +17,6 @@ Change identity name
 
     #. Enter the new identity name and tap **Save**.
 
-.. dropdown:: |mw-gen2|
-
-    #. Tap |wallet-settings|. Select **Your identity cards**.
-
-    #. Tap the identity you want to edit.
-
-    #. On the identity card tap |edit| next to the identity name.
-
-    #. Change the name and tap **Save**.
 
 .. dropdown:: |bw|
 

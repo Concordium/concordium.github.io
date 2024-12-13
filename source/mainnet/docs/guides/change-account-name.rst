@@ -18,16 +18,6 @@ Change account name
     #. Enter the new name and tap **Save**.
 
 
-.. dropdown:: |mw-gen2|
-
-    #. Tap on the account you want to rename.
-
-    #. In the Account details screen, tap |acct-settings|.
-
-    #. Tap **Change account name**.
-
-    #. Change the name and click |save| to save the change.
-
 .. dropdown:: Desktop Wallet
 
     You can edit the name of the account. Click |edit| to edit the account name. Click |save| to save the change.
