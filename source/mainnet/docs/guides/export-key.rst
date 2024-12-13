@@ -23,16 +23,6 @@ In certain situations, such as testing interaction with smart contracts, you may
     #. Now you can tap **Copy key** to copy copy the key to the clipboard, or **Export to file** to save the key as a file that is compatible with other tools like ``concordium-client``.
 
 
-.. dropdown:: |mw-gen2|
-
-    #. Tap on the account for which you want to export the private key.
-
-    #. In the Account details screen, tap |acct-settings|.
-
-    #. Tap **Export private key**.
-
-    #. Tap to show the key. Enter your passcode, when prompted. You can use the copy button to copy the key or tap **Export to file** to save it as a file that is compatible with other tools like ``concordium-client``.
-
 .. dropdown:: |bw|
 
     #. Go to Accounts.
