@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/invoke-instance.668ecf4a-0b7f-4c5c-a3d8-94700aaa99f9.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/invoke-instance.7478e828-8bc9-47b8-a49f-2b49d56f121b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/invoke-instance';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -625,8 +625,6 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/setup-wallets-lp.html">Set up a wallet</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/setup-cryptox-wallet.html">Set up the CryptoX Concordium Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../browser-wallet/setup-browser-wallet.html">Set up the Concordium Wallet for Web</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet-gen2/setup-mobile-wallet.html">Set up the Concordium Wallet for Mobile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/setup-mobile-wallet.html">Set up the Concordium Legacy Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/overview-desktop.html">Set up the Desktop Wallet</a></li>
 </ul>
 </li>
@@ -773,7 +771,8 @@ entrypoint <code class="docutils literal notranslate"><span class="pre">my_recei
 <span class="go">    &lt;some-return-value&gt;</span>
 </pre></div>
 </div>
-<p>The contract state is updated, but the changes are not persisted to the chain and are discarded.</p>
+<p>The contract state is updated, but the changes are not persisted to the chain and are discarded.
+The energy used value represents a simulation of how much NRG is needed when making the smart contract call.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By default, the invocation is sent by a fictional account with address
