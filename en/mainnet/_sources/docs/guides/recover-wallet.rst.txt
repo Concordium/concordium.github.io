@@ -156,42 +156,6 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
 
         If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your seed phrase to recover the wallet.
 
-.. dropdown:: |mw-gen2|
-
-    #. After reinstalling the |mw-gen2| app, open the app.
-
-    #. On the Getting Started screen, tap **Recover wallet**.
-
-        .. image:: ../images/mobile-wallet-gen2/choice-start.png
-            :width: 25%
-
-    #. After the screens explaining recovery tap **Continue**.
-
-    #. Enter each word of your recovery phrase in the correct order. When you start typing, possible words appear for you to select. Once the words are correct, tap **Continue** to submit the recovery request to the identity provider(s).
-
-        .. image:: ../images/mobile-wallet-gen2/recovery-enter-phrase.png
-            :width: 25%
-
-    #. When recovery is successful, the screen below appears.
-
-        .. image:: ../images/mobile-wallet-gen2/recovery-success.png
-            :width: 25%
-
-    Sometimes recovery can take longer. You might encounter a partial recovery.
-
-    This means that accounts and identities have been partially recovered. This could be because one of the identity providers is unresponsive. Tap **Try again** to attempt recovery again now or tap **Continue** to wait until later to try to recover. If you wait until later you can continue to the wallet.
-
-    To continue recovery, tap |wallet-settings| and tap **Recovery** to continue.
-
-    .. Note::
-
-        When you recover your wallet, any account names that you might have edited will be reset to the account number. You can :ref:`edit the account name<change-mw-acct-name>`, if desired.
-
-.. dropdown:: |mw-gen1|
-
-    Recovery of |mw-gen1| requires a valid backup file. For more information about this process, see :ref:`backup and restore<mobile-wallet-recover>`.
-
-    If you want to recover your |mw-gen1| wallet to |cryptox|, see the description above for recovering on |cryptox| with a backup file.
 
 .. dropdown:: Desktop Wallet
 

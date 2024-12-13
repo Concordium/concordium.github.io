@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/create-account.70fe17e0-671d-4754-8e07-64c332495010.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/create-account.0aa483ee-3b4c-44e3-a8dc-0a09bf167049.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/create-account';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -735,9 +735,9 @@ document.write(`
                   
   <section id="create-an-account">
 <span id="create-account"></span><h1>Create an account<a class="headerlink" href="#create-an-account" title="Link to this heading">#</a></h1>
-<p>If you are using Concordium Legacy Wallet or Desktop Wallet, when you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>, it came with an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a>. The initial account is a special account that the <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> submits
+<p>If you are using Desktop Wallet, when you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>, it came with an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a>. The initial account is a special account that the <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> submits
 to the chain. When you already have an identity, you can create more <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">accounts</span></a> with that identity yourself.</p>
-<p>If you are using Concordium Wallet for Web, Concordium Wallet for Mobile or CryptoX Concordium Wallet, no initial account was created when you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>. You create all <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">accounts</span></a> related to your identities.</p>
+<p>If you are using Concordium Wallet for Web or CryptoX Concordium Wallet, no initial account was created when you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>. You create all <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">accounts</span></a> related to your identities.</p>
 <p>To learn more about identities and accounts, see <a class="reference internal" href="../protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a> and <a class="reference internal" href="../protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -780,7 +780,7 @@ Desktop Wallet<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">You can’t import accounts that were created on the Concordium Legacy Wallet, Concordium Wallet for Mobile, or Concordium Wallet for Web.</p>
+<p class="sd-card-text">You can’t import accounts that were created on Concordium Wallet for Web.</p>
 </div>
 <p class="sd-card-text">Before you create more accounts, you need a LEDGER device with the Concordium LEDGER App installed. See <a class="reference internal" href="overview-desktop.html#install-ledger"><span class="std std-ref">Set up the LEDGER device and install the Concordium LEDGER App</span></a>.</p>
 <ol class="arabic">
@@ -835,41 +835,6 @@ Desktop Wallet<div class="sd-summary-down docutils">
 <p class="sd-card-text">To set the currently selected account the default account, click the star icon. Setting this means that this will be the account initially visible when opening the account page.</p>
 <img alt="dark account balance area with favorite button highlighted" src="../../_images/dw-favorite-account.png" />
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Concordium Wallet for Mobile<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">Go to the <strong>Accounts</strong> page.</p></li>
-<li><p class="sd-card-text">Tap the <strong>+</strong> in the upper right corner.</p></li>
-<li><p class="sd-card-text">Tap the identity you want to use to create the account.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/create-acct-select-id.png"><img alt="../../_images/create-acct-select-id.png" src="../../_images/create-acct-select-id.png" style="width: 25%;" />
-</a>
-</div></blockquote>
-</li>
-<li><p class="sd-card-text">Finally, tap <strong>Submit account</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/create-acct-submit.png"><img alt="../../_images/create-acct-submit.png" src="../../_images/create-acct-submit.png" style="width: 25%;" />
-</a>
-</div></blockquote>
-</li>
-</ol>
-<p class="sd-card-text">Your new account is now visible on the Accounts page. It might take a little while for it to finalize on the chain.</p>
-<p class="sd-card-text">You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">Change account name</span></a>.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Concordium Legacy Wallet<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">It is no longer possible for users of Concordium Legacy Wallet to create new accounts.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">

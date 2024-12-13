@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/create-identity.7342a1a6-01e4-4d8a-b05f-8fc93c014564.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/create-identity.98798aac-6f30-44fb-ad4e-f377d4e18205.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/create-identity';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -735,15 +735,11 @@ document.write(`
                   
   <section id="create-an-identity">
 <span id="create-initial-account"></span><h1>Create an identity<a class="headerlink" href="#create-an-identity" title="Link to this heading">#</a></h1>
-<p>Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of Concordium Legacy Wallet and Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For Concordium Wallet for Web, Concordium Wallet for Mobile, and CryptoX Concordium Wallet an initial account is not submitted by the identity provider.</p>
+<p>Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For Concordium Wallet for Web and CryptoX Concordium Wallet an initial account is not submitted by the identity provider.</p>
 <p>To learn more about identities and accounts, see <a class="reference internal" href="../protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a> and <a class="reference internal" href="../protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You can only exchange identities and accounts between the Concordium Wallet for Web, the Concordium Wallet for Mobile, and CryptoX Concordium Wallet.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If using Concordium Wallet for Web, Concordium Wallet for Mobile, or CryptoX Concordium Wallet with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.</p>
+<p>If using Concordium Wallet for Web or CryptoX Concordium Wallet with Digitial Trust Solutions (DTS) as your identity provider, and you have a mitID (Denmark) or Suomi.fi e-identification (Finland), you can use that to complete the identity verification process.</p>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -802,39 +798,6 @@ Desktop Wallet<div class="sd-summary-down docutils">
 <p class="admonition-title">Note</p>
 <p class="sd-card-text">You can change the name of an identity after it has been created. Go to the <strong>Identities</strong> page. Select the identity. Click <a class="reference internal" href="../../_images/edit.png"><img alt="small square with pencil" src="../../_images/edit.png" style="width: 20px;" /></a> next to the identity name. Change the name and click the <a class="reference internal" href="../../_images/save.png"><img alt="check mark" src="../../_images/save.png" style="width: 20px;" /></a> to save the change.</p>
 </div>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Concordium Wallet for Mobile<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You can submit requests for additional <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identities</span></a> in the Concordium Wallet for Mobile. You do this from the <strong>Identities</strong> page.</p>
-<ol class="arabic">
-<li><p class="sd-card-text">Tap <a class="reference internal" href="../../_images/settings.png"><img alt="gear wheel" src="../../_images/settings.png" style="width: 40px;" /></a>.</p></li>
-<li><p class="sd-card-text">Tap <strong>Your identity cards</strong> page.</p></li>
-<li><p class="sd-card-text">Tap the <strong>+</strong> in the upper right corner.</p></li>
-<li><p class="sd-card-text">Select a third-party identity provider from the list. An external web page opens within the app.</p>
-<a class="reference internal image-reference" href="../../_images/choose-idp.png"><img alt="../../_images/choose-idp.png" src="../../_images/choose-idp.png" style="width: 25%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.</p></li>
-<li><p class="sd-card-text">When you have submitted the information to the identity provider, you will have a pending identity in your app. The verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve the result. It might take up to seven days for the result to appear.</p>
-<a class="reference internal image-reference" href="../../_images/MW12.png"><img alt="../../_images/MW12.png" src="../../_images/MW12.png" style="width: 25%;" />
-</a>
-</li>
-</ol>
-<p class="sd-card-text">You can edit the identity name after it has been created so that it is more descriptive in your wallet. This does not change anything with the identity provider or on chain. For more information, see <a class="reference internal" href="change-identity-name.html#change-mw-id-name"><span class="std std-ref">Change identity name</span></a>.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Concordium Legacy Wallet<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">It is no longer possible for users of Concordium Legacy Wallet to create new identities.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">

@@ -51,7 +51,7 @@
     <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/export-import.048c064a-409e-42a3-b598-3bf1b252d6b5.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/export-import.1f01089c-a715-487d-9f6e-70e308f82618.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/export-import';</script>
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -737,35 +737,29 @@ document.write(`
 <span id="export-import"></span><h1>Make a backup of identities, accounts, and addresses<a class="headerlink" href="#make-a-backup-of-identities-accounts-and-addresses" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Concordium Wallet for Mobile and Concordium Wallet for Web use a seed phrase to recover the wallet. Therefore, backup and import features are not available.</p>
+<p>Concordium Wallet for Web uses a seed phrase to recover the wallet. Therefore, backup and import features are not available.</p>
 <p>CryptoX Concordium Wallet supports both file-based backups and seed phrase recovery.</p>
 <p>For more information, see <a class="reference internal" href="recover-wallet.html#recover-wallet"><span class="std std-ref">Recover your wallet</span></a>.</p>
 </div>
-<p>To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that if you are using Concordium Legacy Wallet or Desktop Wallet, you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can’t access the Wallet.</p>
+<p>To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that if you are using Desktop Wallet, you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can’t access the Wallet.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>You are solely responsible for keeping your assets secure. You must never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.</p>
 </div>
 <p>A backup is only necessary when creating new accounts, not every time a transaction is executed. Think of your account like a safe: it contains assets. If you lose the key, you cannot get into the safe unless you have a copy of the key. Your backup is your copy of the safe key.</p>
-<p>You can make a backup from Concordium Legacy Wallet or from Desktop Wallet but there are differences between them.</p>
+<p>You can make a backup from Desktop Wallet.</p>
 <section id="how-to-proceed">
 <h2>How to proceed<a class="headerlink" href="#how-to-proceed" title="Link to this heading">#</a></h2>
 <section id="upgrade">
 <h3>Upgrade<a class="headerlink" href="#upgrade" title="Link to this heading">#</a></h3>
-<p>Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your Concordium Legacy Wallet or Desktop Wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the <a class="reference internal" href="../release-notes/release-notes-lp.html#release-notes"><span class="std std-ref">release notes</span></a>.</p>
+<p>Concordium is continuously improving the security and reliability of its products, so it is vital to ensure that your wallet is upgraded to the latest version available. To check which version of your Concordium Wallet is currently available, refer to the <a class="reference internal" href="../release-notes/release-notes-lp.html#release-notes"><span class="std std-ref">release notes</span></a>.</p>
 </section>
 </section>
 <section id="final-notes">
 <h2>Final Notes<a class="headerlink" href="#final-notes" title="Link to this heading">#</a></h2>
-<p>If the wallet does not have the keys for some accounts and you have previously made a wallet backup using the export functionality, uninstall and reinstall Concordium Legacy Wallet, Desktop Wallet or CryptoX Concordium Wallet. You can then import your wallet backup into the new wallet.</p>
+<p>If the wallet does not have the keys for some accounts and you have previously made a wallet backup using the export functionality, uninstall and reinstall Desktop Wallet or CryptoX Concordium Wallet. You can then import your wallet backup into the new wallet.</p>
 <p>If the wallet does not have the keys from some accounts and you do not have a backup of the keys on an exported file, these accounts cannot be used. Therefore, you should ensure that you never ask anyone to transfer CCD to such accounts. Instead, go through a new identification process and generate new accounts that can be used in the future. And remember to export a new backup of the account keys each time you have generated a new account in the app.</p>
 <p>Keep previous backup files until you have verified that your latest backup is working properly.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You can’t import a backup file created in Concordium Legacy Wallet into Desktop Wallet or the other way around because the two wallets handle private keys in different ways. If you try, the import will fail.</p>
-<p>You also can’t import a backup file from Concordium Legacy Wallet to Concordium Wallet for Mobile, but you <em>can</em> import it to CryptoX Concordium Wallet.
-For more information, see <a class="reference internal" href="deciding-wallet.html#choosing-wallet"><span class="std std-ref">Deciding between the Wallets</span></a>.</p>
-</div>
 </section>
 <section id="how-to-back-up-and-import">
 <h2>How to back up and import<a class="headerlink" href="#how-to-back-up-and-import" title="Link to this heading">#</a></h2>
@@ -841,112 +835,13 @@ Recover accounts without a backup file<div class="sd-summary-down docutils">
 </details></div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="mobile-wallet-recover">
 <summary class="sd-summary-title sd-card-header">
-Concordium Legacy Wallet<div class="sd-summary-down docutils">
+Concordium Wallet for Web<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p class="sd-card-text"><strong>Backup is essential. If you lose your mobile phone or need to restore your mobile phone and you don’t have a backup from the Mobile Wallet, you can’t access your wallet and your CCDs are permanently inaccessible.</strong>
-<strong>Concordium does not take any responsibility if you lose access to your accounts. Concordium strongly advise you to complete a backup every time you create an account and store the backup file in a secure place - preferably offline.</strong></p>
-</div>
-<p class="sd-card-text">Because the Concordium Legacy Wallet does not use a seed phrase, your backup file is the only way you can restore your account keys should you lose your phone or have to re-install your phone or wallet. You will permanently lose access to your wallet if you do not have a backup of your private key file. Concordium cannot recover your private keys if you lose them. If you don’t make a backup file you will lose access to your tokens forever.</p>
-<p class="sd-card-text">If you set up a new phone and transfer the wallet, you will lose the private keys; they can only be recovered from the pre-exported backup file.</p>
-<p class="sd-card-text">Account keys are not stored in the cloud, only on the device itself in order to protect your security.</p>
-<p class="sd-card-text">A new backup file should be exported EVERY time a new account is made, otherwise keys for the account can´t be recovered.</p>
-<p class="sd-card-text">The Concordium Legacy Wallet provides built-in functionality to export wallet backups, encrypted under a passcode you choose. The wallet backup contains the keys for all wallet accounts. Each account has its own keys. Every time you make a new account in your wallet, you have to make a wallet backup to include the newly created account keys.</p>
-<p class="sd-card-text">Even if you have access to the wallet and can see the accounts after a phone restoration operation or similar action, the keys to the accounts on the wallet may be missing, in which case you don’t have access to the CCDs. The following describes how you can check if you have the necessary keys and access to your accounts.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Export<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p class="sd-card-text">The only way to ensure that your backup includes the keys for all of your accounts is to follow the instructions below. Any backup made in any other way (e.g., backup of mobile phone) will <strong>NOT</strong> include your account keys and may result in you losing access to your accounts.</p>
-</div>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Tap <strong>Backup</strong> in the lower left corner.</p></li>
-<li><p class="sd-card-text">Enter your biometrics or app passcode.</p></li>
-<li><p class="sd-card-text">Read the information about the export and tap <strong>Continue</strong>.</p></li>
-<li><p class="sd-card-text">Choose a password with a minimum of 6 characters to encrypt your export. Make sure to choose a secure password and keep it safe. Anyone with the password will be able to unlock the export and make transfers from your account. Tap <strong>Continue</strong>.</p></li>
-<li><p class="sd-card-text">Choose an option for sending or saving the export file, such as Mail.</p></li>
-</ol>
-<p class="sd-card-text">Concordium strongly recommends that you store the backup file in a safe location and not on the phone itself. It’s also vital that you keep the password to the backup file safe. Anyone with access to the file can gain access to your crypto assets. Concordium is not able to recover backup passwords.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-How to check that you have your account keys<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The app does not indicate if it has the keys to the accounts. To check whether the app has the keys for all accounts, do the following:</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Open your wallet.</p></li>
-<li><p class="sd-card-text">Create one new account for each of your identities.</p></li>
-</ol>
-<p class="sd-card-text">If this succeeds for all identities, the wallet has all the necessary account keys. The wallet does not have the keys to the accounts created under identities where this fails.</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Import<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Depending on whether you are using an Android phone or an iPhone, the import process differs slightly.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Android<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic simple">
-<li><p class="sd-card-text">Go to the <img alt="Three dots button" src="../../_images/more-ellipsis.png" /> page.</p></li>
-<li><p class="sd-card-text">Tap <strong>Restore Backup</strong>.</p></li>
-<li><p class="sd-card-text">Use the Android system prompt to browse to your export and select the file.</p></li>
-<li><p class="sd-card-text">Enter the password you chose upon making the export.</p></li>
-<li><p class="sd-card-text">Enter your biometrics or app passcode.</p></li>
-<li><p class="sd-card-text">Review your import and tap <strong>Ok, thanks</strong>.</p></li>
-</ol>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-iOS<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic simple">
-<li><p class="sd-card-text">Find the file you want to import on your iPhone.</p></li>
-<li><p class="sd-card-text">Choose the iOS “Share” option. Choose Concordium Mobile Wallet as the app to open the file.</p></li>
-<li><p class="sd-card-text">Enter the password you chose upon making the export.</p></li>
-<li><p class="sd-card-text">Enter your biometrics or app passcode.</p></li>
-<li><p class="sd-card-text">Review your import and tap <strong>Ok, thanks</strong>.</p></li>
-</ol>
-</div>
-</details></div>
-</details></div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Concordium Wallet for Mobile and Concordium Wallet for Web<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You cannot back up Concordium Wallet for Mobile or Concordium Wallet for Web to a file. They use a seed phrase to <a class="reference internal" href="recover-wallet.html#recover-wallet"><span class="std std-ref">recover your accounts, identities, and private keys</span></a>.</p>
-<p class="sd-card-text">You also can’t import a back-up file into either of these wallet apps.</p>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">The option to view the seed phrase is available in Concordium Wallet for Mobile for Android version 1.3.0 or greater in the Wallet Settings <a class="reference internal" href="../../_images/settings.png"><img alt="gear wheel" src="../../_images/settings.png" style="width: 40px;" /></a>. However you cannot simply upgrade to version 1.3.0 and use this feature. Instead, you must either create a new wallet or recover your wallet to be able to see this option in Wallet Settings.</p>
-</div>
-</div></blockquote>
+<p class="sd-card-text">You cannot back up Concordium Wallet for Web to a file. It uses a seed phrase to <a class="reference internal" href="recover-wallet.html#recover-wallet"><span class="std std-ref">recover your accounts, identities, and private keys</span></a>.</p>
+<p class="sd-card-text">You also can’t import a back-up file into the Concordium Wallet for Web.</p>
 <p class="sd-card-text">If you need to export your private key to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see <a class="reference internal" href="export-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">

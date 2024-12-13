@@ -29,33 +29,7 @@ The address book helps you select a recipient quickly for transactions.
     #. Enter a recipient name. Enter a recipient address or scan the QR code of the recipient account.
 
     #. Tap **Save**.
-.. dropdown:: |mw-gen2|
 
-   #. Tap |wallet-settings|.
-
-   #. Select **Address book**.
-
-      .. image:: ../images/mobile-wallet-gen2/more-options.jpg
-         :width: 25%
-
-   #. You can search in the address book or scan the QR code of another account.
-
-    To add a new recipient
-
-    #. Tap **+**.
-
-    #. Enter a recipient name. Enter a recipient address or scan the QR code of the recipient account.
-
-    #. Tap **Save**.
-
-.. dropdown:: |mw-gen1|
-
-   #. Go to the |morepage| page.
-
-   #. Select **Address book**.
-
-      .. image:: ../images/mobile-wallet/MW58.png
-         :width: 25%
 
 .. dropdown:: Desktop Wallet
 
