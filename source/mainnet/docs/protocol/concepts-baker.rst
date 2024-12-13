@@ -91,7 +91,7 @@ Staking pool
 
 You have the option to open a :term:`staking pool`. A staking pool allows others who want to earn rewards to do so without the need to run a node or become a validator themselves. To do this they :ref:`delegate<delegation-concept>` an amount of stake to your staking pool which then increases your stake and your :term:`chances of winning the lottery<winning probability>` to produce a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.
 
-The maximum size of a pool is 5% of all stake in pools (i.e., excluding passive delegation). Any stake above this limit will not contribute towards earning rewards. It isn't possible to add more stake to exceed the limit, but reward restaking can push it over the limit, or if a lot of other validators unstake and the thresholds change, the staking pool can exceed the limit.
+The maximum size of a pool is 5% of all stake. Any stake above this limit will not contribute towards earning rewards. It isn't possible to add more stake to exceed the limit, but reward restaking can push it over the limit, or if a lot of other validators unstake and the thresholds change, the staking pool can exceed the limit.
 
 .. todo::
 
