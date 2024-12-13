@@ -45,6 +45,7 @@ If successful, the output should be similar to the following:
        <some-return-value>
 
 The contract state is updated, but the changes are not persisted to the chain and are discarded.
+The energy used value represents a simulation of how much NRG is needed when making the smart contract call.
 
 .. note::
 
