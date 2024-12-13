@@ -93,9 +93,6 @@ If you have an account with CCD in the shielded balance, you can't add new crede
 
     When the transaction has been finalized, you can see that the shielded balance has changed, and you can see the the amount you unshielded in the **Transfers** list.
 
-.. Note::
-
-    Unshielding is no more possible in |mw-gen1| and |mw-gen2|. In order to unshield funds, you must migrate to |cryptox|.
 
     .. |more-acct| image:: ../images/more-acct.png
         :alt: Button with double-headed arrow

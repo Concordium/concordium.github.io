@@ -148,53 +148,6 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
       #. Select **Finish** to leave the page.
 
-.. dropdown:: |mw-gen2|
-
-   #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn| on the account details screen.
-
-   #. You see your current delegation. Tap **Stop delegation**.
-
-      .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-         :width: 50%
-         :alt: screen showing current delegation status with options to update or stop
-
-   #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
-
-      .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
-         :width: 50%
-         :alt: screen shown to review delegation stop details
-
-   #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-      .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
-         :width: 50%
-         :alt: delegation stop transaction submission confirmation screen
-
-.. dropdown:: |mw-gen1|
-
-   #. Go to the **Accounts** screen.
-
-   #. Tap on the balance area of the account for which you want to stop delegation or tap **More** |moredetails|.
-
-   #. In the hamburger menu |hamburger| tap **Delegation**.
-
-   #. You see your current delegation. Tap **Stop delegation**.
-
-      .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-         :width: 50%
-         :alt: screen showing current delegation status with options to update or stop
-
-   #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
-
-      .. image:: ../images/mobile-wallet/remove-delegation-conf-mw.jpg
-         :width: 50%
-         :alt: screen shown to review delegation stop details
-
-   #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-      .. image:: ../images/mobile-wallet/remove-delegation-submit-mw.jpg
-         :width: 50%
-         :alt: delegation stop transaction submission confirmation screen
 
 .. dropdown:: |bw|
 
