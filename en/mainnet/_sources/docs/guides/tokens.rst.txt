@@ -5,7 +5,7 @@
 Tokens in the wallet
 ========================
 
-You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
+You can add, inspect, and send tokens in |cryptox| and |bw|.
 
 .. dropdown:: |cryptox|
 
@@ -167,81 +167,6 @@ You can add, inspect, and send tokens in the |cryptox|, |bw|, and |mw-gen2|.
 
         2. Click the **Manage** tab. Search for the token by the Contract index. Once the tokens on the contract are loaded, the tokens that are in your account have a checkmark next to them. Remove the check and click **Update tokens**.
 
-.. dropdown:: |mw-gen2|
-
-    To access tokens and token transactions, tap on an account then tap Tokens |token-mw|. Tabs appear for tokens.
-
-    .. dropdown:: Add tokens
-
-        #. Tap **Manage**.
-
-            .. image:: ../images/mobile-wallet-gen2/manage-tokens.png
-                :width: 50%
-
-        #. Enter a smart contract address on which to look for tokens. Tap **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
-
-            .. image:: ../images/mobile-wallet-gen2/add-token-contract.png
-                :width: 50%
-
-        #. Select the token(s) you want to add. You can tap on a token to see more information about it and then tap **X** to return to the list to select tokens. You can also search by token ID at the top of the screen. Tap **Add tokens** once you have made your selection(s).
-
-            .. image:: ../images/mobile-wallet-gen2/select-tokens.png
-                :width: 50%
-
-        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case, the screen below appears when your wallet is connected and the service suggests the tokens to be added. Tap **Add tokens** to add the selected tokens to your wallet.
-
-        .. Note::
-
-            You can add NFTs that are not owned by your account to your wallet. This does not mean that you have ownership of the NFT.
-
-        Once the tokens are added you can see them on the relevant tab.
-
-        An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |mw-gen2| and convert some CCD to wrapped CCD. When you do this, you get a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |mw-gen2|.
-
-    .. dropdown:: Inspect tokens
-
-        Tap on the tab for the type of token that you want to inspect (Fungible or Collectibles). Then tap on the token to see details for that token.
-
-        You can tap **Show raw metadata** to see the raw metadata for the token. You can also tap **Don't show token in wallet** if you don't want the token to appear in your wallet.
-
-    .. dropdown:: Send tokens
-
-        .. Note::
-
-            It is not possible to send tokens in the |mw-gen2| for iOS.
-
-        To access send, either:
-
-        - Tap Send |send| on an account in the Accounts overview.
-
-            or
-
-        - Tap on the token in the appropriate tab and tap |send|.
-
-        #. Tap the field for what to send.
-
-            .. image:: ../images/mobile-wallet-gen2/send-tokens-select.png
-                :width: 50%
-
-        #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token. To find the number of decimal places, you can inspect the token as described in Inspect tokens.
-
-        #. Add the receiver address.
-
-        #. Tap **Send funds**.
-
-        #. Review the transaction. When satisfied, tap **Send funds**.
-
-        #. Tap **Finish**.
-
-    .. dropdown:: Remove tokens
-
-        If you do not want the token to appear in your wallet you can remove it. This does not change the ownership of the token.
-
-        There are two ways to remove tokens.
-
-        1. Tap on the tab for the token type and then tap on the token you want to remove. Tap **Don't show token in wallet**.
-
-        2. Tap the **Manage** tab. Search for the token by the Contract index. Once the tokens on the contract are shown the tokens that are in your account have a checkmark next to them. Remove the check and tap **Update tokens**.
 
 .. Warning::
 

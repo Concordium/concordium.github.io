@@ -54,44 +54,6 @@ This topic describes how you can send CCD from an account when only one particip
          :alt: Paper airplane with text send
          :width: 50px
 
-.. dropdown:: |mw-gen1|
-
-    #. Go to the Accounts page and tap **SEND** on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap **SEND**.
-
-        .. image:: ../images/mobile-wallet/MW13.png
-            :width: 25%
-
-        .. image:: ../images/mobile-wallet/MW22.png
-            :width: 25%
-
-    #. Enter the amount you want to transfer.
-
-        .. image:: ../images/mobile-wallet/MW23.png
-            :width: 25%
-
-    #. In **Paste recipient address** you can paste the recipient address.
-
-        - You can also choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
-
-    #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.
-
-    .. Warning::
-        Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.
-
-    5. Tap **Send amount**.
-
-        .. image:: ../images/mobile-wallet/MW26.png
-            :width: 25%
-
-    6. Confirm your choices, and tap **Send funds**.
-
-        .. image:: ../images/mobile-wallet/MW27.png
-            :width: 25%
-
-    7. Tap **Finish**.
-
-        .. image:: ../images/mobile-wallet/MW28.png
-            :width: 25%
 
 .. dropdown:: Desktop Wallet
 
@@ -117,83 +79,6 @@ This topic describes how you can send CCD from an account when only one particip
     7. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.
 
     8. Press both buttons to sign the transaction. In the Desktop Wallet, you can see that the transfer has been submitted to the chain. Select **Finish**.
-
-.. dropdown:: |mw-gen2|
-
-    #. Go to the Accounts page and tap |send| on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap |send|.
-
-    #. Enter the amount you want to transfer.
-
-        .. image:: ../images/mobile-wallet/MW23.png
-            :width: 25%
-
-    #. In **Paste recipient address** you can paste the recipient address.
-
-        - You can also choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
-
-    #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.
-
-    .. Warning::
-        Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.
-
-    5. Tap **Send amount**.
-
-        .. image:: ../images/mobile-wallet/MW26.png
-            :width: 25%
-
-    6. Confirm your choices, and tap **Send funds**.
-
-        .. image:: ../images/mobile-wallet/MW27.png
-            :width: 25%
-
-    7. Tap **Finish**.
-
-        .. image:: ../images/mobile-wallet/MW28.png
-            :width: 25%
-
-    .. |send| image:: ../images/send.png
-         :alt: Paper airplane
-         :width: 50px
-
-
-.. dropdown:: |mw-gen1|
-
-    #. Go to the Accounts page and tap **SEND** on the account from which you want to send CCD. Or with an individual account's transaction overview displayed, tap **SEND**.
-
-        .. image:: ../images/mobile-wallet/MW13.png
-            :width: 25%
-
-        .. image:: ../images/mobile-wallet/MW22.png
-            :width: 25%
-
-    #. Enter the amount you want to transfer.
-
-        .. image:: ../images/mobile-wallet/MW23.png
-            :width: 25%
-
-    #. In **Paste recipient address** you can paste the recipient address.
-
-        - You can also choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
-
-    #. *Optional*: You can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the fee of the transaction.
-
-    .. Warning::
-        Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.
-
-    5. Tap **Send amount**.
-
-        .. image:: ../images/mobile-wallet/MW26.png
-            :width: 25%
-
-    6. Confirm your choices, and tap **Send funds**.
-
-        .. image:: ../images/mobile-wallet/MW27.png
-            :width: 25%
-
-    7. Tap **Finish**.
-
-        .. image:: ../images/mobile-wallet/MW28.png
-            :width: 25%
 
 .. dropdown:: |bw|
 

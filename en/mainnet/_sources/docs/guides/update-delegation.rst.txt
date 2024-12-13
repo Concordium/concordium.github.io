@@ -169,65 +169,6 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
         #. Select **Finish** to leave the page.
 
-.. dropdown:: |mw-gen2|
-
-    #. Tap |earn| on the account with a delegation in the **Accounts** page, or tap on an account card and tap |earn| on the account details screen.
-
-    #. You see your current delegation. Tap **Update current delegation**.
-
-        .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-            :width: 50%
-            :alt: screen showing current delegation with options to stop or update
-
-    #. If you want to delegate to a specific pool tap **Validator** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
-
-        .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
-            :width: 50%
-            :alt: screen with options to choose delegation type
-
-    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
-
-    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
-
-    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
-
-.. dropdown:: |mw-gen1|
-
-    #. Go to the **Accounts** screen.
-
-    #. Tap on the balance area of the account for which you want to update delegation or tap **More** |moredetails|.
-
-    #. In the hamburger menu |hamburger| tap **Delegation**.
-
-        .. image:: ../images/mobile-wallet/account-hamburger-menu.png
-            :width: 50%
-            :alt: screen with hamburger menu expanded
-
-    #. You see your current delegation. Tap **Update current delegation**.
-
-        .. image:: ../images/mobile-wallet/delegation-status-mw.jpg
-            :width: 50%
-            :alt: screen showing current delegation with options to stop or update
-
-    #. If you want to delegate to a specific pool tap **Staking pool** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, tap **Passive delegation**. Tap **Continue**.
-
-        .. image:: ../images/mobile-wallet/update-delegation-target-mw.jpg
-            :width: 50%
-            :alt: screen with options to choose delegation type
-
-    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. And tap **Yes, restake** to restake any rewards or tap **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap **Continue**.
-
-        .. image:: ../images/mobile-wallet/update-delegation-amt-mw.jpg
-            :width: 50%
-            :alt: screen to register delegation amount and restake preference
-
-    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
-
-        .. image:: ../images/mobile-wallet/update-delegation-conf-mw.jpg
-            :width: 50%
-            :alt: screen showing overview of the transaction before submission
-
-    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
 .. dropdown:: |bw|
 
