@@ -14,9 +14,9 @@ Change validator options
 .. Warning::
     Transactions on the blockchain can't be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review transactions before submitting.
 
-The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |cryptox|, |bw|, |mw-gen2|, |mw-gen1|, and Desktop Wallet.
+The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |cryptox|, |bw|, and Desktop Wallet.
 
-The steps to get to these settings differ between the mobile wallets. They are described below.
+The steps to get to these settings for |cryptox| are described below.
 
 .. dropdown:: |cryptox|
 
@@ -30,27 +30,6 @@ The steps to get to these settings differ between the mobile wallets. They are d
             :width: 50%
             :alt: screen showing current validator settings and change button
 
-.. dropdown:: |mw-gen2|
-
-    #. You can either: tap |earn| on the account you want to delegate from in the **Accounts** page, or tap on an account card and tap |earn| on the account transaction overview screen.
-
-    #. In the Validator status screen tap **Update validator settings**.
-
-        .. image:: ../images/mobile-wallet/baker-status-mw.png
-            :width: 50%
-            :alt: screen showing current validator settings and update button
-
-.. dropdown:: |mw-gen1|
-
-    #. Go to **Accounts**. Tap on the balance area of the validator account you want update or tap **More** |moredetails|.
-
-    #. In the hamburger menu |hamburger| tap **Validation**.
-
-    #. In the Validator status screen tap **Update validator settings**.
-
-        .. image:: ../images/mobile-wallet/baker-status-mw.png
-            :width: 50%
-            :alt: screen showing current validator settings and update button
 
 Once you access the validator settings for your wallet, you have four options:
 
@@ -87,17 +66,6 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     #. On the overview screen, check the information. Once you are satisfied, tap **Submit validator transaction**.
 
-.. dropdown:: |mw-gen2| and |mw-gen1|
-
-    If you choose **Update validator stake** you see your balance and the current Validator stake amount. Enter the amount you want to stake. This is the full amount to stake and is not added to the existing stake. You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
-
-    .. image:: ../images/mobile-wallet/update-baker-stake-amt-mw.png
-        :width: 50%
-        :alt: screen to update validator stake showing amount and restake preference options
-
-    On the overview screen, check the information. Once you are satisfied, tap **Submit transaction**.
-
-    Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
 .. dropdown:: |bw|
 
@@ -302,51 +270,6 @@ Update pool settings
     #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
     #. The |cryptoX| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
-.. dropdown:: |mw-gen2| and |mw-gen1|
-
-    If you choose **Update pool settings**, you have three options:
-
-    .. image:: ../images/mobile-wallet/update-baker-pool-mw.png
-        :width: 50%
-        :alt: screen showing three staking pool options
-
-    - Open pool: open a pool for a previously closed validator
-    - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the validator's responsibility to monitor the stake to make pool management decisions.**
-    - Close pool: close a pool permanently.
-
-    If you choose **Open pool**:
-
-    #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
-
-    #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
-
-    #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
-
-    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
-
-    If you choose **Closed for new**:
-
-    Existing delegators remain in the pool. You have the option to adjust commission fees and your validator information URL.
-
-    #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
-
-    #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
-
-    #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
-
-    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
-
-    If you choose **Close pool**:
-
-    This closes the pool completely for both existing delegators and new delegators.
-
-    #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
-
-    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
-
-    .. note::
-
-        In the |mw-gen1| it is not possible for pool owners to set the commissions. They are fixed at 10%. If you want to be able to adjust commissions, you must use the |mw-gen2| or |bw|. For information about the process, see :ref:`the delegation FAQ<wallet-migrate>`.
 
 .. dropdown:: |bw|
 
@@ -576,29 +499,6 @@ If you believe your validator keys have been compromised or lost, you can genera
         - :ref:`Ubuntu<baker-ubuntu>`
 
 
-.. dropdown:: |mw-gen2| and |mw-gen1|
-
-    #. If you choose **Update validator keys**, after the screens explaining reasons for updating validator keys, you see the new validator keys. Tap **Export validator keys** and navigate to the place on your device where you want to save the file.
-
-        .. image:: ../images/mobile-wallet/update-baker-keys.png
-            :width: 50%
-            :alt: screen showing new keys with button to export
-
-    .. Warning::
-
-        If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
-
-    2. Once you have saved the keys, review the information on the overview screen of the add validator transaction then tap **Submit validator transaction**.
-
-    3. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
-
-    4. You need to import your validator keys file to your node in order to start producing blocks with the new keys. It is preferable to update them on the node as close to :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
-
-        - :ref:`Windows<baker-windows>`
-        - :ref:`macOS<baker-macos>`
-        - :ref:`Docker<baking-docker>`
-        - :ref:`Ubuntu<baker-ubuntu>`
-
 .. dropdown:: |bw|
 
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
@@ -792,17 +692,6 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
     #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**.
 
-.. dropdown:: |mw-gen2| and |mw-gen1|
-
-    #. Tap **Stop validation**.
-
-        .. image:: ../images/mobile-wallet/baker-hamburger-menu.png
-            :width: 50%
-            :alt: screen showing all validator options
-
-    #. After the screens explaining validator removal, review the information on the overview screen. When you are satisfied, tap **Submit validator transaction**.
-
-    #. The |mw-gen2| or |mw-gen1| shows that the transaction has been submitted to the chain. Tap **Finish**.
 
 .. dropdown:: |bw|
 
