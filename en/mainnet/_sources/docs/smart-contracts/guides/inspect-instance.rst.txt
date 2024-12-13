@@ -11,7 +11,7 @@ and receive-functions:
 Preparation
 ===========
 
-Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and that you have a
+Make sure that you are :ref:`running a node<node-requirements>` using the latest :ref:`Concordium software<downloads>` and that you have a
 smart-contract instance on-chain to inspect.
 
 .. seealso::

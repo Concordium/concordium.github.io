@@ -51,7 +51,7 @@
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/initialize-contract.cfb9660c-2fa6-4178-b958-ddb5fb63aa78.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/initialize-contract.018baa41-8d92-4083-aa26-4e9463014736.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/initialize-contract';</script>
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -109,6 +109,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">We are actively working to enhance our documentation to provide a better experience. Thank you for your patience!</div>
+  </div>
+
   
     <header class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
@@ -745,7 +751,7 @@ Additionally, it will show how to name an instance.</p>
 </div>
 <section id="preparation">
 <h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>Make sure that you are <a class="reference internal" href="../../network/nodes/run-node.html#run-a-node"><span class="std std-ref">running a node</span></a> using the latest <a class="reference internal" href="../../installation/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> and that you have a smart
+<p>Make sure that you are <a class="reference internal" href="../../network/nodes/node-requirements.html#node-requirements"><span class="std std-ref">running a node</span></a> using the latest <a class="reference internal" href="../../installation/downloads.html#downloads"><span class="std std-ref">Concordium software</span></a> and that you have a smart
 contract <a class="reference internal" href="deploy-module.html#deploy-module"><span class="std std-ref">deployed</span></a> in some module on-chain.</p>
 <p>Since initializing a smart contract is a transaction, you should also make sure
 to have <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> set up with an account with enough CCD to pay for
@@ -789,7 +795,7 @@ see <a class="reference internal" href="../references/references-on-chain.html#r
 <section id="passing-parameters-in-json-format">
 <span id="init-passing-parameter-json"></span><h3>Passing parameters in JSON format<a class="headerlink" href="#passing-parameters-in-json-format" title="Link to this heading">#</a></h3>
 <p>A parameter in JSON format can be passed if a <a class="reference internal" href="../contract-schema.html#contract-schema"><span class="std std-ref">smart contract schema</span></a> is supplied, either as a file or embedded in the module.
-The schema is used to serialize the JSON into binary.</p>
+The schema is used to serialize the JSON into binary. You can read more about JSON parameters <a class="reference internal" href="json-params.html#json-params"><span class="std std-ref">here</span></a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="../contract-schema.html#contract-schema"><span class="std std-ref">Read more about why and how to use smart contract schemas</span></a>.</p>
