@@ -17,7 +17,7 @@ You can also watch a video about how to update a smart contact instance.
 Preparation
 ===========
 
-Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and that you have a
+Make sure that you are :ref:`running a node<node-requirements>` using the latest :ref:`Concordium software<downloads>` and that you have a
 smart-contract instance on-chain to inspect.
 
 .. seealso::
@@ -59,7 +59,7 @@ Passing parameters in JSON format
 
 A parameter in JSON format can be passed if a :ref:`smart contract schema
 <contract-schema>` is supplied, either as a file or embedded in the module.
-The schema is used to serialize the JSON into binary.
+The schema is used to serialize the JSON into binary. You can read more about JSON parameters :ref:`here<json-params>`.
 
 .. seealso::
 

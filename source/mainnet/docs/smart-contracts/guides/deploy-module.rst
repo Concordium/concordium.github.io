@@ -11,7 +11,7 @@ how to name it.
 Preparation
 ===========
 
-Make sure that you are :ref:`running a node<run-a-node>` using the latest :ref:`Concordium software<downloads>` and
+Make sure that you are :ref:`running a node<node-requirements>` using the latest :ref:`Concordium software<downloads>` and
 that you have a :ref:`smart-contract module<build-contract>` ready to be deployed.
 
 Since deploying a smart contract module is done in the form of a transaction,
