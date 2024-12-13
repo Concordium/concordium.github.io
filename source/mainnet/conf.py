@@ -160,6 +160,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "article_footer_items": ["footer-article"],
     "show_prev_next": True,
+    "announcement": "We are actively working to enhance our documentation to provide a better experience. Thank you for your patience!",
     #"navbar_align": "left",
     "icon_links": [
         {
