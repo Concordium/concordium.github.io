@@ -160,6 +160,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "article_footer_items": ["footer-article"],
     "show_prev_next": True,
+    "announcement": "We are actively working to enhance our documentation to provide a better experience. Thank you for your patience!",
     #"navbar_align": "left",
     "icon_links": [
         {
@@ -423,7 +424,7 @@ redirects = {
     "net/nodes/baker-docker": "/en/mainnet/docs/network/guides/baker-docker.html",
     "net/guides/become-baker": "/en/mainnet/docs/network/guides/become-baker.html",
     "net/references/concordium-client": "/en/mainnet/docs/network/concordium-client.html",
-    "net/references/transactions": "/en/mainnet/docs/protocol/transactions.html",
+    "net/references/transactions": "/en/mainnet/docs/protocol/manage-accounts.html#account-aliases",
     "net/references/query-node": "/en/mainnet/docs/network/query-node.html",
     "net/references/multi-sig": "/en/mainnet/docs/network/multi-sig.html",
     "net/web3-id/index": "/en/mainnet/docs/network/web3-id/index.html",
