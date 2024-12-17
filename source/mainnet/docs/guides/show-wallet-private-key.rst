@@ -15,7 +15,7 @@ When :ref:`setting up a new wallet<setup-cryptox-wallet>`, you can choose to res
 
 #. Tap **Wallet private key**.
 
-   .. image:: ../images/cryptoX/cryptox-show-wallet-private-key.png
+   .. image:: ../images/cryptoX/show-wallet-private-key.png
             :width: 40%
             :alt: screen with seed phrase
 
