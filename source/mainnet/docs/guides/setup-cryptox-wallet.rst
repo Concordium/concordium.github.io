@@ -11,45 +11,62 @@ and sending :term:`shielded transactions<shielded transfer>`.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
 
-Read the following guide to learn how to set up the wallet.
+Follow this guide to set up your wallet.
 
 Get started
 ===========
 
 #. Install the |cryptox| on an Android or iOS phone. See :ref:`Downloads<downloads-cryptox>`.
 
-#. Open the |cryptox|. Read and accept the Terms and Conditions. Tap **Get started**.
+#. Open the |cryptox|. You'll see an introduction screen explaining the key features.
 
-   .. image:: ../images/cryptoX/cryptox-install1.png
-      :width: 50%
+#. Read and accept the Terms and Conditions and Privacy Policy by checking the box.
+
+   You can also choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.
+
+#. Tap **Get started**.
+
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1.png
+      :width: 40%
       :alt: screen with terms and conditions
 
-#. Decide whether or not to allow activity tracking. This tracking only applies to the general app usage, not funds, transactions or any personal data.
 
-   .. image:: ../images/cryptoX/cryptox-install1b.png
-      :width: 50%
+Set up your wallet
+==================
+
+The wallet setup consists of three phases: Create a 6-digit passcode, Save seed phrase, and Verify identity.
+
+You can pause between the phases and return later to continue.
+
+Create passcode
+---------------
+
+#. Tap **Continue** to begin creating your new wallet.
+
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding2.png
+      :width: 40%
       :alt: screen with activate account
 
-
-#. Tap **Activate Account**.
-
-   .. image:: ../images/cryptoX/cryptox-install2.png
-      :width: 50%
-      :alt: screen with activate account
-
-#. Tap **Create wallet**.
-
-
-   .. image:: ../images/cryptoX/cryptox-install4.png
-      :width: 50%
-      :alt: screen with create wallet
+   .. Note::
+      If you already have a wallet to import, you can select **Import a wallet** at the bottom of the screen. This allows you to :doc:`restore using a seed phrase, wallet private key, or backup file <./recover-wallet>`.
 
 #. Create a six-digit passcode or use a full password. Repeat passcode or password.
 
-   .. image:: ../images/cryptoX/cryptox-install5.png
-      :width: 50%
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding3.png
+      :width: 40%
       :alt: screen with keypad to enter passcode
 
+
+Save seed phrase
+----------------
+
+After setting up your passcode, you'll see the main wallet screen with a progress indicator showing your setup progress. Your progress is automatically saved, so you can close the app now and continue the setup later if you wish.
+
+#. Tap **Save seed phrase** to continue setup.
+
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding4.png
+      :width: 40%
+      :alt: screen with information about saving seed phrase
 
 #. Now you see your seed phrase which is the access key to all the funds in your wallet.
 
@@ -58,14 +75,34 @@ Get started
 
    When done, check the confirmation box and tap **Continue**.
 
-   .. image:: ../images/cryptoX/cryptox-install6.png
-      :width: 50%
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding5.png
+      :width: 40%
       :alt: screen with information about saving seed phrase
+
+#. Enter your passcode when prompted.
+
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding6.png
+      :width: 40%
+      :alt: screen with identity providers
+
+
+Verify identity
+---------------
+
+After securing your seed phrase, you'll return to the main wallet screen. A progress bar shows that you're now ready for the final step. Your progress is automatically saved, so you can close the app now and continue the setup later if you wish.
+
+#. Tap **Verify identity** to continue setup.
+
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding7.png
+      :width: 40%
+      :alt: screen with identity providers
+
+
 
 #. Now you must submit a request for an identity verification. Select an identity provider.
 
-   .. image:: ../images/cryptoX/cryptox-install7.png
-      :width: 50%
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding8.png
+      :width: 40%
       :alt: screen with identity providers
 
 #. Enter your passcode or password when prompted. An external web page opens within the app.
@@ -78,22 +115,24 @@ Get started
 
    If your identity request is rejected, you see a message. Tap **Make new identity request** to create a new identity request. You can choose another identity provider.
 
-#. Once the identity provider has approved your verification request, you can create your first account.
+Create account
+==============
 
-   .. image:: ../images/cryptoX/cryptox-install8.png
-      :width: 50%
-      :alt: screen shown after identity verification information is accepted.
+Once the identity provider has approved your verification request, you can create your first account. A progress bar shows that you have now completed the setup and can create your first account.
 
-#. Tap **Create account** and enter your passcode or password when prompted.
+#. Tap **Create account** to set up your first account.
 
-   .. image:: ../images/cryptoX/cryptox-install9.png
-      :width: 50%
-      :alt: screen shown after identity verification information is accepted.
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding9.png
+      :width: 40%
+      :alt: screen with identity providers
+
+#. Enter your passcode or password when prompted.
+
 
 #. Your new account will be visible in the Accounts list.
 
-   .. image:: ../images/cryptoX/cryptox-install10.png
-      :width: 50%
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding10.png
+      :width: 40%
       :alt: screen showing first account in list
 
 If you want to, you can :ref:`change the name of the account<change-mw-acct-name>`.
@@ -137,7 +176,7 @@ Account navigation
 When you tap an account, you see the details for the specific account, including balances and transactions.
 
 .. image:: ../images/cryptoX/cryptoX-account-balance.png
-      :width: 50%
+      :width: 40%
       :alt: account details screen with navigation bar highlighted
 
 The toolbar contains actions that can be performed on the account:
