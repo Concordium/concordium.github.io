@@ -18,4 +18,5 @@ If you need to know how to send CCDs, recover your wallet on a new device, or mo
     address-book
     transaction-report
     show-seed-phrase
+    show-wallet-private-key
     import-export-file

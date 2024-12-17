@@ -13,7 +13,7 @@ This topic contains information about where you can download the Concordium Wall
 |cryptox|
 ========================
 
-The |cryptox| is available for iOS (15 or later) and Android™ (8 or later).
+The |cryptox| is available for iOS (16.4 or later) and Android™ (8 or later).
 
 It is the main Concordium mobile wallet and has the widest set of features.
 
