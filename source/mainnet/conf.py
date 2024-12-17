@@ -51,6 +51,7 @@ extensions = [
     "sphinx_design",
     'notfound.extension',
     "sphinx_tippy",
+    "sphinx_sitemap"
 ]
 
 # sphinx-prompt must be the first of these two.
@@ -64,6 +65,10 @@ extlinks = {
 # todo_include_todos = True
 # todo_emit_warnings = True
 # todo_link_only = True
+
+# sitemap config
+html_baseurl = "https://developer.concordium.software/en/mainnet/"
+sitemap_url_scheme = "{link}"
 
 graphviz_fontname = "'Lato,proxima-nova,Helvetica Neue,Arial,sans-serif'"
 
