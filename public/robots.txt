@@ -5,3 +5,6 @@ Disallow: /pr-preview/
 # Tell crawlers to ignore PR preview builds for the Concordium Academy site.
 User-agent: *
 Disallow: /pr-preview-academy/
+
+# Add the location of the sitemap
+Sitemap: https://developer.concordium.software/en/mainnet/sitemap.xml
