@@ -87,7 +87,10 @@ Wallets
 
     Version 4.0.0 addresses the following issues:
 
-    - Added new onboarding flow
+    Added:
+
+    - New onboarding flow
+    - Swipelux onramp flow
 
     .. dropdown:: Previous releases
 
