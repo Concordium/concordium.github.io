@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/setup-cryptox-wallet.95c0eb02-378a-40bc-9de4-3a6b73ca5087.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/setup-cryptox-wallet.4f8b249b-7e70-4564-9195-c6ea57b51154.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/setup-cryptox-wallet';</script>
     <link rel="canonical" href="https://developer.concordium.software/en/mainnet/docs/guides/setup-cryptox-wallet.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -624,6 +624,7 @@
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show my seed phrase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
 </ul>
 </details></li>
@@ -721,40 +722,73 @@
 <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identities</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">accounts</span></a> and to create transactions such as sending CCD, <a class="reference internal" href="../resources/glossary.html#term-Shielding"><span class="xref std std-term">shielding</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Unshielding"><span class="xref std std-term">unshielding</span></a> CCD,
 and sending <a class="reference internal" href="../resources/glossary.html#term-Shielded-transfer"><span class="xref std std-term">shielded transactions</span></a>.</p>
 <p>To learn more about identities and accounts, see <a class="reference internal" href="../protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">identities</span></a> and <a class="reference internal" href="../protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">accounts</span></a>.</p>
-<p>Read the following guide to learn how to set up the wallet.</p>
+<p>Follow this guide to set up your wallet.</p>
 <section id="get-started">
 <h2>Get started<a class="headerlink" href="#get-started" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Install the CryptoX Concordium Wallet on an Android or iOS phone. See <a class="reference internal" href="../installation/downloads.html#downloads-cryptox"><span class="std std-ref">Downloads</span></a>.</p></li>
-<li><p>Open the CryptoX Concordium Wallet. Read and accept the Terms and Conditions. Tap <strong>Get started</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install1.png"><img alt="screen with terms and conditions" src="../../_images/cryptox-install1.png" style="width: 50%;" />
+<li><p>Open the CryptoX Concordium Wallet. You’ll see an introduction screen explaining the key features.</p></li>
+<li><p>Read and accept the Terms and Conditions and Privacy Policy by checking the box.</p>
+<p>You can also choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.</p>
+</li>
+<li><p>Tap <strong>Get started</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding1.png"><img alt="screen with terms and conditions" src="../../_images/cryptox-onboarding1.png" style="width: 40%;" />
 </a>
 </li>
-<li><p>Decide whether or not to allow activity tracking. This tracking only applies to the general app usage, not funds, transactions or any personal data.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install1b.png"><img alt="screen with activate account" src="../../_images/cryptox-install1b.png" style="width: 50%;" />
+</ol>
+</section>
+<section id="set-up-your-wallet">
+<h2>Set up your wallet<a class="headerlink" href="#set-up-your-wallet" title="Link to this heading">#</a></h2>
+<p>The wallet setup consists of three phases: Create a 6-digit passcode, Save seed phrase, and Verify identity.</p>
+<p>You can pause between the phases and return later to continue.</p>
+<section id="create-passcode">
+<h3>Create passcode<a class="headerlink" href="#create-passcode" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Tap <strong>Continue</strong> to begin creating your new wallet.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding2.png"><img alt="screen with activate account" src="../../_images/cryptox-onboarding2.png" style="width: 40%;" />
 </a>
-</li>
-<li><p>Tap <strong>Activate Account</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install2.png"><img alt="screen with activate account" src="../../_images/cryptox-install2.png" style="width: 50%;" />
-</a>
-</li>
-<li><p>Tap <strong>Create wallet</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install4.png"><img alt="screen with create wallet" src="../../_images/cryptox-install4.png" style="width: 50%;" />
-</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have a wallet to import, you can select <strong>Import a wallet</strong> at the bottom of the screen. This allows you to <a class="reference internal" href="recover-wallet.html"><span class="doc">restore using a seed phrase, wallet private key, or backup file</span></a>.</p>
+</div>
 </li>
 <li><p>Create a six-digit passcode or use a full password. Repeat passcode or password.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install5.png"><img alt="screen with keypad to enter passcode" src="../../_images/cryptox-install5.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding3.png"><img alt="screen with keypad to enter passcode" src="../../_images/cryptox-onboarding3.png" style="width: 40%;" />
+</a>
+</li>
+</ol>
+</section>
+<section id="save-seed-phrase">
+<h3>Save seed phrase<a class="headerlink" href="#save-seed-phrase" title="Link to this heading">#</a></h3>
+<p>After setting up your passcode, you’ll see the main wallet screen with a progress indicator showing your setup progress. Your progress is automatically saved, so you can close the app now and continue the setup later if you wish.</p>
+<ol class="arabic">
+<li><p>Tap <strong>Save seed phrase</strong> to continue setup.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding4.png"><img alt="screen with information about saving seed phrase" src="../../_images/cryptox-onboarding4.png" style="width: 40%;" />
 </a>
 </li>
 <li><p>Now you see your seed phrase which is the access key to all the funds in your wallet.</p>
 <p>You can either write it down, make a digital copy, or take a screenshot of it.
 In either case, make sure to keep it somewhere safe in case you need to recover your wallet.</p>
 <p>When done, check the confirmation box and tap <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install6.png"><img alt="screen with information about saving seed phrase" src="../../_images/cryptox-install6.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding5.png"><img alt="screen with information about saving seed phrase" src="../../_images/cryptox-onboarding5.png" style="width: 40%;" />
+</a>
+</li>
+<li><p>Enter your passcode when prompted.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding6.png"><img alt="screen with identity providers" src="../../_images/cryptox-onboarding6.png" style="width: 40%;" />
+</a>
+</li>
+</ol>
+</section>
+<section id="verify-identity">
+<h3>Verify identity<a class="headerlink" href="#verify-identity" title="Link to this heading">#</a></h3>
+<p>After securing your seed phrase, you’ll return to the main wallet screen. A progress bar shows that you’re now ready for the final step. Your progress is automatically saved, so you can close the app now and continue the setup later if you wish.</p>
+<ol class="arabic">
+<li><p>Tap <strong>Verify identity</strong> to continue setup.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding7.png"><img alt="screen with identity providers" src="../../_images/cryptox-onboarding7.png" style="width: 40%;" />
 </a>
 </li>
 <li><p>Now you must submit a request for an identity verification. Select an identity provider.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install7.png"><img alt="screen with identity providers" src="../../_images/cryptox-install7.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding8.png"><img alt="screen with identity providers" src="../../_images/cryptox-onboarding8.png" style="width: 40%;" />
 </a>
 </li>
 <li><p>Enter your passcode or password when prompted. An external web page opens within the app.</p></li>
@@ -764,16 +798,20 @@ However, they will ask you to provide photos of identification documents and a s
 the result. The result can be retrieved for up to seven days.</p>
 <p>If your identity request is rejected, you see a message. Tap <strong>Make new identity request</strong> to create a new identity request. You can choose another identity provider.</p>
 </li>
-<li><p>Once the identity provider has approved your verification request, you can create your first account.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install8.png"><img alt="screen shown after identity verification information is accepted." src="../../_images/cryptox-install8.png" style="width: 50%;" />
+</ol>
+</section>
+</section>
+<section id="create-account">
+<h2>Create account<a class="headerlink" href="#create-account" title="Link to this heading">#</a></h2>
+<p>Once the identity provider has approved your verification request, you can create your first account. A progress bar shows that you have now completed the setup and can create your first account.</p>
+<ol class="arabic">
+<li><p>Tap <strong>Create account</strong> to set up your first account.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding9.png"><img alt="screen with identity providers" src="../../_images/cryptox-onboarding9.png" style="width: 40%;" />
 </a>
 </li>
-<li><p>Tap <strong>Create account</strong> and enter your passcode or password when prompted.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install9.png"><img alt="screen shown after identity verification information is accepted." src="../../_images/cryptox-install9.png" style="width: 50%;" />
-</a>
-</li>
+<li><p>Enter your passcode or password when prompted.</p></li>
 <li><p>Your new account will be visible in the Accounts list.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-install10.png"><img alt="screen showing first account in list" src="../../_images/cryptox-install10.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding10.png"><img alt="screen showing first account in list" src="../../_images/cryptox-onboarding10.png" style="width: 40%;" />
 </a>
 </li>
 </ol>
@@ -809,7 +847,7 @@ the result. The result can be retrieved for up to seven days.</p>
 <section id="account-navigation">
 <h3>Account navigation<a class="headerlink" href="#account-navigation" title="Link to this heading">#</a></h3>
 <p>When you tap an account, you see the details for the specific account, including balances and transactions.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-account-balance.png"><img alt="account details screen with navigation bar highlighted" src="../../_images/cryptoX-account-balance.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptoX-account-balance.png"><img alt="account details screen with navigation bar highlighted" src="../../_images/cryptoX-account-balance.png" style="width: 40%;" />
 </a>
 <p>The toolbar contains actions that can be performed on the account:</p>
 <ul>
@@ -916,6 +954,13 @@ the result. The result can be retrieved for up to seven days.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-started">Get started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-wallet">Set up your wallet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-passcode">Create passcode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-seed-phrase">Save seed phrase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-identity">Verify identity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-account">Create account</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-navigation">Basic navigation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-screen">More screen</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-navigation">Account navigation</a></li>

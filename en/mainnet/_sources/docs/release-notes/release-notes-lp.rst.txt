@@ -18,14 +18,23 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    November 25, 2024
+    December 18, 2024
 
-    Version 2.0.1 addresses the following issues:
+    Version 3.0.0 addresses the following issues:
 
-    - Fixed Concordex connectivity Issue
-    - Improved recover from file journey
+    - Added new onboarding flow
+
+    - Changed minimum iOS version to 16.4
+
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 2.0.1 - November 25, 2024
+
+            Version 2.0.1 addresses the following issues:
+
+            - Fixed Concordex connectivity Issue
+            - Improved recover from file journey
 
         .. dropdown:: |cryptox| 2.0.0 - October 29, 2024
 
