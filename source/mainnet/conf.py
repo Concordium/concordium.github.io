@@ -67,7 +67,7 @@ extlinks = {
 # todo_link_only = True
 
 # sitemap config
-html_baseurl = "https://developer.concordium.software/en/mainnet/"
+html_baseurl = "https://docs.concordium.com/en/mainnet/"
 sitemap_url_scheme = "{link}"
 
 graphviz_fontname = "'Lato,proxima-nova,Helvetica Neue,Arial,sans-serif'"
