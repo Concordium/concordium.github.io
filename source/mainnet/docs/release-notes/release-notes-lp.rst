@@ -85,12 +85,16 @@ Wallets
 ---------------------
     December 18, 2024
 
-    Version 4.0.0 addresses the following issues:
+    Version 1.4.0 addresses the following issues:
 
     Added:
 
     - New onboarding flow
     - Swipelux onramp flow
+
+    Changed:
+
+    - The "," decimal separator is now used for all amounts in the wallet
 
     .. dropdown:: Previous releases
 
