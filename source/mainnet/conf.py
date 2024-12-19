@@ -541,5 +541,40 @@ redirects = {
     "smart-contracts/guides/contract-dev-guides": "/en/mainnet/docs/smart-contracts/guides/build-contract.html",
     "smart-contracts/guides/quick-start": "/en/mainnet/docs/smart-contracts/guides/quick-start.html",
     "smart-contracts/tutorials/index": "/en/mainnet/tutorials/index.html",
-    "docs/protocol/id.accounts": "en/mainnet/docs/protocol/id-accounts.html"
+    "docs/protocol/id.accounts": "en/mainnet/docs/protocol/id-accounts.html",
+    "net/browser-wallet/setup-browser-wallet": "/en/mainnet/docs/browser-wallet/setup-browser-wallet.html",
+    "net/guides/shield-ccd-wallets": "/en/mainnet/docs/guides/shield-ccd-wallets.html",
+    "smart-contracts/guides/integration-test-contrac": "/en/mainnet/docs/smart-contracts/guides/integration-test-contract.html",
+    "net/guides/deciding-wallet": "/en/mainnet/docs/guides/deciding-wallet.html",
+    "net/guides/add-delegation": "/en/mainnet/docs/guides/add-delegation.html",
+    "smart-contracts/general/introduction": "/en/mainnet/docs/smart-contracts/introduction.html",
+    "net/guides/setup-wallets-lp": "/en/mainnet/docs/guides/setup-wallets-lp.html",
+    "smart-contracts/best-practices/development": "/en/mainnet/docs/smart-contracts/best-practices/development.html",
+    "net/guides/overview-desktop": "/en/mainnet/docs/guides/overview-desktop.html",
+    "net/guides/recovery": "/en/mainnet/docs/guides/recovery.html",
+    "net/resources/ar-idp-contact": "/en/mainnet/docs/index.html"
+    "net/guides/new-to-concordium": "/en/mainnet/docs/index.html",
+    "smart-contracts/guides/unit-test-contract": "/en/mainnet/docs/smart-contracts/guides/unit-test-contract.html",
+    "smart-contracts/onboarding-guide-ethereum-developers/faq": "/en/mainnet/docs/help-and-faq/onboarding-guide-ethereum-developers/faq.html",
+    "net/mobile-wallet/share-address-mw":"/en/mainnet/docs/mobile-wallet/share-address-mw.html",
+    "net/index": "/en/mainnet/docs/index.html",
+    "net/guides/graviton-hackathon": "/en/mainnet/docs/index.html",
+    "smart-contracts/onboarding-guide-ethereum-developers": "/en/mainnet/docs/help-and-faq/onboarding-guide-ethereum-developers/faq.html",
+    "smart-contracts/best-practices": "/en/mainnet/docs/smart-contracts/best-practices/index.html",
+    "net/guides/create-identity": "/en/mainnet/docs/guides/create-identity.html",
+    "smart-contracts/onboarding-guide-solana-developers": "/en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/overview.html",
+    "net/mobile-wallet/setup-mobile-wallet": "/en/mainnet/docs/guides/setup-cryptox-wallet.html",
+    "net/guides/show-seed-phrase": "/en/mainnet/docs/guides/show-seed-phrase.html",
+    "net/snippets/delegation-faq": "/en/mainnet/docs/help-and-faq/delegation-faq.html",
+    "net/snippets": "/en/mainnet/docs/index.html",
+    "smart-contracts/onboarding-guide-solana-developers/overview": "/en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/overview.html",
+    "net/guides/export-import": "/en/mainnet/docs/guides/export-import.html",
+    "net/desktop-wallet/add-delegation": "/en/mainnet/docs/guides/add-delegation.html",
+    
+
+
+
+
+
+
     }
