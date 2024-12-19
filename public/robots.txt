@@ -7,4 +7,4 @@ User-agent: *
 Disallow: /pr-preview-academy/
 
 # Add the location of the sitemap
-Sitemap: https://developer.concordium.software/en/mainnet/sitemap.xml
+Sitemap: https://docs.concordium.com/en/mainnet/sitemap.xml
