@@ -552,7 +552,7 @@ redirects = {
     "smart-contracts/best-practices/development": "/en/mainnet/docs/smart-contracts/best-practices/development.html",
     "net/guides/overview-desktop": "/en/mainnet/docs/guides/overview-desktop.html",
     "net/guides/recovery": "/en/mainnet/docs/guides/recovery.html",
-    "net/resources/ar-idp-contact": "/en/mainnet/docs/index.html"
+    "net/resources/ar-idp-contact": "/en/mainnet/docs/index.html",
     "net/guides/new-to-concordium": "/en/mainnet/docs/index.html",
     "smart-contracts/guides/unit-test-contract": "/en/mainnet/docs/smart-contracts/guides/unit-test-contract.html",
     "smart-contracts/onboarding-guide-ethereum-developers/faq": "/en/mainnet/docs/help-and-faq/onboarding-guide-ethereum-developers/faq.html",
@@ -570,6 +570,33 @@ redirects = {
     "smart-contracts/onboarding-guide-solana-developers/overview": "/en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/overview.html",
     "net/guides/export-import": "/en/mainnet/docs/guides/export-import.html",
     "net/desktop-wallet/add-delegation": "/en/mainnet/docs/guides/add-delegation.html",
+    "smart-contracts/general": "en/mainnet/docs/smart-contracts/introduction.html",
+    "smart-contracts/guides/": "en/mainnet/docs/smart-contracts/introduction.html",
+    "net/voting/": "en/mainnet/docs/voting/gc-voting.html",
+    "net/": "/en/mainnet/docs/index.html",
+    "net/release-notes": "/en/mainnet/docs/release-notes/release-notes-lp.html",
+    "net/nodes": "en/mainnet/docs/network/nodes/node-requirements.html",
+    "smart-contracts/": "/en/mainnet/docs/smart-contracts/introduction.html",
+    "net/references/": "en/mainnet/docs/index.html",
+    "net/installation/": "/en/mainnet/docs/installation/downloads.html",
+    "net/mobile-wallet/": "/en/mainnet/docs/guides/wallet-faqs.html",
+    "net/guides/wallet-sdk": "/en/mainnet/tools/wallet-sdk/wallet-sdk.html",
+    "net/guides/": "/en/mainnet/docs/index.html",
+    "./en/testnet4/smart-contracts/index": "/en/mainnet/docs/index.html",
+    "./en/testnet/net/concepts/concepts": "/en/mainnet/docs/index.html",
+    "./en/testnet/net/index": "/en/mainnet/docs/index.html",
+    "./en/testnet4/testnet/see-also/troubleshooting.html": "/en/mainnet/docs/index.html",
+    "./testnet/docs/queries": "/en/mainnet/docs/index.html",
+    "./testnet/docs/quickstart-wallet": "/en/mainnet/docs/index.html",
+    "./en/testnet": "/en/mainnet/docs/index.html",
+    "./en/testnet4/testnet/index": "/en/mainnet/docs/index.html",
+    "./en/testnet4": "/en/mainnet/docs/index.html",
+    "./testnet/docs/client": "/en/mainnet/docs/index.html",
+    "./testnet/docs/identities-and-accounts": "/en/mainnet/docs/index.html",
+    "./testnet/docs/quickstart-node": 
+
+
+
     
 
 
