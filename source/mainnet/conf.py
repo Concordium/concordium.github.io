@@ -546,6 +546,7 @@ redirects = {
     "net/guides/shield-ccd-wallets": "/en/mainnet/docs/guides/shield-ccd-wallets.html",
     "smart-contracts/guides/integration-test-contrac": "/en/mainnet/docs/smart-contracts/guides/integration-test-contract.html",
     "net/guides/deciding-wallet": "/en/mainnet/docs/guides/deciding-wallet.html",
+    "net/resources/terms-and-conditions-mw.": "/en/mainnet/docs/index.html",
     "net/guides/add-delegation": "/en/mainnet/docs/guides/add-delegation.html",
     "smart-contracts/general/introduction": "/en/mainnet/docs/smart-contracts/introduction.html",
     "net/guides/setup-wallets-lp": "/en/mainnet/docs/guides/setup-wallets-lp.html",
@@ -561,6 +562,7 @@ redirects = {
     "net/guides/graviton-hackathon": "/en/mainnet/docs/index.html",
     "smart-contracts/onboarding-guide-ethereum-developers": "/en/mainnet/docs/help-and-faq/onboarding-guide-ethereum-developers/faq.html",
     "smart-contracts/best-practices": "/en/mainnet/docs/smart-contracts/best-practices/index.html",
+    "smart-contracts/references/schema-json.html": "/en/mainnet/docs/index.html",
     "net/guides/create-identity": "/en/mainnet/docs/guides/create-identity.html",
     "smart-contracts/onboarding-guide-solana-developers": "/en/mainnet/docs/help-and-faq/onboarding-guide-solana-developers/overview.html",
     "net/mobile-wallet/setup-mobile-wallet": "/en/mainnet/docs/guides/setup-cryptox-wallet.html",
@@ -572,16 +574,18 @@ redirects = {
     "net/desktop-wallet/add-delegation": "/en/mainnet/docs/guides/add-delegation.html",
     "smart-contracts/general": "en/mainnet/docs/smart-contracts/introduction.html",
     "smart-contracts/guides/": "en/mainnet/docs/smart-contracts/introduction.html",
-    "net/voting/": "en/mainnet/docs/voting/gc-voting.html",
-    "net/": "/en/mainnet/docs/index.html",
+    "net/voting": "en/mainnet/docs/voting/gc-voting.html",
+    "net": "/en/mainnet/docs/index.html",
     "net/release-notes": "/en/mainnet/docs/release-notes/release-notes-lp.html",
     "net/nodes": "en/mainnet/docs/network/nodes/node-requirements.html",
-    "smart-contracts/": "/en/mainnet/docs/smart-contracts/introduction.html",
-    "net/references/": "en/mainnet/docs/index.html",
-    "net/installation/": "/en/mainnet/docs/installation/downloads.html",
-    "net/mobile-wallet/": "/en/mainnet/docs/guides/wallet-faqs.html",
+    "smart-contracts": "/en/mainnet/docs/smart-contracts/introduction.html",
+    "net/references": "en/mainnet/docs/index.html",
+    "net/installation": "/en/mainnet/docs/installation/downloads.html",
+    "net/mobile-wallet": "/en/mainnet/docs/guides/wallet-faqs.html",
     "net/guides/wallet-sdk": "/en/mainnet/tools/wallet-sdk/wallet-sdk.html",
-    "net/guides/": "/en/mainnet/docs/index.html",
+    "net/guides": "/en/mainnet/docs/index.html",
+    "net/concepts": "/en/mainnet/docs/index.html",
+    "./en": "/en/mainnet/docs/index.html",
     "./en/testnet4/smart-contracts/index": "/en/mainnet/docs/index.html",
     "./en/testnet/net/concepts/concepts": "/en/mainnet/docs/index.html",
     "./en/testnet/net/index": "/en/mainnet/docs/index.html",
@@ -593,15 +597,37 @@ redirects = {
     "./en/testnet4": "/en/mainnet/docs/index.html",
     "./testnet/docs/client": "/en/mainnet/docs/index.html",
     "./testnet/docs/identities-and-accounts": "/en/mainnet/docs/index.html",
-    "./testnet/docs/quickstart-node": 
-
-
-
-    
-
-
-
-
+    "./testnet/docs/quickstart-node": "/en/mainnet/docs/index.html",
+    "./testnet/docs/nonces": "/en/mainnet/docs/index.html",
+    "./testnet/docs/linux": "/en/mainnet/docs/index.html",
+    "./testnet/docs/downloads": "/en/mainnet/docs/installation/downloads.html",
+    "./testnet/docs/troubleshooting": "/en/mainnet/docs/index.html",
+    "./testnet/docs/transactions": "/en/mainnet/docs/protocol/transactions.html",
+    "./en/testnet4/testnet/see-also/release-notes": "/en/mainnet/docs/release-notes/release-notes.html",
+    "./testnet/docs/webwallet": "/en/mainnet/docs/browser-wallet/browser-wallet-faq.html",
+    "./testnet": "/en/mainnet/docs/index.html",
+    "./en/testnet4/smart-contracts": "/en/mainnet/docs/index.html",
+    "./testnet/docs/windows": "/en/mainnet/docs/index.html",
+    "./en/testnet/net": "/en/mainnet/docs/index.html",
+    "./en/testnet4/testnet/see-also": "/en/mainnet/docs/index.html",
+    "./testnet/docs/managing-accounts": "/en/mainnet/docs/protocol/manage-accounts.html",
+    "./en/testnet4/testnet": "/en/mainnet/docs/index.html",
+    "./testnet/docs/macos": "/en/mainnet/docs/index.html",
+    "./testnet/docs/quickstart-baker": "/en/mainnet/docs/index.html",
+    "./governance/whitepaper":"/en/mainnet/docs/index.html",
+    "./governance/rules": "/en/mainnet/docs/index.html",
+    "./governance/foundation": "/en/mainnet/docs/index.html",
+    "./governance": "/en/mainnet/docs/index.html",
+    "./concordium-node-sdk-js/pages/misc-pages/grpc-v1.md": "/en/mainnet/docs/index.html",
+    "./classes/grpc.ConcordiumGRPCClient": "/en/mainnet/docs/index.html",
+    "./concordium-net-sdk/api/Concordium.Grpc": "/en/mainnet/docs/index.html",
+    "./concordium-node-sdk-js/classes": "/en/mainnet/docs/index.html",
+    "./concordium-node-sdk-js/modules/Common_GRPC_Client": "/en/mainnet/docs/index.html",
+    "./concordium-node-sdk-js/pages": "/en/mainnet/docs/index.html",
+    "./concordium-node-sdk-js/pages/misc-pages": "/en/mainnet/docs/index.html",
+    "./concordium-net-sdk/api/Concordium.Sdk": "/en/mainnet/docs/index.html",
+    "./concordium-net-sdk/api/Concordium": "/en/mainnet/docs/index.html",
+    "net/guides/run-node-aws": "/en/mainnet/docs/network/nodes/run-node-aws.html"
 
 
     }
