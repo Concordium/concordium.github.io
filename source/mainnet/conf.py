@@ -629,5 +629,4 @@ redirects = {
     "./concordium-net-sdk/api/Concordium": "/en/mainnet/docs/index.html",
     "net/guides/run-node-aws": "/en/mainnet/docs/network/nodes/run-node-aws.html"
 
-
     }
