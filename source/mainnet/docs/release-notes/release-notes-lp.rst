@@ -273,19 +273,25 @@ Wallets
 |bw|
 -------------------------
 
-    October 30, 2024
+    December 25, 2024
 
-    Version 1.7.1 includes several changes and bug fixes.
+    Version 1.7.2
 
-    -   Updated version of @concordium/web-sdk to ver.8 (with new protocol ver.7 update)
-    -   Added support of company identities with new web-sdk ver.8
-    -   Added cooldown card at delegation page with info about pending changes, if delegation was updated
-    -   Updated screens mentioning stake cooldowns to reflect protocol ver.7 cooldown changes
-    -   Updated properties checks in `poolStatus` according to new types
-    -   Updated `accountAvailableBalance` value which is now received from the web-sdk
-    -   Fixed window height change on modal open
+    -   Remove unused "downloads" permission from manifest.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.7.1 - October 30, 2024
+
+            Version 1.7.1 includes several changes and bug fixes.
+
+            -   Updated version of @concordium/web-sdk to ver.8 (with new protocol ver.7 update)
+            -   Added support of company identities with new web-sdk ver.8
+            -   Added cooldown card at delegation page with info about pending changes, if delegation was updated
+            -   Updated screens mentioning stake cooldowns to reflect protocol ver.7 cooldown changes
+            -   Updated properties checks in `poolStatus` according to new types
+            -   Updated `accountAvailableBalance` value which is now received from the web-sdk
+            -   Fixed window height change on modal open
 
         .. dropdown:: |bw| 1.6.4 - August 21, 2024
 
