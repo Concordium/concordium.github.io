@@ -132,7 +132,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
 .. dropdown:: Community resources
 
-    -   `Block explorer built by a user in the Netherlands <https://concordium-explorer.nl/>`_
+    -   `CCDExplorer.io, the community supported, comprehensive Concordium Explorer <https://ccdexplorer.io/>`_
 
 .. toctree::
     :hidden:
