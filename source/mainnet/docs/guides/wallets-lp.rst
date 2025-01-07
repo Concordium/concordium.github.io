@@ -16,3 +16,4 @@ Concordium offers its wallets for several different platforms, enabling you to m
     manage-wallets-lp
     account-activities-lp
     ../desktop-wallet/dw-lp
+    cryptox-terms
