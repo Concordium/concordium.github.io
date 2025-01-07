@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _cryptox-terms:
 
-==================
+====================================
 End User License Terms for |cryptox|
-==================
+====================================
 
 Effective April 1, 2023
 
