@@ -26,6 +26,17 @@ Finally, when Rust and Cargo are successfully installed in your system, you shou
 .. image:: images/mint-rust-install-done.png
     :width: 100%
 
+.. Note::
+
+   Currently, Rust toolchain versions up to ``1.81`` are supported. To set version ``1.81`` as the default, run these commands:
+
+   .. code-block:: console
+
+      $ rustup toolchain install 1.81
+      $ rustup default 1.81
+
+   The minimum supported rust version is currently version ``1.73``
+
 Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.
 
 .. code-block:: console
