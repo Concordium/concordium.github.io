@@ -17,6 +17,8 @@ This guide helps you create consistent, high-quality documentation for Concordiu
 
 #. **Review checklist** -  A verification list to help maintain documentation quality and reduce the risk of common issues.
 
+Find information on how to set up the documentation environment `here <https://docs.concordium.com/en/mainnet/docs/help-and-faq/set-up-doc-env-MacOs.html>`_.
+
 Documentation Types
 ===================
 Our documentation follows the `Divio system <https://docs.divio.com/documentation-system/>`_, organizing content into four distinct types:
