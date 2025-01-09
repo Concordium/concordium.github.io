@@ -9,7 +9,7 @@ Introduction
 
 This guide helps you create consistent, high-quality documentation for Concordium. It is divided into four main sections:
 
-#. **Documentation types** - An overview of the different types of documentation following the Divio system.
+#. **Documentation types** - An overview of the different types of documentation following the `Divio system <https://docs.divio.com/documentation-system/>`_.
 
 #. **Tone of voice and language** - Principles for clear and consistent communication, defining our documentation's voice and language style.
 
@@ -21,10 +21,10 @@ Documentation Types
 ===================
 Our documentation follows the `Divio system <https://docs.divio.com/documentation-system/>`_, organizing content into four distinct types:
 
-* **Tutorials**: Learning-oriented content that guides users through a series of steps to complete a project.
-* **How-to guides**: Problem-oriented content showing how to solve specific tasks.
-* **Reference**: Information-oriented technical descriptions of the product.
-* **Explanations**: Understanding-oriented discussions that explain concepts and provide background.
+* **Tutorials**: Learning-oriented content that guides users through a series of steps to complete a project. Example: "Getting started with smart contracts".
+* **How-to guides**: Problem-oriented content showing how to solve specific tasks. Example: "How to deploy a smart contract module".
+* **References**: Information-oriented technical descriptions of systems and features. Example: "REST API documentation".
+* **Explanations**: Understanding-oriented discussions that explain concepts and provide background. Example: "Understanding consensus mechanisms".
 
 When writing, be mindful of which type of documentation you are creating. While a document can contain multiple types, clarity of purpose helps readers find and understand the information they need.
 
