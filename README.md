@@ -4,7 +4,7 @@
 
 Before contributing please read and follow the principles outlined in
 - the [Divio documentation guide](https://documentation.divio.com/)
-- our [style guide](#style-guide).
+- our [style guide](https://docs.concordium.com/en/mainnet/docs/help-and-faq/style-guide.html)
 
 Other good documentation references include:
 - the [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
@@ -172,9 +172,6 @@ The `source/mainnet` directory contains documentation for the current Mainnet, a
 
 With only a couple of exceptions (Downloads and Ubuntu node), Testnet documentation is handled either via a note at the beginning of the topic (where the feature is not yet released on mainnet) or in a dropdown if it is an update to an existing feature where mainnet and testnet differ. Very small differences are handled inline in the text.
 
-## Style guide
-
-Before contributing, please read and follow the principles outlined in: :ref:`style-guide`
 
 ## Preview
 
