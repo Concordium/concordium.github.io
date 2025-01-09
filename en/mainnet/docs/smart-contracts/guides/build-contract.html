@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/build-contract.9ec24b7d-d49e-497d-a1f2-46d54652e106.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/build-contract.4072f8b8-32df-40d5-b3b2-8fe23d3585ce.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/build-contract';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/smart-contracts/guides/build-contract.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -677,6 +677,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/onboarding-guide-solana-developers/faq.html">FAQ for Solana developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/onboarding-guide-solana-developers/overview.html">Onboarding for Solana developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/set-up-doc-env-MacOs.html">Set up Concordium documentation environment on MacOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../help-and-faq/style-guide.html">Concordium documentation style guide</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
@@ -731,6 +732,15 @@
 <h2>Rust and Cargo<a class="headerlink" href="#rust-and-cargo" title="Link to this heading">#</a></h2>
 <p>First, <a class="reference external" href="https://rustup.rs/">install rustup</a>, which installs both <a class="reference external" href="https://www.rust-lang.org/">Rust</a> and <a class="reference external" href="https://doc.rust-lang.org/cargo/">Cargo</a> on your
 machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, Rust toolchain versions up to <code class="docutils literal notranslate"><span class="pre">1.81</span></code> are supported. To set version <code class="docutils literal notranslate"><span class="pre">1.81</span></code> as the default, run these commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rustup<span class="w"> </span>toolchain<span class="w"> </span>install<span class="w"> </span><span class="m">1</span>.81
+<span class="gp">$ </span>rustup<span class="w"> </span>default<span class="w"> </span><span class="m">1</span>.81
+</pre></div>
+</div>
+<p>The minimum supported rust version is currently version <code class="docutils literal notranslate"><span class="pre">1.73</span></code></p>
+</div>
 <p>Then use <code class="docutils literal notranslate"><span class="pre">rustup</span></code> to install the Wasm target, which is used for compilation:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>rustup<span class="w"> </span>target<span class="w"> </span>add<span class="w"> </span>wasm32-unknown-unknown
 </pre></div>

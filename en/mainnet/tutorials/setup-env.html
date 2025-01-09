@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tutorials/setup-env.85136842-bd78-4ab7-b8b8-d648987910e1.js"></script>
+    <script defer="defer" src="../_static/tippy/tutorials/setup-env.a9a2d893-0807-4b56-bebb-00cd28e961e9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/setup-env';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/setup-env.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -586,6 +586,15 @@
 <p>Finally, when Rust and Cargo are successfully installed in your system, you should see something similar to below.</p>
 <a class="reference internal image-reference" href="../_images/mint-rust-install-done.png"><img alt="../_images/mint-rust-install-done.png" src="../_images/mint-rust-install-done.png" style="width: 100%;" />
 </a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, Rust toolchain versions up to <code class="docutils literal notranslate"><span class="pre">1.81</span></code> are supported. To set version <code class="docutils literal notranslate"><span class="pre">1.81</span></code> as the default, run these commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rustup<span class="w"> </span>toolchain<span class="w"> </span>install<span class="w"> </span><span class="m">1</span>.81
+<span class="gp">$ </span>rustup<span class="w"> </span>default<span class="w"> </span><span class="m">1</span>.81
+</pre></div>
+</div>
+<p>The minimum supported rust version is currently version <code class="docutils literal notranslate"><span class="pre">1.73</span></code></p>
+</div>
 <p>Copy and paste the commands in a terminal to install Wasm which will be used for building contracts.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rustup target add wasm32-unknown-unknown</span>
 </pre></div>
