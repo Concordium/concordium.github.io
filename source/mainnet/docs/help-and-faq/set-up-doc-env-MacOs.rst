@@ -161,11 +161,10 @@ Writing Style Guide
 
 Before contributing please read and follow the principles outlined in:
 
+- our style guide: :ref:`style-guide`
+
 - the Divio documentation guide:
   https://docs.divio.com/documentation-system/
-- our style guide:
-  https://github.com/Concordium/concordium.github.io?tab=readme-ov-file#style-guide
-
 
 
 How to Contribute Changes and Open a PR
