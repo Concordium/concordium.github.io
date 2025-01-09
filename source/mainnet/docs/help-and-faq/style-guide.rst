@@ -1,25 +1,38 @@
 .. _style-guide:
 
-======================================
+====================================
 Concordium documentation style guide
-======================================
+====================================
 
 Introduction
-===========
+============
 
-This guide helps you create consistent, high-quality documentation for Concordium. It is divided into three main sections:
+This guide helps you create consistent, high-quality documentation for Concordium. It is divided into four main sections:
 
-#. **Tone of voice and language** - How we communicate with our readers, including our voice characteristics and language choices that shape how our documentation "sounds" and feels to readers.
+#. **Documentation types** - An overview of the different types of documentation following the Divio system.
+
+#. **Tone of voice and language** - Principles for clear and consistent communication, defining our documentation's voice and language style.
 
 #. **Formatting** - The technical aspects of documentation formatting, including how to structure documents, format code examples, and present visual elements.
 
-#. **Quality guidelines and best practices** - Standards and practices for ensuring documentation quality, accessibility, and usefulness.
+#. **Review checklist** -  A verification list to help maintain documentation quality and reduce the risk of common issues.
 
-Part 1: Tone of voice and language
-================================
+Documentation Types
+===================
+Our documentation follows the `Divio system <https://docs.divio.com/documentation-system/>`_, organizing content into four distinct types:
+
+* **Tutorials**: Learning-oriented content that guides users through a series of steps to complete a project.
+* **How-to guides**: Problem-oriented content showing how to solve specific tasks.
+* **Reference**: Information-oriented technical descriptions of the product.
+* **Explanations**: Understanding-oriented discussions that explain concepts and provide background.
+
+When writing, be mindful of which type of documentation you are creating. While a document can contain multiple types, clarity of purpose helps readers find and understand the information they need.
+
+Tone of voice and language
+==========================
 
 Our voice characteristics
-------------------------
+-------------------------
 * **Clear and direct**: Focus on essential information without unnecessary words. Break down complex topics into digestible pieces. Be specific, avoid ambiguous language.
 
 * **Professional but approachable**: Assume general technical proficiency, but explain Concordium-specific concepts. Use industry-standard terminology.
@@ -29,59 +42,66 @@ Our voice characteristics
 * **Global**: Remember that you are generally writing for non-native English speakers. Use clear sentence structures and common technical terms. Avoid idioms, slang, and culturally specific references.
 
 Language choices
---------------
-* use second person ("you") in user guides
-* avoid first person (we, I, me, our)
-* use present continuous tense ("is") over future ("will be") or conditional ("should")
-* use active voice ("the baker adds a block") over passive voice ("a block is added")
-* keep sentences short and focused
-* structure procedures with clear, imperative verbs. For example:
+----------------
+* Use second person ("you") in user guides
+* Avoid first person (we, I, me, our)
+* Use present continuous tense ("is") over future ("will be") or conditional ("should")
+* Use active voice ("the baker adds a block") over passive voice ("a block is added")
+* Keep sentences short and focused
+* Structure procedures with clear, imperative verbs. For example:
 
   * "Deploy the smart contract module"
   * "Initialize the contract state"
 
 Interaction verbs
----------------
+-----------------
 * **Click**: Use for mouse actions on computers
 * **Press**: Use for keyboard actions
 * **Tap**: Use for touchscreen interactions
 * **Select**: Universal term for choosing options
 * Never use "hit"
 
-Part 2: Formatting
-================
+Formatting
+==========
 
-Text formatting
--------------
-* Use ``**bold**`` for keyboard buttons and clickable elements (e.g., press **Enter**, select **Next**)
-* Use ``*italics*`` for text emphasis when introducing new terms (e.g., obtain an *identity provider*). After the term is introduced avoid emphasising it again in the same text
-* Use ``code`` for inline code and commands
-* Never use quotes for emphasis
-
-Header formatting
----------------
+Headers
+-------
 Use *sentence-style capitalization*, i.e., only capitalize the first letter of a header.
-Be consistent in the use of characters for creating headers; use the following for each level of header::
 
-   ===============
-   Getting started
-   ===============
+Be consistent in the use of characters for creating headers; use the following for each header level::
 
-   Installation guide
-   =================
+   ========
+   Header 1
+   ========
 
-   Running your first node
-   ----------------------
+   Header 2
+   ========
 
-   Configure your settings
-   ^^^^^^^^^^^^^^^^^^^^^^
+   Header 3
+   --------
 
-   Troubleshooting steps
-   ~~~~~~~~~~~~~~~~~~~~
+   Header 4
+   ^^^^^^^^
+
+   Header 5
+   ~~~~~~~~
+
+Aim to limit the use of subheading levels to three or four at most. Excessive nesting can make content harder to follow.
+
+Emphasis
+--------
+* Use ``*italics*`` for text emphasis, e.g. when introducing new terms (e.g., obtain an *identity provider*). After the term is introduced avoid emphasising it again in the same text.
+* Never use quotes or underlining for emphasis.
+
+Clickable elements
+------------------
+* Use ``**bold**`` for keyboard buttons and clickable elements (e.g., press **Enter**, select **Next**).
 
 Terminal commands and code examples
---------------------------------
-Use ``code-block:: console`` to show content from a terminal and prepend commands with $ without a space in between. A space is added between $ and the command through CSS. This solution makes only the command itself copyable, thereby improving the user experience.
+-----------------------------------
+Use ``code-block:: console`` to show content from a terminal and prepend commands with ``$`` without a space in between.
+
+A space is added between ``$`` and the command through CSS. This solution makes only the command itself copyable, thereby improving the user experience.
 
 Example::
 
@@ -90,29 +110,39 @@ Example::
       $echo Hello, world!
       Hello, world!
 
-Use ``code-block:: rust`` for Rust content.
+Use ``code-block:: rust`` for Rust content
 
-Use ``code-block:: toml`` for TOML content.
+Use ``code-block:: toml`` for TOML content
 
-Use ``code-block:: json`` for JSON content.
+Use ``code-block:: json`` for JSON content
 
-Use ``code-block:: jsx`` for JSX content.
+Use ``code-block:: jsx`` for JSX content
 
-A particular line number may be emphasized with :emphasize-lines:`line_number` option. Multiple lines are comma-separated and consecutive lines can be written with a dash (e.g. :emphasize-lines:`10,12,15-17`).
+You can emphasize specific lines using the ``:emphasize-lines:`` option followed by line numbers. Multiple lines are specified with commas, and consecutive lines can be written with a dash (e.g., ``1,3,5-7``).
 
-Link formatting
--------------
-Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. `Concordium <https://www.concordium.com>`_.
+Use ````code```` to insert commands or output from a terminal screen into a line of text. For example:
+
+To use this error type, the function ``piggy_smash`` should return ``Result<A, SmashError>`` instead of ``ReceiveResult<A>``
+
+Do not confuse ````code```` with `code`. Text wrapped in single backticks is so-called default role interpreted text. And do not use regular quotes, e.g., ``"code"``, for code examples.
+
+Hyperlinks
+----------
+Unless it is necessary to show the address, use the inline method for hyperlinks::
+
+   `Link text <https://www.example.com>`_
+
+For example: `Concordium <https://www.concordium.com>`_
 
 If you have a hyperlink that will be used often in the same topic, you can insert the directive at the top or bottom of the file, e.g.::
 
    .. _Rust: https://www.rust-lang.org/
 
-and then reference it in the text using Rust_.
+and then reference it in the text using ``Rust_``.
 
 Indentation
-----------
-Use three spaces for indentation. This aligns the directive name (note::) with the content of the directive.
+-----------
+Use three spaces for indentation. This aligns the directive name ``note::`` with the content of the directive.
 
 Add an empty line between a directive and its content.
 
@@ -123,19 +153,19 @@ Example that follows both rules::
       This line has three spaces in front of it and it has an empty line above it.
 
 Variables
---------
+---------
 Use variables when it makes sense. Variables exist for most of the wallets and some other product names. It is preferred to use the variable instead of, e.g., browser wallet.
 
-Add new variables in the file source/variables.rst.
+Add new variables in the file ``source/variables.rst``.
 
 Use the variables by:
 
-* Including a relative path to variables.rst, for example ../../variables.rst, at the top of the file.
-* Then using the variable bw, for example |bw|, in the text.
+* Including a relative path to ``variables.rst``, for example ``../../variables.rst``, at the top of the file.
+* Then using the variable bw, for example ``|bw|``, in the text.
 
 Dropdowns
---------
-Use dropdowns to consolidate information and give a cleaner, more user-friendly experience to the reader. Dropdowns are generally used when describing a procedure across the different wallets. You can nest dropdowns in dropdowns as in the export-import topic. Dropdowns are also used for FAQs. It is important to add an empty line between the dropdown directive and the content.
+---------
+Use dropdowns to consolidate information and give a cleaner, more user-friendly experience to the reader. Dropdowns are generally used when describing a procedure across the different wallets and in FAQs. It is important to add an empty line between the dropdown directive and the content. Note that you can nest dropdowns in dropdowns.
 
 Example::
 
@@ -144,14 +174,15 @@ Example::
       This text appears when the reader clicks on the dropdown element.
 
 Glossary terms
-------------
+--------------
 Enter glossary terms in the glossary.rst if they are not already in the glossary. Pay close attention to the indentation in the glossary.
 
-In the topic where the term is referenced, use the :term:`my term` directive when writing a glossary term in the text. If you want to use different text than how the term appears in the glossary, use the following format: :term:`My terms<my term>`.
+In the topic where the term is referenced, use the ``:term:`my term``` directive when writing a glossary term in the text. If you want to use different text than how the term appears in the glossary, use the following format: ``:term:`my text<my term>```.
 
 Images
------
-Save any images that you add in the Images folder. Create sub-folders as needed to store images.
+------
+Store images in an ``images`` folder within the specific content area where they are used.
+Create sub-folders as needed to store images.
 
 Captions are not used. Instead the image context should be described in the text above it with a reference, such as "...in the image below...".
 
@@ -160,16 +191,32 @@ Images must have :alt: text for accessibility. Generally, image width is 100%. F
 GIFs can be inserted but should only be used when it gives clarity to more complex actions. When using GIFs, the :alt: text is StreamPlayer and :align: is center.
 
 Videos
------
+------
 To embed a video in a topic, use the raw directive::
 
    .. raw:: html
 
-      <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      <iframe src="https://www.youtube.com/embed/0UIyAlZjvLg?si=D0lguDkUjiHCKLcu"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
       </iframe>
 
 Remove any fixed dimensions from the embed link information you copied from the video source. The sizing is handled in the stylesheet.
+
+Review checklist
+================
+
+Before submitting documentation, verify that:
+
+* All links work and point to the correct destinations
+* Code examples are complete and tested
+* Images have proper alt text and descriptions
+* Procedures are complete with all necessary steps
+* Technical terms are properly defined or linked to the glossary
+* Headers follow the correct hierarchy
+* Formatting is consistent throughout the document
+* Spelling and grammar are correct throughout the document
+* Language is clear, professional, and approachable
+
