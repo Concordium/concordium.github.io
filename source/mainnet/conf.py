@@ -627,6 +627,7 @@ redirects = {
     "./concordium-node-sdk-js/pages/misc-pages": "/en/mainnet/docs/index.html",
     "./concordium-net-sdk/api/Concordium.Sdk": "/en/mainnet/docs/index.html",
     "./concordium-net-sdk/api/Concordium": "/en/mainnet/docs/index.html",
-    "net/guides/run-node-aws": "/en/mainnet/docs/network/nodes/run-node-aws.html"
-
+    "net/guides/run-node-aws": "/en/mainnet/docs/network/nodes/run-node-aws.html",
+    "docs/network/guides/concordium-client" : "/en/mainnet/tools/concordium-client.html",
+    "tutorials/piggy-bank/wCCD-frontend-set-up" : "/en/mainnet/tutorials/piggy-bank/frontend.html"
     }
