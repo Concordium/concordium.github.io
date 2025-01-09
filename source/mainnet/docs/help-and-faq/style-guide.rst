@@ -128,11 +128,7 @@ Do not confuse ````code```` with `code`. Text wrapped in single backticks is so-
 
 Hyperlinks
 ----------
-Unless it is necessary to show the address, use the inline method for hyperlinks::
-
-   `Link text <https://www.example.com>`_
-
-For example: `Concordium <https://www.concordium.com>`_
+Unless it is necessary to show the address, use the inline method for hyperlinks, e.g. ``` `Concordium <https://www.concordium.com>`_ ```.
 
 If you have a hyperlink that will be used often in the same topic, you can insert the directive at the top or bottom of the file, e.g.::
 
