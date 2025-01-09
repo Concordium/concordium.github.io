@@ -28,6 +28,17 @@ Rust and Cargo
 First, `install rustup`_, which installs both Rust_ and Cargo_ on your
 machine.
 
+.. Note::
+
+   Currently, Rust toolchain versions up to ``1.81`` are supported. To set version ``1.81`` as the default, run these commands:
+
+   .. code-block:: console
+
+      $ rustup toolchain install 1.81
+      $ rustup default 1.81
+
+   The minimum supported rust version is currently version ``1.73``
+
 Then use ``rustup`` to install the Wasm target, which is used for compilation:
 
 .. code-block:: console
