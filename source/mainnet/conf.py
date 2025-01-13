@@ -629,5 +629,6 @@ redirects = {
     "./concordium-net-sdk/api/Concordium": "/en/mainnet/docs/index.html",
     "net/guides/run-node-aws": "/en/mainnet/docs/network/nodes/run-node-aws.html",
     "docs/network/guides/concordium-client" : "/en/mainnet/tools/concordium-client.html",
-    "tutorials/piggy-bank/wCCD-frontend-set-up" : "/en/mainnet/tutorials/piggy-bank/frontend.html"
+    "tutorials/piggy-bank/wCCD-frontend-set-up" : "/en/mainnet/tutorials/piggy-bank/frontend.html",
+    "net/resources/bw-licenses" : "/en/mainnet/docs/guides/cryptox-terms.html"
     }
