@@ -70,7 +70,7 @@ To create a fresh set of keys run:
 
    $ concordium-client validator generate-keys <keys-file>.json
 
-You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <node-requirement>` and send a ``validator add`` transaction to the network:
+You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <node-requirements>` and send a ``validator add`` transaction to the network:
 
 .. code-block:: console
 
