@@ -15,6 +15,7 @@ sphinx-tippy = "*"
 sphinx-notfound-page = "*"
 pydata-sphinx-theme = "*"
 sphinx-sitemap = "*"
+sphinxcontrib-video = "*"
 
 [dev-packages]
 doc8 = "*"
