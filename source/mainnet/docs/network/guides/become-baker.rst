@@ -45,23 +45,15 @@ This section provides a brief description of how to import an account using the 
 
 .. Note::
 
-   You can only import accounts created in the |mw-gen2|, |bw|, or |mw-gen1| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information.
+   You can only import accounts created in the |cryptox| or |bw| into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information.
 
-   * To export the JSON file in |mw-gen1|, see :ref:`Make a backup of identities and accounts<export-import>`.
-
-   * To export the private key in |mw-gen2| and |bw|, see :ref:`Export a private key<export-key>`.
+   * To export the private key in |cryptox| and |bw|, see :ref:`Export a private key<export-key>`.
 
 To import an account run:
 
 .. code-block:: console
 
    $ concordium-client config account import <path/to/exported/file> --name validatorAccount
-
-For the |bw|, use the following command:
-
-.. code-block:: console
-
-   $ concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
 
 ``concordium-client`` asks for a password to decrypt the exported file and import all accounts. The same password will be used for encrypting the transaction signing keys and the encrypted transfers key.
 
@@ -78,11 +70,11 @@ To create a fresh set of keys run:
 
    $ concordium-client validator generate-keys <keys-file>.json
 
-You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``validator add`` transaction to the network:
+You can choose an arbitrary name for the ``<keys file>``. To register the keys in the network you need to be :ref:`running a node <node-requirements>` and send a ``validator add`` transaction to the network:
 
 .. code-block:: console
 
-   $ concordium-client validator add MyValidatorKeys.json --sender validatorAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --out <concordium-data-dir>/validator-credentials.json
+   $ concordium-client validator add MyValidatorKeys.json --sender validatorAccount --stake <amount-to-stake> --open-delegation-for all --delegation-transaction-fee-commission 0.1 --delegation-baking-commission 0.1 --delegation-finalization-commission 1.0 --validator-url https://example.com/validator --validator-credentials-out <concordium-data-dir>/validator-credentials.json
 
 
 where you replace
@@ -91,6 +83,7 @@ where you replace
 - ``<amount-to-stake>`` with the CCD amount for the validator's initial stake
 - ``MyValidatorURL`` with the URL containing information for your staking pool; can be left as an empty string if you do not want to provide a URL.
 - ``<concordium-data-dir>`` with any path of your choice.
+- ``validatorAccount`` with the name you've chosen for the account
 
    .. Note::
 
@@ -105,8 +98,6 @@ where you replace
       * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
       * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
       * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
-
-Keep the output file name as ``validator-credentials.json``.
 
 The following arguments are also required for the ``validator add`` transaction:
 
@@ -134,7 +125,7 @@ The following arguments are optional. If no selection is made, earnings are rest
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
 
-To start the node with these validator keys and produce blocks, configure the node to use the validator keys, and **restart** it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.
+To start the node with these validator keys and produce blocks, :ref:`configure the node to use the validator keys<baker-macos>`, and **restart** it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.
 
 This change is executed immediately, and it will take effect at the next :term:`pay day` after the one in which the transaction for adding the validator was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 
@@ -294,7 +285,7 @@ When the validator is registered, it will automatically restake the earnings, bu
 
 .. code-block:: console
 
-   $ concordium-client validator add validator-keys.json --sender validatorAccount --stake <amount-to-stake> --out validator-credentials.json --no-restake
+   $ concordium-client validator add validator-keys.json --sender validatorAccount --stake <amount-to-stake> --validator-credentials-out validator-credentials.json --no-restake
 
 Update validator keys
 ---------------------
