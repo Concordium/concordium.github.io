@@ -165,7 +165,7 @@ Sending CCD in the Concordium Desktop Wallet
    .. image:: ../../docs/images/ledger-tutorial/image20.jpg
       :alt: Sign transaction screen
 
-   Press both buttons on your Ledger Device to sign the transaction. 
+   Press both buttons on your Ledger Device to sign the transaction.
 
    .. image:: ../../docs/images/ledger-tutorial/image21.jpg
       :alt: Transaction signing confirmation
