@@ -18,8 +18,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -29,10 +29,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-identity-recovery.55afddef-59b4-4be1-9c40-6cf13c7c7e66.js"></script>
+    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-identity-recovery.468ebeed-fa69-4fc9-a176-0733b5659b76.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/wallet-sdk/wallet-sdk-identity-recovery';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/wallet-sdk/wallet-sdk-identity-recovery.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -519,9 +519,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -635,67 +640,67 @@ Kotlin (Android)</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
-<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
-<span class="kd">import</span> <span class="nc">MnemonicSwift</span> <span class="c1">// external package for converting seed phrase to bytes</span>
-<span class="nc">import</span> <span class="nc">GRPC</span> <span class="c1">// external dependency for gRPC client</span>
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span><span class="w"> </span><span class="nc">Concordium</span>
+<span class="kd">import</span><span class="w"> </span><span class="nc">MnemonicSwift</span><span class="w"> </span><span class="c1">// external package for converting seed phrase to bytes</span>
+<span class="nc">import</span><span class="w"> </span><span class="nc">GRPC</span><span class="w"> </span><span class="c1">// external dependency for gRPC client</span>
 
-<span class="kd">let</span> <span class="nv">grpcChannel</span><span class="p">:</span> <span class="n">GRPCChannel</span> <span class="c1">// see docs for package GRPC or examples in SDK repo</span>
-<span class="kd">let</span> <span class="nv">client</span><span class="p">:</span> <span class="n">NodeClient</span> <span class="p">=</span> <span class="n">GRPCNodeClient</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span> <span class="n">grpcChannel</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">grpcChannel</span><span class="p">:</span><span class="w"> </span><span class="n">GRPCChannel</span><span class="w"> </span><span class="c1">// see docs for package GRPC or examples in SDK repo</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">client</span><span class="p">:</span><span class="w"> </span><span class="n">NodeClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GRPCNodeClient</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span><span class="w"> </span><span class="n">grpcChannel</span><span class="p">)</span>
 
 <span class="c1">/// Fetch all identity providers.</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">identityProviders</span><span class="p">(</span><span class="kc">_</span> <span class="n">walletProxy</span><span class="p">:</span> <span class="n">WalletProxy</span><span class="p">)</span> <span class="k">async</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="p">[</span><span class="n">IdentityProvider</span><span class="p">]</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">res</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">walletProxy</span><span class="p">.</span><span class="n">getIdentityProviders</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">session</span><span class="p">:</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="bp">map</span> <span class="p">{</span> <span class="nv">$0</span><span class="p">.</span><span class="n">toSDKType</span><span class="p">()</span> <span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">identityProviders</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">walletProxy</span><span class="p">:</span><span class="w"> </span><span class="n">WalletProxy</span><span class="p">)</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kr">throws</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">IdentityProvider</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">res</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">walletProxy</span><span class="p">.</span><span class="n">getIdentityProviders</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">session</span><span class="p">:</span><span class="w"> </span><span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="bp">map</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">$0</span><span class="p">.</span><span class="n">toSDKType</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">/// Fetch an identity provider with a specific ID.</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">findIdentityProvider</span><span class="p">(</span><span class="kc">_</span> <span class="n">walletProxy</span><span class="p">:</span> <span class="n">WalletProxy</span><span class="p">,</span> <span class="kc">_</span> <span class="n">id</span><span class="p">:</span> <span class="n">IdentityProviderID</span><span class="p">)</span> <span class="k">async</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="n">IdentityProvider</span><span class="p">?</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">res</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">identityProviders</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">.</span><span class="bp">first</span> <span class="p">{</span> <span class="nv">$0</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">identity</span> <span class="p">==</span> <span class="n">id</span> <span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">findIdentityProvider</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">walletProxy</span><span class="p">:</span><span class="w"> </span><span class="n">WalletProxy</span><span class="p">,</span><span class="w"> </span><span class="kc">_</span><span class="w"> </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">IdentityProviderID</span><span class="p">)</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kr">throws</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">IdentityProvider</span><span class="p">?</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">res</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">identityProviders</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">.</span><span class="bp">first</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">$0</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">identity</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// Inputs.</span>
-<span class="kd">let</span> <span class="nv">seedPhrase</span> <span class="p">=</span> <span class="s">&quot;fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position&quot;</span>
-<span class="kd">let</span> <span class="nv">network</span> <span class="p">=</span> <span class="n">Network</span><span class="p">.</span><span class="n">testnet</span>
-<span class="kd">let</span> <span class="nv">identityProviderID</span> <span class="p">=</span> <span class="n">IdentityProviderID</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">identityIndex</span> <span class="p">=</span> <span class="n">IdentityIndex</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">walletProxyBaseURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://wallet-proxy.testnet.concordium.com&quot;</span><span class="p">)</span><span class="o">!</span>
-<span class="kd">let</span> <span class="nv">identityDisclosureThreshold</span> <span class="p">=</span> <span class="n">RevocationThreshold</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">seedPhrase</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">network</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Network</span><span class="p">.</span><span class="n">testnet</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityProviderID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">IdentityProviderID</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityIndex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">IdentityIndex</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">walletProxyBaseURL</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://wallet-proxy.testnet.concordium.com&quot;</span><span class="p">)</span><span class="o">!</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityDisclosureThreshold</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">RevocationThreshold</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1">// Configure seed and Wallet Proxy instance.</span>
-<span class="kd">let</span> <span class="nv">seedHex</span> <span class="p">=</span> <span class="k">try</span> <span class="n">Mnemonic</span><span class="p">.</span><span class="n">deterministicSeedString</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">seedPhrase</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">seed</span> <span class="p">=</span> <span class="n">WalletSeed</span><span class="p">(</span><span class="n">seedHex</span><span class="p">:</span> <span class="n">seedHex</span><span class="p">,</span> <span class="n">network</span><span class="p">:</span> <span class="n">network</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">walletProxy</span> <span class="p">=</span> <span class="n">WalletProxy</span><span class="p">(</span><span class="n">baseURL</span><span class="p">:</span> <span class="n">walletProxyBaseURL</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">identityProvider</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">findIdentityProvider</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">,</span> <span class="n">identityProviderID</span><span class="p">)</span><span class="o">!</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">seedHex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">Mnemonic</span><span class="p">.</span><span class="n">deterministicSeedString</span><span class="p">(</span><span class="n">from</span><span class="p">:</span><span class="w"> </span><span class="n">seedPhrase</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">seed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">WalletSeed</span><span class="p">(</span><span class="n">seedHex</span><span class="p">:</span><span class="w"> </span><span class="n">seedHex</span><span class="p">,</span><span class="w"> </span><span class="n">network</span><span class="p">:</span><span class="w"> </span><span class="n">network</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">walletProxy</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">WalletProxy</span><span class="p">(</span><span class="n">baseURL</span><span class="p">:</span><span class="w"> </span><span class="n">walletProxyBaseURL</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityProvider</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">findIdentityProvider</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">,</span><span class="w"> </span><span class="n">identityProviderID</span><span class="p">)</span><span class="o">!</span>
 
 <span class="c1">// Construct recovery request.</span>
-<span class="kd">let</span> <span class="nv">cryptoParams</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">cryptographicParameters</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="p">.</span><span class="n">lastFinal</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">cryptoParams</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">cryptographicParameters</span><span class="p">(</span><span class="n">block</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">lastFinal</span><span class="p">)</span>
 
-<span class="kd">let</span> <span class="nv">identityRequestBuilder</span> <span class="p">=</span> <span class="n">SeedBasedIdentityRequestBuilder</span><span class="p">(</span>
-    <span class="n">seed</span><span class="p">:</span> <span class="n">seed</span><span class="p">,</span>
-    <span class="n">cryptoParams</span><span class="p">:</span> <span class="n">cryptoParams</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityRequestBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SeedBasedIdentityRequestBuilder</span><span class="p">(</span>
+<span class="w">    </span><span class="n">seed</span><span class="p">:</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span>
+<span class="w">    </span><span class="n">cryptoParams</span><span class="p">:</span><span class="w"> </span><span class="n">cryptoParams</span>
 <span class="p">)</span>
-<span class="kd">let</span> <span class="nv">reqJSON</span> <span class="p">=</span> <span class="k">try</span> <span class="n">identityRequestBuilder</span><span class="p">.</span><span class="n">recoveryRequestJSON</span><span class="p">(</span>
-    <span class="n">provider</span><span class="p">:</span> <span class="n">identityProvider</span><span class="p">.</span><span class="n">info</span><span class="p">,</span>
-    <span class="n">index</span><span class="p">:</span> <span class="n">identityIndex</span><span class="p">,</span>
-    <span class="n">time</span><span class="p">:</span> <span class="n">Date</span><span class="p">.</span><span class="n">now</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">reqJSON</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">identityRequestBuilder</span><span class="p">.</span><span class="n">recoveryRequestJSON</span><span class="p">(</span>
+<span class="w">    </span><span class="n">provider</span><span class="p">:</span><span class="w"> </span><span class="n">identityProvider</span><span class="p">.</span><span class="n">info</span><span class="p">,</span>
+<span class="w">    </span><span class="n">index</span><span class="p">:</span><span class="w"> </span><span class="n">identityIndex</span><span class="p">,</span>
+<span class="w">    </span><span class="n">time</span><span class="p">:</span><span class="w"> </span><span class="n">Date</span><span class="p">.</span><span class="n">now</span>
 <span class="p">)</span>
 
-<span class="kd">func</span> <span class="nf">makeIdentityRecoveryRequest</span><span class="p">(</span>
-    <span class="kc">_</span> <span class="n">seed</span><span class="p">:</span> <span class="n">WalletSeed</span><span class="p">,</span>
-    <span class="kc">_</span> <span class="n">cryptoParams</span><span class="p">:</span> <span class="n">CryptographicParameters</span><span class="p">,</span>
-    <span class="kc">_</span> <span class="n">identityProvider</span><span class="p">:</span> <span class="n">IdentityProvider</span><span class="p">,</span>
-    <span class="kc">_</span> <span class="n">identityIndex</span><span class="p">:</span> <span class="n">IdentityIndex</span>
-<span class="p">)</span> <span class="kr">throws</span> <span class="p">-&gt;</span> <span class="n">IdentityRecoverRequest</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">identityRequestBuilder</span> <span class="p">=</span> <span class="n">SeedBasedIdentityRequestBuilder</span><span class="p">(</span>
-        <span class="n">seed</span><span class="p">:</span> <span class="n">seed</span><span class="p">,</span>
-        <span class="n">cryptoParams</span><span class="p">:</span> <span class="n">cryptoParams</span>
-    <span class="p">)</span>
-    <span class="kd">let</span> <span class="nv">reqJSON</span> <span class="p">=</span> <span class="k">try</span> <span class="n">identityRequestBuilder</span><span class="p">.</span><span class="n">recoveryRequestJSON</span><span class="p">(</span>
-        <span class="n">provider</span><span class="p">:</span> <span class="n">identityProvider</span><span class="p">.</span><span class="n">info</span><span class="p">,</span>
-        <span class="n">index</span><span class="p">:</span> <span class="n">identityIndex</span><span class="p">,</span>
-        <span class="n">time</span><span class="p">:</span> <span class="n">Date</span><span class="p">.</span><span class="n">now</span>
-    <span class="p">)</span>
+<span class="kd">func</span><span class="w"> </span><span class="nf">makeIdentityRecoveryRequest</span><span class="p">(</span>
+<span class="w">    </span><span class="kc">_</span><span class="w"> </span><span class="n">seed</span><span class="p">:</span><span class="w"> </span><span class="n">WalletSeed</span><span class="p">,</span>
+<span class="w">    </span><span class="kc">_</span><span class="w"> </span><span class="n">cryptoParams</span><span class="p">:</span><span class="w"> </span><span class="n">CryptographicParameters</span><span class="p">,</span>
+<span class="w">    </span><span class="kc">_</span><span class="w"> </span><span class="n">identityProvider</span><span class="p">:</span><span class="w"> </span><span class="n">IdentityProvider</span><span class="p">,</span>
+<span class="w">    </span><span class="kc">_</span><span class="w"> </span><span class="n">identityIndex</span><span class="p">:</span><span class="w"> </span><span class="n">IdentityIndex</span>
+<span class="p">)</span><span class="w"> </span><span class="kr">throws</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">IdentityRecoverRequest</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">identityRequestBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SeedBasedIdentityRequestBuilder</span><span class="p">(</span>
+<span class="w">        </span><span class="n">seed</span><span class="p">:</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span>
+<span class="w">        </span><span class="n">cryptoParams</span><span class="p">:</span><span class="w"> </span><span class="n">cryptoParams</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">reqJSON</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">identityRequestBuilder</span><span class="p">.</span><span class="n">recoveryRequestJSON</span><span class="p">(</span>
+<span class="w">        </span><span class="n">provider</span><span class="p">:</span><span class="w"> </span><span class="n">identityProvider</span><span class="p">.</span><span class="n">info</span><span class="p">,</span>
+<span class="w">        </span><span class="n">index</span><span class="p">:</span><span class="w"> </span><span class="n">identityIndex</span><span class="p">,</span>
+<span class="w">        </span><span class="n">time</span><span class="p">:</span><span class="w"> </span><span class="n">Date</span><span class="p">.</span><span class="n">now</span>
+<span class="w">    </span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -787,15 +792,15 @@ Kotlin (Android)</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
-<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nv">reqJSON</span> <span class="p">=</span> <span class="p">...</span> <span class="c1">// computed in previous section</span>
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nv">reqJSON</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="c1">// computed in previous section</span>
 
 <span class="c1">// Wrap recovery request into HTTP request and execute.</span>
-<span class="kd">let</span> <span class="nv">urlBuilder</span> <span class="p">=</span> <span class="n">IdentityRequestURLBuilder</span><span class="p">(</span><span class="n">callbackURL</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">// without &#39;callbackURL&#39; the builder only supports recovery</span>
-<span class="kd">let</span> <span class="nv">identityReq</span> <span class="p">=</span> <span class="k">try</span> <span class="n">urlBuilder</span><span class="p">.</span><span class="n">recoveryRequest</span><span class="p">(</span>
-    <span class="n">baseURL</span><span class="p">:</span> <span class="n">identityProvider</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">recoveryStart</span><span class="p">,</span>
-    <span class="n">requestJSON</span><span class="p">:</span> <span class="n">reqJSON</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">urlBuilder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">IdentityRequestURLBuilder</span><span class="p">(</span><span class="n">callbackURL</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">// without &#39;callbackURL&#39; the builder only supports recovery</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityReq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">urlBuilder</span><span class="p">.</span><span class="n">recoveryRequest</span><span class="p">(</span>
+<span class="w">    </span><span class="n">baseURL</span><span class="p">:</span><span class="w"> </span><span class="n">identityProvider</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">recoveryStart</span><span class="p">,</span>
+<span class="w">    </span><span class="n">requestJSON</span><span class="p">:</span><span class="w"> </span><span class="n">reqJSON</span>
 <span class="p">)</span>
-<span class="kd">let</span> <span class="nv">identity</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">identityReq</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">session</span><span class="p">:</span> <span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identity</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">identityReq</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">session</span><span class="p">:</span><span class="w"> </span><span class="n">URLSession</span><span class="p">.</span><span class="n">shared</span><span class="p">)</span>
 <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Successfully recovered identity: </span><span class="si">\(</span><span class="n">identity</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -921,8 +926,8 @@ Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   
 

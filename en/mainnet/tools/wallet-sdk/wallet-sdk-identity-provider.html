@@ -18,8 +18,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -29,10 +29,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-identity-provider.efdf0306-6b25-42f1-9786-f9d5e44b6929.js"></script>
+    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-identity-provider.a3ea652d-9ed6-4b7f-8534-df86ad73e949.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/wallet-sdk/wallet-sdk-identity-provider';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/wallet-sdk/wallet-sdk-identity-provider.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -519,9 +519,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -627,16 +632,16 @@ Kotlin (Android)</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
-<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
-<span class="kd">import</span> <span class="nc">Foundation</span>
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span><span class="w"> </span><span class="nc">Concordium</span>
+<span class="kd">import</span><span class="w"> </span><span class="nc">Foundation</span>
 
 <span class="c1">// Inputs.</span>
-<span class="kd">let</span> <span class="nv">walletProxyBaseURL</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;https://wallet-proxy.testnet.concordium.com&quot;</span><span class="p">)</span><span class="o">!</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">walletProxyBaseURL</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://wallet-proxy.testnet.concordium.com&quot;</span><span class="p">)</span><span class="o">!</span>
 
-<span class="kd">let</span> <span class="nv">walletProxy</span> <span class="p">=</span> <span class="n">WalletProxy</span><span class="p">(</span><span class="n">baseURL</span><span class="p">:</span> <span class="n">walletProxyBaseURL</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">walletProxy</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">WalletProxy</span><span class="p">(</span><span class="n">baseURL</span><span class="p">:</span><span class="w"> </span><span class="n">walletProxyBaseURL</span><span class="p">)</span>
 <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Identity providers:&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ip</span> <span class="k">in</span> <span class="k">try</span> <span class="k">await</span> <span class="n">identityProviders</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">)</span> <span class="p">{</span>
-    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;- </span><span class="si">\(</span><span class="n">ip</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">description</span><span class="p">.</span><span class="n">name</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="k">for</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">identityProviders</span><span class="p">(</span><span class="n">walletProxy</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;- </span><span class="si">\(</span><span class="n">ip</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="n">description</span><span class="p">.</span><span class="n">name</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -761,8 +766,8 @@ Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   
 

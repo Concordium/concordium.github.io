@@ -18,8 +18,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -29,10 +29,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
@@ -41,10 +41,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-account-transaction.0fc9cf41-ec10-4f94-bef4-fe587dd093c6.js"></script>
+    <script defer="defer" src="../../_static/tippy/tools/wallet-sdk/wallet-sdk-account-transaction.498ce96d-8206-4f84-8367-b3f3772a2de6.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/wallet-sdk/wallet-sdk-account-transaction';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/wallet-sdk/wallet-sdk-account-transaction.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -519,9 +519,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -675,39 +680,39 @@ Kotlin (Android)</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
-<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
-<span class="kd">import</span> <span class="nc">GRPC</span> <span class="c1">// external dependency for gRPC client</span>
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span><span class="w"> </span><span class="nc">Concordium</span>
+<span class="kd">import</span><span class="w"> </span><span class="nc">GRPC</span><span class="w"> </span><span class="c1">// external dependency for gRPC client</span>
 
-<span class="kd">let</span> <span class="nv">grpcChannel</span><span class="p">:</span> <span class="n">GRPCChannel</span> <span class="c1">// see docs for package GRPC or examples in SDK repo</span>
-<span class="kd">let</span> <span class="nv">client</span><span class="p">:</span> <span class="n">NodeClient</span> <span class="p">=</span> <span class="n">GRPCNodeClient</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span> <span class="n">grpcChannel</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">grpcChannel</span><span class="p">:</span><span class="w"> </span><span class="n">GRPCChannel</span><span class="w"> </span><span class="c1">// see docs for package GRPC or examples in SDK repo</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">client</span><span class="p">:</span><span class="w"> </span><span class="n">NodeClient</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">GRPCNodeClient</span><span class="p">(</span><span class="n">channel</span><span class="p">:</span><span class="w"> </span><span class="n">grpcChannel</span><span class="p">)</span>
 
 <span class="c1">// Inputs.</span>
-<span class="kd">let</span> <span class="nv">seedPhrase</span> <span class="p">=</span> <span class="s">&quot;fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position&quot;</span>
-<span class="kd">let</span> <span class="nv">network</span> <span class="p">=</span> <span class="n">Network</span><span class="p">.</span><span class="n">testnet</span>
-<span class="kd">let</span> <span class="nv">identityProviderID</span> <span class="p">=</span> <span class="n">IdentityProviderID</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">identityIndex</span> <span class="p">=</span> <span class="n">IdentityIndex</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">credentialCounter</span> <span class="p">=</span> <span class="n">CredentialCounter</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">amount</span> <span class="p">=</span> <span class="n">MicroCCDAmount</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">receiver</span> <span class="p">=</span> <span class="k">try</span><span class="p">!</span> <span class="n">AccountAddress</span><span class="p">(</span><span class="n">base58Check</span><span class="p">:</span> <span class="s">&quot;33Po4Z5v4DaAHo9Gz9Afc9LRzbZmYikus4Q7gqMaXHtdS17khz&quot;</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">expiry</span> <span class="p">=</span> <span class="n">TransactionTime</span><span class="p">(</span><span class="mi">9_999_999_999</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">seedPhrase</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;fence tongue sell large master side flock bronze ice accident what humble bring heart swear record valley party jar caution horn cushion endorse position&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">network</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Network</span><span class="p">.</span><span class="n">testnet</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityProviderID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">IdentityProviderID</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">identityIndex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">IdentityIndex</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">credentialCounter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">CredentialCounter</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">MicroCCDAmount</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">receiver</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="p">!</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">(</span><span class="n">base58Check</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;33Po4Z5v4DaAHo9Gz9Afc9LRzbZmYikus4Q7gqMaXHtdS17khz&quot;</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">expiry</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">TransactionTime</span><span class="p">(</span><span class="mi">9_999_999_999</span><span class="p">)</span>
 
 <span class="c1">// Configure seed.</span>
-<span class="kd">let</span> <span class="nv">seedHex</span> <span class="p">=</span> <span class="k">try</span> <span class="n">Mnemonic</span><span class="p">.</span><span class="n">deterministicSeedString</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">seedPhrase</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">seed</span> <span class="p">=</span> <span class="n">WalletSeed</span><span class="p">(</span><span class="n">seedHex</span><span class="p">:</span> <span class="n">seedHex</span><span class="p">,</span> <span class="n">network</span><span class="p">:</span> <span class="n">network</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">seedHex</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">Mnemonic</span><span class="p">.</span><span class="n">deterministicSeedString</span><span class="p">(</span><span class="n">from</span><span class="p">:</span><span class="w"> </span><span class="n">seedPhrase</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">seed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">WalletSeed</span><span class="p">(</span><span class="n">seedHex</span><span class="p">:</span><span class="w"> </span><span class="n">seedHex</span><span class="p">,</span><span class="w"> </span><span class="n">network</span><span class="p">:</span><span class="w"> </span><span class="n">network</span><span class="p">)</span>
 
 <span class="c1">// Derive seed based account from the given coordinates of the given seed.</span>
-<span class="kd">let</span> <span class="nv">cryptoParams</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">cryptographicParameters</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="p">.</span><span class="n">lastFinal</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">accountDerivation</span> <span class="p">=</span> <span class="n">SeedBasedAccountDerivation</span><span class="p">(</span><span class="n">seed</span><span class="p">:</span> <span class="n">seed</span><span class="p">,</span> <span class="n">cryptoParams</span><span class="p">:</span> <span class="n">cryptoParams</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">credentialIndexes</span> <span class="p">=</span> <span class="n">AccountCredentialSeedIndexes</span><span class="p">(</span>
-    <span class="n">identity</span><span class="p">:</span> <span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">providerID</span><span class="p">:</span> <span class="n">identityProviderID</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="n">identityIndex</span><span class="p">),</span>
-    <span class="n">counter</span><span class="p">:</span> <span class="n">credentialCounter</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">cryptoParams</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">cryptographicParameters</span><span class="p">(</span><span class="n">block</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">lastFinal</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">accountDerivation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">SeedBasedAccountDerivation</span><span class="p">(</span><span class="n">seed</span><span class="p">:</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="n">cryptoParams</span><span class="p">:</span><span class="w"> </span><span class="n">cryptoParams</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">credentialIndexes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">AccountCredentialSeedIndexes</span><span class="p">(</span>
+<span class="w">    </span><span class="n">identity</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">providerID</span><span class="p">:</span><span class="w"> </span><span class="n">identityProviderID</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">:</span><span class="w"> </span><span class="n">identityIndex</span><span class="p">),</span>
+<span class="w">    </span><span class="n">counter</span><span class="p">:</span><span class="w"> </span><span class="n">credentialCounter</span>
 <span class="p">)</span>
-<span class="kd">let</span> <span class="nv">account</span> <span class="p">=</span> <span class="k">try</span> <span class="n">accountDerivation</span><span class="p">.</span><span class="n">deriveAccount</span><span class="p">(</span><span class="n">credentials</span><span class="p">:</span> <span class="p">[</span><span class="n">credentialIndexes</span><span class="p">])</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">account</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">accountDerivation</span><span class="p">.</span><span class="n">deriveAccount</span><span class="p">(</span><span class="n">credentials</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">credentialIndexes</span><span class="p">])</span>
 
 <span class="c1">// Construct, sign, and send transfer transaction.</span>
-<span class="kd">let</span> <span class="nv">nextSeq</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">nextAccountSequenceNumber</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="n">account</span><span class="p">.</span><span class="n">address</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">tx</span> <span class="p">=</span> <span class="n">AccountTransaction</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="n">account</span><span class="p">.</span><span class="n">address</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="p">.</span><span class="n">transfer</span><span class="p">(</span><span class="n">amount</span><span class="p">:</span> <span class="n">amount</span><span class="p">,</span> <span class="n">receiver</span><span class="p">:</span> <span class="n">receiver</span><span class="p">))</span>
-<span class="kd">let</span> <span class="nv">signedTx</span> <span class="p">=</span> <span class="k">try</span> <span class="n">account</span><span class="p">.</span><span class="n">keys</span><span class="p">.</span><span class="n">sign</span><span class="p">(</span><span class="n">transaction</span><span class="p">:</span> <span class="n">tx</span><span class="p">,</span> <span class="n">sequenceNumber</span><span class="p">:</span> <span class="n">nextSeq</span><span class="p">,</span> <span class="n">expiry</span><span class="p">:</span> <span class="n">expiry</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">nextSeq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">nextAccountSequenceNumber</span><span class="p">(</span><span class="n">address</span><span class="p">:</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">address</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">tx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">AccountTransaction</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="n">payload</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">transfer</span><span class="p">(</span><span class="n">amount</span><span class="p">:</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">:</span><span class="w"> </span><span class="n">receiver</span><span class="p">))</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">signedTx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">keys</span><span class="p">.</span><span class="n">sign</span><span class="p">(</span><span class="n">transaction</span><span class="p">:</span><span class="w"> </span><span class="n">tx</span><span class="p">,</span><span class="w"> </span><span class="n">sequenceNumber</span><span class="p">:</span><span class="w"> </span><span class="n">nextSeq</span><span class="p">,</span><span class="w"> </span><span class="n">expiry</span><span class="p">:</span><span class="w"> </span><span class="n">expiry</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -751,12 +756,12 @@ Kotlin (Android)</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
-<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span> <span class="nc">Concordium</span>
+<div class="highlight-Swift notranslate"><div class="highlight"><pre><span></span><span class="kd">import</span><span class="w"> </span><span class="nc">Concordium</span>
 
-<span class="kd">let</span> <span class="nv">client</span><span class="p">:</span> <span class="n">NodeClient</span> <span class="c1">// from previous section</span>
-<span class="kd">let</span> <span class="nv">signedTx</span><span class="p">:</span> <span class="n">SignedAccountTransaction</span> <span class="c1">// from previous section</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">client</span><span class="p">:</span><span class="w"> </span><span class="n">NodeClient</span><span class="w"> </span><span class="c1">// from previous section</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">signedTx</span><span class="p">:</span><span class="w"> </span><span class="n">SignedAccountTransaction</span><span class="w"> </span><span class="c1">// from previous section</span>
 
-<span class="kd">let</span> <span class="nv">hash</span> <span class="p">=</span> <span class="k">try</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">transaction</span><span class="p">:</span> <span class="n">signedTx</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">hash</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">transaction</span><span class="p">:</span><span class="w"> </span><span class="n">signedTx</span><span class="p">)</span>
 <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Transaction with hash &#39;</span><span class="si">\(</span><span class="n">hash</span><span class="p">.</span><span class="n">hex</span><span class="si">)</span><span class="s">&#39; successfully submitted.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -882,8 +887,8 @@ Swift (macOS, iOS)</label><div class="sd-tab-content docutils">
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   
 
