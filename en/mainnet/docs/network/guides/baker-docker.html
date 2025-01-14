@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/baker-docker.9258c876-52b9-4a67-9668-68f2903aa890.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/baker-docker.29bb28a3-de51-4580-a418-d4ef0566df41.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/baker-docker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/baker-docker.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -732,7 +732,7 @@
 <h2>Configure a node as a validator<a class="headerlink" href="#configure-a-node-as-a-validator" title="Link to this heading">#</a></h2>
 <p>Once you have generated validator keys, you then need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.</p>
 <p>To register the keys in the network you need to be <a class="reference internal" href="../nodes/run-node.html#running-a-node"><span class="std std-ref">running a node</span></a> and send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>&lt;keys-file&gt;.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>&lt;keys-file&gt;.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--validator-credentials-out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>

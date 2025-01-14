@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/become-baker.2da30650-61dd-495f-8d25-5944ad681f65.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/become-baker.af6bf73f-c3ff-40a8-8765-6fa37344df9b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/become-baker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/become-baker.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -751,18 +751,13 @@
 <p>This section provides a brief description of how to import an account using the Concordium Client.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can only import accounts created in the Concordium Wallet for Mobile, Concordium Wallet for Web, or Concordium Legacy Wallet into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information.</p>
+<p>You can only import accounts created in the CryptoX Concordium Wallet or Concordium Wallet for Web into the Concordium Client. That is, you cannot import accounts created in the Desktop Wallet because they are created using a LEDGER device. You get the account information by exporting a JSON file with the account information.</p>
 <ul class="simple">
-<li><p>To export the JSON file in Concordium Legacy Wallet, see <a class="reference internal" href="../../guides/export-import.html#export-import"><span class="std std-ref">Make a backup of identities and accounts</span></a>.</p></li>
-<li><p>To export the private key in Concordium Wallet for Mobile and Concordium Wallet for Web, see <a class="reference internal" href="../../guides/export-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p></li>
+<li><p>To export the private key in CryptoX Concordium Wallet and Concordium Wallet for Web, see <a class="reference internal" href="../../guides/export-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p></li>
 </ul>
 </div>
 <p>To import an account run:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>&lt;path/to/exported/file&gt;<span class="w"> </span>--name<span class="w"> </span>validatorAccount
-</pre></div>
-</div>
-<p>For the Concordium Wallet for Web, use the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>&lt;Wallet.export&gt;<span class="w"> </span>--name<span class="w"> </span>&lt;Your-Wallet-Name&gt;.json
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> asks for a password to decrypt the exported file and import all accounts. The same password will be used for encrypting the transaction signing keys and the encrypted transfers key.</p>
@@ -774,8 +769,8 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>validator<span class="w"> </span>generate-keys<span class="w"> </span>&lt;keys-file&gt;.json
 </pre></div>
 </div>
-<p>You can choose an arbitrary name for the <code class="docutils literal notranslate"><span class="pre">&lt;keys</span> <span class="pre">file&gt;</span></code>. To register the keys in the network you need to be <a class="reference internal" href="../nodes/run-node.html#running-a-node"><span class="std std-ref">running a node</span></a> and send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction to the network:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>MyValidatorKeys.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--open-delegation-for<span class="w"> </span>all<span class="w"> </span>--delegation-transaction-fee-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--delegation-baking-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--delegation-finalization-commission<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>--validator-url<span class="w"> </span>https://example.com/validator<span class="w"> </span>--out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
+<p>You can choose an arbitrary name for the <code class="docutils literal notranslate"><span class="pre">&lt;keys</span> <span class="pre">file&gt;</span></code>. To register the keys in the network you need to be <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">running a node</span></a> and send a <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction to the network:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>MyValidatorKeys.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--open-delegation-for<span class="w"> </span>all<span class="w"> </span>--delegation-transaction-fee-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--delegation-baking-commission<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--delegation-finalization-commission<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>--validator-url<span class="w"> </span>https://example.com/validator<span class="w"> </span>--validator-credentials-out<span class="w"> </span>&lt;concordium-data-dir&gt;/validator-credentials.json
 </pre></div>
 </div>
 <p>where you replace</p>
@@ -783,7 +778,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">MyValidatorKeys.json</span></code> with the name of validator keys file you generated</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;amount-to-stake&gt;</span></code> with the CCD amount for the validator’s initial stake</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MyValidatorURL</span></code> with the URL containing information for your staking pool; can be left as an empty string if you do not want to provide a URL.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;concordium-data-dir&gt;</span></code> with any path of your choice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">validatorAccount</span></code> with the name you’ve chosen for the account</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -803,7 +799,6 @@
 </div></blockquote>
 </li>
 </ul>
-<p>Keep the output file name as <code class="docutils literal notranslate"><span class="pre">validator-credentials.json</span></code>.</p>
 <p>The following arguments are also required for the <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> transaction:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--open-delegation-for</span></code> sets whether the validator’s staking pool is open for delegators. Options are: <code class="docutils literal notranslate"><span class="pre">none</span></code> (no delegators will be allowed), <code class="docutils literal notranslate"><span class="pre">all</span></code> (any account can delegate), <code class="docutils literal notranslate"><span class="pre">existing</span></code> (only existing delegators can delegate).</p></li>
@@ -831,7 +826,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <p class="admonition-title">Warning</p>
 <p>Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
 </div>
-<p>To start the node with these validator keys and produce blocks, configure the node to use the validator keys, and <strong>restart</strong> it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.</p>
+<p>To start the node with these validator keys and produce blocks, <a class="reference internal" href="baker-macos.html#baker-macos"><span class="std std-ref">configure the node to use the validator keys</span></a>, and <strong>restart</strong> it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.</p>
 <p>This change is executed immediately, and it will take effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the one in which the transaction for adding the validator was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1015,7 +1010,7 @@ stake affects the lottery power</p></td>
 </table>
 </div>
 <p>When the validator is registered, it will automatically restake the earnings, but you can change this by providing the <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to the <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> command as shown in the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>validator-keys.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--out<span class="w"> </span>validator-credentials.json<span class="w"> </span>--no-restake
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>validator<span class="w"> </span>add<span class="w"> </span>validator-keys.json<span class="w"> </span>--sender<span class="w"> </span>validatorAccount<span class="w"> </span>--stake<span class="w"> </span>&lt;amount-to-stake&gt;<span class="w"> </span>--validator-credentials-out<span class="w"> </span>validator-credentials.json<span class="w"> </span>--no-restake
 </pre></div>
 </div>
 </section>
