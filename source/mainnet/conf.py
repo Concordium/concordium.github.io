@@ -51,7 +51,8 @@ extensions = [
     "sphinx_design",
     'notfound.extension',
     "sphinx_tippy",
-    "sphinx_sitemap"
+    "sphinx_sitemap",
+    "sphinxcontrib.video"
 ]
 
 # sphinx-prompt must be the first of these two.

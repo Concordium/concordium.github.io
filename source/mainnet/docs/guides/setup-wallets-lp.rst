@@ -14,3 +14,4 @@ Choose your wallet for instructions about installation and configuration.
     ../guides/setup-cryptox-wallet
     ../browser-wallet/setup-browser-wallet
     overview-desktop
+    ledger-tutorial
