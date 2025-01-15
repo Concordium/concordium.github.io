@@ -23,7 +23,7 @@ To register the keys in the network you need to be :ref:`running a node <running
 
 .. code-block:: console
 
-   $concordium-client validator add <keys-file>.json --sender validatorAccount --stake <amount-to-stake> --out <concordium-data-dir>/validator-credentials.json
+   $ concordium-client validator add <keys-file>.json --sender validatorAccount --stake <amount-to-stake> --validator-credentials-out <concordium-data-dir>/validator-credentials.json
 
 where you replace
 
