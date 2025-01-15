@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>How To Use Your Ledger Device With Concordium Desktop Wallet &#8212; Concordium  documentation</title>
+    <title>Use your Ledger Device with Concordium Desktop Wallet &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/ledger-tutorial.1399ffdf-c04d-4b5c-9ee8-f6edaa5a155f.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/ledger-tutorial.a5456d9d-1a26-4a9c-84c6-71a0ede649bd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/ledger-tutorial';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/ledger-tutorial.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -604,7 +604,7 @@
 <li class="toctree-l3"><a class="reference internal" href="setup-cryptox-wallet.html">Set up the CryptoX Concordium Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../browser-wallet/setup-browser-wallet.html">Set up the Concordium Wallet for Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="overview-desktop.html">Set up the Desktop Wallet</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">How To Use Your Ledger Device With Concordium Desktop Wallet</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Use your Ledger Device with Concordium Desktop Wallet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="manage-wallets-lp.html">Wallet activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -667,7 +667,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../desktop-wallet/proposed-transactions.html">View transaction proposals</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../desktop-wallet/use-ledger-device-with-desktop-wallet.html">Use your Ledger device with the Desktop Wallet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="cryptox-terms.html">End User License Terms for CryptoX Concordium Wallet</a></li>
@@ -725,11 +724,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="how-to-use-your-ledger-device-with-concordium-desktop-wallet">
-<span id="ledger-tutorial"></span><h1>How To Use Your Ledger Device With Concordium Desktop Wallet<a class="headerlink" href="#how-to-use-your-ledger-device-with-concordium-desktop-wallet" title="Link to this heading">#</a></h1>
+  <section id="use-your-ledger-device-with-concordium-desktop-wallet">
+<span id="ledger-tutorial"></span><h1>Use your Ledger Device with Concordium Desktop Wallet<a class="headerlink" href="#use-your-ledger-device-with-concordium-desktop-wallet" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>A Ledger Device is a hardware wallet that is considered one of the most secure ways to store your digital assets. Ledger uses an offline, or cold storage, method of generating private keys, making it a preferred method for many crypto users. This guide will help you to connect your Ledger device to the Concordium Desktop Wallet. The Concordium Desktop Wallet enables you to Send and Receive CCD with the Ledger Device.</p>
+<p>A Ledger Device is a hardware wallet that is considered one of the most secure ways to store your digital assets. It uses an offline method (also known as cold storage) method for generating private keys, making it the preferred choice for many cryptocurrency users. This guide will help you to connect your Ledger Device to the Concordium Desktop Wallet. The Concordium Desktop Wallet enables you to Send and Receive CCD with the Ledger Device.</p>
 </section>
 <section id="quick-links">
 <h2>Quick links<a class="headerlink" href="#quick-links" title="Link to this heading">#</a></h2>
@@ -741,17 +740,18 @@
 <li><p><a class="reference internal" href="../desktop-wallet/accounts-desktop.html#overview-account-desktop"><span class="std std-ref">Desktop wallet Navigation and settings</span></a></p></li>
 </ul>
 </section>
-<section id="before-you-start-make-sure">
-<h2>Before You Start, Make Sure<a class="headerlink" href="#before-you-start-make-sure" title="Link to this heading">#</a></h2>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>Before you start, make sure that:</p>
 <ul class="simple">
 <li><p>You’ve <a class="reference external" href="https://support.ledger.com/article/360000613793-zd?redirect=false">initialized</a> your Ledger Device</p></li>
 <li><p>The latest firmware is <a class="reference external" href="https://support.ledger.com/article/360002731113-zd?redirect=false">installed</a> (Ledger Nano S)</p></li>
 <li><p>Ledger Live is <a class="reference external" href="https://support.ledger.com/article/4404389503889-zd">ready to use</a></p></li>
-<li><p>Install the latest version of <a class="reference external" href="https://www.concordium.com/wallet">Concordium Desktop Wallet</a></p></li>
+<li><p>You’ve installed the latest version of <a class="reference external" href="https://www.concordium.com/wallet">Concordium Desktop Wallet</a></p></li>
 </ul>
 </section>
-<section id="installing-the-concordium-app-on-your-ledger-device">
-<h2>Installing the Concordium App on Your Ledger Device<a class="headerlink" href="#installing-the-concordium-app-on-your-ledger-device" title="Link to this heading">#</a></h2>
+<section id="install-the-concordium-app-on-your-ledger-device">
+<h2>Install the Concordium app on your Ledger Device<a class="headerlink" href="#install-the-concordium-app-on-your-ledger-device" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Open the Manager in Ledger Live</p></li>
 <li><p>Connect and unlock your Ledger Device</p></li>
@@ -759,11 +759,11 @@
 <li><p>Find Concordium in the app catalog and install the Concordium app</p>
 <img alt="Concordium app in Ledger Live catalog" src="../../_images/image1.png" />
 </li>
-<li><p>Click the <em>Install</em> button</p>
+<li><p>Click <strong>Install</strong>.</p>
 <ol class="loweralpha simple">
-<li><p>An installation window will appear</p></li>
-<li><p>Your device will display Processing…</p></li>
-<li><p>The app installation is confirmed</p></li>
+<li><p>An installation window appears.</p></li>
+<li><p>Your device displays <em>Processing</em>.…</p></li>
+<li><p>The app installation is confirmed.</p></li>
 </ol>
 <img alt="Concordium app on Ledger device" src="../../_images/image2.jpg" />
 <img alt="Installation confirmation" src="../../_images/image3.jpg" />
@@ -771,34 +771,34 @@
 <li><p>Close Ledger Live</p></li>
 </ol>
 </section>
-<section id="connecting-to-the-concordium-desktop-wallet">
-<h2>Connecting to the Concordium Desktop Wallet<a class="headerlink" href="#connecting-to-the-concordium-desktop-wallet" title="Link to this heading">#</a></h2>
+<section id="connect-to-the-concordium-desktop-wallet">
+<h2>Connect to the Concordium Desktop Wallet<a class="headerlink" href="#connect-to-the-concordium-desktop-wallet" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>First, connect and unlock your Ledger Device</p></li>
-<li><p>Open the Concordium App on your Ledger Device</p>
+<li><p>Connect and unlock your Ledger Device.</p></li>
+<li><p>Open the Concordium app on your Ledger Device.</p>
 <img alt="Concordium app on Ledger device" src="../../_images/image2.jpg" />
 <ul class="simple">
-<li><p>Ledger Nano S will show “Concordium”</p></li>
+<li><p>Ledger Nano S shows <em>Concordium</em>.</p></li>
 </ul>
 <img alt="Installation confirmation" src="../../_images/image3.jpg" />
-<p>Ledger Nano S will show “Application is ready”</p>
+<p>Ledger Nano S shows <em>Application is ready</em>.</p>
 </li>
-<li><p>Open the Concordium Desktop Wallet Application and create your account</p>
+<li><p>Open the Concordium Desktop Wallet Application and create your account.</p>
 <img alt="Create account screen" src="../../_images/image6.png" />
 </li>
-<li><p>Click the <em>Submit</em> button on the right part of the screen</p>
+<li><p>Click <strong>Submit</strong> on the right side of the screen.</p>
 <img alt="Submit button location" src="../../_images/image7.png" />
 </li>
-<li><p>Confirm the exporting of the public key on a device</p>
+<li><p>Confirm the public key export on a device.</p>
 <img alt="Public key export confirmation" src="../../_images/image8.png" />
 </li>
-<li><p>Verify that the address on the Concordium Desktop Wallet matches the address on your Ledger Device</p>
+<li><p>Verify that the address on the Concordium Desktop Wallet matches the address on your Ledger Device.</p>
 <img alt="Address verification screen" src="../../_images/image9.png" />
 </li>
-<li><p>Confirm the Concordium Wallet address details on Ledger</p>
+<li><p>Confirm the Concordium Wallet address details on Ledger.</p>
 <img alt="Ledger address confirmation" src="../../_images/image10.png" />
 </li>
-<li><p>Your New Concordium Desktop Wallet account has been created</p>
+<li><p>Your New Concordium Desktop Wallet account has been created.</p>
 <img alt="New account creation confirmation" src="../../_images/image11.png" />
 </li>
 </ol>
@@ -816,53 +816,51 @@
 <p>Your account balance is shown on the top bar of the Desktop Wallet denominated in CCD amount.</p>
 <img alt="Account balance display" src="../../_images/image5.png" />
 </section>
-<section id="receiving-ccd-in-the-concordium-desktop-wallet">
-<h2>Receiving CCD in the Concordium Desktop Wallet<a class="headerlink" href="#receiving-ccd-in-the-concordium-desktop-wallet" title="Link to this heading">#</a></h2>
+<section id="receive-ccd-in-the-concordium-desktop-wallet">
+<h2>Receive CCD in the Concordium Desktop Wallet<a class="headerlink" href="#receive-ccd-in-the-concordium-desktop-wallet" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Make sure you have verified your Receive address as shown in Steps 5 and 6 of “Connecting to the Concordium Desktop Wallet”</p></li>
-<li><p>You can get your Receive address by simply copying the address to the clipboard or by scanning the QR Code</p>
-<ol class="loweralpha simple">
-<li><p>You can copy the address by clicking the button next to the address</p></li>
-</ol>
-<img alt="Copy address button" src="../../_images/image13.png" />
+<li><p>Make sure you have verified your Receive address as shown in Steps 5 and 6 of <strong>Connecting to the Concordium Desktop Wallet</strong>.</p></li>
+<li><p>You can get your Receive address by simply copying the address to the clipboard or by scanning the QR code.</p>
+<ol class="loweralpha">
+<li><p>You can copy the address by clicking the <strong>Copy</strong> icon <a class="reference internal" href="../../_images/copy-button.png"><img alt="two pages" src="../../_images/copy-button.png" style="width: 20px;" /></a> next to the address.</p>
 <img alt="QR code display" src="../../_images/image14.png" />
-<ol class="loweralpha simple" start="2">
-<li><p>To scan the QR Code, click the QR code, which will show an enlarged QR Code to scan. Please verify that the address matches after you have scanned. Click the button to go back to the Main page</p></li>
-</ol>
-<img alt="button" src="../../_images/image23.png" />
+</li>
+<li><p>To scan the QR code, click the QR code, which will show an enlarged QR code to scan. Verify that the address matches after you have scanned. Click the <strong>Collapse</strong> icon <a class="reference internal" href="../../_images/collapse-button.png"><img alt="two arrows" src="../../_images/collapse-button.png" style="width: 20px;" /></a> to go back to the Main page.</p>
 <img alt="Enlarged QR code" src="../../_images/image16.png" />
+</li>
+</ol>
 <img alt="Wating for user to finish process" src="../../_images/image15.png" />
 <ol class="loweralpha simple" start="3">
-<li><p>Once you have sent CCD from another Wallet, you will see it in your transaction history and your CCD balance will update</p></li>
+<li><p>Once you have sent CCD from another wallet, you will see it in your transaction history and your CCD balance will update</p></li>
 </ol>
 </li>
 </ol>
 </section>
-<section id="sending-ccd-in-the-concordium-desktop-wallet">
-<h2>Sending CCD in the Concordium Desktop Wallet<a class="headerlink" href="#sending-ccd-in-the-concordium-desktop-wallet" title="Link to this heading">#</a></h2>
+<section id="send-ccd-in-the-concordium-desktop-wallet">
+<h2>Send CCD in the Concordium Desktop Wallet<a class="headerlink" href="#send-ccd-in-the-concordium-desktop-wallet" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Click on the <em>Send</em> button on the left side, enter the CCD address and the amount on the right side of the screen, and click the <em>Continue</em> Button</p>
+<li><p>Click on <strong>Send</strong> on the left side, enter the CCD address and the amount on the right side of the screen, and click the <strong>Continue</strong>.</p>
 <img alt="Send CCD screen" src="../../_images/image17.png" />
 </li>
-<li><p>Review the amount you are sending and the Fees for the transaction and click the <em>Submit</em> Button</p>
+<li><p>Review the amount you are sending and the transaction fees, and click the <strong>Submit</strong>.</p>
 <img alt="Transaction review screen" src="../../_images/image18.png" />
 </li>
 <li><p>Review and sign the transaction on your Ledger Device</p>
 <p>For Ledger Nano S:</p>
 <img alt="Ledger transaction review" src="../../_images/image19.jpg" />
-<p>Press the right button on your Ledger Device to review the transaction details (Amount and Address) until you see “Sign Transaction”</p>
+<p>Press the right button on your Ledger Device to review the transaction details (Amount and Address) until you see <em>Sign Transaction</em>.</p>
 <img alt="Sign transaction screen" src="../../_images/image20.jpg" />
 <p>Press both buttons on your Ledger Device to sign the transaction.</p>
 <img alt="Transaction signing confirmation" src="../../_images/image21.jpg" />
 <p>For Ledger Nano X: press the right button on your Ledger Device to review the transaction details (Amount and Address) until you see “Accept” then press both buttons</p>
 </li>
-<li><p>Once you sign the Transaction on the Ledger Device, a green banner will appear to show that the transaction was successful and a “Sending” transaction will appear in the Transaction history</p>
+<li><p>Once you sign the Transaction on the Ledger Device, a green banner will appear to show that the transaction was successful and a <em>Sending transaction</em> appears in the Transaction history</p>
 <img alt="Transaction success confirmation" src="../../_images/image22.png" />
 </li>
 </ol>
 </section>
 <section id="video-guide">
-<h2>Video Guide<a class="headerlink" href="#video-guide" title="Link to this heading">#</a></h2>
+<h2>Video guide<a class="headerlink" href="#video-guide" title="Link to this heading">#</a></h2>
 <p>A video guide is available below:</p>
 <div  class="align-center"><video controls="True" preload="auto" width="80%"><source src="../../_images/Desktop_wallet_x_Ledger.mp4" type="video/mp4"></video></div></section>
 <section id="support">
@@ -874,7 +872,7 @@
 </ul>
 </section>
 <section id="how-it-was-made">
-<h2>How It Was Made<a class="headerlink" href="#how-it-was-made" title="Link to this heading">#</a></h2>
+<h2>How it was made<a class="headerlink" href="#how-it-was-made" title="Link to this heading">#</a></h2>
 <p>This guide was made according to the ledger third-party application design guidelines: <a class="reference external" href="https://www.ledger.com/academy/hardwarewallet/ledger-and-third-party-wallets">Ledger and Third-Party Wallets</a>.</p>
 </section>
 </section>
@@ -964,15 +962,15 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-links">Quick links</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-start-make-sure">Before You Start, Make Sure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-the-concordium-app-on-your-ledger-device">Installing the Concordium App on Your Ledger Device</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-the-concordium-desktop-wallet">Connecting to the Concordium Desktop Wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-concordium-app-on-your-ledger-device">Install the Concordium app on your Ledger Device</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-the-concordium-desktop-wallet">Connect to the Concordium Desktop Wallet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-account-balance">View Account Balance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#receiving-ccd-in-the-concordium-desktop-wallet">Receiving CCD in the Concordium Desktop Wallet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sending-ccd-in-the-concordium-desktop-wallet">Sending CCD in the Concordium Desktop Wallet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-guide">Video Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#receive-ccd-in-the-concordium-desktop-wallet">Receive CCD in the Concordium Desktop Wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#send-ccd-in-the-concordium-desktop-wallet">Send CCD in the Concordium Desktop Wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-guide">Video guide</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-was-made">How It Was Made</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-it-was-made">How it was made</a></li>
 </ul>
   </nav></div>
 
