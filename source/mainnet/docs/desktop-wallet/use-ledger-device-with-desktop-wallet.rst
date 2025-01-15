@@ -215,4 +215,4 @@ This guide was made according to the ledger third-party application design guide
 .. |collapse|    image:: ../images/desktop-wallet/ledger-device/collapse-button.png
                     :width: 20px
                     :alt: small square with pencil
-                    
+
