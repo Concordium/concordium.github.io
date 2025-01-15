@@ -124,12 +124,12 @@ Receive CCD in the Concordium Desktop Wallet
    a. You can copy the address by clicking the **Copy** icon |copy| next to the address.
 
       .. image:: ../../docs/images/ledger-tutorial/image14.png
-      :alt: QR code display
+         :alt: QR code display
 
    b. To scan the QR code, click the QR code, which will show an enlarged QR code to scan. Verify that the address matches after you have scanned. Click the **Collapse** icon |collapse| to go back to the Main page.
 
       .. image:: ../../docs/images/ledger-tutorial/image16.png
-      :alt: Enlarged QR code
+         :alt: Enlarged QR code
 
    .. image:: ../../docs/images/ledger-tutorial/image15.png
       :alt: Wating for user to finish process
