@@ -34,8 +34,8 @@ Before you start, make sure that:
 
 #. You've installed the latest version of Concordium Desktop Wallet.
 
-.. note::
 Make sure all prerequisites are met before proceeding with the setup process.
+
 
 Install the Concordium app on your Ledger device
 ================================================
