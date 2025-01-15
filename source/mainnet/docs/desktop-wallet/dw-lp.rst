@@ -18,4 +18,4 @@ The guides here are specifically for Desktop Wallet.
     accounts-desktop
     reset-data
     ../guides/overview-shared-accounts
-    use-ledger-device-with-desktop-wallet
+
