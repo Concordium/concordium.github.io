@@ -40,7 +40,7 @@ Make sure all prerequisites are met before proceeding with the setup process.
 Install the Concordium app on your Ledger device
 ================================================
 
-#. Open the **Manager** in Ledger Live.
+#. Open the Manager in Ledger Live.
 
 #. Connect and unlock your Ledger device.
 
@@ -58,10 +58,6 @@ Install the Concordium app on your Ledger device
     #. Your device displays *Processing*
 
     #. The app installation is confirmed.
-
-    .. image:: ../images/desktop-wallet/ledger-device/app-installation-ledger.png
-      :alt: Installation of Concordium app on Ledger device
-
 
     .. image:: ../images/desktop-wallet/ledger-device/app-installation-ledger-confirmed.png
       :alt: Installation of Concordium app on Ledger device confirmed
@@ -97,7 +93,7 @@ Connect to the Desktop Wallet
     .. image:: ../images/desktop-wallet/ledger-device/create-account.png
       :alt: Submit account in Desktop Wallet
 
-#. Confirm the public key export on your Ledger device.
+#. Confirm the public key export on a device.
 
     .. image:: ../images/desktop-wallet/ledger-device/confirm-public-key-export.png
       :alt: Confirm export of the public key
@@ -136,16 +132,86 @@ Receive CCD in the Desktop Wallet
 
 #. You can get your Receive address by simply copying the address to the clipboard or by scanning the QR Code.
 
-    #. You can copy the address by clicking the **Copy** icon next to the address.
+    #. You can copy the address by clicking the **Copy** icon |copy| next to the address.
 
-    #. To scan the QR Code, click the QR code, which will show an enlarged QR Code to scan. Please verify that the address matches after you have scanned. Click the “” button to go back to the Main page.
+    #. To scan the QR Code, click the QR code, which will show an enlarged QR code to scan. Verify that the address matches after you have scanned. Click the **Collapse** button |collapse| to go back to the Main page.
+
+
+        .. image:: ../images/desktop-wallet/ledger-device/verify-address2.png
+            :alt: Screen showing the account balance.
+
+        .. image:: ../images/desktop-wallet/ledger-device/enlarge-QR-code.png
+            :alt: Screen showing QR code.
+
+#. Once you have sent CCD from another Wallet, you will see it in your transaction history and your CCD balance will update.
 
 
 Send CCD in the Desktop Wallet
 ==============================
 
+#. Click **Send**, enter the CCD address and the amount on the right side of the screen. Then, click **Continue**.
+
+    .. image:: ../images/desktop-wallet/ledger-device/send-CCD.png
+      :alt: Screen showing how to enter amount and send CCD.
+
+
+#. Review the amount you are sending and the transaction fee. Then, click **Submit**.
+
+    .. image:: ../images/desktop-wallet/ledger-device/review-transaction.png
+      :alt: Screen showing transacyion info for review.
+
+#. Review and sign the transaction on your Ledger device.
+
+    **For Ledger Nano S:**
+
+    Press the right button on your Ledger device to review the transaction details (amount and address) until you see **Sign Transaction**.
+
+        .. image:: ../images/desktop-wallet/ledger-device/ledger-nano-s-review-transaction.png
+          :alt: Ledger device Nano S.
+
+    Press both buttons on your Ledger Device to sign the transaction.
+
+        .. image:: ../images/desktop-wallet/ledger-device/ledger-nano-s-sign-transaction.png
+          :alt: Signing with Ledger device Nano S.
+
+
+
+    **For Ledger Nano X:**
+    Press the right button on your Ledger Device to review the transaction details (amount and address) until you see **Accept**. Then, press both buttons.
+
+    .. image:: ../images/desktop-wallet/ledger-device/ledger-nano-x-sign-transaction.png
+      :alt: Signing with Ledger device Nano X.
+
+
+#. Once you sign the transaction on the Ledger device, a green banner appears to show that the transaction was successful and a *Sending* transaction will appear in the transaction history.
+
+    .. image:: ../images/desktop-wallet/ledger-device/succesful-transaction.png
+      :alt: Screen showing succesful transaction.
+
+Video Guide
+===========
+
+https://drive.google.com/file/d/1PAp1DI8GQO0yYKUfG2U_2VIzjXoTmYgC/view?usp=sharing
+
 Support
 =======
 
+Telegram: https://t.me/concordium_official
+
+Github: https://github.com/Concordium
+
+Support email: support@concoridum.com
+
+
 How it was made
 ===============
+
+This guide was made according to the ledger third-party application design guidelines: `Ledger and Third-Party Wallets <https://www.ledger.com/academy/hardwarewallet/ledger-and-third-party-wallets>`_.
+
+
+.. |copy| image:: ../images/desktop-wallet/ledger-device/copy-button.png
+             :alt: Three horizontal lines
+             :width: 20px
+.. |collapse|    image:: ../images/desktop-wallet/ledger-device/collapse-button.png
+                    :width: 20px
+                    :alt: small square with pencil
