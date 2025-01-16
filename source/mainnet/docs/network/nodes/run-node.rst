@@ -109,11 +109,11 @@ To run a node on testnet use the following configuration file and follow the ste
 .. code-block:: yaml
 
    # This is an example configuration for running the testnet node
-   version: '3'
    services:
      testnet-node:
        container_name: testnet-node
        image: concordium/testnet-node:latest
+       platform: linux/amd64
        pull_policy: always
        environment:
          # Environment specific configuration
@@ -189,6 +189,7 @@ To run a node on testnet use the following configuration file and follow the ste
      testnet-node-collector:
        container_name: testnet-node-collector
        image: concordium/testnet-node:latest
+       platform: linux/amd64
        pull_policy: always
        environment:
          # Settings that should be customized by the user.
@@ -370,11 +371,11 @@ To retrieve mainnet node logs run:
 .. code-block:: yaml
 
    # This is an example configuration for running the mainnet node
-   version: '3'
    services:
      mainnet-node:
        container_name: mainnet-node
        image: concordium/mainnet-node:latest
+       platform: linux/amd64
        pull_policy: always
        environment:
          # Environment specific configuration
@@ -445,6 +446,7 @@ To retrieve mainnet node logs run:
      mainnet-node-collector:
        container_name: mainnet-node-collector
        image: concordium/mainnet-node:latest
+       platform: linux/amd64
        pull_policy: always
        environment:
          # Settings that should be customized by the user.
