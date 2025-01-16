@@ -126,8 +126,6 @@ If the validator remains inactive through the snapshot epoch, the suspension tak
 
    A high-stake validator could face suspension after approximately 23 hours of inactivity, while low-stake validators typically require a longer period of inactivity before reaching the threshold.
 
-Resuming Validation
-^^^^^^^^^^^^^^^^^^^
 
 A suspended validator:
 
