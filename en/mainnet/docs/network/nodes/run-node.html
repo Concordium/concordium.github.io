@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/run-node.21984e39-0e24-49f2-99c2-a49e4a5f4102.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/run-node.36c892cb-aa11-4a75-8008-bff15a9b51ff.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -815,11 +815,11 @@ and <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE
 <h2>Run a testnet node<a class="headerlink" href="#run-a-testnet-node" title="Link to this heading">#</a></h2>
 <p>To run a node on testnet use the following configuration file and follow the steps below.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example configuration for running the testnet node</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3&#39;</span>
 <span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">testnet-node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
 <span class="w">    </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># Environment specific configuration</span>
@@ -895,6 +895,7 @@ and <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE
 <span class="w">  </span><span class="nt">testnet-node-collector</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node-collector</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
 <span class="w">    </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># Settings that should be customized by the user.</span>
@@ -1058,11 +1059,11 @@ for a list of currently available versions.</p></li>
 </pre></div>
 </div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example configuration for running the mainnet node</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3&#39;</span>
 <span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">mainnet-node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
 <span class="w">    </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># Environment specific configuration</span>
@@ -1133,6 +1134,7 @@ for a list of currently available versions.</p></li>
 <span class="w">  </span><span class="nt">mainnet-node-collector</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node-collector</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
+<span class="w">    </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
 <span class="w">    </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
 <span class="w">      </span><span class="c1"># Settings that should be customized by the user.</span>

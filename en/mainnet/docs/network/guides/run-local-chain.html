@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.93419fd2-d873-4bc8-80c1-b57ad4ea5740.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.ba56f89c-7b6d-4d2a-9b5d-d7b01adc6566.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/run-local-chain';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/run-local-chain.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -844,11 +844,11 @@
 <h3>Run the chain as a Docker instance<a class="headerlink" href="#run-the-chain-as-a-docker-instance" title="Link to this heading">#</a></h3>
 <p>If you ran the validator node by invoking the node binary directly on your host, skip this section. To run the validator node as a Docker instance, first save the following <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file to the working directory:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example configuration for running a local node</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3&#39;</span>
 <span class="nt">services</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">local-node</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local-node</span>
 <span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
+<span class="w">        </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
 <span class="w">        </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 <span class="w">        </span><span class="nt">environment</span><span class="p">:</span>
 <span class="w">        </span><span class="c1"># Validator credentials file</span>

@@ -150,11 +150,11 @@ If you ran the validator node by invoking the node binary directly on your host,
 .. code-block:: yaml
 
     # This is an example configuration for running a local node
-    version: '3'
     services:
         local-node:
             container_name: local-node
             image: concordium/mainnet-node:latest
+            platform: linux/amd64
             pull_policy: always
             environment:
             # Validator credentials file
