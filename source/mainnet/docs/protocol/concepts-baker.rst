@@ -129,10 +129,9 @@ If the validator remains inactive through the snapshot epoch, the suspension tak
 
 A suspended validator:
 
-* Must remain suspended for at least one epoch
 * Can resume validation through a manual transaction
 * Incurs no specific penalties beyond the suspension period
-* Maintains their delegators unless they choose to update their delegation
+* Maintains its delegators unless they choose to update their delegation
 
 .. note::
 
