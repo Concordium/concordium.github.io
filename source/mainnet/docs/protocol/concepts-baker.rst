@@ -110,7 +110,7 @@ Validator Suspension
 
 A validator may be suspended if it remains inactive and fails to produce blocks when selected as a round leader. This mechanism, introduced in Protocol 8, helps maintain the blockchain's performance and reliability by excluding inactive validators.
 
-A validator faces :term:`suspension` if reaches a threshold of missed rounds. The size of a validator's stake affects how long the validator's node has to be inactive before reaching the threshold:
+A validator faces :term:`suspension` if it reaches a threshold of missed rounds. The size of a validator's stake affects how long the validator's node has to be inactive before reaching the threshold:
 
 * High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders.
 * Low-stake validators may take several days to reach the threshold due to fewer opportunities to produce blocks.
