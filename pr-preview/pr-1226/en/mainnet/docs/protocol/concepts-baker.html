@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.e6488e73-940c-4109-9ca1-293d17097e90.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.2f327479-bbd2-4a16-b943-ab883fcdcfc9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-baker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concepts-baker.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -798,7 +798,7 @@ For example, if you decrease a valiator’s stake, the stake will be decreased a
 <section id="validator-suspension">
 <h2>Validator Suspension<a class="headerlink" href="#validator-suspension" title="Link to this heading">#</a></h2>
 <p>A validator may be suspended if it remains inactive and fails to produce blocks when selected as a round leader. This mechanism, introduced in Protocol 8, helps maintain the blockchain’s performance and reliability by excluding inactive validators.</p>
-<p>A validator faces <a class="reference internal" href="../resources/glossary.html#term-Suspension"><span class="xref std std-term">suspension</span></a> if reaches a threshold of missed rounds. The size of a validator’s stake affects how long the validator’s node has to be inactive before reaching the threshold:</p>
+<p>A validator faces <a class="reference internal" href="../resources/glossary.html#term-Suspension"><span class="xref std std-term">suspension</span></a> if it reaches a threshold of missed rounds. The size of a validator’s stake affects how long the validator’s node has to be inactive before reaching the threshold:</p>
 <ul class="simple">
 <li><p>High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders.</p></li>
 <li><p>Low-stake validators may take several days to reach the threshold due to fewer opportunities to produce blocks.</p></li>
