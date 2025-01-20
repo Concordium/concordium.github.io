@@ -101,7 +101,6 @@ An example verifier dApp is the `Concordia social media verifier on Testnet <htt
    :hidden:
    :maxdepth: 1
 
-   wallet
    issuer
    ../guides/create-proofs
    concordia
