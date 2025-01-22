@@ -19,7 +19,7 @@ Concordium provides a new solution to blockchain privacy through its identity la
 
 Fast and final transactions
 ---------------------------
-The Concordium blockchain confirms transactions within seconds. Once confirmed, these transactions cannot be reversed. This is achieved through a proof-of-stake consensus mechanism called ConcordiumBFT, where :term:`validators<validator>` who stake :term:`CCD` tokens help secure and maintain the network.
+The Concordium blockchain confirms transactions within seconds. Once confirmed, these transactions cannot be reversed. This is achieved through a :term:`proof-of-stake<Proof-of-stake>` consensus mechanism called :term:`ConcordiumBFT<Concordium Byzantine Fault Tolerance (BFT) protocol>`, where :term:`validators<validator>` who stake :term:`CCD` tokens help secure and maintain the network.
 
 Predictable costs
 -----------------
@@ -35,7 +35,7 @@ The network layer handles communication between :term:`nodes<node>`. It includes
 
 Consensus layer
 ---------------
-The consensus layer ensures all nodes agree on the state of the blockchain using ConcordiumBFT. This protocol selects validators to create blocks based on their stake, verifies these blocks, and finalizes them quickly. The system remains secure as long as less than one-third of all staked CCD is controlled by malicious actors.
+The consensus layer ensures all nodes agree on the state of the blockchain using :term:`ConcordiumBFT<Concordium Byzantine Fault Tolerance (BFT) protocol>`. This protocol selects validators to create blocks based on their stake, verifies these blocks, and finalizes them quickly. The system remains secure as long as less than one-third of all staked CCD is controlled by malicious actors.
 
 Identity layer
 --------------
@@ -44,11 +44,11 @@ At no point does Concordium see or hold any identiy information about its users,
 
 Execution layer
 ---------------
-The execution layer processes transactions and runs smart contracts. It uses :term:`WebAssembly` as its foundation, allowing developers to write smart contracts in Rust.
+The execution layer processes transactions and runs :term:`smart contracts<Smart contract>`. It uses :term:`WebAssembly` as its foundation, allowing developers to write smart contracts in Rust.
 
 Economics and validation
 ========================
-The protocol uses CCD (ConCorDium) as its native token. CCD serves multiple purposes:
+The protocol uses :term:`CCD` (ConCorDium) as its native token. CCD serves multiple purposes:
 
 - Paying for transaction fees
 - :term:`Staking<Staked Amount>` by :term:`validators<Validator>`
@@ -62,10 +62,10 @@ Concordium is designed to make blockchain development straightforward and effici
 
 The platform provides comprehensive tools for developers:
 
-- Smart contract development tools with first-class Rust support
-- Testing frameworks for thorough contract validation
-- Wallet integration options for easy user onboarding
-- Programming language support through WebAssembly
-- Clear documentation and code examples
+* `Smart contract development tools <https://docs.concordium.com/en/mainnet/tools/index.html>`_ with first-class Rust support
+* Testing frameworks for thorough contract validation
+* Wallet integration options for easy user onboarding
+* Programming language support through WebAssembly
+* Clear documentation and code examples
 
 Developers can deploy both on :term:`Testnet` for development and :term:`Mainnet` for production. All core components of the Concordium Platform are open source and available on GitHub.
