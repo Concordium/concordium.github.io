@@ -6,8 +6,6 @@
 What is the Concordium Protocol
 ===============================
 
-What is Concordium
-==================
 Concordium is a public and permissionless blockchain platform designed for both business applications and public use. It combines privacy-preserving features with regulatory compliance, fast transaction processing, and cost-effective operations.
 
 Core features
