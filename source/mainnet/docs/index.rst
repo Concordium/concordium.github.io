@@ -62,6 +62,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Concordium Protocol
    :hidden:
 
+   What is the Concordium Protocol <protocol/concordium-protocol>
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
