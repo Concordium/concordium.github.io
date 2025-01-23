@@ -25,7 +25,6 @@ Basic Smart Contracts
    Build simple, fundamental contracts.
 
    * :ref:`Counter <counter-sc>` - Build a simple smart contract with an owner-controlled counter
-   * :ref:`PiggyBank <piggy-bank>` - Create a contract that accepts CCD deposits and implements owner-only withdrawal
 
 Token Development
 -----------------
@@ -36,7 +35,6 @@ Token Development
 
    * :ref:`Fungible Tokens <ft-index>` - Mint, transfer, and burn fungible tokens
    * :ref:`NFT Minting <nft-index>` - Create and transfer non-fungible tokens
-   * :ref:`Semi-Fungible Tokens <sft-index>` - Work with hybrid token types
    * :ref:`wCCD Token <wCCD>` - Interact with wrapped CCD tokens on testnet
 
 Advanced Applications
@@ -46,20 +44,13 @@ Advanced Applications
 
    Learn how to create decentralized solutions for voting and NFT trading.
 
+   * :ref:`PiggyBank <piggy-bank>` - Create a contract that accepts CCD deposits and implements owner-only withdrawal
    * :ref:`Voting dApp <voting-dapp>` - Build a complete voting system
    * :ref:`Low Code NFT Marketplace <low-code-nft-mp-intro>` - Create a marketplace for trading NFTs
-
-Document Sealing
-----------------
-
-.. container:: tutorial-section tutorial-section-green
-
-   Explore the power of blockchain technology to timestamp and verify the integrity of your files.
-
    * :ref:`eSealing <eSealing>` - Implement document sealing with the |bw| and timestamp verification
 
-Advanced Features
------------------
+Advanced Concordium Features
+----------------------------
 
 .. container:: tutorial-section tutorial-section-yellow
 
@@ -73,7 +64,7 @@ Additional Resources
 
    * :doc:`dApp Examples <daap-examples/dapp-examples>` - Real-world examples of decentralized applications
    * :doc:`Company Identity Guide <company-identity/company-identities>` - Learn how to create and manage company identities
-   * :ref:`Smart Contract Best Practices <sc-development-best-practices>` - Recommended practices for production-ready development
+   * :ref:`Smart Contract Best Practices <best-practices>` - Recommended practices for production-ready development
 
 .. toctree::
    :maxdepth: 1
