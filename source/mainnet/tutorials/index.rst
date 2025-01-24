@@ -72,6 +72,7 @@ Additional Resources
    :caption: Smart Contract Tutorials
 
    setup-env
+   Hello World <./hello-world/hello-world>
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
    wCCD <./wCCD/index>
