@@ -42,7 +42,10 @@ At no point does Concordium see or hold any identiy information about its users,
 
 Execution layer
 ---------------
-The execution layer processes transactions and runs :term:`smart contracts<Smart contract>`. It uses :term:`WebAssembly` as its foundation, allowing developers to write smart contracts in Rust.
+The execution layer allows users to interact with the platform through its API, processing transactions and running :term:`smart contracts<Smart contract>`. It uses :term:`WebAssembly` as its foundation, allowing developers to write smart contracts in Rust.
+
+.. image:: ../protocol/images/protocol-architecture.png
+   :alt: diagram of Concordium protocol architecture
 
 Economics and validation
 ========================
