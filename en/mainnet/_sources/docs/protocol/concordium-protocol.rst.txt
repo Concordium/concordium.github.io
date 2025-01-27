@@ -33,7 +33,7 @@ The network layer handles communication between :term:`nodes<node>`. It includes
 
 Consensus layer
 ---------------
-The consensus layer ensures all nodes agree on the state of the blockchain using :term:`ConcordiumBFT<Concordium Byzantine Fault Tolerance (BFT) protocol>`. This protocol selects validators to create blocks based on their stake, verifies these blocks, and finalizes them quickly. The system remains secure as long as less than one-third of all staked CCD is controlled by malicious actors.
+The consensus layer ensures all nodes agree on the state of the blockchain using :term:`ConcordiumBFT<Concordium Byzantine Fault Tolerance (BFT) protocol>`, a novel proof-of-stake Byzantine fault tolerance consensus protocol. This protocol selects validators to create blocks based on their stake, verifies these blocks, and finalizes them quickly. The system remains secure as long as less than one-third of all staked CCD is controlled by malicious actors.
 
 Identity layer
 --------------
@@ -42,7 +42,10 @@ At no point does Concordium see or hold any identiy information about its users,
 
 Execution layer
 ---------------
-The execution layer processes transactions and runs :term:`smart contracts<Smart contract>`. It uses :term:`WebAssembly` as its foundation, allowing developers to write smart contracts in Rust.
+The execution layer allows users to interact with the platform through its API, processing transactions and running :term:`smart contracts<Smart contract>`. It uses :term:`WebAssembly` as its foundation, allowing developers to write smart contracts in Rust.
+
+.. image:: ../protocol/images/protocol-architecture.png
+   :alt: diagram of Concordium protocol architecture
 
 Economics and validation
 ========================

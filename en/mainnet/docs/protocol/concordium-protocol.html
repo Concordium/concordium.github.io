@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concordium-protocol.e7d7c513-8206-4ad0-9f20-919672f4bd3f.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concordium-protocol.5155e3c9-a469-4f90-80d4-821485b1d399.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concordium-protocol';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concordium-protocol.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -752,7 +752,7 @@
 </section>
 <section id="consensus-layer">
 <h3>Consensus layer<a class="headerlink" href="#consensus-layer" title="Link to this heading">#</a></h3>
-<p>The consensus layer ensures all nodes agree on the state of the blockchain using <a class="reference internal" href="../resources/glossary.html#term-Concordium-Byzantine-Fault-Tolerance-BFT-protocol"><span class="xref std std-term">ConcordiumBFT</span></a>. This protocol selects validators to create blocks based on their stake, verifies these blocks, and finalizes them quickly. The system remains secure as long as less than one-third of all staked CCD is controlled by malicious actors.</p>
+<p>The consensus layer ensures all nodes agree on the state of the blockchain using <a class="reference internal" href="../resources/glossary.html#term-Concordium-Byzantine-Fault-Tolerance-BFT-protocol"><span class="xref std std-term">ConcordiumBFT</span></a>, a novel proof-of-stake Byzantine fault tolerance consensus protocol. This protocol selects validators to create blocks based on their stake, verifies these blocks, and finalizes them quickly. The system remains secure as long as less than one-third of all staked CCD is controlled by malicious actors.</p>
 </section>
 <section id="id1">
 <h3>Identity layer<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -761,7 +761,8 @@ At no point does Concordium see or hold any identiy information about its users,
 </section>
 <section id="execution-layer">
 <h3>Execution layer<a class="headerlink" href="#execution-layer" title="Link to this heading">#</a></h3>
-<p>The execution layer processes transactions and runs <a class="reference internal" href="../resources/glossary.html#term-Smart-contract"><span class="xref std std-term">smart contracts</span></a>. It uses <a class="reference internal" href="../resources/glossary.html#term-WebAssembly"><span class="xref std std-term">WebAssembly</span></a> as its foundation, allowing developers to write smart contracts in Rust.</p>
+<p>The execution layer allows users to interact with the platform through its API, processing transactions and running <a class="reference internal" href="../resources/glossary.html#term-Smart-contract"><span class="xref std std-term">smart contracts</span></a>. It uses <a class="reference internal" href="../resources/glossary.html#term-WebAssembly"><span class="xref std std-term">WebAssembly</span></a> as its foundation, allowing developers to write smart contracts in Rust.</p>
+<img alt="diagram of Concordium protocol architecture" src="../../_images/protocol-architecture.png" />
 </section>
 </section>
 <section id="economics-and-validation">
