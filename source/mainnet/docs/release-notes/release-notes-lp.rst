@@ -83,20 +83,38 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    December 18, 2024
+    January 27, 2025
 
-    Version 1.4.0 addresses the following issues:
+    Version 1.5.0 addresses the following issues:
 
     Added:
 
-    - New onboarding flow
-    - Swipelux onramp flow
+    - Ability to have both file and seed phrase wallets in the app and switch between them
+    - Ability to open the Terms and Conditions and the Privacy Policy from the About screen
 
-    Changed:
+    Fixed:
 
-    - The "," decimal separator is now used for all amounts in the wallet
+    - Incorrect support email address in some error messages
+    - Not working links to the documentation on some screens
+
+    Removed:
+
+    - Ability to create new accounts and identities in a file wallet. We recommend that you migrate to a seed phrase wallet in order to make use of the full range of CryptoX features.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.4.0 - December 18, 2024
+
+            Version 1.4.0 addresses the following issues:
+
+            Added:
+
+            - New onboarding flow
+            - Swipelux onramp flow
+
+            Changed:
+
+            - The "," decimal separator is now used for all amounts in the wallet
 
         .. dropdown:: |cryptox| 1.3.2 - November 28, 2024
 
