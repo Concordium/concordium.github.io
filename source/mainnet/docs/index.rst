@@ -117,7 +117,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Governance Committee Voting
    :hidden:
 
-   Concordium Governance Committee Elections <voting/gc-voting>
+   Concordium Governance Committee elections <voting/gc-voting>
    Election coordinator tool <voting/coordinator>
    How to vote <voting/voting>
    Guardians <voting/guardians>
