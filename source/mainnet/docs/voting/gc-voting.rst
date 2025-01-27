@@ -2,7 +2,7 @@
 .. include:: ../../variables.rst
 
 =========================================
-Concordium Governance Committee Elections
+Concordium Governance Committee elections
 =========================================
 
 Concordium Governance Committee elections are a vital part of decentralization, allowing the Concordium community to make decisions about the blockchain.
@@ -34,7 +34,7 @@ The period of time before the election is the :term:`setup phase`. Several roles
 
 #. Each guardian sends their account address to Concordium.
 
-#. Candidates are nominated and can "campaign". Candidates can provide information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the voting dApp.
+#. Candidates are nominated and can "campaign". Candidates can provide information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the Voter dApp.
 
 #. The Election Coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract.
 
@@ -68,9 +68,9 @@ The period after the election is the :term:`tally phase`.
 
 #. The guardians use the Guardian App to generate their :term:`decryption share<Decryption share>` of the tally and post that before the specified deadline. They then generate and register proof of correct decryption.
 
-#. The decryption shares from each guardian and corresponding proofs of correct decryption are used to produce the election result, which is registered in the smart contract. The election coordinator posts the decrypted tally and voters can see the election result in the voting dApp.
+#. The decryption shares from each guardian and corresponding proofs of correct decryption are used to produce the election result, which is registered in the smart contract. The election coordinator posts the decrypted tally and voters can see the election result in the Voter dApp.
 
 Components for voting
 =====================
 
-There are a number of components used during voting, including the coordinator tool, the voting dApp, and the Guardian App. You can explore the `repository for the components <https://github.com/Concordium/concordium-governance-committee-voting>`_.
+There are a number of components used during voting, including the coordinator tool, the Voter dApp, and the Guardian App. You can explore the `repository for the components <https://github.com/Concordium/concordium-governance-committee-voting>`_.
