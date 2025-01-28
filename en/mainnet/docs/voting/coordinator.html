@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/voting/coordinator.b0a021da-560c-4af6-b274-311878ba0fc4.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/voting/coordinator.ec20a61c-72d6-462f-9c76-3a37356a1c93.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/voting/coordinator';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/voting/coordinator.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -728,85 +728,35 @@
   <span class="target" id="coordinator"></span><section id="election-coordinator-tool">
 <h1>Election coordinator tool<a class="headerlink" href="#election-coordinator-tool" title="Link to this heading">#</a></h1>
 <p>The coordinator tool is an administrative tool to coordinate the parts of the election that are not done by voters or guardians.</p>
-<p>The coordinator of the election is not trusted per se. All the actions it can do can be verified by any other party. The coordinator tool can be mostly run without access to any secrets to verify results of the election. However some commands take “admin keys” where the result of operations can be posted in the contract for everybody to see. If such a result is present in the contract and another user runs the coordinator tool, the tool will check that the result it computed and the one posted in the contract agree.</p>
+<p>The coordinator of the election is not trusted per se. <a class="reference internal" href="verify-election-result.html#verify-election-result"><span class="std std-ref">All the actions it can do can be verified by any other party</span></a>. The coordinator tool can mostly run without access to any secrets to verify election results. However, some commands take <code class="docutils literal notranslate"><span class="pre">admin</span> <span class="pre">keys</span></code> where the result of operations can be posted in the contract for everybody to see. If such a result is present in the contract and another user runs the coordinator tool, the tool will check that the result it computed and the one posted in the contract agree.</p>
 <section id="build-and-run">
 <h2>Build and run<a class="headerlink" href="#build-and-run" title="Link to this heading">#</a></h2>
-<p>To build the tool make sure you have the repository submodules initialized:</p>
+<p>To build the election coordinator tool, you need:</p>
+<ul class="simple">
+<li><p>Rust 1.74 or newer</p></li>
+<li><p>The repository with initialized submodules</p></li>
+</ul>
+<p>First, initialize the repository submodules:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git submodule update --init --recursive</span>
 </pre></div>
 </div>
-<p>Build the tool by running:</p>
+<p>Then, build the tool:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo build --release</span>
 </pre></div>
 </div>
-<p>This will produce a single binary election-coordinator in target/release directory.</p>
+<p>This will produce a single binary election-coordinator in the target/release directory.</p>
 </section>
-<section id="commands">
-<h2>Commands<a class="headerlink" href="#commands" title="Link to this heading">#</a></h2>
-<p>The tool has the following subcommands. All commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option which explains the input and output parameters.</p>
-<section id="get-the-list-of-initial-weights">
-<h3>Get the list of initial weights<a class="headerlink" href="#get-the-list-of-initial-weights" title="Link to this heading">#</a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">initial-weights</span> <span class="pre">generate</span></code> command to gather the average amount of CCD on an account in the given period. The intention is that this command is used to produce the initial weights of each account prior to the election starting. The output of this command is a CSV file used in the <code class="docutils literal notranslate"><span class="pre">final-weights</span></code> command after the election.</p>
-<p>Example</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">election-coordinator --node http://localhost:20001 initial-weights --out . generate --start 2024-01-01T00:00:00Z --end 2024-01-03T00:00:00Z</span>
-</pre></div>
-</div>
-<p>The weights are stored in the initial-weights.csv file, and the corresponding parameters used to compute them are stored in initial-weights-params.json file in the current path directory.</p>
-</section>
-<section id="create-a-new-election-instance">
-<h3>Create a new election instance<a class="headerlink" href="#create-a-new-election-instance" title="Link to this heading">#</a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">new-election</span></code> command to create the necessary files and the contract for a new election. In particular it will:</p>
+<section id="use-the-tool">
+<h2>Use the tool<a class="headerlink" href="#use-the-tool" title="Link to this heading">#</a></h2>
+<p>The election coordinator tool helps manage the election process through various commands. The key functionality includes:</p>
 <ul class="simple">
-<li><p>create an election manifest based on the inputs</p></li>
-<li><p>create election parameters based on the inputs</p></li>
-<li><p>create a new smart contract instance.</p></li>
+<li><p>Managing voting weights (initial and final calculations)</p></li>
+<li><p>Setting up and configuring new elections</p></li>
+<li><p>Processing vote tallies</p></li>
+<li><p>Handling guardian operations</p></li>
+<li><p>Publishing final results</p></li>
 </ul>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">election-coordinator new-election --module ../contracts/concordium-governance-committee-election/concordium-out/module.wasm.v1 --threshold 1 --admin ../test-scripts/keys/2yJxX711aDXtit7zMu7PHqUMbtwQ8zm7emaikg24uyZtvLTysj.export --election-start &#39;2024-02-01T00:00:00Z&#39; --election-end &#39;2024-02-07T00:00:00Z&#39; --decryption-deadline &#39;2024-02-08T00:00:00Z&#39; --delegation-string &#39;delegatevote2024&#39; --out election --voters-file initial-weights.csv --voters-params-file initial-weights-params.json --guardian 31bTNa42u1zZWag2bknEy7VraeJUozXsJMN1DFjQp7E5YR6a3G --guardian 4PF6BH8bKvM48b8KNYdvGW6Sv3B2nqVRiMnWTj9cvaNHJQeX3D --candidate candidate1.json --candidate https://some.url/candidate2.json --node &#39;https://grpc.testnet.concordium.com:20000&#39; --base-url https://gcvoting.testnet.concordium.com`</span>
-</pre></div>
-</div>
-<p>The options are:</p>
-<p><code class="docutils literal notranslate"><span class="pre">--admin</span></code> is the path to the keys that will be used to create the contract, and serve as the admin</p>
-<p><code class="docutils literal notranslate"><span class="pre">--module</span></code> is the path to the compiled election smart contract in wasm.v1 format</p>
-<p><code class="docutils literal notranslate"><span class="pre">--threshold</span></code> is the threshold for the number of guardians needed for decryption of the result of the election</p>
-<p><code class="docutils literal notranslate"><span class="pre">--election-start</span></code> and <code class="docutils literal notranslate"><span class="pre">--election-end</span></code> date and time for election start and end</p>
-<p><code class="docutils literal notranslate"><span class="pre">decryption-deadline</span></code> is the date and time by which guardians must have decrypted their share of the votes</p>
-<p><code class="docutils literal notranslate"><span class="pre">--delegation-string</span></code> is the string that will be used to determine vote delegations. This is the string users delegating a vote in a wallet must enter in a transaction memo.</p>
-<p><code class="docutils literal notranslate"><span class="pre">--voters-file</span></code> is the initial-weights.csv file for the election</p>
-<p><code class="docutils literal notranslate"><span class="pre">--voters-params-file</span></code> is the initial-weights-params.json file for the election, containing the params used to compute the initial weights.</p>
-<p><code class="docutils literal notranslate"><span class="pre">--guardian</span></code> (repeated) is guardian account addresses. At least one is needed.</p>
-<p><code class="docutils literal notranslate"><span class="pre">--candidate</span></code> (repeated) is a URL or a path to a candidate. The order here matters, since that will be the order of selections in the election. The link is to the candidate metadata. The hash of the metadata will be embedded in the contract.</p>
-<p><code class="docutils literal notranslate"><span class="pre">--base-url</span></code> the URL where the election server is accessible, e.g., <a class="reference external" href="https://gcvoting.testnet.concordium.com">https://gcvoting.testnet.concordium.com</a></p>
-<p>The tool generates three things:</p>
-<ul class="simple">
-<li><p>An election manifest and election parameters which are written to the directory specified by <code class="docutils literal notranslate"><span class="pre">--out</span></code></p></li>
-<li><p>A new smart contract instance which is printed to stderr, for example, <code class="docutils literal notranslate"><span class="pre">Deployed</span> <span class="pre">new</span> <span class="pre">contract</span> <span class="pre">instance</span> <span class="pre">with</span> <span class="pre">address</span> <span class="pre">&lt;7838,0&gt;</span> <span class="pre">using</span> <span class="pre">transaction</span> <span class="pre">hash</span> <span class="pre">3b3e61a01fd3ecefddecbe6760c6ba3d951f4d0a8947d63990ffe9219249de27</span></code>.</p></li>
-</ul>
-</section>
-<section id="get-the-final-weights">
-<h3>Get the final weights<a class="headerlink" href="#get-the-final-weights" title="Link to this heading">#</a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">final-weights</span></code> command to compute the final weights taking into account the delegation. It takes initial weights in the initial-weights.csv into account and any delegations during the election period, outputting the result to final-weights.csv. The output of this command is used in the tally command.</p>
-<p>Example</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">election-coordinator --node http://localhost:20001 final-weights --contract &#39;&lt;7795,0&gt;&#39; --initial-weights initial-weights.csv --final-weights final-weights.csv</span>
-</pre></div>
-</div>
-</section>
-<section id="tally-the-votes-and-register-the-encrypted-tally-in-the-contract">
-<h3>Tally the votes and register the encrypted tally in the contract<a class="headerlink" href="#tally-the-votes-and-register-the-encrypted-tally-in-the-contract" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">tally</span></code> command uses the final-weights.csv generated above to compute the encrypted tally of the election and optionally post it in the smart contract. This sums up all the votes during the election period and scales them according to the specified weights.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">election-coordinator --node http://localhost:20001 tally --contract &#39;&lt;7795,0&gt;&#39; --final-weights final-weights.csv --admin-keys ../test-scripts/keys/2yJxX711aDXtit7zMu7PHqUMbtwQ8zm7emaikg24uyZtvLTysj.export</span>
-</pre></div>
-</div>
-<p>The same command without the <code class="docutils literal notranslate"><span class="pre">--admin-keys</span></code> option will tally the votes and check that the tally matches what is registered in the contract.</p>
-</section>
-<section id="decrypt-the-final-result">
-<h3>Decrypt the final result<a class="headerlink" href="#decrypt-the-final-result" title="Link to this heading">#</a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">final-result</span></code> command after the guardians have each decrypted their share of the encrypted tally. This command can be used to combine the shares and post the result in the contract, or if the result is already posted, to check that it matches what you compute.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">election-coordinator  --node http://localhost:20001 final-result --contract &#39;&lt;7795,0&gt;&#39; --admin-keys ../test-scripts/keys/2yJxX711aDXtit7zMu7PHqUMbtwQ8zm7emaikg24uyZtvLTysj.export```</span>
-</pre></div>
-</div>
-<p>This will look up all the decryption shares provided by the guardians, check that they are valid, and if there are enough of the valid ones, it will decrypt the final result and publish it in the smart contract.</p>
-<p>If the <code class="docutils literal notranslate"><span class="pre">admin-keys</span></code> are not provided the command will do everything else as with the keys, except it will check if the result in the contract matches or not, and report the result.</p>
-</section>
+<p>For a complete list of commands, their parameters, and usage examples, see the <a class="reference external" href="https://github.com/Concordium/concordium-governance-committee-voting/tree/main/coordinator-tool">coordinator-tool documentation</a>.</p>
 </section>
 </section>
 
@@ -894,14 +844,7 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-and-run">Build and run</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-list-of-initial-weights">Get the list of initial weights</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-election-instance">Create a new election instance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-the-final-weights">Get the final weights</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tally-the-votes-and-register-the-encrypted-tally-in-the-contract">Tally the votes and register the encrypted tally in the contract</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decrypt-the-final-result">Decrypt the final result</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-tool">Use the tool</a></li>
 </ul>
   </nav></div>
 
