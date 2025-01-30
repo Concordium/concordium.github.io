@@ -291,13 +291,19 @@ Wallets
 |bw|
 -------------------------
 
-    December 25, 2024
+    January 30, 2025
 
-    Version 1.7.2
+    Version 2.0.0
 
-    -   Remove unused "downloads" permission from manifest.
+    -   Overhauled the Browser Wallet’s interface as part of the CryptoX UI Revamp project.
+        This update will align the browser wallet’s design with look of CryptoX,
+        delivering a more seamless and user-friendly experience while preserving all the existing features.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 1.7.2 - December 25, 2024
+
+            Remove unused "downloads" permission from manifest.
 
         .. dropdown:: |bw| 1.7.1 - October 30, 2024
 
