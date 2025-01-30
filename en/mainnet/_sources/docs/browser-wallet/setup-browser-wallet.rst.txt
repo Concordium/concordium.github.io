@@ -33,11 +33,21 @@ Get started
 
    #. Click on the puzzle icon. Click **Concordium Wallet** to start the extension.
 
-   #. Create a six-digit passcode or use a full password.
+   #. Click **Get started** on the welcome page.
+
+      .. image:: ../images/browser-wallet/new/welcome_page.png
+            :alt: Welcome screen
+            :width: 50%
+
+   #. Create a six-digit passcode or use a full password. Click **Continue**.
+
+      .. image:: ../images/browser-wallet/new/create_passcode.png
+            :alt: screen for setting up passcode
+            :width: 50%
 
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      .. image:: ../images/browser-wallet/wallet-choice.png
+      .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
             :width: 50%
 
@@ -55,11 +65,21 @@ Get started
 
    #. Click on the Concordium icon to start the extension.
 
+   #. Click **Get started** on the welcome page.
+
+      .. image:: ../images/browser-wallet/new/welcome_page.png
+            :alt: Welcome screen
+            :width: 50%
+
    #. Create a six-digit passcode or use a full password.
+
+      .. image:: ../images/browser-wallet/new/create_passcode.png
+            :alt: screen for setting up passcode
+            :width: 50%
 
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      .. image:: ../images/browser-wallet/wallet-choice.png
+      .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
             :width: 50%
 
@@ -75,11 +95,21 @@ Get started
 
    #. Click on the cube icon in your Opera toolbar. Click **Concordium Wallet** to start the extension.
 
+   #. Click **Get started** on the welcome page.
+
+      .. image:: ../images/browser-wallet/new/welcome_page.png
+            :alt: Welcome screen
+            :width: 50%
+
    #. Create a six-digit passcode or use a full password.
+
+      .. image:: ../images/browser-wallet/new/create_passcode.png
+            :alt: screen for setting up passcode
+            :width: 50%
 
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      .. image:: ../images/browser-wallet/wallet-choice.png
+      .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
             :width: 50%
 
@@ -93,11 +123,21 @@ Get started
 
    #. Click on the puzzle icon. Click **Concordium Wallet** to start the extension.
 
+   #. Click **Get started** on the welcome page.
+
+      .. image:: ../images/browser-wallet/new/welcome_page.png
+            :alt: Welcome screen
+            :width: 50%
+
    #. Create a six-digit passcode or use a full password.
+
+      .. image:: ../images/browser-wallet/new/create_passcode.png
+            :alt: screen for setting up passcode
+            :width: 50%
 
    #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
 
-      .. image:: ../images/browser-wallet/wallet-choice.png
+      .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
             :width: 50%
 
@@ -106,9 +146,9 @@ Recovery phrase setup
 
 If you are creating a new wallet, you must set up a :term:`secret recovery phrase`. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your recovery phrase. It is important to keep this secret recovery phrase in a safe location in case you need to recover your wallet on a new device.
 
-#. Once you click on **Create** you are shown the 24 word secret recovery phrase. Write it down and click **Continue**.
+#. When you click **Create**, the 24 word secret recovery phrase is shown. Write it down and click **Continue**.
 
-   .. image:: ../images/browser-wallet/recovery-phrase.png
+   .. image:: ../images/browser-wallet/new/recovery.png
             :alt: screen with recovery phrase and continue option
             :width: 50%
 
@@ -130,38 +170,75 @@ Having set up your passcode, you must then submit a request for an identity.
 Create an account
 =================
 
-#. To switch to the accounts page, click |hamburger-bw| and select **Accounts**.
+#. When you have no accounts, the main page will show *No accounts*. Click **Create account** to create your first account.
 
-#. Click the Accounts drop-down. Then click **Add new**.
+   .. image:: ../images/browser-wallet/new/create_account.png
+            :alt: screen with option for creating account
+            :width: 50%
 
-#. Select the Identity to use for the account. Click **Add account**.
+#. Select the Identity to use for the account and click **Create account**.
 
 Basic navigation
 ================
 
-Click |hamburger-bw| to change between pages.
+Main page
+---------
+The main page shows your account information and a menu accessible from the top-right corner. The page layout includes:
 
-.. image:: ../images/browser-wallet/page-menu.png
-      :alt: menu at top of window with drop-down expanded to show options
-      :width: 50%
+#. An account selector in the top left that lets you switch between accounts, showing the current account's address and a dropdown arrow.
 
-Transactions overview
+#. Your total CCD balance.
+
+#. Four quick action buttons: **Receive**, **Send**, **Earn**, and **Activity**.
+
+#. A list of your tokens with their balances.
+
+#. Option to manage your token list at the bottom.
+
+   .. image:: ../images/browser-wallet/new/main_page.png
+            :alt: menu at top of window with drop-down expanded to show options
+            :width: 50%
+
+Menu
+----
+Clicking the menu button |menu| in the top-right corner opens a page with additional features:
+
+#. **Identities**: Manage your identities
+#. **Accounts**: View and manage accounts
+#. **Seed phrase**: Access your recovery phrase
+#. **Passcode**: Security settings
+#. **Web3 ID**: Web3 identity features
+#. **Earn**: Staking and rewards
+#. **Network**: Network settings
+#. **About**: App information
+#. **Restore**: Recovery options
+#. **Old UI**: Previous interface version
+#. **NFT**: NFT management
+
+The menu can be closed by clicking the **X** in the top-right corner to return to the main page.
+
+.. image:: ../images/browser-wallet/new/menu_screen.png
+         :alt: screen with option for creating account
+         :width: 50%
+
+
+View account activity
 ---------------------
 
-In the Accounts page, click |log| to see an overview of the transactions. If you want to see details for the transaction, click on the transaction.
+#. Select the account from the account selector in the top left of the main page.
+#. Click |activity|
+#. For transaction details, click on any specific transaction in the list.
 
 Find and share your account address
 -----------------------------------
 
-#. Go to the **Accounts** page.
-
-#. On the account you want to find the address to tap |receive|.
-
+#. Select the account from the account selector in the top left of the main page.
+#. Click |new_receive|
 #. Share your address:
 
-    - You can let someone scan your QR code if they have the |mw-gen1| or |mw-gen2| installed.
+    - You can let someone scan your QR code if they have the |mw-gen1| installed.
 
-    - You can tap **COPY** to copy the address and then paste it somewhere of your own choosing.
+    - You can click **Copy Address** to copy the address and then paste it wherever needed.
 
 .. _switch-network:
 
@@ -174,16 +251,26 @@ You can use the wallet on both Mainnet and Testnet without the need for a separa
 
     Accounts and identities are NOT shared between mainnet and testnet.
 
-#. Click on the Concordium logo and select **Wallet Settings**.
+#. Click |menu| to open the menu page.
 
-#. Click **Network settings**.
+#. Click **Network**.
 
 #. Select the Network you want to connect to: Mainnet or Testnet. Note that the color of the user interface items in Mainnet is blue and the color of the user interface items in Testnet is green.
 
-Light/dark mode toggle
-----------------------
+Switch between old and new UI
+-----------------------------
+You can switch between the old and the new wallet interface.
 
-At the bottom of the Wallet settings page you can toggle between light and dark mode.
+To access the old interface:
+
+#. Click |menu| to open the menu page.
+#. Click **Old UI**.
+
+To return to the new interface:
+
+#. Go to Wallet settings in the old interface.
+#. Click **Wallet X**.
+
 
 .. |gear| image:: ../images/browser-wallet/account-settings.png
              :alt: gear wheel
@@ -199,6 +286,18 @@ At the bottom of the Wallet settings page you can toggle between light and dark 
 
 .. |receive| image:: ../images/browser-wallet/receive-ccd.png
              :alt: button with qr code
+             :width: 50px
+
+.. |menu| image:: ../images/browser-wallet/new/menu_button.png
+             :alt: button for opening menu
+             :width: 50px
+
+.. |activity| image:: ../images/browser-wallet/new/activity_button.png
+             :alt: button for viewing wallet activities
+             :width: 50px
+
+.. |new_receive| image:: ../images/browser-wallet/new/receive_button.png
+             :alt: button for viewing qr code
              :width: 50px
 
 Remove the |bw|
