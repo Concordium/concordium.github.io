@@ -1,26 +1,19 @@
+.. include:: ../../../variables.rst
 .. _hello-world:
 
 ====================================
 Creating your first Concordium dApp
 ====================================
 
-This tutorial guides you through creating and deploying your first smart contract on the Concordium blockchain. You'll create a simple "Hello World" smart contract and deploy it on the testnet.
+This tutorial guides you through creating and deploying your first smart contract Concordium. You'll create a simple **Hello World** smart contract and deploy it on the testnet.
 
 Before you start
 ================
+
 Ensure you have set up your development environment by following this :ref:`tutorial <setup-env>`.
 
 Creating your first smart contract
 ==================================
-
-Create a new project
---------------------
-
-#. Create a new project directory:
-
-   .. code-block:: console
-
-      $ mkdir hello_world && cd hello_world
 
 #. Initialize a new smart contract project:
 
@@ -28,14 +21,14 @@ Create a new project
 
       $ cargo concordium init
 
-#. Select the **default** template when prompted.
+#. Select the **default** template when prompted, then choose an appropiate project name.
 
-Writing the contract
+Write the contract
 --------------------
 
 Modify ``src/lib.rs`` to create a simple message-storing contract:
 
-#. Define the state structure:
+#. Create the state structure which defines the **message** variable:
 
    .. code-block:: rust
 
@@ -45,7 +38,7 @@ Modify ``src/lib.rs`` to create a simple message-storing contract:
           message: String,
       }
 
-#. Create the initialization function:
+#. Modify the **init** method which initialises the **message** variable:
 
    .. code-block:: rust
 
@@ -56,7 +49,7 @@ Modify ``src/lib.rs`` to create a simple message-storing contract:
           })
       }
 
-#. Add the message update function:
+#. Modify the **receive** method by specifying **String** as the parameter type, changing it's name to be more suggestive and assigning the **input** string to the **state**:
 
    .. code-block:: rust
 
@@ -73,7 +66,7 @@ Modify ``src/lib.rs`` to create a simple message-storing contract:
           Ok(())
       }
 
-#. Add the view function:
+#. Modify the **view** function by specifying the **String** return value type and the **message** variable of the **state**
 
    .. code-block:: rust
 
@@ -82,18 +75,26 @@ Modify ``src/lib.rs`` to create a simple message-storing contract:
           Ok(host.state().message.clone())
       }
 
-#. Build the project:
+#. Build the contract:
 
    .. code-block:: console
 
-      $ cargo concordium build --out hello_world.wasm.v1
+      $ cargo concordium build
+
+   After the command runs successfully, a file called **module.wasm.v1** will be generated in the **concordium-out** folder
 
 Deploying your contract
 =======================
 
-#. :ref:`Set up a wallet <setup-wallets-lp>`
-#. Request testnet CCD using the **Request** option
-#. Deploy your contract using the `Smart Contract Deploy Tool <https://sctools.mainnet.concordium.software/>`_ or read the :ref:`deploy a smart contract module guide <deploy-module>` and use the :ref:`concoridum client <concordium-client>` to deploy
-#. Use the ``view`` function to verify your deployed contract
+We recommend deploying on the **testnet**, which can be done by following these steps:
 
-Congratulations! You've created and deployed your first smart contract on the Concordium blockchain.
+#. :ref:`Set up a wallet <setup-wallets-lp>`
+#. Request **testnet CCD** using the **Request** option in the wallet
+#. **Access** the `Smart Contract Deploy Tool <https://sctools.mainnet.concordium.software/>`_  in order to deploy the generated module
+#. **Click** on the button to connect to the **Browser Wallet**
+#. **Upload** the module generated in the previous section in the Step 1 section of the dApp then **click** the button to **deploy**
+#. Choose **Derive from step 1** in **Step 2**, then **click** the button to **initialise** the smart contract, a **Smart Contract Index** will be shown
+#. **Input** the index in the next step, then select the **Derive From Smart Contract Index** option
+#. Choose **view** as the **Entry Point Name**, then **click** the **Read Smart Contract** button, **"Hello World"** will be displayed
+
+Congratulations! You've now created and deployed your first smart contract on the Concordium blockchain.
