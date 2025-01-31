@@ -633,5 +633,5 @@ redirects = {
     "tutorials/piggy-bank/wCCD-frontend-set-up" : "/en/mainnet/tutorials/piggy-bank/frontend.html",
     "net/resources/bw-licenses" : "/en/mainnet/docs/guides/cryptox-terms.html",
     "net/guides/legal" : "/en/mainnet/docs/guides/cryptox-terms.html",
-    "net/guides/export-key" : "en/mainnet/docs/guides/export-key.html"
+    "net/guides/export-key" : "/en/mainnet/docs/guides/export-key.html"
     }
