@@ -291,15 +291,23 @@ Wallets
 |bw|
 -------------------------
 
-    January 30, 2025
+    February 1, 2025
 
-    Version 2.0.0
+    Version 2.0.2
 
-    -   Overhauled the Browser Wallet’s interface as part of the CryptoX UI Revamp project.
-        This update will align the browser wallet’s design with look of CryptoX,
-        delivering a more seamless and user-friendly experience while preserving all the existing features.
+    -   Fixed credentials with address undefined
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.0.1 - February 1, 2025
+
+            Fixed credentials with some fields undefined
+
+        .. dropdown:: |bw| 2.0.0 - January 30, 2025
+
+            Overhauled the Browser Wallet’s interface as part of the CryptoX UI Revamp project.
+            This update will align the browser wallet’s design with look of CryptoX,
+            delivering a more seamless and user-friendly experience while preserving all the existing features.
 
         .. dropdown:: |bw| 1.7.2 - December 25, 2024
 
