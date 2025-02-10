@@ -48,7 +48,7 @@ During Wasm installation in your system you should see something similar to belo
 .. image:: images/mint-wasm-install.png
     :width: 100%
 
-Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`.:ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
+Now you need to install the Concordium software package. ``cargo-concordium`` is the tool for developing smart contracts for the Concordium blockchain. It can be used for :ref:`compiling<compile-module>` and :ref:`testing<integration-test-contract>` smart contracts, and enables features such as :ref:`building contract schemas<build-schema>`. :ref:`Click here<cargo-concordium-testnet>` and download the version 2.2.0 or greater of ``cargo-concordium`` for your operating system. The tool is the same for both testnet and mainnet.
 
 .. note::
 
