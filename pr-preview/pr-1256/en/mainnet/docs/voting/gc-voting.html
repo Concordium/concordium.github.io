@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Concordium Governance Committee Elections &#8212; Concordium  documentation</title>
+    <title>Concordium Governance Committee elections &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/voting/gc-voting.c1570495-411f-40b3-9faa-7d481a5fc531.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/voting/gc-voting.8b62030a-5775-497d-8a29-6d233ee51277.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/voting/gc-voting';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/voting/gc-voting.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -687,7 +687,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Concordium Governance Committee Elections</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Concordium Governance Committee elections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="coordinator.html">Election coordinator tool</a></li>
 <li class="toctree-l1"><a class="reference internal" href="voting.html">How to vote</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guardians.html">Guardians</a></li>
@@ -726,13 +726,14 @@
                 <article class="bd-article">
                   
   <span class="target" id="gc-voting"></span><section id="concordium-governance-committee-elections">
-<h1>Concordium Governance Committee Elections<a class="headerlink" href="#concordium-governance-committee-elections" title="Link to this heading">#</a></h1>
+<h1>Concordium Governance Committee elections<a class="headerlink" href="#concordium-governance-committee-elections" title="Link to this heading">#</a></h1>
 <p>Concordium Governance Committee elections are a vital part of decentralization, allowing the Concordium community to make decisions about the blockchain.</p>
-<p>A user with multiple accounts should vote from all accounts for their vote to have maximum <a class="reference internal" href="../resources/glossary.html#term-Account-weight"><span class="xref std std-term">weight</span></a>. If the <em>same account</em> votes multiple times, only the last vote will count.</p>
-<p>Staked CCD, whether it is by validators or delegators, is still held in the user’s wallet, so it counts towards the weight of the vote. And CCD locked in smart contracts cannot be used to vote either. Furthermore tokens that are in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don’t want custodians to vote in their name) to transfer all CCD to wallets of their own.</p>
-<p>The voting system chosen for this election is called <a class="reference internal" href="../resources/glossary.html#term-Approval-voting"><span class="xref std std-term">approval voting</span></a>. The voter may choose as many <a class="reference internal" href="../resources/glossary.html#term-Candidate"><span class="xref std std-term">candidates</span></a> as they like, i.e., they assign either 0 or 1 to every candidate. In standard approval voting, all votes are added up and the candidates with the most votes get the seats. In our weighted case, every candidate that receives a vote receives the corresponding full weight of the account from which the voter was cast — the weights are not split amongst the candidates that receive a vote. For example, suppose that there are four candidates, Peppa Pig, Rebecca Rabbit, Suzy Sheep and Zoe Zebra. And suppose that Alice has 4000 CCD and votes for Peppa, Bob has 2000 CCD and votes for Rebecca and Suzy, and Charlie has 3000 CCD and votes for Suzy and Zoe. Then the final tally is 4000 votes for Peppa, 2000 for Rebecca, 5000 for Suzy and 3000 for Zoe.</p>
-<p>The candidates with the most votes are elected. In case of a tie, which is very unlikely, a fair coin is flipped.</p>
-<p><a class="reference internal" href="../resources/glossary.html#term-Guardian"><span class="xref std std-term">Guardians</span></a> ensure that election result is fair as well as further decentralizing the election process. A guardian is one of a number of independent, trustworthy individuals who participate in the election to ensure that votes are encrypted before the election and decrypted after the election. Guardians may also vote in the election, as may candidates.</p>
+<p>Users vote using their wallets and their vote is <a class="reference internal" href="../resources/glossary.html#term-Account-weight"><span class="xref std std-term">weighted</span></a> by the amount of CCD held in their accounts. Thus, a user with multiple accounts should vote from all accounts for their votes to have maximum weight. If the <em>same account</em> votes multiple times, only the last vote will count.</p>
+<p>Staked CCD, whether it is by validators or delegators, is still held in the user’s wallet, so it counts towards the weight of the vote. In contrast, CCD locked in smart contracts cannot be used to vote. CCD that is in a custody wallet, e.g., on a centralized exchange, will not count as part of the weight of the token owner, but as part of the weight of the custodian. It is thus important for all CCD owners who want to vote (or who don’t want custodians to vote in their name) to transfer all CCD to wallets of their own.</p>
+<p>The voting system chosen for this election is called <a class="reference internal" href="../resources/glossary.html#term-Approval-voting"><span class="xref std std-term">approval voting</span></a>. The voter may choose as many <a class="reference internal" href="../resources/glossary.html#term-Candidate"><span class="xref std std-term">candidates</span></a> as they like, i.e., they assign either 0 or 1 to every candidate. In standard approval voting, all votes are added up and the candidates with the most votes get the seats. In our weighted case, every candidate that receives a vote receives the corresponding full weight of the account from which the vote was cast — the weights are not split amongst the candidates that receive a vote. For example, suppose that there are four candidates, Peppa Pig, Rebecca Rabbit, Suzy Sheep and Zoe Zebra. And suppose that Alice has 4000 CCD and votes for Peppa, Bob has 2000 CCD and votes for Rebecca and Suzy, and Charlie has 3000 CCD and votes for Suzy and Zoe. Then the final tally is 4000 votes for Peppa, 2000 for Rebecca, 5000 for Suzy and 3000 for Zoe.</p>
+<p>The candidates with the most votes are elected. In case of a tie, which is very unlikely given the weighted vote, a fair coin is flipped.</p>
+<p>Our election protocol uses cryptographic proofs and the blockchain to ensure correctness and verifiability, i.e., it ensures that all (valid) votes are counted towards the end result.</p>
+<p><a class="reference internal" href="../resources/glossary.html#term-Guardian"><span class="xref std std-term">Guardians</span></a> ensure that election results are private and fair while further decentralizing the election process. A guardian is one of a number of independent, trustworthy individuals who participate in the election to ensure that votes are decrypted after the election. Guardians may also vote in the election, as may candidates.</p>
 <p>The diagrams and descriptions below describe the process during each phase of the election.</p>
 <section id="before-the-election">
 <h2>Before the election<a class="headerlink" href="#before-the-election" title="Link to this heading">#</a></h2>
@@ -740,12 +741,12 @@
 <a class="reference internal image-reference" href="../../_images/pre-election.png"><img alt="diagram showing steps below" src="../../_images/pre-election.png" style="width: 100%;" />
 </a>
 <ol class="arabic simple">
-<li><p>The Election coordinator uses the coordinator tool to get the initial weight values and initialize an instance of the election smart contract.</p></li>
+<li><p>The Election Coordinator uses the coordinator tool to get the initial weight values and initialize an instance of the election smart contract.</p></li>
 <li><p>Each guardian sends their account address to Concordium.</p></li>
-<li><p>Candidates are nominated and can “campaign”. Candidates can provide information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the voting dApp.</p></li>
-<li><p>The Election coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract.</p></li>
-<li><p>The election server is started, the indexer is started, and the Guardian app is built and released.</p></li>
-<li><p>Guardians download the guardian app and install it. They export their account keys from their wallet and import that file to the Guardian app to generate their guardian key pair. And they generate encrypted shares for each guardian. If any invalid submissions from peers are detected, the guardian files a complaint which requires manual intervention from the election coordinator by setting up a new election.</p></li>
+<li><p>Candidates are nominated and can “campaign”. Candidates can provide information such as name, an image or logo, and the URL of a site with information about their campaign. This information is shown in the Voter dApp.</p></li>
+<li><p>The Election Coordinator adds the guardian addresses to the smart contract along with election parameters such as the start and end date and time, and candidates, and deploys and initializes the smart contract.</p></li>
+<li><p>The election server is started, the indexer is started, and the Guardian App is built and released.</p></li>
+<li><p>Guardians generate the shared decryption key using the Guardian App. Afterwards, the election public key is published.</p></li>
 </ol>
 </section>
 <section id="during-the-election">
@@ -754,24 +755,24 @@
 <a class="reference internal image-reference" href="../../_images/election.png"><img alt="diagram showing steps below" src="../../_images/election.png" style="width: 100%;" />
 </a>
 <ol class="arabic simple">
-<li><p>Voters using the Concordium Wallet for Web, Concordium Wallet for Mobile, or CryptoX Concordium Wallet open the dApp and cast their votes. The voter must connect their wallet and sign and submit the transaction to register it on the blockchain. For voters preferring to delegate their vote to another account (e.g., from a non-dApp enabled account in Desktop Wallet or Concordium Legacy Wallet to one with dApp connectivity), it doesn’t matter when voting power is delegated, as long as it happens within the voting “window”, i.e., between election start and end time. The latest delegation registration counts and you cannot redelegate voting power delegated to you; only your initial weight can be delegated.</p></li>
+<li><p>Voters using the Concordium Wallet for Web, or CryptoX Concordium Wallet, open the dApp and cast their votes. The voter must connect their wallet and sign and submit the transaction to register it on the blockchain. For voters preferring to delegate their vote to another account (e.g., from a non-dApp enabled account in Desktop Wallet or from the Concordium Client to one with dApp connectivity), it doesn’t matter when voting power is delegated, as long as it happens within the voting “window”, i.e., between election start and end time. The latest delegation registration counts and voting power that has been delegated cannot be redelegated; only initial weight can be delegated.</p></li>
 <li><p>The votes are registered in the smart contract and the server reads the votes from the contract.</p></li>
 </ol>
 </section>
 <section id="after-the-election">
 <h2>After the election<a class="headerlink" href="#after-the-election" title="Link to this heading">#</a></h2>
-<p>After the election is the <a class="reference internal" href="../resources/glossary.html#term-Tally-phase"><span class="xref std std-term">tally phase</span></a>.</p>
+<p>The period after the election is the <a class="reference internal" href="../resources/glossary.html#term-Tally-phase"><span class="xref std std-term">tally phase</span></a>.</p>
 <a class="reference internal image-reference" href="../../_images/post-election.png"><img alt="diagram showing steps below" src="../../_images/post-election.png" style="width: 100%;" />
 </a>
 <ol class="arabic simple">
-<li><p>Once the election closes, the election coordinator uses the coordinator tool to get the <a class="reference internal" href="../resources/glossary.html#term-Accumulated-weight"><span class="xref std std-term">final weights</span></a> (the initial weights plus weights after taking vote delegation into account) and compute the encrypted tally which is registered in the smart contract.</p></li>
-<li><p>The guardians use the Guardian app to generate their <a class="reference internal" href="../resources/glossary.html#term-Decryption-share"><span class="xref std std-term">decryption share</span></a> of the tally and post that before the deadline specified. They then generate and register proof of correct decryption. If proof generation fails, manual intervention is required by the election coordinator to reset the tally phase with the option of excluding faulty guardians.</p></li>
-<li><p>The decryption shares from each guardian and corresponding proofs of correct decryption are used to produce the election result, which is registered in the smart contract. The election coordinator posts the decrypted tally and voters can see the election result in the voting dApp.</p></li>
+<li><p>Once the election closes, the Election Coordinator uses the coordinator tool to get the <a class="reference internal" href="../resources/glossary.html#term-Accumulated-weight"><span class="xref std std-term">final weights</span></a> (the initial weights plus weights after taking vote delegation into account) and compute the encrypted tally which is registered in the smart contract.</p></li>
+<li><p>The guardians use the Guardian App to generate their <a class="reference internal" href="../resources/glossary.html#term-Decryption-share"><span class="xref std std-term">decryption share</span></a> of the tally and post that before the specified deadline. They then generate and register proof of correct decryption.</p></li>
+<li><p>The decryption shares from each guardian and corresponding proofs of correct decryption are used to produce the election result, which is registered in the smart contract. The election coordinator posts the decrypted tally and voters can see the election result in the Voter dApp.</p></li>
 </ol>
 </section>
 <section id="components-for-voting">
 <h2>Components for voting<a class="headerlink" href="#components-for-voting" title="Link to this heading">#</a></h2>
-<p>There are a number of components used during voting, including the coordinator tool, the voting dApp, and the Guardian application. You can explore the <a class="reference external" href="https://github.com/Concordium/concordium-governance-committee-voting">repository for the components</a>.</p>
+<p>There are a number of components used during voting, including the coordinator tool, the Voter dApp, and the Guardian App. You can explore the <a class="reference external" href="https://github.com/Concordium/concordium-governance-committee-voting">repository for the components</a>.</p>
 </section>
 </section>
 

@@ -83,20 +83,38 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    December 18, 2024
+    January 27, 2025
 
-    Version 1.4.0 addresses the following issues:
+    Version 1.5.0 addresses the following issues:
 
     Added:
 
-    - New onboarding flow
-    - Swipelux onramp flow
+    - Ability to have both file and seed phrase wallets in the app and switch between them
+    - Ability to open the Terms and Conditions and the Privacy Policy from the About screen
 
-    Changed:
+    Fixed:
 
-    - The "," decimal separator is now used for all amounts in the wallet
+    - Incorrect support email address in some error messages
+    - Not working links to the documentation on some screens
+
+    Removed:
+
+    - Ability to create new accounts and identities in a file wallet. We recommend that you migrate to a seed phrase wallet in order to make use of the full range of CryptoX features.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.4.0 - December 18, 2024
+
+            Version 1.4.0 addresses the following issues:
+
+            Added:
+
+            - New onboarding flow
+            - Swipelux onramp flow
+
+            Changed:
+
+            - The "," decimal separator is now used for all amounts in the wallet
 
         .. dropdown:: |cryptox| 1.3.2 - November 28, 2024
 
@@ -273,13 +291,27 @@ Wallets
 |bw|
 -------------------------
 
-    December 25, 2024
+    February 1, 2025
 
-    Version 1.7.2
+    Version 2.0.2
 
-    -   Remove unused "downloads" permission from manifest.
+    -   Fixed credentials with address undefined
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.0.1 - February 1, 2025
+
+            Fixed credentials with some fields undefined
+
+        .. dropdown:: |bw| 2.0.0 - January 30, 2025
+
+            Overhauled the Browser Wallet’s interface as part of the CryptoX UI Revamp project.
+            This update will align the browser wallet’s design with look of CryptoX,
+            delivering a more seamless and user-friendly experience while preserving all the existing features.
+
+        .. dropdown:: |bw| 1.7.2 - December 25, 2024
+
+            Remove unused "downloads" permission from manifest.
 
         .. dropdown:: |bw| 1.7.1 - October 30, 2024
 
