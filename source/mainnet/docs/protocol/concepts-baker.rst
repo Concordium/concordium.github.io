@@ -18,7 +18,7 @@ A validator needs to :term:`stake<staked amount>` a part of its CCD balance on t
 
    If an account owns an amount that was transferred with a release schedule, the amount can be staked even if it hasn't been released yet.
 
-All validators automatically take part in a *lottery* every round, to decide who will produce the next block, see :term:`leader election<leader election>`. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
+All validators automatically take part in a *lottery* every round to decide who will produce the next block, see :term:`leader election<leader election>`. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
 
 Overview of the validation process
 ==================================
