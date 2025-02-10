@@ -12,7 +12,7 @@ Validation is key to the Concordium blockchain. A :term:`node` is a validator no
 Stake and lottery
 =================
 
-A validator needs to :term:`stake<staked amount>` a part of its CCD balance on the validator account---at least 500'000 CCD---which is then locked. At any point, the validator can manually release a part of the staked amount---as long as the minimum 500'000 CCD remain staked---or close down the validator and release everything. Unstaked CCD goes through a :term:`cool-down<cool-down period>`, during which it does not earn rewards. Once the cool-down is over, the CCD is unlocked and available in the wallet to be moved or transferred.
+A validator needs to :term:`stake<staked amount>` a part of its CCD balance on the validator account (at least 500,000 CCD), which is then locked. At any point, the validator can manually release a part of the staked amount, as long as the minimum 500,000 CCD remain staked, or close down the validator and release everything. Unstaked CCD goes through a :term:`cool-down<cool-down period>`, during which it does not earn rewards. Once the cool-down is over, the CCD is unlocked and available in the wallet to be moved or transferred.
 
 .. note::
 
