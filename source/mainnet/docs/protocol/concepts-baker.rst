@@ -12,13 +12,13 @@ Validation is key to the Concordium blockchain. A :term:`node` is a validator no
 Stake and lottery
 =================
 
-A validator needs to :term:`stake<staked amount>` a part of its CCD balance on the validator account. Later, the validator can then manually release a part of or all of the staked amount. The staked amount cannot be moved or transferred until it's released by the validator.
+A validator needs to :term:`stake<staked amount>` a part of its CCD balance on the validator account (at least 500,000 CCD), which is then locked. At any point, the validator can manually release a part of the staked amount, as long as the minimum 500,000 CCD remain staked, or close down the validator and release everything. Unstaked CCD goes through a :term:`cool-down<cool-down period>`, during which it does not earn rewards. Once the cool-down is over, the CCD is unlocked and available in the wallet to be moved or transferred.
 
 .. note::
 
    If an account owns an amount that was transferred with a release schedule, the amount can be staked even if it hasn't been released yet.
 
-To be chosen to produce a block, the validator must take part in a *lottery*. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
+All validators automatically take part in a *lottery* every round to decide who will produce the next block, see :term:`leader election<leader election>`. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
 
 Overview of the validation process
 ==================================
@@ -29,7 +29,7 @@ Overview of the validation process
 
 #. Bob then broadcasts the block to all peers.
 
-#. If the block is valid, the validators will sign it.
+#. If the block is valid, i.e., it is well-formed and correctly placed in the chain, the validators will sign it.
 
 #. If the combined effective stake of the validators who sign the block is *greater than or equal to* two-thirds of the total stake, the block gets a :term:`Quorum Certificate` (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.
 
