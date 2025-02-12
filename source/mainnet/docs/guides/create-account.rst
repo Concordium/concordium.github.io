@@ -5,10 +5,10 @@
 Create an account
 =================
 
-If you are using Desktop Wallet, when you created your :term:`identity`, it came with an :term:`initial account`. The initial account is a special account that the :term:`identity provider` submits
+Desktop Wallet users: When you created your :term:`identity`, it came with an :term:`initial account`. The initial account is a special account that the :term:`identity provider` submits
 to the chain. When you already have an identity, you can create more :term:`accounts<account>` with that identity yourself.
 
-If you are using |bw| or |cryptox|, no initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
+|bw| and |cryptox| users: No initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -102,17 +102,18 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |bw|
 
-    #. To switch to the accounts page, click |hamburger-bw| and select Accounts. If you do not have any accounts, you can click **Create account** and skip to step 3. If you do not have any identity to create an account, you can click **Create new identity**. For information about the identity creation process, see :ref:`Create an identity<create-initial-account>`.
+    Go to the Accounts page ( select **Accounts** in the menu).
 
-        .. image:: ../images/browser-wallet/acct-page-no-acct.png
-            :width: 25%
+    If you do not have any accounts, click **Create account**.
 
-        .. image:: ../images/browser-wallet/acct-page-no-id.png
-            :width: 25%
+    If you do not have an identity, click **Create new identity**.
 
-    #. Click the Accounts drop-down. Then click **Add new**.
+    If you already have an account and want to create more accounts:
 
-    #. Select the identity to use to create the account. Click **Create new account**.
+    #. Click on the **+**.
+    #. Click on the identity you want to use to create the account.
+    #. Click **Create account**.
+
 
 .. toctree::
    :hidden:
