@@ -25,6 +25,15 @@ Change account name
     .. image:: ../images/desktop-wallet/dw-edit-account-name.png
         :alt: dark account balance area with edit button highlighted
 
+.. dropdown:: |bw|
+
+    #. Go to the Accounts page.
+
+    #. Click the Edit button next to the account name you want to change.
+
+    #. Edit the name and click Save.
+
+
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines
              :width: 20px
