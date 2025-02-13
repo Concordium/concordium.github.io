@@ -59,7 +59,7 @@ What are the requirements for each wallet?
 Comparison
 ==========
 
-The following table lists the major features of each wallet.
+The following table lists the differences between wallets.
 
 .. list-table::
    :widths: 10 10 10
@@ -76,33 +76,21 @@ The following table lists the major features of each wallet.
       - Runs on iOS 15 or later, Android 8 or later
    *  - Secured by password and a LEDGER device
       - Secured by password and seed phrase
-      - Secured by password and biometrics
-   *  - Encrypted
-      - Encrypted
-      - Encrypted
-   *  - Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.
-      - Backup is not necessary but seed phrase is needed.
-      - Backup is not necessary but seed phrase is needed.
-   *  - Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase.
-      - Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the seed phrase.
-      - Private keys are stored in the wallet and backed up by a seed phrase.
+      - Secured by passcode or password as well as biometrics
+   *  - Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery
+      - Backup is not necessary but seed phrase is needed
+      - Backup is not necessary but seed phrase is needed
+   *  - Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase
+      - Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the seed phrase
+      - Private keys are stored in the wallet and secured by password or passcode used to encrypt the wallet and backed up with the seed phrase
    *  - Creation and management of single signature and multi-signature accounts
       - Creation and management of single signature accounts only
       - Creation and management of single signature accounts only
-   *  - Creation of identities
-      - Creation of identities
-      - Creation of identities
-   *  - Creation and management of validator accounts
-      - Creation and management of validator accounts. Rewards are visible in the wallet.
-      - Creation and management of validator accounts. Rewards are visible in the wallet.
-   *  - A node is required
-      - A node is not needed unless validator
-      - A node is not needed unless validator
-   *  - Cannot connect to dApps
-      - Can connect to dApps
-      - Can connect to dApps
-   *  - Cannot recover in other wallet types
-      - Can recover in |bw|
+   *  - Cannot connect to dApps.
+      - Can connect to dApps.
+      - Can connect to dApps.
+   *  - Cannot recover in other wallet types.
+      - Can recover in |bw| and |cryptox|.
       - Can recover in |bw| and |cryptox|.
 
 Next steps
