@@ -12,7 +12,7 @@ Why you need a wallet
 You need a Concordium :term:`wallet` to interact with the Concordium blockchain and manage your CCD tokens. Here are the currently available wallets:
 
 - Desktop Wallet: Offers the highest security but requires a LEDGER device.
-- |bw|: Accessible from any device with a web browser, ideal for standard transactions. Great for developers and dApp users.
+- |bw|: Accessible from any device with a web browser supporting Chrome extensions. Ideal for standard transactions, great for developers and dApp users.
 - |cryptox|: The latest mobile wallet, user-friendly with both seed phrase and file-based recovery and dApp connectivity.
 
 
