@@ -94,13 +94,6 @@ Set up Concordium documentation environment on MacOs
     pipenv run make dev-mainnet
 
 
-For building the “academy” version:
-
-
-  .. code-block:: console
-
-    pipenv run make dev-academy
-
 Open your browser and visit http://localhost:8000 to view the documentation. To stop the server, you can use CRTL+C.
 
 
@@ -216,7 +209,6 @@ Now that you have the Concordium development environment set up, follow these st
 
   .. code-block:: console
 
-    git checkout -b '<your-branch-name>'
     git add .
     git commit -m "Updated installation guide and fixed issues"
 
