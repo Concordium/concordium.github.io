@@ -17,7 +17,7 @@ You need a Concordium :term:`wallet` to interact with the Concordium blockchain 
 
 
 
-The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`, 
+The wallets are developed by Concordium Software and can only be used to hold :term:`CCD`,
 the native token of the Concordium blockchain, and :ref:`CIS-2 tokens<tokens>`.
 You can't use these wallets for any other crypto currencies.
 
