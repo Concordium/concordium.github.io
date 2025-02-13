@@ -77,21 +77,30 @@ The following table lists the differences between wallets.
    *  - Secured by password and a LEDGER device
       - Secured by password and seed phrase
       - Secured by passcode or password as well as biometrics
-   *  - Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery
-      - Backup is not necessary but seed phrase is needed
-      - Backup is not necessary but seed phrase is needed
+   *  - Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for recovery
+      - Seed phrase recovers accounts and identities
+      - Seed phrase recovers accounts and identities. Legacy backup file also includes address book, account and identity names
    *  - Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase
       - Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the seed phrase
       - Private keys are stored in the wallet and secured by password or passcode used to encrypt the wallet and backed up with the seed phrase
    *  - Creation and management of single signature and multi-signature accounts
       - Creation and management of single signature accounts only
       - Creation and management of single signature accounts only
-   *  - Cannot connect to dApps.
-      - Can connect to dApps.
-      - Can connect to dApps.
-   *  - Cannot recover in other wallet types.
-      - Can recover in |bw| and |cryptox|.
-      - Can recover in |bw| and |cryptox|.
+   *  - Password is required to unlock the wallet. LEDGER device is required to create new accounts, identities and send transactions
+      - Password is required to unlock the wallet
+      - Password or passcode or biometrics is required to unlock the wallet, and later to create new accounts, identities and send transactions
+   *  - Cannot connect to dApps
+      - Can connect to dApps
+      - Can connect to dApps
+   *  - Can only hold CCD
+      - Can hold CCD and CIS-2 tokens
+      - Can hold CCD and CIS-2 tokens
+   *  - Backup is not compatible with other wallets
+      - Seed phrase backup can be used in |bw| and |cryptox|
+      - Seed phrase backup can be ised in |bw| and |cryptox|. Legacy backup file can only be used in |cryptox|
+   *  - Doesn't have transaction notifications
+      - Doesn't have transaction notifications
+      - Has push notifications for transactions
 
 Next steps
 ==========
