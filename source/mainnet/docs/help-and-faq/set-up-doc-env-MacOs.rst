@@ -97,7 +97,7 @@ Set up Concordium documentation environment on MacOs
 Open your browser and visit http://localhost:8000 to view the documentation. To stop the server, you can use CRTL+C.
 
 
-- Step 8: Building Documentation for Deployment
+- Step 7: Building Documentation for Deployment
   To build the final version of the documentation:(optional)
 
   .. code-block:: console
@@ -106,7 +106,7 @@ Open your browser and visit http://localhost:8000 to view the documentation. To 
 
   This compiles the documentation into a format that can be hosted and accessed by users.
 
-- Step 9: Checking for Dead Links
+- Step 8: Checking for Dead Links
   This step focuses specifically on ensuring that all hyperlinks within the documentation are functional and lead to valid pages. You can run this command:
 
 .. code-block:: console
@@ -117,16 +117,14 @@ Open your browser and visit http://localhost:8000 to view the documentation. To 
 How to Modify the documentation
 -------------------------------
 
-The documentation is written in reStructuredText ``(.rst files)`` and lives in the ``source/`` directory, with separate folders for the mainnet and academy documentation:
+The documentation is written in reStructuredText ``(.rst files)`` and lives in the ``source/`` directory, within the ``mainnet`` folder:
 
 - Mainnet documentation: ``source/mainnet/``
-- Concordium Academy documentation: ``source/academy/``
-
 
 Editing the Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Locate the relevant ``.rst`` file in either source/mainnet or source/academy to edit the corresponding text.
+1. Locate the relevant ``.rst`` file in source/mainnet to edit the corresponding text.
 2. Edit ``.rst`` files using reStructuredText syntax, which supports Sphinx directives for code snippets, warnings, notes, etc. Reference materials for reStructuredText basics can be found here:
    https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
@@ -178,7 +176,7 @@ Now that you have the Concordium development environment set up, follow these st
 
 - Step 2: Make changes
 
-  #. Navigate to the appropriate ``.rst`` file in the ``source/mainnet/`` or ``source/academy/`` directory, depending on the documentation you want to update.
+  #. Navigate to the appropriate ``.rst`` file in the ``source/mainnet/`` directory, depending on the documentation you want to update.
   #. Edit the ``.rst`` files using any text editor. Follow the reStructuredText syntax and the Concordium style guide.
 
 
