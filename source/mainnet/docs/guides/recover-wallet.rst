@@ -124,26 +124,36 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
 
 .. dropdown:: |bw|
 
-    #. After :ref:`reinstalling<setup-bw>` the |bw|, open the extension, create a passcode, and when prompted, choose **Restore**.
+    #. After :ref:`reinstalling<setup-bw>` the |bw|, open the extension and click **Get started** on the welcome page.
 
-        .. image:: ../images/browser-wallet/wallet-choice.png
-            :width: 25%
+       .. image:: ../images/browser-wallet/new/welcome_page.png
+         :width: 50%
+
+    #. Create a six-digit passcode or use a full password. Click **Continue**.
+
+       .. image:: ../images/browser-wallet/new/create_passcode.png
+         :width: 50%
+
+    #. Before clicking **Restore**, make sure that you have chosen the right network for restoring your wallet; Mainnet or Testnet. You must recover your wallet in the network where it was created. You can see the chosen network in the upper right corner. To switch network, click the network name in the upper right corner and select your desired network on the page that opens. Then, go back and click **Restore**.
+
+       .. image:: ../images/browser-wallet/new/create_or_restore.png
+         :width: 50%
+
+
+       .. image:: ../images/browser-wallet/new/restore_mainnet_testnet.png
+         :width: 50%
 
     #. Enter your 24 word seed phrase. Click **Continue**.
 
-    #. Select whether to recover your wallet in Mainnet or Testnet.
+       .. image:: ../images/browser-wallet/new/restore_from_seedphrase.png
+         :width: 50%
 
-    If recovery is successful, you will see a screen similar to below. If recovery is only partial, you can try to recover using the **Restore IDs and accounts option** in Wallet settings.
+    #. After successful restore, you can see which identities and accounts were recovered. Click **Continue**.
 
-    .. image:: ../images/browser-wallet/recovery-success-bw.png
-        :width: 25%
-
-    .. image:: ../images/browser-wallet/wallet-settings.png
-        :width: 25%
 
     .. Note::
 
-        You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can :ref:`switch between mainnet and testnet<switch-network>`.
+        You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can :ref:`switch between Mainnet and Testnet<switch-network>`.
         If you use both networks, you can recover on the other net after setup, through the settings page.
 
     .. Warning::
@@ -152,7 +162,7 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
 
     .. Note::
 
-        If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your seed phrase to recover the wallet.
+        If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browser and reinstall it<setup-browser-wallet>`, choosing the option to recover your wallet. Use your seed phrase to recover the wallet.
 
 
 .. dropdown:: Desktop Wallet
