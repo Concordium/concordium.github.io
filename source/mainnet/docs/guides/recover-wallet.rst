@@ -2,7 +2,7 @@
 .. _recover-wallet:
 
 ===================
-Recover your Wallet
+Recover your wallet
 ===================
 
 You may need to recover your wallet, e.g. if you've switched devices or lost access to your wallet. Recovering your wallet means restoring your identities, accounts, and keys. This can be done either through your seed phrase or a backup file, depending on the specific wallet app you're using.

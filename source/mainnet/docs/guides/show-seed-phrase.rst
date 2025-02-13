@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _show-seed-phrase:
 
-====================
-Show my seed phrase
-====================
+================
+Show seed phrase
+================
 
 Your seed phrase is the access key to all the funds in your wallet. It is important that you store a copy of it in a safe location.
 

@@ -98,7 +98,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
    .. image:: ../images/browser-wallet/new/request_identity.png
       :width: 50%
 
-   
+
    #. Select a third-party identity provider from the list. An external web page opens in your default web browser.
 
    #. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider. However, they will ask you to provide photos of identification documents and a selfie.
@@ -122,3 +122,4 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
                     :width: 20px
                     :alt: three horizontal lines
+
