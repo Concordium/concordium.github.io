@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/set-up-doc-env-MacOs.5b179b13-95ba-4271-9370-b3b93bca6ebf.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/set-up-doc-env-MacOs.3bd93afe-1892-421c-a0b2-7a944be90568.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/help-and-faq/set-up-doc-env-MacOs';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/help-and-faq/set-up-doc-env-MacOs.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -792,22 +792,16 @@ For building the “mainnet” documentation”:</p>
 </div>
 </li>
 </ul>
-<p>For building the “academy” version:</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run make dev-academy</span>
-</pre></div>
-</div>
-</div></blockquote>
 <p>Open your browser and visit <a class="reference external" href="http://localhost:8000">http://localhost:8000</a> to view the documentation. To stop the server, you can use CRTL+C.</p>
 <ul>
-<li><p>Step 8: Building Documentation for Deployment
+<li><p>Step 7: Building Documentation for Deployment
 To build the final version of the documentation:(optional)</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run ./scripts/build.sh</span>
 </pre></div>
 </div>
 <p>This compiles the documentation into a format that can be hosted and accessed by users.</p>
 </li>
-<li><p>Step 9: Checking for Dead Links
+<li><p>Step 8: Checking for Dead Links
 This step focuses specifically on ensuring that all hyperlinks within the documentation are functional and lead to valid pages. You can run this command:</p></li>
 </ul>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run make linkcheck-mainnet</span>
@@ -815,15 +809,14 @@ This step focuses specifically on ensuring that all hyperlinks within the docume
 </div>
 <section id="how-to-modify-the-documentation">
 <h2>How to Modify the documentation<a class="headerlink" href="#how-to-modify-the-documentation" title="Link to this heading">#</a></h2>
-<p>The documentation is written in reStructuredText <code class="docutils literal notranslate"><span class="pre">(.rst</span> <span class="pre">files)</span></code> and lives in the <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory, with separate folders for the mainnet and academy documentation:</p>
+<p>The documentation is written in reStructuredText <code class="docutils literal notranslate"><span class="pre">(.rst</span> <span class="pre">files)</span></code> and lives in the <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory, within the <code class="docutils literal notranslate"><span class="pre">mainnet</span></code> folder:</p>
 <ul class="simple">
 <li><p>Mainnet documentation: <code class="docutils literal notranslate"><span class="pre">source/mainnet/</span></code></p></li>
-<li><p>Concordium Academy documentation: <code class="docutils literal notranslate"><span class="pre">source/academy/</span></code></p></li>
 </ul>
 <section id="editing-the-documentation">
 <h3>Editing the Documentation<a class="headerlink" href="#editing-the-documentation" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Locate the relevant <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file in either source/mainnet or source/academy to edit the corresponding text.</p></li>
+<li><p>Locate the relevant <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file in source/mainnet to edit the corresponding text.</p></li>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files using reStructuredText syntax, which supports Sphinx directives for code snippets, warnings, notes, etc. Reference materials for reStructuredText basics can be found here:
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html</a></p></li>
 </ol>
@@ -865,7 +858,7 @@ This step focuses specifically on ensuring that all hyperlinks within the docume
 </li>
 <li><p>Step 2: Make changes</p>
 <ol class="arabic simple">
-<li><p>Navigate to the appropriate <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file in the <code class="docutils literal notranslate"><span class="pre">source/mainnet/</span></code> or <code class="docutils literal notranslate"><span class="pre">source/academy/</span></code> directory, depending on the documentation you want to update.</p></li>
+<li><p>Navigate to the appropriate <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file in the <code class="docutils literal notranslate"><span class="pre">source/mainnet/</span></code> directory, depending on the documentation you want to update.</p></li>
 <li><p>Edit the <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files using any text editor. Follow the reStructuredText syntax and the Concordium style guide.</p></li>
 </ol>
 </li>
@@ -887,8 +880,7 @@ This step focuses specifically on ensuring that all hyperlinks within the docume
 </li>
 <li><p>Step 4: Commit &amp; Push your Changes</p>
 <p>Once you are satisfied with your changes, commit them to your branch with a descriptive message.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git checkout -b &#39;&lt;your-branch-name&gt;&#39;</span>
-<span class="go">git add .</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git add .</span>
 <span class="go">git commit -m &quot;Updated installation guide and fixed issues&quot;</span>
 </pre></div>
 </div>
