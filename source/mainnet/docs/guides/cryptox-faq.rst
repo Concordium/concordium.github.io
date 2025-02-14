@@ -27,8 +27,8 @@
 .. dropdown:: What happens if I lose my seed phrase?
 
     If you accidentally throw away the paper your :term:`seed phrase` is written on, forget where you hid it, or do not pass it on to an heir, you no longer have the ability to :ref:`recover your wallet<recover-wallet>`
-    and can lose access to your funds. 
-    While you still have access to your wallet, the seed phrase can be revealed from the **More** screen. 
+    and can lose access to your funds.
+    While you still have access to your wallet, the seed phrase can be revealed from the **More** screen.
     If someone steals your seed phrase, they can access your funds. **If you lose your seed phrase, you lose access to your funds.**
 
     As long as you have your seed phrase, you have your funds. If you break a phone containing your wallet, nothing is lost. You can simply :ref:`enter your seed phrase<recover-wallet>` into a newly downloaded |cryptox| or |bw|.
@@ -91,13 +91,13 @@
 
 .. dropdown:: Can I use exported account private key for recovery?
 
-    No. Exported **account** private key is meant to be used in :ref:`Concordium Client<concordium-client>`. 
+    No. Exported **account** private key is meant to be used in :ref:`Concordium Client<concordium-client>`.
     Unlike a wallet private key, an account private key can't be imported back into the wallet.
 
 .. dropdown:: What's the difference between an account private key and a wallet private key?
 
     An account private key is meant to be used in :ref:`Concordium Client<concordium-client>`
-    to sign transactions on behalf of the corresponding account. 
+    to sign transactions on behalf of the corresponding account.
     An account private key can't be imported into |cryptox| or |bw|.
 
     A wallet private key is the root for all the accounts and identities in your wallet.
