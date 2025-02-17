@@ -41,6 +41,16 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
          :width: 50%
          :alt: password change dialog
 
+.. dropdown:: |bw|
+
+   #. Open the menu and select **Passcode**.
+
+   #. Enter current passcode.
+
+   #. Enter and confirm new passcode.
+
+   #. Click **Change passcode**.
+
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button
              :width: 40px
