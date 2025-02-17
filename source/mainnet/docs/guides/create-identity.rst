@@ -5,7 +5,11 @@
 Create an identity
 ==================
 
-Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider, and, in the case of Desktop Wallet, an initial account issued by the identity provider. The identity provider submits the initial account to the chain and knows the identity of the owner of the initial account, but not of any other accounts that you create. For |bw| and |cryptox| an initial account is not submitted by the identity provider.
+Before you can start using a Wallet and submit transactions to the blockchain, you need an identity issued by an identity provider.
+
+For Desktop Wallet, the identity provider also issues an initial account and submits it to the chain. The identity provider knows the identity of the owner of this initial account, but not of any other accounts that you create.
+
+For |bw| and |cryptox|, an initial account is not submitted by the identity provider.
 
 To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
 
@@ -84,17 +88,16 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |bw|
 
-   You can submit requests for additional :term:`identities<identity>` in the |bw|. You do this from the **ID cards** page. If you are not in the ID cards page, click |hamburger-bw| to select it. If you do not have any identities, you can click **Request identity**.
+   Identities are managed from the ID Cards page. To access this page, open the menu and select **ID Cards**.
 
-   .. image:: ../images/browser-wallet/id-page-no-id.png
-      :width: 25%
+   If you don't have any identities yet, you can click **Request Identity**.
 
-   #. Click the ID cards drop-down.
+   If you want to submit a request for an additional identity, click on the **+** in the upper right corner.
 
-   #. Click **Request new**.
 
-      .. image:: ../images/browser-wallet/id-cards-new.png
-         :width: 25%
+   .. image:: ../images/browser-wallet/new/request_identity.png
+      :width: 50%
+
 
    #. Select a third-party identity provider from the list. An external web page opens in your default web browser.
 
@@ -119,3 +122,4 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 .. |hamburger-bw| image:: ../images/browser-wallet/hamburger-menu.png
                     :width: 20px
                     :alt: three horizontal lines
+
