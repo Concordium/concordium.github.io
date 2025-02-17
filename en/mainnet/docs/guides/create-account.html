@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/create-account.8bd5ffa3-3890-4ae3-9900-512d210056fc.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/create-account.0f9ee7f7-f9df-4758-9d27-10c066cae364.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/create-account';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/create-account.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -618,13 +618,13 @@
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your Wallet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
-<li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show my seed phrase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
@@ -727,9 +727,9 @@
                   
   <section id="create-an-account">
 <span id="create-account"></span><h1>Create an account<a class="headerlink" href="#create-an-account" title="Link to this heading">#</a></h1>
-<p>If you are using Desktop Wallet, when you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>, it came with an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a>. The initial account is a special account that the <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> submits
+<p>Desktop Wallet users: When you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>, it came with an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a>. The initial account is a special account that the <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> submits
 to the chain. When you already have an identity, you can create more <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">accounts</span></a> with that identity yourself.</p>
-<p>If you are using Concordium Wallet for Web or CryptoX Concordium Wallet, no initial account was created when you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>. You create all <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">accounts</span></a> related to your identities.</p>
+<p>Concordium Wallet for Web and CryptoX Concordium Wallet users: No initial account was created when you created your <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identity</span></a>. You create all <a class="reference internal" href="../resources/glossary.html#term-Account"><span class="xref std std-term">accounts</span></a> related to your identities.</p>
 <p>To learn more about identities and accounts, see <a class="reference internal" href="../protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a> and <a class="reference internal" href="../protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">Accounts</span></a>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -823,17 +823,14 @@ to the chain. When you already have an identity, you can create more <a class="r
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">To switch to the accounts page, click <a class="reference internal" href="../../_images/hamburger-menu.png"><img alt="three horizontal lines" src="../../_images/hamburger-menu.png" style="width: 20px;" /></a> and select Accounts. If you do not have any accounts, you can click <strong>Create account</strong> and skip to step 3. If you do not have any identity to create an account, you can click <strong>Create new identity</strong>. For information about the identity creation process, see <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">Create an identity</span></a>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/acct-page-no-acct.png"><img alt="../../_images/acct-page-no-acct.png" src="../../_images/acct-page-no-acct.png" style="width: 25%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/acct-page-no-id.png"><img alt="../../_images/acct-page-no-id.png" src="../../_images/acct-page-no-id.png" style="width: 25%;" />
-</a>
-</div></blockquote>
-</li>
-<li><p class="sd-card-text">Click the Accounts drop-down. Then click <strong>Add new</strong>.</p></li>
-<li><p class="sd-card-text">Select the identity to use to create the account. Click <strong>Create new account</strong>.</p></li>
+<p class="sd-card-text">Go to the Accounts page ( select <strong>Accounts</strong> in the menu).</p>
+<p class="sd-card-text">If you do not have any accounts, click <strong>Create account</strong>.</p>
+<p class="sd-card-text">If you do not have an identity, click <strong>Create new identity</strong>.</p>
+<p class="sd-card-text">If you already have an account and want to create more accounts:</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Click on the <strong>+</strong>.</p></li>
+<li><p class="sd-card-text">Click on the identity you want to use to create the account.</p></li>
+<li><p class="sd-card-text">Click <strong>Create account</strong>.</p></li>
 </ol>
 </div>
 </details><div class="toctree-wrapper compound">

@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Recover your Wallet &#8212; Concordium  documentation</title>
+    <title>Recover your wallet &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/recover-wallet.76930a81-4687-4120-922b-41cd3269f500.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/recover-wallet.d2a02c17-4a0d-44b5-98b8-ed71098b12f9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/recover-wallet';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/recover-wallet.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -618,13 +618,13 @@
 </details></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4 current active"><a class="current reference internal" href="#">Recover your Wallet</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Recover your wallet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
-<li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show my seed phrase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
@@ -726,7 +726,7 @@
                 <article class="bd-article">
                   
   <section id="recover-your-wallet">
-<span id="recover-wallet"></span><h1>Recover your Wallet<a class="headerlink" href="#recover-your-wallet" title="Link to this heading">#</a></h1>
+<span id="recover-wallet"></span><h1>Recover your wallet<a class="headerlink" href="#recover-your-wallet" title="Link to this heading">#</a></h1>
 <p>You may need to recover your wallet, e.g. if you’ve switched devices or lost access to your wallet. Recovering your wallet means restoring your identities, accounts, and keys. This can be done either through your seed phrase or a backup file, depending on the specific wallet app you’re using.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -830,23 +830,29 @@
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">After <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-bw"><span class="std std-ref">reinstalling</span></a> the Concordium Wallet for Web, open the extension, create a passcode, and when prompted, choose <strong>Restore</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/wallet-choice.png"><img alt="../../_images/wallet-choice.png" src="../../_images/wallet-choice.png" style="width: 25%;" />
+<li><p class="sd-card-text">After <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-bw"><span class="std std-ref">reinstalling</span></a> the Concordium Wallet for Web, open the extension and click <strong>Get started</strong> on the welcome page.</p>
+<a class="reference internal image-reference" href="../../_images/welcome_page.png"><img alt="../../_images/welcome_page.png" src="../../_images/welcome_page.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">Enter your 24 word seed phrase. Click <strong>Continue</strong>.</p></li>
-<li><p class="sd-card-text">Select whether to recover your wallet in Mainnet or Testnet.</p></li>
+<li><p class="sd-card-text">Create a six-digit passcode or use a full password. Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/create_passcode.png"><img alt="../../_images/create_passcode.png" src="../../_images/create_passcode.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Before clicking <strong>Restore</strong>, make sure that you have chosen the right network for restoring your wallet; Mainnet or Testnet. You must recover your wallet in the network where it was created. You can see the chosen network in the upper right corner. To switch network, click the network name in the upper right corner and select your desired network on the page that opens. Then, go back and click <strong>Restore</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/create_or_restore.png"><img alt="../../_images/create_or_restore.png" src="../../_images/create_or_restore.png" style="width: 50%;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/restore_mainnet_testnet.png"><img alt="../../_images/restore_mainnet_testnet.png" src="../../_images/restore_mainnet_testnet.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Enter your 24 word seed phrase. Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/restore_from_seedphrase.png"><img alt="../../_images/restore_from_seedphrase.png" src="../../_images/restore_from_seedphrase.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">After successful restore, you can see which identities and accounts were recovered. Click <strong>Continue</strong>.</p></li>
 </ol>
-<p class="sd-card-text">If recovery is successful, you will see a screen similar to below. If recovery is only partial, you can try to recover using the <strong>Restore IDs and accounts option</strong> in Wallet settings.</p>
-<a class="reference internal image-reference" href="../../_images/recovery-success-bw.png"><img alt="../../_images/recovery-success-bw.png" src="../../_images/recovery-success-bw.png" style="width: 25%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/wallet-settings.png"><img alt="../../_images/wallet-settings.png" src="../../_images/wallet-settings.png" style="width: 25%;" />
-</a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#switch-network"><span class="std std-ref">switch between mainnet and testnet</span></a>.
+<p class="sd-card-text">You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#switch-network"><span class="std std-ref">switch between Mainnet and Testnet</span></a>.
 If you use both networks, you can recover on the other net after setup, through the settings page.</p>
 </div>
 <div class="admonition warning">
@@ -855,7 +861,7 @@ If you use both networks, you can recover on the other net after setup, through 
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">If you forget your passcode for your installed Concordium Wallet for Web, you will need to <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">remove the extension in your internet browswer and reinstall it</span></a>, choosing the option to recover your wallet. Use your seed phrase to recover the wallet.</p>
+<p class="sd-card-text">If you forget your passcode for your installed Concordium Wallet for Web, you will need to <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">remove the extension in your internet browser and reinstall it</span></a>, choosing the option to recover your wallet. Use your seed phrase to recover the wallet.</p>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
