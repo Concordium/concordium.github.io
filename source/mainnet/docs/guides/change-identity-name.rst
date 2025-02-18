@@ -20,11 +20,11 @@ Change identity name
 
 .. dropdown:: |bw|
 
-    #. Click the hamburger menu |hamburger| and select **ID cards**. If you have more than one ID card, select the ID card you want to edit in the ID cards drop-down.
+    #. Open the menu and select ID Cards. If you have more than one identity, select the ID card you want to edit.
 
-    #. Click |edit| next to the identity name.
+    #. Click **Edit Name** next to the identity name.
 
-    #. Change the name and click |save|.
+    #. Change the name and click **Save**.
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

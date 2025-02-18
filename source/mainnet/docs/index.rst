@@ -58,10 +58,22 @@ Explore our developer resources, including detailed documentation, tutorials, an
    }
    </style>
 
+.. Note::
+
+   Currently, Rust toolchain versions up to ``1.81`` are supported. To set version ``1.81`` as the default, run these commands:
+
+   .. code-block:: console
+
+      $ rustup toolchain install 1.81
+      $ rustup default 1.81
+
+   The minimum supported rust version is currently version ``1.73``
+
 .. toctree::
    :caption: Concordium Protocol
    :hidden:
 
+   What is the Concordium Protocol <protocol/concordium-protocol>
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
@@ -105,7 +117,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :caption: Governance Committee Voting
    :hidden:
 
-   Concordium Governance Committee Elections <voting/gc-voting>
+   Concordium Governance Committee elections <voting/gc-voting>
    Election coordinator tool <voting/coordinator>
    How to vote <voting/voting>
    Guardians <voting/guardians>
