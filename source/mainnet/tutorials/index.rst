@@ -72,6 +72,7 @@ Additional Resources
    :caption: Smart Contract Tutorials
 
    setup-env
+   Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
    wCCD <./wCCD/index>
