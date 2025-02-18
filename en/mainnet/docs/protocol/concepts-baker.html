@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.093359cb-d547-45ae-ba2c-1965f3764b95.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.3dd21677-b646-4b8f-8416-317e438c54f5.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-baker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concepts-baker.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -796,6 +796,35 @@ For example, if you decrease a valiator’s stake, the stake will be decreased a
 <p>A block is final when it cannot be rolled back any more, i.e., part of the authoritative chain. Validators sign a block when they have verified that it is valid, and their collective signatures are aggregated to form a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a>. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered final. Why isn’t the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.</p>
 <p>A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.</p>
 </section>
+<section id="validator-suspension">
+<h2>Validator Suspension<a class="headerlink" href="#validator-suspension" title="Link to this heading">#</a></h2>
+<p>A validator may be suspended if it remains inactive and fails to produce blocks when selected as a round leader. This mechanism, introduced in Protocol 8, helps maintain the blockchain’s performance and reliability by excluding inactive validators.</p>
+<p>A validator faces <a class="reference internal" href="../resources/glossary.html#term-Suspension"><span class="xref std std-term">suspension</span></a> if it reaches a threshold of missed rounds. The size of a validator’s stake affects how long the validator’s node has to be inactive before reaching the threshold:</p>
+<ul class="simple">
+<li><p>High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders.</p></li>
+<li><p>Low-stake validators may take several days to reach the threshold due to fewer opportunities to produce blocks.</p></li>
+</ul>
+<p>When a validator misses multiple blocks in succession and reaches the inactivity threshold by a payday, it becomes <em>primed for suspension</em>. The validator then has until the next snapshot epoch to demonstrate activity by either:</p>
+<ul class="simple">
+<li><p>Producing a block</p></li>
+<li><p>Having their signature included in a quorum certificate</p></li>
+</ul>
+<p>If the validator remains inactive through the snapshot epoch, the suspension takes effect at the following payday epoch.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A high-stake validator could face suspension after approximately 23 hours of inactivity, while low-stake validators typically require a longer period of inactivity before reaching the threshold.</p>
+</div>
+<p>A suspended validator:</p>
+<ul class="simple">
+<li><p>Can resume validation through a manual transaction</p></li>
+<li><p>Incurs no specific penalties beyond the suspension period</p></li>
+<li><p>Maintains its delegators unless the delegators choose to update their delegation</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The protocol includes safeguards to prevent more than one-third of the total stake from being suspended simultaneously as this would halt the blockchain. This suspension mechanism protects against accidental or careless inactivity but does not protect against malicious behavior.</p>
+</div>
+</section>
 </section>
 
 
@@ -890,6 +919,7 @@ For example, if you decrease a valiator’s stake, the stake will be decreased a
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staking-pool">Staking pool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-is-a-block-final">When is a block final?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-suspension">Validator Suspension</a></li>
 </ul>
   </nav></div>
 
