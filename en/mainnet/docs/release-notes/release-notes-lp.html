@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.24b27191-b31d-43cf-9efb-d0628c42a347.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.a3a6996c-f681-4f59-acff-2afb69f630c5.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -1847,13 +1847,43 @@ This means that node runners <strong>must upgrade</strong> their nodes before th
 <section id="testnet">
 <span id="rn-node-testnet"></span><h3>Testnet<a class="headerlink" href="#testnet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>September 30, 2024</p>
-<p>Concordium node version 7.0.5 fixes a bug in the handling of smart contract names that could cause the node to crash.
-<strong>This is a critical bug fix, and node runners should update as soon as possible.</strong></p>
+<div><p>February 18, 2024</p>
+<p>Concordium node version 8.0.3 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P8.html">protocol version 8</a>.
+The new consensus protocol will take effect on the testnet on February 24, 2025.
+<strong>Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.</strong>
+Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.</p>
+<p>Protocol version 8 introduces the following changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Validators are automatically suspended if they do not produce blocks for a certain number of rounds.</p></li>
+<li><p>The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.</p></li>
+<li><p>Suspended validators are paused from participating in the consensus algorithm.</p></li>
+</ul>
+</div></blockquote>
+<p>Additionally, the node release includes a number of fixes and improvements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add suspension info to <cite>BakerPoolStatus</cite> / <cite>CurrentPaydayBakerPoolStatus</cite> query results.</p></li>
+<li><p>Add <cite>GetConsensusDetailedStatus</cite> gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.</p></li>
+<li><p>Update Rust version to 1.82.</p></li>
+<li><p>Update GHC version to 9.6.6 (LTS-22.39).</p></li>
+<li><p>Add <cite>GetScheduledReleaseAccounts</cite> endpoint for querying the list of accounts that have scheduled releases.</p></li>
+<li><p>Add <cite>GetCooldownAccounts</cite>, <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.</p></li>
+<li><p>gRPC endpoints <cite>DryRun</cite>, <cite>GetBlockItemStatus</cite> and <cite>GetBlockTransactionEvents</cite> now report the parameter used to initialize a smart contract instance as part of a <cite>ContractInitializedEvent</cite>.</p></li>
+<li><p>Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.</p></li>
+<li><p>Fix a bug where <cite>GetBlockInfo</cite> reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.</p></li>
+</ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">7.0.5 - September 30, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 7.0.5 fixes a bug in the handling of smart contract names that could cause the node to crash.
+<strong>This is a critical bug fix, and node runners should update as soon as possible.</strong></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">7.0.4 - September 23, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium node version 7.0.4 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P7.html">protocol version 7</a>.
@@ -2375,20 +2405,34 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <section id="concordium-client">
 <span id="rn-client"></span><h3>Concordium Client<a class="headerlink" href="#concordium-client" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>September 23, 2024</p>
-<p>Concordium Client 7.0.1 includes the following features and bug fixes:</p>
+<div><p>February 18, 2025</p>
+<p>Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.</p>
 <ul class="simple">
-<li><p>Support node version 7 and protocol version 7.</p></li>
-<li><p>Display the “at disposal” balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.</p></li>
-<li><p>From protocol version 7, list the stake cooldowns that are effective on an account in the account info output.</p></li>
-<li><p>Improved checks when configuring a validator or delegator.</p></li>
-<li><p>Fix the display of the expected expiry of pending changes to an account’s stake.</p></li>
-<li><p>Fix a bug in correctly accounting for parsed events.</p></li>
-<li><p>Rename the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag for <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> to <code class="docutils literal notranslate"><span class="pre">--validator-credentials-out</span></code> to fix the conflict with the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag used to write a partially-signed transaction to a file.</p></li>
+<li><p>Support node version 8 and protocol version 8.</p></li>
+<li><p>Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)</p></li>
+<li><p>Add command <cite>consensus detailed-status</cite> for getting detailed consensus status (from protocol version 6).</p></li>
+<li><p>Add <cite>raw GetConsensusDetailedStatus</cite> that presents the detailed consensus status as JSON.</p></li>
+<li><p>Update GHC version to 9.6.6 (lts-22.39).</p></li>
+<li><p>Add raw commands <cite>GetScheduledReleaseAccounts</cite>, <cite>GetCooldownAccounts</cite>,  <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.</p></li>
+<li><p>Raw commands <cite>GetBlockTransactionEvents</cite> and <cite>GetTransactionStatus</cite> include the <cite>parameter</cite> for <cite>ContractInitialized</cite> events.</p></li>
+<li><p>From protocol version 8, raw command <cite>GetPoolStatus</cite> indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of  missed rounds.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">..dropdown:: 7.0.1 - September 23, 2024</p>
+<blockquote>
+<div><p class="sd-card-text">Concordium Client 7.0.1 includes the following features and bug fixes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Support node version 7 and protocol version 7.</p></li>
+<li><p class="sd-card-text">Display the “at disposal” balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.</p></li>
+<li><p class="sd-card-text">From protocol version 7, list the stake cooldowns that are effective on an account in the account info output.</p></li>
+<li><p class="sd-card-text">Improved checks when configuring a validator or delegator.</p></li>
+<li><p class="sd-card-text">Fix the display of the expected expiry of pending changes to an account’s stake.</p></li>
+<li><p class="sd-card-text">Fix a bug in correctly accounting for parsed events.</p></li>
+<li><p class="sd-card-text">Rename the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag for <code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code> to <code class="docutils literal notranslate"><span class="pre">--validator-credentials-out</span></code> to fix the conflict with the <code class="docutils literal notranslate"><span class="pre">--out</span></code> flag used to write a partially-signed transaction to a file.</p></li>
+</ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">6.3.0 - June 07, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">

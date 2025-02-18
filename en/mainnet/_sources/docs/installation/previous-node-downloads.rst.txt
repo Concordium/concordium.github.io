@@ -258,6 +258,16 @@ Ubuntu - Testnet
 Default GRPC port is set to 20001
 Default listen port is set to 8889
 
+`7.0.5 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_7.0.5-0_amd64.deb>`
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_7.0.5-0_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``73a3ec82b7857f068d9f3a457d4e49658d99a5817d163031b4afdc7078f9aafe``
+
 `7.0.4 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_7.0.4-0_amd64.deb>`__
 
    - Verification instructions
