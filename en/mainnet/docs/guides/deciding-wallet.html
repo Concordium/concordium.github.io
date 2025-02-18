@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/deciding-wallet.e3f63bb5-e0d2-48f4-b666-a29e90ce7669.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/deciding-wallet.47a7539c-23e9-4aa1-ab33-1814400bead8.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/deciding-wallet';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/deciding-wallet.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -731,11 +731,12 @@
 <h2>Why you need a wallet<a class="headerlink" href="#why-you-need-a-wallet" title="Link to this heading">#</a></h2>
 <p>You need a Concordium <a class="reference internal" href="../resources/glossary.html#term-Wallet"><span class="xref std std-term">wallet</span></a> to interact with the Concordium blockchain and manage your CCD tokens. Here are the currently available wallets:</p>
 <ul class="simple">
-<li><p>Desktop Wallet: Offers the highest security but requires a LEDGER device and a connected node.</p></li>
-<li><p>Concordium Wallet for Web: Accessible from any device with a web browser, ideal for standard transactions. Great for developers and dApp users.</p></li>
+<li><p>Desktop Wallet: Offers the highest security but requires a LEDGER device.</p></li>
+<li><p>Concordium Wallet for Web: Accessible from any device with a web browser supporting Chrome extensions. Ideal for standard transactions, great for developers and dApp users.</p></li>
 <li><p>CryptoX Concordium Wallet: The latest mobile wallet, user-friendly with both seed phrase and file-based recovery and dApp connectivity.</p></li>
 </ul>
-<p>The wallets are developed by Concordium Software and can only be used to hold <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a>, the native token of the Concordium blockchain.
+<p>The wallets are developed by Concordium Software and can only be used to hold <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a>,
+the native token of the Concordium blockchain, and <a class="reference internal" href="tokens.html#tokens"><span class="std std-ref">CIS-2 tokens</span></a>.
 You can’t use these wallets for any other crypto currencies.</p>
 </section>
 <section id="choosing-the-right-wallet">
@@ -766,7 +767,7 @@ You can’t use these wallets for any other crypto currencies.</p>
 <section id="what-are-the-requirements-for-each-wallet">
 <h2>What are the requirements for each wallet?<a class="headerlink" href="#what-are-the-requirements-for-each-wallet" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Desktop Wallet: A computer running Windows, macOS, or Linux, and a LEDGER NANO S or LEDGER NANO S PLUS. You also have to connect to a node. You can use the default Virtual Hive node (concordiumwalletnode.com), get a third-party to run a node for you, or run a node yourself. If you run a node yourself, your computer must meet the hardware requirements for this.</p></li>
+<li><p>Desktop Wallet: A computer running Windows, macOS, or Linux, and a LEDGER NANO S or LEDGER NANO S PLUS.</p></li>
 <li><p>Concordium Wallet for Web: A device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the Concordium Wallet for Web extension installed.</p></li>
 <li><p>CryptoX Concordium Wallet: An iPhone running iOS 15 or later or an Android phone running Android 8 or later.</p></li>
 </ul>
@@ -778,7 +779,7 @@ You must never share your private keys, PIN codes, passwords, recovery phrases, 
 </section>
 <section id="comparison">
 <h2>Comparison<a class="headerlink" href="#comparison" title="Link to this heading">#</a></h2>
-<p>The following table lists the major features of each wallet.</p>
+<p>The following table lists the differences between wallets.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 33.3%" />
@@ -802,43 +803,39 @@ You must never share your private keys, PIN codes, passwords, recovery phrases, 
 </tr>
 <tr class="row-even"><td><p>Secured by password and a LEDGER device</p></td>
 <td><p>Secured by password and seed phrase</p></td>
-<td><p>Secured by password and biometrics</p></td>
+<td><p>Secured by passcode or password as well as biometrics</p></td>
 </tr>
-<tr class="row-odd"><td><p>Encrypted</p></td>
-<td><p>Encrypted</p></td>
-<td><p>Encrypted</p></td>
+<tr class="row-odd"><td><p>Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for recovery</p></td>
+<td><p>Seed phrase recovers accounts and identities</p></td>
+<td><p>Seed phrase recovers accounts and identities. Legacy backup file also includes address book, account and identity names</p></td>
 </tr>
-<tr class="row-even"><td><p>Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.</p></td>
-<td><p>Backup is not necessary but seed phrase is needed.</p></td>
-<td><p>Backup is not necessary but seed phrase is needed.</p></td>
+<tr class="row-even"><td><p>Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase</p></td>
+<td><p>Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the seed phrase</p></td>
+<td><p>Private keys are stored in the wallet and secured by password or passcode used to encrypt the wallet and backed up with the seed phrase</p></td>
 </tr>
-<tr class="row-odd"><td><p>Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase.</p></td>
-<td><p>Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the seed phrase.</p></td>
-<td><p>Private keys are stored in the wallet and backed up by a seed phrase.</p></td>
-</tr>
-<tr class="row-even"><td><p>Creation and management of single signature and multi-signature accounts</p></td>
+<tr class="row-odd"><td><p>Creation and management of single signature and multi-signature accounts</p></td>
 <td><p>Creation and management of single signature accounts only</p></td>
 <td><p>Creation and management of single signature accounts only</p></td>
 </tr>
-<tr class="row-odd"><td><p>Creation of identities</p></td>
-<td><p>Creation of identities</p></td>
-<td><p>Creation of identities</p></td>
+<tr class="row-even"><td><p>Password is required to unlock the wallet. LEDGER device is required to create new accounts, identities and send transactions</p></td>
+<td><p>Password is required to unlock the wallet</p></td>
+<td><p>Password or passcode or biometrics is required to unlock the wallet, and later to create new accounts, identities and send transactions</p></td>
 </tr>
-<tr class="row-even"><td><p>Creation and management of validator accounts</p></td>
-<td><p>Creation and management of validator accounts. Rewards are visible in the wallet.</p></td>
-<td><p>Creation and management of validator accounts. Rewards are visible in the wallet.</p></td>
-</tr>
-<tr class="row-odd"><td><p>A node is required</p></td>
-<td><p>A node is not needed unless validator</p></td>
-<td><p>A node is not needed unless validator</p></td>
-</tr>
-<tr class="row-even"><td><p>Cannot connect to dApps</p></td>
+<tr class="row-odd"><td><p>Cannot connect to dApps</p></td>
 <td><p>Can connect to dApps</p></td>
 <td><p>Can connect to dApps</p></td>
 </tr>
-<tr class="row-odd"><td><p>Cannot recover in other wallet types</p></td>
-<td><p>Can recover in Concordium Wallet for Web</p></td>
-<td><p>Can recover in Concordium Wallet for Web and CryptoX Concordium Wallet.</p></td>
+<tr class="row-even"><td><p>Can only hold CCD</p></td>
+<td><p>Can hold CCD and CIS-2 tokens</p></td>
+<td><p>Can hold CCD and CIS-2 tokens</p></td>
+</tr>
+<tr class="row-odd"><td><p>Backup is not compatible with other wallets</p></td>
+<td><p>Seed phrase backup can be used in Concordium Wallet for Web and CryptoX Concordium Wallet</p></td>
+<td><p>Seed phrase backup can be ised in Concordium Wallet for Web and CryptoX Concordium Wallet. Legacy backup file can only be used in CryptoX Concordium Wallet</p></td>
+</tr>
+<tr class="row-even"><td><p>Doesn’t have transaction notifications</p></td>
+<td><p>Doesn’t have transaction notifications</p></td>
+<td><p>Has push notifications for transactions</p></td>
 </tr>
 </tbody>
 </table>
