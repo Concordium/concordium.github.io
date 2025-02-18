@@ -413,6 +413,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A list presented to a wallet by a dApp or service whose items are either attributes to reveal, or properties of attributes to prove.
 
+   Suspension
+
+      A state where a validator is temporarily excluded from block production due to prolonged inactivity. The suspension threshold varies based on the validator's stake size and remains in effect for at least one epoch until manually resumed.
+
    Tally
 
       Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.

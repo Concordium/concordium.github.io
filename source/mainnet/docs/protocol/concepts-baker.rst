@@ -20,6 +20,7 @@ A validator needs to :term:`stake<staked amount>` a part of its CCD balance on t
 
 All validators automatically take part in a *lottery* every round to decide who will produce the next block, see :term:`leader election<leader election>`. The greater the validator's stake, the greater the validator's chance of :term:`winning the lottery<lottery power>` and being selected to produce a block.
 
+
 Overview of the validation process
 ==================================
 
@@ -103,4 +104,36 @@ When is a block final?
 A block is final when it cannot be rolled back any more, i.e., part of the authoritative chain. Validators sign a block when they have verified that it is valid, and their collective signatures are aggregated to form a :term:`quorum certificate`. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered final. Why isn't the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.
 
 A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.
+
+Validator Suspension
+====================
+
+A validator may be suspended if it remains inactive and fails to produce blocks when selected as a round leader. This mechanism, introduced in Protocol 8, helps maintain the blockchain's performance and reliability by excluding inactive validators.
+
+A validator faces :term:`suspension` if it reaches a threshold of missed rounds. The size of a validator's stake affects how long the validator's node has to be inactive before reaching the threshold:
+
+* High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders.
+* Low-stake validators may take several days to reach the threshold due to fewer opportunities to produce blocks.
+
+When a validator misses multiple blocks in succession and reaches the inactivity threshold by a payday, it becomes *primed for suspension*. The validator then has until the next snapshot epoch to demonstrate activity by either:
+
+* Producing a block
+* Having their signature included in a quorum certificate
+
+If the validator remains inactive through the snapshot epoch, the suspension takes effect at the following payday epoch.
+
+.. note::
+
+   A high-stake validator could face suspension after approximately 23 hours of inactivity, while low-stake validators typically require a longer period of inactivity before reaching the threshold.
+
+
+A suspended validator:
+
+* Can resume validation through a manual transaction
+* Incurs no specific penalties beyond the suspension period
+* Maintains its delegators unless the delegators choose to update their delegation
+
+.. note::
+
+   The protocol includes safeguards to prevent more than one-third of the total stake from being suspended simultaneously as this would halt the blockchain. This suspension mechanism protects against accidental or careless inactivity but does not protect against malicious behavior.
 
