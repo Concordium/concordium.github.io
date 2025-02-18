@@ -25,7 +25,7 @@
 
 .. Node version variables
 .. |mainnet-node-version| replace:: 7.0.5
-.. |testnet-node-version| replace:: 7.0.5
+.. |testnet-node-version| replace:: 8.0.3
 
 .. Node debian package verification variables
 .. |node-deb-package| replace:: concordium-mainnet-node_7.0.5-0_amd64.deb

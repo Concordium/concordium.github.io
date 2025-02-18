@@ -1132,12 +1132,48 @@ Mainnet
 Testnet
 -------
 
-    September 30, 2024
+    February 18, 2024
 
-    Concordium node version 7.0.5 fixes a bug in the handling of smart contract names that could cause the node to crash.
-    **This is a critical bug fix, and node runners should update as soon as possible.**
+    Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
+    The new consensus protocol will take effect on the testnet on February 24, 2025.
+    **Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.**
+    Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.
+
+    Protocol version 8 introduces the following changes:
+
+        - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
+
+        - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
+
+        - Suspended validators are paused from participating in the consensus algorithm.
+
+    Additionally, the node release includes a number of fixes and improvements:
+
+        - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
+
+        - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
+
+        - Update Rust version to 1.82.
+
+        - Update GHC version to 9.6.6 (LTS-22.39).
+
+        - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+
+        - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
+
+        - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
+
+        - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
+
+        - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
+
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 7.0.5 - September 30, 2024
+
+            Concordium node version 7.0.5 fixes a bug in the handling of smart contract names that could cause the node to crash.
+            **This is a critical bug fix, and node runners should update as soon as possible.**
 
         .. dropdown:: 7.0.4 - September 23, 2024
 
