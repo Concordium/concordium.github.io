@@ -1703,26 +1703,47 @@ Tools
 Concordium Client
 -----------------
 
-    September 23, 2024
+    February 18, 2025
 
-    Concordium Client 7.0.1 includes the following features and bug fixes:
+    Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.
 
-    - Support node version 7 and protocol version 7.
+    - Support node version 8 and protocol version 8.
 
-    - Display the "at disposal" balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.
+    - Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)
 
-    - From protocol version 7, list the stake cooldowns that are effective on an account in the account info output.
+    - Add command `consensus detailed-status` for getting detailed consensus status (from protocol version 6).
 
-    - Improved checks when configuring a validator or delegator.
+    - Add `raw GetConsensusDetailedStatus` that presents the detailed consensus status as JSON.
 
-    - Fix the display of the expected expiry of pending changes to an account's stake.
+    - Update GHC version to 9.6.6 (lts-22.39).
 
-    - Fix a bug in correctly accounting for parsed events.
+    - Add raw commands `GetScheduledReleaseAccounts`, `GetCooldownAccounts`,  `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.
 
-    - Rename the ``--out`` flag for ``validator add`` to ``--validator-credentials-out`` to fix the conflict with the ``--out`` flag used to write a partially-signed transaction to a file.
+    - Raw commands `GetBlockTransactionEvents` and `GetTransactionStatus` include the `parameter` for `ContractInitialized` events.
+
+    - From protocol version 8, raw command `GetPoolStatus` indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of  missed rounds.
 
 
     .. dropdown:: Previous releases
+
+        ..dropdown:: 7.0.1 - September 23, 2024
+
+            Concordium Client 7.0.1 includes the following features and bug fixes:
+
+            - Support node version 7 and protocol version 7.
+
+            - Display the "at disposal" balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.
+
+            - From protocol version 7, list the stake cooldowns that are effective on an account in the account info output.
+
+            - Improved checks when configuring a validator or delegator.
+
+            - Fix the display of the expected expiry of pending changes to an account's stake.
+
+            - Fix a bug in correctly accounting for parsed events.
+
+            - Rename the ``--out`` flag for ``validator add`` to ``--validator-credentials-out`` to fix the conflict with the ``--out`` flag used to write a partially-signed transaction to a file.
+
 
         .. dropdown:: 6.3.0 - June 07, 2024
 

@@ -122,7 +122,7 @@ Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For inf
 Concordium Client |client-version|
 ===================================
 
--  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_7.0.1-0>`_
+-  `Download the Mainnet Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_8.0.0-5>`_
 
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
       - :ref:`Verification instructions <verification-client-linux>`
@@ -135,13 +135,13 @@ Concordium Client |client-version|
 
    where you replace `*` with |client-version|.
 
--  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-7.0.1-0.pkg>`_
+-  `Download the Mainnet Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-8.0.0-5.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_7.0.1-0.zip>`_
+-  `Download the Mainnet Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_8.0.0-5.zip>`_
 
    - The Windows distribution is a zip file that must be extracted before use.
      To do this, in Windows Explorer, right-click the downloaded file and select
