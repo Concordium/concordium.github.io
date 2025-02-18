@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.c4c3946e-84f3-40b7-abd7-8d71db0273e1.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.e4e94106-be62-4392-bcde-26920d0f038a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -2376,15 +2376,15 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <span id="rn-client"></span><h3>Concordium Client<a class="headerlink" href="#concordium-client" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>February 18, 2025</p>
-<p>Concordium CLient 8.0.0 includes the following features and bug fixes:</p>
+<p>Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.</p>
 <ul class="simple">
 <li><p>Support node version 8 and protocol version 8.</p></li>
-<li><p>Support for suspend/resume in validator update transactions.</p></li>
+<li><p>Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)</p></li>
 <li><p>Add command <cite>consensus detailed-status</cite> for getting detailed consensus status (from protocol version 6).</p></li>
-<li><p>Add <cite>raw GetConsensusDetailedStatus</cite> that presents the detailed consensus status as JSON. (Requires node version 8.)</p></li>
+<li><p>Add <cite>raw GetConsensusDetailedStatus</cite> that presents the detailed consensus status as JSON.</p></li>
 <li><p>Update GHC version to 9.6.6 (lts-22.39).</p></li>
-<li><p>Add raw commands <cite>GetScheduledReleaseAccounts</cite>, <cite>GetCooldownAccounts</cite>,  <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns. (Requires node version 8.)</p></li>
-<li><p>Raw commands <cite>GetBlockTransactionEvents</cite> and <cite>GetTransactionStatus</cite> include the <cite>parameter</cite> for <cite>ContractInitialized</cite> events. (Requires node version 8.)</p></li>
+<li><p>Add raw commands <cite>GetScheduledReleaseAccounts</cite>, <cite>GetCooldownAccounts</cite>,  <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.</p></li>
+<li><p>Raw commands <cite>GetBlockTransactionEvents</cite> and <cite>GetTransactionStatus</cite> include the <cite>parameter</cite> for <cite>ContractInitialized</cite> events.</p></li>
 <li><p>From protocol version 8, raw command <cite>GetPoolStatus</cite> indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of  missed rounds.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
