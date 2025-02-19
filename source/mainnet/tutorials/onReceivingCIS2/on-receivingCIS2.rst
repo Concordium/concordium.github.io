@@ -349,7 +349,7 @@ Here's the command, we are using the **transfer** function of the **wCCD smart c
 
     .. code-block:: json
         :force:
-        
+
         [
             {
             "amount": "1000",
