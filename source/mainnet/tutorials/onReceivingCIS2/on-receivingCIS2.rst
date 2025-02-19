@@ -64,7 +64,7 @@ In order to use the **TokenAmountU256** structure, the dependencies in ``Cargo.t
 .. code-block:: rust
 
     [dependencies]
-    concordium-cis2 = { version = "6.2.0", features = ["u256_amount"] } 
+    concordium-cis2 = { version = "6.2.0", features = ["u256_amount"] }
     concordium-std = { version = "10.0", default-features = false }
 
 2. Modify the template code, replace the template's ``State`` and ``Error`` with simpler versions:
@@ -235,7 +235,7 @@ Now let's build our contract:
 .. code-block:: console
 
     $ cargo concordium build --out tokenForwarder.module.wasm.v1
-    
+
 After building successfully, a module file will be created. Next, let's deploy the contract:
 
 .. code-block:: console
@@ -257,7 +257,7 @@ Save this reference - you'll need it for contract initialization and future refe
 
     $ concordium-client --grpc-port 20000 --grpc-ip node.testnet.concordium.com \
     contract init <saved_reference> \
-    --sender <your-account-address> \ 
+    --sender <your-account-address> \
     --contract token_forwarder \
     --energy <max-energy-allowed> \
 
@@ -343,12 +343,13 @@ Here's the command, we are using the **transfer** function of the **wCCD smart c
         You can execute several transfers in the above array.
 
     If you insert everything correctly, the JSON array should look similar to
-    the below JSON array that will transfer 1000 wCCD from an account address(your account in this case) to a contract. 
-    
+    the below JSON array that will transfer 1000 wCCD from an account address(your account in this case) to a contract.
+
     Replace **<token-forwarder-index>** with the index of the received in the previous section.
 
     .. code-block:: json
-
+        :force:
+        
         [
             {
             "amount": "1000",
@@ -371,7 +372,7 @@ Here's the command, we are using the **transfer** function of the **wCCD smart c
             }
         ]
 
-The index of the **wCCD contract** is **2059**. 
+The index of the **wCCD contract** is **2059**.
 The transfer process executes in the following steps:
 
 1. Tokens are transfered from your account to the wCCD contract instance
