@@ -31,7 +31,8 @@ Follow these steps to create a contract that automatically forwards any received
 Initialize the Project
 ----------------------
 
-Create a new smart contract project using the **init** command. The project will be called **token-receiver**. Then add the **concordium-cis2** library.
+Create a new smart contract project using the **init** command. After selecting template `default`, the command line will ask for a project name. Call it `token-receiver` to follow along with this tutorial.
+Then add the **concordium-cis2** library.
 
 .. code-block:: console
 
@@ -152,22 +153,7 @@ This method will initialize the contract and assign a value to the **message str
             Ok(())
         }
 
-5. Add helper functions to manage the state:
-
-.. code-block:: rust
-
-    #[receive(
-        contract = "token_forwarder",
-        name = "set_message",
-        parameter = "String",
-        error = "ContractError",
-        mutable
-    )]
-    fn set_message(ctx: &ReceiveContext, host: &mut Host<State>) -> Result<(), ContractError> {
-        let new_message: String = ctx.parameter_cursor().get()?;
-        host.state_mut().message = new_message;
-        Ok(())
-    }
+5. Add a view helper function to read the message stored in the state:
 
     #[receive(
         contract = "token_forwarder",
@@ -179,53 +165,7 @@ This method will initialize the contract and assign a value to the **message str
         Ok(host.state().message.clone())
     }
 
-These helper methods provide the ability to modify and view the message stored in the state.
-
-Define the Contract Schema
---------------------------
-
-For our contract to be properly defined on the blockchain, we recommend creating a schema. Create a file named ``schema.json`` in your project root, it will specify the parameter and error types for the contract methods.:
-
-.. code-block:: json
-
-    {
-        "onReceivingCIS2": {
-            "parameter": {
-                "token_id": "TokenIdVec",
-                "amount": "TokenAmountU256",
-                "from": "Address",
-                "data": "bytes"
-            }
-        },
-        "set_message": {
-            "parameter": "String",
-            "error": {
-                "type": "enum",
-                "variants": {
-                    "ParseParams": {
-                        "type": "unit"
-                    },
-                    "InvokeContractError": {
-                        "type": "unit"
-                    }
-                }
-            }
-        },
-        "view": {
-            "returnValue": "String",
-            "error": {
-                "type": "enum",
-                "variants": {
-                    "ParseParams": {
-                        "type": "unit"
-                    },
-                    "InvokeContractError": {
-                        "type": "unit"
-                    }
-                }
-            }
-        }
-    }
+This method provides the ability to view the latest forwarding message stored in the state.
 
 Build and Deploy
 ----------------
@@ -242,7 +182,8 @@ After building successfully, a module file will be created. Next, let's deploy t
 
     $ concordium-client module deploy tokenForwarder.module.wasm.v1 \
     --sender <your-account-address> \
-    --grpc-port 20000 --grpc-ip node.testnet.concordium.com \
+    --secure \
+    --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
 
 After successful deployment, you'll receive a module reference in the following format:
 
@@ -255,11 +196,12 @@ Save this reference - you'll need it for contract initialization and future refe
 
 .. code-block:: console
 
-    $ concordium-client --grpc-port 20000 --grpc-ip node.testnet.concordium.com \
+    $ concordium-client --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
     contract init <saved_reference> \
     --sender <your-account-address> \
     --contract token_forwarder \
     --energy <max-energy-allowed> \
+    --secure \
 
 If successful, you will receive a message with the contract's index and subindex, in the following format:
 
@@ -275,7 +217,7 @@ Testing the functionality
 
 We will test our token forwarder on the testnet. We'll need some **CIS-2 tokens** (like wCCD) and we'll send them to the **token forwarder**, using the `wCCD <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-wccd/src/lib.rs>`_ contract as an entrypoint, such that the transfer will be sent from contract to contract.
 
-Before continuing, you need to use the `wCCD dApp <https://wccd.testnet.concordium.com/>`_ to wrap your **CCD**.
+You can acquire some wCCD tokens on the `wCCD dApp <https://wccd.testnet.concordium.com/>`_ by wrapping some of your **CCD**.
 
 Here's the command, we are using the **transfer** function of the **wCCD smart contract** as an entrypoint:
 
@@ -286,7 +228,8 @@ Here's the command, we are using the **transfer** function of the **wCCD smart c
     --parameter-json transfer.json \
     --sender <your-account-address> \
     --energy <max-energy-allowed> \
-    --grpc-port 20000 --grpc-ip node.testnet.concordium.com \
+    --secure \
+    --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
 
 .. dropdown:: Input parameters for the ``transfer`` function (click here)
 
@@ -372,7 +315,7 @@ Here's the command, we are using the **transfer** function of the **wCCD smart c
             }
         ]
 
-The index of the **wCCD contract** is **2059**.
+The index of the **wCCD contract** is **2059** on testnet.
 The transfer process executes in the following steps:
 
 1. Tokens are transfered from your account to the wCCD contract instance

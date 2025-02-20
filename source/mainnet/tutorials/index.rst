@@ -45,6 +45,7 @@ Advanced Applications
    Learn how to create decentralized solutions for voting and NFT trading.
 
    * :ref:`PiggyBank <piggy-bank>` - Create a contract that accepts CCD deposits and implements owner-only withdrawal
+   * :ref:`Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>` - Learn how to handle tokens received by a smart contract
    * :ref:`Voting dApp <voting-dapp>` - Build a complete voting system
    * :ref:`Low Code NFT Marketplace <low-code-nft-mp-intro>` - Create a marketplace for trading NFTs
    * :ref:`eSealing <eSealing>` - Implement document sealing with the |bw| and timestamp verification
@@ -72,9 +73,9 @@ Additional Resources
    :caption: Smart Contract Tutorials
 
    setup-env
-   Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
+   Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
    wCCD <./wCCD/index>
    voting/index
    nft-minting/index
