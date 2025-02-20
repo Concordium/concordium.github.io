@@ -164,6 +164,8 @@ This method will initialize the contract and assign a value to the **message str
 
 5. Add a view helper function to read the message stored in the state:
 
+.. code-block:: rust
+
     #[receive(
         contract = "token_forwarder",
         name = "view",
@@ -215,7 +217,6 @@ If successful, you will receive a message with the contract's index and subindex
 
 .. code-block:: json
     :force:
-
 
     Contract successfully initialized with address: {"index":10710,"subindex":0}
 
