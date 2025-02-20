@@ -180,10 +180,10 @@ After building successfully, a module file will be created. Next, let's deploy t
 
 .. code-block:: console
 
-    $ concordium-client module deploy tokenForwarder.module.wasm.v1 \
+    $ concordium-client --secure --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
+    module deploy tokenForwarder.module.wasm.v1 \
     --sender <your-account-address> \
-    --secure \
-    --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
+    --energy <max-energy-allowed>
 
 After successful deployment, you'll receive a module reference in the following format:
 
@@ -196,12 +196,11 @@ Save this reference - you'll need it for contract initialization and future refe
 
 .. code-block:: console
 
-    $ concordium-client --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
+    $ concordium-client --secure --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
     contract init <saved_reference> \
     --sender <your-account-address> \
     --contract token_forwarder \
-    --energy <max-energy-allowed> \
-    --secure \
+    --energy <max-energy-allowed>
 
 If successful, you will receive a message with the contract's index and subindex, in the following format:
 
@@ -223,13 +222,12 @@ Here's the command, we are using the **transfer** function of the **wCCD smart c
 
 .. code-block:: console
 
-    $ concordium-client contract update <wCCD-contract-index> \
+    $ concordium-client --secure --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
+    contract update <wCCD-contract-index> \
     --entrypoint "transfer" \
     --parameter-json transfer.json \
     --sender <your-account-address> \
     --energy <max-energy-allowed> \
-    --secure \
-    --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com \
 
 .. dropdown:: Input parameters for the ``transfer`` function (click here)
 
