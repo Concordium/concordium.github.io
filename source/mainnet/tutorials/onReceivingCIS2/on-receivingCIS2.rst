@@ -118,40 +118,49 @@ This method will initialize the contract and assign a value to the **message str
 .. code-block:: rust
 
     #[receive(
-            contract = "token_forwarder",
-            name = "onReceivingCIS2",
-            parameter = "OnReceivingCis2Params<ContractTokenId, ContractTokenAmount>",
-            error = "ContractError"
-        )]
-        fn contract_receive_cis2(ctx: &ReceiveContext, host: &Host<State>) -> Result<(), ContractError> {
-            // Get information about received tokens
-            let params: OnReceivingCis2Params<ContractTokenId, ContractTokenAmount> = ctx.parameter_cursor().get()?;
+    contract = "token_forwarder",
+    name = "onReceivingCIS2",
+    parameter = "OnReceivingCis2Params<ContractTokenId, ContractTokenAmount>",
+    error = "ContractError",
+    mutable
+    )]
+    fn contract_receive_cis2(ctx: &ReceiveContext, host: &mut Host<State>) -> Result<(), ContractError> {
+        // Get information about received tokens
+        let params: OnReceivingCis2Params<ContractTokenId, ContractTokenAmount> = ctx.parameter_cursor().get()?;
+        
+        // Get the token contract that sent the tokens
+        let token_contract = match ctx.sender() {
+            Address::Contract(contract) => contract,
+            _ => return Ok(()), // Non-contract senders are ignored
+        };
 
-            // Get the token contract that sent the tokens
-            let token_contract = match ctx.sender() {
-                Address::Contract(contract) => contract,
-                _ => return Ok(()), // Non-contract senders are ignored
-            };
+        // Create transfer to forward tokens to contract owner
+        let transfer = Transfer {
+            token_id: params.token_id.clone(),
+            amount: params.amount,
+            from: Address::Contract(ctx.self_address()),
+            to: Receiver::from_account(ctx.owner()),
+            data: AdditionalData::empty(),
+        };
 
-            // Create transfer to forward tokens to contract owner
-            let transfer = Transfer {
-                token_id: params.token_id,
-                amount: params.amount,
-                from: Address::Contract(ctx.self_address()),
-                to: Receiver::from_account(ctx.owner()),
-                data: AdditionalData::empty(),
-            };
+        // Update the message with forwarding information
+        let new_message = format!(
+            "Forwarded tokenId {:?} from contract with index {} to owner",
+            params.token_id,
+            token_contract.index
+        );
+        host.state_mut().message = new_message;
 
-            // Execute the transfer
-            host.invoke_contract_read_only(
-                &token_contract,
-                &TransferParams::from(vec![transfer]),
-                "transfer",
-                Amount::zero(),
-            )?;
+        // Execute the transfer
+        host.invoke_contract_read_only(
+            &token_contract,
+            &TransferParams::from(vec![transfer]),
+            EntrypointName::new_unchecked("transfer"),
+            Amount::zero(),
+        )?;
 
-            Ok(())
-        }
+        Ok(())
+    }
 
 5. Add a view helper function to read the message stored in the state:
 
