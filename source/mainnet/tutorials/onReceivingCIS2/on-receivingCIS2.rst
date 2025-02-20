@@ -127,7 +127,7 @@ This method will initialize the contract and assign a value to the **message str
     fn contract_receive_cis2(ctx: &ReceiveContext, host: &mut Host<State>) -> Result<(), ContractError> {
         // Get information about received tokens
         let params: OnReceivingCis2Params<ContractTokenId, ContractTokenAmount> = ctx.parameter_cursor().get()?;
-        
+
         // Get the token contract that sent the tokens
         let token_contract = match ctx.sender() {
             Address::Contract(contract) => contract,
