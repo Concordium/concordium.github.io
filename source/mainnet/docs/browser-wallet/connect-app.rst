@@ -41,22 +41,22 @@ Then, the dApp can initiate a request that you can confirm from within the walle
 
    #. A connection request window opens in your wallet. Review the details and click **Connect** to approve acess for the dApp.
 
-   .. image:: ../images/browser-wallet/new/connect_dApp.png
-      :alt: window with a site and Connect text
-      :width: 50%
+      .. image:: ../images/browser-wallet/new/connect_dApp.png
+         :alt: window with a site and Connect text
+         :width: 50%
 
 
-   To view or manage the connection status of your account, click **See list** under *Connected accounts* on the account card.
+      To view or manage the connection status of your account, click **See list** under *Connected accounts* on the account card.
 
-   .. image:: ../images/browser-wallet/new/see_list.png
-      :width: 50%
-      :alt: account card
+      .. image:: ../images/browser-wallet/new/see_list.png
+         :width: 50%
+         :alt: account card
 
-   To disconnect a dApp, find it in the *Connected sites* list and click **Disconnect**.
+      To disconnect a dApp, find it in the *Connected sites* list and click **Disconnect**.
 
-   .. image:: ../images/browser-wallet/new/disconnect_dApp.png
-      :width: 50%
-      :alt: account card
+      .. image:: ../images/browser-wallet/new/disconnect_dApp.png
+         :width: 50%
+         :alt: account card
 
 .. note::
 
