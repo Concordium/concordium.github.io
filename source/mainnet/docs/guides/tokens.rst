@@ -130,58 +130,47 @@ You can add, inspect, and send tokens in |cryptox| and |bw|.
 
     .. dropdown:: Inspect tokens
 
-        Click the tab for the type of token that you want to inspect (Fungible or Collectibles). Then click on the token to see details for that token.
+        Click on the token you want to inspect.
 
-        You can click **Show raw metadata** to see the raw metadata for the token. You can also click **Don't show token in wallet** if you don't want the token to appear in your wallet.
+        You can click **Show raw metadata** to see the raw metadata for the token. You can also click **Hide token from account** if you don't want the token to appear in your wallet.
 
     .. dropdown:: Send tokens
 
-        #. Click Send |send|.
+        #. Click **Send** and select the token type in the dropdown list, or click on the token type and then, click **Send**.
 
-        #. Click the field for what to send.
-
-            .. image:: ../images/browser-wallet/send-tokens-select.png
-                :width: 25%
-
-            .. image:: ../images/browser-wallet/send-tokens-select2.png
-                :width: 25%
-
-        #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token. To find the number of decimal places, you can click on the token as described in Inspect tokens.
+        #. Enter the amount you want to send. The number of decimal places depends on the token and is specified for each token when clicking on it.
 
         #. Add the receiver address.
 
         #. Click **Continue**.
 
-        #. Review the transaction. When satisfied, click **Send**.
+           .. image:: ../images/browser-wallet/new/send_tokens1.png
+               :width: 50%
 
-        #. Click **Finish**.
+
+        #. Review the transaction. When satisfied, click **Send funds**.
+
+        #. The success screen shows the sent amount. You can now view transaction details or return to the account.
+
+           .. image:: ../images/browser-wallet/new/send_tokens2.png
+               :width: 50%
 
     .. dropdown:: Remove tokens
 
-        If you do not want the token to appear in your wallet you can remove it. This does not change the ownership of the token.
+        If you do not want the token to appear in your wallet, you can remove it. This does not change the ownership of the token.
 
         There are two ways to remove tokens.
 
-        1. Click on the tab for the token type and then select the token you want to remove. Click **Don't show token in wallet**.
-
-        2. Click the **Manage** tab. Search for the token by the Contract index. Once the tokens on the contract are loaded, the tokens that are in your account have a checkmark next to them. Remove the check and click **Update tokens**.
+        1. Click on the token. Then, click **Hide token from account**.
+        2. Click **Manage token list** at the bottom of the screen. Then, click **Hide token** for the token type you want to hide.
 
 
 .. Warning::
 
     If you had previously configured your wallet to be able to view selected tokens and you recover your wallet, the tokens will not be recovered. You must add the tokens again to view them in your wallet.
 
-.. |send-bw| image:: ../images/browser-wallet/send-ccd.png
-             :alt: paper airplane
-             :width: 50px
 
-.. |token-bw| image:: ../images/browser-wallet/tokens.png
-             :alt: coins
-             :width: 50px
 
-.. |token-mw| image:: ../images/mobile-wallet-gen2/tokens.png
-             :alt: coins
-             :width: 150px
 
 .. |send| image:: ../images/send.png
          :alt: Paper airplane
