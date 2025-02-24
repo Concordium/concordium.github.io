@@ -37,21 +37,26 @@ Then, the dApp can initiate a request that you can confirm from within the walle
 
    To initiate a request to connect to a dApp within the |bw|:
 
-   #. In the browser navigate to your dApp's frontend interface.
+   #. In the browser, navigate to your dApp's frontend interface and make a connection request to your wallet.
 
-   #. Go to the **Accounts** page.
+   #. A connection request window opens in your wallet. Review the details and click **Connect** to approve acess for the dApp.
 
-   #. Click |gear|.
+      .. image:: ../images/browser-wallet/new/connect_dApp.png
+         :alt: window with a site and Connect text
+         :width: 50%
 
-   #. Click **Connected Sites**.
 
-   #. Your site appears in the list. Click **Connect**.
+      To view or manage the connection status of your account, click **See list** under *Connected accounts* on the account card.
 
-      .. image:: ../images/browser-wallet/connect-site.png
-               :width: 50%
-               :alt: window with a site and Connect text
+      .. image:: ../images/browser-wallet/new/see_list.png
+         :width: 50%
+         :alt: account card
 
-   The status of the account changes to *Connected*. If you need to disconnect, click **Disconnect** to disconnect the account from the dApp.
+      To disconnect a dApp, find it in the *Connected sites* list and click **Disconnect**.
+
+      .. image:: ../images/browser-wallet/new/disconnect_dApp.png
+         :width: 50%
+         :alt: account card
 
 .. note::
 
