@@ -97,92 +97,80 @@ You can add, inspect, and send tokens in |cryptox| and |bw|.
 
 .. dropdown:: |bw|
 
-    To access tokens and token transactions, click Tokens |token-bw|. Tabs appear for tokens.
+    Select the account that you want to manage tokens for in the dropdown menu.
 
     .. dropdown:: Add tokens
 
-        #. Click **Manage**.
+        #. Click **Manage token list** at the bottom of the screen.
 
-            .. image:: ../images/browser-wallet/manage-tokens.png
+        #. Click the **+** at the Manage token list screen.
+
+           .. image:: ../images/browser-wallet/new/manage_token_list.png
                 :width: 50%
 
-        #. Enter a smart contract address on which to look for tokens. Click **Look for tokens**. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
+        #. Enter a smart contract address on which to look for tokens. If you get an error this means that the smart contract doesn’t exist, the smart contract doesn’t live up to the CIS-2 standard, or the smart contract doesn’t contain any tokens.
 
-            .. image:: ../images/browser-wallet/add-token-contract.png
+        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click the back arrow to return to the list to select tokens. Click **Add selected tokens** once you have made your selection(s).
+
+           .. image:: ../images/browser-wallet/new/add_token2.png
                 :width: 50%
 
-        #. Select the token(s) you want to add. You can click on a token to see more information about it and then click **X** to return to the list to select tokens. You can also search by token ID at the top of the screen. Click **Update tokens** once you have made your selection(s).
+        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case the screen below appears when your wallet is connected and the service suggests the tokens to be added. Click **Finish** to add the selected tokens to your wallet.
 
-            .. image:: ../images/browser-wallet/select-tokens.png
-                :width: 50%
-
-        If you have purchased tokens on a marketplace, it can suggest tokens to be added directly without going through the steps above. In this case the screen below appears when your wallet is connected and the service suggests the tokens to be added. Click **Add selected** to add the selected tokens to your wallet.
-
-            .. image:: ../images/browser-wallet/add-tokens.png
-                :width: 50%
+        .. image:: ../images/browser-wallet/new/add_tokens.png
+            :width: 50%
 
         .. Note::
 
             You can add NFTs that are not owned by your account to your wallet. This does not mean that you have ownership of the NFT.
 
-        Once the tokens are added you can see them on the relevant tab.
+        Once the tokens are added you can see them on the account.
 
         An easy way to see how this works is to use the `wCCD example dApp hosted by Concordium <https://wccd.testnet.concordium.com/>`_. Connect it to your |bw| and convert some CCD to wrapped CCD. When you do this, you get a smart contract index. You can then use this smart contract index to search for tokens on the contract and add them to your |bw|.
 
     .. dropdown:: Inspect tokens
 
-        Click the tab for the type of token that you want to inspect (Fungible or Collectibles). Then click on the token to see details for that token.
+        Click on the token you want to inspect.
 
-        You can click **Show raw metadata** to see the raw metadata for the token. You can also click **Don't show token in wallet** if you don't want the token to appear in your wallet.
+        You can click **Show raw metadata** to see the raw metadata for the token. You can also click **Hide token from account** if you don't want the token to appear in your wallet.
 
     .. dropdown:: Send tokens
 
-        #. Click Send |send|.
+        #. Click **Send** and select the token type in the dropdown list, or click on the token type and then, click **Send**.
 
-        #. Click the field for what to send.
-
-            .. image:: ../images/browser-wallet/send-tokens-select.png
-                :width: 25%
-
-            .. image:: ../images/browser-wallet/send-tokens-select2.png
-                :width: 25%
-
-        #. In the amount field enter the amount of the token you want to send. The number of decimal places depends on the token. To find the number of decimal places, you can click on the token as described in Inspect tokens.
+        #. Enter the amount you want to send. The number of decimal places depends on the token and is specified for each token when clicking on it.
 
         #. Add the receiver address.
 
         #. Click **Continue**.
 
-        #. Review the transaction. When satisfied, click **Send**.
+           .. image:: ../images/browser-wallet/new/send_tokens1.png
+               :width: 50%
 
-        #. Click **Finish**.
+
+        #. Review the transaction. When satisfied, click **Send funds**.
+
+        #. The success screen shows the sent amount. You can now view transaction details or return to the account.
+
+           .. image:: ../images/browser-wallet/new/send_tokens2.png
+               :width: 50%
 
     .. dropdown:: Remove tokens
 
-        If you do not want the token to appear in your wallet you can remove it. This does not change the ownership of the token.
+        If you do not want the token to appear in your wallet, you can remove it. This does not change the ownership of the token.
 
         There are two ways to remove tokens.
 
-        1. Click on the tab for the token type and then select the token you want to remove. Click **Don't show token in wallet**.
-
-        2. Click the **Manage** tab. Search for the token by the Contract index. Once the tokens on the contract are loaded, the tokens that are in your account have a checkmark next to them. Remove the check and click **Update tokens**.
+        1. Click on the token. Then, click **Hide token from account**.
+        2. Click **Manage token list** at the bottom of the screen. Then, click **Hide token** for the token type you want to hide.
 
 
 .. Warning::
 
     If you had previously configured your wallet to be able to view selected tokens and you recover your wallet, the tokens will not be recovered. You must add the tokens again to view them in your wallet.
 
-.. |send-bw| image:: ../images/browser-wallet/send-ccd.png
-             :alt: paper airplane
-             :width: 50px
 
-.. |token-bw| image:: ../images/browser-wallet/tokens.png
-             :alt: coins
-             :width: 50px
 
-.. |token-mw| image:: ../images/mobile-wallet-gen2/tokens.png
-             :alt: coins
-             :width: 150px
 
 .. |send| image:: ../images/send.png
          :alt: Paper airplane

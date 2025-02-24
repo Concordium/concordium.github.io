@@ -25,15 +25,13 @@ If you need to share your account address with someone, you can find the address
 
 .. dropdown:: |bw|
 
-   #. Go to the **Accounts** page.
-
-   #. On the account you want to find the address to click |receive|.
+   #. Select your account in the dropdown menu and click **Receive**.
 
    #. Share your address:
 
-       - You can let someone scan your QR code if they have the |mw-gen1| or |mw-gen2| installed.
+      - You can let someone scan your QR code if they have the |cryptox| installed.
 
-       - You can click **COPY** to copy the address and then paste it somewhere of your own choosing.
+      - You can click **COPY** to copy the address and then paste it somewhere of your own choosing.
 
 
 .. |receive| image:: ../images/receive.png
