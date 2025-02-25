@@ -39,7 +39,7 @@ The transaction energy cost is calculated as::
 
 The (header cost) depends on the number of signatures on the transaction (this is typically 1, except in the case of multi-sig accounts) and the size of the transaction::
 
-    (header cost) = 100 × (number of signatures) + 60 + (payload size in bytes)
+    (header cost) = 100 x (number of signatures) + 60 + (payload size in bytes)
 
 The constant 60 here is the size in bytes of the transaction header, which is fixed.
 
@@ -56,23 +56,23 @@ The following table shows the details for different payload types. The total cos
 | Unshield balance       | variable              | 14850                 | 15010 + (payload      |
 | (transfer to public)   |                       |                       | size)                 |
 +------------------------+-----------------------+-----------------------+-----------------------+
-| Transfer with          | 34 + 16 × (number     | 364 × (number         | 194 + 380 × (number   |
+| Transfer with          | 34 + 16 x (number     | 364 x (number         | 194 + 380 x (number   |
 | schedule               | of releases)          | of releases)          | of releases)          |
 +------------------------+-----------------------+-----------------------+-----------------------+
-| Transfer with          | 36 + 16 × (number     | 364 × (number         | 196 + 380 × (number   |
+| Transfer with          | 36 + 16 x (number     | 364 x (number         | 196 + 380 x (number   |
 | schedule and memo      | of releases)          | of releases)          | of releases) + (memo  |
 |                        |                       |                       | length)               |
 +------------------------+-----------------------+-----------------------+-----------------------+
 | Register data          | 3 + (data length)     | 300                   | 463 + (data length)   |
 +------------------------+-----------------------+-----------------------+-----------------------+
-| Deploy module          | 9 + (module size in   | 0.1 × (module         | 169 + 1.1 × (module   |
+| Deploy module          | 9 + (module size in   | 0.1 x (module         | 169 + 1.1 x (module   |
 |                        | bytes)                | size in bytes)        | size in bytes)        |
 +------------------------+-----------------------+-----------------------+-----------------------+
-| Initialize smart       | 45 + (init name       | 500 + 0.002 ×         | 705 + (init name      |
+| Initialize smart       | 45 + (init name       | 500 + 0.002 x         | 705 + (init name      |
 | contract (successful)  | length) + (parameter  | (module size in       | length) + (parameter  |
-|                        | length)               | bytes) + 0.001 ×      | length) + 0.002 ×     |
+|                        | length)               | bytes) + 0.001 x      | length) + 0.002 x     |
 |                        |                       | (interpreter          | (module size in       |
-|                        |                       | energy used) +        | bytes) + 0.001 ×      |
+|                        |                       | energy used) +        | bytes) + 0.001 x      |
 |                        |                       | (state size in        | (interpreter energy   |
 |                        |                       | bytes)                | used) + (state size   |
 |                        |                       |                       | in bytes)             |
@@ -100,18 +100,18 @@ The following table shows the details for different payload types. The total cos
 | (all fields, validator |                       |                       |                       |
 | pool)                  |                       |                       |                       |
 +------------------------+-----------------------+-----------------------+-----------------------+
-| Update credential      | 51 + 34 × (new        | 500 × (number         | 211 + 500 × (number   |
+| Update credential      | 51 + 34 x (new        | 500 x (number         | 211 + 500 x (number   |
 | keys                   | number of keys)       | of credentials) +     | of credentials) + 134 |
-|                        |                       | 100 × (new            | × (new number of      |
+|                        |                       | 100 x (new            | x (new number of      |
 |                        |                       | number of keys)       | keys)                 |
 +------------------------+-----------------------+-----------------------+-----------------------+
-| Update credentials     | variable              | 500 + 500 ×           | variable              |
+| Update credentials     | variable              | 500 + 500 x           | variable              |
 |                        |                       | (number of            |                       |
 |                        |                       | existing              |                       |
 |                        |                       | credentials) +        |                       |
 |                        |                       | [for each new         |                       |
 |                        |                       | credential:           |                       |
-|                        |                       | 54000 + 100 ×         |                       |
+|                        |                       | 54000 + 100 x         |                       |
 |                        |                       | number of keys]       |                       |
 +------------------------+-----------------------+-----------------------+-----------------------+
 
