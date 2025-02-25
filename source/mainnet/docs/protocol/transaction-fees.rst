@@ -39,7 +39,7 @@ The transaction energy cost is calculated as::
 
 The (header cost) depends on the number of signatures on the transaction (this is typically 1, except in the case of multi-sig accounts) and the size of the transaction::
 
-	(header cost) = 100 × (number of signatures) + 60 + (payload size in bytes)
+    (header cost) = 100 × (number of signatures) + 60 + (payload size in bytes)
 
 The constant 60 here is the size in bytes of the transaction header, which is fixed.
 
