@@ -9,10 +9,12 @@ Blockchain users pay a **transaction fee** (also referred to as a payment of :te
 
 Stable transaction costs
 ========================
+
 Concordium combines the freely fluctuating value of the CCD with a transaction cost that remains stable versus EUR. This is achieved by fixing the price of a transaction in EUR, then multiplying this by the current CCD/EUR price. So if the value of the CCD goes up, a user needs fewer CCD to pay for transactions, thereby maintaining a stable cost in EUR terms. The technical implementation of the above principle is described in the following.
 
 Computing transaction costs
 ===========================
+
 ENERGY (NRG for short) is the internal unit of measurement for transaction costs. The transaction cost can be broken down into the header cost, which depends on the size of the transaction and number of signatures involved, and the payload cost, which depends on the type of transaction and the resource cost of executing it. Details of how transaction energy costs are calculated are given in :ref:`transaction-costs-details` below.
 
 The calculated ENERGY is converted into a CCD cost by applying a fixed EUR/ENERGY conversion rate and a variable CCD/EUR exchange rate which is adjusted dynamically to ensure that the cost remains stable when measured in EUR. Thus, the GAS payment in CCD terms is calculated by applying the following calculation:
@@ -114,6 +116,5 @@ The following table shows the details for different payload types. The total cos
 +------------------------+-----------------------+-----------------------+-----------------------+
 
 The payload cost for an update smart contract transaction is complex. The cost includes loading contract modules, loading the contract state, storing any updated state, and the interpreter energy cost. As smart contracts may invoke other smart contracts, there are costs for each of these similar to if they were invoked directly by a transaction. Furthermore, invoking host functions may also come with specific costs.
-
 
 
