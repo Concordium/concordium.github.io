@@ -61,7 +61,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
 .. Note::
 
    Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( < ``4.1.0``). Update cargo-concordium if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
-   
+
    .. code-block:: console
 
       $ cargo concordium update
