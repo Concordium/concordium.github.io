@@ -77,7 +77,9 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
-   Network <protocol/network>
+   Validation <protocol/concepts-baker>
+   Delegation <protocol/concepts-delegation>
+
 
 .. toctree::
    :caption: Smart Contracts
