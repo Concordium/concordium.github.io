@@ -64,6 +64,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       The basic unit of the blockchain, which is produced by a :term:`validator`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a :term:`slot time<slot>` that records when it was produced. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.
 
+   Block reward commission
+
+      Sets the percentage of block rewards a validator retains when its pool successfully produces a block. Lower rates may attract more delegators, while higher rates increase your profit share from each block.
+
    Branch
 
       A chain of blocks that has split from the main chain. All branches have the potential to become the main chain. The Chain selection rule determines which branch is the best chain.
@@ -450,6 +454,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Transaction
 
       An atomic operation that defines a change of state in the ledger, such as transferring funds from one account to another. A transaction typically has a sender account and a :term:`transaction sequence number`, and incurs a fee. The sender account must sign the transaction to authorize it. (The exception to this is a credential deployment transaction that creates a new account, which does not have a sender account.)
+
+   Transaction fee commission
+
+      Determines the percentage of transaction fees a validator keep when delegators' stakes contribute to validating transactions. Lower percentages can attract more delegators but reduce the validator's earnings per transaction.
 
    Transfer Memo
 
