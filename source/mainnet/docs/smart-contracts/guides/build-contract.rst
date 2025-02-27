@@ -34,9 +34,9 @@ machine.
 
    .. code-block:: console
 
-      $ cargo concordium update
+      $ cargo install cargo-concordium
       $ cargo concordium --version
-      $ cargo concordium 4.1.0
+      $ cargo-concordium 4.1.0
 
    The minimum supported rust version is currently version ``1.73``
 
