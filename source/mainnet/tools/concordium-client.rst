@@ -15,11 +15,9 @@ Concordium Client
 The Concordium distribution ships with a CLI tool named ``concordium-client``.
 
 By default ``concordium-client`` performs its queries and sends transactions
-through a :ref:`local node<run-a-node>`. If the node runs on a different machine
-or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used
-to set the `IP address`_ and `port number`_ where the node is accessible. These
-flags are supported by all ``concordium-client`` commands. Note that as of version
-5.1.1, the `port number`_ must be the port where the GRPC V2 interface is enabled, in contrast to previous versions which required the port number of the V1 API of the Concordium node.
+through a :ref:`local node<run-a-node>` on ``127.0.0.1`` and port ``20000`` for mainnet. If the node runs on a different machine or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used
+to set the `IP address`_ and `port number`_ where the node is accessible. These flags are supported by all ``concordium-client`` commands. Note that as of version
+5.1.1, the `port number`_ must be the port where the GRPC V2 interface is enabled, in contrast to previous versions which required the port number of the V1 API of the Concordium node. 
 
 .. note::
 
@@ -41,24 +39,48 @@ Run Concordium Client
 
 Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
 
-On MacOS, you can run the Concordium Client from the command line by typing ``concordium-client``, since the installation adds the client to the PATH.
+.. tab-set::
 
-On Linux, the binary file includes the version and build number, so you can run it by typing ``./concordium-client_6.3.0-1`` from the directory where the file is located. Otherwise, you have to specify the full path to the executable file, or ensure that it is in a directory that is on the PATH. Note that after downloading the file, you may need to make it executable by running ``chmod +x concordium-client_6.3.0-1`` before you can run it.
+   .. tab-item:: macOS
 
-On Windows, to run Concordium Client you have to specify the full path to the executable file (unless you are running from the same directory). For example, if you extracted ``concordium-client_6.3.0-1.zip`` to ``C:\Users\User\Downloads\concordium-client_6.3.0-1``, then you can run the client by typing ``C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe``.
-When running commands for the Concordium Client in the terminal, replace ``concordium-client`` with the full path to the executable file as in the following example:
+      On MacOS, you can run the Concordium Client from the command line by typing ``concordium-client``, 
+      since the installation adds the client to the PATH.
 
-.. code-block:: console
+   .. tab-item:: Linux
 
-   C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
+      On Linux, the binary file includes the version and build number, so you can run it by typing ``./concordium-client_6.3.0-1`` from the directory where the file is located. Otherwise, you have to specify the full path to the executable file, 
+      or ensure that it is in a directory that is on the PATH. 
+      Note that after downloading the file, you may need to make it executable by running 
+      ``chmod +x concordium-client_6.3.0-1`` before you can run it.
 
-.. Note::
+   .. tab-item:: Windows
 
-   To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.export is saved. If not, you have to specify the full path to the file, for example:
+      On Windows, to run Concordium Client you have to specify the full path to the executable file 
+      (unless you are running from the same directory). 
+      For example, if you extracted ``concordium-client_6.3.0-1.zip`` to 
+      ``C:\Users\User\Downloads\concordium-client_6.3.0-1``, then you can run the client by typing:
 
-   .. code-block:: console
+      .. code-block:: console
 
-      C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe
+
+            When running commands for the Concordium Client in the terminal, replace 
+      ``concordium-client`` with the full path to the executable file as in the following example:
+
+      .. code-block:: console
+
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
+
+      *If you add the directory where the concordium-client.exe executable file is located to the system variables, you can skip the full path when running concordium-client.exe*
+
+      .. Note::
+
+         To import the backup file as shown in the example, you must be in the same directory where 
+         the ``concordium-backup.export`` is saved. If not, you have to specify the full path to the file, for example:
+
+         .. code-block:: console
+
+            C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
 
 Commands and help
 =================
@@ -320,18 +342,10 @@ existing names.
 
    When importing keys that have been exported from |bw|, the ``--name`` option must be provided to name the account.
 
-Show account aliases
+Account aliases
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: console
-
-   $concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
-
-This generates the output:
-
-.. code-block:: console
-
-   The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.
+A detailed description and explanation of the term alias is available here :ref:`Account aliases<account-aliases>`
 
 Shell completion
 ================
