@@ -69,44 +69,35 @@ When you change the stake it can influence your :term:`chance of being selected 
 
 .. dropdown:: |bw|
 
-    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
+    #. In the dropdown list, select the account for which you want to update the validation options and click **Earn**.
 
-       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+    #. On the next screen, click **Update**.
+
+       .. image:: ../images/browser-wallet/new/update_validation1.png
            :width: 40%
 
-    #. You see the current validator setup. Click **Update**.
+    #. On the next screen, click **Update validation stake**.
 
-       .. image:: ../images/browser-wallet/update-baker-options.png
+       .. image:: ../images/browser-wallet/new/update_validation2.png
             :width: 40%
-            :alt: screen showing current validator setup and buttons to stop or update
+            :alt: buttons for update validaton options
 
-    #. Click **Update validator stake**. Review the information about updating validator stake and click **Continue**.
+    #. You can now change the staked amount by updating the *Amount* field or change your restaking preferences by toggling the 'Restake rewards' option. When the *Restake rewards* toggle is enabled, your validation rewards will automatically be added to your validation amount, increasing your stake over time. When the *Restake rewards* toggle is disabled, your rewards will instead be deposited to your disposable balance at each pay day. When you're satisfied with your staking configuration, tap the **Continue** to proceed with your updates.
 
-       .. image:: ../images/browser-wallet/update-baker-actions.png
-            :width: 40%
-            :alt: screen showing actions to update validator
-
-    #. You can change the restake preference if desired. Click **Continue**.
-
-       .. image:: ../images/browser-wallet/update-baker-restake-pref.png
+       .. image:: ../images/browser-wallet/new/update_validation3.png
            :width: 40%
-           :alt: screen showing buttons to set restake preference
+           :alt: screen showing firld and toggle to set preferences
 
-    #. You can change the amount staked if desired. Click **Continue**.
 
-       .. image:: ../images/browser-wallet/update-baker-stake.png
-           :width: 40%
-           :alt: screen showing text box to update staked amount
+    #. Review the transaction details. Click **Submit validation** to submit the transaction. If you need to make any changes, you can go back to the previous step.
 
-    #. Review the transaction details. Click **Send** to submit the transaction.
-
-       .. image:: ../images/browser-wallet/update-baker-stake-review.png
+       .. image:: ../images/browser-wallet/new/update_validation4.png
            :width: 40%
            :alt: screen showing transaction receipt
 
-    #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
+    #. The wallet displays a confirmation screen with a green checkmark, indicating your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.
 
-       .. image:: ../images/browser-wallet/update-baker-stake-finalize.png
+       .. image:: ../images/browser-wallet/new/update_validation5.png
            :width: 40%
            :alt: screen showing transaction receipt
 
@@ -273,54 +264,46 @@ Update pool settings
 
 .. dropdown:: |bw|
 
-    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
+    #. In the dropdown list, select the account for which you want to update the validation options and click **Earn**.
 
-       .. image:: ../images/browser-wallet/setup-baking-delegation.png
+    #. On the next screen, click **Update**.
+
+       .. image:: ../images/browser-wallet/new/update_validation1.png
            :width: 40%
 
-    #. You see the current validator setup. Click **Update**.
+    #. On the next screen, click **Update pool settings**.
 
-       .. image:: ../images/browser-wallet/update-baker-options.png
+       .. image:: ../images/browser-wallet/new/update_validation2.png
             :width: 40%
-            :alt: screen showing current validator setup and buttons to stop or update
+            :alt: screen showing validator update options
 
-    #. Click **Update pool settings**. Review the information about updating staking pool settings and click **Continue**.
+    #. On this screen, you can toggle whether your validator is open for delegation. When enabled, other users can delegate their tokens to your validator, increasing your total stake and improving your chances of    producing blocks. Rewards earned will be distributed between you and your delegators at each pay day. If you prefer to validate with only your own stake, you can disable this option. Once you've made your   selection, tap **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/update-baker-actions.png
+       .. image:: ../images/browser-wallet/new/update_pool_settings1.png
             :width: 40%
-            :alt: screen showing actions to update validator
+            :alt: screen showing options pool
 
-    #. You can change the staking pool status, if desired. Click **Continue**. The options are:
+    #. On the Commissions screen, you can set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click Continue to proceed.
 
-       - Open pool: open a pool for a previously closed validator
-       - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the validator's responsibility to monitor the stake to make pool management decisions.**
-       - Close pool: close a pool permanently.
-
-       .. image:: ../images/browser-wallet/update-baker-pool-status.png
-            :width: 40%
-            :alt: screen showing actions to update validator pool status
-
-    #. You can use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. Click **Continue**.
-
-       .. image:: ../images/browser-wallet/update-baker-pool-comms.png
+       .. image:: ../images/browser-wallet/new/update_pool_settings2.png
            :width: 40%
            :alt: screen showing sliders and text boxes to adjust commissions
 
     #. Update the staking pool metadata URL, if desired. Click **Continue**.
 
-       .. image:: ../images/browser-wallet/update-baker-pool-url.png
+       .. image:: ../images/browser-wallet/new/update_pool_settings3.png
             :width: 40%
-            :alt: screen showing text box to add or update staking pool URL
+            :alt: screen showing option for adding metadata
 
-    #. Review the transaction details. Click **Send** to submit the transaction.
+    #. Review the transaction details. When you’re satisfied with the configuration, scroll down and click **Submit validation** to finalize the transaction.
 
-       .. image:: ../images/browser-wallet/update-baker-pool-review.png
+       .. image:: ../images/browser-wallet/new/update_pool_settings4.png
            :width: 40%
            :alt: screen showing transaction receipt
 
-    #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-       .. image:: ../images/browser-wallet/update-baker-pool-finalize.png
+       .. image:: ../images/browser-wallet/new/update_pool_settings5.png
            :width: 40%
            :alt: screen showing transaction receipt
 
@@ -501,42 +484,35 @@ If you believe your validator keys have been compromised or lost, you can genera
 
 .. dropdown:: |bw|
 
-    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
+    #. In the dropdown list, select the account for which you want to update the validation options and click **Earn**.
 
-       .. image:: ../images/browser-wallet/setup-baking-delegation.png
-           :width: 40%
-           :alt: screen showing current validator setup and buttons to stop or update
+    #. On the next screen, click **Update**.
 
-    #. You see the current validator setup. Click **Update**.
-
-       .. image:: ../images/browser-wallet/update-baker-options.png
+       .. image:: ../images/browser-wallet/new/update_validation1.png
             :width: 40%
-            :alt: screen showing current validator setup and buttons to stop or update
+            :alt: screen validator update options
 
-    #. Click **Update validator keys**. Review the information about updating validator keys and click **Continue**.
+    #. On the next screen, click **Update validator keys**. Review the information about updating validator keys and click **Continue**.
 
-       .. image:: ../images/browser-wallet/update-baker-actions.png
+       .. image:: ../images/browser-wallet/new/update_validator_keys1.png
             :width: 40%
-            :alt: screen showing actions to update validator
+            :alt: screen showing validator options
 
-    #. Click **Export validator keys** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
-       .. image:: ../images/browser-wallet/update-baker-keys.png
+    #. Click **Export export as .json** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
+
+       .. image:: ../images/browser-wallet/new/update_validator_keys2.png
             :alt: screen with buttons to show keys or export validator keys
             :width: 40%
 
-       .. image:: ../images/browser-wallet/add-baker-continue-after-export.png
-           :alt: screen with buttons to continue after export and wallet screen dimmed behind
-           :width: 40%
+    #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information, then scroll down and click **Submit validation**.
 
-    #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then click **Send**.
-
-       .. image:: ../images/browser-wallet/update-baker-keys-review.png
+       .. image:: ../images/browser-wallet/new/update_validator_keys3.png
             :width: 40%
 
-    #. The wallet shows that the transaction has been submitted to the chain. Click **Finish**.
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-       .. image:: ../images/browser-wallet/update-baker-keys-finish.png
+       .. image:: ../images/browser-wallet/new/update_validator_keys4.png
             :width: 40%
 
     #. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
@@ -570,7 +546,7 @@ If you believe your validator keys have been compromised or lost, you can genera
         .. Warning::
             This is the only time that you can export the credentials. If you’re going to transfer the validator keys to someone else, make sure to do so through a secure channel.
 
-        5. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
+        1. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
         #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and click **Submit**.
 
@@ -695,6 +671,7 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
 .. dropdown:: |bw|
 
+    #. #. In the dropdown list, select the account for which you want to update validator options and click **Earn**.
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
 
        .. image:: ../images/browser-wallet/setup-baking-delegation.png
