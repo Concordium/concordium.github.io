@@ -321,7 +321,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
        - :ref:`Docker<baking-docker>`
        - :ref:`Ubuntu<baker-ubuntu>`
 
-    
+
 
 .. Warning::
 

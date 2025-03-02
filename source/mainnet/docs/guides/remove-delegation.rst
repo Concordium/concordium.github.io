@@ -151,35 +151,24 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
 .. dropdown:: |bw|
 
-   #. Bring the account whose delegation you want to stop into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
+      #. In the dropdown list, select the delegating account and click **Earn**.
 
-      .. image:: ../images/browser-wallet/select-account.png
-         :width: 40%
-         :alt: screen with accounts drop-down activated and account selection shown
+      #. On the next screen, click **Stop**
 
-   #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+         .. image:: ../images/browser-wallet/new/stop_delegation1.png
+          :width: 50%
 
-      .. image:: ../images/browser-wallet/delegation-update-stop.png
-         :width: 40%
-         :alt: screen showing current delegation and buttons to update or stop
+      #. Review the information. Note that your delegated stake will be released after 7 days. Click **Submit delegation** to finalize the transaction.
 
-   #. You see your current delegation. Click **Stop**. Review the information about the cool-down period.
+         .. image:: ../images/browser-wallet/new/stop_delegation2.png
+          :width: 50%
 
-      .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
-         :width: 40%
-         :alt: screen showing current delegation and buttons to update or stop
+      #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation has been successfully stopped. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-   #. Review the information in the transaction overview. When you are satisfied, click **Send**.
+         .. image:: ../images/browser-wallet/new/stop_delegation3.png
+          :width: 50%
 
-      .. image:: ../images/browser-wallet/delegation-stop-xact-confirm.png
-         :width: 40%
-         :alt: screen showing the transaction details that will be submitted to the chain
 
-   #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
-
-      .. image:: ../images/browser-wallet/delegation-xact-submit.png
-         :width: 40%
-         :alt: screen showing the transaction submitted to the chain and finish button
 
 .. |earn| image:: ../images/earn.png
         :alt: Hand receiving money
