@@ -74,31 +74,31 @@ When you change the stake it can influence your :term:`chance of being selected 
     #. On the next screen, click **Update**.
 
        .. image:: ../images/browser-wallet/new/update_validation1.png
-           :width: 40%
+           :width: 50%
 
     #. On the next screen, click **Update validation stake**.
 
        .. image:: ../images/browser-wallet/new/update_validation2.png
-            :width: 40%
+            :width: 50%
             :alt: buttons for update validaton options
 
     #. You can now change the staked amount by updating the *Amount* field or change your restaking preferences by toggling the 'Restake rewards' option. When the *Restake rewards* toggle is enabled, your validation rewards will automatically be added to your validation amount, increasing your stake over time. When the *Restake rewards* toggle is disabled, your rewards will instead be deposited to your disposable balance at each pay day. When you're satisfied with your staking configuration, tap the **Continue** to proceed with your updates.
 
        .. image:: ../images/browser-wallet/new/update_validation3.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing firld and toggle to set preferences
 
 
     #. Review the transaction details. Click **Submit validation** to submit the transaction. If you need to make any changes, you can go back to the previous step.
 
        .. image:: ../images/browser-wallet/new/update_validation4.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing transaction receipt
 
     #. The wallet displays a confirmation screen with a green checkmark, indicating your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.
 
        .. image:: ../images/browser-wallet/new/update_validation5.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing transaction receipt
 
 .. dropdown:: Desktop Wallet
@@ -269,7 +269,7 @@ Update pool settings
     #. On the next screen, click **Update**.
 
        .. image:: ../images/browser-wallet/new/update_validation1.png
-           :width: 40%
+           :width: 50%
 
     #. On the next screen, click **Update pool settings**.
 
@@ -280,31 +280,31 @@ Update pool settings
     #. On this screen, you can toggle whether your validator is open for delegation. When enabled, other users can delegate their tokens to your validator, increasing your total stake and improving your chances of    producing blocks. Rewards earned will be distributed between you and your delegators at each pay day. If you prefer to validate with only your own stake, you can disable this option. Once you've made your   selection, tap **Continue** to proceed.
 
        .. image:: ../images/browser-wallet/new/update_pool_settings1.png
-            :width: 40%
+            :width: 50%
             :alt: screen showing options pool
 
     #. On the Commissions screen, you can set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click Continue to proceed.
 
        .. image:: ../images/browser-wallet/new/update_pool_settings2.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing sliders and text boxes to adjust commissions
 
     #. Update the staking pool metadata URL, if desired. Click **Continue**.
 
        .. image:: ../images/browser-wallet/new/update_pool_settings3.png
-            :width: 40%
+            :width: 50%
             :alt: screen showing option for adding metadata
 
     #. Review the transaction details. When you’re satisfied with the configuration, scroll down and click **Submit validation** to finalize the transaction.
 
        .. image:: ../images/browser-wallet/new/update_pool_settings4.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing transaction receipt
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
        .. image:: ../images/browser-wallet/new/update_pool_settings5.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing transaction receipt
 
 .. dropdown:: Desktop Wallet
@@ -489,13 +489,13 @@ If you believe your validator keys have been compromised or lost, you can genera
     #. On the next screen, click **Update**.
 
        .. image:: ../images/browser-wallet/new/update_validation1.png
-            :width: 40%
+            :width: 50%
             :alt: screen validator update options
 
     #. On the next screen, click **Update validator keys**. Review the information about updating validator keys and click **Continue**.
 
        .. image:: ../images/browser-wallet/new/update_validator_keys1.png
-            :width: 40%
+            :width: 50%
             :alt: screen showing validator options
 
 
@@ -503,7 +503,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
        .. image:: ../images/browser-wallet/new/update_validator_keys2.png
             :alt: screen with buttons to show keys or export validator keys
-            :width: 40%
+            :width: 50%
 
     #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information, then scroll down and click **Submit validation**.
 
@@ -513,7 +513,7 @@ If you believe your validator keys have been compromised or lost, you can genera
     #. The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
        .. image:: ../images/browser-wallet/new/update_validator_keys4.png
-            :width: 40%
+            :width: 50%
 
     #. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
@@ -675,13 +675,13 @@ If you no longer wish to produce blocks on this account, you can stop validation
     #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.
 
        .. image:: ../images/browser-wallet/setup-baking-delegation.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing current validator setup and buttons to stop or update
 
     #. You see the current validator setup. Click **Stop**.
 
        .. image:: ../images/browser-wallet/update-baker-options.png
-            :width: 40%
+            :width: 50%
             :alt: screen showing current validator setup and buttons to stop or update
 
     #. Read the information about what happens when you stop validation. Click **Continue**.
@@ -689,7 +689,7 @@ If you no longer wish to produce blocks on this account, you can stop validation
     #. Review the transaction information. Click **Send**.
 
        .. image:: ../images/browser-wallet/stop-baking-review.png
-           :width: 40%
+           :width: 50%
            :alt: screen showing transaction details with send and back buttons
 
     #. Click **Finish** to finalize your transaction.

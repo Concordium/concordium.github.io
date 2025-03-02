@@ -59,7 +59,7 @@ Suspend a validator
 
     After successfully suspending your validator, you'll notice several clear indicators throughout the wallet interface:
 
-    On your account overview screen, a prominent red banner appears at the bottom stating "Your validation has been suspended" with an arrow. This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
+    On your account overview screen, a prominent red banner appears at the bottom stating "Your validation has been suspended". This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
 
     .. image:: ../images/browser-wallet/new/suspend_validator4.png
            :width: 40%

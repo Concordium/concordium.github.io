@@ -264,39 +264,39 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
     #. In the *Validation* section, click **Continue to validation setup**.
 
        .. image:: ../images/browser-wallet/new/add_validator1.png
-           :width: 40%
+           :width: 50%
 
     #. You can now go through anumber of informational screens explaining the key concepts of validation on the Concordium blockchain, including the validator role and key generation, node requirements, staking pool options, and suspension policies. Click **Next** to navigate through the screens. Click **Skip** to proceed directly to registering your validation.
 
     #. On the Register validator screen you can see your available balance. Enter the amount you want to stake in the field and select your restake preference. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. Use the *Restake rewards* toggle to disable this feature if you prefer to have your rewards deposited to your disposable balance at each pay day instead of having them automatically restaked. Click **Continue** to proceed.
 
        .. image:: ../images/browser-wallet/new/add_validator2.png
-           :width: 40%
+           :width: 50%
 
     #. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose *Close for delegation* if you do not wish to run a staking pool. Tap **Continue** to proceed.
 
        .. image:: ../images/browser-wallet/new/add_validator3.png
            :alt: screen with balances at the top and text box to enter amount to stake
-           :width: 40%
+           :width: 50%
 
     #. On the Commissions screen, you can set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the :term:`Transaction fee commission` and :term:`Block reward commission` - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click **Continue** to proceed.
 
        .. image:: ../images/browser-wallet/new/add_validator4.png
            :alt: screen with balances at the top and text box to enter amount to stake
-           :width: 40%
+           :width: 50%
 
 
     #. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. Click **Continue** to proceed.
 
        .. image:: ../images/browser-wallet/new/add_validator5.png
             :alt: screen with text box to enter url for staking pool information
-            :width: 40%
+            :width: 50%
 
     #. Now, you must export the validator before continuing. The keys must be added to the validator node. Click **Export as .json** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. After export, click **Continue** to complete the transaction.
 
        .. image:: ../images/browser-wallet/new/add_validator6.png
             :alt: screen with buttons to show keys or export validator keys
-            :width: 40%
+            :width: 50%
 
 
        .. Warning::
@@ -312,7 +312,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
 
        .. image:: ../images/browser-wallet/new/add_validator8a.png
-            :width: 40%
+            :width: 50%
 
     #. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
@@ -321,13 +321,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
        - :ref:`Docker<baking-docker>`
        - :ref:`Ubuntu<baker-ubuntu>`
 
-    Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account card.
-
-    .. image:: ../images/browser-wallet/add-baker-acct-list.png
-        :width: 40%
-
-    .. image:: ../images/browser-wallet/add-baker-acct-details.png
-        :width: 40%
+    
 
 .. Warning::
 
