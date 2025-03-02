@@ -177,44 +177,39 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         #. In the dropdown list, select the account that you want to delegate from and click **Earn**.
 
-        #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+        #. In the *Delegation* section, click **Continue to delegation setup**.
 
-           .. image:: ../images/browser-wallet/setup-baking-delegation.png
-               :width: 40%
+           .. image:: ../images/browser-wallet/new/add_delegation1.png
+               :width: 50%
 
-        #. Click **Setup delegation**. If you are delegating for the first time on the account, you see some information about delegation.
+        #. You can now go through anumber of informational screens explaining the key concepts of delegation on the Concordium blockchain, including delegation models, staking pools, passive delegation, pay days, and lock-ins/cool-downs. Click **Next** to navigate through the screens. Click **Skip** to proceed directly to registering your validation.
 
-           .. image:: ../images/browser-wallet/add-delegation-baking.png
-               :width: 40%
+           .. image:: ../images/browser-wallet/new/add_delegation2.png
+               :width: 50%
 
-        #. On the **Register delegation** screen choose whether to delegate to a specific pool click **Staking pool** and enter the Validator ID of the pool owner. If you are delegating to passive delegation, click **Passive delegation**. Click **Continue**.
+        #. On the Register delegation screen, you have two options: If you want to delegate to a specific pool, click Validator and enter the Validator ID of the pool owner. If you want to register a passive delegation, click Passive. Click **Continue** to proceed.
 
-           .. image:: ../images/browser-wallet/delegation-target.png
-               :width: 40%
+           .. image:: ../images/browser-wallet/new/add_delegation3.png
+               :width: 50%
 
-        #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+        #. You can see your balance available to delegate. Enter the amount you want to delegate in the field and select your restake preference. Delegators receive rewards proportional to their stake, and by default, these rewards can be automatically added to your delegation amount. Use the *Restake rewards* toggle to enable this feature if you prefer to have your rewards automatically added to your delegation amount at each pay day, increasing your stake and future rewards. If disabled, rewards will be deposited to your disposable balance instead. Click **Continue** to proceed.
 
-           .. image:: ../images/browser-wallet/delegation-restake-preference.png
-               :width: 40%
+           .. image:: ../images/browser-wallet/new/add_delegation4.png
+               :width: 50%
 
-        #. You can see your available balance to delegate on the account that is in focus. You can change the account from the Accounts drop-down at the top of the screen if you want to set up delegation on a different account than the one in focus. **Enter the Amount you want to delegate** in the field. Click **Continue**.
+        #. Review the information including your delegation style and amount, amount, reward settings, and commission rates. When you're satisfied with the configuration, scroll down and click **Submit delegation** to finalize the transaction.
 
-           .. image:: ../images/browser-wallet/create-delegation-amount.png
-               :width: 40%
+           .. image:: ../images/browser-wallet/new/add_delegation5.png
+               :width: 50%
 
-        #. Review the information in the transaction overview. When you are satisfied, click **Send**.
+        #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation transaction has been successfully submitted to the chain. You can see the amount you're delegating with. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-        #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
+           .. image:: ../images/browser-wallet/new/add_delegation6.png
+               :width: 50%
 
         Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation type and amount on the account card.
 
-        .. image:: ../images/browser-wallet/delegated-amount.png
-            :width: 40%
 
-        Accounts with delegation also have a badge in the account list.
-
-        .. image:: ../images/browser-wallet/delegation-acct-list.png
-            :width: 40%
 
         .. |earn| image:: ../images/earn.png
              :alt: Hand receiving money
