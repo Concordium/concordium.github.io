@@ -36,17 +36,22 @@ If you no longer wish to produce blocks on this account, you can stop validation
     #. On the next screen, click **Stop**.
 
        .. image:: ../images/browser-wallet/new/update_validation1.png
-            :width: 40%
-            :alt: screen validator update options
+            :width: 50%
+            :alt: screen showing validator update options
 
-    #. Review the the information. Click **Submit validation**.
+    #. Review the transaction details for removing your validator. Note that the validator stake is released after 7 days. Click **Submit validation** to confirm and send your transaction to the blockchain.
 
-       .. image:: ../images/browser-wallet/new/update_validation1.png
-            :width: 40%
-            :alt: screen validator update options
+       .. image:: ../images/browser-wallet/new/stop_validator1.png
+            :width: 50%
+            :alt: screen showing stop validator action
 
 
     #. The wallet displays a confirmation screen with a green checkmark, indicating your validator has successfully removed. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.
+
+       .. image:: ../images/browser-wallet/new/stop_validator2.png
+            :width: 50%
+            :alt: success screen for stopping validator
+
 
 .. dropdown:: Desktop Wallet
 
