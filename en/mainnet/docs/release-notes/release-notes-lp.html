@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.8dbf30ed-6e12-44ef-b9ec-9456342950c2.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.20b562fa-108f-4da4-9efe-33589a610fa9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -1407,22 +1407,54 @@ delivering a more seamless and user-friendly experience while preserving all the
 <section id="mainnet">
 <span id="rn-node-mainnet"></span><span id="id3"></span><h3>Mainnet<a class="headerlink" href="#mainnet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>October 3, 2024</p>
-<p>Concordium node version 7.0.5 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P7.html">protocol version 7</a>.
+<div><p>March 3, 2025</p>
+<p>Concordium node version 8.0.3 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P8.html">protocol version 8</a>.
+The new consensus protocol will take effect on the mainnet on March 17, 2025.
+<strong>Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.</strong>
+Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.</p>
+<p>Protocol version 8 introduces the following changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Validators are automatically suspended if they do not produce blocks for a certain number of rounds.</p></li>
+<li><p>The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.</p></li>
+<li><p>Suspended validators are paused from participating in the consensus algorithm.</p></li>
+</ul>
+</div></blockquote>
+<p>Additionally, the node release includes a number of fixes and improvements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add suspension info to <cite>BakerPoolStatus</cite> / <cite>CurrentPaydayBakerPoolStatus</cite> query results.</p></li>
+<li><p>Add <cite>GetConsensusDetailedStatus</cite> gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.</p></li>
+<li><p>Update Rust version to 1.82.</p></li>
+<li><p>Update GHC version to 9.6.6 (LTS-22.39).</p></li>
+<li><p>Add <cite>GetScheduledReleaseAccounts</cite> endpoint for querying the list of accounts that have scheduled releases.</p></li>
+<li><p>Add <cite>GetCooldownAccounts</cite>, <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.</p></li>
+<li><p>gRPC endpoints <cite>DryRun</cite>, <cite>GetBlockItemStatus</cite> and <cite>GetBlockTransactionEvents</cite> now report the parameter used to initialize a smart contract instance as part of a <cite>ContractInitializedEvent</cite>.</p></li>
+<li><p>Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.</p></li>
+<li><p>Fix a bug where <cite>GetBlockInfo</cite> reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.</p></li>
+</ul>
+</div></blockquote>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">7.0.5 - October 3, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 7.0.5 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P7.html">protocol version 7</a>.
 The new consensus protocol will take effect on the mainnet on October 30, 2024.
 <strong>Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.</strong></p>
-<p>Protocol version 7 introduces the following changes:</p>
+<p class="sd-card-text">Protocol version 7 introduces the following changes:</p>
 <ul>
-<li><p>The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:</p>
+<li><p class="sd-card-text">The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:</p>
 <blockquote>
 <div><ul class="simple">
 <li><dl class="simple">
-<dt>When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.</dt><dd><p>(Previously, the reduction was only effective after the cool-down period.)</p>
+<dt>When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.</dt><dd><p class="sd-card-text">(Previously, the reduction was only effective after the cool-down period.)</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Validators and delegators can make further changes to their stake while they already have stake in cooldown.</dt><dd><p>This includes registering as a validator when the account was previously a delegator, or vice versa.
+<dt>Validators and delegators can make further changes to their stake while they already have stake in cooldown.</dt><dd><p class="sd-card-text">This includes registering as a validator when the account was previously a delegator, or vice versa.
 (Previously, the account had to wait for the cool-down period to end before making further changes.)</p>
 </dd>
 </dl>
@@ -1431,31 +1463,29 @@ The new consensus protocol will take effect on the mainnet on October 30, 2024.
 </div></blockquote>
 </li>
 <li><dl class="simple">
-<dt>Shielded transfers are no longer supported in the protocol.</dt><dd><p>It is still possible to unshield a previously shielded balance.</p>
+<dt>Shielded transfers are no longer supported in the protocol.</dt><dd><p class="sd-card-text">It is still possible to unshield a previously shielded balance.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Smart contract execution costs are reduced.</dt><dd><p>This reflects a more efficient implementation of the smart contract execution engine introduced in this release.</p>
+<dt>Smart contract execution costs are reduced.</dt><dd><p class="sd-card-text">This reflects a more efficient implementation of the smart contract execution engine introduced in this release.</p>
 </dd>
 </dl>
 </li>
-<li><p>Smart contracts can now query the module reference and contract name of a smart contract instance.</p></li>
-<li><p>The block hashing scheme is redefined to better support light clients.</p></li>
+<li><p class="sd-card-text">Smart contracts can now query the module reference and contract name of a smart contract instance.</p></li>
+<li><p class="sd-card-text">The block hashing scheme is redefined to better support light clients.</p></li>
 </ul>
-<p>Additionaly, the node release includes a number of fixes and improvements:</p>
+<p class="sd-card-text">Additionaly, the node release includes a number of fixes and improvements:</p>
 <ul class="simple">
-<li><p>Logging around protocol updates is improved.</p></li>
-<li><p>Failed gRPC requests are now logged at <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level.</p></li>
-<li><p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetBakersRewardPeriod</span></code> returns incorrect data.</p></li>
-<li><p>Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetPoolInfo</span></code> returns incorrect data.</p></li>
-<li><p>Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.</p></li>
-<li><p>Improved the behavior of the node in the event of an unrecoverable error in consensus.</p></li>
+<li><p class="sd-card-text">Logging around protocol updates is improved.</p></li>
+<li><p class="sd-card-text">Failed gRPC requests are now logged at <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level.</p></li>
+<li><p class="sd-card-text">Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetBakersRewardPeriod</span></code> returns incorrect data.</p></li>
+<li><p class="sd-card-text">Fixed a bug where <code class="docutils literal notranslate"><span class="pre">GetPoolInfo</span></code> returns incorrect data.</p></li>
+<li><p class="sd-card-text">Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.</p></li>
+<li><p class="sd-card-text">Improved the behavior of the node in the event of an unrecoverable error in consensus.</p></li>
 </ul>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">6.3.2 - September 30, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium node version 6.3.2 fixes a bug in the handling of smart contract names that could cause the node to crash.
@@ -1464,9 +1494,9 @@ The new consensus protocol will take effect on the mainnet on October 30, 2024.
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">6.3.1 - June 24, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.</p>
 </div>
-</details><p class="sd-card-text">Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">6.3.0 - February 27, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Version 6.3.0 contains the following fixes and improvements:</p>
