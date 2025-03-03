@@ -56,7 +56,7 @@ Run Concordium Client from the command line. On MacOS or Linux, access the comma
       You can run ``concordium-client`` directly by ensuring the executable is placed in a directory included in the PATH environment variable. In most UNIX-like operating systems, including Linux, ``/usr/local/bin`` is typically part of the default PATH. To make ``concordium-client`` accessible from any location in the terminal, move the executable to ``/usr/local/bin`` using the following command:
 
       .. code-block:: console
-   
+
          sudo mv concordium-client_6.3.0-1 /usr/local/bin/concordium-client
 
    .. tab-item:: Windows
