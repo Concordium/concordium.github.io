@@ -15,10 +15,8 @@ Concordium Client
 The Concordium distribution ships with a CLI tool named ``concordium-client``.
 
 By default ``concordium-client`` performs its queries and sends transactions
-through a :ref:`local node<run-a-node>`. If the node runs on a different machine
-or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used
-to set the `IP address`_ and `port number`_ where the node is accessible. These
-flags are supported by all ``concordium-client`` commands. Note that as of version
+through a :ref:`local node<run-a-node>` on ``127.0.0.1`` and port ``20000`` for mainnet. If the node runs on a different machine or in a custom setup, the options ``--grpc-ip`` and ``--grpc-port`` can be used
+to set the `IP address`_ and `port number`_ where the node is accessible. These flags are supported by all ``concordium-client`` commands. Note that as of version
 5.1.1, the `port number`_ must be the port where the GRPC V2 interface is enabled, in contrast to previous versions which required the port number of the V1 API of the Concordium node.
 
 .. note::
@@ -29,7 +27,7 @@ flags are supported by all ``concordium-client`` commands. Note that as of versi
    :ref:`queries<testnet-query-node>` and others send :ref:`transactions<transactions-old>`.
 
 .. Note::
-   All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
+   All transfers and transactions cost a fee. The fee is based on the set :ref:`NRG <transaction-fees>` for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
 
@@ -41,24 +39,54 @@ Run Concordium Client
 
 Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
 
-On MacOS, you can run the Concordium Client from the command line by typing ``concordium-client``, since the installation adds the client to the PATH.
+.. tab-set::
 
-On Linux, the binary file includes the version and build number, so you can run it by typing ``./concordium-client_6.3.0-1`` from the directory where the file is located. Otherwise, you have to specify the full path to the executable file, or ensure that it is in a directory that is on the PATH. Note that after downloading the file, you may need to make it executable by running ``chmod +x concordium-client_6.3.0-1`` before you can run it.
+   .. tab-item:: macOS
 
-On Windows, to run Concordium Client you have to specify the full path to the executable file (unless you are running from the same directory). For example, if you extracted ``concordium-client_6.3.0-1.zip`` to ``C:\Users\User\Downloads\concordium-client_6.3.0-1``, then you can run the client by typing ``C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe``.
-When running commands for the Concordium Client in the terminal, replace ``concordium-client`` with the full path to the executable file as in the following example:
+      On MacOS, you can run the Concordium Client from the command line by typing ``concordium-client``,
+      since the installation adds the client to the PATH.
 
-.. code-block:: console
+   .. tab-item:: Linux
 
-   C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
+      On Linux, the binary file includes the version and build number, so you can run it by typing ``./concordium-client_6.3.0-1`` from the directory where the file is located. Otherwise, you have to specify the full path to the executable file,
+      or ensure that it is in a directory that is on the PATH.
+      Note that after downloading the file, you may need to make it executable by running
+      ``chmod +x concordium-client_6.3.0-1`` before you can run it.
 
-.. Note::
+      You can run ``concordium-client`` directly by ensuring the executable is placed in a directory included in the PATH environment variable. In most UNIX-like operating systems, including Linux, ``/usr/local/bin`` is typically part of the default PATH. To make ``concordium-client`` accessible from any location in the terminal, move the executable to ``/usr/local/bin`` using the following command:
 
-   To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.export is saved. If not, you have to specify the full path to the file, for example:
+      .. code-block:: console
+      
+         sudo mv concordium-client_6.3.0-1 /usr/local/bin/concordium-client
 
-   .. code-block:: console
+   .. tab-item:: Windows
 
-      C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
+      On Windows, to run Concordium Client you have to specify the full path to the executable file
+      (unless you are running from the same directory).
+      For example, if you extracted ``concordium-client_6.3.0-1.zip`` to
+      ``C:\Users\User\Downloads\concordium-client_6.3.0-1``, then you can run the client by typing:
+
+      .. code-block:: console
+
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe
+
+      When running commands for the Concordium Client in the terminal, replace
+      ``concordium-client`` with the full path to the executable file as in the following example:
+
+      .. code-block:: console
+
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
+
+      If you add the directory containing the ``concordium-client.exe`` executable to the system environment variables, you can run it without specifying the full path. Alternatively, you can achieve the same result by moving ``concordium-client.exe`` to a directory that is already included in the system's PATH variable, such as ``C:\Windows\System32`` or any other predefined system directory.
+
+      .. Note::
+
+         To import the backup file as shown in the example, you must be in the same directory where
+         the ``concordium-backup.export`` is saved. If not, you have to specify the full path to the file, for example:
+
+         .. code-block:: console
+
+            C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
 
 Commands and help
 =================
@@ -320,18 +348,10 @@ existing names.
 
    When importing keys that have been exported from |bw|, the ``--name`` option must be provided to name the account.
 
-Show account aliases
+Account aliases
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: console
-
-   $concordium-client account show-alias 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 --alias 17
-
-This generates the output:
-
-.. code-block:: console
-
-   The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.
+A detailed description and explanation of the term alias is available here :ref:`Account aliases<account-aliases>`
 
 Shell completion
 ================
