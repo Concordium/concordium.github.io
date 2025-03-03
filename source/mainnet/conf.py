@@ -166,7 +166,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "article_footer_items": ["footer-article"],
     "show_prev_next": True,
-    "announcement": "We are actively working to enhance our documentation to provide a better experience. Thank you for your patience!",
+    "announcement": 'Protocol 8 is now live on mainnet. For more information, visit our <a href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html#mainnet" target="_blank">release notes page</a>.',
     #"navbar_align": "left",
     "icon_links": [
         {
