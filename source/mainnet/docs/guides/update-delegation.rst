@@ -191,27 +191,27 @@ Update delegation
 
     #. Click **Update**.
 
-       .. image:: ../images/browser-wallet/new/add_delegation1.png
+       .. image:: ../images/browser-wallet/new/update_delegation1.png
            :width: 50%
 
     #. On the next screen, you can modify delegation preferences. Select *Validator* to delegate to a specific validator pool of your choice, select *Passive* to use passive delegation. Click **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/new/add_delegation2.png
+       .. image:: ../images/browser-wallet/new/update_delegation2.png
            :width: 50%
 
-    #. On the next screen, you can update your delegation amount and change your restake rewards options. Click **Continue** to proceed.
+    #. On the next screen, you can make any desired changes to your delegation amount and change your restake rewards options. Click **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/new/add_delegation3.png
+       .. image:: ../images/browser-wallet/new/update_delegation3.png
            :width: 50%
 
     #. Review the information including your delegation amount, and commission rates. When you're satisfied with the configuration, click **Submit delegation** to finalize the transaction.
 
-       .. image:: ../images/browser-wallet/new/add_delegation4.png
+       .. image:: ../images/browser-wallet/new/update_delegation4.png
            :width: 50%
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-       .. image:: ../images/browser-wallet/new/add_delegation5.png
+       .. image:: ../images/browser-wallet/new/update_delegation5.png
            :width: 50%
 
 

@@ -26,7 +26,7 @@ To unsuspend a self-suspended validator, you can simply access your wallet, navi
 Automatic suspension
 --------------------
 
-Automatic suspension occurs when a validator remains inactive for an extended period, missing multiple opportunities to produce blocks. The inactivity threshold varies based on stake size—larger validators may face suspension within hours, while smaller validators might take several days to reach the threshold.
+Automatic suspension occurs when a validator remains inactive for an extended period, missing multiple opportunities to produce blocks. The inactivity threshold varies based on stake size; larger validators may face suspension within hours, while smaller validators might take several days to reach the threshold.
 
 When a validator becomes inactive, it first enters a *primed for suspension* state. The validator then has until the next snapshot epoch to demonstrate activity by either producing a block or having its signature included in a quorum certificate. If it remains inactive, the suspension takes effect at the following payday.
 
@@ -63,7 +63,7 @@ Self-suspend a validator
 
     After successfully suspending your validator, you'll notice several clear indicators throughout the wallet interface:
 
-    On your account overview screen, a prominent red banner appears at the bottom stating "Your validation has been suspended". This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
+    On your account overview screen, a prominent red banner appears at the bottom stating *Your validation has been suspended*. This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
 
     .. image:: ../images/browser-wallet/new/suspend_validator4.png
            :width: 50%
@@ -76,10 +76,11 @@ Self-suspend a validator
     .. image:: ../images/browser-wallet/new/suspend_validator6.png
             :width: 50%
 
-    When viewing your validator details, a red message clearly states "Your validation has been suspended" along with information that your node is not currently earning rewards.
+    When viewing your validator details, a red message clearly states *Your validation has been suspended* along with information that your node is not currently earning rewards.
 
     .. image:: ../images/browser-wallet/new/suspend_validator5.png
            :width: 50%
+
 
     **Important**: The suspension notification banner on your account overview screen will remain visible across your entire wallet experience, even when you have selected different accounts in the dropdown menu. Clicking this banner will immediately take you to the suspended validator's details page, regardless of which account is currently selected or displayed.
 
@@ -119,7 +120,7 @@ Unsuspend an automatically suspendet validator
 
 .. dropdown:: |bw|
 
-    When your validator becomes inactive, it first enters a "primed for suspension" state. During this period, a red warning banner appears at the bottom of your wallet interface stating "Your validation is primed for suspension".
+    When your validator becomes inactive, it first enters a *primed for suspension* state. During this period, a red warning banner appears at the bottom of your wallet interface stating "Your validation is primed for suspension".
 
     Additionally, a red dot appears on the Earn button, providing a visual indicator that your validator requires attention.
 

@@ -187,12 +187,12 @@ When you delegate some stake to a staking pool, it can influence the chances of 
            .. image:: ../images/browser-wallet/new/add_delegation2.png
                :width: 50%
 
-        #. On the Register delegation screen, you have two options: If you want to delegate to a specific pool, click Validator and enter the Validator ID of the pool owner. If you want to register a passive delegation, click Passive. Click **Continue** to proceed.
+        #. On the Register delegation screen, you have two options: If you want to delegate to a specific pool, click **Validator** and enter the Validator ID of the pool owner. If you want to register a passive delegation, click **Passive**. Click **Continue** to proceed.
 
            .. image:: ../images/browser-wallet/new/add_delegation3.png
                :width: 50%
 
-        #. You can see your balance available to delegate. Enter the amount you want to delegate in the field and select your restake preference. Delegators receive rewards proportional to their stake, and by default, these rewards can be automatically added to your delegation amount. Use the *Restake rewards* toggle to enable this feature if you prefer to have your rewards automatically added to your delegation amount at each pay day, increasing your stake and future rewards. If disabled, rewards will be deposited to your disposable balance instead. Click **Continue** to proceed.
+        #. You can see your balance available to delegate. Enter the amount you want to delegate in the field and select your restake preference. Delegators receive rewards proportional to their stake, and by default, these rewards can be automatically added to your delegation amount. Use the **Restake rewards** toggle to enable this feature if you prefer to have your rewards automatically added to your delegation amount at each pay day, increasing your stake and future rewards. If disabled, rewards will be deposited to your disposable balance instead. Click **Continue** to proceed.
 
            .. image:: ../images/browser-wallet/new/add_delegation4.png
                :width: 50%

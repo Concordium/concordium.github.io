@@ -306,7 +306,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
     #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information including your validator stake amount, reward settings, and commission rates. When you're satisfied with the configuration, scroll down and click **Submit** to finalize the transaction.
 
        .. image:: ../images/browser-wallet/new/add_validator7a.png
-            :width: 40%
+            :width: 50%
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you're validating with. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
