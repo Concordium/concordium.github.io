@@ -150,3 +150,4 @@ Unsuspend an automatically suspendet validator
 
        .. image:: ../images/browser-wallet/new/unsuspend_validator4.png
               :width: 50%
+              
