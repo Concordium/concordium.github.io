@@ -769,7 +769,7 @@ Mainnet
 
         .. dropdown:: 6.3.1 - June 24, 2024
 
-        Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
+            Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
         .. dropdown:: 6.3.0 - February 27, 2024
 
