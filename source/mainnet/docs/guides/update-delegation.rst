@@ -12,6 +12,7 @@ Note that if you decrease or remove the delegation, there is a :term:`cool-down 
 
 Before delegating stake to a staking pool, it is important to research the pool using :ref:`CCDScan<ccd-scan>`. You can only have one delegation per account.
 
+
 .. Note::
 
    Any changes made in the last epoch before the upcoming pay day are applied not in the upcoming pay day but the pay day after that.
@@ -24,6 +25,20 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
+
+Updating delegation from a suspendet validator
+----------------------------------------------
+If a validator you've delegated to becomes suspended, you'll see a warning banner in your wallet interface indicating *Your validator has been suspended*. When a validator is suspended, both the validator and its delegators stop earning rewards.
+To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.
+
+.. image:: ../images/browser-wallet/new/your_validator_suspended_banner.png
+           :width: 50%
+
+
+To update your delegation from a suspended validator, follow the same update process described below for each wallet type.
+
+Update delegation
+-----------------
 
 .. dropdown:: |cryptox|
 
