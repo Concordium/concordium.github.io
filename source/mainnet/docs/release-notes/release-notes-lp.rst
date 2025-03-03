@@ -689,43 +689,78 @@ Nodes
 Mainnet
 -------
 
-    October 3, 2024
+    March 3, 2025
 
-    Concordium node version 7.0.5 contains support for `protocol version 7 <https://proposals.concordium.software/updates/P7.html>`_.
-    The new consensus protocol will take effect on the mainnet on October 30, 2024.
-    **Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.**
+    Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
+    The new consensus protocol will take effect on the mainnet on March 17, 2025.
+    **Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.**
+    Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.
 
-    Protocol version 7 introduces the following changes:
+    Protocol version 8 introduces the following changes:
 
-    - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
+        - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
 
-        - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
-            (Previously, the reduction was only effective after the cool-down period.)
+        - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
 
-        - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
-            This includes registering as a validator when the account was previously a delegator, or vice versa.
-            (Previously, the account had to wait for the cool-down period to end before making further changes.)
+        - Suspended validators are paused from participating in the consensus algorithm.
 
-    - Shielded transfers are no longer supported in the protocol.
-        It is still possible to unshield a previously shielded balance.
+    Additionally, the node release includes a number of fixes and improvements:
 
-    - Smart contract execution costs are reduced.
-        This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
+        - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
 
-    - Smart contracts can now query the module reference and contract name of a smart contract instance.
+        - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
 
-    - The block hashing scheme is redefined to better support light clients.
+        - Update Rust version to 1.82.
 
-    Additionaly, the node release includes a number of fixes and improvements:
+        - Update GHC version to 9.6.6 (LTS-22.39).
 
-    - Logging around protocol updates is improved.
-    - Failed gRPC requests are now logged at ``DEBUG`` level.
-    - Fixed a bug where ``GetBakersRewardPeriod`` returns incorrect data.
-    - Fixed a bug where ``GetPoolInfo`` returns incorrect data.
-    - Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.
-    - Improved the behavior of the node in the event of an unrecoverable error in consensus.
+        - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+
+        - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
+
+        - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
+
+        - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
+
+        - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 7.0.5 - October 3, 2024
+
+            Concordium node version 7.0.5 contains support for `protocol version 7 <https://proposals.concordium.software/updates/P7.html>`_.
+            The new consensus protocol will take effect on the mainnet on October 30, 2024.
+            **Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.**
+
+            Protocol version 7 introduces the following changes:
+
+            - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
+
+                - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
+                    (Previously, the reduction was only effective after the cool-down period.)
+
+                - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
+                    This includes registering as a validator when the account was previously a delegator, or vice versa.
+                    (Previously, the account had to wait for the cool-down period to end before making further changes.)
+
+            - Shielded transfers are no longer supported in the protocol.
+                It is still possible to unshield a previously shielded balance.
+
+            - Smart contract execution costs are reduced.
+                This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
+
+            - Smart contracts can now query the module reference and contract name of a smart contract instance.
+
+            - The block hashing scheme is redefined to better support light clients.
+
+            Additionaly, the node release includes a number of fixes and improvements:
+
+            - Logging around protocol updates is improved.
+            - Failed gRPC requests are now logged at ``DEBUG`` level.
+            - Fixed a bug where ``GetBakersRewardPeriod`` returns incorrect data.
+            - Fixed a bug where ``GetPoolInfo`` returns incorrect data.
+            - Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.
+            - Improved the behavior of the node in the event of an unrecoverable error in consensus.
 
         .. dropdown:: 6.3.2 - September 30, 2024
 
