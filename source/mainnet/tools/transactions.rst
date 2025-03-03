@@ -9,8 +9,16 @@ Concordium Client transactions
 You can perform all types of transactions with the :ref:`concordium-client<concordium-client>`. To do so, you use specialized subcommands.
 
 .. Note::
+  
+  Concordium Foundation offers external developers access to a testnet node, which can be reached using ``--grpc-ip grpc.testnet.concordium.com`` and ``--grpc-port 20000``. Since the node is configured to use TLS, the ``--secure`` flag is required when running commands. For instance, to check the consensus status, you can query the Concordium testnet node as follows:
 
-  If you are querying a node on testnet, be sure to use ``--grpc-port 20001`` flag. Let's assume that the node you are querying is running on testnet and is located on the local network at ``192.168.0.10``. In this case, to query the account status, use the command:
+  .. code-block:: text
+
+      $concordium-client consensus status --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+
+.. Note::
+
+  If you are querying your own testnet node, be sure to use ``--grpc-port 20001`` flag (unless you changed it from defaults). Let's assume that the node you are querying is running on testnet and is located on the local network at ``192.168.0.10``. In this case, to query the account status, use the command:
 
   .. code-block:: text
 

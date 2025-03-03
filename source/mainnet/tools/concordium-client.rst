@@ -27,7 +27,7 @@ to set the `IP address`_ and `port number`_ where the node is accessible. These 
    :ref:`queries<testnet-query-node>` and others send :ref:`transactions<transactions-old>`.
 
 .. Note::
-   All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
+   All transfers and transactions cost a fee. The fee is based on the set :ref:`NRG <transaction-fees>` for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
 
@@ -53,6 +53,12 @@ Run Concordium Client from the command line. On MacOS or Linux, access the comma
       Note that after downloading the file, you may need to make it executable by running 
       ``chmod +x concordium-client_6.3.0-1`` before you can run it.
 
+      You can run ``concordium-client`` directly by ensuring the executable is placed in a directory included in the PATH environment variable. In most UNIX-like operating systems, including Linux, ``/usr/local/bin`` is typically part of the default PATH. To make ``concordium-client`` accessible from any location in the terminal, move the executable to ``/usr/local/bin`` using the following command:
+
+      .. code-block:: console
+         
+         sudo mv concordium-client_6.3.0-1 /usr/local/bin/concordium-client
+
    .. tab-item:: Windows
 
       On Windows, to run Concordium Client you have to specify the full path to the executable file 
@@ -71,7 +77,7 @@ Run Concordium Client from the command line. On MacOS or Linux, access the comma
 
          C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
 
-      *If you add the directory where the concordium-client.exe executable file is located to the system variables, you can skip the full path when running concordium-client.exe*
+      If you add the directory containing the ``concordium-client.exe`` executable to the system environment variables, you can run it without specifying the full path. Alternatively, you can achieve the same result by moving ``concordium-client.exe`` to a directory that is already included in the system's PATH variable, such as ``C:\Windows\System32`` or any other predefined system directory.
 
       .. Note::
 
