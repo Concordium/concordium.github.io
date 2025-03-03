@@ -103,4 +103,4 @@ An example verifier dApp is the `Concordia social media verifier on Testnet <htt
 
    issuer
    ../guides/create-proofs
-   concordia
+
