@@ -4,7 +4,7 @@
 Creating your first Concordium dApp
 ====================================
 
-This tutorial guides you through creating and deploying your first smart contract Concordium. You'll create a simple **Hello World** smart contract and deploy it on the testnet.
+This tutorial guides you through creating and deploying your first smart contract on Concordium. You'll create a simple **Hello World** smart contract and deploy it on the testnet.
 
 Before you start
 ================
@@ -20,14 +20,14 @@ Creating your first smart contract
 
       $ cargo concordium init
 
-#. Select the **default** template when prompted, then choose an appropiate project name.
+#. Select the **default** template when prompted, then choose an appropiate project name. The ``init`` command has now created a template smart contract. 
 
 Write the contract
 --------------------
 
 Modify ``src/lib.rs`` to create a simple message-storing contract:
 
-#. Create the state structure which defines the **message** variable:
+#. Modify the existing state structure, the new state defines the **message** variable:
 
    .. code-block:: rust
 
