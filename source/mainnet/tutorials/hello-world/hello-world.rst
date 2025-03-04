@@ -20,7 +20,7 @@ Creating your first smart contract
 
       $ cargo concordium init
 
-#. Select the **default** template when prompted, then choose an appropiate project name. The ``init`` command has now created a template smart contract. 
+#. Select the **default** template when prompted, then choose an appropiate project name. The ``init`` command has now created a template smart contract.
 
 Write the contract
 --------------------
