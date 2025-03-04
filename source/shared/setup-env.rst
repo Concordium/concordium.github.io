@@ -28,13 +28,13 @@ Finally, when Rust and Cargo are successfully installed in your system, you shou
 
 .. Note::
 
-   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( < ``4.1.0``). Update cargo-concordium if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
+   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
 
    .. code-block:: console
 
       $ cargo install cargo-concordium
       $ cargo concordium --version
-      $ cargo-concordium 4.1.0
+      $ cargo-concordium 4.1.1
 
    The minimum supported rust version is currently version ``1.73``
 
