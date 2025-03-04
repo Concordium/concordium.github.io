@@ -14,3 +14,4 @@ About Concordia
 ---------------
 
 Concordia was a Web3 ID solution that allowed users to transfer trust between Telegram and Discord using verifiable credentials in the Concordium Wallet. Users could prove ownership of their social media accounts, link them to their identity, and verify other users across platforms with commands like ``/check`` and ``/verify``.
+
