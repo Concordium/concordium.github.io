@@ -635,5 +635,4 @@ redirects = {
     "net/guides/legal" : "/en/mainnet/docs/guides/cryptox-terms.html",
     "net/guides/export-key" : "/en/mainnet/docs/guides/export-key.html",
     "smart-contracts/guides/on-chain-index" : "/en/mainnet/docs/smart-contracts/introduction.html",
-    "docs/network/web3-id/concordia" : "/en/mainnet/docs/index.html"
     }
