@@ -55,7 +55,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/web3-id/index.ac292d7a-b3d8-4c69-8ca5-0a268f347fcb.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/web3-id/index.d94cec79-adf1-4a52-86f0-bfbcf1698a2e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/web3-id/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/web3-id/index.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -767,7 +767,7 @@ So tooling is provided that enables you to become an issuer and verify credentia
 <p>An issuer will typically consist of the following components.</p>
 <ol class="arabic simple">
 <li><p>Some existing way of identifying users.</p></li>
-<li><p>A dApp that integrates with the wallet and allows the holder to request credential. An example dApp is the <a class="reference external" href="https://concordia.testnet.concordium.com/">Concordia social media verifier on Testnet</a>.</p></li>
+<li><p>A dApp that integrates with the wallet and allows the holder to request credential.</p></li>
 <li><p>A smart contract that manages the credential lifetime. When a verifiable credential is issued the metadata is stored in the contract, and the attributes and other secrets, the full verifiable credential, are returned to the dApp to be stored in the wallet.</p></li>
 </ol>
 <p>To ease the process of becoming an issuer, Concordium has created the <a class="reference external" href="https://web3id-issuer-onboarding.mainnet.concordium.software/">Concordium Web3 ID Issuer Frontend</a> where you can quickly and easily become an issuer.</p>
@@ -786,7 +786,7 @@ This will typically consist of two components.</p>
 <p>Verification of presentations has two components, the cryptographic verification of the zero-knowledge proofs contained within, which establish that the holder indeed owns the relevant credentials and they are issued by the stated issuer, and the business logic checking that the required property was attested.
 In particular, a key part of the business logic is whether the verifier trusts a particular issuer, which is identified by a smart contract address and the public key registered therein.</p>
 <p>Concordium runs an instance of the verifier for <a class="reference external" href="https://web3id-verifier.mainnet.concordium.software/v0/verify">Mainnet</a> or <a class="reference external" href="https://web3id-verifier.testnet.concordium.com/v0/verify">Testnet</a>. Using Concordium hosted services means that the verifier places trust in Concordium, but simplifies the implementation of the verifier. You still have to provide a user interface or frontend (usually a dApp) that calls the Concordium hosted verifier. Otherwise, if you want to run the verification service yourself, Concordium simplifies the checking of the cryptographic part by providing a <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier">verifier service</a>. To read more about the verification service, see <a class="reference internal" href="../guides/create-proofs.html#verifier-tool"><span class="std std-ref">Tool to verify credentials</span></a>.</p>
-<p>An example verifier dApp is the <a class="reference external" href="https://concordia.testnet.concordium.com/">Concordia social media verifier on Testnet</a>, and an example backend can be found in <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier">the Web3 ID repository</a>.</p>
+<p>An example backend can be found in <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier">the Web3 ID repository</a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>

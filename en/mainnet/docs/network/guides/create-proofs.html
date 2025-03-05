@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/create-proofs.9de8b78e-fa3e-485d-9101-da71a517681e.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/create-proofs.378a23e8-54a7-4877-aa4b-71c26df2b65d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/create-proofs';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/create-proofs.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -726,7 +726,7 @@
 <p>A <a class="reference internal" href="../../resources/glossary.html#term-Verifier"><span class="xref std std-term">verifier</span></a> is a business or use-case that provides a service contingent on the holder providing information about themselves using <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a> or <a class="reference internal" href="../../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> they have. A verifier will typically consist of two components:</p>
 <ol class="arabic simple">
 <li><p>A dApp that interacts with the wallet and requests a <a class="reference internal" href="../../resources/glossary.html#term-Verifiable-presentation"><span class="xref std std-term">verifiable presentation</span></a> from the user.</p></li>
-<li><p>A backend that will verify the provided presentations, and provide the required service if successful, such as the <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier">Concordia backend</a>.</p></li>
+<li><p>A backend that will verify the provided presentations, and provide the required service if successful.</p></li>
 </ol>
 <p>The Concordium Wallet for Web allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these <a class="reference internal" href="../../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service. The dApp or service constructs a list of <a class="reference internal" href="../../resources/glossary.html#term-Statement"><span class="xref std std-term">statements</span></a> to request a corresponding list of <a class="reference internal" href="../../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proofs</span></a> of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.</p>
 <p>The dApp or service can also request that attributes are revealed. The wallet owner can choose whether they want to reveal these <a class="reference internal" href="../../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service. The verifiable credentials themselves never leave the holder’s wallet, only the information requested by the verifier does.</p>
