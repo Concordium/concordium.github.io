@@ -197,9 +197,9 @@ When you delegate some stake to a staking pool, it can influence the chances of 
            .. image:: ../images/browser-wallet/new/add_delegation4.png
                :width: 50%
 
-        #. Review the information including your delegation style and amount, amount, reward settings, and commission rates. When you're satisfied with the configuration, scroll down and click **Submit delegation** to finalize the transaction.
+        #. Review the information including your delegation style and amount, amount, reward settings, and commission rates. When you're satisfied with the configuration, scroll down and click **Send** to finalize the transaction.
 
-           .. image:: ../images/browser-wallet/new/add_delegation5.png
+           .. image:: ../images/browser-wallet/new/add_delegation_send.png
                :width: 50%
 
         #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation transaction has been successfully submitted to the chain. You can see the amount you're delegating with. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.

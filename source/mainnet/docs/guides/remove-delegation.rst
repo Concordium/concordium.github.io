@@ -158,9 +158,9 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
          .. image:: ../images/browser-wallet/new/stop_delegation1.png
           :width: 50%
 
-      #. Review the information. Note that your delegated stake will be released after 7 days. Click **Submit delegation** to finalize the transaction.
+      #. Review the information. Note that your delegated stake will be released after 7 days. Click **Send** to finalize the transaction.
 
-         .. image:: ../images/browser-wallet/new/stop_delegation2.png
+         .. image:: ../images/browser-wallet/new/stop_delegation_send.png
           :width: 50%
 
       #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation has been successfully stopped. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.

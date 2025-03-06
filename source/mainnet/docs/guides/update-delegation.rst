@@ -204,9 +204,9 @@ Update delegation
        .. image:: ../images/browser-wallet/new/update_delegation3.png
            :width: 50%
 
-    #. Review the information including your delegation amount, and commission rates. When you're satisfied with the configuration, click **Submit delegation** to finalize the transaction.
+    #. Review the information including your delegation amount, and commission rates. When you're satisfied with the configuration, click **Send** to finalize the transaction.
 
-       .. image:: ../images/browser-wallet/new/update_delegation4.png
+       .. image:: ../images/browser-wallet/new/update_delegation_send.png
            :width: 50%
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.

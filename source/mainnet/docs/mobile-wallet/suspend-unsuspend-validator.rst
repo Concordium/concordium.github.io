@@ -20,6 +20,10 @@ Self-suspension
 ---------------
 
 You can manually suspend your validator when needed, such as during node maintenance, and reactivate it when your node is operational again. This gives you control over your validator's status without risking an automatic suspension due to inactivity.
+When your validator is suspended, a red banner will appear at the bottom of your wallet interface stating **Your validation has been suspended**.
+
+.. image:: ../images/browser-wallet/new/suspended_banner.png
+           :width: 50%
 
 To unsuspend a self-suspended validator, you can simply access your wallet, navigate to the validator section, and select "Resume" to reactivate your validation. This allows you to seamlessly return to active participation in the network once your maintenance is complete.
 
@@ -28,9 +32,18 @@ Automatic suspension
 
 Automatic suspension occurs when a validator remains inactive for an extended period, missing multiple opportunities to produce blocks. The inactivity threshold varies based on stake size; larger validators may face suspension within hours, while smaller validators might take several days to reach the threshold.
 
-When a validator becomes inactive, it first enters a *primed for suspension* state. The validator then has until the next snapshot epoch to demonstrate activity by either producing a block or having its signature included in a quorum certificate. If it remains inactive, the suspension takes effect at the following payday.
+When a validator becomes inactive, it first enters a *primed for suspension* state.
+During this period, a red warning banner appears at the bottom of your wallet interface stating **Your validation is primed for suspension**.
 
-If your validator has been automatically suspended, you'll need to follow a two-step process to resume validation. First, you must address the underlying issue with your node that caused the inactivity. Check your node's status, identify what caused the suspension, fix these issues, and restart your node to ensure it's properly connected to the network. Once your node is operational again, you can then proceed to your wallet and follow the resume procedure by selecting "Resume" in the validation section.
+.. image:: ../images/browser-wallet/new/primed_for_suspension_banner.png
+           :width: 50%
+
+The validator then has until the next snapshot epoch to demonstrate activity by either producing a block or having its signature included in a quorum certificate. If it remains inactive, the suspension takes effect at the following payday, and the red banner will change to indicate the suspended status.
+
+.. image:: ../images/browser-wallet/new/suspended_banner.png
+           :width: 50%
+
+If your validator has been automatically suspended, you'll need to follow a two-step process to resume validation. First, you must address the underlying issue with your node that caused the inactivity. Check your node's status, identify what caused the suspension, fix these issues, and restart your node to ensure it's properly connected to the network. Once your node is operational again, you can then proceed to your wallet and follow the resume procedure by selecting **Resume** in the validation section.
 
 Self-suspend a validator
 ------------------------
@@ -51,9 +64,9 @@ Self-suspend a validator
        .. image:: ../images/browser-wallet/new/suspend_validator1.png
            :width: 50%
 
-    #. Review the transaction details for suspending your validator. Note that the suspension will take effect from the next payday. Click **Submit validation** to confirm and send your suspension transaction to the blockchain.
+    #. Review the transaction details for suspending your validator. Note that the suspension will take effect from the next payday. Click **Send** to confirm and send your suspension transaction to the blockchain.
 
-       .. image:: ../images/browser-wallet/new/suspend_validator2.png
+       .. image:: ../images/browser-wallet/new/suspend_validator_send.png
            :width: 50%
 
     #. The wallet displays a confirmation screen with a green checkmark, indicating your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.
@@ -68,7 +81,10 @@ Self-suspend a validator
     .. image:: ../images/browser-wallet/new/suspend_validator4.png
            :width: 50%
 
+    **Note:** If you have both a suspended validator and a suspended delegator, a banner will be shown for each.
 
+    .. image:: ../images/browser-wallet/new/suspended_validator_and_delegator.png
+           :width: 50%
 
 
     In the account list view, suspended validators are marked with a red indicator dot to the left of the account address.
@@ -101,10 +117,10 @@ Unsuspend a self-suspendet validator
        .. image:: ../images/browser-wallet/new/unsuspend_validator2.png
               :width: 50%
 
-    #. Review the transaction details for resuming your validator. Click **Submit validation** to confirm and send your resume transaction to the blockchain.
+    #. Review the transaction details for resuming your validator. Click **Send** to confirm and send your resume transaction to the blockchain.
        Note that the resumption will be effective from the next payday.
 
-       .. image:: ../images/browser-wallet/new/unsuspend_validator3.png
+       .. image:: ../images/browser-wallet/new/unsuspend_validator_send.png
               :width: 50%
 
     #. The wallet displays a confirmation screen with a green checkmark, indicating your validation has been successfully resumed. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.
@@ -140,10 +156,10 @@ Unsuspend an automatically suspendet validator
        .. image:: ../images/browser-wallet/new/unsuspend_validator2.png
               :width: 50%
 
-    #. Review the transaction details for resuming your validator. Click **Submit validation** to confirm and send your resume transaction to the blockchain.
+    #. Review the transaction details for resuming your validator. Click **Send** to confirm and send your resume transaction to the blockchain.
        Note that the resumption will be effective from the next payday.
 
-       .. image:: ../images/browser-wallet/new/unsuspend_validator3.png
+       .. image:: ../images/browser-wallet/new/unsuspend_validator_send.png
               :width: 50%
 
     #. The wallet displays a confirmation screen with a green checkmark, indicating your validation has been successfully resumed. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.

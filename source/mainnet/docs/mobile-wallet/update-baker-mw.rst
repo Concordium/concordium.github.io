@@ -89,9 +89,9 @@ When you change the stake it can influence your :term:`chance of being selected 
            :alt: screen showing firld and toggle to set preferences
 
 
-    #. Review the transaction details. Click **Submit validation** to submit the transaction. If you need to make any changes, you can go back to the previous step.
+    #. Review the transaction details. Click **Send** to submit the transaction. If you need to make any changes, you can go back to the previous step.
 
-       .. image:: ../images/browser-wallet/new/update_validation4.png
+       .. image:: ../images/browser-wallet/new/update_validation_send.png
            :width: 50%
            :alt: screen showing transaction receipt
 
@@ -295,9 +295,9 @@ Update pool settings
             :width: 50%
             :alt: screen showing option for adding metadata
 
-    #. Review the transaction details. When you’re satisfied with the configuration, scroll down and click **Submit validation** to finalize the transaction.
+    #. Review the transaction details. When you’re satisfied with the configuration, scroll down and click **Send** to finalize the transaction.
 
-       .. image:: ../images/browser-wallet/new/update_pool_settings4.png
+       .. image:: ../images/browser-wallet/new/update_pool_settings_send.png
            :width: 50%
            :alt: screen showing transaction receipt
 
@@ -505,7 +505,7 @@ If you believe your validator keys have been compromised or lost, you can genera
             :alt: screen with buttons to show keys or export validator keys
             :width: 50%
 
-    #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information, then scroll down and click **Submit validation**.
+    #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information, then scroll down and click **Send**.
 
        .. image:: ../images/browser-wallet/new/update_validator_keys3.png
             :width: 40%
