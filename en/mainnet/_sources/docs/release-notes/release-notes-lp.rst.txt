@@ -291,13 +291,23 @@ Wallets
 |bw|
 -------------------------
 
-    February 1, 2025
+    March 6, 2025
 
-    Version 2.0.2
+    Version 2.1.2
 
-    -   Fixed credentials with address undefined
+    -   Updated version of @concordium/web-sdk to ver.-9 (with new protocol8 update)
+    -   New info cards 'validation is primed for suspension' and 'validation is suspended' for Validators
+    -   New info cards 'validator suspended' for Delegators
+    -   New page with description of self-suspend action
+    -   Added action to suspend/resume validation
+    -   Suspended and primed for suspension validator accounts are marked with red dot at accounts list and Main page. Additionally, delegators with suspended target validators also marked.
+    -   Info notification at the Main page, about validator suspension
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.0.2 - February 1, 2025
+
+            Fixed credentials with address undefined
 
         .. dropdown:: |bw| 2.0.1 - February 1, 2025
 

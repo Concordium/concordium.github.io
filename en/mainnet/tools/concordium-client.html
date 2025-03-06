@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tools/concordium-client.9e75c143-9193-4824-9e40-41d0f8439794.js"></script>
+    <script defer="defer" src="../_static/tippy/tools/concordium-client.13ad627b-d024-4ae4-8248-d41e69f7a830.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/concordium-client';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/concordium-client.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -549,10 +549,8 @@
 <span id="id1"></span><h1>Concordium Client<a class="headerlink" href="#concordium-client" title="Link to this heading">#</a></h1>
 <p>The Concordium distribution ships with a CLI tool named <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
 <p>By default <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> performs its queries and sends transactions
-through a <a class="reference internal" href="../docs/network/nodes/run-node.html#run-a-node"><span class="std std-ref">local node</span></a>. If the node runs on a different machine
-or in a custom setup, the options <code class="docutils literal notranslate"><span class="pre">--grpc-ip</span></code> and <code class="docutils literal notranslate"><span class="pre">--grpc-port</span></code> can be used
-to set the <a class="reference external" href="https://en.wikipedia.org/wiki/IP_address">IP address</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Port_(computer_networking)">port number</a> where the node is accessible. These
-flags are supported by all <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> commands. Note that as of version
+through a <a class="reference internal" href="../docs/network/nodes/run-node.html#run-a-node"><span class="std std-ref">local node</span></a> on <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> and port <code class="docutils literal notranslate"><span class="pre">20000</span></code> for mainnet. If the node runs on a different machine or in a custom setup, the options <code class="docutils literal notranslate"><span class="pre">--grpc-ip</span></code> and <code class="docutils literal notranslate"><span class="pre">--grpc-port</span></code> can be used
+to set the <a class="reference external" href="https://en.wikipedia.org/wiki/IP_address">IP address</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Port_(computer_networking)">port number</a> where the node is accessible. These flags are supported by all <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> commands. Note that as of version
 5.1.1, the <a class="reference external" href="https://en.wikipedia.org/wiki/Port_(computer_networking)">port number</a> must be the port where the GRPC V2 interface is enabled, in contrast to previous versions which required the port number of the V1 API of the Concordium node.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -563,7 +561,7 @@ where the features that use them are documented. Some commands will perform
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
+<p>All transfers and transactions cost a fee. The fee is based on the set <a class="reference internal" href="../docs/protocol/transaction-fees.html#transaction-fees"><span class="std std-ref">NRG</span></a> for that transaction and the current exchange rate.
 The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the <strong>Balance</strong> of the account, so it is important to have some available CCDs to cover fees.
 You can see the fee in the transaction log.</p>
 </div>
@@ -574,18 +572,49 @@ You can see the fee in the transaction log.</p>
 <section id="run-concordium-client">
 <h2>Run Concordium Client<a class="headerlink" href="#run-concordium-client" title="Link to this heading">#</a></h2>
 <p>Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.</p>
-<p>On MacOS, you can run the Concordium Client from the command line by typing <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>, since the installation adds the client to the PATH.</p>
-<p>On Linux, the binary file includes the version and build number, so you can run it by typing <code class="docutils literal notranslate"><span class="pre">./concordium-client_6.3.0-1</span></code> from the directory where the file is located. Otherwise, you have to specify the full path to the executable file, or ensure that it is in a directory that is on the PATH. Note that after downloading the file, you may need to make it executable by running <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">concordium-client_6.3.0-1</span></code> before you can run it.</p>
-<p>On Windows, to run Concordium Client you have to specify the full path to the executable file (unless you are running from the same directory). For example, if you extracted <code class="docutils literal notranslate"><span class="pre">concordium-client_6.3.0-1.zip</span></code> to <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_6.3.0-1</span></code>, then you can run the client by typing <code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe</span></code>.
-When running commands for the Concordium Client in the terminal, replace <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> with the full path to the executable file as in the following example:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+macOS</label><div class="sd-tab-content docutils">
+<p>On MacOS, you can run the Concordium Client from the command line by typing <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>,
+since the installation adds the client to the PATH.</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Linux</label><div class="sd-tab-content docutils">
+<p>On Linux, the binary file includes the version and build number, so you can run it by typing <code class="docutils literal notranslate"><span class="pre">./concordium-client_6.3.0-1</span></code> from the directory where the file is located. Otherwise, you have to specify the full path to the executable file,
+or ensure that it is in a directory that is on the PATH.
+Note that after downloading the file, you may need to make it executable by running
+<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">concordium-client_6.3.0-1</span></code> before you can run it.</p>
+<p>You can run <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> directly by ensuring the executable is placed in a directory included in the PATH environment variable. In most UNIX-like operating systems, including Linux, <code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> is typically part of the default PATH. To make <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> accessible from any location in the terminal, move the executable to <code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> using the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo mv concordium-client_6.3.0-1 /usr/local/bin/concordium-client</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Windows</label><div class="sd-tab-content docutils">
+<p>On Windows, to run Concordium Client you have to specify the full path to the executable file
+(unless you are running from the same directory).
+For example, if you extracted <code class="docutils literal notranslate"><span class="pre">concordium-client_6.3.0-1.zip</span></code> to
+<code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_6.3.0-1</span></code>, then you can run the client by typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe</span>
+</pre></div>
+</div>
+<p>When running commands for the Concordium Client in the terminal, replace
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> with the full path to the executable file as in the following example:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA</span>
 </pre></div>
 </div>
+<p>If you add the directory containing the <code class="docutils literal notranslate"><span class="pre">concordium-client.exe</span></code> executable to the system environment variables, you can run it without specifying the full path. Alternatively, you can achieve the same result by moving <code class="docutils literal notranslate"><span class="pre">concordium-client.exe</span></code> to a directory that is already included in the system’s PATH variable, such as <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32</span></code> or any other predefined system directory.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To import the backup file as shown in the example, you must be in the same directory where the concordium-backup.export is saved. If not, you have to specify the full path to the file, for example:</p>
+<p>To import the backup file as shown in the example, you must be in the same directory where
+the <code class="docutils literal notranslate"><span class="pre">concordium-backup.export</span></code> is saved. If not, you have to specify the full path to the file, for example:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -811,15 +840,9 @@ existing names.</p>
 <p>When importing keys that have been exported from Concordium Wallet for Web, the <code class="docutils literal notranslate"><span class="pre">--name</span></code> option must be provided to name the account.</p>
 </div>
 </section>
-<section id="show-account-aliases">
-<h4>Show account aliases<a class="headerlink" href="#show-account-aliases" title="Link to this heading">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show-alias<span class="w"> </span>3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5<span class="w"> </span>--alias<span class="w"> </span><span class="m">17</span>
-</pre></div>
-</div>
-<p>This generates the output:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.</span>
-</pre></div>
-</div>
+<section id="account-aliases">
+<h4>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h4>
+<p>A detailed description and explanation of the term alias is available here <a class="reference internal" href="transactions.html#account-aliases"><span class="std std-ref">Account aliases</span></a></p>
 </section>
 </section>
 </section>
@@ -938,7 +961,7 @@ structure of <code class="docutils literal notranslate"><span class="pre">concor
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-keys-of-an-account">Update keys of an account</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-keys-of-an-account">Remove keys of an account</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#import-accounts-and-keys-from-the-wallet-apps">Import accounts and keys from the Wallet apps</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#show-account-aliases">Show account aliases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#account-aliases">Account aliases</a></li>
 </ul>
 </li>
 </ul>

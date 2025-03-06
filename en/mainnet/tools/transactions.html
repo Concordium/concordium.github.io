@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tools/transactions.3a2e799e-139c-4368-89ee-22edc6d72b3e.js"></script>
+    <script defer="defer" src="../_static/tippy/tools/transactions.9b12396b-1db7-4c9d-913d-6b3f19263852.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/transactions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/transactions.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -550,6 +550,20 @@
 <p>You can perform all types of transactions with the <a class="reference internal" href="concordium-client.html#concordium-client"><span class="std std-ref">concordium-client</span></a>. To do so, you use specialized subcommands.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>Concordium Foundation offers external developers access to a testnet node, which can be reached using <code class="docutils literal notranslate"><span class="pre">--grpc-ip</span> <span class="pre">grpc.testnet.concordium.com</span></code> and <code class="docutils literal notranslate"><span class="pre">--grpc-port</span> <span class="pre">20000</span></code>. Since the node is configured to use TLS, the <code class="docutils literal notranslate"><span class="pre">--secure</span></code> flag is required when running commands. For instance, to check the consensus status, you can query the Concordium testnet node as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$concordium-client consensus status --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are querying your own testnet node, be sure to use <code class="docutils literal notranslate"><span class="pre">--grpc-port</span> <span class="pre">20001</span></code> flag (unless you changed it from defaults). Let’s assume that the node you are querying is running on testnet and is located on the local network at <code class="docutils literal notranslate"><span class="pre">192.168.0.10</span></code>. In this case, to query the account status, use the command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$concordium-client account show 48XGRnvQoG92T1AwETvW5pnJ1aRSPMKsWtGdKhTqyiNZzMk3Qn --grpc-ip 192.168.0.10 --grpc-port 20001
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
 The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the <strong>Balance</strong> of the account, so it is important to have some available CCDs to cover fees.
 You can see the fee in the transaction log.</p>
@@ -682,7 +696,7 @@ the same account. Thus, accounts can be referred to by any address whose initial
 </pre></div>
 </div>
 <p>This generates the output:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt</span>
 </pre></div>
 </div>
 </section>
