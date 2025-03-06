@@ -60,12 +60,13 @@ Explore our developer resources, including detailed documentation, tutorials, an
 
 .. Note::
 
-   Currently, Rust toolchain versions up to ``1.81`` are supported. To set version ``1.81`` as the default, run these commands:
+   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
 
    .. code-block:: console
 
-      $ rustup toolchain install 1.81
-      $ rustup default 1.81
+      $ cargo install cargo-concordium
+      $ cargo concordium --version
+      $ cargo-concordium 4.1.1
 
    The minimum supported rust version is currently version ``1.73``
 

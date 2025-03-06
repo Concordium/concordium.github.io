@@ -8,7 +8,7 @@ Create proofs
 A :term:`verifier` is a business or use-case that provides a service contingent on the holder providing information about themselves using :term:`verifiable credentials<verifiable credential>` or :term:`account credentials<account credential>` they have. A verifier will typically consist of two components:
 
 1. A dApp that interacts with the wallet and requests a :term:`verifiable presentation` from the user.
-2. A backend that will verify the provided presentations, and provide the required service if successful, such as the `Concordia backend <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`_.
+2. A backend that will verify the provided presentations, and provide the required service if successful.
 
 The |bw| allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :term:`attributes<attributes>` to the dApp or service. The dApp or service constructs a list of :term:`statements<statement>` to request a corresponding list of :term:`zero-knowledge proofs<zero-knowledge proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.
 
