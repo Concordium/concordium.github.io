@@ -54,14 +54,14 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/add-delegation.8fc9a1db-7f8a-45c7-99d0-fb60584f4c88.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/add-delegation.7abf5818-04b4-4313-9d5f-a4c4a0329327.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/add-delegation';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/add-delegation.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Remove delegation to a staking pool or passive delegation" href="remove-delegation.html" />
-    <link rel="prev" title="Change validator options" href="../mobile-wallet/update-baker-mw.html" />
+    <link rel="prev" title="Suspend/Unsuspend a validator" href="../mobile-wallet/suspend-unsuspend-validator.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -644,6 +644,8 @@
 <li class="toctree-l3"><a class="reference internal" href="export-transaction-logs.html">Export transaction logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -861,35 +863,33 @@ You can see the fee in the transaction log.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Click <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the navigation bar. Use the left and right arrow to locate the button if necessary.</p>
-<a class="reference internal image-reference" href="../../_images/setup-baking-delegation.png"><img alt="../../_images/setup-baking-delegation.png" src="../../_images/setup-baking-delegation.png" style="width: 40%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account that you want to delegate from and click <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">In the <em>Delegation</em> section, click <strong>Continue to delegation setup</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/add_delegation1.png"><img alt="../../_images/add_delegation1.png" src="../../_images/add_delegation1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Click <strong>Setup delegation</strong>. If you are delegating for the first time on the account, you see some information about delegation.</p>
-<a class="reference internal image-reference" href="../../_images/add-delegation-baking.png"><img alt="../../_images/add-delegation-baking.png" src="../../_images/add-delegation-baking.png" style="width: 40%;" />
+<li><p class="sd-card-text">You can now go through anumber of informational screens explaining the key concepts of delegation on the Concordium blockchain, including delegation models, staking pools, passive delegation, pay days, and lock-ins/cool-downs. Click <strong>Next</strong> to navigate through the screens. Click <strong>Skip</strong> to proceed directly to registering your validation.</p>
+<a class="reference internal image-reference" href="../../_images/add_delegation2.png"><img alt="../../_images/add_delegation2.png" src="../../_images/add_delegation2.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">On the <strong>Register delegation</strong> screen choose whether to delegate to a specific pool click <strong>Staking pool</strong> and enter the Validator ID of the pool owner. If you are delegating to passive delegation, click <strong>Passive delegation</strong>. Click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/delegation-target.png"><img alt="../../_images/delegation-target.png" src="../../_images/delegation-target.png" style="width: 40%;" />
+<li><p class="sd-card-text">On the Register delegation screen, you have two options: If you want to delegate to a specific pool, click <strong>Validator</strong> and enter the Validator ID of the pool owner. If you want to register a passive delegation, click <strong>Passive</strong>. Click <strong>Continue</strong> to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/add_delegation3.png"><img alt="../../_images/add_delegation3.png" src="../../_images/add_delegation3.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Select your restake preference. Click <strong>Yes, restake</strong> to restake any rewards or click <strong>No, don’t restake</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/delegation-restake-preference.png"><img alt="../../_images/delegation-restake-preference.png" src="../../_images/delegation-restake-preference.png" style="width: 40%;" />
+<li><p class="sd-card-text">You can see your balance available to delegate. Enter the amount you want to delegate in the field and select your restake preference. Delegators receive rewards proportional to their stake, and by default, these rewards can be automatically added to your delegation amount. Use the <strong>Restake rewards</strong> toggle to enable this feature if you prefer to have your rewards automatically added to your delegation amount at each pay day, increasing your stake and future rewards. If disabled, rewards will be deposited to your disposable balance instead. Click <strong>Continue</strong> to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/add_delegation4.png"><img alt="../../_images/add_delegation4.png" src="../../_images/add_delegation4.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You can see your available balance to delegate on the account that is in focus. You can change the account from the Accounts drop-down at the top of the screen if you want to set up delegation on a different account than the one in focus. <strong>Enter the Amount you want to delegate</strong> in the field. Click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/create-delegation-amount.png"><img alt="../../_images/create-delegation-amount.png" src="../../_images/create-delegation-amount.png" style="width: 40%;" />
+<li><p class="sd-card-text">Review the information including your delegation style and amount, amount, reward settings, and commission rates. When you’re satisfied with the configuration, scroll down and click <strong>Send</strong> to finalize the transaction.</p>
+<a class="reference internal image-reference" href="../../_images/add_delegation_send.png"><img alt="../../_images/add_delegation_send.png" src="../../_images/add_delegation_send.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Review the information in the transaction overview. When you are satisfied, click <strong>Send</strong>.</p></li>
-<li><p class="sd-card-text">Once the transaction is submitted you see a confirmation screen. Click <strong>Finish</strong> to complete the action.</p></li>
+<li><p class="sd-card-text">The wallet shows a confirmation screen with a green checkmark indicating that your delegation transaction has been successfully submitted to the chain. You can see the amount you’re delegating with. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Return to account</strong> to return to your account overview.</p>
+<a class="reference internal image-reference" href="../../_images/add_delegation6.png"><img alt="../../_images/add_delegation6.png" src="../../_images/add_delegation6.png" style="width: 50%;" />
+</a>
+</li>
 </ol>
 <p class="sd-card-text">Once the transaction is finalized, the delegation is effective from the next pay day. You can see the delegation type and amount on the account card.</p>
-<a class="reference internal image-reference" href="../../_images/delegated-amount.png"><img alt="../../_images/delegated-amount.png" src="../../_images/delegated-amount.png" style="width: 40%;" />
-</a>
-<p class="sd-card-text">Accounts with delegation also have a badge in the account list.</p>
-<a class="reference internal image-reference" href="../../_images/delegation-acct-list.png"><img alt="../../_images/delegation-acct-list.png" src="../../_images/delegation-acct-list.png" style="width: 40%;" />
-</a>
 </div>
 </details></section>
 
@@ -940,12 +940,12 @@ You can see the fee in the transaction log.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../mobile-wallet/update-baker-mw.html"
+       href="../mobile-wallet/suspend-unsuspend-validator.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Change validator options</p>
+        <p class="prev-next-title">Suspend/Unsuspend a validator</p>
       </div>
     </a>
     <a class="right-next"

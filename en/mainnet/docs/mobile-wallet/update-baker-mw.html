@@ -54,13 +54,13 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/update-baker-mw.6ecb5560-6c1c-4604-946c-4be4f81b7653.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/update-baker-mw.313eacb1-695b-43df-a184-c1046ff0bf0a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/update-baker-mw';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/update-baker-mw.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Delegate to a staking pool or passive delegation" href="../guides/add-delegation.html" />
+    <link rel="next" title="Stop a validator" href="stop-validator.html" />
     <link rel="prev" title="Add a validator" href="add-baker-mw.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -644,6 +644,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Change validator options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stop-validator.html">Stop a validator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -782,32 +784,25 @@ You can also choose to adjust your restake setting between <strong>Yes, restake<
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Click <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.</p>
-<a class="reference internal image-reference" href="../../_images/setup-baking-delegation.png"><img alt="../../_images/setup-baking-delegation.png" src="../../_images/setup-baking-delegation.png" style="width: 40%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validation options and click <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the next screen, click <strong>Update</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation1.png"><img alt="../../_images/update_validation1.png" src="../../_images/update_validation1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You see the current validator setup. Click <strong>Update</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-options.png"><img alt="screen showing current validator setup and buttons to stop or update" src="../../_images/update-baker-options.png" style="width: 40%;" />
+<li><p class="sd-card-text">On the next screen, click <strong>Update validation stake</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation2.png"><img alt="buttons for update validaton options" src="../../_images/update_validation2.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Click <strong>Update validator stake</strong>. Review the information about updating validator stake and click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-actions.png"><img alt="screen showing actions to update validator" src="../../_images/update-baker-actions.png" style="width: 40%;" />
+<li><p class="sd-card-text">You can now change the staked amount by updating the <em>Amount</em> field or change your restaking preferences by toggling the ‘Restake rewards’ option. When the <em>Restake rewards</em> toggle is enabled, your validation rewards will automatically be added to your validation amount, increasing your stake over time. When the <em>Restake rewards</em> toggle is disabled, your rewards will instead be deposited to your disposable balance at each pay day. When you’re satisfied with your staking configuration, tap the <strong>Continue</strong> to proceed with your updates.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation3.png"><img alt="screen showing firld and toggle to set preferences" src="../../_images/update_validation3.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You can change the restake preference if desired. Click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-restake-pref.png"><img alt="screen showing buttons to set restake preference" src="../../_images/update-baker-restake-pref.png" style="width: 40%;" />
+<li><p class="sd-card-text">Review the transaction details. Click <strong>Send</strong> to submit the transaction. If you need to make any changes, you can go back to the previous step.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation_send.png"><img alt="screen showing transaction receipt" src="../../_images/update_validation_send.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You can change the amount staked if desired. Click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-stake.png"><img alt="screen showing text box to update staked amount" src="../../_images/update-baker-stake.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Review the transaction details. Click <strong>Send</strong> to submit the transaction.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-stake-review.png"><img alt="screen showing transaction receipt" src="../../_images/update-baker-stake-review.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">The wallet shows that the transaction has been submitted to the chain. Click <strong>Finish</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-stake-finalize.png"><img alt="screen showing transaction receipt" src="../../_images/update-baker-stake-finalize.png" style="width: 40%;" />
+<li><p class="sd-card-text">The wallet displays a confirmation screen with a green checkmark, indicating your validation settings have been successfully updated. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Return to account</strong> to go back to your account overview.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation5.png"><img alt="screen showing transaction receipt" src="../../_images/update_validation5.png" style="width: 50%;" />
 </a>
 </li>
 </ol>
@@ -947,41 +942,33 @@ Tap Next to navigate through the screens. Tap Skip to proceed directly to updati
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Click <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.</p>
-<a class="reference internal image-reference" href="../../_images/setup-baking-delegation.png"><img alt="../../_images/setup-baking-delegation.png" src="../../_images/setup-baking-delegation.png" style="width: 40%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validation options and click <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the next screen, click <strong>Update</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation1.png"><img alt="../../_images/update_validation1.png" src="../../_images/update_validation1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You see the current validator setup. Click <strong>Update</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-options.png"><img alt="screen showing current validator setup and buttons to stop or update" src="../../_images/update-baker-options.png" style="width: 40%;" />
+<li><p class="sd-card-text">On the next screen, click <strong>Update pool settings</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation2.png"><img alt="screen showing validator update options" src="../../_images/update_validation2.png" style="width: 40%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Click <strong>Update pool settings</strong>. Review the information about updating staking pool settings and click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-actions.png"><img alt="screen showing actions to update validator" src="../../_images/update-baker-actions.png" style="width: 40%;" />
+<li><p class="sd-card-text">On this screen, you can toggle whether your validator is open for delegation. When enabled, other users can delegate their tokens to your validator, increasing your total stake and improving your chances of    producing blocks. Rewards earned will be distributed between you and your delegators at each pay day. If you prefer to validate with only your own stake, you can disable this option. Once you’ve made your   selection, tap <strong>Continue</strong> to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/update_pool_settings1.png"><img alt="screen showing options pool" src="../../_images/update_pool_settings1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You can change the staking pool status, if desired. Click <strong>Continue</strong>. The options are:</p>
-<ul class="simple">
-<li><p class="sd-card-text">Open pool: open a pool for a previously closed validator</p></li>
-<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
-<li><p class="sd-card-text">Close pool: close a pool permanently.</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/update-baker-pool-status.png"><img alt="screen showing actions to update validator pool status" src="../../_images/update-baker-pool-status.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">You can use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. Click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-pool-comms.png"><img alt="screen showing sliders and text boxes to adjust commissions" src="../../_images/update-baker-pool-comms.png" style="width: 40%;" />
+<li><p class="sd-card-text">On the Commissions screen, you can set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click Continue to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/update_pool_settings2.png"><img alt="screen showing sliders and text boxes to adjust commissions" src="../../_images/update_pool_settings2.png" style="width: 50%;" />
 </a>
 </li>
 <li><p class="sd-card-text">Update the staking pool metadata URL, if desired. Click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-pool-url.png"><img alt="screen showing text box to add or update staking pool URL" src="../../_images/update-baker-pool-url.png" style="width: 40%;" />
+<a class="reference internal image-reference" href="../../_images/update_pool_settings3.png"><img alt="screen showing option for adding metadata" src="../../_images/update_pool_settings3.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Review the transaction details. Click <strong>Send</strong> to submit the transaction.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-pool-review.png"><img alt="screen showing transaction receipt" src="../../_images/update-baker-pool-review.png" style="width: 40%;" />
+<li><p class="sd-card-text">Review the transaction details. When you’re satisfied with the configuration, scroll down and click <strong>Send</strong> to finalize the transaction.</p>
+<a class="reference internal image-reference" href="../../_images/update_pool_settings_send.png"><img alt="screen showing transaction receipt" src="../../_images/update_pool_settings_send.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">The wallet shows that the transaction has been submitted to the chain. Click <strong>Finish</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-pool-finalize.png"><img alt="screen showing transaction receipt" src="../../_images/update-baker-pool-finalize.png" style="width: 40%;" />
+<li><p class="sd-card-text">The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Return to account</strong> to return to your account overview.</p>
+<a class="reference internal image-reference" href="../../_images/update_pool_settings5.png"><img alt="screen showing transaction receipt" src="../../_images/update_pool_settings5.png" style="width: 50%;" />
 </a>
 </li>
 </ol>
@@ -1140,30 +1127,25 @@ Tap Next to navigate through the screens. Tap Skip to proceed directly to updati
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Click <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.</p>
-<a class="reference internal image-reference" href="../../_images/setup-baking-delegation.png"><img alt="screen showing current validator setup and buttons to stop or update" src="../../_images/setup-baking-delegation.png" style="width: 40%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validation options and click <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the next screen, click <strong>Update</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/update_validation1.png"><img alt="screen validator update options" src="../../_images/update_validation1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You see the current validator setup. Click <strong>Update</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-options.png"><img alt="screen showing current validator setup and buttons to stop or update" src="../../_images/update-baker-options.png" style="width: 40%;" />
+<li><p class="sd-card-text">On the next screen, click <strong>Update validator keys</strong>. Review the information about updating validator keys and click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/update_validator_keys1.png"><img alt="screen showing validator options" src="../../_images/update_validator_keys1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Click <strong>Update validator keys</strong>. Review the information about updating validator keys and click <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-actions.png"><img alt="screen showing actions to update validator" src="../../_images/update-baker-actions.png" style="width: 40%;" />
+<li><p class="sd-card-text">Click <strong>Export export as .json</strong> and the keys are automatically downloaded as <cite>validator-credentials.json</cite> to your default download folder. Click <strong>Continue</strong> to complete the transaction.</p>
+<a class="reference internal image-reference" href="../../_images/update_validator_keys2.png"><img alt="screen with buttons to show keys or export validator keys" src="../../_images/update_validator_keys2.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Click <strong>Export validator keys</strong> and the keys are automatically downloaded as <cite>validator-credentials.json</cite> to your default download folder. Click <strong>Continue</strong> to complete the transaction.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-keys.png"><img alt="screen with buttons to show keys or export validator keys" src="../../_images/update-baker-keys.png" style="width: 40%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/add-baker-continue-after-export.png"><img alt="screen with buttons to continue after export and wallet screen dimmed behind" src="../../_images/add-baker-continue-after-export.png" style="width: 40%;" />
+<li><p class="sd-card-text">Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information, then scroll down and click <strong>Send</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/update_validator_keys3.png"><img alt="../../_images/update_validator_keys3.png" src="../../_images/update_validator_keys3.png" style="width: 40%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then click <strong>Send</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-keys-review.png"><img alt="../../_images/update-baker-keys-review.png" src="../../_images/update-baker-keys-review.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">The wallet shows that the transaction has been submitted to the chain. Click <strong>Finish</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-keys-finish.png"><img alt="../../_images/update-baker-keys-finish.png" src="../../_images/update-baker-keys-finish.png" style="width: 40%;" />
+<li><p class="sd-card-text">The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Return to account</strong> to return to your account overview.</p>
+<a class="reference internal image-reference" href="../../_images/update_validator_keys4.png"><img alt="../../_images/update_validator_keys4.png" src="../../_images/update_validator_keys4.png" style="width: 50%;" />
 </a>
 </li>
 <li><p class="sd-card-text">You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a validator for a longer time.</p>
@@ -1198,7 +1180,7 @@ Tap Next to navigate through the screens. Tap Skip to proceed directly to updati
 <p class="admonition-title">Warning</p>
 <p class="sd-card-text">This is the only time that you can export the credentials. If you’re going to transfer the validator keys to someone else, make sure to do so through a secure channel.</p>
 </div>
-<ol class="arabic simple" start="5">
+<ol class="arabic simple">
 <li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
 <li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> in the Desktop Wallet and click <strong>Submit</strong>.</p></li>
 <li><p class="sd-card-text">On the LEDGER device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct and navigate to the right. The LEDGER device says <strong>Update baker keys</strong>. Navigate to the right.</p></li>
@@ -1275,139 +1257,7 @@ Tap Next to navigate through the screens. Tap Skip to proceed directly to updati
 </ol>
 </div>
 </details></div>
-</details></section>
-<section id="stop-validation">
-<span id="remove-baker-mw"></span><h2>Stop validation<a class="headerlink" href="#stop-validation" title="Link to this heading">#</a></h2>
-<p>If you remove a validator, the node that is configured with the <a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">validator keys</span></a> will stop producing blocks after the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.</p>
-<p>After the <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>, the amount that you previously staked is returned to your disposable balance at the next pay day. When you’ve removed the validator,
-it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
-If you want to use the node for validation at a later point in time, you’ll then have to create a new set of validator keys.</p>
-<p>If you no longer wish to produce blocks on this account, you can stop validation.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>Stop validation</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-stop-validation.png"><img alt="screen showing all validator options" src="../../_images/cryptoX-stop-validation.png" style="width: 50%;" />
-</a>
-</div></blockquote>
-</li>
-<li><p class="sd-card-text">After the screens explaining validator removal, tap <strong>Continue</strong>.</p></li>
-<li><p class="sd-card-text">Review the information. When you are satisfied, tap <strong>Submit validator transaction</strong>.</p></li>
-<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>.</p></li>
-</ol>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">Click <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the navigation bar. Use the left and right arrow to locate the button if necessary. Use the Accounts drop-down at the top of the window to select the account.</p>
-<a class="reference internal image-reference" href="../../_images/setup-baking-delegation.png"><img alt="screen showing current validator setup and buttons to stop or update" src="../../_images/setup-baking-delegation.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">You see the current validator setup. Click <strong>Stop</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update-baker-options.png"><img alt="screen showing current validator setup and buttons to stop or update" src="../../_images/update-baker-options.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Read the information about what happens when you stop validation. Click <strong>Continue</strong>.</p></li>
-<li><p class="sd-card-text">Review the transaction information. Click <strong>Send</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/stop-baking-review.png"><img alt="screen showing transaction details with send and back buttons" src="../../_images/stop-baking-review.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Click <strong>Finish</strong> to finalize your transaction.</p></li>
-</ol>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Single signature account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">Go to <strong>Accounts</strong>, select the account that you no longer want to be a validator account then click <strong>More options</strong>.</p></li>
-<li><p class="sd-card-text">Select <strong>Validation</strong>.</p></li>
-<li><p class="sd-card-text">Click <strong>Stop validation</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/dw-baker-menu.png"><img alt="screen showing all validator options" src="../../_images/dw-baker-menu.png" style="width: 50%;" />
-</a>
-</li>
-<li><p class="sd-card-text">The cool-down period is displayed. Select <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/dw-remove-baker.png"><img alt="screen showing that validator will be removed" src="../../_images/dw-remove-baker.png" style="width: 50%;" />
-</a>
-</li>
-<li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
-<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready**in the Desktop Wallet and select **Submit</strong>.</p></li>
-<li><p class="sd-card-text">On the LEDGER device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Remove baker from pool</strong>. Navigate to the right.</p></li>
-<li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
-<li><p class="sd-card-text">In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
-</ol>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Multi signature account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic simple">
-<li><p class="sd-card-text">Go to <strong>Multi Signature Transactions</strong>, select <strong>Make new proposal</strong>, and then select <strong>Stop validation</strong>.</p></li>
-<li><p class="sd-card-text">Select the <strong>Account</strong> that you no longer want to be a validator account, and then select <strong>Continue</strong>.</p></li>
-<li><p class="sd-card-text">Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select <strong>Continue</strong>.</p></li>
-</ol>
-<p class="sd-card-text"><strong>Generate the transaction</strong></p>
-<p class="sd-card-text">There are two ways that you can generate the transaction:</p>
-<ul class="simple">
-<li><p class="sd-card-text">Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a LEDGER device but you do need an internet connection.</p></li>
-<li><p class="sd-card-text">Generate and sign the transaction This option requires a LEDGER device and an internet connection.</p></li>
-</ul>
-<p class="sd-card-text">In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
-<p class="sd-card-text"><em>Generate the transaction without signing</em></p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
-<li><p class="sd-card-text">Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
-</ol>
-<p class="sd-card-text"><em>Generate and sign the transaction on the LEDGER device</em></p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">If you haven’t connected the LEDGER device, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
-<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong> or <strong>Open the Concordium application on your Ledger Nano S Plus</strong>. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying LEDGER device is ready.</p></li>
-<li><p class="sd-card-text">In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
-<li><p class="sd-card-text">On the LEDGER device, there’s a message saying <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Remove baker from pool</strong>. Navigate to the right.</p></li>
-<li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p class="sd-card-text">If you want to decline the transaction, press the right button on the LEDGER device. The hardware wallet now says <strong>Decline to sign transaction</strong>. Press both buttons to decline. In the Desktop Wallet, there’s a message saying <strong>The action was declined on the Ledger device. Please try again.</strong></p>
-</div>
-<p class="sd-card-text">In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can <a class="reference internal" href="#submit-remove-baker"><span class="std std-ref">submit the transaction to the chain</span></a>, otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
-<p class="sd-card-text"><strong>Export proposal</strong></p>
-<p class="sd-card-text">If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
-<li><p class="sd-card-text">Navigate to the location on your computer where you want to save the file. If you’re on Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>.</p></li>
-<li><p class="sd-card-text">You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.</p></li>
-</ol>
-<p class="sd-card-text"><strong>Receive signatures from co-signers</strong></p>
-<p class="sd-card-text">When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select Your proposed transactions.</p></li>
-<li><p class="sd-card-text">Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.</p></li>
-<li><p class="sd-card-text">Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
-</ol>
-<p class="sd-card-text" id="submit-remove-baker"><strong>Submit the transaction to the blockchain</strong></p>
-<p class="sd-card-text">When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
-<ol class="arabic">
-<li><p class="sd-card-text">Review the transaction details carefully to ensure that all information is correct.</p></li>
-<li><p class="sd-card-text">Select <strong>I understand this is the final submission, and that it cannot be reverted</strong>.</p>
-<blockquote>
-<div><p class="sd-card-text">If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
-</div></blockquote>
-</li>
-<li><p class="sd-card-text">Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the ledger.</p></li>
-<li><p class="sd-card-text">Select <strong>Finish</strong> to leave the page.</p></li>
-</ol>
-</div>
-</details></div>
-</details><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you stop as a validator, remember that this does not shut down your node. You need to shut down the node in a separate action if you no longer wish to run a node on the Concordium blockchain.</p>
-</div>
-</section>
+</details><span class="target" id="remove-baker-mw"></span></section>
 </section>
 
 
@@ -1466,11 +1316,11 @@ If you want to use the node for validation at a later point in time, you’ll th
       </div>
     </a>
     <a class="right-next"
-       href="../guides/add-delegation.html"
+       href="stop-validator.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Delegate to a staking pool or passive delegation</p>
+        <p class="prev-next-title">Stop a validator</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1496,7 +1346,6 @@ If you want to use the node for validation at a later point in time, you’ll th
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-validator-stake-and-restaking-preference">Update validator stake and restaking preference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-pool-settings">Update pool settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-validator-keys">Update validator keys</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-validation">Stop validation</a></li>
 </ul>
   </nav></div>
 

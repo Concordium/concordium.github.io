@@ -12,6 +12,7 @@ Note that if you decrease or remove the delegation, there is a :term:`cool-down 
 
 Before delegating stake to a staking pool, it is important to research the pool using :ref:`CCDScan<ccd-scan>`. You can only have one delegation per account.
 
+
 .. Note::
 
    Any changes made in the last epoch before the upcoming pay day are applied not in the upcoming pay day but the pay day after that.
@@ -24,6 +25,20 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
+
+Updating delegation from a suspendet validator
+----------------------------------------------
+If a validator you've delegated to becomes suspended, you'll see a warning banner in your wallet interface indicating *Your validator has been suspended*. When a validator is suspended, both the validator and its delegators stop earning rewards.
+To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.
+
+.. image:: ../images/browser-wallet/new/your_validator_suspended_banner.png
+           :width: 50%
+
+
+To update your delegation from a suspended validator, follow the same update process described below for each wallet type.
+
+Update delegation
+-----------------
 
 .. dropdown:: |cryptox|
 
@@ -172,60 +187,33 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 .. dropdown:: |bw|
 
-    #. Bring the account whose delegation you want to update into focus by clicking the **Accounts** drop-down at the top of the screen and selecting the account.
+    #. In the dropdown list, select the delegating account and click **Earn**.
 
-       .. image:: ../images/browser-wallet/select-account.png
-           :width: 40%
-           :alt: screen with accounts drop-down activated and account selection shown
+    #. Click **Update**.
 
-    #. Click |earn| on the navigation bar. Use the left and right arrow to locate the button if necessary.
+       .. image:: ../images/browser-wallet/new/update_delegation1.png
+           :width: 50%
 
-       .. image:: ../images/browser-wallet/delegation-update-stop.png
-           :width: 40%
-           :alt: screen showing current delegation and buttons to update or stop
+    #. On the next screen, you can modify delegation preferences. Select *Validator* to delegate to a specific validator pool of your choice, select *Passive* to use passive delegation. Click **Continue** to proceed.
 
-    #. You see your current delegation. Click **Update**. Review the information about updating your delegation.
+       .. image:: ../images/browser-wallet/new/update_delegation2.png
+           :width: 50%
 
-       .. image:: ../images/browser-wallet/update-stop-delegation-baking.png
-           :width: 40%
-           :alt: screen showing current delegation and buttons to update or stop
+    #. On the next screen, you can make any desired changes to your delegation amount and change your restake rewards options. Click **Continue** to proceed.
 
-    #. If you want to delegate to a specific pool click **Target** and enter the validator ID of the pool owner you want to switch the delegation to. If you want to delegate to passive delegation, click **Passive**. Click **Continue**.
+       .. image:: ../images/browser-wallet/new/update_delegation3.png
+           :width: 50%
 
-       .. image:: ../images/browser-wallet/delegation-update-target.png
-           :width: 40%
-           :alt: screen showing current delegation and buttons to select target
+    #. Review the information including your delegation amount, and commission rates. When you're satisfied with the configuration, click **Send** to finalize the transaction.
 
+       .. image:: ../images/browser-wallet/new/update_delegation_send.png
+           :width: 50%
 
-       .. image:: ../images/browser-wallet/delegation-update-target1.png
-           :width: 40%
-           :alt: screen showing current delegation and buttons to select target
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-    #. Select your restake preference. Click **Yes, restake** to restake any rewards or click **No, don't restake** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Click **Continue**.
+       .. image:: ../images/browser-wallet/new/update_delegation5.png
+           :width: 50%
 
-       .. image:: ../images/browser-wallet/delegation-update-restaking-pref.png
-           :width: 40%
-           :alt: screen with buttons to select restaking rewards preference
-
-    #. You can see your balance available to delegate at the top of screen and the amount of your current delegation. If you want to change the amount enter that in the **Enter the Amount you want to delegate** field. Click **Continue**.
-
-       .. image:: ../images/browser-wallet/delegation-update-amount.png
-           :width: 40%
-           :alt: screen to enter delegation amount
-
-    #. Review the information in the transaction overview. When you are satisfied, click **Send**.
-
-       .. image:: ../images/browser-wallet/delegation-update-xact-confirm.png
-           :width: 40%
-           :alt: screen showing delegation transaction details for review
-
-    #. Once the transaction is submitted you see a confirmation screen. Click **Finish** to complete the action.
-
-       .. image:: ../images/browser-wallet/delegation-update-submit.png
-           :width: 40%
-           :alt: screen showing transaction details submitted to chain
-
-Once the transaction is finalized, the delegation update is effective from the next pay day for most transactions, except reducing your stake.
 
 
 .. |earn| image:: ../images/earn.png

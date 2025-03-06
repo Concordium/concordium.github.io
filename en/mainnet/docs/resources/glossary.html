@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.f231b5d1-5fb2-447e-9f75-4a1f8cc55176.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.844d7540-ea5b-4b32-a6b7-c7b022d67fc3.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/resources/glossary';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/resources/glossary.html" />
@@ -645,6 +645,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -751,6 +753,8 @@
 <dt id="term-Best-chain">Best chain<a class="headerlink" href="#term-Best-chain" title="Link to this term">#</a></dt><dd><p>This term is no longer used. See <a class="reference internal" href="#term-Concordium-Byzantine-Fault-Tolerance-BFT-protocol"><span class="xref std std-term">Concordium Byzantine Fault Tolerance (BFT) protocol</span></a>.</p>
 </dd>
 <dt id="term-Block">Block<a class="headerlink" href="#term-Block" title="Link to this term">#</a></dt><dd><p>The basic unit of the blockchain, which is produced by a <a class="reference internal" href="#term-Validator"><span class="xref std std-term">validator</span></a>. A block contains a (possibly empty) list of <a class="reference internal" href="#term-Transaction"><span class="xref std std-term">transactions</span></a>, and has a pointer to a previous block (with the exception of the <a class="reference internal" href="#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a>). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a <a class="reference internal" href="#term-Slot"><span class="xref std std-term">slot time</span></a> that records when it was produced. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.</p>
+</dd>
+<dt id="term-Block-reward-commission">Block reward commission<a class="headerlink" href="#term-Block-reward-commission" title="Link to this term">#</a></dt><dd><p>Sets the percentage of block rewards a validator retains when its pool successfully produces a block. Lower rates may attract more delegators, while higher rates increase your profit share from each block.</p>
 </dd>
 <dt id="term-Branch">Branch<a class="headerlink" href="#term-Branch" title="Link to this term">#</a></dt><dd><p>A chain of blocks that has split from the main chain. All branches have the potential to become the main chain. The Chain selection rule determines which branch is the best chain.</p>
 </dd>
@@ -957,6 +961,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <dt id="term-Total-effective-stake">Total effective stake<a class="headerlink" href="#term-Total-effective-stake" title="Link to this term">#</a></dt><dd><p>The total amount of stake in staking pools excluding passive delegation and any amount that exceeds the <a class="reference internal" href="../protocol/concepts-delegation.html#delegation-caps"><span class="std std-ref">staking pool bounding caps</span></a>.</p>
 </dd>
 <dt id="term-Transaction">Transaction<a class="headerlink" href="#term-Transaction" title="Link to this term">#</a></dt><dd><p>An atomic operation that defines a change of state in the ledger, such as transferring funds from one account to another. A transaction typically has a sender account and a <a class="reference internal" href="#term-Transaction-Sequence-Number"><span class="xref std std-term">transaction sequence number</span></a>, and incurs a fee. The sender account must sign the transaction to authorize it. (The exception to this is a credential deployment transaction that creates a new account, which does not have a sender account.)</p>
+</dd>
+<dt id="term-Transaction-fee-commission">Transaction fee commission<a class="headerlink" href="#term-Transaction-fee-commission" title="Link to this term">#</a></dt><dd><p>Determines the percentage of transaction fees a validator keep when delegators’ stakes contribute to validating transactions. Lower percentages can attract more delegators but reduce the validator’s earnings per transaction.</p>
 </dd>
 <dt id="term-Transfer-Memo">Transfer Memo<a class="headerlink" href="#term-Transfer-Memo" title="Link to this term">#</a></dt><dd><p>Additional data that a user can provide when making a transfer, or a transfer with schedule. The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings, numbers and JSON values, but this is not enforced.</p>
 </dd>

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/remove-delegation.94490dcf-f344-48c3-a86c-d203f4ca980b.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/remove-delegation.7746954c-0646-490a-a497-0c870b831fd3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/remove-delegation';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/remove-delegation.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -644,6 +644,8 @@
 <li class="toctree-l3"><a class="reference internal" href="export-transaction-logs.html">Export transaction logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -842,24 +844,17 @@ You can see the fee in the transaction log.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Bring the account whose delegation you want to stop into focus by clicking the <strong>Accounts</strong> drop-down at the top of the screen and selecting the account.</p>
-<a class="reference internal image-reference" href="../../_images/select-account.png"><img alt="screen with accounts drop-down activated and account selection shown" src="../../_images/select-account.png" style="width: 40%;" />
+<li><p class="sd-card-text">In the dropdown list, select the delegating account and click <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the next screen, click <strong>Stop</strong></p>
+<a class="reference internal image-reference" href="../../_images/stop_delegation1.png"><img alt="../../_images/stop_delegation1.png" src="../../_images/stop_delegation1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Click <a class="reference internal" href="../../_images/earn.png"><img alt="Hand receiving money" src="../../_images/earn.png" style="width: 50px;" /></a> on the navigation bar. Use the left and right arrow to locate the button if necessary.</p>
-<a class="reference internal image-reference" href="../../_images/delegation-update-stop.png"><img alt="screen showing current delegation and buttons to update or stop" src="../../_images/delegation-update-stop.png" style="width: 40%;" />
+<li><p class="sd-card-text">Review the information. Note that your delegated stake will be released after 7 days. Click <strong>Send</strong> to finalize the transaction.</p>
+<a class="reference internal image-reference" href="../../_images/stop_delegation_send.png"><img alt="../../_images/stop_delegation_send.png" src="../../_images/stop_delegation_send.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You see your current delegation. Click <strong>Stop</strong>. Review the information about the cool-down period.</p>
-<a class="reference internal image-reference" href="../../_images/update-stop-delegation-baking.png"><img alt="screen showing current delegation and buttons to update or stop" src="../../_images/update-stop-delegation-baking.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Review the information in the transaction overview. When you are satisfied, click <strong>Send</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/delegation-stop-xact-confirm.png"><img alt="screen showing the transaction details that will be submitted to the chain" src="../../_images/delegation-stop-xact-confirm.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Once the transaction is submitted you see a confirmation screen. Click <strong>Finish</strong> to complete the action.</p>
-<a class="reference internal image-reference" href="../../_images/delegation-xact-submit.png"><img alt="screen showing the transaction submitted to the chain and finish button" src="../../_images/delegation-xact-submit.png" style="width: 40%;" />
+<li><p class="sd-card-text">The wallet shows a confirmation screen with a green checkmark indicating that your delegation has been successfully stopped. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Return to account</strong> to return to your account overview.</p>
+<a class="reference internal image-reference" href="../../_images/stop_delegation3.png"><img alt="../../_images/stop_delegation3.png" src="../../_images/stop_delegation3.png" style="width: 50%;" />
 </a>
 </li>
 </ol>
