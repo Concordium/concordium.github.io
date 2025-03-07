@@ -19,7 +19,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
 .. dropdown:: |cryptox|
 
-    #. In the dropdown list, select the account for which you will set up a validator an click **Earn**.
+    #. In the dropdown list, select the account for which you will set up a validator an tap **Earn**.
 
     #. Select **Continue to validator setup**.
 

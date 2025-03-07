@@ -16,27 +16,6 @@ Change validator options
 
 The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the |cryptox|, |bw|, and Desktop Wallet.
 
-The steps to get to these settings for |cryptox| are described below.
-
-.. dropdown:: |cryptox|
-
-    #. Tap the account.
-
-    #. Tap |cryptoX-earn| on the account balance screen.
-
-    #. Tap **Change validating status**.
-
-        .. image:: ../images/cryptoX/cryptoX-change-validator-status.png
-            :width: 50%
-            :alt: screen showing current validator settings and change button
-
-
-Once you access the validator settings for your wallet, you have four options:
-
-- Update validator stake
-- Update pool settings
-- Update validator keys
-- Stop validation
 
 .. _update-baker-stake-mw:
 
@@ -52,17 +31,29 @@ When you change the stake it can influence your :term:`chance of being selected 
 
 .. dropdown:: |cryptox|
 
-    #. Tap **Update validator stake**.
+    #. In the dropdown list, select the account for which you want to update the validation options and tap **Earn**.
 
-    #. You can now go through informational screens explaining the options for changing validator status. Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the validator stake.
+    #. On the validator status screen, tap **Change validating status**.
 
-       .. image:: ../images/cryptoX/cryptoX-update-validator-stake.png
+       .. image:: ../images/cryptoX/cryptox-change-validating-status.png
             :width: 50%
-            :alt: screen to update validator stake showing amount and restake preference options
+            :alt: screen showing validating status
 
-    #. Now you see your balance and the current Validator stake amount.
+    #. You now see the options for changing the validating status. Tap **Update validator stake**
+
+       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
+            :width: 50%
+            :alt: screen showing options for changing validating status
+
+    #. You can now go through informational screens explaining the options for changing validator status. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to updating the validator stake.
+
+    #. Now you see your balance and the current validator stake amount.
        Enter the total amount you want to stake.
-       You can also choose to adjust your restake setting between **Yes, restake** rewards or **No, don’t restake** rewards. Tap **Continue**.
+       You can also choose to adjust your restake settings. Select **Yes, add** to automatically add your validation rewards to your validation amount, or **No, don’t add** to have the rewards deposited to your disposable balance at each payday. When you're satisfied with your staking configuration, tap **Continue** to proceed with your updates.
+
+       .. image:: ../images/cryptoX/cryptox-update-validator-stake_new.png
+            :width: 50%
+            :alt: screen showing options for changing validating status
 
     #. On the overview screen, check the information. Once you are satisfied, tap **Submit validator transaction**.
 
@@ -219,47 +210,54 @@ Update pool settings
 
 .. dropdown:: |cryptox|
 
-    #. Tap **Update pool settings**
+    #. In the dropdown list, select the account for which you want to update the pool settings and tap **Earn**.
+
+    #. On the Validator status screen, tap **Change validating status**.
+
+       .. image:: ../images/cryptoX/cryptox-change-validating-status.png
+            :width: 50%
+            :alt: screen showing validator status
+
+    #. You now see the options for changing the validating status. Tap **Update pool settings**.
+
+       .. image:: ../images/cryptoX/cryptoX-change-validating-status-options.png
+            :width: 50%
+            :alt: screen showing options for changing validating status
+
 
     #. You can now go through informational screens explaining the options for changing validator status.
-       Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the pool settings.
+       Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to updating the pool settings.
 
-       .. image:: ../images/cryptoX/cryptoX-update-pool-settings1.png
+    #. You now see the pool setting options and your current status:
+
+       - **Open for delegation**: Select this option for opening a pool for a previously closed validator
+       - **Close for new delegators**: Select this option for closing the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`.
+       - **Close for delegation**: Select this option for closing a pool permanently.
+
+       Select the preferred setting and tap **Continue**.
+
+       .. image:: ../images/cryptoX/cryptoX-update-pool-settings_new.png
             :width: 50%
             :alt: screen showing three staking pool options
 
-       - Open pool: open a pool for a previously closed validator
-       - Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the :ref:`bounding caps<delegation-concept>`. **It is the validator's responsibility to monitor the stake to make pool management decisions.**
-       - Close pool: close a pool permanently.
+    #. If you have an open pool, you can set or update the validator commission rates here. This is the percentage of rewards you keep when others delegate their stake to your validator pool.
 
-       If you choose **Open pool**:
+       Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, tap **Continue** to proceed.
 
-        #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
+       .. image:: ../images/cryptoX/cryptoX-update-commissions.png
+            :width: 50%
+            :alt: screen showing sliders for defining validator commissions
 
-        #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
+    #. If you have an open pool, you can, optionally, enter a URL with information about your validator. This will give delegators additional information when researching staking pools. This information is not shared in the case of a closed pool. Tap **Continue** to proceed.
 
-        #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
+       .. image:: ../images/cryptoX/cryptox-update-pool-settings-metadata-url.png
+            :width: 50%
+            :alt: screen showing option for entering metadata url
 
-        #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
 
-       If you choose **Closed for new**:
+    #. In the Update pool settings overview screen, review the information then tap **Submit delegation transaction**.
 
-       Existing delegators remain in the pool. You have the option to adjust commission fees and your validator information URL.
-
-        #. Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.
-
-        #. Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.
-
-        #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
-
-        #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
-
-       If you choose **Close pool**:
-
-       This closes the pool completely for both existing delegators and new delegators.
-
-    #. In the Update pool settings overview screen review the information then tap **Submit delegation transaction**.
-    #. The |cryptoX| shows that the transaction has been submitted to the chain. Tap **Finish**. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.
+    #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**.
 
 
 .. dropdown:: |bw|
@@ -274,7 +272,7 @@ Update pool settings
     #. On the next screen, click **Update pool settings**.
 
        .. image:: ../images/browser-wallet/new/update_validation2.png
-            :width: 40%
+            :width: 50%
             :alt: screen showing validator update options
 
     #. On this screen, you can toggle whether your validator is open for delegation. When enabled, other users can delegate their tokens to your validator, increasing your total stake and improving your chances of    producing blocks. Rewards earned will be distributed between you and your delegators at each pay day. If you prefer to validate with only your own stake, you can disable this option. Once you've made your   selection, tap **Continue** to proceed.
@@ -455,20 +453,34 @@ If you believe your validator keys have been compromised or lost, you can genera
 
 .. dropdown:: |cryptox|
 
-    #. Tap **Update validator keys**
+    #. In the dropdown list, select the account for which you want to update the pool settings and tap **Earn**.
+
+    #. On the Validator status screen, tap **Change validating status**.
+
+       .. image:: ../images/cryptoX/cryptox-change-validating-status.png
+            :width: 50%
+            :alt: screen showing validator status
+
+    #. You now see the options for changing the validating status. Tap **Update validator keys**.
+
+       .. image:: ../images/cryptoX/cryptoX-change-validating-status-options.png
+            :width: 50%
+            :alt: screen showing options for changing validating status
+
 
     #. You can now go through informational screens explaining the options for changing validator status.
-       Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the validator keys.
+       Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to updating the pool settings.
 
-        .. image:: ../images/cryptoX/cryptoX-update-validator-keys.png
-            :width: 50%
-            :alt: screen showing new keys with button to export
+    #. On the Update validator keys screen, tap **Export validator keys**.
 
-    #. Tap **Export validator keys**.
-
-        .. Warning::
+       .. Warning::
 
            If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
+
+
+       .. image:: ../images/cryptoX/cryptoX-update-validator-keys.png
+            :width: 50%
+            :alt: screen showing new keys with button to export
 
     #. Once you have saved the keys, review the information on the overview screen of the add validator transaction then tap **Submit validator transaction**.
 
@@ -476,10 +488,10 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     #. You need to import your validator keys file to your node in order to start producing blocks with the new keys. It is preferable to update them on the node as close to :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
-        - :ref:`Windows<baker-windows>`
-        - :ref:`macOS<baker-macos>`
-        - :ref:`Docker<baking-docker>`
-        - :ref:`Ubuntu<baker-ubuntu>`
+       - :ref:`Windows<baker-windows>`
+       - :ref:`macOS<baker-macos>`
+       - :ref:`Docker<baking-docker>`
+       - :ref:`Ubuntu<baker-ubuntu>`
 
 
 .. dropdown:: |bw|
