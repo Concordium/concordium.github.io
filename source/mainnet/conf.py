@@ -184,6 +184,20 @@ html_theme_options = {
                "target" : "_blank",}
         },
         {
+            # Concordium Email Support
+            "name": "Support",
+            # URL where the link will redirect
+            "url": "mailto:support@concordium.software",  # required
+            # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
+            "icon": "fas fa-envelope",
+            # Whether icon should be a FontAwesome class, or a local file
+            "type": "fontawesome",  # Default is fontawesome
+            # Add additional attributes to the href link.
+            # The defaults of the target, rel, class, title, and href may be overwritten.
+            "attributes": {
+               "target" : "_blank",}
+        },
+        {
             # Concordium monitoring options
             "name": "Monitor",
             # URL where the link will redirect
