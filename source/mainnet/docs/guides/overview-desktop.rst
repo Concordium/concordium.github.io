@@ -30,7 +30,7 @@ Before you start, make sure you’ve completed the following steps:
 
     #. Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.
 
-    #. If this is the first time you're opening the Desktop Wallet, you're asked to connect to a node. If you don't see this message, go to **Settings**, and then select **Node settings**. The Virtual Hive node (concordiumwalletnode.com) is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you’re running. The address is the network address of the node.
+    #. If this is the first time you're opening the Desktop Wallet, you're asked to connect to a node. If you don't see this message, go to **Settings**, and then select **Node settings**. By default, ``grpc.mainnet.concordium.software`` is inserted, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the **Address** and **Port** of the node you’re running. The address is the network address of the node.
 
     - If you're running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the **Address field**, enter *127.0.0.1*, and in the **Port field** enter *20000*.
 
