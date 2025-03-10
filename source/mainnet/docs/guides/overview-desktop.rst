@@ -22,7 +22,7 @@ Before you start, make sure you’ve completed the following steps:
 
 .. dropdown:: Step 1: Set up the node
 
-    The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
+    The Desktop Wallet must be connected to a running **trusted** node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default ``grpc.mainnet.concordium.software`` is provided. But you can run a node yourself using :ref:`Windows<run-node-windows>`, :ref:`macOS <run-node-macos>`, and :ref:`with Docker <run-a-node>` or :ref:`a Debian package <run-node-ubuntu>` on Linux. You can also have a third-party provider run a node for you.
 
 .. dropdown:: Step 2: Install the Desktop Wallet
 
@@ -46,8 +46,6 @@ Before you start, make sure you’ve completed the following steps:
 .. dropdown:: Step 3: Install the Concordium LEDGER app using LEDGER Live
 
     The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet.
-
-    #. Open LEDGER Live and click Settings |ledger-settings|. Select **Experimental features** and turn on **Developer mode**.
 
     #. Connect the LEDGER device to your computer, and enter your PIN code to unlock the LEDGER.
 
@@ -78,6 +76,20 @@ Once you have completed these four steps, you're ready to start using the Deskto
 .. Warning::
 
     Currently, it is not possible to exchange identities and accounts between the |mw-gen1| or |mw-gen2| and the Desktop Wallet. If you try to import a file that has been exported from the |mw-gen1| into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the |mw-gen1|.
+
+If you previously installed the Concordium app by enabling Developer mode
+=========================================================================
+
+Users who previously installed the Concordium Ledger app through Developer Mode in Ledger Live can now update to the standard version without needing to enable Developer Mode.
+
+Simply go to My Ledger in Ledger Live and follow the prompt to update the application.
+You do not need to disable Developer Mode—the app will be accessible whether Developer Mode is enabled or not.
+
+If you are installing the app for the first time, you can find Concordium in the list of available applications in Ledger Live and install it directly, without requiring Developer Mode.
+
+In both cases, it is essential that Ledger Live and the device firmware are updated to the latest versions before proceeding.
+If your device's operating system is outdated, an orange banner will appear, prompting you to update before you can install or update the app.
+You do not need to take any additional technical steps—your private keys will remain intact, and there is no need for key restoration.
 
 .. |ledger-settings| image:: ../images/desktop-wallet/ledger-live-settings.png
                     :alt: gear wheel on black background
