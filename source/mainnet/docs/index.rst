@@ -45,18 +45,19 @@ Explore our developer resources, including detailed documentation, tutorials, an
 
 .. raw:: html
 
-   <style>
-   .three-columns {
-       display: flex;
-       justify-content: space-between;
-       gap: 2em; /* Tilføjer mellemrum mellem spalterne */
-   }
-   .column1, .column2, .column3 {
-       width: 30%;
-       padding: 1em; /* Tilføjer indvendig polstring */
 
-   }
-   </style>
+    <style>
+   .. .three-columns {
+   ..     display: flex;
+   ..     justify-content: space-between;
+   ..     gap: 2em; /* Tilføjer mellemrum mellem spalterne */
+   .. }
+   .. .column1, .column2, .column3 {
+   ..     width: 30%;
+   ..     padding: 1em; /* Tilføjer indvendig polstring */
+
+   .. }
+    </style>
 
 .. Note::
 

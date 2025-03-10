@@ -36,30 +36,30 @@ html {
 
     /* Font family */
     /* These are adapted from https://systemfontstack.com/ */
-    --pst-font-family-base-system: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
-    --pst-font-family-monospace-system: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
-                                        'Bitstream Vera Sans Mono', Courier, monospace;
+    --pst-font-family-base-system: "IBM Plex Sans", "Helvetica Neue", Arial,
+        sans-serif;
+    --pst-font-family-monospace-system: "IBM Plex Mono", "Menlo",
+        "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
     --pst-font-family-base: var(--pst-font-family-base-system);
     --pst-font-family-heading: var(--pst-font-family-base-system);
     --pst-font-family-monospace: var(--pst-font-family-monospace-system);
-
 
     /*****************************************************************************
      * Colors
      **/
 
     /* specified with RGB or hexcodes */
-    --pst-color-primary: #48A2AE;
+    --pst-color-primary: #48a2ae;
     --pst-color-primary-text: #333333;
     --pst-color-secondary: #052535;
-    --pst-color-link: #48A2AE;
-    --pst-color-link-hover: #48A2AE;
+    --pst-color-link: #48a2ae;
+    --pst-color-link-hover: #48a2ae;
     --pst-color-inline-code: 178, 34, 34;
-    --pst-color-sidebar-link-hover: #48A2AE;
-    --pst-color-toc-link-hover: #48A2AE;
-    --pst-color-toc-link-active: #48A2AE;
-    --pst-color-headerlink: #48A2AE;
-    --pst-color-headerlink-hover: #48A2AE;
+    --pst-color-sidebar-link-hover: #48a2ae;
+    --pst-color-toc-link-hover: #48a2ae;
+    --pst-color-toc-link-active: #48a2ae;
+    --pst-color-headerlink: #48a2ae;
+    --pst-color-headerlink-hover: #48a2ae;
     --bg-color: #ffffff;
     --heading-color: #333333;
     --font-color: #333333;
@@ -82,9 +82,6 @@ html {
     --pst-icon-admonition-todo: var(--pst-icon-pencil);
 }
 
-
-
-
 /* Consent dialog */
 .consent {
     position: fixed;
@@ -92,35 +89,41 @@ html {
     bottom: 0;
     max-width: 530px;
     padding: 30px 45px 25px;
-    background: linear-gradient(157deg, #005A78 -18.68%, #2E8894 95.63%);
+    background: linear-gradient(157deg, #005a78 -18.68%, #2e8894 95.63%);
     color: #fff;
 }
+
 .consent p {
     margin-bottom: 0.5em;
     color: #fff;
     font-size: 14px;
     font-weight: 300;
 }
+
 .consent button {
     padding-left: 1em;
     padding-right: 1em;
-    margin-left: .5em;
-    margin-right: .5em;
-    background-color: #48A2AE;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #48a2ae;
     border-radius: 12px;
     border-width: 0;
     color: #fff;
 }
+
 .consent a:link {
-    margin-left: .5em;
+    margin-left: 0.5em;
     color: #ffffff;
 }
+
 .consent a:visited {
     color: lightgrey;
 }
-.consent   a:hover {
+
+.consent a:hover {
     color: lightgrey;
 }
+
 .consent a:active {
     color: #d9d9d9;
 }
@@ -133,12 +136,16 @@ html {
 .tutorial-section {
     background-color: var(--pst-color-on-background);
     border-color: var(--pst-color-border);
-    padding: 25px 25px 25px 40px !important;    /* top right bottom left - more padding on left */
+    padding: 25px 25px 25px 40px !important;
+    /* top right bottom left - more padding on left */
     margin: 20px 0;
     border-radius: 8px;
-    border: 1px solid #cbd5e0;    /* More visible border */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    border: 1px solid #cbd5e0;
+    /* More visible border */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
 }
+
 /* Blue container */
 .tutorial-section-blue {
     background-color: #edf2f7 !important;
@@ -147,39 +154,47 @@ html {
 
 /* Green container */
 .tutorial-section-green {
-    background-color: #f0fdf4 !important;    /* Light green */
+    background-color: #f0fdf4 !important;
+    /* Light green */
     border: 1px solid #dcfce7 !important;
 }
 
 /* Purple container */
 .tutorial-section-purple {
-    background-color: #faf5ff !important;    /* Light purple */
+    background-color: #faf5ff !important;
+    /* Light purple */
     border: 1px solid #f3e8ff !important;
 }
+
 /* Yellow container */
 .tutorial-section-yellow {
-    background-color: #fefce8 !important;    /* Light yellow */
+    background-color: #fefce8 !important;
+    /* Light yellow */
     border: 1px solid #fef9c3 !important;
 }
 
 /* Dark mode variants */
 html[data-theme="dark"] .tutorial-section-blue {
-    background-color: #1e2937 !important;    /* Dark blue */
+    background-color: #1e2937 !important;
+    /* Dark blue */
     border: 1px solid #2d3748 !important;
 }
 
 html[data-theme="dark"] .tutorial-section-green {
-    background-color: #1a2e1a !important;    /* Dark green */
+    background-color: #1a2e1a !important;
+    /* Dark green */
     border: 1px solid #2d482d !important;
 }
 
 html[data-theme="dark"] .tutorial-section-purple {
-    background-color: #2d1a2e !important;    /* Dark purple */
+    background-color: #2d1a2e !important;
+    /* Dark purple */
     border: 1px solid #482d48 !important;
 }
 
 html[data-theme="dark"] .tutorial-section-yellow {
-    background-color: #2e2d1a !important;    /* Dark yellow */
+    background-color: #2e2d1a !important;
+    /* Dark yellow */
     border: 1px solid #48482d !important;
 }
 
@@ -201,12 +216,14 @@ html[data-theme="dark"] .tutorial-section-yellow {
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
+
 /* Sidebar max width */
 .bd-sidebar-primary {
     min-width: 250px;
     max-width: 20%;
     flex: 0 0 auto;
 }
+
 /* Prevent text selection in sidebar navigation */
 .bd-sidebar-primary .bd-links .bd-links__item,
 .bd-sidebar-primary .bd-links .bd-links__item *,
@@ -220,14 +237,17 @@ html[data-theme="dark"] .tutorial-section-yellow {
     -moz-user-select: none;
     -ms-user-select: none;
 }
+
 /* Logo positioning */
 .navbar-header-items__start {
     position: relative;
     left: 0;
     padding-left: 1rem;
-    z-index: 1;  /* Reduced z-index */
-    background: var(--pst-color-on-background);  
-    max-width: 167px; /* Match logo's natural width*/
+    z-index: 1;
+    /* Reduced z-index */
+    background: var(--pst-color-on-background);
+    max-width: 167px;
+    /* Match logo's natural width*/
 }
 
 /* Dark mode switching */
@@ -243,8 +263,9 @@ html[data-theme="dark"] .dark-logo {
 .navbar-header-items:not(.navbar-header-items__start) {
     margin-left: 200px;
     position: relative;
-    z-index: 2;  /* Higher than logo */
-    background: var(--pst-color-on-background);  
+    z-index: 2;
+    /* Higher than logo */
+    background: var(--pst-color-on-background);
 }
 
 /* Logo handling for dark/light mode */
@@ -263,13 +284,16 @@ img.logo {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .navbar-header-items__start{
-        max-width: 120px; /* Smaller width on mobile */
-        margin-left: 3rem; /* Make space for menu button */
-        background: var(--pst-color-on-background);  /* Single background property */ 
+    .navbar-header-items__start {
+        max-width: 120px;
+        /* Smaller width on mobile */
+        margin-left: 3rem;
+        /* Make space for menu button */
+        background: var(--pst-color-on-background);
+        /* Single background property */
     }
-    
-    img.logo{
+
+    img.logo {
         width: 100%;
         height: auto;
     }
@@ -278,5 +302,95 @@ img.logo {
 /* Dark mode specific adjustments if needed */
 html[data-theme="dark"] .navbar-header-items__start,
 html[data-theme="dark"] .navbar-header-items:not(.navbar-header-items__start) {
-    background: var(--pst-color-on-background);  /* Ensures correct dark mode background */
+    background: var(--pst-color-on-background);
+    /* Ensures correct dark mode background */
+}
+
+@media (max-width: 576px) {
+    .bd-main .bd-content {
+        padding: 0 16px;
+    }
+
+    .three-columns {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-bottom: 0;
+    }
+
+    /* .prev-next-area a p.prev-next-title {
+    font-size: 0.875rem;
+  }
+
+  .prev-next-area a p.prev-next-subtitle {
+    font-size: 0.8rem;
+  } */
+
+    .prev-next-area a {
+        max-width: 50%;
+    }
+
+    .tutorial-section {
+        padding: 0.9375rem !important;
+    }
+
+    /* .tutorial-section {
+    padding: 15px !important;
+  } */
+
+    .copyright {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .sd-tab-set .sd-tab-label {
+        /*    font-size: 0.75rem;*/
+        padding: 0.375rem !important;
+    }
+
+    .bd-search-container ul.search {
+        padding: 0;
+    }
+
+    .bd-search-container ul.search li div.context,
+    .bd-search-container ul.search li p.context {
+        word-wrap: break-word;
+    }
+
+    span.pre {
+        text-wrap: auto;
+    }
+
+    .sig {
+        flex-direction: column;
+        /* Stacks elements vertically */
+        align-items: flex-start;
+        /* Aligns to the left for better readability */
+    }
+
+    .sig-paren {
+        display: inline-block;
+    }
+
+    dd, ul {
+        margin-left: 0px !important;
+        padding-left: 0px !important;
+    }
+    #import-created-accounts-into-concordium-client{
+        word-break: break-all;
+    }
+    .sd-tab-set>input:checked+label+.sd-tab-content{
+        word-wrap: break-word;
+    }
+}
+
+@media (min-width: 768px),
+(max-width: 576px) {
+    .bd-sidebar-primary {
+        min-width: 21.875rem;
+    }
+
+    ul.navbar-icon-links {
+        flex-flow: row;
+    }
 }
