@@ -211,7 +211,7 @@ html_theme_options = {
             # Concordium Discord
             "name": "Discord",
             # URL where the link will redirect
-            "url": "https://discord.com/invite/GpKGE2hCFx",  # replace with your actual Discord invite link
+            "url": "https://discord.com/invite/GpKGE2hCFx",
             # Icon class for Discord using FontAwesome
             "icon": "fab fa-discord",
             # Using FontAwesome
