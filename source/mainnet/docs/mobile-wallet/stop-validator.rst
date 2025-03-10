@@ -21,7 +21,7 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
 .. dropdown:: |cryptox|
 
-    #. In the dropdown list, select the account for which you want to update the pool settings and tap **Earn**.
+    #. In the dropdown list, select the account for which you want to stop validation and tap **Earn**.
 
     #. On the Validator status screen, tap **Change validating status**.
 
