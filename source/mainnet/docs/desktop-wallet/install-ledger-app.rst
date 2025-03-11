@@ -48,7 +48,7 @@ The LEDGER device will generate the unique 24-word recovery phrase that is used 
 
    Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
-Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. 
+Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device.
 The Concordium LEDGER App currently supports LEDGER firmware version 2.1.0 for the LEDGER NANO S and 1.3.1 or 1.3.2 for LEDGER NANO S PLUS.
 
 Update the LEDGER device firmware
