@@ -202,6 +202,10 @@ Unsuspend an automatically suspendet validator
 
     Additionally, a red dot appears on the Earn button, providing a visual indicator that your validator requires attention.
 
+    .. image:: ../images/cryptoX/cryptox-validator-primed-for-suspension-banner.png
+            :width: 50%
+            :alt: screen showing suspended validator in validator status screen
+
     Your node has until the next snapshot epoch to show activity. If your node remains inactive, full suspension takes effect at the next payday.
 
     If your validator has been suspended:
