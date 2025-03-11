@@ -75,7 +75,7 @@ Self-suspend a validator
 
     On your account overview screen, a prominent red banner appears at the bottom stating *Your validation has been suspended*. This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
 
-    .. image:: ../images/cryptoX/cryptox-validator-suspended-banner.png
+    .. image:: ../images/cryptoX/cryptox-validator-suspended-banner-new.png
             :width: 50%
             :alt: screen showing validator suspended banner
 
