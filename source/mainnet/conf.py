@@ -247,7 +247,7 @@ html_theme_options = {
         },
         {
             "name": "Medium",
-            "url": "https://medium.com/concordium",
+            "url": "https://medium.com/@concordium",
             "icon": "fab fa-medium",
             "type": "fontawesome",
             # Add additional attributes to the href link.
