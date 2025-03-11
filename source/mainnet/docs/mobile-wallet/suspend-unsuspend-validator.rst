@@ -169,17 +169,7 @@ Unsuspend a self-suspendet validator
 
     #. Review the resume validation info and tap **Submit validator transaction** to proceed.
 
-       .. image:: ../images/cryptoX/cryptox-resume-validation-submit-transaction.png
-            :width: 50%
-            :alt: screen showing submit transaction for resume validation
-
-
     #. The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
-
-       .. image:: ../images/cryptoX/cryptox-resume-validation-finish.png
-            :width: 50%
-            :alt: screen showing submit transaction for resume validation
-
 
 
 .. dropdown:: |bw|
@@ -235,17 +225,7 @@ Unsuspend an automatically suspendet validator
 
     #. Review the resume validation info and tap **Submit validator transaction** to proceed.
 
-       .. image:: ../images/cryptoX/cryptox-resume-validation-submit-transaction.png
-            :width: 50%
-            :alt: screen showing submit transaction for resume validation
-
-
     #. The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
-
-       .. image:: ../images/cryptoX/cryptox-resume-validation-finish.png
-            :width: 50%
-            :alt: screen showing submit transaction for resume validation
-
 
 
 .. dropdown:: |bw|

@@ -57,6 +57,8 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     #. On the overview screen, check the information. Once you are satisfied, tap **Submit validator transaction**.
 
+    #. The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
+
 
 .. dropdown:: |bw|
 
