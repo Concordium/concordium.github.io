@@ -211,7 +211,7 @@ html[data-theme="dark"] .tutorial-section-yellow {
 
 .three-columns {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
     gap: 2.5rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -372,10 +372,10 @@ html[data-theme="dark"] .navbar-header-items:not(.navbar-header-items__start) {
         display: inline-block;
     }
 
-    dd, ul {
+    /*dd, ul {
         margin-left: 0px !important;
         padding-left: 0px !important;
-    }
+    }*/
     #import-created-accounts-into-concordium-client{
         word-break: break-all;
     }
@@ -387,7 +387,7 @@ html[data-theme="dark"] .navbar-header-items:not(.navbar-header-items__start) {
 @media (min-width: 768px),
 (max-width: 576px) {
     .bd-sidebar-primary {
-        min-width: 21.875rem;
+        min-width: 20rem;
     }
 
     ul.navbar-icon-links {
