@@ -26,7 +26,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
 .. Warning::
    Make sure you have enough funds in your disposable balance to cover transaction fees.
 
-Updating delegation from a suspendet validator
+Updating delegation from a suspended validator
 ----------------------------------------------
 If a validator you've delegated to becomes suspended, you'll see a warning banner in your wallet interface indicating *Your validator has been suspended*. When a validator is suspended, both the validator and its delegators stop earning rewards.
 To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.
@@ -42,7 +42,7 @@ Update delegation
 
 .. dropdown:: |cryptox|
 
-    #. In the dropdown list, select the account from which you want to delegate and tap **Earn**.
+    #. In the dropdown list, select the account from which you want to change your delegation preferences and tap **Earn**.
 
     #. On the delegation status screen, tap **Update current delegation**.
 
@@ -52,7 +52,7 @@ Update delegation
 
     #. You can now go through informational screens explaining the update options for delegation. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to updating.
 
-    #. If you want to delegate to a specific pool, selectp **Validator** and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, select **Passive**. Tap **Continue**.
+    #. If you want to delegate to a specific pool, select **Validator** and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, select **Passive**. Tap **Continue**.
 
        .. image:: ../images/cryptoX/cryptoX-update-delegation.png
             :width: 50%

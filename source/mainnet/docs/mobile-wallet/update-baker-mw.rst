@@ -264,7 +264,7 @@ Update pool settings
 
 .. dropdown:: |bw|
 
-    #. In the dropdown list, select the account for which you want to update the validation options and click **Earn**.
+    #. In the dropdown list, select the account for which you want to update the pool settings and click **Earn**.
 
     #. On the next screen, click **Update**.
 
@@ -455,7 +455,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
 .. dropdown:: |cryptox|
 
-    #. In the dropdown list, select the account for which you want to update the pool settings and tap **Earn**.
+    #. In the dropdown list, select the account for which you want to update the validator keys and tap **Earn**.
 
     #. On the Validator status screen, tap **Change validating status**.
 
@@ -498,7 +498,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
 .. dropdown:: |bw|
 
-    #. In the dropdown list, select the account for which you want to update the validation options and click **Earn**.
+    #. In the dropdown list, select the account for which you want to update the validator keys and click **Earn**.
 
     #. On the next screen, click **Update**.
 

@@ -20,7 +20,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
 .. dropdown:: |cryptox|
 
-        #. In the dropdown list, select the account from which you want to delegate and tap **Earn**.
+        #. In the dropdown list, select the account that you want to delegate from and tap **Earn**.
 
         #. Tap **Continue to delegation setup**
 

@@ -147,12 +147,12 @@ Self-suspend a validator
     This persistent notification ensures you're always aware of the suspension status and provides quick access to resume validation when you're ready.
 
 
-Unsuspend a self-suspendet validator
+Unsuspend a self-suspended validator
 ------------------------------------
 
 .. dropdown:: |cryptox|
 
-    #. Navigate to the unsuspendet validator. Tapping the suspension notification banner will immediately take you to the suspended validator's status page.
+    #. Navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator's status page.
 
     #. Tap **Change validating status**.
 
@@ -174,7 +174,7 @@ Unsuspend a self-suspendet validator
 
 .. dropdown:: |bw|
 
-    #. Navigate to the unsuspendet validator. Clicking the suspension notification banner will immediately take you to the suspended validator's details page.
+    #. Navigate to the suspended validator. Clicking the suspension notification banner will immediately take you to the suspended validator's details page.
 
     #. Click **Resume**.
 
@@ -193,7 +193,7 @@ Unsuspend a self-suspendet validator
               :width: 50%
 
 
-Unsuspend an automatically suspendet validator
+Unsuspend an automatically suspended validator
 ----------------------------------------------
 
 .. dropdown:: |cryptox|
@@ -212,7 +212,7 @@ Unsuspend an automatically suspendet validator
 
     #. First check your node and resolve the underlying issues: Identify what caused the automatic suspension, fix the identified issues on your node, and restart your node.
 
-    #. Then, navigate to the unsuspendet validator. Tapping the suspension notification banner will immediately take you to the suspended validator's details page.
+    #. Then, navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator's details page.
 
     #. Tap **Change validating status**.
 
@@ -247,7 +247,7 @@ Unsuspend an automatically suspendet validator
 
     #. First check your node and resolve the underlying issues: Identify what caused the automatic suspension, fix the identified issues on your node, and restart your node.
 
-    #. Then, navigate to the unsuspendet validator. Clicking the suspension notification banner will immediately take you to the suspended validator's status page.
+    #. Then, navigate to the suspended validator. Clicking the suspension notification banner will immediately take you to the suspended validator's status page.
 
     #. Click **Resume**.
 

@@ -20,7 +20,7 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
 .. dropdown:: |cryptox|
 
-      #. In the dropdown list, select the account from which you want to delegate and tap **Earn**.
+      #. In the dropdown list, select the account from which you want to remove delegation and tap **Earn**.
 
       #. On the delegation status screen, tap **Stop delegation**.
 
