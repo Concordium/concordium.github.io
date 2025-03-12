@@ -222,6 +222,20 @@ html_theme_options = {
                "target" : "_blank",}
         },
         {
+            # Concordium Discord
+            "name": "Discord",
+            # URL where the link will redirect
+            "url": "https://discord.com/invite/GpKGE2hCFx",
+            # Icon class for Discord using FontAwesome
+            "icon": "fab fa-discord",
+            # Using FontAwesome
+            "type": "fontawesome",
+            # Opening in a new tab
+            "attributes": {
+            "target": "_blank",
+            }
+        },
+        {
             "name": "YouTube",
             "url": "https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A",
             "icon": "fab fa-youtube",
@@ -233,18 +247,8 @@ html_theme_options = {
         },
         {
             "name": "Medium",
-            "url": "https://medium.com/concordium",
+            "url": "https://medium.com/@concordium",
             "icon": "fab fa-medium",
-            "type": "fontawesome",
-            # Add additional attributes to the href link.
-            # The defaults of the target, rel, class, title, and href may be overwritten.
-            "attributes": {
-               "target" : "_blank",}
-        },
-        {
-            "name": "Academy",
-            "url": "https://academy.concordium.software/ccd-academy/getting-started",
-            "icon": "fas fa-graduation-cap",
             "type": "fontawesome",
             # Add additional attributes to the href link.
             # The defaults of the target, rel, class, title, and href may be overwritten.
