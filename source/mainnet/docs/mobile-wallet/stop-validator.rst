@@ -31,7 +31,7 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
     #. You now see the options for changing the validating status. Tap **Stop validating**.
 
-       .. image:: ../images/cryptoX/cryptoX-change-validating-status-options.png
+       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
             :width: 50%
             :alt: screen showing options for changing validating status
 

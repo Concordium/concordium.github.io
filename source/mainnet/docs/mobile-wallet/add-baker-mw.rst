@@ -31,7 +31,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     #. On the register validator screen you can see your available balance. Enter the amount you want to stake in the field. Tap **Yes, add** to restake validator rewards, or tap **No, don't add** if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Tap **Continue**.
 
-       .. image:: ../images/cryptoX/cryptoX-register-validator_new.png
+       .. image:: ../images/cryptoX/cryptox-register-validator_new.png
             :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
             :width: 50%
 

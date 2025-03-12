@@ -60,7 +60,7 @@ Update delegation
 
     #. On the next screen you can see your balance available for delegation and the amount of your current delegation. If you want to change the amount, tap on the field **Optional: Type the new amount** and enter the amount. Tap **Yes, add** to restake any rewards or tap **No, don't add** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance at each payday. When satisfied with your settings, tap **Continue**.
 
-       .. image:: ../images/cryptoX/cryptoX-update-delegation2-new.png
+       .. image:: ../images/cryptoX/cryptox-update-delegation2-new.png
             :width: 50%
             :alt: screen with options to choose delegation type
 

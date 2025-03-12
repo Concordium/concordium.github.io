@@ -39,7 +39,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
         #. You can see your balance available to delegate. Enter the amount you want to delegate in the field. Tap **Yes, add** to restake any rewards, or tap **No, don't add** if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Then, tap **Continue**.
 
-           .. image:: ../images/cryptoX/cryptoX-register-delegation-add-rewards-new.png
+           .. image:: ../images/cryptoX/cryptox-register-delegation-add-rewards-new.png
                 :width: 50%
                 :alt: screen to register delegation amount and restake preference
 

@@ -222,7 +222,7 @@ Update pool settings
 
     #. You now see the options for changing the validating status. Tap **Update pool settings**.
 
-       .. image:: ../images/cryptoX/cryptoX-change-validating-status-options.png
+       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
             :width: 50%
             :alt: screen showing options for changing validating status
 
@@ -238,7 +238,7 @@ Update pool settings
 
        Select the preferred setting and tap **Continue**.
 
-       .. image:: ../images/cryptoX/cryptoX-update-pool-settings_new.png
+       .. image:: ../images/cryptoX/cryptox-update-pool-settings_new.png
             :width: 50%
             :alt: screen showing three staking pool options
 
@@ -246,7 +246,7 @@ Update pool settings
 
        Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, tap **Continue** to proceed.
 
-       .. image:: ../images/cryptoX/cryptoX-update-commissions.png
+       .. image:: ../images/cryptoX/cryptox-update-commissions.png
             :width: 50%
             :alt: screen showing sliders for defining validator commissions
 
@@ -465,7 +465,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     #. You now see the options for changing the validating status. Tap **Update validator keys**.
 
-       .. image:: ../images/cryptoX/cryptoX-change-validating-status-options.png
+       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
             :width: 50%
             :alt: screen showing options for changing validating status
 
