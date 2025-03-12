@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/update-baker-mw.9e70b602-9ab4-44c6-a524-6b4e27a43418.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/update-baker-mw.45c930bf-3be7-47f9-b343-e840b638f99e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/update-baker-mw';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/update-baker-mw.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -736,28 +736,6 @@ You can see the fee in the transaction log.</p>
 <p>Transactions on the blockchain can’t be reversed or deleted. They will always exist on the blockchain. Therefore, carefully review transactions before submitting.</p>
 </div>
 <p>The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the CryptoX Concordium Wallet, Concordium Wallet for Web, and Desktop Wallet.</p>
-<p>The steps to get to these settings for CryptoX Concordium Wallet are described below.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">Tap the account.</p></li>
-<li><p class="sd-card-text">Tap <a class="reference internal" href="../../_images/cryptoX-earn.png"><img alt="Hand receiving money" src="../../_images/cryptoX-earn.png" style="width: 50px;" /></a> on the account balance screen.</p></li>
-<li><p class="sd-card-text">Tap <strong>Change validating status</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-change-validator-status.png"><img alt="screen showing current validator settings and change button" src="../../_images/cryptoX-change-validator-status.png" style="width: 50%;" />
-</a>
-</div></blockquote>
-</li>
-</ol>
-</div>
-</details><p>Once you access the validator settings for your wallet, you have four options:</p>
-<ul class="simple">
-<li><p>Update validator stake</p></li>
-<li><p>Update pool settings</p></li>
-<li><p>Update validator keys</p></li>
-<li><p>Stop validation</p></li>
-</ul>
 <section id="update-validator-stake-and-restaking-preference">
 <span id="update-baker-stake-mw"></span><h2>Update validator stake and restaking preference<a class="headerlink" href="#update-validator-stake-and-restaking-preference" title="Link to this heading">#</a></h2>
 <p>You can change the <a class="reference internal" href="../protocol/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a validator account. Changes will take effect at the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.
@@ -769,15 +747,24 @@ After the cool-down period, the amount you’ve decreased the stake with is retu
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>Update validator stake</strong>.</p></li>
-<li><p class="sd-card-text">You can now go through informational screens explaining the options for changing validator status. Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the validator stake.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-update-validator-stake.png"><img alt="screen to update validator stake showing amount and restake preference options" src="../../_images/cryptoX-update-validator-stake.png" style="width: 50%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validation options and tap <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the validator status screen, tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status.png"><img alt="screen showing validating status" src="../../_images/cryptox-change-validating-status.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Now you see your balance and the current Validator stake amount.
+<li><p class="sd-card-text">You now see the options for changing the validating status. Tap <strong>Update validator stake</strong></p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status-options.png"><img alt="screen showing options for changing validating status" src="../../_images/cryptox-change-validating-status-options.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">You can now go through informational screens explaining the options for changing validator status. Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to updating the validator stake.</p></li>
+<li><p class="sd-card-text">Now you see your balance and the current validator stake amount.
 Enter the total amount you want to stake.
-You can also choose to adjust your restake setting between <strong>Yes, restake</strong> rewards or <strong>No, don’t restake</strong> rewards. Tap <strong>Continue</strong>.</p></li>
+You can also choose to adjust your restake settings. Select <strong>Yes, add</strong> to automatically add your validation rewards to your validation amount, or <strong>No, don’t add</strong> to have the rewards deposited to your disposable balance at each payday. When you’re satisfied with your staking configuration, tap <strong>Continue</strong> to proceed with your updates.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-update-validator-stake_new.png"><img alt="screen showing options for changing validating status" src="../../_images/cryptox-update-validator-stake_new.png" style="width: 50%;" />
+</a>
+</li>
 <li><p class="sd-card-text">On the overview screen, check the information. Once you are satisfied, tap <strong>Submit validator transaction</strong>.</p></li>
+<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>.</p></li>
 </ol>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -902,53 +889,51 @@ You can also choose to adjust your restake setting between <strong>Yes, restake<
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>Update pool settings</strong></p></li>
-<li><p class="sd-card-text">You can now go through informational screens explaining the options for changing validator status.
-Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the pool settings.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-update-pool-settings1.png"><img alt="screen showing three staking pool options" src="../../_images/cryptoX-update-pool-settings1.png" style="width: 50%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the pool settings and tap <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the Validator status screen, tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status.png"><img alt="screen showing validator status" src="../../_images/cryptox-change-validating-status.png" style="width: 50%;" />
 </a>
-<ul class="simple">
-<li><p class="sd-card-text">Open pool: open a pool for a previously closed validator</p></li>
-<li><p class="sd-card-text">Closed for new: close the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>. <strong>It is the validator’s responsibility to monitor the stake to make pool management decisions.</strong></p></li>
-<li><p class="sd-card-text">Close pool: close a pool permanently.</p></li>
-</ul>
-<p class="sd-card-text">If you choose <strong>Open pool</strong>:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p class="sd-card-text">Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.</p></li>
-<li><p class="sd-card-text">Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.</p></li>
-<li><p class="sd-card-text">In the Update pool settings overview screen review the information then tap <strong>Submit delegation transaction</strong>.</p></li>
-<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.</p></li>
-</ol>
-</div></blockquote>
-<p class="sd-card-text">If you choose <strong>Closed for new</strong>:</p>
-<p class="sd-card-text">Existing delegators remain in the pool. You have the option to adjust commission fees and your validator information URL.</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p class="sd-card-text">Use the sliders to update the validator commission rates or type in the percentage you want for your commission rates, if desired. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool.</p></li>
-<li><p class="sd-card-text">Enter an optional URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. This information is not shared in the case of a closed pool.</p></li>
-<li><p class="sd-card-text">In the Update pool settings overview screen review the information then tap <strong>Submit delegation transaction</strong>.</p></li>
-<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.</p></li>
-</ol>
-</div></blockquote>
-<p class="sd-card-text">If you choose <strong>Close pool</strong>:</p>
-<p class="sd-card-text">This closes the pool completely for both existing delegators and new delegators.</p>
 </li>
-<li><p class="sd-card-text">In the Update pool settings overview screen review the information then tap <strong>Submit delegation transaction</strong>.</p></li>
-<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.</p></li>
+<li><p class="sd-card-text">You now see the options for changing the validating status. Tap <strong>Update pool settings</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status-options.png"><img alt="screen showing options for changing validating status" src="../../_images/cryptox-change-validating-status-options.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">You can now go through informational screens explaining the options for changing validator status.
+Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to updating the pool settings.</p></li>
+<li><p class="sd-card-text">You now see the pool setting options and your current status:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Open for delegation</strong>: Select this option for opening a pool for a previously closed validator</p></li>
+<li><p class="sd-card-text"><strong>Close for new delegators</strong>: Select this option for closing the pool to new delegators. Existing delegators are not affected. You might do this when, for example, the pool is close to meeting one or both of the <a class="reference internal" href="../protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">bounding caps</span></a>.</p></li>
+<li><p class="sd-card-text"><strong>Close for delegation</strong>: Select this option for closing a pool permanently.</p></li>
+</ul>
+<p class="sd-card-text">Select the preferred setting and tap <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-update-pool-settings_new.png"><img alt="screen showing three staking pool options" src="../../_images/cryptox-update-pool-settings_new.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">If you have an open pool, you can set or update the validator commission rates here. This is the percentage of rewards you keep when others delegate their stake to your validator pool.</p>
+<p class="sd-card-text">Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, tap <strong>Continue</strong> to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-update-commissions.png"><img alt="screen showing sliders for defining validator commissions" src="../../_images/cryptox-update-commissions.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">If you have an open pool, you can, optionally, enter a URL with information about your validator. This will give delegators additional information when researching staking pools. This information is not shared in the case of a closed pool. Tap <strong>Continue</strong> to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-update-pool-settings-metadata-url.png"><img alt="screen showing option for entering metadata url" src="../../_images/cryptox-update-pool-settings-metadata-url.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">In the Update pool settings overview screen, review the information then tap <strong>Submit delegation transaction</strong>.</p></li>
+<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>.</p></li>
 </ol>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validation options and click <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the pool settings and click <strong>Earn</strong>.</p></li>
 <li><p class="sd-card-text">On the next screen, click <strong>Update</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/update_validation1.png"><img alt="../../_images/update_validation1.png" src="../../_images/update_validation1.png" style="width: 50%;" />
 </a>
 </li>
 <li><p class="sd-card-text">On the next screen, click <strong>Update pool settings</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/update_validation2.png"><img alt="screen showing validator update options" src="../../_images/update_validation2.png" style="width: 40%;" />
+<a class="reference internal image-reference" href="../../_images/update_validation2.png"><img alt="screen showing validator update options" src="../../_images/update_validation2.png" style="width: 50%;" />
 </a>
 </li>
 <li><p class="sd-card-text">On this screen, you can toggle whether your validator is open for delegation. When enabled, other users can delegate their tokens to your validator, increasing your total stake and improving your chances of    producing blocks. Rewards earned will be distributed between you and your delegators at each pay day. If you prefer to validate with only your own stake, you can disable this option. Once you’ve made your   selection, tap <strong>Continue</strong> to proceed.</p>
@@ -1093,33 +1078,34 @@ Tap Next to navigate through the screens. Tap Skip to proceed directly to updati
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>Update validator keys</strong></p></li>
-<li><p class="sd-card-text">You can now go through informational screens explaining the options for changing validator status.
-Tap Next to navigate through the screens. Tap Skip to proceed directly to updating the validator keys.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-update-validator-keys.png"><img alt="screen showing new keys with button to export" src="../../_images/cryptoX-update-validator-keys.png" style="width: 50%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validator keys and tap <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the Validator status screen, tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status.png"><img alt="screen showing validator status" src="../../_images/cryptox-change-validating-status.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">Tap <strong>Export validator keys</strong>.</p>
-<blockquote>
-<div><div class="admonition warning">
+<li><p class="sd-card-text">You now see the options for changing the validating status. Tap <strong>Update validator keys</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status-options.png"><img alt="screen showing options for changing validating status" src="../../_images/cryptox-change-validating-status-options.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">You can now go through informational screens explaining the options for changing validator status.
+Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to updating the pool settings.</p></li>
+<li><p class="sd-card-text">On the Update validator keys screen, tap <strong>Export validator keys</strong>.</p>
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p class="sd-card-text">If you’re going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
 </div>
-</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/cryptoX-update-validator-keys.png"><img alt="screen showing new keys with button to export" src="../../_images/cryptoX-update-validator-keys.png" style="width: 50%;" />
+</a>
 </li>
 <li><p class="sd-card-text">Once you have saved the keys, review the information on the overview screen of the add validator transaction then tap <strong>Submit validator transaction</strong>.</p></li>
 <li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.</p></li>
 <li><p class="sd-card-text">You need to import your validator keys file to your node in order to start producing blocks with the new keys. It is preferable to update them on the node as close to <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a validator for a longer time.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-macos.html#baker-macos"><span class="std std-ref">macOS</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-docker.html#baking-docker"><span class="std std-ref">Docker</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">Ubuntu</span></a></p></li>
 </ul>
-</div></blockquote>
 </li>
 </ol>
 </div>
@@ -1127,7 +1113,7 @@ Tap Next to navigate through the screens. Tap Skip to proceed directly to updati
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validation options and click <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to update the validator keys and click <strong>Earn</strong>.</p></li>
 <li><p class="sd-card-text">On the next screen, click <strong>Update</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/update_validation1.png"><img alt="screen validator update options" src="../../_images/update_validation1.png" style="width: 50%;" />
 </a>

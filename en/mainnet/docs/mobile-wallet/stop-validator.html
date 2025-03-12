@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/stop-validator.e6d9b99b-ec3e-48fa-a781-a72afc8ffc57.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/stop-validator.264c6667-0566-46c2-adf7-aa6c89fa4743.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/stop-validator';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/stop-validator.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -726,19 +726,23 @@
   <section id="stop-a-validator">
 <span id="stop-validator"></span><h1>Stop a validator<a class="headerlink" href="#stop-a-validator" title="Link to this heading">#</a></h1>
 <p>If you remove a validator, the node that is configured with the <a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">validator keys</span></a> will stop producing blocks after the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.</p>
-<p>After the <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>, the amount that you previously staked is returned to your disposable balance at the next pay day. When you’ve removed the validator,
-it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
+<p>After the <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>, the amount that you previously staked is returned to your disposable balance at the next pay day.</p>
+<p>If your pool has any delegators, they will be automatically moved to passive delegation, if they don’t decide to do something else.</p>
+<p>When you’ve removed the validator, it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
 If you want to use the node for validation at a later point in time, you’ll then have to create a new set of validator keys.</p>
 <p>If you no longer wish to produce blocks on this account, you can stop validation.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>Stop validation</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-stop-validation.png"><img alt="screen showing all validator options" src="../../_images/cryptoX-stop-validation.png" style="width: 50%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to stop validation and tap <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the Validator status screen, tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status.png"><img alt="screen showing validator status" src="../../_images/cryptox-change-validating-status.png" style="width: 50%;" />
 </a>
-</div></blockquote>
+</li>
+<li><p class="sd-card-text">You now see the options for changing the validating status. Tap <strong>Stop validating</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status-options.png"><img alt="screen showing options for changing validating status" src="../../_images/cryptox-change-validating-status-options.png" style="width: 50%;" />
+</a>
 </li>
 <li><p class="sd-card-text">After the screens explaining validator removal, tap <strong>Continue</strong>.</p></li>
 <li><p class="sd-card-text">Review the information. When you are satisfied, tap <strong>Submit validator transaction</strong>.</p></li>

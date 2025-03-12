@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/suspend-unsuspend-validator.6ac8a8b1-552f-48b6-aacf-b7959a851fcc.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/suspend-unsuspend-validator.c95417d3-6ee6-46d2-a216-7a6136c46ed9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/suspend-unsuspend-validator';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/suspend-unsuspend-validator.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -761,6 +761,31 @@ During this period, a red warning banner appears at the bottom of your wallet in
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to suspend validation and tap <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the Validator status screen, tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status.png"><img alt="screen showing validator status" src="../../_images/cryptox-change-validating-status.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">You now see the options for changing the validating status. Tap <strong>Suspend valdiation</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status-options.png"><img alt="screen showing options for changing validating status" src="../../_images/cryptox-change-validating-status-options.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">On the next screen, read the information about the consequences of suspending your validator. Tap <strong>Continue</strong> to proceed with the suspension or go back if you need to reconsider.</p></li>
+<li><p class="sd-card-text">Review the transaction details for suspending your validator. Note that the suspension will take effect from the next payday. Tap <strong>Submit validator transaction</strong> to confirm and send your suspension transaction to the blockchain.</p></li>
+<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>.</p></li>
+</ol>
+<p class="sd-card-text">After successfully suspending your validator, you’ll notice several clear indicators throughout the wallet interface:</p>
+<p class="sd-card-text">On your account overview screen, a prominent red banner appears at the bottom stating <em>Your validation has been suspended</em>. This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the <strong>Earn</strong> button, providing a visual indicator that your validator requires attention.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-validator-suspended-banner-new.png"><img alt="screen showing validator suspended banner" src="../../_images/cryptox-validator-suspended-banner-new.png" style="width: 50%;" />
+</a>
+<p class="sd-card-text"><strong>Note:</strong> If you have both a suspended validator and a suspended delegator, a banner will be shown for each.</p>
+<p class="sd-card-text">In the account list view, suspended validators are marked with a red indicator dot to the left of the account address.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-validator-suspended-account-list.png"><img alt="screen showing suspended alidator in accountlist" src="../../_images/cryptox-validator-suspended-account-list.png" style="width: 50%;" />
+</a>
+<p class="sd-card-text">When viewing your validator status information, a warning message clearly states <em>Your validation has been suspended</em> along with information that your node is not currently earning rewards.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-validator-suspended-validator-status.png"><img alt="screen showing suspended validator in validator status screen" src="../../_images/cryptox-validator-suspended-validator-status.png" style="width: 50%;" />
+</a>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -801,17 +826,30 @@ During this period, a red warning banner appears at the bottom of your wallet in
 <p class="sd-card-text">This persistent notification ensures you’re always aware of the suspension status and provides quick access to resume validation when you’re ready.</p>
 </div>
 </details></section>
-<section id="unsuspend-a-self-suspendet-validator">
-<h2>Unsuspend a self-suspendet validator<a class="headerlink" href="#unsuspend-a-self-suspendet-validator" title="Link to this heading">#</a></h2>
+<section id="unsuspend-a-self-suspended-validator">
+<h2>Unsuspend a self-suspended validator<a class="headerlink" href="#unsuspend-a-self-suspended-validator" title="Link to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator’s status page.</p></li>
+<li><p class="sd-card-text">Tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-validator-suspended-validator-status.png"><img alt="screen showing suspended validator in validator status screen" src="../../_images/cryptox-validator-suspended-validator-status.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Then, tap <strong>Resume validation</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-resume-validation.png"><img alt="screen showing resume validation action for suspended validator" src="../../_images/cryptox-resume-validation.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Review the resume validation info and tap <strong>Submit validator transaction</strong> to proceed.</p></li>
+<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>.</p></li>
+</ol>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Navigate to the unsuspendet validator. Clicking the suspension notification banner will immediately take you to the suspended validator’s details page.</p></li>
+<li><p class="sd-card-text">Navigate to the suspended validator. Clicking the suspension notification banner will immediately take you to the suspended validator’s details page.</p></li>
 <li><p class="sd-card-text">Click <strong>Resume</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/unsuspend_validator2.png"><img alt="../../_images/unsuspend_validator2.png" src="../../_images/unsuspend_validator2.png" style="width: 50%;" />
 </a>
@@ -828,11 +866,31 @@ Note that the resumption will be effective from the next payday.</p>
 </ol>
 </div>
 </details></section>
-<section id="unsuspend-an-automatically-suspendet-validator">
-<h2>Unsuspend an automatically suspendet validator<a class="headerlink" href="#unsuspend-an-automatically-suspendet-validator" title="Link to this heading">#</a></h2>
+<section id="unsuspend-an-automatically-suspended-validator">
+<h2>Unsuspend an automatically suspended validator<a class="headerlink" href="#unsuspend-an-automatically-suspended-validator" title="Link to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">When your validator becomes inactive, it first enters a <em>primed for suspension</em> state. During this period, a red warning banner appears at the top of your wallet interface stating “Your validation is primed for suspension”.</p>
+<p class="sd-card-text">Additionally, a red dot appears on the Earn button, providing a visual indicator that your validator requires attention.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-validator-primed-for-suspension-banner.png"><img alt="screen showing suspended validator in validator status screen" src="../../_images/cryptox-validator-primed-for-suspension-banner.png" style="width: 50%;" />
+</a>
+<p class="sd-card-text">Your node has until the next snapshot epoch to show activity. If your node remains inactive, full suspension takes effect at the next payday.</p>
+<p class="sd-card-text">If your validator has been suspended:</p>
+<ol class="arabic">
+<li><p class="sd-card-text">First check your node and resolve the underlying issues: Identify what caused the automatic suspension, fix the identified issues on your node, and restart your node.</p></li>
+<li><p class="sd-card-text">Then, navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator’s details page.</p></li>
+<li><p class="sd-card-text">Tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-validator-suspended-validator-status.png"><img alt="screen showing suspended validator in validator status screen" src="../../_images/cryptox-validator-suspended-validator-status.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Then, tap <strong>Resume validation</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-resume-validation.png"><img alt="screen showing resume validation action for suspended validator" src="../../_images/cryptox-resume-validation.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Review the resume validation info and tap <strong>Submit validator transaction</strong> to proceed.</p></li>
+<li><p class="sd-card-text">The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>.</p></li>
+</ol>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -845,7 +903,7 @@ Note that the resumption will be effective from the next payday.</p>
 <p class="sd-card-text">If your validator has been suspended:</p>
 <ol class="arabic">
 <li><p class="sd-card-text">First check your node and resolve the underlying issues: Identify what caused the automatic suspension, fix the identified issues on your node, and restart your node.</p></li>
-<li><p class="sd-card-text">Then, Navigate to the unsuspendet validator. Clicking the suspension notification banner will immediately take you to the suspended validator’s details page.</p></li>
+<li><p class="sd-card-text">Then, navigate to the suspended validator. Clicking the suspension notification banner will immediately take you to the suspended validator’s status page.</p></li>
 <li><p class="sd-card-text">Click <strong>Resume</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/unsuspend_validator2.png"><img alt="../../_images/unsuspend_validator2.png" src="../../_images/unsuspend_validator2.png" style="width: 50%;" />
 </a>
@@ -950,8 +1008,8 @@ Note that the resumption will be effective from the next payday.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-suspension">Self-suspension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-suspension">Automatic suspension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-suspend-a-validator">Self-suspend a validator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsuspend-a-self-suspendet-validator">Unsuspend a self-suspendet validator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsuspend-an-automatically-suspendet-validator">Unsuspend an automatically suspendet validator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsuspend-a-self-suspended-validator">Unsuspend a self-suspended validator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsuspend-an-automatically-suspended-validator">Unsuspend an automatically suspended validator</a></li>
 </ul>
   </nav></div>
 
