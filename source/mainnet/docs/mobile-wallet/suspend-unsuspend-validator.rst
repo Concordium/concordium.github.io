@@ -50,6 +50,50 @@ Self-suspend a validator
 
 .. dropdown:: |cryptox|
 
+    #. In the dropdown list, select the account for which you want to suspend validation and tap **Earn**.
+
+    #. On the Validator status screen, tap **Change validating status**.
+
+       .. image:: ../images/cryptoX/cryptox-change-validating-status.png
+            :width: 50%
+            :alt: screen showing validator status
+
+    #. You now see the options for changing the validating status. Tap **Suspend valdiation**.
+
+       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
+            :width: 50%
+            :alt: screen showing options for changing validating status
+
+    #. On the next screen, read the information about the consequences of suspending your validator. Tap **Continue** to proceed with the suspension or go back if you need to reconsider.
+
+    #. Review the transaction details for suspending your validator. Note that the suspension will take effect from the next payday. Tap **Submit validator transaction** to confirm and send your suspension transaction to the blockchain.
+
+    #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**.
+
+
+    After successfully suspending your validator, you'll notice several clear indicators throughout the wallet interface:
+
+    On your account overview screen, a prominent red banner appears at the bottom stating *Your validation has been suspended*. This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
+
+    .. image:: ../images/cryptoX/cryptox-validator-suspended-banner-new.png
+            :width: 50%
+            :alt: screen showing validator suspended banner
+
+    **Note:** If you have both a suspended validator and a suspended delegator, a banner will be shown for each.
+
+    In the account list view, suspended validators are marked with a red indicator dot to the left of the account address.
+
+    .. image:: ../images/cryptoX/cryptox-validator-suspended-account-list.png
+            :width: 50%
+            :alt: screen showing suspended alidator in accountlist
+
+    When viewing your validator status information, a warning message clearly states *Your validation has been suspended* along with information that your node is not currently earning rewards.
+
+    .. image:: ../images/cryptoX/cryptox-validator-suspended-validator-status.png
+            :width: 50%
+            :alt: screen showing suspended validator in validator status screen
+
+
 .. dropdown:: |bw|
 
     #. In the dropdown list, select the account for which you want to suspend the validator and click **Earn**.
@@ -103,14 +147,34 @@ Self-suspend a validator
     This persistent notification ensures you're always aware of the suspension status and provides quick access to resume validation when you're ready.
 
 
-Unsuspend a self-suspendet validator
+Unsuspend a self-suspended validator
 ------------------------------------
 
 .. dropdown:: |cryptox|
 
+    #. Navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator's status page.
+
+    #. Tap **Change validating status**.
+
+       .. image:: ../images/cryptoX/cryptox-validator-suspended-validator-status.png
+            :width: 50%
+            :alt: screen showing suspended validator in validator status screen
+
+
+    #. Then, tap **Resume validation**.
+
+       .. image:: ../images/cryptoX/cryptox-resume-validation.png
+            :width: 50%
+            :alt: screen showing resume validation action for suspended validator
+
+    #. Review the resume validation info and tap **Submit validator transaction** to proceed.
+
+    #. The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
+
+
 .. dropdown:: |bw|
 
-    #. Navigate to the unsuspendet validator. Clicking the suspension notification banner will immediately take you to the suspended validator's details page.
+    #. Navigate to the suspended validator. Clicking the suspension notification banner will immediately take you to the suspended validator's details page.
 
     #. Click **Resume**.
 
@@ -129,10 +193,44 @@ Unsuspend a self-suspendet validator
               :width: 50%
 
 
-Unsuspend an automatically suspendet validator
+Unsuspend an automatically suspended validator
 ----------------------------------------------
 
 .. dropdown:: |cryptox|
+
+    When your validator becomes inactive, it first enters a *primed for suspension* state. During this period, a red warning banner appears at the top of your wallet interface stating "Your validation is primed for suspension".
+
+    Additionally, a red dot appears on the Earn button, providing a visual indicator that your validator requires attention.
+
+    .. image:: ../images/cryptoX/cryptox-validator-primed-for-suspension-banner.png
+            :width: 50%
+            :alt: screen showing suspended validator in validator status screen
+
+    Your node has until the next snapshot epoch to show activity. If your node remains inactive, full suspension takes effect at the next payday.
+
+    If your validator has been suspended:
+
+    #. First check your node and resolve the underlying issues: Identify what caused the automatic suspension, fix the identified issues on your node, and restart your node.
+
+    #. Then, navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator's details page.
+
+    #. Tap **Change validating status**.
+
+       .. image:: ../images/cryptoX/cryptox-validator-suspended-validator-status.png
+            :width: 50%
+            :alt: screen showing suspended validator in validator status screen
+
+
+    #. Then, tap **Resume validation**.
+
+       .. image:: ../images/cryptoX/cryptox-resume-validation.png
+            :width: 50%
+            :alt: screen showing resume validation action for suspended validator
+
+    #. Review the resume validation info and tap **Submit validator transaction** to proceed.
+
+    #. The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
+
 
 .. dropdown:: |bw|
 
@@ -149,7 +247,7 @@ Unsuspend an automatically suspendet validator
 
     #. First check your node and resolve the underlying issues: Identify what caused the automatic suspension, fix the identified issues on your node, and restart your node.
 
-    #. Then, Navigate to the unsuspendet validator. Clicking the suspension notification banner will immediately take you to the suspended validator's details page.
+    #. Then, navigate to the suspended validator. Clicking the suspension notification banner will immediately take you to the suspended validator's status page.
 
     #. Click **Resume**.
 

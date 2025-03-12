@@ -7,8 +7,13 @@ Stop a validator
 
 If you remove a validator, the node that is configured with the :term:`validator keys<private keys>` will stop producing blocks after the next :term:`pay day`.
 
-After the :term:`cool-down period`, the amount that you previously staked is returned to your disposable balance at the next pay day. When you've removed the validator,
-it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
+After the :term:`cool-down period`, the amount that you previously staked is returned to your disposable balance at the next pay day.
+
+If your pool has any delegators, they will be automatically moved to passive delegation, if they don't decide to do something else.
+
+
+
+When you've removed the validator, it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
 If you want to use the node for validation at a later point in time, you'll then have to create a new set of validator keys.
 
 
@@ -16,11 +21,19 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
 .. dropdown:: |cryptox|
 
-    #. Tap **Stop validation**.
+    #. In the dropdown list, select the account for which you want to stop validation and tap **Earn**.
 
-        .. image:: ../images/cryptoX/cryptoX-stop-validation.png
+    #. On the Validator status screen, tap **Change validating status**.
+
+       .. image:: ../images/cryptoX/cryptox-change-validating-status.png
             :width: 50%
-            :alt: screen showing all validator options
+            :alt: screen showing validator status
+
+    #. You now see the options for changing the validating status. Tap **Stop validating**.
+
+       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
+            :width: 50%
+            :alt: screen showing options for changing validating status
 
     #. After the screens explaining validator removal, tap **Continue**.
 
