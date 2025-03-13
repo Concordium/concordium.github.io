@@ -425,6 +425,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A state where a validator is temporarily excluded from block production due to prolonged inactivity. The suspension threshold varies based on the validator's stake size and remains in effect for at least one epoch until manually resumed.
 
+   Sybil attack
+
+      A form of network attack where a malicious actor creates multiple fake identities (nodes) to gain disproportionate influence over a decentralized network. In blockchain systems, Sybil attacks could allow attackers to disrupt consensus, manipulate transaction validation, or execute double-spending. Concordium's proof-of-stake mechanism prevents Sybil attacks by requiring validators to stake actual value (CCD), making it economically unfeasible to create and maintain multiple validator identities with significant influence.
+
    Tally
 
       Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.

@@ -6,7 +6,7 @@
 Consensus mechanisms
 ====================
 
-The consensus mechanism in Concordium is more than just its :term:`proof-of-stake` protocol. While proof-of-stake is a crucial component that prevents Sybil attacks, Concordium's consensus mechanism, :term:`ConcordiumBFT<Concordium Byzantine Fault Tolerance (BFT) protocol>`, is a more complex protocol that enables the network's nodes to reach agreement on the blockchain's state.
+The consensus mechanism in Concordium is more than just its :term:`proof-of-stake` protocol. While proof-of-stake is a crucial component that prevents :term:`Sybil attacks<Sybil attack>` , Concordium's consensus mechanism, :term:`ConcordiumBFT<Concordium Byzantine Fault Tolerance (BFT) protocol>`, is a more complex protocol that enables the network's nodes to reach agreement on the blockchain's state.
 
 What is consensus?
 ------------------
@@ -19,7 +19,7 @@ What is a consensus mechanism?
 Concordium's consensus mechanism refers to the entire stack of protocols and incentives that ensure a consistent network state. The mechanism includes:
 
 * A proof-of-stake system that requires validators to lock up CCD as stake
-* A leader election protocol based on verifiable random functions
+* A :term:`leader election` protocol based on verifiable random functions
 * A block production and validation process
 * A finalization mechanism that provides quick, deterministic finality
 * Economic incentives that reward honest behavior and discourage attacks
