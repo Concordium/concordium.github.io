@@ -177,6 +177,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       For delegation in an election, see :term:`Vote delegation`.
 
+   Delegation
+
+    The process of contributing CCD stake to a validator's staking pool or to passive delegation without running a node. When delegating, the CCD amount becomes locked and cannot be spent or transferred until undelegated.Delegation allows CCD holders to earn rewards proportional to their stake, minus any applicable commission paid to validators.
+
    Deploy
 
       Command that takes the built :term:`Wasm<webassembly>` file for a smart contract module and deploys it on chain. This command is run from :term:`Concordium client`.
@@ -329,6 +333,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A consensus mechanism where validators must stake (lock) CCD tokens to participate in block production. The chance of being selected to produce a block is proportional to the amount staked.
 
+   proof-of-work
+
+     A consensus mechanism where validators (miners) compete to solve complex cryptographic puzzles that require significant computational power. The first to solve the puzzle earns the right to produce the next block and receive the associated rewards.
+
    Qualified authority
 
       A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of disclosing the identity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`identity disclosure authorities<identity disclosure authority>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
@@ -424,6 +432,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Suspension
 
       A state where a validator is temporarily excluded from block production due to prolonged inactivity. The suspension threshold varies based on the validator's stake size and remains in effect for at least one epoch until manually resumed.
+
+   Sybil attack
+
+      A form of network attack where a malicious actor creates multiple fake identities (nodes) to gain disproportionate influence over a decentralized network. In blockchain systems, Sybil attacks could allow attackers to disrupt consensus, manipulate transaction validation, or execute double-spending. Concordium's proof-of-stake mechanism prevents Sybil attacks by requiring validators to stake actual value (CCD), making it economically unfeasible to create and maintain multiple validator identities with significant influence.
 
    Tally
 

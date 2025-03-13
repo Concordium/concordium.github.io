@@ -79,6 +79,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
+   Consensus mechanisms <protocol/consensus-mechanisms>
    Validation <protocol/concepts-baker>
    Delegation <protocol/concepts-delegation>
 
