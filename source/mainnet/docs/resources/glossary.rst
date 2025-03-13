@@ -177,6 +177,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       For delegation in an election, see :term:`Vote delegation`.
 
+   Delegation
+
+    The process of contributing CCD stake to a validator's staking pool or to passive delegation without running a node. When delegating, the CCD amount becomes locked and cannot be spent or transferred until undelegated.Delegation allows CCD holders to earn rewards proportional to their stake, minus any applicable commission paid to validators.
+
    Deploy
 
       Command that takes the built :term:`Wasm<webassembly>` file for a smart contract module and deploys it on chain. This command is run from :term:`Concordium client`.

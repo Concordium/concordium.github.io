@@ -18,7 +18,7 @@ What is a consensus mechanism?
 
 Concordium's consensus mechanism refers to the entire stack of protocols and incentives that ensure a consistent network state. The mechanism includes:
 
-* A proof-of-stake system that requires validators to lock up CCD as stake
+* A proof-of-stake system that requires :term:`validators<validator>` to lock up :term:`CCD` as stake
 * A :term:`leader election` protocol based on verifiable random functions
 * A block production and validation process
 * A finalization mechanism that provides quick, deterministic finality
@@ -29,7 +29,9 @@ Block Creation
 
 In Concordium, block creation follows a leader-based approach. For each round, a leader is selected through a lottery-based system where the probability of selection is proportional to the validator's stake. The selected leader creates a new block and broadcasts it to the network.
 
-Unlike proof-of-work systems that require solving complex puzzles, Concordium's block creation is energy-efficient. The chosen leader simply needs to create a valid block and prove they were legitimately selected through the verifiable random function (VRF) system.
+`Learn more about the complete validation process here. <concepts-baker.html>`_
+
+Unlike :term:`proof-of-work` systems that require solving complex puzzles, Concordium's block creation is energy-efficient. The chosen leader simply needs to create a valid block and prove they were legitimately selected through the verifiable random function (VRF) system.
 
 Security
 --------
@@ -49,7 +51,7 @@ Concordium organizes time into :term:`epochs<epoch>` during which the validator 
 Delegation and Participation
 ----------------------------
 
-The consensus mechanism includes a sophisticated delegation system that allows CCD holders to participate in network staking security without running a validator node. Through delegation, users can add their stake to a validator's pool, increasing the validator's block production probability while sharing in the rewards.
+The consensus mechanism includes a sophisticated delegation system that allows CCD holders to participate in staking without running a validator node. Through delegation, users can add their stake to a validator's pool, increasing the validator's block production probability while sharing in the rewards.
 
 Future Scalability
 ------------------
