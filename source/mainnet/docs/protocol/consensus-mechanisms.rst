@@ -44,7 +44,7 @@ The network's security is maintained through several mechanisms:
 Epoch Structure
 ---------------
 
-Concordium organizes time into epochs (one-hour periods) during which the validator set remains constant. This structure provides clear checkpoints for updates to the system and helps coordinate the network's operation. Every 24 epochs, there is a "pay day" where rewards are distributed and stake changes take effect.
+Concordium organizes time into :term:`epochs<epoch>` during which the validator set remains constant. This structure provides clear checkpoints for updates to the system and helps coordinate the network's operation. Every 24 epochs, there is a :term:`pay day` where rewards are distributed and stake changes take effect.
 
 Delegation and Participation
 ----------------------------
