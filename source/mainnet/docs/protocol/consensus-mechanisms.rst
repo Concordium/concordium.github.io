@@ -61,5 +61,5 @@ The role of identity
 
 A unique aspect of Concordium's consensus mechanism is its integration with the identity layer. While consensus operates pseudonymously, the underlying identity system ensures that validators can be held accountable if necessary, providing an additional security guarantee without compromising the network's decentralized nature.
 
-`Learn more about Concordium's identities here. <id-accounts.html>`_
+`Learn more about identities here. <id-accounts.html>`_
 
