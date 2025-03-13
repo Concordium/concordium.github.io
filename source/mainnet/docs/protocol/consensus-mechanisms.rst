@@ -24,7 +24,7 @@ Concordium's consensus mechanism refers to the entire stack of protocols and inc
 * A finalization mechanism that provides quick, deterministic finality
 * Economic incentives that reward honest behavior and discourage attacks
 
-Block Creation
+Block creation
 --------------
 
 In Concordium, block creation follows a leader-based approach. For each round, a leader is selected through a lottery-based system where the probability of selection is proportional to the validator's stake. The selected leader creates a new block and broadcasts it to the network.
@@ -43,29 +43,23 @@ The network's security is maintained through several mechanisms:
 
 3. **Quick Finality**: Unlike systems that require waiting for multiple block confirmations, Concordium's finality is achieved within seconds and is deterministic, meaning finalized blocks cannot be reverted.
 
-Epoch Structure
+Epoch structure
 ---------------
 
 Concordium organizes time into :term:`epochs<epoch>` during which the validator set remains constant. This structure provides clear checkpoints for updates to the system and helps coordinate the network's operation. Every 24 epochs, there is a :term:`pay day` where rewards are distributed and stake changes take effect.
 
-Delegation and Participation
+Delegation and participation
 ----------------------------
 
-The consensus mechanism includes a sophisticated delegation system that allows CCD holders to participate in staking without running a validator node. Through delegation, users can add their stake to a validator's pool, increasing the validator's block production probability while sharing in the rewards.
+The consensus mechanism includes a sophisticated delegation system that allows CCD holders to participate in staking without running a validator node. Through :term:`delegation`, users can add their stake to a validator's pool, increasing the validator's block production probability while sharing in the rewards.
 
-Future Scalability
-------------------
+`Learn more about delegation and how it works on Concordium here. <concepts-delegation.html>`_
 
-The consensus mechanism is designed with scalability in mind, incorporating:
 
-* Parallel transaction execution
-* Preparation for sharding implementation
-* Support for layer-2 scaling solutions
-* Separate consensus and execution layers
-
-This architecture allows the network to adapt to increasing demand while maintaining its security guarantees.
-
-The Role of Identity
+The role of identity
 --------------------
 
 A unique aspect of Concordium's consensus mechanism is its integration with the identity layer. While consensus operates pseudonymously, the underlying identity system ensures that validators can be held accountable if necessary, providing an additional security guarantee without compromising the network's decentralized nature.
+
+`Learn more about Concordium's identities and how they work here. <id-accounts.html>`_
+
