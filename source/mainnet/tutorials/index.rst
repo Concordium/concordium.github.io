@@ -74,6 +74,7 @@ Additional Resources
    setup-env
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
+   Using ID in dApps <./using-ID-in-dApps/index>
    wCCD <./wCCD/index>
    voting/index
    nft-minting/index
