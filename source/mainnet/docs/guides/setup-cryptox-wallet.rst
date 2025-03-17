@@ -140,25 +140,48 @@ If you want to, you can :ref:`change the name of the account<change-mw-acct-name
 Basic navigation
 ================
 
-In the wallet you have some navigation options.
+The |cryptox| provides the the following navigation elements.
 
-.. image:: ../images/cryptoX/cryptoX-basic-navigation-callouts.png
+.. image:: ../images/cryptoX/cryptox-basic-navigation1.png
       :alt: main wallet screen with position numbers
-      :width: 60%
+      :width: 50%
 
-1. Balances: shows total balances of all accounts.
-2. Account: shows the identity on which the account was created, and totals.
-3. :ref:`More screen<mw-cryptoX-more-screen>`: contains actions for the wallet.
-4. Scan QR code: tap to :ref:`scan a QR code to connect to a dApp<connect-app-bw>`.
-5. Add: to :ref:`add a new account<create-account>`.
-6. Account actions: range of actions you can perform on the account, such as send and receive.
-7. Shortcut to Concordium News.
-8. NFT administration.
 
-.. _mw-cryptoX-more-screen:
+* At the top left of the screen, you see your shortened account identifier with a dropdown arrow for switching between accounts. Tapping an account in this dropdown will take you to the :ref:`Your Accounts screen<mw-cryptox-account-navigation>` with additional account functionalities.
 
-More screen
------------
+*  In the top right corner, you find the QR code scan button that allows you to :ref:`scan a QR code to connect to a dApp<connect-app-bw>`.
+
+* Below the account dropdown, a large display shows your total CCD balance, and right under that you see your available balance indicated as *CCD at disposal* - this is the amount you can use for transactions.
+
+* Below the balance information, you find the action bar with quick access buttons to core functionality:
+
+  * Buy: purchase CCD
+  * Send: transfer CCD to another account
+  * Receive: get your address to receive CCD
+  * Earn: access staking and delegation options
+  * Activity: view transaction history
+
+* The central part of the screen displays your token list, showing all digital assets in your wallet including their current balances. Tapping on any token entry will take you to a detailed view for that specific token, where you can perform token-specific actions.
+
+* At the bottom of the screen, you find the navigation bar with three main options:
+
+  * Home (house icon): return to the main wallet screen
+  * Browser/dApps (compass icon): access Concordium News
+  * :ref:`Settings (gear icon) <mw-cryptoX-wallet-settings>`: configure wallet preferences and security options
+
+
+
+1. :ref:`More screen<mw-cryptoX-more-screen>`: contains actions for the wallet.
+2. Scan QR code: tap to :ref:`scan a QR code to connect to a dApp<connect-app-bw>`.
+3. Add: to :ref:`add a new account<create-account>`.
+4. Account actions: range of actions you can perform on the account, such as send and receive.
+5. Shortcut to Concordium News.
+6. NFT administration.
+
+.. _mw-cryptoX-wallet-settings:
+
+Wallet settings
+---------------
 
 In the More screen |more| you have the following options.
 
@@ -169,6 +192,9 @@ In the More screen |more| you have the following options.
 - Update passcode and biometrics: :ref:`change your wallet passcode or activate biometrics<change-passcode-mw>`.
 
 In case you have created your wallet from a backup file, you will not have the Recovery and  Show my seed phrase options, but instead the options :ref:`Import<import-export-file>` and :ref:`Export<import-export-file>`.
+
+
+.. _mw-cryptoX-account-navigation:
 
 Account navigation
 ------------------
