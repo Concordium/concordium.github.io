@@ -541,7 +541,7 @@ Desktop Wallet
     - Account validation/delegation overview now shows if the target pool is suspended or primed for suspension.
     - A notification is shown for accounts validating/delegating to a pool which is suspended.
     - Support for updating validator score parameters on chains running protocol version 8 or above.
-    - Support changing the suspension status of validators. This requires the corresponding version of the concordium ledger app which also adds support for this feature.
+    - Support for changing the suspension status of validators. This requires the corresponding version of the Concordium ledger app which also adds support for this feature.
     - Updating Concordium SDK fixing issue preventing transactions.
 
 
