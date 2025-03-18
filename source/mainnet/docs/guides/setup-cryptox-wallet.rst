@@ -146,8 +146,8 @@ The |cryptox| provides the the navigation elements described in the following.
       :alt: main wallet screen with position numbers
       :width: 50%
 
-Accounts, balance and QR scan
------------------------------
+Accounts, balances and QR scan
+------------------------------
 
 .. image:: ../images/cryptoX/cryptox-navigation-top.png
       :alt: main wallet screen with position numbers
