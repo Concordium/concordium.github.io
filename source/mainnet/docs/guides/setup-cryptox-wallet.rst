@@ -26,7 +26,7 @@ Get started
 
 #. Tap **Get started**.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1a.png
       :width: 40%
       :alt: screen with terms and conditions
 
@@ -64,7 +64,7 @@ After setting up your passcode, you'll see the main wallet screen with a progres
 
 #. Tap **Save seed phrase** to continue setup.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding4.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding4a.png
       :width: 40%
       :alt: screen with information about saving seed phrase
 
@@ -75,13 +75,13 @@ After setting up your passcode, you'll see the main wallet screen with a progres
 
    When done, check the confirmation box and tap **Continue**.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding5.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding5a.png
       :width: 40%
       :alt: screen with information about saving seed phrase
 
 #. Enter your passcode when prompted.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding6.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding6a.png
       :width: 40%
       :alt: screen with identity providers
 
@@ -93,7 +93,7 @@ After securing your seed phrase, you'll return to the main wallet screen. A prog
 
 #. Tap **Verify identity** to continue setup.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding7.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding7a.png
       :width: 40%
       :alt: screen with identity providers
 
@@ -101,7 +101,7 @@ After securing your seed phrase, you'll return to the main wallet screen. A prog
 
 #. Now you must submit a request for an identity verification. Select an identity provider.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding8.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding8a.png
       :width: 40%
       :alt: screen with identity providers
 
@@ -122,7 +122,7 @@ Once the identity provider has approved your verification request, you can creat
 
 #. Tap **Create account** to set up your first account.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding9.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding9a.png
       :width: 40%
       :alt: screen with identity providers
 
@@ -131,7 +131,7 @@ Once the identity provider has approved your verification request, you can creat
 
 #. Your new account will be visible in the Accounts list.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding10.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding10a.png
       :width: 40%
       :alt: screen showing first account in list
 
@@ -144,7 +144,7 @@ The |cryptox| provides the the navigation elements described in the following.
 
 .. image:: ../images/cryptoX/cryptox-basic-navigation1a.png
       :alt: main wallet screen with position numbers
-      :width: 50%
+      :width: 40%
 
 Accounts, balances and QR scan
 ------------------------------
