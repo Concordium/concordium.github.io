@@ -534,17 +534,28 @@ Wallets
 Desktop Wallet
 --------------
 
-    June 26, 2024
+    March 18, 2025
 
-    Version 1.7.4 contains the following changes:
+    Version 1.8.0 contains the following changes:
 
-    - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+    - Account validation/delegation overview now shows if the target pool is suspended or primed for suspension.
+    - A notification is shown for accounts validating/delegating to a pool which is suspended.
+    - Support for updating validator score parameters on chains running protocol version 8 or above.
+    - Support changing the suspension status of validators. This requires the corresponding version of the concordium ledger app which also adds support for this feature.
+    - Updating Concordium SDK fixing issue preventing transactions.
 
-    - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
-
-    - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.4 - June 26, 2024
+
+            Version 1.7.4 contains the following changes:
+
+            - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+
+            - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
+
+            - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
         .. dropdown:: 1.7.3 - March 21, 2024
 
