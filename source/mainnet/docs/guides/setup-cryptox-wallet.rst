@@ -169,6 +169,7 @@ Quick access buttons
 .. image:: ../images/cryptoX/cryptox-navigation-action-bar.png
       :alt: main wallet screen with position numbers
       :width: 50%
+
 Below the balance information, you find a number of quick access buttons to core functionality:
 
 * Buy: purchase CCD
