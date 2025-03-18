@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.6f0a9dab-632d-473b-9c4a-27d4e89f73c2.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.f80a7d39-6613-4954-8291-506cca9bf576.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -1227,17 +1227,29 @@ delivering a more seamless and user-friendly experience while preserving all the
 <section id="desktop-wallet">
 <span id="rn-dw"></span><h3>Desktop Wallet<a class="headerlink" href="#desktop-wallet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>June 26, 2024</p>
-<p>Version 1.7.4 contains the following changes:</p>
+<div><p>March 18, 2025</p>
+<p>Version 1.8.0 contains the following changes:</p>
 <ul class="simple">
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">shielded</span></code> button to disable the transfer of CCD from the public balance to the shielded balance of an account.</p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">encryptedTransfer</span></code> button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.</p></li>
-<li><p>Rename <code class="docutils literal notranslate"><span class="pre">anonymity</span> <span class="pre">revokers</span></code> to <code class="docutils literal notranslate"><span class="pre">identity</span> <span class="pre">disclosure</span> <span class="pre">authorities</span></code>.</p></li>
+<li><p>Account validation/delegation overview now shows if the target pool is suspended or primed for suspension.</p></li>
+<li><p>A notification is shown for accounts validating/delegating to a pool which is suspended.</p></li>
+<li><p>Support for updating validator score parameters on chains running protocol version 8 or above.</p></li>
+<li><p>Support for changing the suspension status of validators. This requires the corresponding version of the Concordium ledger app which also adds support for this feature.</p></li>
+<li><p>Updating Concordium SDK fixing issue preventing transactions.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1.7.4 - June 26, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 1.7.4 contains the following changes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Remove <code class="docutils literal notranslate"><span class="pre">shielded</span></code> button to disable the transfer of CCD from the public balance to the shielded balance of an account.</p></li>
+<li><p class="sd-card-text">Remove <code class="docutils literal notranslate"><span class="pre">encryptedTransfer</span></code> button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.</p></li>
+<li><p class="sd-card-text">Rename <code class="docutils literal notranslate"><span class="pre">anonymity</span> <span class="pre">revokers</span></code> to <code class="docutils literal notranslate"><span class="pre">identity</span> <span class="pre">disclosure</span> <span class="pre">authorities</span></code>.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">1.7.3 - March 21, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Version 1.7.3 fixes an issue reported on Windows where the LEDGER connectivity state was faulty, preventing users from signing transactions.</p>
