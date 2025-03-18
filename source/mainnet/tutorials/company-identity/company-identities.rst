@@ -3,20 +3,83 @@
 .. _port number: https://en.wikipedia.org/wiki/Port_(computer_networking)
 .. _company-identities:
 
-============================
+=========================
 Company identity creation
-============================
+=========================
 
 A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don't want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.
 
-You can't use the Desktop Wallet, |bw|, |mw-gen2|, or |mw-gen1| to create a company identity. You need to use the Concordium Company ID tool, and you need to communicate directly with the identity provider (currently Notabene). `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
+Currently, Concordium offers two identity providers for company identities:
+
+* Global FinReg - Can be accessed directly through |bw| or |cryptox|
+* Notabene - You can't use the Desktop Wallet, |bw| or |cryptox| to create a company identity.
+
+   * for Notabene, you need to use the :ref:`Concordium Company ID tool <downloads-auxiliary-tools>`, and you need to communicate directly with the identity provider. `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.
 
 The information below describes how to create a company identity, how to create accounts with a company identity, and how to recover a company identity. If you experience issues with the Concordium Company ID tool, please contact Concordium’s technical support via support@concordium.software.
 
-Using the Concordium Company ID tool
-====================================
+Requesting a company identity through Global FinReg
+===================================================
 
-Once you have dowloaded the Concordium Company ID tool for your platform and installed it, you should choose your network, either Mainnet or Testnet. A default Concordium node URL is used, but you can enter your node URL, if desired.
+To create a company identity using Global FinReg, first :ref:`download <downloads-cryptox>` the |bw| or the |cryptox|, then follow the steps outlined below.
+
+Initiate the request from a Concordium wallet
+---------------------------------------------
+
+* Open the |bw| or |cryptox|
+
+* In the main menu, click on **Identities**.
+
+   .. image:: images/wallet-globalfinreg-identities-menu.png
+      :alt: Concordium wallet screen showing the Identities option in the main menu
+
+* Click on the plus sign (+) to request a new identity.
+
+   .. image:: images/wallet-globalfinreg-add-identity.png
+      :alt: Concordium wallet screen showing the plus sign to add a new identity
+
+* Select **Global FinReg** from the identity provider options. This initiates a request and opens a new webpage on the Global FinReg platform.
+
+   .. image:: images/walllet-globalfinreg-provider-selection.png
+      :alt: Concordium wallet screen showing the Global FinReg option selection
+
+Complete verification on the Global FinReg platform
+---------------------------------------------------
+
+* Log in to your existing Global FinReg account or sign up for a new account.
+
+* Enter your company's `Legal Entity Identifier (LEI code) <https://www.lei-worldwide.com/what-is-a-legal-entity-identifier.html>`_. Alternatively, you can enter the entity details of the company.
+
+* Upload entity documents from a primary source that are no older than three months. Acceptable documents include:
+
+   * Business registry documents
+   * Documents from a financial supervisory authority (FSA)
+
+* Provide information about the company's Ultimate Beneficial Owner (UBO) or Authorized Signatory.
+
+.. note::
+
+   A UBO is generally defined as an individual who holds a minimum of 10-25% (depending on jurisdiction) of capital or voting rights in the underlying entity.
+
+* Verify the UBO or Authorized Signatory through the online verification tool using a passport or driver's license.
+
+Finalize validation and create accounts
+---------------------------------------
+
+* Navigate to the account management tab in Global FinReg.
+
+* Review all submitted documents and information for accuracy.
+
+* If all information is correct, click **Approve** to finalize the verification process.
+
+* Upon approval, your wallet ID will be validated and ready for use on the Concordium blockchain.
+
+After completing these steps, you can use your company identity to create accounts on the Concordium blockchain as described in the :ref:`Create account<create-account>` guide.
+
+Requesting a company identity through  Notabene
+===============================================
+
+Once you have dowloaded the :ref:`Concordium Company ID tool <downloads-auxiliary-tools>` for your platform and installed it, you should choose your network, either Mainnet or Testnet. A default Concordium node URL is used, but you can enter your node URL, if desired.
 
 Request identity
 ----------------
@@ -128,8 +191,8 @@ Once you have created accounts, you can request CCDs for testing. To request CCD
 
 .. _id-recovery:
 
-Identity recovery
------------------
+Notabene Identity recovery
+==========================
 
 If the identity object used to create credentials is lost, it can be recovered from the identity provider by generating a recovery request using the 24 words used when the identity was originally created. Recover identity generates an identity recovery request to be sent to the identity provider.
 
@@ -147,3 +210,10 @@ If the identity object used to create credentials is lost, it can be recovered f
 - For Testnet requests: Send the file to support@concordium.software with the subject line "Recover company identity".
 
 When the recovery request has been verified successfully, you will receive an email with the identity object file named ``id-object.json`` that you lost. Store this file securely as you need it to create accounts.
+
+Global FinReg Identity recovery
+===============================
+
+The recovery process for Global FinReg identities differs from the Notabene process described above. Since Global FinReg identities are created directly through the |bw| or |cryptox|, identity recovery is performed through the wallet recovery process.
+
+For detailed instructions on wallet recovery, please refer to the :ref:`recover your wallet <recover-wallet>` guide.
