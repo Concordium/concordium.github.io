@@ -6,10 +6,13 @@ Set up the |cryptox|
 ===============================
 
 The |cryptox| is a digital :term:`wallet` that enables you to create and manage your Concordium
-:term:`identities<identity>` and :term:`accounts<account>` and to create transactions such as sending CCD, :term:`shielding` and :term:`unshielding` CCD,
-and sending :term:`shielded transactions<shielded transfer>`.
+:term:`identities<identity>` and :term:`accounts<account>` , transfer, receive, and stake CCD, and connect to decentralized applications (dApps).
+
+|cryptox| features a modern user interface with intuitive account management and token support. The wallet provides a clear overview of your balances, simplifies navigation between accounts, and supports multiple token types beyond CCD. It offers flexible account import and recovery options, supporting both seed phrase and backup file methods.
 
 To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
+
+The CryptoX Concordium Wallet is available for both iOS and Android devices.
 
 Follow this guide to set up your wallet.
 
