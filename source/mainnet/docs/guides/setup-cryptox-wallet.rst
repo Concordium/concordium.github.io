@@ -6,7 +6,7 @@ Set up the |cryptox|
 ===============================
 
 The |cryptox| is a digital :term:`wallet` that enables you to create and manage your Concordium
-:term:`identities<identity>` and :term:`accounts<account>` , transfer, receive, and stake CCD, and connect to decentralized applications (dApps).
+:term:`identities<identity>` and :term:`accounts<account>`, transfer, receive, and stake CCD, and connect to decentralized applications (dApps).
 
 |cryptox| features a modern user interface with intuitive account management and token support. The wallet provides a clear overview of your balances, simplifies navigation between accounts, and supports multiple token types beyond CCD. It offers flexible account import and recovery options, supporting both seed phrase and backup file methods.
 
@@ -143,7 +143,7 @@ If you want to, you can :ref:`change the name of the account<change-mw-acct-name
 Basic navigation
 ================
 
-The |cryptox| provides the the navigation elements described in the following.
+The |cryptox| provides the navigation elements described in the following.
 
 .. image:: ../images/cryptoX/cryptox-basic-navigation1a.png
       :alt: main wallet screen with position numbers
@@ -224,7 +224,7 @@ Tapping the gear icon in the bottom right part of the screen opens up the *Walle
 - NFT: view and manage your NFT collections, and discover new NFTs.
 - About: access app version, support information, website links, legal documents, and social media channels.
 
-In case you have created your wallet from a backup file, you will not have the Recovery and  Show my seed phrase options, but instead the options :ref:`Import<import-export-file>` and :ref:`Export<import-export-file>`.
+In case you have created your wallet from a backup file, you will not have the Recovery and Show seed phrase options, but instead the options :ref:`Import<import-export-file>` and :ref:`Export<import-export-file>`.
 
 
 .. _mw-cryptoX-account-navigation:
