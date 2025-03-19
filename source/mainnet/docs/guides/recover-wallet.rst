@@ -26,7 +26,7 @@ You may need to recover your wallet, e.g. if you've switched devices or lost acc
 
     #. Tap **Get started**.
 
-       .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1.png
+       .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1a.png
          :width: 40%
          :alt: screen with terms and conditions
 
