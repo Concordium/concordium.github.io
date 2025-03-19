@@ -12,6 +12,10 @@ A company identity is for companies that need an identity and accounts on the Co
 Currently, Concordium offers two identity providers for company identities:
 
 * Global FinReg - Can be accessed directly through |bw| or |cryptox|
+
+.. note::
+   Please be advised that Global FinReg identity verification is currently only supported on |cryptox| for Android devices. This service is not yet available for iOS users.
+
 * Notabene - You can't use the Desktop Wallet, |bw| or |cryptox| to create a company identity.
 
    * for Notabene, you need to use the :ref:`Concordium Company ID tool <downloads-auxiliary-tools>`, and you need to communicate directly with the identity provider. `This page <https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc>`_ describes Notabene's process, including recovery of company identities.

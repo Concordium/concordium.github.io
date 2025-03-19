@@ -172,6 +172,6 @@ Getting testnet CCDs
 Additional support
 ==================
 
-For specific help to integrate your exchange with the Concordium blockchain, contact support@concordium.software. 
+For specific help to integrate your exchange with the Concordium blockchain, contact support@concordium.software.
 
 Please start your subject line with "Approved Exchange" to prioritize your support request.
