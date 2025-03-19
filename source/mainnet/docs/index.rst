@@ -116,6 +116,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    FAQs <help-and-faq/faqs>
    Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
+   Exchange Onboarding Guide <resources/exchangeOnBoarding>
 
 
 .. toctree::

@@ -141,6 +141,8 @@ The |cryptox| keeps track of the sequence number and assigns the correct one whe
 ``concordium-client`` tracks the sequence number automatically, but it can
 also be set manually.
 
+.. _account-aliasses:
+
 Account aliases
 ---------------
 
