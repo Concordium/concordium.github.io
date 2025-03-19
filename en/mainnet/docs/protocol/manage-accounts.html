@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.6f2e9e5c-1589-41d0-9d90-442ef465fea8.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.24b288ae-3d2f-4423-a5fe-266349cd2e36.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/manage-accounts';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/manage-accounts.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -683,6 +683,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -835,7 +836,7 @@ validate transactions.</p>
 also be set manually.</p>
 </section>
 <section id="account-aliases">
-<h3>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h3>
+<span id="account-aliasses"></span><h3>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h3>
 <p>In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
 matching <a class="reference internal" href="../resources/glossary.html#term-Alias"><span class="xref std std-term">account aliases</span></a>. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
