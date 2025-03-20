@@ -32,7 +32,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     It might take a few seconds for your new account to finalize on the chain. After that, it will be visible in the account list on the Your Accounts screen .
 
-    You can access settings for your new account byt tapping the gear icon in the upper right corner.
+    You can access settings for your new account by tapping the gear icon in the upper right corner.
 
 .. dropdown:: Desktop Wallet
 
