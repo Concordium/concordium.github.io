@@ -14,29 +14,25 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
 .. dropdown:: |cryptox|
 
-    #. Go to the Accounts screen.
+    #. Go to the Your Accounts screen (tap the account identifier on the main screen).
 
-    #. Tap the **+** in the upper left corner.
+    #. Tap **Create new account**.
 
     #. Enter the name of the account and tap **Continue**.
 
-        .. image:: ../images/cryptoX/create-acct-set-name.png
+       .. image:: ../images/cryptoX/create-account.png
             :width: 50%
 
     #. Tap the identity you want to use for the new account.
 
-        .. image:: ../images/cryptoX/create-acct-select-identity.png
+       .. image:: ../images/cryptoX/cryptox-create-account-identity.png
             :width: 50%
 
-    #. Tap **Done** to finalize the account.
+    #. Tap **Create account**.
 
-        .. image:: ../images/cryptoX/create-acct-finalize.png
-            :width: 50%
+    It might take a few seconds for your new account to finalize on the chain. After that, it will be visible in the account list on the Your Accounts screen .
 
-
-    Your new account is now visible on the Accounts screen . It might take a little while for it to finalize on the chain.
-
-    You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see :ref:`Change account name<change-mw-acct-name>`.
+    You can access settings for your new account byt tapping the gear icon in the upper right corner.
 
 .. dropdown:: Desktop Wallet
 
