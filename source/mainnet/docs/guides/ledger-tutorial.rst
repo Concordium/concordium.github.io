@@ -64,7 +64,7 @@ Connect to the Concordium Desktop Wallet
 
    - Ledger Nano X shows *Concordium*.
 
-   .. image:: ../../docs/images/ledger-tutorial/2LEDGER.jpEg
+   .. image:: ../../docs/images/ledger-tutorial/2LEDGER.jpeg
       :alt: Installation confirmation
 
    Ledger Nano x shows *Concordium is ready*.
