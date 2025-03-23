@@ -45,18 +45,19 @@ Explore our developer resources, including detailed documentation, tutorials, an
 
 .. raw:: html
 
-   <style>
-   .three-columns {
-       display: flex;
-       justify-content: space-between;
-       gap: 2em; /* Tilføjer mellemrum mellem spalterne */
-   }
-   .column1, .column2, .column3 {
-       width: 30%;
-       padding: 1em; /* Tilføjer indvendig polstring */
 
-   }
-   </style>
+    <style>
+   .. .three-columns {
+   ..     display: flex;
+   ..     justify-content: space-between;
+   ..     gap: 2em; /* Tilføjer mellemrum mellem spalterne */
+   .. }
+   .. .column1, .column2, .column3 {
+   ..     width: 30%;
+   ..     padding: 1em; /* Tilføjer indvendig polstring */
+
+   .. }
+    </style>
 
 .. Note::
 
@@ -78,6 +79,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
+   Consensus mechanisms <protocol/consensus-mechanisms>
    Validation <protocol/concepts-baker>
    Delegation <protocol/concepts-delegation>
 
@@ -114,6 +116,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    FAQs <help-and-faq/faqs>
    Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
+   Exchange Onboarding Guide <resources/exchangeOnBoarding>
 
 
 .. toctree::

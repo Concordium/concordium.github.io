@@ -222,6 +222,20 @@ html_theme_options = {
                "target" : "_blank",}
         },
         {
+            # Concordium Discord
+            "name": "Discord",
+            # URL where the link will redirect
+            "url": "https://discord.com/invite/GpKGE2hCFx",
+            # Icon class for Discord using FontAwesome
+            "icon": "fab fa-discord",
+            # Using FontAwesome
+            "type": "fontawesome",
+            # Opening in a new tab
+            "attributes": {
+            "target": "_blank",
+            }
+        },
+        {
             "name": "YouTube",
             "url": "https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A",
             "icon": "fab fa-youtube",
@@ -233,18 +247,8 @@ html_theme_options = {
         },
         {
             "name": "Medium",
-            "url": "https://medium.com/concordium",
+            "url": "https://medium.com/@concordium",
             "icon": "fab fa-medium",
-            "type": "fontawesome",
-            # Add additional attributes to the href link.
-            # The defaults of the target, rel, class, title, and href may be overwritten.
-            "attributes": {
-               "target" : "_blank",}
-        },
-        {
-            "name": "Academy",
-            "url": "https://academy.concordium.software/ccd-academy/getting-started",
-            "icon": "fas fa-graduation-cap",
             "type": "fontawesome",
             # Add additional attributes to the href link.
             # The defaults of the target, rel, class, title, and href may be overwritten.
@@ -635,4 +639,7 @@ redirects = {
     "net/guides/legal" : "/en/mainnet/docs/guides/cryptox-terms.html",
     "net/guides/export-key" : "/en/mainnet/docs/guides/export-key.html",
     "smart-contracts/guides/on-chain-index" : "/en/mainnet/docs/smart-contracts/introduction.html",
+    "docs/protocol/company-identities" : "/en/mainnet/tutorials/company-identity/company-identities.html",
+    "docs/network/query-node" : "/en/mainnet/tools/query-node.html",
+    "net/references/net/references/grpc2" : "/en/mainnet/tools/grpc2.html",
     }
