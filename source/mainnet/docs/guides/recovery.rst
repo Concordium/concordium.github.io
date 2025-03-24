@@ -104,7 +104,7 @@ A backup is only necessary when creating new accounts, not every time a transact
 You can :ref:`view the seed phrase in Wallet Settings<show-seed-phrase>` if you need to write it down again.
 
 
-If you need to export your private key to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see :ref:`Export a private key<export-key>`.
+If you need to export the private key of a specific account to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see :ref:`Export a private key<export-key>`.
 
 .. dropdown:: Recover |bw|
 
@@ -164,6 +164,8 @@ If you have restored your wallet from a copy of your wallet private key, you wil
 See both recovery from seed phrase and recovery from back-up file under :ref:`Recover your wallet<recover-wallet>`.
 
 Note that the backup functionality available form Wallet Settings will depend on how your wallet was set up/restored.
+
+If you need to export the private key of a specific account to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see :ref:`Export a private key<export-key>`.
 
 .. dropdown:: Recover |cryptox|
 
