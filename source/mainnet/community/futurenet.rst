@@ -7,10 +7,10 @@ Futurenet: The Future of Stablecoin Payments—Coming This April
 
 🌟 What is Futurenet?
 -------------------------
-Futurenet is Concordium’s upcoming **Canary DevNet** to experiment 
-with stablecoins at the **Protocol Layer**. 
-Starting in April, our engineering team will begin deploying 
-**releases every 2 weeks** to **Futurenet**—pushing new code *before* 
+Futurenet is Concordium’s upcoming **Canary DevNet** to experiment
+with stablecoins at the **Protocol Layer**.
+Starting in April, our engineering team will begin deploying
+**releases every 2 weeks** to **Futurenet**—pushing new code *before*
 our Alpha goes live to testnet.
 
 👉 `Get involved now! - Application form <https://tally.so/r/3jvkLx>`_.
@@ -59,6 +59,6 @@ We’re inviting a select group of developers who want to help shape next-gen pa
 
 🥇🚀 Ready to pioneer?
 ----------------------
-Reach out to request access and learn how to **bridge Web2 and Web3** with Concordium stablecoins payments. 
+Reach out to request access and learn how to **bridge Web2 and Web3** with Concordium stablecoins payments.
 
 👉 `Get involved now! - Application form <https://tally.so/r/3jvkLx>`_.
