@@ -23,6 +23,13 @@ Prerequisites
 
 Before you start, make sure that:
 
+* You have one of the following supported Ledger devices:
+
+  * Ledger Nano S+
+  * Ledger Nano X
+  * Ledger Stax
+  * Ledger Flex
+
 * You've `initialized <https://support.ledger.com/article/360000613793-zd?redirect=false>`_ your Ledger Device
 * The latest firmware is `installed <https://support.ledger.com/article/360002731113-zd?redirect=false>`_ (Ledger Nano S +)
 * Ledger Live is `ready to use <https://support.ledger.com/article/4404389503889-zd>`_
