@@ -13,10 +13,12 @@ FutureNet
 
 .. container:: tutorial-section tutorial-section-blue
 
-   Our canary DevNet where we are going to push PLT-related releases regarding the following scenarios:
+   Our :doc:`canary devnet <futurenet>` where we are going to push PLT-related releases regarding the following scenarios:
 
    * Geofencing Payments
    * Verify & Pay
+   * Scheduled Transfers
+   * Smart Payment Lock
 
 .. toctree::
    :maxdepth: 2
