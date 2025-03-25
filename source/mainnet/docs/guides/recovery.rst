@@ -82,7 +82,7 @@ A backup is only necessary when creating new accounts, not every time a transact
 
         **Incomplete backups**
 
-        If you have :ref:`imported <export-import>` accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.
+        If you have imported accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.
 
         **How to recover accounts**
 
