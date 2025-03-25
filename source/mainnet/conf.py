@@ -642,4 +642,6 @@ redirects = {
     "docs/protocol/company-identities" : "/en/mainnet/tutorials/company-identity/company-identities.html",
     "docs/network/query-node" : "/en/mainnet/tools/query-node.html",
     "net/references/net/references/grpc2" : "/en/mainnet/tools/grpc2.html",
+    "guides/export-import": "/en/mainnet/docs/guides/recovery.html",
+    "guides/recover-wallet": "/en/mainnet/docs/guides/recovery.html"
     }
