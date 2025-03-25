@@ -79,4 +79,4 @@ Identity recovery
 
 Since identities are created directly through the |bw| or |cryptox|, identity recovery is performed through the wallet recovery process.
 
-For detailed instructions on wallet recovery, please refer to the :ref:`recover your wallet <recover-wallet>` guide.
+For detailed instructions on wallet recovery, please refer to the :ref:`recover your wallet <backup-import-recover>` guide.
