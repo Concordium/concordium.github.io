@@ -6,3 +6,4 @@
    Docs <docs/index>
    tutorials/index
    tools/index
+   community/index
