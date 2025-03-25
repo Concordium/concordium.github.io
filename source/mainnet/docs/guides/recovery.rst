@@ -5,9 +5,13 @@
 Backup and recovery
 ===================
 
-Backup and recovery are essential aspects of managing your digital assets safely. When using Concordium wallets, it's important to understand how to backup your wallet information and how to recover access if needed - for example, when you get a new device or if your device is lost or damaged.
+Backup and recovery are essential aspects of managing your digital assets safely. When using Concordium wallets, it's important to know how to backup your wallet information and recover access if needed - for example, when you get a new device or if your device is lost or damaged.
 
 You are solely responsible for keeping your assets secure. Never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.
+
+.. Note::
+
+    You cannot recover testnet wallets on mainnet, or vice versa.
 
 Different Concordium wallet types use different methods for backup and recovery. This page explains the specific procedures for each wallet type.
 
@@ -100,7 +104,7 @@ A backup is only necessary when creating new accounts, not every time a transact
 |bw|
 ====
 
-|bw| uses a seed phrase to recover your accounts, identities, and private keys.
+|bw| uses a seed phrase to recover your accounts, identities, and private keys. The seed phrase is created when you set up a new wallet, and you must write it down and keep it a safe location.
 You can :ref:`view the seed phrase in Wallet Settings<show-seed-phrase>` if you need to write it down again.
 
 
@@ -157,13 +161,11 @@ If you need to export the private key of a specific account to use in Concordium
 If you have set up your wallet with a seed phrase, you will need this for recovering your wallet.
 You can :ref:`view and copy the seed phrase<show-seed-phrase>` in Wallet Settings if you need to write it down again.
 
-If you have restored your wallet from an imported back-up file, you will need this for recovering your wallet. You can :ref:`export and import back-up files<import-export-file>` in Wallet Settings.
+If you have restored your wallet from an imported back-up file, you will need this file for recovering your wallet. You can :ref:`export and import back-up files<import-export-file>` in Wallet Settings.
 
-If you have restored your wallet from a copy of your wallet private key, you will need this for recovering your wallet. You can :ref:`view and copy the wallet private key <show-wallet-private-key>` in Wallet Settings.
+If you have restored your wallet from a copy of your wallet private key, you will need this key for recovering your wallet. You can :ref:`view and copy the wallet private key <show-wallet-private-key>` in Wallet Settings.
 
-See both recovery from seed phrase and recovery from back-up file under :ref:`Recover your wallet<recover-wallet>`.
-
-Note that the backup functionality available form Wallet Settings will depend on how your wallet was set up/restored.
+Note that the backup functionality available form Wallet Settings will depend on which of the above methods was used for setting up/restoring your wallet.
 
 If you need to export the private key of a specific account to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see :ref:`Export a private key<export-key>`.
 
@@ -211,7 +213,7 @@ If you need to export the private key of a specific account to use in Concordium
 
          #. Once the words are correct, tap **Recover** to submit the recovery request to the identity provider(s).
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover5a.png
+            .. image:: ../images/cryptoX/recovery/cryptox-recover5d.png
                 :width: 40%
 
          #. It may take a little while for recovery to complete.
@@ -220,9 +222,14 @@ If you need to export the private key of a specific account to use in Concordium
                 :width: 40%
 
 
-         #. Your wallet has now been restored on |cryptox|.
+         #. After after copletion, you will see an overview of identities and accounts that have been recovered. Tap **Continue to Wallet**.
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover7a.png
+            .. image:: ../images/cryptoX/recovery/cryptox-recover-overview.png
+                :width: 40%
+
+         #. You have succesfully restored your wallet.
+
+            .. image:: ../images/cryptoX/recovery/cryptox-recover7d.png
                 :width: 40%
 
 
@@ -234,9 +241,9 @@ If you need to export the private key of a specific account to use in Concordium
             .. image:: ../images/cryptoX/recovery/cryptox-recover4b.png
                 :width: 40%
 
-         #. Once the key is entered, tap **Continue** to submit the recovery request to the identity provider(s).
+         #. Once the key is entered, tap **Recover** to submit the recovery request to the identity provider(s).
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover5b.png
+            .. image:: ../images/cryptoX/recovery/cryptox-recover5d.png
                 :width: 40%
 
          #. It may take a little while for recovery to complete.
@@ -244,10 +251,15 @@ If you need to export the private key of a specific account to use in Concordium
             .. image:: ../images/cryptoX/recovery/cryptox-recover6b.png
                 :width: 40%
 
+         #. After after copletion, you will see an overview of identities and accounts that have been recovered. Tap **Continue to Wallet**.
 
-         #. Your wallet has now been restored on |cryptox|.
+            .. image:: ../images/cryptoX/recovery/cryptox-recover-overview.png
+                :width: 40%
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover7b.png
+
+         #. You have succesfully restored your wallet.
+
+            .. image:: ../images/cryptoX/recovery/cryptox-recover7d.png
                 :width: 40%
 
 
@@ -276,9 +288,5 @@ If you need to export the private key of a specific account to use in Concordium
 
             When you recover your wallet, any account or identity names that you might have edited will be reset. You can :ref:`edit the account name<change-mw-acct-name>`, if desired.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
 
-   ../guides/export-import
-   ../guides/recover-wallet
+
