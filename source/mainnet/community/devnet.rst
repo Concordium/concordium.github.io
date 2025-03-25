@@ -1,30 +1,30 @@
-.. _futurenet:
+.. _devnet:
 
 
-Futurenet: The Future of Stablecoin Payments—Coming This April
+DevNet: The Future of Stablecoin Payments—Coming This April
 ==============================================================
 
 
-🌟 What is Futurenet?
+What is DevNet?
 -------------------------
-Futurenet is Concordium’s upcoming **Canary DevNet** to experiment
+We are starting a **Canary DevNet** to experiment
 with stablecoins at the **Protocol Layer**.
 Starting in April, our engineering team will begin deploying
-**releases every 2 weeks** to **Futurenet**—pushing new code *before*
+**releases every 2 weeks** to **DevNet**—pushing new code *before*
 our Alpha goes live to testnet.
 
 👉 `Get involved now! - Application form <https://tally.so/r/3jvkLx>`_.
 
-🙋 Why join Futurenet?
+Why join DevNet?
 ------------------------
 
 - **Be among the first** to build and test newly released stablecoin payment products.
 - Focus on **APIs** to quickly and seamlessly integrate stablecoin payments into existing payment solutions (Stripe, Shopify, etc).
 - Your feedback will shape how we build Concordium’s stablecoins and guide the roadmap priorities.
 
-💡 What can you do?
+What can you do?
 ---------------------
-**Futurenet** unlocks **powerful** new scenarios for **payment processing**, available only thanks for Concordium ID-layer:
+**DevNet** unlocks **powerful** new scenarios for **payment processing**, available only thanks for Concordium ID-layer:
 
 1. **Geofencing Payments**
 
@@ -42,14 +42,14 @@ Automate periodic payments, like rent or subscriptions.
 
 Execute transactions conditionally, e.g., payments triggered upon delivery or trade finance document verification.
 
-📆 Launch Timeline
+Launch Timeline
 --------------------
-* **22 April 2025**: Futurenet goes live; invite-only building begins!
+* **End of April 2025**: DevNet goes live; invite-only building begins!
 * **Every 2 weeks**: New feature releases deployed.
-* **June 2025**: First two scenarios (Geofenced Payments, Verify & Pay) delivered.
+* **June 2025**: First two scenarios (Geofenced Payments, Verify & Pay) are delivered.
 * **November 2025**: Delivery of second two scenarios (Scheduled Transfers and Smart Payment Locks).
 
-🛠️ Who can apply?
+Who can apply?
 --------------------
 We’re inviting a select group of developers who want to help shape next-gen payment flows and stablecoin functionality, including:
 
@@ -57,7 +57,7 @@ We’re inviting a select group of developers who want to help shape next-gen pa
 * **PayFi, Wallets & Stablecoin Integrators**: Teams already handling digital wallets, fiat on/off ramps, or stablecoin-based payment flows.
 * **Builders Exploring Trade Finance, Rent Payments, and Verify & Buy**: Anyone prototyping solutions where stablecoins can unlock new efficiencies or compliance benefits.
 
-🥇🚀 Ready to pioneer?
+Ready to pioneer?
 ----------------------
 Reach out to request access and learn how to **bridge Web2 and Web3** with Concordium stablecoins payments.
 
