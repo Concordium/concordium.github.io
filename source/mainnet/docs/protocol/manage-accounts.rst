@@ -50,7 +50,7 @@ Initial account
 
 The user gets an :term:`initial account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :term:`identity provider`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
-The user additionally :ref:`creates account keys<export-import>` for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
+The user additionally :ref:`creates account keys<backup-import-recover>` for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
 and stores it locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
@@ -75,7 +75,7 @@ The input to the transaction is a *credential*, which contains a number of :term
 .. Note::
    It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-Any time you create a new account using Desktop Wallet, you should make a :ref:`backup<export-import>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
+Any time you create a new account using Desktop Wallet, you should make a :ref:`backup<backup-import-recover>`. Backups protect your account keys, ensuring that you do not lose access to your CCDs.
 
 Each identity contains a number of cryptographic values. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
