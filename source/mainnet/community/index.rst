@@ -5,15 +5,15 @@
 Community
 =========
 
-Welcome to the community page where you'll find community projects and events.
+Welcome to the community page where you find Developer community projects and events.
 
 
-FutureNet
+DevNet
 ---------
 
 .. container:: tutorial-section tutorial-section-blue
 
-   Our :doc:`canary devnet <futurenet>` where we are going to push PLT-related releases regarding the following scenarios:
+   Our :doc:`canary devnet <devnet>` where we are going to push PLT-related releases regarding the following scenarios:
 
    * Geofencing Payments
    * Verify & Pay
@@ -24,5 +24,5 @@ FutureNet
    :maxdepth: 2
    :hidden:
 
-    Futurenet <futurenet>
+    DevNet <devnet>
 

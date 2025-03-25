@@ -1,21 +1,21 @@
-.. _futurenet:
+.. _devnet:
 
 
-Futurenet: The Future of Stablecoin Payments—Coming This April
+DevNet: The Future of Stablecoin Payments—Coming This April
 ==============================================================
 
 
-🌟 What is Futurenet?
+🌟 What is DevNet?
 -------------------------
-Futurenet is Concordium’s upcoming **Canary DevNet** to experiment
+We are starting **Canary DevNet** to experiment
 with stablecoins at the **Protocol Layer**.
 Starting in April, our engineering team will begin deploying
-**releases every 2 weeks** to **Futurenet**—pushing new code *before*
+**releases every 2 weeks** to **DevNet**—pushing new code *before*
 our Alpha goes live to testnet.
 
 👉 `Get involved now! - Application form <https://tally.so/r/3jvkLx>`_.
 
-🙋 Why join Futurenet?
+🙋 Why join DevNet?
 ------------------------
 
 - **Be among the first** to build and test newly released stablecoin payment products.
@@ -24,7 +24,7 @@ our Alpha goes live to testnet.
 
 💡 What can you do?
 ---------------------
-**Futurenet** unlocks **powerful** new scenarios for **payment processing**, available only thanks for Concordium ID-layer:
+**DevNet** unlocks **powerful** new scenarios for **payment processing**, available only thanks for Concordium ID-layer:
 
 1. **Geofencing Payments**
 
@@ -44,9 +44,9 @@ Execute transactions conditionally, e.g., payments triggered upon delivery or tr
 
 📆 Launch Timeline
 --------------------
-* **22 April 2025**: Futurenet goes live; invite-only building begins!
+* **End of April 2025**: DevNet goes live; invite-only building begins!
 * **Every 2 weeks**: New feature releases deployed.
-* **June 2025**: First two scenarios (Geofenced Payments, Verify & Pay) delivered.
+* **June 2025**: First two scenarios (Geofenced Payments, Verify & Pay) are delivered.
 * **November 2025**: Delivery of second two scenarios (Scheduled Transfers and Smart Payment Locks).
 
 🛠️ Who can apply?
