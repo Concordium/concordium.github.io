@@ -51,7 +51,7 @@ Create passcode
       :alt: screen with activate account
 
    .. Note::
-      If you already have a wallet to import, you can select **Import a wallet** at the bottom of the screen. This allows you to :doc:`restore using a seed phrase, wallet private key, or backup file <./recover-wallet>`.
+      If you already have a wallet to import, you can select **Import a wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
 
 #. Create a six-digit passcode or use a full password. Repeat passcode or password.
 
@@ -215,7 +215,7 @@ Tapping the gear icon in the bottom right part of the screen opens up the *Walle
 - Wallets: manage different wallet types (seed phrase or file wallet), add existing wallets, and switch between them.
 - Address book: :ref:`manage your address book<address-book-mw>`.
 - Notifications: enable or disable notifications for CCD and CIS-2 token transactions.
-- Recovery: :ref:`recover your wallet<recover-wallet>`.
+- Recovery: :ref:`recover your wallet<backup-import-recover>`.
 - Seed phrase: :ref:`show seed phrase<show-seed-phrase>`
 - Update passcode and biometrics: :ref:`change your wallet passcode or activate biometrics<change-passcode-mw>`.
 - Clear WalletConnect: disconnect all active WalletConnect sessions.
