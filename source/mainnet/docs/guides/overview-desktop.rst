@@ -7,7 +7,7 @@ Set up the Desktop Wallet
 
 The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
 
-The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S, LEDGER NANO S Plus, and LEDGER Nano X are supported.
+The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, LEDGER NANO S Plus and LEDGER Nano X are supported.
 
 This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you'll be using the Desktop Wallet in combination with a LEDGER device to generate and store keys and sign transactions.
 
@@ -16,7 +16,7 @@ Before you start
 
 Before you start, make sure you’ve completed the following steps:
 
-- You’ve set up the `LEDGER Nano S <https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true>`_, `LEDGER Nano S Plus <https://support.ledger.com/hc/en-us/articles/4416927988625-Set-up-your-Ledger-Nano-S-Plus-?docs=true>`_, or the `LEDGER Nano X <https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true>`_ and you have saved your 24-word recovery phrase generated on the LEDGER securely. This is the only backup of your private keys, and you need it to access you accounts if you lose your LEDGER device.
+- You’ve set up the `LEDGER Nano S Plus <https://support.ledger.com/hc/en-us/articles/4416927988625-Set-up-your-Ledger-Nano-S-Plus-?docs=true>`_ or the `LEDGER Nano X <https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true>`_ and you have saved your 24-word recovery phrase generated on the LEDGER securely. This is the only backup of your private keys, and you need it to access you accounts if you lose your LEDGER device.
 
 - You’ve downloaded `Ledger Live <https://www.ledger.com/ledger-live/download>`_.
 
@@ -94,3 +94,4 @@ You do not need to take any additional technical steps—your private keys will 
 .. |ledger-settings| image:: ../images/desktop-wallet/ledger-live-settings.png
                     :alt: gear wheel on black background
                     :width: 50px
+
