@@ -28,7 +28,7 @@ Create and export a file with credentials
 
 #. On the LEDGER device press both buttons to open the Concordium application. There's a message saying **Concordium is ready**.
 
-#. In the Desktop Wallet, there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**. Select **Submit**.
+#. In the Desktop Wallet, there's a message saying **Ledger device is ready**. Select **Submit**.
 
 #. Press both buttons to confirm the following on the LEDGER device:
 
