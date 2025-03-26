@@ -366,7 +366,6 @@ You now have to install a custom certificate to ensure that the LEDGER device tr
 #. Now you need to start recovery mode on the LEDGER device.
 
    - On the LEDGER device, press the *left* button and hold it down while you reconnect the LEDGER device to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
-   - 
 
 #. Enter your PIN code.
 
