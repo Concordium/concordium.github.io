@@ -4,7 +4,7 @@
 Building a Zero-Knowledge Proof dApp on Concordium
 ==================================================
 
-This tutorial walks through implementing Concordium blockchain features in a React-based decentralized application (dApp). You'll learn how to integrate wallet connections and zero-knowledge (ZK) proofs using Concordium's identity framework.
+This tutorial walks through implementing Concordium features in a React-based decentralized application (dApp). You'll learn how to integrate both browser and mobile wallets, generate zero-knowledge (ZK) proofs, and verify them using the ID layer.
 
 Concordium is an identity-based blockchain with a unique approach to balancing privacy and compliance. Every account on Concordium has a real-world identity verified by an identity provider, but this doesn't mean sacrificing privacy. Through wallets, users can generate zero-knowledge proofs through wallets about underlying identity attributes like nationality, age, etc., instead of sharing the entire ID information. Also, it is possible to selectively disclose specific attributes about themselves without revealing their identity in a totally self-sovereign way.
 
