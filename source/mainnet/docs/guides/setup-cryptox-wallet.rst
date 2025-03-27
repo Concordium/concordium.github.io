@@ -224,7 +224,7 @@ Tapping the gear icon in the bottom right part of the screen opens up the *Walle
 - NFT: view and manage your NFT collections, and discover new NFTs.
 - About: access app version, support information, website links, legal documents, and social media channels.
 
-In case you have created your wallet from a backup file, you will not have the Recovery and Show seed phrase options, but instead the options :ref:`Import<import-export-file>` and :ref:`Export<import-export-file>`.
+In case you have created your wallet from a backup file, you will not have the Recovery and Show seed phrase options, but instead the options :ref:`Import<import-export-file-wallet>` and :ref:`Export<import-export-file-wallet>`.
 
 
 .. _mw-cryptoX-account-navigation:

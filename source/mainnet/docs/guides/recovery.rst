@@ -161,7 +161,7 @@ If you need to export the private key of a specific account to use in Concordium
 If you have set up your wallet with a seed phrase, you will need this for recovering your wallet.
 You can :ref:`view and copy the seed phrase<show-seed-phrase>` in Wallet Settings if you need to write it down again.
 
-If you have restored your wallet from an imported back-up file, you will need this file for recovering your wallet. You can :ref:`export and import back-up files<import-export-file>` in Wallet Settings.
+If you have restored your wallet from an imported back-up file, you will need this file for recovering your wallet. You can :ref:`export and import back-up files<import-export-file-wallet>` in Wallet Settings.
 
 If you have restored your wallet from a copy of your wallet private key, you will need this key for recovering your wallet. You can :ref:`view and copy the wallet private key <show-wallet-private-key>` in Wallet Settings.
 
