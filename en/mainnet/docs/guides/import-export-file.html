@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Import/export file &#8212; Concordium  documentation</title>
+    <title>Import/export file wallet &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/import-export-file.de0331cb-aff4-44ab-b8bd-05edbb702a50.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/import-export-file.e3df2c64-0cea-4a1a-969c-602405dea330.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/import-export-file';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/import-export-file.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -627,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Import/export file</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -739,43 +735,58 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="import-export-file">
-<span id="id1"></span><h1>Import/export file<a class="headerlink" href="#import-export-file" title="Link to this heading">#</a></h1>
+  <section id="import-export-file-wallet">
+<span id="id1"></span><h1>Import/export file wallet<a class="headerlink" href="#import-export-file-wallet" title="Link to this heading">#</a></h1>
 <p>CryptoX Concordium Wallet offers you to import or export a backup file of your wallet.</p>
-<p>When <a class="reference internal" href="setup-cryptox-wallet.html#setup-cryptox-wallet"><span class="std std-ref">setting up a new wallet</span></a>, you can choose to import a backup file. After setup, the import and export functions can be found in the <strong>More</strong> menu.</p>
-<section id="import-file">
-<h2>Import file<a class="headerlink" href="#import-file" title="Link to this heading">#</a></h2>
+<section id="import-or-export-file-in-a-file-based-wallet">
+<h2>Import or export file in a file based wallet<a class="headerlink" href="#import-or-export-file-in-a-file-based-wallet" title="Link to this heading">#</a></h2>
+<p>If you have <a class="reference internal" href="recovery.html#backup-import-recover"><span class="std std-ref">restored your wallet</span></a> from a backup file, you have the import and export functions in the Wallet Settings (tap the gear icon in the lower right of the main screen to open Wallet Settings).</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-import-export-in-wallet-settings.png"><img alt="../../_images/cryptox-import-export-in-wallet-settings.png" src="../../_images/cryptox-import-export-in-wallet-settings.png" style="width: 50%;" />
+</a>
+<div style="margin-bottom: 50px;"></div><p><strong>To import a file:</strong></p>
 <ol class="arabic simple">
-<li><p>Tap <strong>More</strong>.</p></li>
-<li><p>Tap <strong>Import</strong> in the More menu.</p></li>
+<li><p>Tap <strong>Import</strong>.</p></li>
 <li><p>Browse for the file to import.</p></li>
-<li><p>Choose the file and enter the password created when exporting the file.</p></li>
+<li><p>Select the file and enter the password created when exporting the file. Tap <strong>Continue</strong>.</p></li>
 <li><p>Enter your passcode to authorize the import.</p></li>
 <li><p>Tap <strong>OK</strong>.</p></li>
 </ol>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptox-import-file.png"><img alt="screen showning password entering during export of backup file." src="../../_images/cryptox-import-file.png" style="width: 50%;" />
-</a>
-</div></blockquote>
-<p>After sucessfully importing the file, you will have access to your identities and accounts from the CryptoX Concordium Wallet.</p>
-</section>
-<section id="export-file">
-<h2>Export file<a class="headerlink" href="#export-file" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Tap <strong>More</strong>.</p></li>
-<li><p>Tap <strong>Export</strong> in the More menu.</p></li>
-<li><p>Tap <strong>Export</strong> on the Export screen.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-export-file1.png"><img alt="screen showing exporting backup file." src="../../_images/cryptox-export-file1.png" style="width: 50%;" />
-</a>
-</li>
-<li><p>Enter an export password.</p>
-<p>Remember to store the password securely. You will need it if you want to import your account later, e.g. if you need to recover it or want to import it into another CCD wallet.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-export-file2.png"><img alt="screen showning password entering during export of backup file." src="../../_images/cryptox-export-file2.png" style="width: 50%;" />
-</a>
-</li>
-<li><p>Enter the export password once more.</p></li>
-<li><p>Store your file in the desired location.</p></li>
+<p>After successfully importing the file, you will have access to your identities and accounts from the CryptoX Concordium Wallet.</p>
+<p><strong>To export a file:</strong></p>
+<ol class="arabic simple">
+<li><p>Tap <strong>Export</strong>.</p></li>
+<li><p>Read the information about backup and export on the Export screen and tap <strong>Export</strong>.</p></li>
+<li><p>Enter your passcode.</p></li>
+<li><p>Enter an export password.
+Remember to store the password securely. You will need it if you want to import your account later, e.g. if you need to recover it.</p></li>
+<li><p>Confirm the export password.</p></li>
+<li><p>Select a location for your exported file.</p></li>
 </ol>
+</section>
+<section id="add-or-remove-file-based-wallet-to-a-seed-phrase-wallet">
+<h2>Add or remove file based wallet to a seed phrase wallet<a class="headerlink" href="#add-or-remove-file-based-wallet-to-a-seed-phrase-wallet" title="Link to this heading">#</a></h2>
+<p>If you have <a class="reference internal" href="setup-cryptox-wallet.html#setup-cryptox-wallet"><span class="std std-ref">set up your wallet</span></a> with a seed phrase or <a class="reference internal" href="recovery.html#backup-import-recover"><span class="std std-ref">restored your wallet</span></a> from a seed phrase, you have the opportunity to also add a file based wallet and switch between the seed phrase wallet and the file wallet. Note, however, that you will not be able to create new accounts or identities in your file wallet.</p>
+<p>You add the file wallet by navigating to the Wallets screen (tap the gear icon in the lower right of the main screen to open Wallet Settings, and then tap <strong>Wallets</strong>). Then proceed like this:</p>
+<ol class="arabic">
+<li><p>Tap <strong>Add a file wallet</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-add-file-wallet.png"><img alt="../../_images/cryptox-add-file-wallet.png" src="../../_images/cryptox-add-file-wallet.png" style="width: 50%;" />
+</a>
+</li>
+<li><p>Read the information about adding a file wallet and tap <strong>Add wallet</strong>.</p></li>
+<li><p>Browse for the file to import.</p></li>
+<li><p>Select the file and enter the password created when exporting the file. Tap <strong>Continue</strong>.</p></li>
+<li><p>Enter your passcode to authorize the import.</p></li>
+<li><p>Tap <strong>OK</strong>.</p></li>
+</ol>
+<p>After importing the file wallet you can switch between this and the seed phrase wallet by tapping the blue banner at the top of the main screen.
+The currently selected wallet will be active for all functions - any transactions, balance displays, and operations will apply to this wallet.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-file-wallet-banner.png"><img alt="../../_images/cryptox-file-wallet-banner.png" src="../../_images/cryptox-file-wallet-banner.png" style="width: 50%;" />
+</a>
+<div style="margin-bottom: 50px;"></div><a class="reference internal image-reference" href="../../_images/cryptox-seed-phrase-wallet-banner.png"><img alt="../../_images/cryptox-seed-phrase-wallet-banner.png" src="../../_images/cryptox-seed-phrase-wallet-banner.png" style="width: 50%;" />
+</a>
+<div style="margin-bottom: 50px;"></div><p>If you want to remove one of the wallets, you can also do this from the Wallets screen (tap the gear icon in the lower right of the main screen to open Wallet Settings, and then tap <strong>Wallets</strong>). The remove option will be available for the selected wallet.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-remove-wallet.png"><img alt="../../_images/cryptox-remove-wallet.png" src="../../_images/cryptox-remove-wallet.png" style="width: 50%;" />
+</a>
 </section>
 </section>
 
@@ -862,8 +873,8 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-file">Import file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-file">Export file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-or-export-file-in-a-file-based-wallet">Import or export file in a file based wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-or-remove-file-based-wallet-to-a-seed-phrase-wallet">Add or remove file based wallet to a seed phrase wallet</a></li>
 </ul>
   </nav></div>
 

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/create-account.7b61c960-478c-4f04-b474-012f98d39255.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/create-account.a04c18cd-c285-49f4-ab86-26d43fc22323.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/create-account';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/create-account.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -627,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -749,29 +745,20 @@ to the chain. When you already have an identity, you can create more <a class="r
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Go to the Accounts screen.</p></li>
-<li><p class="sd-card-text">Tap the <strong>+</strong> in the upper left corner.</p></li>
+<li><p class="sd-card-text">Go to the Your Accounts screen (tap the account identifier on the main screen).</p></li>
+<li><p class="sd-card-text">Tap <strong>Create new account</strong>.</p></li>
 <li><p class="sd-card-text">Enter the name of the account and tap <strong>Continue</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/create-acct-set-name.png"><img alt="../../_images/create-acct-set-name.png" src="../../_images/create-acct-set-name.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/create-account.png"><img alt="../../_images/create-account.png" src="../../_images/create-account.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
 <li><p class="sd-card-text">Tap the identity you want to use for the new account.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/create-acct-select-identity.png"><img alt="../../_images/create-acct-select-identity.png" src="../../_images/create-acct-select-identity.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-create-account-identity.png"><img alt="../../_images/cryptox-create-account-identity.png" src="../../_images/cryptox-create-account-identity.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">Tap <strong>Done</strong> to finalize the account.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/create-acct-finalize.png"><img alt="../../_images/create-acct-finalize.png" src="../../_images/create-acct-finalize.png" style="width: 50%;" />
-</a>
-</div></blockquote>
-</li>
+<li><p class="sd-card-text">Tap <strong>Create account</strong>.</p></li>
 </ol>
-<p class="sd-card-text">Your new account is now visible on the Accounts screen . It might take a little while for it to finalize on the chain.</p>
-<p class="sd-card-text">You can edit the account name after it has been created so that it is more descriptive in your wallet. For more information, see <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">Change account name</span></a>.</p>
+<p class="sd-card-text">It might take a few seconds for your new account to finalize on the chain. After that, it will be visible in the account list on the Your Accounts screen .</p>
+<p class="sd-card-text">You can access settings for your new account by tapping the gear icon in the upper right corner.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/reset-data.e309c3b2-e899-4d67-8666-8ebfee195197.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/reset-data.651d3351-87f2-49f8-ba01-4186dbfec576.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/desktop-wallet/reset-data';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/desktop-wallet/reset-data.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -627,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../guides/export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -743,10 +739,10 @@
 <span id="reset-data"></span><h1>Reset desktop wallet data<a class="headerlink" href="#reset-desktop-wallet-data" title="Link to this heading">#</a></h1>
 <p>All the local data of the desktop wallet is stored in a database in the user’s applications data folder.</p>
 <p>The desktop wallet does not remove your user data when it is uninstalled; this avoids users losing their data, and simplifies the update process for the application.</p>
-<p>Occasionally, it might be necessary to delete the user data. The following steps describe the process of deleting this user data. Make sure that you have a <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">backup</span></a> with your data before starting this process.</p>
+<p>Occasionally, it might be necessary to delete the user data. The following steps describe the process of deleting this user data. Make sure that you have a <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">backup</span></a> with your data before starting this process.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Deleting the user data without a <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">backup</span></a> will mean you can only recover what is recoverable with <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">account recovery</span></a> (under “Recover accounts without a backup file”), which does not include your identities, address book, names or notes.</p>
+<p>Deleting the user data without a <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">backup</span></a> will mean you can only recover what is recoverable with <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">account recovery</span></a> (under “Recover accounts without a backup file”), which does not include your identities, address book, names or notes.</p>
 </div>
 <section id="delete-the-user-data">
 <h2>Delete the user data<a class="headerlink" href="#delete-the-user-data" title="Link to this heading">#</a></h2>

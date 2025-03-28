@@ -9,16 +9,16 @@ Your seed phrase is the access key to all the funds in your wallet. It is import
 
 .. dropdown:: |cryptox|
 
-   #. Tap **More**.
+   #. Open *Wallet Settings* by tapping the gear icon in the lower right of the main screen.
 
-   #. Tap **Show my seed phrase**.
+   #. Tap **Seed Phrase**.
 
-      .. image:: ../images/cryptoX/cryptoX-copy-seed-phrase.png
+   #. Tap **Show seed phrase**.
+
+      .. image:: ../images/cryptoX/cryptox-show-seed-phrase.png
          :width: 50%
          :alt: screen with seed phrase
 
-
-   #. Tap **Show seed phrase**.
 
    #. Enter your passcode when prompted.
 
