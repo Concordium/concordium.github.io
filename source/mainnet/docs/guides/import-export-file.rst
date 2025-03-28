@@ -43,7 +43,7 @@ After successfully importing the file, you will have access to your identities a
 #. Enter your passcode.
 
 #. Enter an export password.
-   Remember to store the password securely. You will need it if you want to import your account later, e.g. if you need to recover it or want to import it into another CCD wallet.
+   Remember to store the password securely. You will need it if you want to import your account later, e.g. if you need to recover it.
 
 #. Confirm the export password.
 
