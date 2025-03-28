@@ -66,7 +66,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
     7. Connect your LEDGER device if you haven't done so already, and enter your PIN code. Press the up and down arrows to choose a digit, and then press both buttons to select the digit. The LEDGER device says **Concordium is ready**.
 
-    8. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+    8. Wait for the message in the Desktop Wallet saying **Ledger device is ready** and select **Submit**.
 
     9. You now have to confirm the following on the LEDGER device:
 

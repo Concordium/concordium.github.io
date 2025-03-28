@@ -12,7 +12,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :align: center
 
 
-.. container:: three-columns
+.. container:: four-columns
 
    .. container:: column1
 
@@ -42,6 +42,16 @@ Explore our developer resources, including detailed documentation, tutorials, an
 
       Access a comprehensive set of tools to build your dApps.
       Find SDKs, APIs, smart contract libraries, CLI, CCDScan, Testnet Faucet, and IDE plugins.
+
+   .. container:: column4
+
+      .. raw:: html
+
+           <a href="../community/index.html" class="heading-link"><strong>Community</strong></a>
+
+
+      Developer Community.
+      Find out about latest initiatives, projects and events for Concordium Developers.
 
 .. raw:: html
 
