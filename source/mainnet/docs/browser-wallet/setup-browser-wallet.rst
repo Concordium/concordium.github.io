@@ -45,7 +45,7 @@ Get started
             :alt: screen for setting up passcode
             :width: 50%
 
-   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<backup-import-recover>`.
 
       .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
@@ -77,7 +77,7 @@ Get started
             :alt: screen for setting up passcode
             :width: 50%
 
-   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<backup-import-recover>`.
 
       .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
@@ -107,7 +107,7 @@ Get started
             :alt: screen for setting up passcode
             :width: 50%
 
-   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<backup-import-recover>`.
 
       .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
@@ -135,7 +135,7 @@ Get started
             :alt: screen for setting up passcode
             :width: 50%
 
-   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<recover-wallet>`.
+   #. Choose whether you are creating a new wallet or :ref:`recovering an existing one<backup-import-recover>`.
 
       .. image:: ../images/browser-wallet/new/create_restore.png
             :alt: screen with option to create or restore
@@ -341,7 +341,7 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 
 .. Note::
 
-   If you forget your passcode for your installed |bw|, you will need to remove the extension in your internet browswer and reinstall it, choosing the option to :ref:`recover your wallet<recover-wallet>`. Use your secret recovery phrase to recover the wallet.
+   If you forget your passcode for your installed |bw|, you will need to remove the extension in your internet browswer and reinstall it, choosing the option to :ref:`recover your wallet<backup-import-recover>`. Use your secret recovery phrase to recover the wallet.
 
 .. |chrome-ext|    image:: ../images/browser-wallet/chrome-extensions-icon.png
                     :width: 20px

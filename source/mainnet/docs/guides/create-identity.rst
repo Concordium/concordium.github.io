@@ -22,7 +22,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    You can submit requests for additional :term:`identities<identity>` in the |cryptox|. You do this from the **Identities** screen.
 
-   #. Tap **More** in the lower right corner.
+   #. Open *Wallet Settings* by tapping the gear icon in the lower right of the main screen.
 
    #. Tap **Identities**.
 
