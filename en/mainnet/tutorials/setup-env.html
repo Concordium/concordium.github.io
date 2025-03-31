@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Setup the development environment &#8212; Concordium  documentation</title>
+    <title>Set up the development environment &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tutorials/setup-env.cd5db44c-24e7-496a-aedb-08d4c0e7a854.js"></script>
+    <script defer="defer" src="../_static/tippy/tutorials/setup-env.c3ab1467-7d3b-44ff-9f89-f87605490afe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/setup-env';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/setup-env.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -499,7 +499,7 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contract Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup the development environment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Set up the development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="counter/counter-contract.html">Counter</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
@@ -591,8 +591,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="setup-the-development-environment">
-<span id="setup-env"></span><h1>Setup the development environment<a class="headerlink" href="#setup-the-development-environment" title="Link to this heading">#</a></h1>
+  <section id="set-up-the-development-environment">
+<span id="setup-env"></span><h1>Set up the development environment<a class="headerlink" href="#set-up-the-development-environment" title="Link to this heading">#</a></h1>
 <p>Before starting the smart contract tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -732,27 +732,29 @@ The macOS distribution is an installer that places an alias to the binary into t
 <p>For the purposes of these tutorials and for testing, a node is available on testnet to use when testing smart contracts and dApps so you do not need to run your own node. You can use this node for API calls of chain methods only with gRPC v2 and gRPC web. The address is <code class="docutils literal notranslate"><span class="pre">grpc.testnet.concordium.com</span></code> on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of <em>chain methods only</em>. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the <a class="reference external" href="https://status.testnet.concordium.software">Testnet status page</a>.</p>
 <p>If you wish to run your own node, see <a class="reference internal" href="../docs/network/nodes/node-requirements.html#node-requirements"><span class="std std-ref">Run a node on Concordium</span></a>.</p>
 </section>
-<section id="setup-a-wallet">
-<span id="setup-wallet"></span><h2>Setup a wallet<a class="headerlink" href="#setup-a-wallet" title="Link to this heading">#</a></h2>
+<section id="set-up-a-wallet">
+<span id="setup-wallet"></span><h2>Set up a wallet<a class="headerlink" href="#set-up-a-wallet" title="Link to this heading">#</a></h2>
 <p>Now you need a Concordium wallet. Use the Concordium Wallet for Web. The Concordium Wallet for Web uses a 24 word secret recovery phrase to secure your wallet. Make sure to protect your 24 word secret recovery phrase and store it in a secure place. Anyone who knows the secret recovery phrase can access your wallet.</p>
 <p>Use <a class="reference external" href="https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US">this link</a> to install a Concordium Wallet for Web in a chromium web browser. Follow <a class="reference internal" href="../docs/browser-wallet/setup-browser-wallet.html#setup-bw"><span class="std std-ref">these instructions</span></a> to install the extension. Configure it to run on testnet with an identity created from the Concordium testnet IP (shown below) and an account based on that identity. You don’t have to provide an ID to create an identity on testnet when selecting <code class="docutils literal notranslate"><span class="pre">Concordium</span> <span class="pre">testnet</span> <span class="pre">IP</span></code>. Test identities are meant for testnet testing only.</p>
 <a class="reference internal image-reference" href="../_images/bw-idp-selection.png"><img alt="../_images/bw-idp-selection.png" src="../_images/bw-idp-selection.png" style="width: 100%;" />
 </a>
-<p id="testnet-faucet">Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.</p>
-<a class="reference internal image-reference" href="../_images/testnet-faucet-bw.png"><img alt="../_images/testnet-faucet-bw.png" src="../_images/testnet-faucet-bw.png" style="width: 50%;" />
+<div style="margin-bottom: 50px;"></div><p id="testnet-faucet">Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes:</p>
+<p>Click the <strong>Activity</strong> button on the main screen, and then click <strong>Request CCD</strong>.</p>
+<a class="reference internal image-reference" href="../_images/request-CCD.png"><img alt="../_images/request-CCD.png" src="../_images/request-CCD.png" style="width: 50%;" />
 </a>
-<p>One thing to note is that if you click <a class="reference internal" href="../_images/send-ccd1.png"><img alt="button with paper airplane" src="../_images/send-ccd1.png" style="width: 50px;" /></a>, you enter a transaction window. This allows you to transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see just below those textboxes, there is a value highlighting the “Estimated transaction fee” in CCD terms. This allows you to estimate the costs beforehand and it allows helps you to calculate your business expenses in the future.</p>
-<a class="reference internal image-reference" href="../_images/tx-fee-in-bw.png"><img alt="../_images/tx-fee-in-bw.png" src="../_images/tx-fee-in-bw.png" style="width: 100%;" />
+<div style="margin-bottom: 50px;"></div><p>One thing to note is that if you click the <strong>Send</strong> button on the main screen, you go to the Send funds screen where you can transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see below, the screen shows the <em>Estimated transaction fee</em> in CCD terms. This allows you to estimate the costs beforehand and helps you to calculate your business expenses.</p>
+<a class="reference internal image-reference" href="../_images/send-funds.png"><img alt="../_images/send-funds.png" src="../_images/send-funds.png" style="width: 50%;" />
 </a>
-<p>After that step, you need to <a class="reference internal" href="../docs/guides/export-key.html#export-key"><span class="std std-ref">export the keys</span></a> for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this &lt;YOUR PUBLIC ADDRESS&gt;.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.</p>
-<a class="reference internal image-reference" href="../_images/bw-export-key.png"><img alt="../_images/bw-export-key.png" src="../_images/bw-export-key.png" style="width: 100%;" />
+<div style="margin-bottom: 50px;"></div><p>After that, you need to <a class="reference internal" href="../docs/guides/export-key.html#export-key"><span class="std std-ref">export the keys</span></a> for your account. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this &lt;YOUR PUBLIC ADDRESS&gt;.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.</p>
+<p>To export the key, go to the Accounts page and click <strong>Export</strong> next to <em>Private key</em>. Enter your passcode and click <strong>Show private key</strong>, and then <strong>Export</strong>.</p>
+<a class="reference internal image-reference" href="../_images/export-key-new.png"><img alt="../_images/export-key-new.png" src="../_images/export-key-new.png" style="width: 100%;" />
 </a>
-<p>When you export the key it creates a file named <code class="docutils literal notranslate"><span class="pre">&lt;YOUR</span> <span class="pre">PUBLIC</span> <span class="pre">ADDRESS&gt;.export</span></code>. Open it with a text editor and find your <code class="docutils literal notranslate"><span class="pre">signKey</span></code>, <code class="docutils literal notranslate"><span class="pre">verifyKey</span></code> in there. Copy the <code class="docutils literal notranslate"><span class="pre">signKey</span></code> and your address. You will use it while deploying and interacting with your contract.</p>
+<div style="margin-bottom: 50px;"></div><p>When you export the key, it creates a file named <code class="docutils literal notranslate"><span class="pre">&lt;YOUR</span> <span class="pre">PUBLIC</span> <span class="pre">ADDRESS&gt;.export</span></code>. Open it with a text editor and find your <code class="docutils literal notranslate"><span class="pre">signKey</span></code>, <code class="docutils literal notranslate"><span class="pre">verifyKey</span></code> in there. Copy the <code class="docutils literal notranslate"><span class="pre">signKey</span></code> and your address. You will use it while deploying and interacting with your contract.</p>
 <a class="reference internal image-reference" href="../_images/bw-exported-key.png"><img alt="../_images/bw-exported-key.png" src="../_images/bw-exported-key.png" style="width: 100%;" />
 </a>
 <section id="import-the-key">
 <span id="import-client-key"></span><h3>Import the key<a class="headerlink" href="#import-the-key" title="Link to this heading">#</a></h3>
-<p>You are ready to import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration. Transfer your wallet key export file to the place where you are running your <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool. Navigate to the folder as well.</p>
+<p>You are ready to import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration. Transfer your key export file to the place where you are running your <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tool. Navigate to the folder as well.</p>
 <p>Import your key into the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> configuration:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import &lt;Wallet.export&gt; --name &lt;Your-Wallet-Name&gt;</span>
 </pre></div>
@@ -846,7 +848,7 @@ The macOS distribution is an installer that places an alias to the binary into t
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-run-concordium-client">Download and run Concordium Client</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-on-testnet">Concordium node on Testnet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-a-wallet">Setup a wallet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-a-wallet">Set up a wallet</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-key">Import the key</a></li>
 </ul>
 </li>
