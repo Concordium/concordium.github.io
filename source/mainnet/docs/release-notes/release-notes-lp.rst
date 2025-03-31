@@ -18,16 +18,23 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    December 18, 2024
+    March 31, 2025
 
-    Version 3.0.0 addresses the following issues:
+    Version 3.2.2 addresses the following issues:
 
-    - Added new onboarding flow
+    Changed:
 
-    - Changed minimum iOS version to 16.4
-
+    - Earn flow design
+    - Swipelux onramp flow
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.0.0 - December 18, 2024
+
+            Version 3.0.0 addresses the following issues:
+
+            - Added new onboarding flow
+            - Changed minimum iOS version to 16.4
 
         .. dropdown:: |cryptox| 2.0.1 - November 25, 2024
 
