@@ -124,7 +124,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
 .. dropdown:: Social media and support
 
-    - `Concordium's official support <https://support.concordium.software/>`_
+    - `Concordium's official support <https://forum.concordium.com>`_
 
     - `Telegram <https://t.me/ConcordiumNews>`_
 
