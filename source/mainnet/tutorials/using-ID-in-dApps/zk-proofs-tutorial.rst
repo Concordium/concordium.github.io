@@ -9,7 +9,7 @@ Now we'll explore how to generate zero-knowledge proofs using Concordium's ident
 Defining ZK statements
 ----------------------
 
-First, let's look at the ZK statements defined in the constants file:
+First, let's look at the ZK statements defined in the ``constants`` file:
 
 .. code-block:: javascript
 
