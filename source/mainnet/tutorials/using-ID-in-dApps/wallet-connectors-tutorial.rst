@@ -418,6 +418,14 @@ Now, let's implement the actual request to the mobile wallet:
 
 .. code-block:: javascript
 
+  // Request ZK proof via WalletConnect
+  async requestVerifiablePresentation(
+    challenge: HexString,
+    statement: CredentialStatements,
+  ): Promise<VerifiablePresentation> {
+  
+  // code omitted from previous code block
+  
   try {
     // Send request to the mobile wallet
     const result = await this.client.request<{
