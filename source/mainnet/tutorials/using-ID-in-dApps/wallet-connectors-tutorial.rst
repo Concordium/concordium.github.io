@@ -569,7 +569,6 @@ Next, let's implement the connection function:
       setConnectedAccount(account);
     }
     setProvider(provider);
-    navigate("/proof");
   };
 
 The ``connectProvider`` function handles the wallet connection process:
