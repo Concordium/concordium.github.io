@@ -279,7 +279,7 @@ The complete implementation of this component can be found in the example reposi
 The most powerful aspect of this implementation is that the wallet handles all the complex cryptography. The dApp only needs to:
 
 #. Define what should be proved
-#. Generate a secure challenge
+#. Generate a challenge
 #. Process the returned proof
 
 This makes building privacy-preserving applications on Concordium accessible to developers without requiring deep cryptographic expertise.
