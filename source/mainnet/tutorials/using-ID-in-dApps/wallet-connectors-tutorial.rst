@@ -672,10 +672,10 @@ The render function creates a simple UI with:
 
 This component demonstrates a clean implementation pattern for wallet connections in React:
 
-1. It uses React Context from ``frontend/src/context/WalletContext.tsx`` to manage global wallet state
-2. It properly handles component lifecycle with ``useEffect``
-3. It sets up and cleans up event listeners to prevent memory leaks
-4. It provides a user-friendly interface for selecting a wallet type
-5. It encapsulates all the complexity of wallet connection behind a simple abstraction
+1. It uses React Context from ``frontend/src/context/WalletContext.tsx`` to manage global wallet state.
+2. It properly handles component lifecycle with ``useEffect``.
+3. It sets up and cleans up event listeners to prevent memory leaks.
+4. It provides a user-friendly interface for selecting a wallet type.
+5. It encapsulates all the complexity of wallet connection behind a simple abstraction.
 
 By using this approach, we can maintain a consistent wallet connection experience throughout our application regardless of which wallet provider the user chooses.
