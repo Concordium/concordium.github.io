@@ -400,9 +400,9 @@ Now let's implement the ZK proof request method:
     };
     // Use JSONBigInt for proper handling of large numbers
     const serializedParams = JSONBigInt.stringify(params);
-    
+
   // will continue in next code block
-  
+
   }
 
 First, we check if we have an active connection by verifying the existence of a session topic. If no connection exists, we throw an error to prevent attempting to request a proof without a connected wallet.
