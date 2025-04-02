@@ -135,7 +135,6 @@ Now let's implement the ZK proof generation and verification. First, we'll set u
   // From components/proof/Proof.tsx, imports ommited for brevity
 
   const Proof = () => {
-    const navigate = useNavigate();
     // Access wallet state and set up GRPC client
     const { provider, connectedAccount } = useWallet();
     const grpcClient = useRef(
