@@ -278,7 +278,7 @@ The complete implementation of this component can be found in the example reposi
 
 The most powerful aspect of this implementation is that the wallet handles all the complex cryptography. The dApp only needs to:
 
-#. Define what should be proved
+#. Define what should be proven
 #. Generate a challenge
 #. Process the returned proof
 
