@@ -410,7 +410,7 @@ First, we check if we have an active connection by verifying the existence of a 
 The parameters for the ZK proof request include:
 
 * ``challenge``: A unique challenge string to prevent `replay attacks <https://en.wikipedia.org/wiki/Replay_attack>`_
-* ``CredentialStatements``: The statements defining what should be proved
+* ``CredentialStatements``: The statements defining what should be proven
 
 We serialize these parameters using ``JSONBigInt`` instead of standard JSON. This is important because ZK proofs often involve large numbers that standard JSON can't handle correctly.
 
