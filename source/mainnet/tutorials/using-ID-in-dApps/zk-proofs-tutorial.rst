@@ -12,6 +12,7 @@ Defining ZK statements
 First, let's look at the ZK statements defined in the ``constants`` file:
 
 .. code-block:: javascript
+  
   // From constants.ts
 
   import { AtomicStatementV2 } from "@concordium/web-sdk";
