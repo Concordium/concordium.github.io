@@ -50,25 +50,15 @@ Self-suspend a validator
 
 .. dropdown:: |cryptox|
 
-    #. In the dropdown list, select the account for which you want to suspend validation and tap **Earn**.
+    #. Tap the **Earn** button on the main screen.
 
-    #. On the Validator status screen, tap **Change validating status**.
+    #. On the validation screen, tap **Suspend**.
 
-       .. image:: ../images/cryptoX/cryptox-change-validating-status.png
-            :width: 50%
-            :alt: screen showing validator status
+    #. You will see a message explaining about the implications of suspending validation. Tap **Continue** to procced.
 
-    #. You now see the options for changing the validating status. Tap **Suspend valdiation**.
+    #. On the overview screen, review the information. Note that the suspension will take effect from the next payday. Swipe right on the **Suspend** slider to submit the validation suspension.
 
-       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
-            :width: 50%
-            :alt: screen showing options for changing validating status
-
-    #. On the next screen, read the information about the consequences of suspending your validator. Tap **Continue** to proceed with the suspension or go back if you need to reconsider.
-
-    #. Review the transaction details for suspending your validator. Note that the suspension will take effect from the next payday. Tap **Submit validator transaction** to confirm and send your suspension transaction to the blockchain.
-
-    #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**.
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your validation has been successfully suspended. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
 
     After successfully suspending your validator, you'll notice several clear indicators throughout the wallet interface:
@@ -87,9 +77,9 @@ Self-suspend a validator
             :width: 50%
             :alt: screen showing suspended alidator in accountlist
 
-    When viewing your validator status information, a warning message clearly states *Your validation has been suspended* along with information that your node is not currently earning rewards.
+    When viewing your validation status information, a warning message clearly states *Your validation has been suspended* along with information that your node is not currently earning rewards.
 
-    .. image:: ../images/cryptoX/cryptox-validator-suspended-validator-status.png
+    .. image:: ../images/cryptoX/cryptox-suspended-validator-status.png
             :width: 50%
             :alt: screen showing suspended validator in validator status screen
 
@@ -154,22 +144,11 @@ Unsuspend a self-suspended validator
 
     #. Navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator's status page.
 
-    #. Tap **Change validating status**.
+    #. Tap **Resume**.
 
-       .. image:: ../images/cryptoX/cryptox-validator-suspended-validator-status.png
-            :width: 50%
-            :alt: screen showing suspended validator in validator status screen
+    #. On the overview screen, review the information. Note that the resume will take effect from the next payday. Swipe right on the **Resume** slider to submit the resume.
 
-
-    #. Then, tap **Resume validation**.
-
-       .. image:: ../images/cryptoX/cryptox-resume-validation.png
-            :width: 50%
-            :alt: screen showing resume validation action for suspended validator
-
-    #. Review the resume validation info and tap **Submit validator transaction** to proceed.
-
-    #. The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your validation has been successfully resumed. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
 
 .. dropdown:: |bw|
@@ -200,7 +179,7 @@ Unsuspend an automatically suspended validator
 
     When your validator becomes inactive, it first enters a *primed for suspension* state. During this period, a red warning banner appears at the top of your wallet interface stating "Your validation is primed for suspension".
 
-    Additionally, a red dot appears on the Earn button, providing a visual indicator that your validator requires attention.
+    Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
 
     .. image:: ../images/cryptoX/cryptox-validator-primed-for-suspension-banner.png
             :width: 50%
@@ -214,22 +193,11 @@ Unsuspend an automatically suspended validator
 
     #. Then, navigate to the suspended validator. Tapping the suspension notification banner will immediately take you to the suspended validator's details page.
 
-    #. Tap **Change validating status**.
+    #. Tap **Resume**.
 
-       .. image:: ../images/cryptoX/cryptox-validator-suspended-validator-status.png
-            :width: 50%
-            :alt: screen showing suspended validator in validator status screen
+    #. On the overview screen, review the information. Note that the resume will take effect from the next payday. Swipe right on the **Resume** slider to submit the resume.
 
-
-    #. Then, tap **Resume validation**.
-
-       .. image:: ../images/cryptoX/cryptox-resume-validation.png
-            :width: 50%
-            :alt: screen showing resume validation action for suspended validator
-
-    #. Review the resume validation info and tap **Submit validator transaction** to proceed.
-
-    #. The CryptoX Concordium Wallet shows that the transaction has been submitted to the chain. Tap **Finish**.
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your validation has been successfully resumed. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
 
 .. dropdown:: |bw|
