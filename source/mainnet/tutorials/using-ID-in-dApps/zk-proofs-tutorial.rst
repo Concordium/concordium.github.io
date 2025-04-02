@@ -12,8 +12,9 @@ Defining ZK statements
 First, let's look at the ZK statements defined in the ``constants`` file:
 
 .. code-block:: javascript
+  // From constants.ts
 
-  import { AtomicStatementV2 } from "@concordium/web-sdk"; // From constants.ts
+  import { AtomicStatementV2 } from "@concordium/web-sdk"; 
 
   // Context string for signing messages and generating ZK proofs
   export const CONTEXT_STRING = "CONCORDIUM_COMPLIANT_REWARD_DISTRIBUTION_DAPP";
