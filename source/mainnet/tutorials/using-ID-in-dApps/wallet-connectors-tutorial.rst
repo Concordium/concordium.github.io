@@ -577,7 +577,6 @@ The ``connectProvider`` function handles the wallet connection process:
 1. It takes a wallet provider instance (Browser or Mobile)
 2. It calls the provider's ``connect()`` method, which prompts the user to select an account
 3. If an account is successfully connected, it updates the app's state
-4. It navigates to the proof page where ZK verification will happen
 
 Now, let's add cleanup on component unmount:
 
