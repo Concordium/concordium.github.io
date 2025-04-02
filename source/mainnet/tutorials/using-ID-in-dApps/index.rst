@@ -15,7 +15,7 @@ Unlike many other blockchains where implementing zero-knowledge proofs requires 
 3. **Flexible proof types**: Support for revealing attributes, range proofs, and set membership proofs, read :ref:`this article <create-proofs>` for more information
 4. **Simple developer experience**: No need for specialized ZK languages or custom implementations
 
-This architecture allows developers to focus on defining what needs to be proved rather than implementing complex cryptography.
+This architecture allows developers to focus on defining what needs to be proven rather than implementing complex cryptography.
 
 What you will learn
 -------------------
