@@ -66,7 +66,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     9. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information. Swipe right on the **Submit** slider to submit the validator transaction.
 
-    10. The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you’re validating with. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
+    10. The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you’re validating with. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
         .. image:: ../images/cryptoX/cryptox-add-valiator7.png
              :alt: screen confirming validator registration
