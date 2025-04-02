@@ -43,7 +43,7 @@ First, let's look at the ZK statements defined in the ``constants`` file:
   ] as AtomicStatementV2[];
 
   // The number of blocks after the `best block` (top of chain), where the `recent block` is located.
-  // The `recent block hash` is included in signatures and ZK proofs to ensure they expire.
+  // The `recent block hash` is included in ZK proofs to ensure they expire.
   export const RECENT_BLOCK_DURATION = 10n;
 
 The ZK statements use Concordium's ``AtomicStatementV2`` type to define:
