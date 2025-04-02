@@ -10,9 +10,9 @@ In certain situations, such as testing interaction with smart contracts, you may
 
 .. dropdown:: |cryptox|
 
-    #. Tap the account you wish to to export the private key for.
+    #. Go to the Your Accounts screen (tap the account identifier on the main screen).
 
-    #. On the Account screen, tap |cryptoX-acct-settings| to open the Account settings screen.
+    #. Open Account Settings by tapping the gear icon in the upper right of the screen.
 
     #. Tap **Export private key**.
 
