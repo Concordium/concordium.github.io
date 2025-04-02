@@ -4,7 +4,7 @@
 ZK proofs structure
 ===================
 
-Now we'll explore how to implement zero-knowledge proof verification using Concordium's identity framework, focusing on how ZK statements are structured.
+Now we'll explore how to generate zero-knowledge proofs using Concordium's identity framework, focusing on how ZK statements are structured.
 
 Defining ZK statements
 ----------------------
