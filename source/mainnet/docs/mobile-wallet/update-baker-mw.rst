@@ -43,7 +43,7 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     #. Now you see your balance and the current validator stake amount.
        Enter the total amount you want to stake.
-       You can also choose to adjust your restake settings. Select **Yes, add** to automatically add your validation rewards to your validation amount, or **No, don’t add** to have the rewards deposited to your disposable balance at each payday. When you're satisfied with your staking configuration, tap **Continue** to proceed with your updates.
+       You can also choose to adjust your restake settings. Toggle the **Restake rewards** switch if you want to change your restaking preferences. When you're satisfied with your staking configuration, tap **Continue** to proceed with your updates.
 
        .. image:: ../images/cryptoX/cryptox-add-validator2.png
             :width: 50%
