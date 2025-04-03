@@ -4,7 +4,7 @@
 ZK proofs structure
 ===================
 
-Now we'll explore how to generate zero-knowledge proofs using Concordium's identity framework, focusing on how ZK statements are structured.
+Now we'll explore how to generate zero-knowledge proofs using the ID Layer, focusing on how ZK statements are structured.
 
 Defining ZK statements
 ----------------------
@@ -47,7 +47,7 @@ First, let's look at the ZK statements defined in the ``constants`` file:
   // The `recent block hash` is included in ZK proofs to ensure they expire.
   export const RECENT_BLOCK_DURATION = 10n;
 
-The ZK statements use Concordium's ``AtomicStatementV2`` type to define:
+The ZK statements use Concordium's `AtomicStatementV2 <https://docs.concordium.com/concordium-node-sdk-js/types/web3_id.AtomicStatementV2.html>`_ type to define:
 
 * **CONTEXT_STRING**: A domain separator that ensures ZK proofs are specific to this application.
 
@@ -113,7 +113,7 @@ This function retrieves a recent block to use in challenge generation:
 
 * **Security purpose**: Including a recent block hash in the challenge creates time-limited ZK proofs. After the chain progresses further, the proofs will no longer be valid, preventing `replay attacks <https://en.wikipedia.org/wiki/Replay_attack>`_.
 
-* **Blockchain interaction**: The function uses ``ConcordiumGRPCClient`` to communicate with a Concordium node:
+* **Blockchain interaction**: The function uses `ConcordiumGRPCClient <https://docs.concordium.com/concordium-node-sdk-js/classes/grpc.ConcordiumGRPCClient.html>`_ to communicate with a Concordium node:
 
   1. First, it retrieves the current best block height using ``getConsensusInfo()``
   2. It calculates a "recent" block by subtracting ``RECENT_BLOCK_DURATION`` (10 blocks)
@@ -159,7 +159,7 @@ Now let's implement the ZK proof generation and verification. First, we'll set u
 
 The component starts by setting up:
 
-* A connection to the Concordium node using ``ConcordiumGRPCClient`` with ``GrpcWebFetchTransport``
+* A connection to the Concordium node using `ConcordiumGRPCClient <https://docs.concordium.com/concordium-node-sdk-js/classes/grpc.ConcordiumGRPCClient.html>`_ with ``GrpcWebFetchTransport``
 * State variables to track:
 
   * ``isLoading``: Whether a proof request is in progress

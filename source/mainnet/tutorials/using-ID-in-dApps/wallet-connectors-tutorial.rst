@@ -9,6 +9,8 @@ For this tutorial, we'll be focusing on two key Concordium features:
 #. Wallet connection (Browser and Mobile)
 #. Zero-knowledge proof verification
 
+Connecting to wallets allows users to interact with your dApp using their Concordium accounts, while zero-knowledge proofs enable privacy-preserving identity verification - a fundamental feature of compliance-focused applications on Concordium.
+
 .. Attention::
 
   This tutorial presents selected code snippets to help you understand the key concepts and implementation patterns of a dApp on Concordium.
@@ -25,7 +27,13 @@ Before diving into the code details, you are encouraged to clone the project rep
 .. code-block:: console
 
   $ git clone https://github.com/DOBEN/ZK_Proof_Demo
-  $ cd zk-proof-demo/frontend
+  $ cd zk-proof-demo
+
+At this point, open your preferred code editor in the zk-proof-demo directory to explore the full codebase.
+
+.. code-block:: console
+
+  $ cd frontend
   $ yarn install
   $ yarn dev
 
@@ -99,9 +107,10 @@ Now, let's add the zero-knowledge proof related method:
 
 This method is the core of our ZK functionality:
 
-* It accepts a ``challenge`` (a hex-encoded string) that ensures the proof is generated for this specific request
-* It takes ``statement`` parameters that define what should be proved about the user's identity
-* It returns a ``VerifiablePresentation`` containing the generated proof
+* It accepts a :term:`Challenge` (a hex-encoded string) that ensures the proof is generated for this specific request
+* It takes :term:`Statement` parameters that define what should be proved about the user's identity
+* It returns a `VerifiablePresentation <https://docs.concordium.com/concordium-node-sdk-js/classes/types.VerifiablePresentation.html>`_ containing the generated proof
+* A **Witness** (not explicitly used in our interface) refers to the private information known only to the prover that allows them to generate a valid proof.
 
 Finally, let's add message signing capability:
 
@@ -121,7 +130,7 @@ The ``signMessage`` method allows for signing arbitrary messages:
 * ``message``: The content to be signed (can be string, array, or object)
 * ``recentBlockHash``: A recent block hash for time-limited validity
 * ``schema``: Defines the structure of the message for proper serialization
-* Returns an ``AccountTransactionSignature`` containing the cryptographic signature
+* Returns an `AccountTransactionSignature <https://docs.concordium.com/concordium-node-sdk-js/types/types.AccountTransactionSignature.html>`_ containing the cryptographic signature
 
 By using this abstract class as a foundation, we can implement concrete wallet providers for different environments (browser extension, mobile app)
 while maintaining a consistent interface throughout our application. This approach makes it easy to add support for new wallet types in the future without changing the rest of the codebase.
@@ -177,7 +186,7 @@ Next, let's implement the singleton pattern to ensure only one provider instance
 The ``getInstance()`` static method:
 
 * Checks if we already have a provider instance
-* If not, it uses ``detectConcordiumProvider()`` to get a reference to the wallet extension
+* If not, it uses `detectConcordiumProvider() <https://www.npmjs.com/package/@concordium/browser-wallet-api-helpers#using-the-api>`_ to get a reference to the wallet extension
 * Creates a new provider instance and caches it
 * Returns the instance (either new or existing)
 
@@ -214,7 +223,7 @@ For requesting zero-knowledge proofs, we implement a simple pass-through method:
     return this.provider.requestVerifiablePresentation(challenge, statement);
   }
 
-The ``requestVerifiablePresentation()`` method directly calls the browser wallet's implementation:
+The `requestVerifiablePresentation() <https://www.npmjs.com/package/@concordium/browser-wallet-api-helpers#request-verifiable-presentation-for-web3id-statements>_` method directly calls the browser wallet's implementation:
 
 * It passes through the challenge and statements without modification
 * The wallet extension shows a UI to the user for approving the ZK proof generation
@@ -410,7 +419,7 @@ First, we check if we have an active connection by verifying the existence of a 
 The parameters for the ZK proof request include:
 
 * ``challenge``: A unique challenge string to prevent `replay attacks <https://en.wikipedia.org/wiki/Replay_attack>`_
-* ``CredentialStatements``: The statements defining what should be proven
+* `CredentialStatements <https://docs.concordium.com/concordium-node-sdk-js/types/web3_id.CredentialStatement.html>`_: The statements defining what should be proven
 
 We serialize these parameters using ``JSONBigInt`` instead of standard JSON. This is important because ZK proofs often involve large numbers that standard JSON can't handle correctly.
 
@@ -447,7 +456,7 @@ Now, let's implement the actual request to the mobile wallet:
 The request is sent to the mobile wallet using the WalletConnect protocol. We specify:
 
 * ``topic``: The current session identifier
-* ``method``: The Concordium-specific ``METHOD_GENERATE_ZK_PROOF``, which stores the value ``request_verifiable_presentation``
+* ``method``: The Concordium-specific ``request_verifiable_presentation`` method, which is stored in the ``METHOD_GENERATE_ZK_PROOF`` constant
 * ``params``: The serialized parameters wrapped in a ``paramsJson`` field
 * ``chainId``: The Concordium chain identifier (``testnet`` or ``mainnet``)
 
