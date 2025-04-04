@@ -18,16 +18,23 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    December 18, 2024
+    March 31, 2025
 
-    Version 3.0.0 addresses the following issues:
+    Version 3.2.2 addresses the following issues:
 
-    - Added new onboarding flow
+    Changed:
 
-    - Changed minimum iOS version to 16.4
-
+    - Earn flow design
+    - Swipelux onramp flow
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.0.0 - December 18, 2024
+
+            Version 3.0.0 addresses the following issues:
+
+            - Added new onboarding flow
+            - Changed minimum iOS version to 16.4
 
         .. dropdown:: |cryptox| 2.0.1 - November 25, 2024
 
@@ -534,17 +541,28 @@ Wallets
 Desktop Wallet
 --------------
 
-    June 26, 2024
+    March 18, 2025
 
-    Version 1.7.4 contains the following changes:
+    Version 1.8.0 contains the following changes:
 
-    - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+    - Account validation/delegation overview now shows if the target pool is suspended or primed for suspension.
+    - A notification is shown for accounts validating/delegating to a pool which is suspended.
+    - Support for updating validator score parameters on chains running protocol version 8 or above.
+    - Support for changing the suspension status of validators. This requires the corresponding version of the Concordium ledger app which also adds support for this feature.
+    - Updating Concordium SDK fixing issue preventing transactions.
 
-    - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
-
-    - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.4 - June 26, 2024
+
+            Version 1.7.4 contains the following changes:
+
+            - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+
+            - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
+
+            - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
         .. dropdown:: 1.7.3 - March 21, 2024
 

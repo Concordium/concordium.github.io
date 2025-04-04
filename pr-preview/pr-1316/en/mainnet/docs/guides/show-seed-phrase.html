@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/show-seed-phrase.cbdb9ac0-f0c6-4302-8303-b42d891dddd2.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/show-seed-phrase.3546b04c-9da7-4b1b-a5e1-aea33b58409e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/show-seed-phrase';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/show-seed-phrase.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -730,12 +742,12 @@
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>More</strong>.</p></li>
-<li><p class="sd-card-text">Tap <strong>Show my seed phrase</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-copy-seed-phrase.png"><img alt="screen with seed phrase" src="../../_images/cryptoX-copy-seed-phrase.png" style="width: 50%;" />
+<li><p class="sd-card-text">Open <em>Wallet Settings</em> by tapping the gear icon in the lower right of the main screen.</p></li>
+<li><p class="sd-card-text">Tap <strong>Seed Phrase</strong>.</p></li>
+<li><p class="sd-card-text">Tap <strong>Show seed phrase</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-show-seed-phrase.png"><img alt="screen with seed phrase" src="../../_images/cryptox-show-seed-phrase.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Tap <strong>Show seed phrase</strong>.</p></li>
 <li><p class="sd-card-text">Enter your passcode when prompted.</p></li>
 <li><p class="sd-card-text">Now you can tap <strong>Copy to clipboard</strong> to copy the seed phrase to the clipboard.</p></li>
 </ol>

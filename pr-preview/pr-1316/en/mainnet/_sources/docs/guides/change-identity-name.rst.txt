@@ -9,11 +9,13 @@ Change identity name
 
 .. dropdown:: |cryptox|
 
-    #. In the **More** menu tap **Identities**.
+    #. Open *Wallet Settings* by tapping the gear icon in the lower right of the main screen.
+
+    #. Tap **Identities**.
 
     #. Tap the identity you want to edit.
 
-    #. On the identity card tap |cryptoX-edit| next to the identity name.
+    #. On the identity card, tap the edit icon next to the identity name.
 
     #. Enter the new identity name and tap **Save**.
 

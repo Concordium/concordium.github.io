@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/zk-proofs-tutorial.157546fe-b9c2-4042-9acb-d2091f06c5d3.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/zk-proofs-tutorial.b4886877-6053-490d-b5b9-e0b449df3838.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/zk-proofs-tutorial';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/zk-proofs-tutorial.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -485,7 +499,7 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contract Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Setup the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
@@ -584,11 +598,13 @@
                   
   <section id="zk-proofs-structure">
 <span id="zk-proofs-tutorial"></span><h1>ZK proofs structure<a class="headerlink" href="#zk-proofs-structure" title="Link to this heading">#</a></h1>
-<p>Now we’ll explore how to implement zero-knowledge proof verification using Concordium’s identity framework, focusing on how ZK statements are structured.</p>
+<p>Now we’ll explore how to generate zero-knowledge proofs using the ID Layer, focusing on how ZK statements are structured.</p>
 <section id="defining-zk-statements">
 <h2>Defining ZK statements<a class="headerlink" href="#defining-zk-statements" title="Link to this heading">#</a></h2>
-<p>First, let’s look at the ZK statements defined in the constants file:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AtomicStatementV2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@concordium/web-sdk&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// From constants.ts</span>
+<p>First, let’s look at the ZK statements defined in the <code class="docutils literal notranslate"><span class="pre">constants</span></code> file:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// From constants.ts</span>
+
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AtomicStatementV2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@concordium/web-sdk&quot;</span><span class="p">;</span>
 
 <span class="c1">// Context string for signing messages and generating ZK proofs</span>
 <span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">CONTEXT_STRING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CONCORDIUM_COMPLIANT_REWARD_DISTRIBUTION_DAPP&quot;</span><span class="p">;</span>
@@ -617,11 +633,13 @@
 <span class="p">]</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">AtomicStatementV2</span><span class="p">[];</span>
 
 <span class="c1">// The number of blocks after the `best block` (top of chain), where the `recent block` is located.</span>
-<span class="c1">// The `recent block hash` is included in signatures and ZK proofs to ensure they expire.</span>
+<span class="c1">// The `recent block hash` is included in ZK proofs to ensure they expire.</span>
+<span class="c1">// Note: It is the verifier&#39;s responsibility to check that this recent block hash</span>
+<span class="c1">// was actually used in the proof for the time-limitation to be effective.</span>
 <span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">RECENT_BLOCK_DURATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10n</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The ZK statements use Concordium’s <code class="docutils literal notranslate"><span class="pre">AtomicStatementV2</span></code> type to define:</p>
+<p>The ZK statements use Concordium’s <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/types/web3_id.AtomicStatementV2.html">AtomicStatementV2</a> type to define:</p>
 <ul>
 <li><p><strong>CONTEXT_STRING</strong>: A domain separator that ensures ZK proofs are specific to this application.</p></li>
 <li><p><strong>RECENT_BLOCK_DURATION</strong>: The number of blocks behind the best block to use for challenge generation (10 blocks in this case). This creates time-limited proofs.</p></li>
@@ -651,6 +669,10 @@
 </ul>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Country codes to use for residence and nationality proofs are the <a class="reference external" href="https://www.iso.org/iso-3166-country-codes.html">ISO-3166-1 alpha-2</a> codes.</p>
+</div>
 <p>These statements demonstrate Concordium’s flexible identity verification system, allowing applications to get exactly the information they need while preserving user privacy.</p>
 </section>
 <section id="getting-recent-block-for-challenge">
@@ -687,8 +709,9 @@
 </div>
 <p>This function retrieves a recent block to use in challenge generation:</p>
 <ul class="simple">
-<li><p><strong>Security purpose</strong>: Including a recent block hash in the challenge creates time-limited ZK proofs. After the chain progresses further, the proofs will no longer be valid, preventing <a class="reference external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>.</p></li>
-<li><p><strong>Blockchain interaction</strong>: The function uses <code class="docutils literal notranslate"><span class="pre">ConcordiumGRPCClient</span></code> to communicate with a Concordium node:</p>
+<li><p><strong>Security purpose</strong>: Including a recent block hash in the challenge creates time-limited ZK proofs. After the chain progresses further, the proofs will no longer be valid, preventing <a class="reference external" href="https://csrc.nist.gov/glossary/term/replay_attack">replay attacks</a>.</p></li>
+<li><p><strong>Important</strong>: It is the verifier’s responsibility to validate that the block hash included in the proof is indeed recent. The proofs themselves don’t automatically become valid or invalid - they remain cryptographically correct. The verifier must implement proper checks to enforce time limitation and reject proofs that use outdated block hashes.</p></li>
+<li><p><strong>Blockchain interaction</strong>: The function uses <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/classes/grpc.ConcordiumGRPCClient.html">ConcordiumGRPCClient</a> to communicate with a Concordium node:</p>
 <ol class="arabic simple">
 <li><p>First, it retrieves the current best block height using <code class="docutils literal notranslate"><span class="pre">getConsensusInfo()</span></code></p></li>
 <li><p>It calculates a “recent” block by subtracting <code class="docutils literal notranslate"><span class="pre">RECENT_BLOCK_DURATION</span></code> (10 blocks)</p></li>
@@ -711,7 +734,6 @@
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// From components/proof/Proof.tsx, imports ommited for brevity</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">Proof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
 <span class="w">  </span><span class="c1">// Access wallet state and set up GRPC client</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">provider</span><span class="p">,</span><span class="w"> </span><span class="nx">connectedAccount</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useWallet</span><span class="p">();</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">grpcClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useRef</span><span class="p">(</span>
@@ -735,7 +757,7 @@
 </div>
 <p>The component starts by setting up:</p>
 <ul class="simple">
-<li><p>A connection to the Concordium node using <code class="docutils literal notranslate"><span class="pre">ConcordiumGRPCClient</span></code> with <code class="docutils literal notranslate"><span class="pre">GrpcWebFetchTransport</span></code></p></li>
+<li><p>A connection to the Concordium node using <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/classes/grpc.ConcordiumGRPCClient.html">ConcordiumGRPCClient</a> with <code class="docutils literal notranslate"><span class="pre">GrpcWebFetchTransport</span></code></p></li>
 <li><p>State variables to track:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">isLoading</span></code>: Whether a proof request is in progress</p></li>
@@ -776,7 +798,7 @@
 <li><p>Checks that we have a connected wallet provider and account</p></li>
 <li><p>Gets a recent block from the blockchain to use in the challenge generation</p></li>
 </ol>
-<p>The recent block is important for security - it ensures the proof will expire after the chain progresses further, preventing <a class="reference external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a>.</p>
+<p>The recent block is important for security - it ensures the proof will expire after the chain progresses further, preventing <a class="reference external" href="https://csrc.nist.gov/glossary/term/replay_attack">replay attacks</a>.</p>
 <p>Now let’s continue with challenge generation:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// 2. Create challenge by combining block hash and context string</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">digest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">recentBlockHash</span><span class="p">.</span><span class="nx">buffer</span><span class="p">,</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">CONTEXT_STRING</span><span class="p">)];</span>
@@ -830,6 +852,12 @@
 <span class="nx">setValidZKProof</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 </pre></div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In a production environment, this proof <strong>MUST</strong> be verified on a secure backend!
+This frontend-only implementation is for <strong>demonstration purposes only</strong>.
+Proper implementation would send the presentation to a backend <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier">verifier</a>.</p>
+</div>
 <p>This section handles the proof request and processing:</p>
 <ol class="arabic simple">
 <li><p>It calls <code class="docutils literal notranslate"><span class="pre">requestVerifiablePresentation()</span></code> on the wallet provider</p></li>
@@ -858,12 +886,13 @@ You can explore this <a class="reference external" href="https://github.com/Conc
 The complete implementation of this component can be found in the example repository, in <code class="docutils literal notranslate"><span class="pre">frontend/src/components/proof/Proof.tsx</span></code></p>
 <p>The most powerful aspect of this implementation is that the wallet handles all the complex cryptography. The dApp only needs to:</p>
 <ol class="arabic simple">
-<li><p>Define what should be proved</p></li>
-<li><p>Generate a secure challenge</p></li>
+<li><p>Define what should be proven</p></li>
+<li><p>Generate a challenge</p></li>
 <li><p>Process the returned proof</p></li>
 </ol>
 <p>This makes building privacy-preserving applications on Concordium accessible to developers without requiring deep cryptographic expertise.</p>
-<p>In a production environment, you would send the verifiable presentation to a backend service that would cryptographically verify the proof before allowing the user to proceed. For this demo, we’re simplifying by assuming any returned proof is valid.</p>
+<p>In a production environment, you would send the verifiable presentation to a backend service that would cryptographically verify the proof before allowing the user to proceed.
+For this demo, we’re simplifying by assuming any returned proof is valid.</p>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>

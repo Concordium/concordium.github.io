@@ -22,7 +22,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    You can submit requests for additional :term:`identities<identity>` in the |cryptox|. You do this from the **Identities** screen.
 
-   #. Tap **More** in the lower right corner.
+   #. Open *Wallet Settings* by tapping the gear icon in the lower right of the main screen.
 
    #. Tap **Identities**.
 
@@ -61,7 +61,7 @@ To learn more about identities and accounts, see :ref:`Identities <reference-id-
 
    #. In the Desktop Wallet, there's a message asking you to open the Concordium application on the LEDGER device. On the LEDGER device, press both buttons when it says **Concordium**. The LEDGER device says **Concordium is ready**.
 
-   #. In the Desktop Wallet there's a message saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready**. Select **Submit**.
+   #. In the Desktop Wallet there's a message saying **Ledger device is ready**. Select **Submit**.
 
    #. Press both buttons to confirm the following on the LEDGER device:
 

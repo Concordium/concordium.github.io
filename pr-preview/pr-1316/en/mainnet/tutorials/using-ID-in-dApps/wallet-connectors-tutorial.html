@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.a776893d-d063-4640-bde7-d8e4ca8da4f9.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.3a090b8f-aa50-431a-a457-fe786473e771.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/wallet-connectors-tutorial';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -485,7 +499,7 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contract Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Setup the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
@@ -589,6 +603,7 @@
 <li><p>Wallet connection (Browser and Mobile)</p></li>
 <li><p>Zero-knowledge proof verification</p></li>
 </ol>
+<p>Connecting to wallets allows users to interact with your dApp using their Concordium accounts, while zero-knowledge proofs enable privacy-preserving identity verification - a fundamental feature of compliance-focused applications on Concordium.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>This tutorial presents selected code snippets to help you understand the key concepts and implementation patterns of a dApp on Concordium.
@@ -601,14 +616,23 @@ Exploring the complete codebase alongside this tutorial is recommended for a com
 <h2>Setting up the project<a class="headerlink" href="#setting-up-the-project" title="Link to this heading">#</a></h2>
 <p>Before diving into the code details, you are encouraged to clone the project repository and explore it firsthand:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/DOBEN/ZK_Proof_Demo
-<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>zk-proof-demo/frontend
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>zk-proof-demo
+</pre></div>
+</div>
+<p>At this point, open your preferred code editor in the zk-proof-demo directory to explore the full codebase.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>frontend
 <span class="gp">$ </span>yarn<span class="w"> </span>install
 <span class="gp">$ </span>yarn<span class="w"> </span>dev
 </pre></div>
 </div>
 <p>Running the application and interacting with it will give you a better understanding of the concepts we’ll be discussing.
-Feel free to explore the codebase, particularly focusing on the wallet connection components and ZK proof implementation.
-If you’d like to build this project from scratch or follow along step-by-step, you’ll need to set up your development environment:</p>
+Feel free to explore the codebase, particularly focusing on the wallet connection components and ZK proof implementation.</p>
+<p>Before running the application, ensure you have:</p>
+<ul class="simple">
+<li><p>A <a class="reference internal" href="../../docs/guides/setup-wallets-lp.html#setup-wallets-lp"><span class="std std-ref">Concordium wallet</span></a> (either the Browser Wallet extension or CryptoX)</p></li>
+<li><p>At least one <a class="reference internal" href="../../docs/protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">identity</span></a> and <a class="reference internal" href="../../docs/protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">account</span></a> created in your wallet</p></li>
+</ul>
+<p>If you’d like to build this project from scratch or follow along step-by-step, you’ll need to set up your development environment:</p>
 <ol class="arabic simple">
 <li><p>Install NodeJS and yarn (or npm)</p></li>
 <li><p>Set up your frontend directories</p></li>
@@ -632,7 +656,7 @@ If you’d like to build this project from scratch or follow along step-by-step,
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code> extension enables our class to use a <a class="reference external" href="https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">publish-subscribe pattern</a> for wallet events.
+<p>The <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code> extension enables our class to use a <strong>publish-subscribe pattern</strong> for wallet events.
 This allows React components to listen for account changes without tight coupling. We also define a <code class="docutils literal notranslate"><span class="pre">connectedAccount</span></code> property to track the currently connected account address.</p>
 <p>Next, let’s add the connection-related methods:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kr">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">WalletProvider</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="p">{</span>
@@ -668,27 +692,10 @@ This allows React components to listen for account changes without tight couplin
 </div>
 <p>This method is the core of our ZK functionality:</p>
 <ul class="simple">
-<li><p>It accepts a <code class="docutils literal notranslate"><span class="pre">challenge</span></code> (a hex-encoded string) that ensures the proof is generated for this specific request</p></li>
-<li><p>It takes <code class="docutils literal notranslate"><span class="pre">statement</span></code> parameters that define what should be proved about the user’s identity</p></li>
-<li><p>It returns a <code class="docutils literal notranslate"><span class="pre">VerifiablePresentation</span></code> containing the generated proof</p></li>
-</ul>
-<p>Finally, let’s add message signing capability:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Sign a message with the wallet</span>
-<span class="kr">abstract</span><span class="w"> </span><span class="nx">signMessage</span><span class="p">(</span>
-<span class="w">  </span><span class="nx">accountAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">object</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">recentBlockHash</span><span class="o">:</span><span class="w"> </span><span class="nx">BlockHash</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">schema</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span>
-<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">AccountTransactionSignature</span><span class="o">&gt;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">signMessage</span></code> method allows for signing arbitrary messages:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">accountAddress</span></code>: The account that will sign the message</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code>: The content to be signed (can be string, array, or object)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">recentBlockHash</span></code>: A recent block hash for time-limited validity</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">schema</span></code>: Defines the structure of the message for proper serialization</p></li>
-<li><p>Returns an <code class="docutils literal notranslate"><span class="pre">AccountTransactionSignature</span></code> containing the cryptographic signature</p></li>
+<li><p>It accepts a <a class="reference internal" href="../../docs/resources/glossary.html#term-Challenge"><span class="xref std std-term">Challenge</span></a> (a hex-encoded string) that ensures the proof is generated for this specific request</p></li>
+<li><p>It takes <a class="reference internal" href="../../docs/resources/glossary.html#term-Statement"><span class="xref std std-term">Statement</span></a> parameters that define what should be proved about the user’s identity</p></li>
+<li><p>It returns a <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/classes/types.VerifiablePresentation.html">VerifiablePresentation</a> containing the generated proof</p></li>
+<li><p>A <strong>Witness</strong> (not explicitly used in our interface) refers to the private information known only to the prover that allows them to generate a valid proof.</p></li>
 </ul>
 <p>By using this abstract class as a foundation, we can implement concrete wallet providers for different environments (browser extension, mobile app)
 while maintaining a consistent interface throughout our application. This approach makes it easy to add support for new wallet types in the future without changing the rest of the codebase.</p>
@@ -738,7 +745,7 @@ while maintaining a consistent interface throughout our application. This approa
 <p>The <code class="docutils literal notranslate"><span class="pre">getInstance()</span></code> static method:</p>
 <ul class="simple">
 <li><p>Checks if we already have a provider instance</p></li>
-<li><p>If not, it uses <code class="docutils literal notranslate"><span class="pre">detectConcordiumProvider()</span></code> to get a reference to the wallet extension</p></li>
+<li><p>If not, it uses <a class="reference external" href="https://www.npmjs.com/package/&#64;concordium/browser-wallet-api-helpers#using-the-api">detectConcordiumProvider()</a> to get a reference to the wallet extension</p></li>
 <li><p>Creates a new provider instance and caches it</p></li>
 <li><p>Returns the instance (either new or existing)</p></li>
 </ul>
@@ -770,64 +777,19 @@ while maintaining a consistent interface throughout our application. This approa
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">requestVerifiablePresentation()</span></code> method directly calls the browser wallet’s implementation:</p>
+<p>The <a class="reference external" href="https://www.npmjs.com/package/&#64;concordium/browser-wallet-api-helpers#request-verifiable-presentation-for-web3id-statements">requestVerifiablePresentation()</a> method directly calls the browser wallet’s implementation:</p>
 <ul class="simple">
 <li><p>It passes through the challenge and statements without modification</p></li>
 <li><p>The wallet extension shows a UI to the user for approving the ZK proof generation</p></li>
 <li><p>The wallet handles all the complex cryptography required</p></li>
 <li><p>The method returns the verifiable presentation containing the proof</p></li>
 </ul>
-<p>Finally, let’s implement the message signing capability:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Sign a message according to Concordium&#39;s standards</span>
-<span class="k">async</span><span class="w"> </span><span class="nx">signMessage</span><span class="p">(</span>
-<span class="w">  </span><span class="nx">accountAddress</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">string</span><span class="p">[]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">object</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">recentBlockHash</span><span class="o">:</span><span class="w"> </span><span class="nx">BlockHash</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">schema</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span>
-<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">AccountTransactionSignature</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Format message with block hash (for expiration) and context (for domain separation)</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span>
-<span class="w">    </span><span class="nx">serializeTypeValue</span><span class="p">(</span>
-<span class="w">      </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">block_hash</span><span class="o">:</span><span class="w"> </span><span class="nx">BlockHash</span><span class="p">.</span><span class="nx">toHexString</span><span class="p">(</span><span class="nx">recentBlockHash</span><span class="p">),</span>
-<span class="w">        </span><span class="nx">context_string</span><span class="o">:</span><span class="w"> </span><span class="nx">CONTEXT_STRING</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">message</span><span class="p">,</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nx">toBuffer</span><span class="p">(</span><span class="nx">schema</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;base64&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="p">).</span><span class="nx">buffer</span><span class="p">,</span>
-<span class="w">  </span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s2">&quot;hex&quot;</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// Prepare message with schema for wallet</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">messageToSign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">payload</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">schema</span><span class="p">,</span>
-<span class="w">  </span><span class="p">};</span>
-
-<span class="w">  </span><span class="c1">// Request signature from the wallet</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">provider</span><span class="p">.</span><span class="nx">signMessage</span><span class="p">(</span><span class="nx">accountAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">messageToSign</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">signMessage()</span></code> method formats messages according to Concordium’s standards before signing:</p>
-<ul class="simple">
-<li><p>It creates a structured payload containing:</p>
-<ul>
-<li><p>The message content</p></li>
-<li><p>A recent block hash (for time-limited validity)</p></li>
-<li><p>A context string (for domain separation between applications)</p></li>
-</ul>
-</li>
-<li><p>It serializes this payload according to the provided schema using <code class="docutils literal notranslate"><span class="pre">serializeTypeValue()</span></code></p></li>
-<li><p>It converts the serialized data to a hex string format that the wallet expects</p></li>
-<li><p>It sends the prepared message to the wallet for signing</p></li>
-<li><p>The wallet presents a signing request to the user and returns the cryptographic signature</p></li>
-</ul>
 <p>This implementation demonstrates how the Concordium Browser Wallet extension simplifies dApp development by handling the complex cryptographic operations
 while exposing a straightforward API for wallet interactions, account management, and ZK proof generation.</p>
 </section>
 <section id="mobile-wallet-implementation">
 <h2>Mobile wallet implementation<a class="headerlink" href="#mobile-wallet-implementation" title="Link to this heading">#</a></h2>
-<p>For mobile wallets, we implement the connection using WalletConnect. Let’s start with the basic class structure and constructor:</p>
+<p>For mobile wallets, we implement the connection using <a class="reference external" href="https://specs.walletconnect.com/2.0/">WalletConnect</a>. Let’s start with the basic class structure and constructor:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// From wallet-connection.tsx</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">walletConnectInstance</span><span class="o">:</span><span class="w"> </span><span class="nx">WalletConnectProvider</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
@@ -884,9 +846,9 @@ while exposing a straightforward API for wallet interactions, account management
 <span class="w">  </span><span class="c1">// Request connection with required methods and chains</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uri</span><span class="p">,</span><span class="w"> </span><span class="nx">approval</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">requiredNamespaces</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="p">[</span><span class="nx">WALLET_CONNECT_SESSION_NAMESPACE</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">METHOD_SIGN</span><span class="p">,</span><span class="w"> </span><span class="nx">METHOD_GENERATE_ZK_PROOF</span><span class="p">],</span>
-<span class="w">        </span><span class="nx">chains</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CHAIN_ID</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;ccd&quot;</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Concordium&#39;s identifier in WalletConnect</span>
+<span class="w">        </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sign_message&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;request_verifiable_presentation&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Methods supported by Concordium wallets</span>
+<span class="w">        </span><span class="nx">chains</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ccd:testnet&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// For testnet use &quot;ccd:testnet&quot;, for mainnet use &quot;ccd:mainnet&quot;</span>
 <span class="w">        </span><span class="nx">events</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;accounts_changed&quot;</span><span class="p">],</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">    </span><span class="p">},</span>
@@ -915,8 +877,8 @@ while exposing a straightforward API for wallet interactions, account management
 <li><p>It initiates a connection request with specific Concordium requirements:</p>
 <ul class="simple">
 <li><p>Namespace: <code class="docutils literal notranslate"><span class="pre">ccd</span></code> (Concordium’s identifier in WalletConnect)</p></li>
-<li><p>Methods: Includes <code class="docutils literal notranslate"><span class="pre">METHOD_GENERATE_ZK_PROOF</span></code> for requesting ZK proofs</p></li>
-<li><p>Chains: The appropriate Concordium network (testnet/mainnet)</p></li>
+<li><p>Methods: Includes <code class="docutils literal notranslate"><span class="pre">request_verifiable_presentation</span></code> for requesting ZK proofs</p></li>
+<li><p>Chains: The appropriate Concordium network (<cite>“ccd:testnet”</cite> for <strong>testnet</strong> or <cite>“ccd:mainnet”</cite> for <strong>mainnet</strong>)</p></li>
 <li><p>Events: To listen for account changes</p></li>
 </ul>
 </li>
@@ -946,28 +908,69 @@ while exposing a straightforward API for wallet interactions, account management
 <span class="w">  </span><span class="p">};</span>
 <span class="w">  </span><span class="c1">// Use JSONBigInt for proper handling of large numbers</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">serializedParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">JSONBigInt</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+
 <span class="c1">// will continue in next code block</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>First, we check if we have an active connection by verifying the existence of a session topic. If no connection exists, we throw an error to prevent attempting to request a proof without a connected wallet.</p>
 <p>The parameters for the ZK proof request include:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">challenge</span></code>: A unique challenge string to prevent <a class="reference external" href="https://en.wikipedia.org/wiki/Replay_attack">replay attacks</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CredentialStatements</span></code>: The statements defining what should be proved</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">challenge</span></code>: A unique challenge string to prevent <a class="reference external" href="https://csrc.nist.gov/glossary/term/replay_attack">replay attacks</a></p></li>
+<li><p><a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/types/web3_id.CredentialStatement.html">CredentialStatements</a>: The statements defining what should be proven</p></li>
 </ul>
+<p>The ZK proof verification process involves two parties:</p>
+<ul class="simple">
+<li><p><strong>Prover</strong>: The wallet user who wants to prove something about their identity (in our case, the user with the Concordium account)</p></li>
+<li><p><strong>Verifier</strong>: The application or service that needs to validate the proof (our dApp or its backend)</p></li>
+</ul>
+<p>It’s important to understand that the <strong>challenge</strong> must be generated by the <strong>verifier</strong> (not the prover) to prevent replay attacks.
+Here’s how the process works:</p>
+<ol class="arabic simple">
+<li><p>The <strong>verifier</strong> generates a unique challenge (in our implementation, we use a recent block hash combined with a context string)</p></li>
+<li><p>The <strong>prover</strong> (wallet) creates a proof using this challenge</p></li>
+<li><p>The <strong>verifier</strong> checks that:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>The proof is cryptographically valid</p></li>
+<li><p>The proof was created using the specific challenge it provided</p></li>
+<li><p>The <strong>challenge</strong> has not been used in a previous proof</p></li>
+</ul>
+</div></blockquote>
+<p>Note that protection against replay attacks isn’t automatic - the <strong>verifier</strong> must implement proper challenge validation, typically by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Checking that the <strong>challenge</strong> includes a recent block hash (time-limiting the proof)</p></li>
+<li><p>Tracking which <strong>challenges</strong> have been used in a database</p></li>
+<li><p>Rejecting proofs with previously-used challenges</p></li>
+</ul>
+</div></blockquote>
+<p>As an example, in the <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/blob/main/compliant-reward-distribution/indexer-and-server/src/bin/server.rs#L462">compliant-reward-distribution dApp</a>,
+the verifier checks that the proof hasn’t expired by verifying that the block height is recent enough, but it doesn’t track which challenges have been used before.
+For complete security in a production environment, a backend would need to maintain a record of used challenges to fully protect against replay attacks.</p>
 <p>We serialize these parameters using <code class="docutils literal notranslate"><span class="pre">JSONBigInt</span></code> instead of standard JSON. This is important because ZK proofs often involve large numbers that standard JSON can’t handle correctly.</p>
 <p>Now, let’s implement the actual request to the mobile wallet:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Request ZK proof via WalletConnect</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">requestVerifiablePresentation</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">challenge</span><span class="o">:</span><span class="w"> </span><span class="nx">HexString</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">statement</span><span class="o">:</span><span class="w"> </span><span class="nx">CredentialStatements</span><span class="p">,</span>
+<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">VerifiablePresentation</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="c1">// code omitted from previous code block</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="c1">// Send request to the mobile wallet</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">request</span><span class="o">&lt;</span><span class="p">{</span>
 <span class="w">    </span><span class="nx">verifiablePresentationJson</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span><span class="o">&gt;</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">topic</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">topic</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="nx">METHOD_GENERATE_ZK_PROOF</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;request_verifiable_presentation&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">paramsJson</span><span class="o">:</span><span class="w"> </span><span class="nx">serializedParams</span><span class="w"> </span><span class="p">},</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nx">chainId</span><span class="o">:</span><span class="w"> </span><span class="nx">CHAIN_ID</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">chainId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ccd:testnet&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use &quot;ccd:testnet&quot; for testnet or &quot;ccd:mainnet&quot; for mainnet</span>
 <span class="w">  </span><span class="p">});</span>
 <span class="w">  </span><span class="c1">// Parse the result into a VerifiablePresentation</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">VerifiablePresentation</span><span class="p">.</span><span class="nx">fromString</span><span class="p">(</span>
@@ -979,9 +982,9 @@ while exposing a straightforward API for wallet interactions, account management
 <p>The request is sent to the mobile wallet using the WalletConnect protocol. We specify:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The current session identifier</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The Concordium-specific <code class="docutils literal notranslate"><span class="pre">METHOD_GENERATE_ZK_PROOF</span></code>, which stores the value <code class="docutils literal notranslate"><span class="pre">request_verifiable_presentation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The Concordium-specific <code class="docutils literal notranslate"><span class="pre">request_verifiable_presentation</span></code> method, which is stored in the <code class="docutils literal notranslate"><span class="pre">METHOD_GENERATE_ZK_PROOF</span></code> constant</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">params</span></code>: The serialized parameters wrapped in a <code class="docutils literal notranslate"><span class="pre">paramsJson</span></code> field</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">chainId</span></code>: The Concordium chain identifier (<code class="docutils literal notranslate"><span class="pre">testnet</span></code> or <code class="docutils literal notranslate"><span class="pre">mainnet</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chainId</span></code>: The Concordium chain identifier (<strong>testnet</strong> or <strong>mainnet</strong>)</p></li>
 </ul>
 <p>When the wallet responds with the generated proof, we parse the JSON string into a structured <code class="docutils literal notranslate"><span class="pre">VerifiablePresentation</span></code> object using the <code class="docutils literal notranslate"><span class="pre">fromString</span></code> method provided by <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/index.html">Concordium’s SDK</a>.</p>
 <p>Finally, let’s handle potential errors:</p>
@@ -1039,7 +1042,7 @@ For example, the user might deny the proof request in their mobile wallet, which
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Helper to extract Concordium account from WalletConnect namespaces</span>
 <span class="k">private</span><span class="w"> </span><span class="nx">getAccount</span><span class="p">(</span><span class="nx">ns</span><span class="o">:</span><span class="w"> </span><span class="kt">SessionTypes.Namespaces</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">account</span><span class="p">]</span><span class="w"> </span><span class="o">=</span>
-<span class="w">    </span><span class="nx">ns</span><span class="p">[</span><span class="nx">WALLET_CONNECT_SESSION_NAMESPACE</span><span class="p">].</span><span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">ns</span><span class="p">[</span><span class="s2">&quot;ccd&quot;</span><span class="p">].</span><span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;ccd&quot; is the Concordium namespace in WalletConnect</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">account</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -1057,17 +1060,6 @@ For example, the user might deny the proof request in their mobile wallet, which
 <section id="connecting-to-a-wallet-in-react">
 <h2>Connecting to a wallet in React<a class="headerlink" href="#connecting-to-a-wallet-in-react" title="Link to this heading">#</a></h2>
 <p>Now let’s look at how to use these wallet providers in a React component. Let’s start with the basic component structure and hooks:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// From components/connect-wallet/ConnectWallet.tsx, imports ommited for brevity</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">ConnectWallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Access wallet state from context</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">provider</span><span class="p">,</span><span class="w"> </span><span class="nx">setProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">setConnectedAccount</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useWallet</span><span class="p">();</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
-
-<span class="w">  </span><span class="c1">// Rest of component will follow</span>
-<span class="p">};</span>
-</pre></div>
-</div>
 <p>First, we import the necessary dependencies and set up our component. The key elements here are:</p>
 <blockquote>
 <div><ul class="simple">
@@ -1087,7 +1079,6 @@ For example, the user might deny the proof request in their mobile wallet, which
 <span class="w">    </span><span class="nx">setConnectedAccount</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">provider</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">navigate</span><span class="p">(</span><span class="s2">&quot;/proof&quot;</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></div>
 </div>
@@ -1096,7 +1087,6 @@ For example, the user might deny the proof request in their mobile wallet, which
 <li><p>It takes a wallet provider instance (Browser or Mobile)</p></li>
 <li><p>It calls the provider’s <code class="docutils literal notranslate"><span class="pre">connect()</span></code> method, which prompts the user to select an account</p></li>
 <li><p>If an account is successfully connected, it updates the app’s state</p></li>
-<li><p>It navigates to the proof page where ZK verification will happen</p></li>
 </ol>
 <p>Now, let’s add cleanup on component unmount:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Clean up on unmount</span>
@@ -1189,11 +1179,11 @@ For example, the user might deny the proof request in their mobile wallet, which
 </ul>
 <p>This component demonstrates a clean implementation pattern for wallet connections in React:</p>
 <ol class="arabic simple">
-<li><p>It uses React Context from <code class="docutils literal notranslate"><span class="pre">frontend/src/context/WalletContext.tsx</span></code> to manage global wallet state</p></li>
-<li><p>It properly handles component lifecycle with <code class="docutils literal notranslate"><span class="pre">useEffect</span></code></p></li>
-<li><p>It sets up and cleans up event listeners to prevent memory leaks</p></li>
-<li><p>It provides a user-friendly interface for selecting a wallet type</p></li>
-<li><p>It encapsulates all the complexity of wallet connection behind a simple abstraction</p></li>
+<li><p>It uses React Context from <code class="docutils literal notranslate"><span class="pre">frontend/src/context/WalletContext.tsx</span></code> to manage global wallet state.</p></li>
+<li><p>It properly handles component lifecycle with <code class="docutils literal notranslate"><span class="pre">useEffect</span></code>.</p></li>
+<li><p>It sets up and cleans up event listeners to prevent memory leaks.</p></li>
+<li><p>It provides a user-friendly interface for selecting a wallet type.</p></li>
+<li><p>It encapsulates all the complexity of wallet connection behind a simple abstraction.</p></li>
 </ol>
 <p>By using this approach, we can maintain a consistent wallet connection experience throughout our application regardless of which wallet provider the user chooses.</p>
 </section>

@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/stop-validator.e5375628-5a0c-488f-b550-daf8e3b29132.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/stop-validator.c6f47f90-78e5-4a2b-92a8-cea7a1ac24b4.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/stop-validator';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/stop-validator.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../guides/export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -726,19 +738,23 @@
   <section id="stop-a-validator">
 <span id="stop-validator"></span><h1>Stop a validator<a class="headerlink" href="#stop-a-validator" title="Link to this heading">#</a></h1>
 <p>If you remove a validator, the node that is configured with the <a class="reference internal" href="../resources/glossary.html#term-Private-keys"><span class="xref std std-term">validator keys</span></a> will stop producing blocks after the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.</p>
-<p>After the <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>, the amount that you previously staked is returned to your disposable balance at the next pay day. When you’ve removed the validator,
-it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
+<p>After the <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>, the amount that you previously staked is returned to your disposable balance at the next pay day.</p>
+<p>If your pool has any delegators, they will be automatically moved to passive delegation, if they don’t decide to do something else.</p>
+<p>When you’ve removed the validator, it is recommended that you also remove the keys from the node, but you should only do this after the node has stopped producing blocks, i.e. after the payday.
 If you want to use the node for validation at a later point in time, you’ll then have to create a new set of validator keys.</p>
 <p>If you no longer wish to produce blocks on this account, you can stop validation.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>Stop validation</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-stop-validation.png"><img alt="screen showing all validator options" src="../../_images/cryptoX-stop-validation.png" style="width: 50%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account for which you want to stop validation and tap <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the Validator status screen, tap <strong>Change validating status</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status.png"><img alt="screen showing validator status" src="../../_images/cryptox-change-validating-status.png" style="width: 50%;" />
 </a>
-</div></blockquote>
+</li>
+<li><p class="sd-card-text">You now see the options for changing the validating status. Tap <strong>Stop validating</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-change-validating-status-options.png"><img alt="screen showing options for changing validating status" src="../../_images/cryptox-change-validating-status-options.png" style="width: 50%;" />
+</a>
 </li>
 <li><p class="sd-card-text">After the screens explaining validator removal, tap <strong>Continue</strong>.</p></li>
 <li><p class="sd-card-text">Review the information. When you are satisfied, tap <strong>Submit validator transaction</strong>.</p></li>
@@ -782,7 +798,7 @@ If you want to use the node for validation at a later point in time, you’ll th
 </a>
 </li>
 <li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
-<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready**in the Desktop Wallet and select **Submit</strong>.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger device is ready**in the Desktop Wallet and select **Submit</strong>.</p></li>
 <li><p class="sd-card-text">On the LEDGER device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Remove baker from pool</strong>. Navigate to the right.</p></li>
 <li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
 <li><p class="sd-card-text">In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
@@ -811,7 +827,7 @@ If you want to use the node for validation at a later point in time, you’ll th
 <p class="sd-card-text"><em>Generate and sign the transaction on the LEDGER device</em></p>
 <ol class="arabic simple">
 <li><p class="sd-card-text">If you haven’t connected the LEDGER device, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
-<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong> or <strong>Open the Concordium application on your Ledger Nano S Plus</strong>. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying LEDGER device is ready.</p></li>
+<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger device</strong>. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying LEDGER device is ready.</p></li>
 <li><p class="sd-card-text">In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
 <li><p class="sd-card-text">On the LEDGER device, there’s a message saying <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Remove baker from pool</strong>. Navigate to the right.</p></li>
 <li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>

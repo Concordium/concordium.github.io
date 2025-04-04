@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/multisig-simple-transfer.2cb8941f-f762-49f2-a482-a5aec0ebfe25.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/multisig-simple-transfer.39560d13-fb0e-4567-b7fc-659505db7cc2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/desktop-wallet/multisig-simple-transfer';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/desktop-wallet/multisig-simple-transfer.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../guides/export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -773,7 +785,7 @@ You can see the fee in the transaction log.</p>
 <span id="generate-sign-transfer"></span><h3>Generate and sign the transaction proposal on the LEDGER device<a class="headerlink" href="#generate-and-sign-the-transaction-proposal-on-the-ledger-device" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Connect the LEDGER device to the computer if you haven’t done so already. There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>.</p></li>
-<li><p>Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong>.</p></li>
+<li><p>Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger device is ready</strong>.</p></li>
 <li><p>In the Desktop Wallet, verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>. (If you’re not on the proposal page, go to <strong>Multi Signature Transactions</strong> -&gt; <strong>Your proposed transactions</strong>, and then select the proposal you want to sign.)</p></li>
 <li><p>Select <strong>Generate and sign</strong>.</p></li>
 <li><p>The LEDGER device says <strong>Review Transaction</strong>. Navigate to the right, till you see <strong>Sender</strong> and then an address. This is the address of the account you’re transferring CCD from.</p></li>

@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/update-delegation.5995d40e-9ba4-4259-aaeb-2e100f29a08f.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/update-delegation.892da2cd-c2c3-4949-a550-18fd91c921f9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/update-delegation';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/update-delegation.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -743,11 +755,11 @@ You can see the fee in the transaction log.</p>
 <p class="admonition-title">Warning</p>
 <p>Make sure you have enough funds in your disposable balance to cover transaction fees.</p>
 </div>
-<section id="updating-delegation-from-a-suspendet-validator">
-<h2>Updating delegation from a suspendet validator<a class="headerlink" href="#updating-delegation-from-a-suspendet-validator" title="Link to this heading">#</a></h2>
+<section id="updating-delegation-from-a-suspended-validator">
+<h2>Updating delegation from a suspended validator<a class="headerlink" href="#updating-delegation-from-a-suspended-validator" title="Link to this heading">#</a></h2>
 <p>If a validator you’ve delegated to becomes suspended, you’ll see a warning banner in your wallet interface indicating <em>Your validator has been suspended</em>. When a validator is suspended, both the validator and its delegators stop earning rewards.
 To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.</p>
-<a class="reference internal image-reference" href="../../_images/your_validator_suspended_banner.png"><img alt="../../_images/your_validator_suspended_banner.png" src="../../_images/your_validator_suspended_banner.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/validator_suspended_banner.png"><img alt="../../_images/validator_suspended_banner.png" src="../../_images/validator_suspended_banner.png" style="width: 50%;" />
 </a>
 <p>To update your delegation from a suspended validator, follow the same update process described below for each wallet type.</p>
 </section>
@@ -757,26 +769,19 @@ To maintain your earning potential, you may consider moving your delegation to a
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap the account on the accounts screen.</p></li>
-<li><p class="sd-card-text">Tap <a class="reference internal" href="../../_images/cryptoX-earn.png"><img alt="Hand receiving money" src="../../_images/cryptoX-earn.png" style="width: 50px;" /></a> on the account balance screen.</p></li>
-<li><p class="sd-card-text">Now you see your current delegation. Tap <strong>Update current delegation</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-delegation-status.png"><img alt="screen showing current delegation with options to stop or update" src="../../_images/cryptoX-delegation-status.png" style="width: 50%;" />
+<li><p class="sd-card-text">In the dropdown list, select the account from which you want to change your delegation preferences and tap <strong>Earn</strong>.</p></li>
+<li><p class="sd-card-text">On the delegation status screen, tap <strong>Update current delegation</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptoX-delegation-status.png"><img alt="screen showing current delegation with options to stop or update" src="../../_images/cryptoX-delegation-status.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">You can now go through informational screens explaining the update options releated to delegation. Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to updating.</p></li>
-<li><p class="sd-card-text">If you want to delegate to a specific pool, tap <strong>Validator</strong> and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, tap <strong>Passive</strong>. Tap <strong>Continue</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-update-delegation.png"><img alt="screen with options to choose delegation type" src="../../_images/cryptoX-update-delegation.png" style="width: 50%;" />
+<li><p class="sd-card-text">You can now go through informational screens explaining the update options for delegation. Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to updating.</p></li>
+<li><p class="sd-card-text">If you want to delegate to a specific pool, select <strong>Validator</strong> and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, select <strong>Passive</strong>. Tap <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptoX-update-delegation.png"><img alt="screen with options to choose delegation type" src="../../_images/cryptoX-update-delegation.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">On the next screen you can see your balance available for delegation and the amount of your current delegation. If you want to change the amount, tap on the field <strong>Optional: Type the new amount</strong> and enter the amount. Tap <strong>Yes, add</strong> to restake any rewards or tap <strong>No, don’t add</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance. Tap <strong>Continue</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-update-delegation-2.png"><img alt="screen with options to choose delegation type" src="../../_images/cryptoX-update-delegation-2.png" style="width: 50%;" />
+<li><p class="sd-card-text">On the next screen you can see your balance available for delegation and the amount of your current delegation. If you want to change the amount, tap on the field <strong>Optional: Type the new amount</strong> and enter the amount. Tap <strong>Yes, add</strong> to restake any rewards or tap <strong>No, don’t add</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance at each payday. When satisfied with your settings, tap <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-update-delegation2-new.png"><img alt="screen with options to choose delegation type" src="../../_images/cryptox-update-delegation2-new.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
 <li><p class="sd-card-text">Review the information in the transaction overview. When you are satisfied, tap <strong>Submit delegation transaction</strong>.</p></li>
 <li><p class="sd-card-text">Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p></li>
@@ -803,7 +808,7 @@ To maintain your earning potential, you may consider moving your delegation to a
 </a>
 </li>
 <li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
-<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger device is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
 <li><p class="sd-card-text">On the LEDGER device, a message says <strong>Review transaction</strong>. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.</p></li>
 <li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
 <li><p class="sd-card-text">In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
@@ -835,7 +840,7 @@ To maintain your earning potential, you may consider moving your delegation to a
 <p class="sd-card-text"><strong>Generate and sign the transaction on the LEDGER device</strong></p>
 <ol class="arabic simple">
 <li><p class="sd-card-text">If you haven’t connected the LEDGER device, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
-<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger Nano S</strong> or <strong>Open the Concordium application on your Ledger Nano S Plus</strong>. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying LEDGER device is ready.</p></li>
+<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger device</strong>. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying LEDGER device is ready.</p></li>
 <li><p class="sd-card-text">In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
 <li><p class="sd-card-text">On the LEDGER device, there’s a message saying <strong>Review transaction</strong>. Verify changes you made to any parameters; only changed parameters are shown. Navigate to the right to verify each parameter change.</p></li>
 <li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
@@ -986,7 +991,7 @@ To maintain your earning potential, you may consider moving your delegation to a
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-delegation-from-a-suspendet-validator">Updating delegation from a suspendet validator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-delegation-from-a-suspended-validator">Updating delegation from a suspended validator</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Update delegation</a></li>
 </ul>
   </nav></div>

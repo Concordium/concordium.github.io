@@ -19,43 +19,43 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
 .. dropdown:: |cryptox|
 
-    #. Tap the account on the accounts screen and tap |cryptoX-earn| on the account balance screen.
+    #. In the dropdown list, select the account for which you will set up a validator an tap **Earn**.
 
     #. Select **Continue to validator setup**.
 
-        .. image:: ../images/cryptoX/cryptoX-earning-rewards.png
+       .. image:: ../images/cryptoX/cryptoX-earning-rewards.png
             :width: 50%
             :alt: screen with earning options
 
-    #. You can now go through informational screens explaining the key concepts of validation on the Concordium blockchain. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to registering your validation.
+    #. You can now go through informational screens explaining the key concepts of validation on the Concordium blockchain, including the validator role and key generation, node requirements, staking pool options, and suspension policies. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to registering your validation.
 
     #. On the register validator screen you can see your available balance. Enter the amount you want to stake in the field. Tap **Yes, add** to restake validator rewards, or tap **No, don't add** if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Tap **Continue**.
 
-        .. image:: ../images/cryptoX/cryptoX-register-validator.png
+       .. image:: ../images/cryptoX/cryptox-register-validator_new.png
             :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
             :width: 50%
 
     4. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool. Tap **Continue**.
 
-        .. image:: ../images/cryptoX/cryptoX-register-validator-open-del.png
+       .. image:: ../images/cryptoX/cryptoX-register-validator-open-del.png
             :alt: screen to register validator for first time showing options to open or close pool for delegation
             :width: 50%
 
-    5. Set your commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Tap **Continue**.
+    5. Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Tap **Continue**.
 
-        .. image:: ../images/cryptoX/cryptoX-register-validator-commissions.png
+       .. image:: ../images/cryptoX/cryptox-register_validator_commissions_new.png
             :alt: screen to register validator for first time showing commission rates for staking pools
             :width: 50%
 
     6. If you open a staking pool, you can optionally provide a URL with information about your validator. This allows delegators to learn more about your pool and make informed decisions. This information is not shared for closed pools or validators. Tap **Continue**.
 
-        .. image:: ../images/cryptoX/cryptoX-register-validator-metadata.png
+       .. image:: ../images/cryptoX/cryptoX-register-validator-metadata.png
             :alt: screen to register validator for first time showing field to paste URL with metadata for staking pools
             :width: 50%
 
     6. Now, export the validator keys. You need the validator keys to start the node. Tap **Export validator keys** and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.
 
-        .. image:: ../images/cryptoX/cryptoX-register-validator-export-validator-keys.png
+       .. image:: ../images/cryptoX/cryptoX-register-validator-export-validator-keys.png
             :alt: screen to register validator for first time showing all of the validator keys with option to export
             :width: 50%
 
@@ -74,15 +74,6 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
         - :ref:`Docker<baking-docker>`
         - :ref:`Ubuntu<baker-ubuntu>`
 
-    Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account balance screen.
-
-    .. image:: ../images/cryptoX/cryptoX-account-list-validator.png
-        :alt: account information in list showing validator badge
-        :width: 40%
-
-    .. image:: ../images/cryptoX/cryptoX-account-balance-screen-validator.png
-        :alt: account card showing staked amount with validator number
-        :width: 40%
 
 .. dropdown:: Desktop wallet
 
@@ -130,7 +121,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
         6. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
-        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+        #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger device is ready** in the Desktop Wallet and select **Submit**.
 
         #. On the LEDGER device, a message says **Review transaction**. Review the information to verify that it matches the transaction details in the Desktop Wallet.
 
@@ -196,7 +187,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
         #. Connect the LEDGER device to the computer if you haven't done so already. There’s a message saying **Waiting for device. Please connect your Ledger**.
 
-        #. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready**.
+        #. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger device is ready**.
 
         #. In the Desktop Wallet verify that all transaction details are correct and select **I am sure that the proposed changes are correct**.
 

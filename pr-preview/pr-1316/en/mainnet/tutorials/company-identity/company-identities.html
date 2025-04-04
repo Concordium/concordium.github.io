@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/company-identity/company-identities.7793102b-1865-4174-beab-2ef9cbcd5651.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/company-identity/company-identities.74e861dd-1768-41d1-b97e-a07674e4e869.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/company-identity/company-identities';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/company-identity/company-identities.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -485,7 +499,7 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Smart Contract Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Setup the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
@@ -585,121 +599,74 @@
   <section id="company-identity-creation">
 <span id="company-identities"></span><h1>Company identity creation<a class="headerlink" href="#company-identity-creation" title="Link to this heading">#</a></h1>
 <p>A company identity is for companies that need an identity and accounts on the Concordium blockchain, but don’t want that identity to belong to a specific person. Company identities are therefore issued with documents that identify the company and not an individual. Company identities are only relevant for a few companies, such as crypto exchanges.</p>
-<p>You can’t use the Desktop Wallet, Concordium Wallet for Web, Concordium Wallet for Mobile, or Concordium Legacy Wallet to create a company identity. You need to use the Concordium Company ID tool, and you need to communicate directly with the identity provider (currently Notabene). <a class="reference external" href="https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc">This page</a> describes Notabene’s process, including recovery of company identities.</p>
-<p>The information below describes how to create a company identity, how to create accounts with a company identity, and how to recover a company identity. If you experience issues with the Concordium Company ID tool, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
-<section id="using-the-concordium-company-id-tool">
-<h2>Using the Concordium Company ID tool<a class="headerlink" href="#using-the-concordium-company-id-tool" title="Link to this heading">#</a></h2>
-<p>Once you have dowloaded the Concordium Company ID tool for your platform and installed it, you should choose your network, either Mainnet or Testnet. A default Concordium node URL is used, but you can enter your node URL, if desired.</p>
-<section id="request-identity">
-<h3>Request identity<a class="headerlink" href="#request-identity" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Click <strong>Request identity</strong>.</p></li>
-<li><p>Read the information and click <strong>Proceed</strong>.</p></li>
-<li><p>Write down or save your seedphrase by clicking the copy button to copy your seedphrase to the clipboard and remember to go to the clipboard and save the file. Keep your seedphrase secure as you will need it to create accounts or recover the identity. Click <strong>Proceed</strong>.</p>
-<img alt="company id tool screen showing identities related to seedphrase and option to select" src="../../_images/company-id-request.png" />
-</li>
-<li><p>Enter your seedphrase to verify that you have recorded it correctly. Click <strong>Proceed</strong>.</p></li>
-<li><p>Click <strong>Generate request.json</strong>. The command outputs the <code class="docutils literal notranslate"><span class="pre">request.json</span></code> file. The request should be sent to the identity provider through a trusted channel. Store the auxiliary output securely.</p>
-<ul class="simple">
-<li><p>For <strong>Mainnet</strong> requests: Send the file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a> together with any other required identity data as described in the <a class="reference external" href="https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc">entity verification instructions</a>.</p></li>
-<li><p>For <strong>Testnet</strong> requests: Send the file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Test company identity”.</p></li>
-</ul>
-</li>
-</ol>
-<p>When the identity has been verified successfully, you will receive an email with an identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code>. Store this file securely as you need it to create accounts and regenerate account keys.</p>
-</section>
-<section id="create-account">
-<h3>Create account<a class="headerlink" href="#create-account" title="Link to this heading">#</a></h3>
-<p>After obtaining the <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> identity object from the identity provider you can create accounts on the chain. The Concordium Company ID tool requires the identity object returned by the identity provider to create accounts on chain.</p>
-<p><strong>Create account</strong> can also be used to regenerate the keys for an old account. In this case, you would need <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> file again. If you have lost that file, use <a class="reference internal" href="#id-recovery"><span class="std std-ref">Identity Recovery</span></a> to retrieve it so you can recover your accounts and save the account keys. After selecting Identity Recovery, enter your seed phrase. If there are accounts on chain related to the seed phrase, you will be able to store the keys of those accounts.</p>
-<ol class="arabic">
-<li><p>Click <strong>Create Account</strong>.</p></li>
-<li><p>Enter your seedphrase in the Enter seedphrase field. In the Identity object file field click to navigate to the location of the stored <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> file. Click <strong>Get Accounts</strong>.</p>
-<img alt="company id tool screen showing seedphrase field and file selection box" src="../../_images/company-id-create-acct.png" />
-</li>
-<li><p>On the next screen, click <strong>Create Account</strong> to create an account with this company identity. When prompted, save the <code class="docutils literal notranslate"><span class="pre">account-keys.json</span></code> in a secure location as you will need them to interact with the account on-chain. You can click <strong>Create account</strong> again to create another account.</p></li>
-</ol>
+<p>Company identities can only be created through the Concordium Wallet for Web or CryptoX Concordium Wallet using Global FinReg as the identity provider. You cannot use the Desktop Wallet for this purpose.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are trying to recover the <code class="docutils literal notranslate"><span class="pre">account-keys.json</span></code> file(s), you can also use <strong>Create Account</strong>. After entering your seedphrase and selecting your <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> file you will see a list of account associated with this seedphrase and ID object. Click <strong>Save</strong> to save the <code class="docutils literal notranslate"><span class="pre">account-keys.json</span></code> for that account.</p>
-<img alt="company id tool screen showing seedphrase field and file selection box" src="../../_images/company-id-acct-keys.png" />
+<p>Please be advised that Global FinReg identity verification is currently only supported on CryptoX Concordium Wallet for Android devices. This service is not yet available for iOS users.</p>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Format of the key files</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Both initial account keys and subsequent account keys are stored in JSON files. The unencrypted data is a JSON record with a number of fields. This is the same format as exported by the other Concordium wallets (except Desktop Wallet). For sending transactions the fields that are relevant are:</p>
+<p>The information below describes how to create a company identity, how to create accounts with a company identity, and how to recover a company identity. If you experience issues, please contact Concordium’s technical support via <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a>.</p>
+<section id="request-identity">
+<h2>Request identity<a class="headerlink" href="#request-identity" title="Link to this heading">#</a></h2>
+<p>To create a company identity using Global FinReg, first <a class="reference internal" href="../../docs/installation/downloads.html#downloads-cryptox"><span class="std std-ref">download</span></a> the Concordium Wallet for Web or the CryptoX Concordium Wallet, then follow the steps outlined below.</p>
+<section id="initiate-the-request-from-a-concordium-wallet">
+<h3>Initiate the request from a Concordium wallet<a class="headerlink" href="#initiate-the-request-from-a-concordium-wallet" title="Link to this heading">#</a></h3>
 <ul>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">accountKeys</span></code> contains the account keys. It has the following format:</p>
+<li><p>Open the Concordium Wallet for Web or CryptoX Concordium Wallet</p></li>
+<li><p>In the main menu, click on <strong>Identities</strong>.</p>
 <blockquote>
-<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">   </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testnet&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;concordium-browser-wallet-account&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">   </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;accountKeys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">               </span><span class="nt">&quot;keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                  </span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                     </span><span class="nt">&quot;signKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;81e7d8e625a00b6f5b97dd8b0a97807212e6b0ceb4fd206e715b97536c83caea&quot;</span><span class="p">,</span>
-<span class="w">                     </span><span class="nt">&quot;verifyKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;03164c9e6654c1544a0e7d33780df425c695f6222fda75c047aea5186680e491&quot;</span>
-<span class="w">                  </span><span class="p">}</span>
-<span class="w">               </span><span class="p">},</span>
-<span class="w">               </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">         </span><span class="p">},</span>
-<span class="w">         </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3LfTBXYtc6TEjuJiKgLpFGEtGRMPhBsKRB76Q4x91LZPWSmQ9Z&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;843785aef9446c8e5b2c6922863e49231b93fb9950909c3166e7c287357a1a495ecfbdcb6ca36ea5998fef2c9dee91f8&quot;</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">   </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p class="sd-card-text">In this example the account has a single credential with index 0, and that credential has a single key with index 0. The private key is 03164c9e6654c1544a0e7d33780df425c695f6222fda75c047aea5186680e491 and its public key is 81e7d8e625a00b6f5b97dd8b0a97807212e6b0ceb4fd206e715b97536c83caea.</p>
+<div><img alt="Concordium wallet screen showing the Identities option in the main menu" src="../../_images/wallet-globalfinreg-identities-menu.png" />
 </div></blockquote>
 </li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">address</span></code> is the address of the account, e.g.,</p>
+<li><p>Click on the plus sign (+) to request a new identity.</p>
 <blockquote>
-<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3LfTBXYtc6TEjuJiKgLpFGEtGRMPhBsKRB76Q4x91LZPWSmQ9Z&quot;</span>
-</pre></div>
-</div>
+<div><img alt="Concordium wallet screen showing the plus sign to add a new identity" src="../../_images/wallet-globalfinreg-add-identity.png" />
+</div></blockquote>
+</li>
+<li><p>Select <strong>Global FinReg</strong> from the identity provider options. This initiates a request and opens a new webpage on the Global FinReg platform.</p>
+<blockquote>
+<div><img alt="Concordium wallet screen showing the Global FinReg option selection" src="../../_images/walllet-globalfinreg-provider-selection.png" />
 </div></blockquote>
 </li>
 </ul>
-</div>
-</details><section id="import-created-accounts-into-concordium-client">
-<h4>Import created accounts into <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code><a class="headerlink" href="#import-created-accounts-into-concordium-client" title="Link to this heading">#</a></h4>
-<p>To use the accounts created in the Concordium Company ID tool, you must use Concordium Client. You can download it <a class="reference internal" href="../../docs/installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">here</span></a>. For information about how to use it, see <a class="reference internal" href="../../tools/concordium-client.html#concordium-client"><span class="std std-ref">Concordium Client</span></a>.</p>
-<p>The account keys are primarily meant for clients to integrate into their key management solution and their software, e.g., an exchange integrating their trading platform with the Concordium chain.</p>
-<p>However, if the <code class="docutils literal notranslate"><span class="pre">account-keys.json</span></code> file is not encrypted it can be imported into <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> with the command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client config account import account-keys.json --name my-account</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">--name</span></code> is mandatory and will name the account according to the given value (“my-account” in the example above).</p>
-<p>The initial account keys cannot be directly imported into <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>.</p>
-<p>Once you have created accounts, you can request CCDs for testing. To request CCDs for testing, run the following command:</p>
-<p><code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">PUT</span> <span class="pre">https://wallet-proxy.testnet.concordium.com/v0/testnetGTUDrop/3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV</span></code> where you replace 3GXM6cEuAwEA47EEtFpax9PLhMWchWmkaPmNZmW1kbDaWaKBxV with the account address that should receive the CCDs.</p>
 </section>
-</section>
-<section id="id-recovery">
-<span id="identity-recovery"></span><h3>Identity recovery<a class="headerlink" href="#id-recovery" title="Link to this heading">#</a></h3>
-<p>If the identity object used to create credentials is lost, it can be recovered from the identity provider by generating a recovery request using the 24 words used when the identity was originally created. Recover identity generates an identity recovery request to be sent to the identity provider.</p>
-<ol class="arabic">
-<li><p>Click <strong>Identity Recovery</strong>.</p></li>
-<li><p>Enter your seedphrase in the Enter seedphrase field. And click <strong>Find identities</strong>.</p></li>
-<li><p>You see a list of accounts associated with the seedphrase. It is possible to save the account keys that can be ussed to interact with the account on the chain. Indices that are to the left of the account address are pointing to the identity index, being the first value and the account index being the second value (0,0). In the Identities to recover drop-down, select the identity you want to recover. There will always be one additional index on the list for selection to be sure that request can be generated for more than one identity. This is mainly useful in cases where first identity object was lost or unused to create accounts. Click <strong>Generate recovery request</strong>. The command outputs the <code class="docutils literal notranslate"><span class="pre">recovery-request.json</span></code> file. The request should be sent to the identity provider through a trusted channel. When the request has been verified successfully, you will receive an email with an identity object. Store this file securely as you need it to create accounts on the chain.</p>
-<img alt="company id tool screen showing identities related to seedphrase and option to select" src="../../_images/account-creation1.png" />
+<section id="complete-verification">
+<h3>Complete verification<a class="headerlink" href="#complete-verification" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>Log in to your existing Global FinReg account or sign up for a new account.</p></li>
+<li><p>Enter your company’s <a class="reference external" href="https://www.lei-worldwide.com/what-is-a-legal-entity-identifier.html">Legal Entity Identifier (LEI code)</a>. Alternatively, you can enter the entity details of the company.</p></li>
+<li><p>Upload entity documents from a primary source that are no older than three months. Acceptable documents include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Business registry documents</p></li>
+<li><p>Documents from a financial supervisory authority (FSA)</p></li>
+</ul>
+</div></blockquote>
 </li>
-</ol>
+<li><p>Provide information about the company’s Ultimate Beneficial Owner (UBO) or Authorized Signatory.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A UBO is generally defined as an individual who holds a minimum of 10-25% (depending on jurisdiction) of capital or voting rights in the underlying entity.</p>
+</div>
 <ul class="simple">
-<li><p>For Mainnet requests: Send the file to <a class="reference external" href="mailto:ania&#37;&#52;&#48;notabene&#46;id">ania<span>&#64;</span>notabene<span>&#46;</span>id</a> together with any other required identity data as described in the <a class="reference external" href="https://notaben.notion.site/Entity-verification-next-1b4fbcd8e32042e1ac3b0018a3cc27bc">entity verification instructions</a>.</p></li>
-<li><p>For Testnet requests: Send the file to <a class="reference external" href="mailto:support&#37;&#52;&#48;concordium&#46;software">support<span>&#64;</span>concordium<span>&#46;</span>software</a> with the subject line “Recover company identity”.</p></li>
+<li><p>Verify the UBO or Authorized Signatory through the online verification tool using a passport or driver’s license.</p></li>
 </ul>
-<p>When the recovery request has been verified successfully, you will receive an email with the identity object file named <code class="docutils literal notranslate"><span class="pre">id-object.json</span></code> that you lost. Store this file securely as you need it to create accounts.</p>
 </section>
+<section id="finalize-validation-and-create-accounts">
+<h3>Finalize validation and create accounts<a class="headerlink" href="#finalize-validation-and-create-accounts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Navigate to the account management tab in Global FinReg.</p></li>
+<li><p>Review all submitted documents and information for accuracy.</p></li>
+<li><p>If all information is correct, click <strong>Approve</strong> to finalize the verification process.</p></li>
+<li><p>Upon approval, your wallet ID will be validated and ready for use on the Concordium blockchain.</p></li>
+</ul>
+<p>After completing these steps, you can use your company identity to create accounts on the Concordium blockchain as described in the <a class="reference internal" href="../../docs/guides/create-account.html#create-account"><span class="std std-ref">Create account</span></a> guide.</p>
+</section>
+</section>
+<section id="identity-recovery">
+<h2>Identity recovery<a class="headerlink" href="#identity-recovery" title="Link to this heading">#</a></h2>
+<p>Since identities are created directly through the Concordium Wallet for Web or CryptoX Concordium Wallet, identity recovery is performed through the wallet recovery process.</p>
+<p>For detailed instructions on wallet recovery, please refer to the <a class="reference internal" href="../../docs/guides/recovery.html#backup-import-recover"><span class="std std-ref">recover your wallet</span></a> guide.</p>
 </section>
 </section>
 
@@ -786,15 +753,13 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-concordium-company-id-tool">Using the Concordium Company ID tool</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#request-identity">Request identity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-account">Create account</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#import-created-accounts-into-concordium-client">Import created accounts into <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#request-identity">Request identity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-the-request-from-a-concordium-wallet">Initiate the request from a Concordium wallet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-verification">Complete verification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finalize-validation-and-create-accounts">Finalize validation and create accounts</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id-recovery">Identity recovery</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identity-recovery">Identity recovery</a></li>
 </ul>
   </nav></div>
 

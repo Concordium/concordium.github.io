@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/installation/verification-instructions.e5b1121d-d17e-43be-8357-e4758aa01b54.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/installation/verification-instructions.a1b5695e-7821-4477-9bdd-ccb953c65fdc.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/installation/verification-instructions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/installation/verification-instructions.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../guides/export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -739,8 +751,8 @@
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.4.AppImage
-<span class="go">87055b6f6dc19c4d22460e87697801021606e4248bed1908f9bc808776cd0bec</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.8.0.AppImage
+<span class="go">b6f438b8ac1b09a63ae464b8aa943a74cbc3cea5a2be3e55261f5c8e1a49bc58</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
@@ -756,7 +768,7 @@
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.4.AppImage<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.4.AppImage.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.8.0.AppImage<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.8.0.AppImage.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
@@ -771,8 +783,8 @@
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.4.deb
-<span class="go">2860af2631e03643a101380ba02808ae88f64e1dc82ab450dee43a0440ccff36</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.8.0.deb
+<span class="go">153270cc998d2fc3bdf9d30571855a29081c7c534bb439cf2c00654d3526120f</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
@@ -788,7 +800,7 @@
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.4.deb<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.4.deb.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.8.0.deb<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.8.0.deb.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
@@ -803,8 +815,8 @@
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.7.4.rpm
-<span class="go">bf50e3777ddaefe865b3765401e23da7ab39530a109c16b75bc3871127eae83c</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.8.0.rpm
+<span class="go">5553a882a76402da267ce78cf68145580d77d5cfc1192b54a312d11e0626fed4</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
@@ -820,7 +832,7 @@
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.7.4.rpm<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.7.4.rpm.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.8.0.rpm<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.8.0.rpm.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>

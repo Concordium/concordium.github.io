@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,13 +54,13 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/recovery.abff6289-9f95-4ff2-a7ec-962c9b73fc61.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/recovery.c80c9519-93b8-4fa5-86f4-1f83d90d82b7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/recovery';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/recovery.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Make a backup of identities, accounts, and addresses" href="export-import.html" />
+    <link rel="next" title="Update your passcode and biometric settings" href="../mobile-wallet/change-passcode-mw.html" />
     <link rel="prev" title="Change account name" href="change-account-name.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">Backup and recovery</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -725,41 +737,228 @@
                   
   <section id="backup-and-recovery">
 <span id="backup-import-recover"></span><h1>Backup and recovery<a class="headerlink" href="#backup-and-recovery" title="Link to this heading">#</a></h1>
-<p>It can be necessary to recover your wallet, for example if you get a new computer or mobile device. It is important to know how you can recover your wallet on a device if necessary. There are differences between what the wallets require for recovery.</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 33.3%" />
-<col style="width: 33.3%" />
-<col style="width: 33.3%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Desktop Wallet</p></th>
-<th class="head"><p>Concordium Wallet for Web</p></th>
-<th class="head"><p>CryptoX Concordium Wallet</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Backup recommended; can recover without backup</p></td>
-<td><p>Seed phrase required</p></td>
-<td><p>Seed phrase required</p></td>
-</tr>
-<tr class="row-odd"><td><p>Backup file includes account names and addresses, identities, and the address book. LEDGER device is needed for a full recovery.</p></td>
-<td><p>Backup is not necessary but seed phrase is needed.</p></td>
-<td><p>Backup is not necessary but seed phrase is needed.</p></td>
-</tr>
-<tr class="row-even"><td><p>Private keys are stored on the LEDGER device that is secured by a PIN code and backed up by recovery phrase.</p></td>
-<td><p>Private keys are stored in the wallet and secured by the passcode used to encrypt the wallet and backed up with the seed phrase.</p></td>
-<td><p>Private keys are stored in the wallet and backed up by a seed phrase.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Cannot recover in other wallet types</p></td>
-<td><p>Can recover in Concordium Wallet for Web and CryptoX Concordium Wallet</p></td>
-<td><p>Can recover in Concordium Wallet for Web and CryptoX Concordium Wallet</p></td>
-</tr>
-</tbody>
-</table>
+<p>Backup and recovery are essential aspects of managing your digital assets safely. When using Concordium wallets, it’s important to know how to backup your wallet information and recover access if needed - for example, when you get a new device or if your device is lost or damaged.</p>
+<p>You are solely responsible for keeping your assets secure. Never share your private keys, PIN codes, passwords, recovery phrases, LEDGER devices, or mobile devices with anyone.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot recover testnet wallets on mainnet, or vice versa.</p>
 </div>
-<div class="toctree-wrapper compound">
+<p>Different Concordium wallet types use different methods for backup and recovery. This page explains the specific procedures for each wallet type.</p>
+<section id="desktop-wallet">
+<h2>Desktop Wallet<a class="headerlink" href="#desktop-wallet" title="Link to this heading">#</a></h2>
+<p>To make sure that you have a backup of your accounts, identities, and addresses, Concordium strongly recommends that if you are using Desktop Wallet, you export the data to a file you can store in a safe location. The backup will ensure that you can recover your accounts, identities, and addresses if your Wallet database becomes damaged or if, for some reason, you can’t access the Wallet.</p>
+<p>A backup is only necessary when creating new accounts, not every time a transaction is executed.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="desktop-wallet-recover">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Backup and Recover Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Because the Desktop Wallet uses a LEDGER device to sign all transactions, you can more easily recover your wallet and accounts if anything happens to your Desktop Wallet or you cannot access it. To access your Desktop Wallet, you use the backup file that you create in combination with your LEDGER device.</p>
+<p class="sd-card-text">If you lose the backup file with your accounts, you can use the Desktop Wallet in combination with your LEDGER device to recover those accounts. You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet.</p>
+<p class="sd-card-text">If you’ve lost your LEDGER device or the device has stopped working, you can restore the keys in another LEDGER device by restoring it from the recovery phrase used for the original device. As long as you have your recovery phrase available, you can recover your wallet and accounts.</p>
+<p class="sd-card-text">To actually access the recovered accounts, you still need the LEDGER device that was used to set up the accounts, or a new LEDGER device that’s been restored from the same recovery phrase.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Export</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to <strong>Export/Import</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Export</strong>.</p></li>
+<li><p class="sd-card-text">Create a password that contains at least 6 characters. You’ll need the password to import the file into the Desktop Wallet so keep it safe.</p></li>
+<li><p class="sd-card-text">Navigate to the location on your computer where you want to save the file. If you’re on Windows, make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>. Once the export is complete, Concordium recommends that you store the file in a safe location that is different from where you store the Desktop Wallet database.</p></li>
+</ol>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Import</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to <strong>Export/Import</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Import</strong> and navigate to the location on your computer where you saved the file, and then select <strong>Open</strong>.</p></li>
+<li><p class="sd-card-text">Enter the password of the import. If the import is successful, you can see all the imported identities, accounts, and addresses in the right pane.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Recover accounts without a backup file</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text" id="account-recovery">If, for some reason, you’ve lost one or more of your accounts in the Desktop Wallet, and you’ve also lost the backup file, you can use the LEDGER device to recover those accounts.</p>
+<p class="sd-card-text">You only have to perform a recovery if you have lost the backup of your accounts and identities. If you still have the backup file, you can import the accounts back into the Desktop Wallet.</p>
+<p class="sd-card-text">If you’ve lost your LEDGER device or the device has stopped working, you can restore the keys in another LEDGER device by by restoring it from the recovery phrase used for the original device. To learn more about the recovery phrase of a LEDGER device, see LEDGER’s documentation: <a class="reference external" href="https://www.ledger.com/academy/crypto/what-is-a-recovery-phrase/">What is a recovery phrase</a> .</p>
+<p class="sd-card-text"><strong>How the recovery process works</strong></p>
+<p class="sd-card-text">When you create a new identity in the Desktop Wallet, a number on the LEDGER device is associated with the identity. This is called the identity index and there can be more identity indices on a LEDGER device. These indices are used sequentially, so the first identity created from a LEDGER device uses index <em>0</em>, the next uses index <em>1</em>, and so on.</p>
+<p class="sd-card-text">The LEDGER device stores data about the credentials that belong to an identity. The keys you use to sign account transactions are all attached to credentials. It’s the credentials on an account that determine who’s allowed to sign transactions. To learn more about identities, see <a class="reference internal" href="../protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities and accounts</span></a>.</p>
+<p class="sd-card-text">Lost identities can’t be recovered because the identity object is not stored on the LEDGER device. However, you can go through each index on the LEDGER device where the data to create credentials are stored and use this information to regain access to the accounts related to a given identity.</p>
+<p class="sd-card-text">For each identity index, the recovery process uses the LEDGER device to calculate the IDs of the credentials, which also have sequential indices. The wallet then checks on the blockchain whether the credentials have been deployed, and which account each credential is attached to. These accounts are then added to the Desktop Wallet along with the deployed credentials.</p>
+<p class="sd-card-text">If all your identity issuances were successful, you can stop the recovery when you encounter an unused index. However, if one of your identity issuance processes failed, this might have caused an index to be skipped. Therefore, you must determine yourself when the recovery is completed.</p>
+<p class="sd-card-text">The recovery also creates placeholders for the missing identities to indicate that the index has already been used. However, the information used to create new accounts and credentials on a missing identity can’t be recovered because it doesn’t exist on the blockchain. That’s why you can’t create new accounts using these placeholders. Instead, you can request a new identity from an identity provider.</p>
+<p class="sd-card-text">The names of the accounts and the notes on the credentials are also not recoverable because they are only saved locally.</p>
+<p class="sd-card-text"><strong>Incomplete backups</strong></p>
+<p class="sd-card-text">If you have imported accounts from a backup file and you know there are accounts missing on one or more identities, you can go through the recovery process to recover the missing accounts.</p>
+<p class="sd-card-text"><strong>How to recover accounts</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">In the <strong>Desktop Wallet</strong>, go to <strong>Settings</strong>, and then select <strong>Recover existing accounts</strong>.</p></li>
+<li><p class="sd-card-text">Familiarize yourself with the recovery information, and then select <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Connect the LEDGER device to the computer if you haven’t done so already, and then select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, there’s a message saying <em>Please allow recovering credentials</em>. The LEDGER device says <em>Recover credentials</em>. In the right pane, you can see the indices that are found, and the accounts, if any, associated with each index.</p></li>
+<li><p class="sd-card-text">When you consider the recovery complete, select <strong>Stop recovery, I found all my accounts</strong>. You then see an overview of all the recovered accounts. If you don’t think the recovery is complete, you can go back and continue the recovery process.</p></li>
+<li><p class="sd-card-text">To view the recovered accounts, go to <strong>Accounts</strong>. A recovered account doesn’t have the name you originally gave it. Instead the name consists of the first eight digits of the account address. Furthermore, because the identities are not recovered, the accounts show the index number that’s associated with the identity and not the identity itself.</p></li>
+<li><p class="sd-card-text">To view placeholders for identities, go to <strong>Identities</strong>. Here you can see placeholders for the missing identities. These placeholders show the index numbers that have been used. You can’t use the placeholders to create new accounts.</p></li>
+</ol>
+</div>
+</details></div>
+</details></section>
+<section id="bw">
+<h2>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Link to this heading">#</a></h2>
+<p>Concordium Wallet for Web uses a seed phrase to recover your accounts, identities, and private keys. The seed phrase is created when you set up a new wallet, and you must write it down and keep it a safe location.
+You can <a class="reference internal" href="show-seed-phrase.html#show-seed-phrase"><span class="std std-ref">view the seed phrase in Wallet Settings</span></a> if you need to write it down again.</p>
+<p>If you need to export the private key of a specific account to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see <a class="reference internal" href="export-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Recover Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">After <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-bw"><span class="std std-ref">reinstalling</span></a> the Concordium Wallet for Web, open the extension and click <strong>Get started</strong> on the welcome page.</p>
+<a class="reference internal image-reference" href="../../_images/welcome_page.png"><img alt="../../_images/welcome_page.png" src="../../_images/welcome_page.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Create a six-digit passcode or use a full password. Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/create_passcode.png"><img alt="../../_images/create_passcode.png" src="../../_images/create_passcode.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Before clicking <strong>Restore</strong>, make sure that you have chosen the right network for restoring your wallet; Mainnet or Testnet. You must recover your wallet in the network where it was created. You can see the chosen network in the upper right corner. To switch network, click the network name in the upper right corner and select your desired network on the page that opens. Then, go back and click <strong>Restore</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/create_or_restore.png"><img alt="../../_images/create_or_restore.png" src="../../_images/create_or_restore.png" style="width: 50%;" />
+</a>
+<a class="reference internal image-reference" href="../../_images/restore_mainnet_testnet.png"><img alt="../../_images/restore_mainnet_testnet.png" src="../../_images/restore_mainnet_testnet.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Enter your 24 word seed phrase. Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/restore_from_seedphrase.png"><img alt="../../_images/restore_from_seedphrase.png" src="../../_images/restore_from_seedphrase.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">After successful restore, you can see which identities and accounts were recovered. Click <strong>Continue</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">You cannot recover a wallet created in Mainnet in Testnet, and vice versa. Once you have recovered on the correct network, you can <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#switch-network"><span class="std std-ref">switch between Mainnet and Testnet</span></a>.
+If you use both networks, you can recover on the other net after setup, through the settings page.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="sd-card-text">If you had previously configured your wallet to be able to view selected tokens and you recover your wallet, the tokens will not be recovered. You must <a class="reference internal" href="tokens.html#tokens"><span class="std std-ref">add the tokens</span></a> again to view them in your wallet.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">If you forget your passcode for your installed Concordium Wallet for Web, you will need to <a class="reference internal" href="../browser-wallet/setup-browser-wallet.html#setup-browser-wallet"><span class="std std-ref">remove the extension in your internet browser and reinstall it</span></a>, choosing the option to recover your wallet. Use your seed phrase to recover the wallet.</p>
+</div>
+</div>
+</details></section>
+<section id="cryptox">
+<h2>CryptoX Concordium Wallet<a class="headerlink" href="#cryptox" title="Link to this heading">#</a></h2>
+<p>CryptoX Concordium Wallet supports three ways of recovering your wallet: from seed phrase, backup file, or wallet private key.</p>
+<p>If you have set up your wallet with a seed phrase, you will need this for recovering your wallet.
+You can <a class="reference internal" href="show-seed-phrase.html#show-seed-phrase"><span class="std std-ref">view and copy the seed phrase</span></a> in Wallet Settings if you need to write it down again.</p>
+<p>If you have restored your wallet from an imported back-up file, you will need this file for recovering your wallet. You can <a class="reference internal" href="import-export-file.html#import-export-file-wallet"><span class="std std-ref">export and import back-up files</span></a> in Wallet Settings.</p>
+<p>If you have restored your wallet from a copy of your wallet private key, you will need this key for recovering your wallet. You can <a class="reference internal" href="show-wallet-private-key.html#show-wallet-private-key"><span class="std std-ref">view and copy the wallet private key</span></a> in Wallet Settings.</p>
+<p>Note that the backup functionality available form Wallet Settings will depend on which of the above methods was used for setting up/restoring your wallet.</p>
+<p>If you need to export the private key of a specific account to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see <a class="reference internal" href="export-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Recover CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">CryptoX Concordium Wallet offers three recovery methods: using a seed phrase, a backup file, or a wallet private key.</p>
+<p class="sd-card-text">For all three methods, start doing this:</p>
+<ol class="arabic">
+<li><p class="sd-card-text">After installing or reinstalling the CryptoX Concordium Wallet app, open the app.</p></li>
+<li><p class="sd-card-text">On the Welcome screen, read and accept Terms and Conditions and Pricacy Policy by checking the box.</p>
+<p class="sd-card-text">You can also choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.</p>
+</li>
+<li><p class="sd-card-text">Tap <strong>Get started</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-onboarding1a.png"><img alt="screen with terms and conditions" src="../../_images/cryptox-onboarding1a.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Tap <strong>Import a wallet</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover2.png"><img alt="../../_images/cryptox-recover2.png" src="../../_images/cryptox-recover2.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Enter and then re-enter a 6-digit passcode for your wallet.</p></li>
+<li><p class="sd-card-text">You now have three options: Import via seed phrase, import via wallet private key, or import via backup file.</p>
+<p class="sd-card-text">Tap on the desired option.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover3.png"><img alt="../../_images/cryptox-recover3.png" src="../../_images/cryptox-recover3.png" style="width: 40%;" />
+</a>
+</li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Import via seed phrase</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Enter each word of your seed phrase in the correct order. When you start typing, possible words appear for you to select.</p>
+<p class="sd-card-text">If you have a copy of your seed phrase, you can also tap <strong>Paste your seed phrase</strong> to paste it from your clipboard.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover4a.png"><img alt="../../_images/cryptox-recover4a.png" src="../../_images/cryptox-recover4a.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Once the words are correct, tap <strong>Recover</strong> to submit the recovery request to the identity provider(s).</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover5d.png"><img alt="../../_images/cryptox-recover5d.png" src="../../_images/cryptox-recover5d.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">It may take a little while for recovery to complete.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover6a.png"><img alt="../../_images/cryptox-recover6a.png" src="../../_images/cryptox-recover6a.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">After after copletion, you will see an overview of identities and accounts that have been recovered. Tap <strong>Continue to Wallet</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover-overview.png"><img alt="../../_images/cryptox-recover-overview.png" src="../../_images/cryptox-recover-overview.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">You have succesfully restored your wallet.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover7d.png"><img alt="../../_images/cryptox-recover7d.png" src="../../_images/cryptox-recover7d.png" style="width: 40%;" />
+</a>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Import via wallet private key</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Enter or paste your wallet private key.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover4b.png"><img alt="../../_images/cryptox-recover4b.png" src="../../_images/cryptox-recover4b.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Once the key is entered, tap <strong>Recover</strong> to submit the recovery request to the identity provider(s).</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover5d.png"><img alt="../../_images/cryptox-recover5d.png" src="../../_images/cryptox-recover5d.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">It may take a little while for recovery to complete.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover6b.png"><img alt="../../_images/cryptox-recover6b.png" src="../../_images/cryptox-recover6b.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">After after copletion, you will see an overview of identities and accounts that have been recovered. Tap <strong>Continue to Wallet</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover-overview.png"><img alt="../../_images/cryptox-recover-overview.png" src="../../_images/cryptox-recover-overview.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">You have succesfully restored your wallet.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover7d.png"><img alt="../../_images/cryptox-recover7d.png" src="../../_images/cryptox-recover7d.png" style="width: 40%;" />
+</a>
+</li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Import via backup file</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Tap <strong>Import</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover4c.png"><img alt="../../_images/cryptox-recover4c.png" src="../../_images/cryptox-recover4c.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Select the file you want to import.</p></li>
+<li><p class="sd-card-text">Enter the password you created when exporting the backup file. Tap <strong>Continue</strong>. It may take a little while for recovery to complete.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover5c.png"><img alt="../../_images/cryptox-recover5c.png" src="../../_images/cryptox-recover5c.png" style="width: 40%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Once the import is finished, tap <strong>Okay</strong> to go to the Accounts list.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-recover6c.png"><img alt="../../_images/cryptox-recover6c.png" src="../../_images/cryptox-recover6c.png" style="width: 40%;" />
+</a>
+</li>
+</ol>
+</div>
+</details><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">When you recover your wallet, any account or identity names that you might have edited will be reset. You can <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">edit the account name</span></a>, if desired.</p>
+</div>
+</div>
+</details></section>
 </section>
 
 
@@ -818,11 +1017,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="export-import.html"
+       href="../mobile-wallet/change-passcode-mw.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Make a backup of identities, accounts, and addresses</p>
+        <p class="prev-next-title">Update your passcode and biometric settings</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -836,6 +1035,20 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desktop-wallet">Desktop Wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw">Concordium Wallet for Web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox">CryptoX Concordium Wallet</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/overview-desktop.4add96b1-8c67-4c1f-bb7f-b7d6849bd3b0.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/overview-desktop.c02c137c-cdb4-4531-a9b2-7ef4d51fb7df.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/overview-desktop';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/overview-desktop.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -726,19 +738,19 @@
   <section id="set-up-the-desktop-wallet">
 <span id="overview-desktop"></span><h1>Set up the Desktop Wallet<a class="headerlink" href="#set-up-the-desktop-wallet" title="Link to this heading">#</a></h1>
 <p>The Concordium Desktop Wallet is a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts, and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.</p>
-<p>The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, the LEDGER NANO S, LEDGER NANO S Plus, and LEDGER Nano X are supported.</p>
+<p>The Desktop Wallet also supports storing of your private keys on a hardware device. Currently, LEDGER NANO S Plus and LEDGER Nano X are supported.</p>
 <p>This topic contains an overview of each task you need to complete to set up and start using the Desktop Wallet. The guide assumes that you’ll be using the Desktop Wallet in combination with a LEDGER device to generate and store keys and sign transactions.</p>
 <section id="before-you-start">
 <h2>Before you start<a class="headerlink" href="#before-you-start" title="Link to this heading">#</a></h2>
 <p>Before you start, make sure you’ve completed the following steps:</p>
 <ul class="simple">
-<li><p>You’ve set up the <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-your-Ledger-Nano-S?docs=true">LEDGER Nano S</a>, <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4416927988625-Set-up-your-Ledger-Nano-S-Plus-?docs=true">LEDGER Nano S Plus</a>, or the <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true">LEDGER Nano X</a> and you have saved your 24-word recovery phrase generated on the LEDGER securely. This is the only backup of your private keys, and you need it to access you accounts if you lose your LEDGER device.</p></li>
+<li><p>You’ve set up the <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4416927988625-Set-up-your-Ledger-Nano-S-Plus-?docs=true">LEDGER Nano S Plus</a> or the <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/360018784134-Set-up-your-Ledger-Nano-X?docs=true">LEDGER Nano X</a> and you have saved your 24-word recovery phrase generated on the LEDGER securely. This is the only backup of your private keys, and you need it to access you accounts if you lose your LEDGER device.</p></li>
 <li><p>You’ve downloaded <a class="reference external" href="https://www.ledger.com/ledger-live/download">Ledger Live</a>.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 1: Set up the node</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The Desktop Wallet must be connected to a running <strong>trusted</strong> node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default Virtual Hive node (concordiumwalletnode.com) is provided. But you can run a node yourself using <a class="reference internal" href="../network/nodes/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="../network/nodes/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, and <a class="reference internal" href="../network/nodes/run-node.html#run-a-node"><span class="std std-ref">with Docker</span></a> or <a class="reference internal" href="../network/nodes/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">a Debian package</span></a> on Linux. You can also have a third-party provider run a node for you.</p>
+<p class="sd-card-text">The Desktop Wallet must be connected to a running <strong>trusted</strong> node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default <code class="docutils literal notranslate"><span class="pre">grpc.mainnet.concordium.software</span></code> is provided. But you can run a node yourself using <a class="reference internal" href="../network/nodes/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="../network/nodes/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, and <a class="reference internal" href="../network/nodes/run-node.html#run-a-node"><span class="std std-ref">with Docker</span></a> or <a class="reference internal" href="../network/nodes/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">a Debian package</span></a> on Linux. You can also have a third-party provider run a node for you.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -746,7 +758,7 @@
 <ol class="arabic simple">
 <li><p class="sd-card-text">Download the latest version of the Desktop Wallet for <a class="reference internal" href="../installation/downloads.html#downloads-desktop-wallet"><span class="std std-ref">Mainnet</span></a> or <a class="reference internal" href="../installation/downloads.html#downloads-desktop-wallet-testnet"><span class="std std-ref">Testnet</span></a>.</p></li>
 <li><p class="sd-card-text">Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.</p></li>
-<li><p class="sd-card-text">If this is the first time you’re opening the Desktop Wallet, you’re asked to connect to a node. If you don’t see this message, go to <strong>Settings</strong>, and then select <strong>Node settings</strong>. The Virtual Hive node (concordiumwalletnode.com) is inserted by default, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the <strong>Address</strong> and <strong>Port</strong> of the node you’re running. The address is the network address of the node.</p></li>
+<li><p class="sd-card-text">If this is the first time you’re opening the Desktop Wallet, you’re asked to connect to a node. If you don’t see this message, go to <strong>Settings</strong>, and then select <strong>Node settings</strong>. By default, <code class="docutils literal notranslate"><span class="pre">grpc.mainnet.concordium.software</span></code> is inserted, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the <strong>Address</strong> and <strong>Port</strong> of the node you’re running. The address is the network address of the node.</p></li>
 </ol>
 <ul>
 <li><p class="sd-card-text">If you’re running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the <strong>Address field</strong>, enter <em>127.0.0.1</em>, and in the <strong>Port field</strong> enter <em>20000</em>.</p></li>
@@ -766,7 +778,6 @@
 <span class="sd-summary-text">Step 3: Install the Concordium LEDGER app using LEDGER Live</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet.</p>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Open LEDGER Live and click Settings <a class="reference internal" href="../../_images/ledger-live-settings.png"><img alt="gear wheel on black background" src="../../_images/ledger-live-settings.png" style="width: 50px;" /></a>. Select <strong>Experimental features</strong> and turn on <strong>Developer mode</strong>.</p></li>
 <li><p class="sd-card-text">Connect the LEDGER device to your computer, and enter your PIN code to unlock the LEDGER.</p></li>
 <li><p class="sd-card-text">In the LEDGER Live app select <strong>My Ledger</strong> in the left side panel.</p></li>
 <li><p class="sd-card-text">The LEDGER says <strong>Allow Ledger Manager</strong>. Press both buttons simultaneously to allow the manager on your LEDGER.</p></li>
@@ -793,6 +804,16 @@
 <p class="admonition-title">Warning</p>
 <p>Currently, it is not possible to exchange identities and accounts between the Concordium Legacy Wallet or Concordium Wallet for Mobile and the Desktop Wallet. If you try to import a file that has been exported from the Concordium Legacy Wallet into the Desktop Wallet, the import will fail, and likewise, if you try to import a file exported from the Desktop Wallet into the Concordium Legacy Wallet.</p>
 </div>
+</section>
+<section id="if-you-previously-installed-the-concordium-app-by-enabling-developer-mode">
+<h2>If you previously installed the Concordium app by enabling Developer mode<a class="headerlink" href="#if-you-previously-installed-the-concordium-app-by-enabling-developer-mode" title="Link to this heading">#</a></h2>
+<p>Users who previously installed the Concordium Ledger app through Developer Mode in Ledger Live can now update to the standard version without needing to enable Developer Mode.</p>
+<p>Simply go to My Ledger in Ledger Live and follow the prompt to update the application.
+You do not need to disable Developer Mode—the app will be accessible whether Developer Mode is enabled or not.</p>
+<p>If you are installing the app for the first time, you can find Concordium in the list of available applications in Ledger Live and install it directly, without requiring Developer Mode.</p>
+<p>In both cases, it is essential that Ledger Live and the device firmware are updated to the latest versions before proceeding.
+If your device’s operating system is outdated, an orange banner will appear, prompting you to update before you can install or update the app.
+You do not need to take any additional technical steps—your private keys will remain intact, and there is no need for key restoration.</p>
 </section>
 </section>
 
@@ -880,6 +901,7 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-you-start">Before you start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-previously-installed-the-concordium-app-by-enabling-developer-mode">If you previously installed the Concordium app by enabling Developer mode</a></li>
 </ul>
   </nav></div>
 

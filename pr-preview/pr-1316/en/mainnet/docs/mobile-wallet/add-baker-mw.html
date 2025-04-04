@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/add-baker-mw.b3719f73-27f0-46e7-992a-8d5beb4c1c8c.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/add-baker-mw.7820333c-2121-45e7-a56a-6acdb9e26435.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/add-baker-mw';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/add-baker-mw.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../guides/export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -740,47 +752,35 @@ You can see the fee in the transaction log.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Tap the account on the accounts screen and tap <a class="reference internal" href="../../_images/cryptoX-earn.png"><img alt="Hand receiving money" src="../../_images/cryptoX-earn.png" style="width: 50px;" /></a> on the account balance screen.</p></li>
+<li><p class="sd-card-text">In the dropdown list, select the account for which you will set up a validator an tap <strong>Earn</strong>.</p></li>
 <li><p class="sd-card-text">Select <strong>Continue to validator setup</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-earning-rewards.png"><img alt="screen with earning options" src="../../_images/cryptoX-earning-rewards.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptoX-earning-rewards.png"><img alt="screen with earning options" src="../../_images/cryptoX-earning-rewards.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">You can now go through informational screens explaining the key concepts of validation on the Concordium blockchain. Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to registering your validation.</p></li>
+<li><p class="sd-card-text">You can now go through informational screens explaining the key concepts of validation on the Concordium blockchain, including the validator role and key generation, node requirements, staking pool options, and suspension policies. Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to registering your validation.</p></li>
 <li><p class="sd-card-text">On the register validator screen you can see your available balance. Enter the amount you want to stake in the field. Tap <strong>Yes, add</strong> to restake validator rewards, or tap <strong>No, don’t add</strong> if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Tap <strong>Continue</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-register-validator.png"><img alt="screen to register validator for first time showing balance, amount to stake, and restake parameters" src="../../_images/cryptoX-register-validator.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-register-validator_new.png"><img alt="screen to register validator for first time showing balance, amount to stake, and restake parameters" src="../../_images/cryptox-register-validator_new.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
 </ol>
 <ol class="arabic" start="4">
 <li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a> or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a staking pool. Tap <strong>Continue</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-open-del.png"><img alt="screen to register validator for first time showing options to open or close pool for delegation" src="../../_images/cryptoX-register-validator-open-del.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-open-del.png"><img alt="screen to register validator for first time showing options to open or close pool for delegation" src="../../_images/cryptoX-register-validator-open-del.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">Set your commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Tap <strong>Continue</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-commissions.png"><img alt="screen to register validator for first time showing commission rates for staking pools" src="../../_images/cryptoX-register-validator-commissions.png" style="width: 50%;" />
+<li><p class="sd-card-text">Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Tap <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-register_validator_commissions_new.png"><img alt="screen to register validator for first time showing commission rates for staking pools" src="../../_images/cryptox-register_validator_commissions_new.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
 <li><p class="sd-card-text">If you open a staking pool, you can optionally provide a URL with information about your validator. This allows delegators to learn more about your pool and make informed decisions. This information is not shared for closed pools or validators. Tap <strong>Continue</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-metadata.png"><img alt="screen to register validator for first time showing field to paste URL with metadata for staking pools" src="../../_images/cryptoX-register-validator-metadata.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-metadata.png"><img alt="screen to register validator for first time showing field to paste URL with metadata for staking pools" src="../../_images/cryptoX-register-validator-metadata.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
 </ol>
 <ol class="arabic" start="6">
 <li><p class="sd-card-text">Now, export the validator keys. You need the validator keys to start the node. Tap <strong>Export validator keys</strong> and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-export-validator-keys.png"><img alt="screen to register validator for first time showing all of the validator keys with option to export" src="../../_images/cryptoX-register-validator-export-validator-keys.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-export-validator-keys.png"><img alt="screen to register validator for first time showing all of the validator keys with option to export" src="../../_images/cryptoX-register-validator-export-validator-keys.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
 </ol>
 <div class="admonition warning">
@@ -801,11 +801,6 @@ You can see the fee in the transaction log.</p>
 </div></blockquote>
 </li>
 </ol>
-<p class="sd-card-text">Once the transaction is finalized after importing your validator keys to the node, you see the status reflected in the account list and on the account balance screen.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-account-list-validator.png"><img alt="account information in list showing validator badge" src="../../_images/cryptoX-account-list-validator.png" style="width: 40%;" />
-</a>
-<a class="reference internal image-reference" href="../../_images/cryptoX-account-balance-screen-validator.png"><img alt="account card showing staked amount with validator number" src="../../_images/cryptoX-account-balance-screen-validator.png" style="width: 40%;" />
-</a>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -846,7 +841,7 @@ You can see the fee in the transaction log.</p>
 </div>
 <ol class="arabic simple" start="6">
 <li><p class="sd-card-text">There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
-<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger Nano S is ready</strong> or <strong>Ledger Nano S Plus is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger device is ready</strong> in the Desktop Wallet and select <strong>Submit</strong>.</p></li>
 <li><p class="sd-card-text">On the LEDGER device, a message says <strong>Review transaction</strong>. Review the information to verify that it matches the transaction details in the Desktop Wallet.</p></li>
 <li><p class="sd-card-text">When the LEDGER device says <strong>Sign transaction</strong>, press both buttons to confirm the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
 <li><p class="sd-card-text">In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
@@ -906,7 +901,7 @@ You can see the fee in the transaction log.</p>
 <p class="sd-card-text" id="generate-sign"><em>Generate and sign the transaction on the LEDGER device</em></p>
 <ol class="arabic simple">
 <li><p class="sd-card-text">Connect the LEDGER device to the computer if you haven’t done so already. There’s a message saying <strong>Waiting for device. Please connect your Ledger</strong>.</p></li>
-<li><p class="sd-card-text">Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger Nano S is ready</strong>.</p></li>
+<li><p class="sd-card-text">Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit. Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying <strong>Ledger device is ready</strong>.</p></li>
 <li><p class="sd-card-text">In the Desktop Wallet verify that all transaction details are correct and select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
 <li><p class="sd-card-text">Select <strong>Generate and sign</strong>. There’s a message saying <strong>Waiting for user to finish the process on the device</strong>.</p></li>
 <li><p class="sd-card-text">On the LEDGER device, there’s a message saying <strong>Review transaction</strong>. Review the information to verify that it matches the transaction details in the Desktop Wallet.</p></li>

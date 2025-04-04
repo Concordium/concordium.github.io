@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,13 +54,13 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/show-wallet-private-key.8155d861-fc01-4ecb-8a7a-062ef7d566a3.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/show-wallet-private-key.541cd8e6-5ab6-4e4d-a7d7-d0a0c3c74f14.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/show-wallet-private-key';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/show-wallet-private-key.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Import/export file" href="import-export-file.html" />
+    <link rel="next" title="Import/export file wallet" href="import-export-file.html" />
     <link rel="prev" title="Show seed phrase" href="show-seed-phrase.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -725,15 +737,13 @@
                   
   <section id="show-wallet-private-key">
 <span id="id1"></span><h1>Show wallet private key<a class="headerlink" href="#show-wallet-private-key" title="Link to this heading">#</a></h1>
-<p>CryptoX Concordium Wallet offers you to restore your wallet using a wallet private key.</p>
-<p>When <a class="reference internal" href="setup-cryptox-wallet.html#setup-cryptox-wallet"><span class="std std-ref">setting up a new wallet</span></a>, you can choose to restore using the wallet private key. After setup, you will have access to the key in the <strong>More</strong> menu.</p>
+<p>CryptoX Concordium Wallet offers you to <a class="reference internal" href="recovery.html#backup-import-recover"><span class="std std-ref">restore your wallet</span></a> using a wallet private key. After doing that, you will have access to viewing the wallet private key via the <em>Wallet Settings</em> (tap the gear icon in the lower right of the main screen to open Wallet Settings):</p>
 <ol class="arabic">
-<li><p>Tap <strong>More</strong>.</p></li>
-<li><p>Tap <strong>Wallet private key</strong>.</p>
+<li><p>On the Wallet Settings screen, Tap <strong>Wallet private key</strong>.</p></li>
+<li><p>Tap <strong>Show wallet private key</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/show-wallet-private-key.png"><img alt="screen with seed phrase" src="../../_images/show-wallet-private-key.png" style="width: 40%;" />
 </a>
 </li>
-<li><p>Tap <strong>Show wallet private key</strong>.</p></li>
 <li><p>Enter your passcode when prompted.</p></li>
 <li><p>Now you can tap <strong>Copy to clipboard</strong> to copy the key to the clipboard.</p></li>
 </ol>
@@ -799,7 +809,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Import/export file</p>
+        <p class="prev-next-title">Import/export file wallet</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

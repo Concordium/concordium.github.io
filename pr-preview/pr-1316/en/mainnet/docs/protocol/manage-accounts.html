@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=9fde4d7a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
   
   <!-- So that users can add custom icons -->
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.fe0e50e5-b720-4b27-b79c-8fc5a72fa7a0.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.aaf453c2-efb4-47f2-a6da-8f2672e252b1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/manage-accounts';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/manage-accounts.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -156,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../tools/index.html">
     Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
   </a>
 </li>
 
@@ -354,6 +361,13 @@
   </a>
 </li>
 
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
   </ul>
 </nav></div>
           
@@ -493,6 +507,7 @@
 <li class="toctree-l2"><a class="reference internal" href="transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-baker.html">Validation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concepts-delegation.html">Delegation</a></li>
 </ul>
@@ -612,17 +627,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/change-account-name.html">Change account name</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="../guides/export-import.html">Make a backup of identities, accounts, and addresses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/recover-wallet.html">Recover your wallet</a></li>
-</ul>
-</details></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/recovery.html">Backup and recovery</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/change-passcode-mw.html">Update your passcode and biometric settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/address-book.html">Manage address book</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/transaction-report.html">Create a transaction report</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-seed-phrase.html">Show seed phrase</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/show-wallet-private-key.html">Show wallet private key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/import-export-file.html">Import/export file wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/wallet.html">Web3 ID in the Concordium Wallet for Web</a></li>
 </ul>
 </details></li>
@@ -682,6 +693,7 @@
 </details></li>
 <li class="toctree-l1"><a class="reference external" href="https://proposals.concordium.software/index.html">Concordium Standards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources/glossary.html">Glossary of Concordium terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/exchangeOnBoarding.html">Exchange Onboarding Guide</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Governance Committee Voting</span></p>
 <ul class="nav bd-sidenav">
@@ -760,7 +772,7 @@ The name is resolved to an address before interactions with the <a class="refere
 <p>Initial accounts are not created by the identity provider when using CryptoX Concordium Wallet or Concordium Wallet for Web. You create all accounts yourself.</p>
 </div>
 <p>The user gets an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a> at the same time as an <a class="reference internal" href="id-accounts.html#reference-id-accounts"><span class="std std-ref">identity</span></a> has been issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.</p>
-<p>The user additionally <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">creates account keys</span></a> for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
+<p>The user additionally <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">creates account keys</span></a> for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
 and stores it locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
@@ -781,7 +793,7 @@ involved. This gives a user a way to create accounts with an additional layer of
 <p class="admonition-title">Note</p>
 <p>It is possible to create a shared account where multiple users share one account. For more information, see <a class="reference internal" href="../guides/overview-shared-accounts.html#overview-shared-accounts"><span class="std std-ref">Overview of shared accounts with multiple credentials</span></a>.</p>
 </div>
-<p>Any time you create a new account using Desktop Wallet, you should make a <a class="reference internal" href="../guides/export-import.html#export-import"><span class="std std-ref">backup</span></a>. Backups protect your account keys, ensuring that you do not lose access to your CCDs.</p>
+<p>Any time you create a new account using Desktop Wallet, you should make a <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">backup</span></a>. Backups protect your account keys, ensuring that you do not lose access to your CCDs.</p>
 <p>Each identity contains a number of cryptographic values. The cryptographic values are
 a number of public and private keys, a signature from the identity provider, as
 well as a number of secret values the user must use to be able to use the
@@ -834,7 +846,7 @@ validate transactions.</p>
 also be set manually.</p>
 </section>
 <section id="account-aliases">
-<h3>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h3>
+<span id="account-aliasses"></span><h3>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h3>
 <p>In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has 16777216 addresses, namely a so-called canonical account address together with
 matching <a class="reference internal" href="../resources/glossary.html#term-Alias"><span class="xref std std-term">account aliases</span></a>. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for
 the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.</p>
