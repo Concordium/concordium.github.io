@@ -45,6 +45,8 @@ First, let's look at the ZK statements defined in the ``constants`` file:
 
   // The number of blocks after the `best block` (top of chain), where the `recent block` is located.
   // The `recent block hash` is included in ZK proofs to ensure they expire.
+  // Note: It is the verifier's responsibility to check that this recent block hash
+  // was actually used in the proof for the time-limitation to be effective.
   export const RECENT_BLOCK_DURATION = 10n;
 
 The ZK statements use Concordium's `AtomicStatementV2 <https://docs.concordium.com/concordium-node-sdk-js/types/web3_id.AtomicStatementV2.html>`_ type to define:
@@ -71,6 +73,10 @@ The ZK statements use Concordium's `AtomicStatementV2 <https://docs.concordium.c
   * We verify the ``countryOfResidence`` is not in the set ["US", "KP", "RU"].
   * This proves the user is not from the United States, North Korea, or Russia.
   * The actual country of residence remains private.
+
+.. Note::
+
+  Country codes to use for residence and nationality proofs are the `ISO-3166-1 alpha-2 <https://www.iso.org/iso-3166-country-codes.html>`_ codes.
 
 These statements demonstrate Concordium's flexible identity verification system, allowing applications to get exactly the information they need while preserving user privacy.
 
@@ -111,8 +117,8 @@ For security, ZK proofs need to be time-limited. We achieve this by including a 
 
 This function retrieves a recent block to use in challenge generation:
 
-* **Security purpose**: Including a recent block hash in the challenge creates time-limited ZK proofs. After the chain progresses further, the proofs will no longer be valid, preventing `replay attacks <https://en.wikipedia.org/wiki/Replay_attack>`_.
-
+* **Security purpose**: Including a recent block hash in the challenge creates time-limited ZK proofs. After the chain progresses further, the proofs will no longer be valid, preventing `replay attacks <https://csrc.nist.gov/glossary/term/replay_attack>`_.
+* **Important**: It is the verifier's responsibility to validate that the block hash included in the proof is indeed recent. The proofs themselves don't automatically become valid or invalid - they remain cryptographically correct. The verifier must implement proper checks to enforce time limitation and reject proofs that use outdated block hashes.
 * **Blockchain interaction**: The function uses `ConcordiumGRPCClient <https://docs.concordium.com/concordium-node-sdk-js/classes/grpc.ConcordiumGRPCClient.html>`_ to communicate with a Concordium node:
 
   1. First, it retrieves the current best block height using ``getConsensusInfo()``
@@ -200,7 +206,7 @@ The first part of ``handleVerify``:
 2. Checks that we have a connected wallet provider and account
 3. Gets a recent block from the blockchain to use in the challenge generation
 
-The recent block is important for security - it ensures the proof will expire after the chain progresses further, preventing `replay attacks <https://en.wikipedia.org/wiki/Replay_attack>`_.
+The recent block is important for security - it ensures the proof will expire after the chain progresses further, preventing `replay attacks <https://csrc.nist.gov/glossary/term/replay_attack>`_.
 
 Now let's continue with challenge generation:
 
@@ -257,6 +263,12 @@ Now let's request the ZK proof from the wallet:
   // 6. Mark proof as valid (in production, verify on backend)
   setValidZKProof(true);
 
+.. warning::
+
+  In a production environment, this proof **MUST** be verified on a secure backend!
+  This frontend-only implementation is for **demonstration purposes only**.
+  Proper implementation would send the presentation to a backend `verifier <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_.
+
 This section handles the proof request and processing:
 
 1. It calls ``requestVerifiablePresentation()`` on the wallet provider
@@ -285,7 +297,8 @@ The most powerful aspect of this implementation is that the wallet handles all t
 
 This makes building privacy-preserving applications on Concordium accessible to developers without requiring deep cryptographic expertise.
 
-In a production environment, you would send the verifiable presentation to a backend service that would cryptographically verify the proof before allowing the user to proceed. For this demo, we're simplifying by assuming any returned proof is valid.
+In a production environment, you would send the verifiable presentation to a backend service that would cryptographically verify the proof before allowing the user to proceed.
+For this demo, we're simplifying by assuming any returned proof is valid.
 
 Conclusion
 ----------

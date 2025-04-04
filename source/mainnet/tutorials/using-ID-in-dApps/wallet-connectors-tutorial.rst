@@ -39,6 +39,12 @@ At this point, open your preferred code editor in the zk-proof-demo directory to
 
 Running the application and interacting with it will give you a better understanding of the concepts we'll be discussing.
 Feel free to explore the codebase, particularly focusing on the wallet connection components and ZK proof implementation.
+
+Before running the application, ensure you have:
+
+* A :ref:`Concordium wallet <setup-wallets-lp>` (either the Browser Wallet extension or CryptoX)
+* At least one :ref:`identity <reference-id-accounts>` and :ref:`account <managing_accounts>` created in your wallet
+
 If you'd like to build this project from scratch or follow along step-by-step, you'll need to set up your development environment:
 
 1. Install NodeJS and yarn (or npm)
@@ -66,7 +72,7 @@ First, let's create an abstract class that serves as the foundation for differen
     // Abstract methods will be defined below
   }
 
-The ``EventEmitter`` extension enables our class to use a `publish-subscribe pattern <https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern>`_ for wallet events.
+The ``EventEmitter`` extension enables our class to use a **publish-subscribe pattern** for wallet events.
 This allows React components to listen for account changes without tight coupling. We also define a ``connectedAccount`` property to track the currently connected account address.
 
 Next, let's add the connection-related methods:
@@ -111,26 +117,6 @@ This method is the core of our ZK functionality:
 * It takes :term:`Statement` parameters that define what should be proved about the user's identity
 * It returns a `VerifiablePresentation <https://docs.concordium.com/concordium-node-sdk-js/classes/types.VerifiablePresentation.html>`_ containing the generated proof
 * A **Witness** (not explicitly used in our interface) refers to the private information known only to the prover that allows them to generate a valid proof.
-
-Finally, let's add message signing capability:
-
-.. code-block:: javascript
-
-   // Sign a message with the wallet
-   abstract signMessage(
-     accountAddress: string,
-     message: string | string[] | object,
-     recentBlockHash: BlockHash.Type,
-     schema: string,
-   ): Promise<AccountTransactionSignature>;
-
-The ``signMessage`` method allows for signing arbitrary messages:
-
-* ``accountAddress``: The account that will sign the message
-* ``message``: The content to be signed (can be string, array, or object)
-* ``recentBlockHash``: A recent block hash for time-limited validity
-* ``schema``: Defines the structure of the message for proper serialization
-* Returns an `AccountTransactionSignature <https://docs.concordium.com/concordium-node-sdk-js/types/types.AccountTransactionSignature.html>`_ containing the cryptographic signature
 
 By using this abstract class as a foundation, we can implement concrete wallet providers for different environments (browser extension, mobile app)
 while maintaining a consistent interface throughout our application. This approach makes it easy to add support for new wallet types in the future without changing the rest of the codebase.
@@ -223,58 +209,12 @@ For requesting zero-knowledge proofs, we implement a simple pass-through method:
     return this.provider.requestVerifiablePresentation(challenge, statement);
   }
 
-The `requestVerifiablePresentation() <https://www.npmjs.com/package/@concordium/browser-wallet-api-helpers#request-verifiable-presentation-for-web3id-statements>_` method directly calls the browser wallet's implementation:
+The `requestVerifiablePresentation() <https://www.npmjs.com/package/@concordium/browser-wallet-api-helpers#request-verifiable-presentation-for-web3id-statements>`_ method directly calls the browser wallet's implementation:
 
 * It passes through the challenge and statements without modification
 * The wallet extension shows a UI to the user for approving the ZK proof generation
 * The wallet handles all the complex cryptography required
 * The method returns the verifiable presentation containing the proof
-
-Finally, let's implement the message signing capability:
-
-.. code-block:: javascript
-
-  // Sign a message according to Concordium's standards
-  async signMessage(
-    accountAddress: string,
-    message: string | string[] | object,
-    recentBlockHash: BlockHash.Type,
-    schema: string,
-  ): Promise<AccountTransactionSignature> {
-    // Format message with block hash (for expiration) and context (for domain separation)
-    const payload = Buffer.from(
-      serializeTypeValue(
-        {
-          block_hash: BlockHash.toHexString(recentBlockHash),
-          context_string: CONTEXT_STRING,
-          message,
-        },
-        toBuffer(schema, "base64"),
-      ).buffer,
-    ).toString("hex");
-
-    // Prepare message with schema for wallet
-    const messageToSign = {
-      data: payload,
-      schema,
-    };
-
-    // Request signature from the wallet
-    return this.provider.signMessage(accountAddress, messageToSign);
-  }
-
-The ``signMessage()`` method formats messages according to Concordium's standards before signing:
-
-* It creates a structured payload containing:
-
-  * The message content
-  * A recent block hash (for time-limited validity)
-  * A context string (for domain separation between applications)
-
-* It serializes this payload according to the provided schema using ``serializeTypeValue()``
-* It converts the serialized data to a hex string format that the wallet expects
-* It sends the prepared message to the wallet for signing
-* The wallet presents a signing request to the user and returns the cryptographic signature
 
 This implementation demonstrates how the Concordium Browser Wallet extension simplifies dApp development by handling the complex cryptographic operations
 while exposing a straightforward API for wallet interactions, account management, and ZK proof generation.
@@ -282,7 +222,7 @@ while exposing a straightforward API for wallet interactions, account management
 Mobile wallet implementation
 ----------------------------
 
-For mobile wallets, we implement the connection using WalletConnect. Let's start with the basic class structure and constructor:
+For mobile wallets, we implement the connection using `WalletConnect <https://specs.walletconnect.com/2.0/>`_. Let's start with the basic class structure and constructor:
 
 .. code-block:: javascript
 
@@ -347,9 +287,9 @@ Now let's implement the connection method:
     // Request connection with required methods and chains
     const { uri, approval } = await this.client.connect({
       requiredNamespaces: {
-        [WALLET_CONNECT_SESSION_NAMESPACE]: {
-          methods: [METHOD_SIGN, METHOD_GENERATE_ZK_PROOF],
-          chains: [CHAIN_ID],
+        ["ccd"]: { // Concordium's identifier in WalletConnect
+          methods: ["sign_message", "request_verifiable_presentation"], // Methods supported by Concordium wallets
+          chains: ["ccd:testnet"], // For testnet use "ccd:testnet", for mainnet use "ccd:mainnet"
           events: ["accounts_changed"],
         },
       },
@@ -377,8 +317,8 @@ The ``connect()`` method establishes a connection with a mobile wallet:
 1. It initiates a connection request with specific Concordium requirements:
 
    * Namespace: ``ccd`` (Concordium's identifier in WalletConnect)
-   * Methods: Includes ``METHOD_GENERATE_ZK_PROOF`` for requesting ZK proofs
-   * Chains: The appropriate Concordium network (testnet/mainnet)
+   * Methods: Includes ``request_verifiable_presentation`` for requesting ZK proofs
+   * Chains: The appropriate Concordium network (`"ccd:testnet"` for **testnet** or `"ccd:mainnet"` for **mainnet**)
    * Events: To listen for account changes
 
 2. For new connections, it:
@@ -418,8 +358,34 @@ First, we check if we have an active connection by verifying the existence of a 
 
 The parameters for the ZK proof request include:
 
-* ``challenge``: A unique challenge string to prevent `replay attacks <https://en.wikipedia.org/wiki/Replay_attack>`_
+* ``challenge``: A unique challenge string to prevent `replay attacks <https://csrc.nist.gov/glossary/term/replay_attack>`_
 * `CredentialStatements <https://docs.concordium.com/concordium-node-sdk-js/types/web3_id.CredentialStatement.html>`_: The statements defining what should be proven
+
+The ZK proof verification process involves two parties:
+
+* **Prover**: The wallet user who wants to prove something about their identity (in our case, the user with the Concordium account)
+* **Verifier**: The application or service that needs to validate the proof (our dApp or its backend)
+
+It's important to understand that the **challenge** must be generated by the **verifier** (not the prover) to prevent replay attacks.
+Here's how the process works:
+
+1. The **verifier** generates a unique challenge (in our implementation, we use a recent block hash combined with a context string)
+2. The **prover** (wallet) creates a proof using this challenge
+3. The **verifier** checks that:
+
+  * The proof is cryptographically valid
+  * The proof was created using the specific challenge it provided
+  * The **challenge** has not been used in a previous proof
+
+Note that protection against replay attacks isn't automatic - the **verifier** must implement proper challenge validation, typically by:
+
+  * Checking that the **challenge** includes a recent block hash (time-limiting the proof)
+  * Tracking which **challenges** have been used in a database
+  * Rejecting proofs with previously-used challenges
+
+As an example, in the `compliant-reward-distribution dApp <https://github.com/Concordium/concordium-dapp-examples/blob/main/compliant-reward-distribution/indexer-and-server/src/bin/server.rs#L462>`_,
+the verifier checks that the proof hasn't expired by verifying that the block height is recent enough, but it doesn't track which challenges have been used before.
+For complete security in a production environment, a backend would need to maintain a record of used challenges to fully protect against replay attacks.
 
 We serialize these parameters using ``JSONBigInt`` instead of standard JSON. This is important because ZK proofs often involve large numbers that standard JSON can't handle correctly.
 
@@ -442,10 +408,10 @@ Now, let's implement the actual request to the mobile wallet:
     }>({
       topic: this.topic,
       request: {
-        method: METHOD_GENERATE_ZK_PROOF,
+        method: "request_verifiable_presentation",
         params: { paramsJson: serializedParams },
       },
-      chainId: CHAIN_ID,
+      chainId: "ccd:testnet", // Use "ccd:testnet" for testnet or "ccd:mainnet" for mainnet
     });
     // Parse the result into a VerifiablePresentation
     return VerifiablePresentation.fromString(
@@ -458,7 +424,7 @@ The request is sent to the mobile wallet using the WalletConnect protocol. We sp
 * ``topic``: The current session identifier
 * ``method``: The Concordium-specific ``request_verifiable_presentation`` method, which is stored in the ``METHOD_GENERATE_ZK_PROOF`` constant
 * ``params``: The serialized parameters wrapped in a ``paramsJson`` field
-* ``chainId``: The Concordium chain identifier (``testnet`` or ``mainnet``)
+* ``chainId``: The Concordium chain identifier (**testnet** or **mainnet**)
 
 When the wallet responds with the generated proof, we parse the JSON string into a structured ``VerifiablePresentation`` object using the ``fromString`` method provided by `Concordium's SDK <https://docs.concordium.com/concordium-node-sdk-js/index.html>`_.
 
@@ -527,7 +493,7 @@ Now, let's implement the helper for extracting the account address:
   // Helper to extract Concordium account from WalletConnect namespaces
   private getAccount(ns: SessionTypes.Namespaces): string | undefined {
     const [, , account] =
-      ns[WALLET_CONNECT_SESSION_NAMESPACE].accounts[0].split(":");
+      ns["ccd"].accounts[0].split(":"); // "ccd" is the Concordium namespace in WalletConnect
     return account;
   }
 
@@ -545,18 +511,6 @@ Connecting to a wallet in React
 -------------------------------
 
 Now let's look at how to use these wallet providers in a React component. Let's start with the basic component structure and hooks:
-
-.. code-block:: javascript
-
-  // From components/connect-wallet/ConnectWallet.tsx, imports ommited for brevity
-
-  const ConnectWallet = () => {
-    // Access wallet state from context
-    const { provider, setProvider, setConnectedAccount } = useWallet();
-    const navigate = useNavigate();
-
-    // Rest of component will follow
-  };
 
 First, we import the necessary dependencies and set up our component. The key elements here are:
 
