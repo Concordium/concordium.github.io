@@ -9,7 +9,7 @@ You can add, inspect, and send tokens in |cryptox| and |bw|.
 
 .. dropdown:: |cryptox|
 
-    To access tokens and token transactions, tap on an account then tap **Tokens**.
+    To access this functionality, tap **Manage token list** at the bottom of the token list.
 
     .. dropdown:: Add tokens
 

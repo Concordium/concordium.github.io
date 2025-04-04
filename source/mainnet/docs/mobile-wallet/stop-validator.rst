@@ -21,25 +21,15 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
 .. dropdown:: |cryptox|
 
-    #. In the dropdown list, select the account for which you want to stop validation and tap **Earn**.
+    #. Tap the **Earn** button on the main screen.
 
-    #. On the Validator status screen, tap **Change validating status**.
+    #. On the validation screen, tap **Stop**.
 
-       .. image:: ../images/cryptoX/cryptox-change-validating-status.png
-            :width: 50%
-            :alt: screen showing validator status
+    #. You will see a message explaining about the implications of stopping validation. Tap **Continue** to procced.
 
-    #. You now see the options for changing the validating status. Tap **Stop validating**.
+    #. On the overview screen, review the information. Swipe right on the **Stop validation** slider to submit the validation update.
 
-       .. image:: ../images/cryptoX/cryptox-change-validating-status-options.png
-            :width: 50%
-            :alt: screen showing options for changing validating status
-
-    #. After the screens explaining validator removal, tap **Continue**.
-
-    #. Review the information. When you are satisfied, tap **Submit validator transaction**.
-
-    #. The |cryptox| shows that the transaction has been submitted to the chain. Tap **Finish**.
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your validation update has been successfully submitted to the chain. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
 
 .. dropdown:: |bw|

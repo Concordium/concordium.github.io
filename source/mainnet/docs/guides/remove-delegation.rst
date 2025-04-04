@@ -20,20 +20,15 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
 .. dropdown:: |cryptox|
 
-      #. In the dropdown list, select the account from which you want to remove delegation and tap **Earn**.
+      #. Tap the **Earn** button on the main screen.
 
-      #. On the delegation status screen, tap **Stop delegation**.
+      #. On the earning status screen, tap **Stop**.
 
-         .. image:: ../images/cryptoX/cryptoX-delegation-status.png
-           :width: 50%
-           :alt: screen showing current delegation status with options to update or stop
+      #. You will see a screen explaining the implications of stopping your delegation, tap **Continue** to proceed.
 
+      #. On the overview screen, review the information. Swipe right on the **Stop staking** slider to submit the delegation stop.
 
-      #. After the screen explaining the implications of stopping your delegation, tap **Continue** to proceed.
-
-      #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
-
-      #. Once the transaction is submitted, you see a confirmation screen. Tap **Finish**.
+      #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation update has been successfully submitted to the chain. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
 
 .. dropdown:: Desktop Wallet
