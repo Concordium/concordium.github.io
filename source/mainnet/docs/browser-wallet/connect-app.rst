@@ -16,13 +16,13 @@ Then, the dApp can initiate a request that you can confirm from within the walle
    #. Tap the scan QR code button in the upper right of the main screen.
    #. When prompted to connect, tap **Allow** to continue using your account with the dApp.
 
-      .. image:: ../images/cryptoX/cryptoX-connect-dapps1a.png
+      .. image:: ../images/cryptoX/cryptox-connect-dapps1a.png
             :alt: screen with text boxes for each account
             :width: 50%
 
    #. After making your purchase in a dApp, confirm the purchase in the |cryptox|. On the sign transaction screen, review the transaction details. Tap **Sign** if you approve the transaction.
 
-      .. image:: ../images/cryptoX/cryptoX-connect-dapps2a.png
+      .. image:: ../images/cryptoX/cryptox-connect-dapps2a.png
          :alt: screen with information about session and options to accept or decline
          :width: 50%
 
