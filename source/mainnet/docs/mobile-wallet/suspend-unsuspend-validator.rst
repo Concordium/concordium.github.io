@@ -20,7 +20,7 @@ Self-suspension
 ---------------
 
 You can manually suspend your validator when needed, such as during node maintenance, and reactivate it when your node is operational again. This gives you control over your validator's status without risking an automatic suspension due to inactivity.
-When your validator is suspended, a red banner will appear at the bottom of your wallet interface stating **Your validation has been suspended**.
+When your validator is suspended, a red banner will appear on your wallet stating that **Your validation has been suspended**.
 
 .. image:: ../images/browser-wallet/new/suspended_banner.png
            :width: 50%
@@ -33,7 +33,7 @@ Automatic suspension
 Automatic suspension occurs when a validator remains inactive for an extended period, missing multiple opportunities to produce blocks. The inactivity threshold varies based on stake size; larger validators may face suspension within hours, while smaller validators might take several days to reach the threshold.
 
 When a validator becomes inactive, it first enters a *primed for suspension* state.
-During this period, a red warning banner appears at the bottom of your wallet interface stating **Your validation is primed for suspension**.
+During this period, a red warning banner appears on your wallet stating that **Your validation is primed for suspension**.
 
 .. image:: ../images/browser-wallet/new/primed_for_suspension_banner.png
            :width: 50%
@@ -63,7 +63,7 @@ Self-suspend a validator
 
     After successfully suspending your validator, you'll notice several clear indicators throughout the wallet interface:
 
-    On your account overview screen, a prominent red banner appears at the bottom stating *Your validation has been suspended*. This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
+    On your main screen, a prominent red banner appears at the top stating *Your validation has been suspended*. This banner serves as both a notification and a shortcut. Additionally, a red dot appears on the **Earn** button, providing a visual indicator that your validator requires attention.
 
     .. image:: ../images/cryptoX/cryptox-validator-suspended-banner-new.png
             :width: 50%
