@@ -28,7 +28,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 Updating delegation from a suspended validator
 ----------------------------------------------
-If a validator you've delegated to becomes suspended, you'll see a warning banner in your wallet interface indicating *Your validator has been suspended*. When a validator is suspended, both the validator and its delegators stop earning rewards.
+If a validator you've delegated to becomes suspended, you'll see a warning banner on your wallet indicating that *Your validator has been suspended*. When a validator is suspended, both the validator and its delegators stop earning rewards.
 To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.
 
 .. image:: ../images/browser-wallet/new/validator_suspended_banner.png
@@ -54,7 +54,7 @@ Update delegation
             :width: 50%
             :alt: screen with options to choose delegation type
 
-    #. On the overview screen, review the information. Swipe right on the **Update delegation** slider to submit the validation update.
+    #. On the overview screen, review the information. Swipe right on the **Update delegation** slider to submit the delegation update.
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation update has been successfully submitted to the chain. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
