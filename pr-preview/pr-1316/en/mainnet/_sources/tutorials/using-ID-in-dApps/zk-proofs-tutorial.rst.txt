@@ -1,7 +1,7 @@
 .. _zk-proofs-tutorial:
 
 ===================
-ZK proofs structure
+ZK proof generation
 ===================
 
 Now we'll explore how to generate zero-knowledge proofs using the ID Layer, focusing on how ZK statements are structured.
@@ -17,7 +17,7 @@ First, let's look at the ZK statements defined in the ``constants`` file:
 
   import { AtomicStatementV2 } from "@concordium/web-sdk";
 
-  // Context string for signing messages and generating ZK proofs
+  // Context string for and generating ZK proofs
   export const CONTEXT_STRING = "CONCORDIUM_COMPLIANT_REWARD_DISTRIBUTION_DAPP";
 
   // ZK statements for the verifiable presentation
@@ -284,7 +284,7 @@ This section handles the proof request and processing:
 3. It marks the proof as valid and exits the loading state
 
 In a production environment, you would send the proof to a backend for cryptographic verification. In this demo, we're assuming any returned proof is valid for simplicity.
-You can explore this `github repository <https://github.com/Concordium/concordium-web3id>`_ which contains a verifier.
+You can explore this `github repository <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_ which contains a verifier.
 
 The component's render function handles different UI states (loading, verification success, and error states) and displays the results of the ZK proof to the user.
 The complete implementation of this component can be found in the example repository, in ``frontend/src/components/proof/Proof.tsx``

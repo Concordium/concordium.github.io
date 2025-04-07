@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/index.bd487b0e-6bec-49c4-8316-cd3e8969ea9a.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/index.f7740a5c-b964-4d31-8651-d16f4ea45141.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/index.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -510,7 +510,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Using ID in dApps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="wallet-connectors-tutorial.html">Implementing Wallet Connectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zk-proofs-tutorial.html">ZK proofs structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zk-proofs-tutorial.html">ZK proof generation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -632,7 +632,7 @@ While we discuss verification concepts and security considerations throughout, t
 <li><p>The cryptographic proofs are mathematically valid</p></li>
 <li><p>The challenge used in the proof is recent (using block hash verification)</p></li>
 <li><p>The challenge has not been used in a previous proof (preventing replay attacks)</p></li>
-<li><p>All other application-specific requirements are me</p></li>
+<li><p>All other application-specific requirements are met</p></li>
 </ol>
 <p>For backend implementation details, we reference the <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/tree/main/compliant-reward-distribution">compliant-reward-distribution dApp</a>
 and the <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier">web3id-verifier</a> which demonstrate a more complete verification flow.

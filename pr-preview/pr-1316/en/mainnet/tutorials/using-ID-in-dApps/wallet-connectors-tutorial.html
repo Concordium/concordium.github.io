@@ -54,13 +54,13 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.3a090b8f-aa50-431a-a457-fe786473e771.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.f2c96564-39c8-499c-a238-a4febf73a216.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/wallet-connectors-tutorial';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ZK proofs structure" href="zk-proofs-tutorial.html" />
+    <link rel="next" title="ZK proof generation" href="zk-proofs-tutorial.html" />
     <link rel="prev" title="Building a Zero-Knowledge Proof dApp on Concordium" href="index.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -510,7 +510,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Using ID in dApps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Implementing Wallet Connectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zk-proofs-tutorial.html">ZK proofs structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zk-proofs-tutorial.html">ZK proof generation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -601,7 +601,7 @@
 <p>For this tutorial, we’ll be focusing on two key Concordium features:</p>
 <ol class="arabic simple">
 <li><p>Wallet connection (Browser and Mobile)</p></li>
-<li><p>Zero-knowledge proof verification</p></li>
+<li><p>Zero-knowledge proof generation</p></li>
 </ol>
 <p>Connecting to wallets allows users to interact with your dApp using their Concordium accounts, while zero-knowledge proofs enable privacy-preserving identity verification - a fundamental feature of compliance-focused applications on Concordium.</p>
 <div class="admonition attention">
@@ -695,7 +695,6 @@ This allows React components to listen for account changes without tight couplin
 <li><p>It accepts a <a class="reference internal" href="../../docs/resources/glossary.html#term-Challenge"><span class="xref std std-term">Challenge</span></a> (a hex-encoded string) that ensures the proof is generated for this specific request</p></li>
 <li><p>It takes <a class="reference internal" href="../../docs/resources/glossary.html#term-Statement"><span class="xref std std-term">Statement</span></a> parameters that define what should be proved about the user’s identity</p></li>
 <li><p>It returns a <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/classes/types.VerifiablePresentation.html">VerifiablePresentation</a> containing the generated proof</p></li>
-<li><p>A <strong>Witness</strong> (not explicitly used in our interface) refers to the private information known only to the prover that allows them to generate a valid proof.</p></li>
 </ul>
 <p>By using this abstract class as a foundation, we can implement concrete wallet providers for different environments (browser extension, mobile app)
 while maintaining a consistent interface throughout our application. This approach makes it easy to add support for new wallet types in the future without changing the rest of the codebase.</p>
@@ -847,7 +846,7 @@ while exposing a straightforward API for wallet interactions, account management
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uri</span><span class="p">,</span><span class="w"> </span><span class="nx">approval</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">requiredNamespaces</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="p">[</span><span class="s2">&quot;ccd&quot;</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Concordium&#39;s identifier in WalletConnect</span>
-<span class="w">        </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sign_message&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;request_verifiable_presentation&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Methods supported by Concordium wallets</span>
+<span class="w">        </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;request_verifiable_presentation&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Methods supported by Concordium wallets</span>
 <span class="w">        </span><span class="nx">chains</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ccd:testnet&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// For testnet use &quot;ccd:testnet&quot;, for mainnet use &quot;ccd:mainnet&quot;</span>
 <span class="w">        </span><span class="nx">events</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;accounts_changed&quot;</span><span class="p">],</span>
 <span class="w">      </span><span class="p">},</span>
@@ -982,7 +981,7 @@ For complete security in a production environment, a backend would need to maint
 <p>The request is sent to the mobile wallet using the WalletConnect protocol. We specify:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The current session identifier</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The Concordium-specific <code class="docutils literal notranslate"><span class="pre">request_verifiable_presentation</span></code> method, which is stored in the <code class="docutils literal notranslate"><span class="pre">METHOD_GENERATE_ZK_PROOF</span></code> constant</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The Concordium-specific <code class="docutils literal notranslate"><span class="pre">request_verifiable_presentation</span></code> method.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">params</span></code>: The serialized parameters wrapped in a <code class="docutils literal notranslate"><span class="pre">paramsJson</span></code> field</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">chainId</span></code>: The Concordium chain identifier (<strong>testnet</strong> or <strong>mainnet</strong>)</p></li>
 </ul>
@@ -1249,7 +1248,7 @@ For example, the user might deny the proof request in their mobile wallet, which
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ZK proofs structure</p>
+        <p class="prev-next-title">ZK proof generation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

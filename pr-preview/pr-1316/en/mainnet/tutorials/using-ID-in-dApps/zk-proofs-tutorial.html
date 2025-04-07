@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ZK proofs structure &#8212; Concordium  documentation</title>
+    <title>ZK proof generation &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/zk-proofs-tutorial.b4886877-6053-490d-b5b9-e0b449df3838.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/zk-proofs-tutorial.33d5fb62-38be-4911-a1a0-975f0833206b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/zk-proofs-tutorial';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/zk-proofs-tutorial.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -510,7 +510,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Using ID in dApps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="wallet-connectors-tutorial.html">Implementing Wallet Connectors</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">ZK proofs structure</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ZK proof generation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -596,8 +596,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="zk-proofs-structure">
-<span id="zk-proofs-tutorial"></span><h1>ZK proofs structure<a class="headerlink" href="#zk-proofs-structure" title="Link to this heading">#</a></h1>
+  <section id="zk-proof-generation">
+<span id="zk-proofs-tutorial"></span><h1>ZK proof generation<a class="headerlink" href="#zk-proof-generation" title="Link to this heading">#</a></h1>
 <p>Now we’ll explore how to generate zero-knowledge proofs using the ID Layer, focusing on how ZK statements are structured.</p>
 <section id="defining-zk-statements">
 <h2>Defining ZK statements<a class="headerlink" href="#defining-zk-statements" title="Link to this heading">#</a></h2>
@@ -606,7 +606,7 @@
 
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AtomicStatementV2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@concordium/web-sdk&quot;</span><span class="p">;</span>
 
-<span class="c1">// Context string for signing messages and generating ZK proofs</span>
+<span class="c1">// Context string for and generating ZK proofs</span>
 <span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">CONTEXT_STRING</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CONCORDIUM_COMPLIANT_REWARD_DISTRIBUTION_DAPP&quot;</span><span class="p">;</span>
 
 <span class="c1">// ZK statements for the verifiable presentation</span>
@@ -881,7 +881,7 @@ Proper implementation would send the presentation to a backend <a class="referen
 <li><p>It marks the proof as valid and exits the loading state</p></li>
 </ol>
 <p>In a production environment, you would send the proof to a backend for cryptographic verification. In this demo, we’re assuming any returned proof is valid for simplicity.
-You can explore this <a class="reference external" href="https://github.com/Concordium/concordium-web3id">github repository</a> which contains a verifier.</p>
+You can explore this <a class="reference external" href="https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier">github repository</a> which contains a verifier.</p>
 <p>The component’s render function handles different UI states (loading, verification success, and error states) and displays the results of the ZK proof to the user.
 The complete implementation of this component can be found in the example repository, in <code class="docutils literal notranslate"><span class="pre">frontend/src/components/proof/Proof.tsx</span></code></p>
 <p>The most powerful aspect of this implementation is that the wallet handles all the complex cryptography. The dApp only needs to:</p>
