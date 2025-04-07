@@ -422,7 +422,7 @@ Now, let's implement the actual request to the mobile wallet:
 The request is sent to the mobile wallet using the WalletConnect protocol. We specify:
 
 * ``topic``: The current session identifier
-* ``method``: The Concordium-specific ``request_verifiable_presentation`` method, which is stored in the ``METHOD_GENERATE_ZK_PROOF`` constant
+* ``method``: The Concordium-specific ``request_verifiable_presentation`` method.
 * ``params``: The serialized parameters wrapped in a ``paramsJson`` field
 * ``chainId``: The Concordium chain identifier (**testnet** or **mainnet**)
 
