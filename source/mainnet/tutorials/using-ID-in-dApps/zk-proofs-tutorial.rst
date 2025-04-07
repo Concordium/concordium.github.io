@@ -1,7 +1,7 @@
 .. _zk-proofs-tutorial:
 
 ===================
-ZK proofs structure
+ZK proof generation
 ===================
 
 Now we'll explore how to generate zero-knowledge proofs using the ID Layer, focusing on how ZK statements are structured.
