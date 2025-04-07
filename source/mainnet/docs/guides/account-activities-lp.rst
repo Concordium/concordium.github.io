@@ -17,7 +17,7 @@ If you need to know how to send CCDs, connect dApps, manage fungible and non-fun
     tokens
     shield-ccd-wallets
     scheduled-release
-    export-key
+    export-account-private-key
     export-transaction-logs
     ../mobile-wallet/add-baker-mw
     ../mobile-wallet/update-baker-mw
