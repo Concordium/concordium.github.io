@@ -7,7 +7,7 @@ Implementing Wallet Connectors
 For this tutorial, we'll be focusing on two key Concordium features:
 
 #. Wallet connection (Browser and Mobile)
-#. Zero-knowledge proof verification
+#. Zero-knowledge proof generation
 
 Connecting to wallets allows users to interact with your dApp using their Concordium accounts, while zero-knowledge proofs enable privacy-preserving identity verification - a fundamental feature of compliance-focused applications on Concordium.
 
