@@ -284,7 +284,7 @@ This section handles the proof request and processing:
 3. It marks the proof as valid and exits the loading state
 
 In a production environment, you would send the proof to a backend for cryptographic verification. In this demo, we're assuming any returned proof is valid for simplicity.
-You can explore this `github repository <https://github.com/Concordium/concordium-web3id>`_ which contains a verifier.
+You can explore this `github repository <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_ which contains a verifier.
 
 The component's render function handles different UI states (loading, verification success, and error states) and displays the results of the ZK proof to the user.
 The complete implementation of this component can be found in the example repository, in ``frontend/src/components/proof/Proof.tsx``
