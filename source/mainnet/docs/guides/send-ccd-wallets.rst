@@ -74,7 +74,7 @@ This topic describes how you can send CCD from an account when only one particip
 
     5. There's a message saying **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on LEDGER device.
 
-    6. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** and select **Submit**.
+    6. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying **Ledger device is ready** and select **Submit**.
 
     7. Review the transaction on the LEDGER device and verify that the information matches the **Transaction details** in the Desktop Wallet. Navigate to the right and verify the sender address is correct. Continue navigating to the right and verify that the recipient address is correct.
 
@@ -82,23 +82,21 @@ This topic describes how you can send CCD from an account when only one particip
 
 .. dropdown:: |bw|
 
-    #. Go to Accounts.
+    #. Select your account from the dropdown menu and click **Send**.
 
-    #. Click |send-bw|.
+    #. Select CCD as token and enter the amount to transfer. Note that you can click **Send max** to transfer all of your CCD minus the transaction fee.
+       Enter the recipient address and click **Continue**.
 
-    #. Enter the amount of CCD to transfer. Or click **Max** to transfer all of your CCD minus the transaction fee.
+       .. image:: ../images/browser-wallet/new/send_funds1.png
 
-        .. image:: ../images/browser-wallet/send-dialog.png
+    #. On the confirmation screen, review the transaction and click **Send funds** to submit the transaction.
+       If you need to correct the transfer, click on the  arrow to go back to the previous screen.
 
-    #. Enter the recipient address. Click **Continue**.
+       .. image:: ../images/browser-wallet/new/send_funds2.png
 
-    #. On the confirmation screen, click **Send** to submit the transaction to the blockchain. Click **Back** if you need to correct the transfer.
+    #. The success screen shows the sent amount. You can now view transaction details or return to the account.
 
-        .. image:: ../images/browser-wallet/send-confirm.png
-
-    #. Once you click Send, review the transaction and click **Finish**.
-
-        .. image:: ../images/browser-wallet/send-finish.png
+       .. image:: ../images/browser-wallet/new/send_funds3.png
 
 Your transaction is now submitted to the chain. It might take a little while for it to finalize on the chain, and you can follow the status of the transaction in the log.
 

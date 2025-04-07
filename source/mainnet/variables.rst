@@ -1,10 +1,10 @@
 .. Desktop wallet verification variables
-.. |cdw-appimage| replace:: concordium-desktop-wallet-1.7.4.AppImage
-.. |cdw-appimage-checksum| replace:: 87055b6f6dc19c4d22460e87697801021606e4248bed1908f9bc808776cd0bec
-.. |cdw-deb| replace:: concordium-desktop-wallet-1.7.4.deb
-.. |cdw-deb-checksum| replace:: 2860af2631e03643a101380ba02808ae88f64e1dc82ab450dee43a0440ccff36
-.. |cdw-rpm| replace:: concordium-desktop-wallet-1.7.4.rpm
-.. |cdw-rpm-checksum| replace:: bf50e3777ddaefe865b3765401e23da7ab39530a109c16b75bc3871127eae83c
+.. |cdw-appimage| replace:: concordium-desktop-wallet-1.8.0.AppImage
+.. |cdw-appimage-checksum| replace:: b6f438b8ac1b09a63ae464b8aa943a74cbc3cea5a2be3e55261f5c8e1a49bc58
+.. |cdw-deb| replace:: concordium-desktop-wallet-1.8.0.deb
+.. |cdw-deb-checksum| replace:: 153270cc998d2fc3bdf9d30571855a29081c7c534bb439cf2c00654d3526120f
+.. |cdw-rpm| replace:: concordium-desktop-wallet-1.8.0.rpm
+.. |cdw-rpm-checksum| replace:: 5553a882a76402da267ce78cf68145580d77d5cfc1192b54a312d11e0626fed4
 .. |ledger-app-public-key| replace:: 04af7e6a68fa79b3f7a035a5cd75f916ee67c4a71fc990fe9ba2b2e1fb54dd7cdc950a73b5a4adf52ea95df16f5c17602090f639f0d35a760e34afae7cbd60792b
 
 .. Mobile Wallet product names
@@ -24,12 +24,12 @@
 .. |cargo-linux-checksum| replace:: ea3f603e2a921181cdf323604066444378a955c55e82b206a7d169bf636fa75d
 
 .. Node version variables
-.. |mainnet-node-version| replace:: 7.0.5
+.. |mainnet-node-version| replace:: 8.0.3
 .. |testnet-node-version| replace:: 8.0.3
 
 .. Node debian package verification variables
-.. |node-deb-package| replace:: concordium-mainnet-node_7.0.5-0_amd64.deb
-.. |node-deb-package-checksum| replace:: 42bb05409561bc30917d87a3479d3b76d9a3f17fa46bb2aee7475e7f7fa1df5d
+.. |node-deb-package| replace:: concordium-mainnet-node_8.0.3-1_amd64.deb
+.. |node-deb-package-checksum| replace:: 83216d9985971f3dec3d3e99da3822e01e022558887e2461c0cb315d48bd0460
 
 .. Mainnet genesis block verification variables
 .. |mainnet-genesis-block| replace:: genesis.dat

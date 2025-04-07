@@ -1,8 +1,8 @@
 .. _setup-env:
 
-=================================
-Setup the development environment
-=================================
+==================================
+Set up the development environment
+==================================
 
 Before starting the smart contract tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.
 
@@ -28,12 +28,13 @@ Finally, when Rust and Cargo are successfully installed in your system, you shou
 
 .. Note::
 
-   Currently, Rust toolchain versions up to ``1.81`` are supported. To set version ``1.81`` as the default, run these commands:
+   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
 
    .. code-block:: console
 
-      $ rustup toolchain install 1.81
-      $ rustup default 1.81
+      $ cargo install cargo-concordium
+      $ cargo concordium --version
+      $ cargo-concordium 4.1.1
 
    The minimum supported rust version is currently version ``1.73``
 
@@ -201,8 +202,8 @@ If you wish to run your own node, see :ref:`Run a node on Concordium<node-requir
 
 .. _setup-wallet:
 
-Setup a wallet
-==============
+Set up a wallet
+===============
 
 Now you need a Concordium wallet. Use the Concordium Wallet for Web. The Concordium Wallet for Web uses a 24 word secret recovery phrase to secure your wallet. Make sure to protect your 24 word secret recovery phrase and store it in a secure place. Anyone who knows the secret recovery phrase can access your wallet.
 
@@ -211,24 +212,44 @@ Use `this link <https://chrome.google.com/webstore/detail/concordium-wallet/mnnk
 .. image:: images/bw-idp-selection.png
     :width: 100%
 
+.. raw:: html
+
+   <div style="margin-bottom: 50px;"></div>
+
 .. _testnet-faucet:
 
-Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes.
+Use the Testnet faucet in your account to claim 2000 CCDs for testing purposes:
 
-.. image:: images/testnet-faucet-bw.png
+Click the **Activity** button on the main screen, and then click **Request CCD**.
+
+.. image:: images/request-CCD.png
     :width: 50%
 
-One thing to note is that if you click |send|, you enter a transaction window. This allows you to transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see just below those textboxes, there is a value highlighting the “Estimated transaction fee” in CCD terms. This allows you to estimate the costs beforehand and it allows helps you to calculate your business expenses in the future.
+.. raw:: html
 
-.. image:: images/tx-fee-in-bw.png
+   <div style="margin-bottom: 50px;"></div>
+
+One thing to note is that if you click the **Send** button on the main screen, you go to the Send funds screen where you can transfer CCDs. You can type the amount of CCD and the recipient’s address in this section. As you can see below, the screen shows the *Estimated transaction fee* in CCD terms. This allows you to estimate the costs beforehand and helps you to calculate your business expenses.
+
+.. image:: images/send-funds.png
+    :width: 50%
+
+.. raw:: html
+
+   <div style="margin-bottom: 50px;"></div>
+
+After that, you need to :ref:`export the keys<export-key>` for your account. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this <YOUR PUBLIC ADDRESS>.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.
+
+To export the key, go to the Accounts page and click **Export** next to *Private key*. Enter your passcode and click **Show private key**, and then **Export**.
+
+.. image:: images/export-key-new.png
     :width: 100%
 
-After that step, you need to :ref:`export the keys<export-key>` for your wallet. Save the file on your local machine in the same folder as the rest of the repository. It will have a name like this <YOUR PUBLIC ADDRESS>.export. You can open it with a text editor and see your signKey, verifyKey in there. Copy signKey and your address. You will use them while deploying and interacting with your contract.
+.. raw:: html
 
-.. image:: images/bw-export-key.png
-    :width: 100%
+   <div style="margin-bottom: 50px;"></div>
 
-When you export the key it creates a file named ``<YOUR PUBLIC ADDRESS>.export``. Open it with a text editor and find your ``signKey``, ``verifyKey`` in there. Copy the ``signKey`` and your address. You will use it while deploying and interacting with your contract.
+When you export the key, it creates a file named ``<YOUR PUBLIC ADDRESS>.export``. Open it with a text editor and find your ``signKey``, ``verifyKey`` in there. Copy the ``signKey`` and your address. You will use it while deploying and interacting with your contract.
 
 .. image:: images/bw-exported-key.png
     :width: 100%
@@ -238,13 +259,13 @@ When you export the key it creates a file named ``<YOUR PUBLIC ADDRESS>.export``
 Import the key
 --------------
 
-You are ready to import your key into the ``concordium-client`` configuration. Transfer your wallet key export file to the place where you are running your ``concordium-client`` tool. Navigate to the folder as well.
+You are ready to import your key into the ``concordium-client`` configuration. Transfer your key export file to the place where you are running your ``concordium-client`` tool. Navigate to the folder as well.
 
 Import your key into the ``concordium-client`` configuration:
 
 .. code-block:: console
 
-    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>.json
+    concordium-client config account import <Wallet.export> --name <Your-Wallet-Name>
 
 .. |send| image:: images/send-ccd.png
              :alt: button with paper airplane

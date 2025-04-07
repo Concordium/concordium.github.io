@@ -10,6 +10,22 @@ You can perform all types of transactions with the :ref:`concordium-client<conco
 
 .. Note::
 
+  Concordium Foundation offers external developers access to a testnet node, which can be reached using ``--grpc-ip grpc.testnet.concordium.com`` and ``--grpc-port 20000``. Since the node is configured to use TLS, the ``--secure`` flag is required when running commands. For instance, to check the consensus status, you can query the Concordium testnet node as follows:
+
+  .. code-block:: text
+
+      $concordium-client consensus status --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
+
+.. Note::
+
+  If you are querying your own testnet node, be sure to use ``--grpc-port 20001`` flag (unless you changed it from defaults). Let's assume that the node you are querying is running on testnet and is located on the local network at ``192.168.0.10``. In this case, to query the account status, use the command:
+
+  .. code-block:: text
+
+      $concordium-client account show 48XGRnvQoG92T1AwETvW5pnJ1aRSPMKsWtGdKhTqyiNZzMk3Qn --grpc-ip 192.168.0.10 --grpc-port 20001
+
+.. Note::
+
    All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
@@ -154,7 +170,7 @@ This generates the output:
 
 .. code-block:: console
 
-   The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt.
+   The requested alias for address 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nup24cE53jNX5 is 3ofwYFAkgV59BsHqzmiWyRmmKRB5ZzrPfbmx5nuou5Z2vaESRt
 
 .. _identity-commands:
 

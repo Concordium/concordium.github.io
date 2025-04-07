@@ -13,12 +13,14 @@ The address book helps you select a recipient quickly for transactions.
 
 .. dropdown:: |cryptox|
 
-   #. In the **More** menu tap **Address Book**.
+   #.  Open *Wallet Settings* by tapping the gear icon in the lower right of the main screen.
+
+   #. Tap **Address Book**.
 
    #. You can search in the address book or scan the QR code of another account.
 
 
-         .. image:: ../images/cryptoX/Addressbook.png
+      .. image:: ../images/cryptoX/cryptox-address-book.png
             :width: 50%
 
 

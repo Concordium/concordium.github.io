@@ -21,6 +21,8 @@ If you need to know how to send CCDs, connect dApps, manage fungible and non-fun
     export-transaction-logs
     ../mobile-wallet/add-baker-mw
     ../mobile-wallet/update-baker-mw
+    ../mobile-wallet/stop-validator
+    ../mobile-wallet/suspend-unsuspend-validator
     add-delegation
     remove-delegation
     update-delegation

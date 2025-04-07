@@ -64,6 +64,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       The basic unit of the blockchain, which is produced by a :term:`validator`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a :term:`slot time<slot>` that records when it was produced. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.
 
+   Block reward commission
+
+      Sets the percentage of block rewards a validator retains when its pool successfully produces a block. Lower rates may attract more delegators, while higher rates increase your profit share from each block.
+
    Branch
 
       A chain of blocks that has split from the main chain. All branches have the potential to become the main chain. The Chain selection rule determines which branch is the best chain.
@@ -173,6 +177,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       For delegation in an election, see :term:`Vote delegation`.
 
+   Delegation
+
+    The process of contributing CCD stake to a validator's staking pool or to passive delegation without running a node. When delegating, the CCD amount becomes locked and cannot be spent or transferred until undelegated.Delegation allows CCD holders to earn rewards proportional to their stake, minus any applicable commission paid to validators.
+
    Deploy
 
       Command that takes the built :term:`Wasm<webassembly>` file for a smart contract module and deploys it on chain. This command is run from :term:`Concordium client`.
@@ -204,6 +212,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Final block
 
       A block is considered final when it cannot be rolled back anymore. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.
+
+   GAS
+
+      A transaction fee paid in CCD for executing operations on the Concordium blockchain. GAS is calculated based on ENERGY (NRG) consumption, which measures computational resources required, converted to CCD using a stable EUR-pegged pricing mechanism. This ensures transaction costs remain predictable in EUR terms despite CCD price fluctuations.
 
    Genesis Block
 
@@ -321,6 +333,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A consensus mechanism where validators must stake (lock) CCD tokens to participate in block production. The chance of being selected to produce a block is proportional to the amount staked.
 
+   proof-of-work
+
+     A consensus mechanism where validators (miners) compete to solve complex cryptographic puzzles that require significant computational power. The first to solve the puzzle earns the right to produce the next block and receive the associated rewards.
+
    Qualified authority
 
       A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of disclosing the identity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`identity disclosure authorities<identity disclosure authority>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
@@ -417,6 +433,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A state where a validator is temporarily excluded from block production due to prolonged inactivity. The suspension threshold varies based on the validator's stake size and remains in effect for at least one epoch until manually resumed.
 
+   Sybil attack
+
+      A form of network attack where a malicious actor creates multiple fake identities (nodes) to gain disproportionate influence over a decentralized network. In blockchain systems, Sybil attacks could allow attackers to disrupt consensus, manipulate transaction validation, or execute double-spending. Concordium's proof-of-stake mechanism prevents Sybil attacks by requiring validators to stake actual value (CCD), making it economically unfeasible to create and maintain multiple validator identities with significant influence.
+
    Tally
 
       Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.
@@ -446,6 +466,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Transaction
 
       An atomic operation that defines a change of state in the ledger, such as transferring funds from one account to another. A transaction typically has a sender account and a :term:`transaction sequence number`, and incurs a fee. The sender account must sign the transaction to authorize it. (The exception to this is a credential deployment transaction that creates a new account, which does not have a sender account.)
+
+   Transaction fee commission
+
+      Determines the percentage of transaction fees a validator keep when delegators' stakes contribute to validating transactions. Lower percentages can attract more delegators but reduce the validator's earnings per transaction.
 
    Transfer Memo
 
