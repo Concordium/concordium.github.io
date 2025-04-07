@@ -288,7 +288,7 @@ Now let's implement the connection method:
     const { uri, approval } = await this.client.connect({
       requiredNamespaces: {
         ["ccd"]: { // Concordium's identifier in WalletConnect
-          methods: ["sign_message", "request_verifiable_presentation"], // Methods supported by Concordium wallets
+          methods: ["request_verifiable_presentation"], // Methods supported by Concordium wallets
           chains: ["ccd:testnet"], // For testnet use "ccd:testnet", for mainnet use "ccd:mainnet"
           events: ["accounts_changed"],
         },
