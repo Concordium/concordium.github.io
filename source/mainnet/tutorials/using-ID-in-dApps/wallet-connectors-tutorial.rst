@@ -116,7 +116,6 @@ This method is the core of our ZK functionality:
 * It accepts a :term:`Challenge` (a hex-encoded string) that ensures the proof is generated for this specific request
 * It takes :term:`Statement` parameters that define what should be proved about the user's identity
 * It returns a `VerifiablePresentation <https://docs.concordium.com/concordium-node-sdk-js/classes/types.VerifiablePresentation.html>`_ containing the generated proof
-* A **Witness** (not explicitly used in our interface) refers to the private information known only to the prover that allows them to generate a valid proof.
 
 By using this abstract class as a foundation, we can implement concrete wallet providers for different environments (browser extension, mobile app)
 while maintaining a consistent interface throughout our application. This approach makes it easy to add support for new wallet types in the future without changing the rest of the codebase.
