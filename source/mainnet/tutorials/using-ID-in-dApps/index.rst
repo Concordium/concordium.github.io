@@ -46,7 +46,7 @@ By the end, you'll understand how to build privacy-preserving applications that 
    1. The cryptographic proofs are mathematically valid
    2. The challenge used in the proof is recent (using block hash verification)
    3. The challenge has not been used in a previous proof (preventing replay attacks)
-   4. All other application-specific requirements are me
+   4. All other application-specific requirements are met
 
    For backend implementation details, we reference the `compliant-reward-distribution dApp <https://github.com/Concordium/concordium-dapp-examples/tree/main/compliant-reward-distribution>`_
    and the `web3id-verifier <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`_ which demonstrate a more complete verification flow.
