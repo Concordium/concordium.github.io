@@ -9,11 +9,11 @@ Change account name
 
 .. dropdown:: |cryptox|
 
-    #. On the Accounts screen, tap the account you want to rename.
+    #. Go to the Your Accounts screen (tap the account identifier on the main screen).
 
-    #. On the Account balance screen, tap |cryptoX-acct-settings|.
+    #. Select the account to rename and tap the gear icon in the upper right corner.
 
-    #. Tap **Change account name**.
+    #. On the Account settings screen, tap **Change account name**.
 
     #. Enter the new name and tap **Save**.
 
@@ -24,6 +24,15 @@ Change account name
 
     .. image:: ../images/desktop-wallet/dw-edit-account-name.png
         :alt: dark account balance area with edit button highlighted
+
+.. dropdown:: |bw|
+
+    #. Go to the Accounts page.
+
+    #. Click the Edit button next to the account name you want to change.
+
+    #. Edit the name and click Save.
+
 
 .. |hamburger| image:: ../images/hamburger.png
              :alt: Three horizontal lines

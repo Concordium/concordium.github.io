@@ -18,16 +18,23 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    December 18, 2024
+    March 31, 2025
 
-    Version 3.0.0 addresses the following issues:
+    Version 3.2.2 addresses the following issues:
 
-    - Added new onboarding flow
+    Changed:
 
-    - Changed minimum iOS version to 16.4
-
+    - Earn flow design
+    - Swipelux onramp flow
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.0.0 - December 18, 2024
+
+            Version 3.0.0 addresses the following issues:
+
+            - Added new onboarding flow
+            - Changed minimum iOS version to 16.4
 
         .. dropdown:: |cryptox| 2.0.1 - November 25, 2024
 
@@ -83,20 +90,38 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    December 18, 2024
+    January 27, 2025
 
-    Version 1.4.0 addresses the following issues:
+    Version 1.5.0 addresses the following issues:
 
     Added:
 
-    - New onboarding flow
-    - Swipelux onramp flow
+    - Ability to have both file and seed phrase wallets in the app and switch between them
+    - Ability to open the Terms and Conditions and the Privacy Policy from the About screen
 
-    Changed:
+    Fixed:
 
-    - The "," decimal separator is now used for all amounts in the wallet
+    - Incorrect support email address in some error messages
+    - Not working links to the documentation on some screens
+
+    Removed:
+
+    - Ability to create new accounts and identities in a file wallet. We recommend that you migrate to a seed phrase wallet in order to make use of the full range of CryptoX features.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.4.0 - December 18, 2024
+
+            Version 1.4.0 addresses the following issues:
+
+            Added:
+
+            - New onboarding flow
+            - Swipelux onramp flow
+
+            Changed:
+
+            - The "," decimal separator is now used for all amounts in the wallet
 
         .. dropdown:: |cryptox| 1.3.2 - November 28, 2024
 
@@ -273,13 +298,37 @@ Wallets
 |bw|
 -------------------------
 
-    December 25, 2024
+    March 6, 2025
 
-    Version 1.7.2
+    Version 2.1.2
 
-    -   Remove unused "downloads" permission from manifest.
+    -   Updated version of @concordium/web-sdk to ver.-9 (with new protocol8 update)
+    -   New info cards 'validation is primed for suspension' and 'validation is suspended' for Validators
+    -   New info cards 'validator suspended' for Delegators
+    -   New page with description of self-suspend action
+    -   Added action to suspend/resume validation
+    -   Suspended and primed for suspension validator accounts are marked with red dot at accounts list and Main page. Additionally, delegators with suspended target validators also marked.
+    -   Info notification at the Main page, about validator suspension
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.0.2 - February 1, 2025
+
+            Fixed credentials with address undefined
+
+        .. dropdown:: |bw| 2.0.1 - February 1, 2025
+
+            Fixed credentials with some fields undefined
+
+        .. dropdown:: |bw| 2.0.0 - January 30, 2025
+
+            Overhauled the Browser Wallet’s interface as part of the CryptoX UI Revamp project.
+            This update will align the browser wallet’s design with look of CryptoX,
+            delivering a more seamless and user-friendly experience while preserving all the existing features.
+
+        .. dropdown:: |bw| 1.7.2 - December 25, 2024
+
+            Remove unused "downloads" permission from manifest.
 
         .. dropdown:: |bw| 1.7.1 - October 30, 2024
 
@@ -492,17 +541,28 @@ Wallets
 Desktop Wallet
 --------------
 
-    June 26, 2024
+    March 18, 2025
 
-    Version 1.7.4 contains the following changes:
+    Version 1.8.0 contains the following changes:
 
-    - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+    - Account validation/delegation overview now shows if the target pool is suspended or primed for suspension.
+    - A notification is shown for accounts validating/delegating to a pool which is suspended.
+    - Support for updating validator score parameters on chains running protocol version 8 or above.
+    - Support for changing the suspension status of validators. This requires the corresponding version of the Concordium ledger app which also adds support for this feature.
+    - Updating Concordium SDK fixing issue preventing transactions.
 
-    - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
-
-    - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.7.4 - June 26, 2024
+
+            Version 1.7.4 contains the following changes:
+
+            - Remove ``shielded`` button to disable the transfer of CCD from the public balance to the shielded balance of an account.
+
+            - Remove ``encryptedTransfer`` button to disable the transfer of CCD from the shielded balance of the account to the shielded balance of another account.
+
+            - Rename ``anonymity revokers`` to ``identity disclosure authorities``.
 
         .. dropdown:: 1.7.3 - March 21, 2024
 
@@ -657,43 +717,78 @@ Nodes
 Mainnet
 -------
 
-    October 3, 2024
+    March 3, 2025
 
-    Concordium node version 7.0.5 contains support for `protocol version 7 <https://proposals.concordium.software/updates/P7.html>`_.
-    The new consensus protocol will take effect on the mainnet on October 30, 2024.
-    **Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.**
+    Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
+    The new consensus protocol will take effect on the mainnet on March 17, 2025.
+    **Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.**
+    Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.
 
-    Protocol version 7 introduces the following changes:
+    Protocol version 8 introduces the following changes:
 
-    - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
+        - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
 
-        - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
-            (Previously, the reduction was only effective after the cool-down period.)
+        - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
 
-        - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
-            This includes registering as a validator when the account was previously a delegator, or vice versa.
-            (Previously, the account had to wait for the cool-down period to end before making further changes.)
+        - Suspended validators are paused from participating in the consensus algorithm.
 
-    - Shielded transfers are no longer supported in the protocol.
-        It is still possible to unshield a previously shielded balance.
+    Additionally, the node release includes a number of fixes and improvements:
 
-    - Smart contract execution costs are reduced.
-        This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
+        - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
 
-    - Smart contracts can now query the module reference and contract name of a smart contract instance.
+        - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
 
-    - The block hashing scheme is redefined to better support light clients.
+        - Update Rust version to 1.82.
 
-    Additionaly, the node release includes a number of fixes and improvements:
+        - Update GHC version to 9.6.6 (LTS-22.39).
 
-    - Logging around protocol updates is improved.
-    - Failed gRPC requests are now logged at ``DEBUG`` level.
-    - Fixed a bug where ``GetBakersRewardPeriod`` returns incorrect data.
-    - Fixed a bug where ``GetPoolInfo`` returns incorrect data.
-    - Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.
-    - Improved the behavior of the node in the event of an unrecoverable error in consensus.
+        - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+
+        - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
+
+        - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
+
+        - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
+
+        - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 7.0.5 - October 3, 2024
+
+            Concordium node version 7.0.5 contains support for `protocol version 7 <https://proposals.concordium.software/updates/P7.html>`_.
+            The new consensus protocol will take effect on the mainnet on October 30, 2024.
+            **Node runners should upgrade to version 7.0.5 before the protocol update to ensure that their nodes do not shut down.**
+
+            Protocol version 7 introduces the following changes:
+
+            - The cool-down behavior when the stake of a validator or delegator is reduced or removed is changed:
+
+                - When stake is reduced, the reduction is immediately effective for future stake calculations, and the amount of the reduction is locked for a cool-down period.
+                    (Previously, the reduction was only effective after the cool-down period.)
+
+                - Validators and delegators can make further changes to their stake while they already have stake in cooldown.
+                    This includes registering as a validator when the account was previously a delegator, or vice versa.
+                    (Previously, the account had to wait for the cool-down period to end before making further changes.)
+
+            - Shielded transfers are no longer supported in the protocol.
+                It is still possible to unshield a previously shielded balance.
+
+            - Smart contract execution costs are reduced.
+                This reflects a more efficient implementation of the smart contract execution engine introduced in this release.
+
+            - Smart contracts can now query the module reference and contract name of a smart contract instance.
+
+            - The block hashing scheme is redefined to better support light clients.
+
+            Additionaly, the node release includes a number of fixes and improvements:
+
+            - Logging around protocol updates is improved.
+            - Failed gRPC requests are now logged at ``DEBUG`` level.
+            - Fixed a bug where ``GetBakersRewardPeriod`` returns incorrect data.
+            - Fixed a bug where ``GetPoolInfo`` returns incorrect data.
+            - Fixed a bug where a configure-validator transaction that is rejected for having a duplicate aggregation key reports the old key of the validator, rather than the new (duplicative) key.
+            - Improved the behavior of the node in the event of an unrecoverable error in consensus.
 
         .. dropdown:: 6.3.2 - September 30, 2024
 
@@ -702,7 +797,7 @@ Mainnet
 
         .. dropdown:: 6.3.1 - June 24, 2024
 
-        Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
+            Concordium node version 6.3.1 fixes a bug where a node may fail to produce a timeout certificate due to incorrectly computing the total weight of finalizers that have signed timeout messages.
 
         .. dropdown:: 6.3.0 - February 27, 2024
 
@@ -1100,12 +1195,48 @@ Mainnet
 Testnet
 -------
 
-    September 30, 2024
+    February 18, 2024
 
-    Concordium node version 7.0.5 fixes a bug in the handling of smart contract names that could cause the node to crash.
-    **This is a critical bug fix, and node runners should update as soon as possible.**
+    Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
+    The new consensus protocol will take effect on the testnet on February 24, 2025.
+    **Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.**
+    Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.
+
+    Protocol version 8 introduces the following changes:
+
+        - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
+
+        - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
+
+        - Suspended validators are paused from participating in the consensus algorithm.
+
+    Additionally, the node release includes a number of fixes and improvements:
+
+        - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
+
+        - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
+
+        - Update Rust version to 1.82.
+
+        - Update GHC version to 9.6.6 (LTS-22.39).
+
+        - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+
+        - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
+
+        - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
+
+        - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
+
+        - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
+
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 7.0.5 - September 30, 2024
+
+            Concordium node version 7.0.5 fixes a bug in the handling of smart contract names that could cause the node to crash.
+            **This is a critical bug fix, and node runners should update as soon as possible.**
 
         .. dropdown:: 7.0.4 - September 23, 2024
 
@@ -1635,26 +1766,47 @@ Tools
 Concordium Client
 -----------------
 
-    September 23, 2024
+    February 18, 2025
 
-    Concordium Client 7.0.1 includes the following features and bug fixes:
+    Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.
 
-    - Support node version 7 and protocol version 7.
+    - Support node version 8 and protocol version 8.
 
-    - Display the "at disposal" balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.
+    - Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)
 
-    - From protocol version 7, list the stake cooldowns that are effective on an account in the account info output.
+    - Add command `consensus detailed-status` for getting detailed consensus status (from protocol version 6).
 
-    - Improved checks when configuring a validator or delegator.
+    - Add `raw GetConsensusDetailedStatus` that presents the detailed consensus status as JSON.
 
-    - Fix the display of the expected expiry of pending changes to an account's stake.
+    - Update GHC version to 9.6.6 (lts-22.39).
 
-    - Fix a bug in correctly accounting for parsed events.
+    - Add raw commands `GetScheduledReleaseAccounts`, `GetCooldownAccounts`,  `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.
 
-    - Rename the ``--out`` flag for ``validator add`` to ``--validator-credentials-out`` to fix the conflict with the ``--out`` flag used to write a partially-signed transaction to a file.
+    - Raw commands `GetBlockTransactionEvents` and `GetTransactionStatus` include the `parameter` for `ContractInitialized` events.
+
+    - From protocol version 8, raw command `GetPoolStatus` indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of  missed rounds.
 
 
     .. dropdown:: Previous releases
+
+        ..dropdown:: 7.0.1 - September 23, 2024
+
+            Concordium Client 7.0.1 includes the following features and bug fixes:
+
+            - Support node version 7 and protocol version 7.
+
+            - Display the "at disposal" balance in the account info output, which indicates the amount of CCD that can be spent or transferred, accounting for any lock-up from staking or scheduled transfers.
+
+            - From protocol version 7, list the stake cooldowns that are effective on an account in the account info output.
+
+            - Improved checks when configuring a validator or delegator.
+
+            - Fix the display of the expected expiry of pending changes to an account's stake.
+
+            - Fix a bug in correctly accounting for parsed events.
+
+            - Rename the ``--out`` flag for ``validator add`` to ``--validator-credentials-out`` to fix the conflict with the ``--out`` flag used to write a partially-signed transaction to a file.
+
 
         .. dropdown:: 6.3.0 - June 07, 2024
 

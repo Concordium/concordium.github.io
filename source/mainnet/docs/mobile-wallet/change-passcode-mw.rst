@@ -13,11 +13,13 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
 .. dropdown:: |cryptox|
 
 
-   #. In the **More** menu tap **Update Passcode & Biometrics**.
+   #. Open *Wallet Settings* by tapping the gear icon in the lower right of the main screen.
+
+   #. Tap **Update Passcode & Biometrics**.
 
    #. On the next screen tap **Continue**.
 
-      .. image:: ../images/cryptoX/Update-passcode-and-biometrics.png
+      .. image:: ../images/cryptoX/cryptox-update-passcode-and-biometrics.png
          :width: 50%
          :alt: screen with settings menu
 
@@ -40,6 +42,16 @@ If you want to change your passcode or enable/disable your biometrics (on a mobi
       .. image:: ../images/desktop-wallet/dw-change-pw.png
          :width: 50%
          :alt: password change dialog
+
+.. dropdown:: |bw|
+
+   #. Open the menu and select **Passcode**.
+
+   #. Enter current passcode.
+
+   #. Enter and confirm new passcode.
+
+   #. Click **Change passcode**.
 
 .. |morepage| image:: ../images/more-ellipsis.png
              :alt: Three dots button

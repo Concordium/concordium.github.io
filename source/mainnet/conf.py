@@ -166,7 +166,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "article_footer_items": ["footer-article"],
     "show_prev_next": True,
-    "announcement": "We are actively working to enhance our documentation to provide a better experience. Thank you for your patience!",
+    "announcement": 'Protocol 8 is now live on mainnet. For more information, visit our <a href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html#mainnet" target="_blank">release notes page</a>.',
     #"navbar_align": "left",
     "icon_links": [
         {
@@ -222,6 +222,20 @@ html_theme_options = {
                "target" : "_blank",}
         },
         {
+            # Concordium Discord
+            "name": "Discord",
+            # URL where the link will redirect
+            "url": "https://discord.com/invite/GpKGE2hCFx",
+            # Icon class for Discord using FontAwesome
+            "icon": "fab fa-discord",
+            # Using FontAwesome
+            "type": "fontawesome",
+            # Opening in a new tab
+            "attributes": {
+            "target": "_blank",
+            }
+        },
+        {
             "name": "YouTube",
             "url": "https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A",
             "icon": "fab fa-youtube",
@@ -233,18 +247,8 @@ html_theme_options = {
         },
         {
             "name": "Medium",
-            "url": "https://medium.com/concordium",
+            "url": "https://medium.com/@concordium",
             "icon": "fab fa-medium",
-            "type": "fontawesome",
-            # Add additional attributes to the href link.
-            # The defaults of the target, rel, class, title, and href may be overwritten.
-            "attributes": {
-               "target" : "_blank",}
-        },
-        {
-            "name": "Academy",
-            "url": "https://academy.concordium.software/ccd-academy/getting-started",
-            "icon": "fas fa-graduation-cap",
             "type": "fontawesome",
             # Add additional attributes to the href link.
             # The defaults of the target, rel, class, title, and href may be overwritten.
@@ -632,5 +636,12 @@ redirects = {
     "docs/network/guides/concordium-client" : "/en/mainnet/tools/concordium-client.html",
     "tutorials/piggy-bank/wCCD-frontend-set-up" : "/en/mainnet/tutorials/piggy-bank/frontend.html",
     "net/resources/bw-licenses" : "/en/mainnet/docs/guides/cryptox-terms.html",
-    "net/guides/legal" : "/en/mainnet/docs/guides/cryptox-terms.html"
+    "net/guides/legal" : "/en/mainnet/docs/guides/cryptox-terms.html",
+    "net/guides/export-key" : "/en/mainnet/docs/guides/export-key.html",
+    "smart-contracts/guides/on-chain-index" : "/en/mainnet/docs/smart-contracts/introduction.html",
+    "docs/protocol/company-identities" : "/en/mainnet/tutorials/company-identity/company-identities.html",
+    "docs/network/query-node" : "/en/mainnet/tools/query-node.html",
+    "net/references/net/references/grpc2" : "/en/mainnet/tools/grpc2.html",
+    "guides/export-import": "/en/mainnet/docs/guides/recovery.html",
+    "guides/recover-wallet": "/en/mainnet/docs/guides/recovery.html"
     }

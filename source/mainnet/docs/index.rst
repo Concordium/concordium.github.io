@@ -12,7 +12,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :align: center
 
 
-.. container:: three-columns
+.. container:: four-columns
 
    .. container:: column1
 
@@ -43,29 +43,41 @@ Explore our developer resources, including detailed documentation, tutorials, an
       Access a comprehensive set of tools to build your dApps.
       Find SDKs, APIs, smart contract libraries, CLI, CCDScan, Testnet Faucet, and IDE plugins.
 
+   .. container:: column4
+
+      .. raw:: html
+
+           <a href="../community/index.html" class="heading-link"><strong>Community</strong></a>
+
+
+      Developer Community.
+      Find out about latest initiatives, projects and events for Concordium Developers.
+
 .. raw:: html
 
-   <style>
-   .three-columns {
-       display: flex;
-       justify-content: space-between;
-       gap: 2em; /* Tilføjer mellemrum mellem spalterne */
-   }
-   .column1, .column2, .column3 {
-       width: 30%;
-       padding: 1em; /* Tilføjer indvendig polstring */
 
-   }
-   </style>
+    <style>
+   .. .three-columns {
+   ..     display: flex;
+   ..     justify-content: space-between;
+   ..     gap: 2em; /* Tilføjer mellemrum mellem spalterne */
+   .. }
+   .. .column1, .column2, .column3 {
+   ..     width: 30%;
+   ..     padding: 1em; /* Tilføjer indvendig polstring */
+
+   .. }
+    </style>
 
 .. Note::
 
-   Currently, Rust toolchain versions up to ``1.81`` are supported. To set version ``1.81`` as the default, run these commands:
+   Currently, Rust toolchain versions up to ``1.81`` are and newer are not supported by older ``cargo-concordium`` versions ( <= ``4.0.0``). Update ``cargo-concordium`` if you see the error ``Unexpected byte 0x80. Expected 0x00`` as follows:
 
    .. code-block:: console
 
-      $ rustup toolchain install 1.81
-      $ rustup default 1.81
+      $ cargo install cargo-concordium
+      $ cargo concordium --version
+      $ cargo-concordium 4.1.1
 
    The minimum supported rust version is currently version ``1.73``
 
@@ -77,7 +89,10 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
-   Network <protocol/network>
+   Consensus mechanisms <protocol/consensus-mechanisms>
+   Validation <protocol/concepts-baker>
+   Delegation <protocol/concepts-delegation>
+
 
 .. toctree::
    :caption: Smart Contracts
@@ -111,13 +126,14 @@ Explore our developer resources, including detailed documentation, tutorials, an
    FAQs <help-and-faq/faqs>
    Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
+   Exchange Onboarding Guide <resources/exchangeOnBoarding>
 
 
 .. toctree::
    :caption: Governance Committee Voting
    :hidden:
 
-   Concordium Governance Committee Elections <voting/gc-voting>
+   Concordium Governance Committee elections <voting/gc-voting>
    Election coordinator tool <voting/coordinator>
    How to vote <voting/voting>
    Guardians <voting/guardians>

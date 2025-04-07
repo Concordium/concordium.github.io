@@ -8,7 +8,7 @@ Create proofs
 A :term:`verifier` is a business or use-case that provides a service contingent on the holder providing information about themselves using :term:`verifiable credentials<verifiable credential>` or :term:`account credentials<account credential>` they have. A verifier will typically consist of two components:
 
 1. A dApp that interacts with the wallet and requests a :term:`verifiable presentation` from the user.
-2. A backend that will verify the provided presentations, and provide the required service if successful, such as the `Concordia backend <https://github.com/Concordium/concordium-web3id/tree/main/examples/some-verifier>`_.
+2. A backend that will verify the provided presentations, and provide the required service if successful.
 
 The |bw| allows verifiers to request verifiable presentations using dApps or services that the user meets some requirement, such as proof the user is over a certain age, or resides in a specific set of countries or area. The wallet owner chooses whether to prove these :term:`attributes<attributes>` to the dApp or service. The dApp or service constructs a list of :term:`statements<statement>` to request a corresponding list of :term:`zero-knowledge proofs<zero-knowledge proof>` of the attribute(s) necessary without revealing anything beyond the truth of the statement. Presentations contain zero-knowledge proofs.
 
@@ -189,7 +189,19 @@ The verifier has a single POST endpoint and is meant to be used by another servi
 
 The response to the request will be status code 200 together with a JSON body that contains the request (i.e., challenge and statement for which the presentation is valid) together with the timestamp and block in which the verification took place. In case of an invalid request the HTTP status code will be in the 4** range, either 404 if credentials cannot be found, or 400 for invalid proofs or otherwise malformed requests.
 
-You can choose whether you want to use the hosted Concordium verifier for `Mainnet <https://web3id-verifier.mainnet.concordium.software/v0/verify>`__ or `Testnet <https://web3id-verifier.testnet.concordium.com/v0/verify>`__, or whether you want to create your own verifier tool. Note that if you use the hosted verifier then you trust Concordium when verifying proofs.
+You can choose whether you want to run your own verifier tool or you want to use the hosted Concordium verifier endpoints:
+
+- Mainnet: `https://web3id-verifier.mainnet.concordium.software/v0/verify`
+
+- Testnet: `https://web3id-verifier.testnet.concordium.com/v0/verify`
+
+An example request sent to the endpoint is as follows:
+
+.. code-block:: console
+
+    curl -POST "https://web3id-verifier.testnet.concordium.com/v0/verify" -H "Content-Type: application/json" --data '{"presentationContext":"759426830fd65e1ad30585fb8dc14cbf9f643a825e28196b896ee36c6f85fe33","proof":{"created":"2025-04-07T07:57:46.644Z","proofValue":[],"type":"ConcordiumWeakLinkingProofV1"},"type":"VerifiablePresentation","verifiableCredential":[{"credentialSubject":{"id":"did:ccd:testnet:cred:b1f1b7bb1b57af17cfcdfa853da3401456e985d8f9dc42178007aa2eef6a89f0b0bb467673fa0baff2d82c98fca6c5ef","proof":{"created":"2025-04-07T07:57:46.644Z","proofValue":[{"attribute":"John","proof":"7f4c5f378aef48e636979ca20adaa8b4d54c4518102c4d5991e1d794a4e9ba3f59855b40ce1175be7d23c09c056064c92dab7cb140508735b8922f5eaac2cb1a","type":"RevealAttribute"}],"type":"ConcordiumZKProofV3"},"statement":[{"attributeTag":"firstName","type":"RevealAttribute"}]},"issuer":"did:ccd:testnet:idp:0","type":["VerifiableCredential","ConcordiumVerifiableCredential"]}]}' -v
+
+Note that if you use the hosted verifier then you trust Concordium when verifying proofs.
 
 If you do not wish to use the Concordium hosted verifier, you can can either build your own following instructions in `readme file <https://github.com/Concordium/concordium-web3id/tree/main/services/web3id-verifier>`__ or use the `published Docker image <https://hub.docker.com/r/concordium/web3id-verifier/tags>`__.
 
