@@ -24,7 +24,7 @@ Developer Spotlight
 
 .. container:: tutorial-section tutorial-section-blue
 
-   The Developer Spotlight highlights innovative projects built on Concordium.  
+   The Developer Spotlight highlights innovative projects built on Concordium.
    Each month, we feature developers and teams pushing the boundaries of identity, privacy, and utility on the blockchain.
 
    :doc:`Check out the spotlight <developer-spotlight>`
