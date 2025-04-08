@@ -28,7 +28,7 @@ We welcome projects that:
 How to Apply
 ------------
 
-To nominate your project, submit an application using the following form:  
+To nominate your project, submit an application using the following form:
 `Submit your application <https://tally.so/r/mRV5Gl>`_
 
 What to Expect
