@@ -7,7 +7,6 @@ Community
 
 Welcome to the community page where you find Developer community projects and events.
 
-
 DevNet
 ---------
 
@@ -20,9 +19,19 @@ DevNet
    * Scheduled Transfers
    * Smart Payment Lock
 
+Developer Spotlight
+-------------------
+
+.. container:: tutorial-section tutorial-section-blue
+
+   The Developer Spotlight highlights innovative projects built on Concordium.  
+   Each month, we feature developers and teams pushing the boundaries of identity, privacy, and utility on the blockchain.
+
+   :doc:`Check out the spotlight <developer-spotlight>`
+
 .. toctree::
    :maxdepth: 2
    :hidden:
 
-    DevNet <devnet>
-
+   DevNet <devnet>
+   Developer Spotlight <developer-spotlight>
