@@ -51,5 +51,6 @@ Apply now and let the world see what you are building on Concordium!
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    aesirx-interview
