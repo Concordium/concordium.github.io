@@ -55,6 +55,7 @@ Our dApp integrates multiple tools:
 - Single Sign-On (SSO) using blockchain, which helps prevent brute-force attacks — especially for platforms like WordPress
 - Shield of Privacy, which uses indirect Zero-Knowledge Proofs (ZKPs) to verify things like age and location without revealing sensitive data *(already in use on platforms such as `concordium.com <https://concordium.com>`_)*
 ***Editor's note: This integration with Concordium demonstrates how AesirX leverages the ID Layer (`Identity on Concordium <https://docs.concordium.com/en/mainnet/docs/network/web3-id/index.html>`_) to enable privacy-preserving verification.***
+
 - A creator verification system using blockchain-based identity
 - Planned tools like interest-based pre-marketing
 
