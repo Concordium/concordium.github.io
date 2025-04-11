@@ -86,7 +86,7 @@ You’re also building an NFT marketplace for software licenses — how will tha
 ------------------------------------------------------------------------------------
 
 **Ronni:**
-We’re developing a platform where software licenses can be minted and resold as NFTs. This creates a secondary market for licenses and lets users retain value when they no longer need a license. These NFTs are based on the CIS-2 standard developed by Concordium, ensuring secure and identity-compliant transactions.
+We’re developing a platform where software licenses can be minted and resold as NFTs. This creates a secondary market for licenses and lets users retain value when they no longer need a license. These NFTs are based on the `CIS-2 <https://proposals.concordium.com/CIS/cis-2.html>`_ standard developed by Concordium, ensuring secure and identity-compliant transactions.
 
 In this case, NFTs aren’t about digital art — they’re about transparent, verifiable ownership and transfer of software access.
 
