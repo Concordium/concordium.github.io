@@ -66,7 +66,7 @@ How do you approach bridging Web2 and Web3 practically?
 **Ronni:**
 We always start with solving real-world business problems — mostly in the Web2 space — and then enhance those solutions with Web3 technology. For example, we integrated blockchain-based SSO for WordPress. That immediately solves a problem (brute-force logins), while also introducing secure digital identity.
 
-The goal is to make Web3 usable and seamless — not something that only crypto experts can benefit from.
+The goal is to make Web3 easy to use — so that anyone can benefit, not just those deeply involved in crypto.
 
 Let’s move on to the $AESIRX token. What is its purpose, and when will it launch?
 ----------------------------------------------------------------------------------
