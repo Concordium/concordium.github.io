@@ -129,4 +129,4 @@ We’re also working closely with legal and technical partners to ensure everyth
 Final Thoughts
 --------------
 
-AesirX is creating a compelling privacy ecosystem — not by talking theory, but by building tools that work today. With a strong ethical foundation, real-world use cases, and an unwavering focus on decentralization done right, Ronni K. Gothard Christiansen and his team are shaping the future of responsible Web3.
+AesirX is creating a compelling privacy ecosystem — not by talking theory, but by building tools that work today. With a strong ethical foundation, real-world use cases, and an unwavering focus on decentralization done right, Ronni K. Gothard Christiansen and his team are shaping the future of responsible Web3 powered by Concordium.
