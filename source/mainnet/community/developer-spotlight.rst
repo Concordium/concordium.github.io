@@ -5,7 +5,7 @@ Developer Spotlight
 
 Hello, developers!
 
-We are excited to introduce **Developer Spotlight**, an initiative that highlights promising projects built on Concordium. This is your opportunity to share your work, present insights, and gain visibility within the ecosystem. Selected projects that align with Concordium’s vision will be featured in the community.
+We are excited to introduce **the Developer Spotlight**, an initiative that highlights promising projects built on Concordium. This is your opportunity to share your work, present insights, and gain visibility within the ecosystem. Selected projects that align with Concordium’s vision will be featured in the community.
 
 Why Participate?
 ----------------
