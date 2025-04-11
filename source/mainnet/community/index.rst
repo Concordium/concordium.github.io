@@ -27,11 +27,11 @@ Developer Spotlight
    The Developer Spotlight highlights innovative projects built on Concordium.
    We feature developers and teams pushing the boundaries of identity, privacy, and utility on the blockchain.
 
-   :doc:`Check out the spotlight <developer-spotlight>`
+   :doc:`Check out the spotlight <developer-spotlight/index>`
 
 .. toctree::
    :maxdepth: 2
    :hidden:
 
    DevNet <devnet>
-   Developer Spotlight <developer-spotlight>
+   Developer Spotlight <developer-spotlight/index>

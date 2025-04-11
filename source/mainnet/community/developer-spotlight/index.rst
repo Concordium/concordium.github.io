@@ -53,4 +53,5 @@ Apply now and let the world see what you are building on Concordium!
    :maxdepth: 1
    :hidden:
 
-   aesirx-interview
+   Interview with AesirX <aesirx/index>
+   Interview with Provenance Tags <provenance-tags/index>
