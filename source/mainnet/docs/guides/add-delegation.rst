@@ -20,32 +20,27 @@ When you delegate some stake to a staking pool, it can influence the chances of 
 
 .. dropdown:: |cryptox|
 
-        #. In the dropdown list, select the account that you want to delegate from and tap **Earn**.
+        #. Tap the **Earn** button on the main screen.
 
-        #. Tap **Continue to delegation setup**
+        #. Tap **Read more** to go to an informational screen explaining the key concepts of delegation on the Concordium blockchain, or tap **Start earning** to go directly to registering your delegation.
 
-           .. image:: ../images/cryptoX/cryptoX-earning-rewards.png
+           .. image:: ../images/cryptoX/cryptox-add-validator1.png
                     :width: 50%
                     :alt: screen with earning options
 
-        #. You can now go through informational screens explaining the key concepts of delegation on the Concordium blockchain, including the delegator role, delegation models, pay days, lock-in and cooldowns, and delegation updates. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to registering your delegation.
+        #. On the next screen, enter the amount you want to delegate. You can see your available balance. Tap **Staking mode** to specify wheter you want to set up passive delegation or delegation to a specific pool. In the latter case, you must also enter validatoe pool ID. Tap **Continue** to return to the previous screen. Toggle the **Restake rewards** switch if you want to automatically add your rewards to your stake amount. If disabled, rewards will be deposited to your disposable balance at each pay day. Tap **Continue** to proceed.
 
-
-        #. On the **Register delegation** screen, you have two options: If you want to delegate to a specific pool, tap **Validator** and enter the Validator ID of the pool owner. If you want to register a passive delegation, tap **Passive**. Tap **Continue**.
-
-           .. image:: ../images/cryptoX/cryptoX-register-delegation.png
+           .. image:: ../images/cryptoX/cryptox-register-delegation1.png
                     :width: 50%
                     :alt: screen with earning options
 
-        #. You can see your balance available to delegate. Enter the amount you want to delegate in the field. Tap **Yes, add** to restake any rewards, or tap **No, don't add** if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Then, tap **Continue**.
+        #. Review the information in the transaction overview. When you are satisfied, Swipe right on the **Submit delegation** slider to submit the transaction.
 
-           .. image:: ../images/cryptoX/cryptox-register-delegation-add-rewards-new.png
-                :width: 50%
-                :alt: screen to register delegation amount and restake preference
+           .. image:: ../images/cryptoX/cryptox-register-delegation2.png
+                    :width: 50%
+                    :alt: screen with transaction overview
 
-        #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
-
-        #. Once the transaction is submitted, you see a confirmation screen. Tap **Finish**.
+        #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation registration has been successfully submitted to the chain. You can see the amount you’re delegating. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
         Once the transaction is finalized, the delegation is effective from the next pay day.
 
