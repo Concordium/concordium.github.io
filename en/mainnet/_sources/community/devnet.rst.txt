@@ -1,8 +1,8 @@
 .. _devnet:
 
 
-DevNet: The Future of Stablecoin Payments—Coming This April
-==============================================================
+DevNet
+======
 
 
 What is DevNet?
