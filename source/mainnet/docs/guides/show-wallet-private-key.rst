@@ -5,22 +5,17 @@
 Show wallet private key
 =======================
 
-|cryptox| offers you to restore your wallet using a wallet private key.
+|cryptox| offers you to :ref:`restore your wallet<backup-import-recover>` using a wallet private key. After doing that, you will have access to viewing the wallet private key via the *Wallet Settings* (tap the gear icon in the lower right of the main screen to open Wallet Settings):
 
-When :ref:`setting up a new wallet<setup-cryptox-wallet>`, you can choose to restore using the wallet private key. After setup, you will have access to the key in the **More** menu.
+#. On the Wallet Settings screen, Tap **Wallet private key**.
 
+#. Tap **Show wallet private key**.
 
-
-#. Tap **More**.
-
-#. Tap **Wallet private key**.
 
    .. image:: ../images/cryptoX/show-wallet-private-key.png
             :width: 40%
             :alt: screen with seed phrase
 
-
-#. Tap **Show wallet private key**.
 
 #. Enter your passcode when prompted.
 
