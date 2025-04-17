@@ -29,7 +29,7 @@
 
     If you accidentally throw away the paper your secret recovery phrase is written on, forget where you hid it, or do not pass it on to an heir, you no longer have the ability to recover your wallet and can lose access to your CCDs. If someone steals your secret recovery phrase, they can access your CCDs. **If you lose your secret recovery phrase you lose access to your CCDs.**
 
-    As long as you have your secret recovery phrase, you have your CCDs. If you break a device containing your wallet, you haven’t lost your CCDs. You can simply :ref:`enter your secret recovery phrase<recover-wallet>` into a newly downloaded |mw-gen2| or |bw|.
+    As long as you have your secret recovery phrase, you have your CCDs. If you break a device containing your wallet, you haven’t lost your CCDs. You can simply :ref:`enter your secret recovery phrase<backup-import-recover>` into a newly downloaded |cryptox| or |bw|.
 
 .. dropdown:: How can I keep my secret recovery phrase secure?
 
@@ -52,15 +52,13 @@
 
     #. Download the |bw| and set it up so you have a :term:`secret recovery phrase`, a verified identity, and at least one account.
     #. Open the |mw-gen1| and send your funds from it to your new account(s) in the |bw|.
-    #. Once you are sure that all of your funds have been transferred and you have no incoming transfers, you can delete the |mw-gen1| on your phone. You can also keep the |mw-gen1| and use both wallets. Just make sure that you continue to make :ref:`backups<export-import>` if you continue using the |mw-gen1|.
-
-    Identity and account creation is disabled in |mw-gen1|.
+    #. Once you are sure that all of your funds have been transferred and you have no incoming transfers, you can delete the |mw-gen1| on your phone.
 
 .. dropdown:: Can I access my wallet on multiple devices with the secret recovery phrase?
 
-    Yes, you can access your wallet concurrently using |mw-gen2| and |bw|. You can :ref:`recover<recover-wallet>` your wallet in a device that uses either of these. Be aware that any names you have given to identities and accounts are **specific to the device**, so if you have used special names for them, they will not appear when you recover the wallet on another device. You can edit the account name and edit the identity name, if desired.
+    Yes, you can access your wallet concurrently using |cryptox| and |bw|. You can :ref:`recover<backup-import-recover>` your wallet in a device that uses either of these. Be aware that any names you have given to identities and accounts are **specific to the device**, so if you have used special names for them, they will not appear when you recover the wallet on another device. You can edit the account name and edit the identity name, if desired.
 
-    It is also important to note that if, for example, you add an account on one wallet that is recovered on two devices in parallel (from the same recovery phrase), nothing is dynamically updated across wallets from the same recovery phrase except balances. To get updates such as a new account or new identity, it is necessary to :ref:`recover<recover-wallet>` from your recovery phrase again; however you do not need to enter the recovery phrase again as the wallet will remember it.
+    It is also important to note that if, for example, you add an account on one wallet that is recovered on two devices in parallel (from the same recovery phrase), nothing is dynamically updated across wallets from the same recovery phrase except balances. To get updates such as a new account or new identity, it is necessary to :ref:`recover<backup-import-recover>` from your recovery phrase again; however you do not need to enter the recovery phrase again as the wallet will remember it.
 
 .. dropdown:: Can I use my secret recovery phrase to restore my accounts in third-party wallets?
 
@@ -82,8 +80,8 @@
 
 .. dropdown:: Can I access the same accounts on different devices?
 
-    If you are using |bw| and the |mw-gen2|, you can because the |mw-gen2| also uses the :term:`secret recovery phrase`. You simply enter your :ref:`recovery phrase<recover-wallet>` into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.
+    If you are using |bw| and |cryptox|, you can because the |cryptox| also uses the :term:`secret recovery phrase`. You simply enter your :ref:`recovery phrase<backup-import-recover>` into the wallet to see the same identities and accounts on both. Note that the account and identity names are specific to the device and are not the same between devices.
 
 .. dropdown:: What do I do if I forget my passcode on the |bw|?
 
-    If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to :ref:`recover<recover-wallet>` your wallet. Use your :term:`secret recovery phrase` to recover the wallet.
+    If you forget your passcode for your installed |bw|, you will need to :ref:`remove the extension in your internet browswer and reinstall it<setup-browser-wallet>`, choosing the option to :ref:`recover<backup-import-recover>` your wallet. Use your :term:`secret recovery phrase` to recover the wallet.

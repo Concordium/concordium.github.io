@@ -36,6 +36,7 @@ Token Development
    * :ref:`Fungible Tokens <ft-index>` - Mint, transfer, and burn fungible tokens
    * :ref:`NFT Minting <nft-index>` - Create and transfer non-fungible tokens
    * :ref:`wCCD Token <wCCD>` - Interact with wrapped CCD tokens on testnet
+   * :ref:`Using the onReceivingCIS2 hook <cis2-receiving>` - Learn how to handle tokens received by a smart contract
 
 Advanced Applications
 ---------------------
@@ -81,9 +82,11 @@ Additional Resources
    :caption: Smart Contract Tutorials
 
    setup-env
+   Hello World <./hello-world/hello-world>
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
    Using ID in dApps <./using-ID-in-dApps/index>
+   Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
    wCCD <./wCCD/index>
    voting/index
    nft-minting/index

@@ -48,7 +48,7 @@ Wallet Backups
 What are the requirements for each wallet?
 ==========================================
 
-- Desktop Wallet: A computer running Windows, macOS, or Linux, and a LEDGER NANO S or LEDGER NANO S PLUS.
+- Desktop Wallet: A computer running Windows, macOS, or Linux, and a LEDGER NANO S PLUS.
 - |bw|: A device running one of the supported Chromium internet browsers (Chrome, Opera, Brave, Edge) with the |bw| extension installed.
 - |cryptox|: An iPhone running iOS 15 or later or an Android phone running Android 8 or later.
 

@@ -8,9 +8,9 @@ All the local data of the desktop wallet is stored in a database in the user's a
 
 The desktop wallet does not remove your user data when it is uninstalled; this avoids users losing their data, and simplifies the update process for the application.
 
-Occasionally, it might be necessary to delete the user data. The following steps describe the process of deleting this user data. Make sure that you have a :ref:`backup <export-import>` with your data before starting this process.
+Occasionally, it might be necessary to delete the user data. The following steps describe the process of deleting this user data. Make sure that you have a :ref:`backup <backup-import-recover>` with your data before starting this process.
 
-.. warning:: Deleting the user data without a :ref:`backup <export-import>` will mean you can only recover what is recoverable with :ref:`account recovery <export-import>` (under "Recover accounts without a backup file"), which does not include your identities, address book, names or notes.
+.. warning:: Deleting the user data without a :ref:`backup <backup-import-recover>` will mean you can only recover what is recoverable with :ref:`account recovery <backup-import-recover>` (under "Recover accounts without a backup file"), which does not include your identities, address book, names or notes.
 
 Delete the user data
 =========================================================

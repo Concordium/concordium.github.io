@@ -20,25 +20,20 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
 .. dropdown:: |cryptox|
 
-   #. Tap the account on the accounts screen.
+      #. In the dropdown list, select the account from which you want to remove delegation and tap **Earn**.
 
-   #. Tap |cryptoX-earn| on the account balance screen.
+      #. On the delegation status screen, tap **Stop delegation**.
 
-   #. Now you see your current delegation. Tap **Stop delegation**.
+         .. image:: ../images/cryptoX/cryptoX-delegation-status.png
+           :width: 50%
+           :alt: screen showing current delegation status with options to update or stop
 
-      .. image:: ../images/cryptoX/cryptoX-delegation-status.png
-         :width: 50%
-         :alt: screen showing current delegation status with options to update or stop
 
-   #. You can now go through informational screens explaining the implications of stopping your delegation. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to stopping the delegation.
+      #. After the screen explaining the implications of stopping your delegation, tap **Continue** to proceed.
 
-   #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
+      #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
 
-      .. image:: ../images/cryptoX/cryptoX-stop-delegation.png
-         :width: 50%
-         :alt: screen shown to review delegation stop details
-
-   #. Once the transaction is submitted, you see a confirmation screen. Tap **Finish** to complete the action.
+      #. Once the transaction is submitted, you see a confirmation screen. Tap **Finish**.
 
 
 .. dropdown:: Desktop Wallet
@@ -61,7 +56,7 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
       #. A message says **Waiting for device. Please connect your Ledger**. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.
 
-      #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger Nano S is ready** or **Ledger Nano S Plus is ready** in the Desktop Wallet and select **Submit**.
+      #. Press the right button to navigate to the **Concordium** app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message **Ledger device is ready** in the Desktop Wallet and select **Submit**.
 
       #. On the LEDGER device, a message says **Review transaction**. The LEDGER device shows **Stop delegation**. Navigate to the right.
 
@@ -99,7 +94,7 @@ If you remove the delegation, there is a :term:`cool-down period` before the amo
 
       #. If you haven't connected the LEDGER device, there's a message in the Desktop Wallet saying **Waiting for connection** until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.
 
-      #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger Nano S** or **Open the Concordium application on your Ledger Nano S Plus**. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying LEDGER device is ready.
+      #. Wait for the message in the Desktop Wallet saying **Open the Concordium application on your Ledger device**. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says **Concordium is ready**. Wait for the message in the Desktop Wallet saying LEDGER device is ready.
 
       #. In the Desktop Wallet, Verify that the **Transaction details** are as you intended, select **I am sure that the proposed changes are correct**, and then select **Generate and Sign**.
 
