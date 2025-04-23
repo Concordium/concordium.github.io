@@ -24,7 +24,7 @@ Your recent focus has been on E-Fulfillment Reinvented. Could you elaborate on t
 What makes the current e-fulfillment process inefficient or insecure, and how does your solution improve upon it?
 -----------------------------------------------------------------------------------------------------------------
 
-**Niels:** Traditional systems rely on insecure payment holding, expensive credit card networks, and slow manual identity checks. There’s no way to easily prove a product is genuine. Our system replaces this with programmable payment flows, ZKP identity checks, and authenticated Provenance Tags — making the entire process more secure and cost-efficient.
+**Niels:** Traditional systems rely on insecure payment holding, expensive credit card networks, and slow manual identity checks. There’s no way to easily prove a product is genuine. Our system replaces this with programmable payment flows, Zero-Knowledge Proofs based identity checks, and authenticated Provenance Tags — making the entire process more secure and cost-efficient.
 
 Provenance Tags utilizes encrypted, tamper-proof tags for product authentication. Can you explain how these tags work and their role in ensuring product integrity throughout the supply chain?
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
