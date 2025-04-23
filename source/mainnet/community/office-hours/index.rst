@@ -53,6 +53,6 @@ To initiate an Office Hours session, simply fill out the short form below. We wi
       }
     </script>
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
+.. .. toctree::
+..    :maxdepth: 1
+..    :hidden:
