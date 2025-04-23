@@ -28,7 +28,7 @@ What to Expect from Office Hours
    .. raw:: html
 
       <p style="font-size: 1rem; font-weight: 600; margin: 0.3em 0;">
-         ⚠️ All Office Hours are recorded and published publicly. By joining, you agree to this condition.
+         ⚠️ Office Hours may be recorded and published publicly. By joining, you acknowledge and consent to this possibility.
       </p>
 
 How to Request an Office Hours Session
