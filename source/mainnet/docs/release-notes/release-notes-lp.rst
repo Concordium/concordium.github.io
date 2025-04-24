@@ -298,19 +298,29 @@ Wallets
 |bw|
 -------------------------
 
-    March 6, 2025
+    April 24, 2025
 
-    Version 2.1.2
+    Version 2.2.0
 
-    -   Updated version of @concordium/web-sdk to ver.-9 (with new protocol8 update)
-    -   New info cards 'validation is primed for suspension' and 'validation is suspended' for Validators
-    -   New info cards 'validator suspended' for Delegators
-    -   New page with description of self-suspend action
-    -   Added action to suspend/resume validation
-    -   Suspended and primed for suspension validator accounts are marked with red dot at accounts list and Main page. Additionally, delegators with suspended target validators also marked.
-    -   Info notification at the Main page, about validator suspension
+    -   Memo input field at Send Transaction screen
+    -   Added support for TransferWithMemo transaction type
+    -   Updated Send transaction status screens
+    -   Preview of memo at Transaction Log
+    -   Memo field at Transaction details screen
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.1.2 - March 6, 2025
+
+            Version 2.1.2 includes several changes.
+
+            -   Updated version of @concordium/web-sdk to ver.-9 (with new protocol8 update)
+            -   New info cards 'validation is primed for suspension' and 'validation is suspended' for Validators
+            -   New info cards 'validator suspended' for Delegators
+            -   New page with description of self-suspend action
+            -   Added action to suspend/resume validation
+            -   Suspended and primed for suspension validator accounts are marked with red dot at accounts list and Main page. Additionally, delegators with suspended target validators also marked.
+            -   Info notification at the Main page, about validator suspension
 
         .. dropdown:: |bw| 2.0.2 - February 1, 2025
 
