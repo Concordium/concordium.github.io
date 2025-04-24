@@ -18,7 +18,7 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    March 31, 2025
+    April 9, 2025
 
     Version 3.2.2 addresses the following issues:
 
@@ -28,6 +28,25 @@ Wallets
     - Swipelux onramp flow
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.1.0 - February 21, 2025
+
+            New Features & Enhancements:
+
+            - Home screen redesign
+            - Account Selector
+            - Token detail screen
+            - Token management flow
+            - Account settings update
+            - Transaction history and activity screen
+            - Improved onboarding flow
+            - UI transitions and animations
+
+            UI & Styling Updates:
+
+            - New footer/header menu
+            - Updated background color
+            - General styling updates across all screens
 
         .. dropdown:: |cryptox| 3.0.0 - December 18, 2024
 
