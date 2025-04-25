@@ -18,7 +18,7 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    March 31, 2025
+    April 9, 2025
 
     Version 3.2.2 addresses the following issues:
 
@@ -28,6 +28,25 @@ Wallets
     - Swipelux onramp flow
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.1.0 - February 21, 2025
+
+            New Features & Enhancements:
+
+            - Home screen redesign
+            - Account Selector
+            - Token detail screen
+            - Token management flow
+            - Account settings update
+            - Transaction history and activity screen
+            - Improved onboarding flow
+            - UI transitions and animations
+
+            UI & Styling Updates:
+
+            - New footer/header menu
+            - Updated background color
+            - General styling updates across all screens
 
         .. dropdown:: |cryptox| 3.0.0 - December 18, 2024
 
@@ -90,25 +109,96 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    January 27, 2025
+    April 18, 2025
 
-    Version 1.5.0 addresses the following issues:
+    Changed:
 
-    Added:
-
-    - Ability to have both file and seed phrase wallets in the app and switch between them
-    - Ability to open the Terms and Conditions and the Privacy Policy from the About screen
-
-    Fixed:
-
-    - Incorrect support email address in some error messages
-    - Not working links to the documentation on some screens
+    - Analytics is now collected through Firebase (Google Analytics)
+    - Empty state Token logo
+    - Improved Wert onramp flow
 
     Removed:
 
-    - Ability to create new accounts and identities in a file wallet. We recommend that you migrate to a seed phrase wallet in order to make use of the full range of CryptoX features.
+    - USDT, USDC, ETH and WBTC tokens from the default token set
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.8.1 - April 9, 2025
+
+            Fixed:
+
+            - Cutting off a text on the delegation action button
+
+        .. dropdown:: |cryptox| 1.8.0 - April 4, 2025
+
+            Added:
+
+            - Pull to refresh feature on Home screen
+
+            Changed:
+
+            - Revamped UI across the delegation and validation flow
+
+        .. dropdown:: |cryptox| 1.7.0 - March 4, 2025
+
+            Added:
+
+            - Ability to manually suspend and resume your validation
+            - Display of the suspension warning, for both validators and delegators
+            - Ability to see automatic validation suspension status changes in the Activity (Primed for suspension, Suspended)
+
+        .. dropdown:: |cryptox| 1.6.1 - February 25, 2025
+
+            Fixed:
+
+            - Send zero amount
+
+            Added:
+
+            - Social networks links (Telegram, X, Discord)
+
+            Changed:
+
+            - Replaced system dialogs with new gradient style dialogs
+            - Transaction details screen
+
+        .. dropdown:: |cryptox| 1.6.0 - February 21, 2025
+
+            Changes:
+
+            - New Features & Enhancements
+            - Home screen redesign
+            - Account Selector
+            - Token detail screen
+            - Token management flow
+            - Account settings update
+            - Transaction history and activity screen
+            - Improved onboarding flow
+            - UI transitions and animations
+
+            UI and styling updates:
+
+            - New footer/header menu
+            - Updated background color
+            - General styling updates across all screens
+
+        .. dropdown:: |cryptox| 1.5.0 - January 27, 2025
+
+            Version 1.5.0 addresses the following issues:
+
+            Added:
+
+            - Ability to have both file and seed phrase wallets in the app and switch between them
+            - Ability to open the Terms and Conditions and the Privacy Policy from the About screen
+
+            Fixed:
+
+            - Incorrect support email address in some error messages
+            - Not working links to the documentation on some screens
+
+            Removed:
+
+            - Ability to create new accounts and identities in a file wallet. We recommend that you migrate to a seed phrase wallet in order to make use of the full range of CryptoX features.
 
         .. dropdown:: |cryptox| 1.4.0 - December 18, 2024
 
