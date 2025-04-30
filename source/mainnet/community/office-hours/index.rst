@@ -3,7 +3,7 @@
 Office Hours
 =============
 
-What Are Developer Office Hours?
+What are Developer Office Hours?
 --------------------------------
 
 Office Hours are regular online sessions hosted by the Concordium team for developers and community members. During these sessions, you can ask questions, discuss technical challenges, and receive direct support from our team.
@@ -15,7 +15,7 @@ Unlike pre-scheduled events, Office Hours are held only by community request. If
 
 All events are conducted as voice chats on our Discord server, and typically last around 1 hour.
 
-What to Expect from Office Hours
+What to expect from Office Hours
 --------------------------------
 
 - Live discussion on the selected topic
@@ -31,7 +31,7 @@ What to Expect from Office Hours
          ⚠️ Office Hours may be recorded and published publicly. By joining, you acknowledge and consent to this possibility.
       </p>
 
-How to Request an Office Hours Session
+How to request an Office Hours session
 --------------------------------------
 
 To initiate an Office Hours session, simply fill out the short form below. We will review all submissions, and once at least 3 requests for the same topic have been received, we will contact you and schedule the session.

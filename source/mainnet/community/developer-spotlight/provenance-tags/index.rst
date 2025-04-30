@@ -55,7 +55,7 @@ Provenance Tags offers a white-label smartphone SDK in React Native. How does th
 
 **Niels:** It allows brands and partners to integrate our tag scanning and product verification flow directly into their apps with minimal effort. They can offer secure, trusted experiences without rebuilding the technology stack — accelerating adoption.
 
-You mentioned that some parts of the platform are open-source. Which components are publicly available, and how can developers or the community get involved?
+You mentioned that some parts of the platform are open source. Which components are publicly available, and how can developers or the community get involved?
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Niels:** Our platform is not fully open source to the public — but we do provide select components to trusted partners within our own ecosystem. These include tools like our tag verifier logic, SDKs, and API interfaces, which help partners build and integrate quickly while maintaining the integrity and security of the system. By keeping it within our ecosystem, we can ensure high-quality integrations, protect against misuse, and maintain trust across all verified participants.
@@ -108,7 +108,7 @@ What are the biggest challenges you're currently facing in development or adopti
 What are the key milestones and future developments we can expect from Provenance Tags in the coming years?
 -----------------------------------------------------------------------------------------------------------
 
-**Niels:** A full Proof of Concept rollout with stable-coins, ZKP delivery verification and in-transit yield, expanded SDK features, and integration with major e-commerce platforms. Our 120-day plan includes full web shop + delivery workflow testing and onboarding more partners across sectors.
+**Niels:** A full Proof of Concept rollout with stablecoins, ZKP delivery verification and in-transit yield, expanded SDK features, and integration with major e-commerce platforms. Our 120-day plan includes full web shop + delivery workflow testing and onboarding more partners across sectors.
 
 Final Thoughts
 --------------
