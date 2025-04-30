@@ -12,6 +12,8 @@ It is possible to export tansaction logs with :ref:`CCD Scan<ccd-scan>` from the
 
     #. Go to the Your Accounts screen (tap the account identifier on the main screen).
 
+    #. Open Account Settings by tapping the gear icon in the upper right og the screen.
+
     #. Tap **Export transaction logs**.
 
     #. Tap **Save transaction logs** and browse to the saving location.

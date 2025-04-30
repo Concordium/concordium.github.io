@@ -28,7 +28,7 @@ When you delegate some stake to a staking pool, it can influence the chances of 
                     :width: 50%
                     :alt: screen with earning options
 
-        #. On the next screen, enter the amount you want to delegate. You can see your available balance. Tap **Staking mode** to specify wheter you want to set up passive delegation or delegation to a specific pool. In the latter case, you must also enter validatoe pool ID. Tap **Continue** to return to the previous screen. Toggle the **Restake rewards** switch if you want to automatically add your rewards to your stake amount. If disabled, rewards will be deposited to your disposable balance at each pay day. Tap **Continue** to proceed.
+        #. On the next screen, enter the amount you want to delegate. You can see your available balance. Tap **Staking mode** to specify wheter you want to set up passive delegation or delegation to a specific pool. In the latter case, you must also enter validate pool ID. Tap **Continue** to return to the previous screen. Toggle the **Restake rewards** switch if you want to automatically add your rewards to your stake amount. If disabled, rewards will be deposited to your disposable balance at each pay day. Tap **Continue** to proceed.
 
            .. image:: ../images/cryptoX/cryptox-register-delegation1.png
                     :width: 50%

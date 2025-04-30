@@ -22,7 +22,7 @@ This topic describes how you can send CCD from an account when only one particip
 
     #. Tap **Send** on the main screen.
 
-    #. Enter the amount you want to transfer and specify the recipient. You can paste the recipient address, choose a recipient that already exists in your address book, or tap the Scan QR icon to add a new one.
+    #. Enter the amount you want to transfer and specify the recipient. You can paste the recipient address, choose a recipient that already exists in your address book, or tap the Scan QR icon.
 
        .. image:: ../images/cryptoX/cryptox-send-funds1a.png
             :width: 50%

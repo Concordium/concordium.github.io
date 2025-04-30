@@ -42,7 +42,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
             :alt: screen to register validator for first time showing options to open or close pool for delegation
             :width: 50%
 
-    6. Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Tap **Continue**.
+    6. Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. The lower the commission, the greater reward the delegators receive, hence they are more motivated to delegate to you. For example, 10% commission means that you get 10% of the rewards for the total delegated amount, while delegators get the remaining 90% proportionally to their stake. You still get 100% of the rewards for your own staked amount.  Tap **Continue**.
 
        .. image:: ../images/cryptoX/cryptox-add-validator4.png
             :alt: screen to register validator for first time showing commission rates for staking pools
