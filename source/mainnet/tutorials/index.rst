@@ -50,6 +50,15 @@ Advanced Applications
    * :ref:`Low Code NFT Marketplace <low-code-nft-mp-intro>` - Create a marketplace for trading NFTs
    * :ref:`eSealing <eSealing>` - Implement document sealing with the |bw| and timestamp verification
 
+ID Tutorials
+------------
+
+.. container:: tutorial-section tutorial-section-yellow
+
+   Learn how to use the ID layer in dApps.
+
+   * :ref:`Using ID in dApps <zk-proof-index>` - Use the ID Layer
+
 Advanced Concordium Features
 ----------------------------
 
@@ -76,6 +85,7 @@ Additional Resources
    Hello World <./hello-world/hello-world>
    Counter <./counter/counter-contract>
    PiggyBank <./piggy-bank/index>
+   Using ID in dApps <./using-ID-in-dApps/index>
    Using the onReceivingCIS2 hook <./onReceivingCIS2/on-receivingCIS2>
    wCCD <./wCCD/index>
    voting/index

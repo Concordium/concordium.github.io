@@ -102,5 +102,6 @@ An example backend can be found in `the Web3 ID repository <https://github.com/C
    :maxdepth: 1
 
    issuer
+   Wallet identity provider interfaces <identity-provider-interfaces>
    ../guides/create-proofs
 
