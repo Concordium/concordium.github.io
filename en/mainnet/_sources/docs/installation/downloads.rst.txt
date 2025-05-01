@@ -65,25 +65,25 @@ Concordium Desktop Wallet
 
 .. dropdown:: Mainnet
 
-   .. card:: Windows v1.8.0
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-mainnet/concordium-desktop-wallet-1.8.0.exe
+   .. card:: Windows v1.8.1
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.exe
 
-   .. card:: MacOS v1.8.0
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-mainnet/concordium-desktop-wallet-1.8.0.dmg
+   .. card:: MacOS v1.8.1
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.dmg
 
-   .. dropdown:: Linux® v1.8.0
+   .. dropdown:: Linux® v1.8.1
 
-      - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-mainnet/concordium-desktop-wallet-1.8.0.AppImage>`_
+      - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.AppImage>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
          - :ref:`Verification instructions <verification-cdw-appimage>`
 
-      - `Mainnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-mainnet/concordium-desktop-wallet-1.8.0.deb>`_
+      - `Mainnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.deb>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
          - :ref:`Verification instructions <verification-cdw-deb>`
 
-      - `Mainnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-mainnet/concordium-desktop-wallet-1.8.0.rpm>`_
+      - `Mainnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.rpm>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
          - :ref:`Verification instructions <verification-cdw-rpm>`
