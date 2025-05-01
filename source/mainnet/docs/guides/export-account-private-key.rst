@@ -1,18 +1,18 @@
 .. include:: ../../variables.rst
 .. _export-key:
 
-====================
-Export a private key
-====================
+==========================
+Export account private key
+==========================
 
 In certain situations, such as testing interaction with smart contracts, you may need to export your private key for an account in your wallet. The file format of the key export is specifically for :ref:`import<concordium-client-import-accounts-keys>` to ``concordium-client``. If you just copy the key to the clipboard, it's just the key itself and can be used for other purposes.
 
 
 .. dropdown:: |cryptox|
 
-    #. Tap the account you wish to to export the private key for.
+    #. Go to the Your Accounts screen (tap the account identifier on the main screen).
 
-    #. On the Account screen, tap |cryptoX-acct-settings| to open the Account settings screen.
+    #. Open Account Settings by tapping the gear icon in the upper right of the screen.
 
     #. Tap **Export private key**.
 

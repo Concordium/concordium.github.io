@@ -9,19 +9,21 @@ If you need to share your account address with someone, you can find the address
 
 .. dropdown:: |cryptox|
 
-   #. On the accounts screen tap |cryptoX-receive| or on the account balance screen tap |cryptoX-receive|.
+   #. Tap **Receive** on the main screen.
 
    #. You see a QR code and your address. To share your address:
 
-      .. image:: ../images/cryptoX/cryptoX-QR-code.png
-         :width: 50%
-         :alt: screen with QR code and account address shown
-
-      - You can let someone scan your QR code if they have |cryptox|, |mw-gen2|, or |mw-gen1| installed.
+      - You can let someone scan your QR code if they have |cryptox| installed.
 
       - You can tap **Share** and then share the address using one of the share options.
 
       - You can tap **Copy** to copy the address and then paste it somewhere of your own choosing.
+
+
+      .. image:: ../images/cryptoX/cryptox-QR-code-new.png
+         :width: 50%
+         :alt: screen with QR code and account address shown
+
 
 .. dropdown:: |bw|
 

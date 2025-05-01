@@ -20,35 +20,30 @@ This topic describes how you can send CCD from an account when only one particip
 
 .. dropdown:: |cryptox|
 
-    #. On the Accounts screen tap |cryptoX-send| on the account from which you want to send CCD. You can also tap |cryptoX-send| on the account's balance screen.
+    #. Tap **Send** on the main screen.
 
-    #. Enter the amount you want to transfer.
+    #. Enter the amount you want to transfer and specify the recipient. You can paste the recipient address, choose a recipient that already exists in your address book, or tap the Scan QR icon.
 
-        .. image:: ../images/cryptoX/cryptoX-send-funds1.png
+       .. image:: ../images/cryptoX/cryptox-send-funds1a.png
             :width: 50%
 
-    #. You can paste the recipient address, choose a recipient that already exists in your **Address Book**, or tap **Scan QR** to add a new one.
+    #. Optionally you can add a memo to your transaction by tapping the **Add memo** field. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the transaction fee.
 
-    #. Optionally you can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the transaction fee.
-
-        .. Warning::
+       .. Warning::
             Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.
 
     #. Tap **Continue**.
 
-    #. Tap **Send funds**.
+    #. Review the transaction. If you need to correct something, use the arrow to go back to the previous screen. When ready, swipe to submit the transaction.
 
-        .. image:: ../images/cryptoX/cryptoX-send-funds2.png
+       .. image:: ../images/cryptoX/cryptox-send-funds2a.png
             :width: 50%
 
-    #. Tap **Finish**.
+    #. The confirmation screen shows the sent amount. You can now view transaction details or tap **Close** to return to the main screen.
 
-        .. image:: ../images/cryptoX/cryptoX-send-funds3.png
+       .. image:: ../images/cryptoX/cryptox-send-funds3a.png
             :width: 50%
 
-    .. |cryptoX-send| image:: ../images/cryptoX/cryptoX-send.png
-         :alt: Paper airplane
-         :width: 30px
 
     .. |send-w-text| image:: ../images/send-w-text.png
          :alt: Paper airplane with text send
