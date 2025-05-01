@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/update-delegation.f8df053f-d839-41d8-9d6f-68e169da2e27.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/update-delegation.5bf96a79-52b1-45cf-996f-2a48799bf33d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/update-delegation';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/update-delegation.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -652,7 +652,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="export-key.html">Export a private key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="export-transaction-logs.html">Export transaction logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
@@ -758,7 +758,7 @@ You can see the fee in the transaction log.</p>
 </div>
 <section id="updating-delegation-from-a-suspended-validator">
 <h2>Updating delegation from a suspended validator<a class="headerlink" href="#updating-delegation-from-a-suspended-validator" title="Link to this heading">#</a></h2>
-<p>If a validator you’ve delegated to becomes suspended, you’ll see a warning banner in your wallet interface indicating <em>Your validator has been suspended</em>. When a validator is suspended, both the validator and its delegators stop earning rewards.
+<p>If a validator you’ve delegated to becomes suspended, you’ll see a warning banner on your wallet indicating that <em>Your validator has been suspended</em>. When a validator is suspended, both the validator and its delegators stop earning rewards.
 To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.</p>
 <a class="reference internal image-reference" href="../../_images/validator_suspended_banner.png"><img alt="../../_images/validator_suspended_banner.png" src="../../_images/validator_suspended_banner.png" style="width: 50%;" />
 </a>
@@ -770,22 +770,15 @@ To maintain your earning potential, you may consider moving your delegation to a
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">In the dropdown list, select the account from which you want to change your delegation preferences and tap <strong>Earn</strong>.</p></li>
-<li><p class="sd-card-text">On the delegation status screen, tap <strong>Update current delegation</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-delegation-status.png"><img alt="screen showing current delegation with options to stop or update" src="../../_images/cryptoX-delegation-status.png" style="width: 50%;" />
+<li><p class="sd-card-text">Tap the <strong>Earn</strong> button on the main screen.</p></li>
+<li><p class="sd-card-text">On the earning status screen, tap <strong>Update</strong>.</p></li>
+<li><p class="sd-card-text">This will open an informational screen explaining the update options for delegation. Tap <strong>Update delegation</strong> to proceed.</p></li>
+<li><p class="sd-card-text">On the next screen you can see your balance available for delegation and your current delegation amount. If you want to change the amount, tap on the field and update the amount. Tap on the delegation field to change delegation model, and toggle the <strong>Restake rewards</strong> switch if you want to change your restaking preferences. Tap <strong>Continue</strong> to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-update-delegation1.png"><img alt="screen with options to choose delegation type" src="../../_images/cryptox-update-delegation1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You can now go through informational screens explaining the update options for delegation. Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to updating.</p></li>
-<li><p class="sd-card-text">If you want to delegate to a specific pool, select <strong>Validator</strong> and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, select <strong>Passive</strong>. Tap <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-update-delegation.png"><img alt="screen with options to choose delegation type" src="../../_images/cryptoX-update-delegation.png" style="width: 50%;" />
-</a>
-</li>
-<li><p class="sd-card-text">On the next screen you can see your balance available for delegation and the amount of your current delegation. If you want to change the amount, tap on the field <strong>Optional: Type the new amount</strong> and enter the amount. Tap <strong>Yes, add</strong> to restake any rewards or tap <strong>No, don’t add</strong> if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance at each payday. When satisfied with your settings, tap <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-update-delegation2-new.png"><img alt="screen with options to choose delegation type" src="../../_images/cryptox-update-delegation2-new.png" style="width: 50%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Review the information in the transaction overview. When you are satisfied, tap <strong>Submit delegation transaction</strong>.</p></li>
-<li><p class="sd-card-text">Once the transaction is submitted you see a confirmation screen. Tap <strong>Finish</strong> to complete the action.</p></li>
+<li><p class="sd-card-text">On the overview screen, review the information. Swipe right on the <strong>Update delegation</strong> slider to submit the delegation update.</p></li>
+<li><p class="sd-card-text">The wallet shows a confirmation screen with a green checkmark indicating that your delegation update has been successfully submitted to the chain. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Close</strong> to return to the main screen.</p></li>
 </ol>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">

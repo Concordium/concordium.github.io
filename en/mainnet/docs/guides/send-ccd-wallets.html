@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/send-ccd-wallets.4f4d7784-3114-4d04-a082-addf402d0903.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/send-ccd-wallets.4a3d32c5-5a2e-4ddf-959b-02d614b560f8.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/send-ccd-wallets';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/send-ccd-wallets.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -652,7 +652,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="export-key.html">Export a private key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="export-transaction-logs.html">Export transaction logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
@@ -757,34 +757,25 @@ You can see the fee in the transaction log.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">On the Accounts screen tap <a class="reference internal" href="../../_images/cryptoX-send.png"><img alt="Paper airplane" src="../../_images/cryptoX-send.png" style="width: 30px;" /></a> on the account from which you want to send CCD. You can also tap <a class="reference internal" href="../../_images/cryptoX-send.png"><img alt="Paper airplane" src="../../_images/cryptoX-send.png" style="width: 30px;" /></a> on the account’s balance screen.</p></li>
-<li><p class="sd-card-text">Enter the amount you want to transfer.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-send-funds1.png"><img alt="../../_images/cryptoX-send-funds1.png" src="../../_images/cryptoX-send-funds1.png" style="width: 50%;" />
+<li><p class="sd-card-text">Tap <strong>Send</strong> on the main screen.</p></li>
+<li><p class="sd-card-text">Enter the amount you want to transfer and specify the recipient. You can paste the recipient address, choose a recipient that already exists in your address book, or tap the Scan QR icon.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-send-funds1a.png"><img alt="../../_images/cryptox-send-funds1a.png" src="../../_images/cryptox-send-funds1a.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">You can paste the recipient address, choose a recipient that already exists in your <strong>Address Book</strong>, or tap <strong>Scan QR</strong> to add a new one.</p></li>
-<li><p class="sd-card-text">Optionally you can add a memo to your transaction. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the transaction fee.</p>
-<blockquote>
-<div><div class="admonition warning">
+<li><p class="sd-card-text">Optionally you can add a memo to your transaction by tapping the <strong>Add memo</strong> field. A memo is a short message that will be shown with the transaction. Memos are publicly visible on the chain, so be careful what you write. Adding a memo will also increase the transaction fee.</p>
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p class="sd-card-text">Transaction memos are public, permanent and visible to everyone on the blockchain. Therefore, carefully review all information before you submit the memo to the blockchain.</p>
 </div>
-</div></blockquote>
 </li>
 <li><p class="sd-card-text">Tap <strong>Continue</strong>.</p></li>
-<li><p class="sd-card-text">Tap <strong>Send funds</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-send-funds2.png"><img alt="../../_images/cryptoX-send-funds2.png" src="../../_images/cryptoX-send-funds2.png" style="width: 50%;" />
+<li><p class="sd-card-text">Review the transaction. If you need to correct something, use the arrow to go back to the previous screen. When ready, swipe to submit the transaction.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-send-funds2a.png"><img alt="../../_images/cryptox-send-funds2a.png" src="../../_images/cryptox-send-funds2a.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
-<li><p class="sd-card-text">Tap <strong>Finish</strong>.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../_images/cryptoX-send-funds3.png"><img alt="../../_images/cryptoX-send-funds3.png" src="../../_images/cryptoX-send-funds3.png" style="width: 50%;" />
+<li><p class="sd-card-text">The confirmation screen shows the sent amount. You can now view transaction details or tap <strong>Close</strong> to return to the main screen.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-send-funds3a.png"><img alt="../../_images/cryptox-send-funds3a.png" src="../../_images/cryptox-send-funds3a.png" style="width: 50%;" />
 </a>
-</div></blockquote>
 </li>
 </ol>
 </div>

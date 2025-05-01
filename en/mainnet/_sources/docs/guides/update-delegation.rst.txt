@@ -28,7 +28,7 @@ Before delegating stake to a staking pool, it is important to research the pool 
 
 Updating delegation from a suspended validator
 ----------------------------------------------
-If a validator you've delegated to becomes suspended, you'll see a warning banner in your wallet interface indicating *Your validator has been suspended*. When a validator is suspended, both the validator and its delegators stop earning rewards.
+If a validator you've delegated to becomes suspended, you'll see a warning banner on your wallet indicating that *Your validator has been suspended*. When a validator is suspended, both the validator and its delegators stop earning rewards.
 To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.
 
 .. image:: ../images/browser-wallet/new/validator_suspended_banner.png
@@ -42,32 +42,22 @@ Update delegation
 
 .. dropdown:: |cryptox|
 
-    #. In the dropdown list, select the account from which you want to change your delegation preferences and tap **Earn**.
+    #. Tap the **Earn** button on the main screen.
 
-    #. On the delegation status screen, tap **Update current delegation**.
+    #. On the earning status screen, tap **Update**.
 
-       .. image:: ../images/cryptoX/cryptoX-delegation-status.png
-            :width: 50%
-            :alt: screen showing current delegation with options to stop or update
+    #. This will open an informational screen explaining the update options for delegation. Tap **Update delegation** to proceed.
 
-    #. You can now go through informational screens explaining the update options for delegation. Tap **Next** to navigate through the screens. Tap **Skip** to proceed directly to updating.
+    #. On the next screen you can see your balance available for delegation and your current delegation amount. If you want to change the amount, tap on the field and update the amount. Tap on the delegation field to change delegation model, and toggle the **Restake rewards** switch if you want to change your restaking preferences. Tap **Continue** to proceed.
 
-    #. If you want to delegate to a specific pool, select **Validator** and enter the validator ID of the desired pool owner. If you want to delegate to passive delegation, select **Passive**. Tap **Continue**.
-
-       .. image:: ../images/cryptoX/cryptoX-update-delegation.png
+       .. image:: ../images/cryptoX/cryptox-update-delegation1.png
             :width: 50%
             :alt: screen with options to choose delegation type
 
-    #. On the next screen you can see your balance available for delegation and the amount of your current delegation. If you want to change the amount, tap on the field **Optional: Type the new amount** and enter the amount. Tap **Yes, add** to restake any rewards or tap **No, don't add** if you don’t want to restake rewards. If you do not restake, rewards are deposited to your disposable balance at each payday. When satisfied with your settings, tap **Continue**.
+    #. On the overview screen, review the information. Swipe right on the **Update delegation** slider to submit the delegation update.
 
-       .. image:: ../images/cryptoX/cryptox-update-delegation2-new.png
-            :width: 50%
-            :alt: screen with options to choose delegation type
+    #. The wallet shows a confirmation screen with a green checkmark indicating that your delegation update has been successfully submitted to the chain. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
-
-    #. Review the information in the transaction overview. When you are satisfied, tap **Submit delegation transaction**.
-
-    #. Once the transaction is submitted you see a confirmation screen. Tap **Finish** to complete the action.
 
 .. dropdown:: Desktop Wallet
 

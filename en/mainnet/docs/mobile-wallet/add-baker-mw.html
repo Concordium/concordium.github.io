@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/add-baker-mw.c114ced7-9957-4dbd-874f-857cffad8a90.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/add-baker-mw.5e10d77f-358f-44e7-b894-93825f0ff9f8.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/add-baker-mw';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/add-baker-mw.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -652,7 +652,7 @@
 <li class="toctree-l4"><a class="reference internal" href="inspect-release-schedule-mw.html">Inspect a release schedule</a></li>
 </ul>
 </details></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/export-key.html">Export a private key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Add a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="update-baker-mw.html">Change validator options</a></li>
@@ -753,34 +753,30 @@ You can see the fee in the transaction log.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">In the dropdown list, select the account for which you will set up a validator an tap <strong>Earn</strong>.</p></li>
-<li><p class="sd-card-text">Select <strong>Continue to validator setup</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-earning-rewards.png"><img alt="screen with earning options" src="../../_images/cryptoX-earning-rewards.png" style="width: 50%;" />
+<li><p class="sd-card-text">Tap the <strong>Earn</strong> button on the main screen.</p></li>
+<li><p class="sd-card-text">On the earnings information screen, tap <strong>Or become a validator (advanced)</strong> at the bottom of the screen.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-add-validator1.png"><img alt="screen with earning options" src="../../_images/cryptox-add-validator1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You can now go through informational screens explaining the key concepts of validation on the Concordium blockchain, including the validator role and key generation, node requirements, staking pool options, and suspension policies. Tap <strong>Next</strong> to navigate through the screens. Tap <strong>Skip</strong> to proceed directly to registering your validation.</p></li>
-<li><p class="sd-card-text">On the register validator screen you can see your available balance. Enter the amount you want to stake in the field. Tap <strong>Yes, add</strong> to restake validator rewards, or tap <strong>No, don’t add</strong> if you don’t want to restake rewards. In this case, rewards are deposited to your disposable balance at each pay day. Tap <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-register-validator_new.png"><img alt="screen to register validator for first time showing balance, amount to stake, and restake parameters" src="../../_images/cryptox-register-validator_new.png" style="width: 50%;" />
+<li><p class="sd-card-text">Read through the validator information screen where the key concepts of validation on the Concordium blockchain are explained. This includes information about the validator role, key generation, node requirements, staking pool options, and suspension policies. Tap <strong>Start validating</strong> at the bottom of the screen to proceed.</p></li>
+<li><p class="sd-card-text">On the Register validator screen, enter the amount of CCD you want to stake. You can see your available balance for staking below. Toggle the <strong>Restake rewards</strong> switch if you want to automatically add your validator rewards to your stake amount. If disabled, rewards will be deposited to your disposable balance at each pay day. Tap <strong>Continue</strong> to proceed.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-add-validator2.png"><img alt="screen to register validator for first time showing balance, amount to stake, and restake parameters" src="../../_images/cryptox-add-validator2.png" style="width: 50%;" />
 </a>
 </li>
-</ol>
-<ol class="arabic" start="4">
 <li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a> or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a staking pool. Tap <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-open-del.png"><img alt="screen to register validator for first time showing options to open or close pool for delegation" src="../../_images/cryptoX-register-validator-open-del.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-add-validator3.png"><img alt="screen to register validator for first time showing options to open or close pool for delegation" src="../../_images/cryptox-add-validator3.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. Tap <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-register_validator_commissions_new.png"><img alt="screen to register validator for first time showing commission rates for staking pools" src="../../_images/cryptox-register_validator_commissions_new.png" style="width: 50%;" />
+<li><p class="sd-card-text">Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. The lower the commission, the greater reward the delegators receive, hence they are more motivated to delegate to you. For example, 10% commission means that you get 10% of the rewards for the total delegated amount, while delegators get the remaining 90% proportionally to their stake. You still get 100% of the rewards for your own staked amount.  Tap <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-add-validator4.png"><img alt="screen to register validator for first time showing commission rates for staking pools" src="../../_images/cryptox-add-validator4.png" style="width: 50%;" />
 </a>
 </li>
 <li><p class="sd-card-text">If you open a staking pool, you can optionally provide a URL with information about your validator. This allows delegators to learn more about your pool and make informed decisions. This information is not shared for closed pools or validators. Tap <strong>Continue</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-metadata.png"><img alt="screen to register validator for first time showing field to paste URL with metadata for staking pools" src="../../_images/cryptoX-register-validator-metadata.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="../../_images/cryptox-add-validator5.png"><img alt="screen to register validator for first time showing field to paste URL with metadata for staking pools" src="../../_images/cryptox-add-validator5.png" style="width: 50%;" />
 </a>
 </li>
-</ol>
-<ol class="arabic" start="6">
-<li><p class="sd-card-text">Now, export the validator keys. You need the validator keys to start the node. Tap <strong>Export validator keys</strong> and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.</p>
-<a class="reference internal image-reference" href="../../_images/cryptoX-register-validator-export-validator-keys.png"><img alt="screen to register validator for first time showing all of the validator keys with option to export" src="../../_images/cryptoX-register-validator-export-validator-keys.png" style="width: 50%;" />
+<li><p class="sd-card-text">Now, export the validator keys. You need the validator keys to start the node. Tap <strong>Continue</strong> and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-add-validator6.png"><img alt="screen to register validator for first time showing all of the validator keys with option to export" src="../../_images/cryptox-add-validator6.png" style="width: 50%;" />
 </a>
 </li>
 </ol>
@@ -788,18 +784,19 @@ You can see the fee in the transaction log.</p>
 <p class="admonition-title">Warning</p>
 <p class="sd-card-text">If you’re going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
 </div>
-<ol class="arabic" start="7">
-<li><p class="sd-card-text">Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information then tap <strong>Submit validator transaction</strong>.</p></li>
-<li><p class="sd-card-text">The wallet shows that the transaction has been submitted to the chain. Tap <strong>Finish</strong>. Once the transaction is approved, the active validator screen appears where you have the possibility to update validator settings.</p></li>
+<ol class="arabic" start="9">
+<li><p class="sd-card-text">Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information. Swipe right on the <strong>Submit</strong> slider to submit the validator transaction.</p></li>
+<li><p class="sd-card-text">The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you’re validating with. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Close</strong> to return to the main screen.</p>
+<a class="reference internal image-reference" href="../../_images/cryptox-add-valiator7.png"><img alt="screen confirming validator registration" src="../../_images/cryptox-add-valiator7.png" style="width: 50%;" />
+</a>
+</li>
 <li><p class="sd-card-text">You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a validator for a longer time.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-windows.html#baker-windows"><span class="std std-ref">Windows</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-macos.html#baker-macos"><span class="std std-ref">macOS</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-docker.html#baking-docker"><span class="std std-ref">Docker</span></a></p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../network/guides/baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">Ubuntu</span></a></p></li>
 </ul>
-</div></blockquote>
 </li>
 </ol>
 </div>
