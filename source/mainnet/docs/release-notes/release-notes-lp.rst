@@ -641,18 +641,22 @@ Wallets
 Desktop Wallet
 --------------
 
-    March 18, 2025
+    May 1, 2025
 
-    Version 1.8.0 contains the following changes:
+    Version 1.8.1 contains the following changes:
 
-    - Account validation/delegation overview now shows if the target pool is suspended or primed for suspension.
-    - A notification is shown for accounts validating/delegating to a pool which is suspended.
-    - Support for updating validator score parameters on chains running protocol version 8 or above.
-    - Support for changing the suspension status of validators. This requires the corresponding version of the Concordium ledger app which also adds support for this feature.
-    - Updating Concordium SDK fixing issue preventing transactions.
-
+    - Fixed issue with blank screen on startup first seen in 1.8.0.
+    - Fixed error message in terminal when failing to lookup the latest release.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.8.0 - March 18, 2025
+
+            - Account validation/delegation overview now shows if the target pool is suspended or primed for suspension.
+            - A notification is shown for accounts validating/delegating to a pool which is suspended.
+            - Support for updating validator score parameters on chains running protocol version 8 or above.
+            - Support for changing the suspension status of validators. This requires the corresponding version of the Concordium ledger app which also adds support for this feature.
+            - Updating Concordium SDK fixing issue preventing transactions.
 
         .. dropdown:: 1.7.4 - June 26, 2024
 
