@@ -66,10 +66,10 @@ Concordium Desktop Wallet
 .. dropdown:: Mainnet
 
    .. card:: Windows v1.8.1
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-mainnet/concordium-desktop-wallet-1.8.0.exe
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.exe
 
    .. card:: MacOS v1.8.1
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-mainnet/concordium-desktop-wallet-1.8.0.dmg
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.dmg
 
    .. dropdown:: Linux® v1.8.1
 
