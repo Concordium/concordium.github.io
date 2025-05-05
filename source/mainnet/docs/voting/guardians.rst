@@ -25,6 +25,21 @@ Setup
 
 Before the election opens, the guardians must use the Guardian app to create their key pairs, register encrypted shares, and generate their secret key share to be used to decrypt the tally after the election.
 
+Connect to election contract
+----------------------------
+
+When the election contract has been initialized, the guardians must connect to the election contract using the Guardian app. This is done in the folowing sequence of steps:
+
+#. Open the Guardian app.
+
+#. Specify the election target, consisting of a Concordium network ("mainnet" or "testnet" from the dropdown) and contract index, which is a positive whole number specified in the input field.
+
+    .. image:: ../images/voting/guardian-connect.png
+        :alt: connect to election contract dialog
+        :width: 100%
+
+#. Click **Connect** to connect to the election contract.
+
 Generate guardian keys
 ----------------------
 
@@ -169,6 +184,21 @@ After all guardians have registered decryption proofs, the decryption is shown a
     :alt: dialog shown when awaiting other guardians
     :width: 100%
 
+Reconfigure the app
+===================
+
+In the case of a reset of the election, the guardian app must be reconfigured. This can be done through the **Settings** menu.
+
+The simplest way to reconfigure the app to target new election is to click **Set Election Target** and update the network and contract index.
+
+    .. image:: ../images/voting/guardian-reconfigure.png
+        :alt: reconfigure guardian app menu
+        :width: 100%
+
+.. note::
+
+    On windows/linux, it might be required to press **Alt** on your keyboard to bring up the application menu where the "Settings" menu is available.
+
 Uninstall the app
 =================
 
@@ -179,21 +209,21 @@ Windows
 
 Uninstall the app as you uninstall all apps on Microsoft.
 
-Delete the folder ``C:\Users\<user>\AppData\com.concordium.guardian.<network>.<contract-index>.<contract-subindex>`` to remove all guardian keys.
+Delete the folder ``C:\Users\<user>\AppData\com.concordium.guardian`` to remove all guardian keys.
 
 MacOS
 -----
 
 Uninstall the app as you uninstall all apps on MacOS.
 
-Delete the folder ``~/Library/Application Support/com.concordium.guardian.<network>.<contract-index>.<contract-subindex>`` where ``~`` represents either ``$HOME`` or ``/Users/<username>`` to remove all guardian keys.
+Delete the folder ``~/Library/Application Support/com.concordium.guardian`` where ``~`` represents either ``$HOME`` or ``/Users/<username>`` to remove all guardian keys.
 
 Linux
 -----
 
 On linux, the application data is stored in one of two places depending on your system:
 
-- ``$XDG_DATA_HOME/com.concordium.guardian.<network>.<contract-index>.<contract-subindex>``
-- ``$HOME/.local/share/com.concordium.guardian.<network>.<contract-index>.<contract-subindex>``
+- ``$XDG_DATA_HOME/com.concordium.guardian``
+- ``$HOME/.local/share/com.concordium.guardian``
 
 Delete this folder to remove all guardian keys.
