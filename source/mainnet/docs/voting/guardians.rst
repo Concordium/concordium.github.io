@@ -28,7 +28,7 @@ Before the election opens, the guardians must use the Guardian app to create the
 Connect to election contract
 ----------------------------
 
-When the election contract has been initialized, the guardians must connect to the election contract using the Guardian app. This is done in the folowing sequence of steps:
+When the election contract has been initialized, the guardians must connect to the election contract using the Guardian app. This is done in the following sequence of steps:
 
 #. Open the Guardian app.
 
@@ -192,7 +192,7 @@ Reconfigure the app
 
 In the case of a reset of the election, the guardian app must be reconfigured. This can be done through the **Settings** menu.
 
-The simplest way to reconfigure the app to target new election is to click **Set Election Target** and update the network and contract index.
+The simplest way to reconfigure the app to target the new election is to click **Set Election Target** and update the network and contract index.
 
     .. image:: ../images/voting/guardian-reconfigure.png
         :alt: reconfigure guardian app menu
@@ -200,7 +200,7 @@ The simplest way to reconfigure the app to target new election is to click **Set
 
 .. note::
 
-    On windows/linux, it might be required to press **Alt** on your keyboard to bring up the application menu where the "Settings" menu is available.
+    On Windows/Linux, it might be required to press **Alt** on your keyboard to bring up the application menu where the "Settings" menu is available.
 
 Uninstall the app
 =================
