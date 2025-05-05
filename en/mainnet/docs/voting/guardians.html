@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/voting/guardians.030e540f-7123-4e97-b4ed-d496a8eae4f0.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/voting/guardians.9a862450-81b5-4634-897d-ea9c8ecbcfcc.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/voting/guardians';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/voting/guardians.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -752,11 +752,24 @@
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>Before the election opens, the guardians must use the Guardian app to create their key pairs, register encrypted shares, and generate their secret key share to be used to decrypt the tally after the election.</p>
-<section id="generate-guardian-keys">
-<h3>Generate guardian keys<a class="headerlink" href="#generate-guardian-keys" title="Link to this heading">#</a></h3>
-<p>Before the election opens, the guardians must use the Guardian app to generate a pre-key.</p>
+<section id="connect-to-election-contract">
+<h3>Connect to election contract<a class="headerlink" href="#connect-to-election-contract" title="Link to this heading">#</a></h3>
+<p>When the election contract has been initialized, the guardians must connect to the election contract using the Guardian app. This is done in the following sequence of steps:</p>
 <ol class="arabic">
 <li><p>Open the Guardian app.</p></li>
+<li><p>Specify the election target, consisting of a Concordium network (“mainnet” or “testnet” from the dropdown) and contract index, which is a positive whole number specified in the input field.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/guardian-connect.png"><img alt="connect to election contract dialog" src="../../_images/guardian-connect.png" style="width: 100%;" />
+</a>
+</div></blockquote>
+</li>
+<li><p>Click <strong>Connect</strong> to connect to the election contract.</p></li>
+</ol>
+</section>
+<section id="connect-your-account">
+<h3>Connect your account<a class="headerlink" href="#connect-your-account" title="Link to this heading">#</a></h3>
+<p>The guardian app will sign the guardian transactions and submit them to the chain. For this, it needs the signing key of the account that is registered as a guardian in the smart contract.</p>
+<ol class="arabic">
 <li><p>To connect your account to the Guardian app, you must add your export file for your private account keys. For information about how to generate an export file, see <a class="reference internal" href="../guides/export-account-private-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/guardian-await-key.png"><img alt="screen showing drag-drop or browse to export file" src="../../_images/guardian-await-key.png" style="width: 100%;" />
@@ -769,6 +782,12 @@
 </a>
 </div></blockquote>
 </li>
+</ol>
+</section>
+<section id="generate-guardian-keys">
+<h3>Generate guardian keys<a class="headerlink" href="#generate-guardian-keys" title="Link to this heading">#</a></h3>
+<p>Before the election opens, the guardians must use the Guardian app to generate a pre-key.</p>
+<ol class="arabic">
 <li><p>Click <strong>Generate guardian key</strong> to create your secret key and register your public key in the election smart contract.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/guardian-generate-keys.png"><img alt="generate key pair dialog" src="../../_images/guardian-generate-keys.png" style="width: 100%;" />
@@ -876,25 +895,38 @@
 </a>
 </section>
 </section>
+<section id="reconfigure-the-app">
+<h2>Reconfigure the app<a class="headerlink" href="#reconfigure-the-app" title="Link to this heading">#</a></h2>
+<p>In the case of a reset of the election, the guardian app must be reconfigured. This can be done through the <strong>Settings</strong> menu.</p>
+<p>The simplest way to reconfigure the app to target the new election is to click <strong>Set Election Target</strong> and update the network and contract index.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/guardian-reconfigure.png"><img alt="reconfigure guardian app menu" src="../../_images/guardian-reconfigure.png" style="width: 100%;" />
+</a>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows/Linux, it might be required to press <strong>Alt</strong> on your keyboard to bring up the application menu where the “Settings” menu is available.</p>
+</div>
+</section>
 <section id="uninstall-the-app">
 <h2>Uninstall the app<a class="headerlink" href="#uninstall-the-app" title="Link to this heading">#</a></h2>
 <p>Once the election is final, guardians should uninstall the app. The instructions below describe how to uninstall the app for each platform.</p>
 <section id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
 <p>Uninstall the app as you uninstall all apps on Microsoft.</p>
-<p>Delete the folder <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;user&gt;\AppData\com.concordium.guardian.&lt;network&gt;.&lt;contract-index&gt;.&lt;contract-subindex&gt;</span></code> to remove all guardian keys.</p>
+<p>Delete the folder <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;user&gt;\AppData\com.concordium.guardian</span></code> to remove all guardian keys.</p>
 </section>
 <section id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h3>
 <p>Uninstall the app as you uninstall all apps on MacOS.</p>
-<p>Delete the folder <code class="docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/com.concordium.guardian.&lt;network&gt;.&lt;contract-index&gt;.&lt;contract-subindex&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">~</span></code> represents either <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> or <code class="docutils literal notranslate"><span class="pre">/Users/&lt;username&gt;</span></code> to remove all guardian keys.</p>
+<p>Delete the folder <code class="docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/com.concordium.guardian</span></code> where <code class="docutils literal notranslate"><span class="pre">~</span></code> represents either <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> or <code class="docutils literal notranslate"><span class="pre">/Users/&lt;username&gt;</span></code> to remove all guardian keys.</p>
 </section>
 <section id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
 <p>On linux, the application data is stored in one of two places depending on your system:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">$XDG_DATA_HOME/com.concordium.guardian.&lt;network&gt;.&lt;contract-index&gt;.&lt;contract-subindex&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/com.concordium.guardian.&lt;network&gt;.&lt;contract-index&gt;.&lt;contract-subindex&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$XDG_DATA_HOME/com.concordium.guardian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/com.concordium.guardian</span></code></p></li>
 </ul>
 <p>Delete this folder to remove all guardian keys.</p>
 </section>
@@ -986,6 +1018,8 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-setup">Pre-setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-election-contract">Connect to election contract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-your-account">Connect your account</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-guardian-keys">Generate guardian keys</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-and-register-encrypted-shares">Generate and register encrypted shares</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-secret-key-share">Generate secret key share</a></li>
@@ -996,6 +1030,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#register-the-decrypted-share-in-the-contract">Register the decrypted share in the contract</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reconfigure-the-app">Reconfigure the app</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uninstall-the-app">Uninstall the app</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
