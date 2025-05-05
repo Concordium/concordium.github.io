@@ -40,12 +40,10 @@ When the election contract has been initialized, the guardians must connect to t
 
 #. Click **Connect** to connect to the election contract.
 
-Generate guardian keys
-----------------------
+Connect your account
+--------------------
 
-Before the election opens, the guardians must use the Guardian app to generate a pre-key.
-
-#. Open the Guardian app.
+The guardian app will sign the guardian transactions and submit them to the chain. For this, it needs the signing key of the account that is registered as a guardian in the smart contract.
 
 #. To connect your account to the Guardian app, you must add your export file for your private account keys. For information about how to generate an export file, see :ref:`Export a private key<export-key>`.
 
@@ -58,6 +56,11 @@ Before the election opens, the guardians must use the Guardian app to generate a
     .. image:: ../images/voting/guardian-set-pw.png
         :alt: password dialog
         :width: 100%
+
+Generate guardian keys
+----------------------
+
+Before the election opens, the guardians must use the Guardian app to generate a pre-key.
 
 #. Click **Generate guardian key** to create your secret key and register your public key in the election smart contract.
 
