@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/voting/guardians.bba70e23-cce0-4f36-aecc-dd5d9c4c3cad.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/voting/guardians.4068d7bc-a2ca-4bac-b68f-b756238cd11a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/voting/guardians';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/voting/guardians.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -766,11 +766,10 @@
 <li><p>Click <strong>Connect</strong> to connect to the election contract.</p></li>
 </ol>
 </section>
-<section id="generate-guardian-keys">
-<h3>Generate guardian keys<a class="headerlink" href="#generate-guardian-keys" title="Link to this heading">#</a></h3>
-<p>Before the election opens, the guardians must use the Guardian app to generate a pre-key.</p>
+<section id="connect-your-account">
+<h3>Connect your account<a class="headerlink" href="#connect-your-account" title="Link to this heading">#</a></h3>
+<p>The guardian app will sign the guardian transactions and submit them to the chain. For this, it needs the signing key of the account that is registered as a guardian in the smart contract.</p>
 <ol class="arabic">
-<li><p>Open the Guardian app.</p></li>
 <li><p>To connect your account to the Guardian app, you must add your export file for your private account keys. For information about how to generate an export file, see <a class="reference internal" href="../guides/export-account-private-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/guardian-await-key.png"><img alt="screen showing drag-drop or browse to export file" src="../../_images/guardian-await-key.png" style="width: 100%;" />
@@ -783,6 +782,12 @@
 </a>
 </div></blockquote>
 </li>
+</ol>
+</section>
+<section id="generate-guardian-keys">
+<h3>Generate guardian keys<a class="headerlink" href="#generate-guardian-keys" title="Link to this heading">#</a></h3>
+<p>Before the election opens, the guardians must use the Guardian app to generate a pre-key.</p>
+<ol class="arabic">
 <li><p>Click <strong>Generate guardian key</strong> to create your secret key and register your public key in the election smart contract.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/guardian-generate-keys.png"><img alt="generate key pair dialog" src="../../_images/guardian-generate-keys.png" style="width: 100%;" />
@@ -1014,6 +1019,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-setup">Pre-setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-election-contract">Connect to election contract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-your-account">Connect your account</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-guardian-keys">Generate guardian keys</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-and-register-encrypted-shares">Generate and register encrypted shares</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-secret-key-share">Generate secret key share</a></li>
