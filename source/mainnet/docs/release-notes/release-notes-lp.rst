@@ -29,7 +29,7 @@ Wallets
         .. dropdown:: |cryptox| 3.2.2 - April 9, 2025
 
             Changed:
-            
+
                 - Earn flow design
                 - Swipelux onramp flow
 
