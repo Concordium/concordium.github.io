@@ -22,7 +22,7 @@ Wallets
 
     Version 3.3.1 addresses the following issues:
 
-    - Fix an issue with password hashes.
+    - Fixed an issue with password hashes.
 
     .. dropdown:: Previous releases
 
