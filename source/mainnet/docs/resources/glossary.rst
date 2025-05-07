@@ -213,9 +213,9 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A block is considered final when it cannot be rolled back anymore. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.
 
-   GAS
+   Gas
 
-      A transaction fee paid in CCD for executing operations on the Concordium blockchain. GAS is calculated based on ENERGY (NRG) consumption, which measures computational resources required, converted to CCD using a stable EUR-pegged pricing mechanism. This ensures transaction costs remain predictable in EUR terms despite CCD price fluctuations.
+      A transaction fee paid in CCD for executing operations on the Concordium blockchain. Gas is calculated based on ENERGY (NRG) consumption, which measures computational resources required, converted to CCD using a stable EUR-pegged pricing mechanism. This ensures transaction costs remain predictable in EUR terms despite CCD price fluctuations.
 
    Genesis Block
 
