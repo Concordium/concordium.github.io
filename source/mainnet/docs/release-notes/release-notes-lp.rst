@@ -18,16 +18,20 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    April 9, 2025
+    May 5, 2025
 
-    Version 3.2.2 addresses the following issues:
+    Version 3.3.1 addresses the following issues:
 
-    Changed:
-
-    - Earn flow design
-    - Swipelux onramp flow
+    - Fixed an issue with password hashes.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.2.2 - April 9, 2025
+
+            Changed:
+
+                - Earn flow design
+                - Swipelux onramp flow
 
         .. dropdown:: |cryptox| 3.1.0 - February 21, 2025
 
