@@ -5,7 +5,7 @@
 Transaction fees
 ================
 
-Blockchain users pay a **transaction fee** (also referred to as a payment of :term:`GAS`) for each transaction they make. The fee is paid in CCD, and for that purpose, users will need to acquire and hold CCD. Transaction costs are designed to be stable in EUR terms, thereby enabling businesses and other users to predict and plan with fixed predictable EUR costs.
+Blockchain users pay a **transaction fee** (also referred to as a payment of :term:`gas`) for each transaction they make. The fee is paid in CCD, and for that purpose, users will need to acquire and hold CCD. Transaction costs are designed to be stable in EUR terms, thereby enabling businesses and other users to predict and plan with fixed predictable EUR costs.
 
 Stable transaction costs
 ========================
