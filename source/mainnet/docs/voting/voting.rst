@@ -97,7 +97,7 @@ These wallets do not have the capability to connect to dApps. But you do have an
 
     .. code-block:: console
 
-        $concordium-client --secure --grpc-ip grpc.mainnet.concordium.software transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2024
+        $concordium-client --secure --grpc-ip grpc.mainnet.concordium.software transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2025
 
     #. Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo *delegatevote2025* for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.
 
