@@ -22,7 +22,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Account weight
 
-      The Account weight of an account corresponds to the weight this account has for voting. In the 2024 election, this is computed as the average amount of CCD on the account between the 1st of March and 31st of May 2024.
+      The Account weight of an account corresponds to the weight this account has for voting. In the 2025 election, this is computed as the average amount of CCD on the account between the 26th of February and the 25th of May 2025.
 
    Accumulated weight
 
@@ -78,7 +78,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Candidate
 
-      Option on the official list of candidates for the election. Since there are only 10 places for the 2024 election, not all nominees are necessarily candidates.
+      Option on the official list of candidates for the election. Since there are only 10 places for the 2025 election, not all nominees are necessarily candidates.
 
    cargo-concordium
 
@@ -516,7 +516,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Vote delegation
 
-      Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet to cast ballots in the 2024 election.
+      Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet to cast ballots in the 2025 election.
 
       For delegation related to earning rewards on an account, see :term:`delegator`.
 

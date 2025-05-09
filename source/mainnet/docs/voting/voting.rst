@@ -40,7 +40,9 @@ For |bw| users: Disconnecting and connecting will reconnect to the same account.
 
 .. dropdown:: |bw|
 
-    #. In the wallet, click **See list** next to *Connected sites* for the account you want to vote with.
+    #. In the wallet, click **Accounts** in the menu.
+
+    #. Under the account that is currently connected to the voting dApp, click **See list** next to *Connected sites*.
 
         .. image:: ../images/voting/connected_account_new.png
                     :alt: account connected to a dApp
@@ -52,7 +54,10 @@ For |bw| users: Disconnecting and connecting will reconnect to the same account.
                     :alt: account connected to a dApp
                     :width: 50%
 
-    #. Return to the main wallet window by clicking **to Accounts list**.
+    #. Click **disconnect** next to the address of the voting dApp.
+    #. Return to the account list by clicking **To Accounts list**
+    #. Return to the main wallet window by clicking **To main page**.
+    #. Select the account with which you wish to vote.
     #. Disconnect and reconnect in the voting dApp. After reconnecting, you will be connected to the account that is currently open in the wallet.
     #. Repeat the steps above to vote with all accounts.
 
@@ -92,7 +97,7 @@ These wallets do not have the capability to connect to dApps. But you do have an
 
     .. code-block:: console
 
-        $concordium-client --secure --grpc-ip grpc.mainnet.concordium.software transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2024
+        $concordium-client --secure --grpc-ip grpc.mainnet.concordium.software transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2025
 
     #. Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo *delegatevote2025* for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.
 
