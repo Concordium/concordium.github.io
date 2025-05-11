@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/voting/voting.5fa397c0-6ee8-42b2-9c0d-1bcf1b5a2e6b.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/voting/voting.8172ac28-0fa9-4895-ae37-7ae10adcac2c.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/voting/voting';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/voting/voting.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -767,7 +767,8 @@
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">In the wallet, click <strong>See list</strong> next to <em>Connected sites</em> for the account you want to vote with.</p>
+<li><p class="sd-card-text">In the wallet, click <strong>Accounts</strong> in the menu.</p></li>
+<li><p class="sd-card-text">Under the account that is currently connected to the voting dApp, click <strong>See list</strong> next to <em>Connected sites</em>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/connected_account_new.png"><img alt="account connected to a dApp" src="../../_images/connected_account_new.png" style="width: 50%;" />
 </a>
@@ -779,7 +780,10 @@
 </a>
 </div></blockquote>
 </li>
-<li><p class="sd-card-text">Return to the main wallet window by clicking <strong>to Accounts list</strong>.</p></li>
+<li><p class="sd-card-text">Click <strong>disconnect</strong> next to the address of the voting dApp.</p></li>
+<li><p class="sd-card-text">Return to the account list by clicking <strong>To Accounts list</strong></p></li>
+<li><p class="sd-card-text">Return to the main wallet window by clicking <strong>To main page</strong>.</p></li>
+<li><p class="sd-card-text">Select the account with which you wish to vote.</p></li>
 <li><p class="sd-card-text">Disconnect and reconnect in the voting dApp. After reconnecting, you will be connected to the account that is currently open in the wallet.</p></li>
 <li><p class="sd-card-text">Repeat the steps above to vote with all accounts.</p></li>
 </ol>
@@ -816,7 +820,7 @@
 <span class="sd-summary-text">Concordium Client</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or CryptoX Concordium Wallet and delegate their vote from their Concordium Client wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or CryptoX Concordium Wallet at any time before delegating your vote. But the memo transaction, which effectively delegates the vote, and the vote from the new account both need to take place within the official voting window.</p>
 <p class="sd-card-text"><strong>To delegate your vote:</strong></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>--secure<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.mainnet.concordium.software<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>A<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--memo<span class="w"> </span>delegatevote2024
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>--secure<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.mainnet.concordium.software<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>A<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--memo<span class="w"> </span>delegatevote2025
 </pre></div>
 </div>
 <ol class="arabic simple">
