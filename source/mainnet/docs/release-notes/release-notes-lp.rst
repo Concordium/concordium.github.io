@@ -18,13 +18,19 @@ Wallets
 
 |cryptox| for iOS
 -----------------
-    May 5, 2025
 
-    Version 3.3.1 addresses the following issues:
+ May 13, 2025
 
-    - Fixed an issue with password hashes.
+    Version 3.3.2 addresses the following issues:
+
+    - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
+    - Refactor Wert flow.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.3.1  -  May 5, 2025
+
+            - Fixed an issue with password hashes.
 
         .. dropdown:: |cryptox| 3.2.2 - April 9, 2025
 
