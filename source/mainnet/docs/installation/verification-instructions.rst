@@ -7,6 +7,23 @@ Verification instructions
 
 To find instructions on how to verify the integrity of the file you have downloaded, navigate to the respective section that outlines the steps needed for that specific file.
 
+.. _verify-docker-image:
+
+Verify Concordium Node Docker Image
+===================================
+
+The Docker images are signed with Sigstore Cosign. To verify
+the signature run ``cosign verify`` with the ``certificate-oidc-issuer`` and ``certificate-identity`` as specified (important):
+
+.. code-block:: console
+    :substitutions:
+
+    $cosign verify concordium/mainnet-node:|mainnet-node-version| \ 
+        --certificate-identity=https://github.com/Concordium/concordium-node/.github/workflows/release.yaml@refs/heads/main \
+        --certificate-oidc-issuer=https://token.actions.githubusercontent.com
+
+This verifies that the image was build and signed by Concordium. You can replace the image with ``testnet-node`` and the tag with the tag you want to run.
+
 Concordium Desktop Wallet
 =========================
 
