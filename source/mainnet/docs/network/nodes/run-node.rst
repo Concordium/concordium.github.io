@@ -42,7 +42,9 @@ Running/upgrading a node
 ========================
 
 Concordium provides two Docker images, a `mainnet <https://hub.docker.com/r/concordium/mainnet-node>`_ one and a `testnet <https://hub.docker.com/r/concordium/testnet-node>`_ one.
-These images are designed to be used together with docker-compose, or a similar driver. This guide provides a sample configuration using ``docker-compose``.
+The images are signed with Sigstore Cosign and the signature can be verified by following :ref:`Verify Concordium Node Docker Image<verify-docker-image>`.      
+
+The images are designed to be used together with docker-compose, or a similar driver. This guide provides a sample configuration using ``docker-compose``.
 
 The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is ``/var/lib/concordium-mainnet`` or ``/var/lib/concordium-testent`` but any location to which the user that runs the Docker command has access to will do.
 
