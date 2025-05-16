@@ -11,4 +11,3 @@ This section provides guidance on integrating Protocol Layer Tokens (PLTs) using
    concordium-client
    web-sdk
    rust-sdk
-   
