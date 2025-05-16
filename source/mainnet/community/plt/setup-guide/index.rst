@@ -12,3 +12,4 @@ This section covers everything you need to get started with Protocol Layer Token
    devnet-connection
    request-ccd
    request-plt
+   

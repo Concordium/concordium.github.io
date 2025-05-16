@@ -11,3 +11,4 @@ This section covers the core operations available with Protocol Layer Tokens (PL
    create-plt
    transfer-plt
    query-plt
+   
