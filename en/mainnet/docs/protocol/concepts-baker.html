@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.707ef56b-689c-421c-9c0d-f71680d94227.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.294bb924-76aa-4607-ad5a-517974957f5c.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-baker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concepts-baker.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -808,7 +808,7 @@ For example, if you decrease a valiator’s stake, the stake will be decreased a
 <p>A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.</p>
 </section>
 <section id="validator-suspension">
-<h2>Validator Suspension<a class="headerlink" href="#validator-suspension" title="Link to this heading">#</a></h2>
+<span id="concepts-baker-suspension"></span><h2>Validator Suspension<a class="headerlink" href="#validator-suspension" title="Link to this heading">#</a></h2>
 <p>A validator may be suspended if it remains inactive and fails to produce blocks when selected as a round leader. This mechanism, introduced in Protocol 8, helps maintain the blockchain’s performance and reliability by excluding inactive validators.</p>
 <p>A validator faces <a class="reference internal" href="../resources/glossary.html#term-Suspension"><span class="xref std std-term">suspension</span></a> if it reaches a threshold of missed rounds. The size of a validator’s stake affects how long the validator’s node has to be inactive before reaching the threshold:</p>
 <ul class="simple">

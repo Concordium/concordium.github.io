@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/delegation-faq.2c61811f-da66-46b3-830f-f95f5ea6b701.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/delegation-faq.86b9ea89-1d16-40cf-b46d-b0d4e15e6d64.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/help-and-faq/delegation-faq';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/help-and-faq/delegation-faq.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -748,6 +748,17 @@ You can’t make other changes to the stake while this change is pending. The st
 but won’t count as active stake (e.g. for rewards). The stake in cooldown will be available to spend after the cooldown period elapses.</p></li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Changes from Protocol 7 to Protocol 8</strong></p>
+<p>In P8, the following changes were introduced:</p>
+<ul class="simple">
+<li><p>Validators are automatically suspended if they do not produce blocks for a certain number of rounds.</p></li>
+<li><p>The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.</p></li>
+<li><p>Suspended validators are paused from participating in the consensus algorithm.</p></li>
+</ul>
+<p>For more information about validator suspension, see <a class="reference internal" href="../protocol/concepts-baker.html#concepts-baker-suspension"><span class="std std-ref">Validator suspension</span></a></p>
+</div>
 <section id="for-delegators">
 <h2>For delegators<a class="headerlink" href="#for-delegators" title="Link to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -853,6 +864,14 @@ The cool-down period is three weeks. The cool-down period is activated when you 
 <span class="sd-summary-text">Can I delegate funds in a release schedule?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Yes, the funds locked in a release schedule can be staked.</p>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">What happens if the validator I’m delegating to is suspended?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If a validator you’ve delegated to becomes suspended, you’ll see a warning banner in your wallet stating “Your validator has been suspended”.
+When a validator is suspended, both the validator and its delegators stop earning rewards.</p>
+<p class="sd-card-text">To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.</p>
+<p class="sd-card-text">To update your delegation from a suspended validator, follow the standard update process in your wallet: <a class="reference internal" href="../guides/update-delegation.html#update-delegation"><span class="std std-ref">Update delegation</span></a></p>
+</div>
 </details></section>
 <section id="for-validators">
 <h2>For validators<a class="headerlink" href="#for-validators" title="Link to this heading">#</a></h2>
@@ -928,6 +947,39 @@ The cool-down period is three weeks. The cool-down period is activated when you 
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Can I use funds in a release schedule to meet the minimum required amount of CCDs to become a validator?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Yes, the funds locked in a release schedule can be staked.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">What is validator suspension and how does it affect my rewards?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A validator can be suspended in two ways:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>Self-suspension</strong>: You can manually suspend your validator, for example during planned node maintenance.</p></li>
+<li><p class="sd-card-text"><strong>Automatic suspension</strong>: The protocol may suspend your validator if it fails to produce blocks a certain number of times when selected as a round leader.</p></li>
+</ul>
+<p class="sd-card-text">When your validator is suspended, regardless of the cause:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Your validator stops earning rewards</p></li>
+<li><p class="sd-card-text">Delegators to your validator stop earning rewards</p></li>
+<li><p class="sd-card-text">Both you and any delegators are notified about the suspension</p></li>
+</ul>
+<p class="sd-card-text">Your stake remains locked while suspended, but you won’t earn any rewards until you resume validation. For more details, see <a class="reference internal" href="../protocol/concepts-baker.html#concepts-baker-suspension"><span class="std std-ref">Validator suspension</span></a>.</p>
+<p class="sd-card-text">To learn how to suspend or unsuspend a validator, see <a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend/Unsuspend a validator</span></a>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">How can I prevent my validator from being automatically suspended?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To prevent automatic suspension, you need to ensure your validator node stays active and properly connected to the network. Here are some key preventative measures:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Maintain reliable infrastructure (stable internet connection and server uptime)</p></li>
+<li><p class="sd-card-text">Keep your node software updated to the latest version</p></li>
+<li><p class="sd-card-text">Ensure your node is correctly configured with your validator keys</p></li>
+<li><p class="sd-card-text">Monitor your node’s performance and set up alerts for potential issues</p></li>
+<li><p class="sd-card-text">For planned maintenance lasting longer than a day, use self-suspension.</p></li>
+</ul>
+<p class="sd-card-text">High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders, while low-stake validators may take several days to reach the threshold.</p>
+<p class="sd-card-text">If your validator becomes primed for suspension (indicated by a warning banner in your wallet stating “Your validation is primed for suspension”), you must demonstrate activity before the next snapshot epoch by either producing a block or having your signature included in a quorum certificate.</p>
+<p class="sd-card-text">If you need to perform maintenance on your node, it’s recommended to use the self-suspension feature to avoid automatic suspension. You can manually suspend your validator, perform the maintenance, and then resume validation when your node is operational again.</p>
+<p class="sd-card-text">For instructions on how to suspend or unsuspend a validator, see <a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend/Unsuspend a validator</span></a>.</p>
 </div>
 </details></section>
 <section id="for-validators-delegators-and-passive-delegators">
