@@ -6,7 +6,7 @@ Connect to DevNet
 This guide explains how to configure your DevNet Browser Wallet to connect to Concordium's DevNet environment and how to create an identity and account for working with Protocol Layer Tokens (PLTs).
 
 Before you begin
----------------
+----------------
 
 .. note::
    To connect to DevNet, you must first have an account on Testnet. This is because the Custom Network option in the wallet only becomes available after you have created at least one account on Testnet. If you don't already have a Testnet account, please `create one following the standard Concordium wallet setup process <https://developer.concordium.software/en/mainnet/net/browser-wallet/setup-browser-wallet.html>`_ before continuing with this guide.
