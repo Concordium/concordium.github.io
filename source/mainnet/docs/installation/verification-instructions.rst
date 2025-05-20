@@ -18,7 +18,7 @@ the signature run ``cosign verify`` with the ``certificate-oidc-issuer`` and ``c
 .. code-block:: console
     :substitutions:
 
-    $cosign verify concordium/mainnet-node:|mainnet-node-version| \ 
+    $cosign verify concordium/mainnet-node:|mainnet-node-version| \
         --certificate-identity=https://github.com/Concordium/concordium-node/.github/workflows/release.yaml@refs/heads/main \
         --certificate-oidc-issuer=https://token.actions.githubusercontent.com
 
@@ -31,7 +31,7 @@ you should first get the image hash and then verify and run the image by referen
     :substitutions:
 
     $crane digest concordium/mainnet-node:|mainnet-node-version|
-    $cosign verify concordium/mainnet-node@sha256:6a4f8c65345ddea7db82431b76c8eadb09b9d0ebd93d4825870704e878d81f1a \ 
+    $cosign verify concordium/mainnet-node@sha256:6a4f8c65345ddea7db82431b76c8eadb09b9d0ebd93d4825870704e878d81f1a \
         --certificate-identity=https://github.com/Concordium/concordium-node/.github/workflows/release.yaml@refs/heads/main \
         --certificate-oidc-issuer=https://token.actions.githubusercontent.com
 

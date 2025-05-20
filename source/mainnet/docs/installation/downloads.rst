@@ -234,7 +234,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
       To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
-      See :ref:`Verify Concordium Node Docker Image<verify-docker-image>` for how the verify the signature on the Docker image.      
+      See :ref:`Verify Concordium Node Docker Image<verify-docker-image>` for how the verify the signature on the Docker image.
 
    .. dropdown:: Windows |testnet-node-version|
 

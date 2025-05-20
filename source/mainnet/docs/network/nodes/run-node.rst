@@ -42,7 +42,7 @@ Running/upgrading a node
 ========================
 
 Concordium provides two Docker images, a `mainnet <https://hub.docker.com/r/concordium/mainnet-node>`_ one and a `testnet <https://hub.docker.com/r/concordium/testnet-node>`_ one.
-The images are signed with Sigstore Cosign and the signature can be verified by following :ref:`Verify Concordium Node Docker Image<verify-docker-image>`.      
+The images are signed with Sigstore Cosign and the signature can be verified by following :ref:`Verify Concordium Node Docker Image<verify-docker-image>`.
 
 The images are designed to be used together with docker-compose, or a similar driver. This guide provides a sample configuration using ``docker-compose``.
 
