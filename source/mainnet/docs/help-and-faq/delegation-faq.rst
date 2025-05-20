@@ -14,6 +14,20 @@ Delegation and validation FAQ
       but won't count as active stake (e.g. for rewards). The stake in cooldown will be available to spend after the cooldown period elapses.
 
 
+.. Note::
+
+    **Changes from Protocol 7 to Protocol 8**
+
+    In P8, the following changes were introduced:
+
+    - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
+    - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
+    - Suspended validators are paused from participating in the consensus algorithm.
+
+    For more information about validator suspension, see `Validator suspension <https://docs.concordium.com/en/mainnet/docs/protocol/concepts-baker.html#validator-suspension>`_.
+
+
+
 For delegators
 --------------
 
@@ -103,6 +117,16 @@ For delegators
 
     Yes, the funds locked in a release schedule can be staked.
 
+.. dropdown:: What happens if the validator I'm delegating to is suspended?
+
+   If a validator you've delegated to becomes suspended, you'll see a warning banner in your wallet stating "Your validator has been suspended".
+   When a validator is suspended, both the validator and its delegators stop earning rewards.
+
+   To maintain your earning potential, you may consider moving your delegation to another active validator or to passive delegation.
+
+   To update your delegation from a suspended validator, follow the standard update process in your wallet: `Update delegation <https://docs.concordium.com/en/mainnet/docs/guides/update-delegation.html>`_.
+
+
 For validators
 --------------
 
@@ -167,6 +191,53 @@ For validators
 .. dropdown:: Can I use funds in a release schedule to meet the minimum required amount of CCDs to become a validator?
 
     Yes, the funds locked in a release schedule can be staked.
+
+.. dropdown:: What is validator suspension and how does it affect my rewards?
+
+   A validator can be suspended in two ways:
+
+   * **Self-suspension**: You can manually suspend your validator, for example during planned node maintenance.
+   * **Automatic suspension**: The protocol may suspend your validator if it fails to produce blocks a certain number of times when selected as a round leader.
+
+   When your validator is suspended, regardless of the cause:
+
+   * Your validator stops earning rewards
+   * Delegators to your validator stop earning rewards
+   * Both you and any delegators are notified about the suspension
+
+   Your stake remains locked while suspended, but you won't earn any rewards until you resume validation. For more details, see `Validator suspension <https://docs.concordium.com/en/mainnet/docs/protocol/concepts-baker.html#validator-suspension>`_.
+
+   To learn how to suspend or unsuspend a validator, see `Suspend/Unsuspend a validator <https://docs.concordium.com/en/mainnet/docs/mobile-wallet/suspend-unsuspend-validator.html>`_.
+
+.. dropdown:: How can I prevent my validator from being automatically suspended?
+
+   To prevent automatic suspension, you need to ensure your validator node stays active and properly connected to the network. Here are some key preventative measures:
+
+   * Maintain reliable infrastructure (stable internet connection and server uptime)
+   * Keep your node software updated to the latest version
+   * Monitor your node's performance and set up alerts for potential issues
+   * For planned maintenance, use self-suspension to avoid automatic suspension
+
+   High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders, while low-stake validators may take several days to reach the threshold.
+
+   If your validator becomes primed for suspension (indicated by a warning banner in your wallet stating "Your validation is primed for suspension"), you must demonstrate activity before the next snapshot epoch by either producing a block or having your signature included in a quorum certificate.
+
+   If you need to perform maintenance on your node, it's recommended to use the self-suspension feature to avoid automatic suspension. You can manually suspend your validator, perform the maintenance, and then resume validation when your node is operational again.
+
+   For instructions on how to suspend or unsuspend a validator, see `Suspend/Unsuspend a validator <https://docs.concordium.com/en/mainnet/docs/mobile-wallet/suspend-unsuspend-validator.html>`_.
+
+.. dropdown:: What should I do if my validator becomes primed for suspension?
+
+   If your validator becomes primed for suspension, you'll see a red warning banner in your wallet stating "Your validation is primed for suspension". This is a critical warning that requires immediate attention.
+
+   When a validator becomes inactive, it first enters a primed for suspension state. During this period, you need to take action before the next snapshot epoch to prevent your validator from being suspended. You have two options to demonstrate activity:
+
+   * Ensure your validator produces a block when selected as round leader
+   * Have your validator's signature included in a quorum certificate
+
+   If your validator remains inactive through the snapshot epoch, the suspension takes effect at the following payday.
+
+   For instructions on how to suspend or unsuspend a validator, see `Suspend/Unsuspend a validator <https://docs.concordium.com/en/mainnet/docs/mobile-wallet/suspend-unsuspend-validator.html>`_.
 
 For validators, delegators and passive delegators
 -------------------------------------------------
