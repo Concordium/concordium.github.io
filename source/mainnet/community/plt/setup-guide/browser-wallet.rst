@@ -1,7 +1,7 @@
 .. _plt-browser-wallet:
 
-Browser Wallet setup for DevNet
-===============================
+Set up Browser Wallet for DevNet
+================================
 
 This guide explains how to download and install the custom DevNet Browser Wallet, which is required for connecting to Concordium's DevNet environment and working with Protocol Layer Tokens (PLTs).
 
@@ -39,11 +39,4 @@ Follow these steps to install the custom DevNet Browser Wallet:
 Next steps
 ----------
 
-After installing the DevNet Browser Wallet, your next steps are:
-
-1. :doc:`Connect to DevNet <devnet-connection>` by configuring your wallet with the correct network parameters
-2. Create an identity and account on DevNet
-3. :doc:`Request test CCD <request-ccd>` for transactions
-
-.. note::
-   Before connecting to DevNet, you need to create an account on Testnet to unlock the network selection functionality in the wallet. After that, you can access the Custom Network option to connect to DevNet.
+After installing the DevNet Browser Wallet, your next step is to :doc:`connect to DevNet and create an identity and account <devnet-connection>`.
