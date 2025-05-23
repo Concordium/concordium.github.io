@@ -195,7 +195,11 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Linux-Docker |mainnet-node-version|
 
-      To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`. To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+      To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
+
+      To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+
+      See :ref:`Verify Concordium Node Docker Image<verify-docker-image>` for how the verify the signature on the Docker image.
 
    .. dropdown:: Windows |mainnet-node-version|
 
@@ -229,6 +233,8 @@ For the system requirements to run a node, see :ref:`System requirements to run 
       To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
 
       To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+
+      See :ref:`Verify Concordium Node Docker Image<verify-docker-image>` for how the verify the signature on the Docker image.
 
    .. dropdown:: Windows |testnet-node-version|
 
