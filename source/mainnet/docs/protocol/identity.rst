@@ -39,13 +39,13 @@ Key participants
 ================
 The identity solution on Concordium involves several key participants, each with specific roles and responsibilities in the process.
 
-* **Users**: Individuals or businesses who interact on the Concordium blockchain. Users must complete an identity verification process to create an account and become participants on the network.
+* **Users**: Individuals or businesses who interact on the Concordium blockchain. :doc:`Users must complete an identity verification process to create an account <user-processes>` and become participants on the network.
 
 * **Identity Providers (IDPs)**: Third-party organizations that provide off-chain identity verification. They issue structured identity objects while storing verification data securely. Currently available IDPs include `Notabene <https://notabene.id/>`_, `Digital Trust Solutions <https://www.digitaltrustsolutions.nl/>`_, and `Global Finreg <https://globalfinreg.com/en>`_ (for businesses), with the potential to add additional IDPs in the future.
 
-* **Identity Disclosure Authority (IDAs)**: Authorized entities that participate in Concordium's Identity Disclosure process when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
+* **Identity Disclosure Authority (IDAs)**: Authorized entities that participate in :doc:`Concordium's Identity Disclosure process <identity-disclosure-processes>` when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
 
-* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the IDA is based, with a second court order from the IDP's jurisdiction also required. The Authority initiates the identity disclosure process when there is a legal need, such as in cases of fraud or criminal activity.
+* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the IDA is based, with a second court order from the IDP's jurisdiction also required. The Authority :doc:`initiates the identity disclosure process <identity-disclosure-processes>` when there is a legal need, such as in cases of fraud or criminal activity.
 
 Key concepts
 ============
@@ -54,9 +54,9 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Account**: An account is used to send and receive funds on the Concordium chain. The associated account credential defines the cryptographic keys that control the account. The account credential also contains information necessary for the identity disclosure. Multiple accounts can be created underneath an Identity Credential.
 
-* **Identity Credential**: An Identity Credential contains attributes on a user's identity and is used to open accounts on-chain. It is issued by IDPs during user onboarding based on identity documents (e.g. passports). It is stored in both the user's wallet and IDP's database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
+* **Identity Credential**: An Identity Credential contains attributes on a user's identity and is used to open accounts on-chain. It is issued by IDPs during :doc:`user onboarding <user-processes>` based on identity documents (e.g. passports). It is stored in both the user's wallet and IDP's database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
 
-* **Identity Disclosure**: In fraudulent and criminal cases, a process can be followed with multiple stakeholders (Authorities, IDPs and IDAs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
+* **Identity Disclosure**: In fraudulent and criminal cases, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and IDAs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
 
 * **Base Layer ID**: This is the identity system described above where users open accounts with identity credentials.
 
@@ -86,7 +86,7 @@ No single party can link a user's Identity to the accounts they have on Concordi
 
 - A single IDA cannot decrypt a user's Identity Disclosure Data, this means they cannot access the mapping between a user's identity and their on-chain presence. In addition they do not have access to the PII which is stored within the IDPs systems.
 
-- It is only possible to connect a user's PII identity to an account by following the identity disclosure process.
+- It is only possible to connect a user's PII identity to an account by :doc:`following the identity disclosure process <identity-disclosure-processes>`.
 
 Selective disclosure through zero-knowledge proofs
 --------------------------------------------------
