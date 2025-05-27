@@ -17,8 +17,8 @@ The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identi
 
 After successful identity verification, the account holder receives a ConcordiumID, which enables them to:
 
-- Create accounts on the Concordium blockchain
-- Conduct transactions within the network
+- :doc:`Create accounts <manage-accounts>` on the Concordium blockchain
+- :doc:`Conduct transactions <transactions>` within the network
 - Prove certain identity attributes (such as age or citizenship) using zero-knowledge proofs without revealing the underlying data
 
 The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
@@ -26,7 +26,9 @@ The ConcordiumID is foundational to the accountability and privacy features of t
 Web3 ID
 =======
 
-The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing Verifiable Credentials, based on the W3C standard. This next-generation portable ID tool can be used for:
+The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing Verifiable Credentials, based on the W3C standard. :doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
+
+This next-generation portable ID tool can be used for:
 
 - Issuance, management, and verification of digital certifications
 - Portable KYC
@@ -64,7 +66,7 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Identity Disclosure Data**: Each account credential contains encrypted identifiers linking it to the owner's identity record at the IDP. This data, along with encrypted linking information that can reveal all accounts of a user, requires decryption by multiple IDAs. This ensures that no single party—not even the IDP—can connect identities to accounts outside the proper disclosure process.
 
-* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens, and store Identity Credentials. Wallets enable users to generate zero-knowledge proofs to share verified information without revealing personal data. Wallets hold cryptographic addresses that control the accounts.
+* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens, and store Identity Credentials. Wallets enable users to generate zero-knowledge proofs to share verified information without revealing personal data. Wallets hold cryptographic addresses that control the accounts. :doc:`View wallet setup guides <../guides/setup-wallets-lp>`.
 
 * **Seed (phrase)**: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.
 
