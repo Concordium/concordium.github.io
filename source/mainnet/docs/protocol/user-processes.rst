@@ -9,15 +9,15 @@ User processes
 Account creation
 ================
 
-Users must complete an identity verification process to create an account and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as Identity Credentials), and accounts (which contain cryptographic addresses). Every account must be linked to a ConcordiumID Identity Credential.
+Users must complete an identity verification process to :doc:`create an account <manage-accounts>` and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as :term:`Identity Credentials<Identity Credential>`), and accounts (which contain cryptographic addresses). Every account must be linked to a ConcordiumID Identity Credential.
 
 The account creation process follows these steps:
 
-1. A user downloads their chosen wallet application. Mobile, browser and desktop versions are available.
+1. A user :doc:`downloads <../installation/downloads>` their chosen wallet application. :doc:`Mobile, browser and desktop versions are available <../guides/deciding-wallet>`.
 
-2. Within the wallet, the user initiates a request for the creation of an Identity Credential by selecting their IDP of choice.
+2. Within the wallet, the user initiates a request for the creation of an Identity Credential by selecting their :term:`IDP<Identity Provider>` of choice.
 
-3. The user is prompted by the IDP to scan a passport or an identity document and to provide a selfie. Businesses can also identify through a similar process, but the requirements vary and need additional KYB (Know Your Business) documentation.
+3. The user is prompted by the IDP to scan a passport or an identity document and to provide a selfie. Businesses can also identify through a similar process, but the requirements vary and need additional :term:`KYB (Know Your Business)<KYB>` documentation.
 
 4. The IDP follows their standard identity verification process and verifies the validity of the identity document and any liveness checks.
 
@@ -33,20 +33,20 @@ The account creation process follows these steps:
    :alt: graphic drawing showing how creation of a user account
 
 
-Verifiable Credentials with Web3 ID
+Verifiable credentials with Web3 ID
 ===================================
 
 As a supplementary feature to the base identity provided on wallet creation, verified credentials can be issued to a user to power enhanced use cases.
 
-Web3 ID is based on the W3C standards for Verifiable Credentials. This makes them portable and interoperable. Verifiable Credentials can be used for KYC, compliance and regulation, for example to identify accredited investor status. Identity data, both ConcordiumID and Web3 ID Verifiable Credentials, can be used for off-chain uses such as zero-knowledge age verification.
+:ref:`Web3 ID <web3-id>` is based on the W3C standards for verifiable credentials. This makes them portable and interoperable. verifiable credentials can be used for KYC, compliance and regulation, for example to identify accredited investor status. Identity data, both ConcordiumID and Web3 ID verifiable credentials, can be used for off-chain uses such as zero-knowledge age verification.
 
 The Web3 ID suite can be used for:
 
 - Issuance, management, and verification of digital certifications
-- Portable KYC implementations
+- Portable :term:`KYC` implementations
 - Professional certifications
 - Membership verification
 - Age verification without revealing birth date
 - Other use cases requiring verified digital credentials
 
-Web3 ID can leverage ConcordiumID, but doesn't have to. The Verifiable Credentials can, in principle, be used off-chain, but benefit from both the ConcordiumID, as well as transparent events logs on-chain.
+Web3 ID can leverage ConcordiumID, but doesn't have to. The verifiable credentials can, in principle, be used off-chain, but benefit from both the ConcordiumID, as well as transparent events logs on-chain.

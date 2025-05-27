@@ -8,34 +8,40 @@ Identity framework on Concordium
 
 Concordium's identity solution is designed to provide secure blockchain infrastructure that maintains accountability while preserving user privacy. The approach balances these requirements, enabling blockchain adoption across jurisdictions and ensuring regulatory compliance.
 
-Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, ConcordiumID and Web3 ID.
+Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, :ref:`ConcordiumID <concordium-id>` and :ref:`Web3 ID <web3-id>`.
+
+
+.. _concordium-id:
 
 ConcordiumID
 ============
 
-The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved identity provider before they can create and use accounts on the blockchain.
+The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved :term:`identity provider` before they can create and use accounts on the blockchain.
 
 After successful identity verification, the account holder receives a ConcordiumID, which enables them to:
 
 - :doc:`Create accounts <manage-accounts>` on the Concordium blockchain
-- :doc:`Conduct transactions <transactions>` within the network
-- Prove certain identity attributes (such as age or citizenship) using zero-knowledge proofs without revealing the underlying data
+- :doc:`Conduct transactions <transactions>` within the networkusing :term:`zero-knowledge proofs<zero-knowledge proof>` without revealing the underlying data
 
+- Prove certain identity attributes (such as age or citizenship)
 The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
+
+
+.. _web3-id:
 
 Web3 ID
 =======
 
-The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing Verifiable Credentials, based on the W3C standard. :doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
+The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing :term:`verifiable credentials<verifiable credential>`, based on the :term:`W3C standard`. :doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
 
 This next-generation portable ID tool can be used for:
 
 - Issuance, management, and verification of digital certifications
-- Portable KYC
+- Portable :term:`KYC`
 - Professional certifications
 - Various other use cases requiring verified digital credentials
 
-While interaction with the Concordium blockchain always requires a ConcordiumID, Web3 ID Verifiable Credentials can be used both within the Concordium ecosystem and in off-chain environments.
+While interaction with the Concordium blockchain always requires a ConcordiumID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.
 
 Key participants
 ================
@@ -60,7 +66,7 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Identity Disclosure**: In fraudulent and criminal cases, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and IDAs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
 
-* **Base Layer ID**: This is the identity system described above where users open accounts with identity credentials.
+* **Base Layer ID**: This is the identity system described above where users open accounts with Identity Credentials.
 
 * **Web3 ID**: This is a generic verifiable credential system. It can be used to provide a user with additional credentials, such as membership cards or degrees.
 
