@@ -27,6 +27,7 @@ After successful identity verification, the account holder receives a Concordium
 The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
 
 
+
 .. _web3-id:
 
 Web3 ID

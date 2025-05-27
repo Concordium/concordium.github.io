@@ -279,11 +279,11 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    KYB
 
-   Know Your Business - regulatory processes used to verify the identity and legitimacy of business entities, including their ownership structure, business activities, and compliance status.
+      Know Your Business - regulatory processes used to verify the identity and legitimacy of business entities, including their ownership structure, business activities, and compliance status.
 
    KYC
 
-   Know Your Customer - regulatory processes used by financial institutions and other businesses to verify the identity of their customers, helping prevent money laundering, fraud, and other financial crimes.
+      Know Your Customer - regulatory processes used by financial institutions and other businesses to verify the identity of their customers, helping prevent money laundering, fraud, and other financial crimes.
 
    Leader Election
 
