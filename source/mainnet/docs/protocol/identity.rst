@@ -76,33 +76,10 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Seed (phrase)**: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.
 
-Principles of privacy
-=====================
-Concordium's identity system has been designed to be privacy first and incorporates several key privacy principles.
-
-Protection of personal identifiable information
------------------------------------------------
-
-Users personal identifiable information (PII) such as name, birthdate etc, are never available on chain, either encrypted or unencrypted. PII is only stored locally within the user's wallet and with the IDP for compliance purposes. For avoidance of doubt, Concordium does not have access to any of this user information.
-
-Separation of powers
---------------------
-
-No single party can link a user's Identity to the accounts they have on Concordium. This can only be done through the Identity Disclosure Process.
-
-- IDPs cannot identify a user's account (or on chain wallet address). They cannot connect an identity to on chain activity or an address.
-
-- A single PG cannot decrypt a user's Identity Disclosure Data, this means they cannot access the mapping between a user's identity and their on-chain presence. In addition they do not have access to the PII which is stored within the IDPs systems.
-
-- It is only possible to connect a user's PII identity to an account by :doc:`following the identity disclosure process <identity-disclosure-processes>`.
-
-Selective disclosure through zero-knowledge proofs
---------------------------------------------------
-
-With Concordium users can choose to reveal zero-knowledge proof verifications of attributes of their identity across both ConcordiumID and Web3 ID, without revealing the underlying data (e.g. proving they are over 18 without revealing their birth date).
 
 .. toctree::
    :maxdepth: 1
 
+   principles-of-privacy
    user-processes
    identity-disclosure-processes
