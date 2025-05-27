@@ -22,10 +22,9 @@ After successful identity verification, the account holder receives a Concordium
 
 - :doc:`Create accounts <manage-accounts>` on the Concordium blockchain
 - :doc:`Conduct transactions <transactions>` within the networkusing :term:`zero-knowledge proofs<zero-knowledge proof>` without revealing the underlying data
-
 - Prove certain identity attributes (such as age or citizenship)
-The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
 
+The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
 
 
 .. _web3-id:
