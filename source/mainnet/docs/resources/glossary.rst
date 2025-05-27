@@ -237,9 +237,9 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       An Identity Credential contains attributes on a user’s identity and is used to open accounts on-chain. It is issued by IDPs during user onboarding based on identity documents (e.g. passports). It is stored in both the user’s wallet and IDP’s database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
 
-   Identity Disclosure Authority (IDA)
+   Privacy Guardian
 
-   Authorized legal entities, typically law firms, that participate in Concordium's identity disclosure process when legally required. IDAs hold cryptographic keys that enable them to decrypt partial shares of encrypted identity information. Multiple IDAs must collaborate to reconstruct complete identity data - a minimum threshold (minimum two out of three) of IDAs must provide their decryption shares before the Authority can access the full information needed to connect accounts to identities.
+      Authorized legal entities, typically law firms, that participate in Concordium's identity disclosure process when legally required. PGs hold cryptographic keys that enable them to decrypt partial shares of encrypted identity information. Multiple PGs must collaborate to reconstruct complete identity data - a minimum threshold (minimum two out of three) of PGs must provide their decryption shares before the Authority can access the full information needed to connect accounts to identities.
 
    Identity Issuer
 

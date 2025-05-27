@@ -51,9 +51,9 @@ The identity solution on Concordium involves several key participants, each with
 
 * **Identity Providers (IDPs)**: Third-party organizations that provide off-chain identity verification. They issue structured identity objects while storing verification data securely. Currently available IDPs include `Notabene <https://notabene.id/>`_, `Digital Trust Solutions <https://www.digitaltrustsolutions.nl/>`_, and `Global Finreg <https://globalfinreg.com/en>`_ (for businesses), with the potential to add additional IDPs in the future.
 
-* **Identity Disclosure Authority (IDAs)**: Authorized entities that participate in :doc:`Concordium's Identity Disclosure process <identity-disclosure-processes>` when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
+* **Privacy Guardians (PGs)**: Authorized entities that participate in :doc:`Concordium's Identity Disclosure process <identity-disclosure-processes>` when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
 
-* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the IDA is based, with a second court order from the IDP's jurisdiction also required. The Authority :doc:`initiates the identity disclosure process <identity-disclosure-processes>` when there is a legal need, such as in cases of fraud or criminal activity.
+* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the PG is based, with a second court order from the IDP's jurisdiction also required. The Authority :doc:`initiates the identity disclosure process <identity-disclosure-processes>` when there is a legal need, such as in cases of fraud or criminal activity.
 
 Key concepts
 ============
@@ -64,13 +64,13 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Identity Credential**: An Identity Credential contains attributes on a user's identity and is used to open accounts on-chain. It is issued by IDPs during :doc:`user onboarding <user-processes>` based on identity documents (e.g. passports). It is stored in both the user's wallet and IDP's database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
 
-* **Identity Disclosure**: In fraudulent and criminal cases, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and IDAs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
+* **Identity Disclosure**: In fraudulent and criminal cases, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and PGs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
 
 * **Base Layer ID**: This is the identity system described above where users open accounts with Identity Credentials.
 
 * **Web3 ID**: This is a generic verifiable credential system. It can be used to provide a user with additional credentials, such as membership cards or degrees.
 
-* **Identity Disclosure Data**: Each account credential contains encrypted identifiers linking it to the owner's identity record at the IDP. This data, along with encrypted linking information that can reveal all accounts of a user, requires decryption by multiple IDAs. This ensures that no single party—not even the IDP—can connect identities to accounts outside the proper disclosure process.
+* **Identity Disclosure Data**: Each account credential contains encrypted identifiers linking it to the owner's identity record at the IDP. This data, along with encrypted linking information that can reveal all accounts of a user, requires decryption by multiple PGs. This ensures that no single party—not even the IDP—can connect identities to accounts outside the proper disclosure process.
 
 * **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens, and store Identity Credentials. Wallets enable users to generate zero-knowledge proofs to share verified information without revealing personal data. Wallets hold cryptographic addresses that control the accounts. :doc:`View wallet setup guides <../guides/setup-wallets-lp>`.
 
@@ -92,7 +92,7 @@ No single party can link a user's Identity to the accounts they have on Concordi
 
 - IDPs cannot identify a user's account (or on chain wallet address). They cannot connect an identity to on chain activity or an address.
 
-- A single IDA cannot decrypt a user's Identity Disclosure Data, this means they cannot access the mapping between a user's identity and their on-chain presence. In addition they do not have access to the PII which is stored within the IDPs systems.
+- A single PG cannot decrypt a user's Identity Disclosure Data, this means they cannot access the mapping between a user's identity and their on-chain presence. In addition they do not have access to the PII which is stored within the IDPs systems.
 
 - It is only possible to connect a user's PII identity to an account by :doc:`following the identity disclosure process <identity-disclosure-processes>`.
 
