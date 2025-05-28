@@ -8,44 +8,60 @@ Identity framework on Concordium
 
 Concordium's identity solution is designed to provide secure blockchain infrastructure that maintains accountability while preserving user privacy. The approach balances these requirements, enabling blockchain adoption across jurisdictions and ensuring regulatory compliance.
 
-Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, ConcordiumID and Web3 ID.
+Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, :ref:`ConcordiumID <concordium-id>` and :ref:`Web3 ID <web3-id>`.
+
+
+.. _concordium-id:
 
 ConcordiumID
 ============
 
-The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved identity provider before they can create and use accounts on the blockchain.
+The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved :term:`identity provider` before they can create and use accounts on the blockchain.
 
 After successful identity verification, the account holder receives a ConcordiumID, which enables them to:
 
-- Create accounts on the Concordium blockchain
-- Conduct transactions within the network
-- Prove certain identity attributes (such as age or citizenship) using zero-knowledge proofs without revealing the underlying data
+- :doc:`Create accounts <manage-accounts>` on the Concordium blockchain
+- :doc:`Conduct transactions <transactions>` within the networkusing :term:`zero-knowledge proofs<zero-knowledge proof>` without revealing the underlying data
+- Prove certain identity attributes (such as age or citizenship)
 
 The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
+
+.. Note::
+
+   It is possible to create a company identity using corporate documents rather than individual identification.
+   Company identities are only relevant for specific business use cases and have different creation requirements than individual identities.
+   For more information, see `Company identity creation <https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities>`_.
+
+.. _web3-id:
 
 Web3 ID
 =======
 
-The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing Verifiable Credentials, based on the W3C standard. This next-generation portable ID tool can be used for:
+The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing :term:`verifiable credentials<verifiable credential>`, based on the
+`W3C Verifiable Credentials Data Model <https://www.w3.org/TR/vc-data-model-2.0/>`_.
+
+This next-generation portable ID tool can be used for:
 
 - Issuance, management, and verification of digital certifications
-- Portable KYC
+- Portable :term:`KYC`
 - Professional certifications
 - Various other use cases requiring verified digital credentials
 
-While interaction with the Concordium blockchain always requires a ConcordiumID, Web3 ID Verifiable Credentials can be used both within the Concordium ecosystem and in off-chain environments.
+While interaction with the Concordium blockchain always requires a ConcordiumID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.
+
+:doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
 
 Key participants
 ================
 The identity solution on Concordium involves several key participants, each with specific roles and responsibilities in the process.
 
-* **Users**: Individuals or businesses who interact on the Concordium blockchain. Users must complete an identity verification process to create an account and become participants on the network.
+* **Users**: Individuals or businesses who interact on the Concordium blockchain. :doc:`Users must complete an identity verification process to create an account <user-processes>` and become participants on the network.
 
 * **Identity Providers (IDPs)**: Third-party organizations that provide off-chain identity verification. They issue structured identity objects while storing verification data securely. Currently available IDPs include `Notabene <https://notabene.id/>`_, `Digital Trust Solutions <https://www.digitaltrustsolutions.nl/>`_, and `Global Finreg <https://globalfinreg.com/en>`_ (for businesses), with the potential to add additional IDPs in the future.
 
-* **Identity Disclosure Authority (IDAs)**: Authorized entities that participate in Concordium's Identity Disclosure process when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
+* **Privacy Guardians (PGs)**: Authorized entities that participate in :doc:`Concordium's Identity Disclosure process <identity-disclosure-processes>` when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
 
-* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the IDA is based, with a second court order from the IDP's jurisdiction also required. The Authority initiates the identity disclosure process when there is a legal need, such as in cases of fraud or criminal activity.
+* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the PG is based, with a second court order from the IDP's jurisdiction also required. The Authority :doc:`initiates the identity disclosure process <identity-disclosure-processes>` when there is a legal need, such as in cases of fraud or criminal activity.
 
 Key concepts
 ============
@@ -54,141 +70,24 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Account**: An account is used to send and receive funds on the Concordium chain. The associated account credential defines the cryptographic keys that control the account. The account credential also contains information necessary for the identity disclosure. Multiple accounts can be created underneath an Identity Credential.
 
-* **Identity Credential**: An Identity Credential contains attributes on a user's identity and is used to open accounts on-chain. It is issued by IDPs during user onboarding based on identity documents (e.g. passports). It is stored in both the user's wallet and IDP's database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
+* **Identity Credential**: An Identity Credential contains attributes on a user's identity and is used to open accounts on-chain. It is issued by IDPs during :doc:`user onboarding <user-processes>` based on identity documents (e.g. passports). It is stored in both the user's wallet and IDP's database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
 
-* **Identity Disclosure**: In fraudulent and criminal cases, a process can be followed with multiple stakeholders (Authorities, IDPs and IDAs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
+* **Identity Disclosure**: In fraudulent and criminal cases, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and PGs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
 
-* **Base Layer ID**: This is the identity system described above where users open accounts with identity credentials.
+* **Base Layer ID**: This is the identity system described above where users open accounts with Identity Credentials.
 
 * **Web3 ID**: This is a generic verifiable credential system. It can be used to provide a user with additional credentials, such as membership cards or degrees.
 
-* **Identity Disclosure Data**: Each account credential contains encrypted identifiers linking it to the owner's identity record at the IDP. This data, along with encrypted linking information that can reveal all accounts of a user, requires decryption by multiple IDAs. This ensures that no single party—not even the IDP—can connect identities to accounts outside the proper disclosure process.
+* **Identity Disclosure Data**: Each account credential contains encrypted identifiers linking it to the owner's identity record at the IDP. This data, along with encrypted linking information that can reveal all accounts of a user, requires decryption by multiple PGs. This ensures that no single party—not even the IDP—can connect identities to accounts outside the proper disclosure process.
 
-* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens, and store Identity Credentials. Wallets enable users to generate zero-knowledge proofs to share verified information without revealing personal data. Wallets hold cryptographic addresses that control the accounts.
+* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens, and store Identity Credentials. Wallets enable users to generate zero-knowledge proofs to share verified information without revealing personal data. Wallets hold cryptographic addresses that control the accounts. :doc:`View wallet setup guides <../guides/setup-wallets-lp>`.
 
 * **Seed (phrase)**: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.
 
-Principles of privacy
-=====================
-Concordium's identity system has been designed to be privacy first and incorporates several key privacy principles.
 
-Protection of personal identifiable information
------------------------------------------------
+.. toctree::
+   :maxdepth: 1
 
-Users personal identifiable information (PII) such as name, birthdate etc, are never available on chain, either encrypted or unencrypted. PII is only stored locally within the user's wallet and with the IDP for compliance purposes. For avoidance of doubt, Concordium does not have access to any of this user information.
-
-Separation of powers
---------------------
-
-No single party can link a user's Identity to the accounts they have on Concordium. This can only be done through the Identity Disclosure Process.
-
-- IDPs cannot identify a user's account (or on chain wallet address). They cannot connect an identity to on chain activity or an address.
-
-- A single IDA cannot decrypt a user's Identity Disclosure Data, this means they cannot access the mapping between a user's identity and their on-chain presence. In addition they do not have access to the PII which is stored within the IDPs systems.
-
-- It is only possible to connect a user's PII identity to an account by following the identity disclosure process.
-
-Selective disclosure through zero-knowledge proofs
---------------------------------------------------
-
-With Concordium users can choose to reveal zero-knowledge proof verifications of attributes of their identity across both ConcordiumID and Web3 ID, without revealing the underlying data (e.g. proving they are over 18 without revealing their birth date).
-
-User processes
-==============
-
-Account creation
-----------------
-
-Users must complete an identity verification process to create an account and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as Identity Credentials), and accounts (which contain cryptographic addresses). Every account must be linked to a ConcordiumID Identity Credential.
-
-The account creation process follows these steps:
-
-1. A user downloads their chosen wallet application. Mobile, browser and desktop versions are available.
-
-2. Within the wallet, the user initiates a request for the creation of an Identity Credential by selecting their IDP of choice.
-
-3. The user is prompted by the IDP to scan a passport or an identity document and to provide a selfie. Businesses can also identify through a similar process, but the requirements vary and need additional KYB (Know Your Business) documentation.
-
-4. The IDP follows their standard identity verification process and verifies the validity of the identity document and any liveness checks.
-
-5. For new users the IDP creates an Identity Credential which is stored in two places, in the user's wallet application and within the IDP's systems ("the identity record") for compliance and for reference as required for their participation in the Identity Disclosure Process. It's important to note that the IDP does not store associated wallet addresses alongside the Identity credentials. IDPs are not able to unilaterally map identities to addresses.
-
-6. Once the Identity Credentials have been verified and stored (within the user's wallet and IDP system), the user can create an associated account. This account contains a public and private key, to send and receive tokens. Multiple accounts can be created underneath an Identity Credential.
-
-7. For returning users, the IDP recreates an Identity Credential. A user can then use their existing accounts or create a new one.
-
-8. Users can add multiple Identity Credentials within the same wallet application. However to create a new identity, as opposed to a new account, a user will need to complete an additional identity verification process with their chosen IDP.
-
-.. image:: ./images/account-creation-new.png
-   :alt: graphic drawing showing how creation of a user account
-
-Verifiable Credentials with Web3 ID
------------------------------------
-
-As a supplementary feature to the base identity provided on wallet creation, verified credentials can be issued to a user to power enhanced use cases.
-
-Web3 ID is based on the W3C standards for Verifiable Credentials. This makes them portable and interoperable. Verifiable Credentials can be used for KYC, compliance and regulation, for example to identify accredited investor status. Identity data, both ConcordiumID and Web3 ID Verifiable Credentials, can be used for off-chain uses such as zero-knowledge age verification.
-
-The Web3 ID suite can be used for:
-
-- Issuance, management, and verification of digital certifications
-- Portable KYC implementations
-- Professional certifications
-- Membership verification
-- Age verification without revealing birth date
-- Other use cases requiring verified digital credentials
-
-Web3 ID can leverage ConcordiumID, but doesn't have to. The Verifiable Credentials can, in principle, be used off-chain, but benefit from both the ConcordiumID, as well as transparent events logs on-chain.
-
-Identity disclosure process
-===========================
-
-An important feature of Concordium is the ability to disclose a user's identity and any associated accounts if there is a legal need. This is reserved for exceptional cases of malpractice, and requires a court order to authorise the request. A disclosure can take two forms, one identifying a person from an on-chain account, and the other a person identified via their registered document to all their accounts on-chain.
-
-From an account on Concordium Blockchain to a real-world identity
------------------------------------------------------------------
-
-Individually, an IDA or the IDP cannot reveal the identity of a user mapped to a Concordium account. But using the identity disclosure process, IDAs and the Authority work together to decrypt an identifier in the account. With this identifier the identity provider can find the user's identity record that contains information on the real-world identity.
-
-A detailed breakdown of the process to reveal a user's identity from an account address is as follows:
-
-1. The Authority initiates the identity disclosure process by presenting an official court order, along with the corresponding encrypted Identity Disclosure Data to the Identity Disclosure Authorities (IDAs).
-
-2. Each IDA uses its private decryption key to decrypt its share of the Identity Disclosure Data and transmits the resulting partial data back to the Authority.
-
-3. Upon receiving a threshold number of valid responses (i.e n out of t), the Authority combines the decrypted shares to reconstruct the unencrypted Identity Disclosure Data.
-
-4. The Authority issues a formal request and submits the reconstructed Identity Disclosure Data to the relevant Identity Provider (IDP).
-
-5. The Identity Provider searches its internal database for a match to the provided public Identity Credential. Upon locating the associated Identity Credentials which matches the unencrypted Identity Disclosure Data, the IDP returns the identifying information and linking information key to the Authority. At this point, the disclosure process has successfully revealed a verified identity for an account or wallet address.
-
-6. To find all accounts associated with the identity, the Authority forwards the encrypted linking information to the IDAs, requesting decryption shares.
-
-7. Each IDA processes the encrypted linking information and returns its partial decryption share to the Authority.
-
-8. Once the Authority obtains the required threshold of decryption shares (minimum two out of three), it reconstructs the complete linking information required to connect the account to an identity document. This linking information allows the Authority to identify all accounts linked to the individual created with the same Identity Credential.
-
-.. image:: ./images/account-to-person-disclosure.png
-   :alt: graphic drawing showing the process for identity disclosure from account to person
-
-From a real-world identity to Concordium accounts
--------------------------------------------------
-It is possible to find account addresses associated with a user's identity. Typically this process would only reveal identities created with the same document. In certain cases a wider scope could be required, such as all identities matching the name and birthdate. This would be specified in the court order.
-
-The following approach discloses an account from an identity document:
-
-1. Again, a court order is required to start the disclosure process. The Authority sends the identifying data of a real-life person together with the official request to all IDPs.
-
-2. IDPs check their system for users that match the identity data they received from the Authority.
-
-3. If the IDP is able to identify a matching user within its system, then the IDP sends the account holder's identity, including the encrypted linking information to the Authority.
-
-4. This encrypted linking information is then sent to the IDAs, who decrypt their share of the linking information and return it to the Authority.
-
-5. Once the Authority collects the minimum (at least n out of t) shares from the IDAs, it reconstructs the full linking information.
-
-6. Using all decrypted linking information, the Authority retrieves the list of all accounts associated with the identified user across all IDPs.
-
-.. image:: ./images/person-to-account-disclosure.png
-   :alt: graphic drawing showing the process for identity disclosure from person to account
-
+   principles-of-privacy
+   user-processes
+   identity-disclosure-processes
