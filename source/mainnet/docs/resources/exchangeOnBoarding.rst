@@ -7,7 +7,7 @@ Exchange Onboarding Guide
 This guide will help you add Concordium's native token (CCD) to your cryptocurrency exchange.
 
 Before you start, it is a good idea to read about the core concepts of the Concordium blockchain,
-particularly :ref:`identities <reference-id-accounts>` and :ref:`accounts <managing_accounts>`. The `Concordium Whitepaper <https://docs.concordium.com/governance/whitepaper/Concordium%20White%20Paper.pdf>`_ provides a comprehensive overview of these concepts.
+particularly :ref:`identities <reference-identity>` and :ref:`accounts <managing_accounts>`. The `Concordium Whitepaper <https://docs.concordium.com/governance/whitepaper/Concordium%20White%20Paper.pdf>`_ provides a comprehensive overview of these concepts.
 
 Identity creation
 =================

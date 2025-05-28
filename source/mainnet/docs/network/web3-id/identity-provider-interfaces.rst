@@ -9,7 +9,7 @@ A :ref:`Concordium wallet <wallets-lp>` interacts with identity providers when i
 Recovery
 ========
 
-The **goal** is to recover a particular existing :ref:`identity <reference-id-accounts>` (identity object) when recovering a wallet from the secret :term:`seed phrase`.
+The **goal** is to recover a particular existing :ref:`identity <reference-identity>` (identity object) when recovering a wallet from the secret :term:`seed phrase`.
 
 Prerequisites
 -------------
@@ -81,7 +81,7 @@ If the **queried identity doesn't exist**:
 Issuance
 ========
 
-The **goal** is to create a new :ref:`identity <reference-id-accounts>` for the user so they can then create :ref:`accounts <managing_accounts>`.
+The **goal** is to create a new :ref:`identity <reference-identity>` for the user so they can then create :ref:`accounts <managing_accounts>`.
 
 Sequence
 --------
