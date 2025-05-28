@@ -19,7 +19,7 @@ The account creation process follows these steps:
 
 3. The user is prompted by the IDP to scan a passport or an identity document and to provide a selfie. Businesses can also identify through a similar process, but the requirements vary and need additional :term:`KYB (Know Your Business)<KYB>` documentation.
 
-4. The IDP follows their standard identity verification process and verifies the validity of the identity document and any liveness checks.
+4. The IDP follows their standard identity verification process, verifies the validity of the identity document, and completes any other checks.
 
 5. For new users the IDP creates an Identity Credential which is stored in two places, in the user's wallet application and within the IDP's systems ("the identity record") for compliance and for reference as required for their participation in the Identity Disclosure Process. It's important to note that the IDP does not store associated wallet addresses alongside the Identity credentials. IDPs are not able to unilaterally map identities to addresses.
 
