@@ -643,5 +643,6 @@ redirects = {
     "docs/network/query-node" : "/en/mainnet/tools/query-node.html",
     "net/references/net/references/grpc2" : "/en/mainnet/tools/grpc2.html",
     "guides/export-import": "/en/mainnet/docs/guides/recovery.html",
-    "guides/recover-wallet": "/en/mainnet/docs/guides/recovery.html"
+    "guides/recover-wallet": "/en/mainnet/docs/guides/recovery.html",
+    "docs/protocol/id-accounts": "/en/mainnet/docs/protocol/identity.html"
     }
