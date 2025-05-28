@@ -8,7 +8,7 @@ Set up the |bw|
 The |bw| is a digital wallet that enables you to create and manage your Concordium
 :term:`identities<identity>` and :term:`accounts<account>` and to create transactions, such as sending CCD.
 
-To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
+To learn more about identities and accounts, see :ref:`Identity<reference-identity>` and :ref:`accounts<managing_accounts>`.
 
 Read the following guide to learn how to set up the wallet.
 
