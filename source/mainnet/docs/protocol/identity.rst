@@ -37,7 +37,8 @@ The ConcordiumID is foundational to the accountability and privacy features of t
 Web3 ID
 =======
 
-The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing :term:`verifiable credentials<verifiable credential>`, based on the :term:`W3C standard`. :doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
+The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing :term:`verifiable credentials<verifiable credential>`, based on the
+`W3C Verifiable Credentials Data Model <https://www.w3.org/TR/vc-data-model-2.0/>`_.
 
 This next-generation portable ID tool can be used for:
 
@@ -47,6 +48,8 @@ This next-generation portable ID tool can be used for:
 - Various other use cases requiring verified digital credentials
 
 While interaction with the Concordium blockchain always requires a ConcordiumID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.
+
+:doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
 
 Key participants
 ================
