@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/identity.620184a4-921f-4dff-b787-8dbec6ce6ae5.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/identity.21774404-98dd-4cbe-86ad-4649b8769e79.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/identity';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/identity.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -792,12 +792,12 @@ For more information, see <a class="reference external" href="https://developer.
 <ul class="simple">
 <li><p><strong>Account</strong>: An account is used to send and receive funds on the Concordium chain. The associated account credential defines the cryptographic keys that control the account. The account credential also contains information necessary for the identity disclosure. Multiple accounts can be created underneath an Identity Credential.</p></li>
 <li><p><strong>Identity Credential</strong>: An Identity Credential contains attributes on a user’s identity and is used to open accounts on-chain. It is issued by IDPs during <a class="reference internal" href="user-processes.html"><span class="doc">user onboarding</span></a> based on identity documents (e.g. passports). It is stored in both the user’s wallet and IDP’s database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.</p></li>
-<li><p><strong>Identity Disclosure</strong>: In fraudulent and criminal cases, <a class="reference internal" href="identity-disclosure-processes.html"><span class="doc">a process can be followed</span></a> with multiple stakeholders (Authorities, IDPs and PGs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.</p></li>
+<li><p><strong>Identity Disclosure Process</strong>: In fraudulent and criminal cases, <a class="reference internal" href="identity-disclosure-processes.html"><span class="doc">a process can be followed</span></a> with multiple stakeholders (Authorities, IDPs and PGs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.</p></li>
 <li><p><strong>Base Layer ID</strong>: This is the identity system described above where users open accounts with Identity Credentials.</p></li>
-<li><p><strong>Web3 ID</strong>: This is a generic verifiable credential system. It can be used to provide a user with additional credentials, such as membership cards or degrees.</p></li>
-<li><p><strong>Identity Disclosure Data</strong>: Each account credential contains encrypted identifiers linking it to the owner’s identity record at the IDP. This data, along with encrypted linking information that can reveal all accounts of a user, requires decryption by multiple PGs. This ensures that no single party—not even the IDP—can connect identities to accounts outside the proper disclosure process.</p></li>
 <li><p><strong>Wallet</strong>: A wallet is a secure application where users manage their accounts, hold and transfer tokens, and store Identity Credentials. Wallets enable users to generate zero-knowledge proofs to share verified information without revealing personal data. Wallets hold cryptographic addresses that control the accounts. <a class="reference internal" href="../guides/setup-wallets-lp.html"><span class="doc">View wallet setup guides</span></a>.</p></li>
 <li><p><strong>Seed (phrase)</strong>: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.</p></li>
+<li><p><strong>Public Holder Identifier</strong>: An encrypted mapping between the user’s identity credentials and their account. This identifier requires a court order and multiple Privacy Guardians to be decrypted.</p></li>
+<li><p><strong>Account Holder Identity Records</strong>: A collection of records related to the account owner, including their identity information and an encrypted key that links to any other accounts opened with the same identity document. This data is stored in the IDP’s database.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <ul>

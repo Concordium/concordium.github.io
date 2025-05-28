@@ -20,7 +20,7 @@ No single party can link a user's Identity to the accounts they have on Concordi
 
 - IDPs cannot identify a user's account (or on chain wallet address). They cannot connect an identity to on chain activity or an address.
 
-- A single PG cannot decrypt a user's Identity Disclosure Data, this means they cannot access the mapping between a user's identity and their on-chain presence. In addition they do not have access to the PII which is stored within the IDPs systems.
+- A single Privacy Guardian cannot decrypt a user's Identity Disclosure Data. This means they cannot access the mapping between a user's identity and their on-chain presence. In addition they do not have access to the PII which is stored within the IDPs systems.
 
 - It is only possible to connect a user's PII identity to an account by :doc:`following the identity disclosure process <identity-disclosure-processes>`.
 

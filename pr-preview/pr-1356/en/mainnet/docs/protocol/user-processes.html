@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/user-processes.d6b9f455-f89e-44b5-84f9-d8ddaff9c072.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/user-processes.1537611b-5a8e-4878-bcef-89b1c8169c7a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/user-processes';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/user-processes.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -751,7 +751,7 @@
 <li><p>A user <a class="reference internal" href="../installation/downloads.html"><span class="doc">downloads</span></a> their chosen wallet application. <a class="reference internal" href="../guides/deciding-wallet.html"><span class="doc">Mobile, browser and desktop versions are available</span></a>.</p></li>
 <li><p>Within the wallet, the user initiates a request for the creation of an Identity Credential by selecting their <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">IDP</span></a> of choice.</p></li>
 <li><p>The user is prompted by the IDP to scan a passport or an identity document and to provide a selfie. Businesses can also identify through a similar process, but the requirements vary and need additional <a class="reference internal" href="../resources/glossary.html#term-KYB"><span class="xref std std-term">KYB (Know Your Business)</span></a> documentation.</p></li>
-<li><p>The IDP follows their standard identity verification process and verifies the validity of the identity document and any liveness checks.</p></li>
+<li><p>The IDP follows their standard identity verification process, verifies the validity of the identity document, and completes any other checks.</p></li>
 <li><p>For new users the IDP creates an Identity Credential which is stored in two places, in the user’s wallet application and within the IDP’s systems (“the identity record”) for compliance and for reference as required for their participation in the Identity Disclosure Process. It’s important to note that the IDP does not store associated wallet addresses alongside the Identity credentials. IDPs are not able to unilaterally map identities to addresses.</p></li>
 <li><p>Once the Identity Credentials have been verified and stored (within the user’s wallet and IDP system), the user can create an associated account. This account contains a public and private key, to send and receive tokens. Multiple accounts can be created underneath an Identity Credential.</p></li>
 <li><p>For returning users, the IDP recreates an Identity Credential. A user can then use their existing accounts or create a new one.</p></li>

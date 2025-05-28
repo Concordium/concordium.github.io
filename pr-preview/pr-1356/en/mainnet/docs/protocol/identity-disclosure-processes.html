@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/identity-disclosure-processes.bbfa1f80-bc21-4463-afc5-261887d76211.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/identity-disclosure-processes.e8a9f5d6-7b82-45e8-9bf4-1115f95184e1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/identity-disclosure-processes';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/identity-disclosure-processes.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -743,36 +743,33 @@
                   
   <section id="reference-identity-disclosure-processes">
 <span id="identity-disclosure-processes"></span><h1>Identity disclosure processes<a class="headerlink" href="#reference-identity-disclosure-processes" title="Link to this heading">#</a></h1>
-<p>An important feature of Concordium is the ability to disclose a user’s identity and any associated accounts if there is a legal need. This is reserved for exceptional cases of malpractice, and requires a court order to authorise the request. A disclosure can take two forms, one identifying a person from an on-chain account, and the other a person identified via their registered document to all their accounts on-chain.</p>
-<section id="from-an-account-on-concordium-blockchain-to-a-real-world-identity">
-<h2>From an account on Concordium Blockchain to a real-world identity<a class="headerlink" href="#from-an-account-on-concordium-blockchain-to-a-real-world-identity" title="Link to this heading">#</a></h2>
-<p>Individually, a <a class="reference internal" href="../resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">PG</span></a> or the <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">IDP</span></a> cannot reveal the identity of a user mapped to a <a class="reference internal" href="manage-accounts.html"><span class="doc">Concordium account</span></a>. But using the identity disclosure process, PGs and the Authority work together to decrypt an identifier in the account. With this identifier the identity provider can find the user’s identity record that contains information on the real-world identity.</p>
-<p>A detailed breakdown of the process to reveal a user’s identity from an account address is as follows:</p>
+<p>An important feature of Concordium is the ability to disclose a user’s identity and any associated accounts if there is a legal need. This is reserved for exceptional cases of malpractice, and requires a court order to authorise the request. There are two legal scenarios in the context of Identity Disclosure: investigation of on-chain activity (initialized with an account number) and investigation of a person of interest (initialized with off-chain identifying data).</p>
+<p>To maintain process integrity, all communication occurs through the Authority - there is no direct communication between Identity Providers and Privacy Guardians.</p>
+<section id="legal-scenario-1-investigation-of-on-chain-activity">
+<h2>Legal scenario 1: Investigation of on-chain activity<a class="headerlink" href="#legal-scenario-1-investigation-of-on-chain-activity" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>The Authority initiates the identity disclosure process by presenting an official court order, along with the corresponding encrypted Identity Disclosure Data to the Privacy Guardians (PGs).</p></li>
-<li><p>Each PG uses its private decryption key to decrypt its share of the Identity Disclosure Data and transmits the resulting partial data back to the Authority.</p></li>
-<li><p>Upon receiving a threshold number of valid responses (i.e n out of t), the Authority combines the decrypted shares to reconstruct the unencrypted Identity Disclosure Data.</p></li>
-<li><p>The Authority issues a formal request and submits the reconstructed Identity Disclosure Data to the relevant Identity Provider (IDP).</p></li>
-<li><p>The Identity Provider searches its internal database for a match to the provided public Identity Credential. Upon locating the associated Identity Credentials which matches the unencrypted Identity Disclosure Data, the IDP returns the identifying information and linking information key to the Authority. At this point, the disclosure process has successfully revealed a verified identity for an account or wallet address.</p></li>
-<li><p>To find all accounts associated with the identity, the Authority forwards the encrypted linking information to the PGs, requesting decryption shares.</p></li>
-<li><p>Each PG processes the encrypted linking information and returns its partial decryption share to the Authority.</p></li>
-<li><p>Once the Authority obtains the required threshold of decryption shares (minimum two out of three), it reconstructs the complete linking information required to connect the account to an identity document. This linking information allows the Authority to identify all accounts linked to the individual created with the same Identity Credential.</p></li>
+<li><p>The Authority that is conducting the investigation must obtain a court order from the legal jurisdiction of the Privacy Guardian (PG).</p></li>
+<li><p>The Authority initiates the identity disclosure process by presenting an official court order to the PGs from their respective jurisdictions, along with the encrypted public holder identifier (obtained from blockchain data) corresponding to the account being investigated.</p></li>
+<li><p>Each PG uses its private decryption key to decrypt its share of the public holder identifier and transmits the resulting string back to the Authority.</p></li>
+<li><p>Upon receiving the necessary threshold of valid responses (currently 2 out of 3 threshold), the Authority combines the decrypted shares to reconstruct the public holder identifier.</p></li>
+<li><p>The Authority issues a formal request and submits the reconstructed public holder identifier to the relevant Identity Provider (IDP). If the IDP is in a different jurisdiction than the PG, an additional court order needs to be obtained by the Authority from the home country of the IDP.</p></li>
+<li><p>The Identity Provider searches its internal database for a match to the public holder identifier provided by the Authority. Upon having located the database entry corresponding to the public holder identifier, the IDP sends the account holder identity record to the Authority. At this point, the disclosure process has successfully revealed a verified identity for an account or wallet address.</p></li>
 </ol>
-<img alt="graphic drawing showing the process for identity disclosure from account to person" src="../../_images/account-to-person-disclosure.png" />
+<p>Once the identity has been revealed, it is possible to find additional accounts that are linked to it. This can be done via a full person to accounts disclosure scenario (detailed below) or via encrypted mapping information stored in the IDP. Both are dependent on a court order.</p>
+<img alt="graphic drawing showing the process for identity disclosure from account to person" src="../../_images/legal-scenario1.png" />
 </section>
-<section id="from-a-real-world-identity-to-concordium-accounts">
-<h2>From a real-world identity to Concordium accounts<a class="headerlink" href="#from-a-real-world-identity-to-concordium-accounts" title="Link to this heading">#</a></h2>
-<p>It is possible to find account addresses associated with a user’s identity. Typically this process would only reveal identities created with the same document. In certain cases a wider scope could be required, such as all identities matching the name and birthdate. This would be specified in the court order.</p>
-<p>The following approach discloses an account from an identity document:</p>
+<section id="legal-scenario-2-investigation-of-person-of-interest">
+<h2>Legal scenario 2: Investigation of person of interest<a class="headerlink" href="#legal-scenario-2-investigation-of-person-of-interest" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Again, a court order is required to start the disclosure process. The Authority sends the identifying data of a real-life person together with the official request to all IDPs.</p></li>
-<li><p>IDPs check their system for users that match the identity data they received from the Authority.</p></li>
-<li><p>If the IDP is able to identify a matching user within its system, then the IDP sends the account holder’s identity, including the encrypted linking information to the Authority.</p></li>
-<li><p>This encrypted linking information is then sent to the PGs, who decrypt their share of the linking information and return it to the Authority.</p></li>
-<li><p>Once the Authority collects the minimum (at least n out of t) shares from the PGs, it reconstructs the full linking information.</p></li>
-<li><p>Using all decrypted linking information, the Authority retrieves the list of all accounts associated with the identified user across all IDPs.</p></li>
+<li><p>A court order is required to start the disclosure process by the Authority in the jurisdiction(s) of the IDPs. The Authority sends the identifying data of a real-life person together with the official request to all IDPs on Concordium.</p></li>
+<li><p>The IDPs check their system for account holders that match the identity data they received from the Authority.</p></li>
+<li><p>If the IDP(s) can identify one or several database entries matching the user, then the IDP(s) sends all the corresponding account holder identity records to the Authority. Each record contains an encrypted key, which allows the identity to be linked to the accounts opened with this identity.</p></li>
+<li><p>These encrypted keys are then sent to the PGs along with a court order from their jurisdiction by the Authority. The PGs decrypt their share of each key and return the resulting strings to the Authority.</p></li>
+<li><p>Once the Authority has collected the required threshold of shares (currently 2 out of 3 threshold) for a key from the PGs, it reconstructs the full key.</p></li>
+<li><p>Using the reconstructed keys, the Authority retrieves the list of all accounts associated with each account holder identity record across all IDPs.</p></li>
+<li><p>The Authority takes appropriate action based on the retrieved account and transaction information.</p></li>
 </ol>
-<img alt="graphic drawing showing the process for identity disclosure from person to account" src="../../_images/person-to-account-disclosure.png" />
+<img alt="graphic drawing showing the process for identity disclosure from person to account" src="../../_images/legal-scenario2.png" />
 </section>
 </section>
 
@@ -859,8 +856,8 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-an-account-on-concordium-blockchain-to-a-real-world-identity">From an account on Concordium Blockchain to a real-world identity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-a-real-world-identity-to-concordium-accounts">From a real-world identity to Concordium accounts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legal-scenario-1-investigation-of-on-chain-activity">Legal scenario 1: Investigation of on-chain activity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legal-scenario-2-investigation-of-person-of-interest">Legal scenario 2: Investigation of person of interest</a></li>
 </ul>
   </nav></div>
 
