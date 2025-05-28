@@ -26,6 +26,11 @@ After successful identity verification, the account holder receives a Concordium
 
 The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
 
+.. Note::
+
+   It is possible to create a company identity using corporate documents rather than individual identification.
+   Company identities are only relevant for specific business use cases and have different creation requirements than individual identities.
+   For more information, see `Company identity creation <https://developer.concordium.software/en/mainnet/net/guides/company-identities.html#company-identities>`_.
 
 .. _web3-id:
 
