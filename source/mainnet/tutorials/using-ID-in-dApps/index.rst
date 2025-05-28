@@ -16,7 +16,7 @@ This architecture enables wallets to generate zero-knowledge proofs about the id
 
 Unlike many other blockchains where implementing zero-knowledge proofs requires deep cryptographic expertise, Concordium simplifies this process significantly:
 
-1. **Built-in identity layer**: Identity credentials are already associated with accounts, read :ref:`this article <reference-id-accounts>` for more details
+1. **Built-in identity layer**: Identity credentials are already associated with accounts, read :ref:`this article <reference-identity>` for more details
 2. **Wallet-managed proofs**: The cryptographic heavy lifting happens in the wallet
 3. **Flexible proof types**: Support for revealing attributes, range proofs, and set membership proofs, read :ref:`this article <create-proofs>` for more information
 4. **Simple developer experience**: No need for specialized ZK languages or custom implementations
