@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/suspend-unsuspend-validator.93135448-6fd7-4084-876c-447a855ee219.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/mobile-wallet/suspend-unsuspend-validator.90507665-fa0b-4c4b-84ab-c7788e837d11.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/mobile-wallet/suspend-unsuspend-validator';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/mobile-wallet/suspend-unsuspend-validator.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -831,9 +831,103 @@ During this period, a red warning banner appears on your wallet stating that <st
 <p class="sd-card-text"><strong>Important</strong>: The suspension notification banner on your account overview screen will remain visible across your entire wallet experience, even when you have selected different accounts in the dropdown menu. Clicking this banner will immediately take you to the suspended validator’s details page, regardless of which account is currently selected or displayed.</p>
 <p class="sd-card-text">This persistent notification ensures you’re always aware of the suspension status and provides quick access to resume validation when you’re ready.</p>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Single signature account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to <strong>Accounts</strong>, select the account for which you want to suspend validation and click <strong>More options</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Validation</strong>.</p></li>
+<li><p class="sd-card-text">Click <strong>Suspend validation</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/dw-suspend-validation1.png"><img alt="screen showing all validator options" src="../../_images/dw-suspend-validation1.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/dw-suspend-validation2.png"><img alt="screen showing that validator will be suspended" src="../../_images/dw-suspend-validation2.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger device is ready</strong> in the Desktop Wallet and click <strong>Submit</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/dw-suspend-validation3.png"><img alt="../../_images/dw-suspend-validation3.png" src="../../_images/dw-suspend-validation3.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">On the LEDGER device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Suspend validator</strong>. Navigate to the right.</p></li>
+<li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
+</ol>
+<p class="sd-card-text">You can see that the Suspension status now has changed to <em>Suspended</em>.</p>
+<a class="reference internal image-reference" href="../../_images/dw-suspension-status.png"><img alt="screen showing warning about suspended validator" src="../../_images/dw-suspension-status.png" style="width: 50%;" />
+</a>
+<p class="sd-card-text">Furthermore, a banner will appear on the main page warning about the suspension.</p>
+<a class="reference internal image-reference" href="../../_images/dw-suspend-banner-new.png"><img alt="screen showing suspension status of validator" src="../../_images/dw-suspend-banner-new.png" style="width: 50%;" />
+</a>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Multi signature account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to <strong>Multi Signature Transactions</strong>, select <strong>Make new proposal</strong>, and then select <strong>Update validator suspension</strong>.</p></li>
+<li><p class="sd-card-text">Select the <strong>Account</strong> that you no longer want to be a validator account, and then select <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select <strong>Continue</strong>.</p></li>
+</ol>
+<p class="sd-card-text"><strong>Generate the transaction</strong></p>
+<p class="sd-card-text">There are two ways that you can generate the transaction:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a LEDGER device but you do need an internet connection.</p></li>
+<li><p class="sd-card-text">Generate and sign the transaction This option requires a LEDGER device and an internet connection.</p></li>
+</ul>
+<p class="sd-card-text">In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
+<p class="sd-card-text"><em>Generate the transaction without signing</em></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
+</ol>
+<p class="sd-card-text"><em>Generate and sign the transaction on the LEDGER device</em></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">If you haven’t connected the LEDGER device, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
+<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger device</strong>. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying LEDGER device is ready.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
+<li><p class="sd-card-text">On the LEDGER device, there’s a message saying <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Validator status: Suspend validator</strong>. Navigate to the right.</p></li>
+<li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">If you want to decline the transaction, press the right button on the LEDGER device. The hardware wallet now says <strong>Decline to sign transaction</strong>. Press both buttons to decline. In the Desktop Wallet, there’s a message saying <strong>The action was declined on the Ledger device. Please try again.</strong></p>
+</div>
+<p class="sd-card-text">In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can submit the transaction to the chain, otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
+<p class="sd-card-text"><strong>Export proposal</strong></p>
+<p class="sd-card-text">If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
+<li><p class="sd-card-text">Navigate to the location on your computer where you want to save the file. If you’re on Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>.</p></li>
+<li><p class="sd-card-text">You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.</p></li>
+</ol>
+<p class="sd-card-text"><strong>Receive signatures from co-signers</strong></p>
+<p class="sd-card-text">When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select Your proposed transactions.</p></li>
+<li><p class="sd-card-text">Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.</p></li>
+<li><p class="sd-card-text">Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
+</ol>
+<p class="sd-card-text"><strong>Submit the transaction to the blockchain</strong></p>
+<p class="sd-card-text">When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
+<ol class="arabic">
+<li><p class="sd-card-text">Review the transaction details carefully to ensure that all information is correct.</p></li>
+<li><p class="sd-card-text">Select <strong>I understand this is the final submission, and that it cannot be reverted</strong>.</p>
+<blockquote>
+<div><p class="sd-card-text">If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
+</div></blockquote>
+</li>
+<li><p class="sd-card-text">Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the ledger.</p></li>
+<li><p class="sd-card-text">Select <strong>Finish</strong> to leave the page.</p></li>
+</ol>
+</div>
+</details></div>
 </details></section>
 <section id="unsuspend-a-self-suspended-validator">
-<h2>Unsuspend a self-suspended validator<a class="headerlink" href="#unsuspend-a-self-suspended-validator" title="Link to this heading">#</a></h2>
+<span id="unsuspend-selfsuspended"></span><h2>Unsuspend a self-suspended validator<a class="headerlink" href="#unsuspend-a-self-suspended-validator" title="Link to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -864,6 +958,94 @@ Note that the resumption will be effective from the next payday.</p>
 </li>
 </ol>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Single signature account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Go to <strong>Accounts</strong>, select the account for which you want to resume validation and click <strong>More options</strong>. You may also click <strong>Go to account</strong> on the suspension warning.</p></li>
+<li><p class="sd-card-text">Select <strong>Validation</strong>.</p></li>
+<li><p class="sd-card-text">Click <strong>Resume validation</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/dw-resume-validation1.png"><img alt="screen showing all validator options" src="../../_images/dw-resume-validation1.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">Click <strong>Continue</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/dw-resume-validation2.png"><img alt="screen showing that validator will be unsuspendet" src="../../_images/dw-resume-validation2.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">A message says <strong>Waiting for device. Please connect your Ledger</strong>. Connect the LEDGER device to the computer and enter your PIN on the LEDGER device.</p></li>
+<li><p class="sd-card-text">Press the right button to navigate to the <strong>Concordium</strong> app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message <strong>Ledger device is ready**in the Desktop Wallet and select **Submit</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/dw-resume-validation3.png"><img alt="../../_images/dw-resume-validation3.png" src="../../_images/dw-resume-validation3.png" style="width: 50%;" />
+</a>
+</li>
+<li><p class="sd-card-text">On the LEDGER device, a message says <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Resume validator</strong>. Navigate to the right.</p></li>
+<li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, you can see that the transaction has been submitted to the chain. Select <strong>Finish</strong>.</p></li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Multi signature account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Go to <strong>Multi Signature Transactions</strong>, select <strong>Make new proposal</strong>, and then select <strong>Update validator suspension</strong>.</p></li>
+<li><p class="sd-card-text">Select the <strong>Account</strong> that you no longer want to be a validator account, and then select <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Set an expiry date and time for your proposal. You must set the expiry time so that the co-signers can return their signatures in time. Select <strong>Continue</strong>.</p></li>
+</ol>
+<p class="sd-card-text"><strong>Generate the transaction</strong></p>
+<p class="sd-card-text">There are two ways that you can generate the transaction:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Generate the transaction without signing. This option enables you to export the transaction proposal without signing it. You don’t need a LEDGER device but you do need an internet connection.</p></li>
+<li><p class="sd-card-text">Generate and sign the transaction This option requires a LEDGER device and an internet connection.</p></li>
+</ul>
+<p class="sd-card-text">In combination, these two options enable you to distribute the responsibility of creating and signing transfers among more people. You can, for example, have one person create the proposal and another one sign the proposal. It also makes it possible for you to sign the transaction on the Ledger in a different location than where the proposal was created.</p>
+<p class="sd-card-text"><em>Generate the transaction without signing</em></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Verify that the <strong>Transaction details</strong> are as you intended, and then select <strong>I am sure that the proposed changes are correct</strong>.</p></li>
+<li><p class="sd-card-text">Select <strong>Generate without signing</strong>. You can now export the proposal.</p></li>
+</ol>
+<p class="sd-card-text"><em>Generate and sign the transaction on the LEDGER device</em></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">If you haven’t connected the LEDGER device, there’s a message in the Desktop Wallet saying <strong>Waiting for connection</strong> until you connect the LEDGER device. Enter your PIN code on the LEDGER device. Press the buttons above the up and down arrows to choose a digit, and then press both buttons to select the digit.</p></li>
+<li><p class="sd-card-text">Wait for the message in the Desktop Wallet saying <strong>Open the Concordium application on your Ledger device</strong>. On the LEDGER device, press the right button to navigate to the Concordium app, and then press both buttons to open the app. The LEDGER device says <strong>Concordium is ready</strong>. Wait for the message in the Desktop Wallet saying LEDGER device is ready.</p></li>
+<li><p class="sd-card-text">In the Desktop Wallet, Verify that the <strong>Transaction details</strong> are as you intended, select <strong>I am sure that the proposed changes are correct</strong>, and then select <strong>Generate and Sign</strong>.</p></li>
+<li><p class="sd-card-text">On the LEDGER device, there’s a message saying <strong>Review transaction</strong>. Verify that the sender account is correct, and navigate to the right. The LEDGER device says <strong>Validator status: Unsuspend validator</strong>. Navigate to the right.</p></li>
+<li><p class="sd-card-text">The LEDGER device says <strong>Sign transaction</strong>. Press both buttons to sign the transaction. The LEDGER device says <strong>Concordium is ready</strong>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">If you want to decline the transaction, press the right button on the LEDGER device. The hardware wallet now says <strong>Decline to sign transaction</strong>. Press both buttons to decline. In the Desktop Wallet, there’s a message saying <strong>The action was declined on the Ledger device. Please try again.</strong></p>
+</div>
+<p class="sd-card-text">In the Desktop Wallet, you can now see <strong>Transaction details</strong>, <strong>Signatures</strong>, and <strong>Security &amp; Submission Details</strong>, which include the status of the transaction, the identicon, and the transaction hash. If you have all the required signatures, you can submit the transaction to the chain , otherwise, you’ll have to export the proposal and receive signatures from the co-signers.</p>
+<p class="sd-card-text"><strong>Export proposal</strong></p>
+<p class="sd-card-text">If more than one signature is needed to sign off on the proposal, you have to share a file of the type JSON, which contains the transaction information,  with the co-signers.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">In the Desktop Wallet, select <strong>Export transaction proposal</strong>.</p></li>
+<li><p class="sd-card-text">Navigate to the location on your computer where you want to save the file. If you’re on Windows make sure that <strong>All Files</strong> is selected in <strong>Save as type</strong>. Give the file a name and the extension .json, and then click <strong>Save</strong>.</p></li>
+<li><p class="sd-card-text">You have to export the transaction proposal and send it to the co-signer through a secure channel. Optionally, you can also send the Identicon to the co-signers through a different secure channel.</p></li>
+</ol>
+<p class="sd-card-text"><strong>Receive signatures from co-signers</strong></p>
+<p class="sd-card-text">When the co-signers have signed the transaction, they return the signed transaction proposal to you, and you have to import the files into the Desktop Wallet before you can submit the transaction to the chain.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">If you’re still on the same page, go to step 3. If you left the page with the account transaction, go to <strong>Multi-signature Transactions</strong>, and then select Your proposed transactions.</p></li>
+<li><p class="sd-card-text">Select the transaction that you want to submit to the chain. You can see an overview of the transaction details and an overview of the signatures. You can also see that the status of the transaction is Unsubmitted, and you can see the identicon and the transaction hash.</p></li>
+<li><p class="sd-card-text">Select <strong>Browse to file</strong> and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select <strong>OK</strong>. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.</p></li>
+</ol>
+<p class="sd-card-text"><strong>Submit the transaction to the blockchain</strong></p>
+<p class="sd-card-text">When you have received and added all the required signatures, you can submit the transaction to the blockchain.</p>
+<ol class="arabic">
+<li><p class="sd-card-text">Review the transaction details carefully to ensure that all information is correct.</p></li>
+<li><p class="sd-card-text">Select <strong>I understand this is the final submission, and that it cannot be reverted</strong>.</p>
+<blockquote>
+<div><p class="sd-card-text">If you don’t want to submit the transaction to the chain, you can select <strong>Cancel</strong>. The proposal is no longer active. However, it is still visible in the list of proposals.</p>
+</div></blockquote>
+</li>
+<li><p class="sd-card-text">Select <strong>Submit transaction to chain</strong>. The transaction is submitted to the chain and finalized on the ledger.</p></li>
+<li><p class="sd-card-text">Select <strong>Finish</strong> to leave the page.</p></li>
+</ol>
+</div>
+</details></div>
 </details></section>
 <section id="unsuspend-an-automatically-suspended-validator">
 <h2>Unsuspend an automatically suspended validator<a class="headerlink" href="#unsuspend-an-automatically-suspended-validator" title="Link to this heading">#</a></h2>
@@ -909,6 +1091,18 @@ Note that the resumption will be effective from the next payday.</p>
 <a class="reference internal image-reference" href="../../_images/unsuspend_validator4.png"><img alt="../../_images/unsuspend_validator4.png" src="../../_images/unsuspend_validator4.png" style="width: 50%;" />
 </a>
 </li>
+</ol>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">When your validator becomes inactive, it first enters a primed for suspension state. During this period, a warning banner appears at the main page of your wallet interface stating <em>The target pool of the following account is primed for suspension</em>.</p>
+<p class="sd-card-text">Your node has until the next snapshot epoch to show activity. If your node remains inactive, full suspension takes effect at the next payday.</p>
+<p class="sd-card-text">If your validator has been suspended:</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">First check your node and resolve the underlying issues: Identify what caused the automatic suspension, fix the identified issues on your node, and restart your node.</p></li>
+<li><p class="sd-card-text">Then, navigate to the account with the suspended validator. Clicking the suspension notification banner will immediately take you to the account.</p></li>
+<li><p class="sd-card-text">Follow the same steps as described under  <a class="reference internal" href="#unsuspend-selfsuspended"><span class="std std-ref">Unsuspend a self-suspended validator</span></a>.</p></li>
 </ol>
 </div>
 </details></section>
