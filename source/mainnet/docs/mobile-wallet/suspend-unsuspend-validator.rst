@@ -246,7 +246,7 @@ Self-suspend a validator
 
         #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
 
-        .. _submit-remove-baker:
+       
 
         **Submit the transaction to the blockchain**
 
@@ -397,7 +397,7 @@ Unsuspend a self-suspended validator
 
         #. Select **Browse to file** and then navigate to the location on your computer where you saved the signed transaction files. Select the relevant files, and then select **OK**. The files are uploaded to the Desktop Wallet and added to the list of signatures. Alternatively, you can drag and drop the signature files from their location on the computer and onto the Desktop Wallet.
 
-        .. _submit-remove-baker:
+       
 
         **Submit the transaction to the blockchain**
 
