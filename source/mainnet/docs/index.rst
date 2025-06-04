@@ -88,6 +88,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    What is the Concordium Protocol <protocol/concordium-protocol>
    Identities <protocol/id-accounts>
    Accounts <protocol/manage-accounts>
+   Key derivation and usage <protocol/key-derivation-and-usage>
    Transactions <protocol/transactions>
    Consensus mechanisms <protocol/consensus-mechanisms>
    Validation <protocol/concepts-baker>
