@@ -59,28 +59,28 @@ The identity solution on Concordium involves several key participants, each with
 
 * **Identity Providers (IDPs)**: Third-party organizations that provide off-chain identity verification. They issue structured identity objects while storing verification data securely. Currently available IDPs include `Notabene <https://notabene.id/>`_, `Digital Trust Solutions <https://www.digitaltrustsolutions.nl/>`_, and `Global Finreg <https://globalfinreg.com/en>`_ (for businesses), with the potential to add additional IDPs in the future.
 
-* **Privacy Guardians (PGs)**: Authorized entities that participate in :doc:`Concordium's Identity Disclosure process <identity-disclosure-processes>` when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
+* **Privacy Guardians (PGs)**: Authorized entities that participate in :doc:`Concordium's Identity Disclosure Process <identity-disclosure-processes>` when legally required. Typically legal firms adept at handling disclosure requests in compliance with court orders, they play a crucial role in the decryption process.
 
-* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the PG is based, with a second court order from the IDP's jurisdiction also required. The Authority :doc:`initiates the identity disclosure process <identity-disclosure-processes>` when there is a legal need, such as in cases of fraud or criminal activity.
+* **The Authority**: The entity that has obtained a court order to request identity disclosure. The court order must originate in the governing jurisdiction where the PG is based, with a second court order from the IDP's jurisdiction also required. The Authority :doc:`initiates the identity disclosure process <identity-disclosure-processes>` when there is a legal need, such as in cases of suspicious activity.
 
 Key concepts
 ============
 
 Understanding Concordium's identity framework requires familiarity with several key concepts:
 
-* **Account**: An account is used to send and receive funds on the Concordium chain. The associated account credential defines the cryptographic keys that control the account. The account credential also contains information necessary for the identity disclosure. Multiple accounts can be created underneath an Identity Credential.
+* **Account**: An account is used to send and receive funds on the Concordium chain. The account is associated with the user’s identity, however this association is encrypted and can only be disclosed through the :doc:`Identity Disclosure Process <identity-disclosure-processes>`.
 
-* **Identity Credential**: An Identity Credential contains attributes on a user's identity and is used to open accounts on-chain. It is issued by IDPs during :doc:`user onboarding <user-processes>` based on identity documents (e.g. passports). It is stored in both the user's wallet and IDP's database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
+* **Identity Credential**: An Identity Credential contains attributes on a user's identity. It is used to open accounts on-chain. These credentials are issued by Identity Providers during :doc:`user onboarding <user-processes>` and are derived from an identity document (e.g. a passport). The IDP keeps an identity record within their database. Identity Credentials are also stored within the wallet application. Concordium does not have any access to the user information within the Identity Credential. Individual attributes from the user’s Identity Credential can be shared by the user from their wallet with minimal data exposure using zero-knowledge proofs.
 
-* **Identity Disclosure Process**: In fraudulent and criminal cases, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and PGs) to disclose the identity of the user of a given account or the finding of all accounts of a given user. This process requires court orders and involves multiple participants to protect user privacy under normal circumstances.
+* **Identity Disclosure Process**: Unique to Concordium. In cases where an Authority suspects suspicious behaviour and wants to open an investigation, :doc:`a process can be followed <identity-disclosure-processes>` with multiple stakeholders (Authorities, IDPs and PGs) to disclose the identity of the user of a given account or the finding of all accounts of a given user.
 
 * **Base Layer ID**: This is the identity system described above where users open accounts with Identity Credentials.
 
-* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens, and store Identity Credentials. Wallets enable users to generate zero-knowledge proofs to share verified information without revealing personal data. Wallets hold cryptographic addresses that control the accounts. :doc:`View wallet setup guides <../guides/setup-wallets-lp>`.
+* **Wallet**: A wallet is a secure application where users manage their accounts, hold and transfer tokens on the network, and store Identity Credentials issued by Identity Providers. It also enables users to generate zero-knowledge proofs to share verified identity information without revealing personal data. :doc:`View wallet setup guides <../guides/setup-wallets-lp>`.
 
 * **Seed (phrase)**: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.
 
-* **Public Holder Identifier**: An encrypted mapping between the user's identity credentials and their account. This identifier requires a court order and multiple Privacy Guardians to be decrypted.
+* **Public Holder Identifier**: An encrypted mapping between the user's Identity Credentials and their account. This identifier requires a court order and multiple Privacy Guardians to be decrypted.
 
 * **Account Holder Identity Records**: A collection of records related to the account owner, including their identity information and an encrypted key that links to any other accounts opened with the same identity document. This data is stored in the IDP’s database.
 
