@@ -372,7 +372,6 @@ To fully remove your Concordium node—including all running or stopped containe
 
       $docker ps -a
 
-   
 2. **Remove the Docker image**
 
    Once all containers using the image are deleted, you can remove the image itself. List images to find the correct name and tag:
