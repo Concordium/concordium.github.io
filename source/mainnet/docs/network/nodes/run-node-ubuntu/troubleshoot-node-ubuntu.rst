@@ -30,9 +30,9 @@ This is helpful for observing the service's behavior as it runs.
 **On the Testnet, you can view the node logs with**
 
 .. code-block:: console
-               
+
       $ journalctl -u concordium-testnet-node.service
-   
+
 Database invariant violation error
 ==================================
 
