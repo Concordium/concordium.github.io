@@ -214,10 +214,10 @@ Uninstall the app as you uninstall all apps on Microsoft.
 
 Delete the folder ``C:\Users\<user>\AppData\com.concordium.guardian`` to remove all guardian keys.
 
-MacOS
+macOS
 -----
 
-Uninstall the app as you uninstall all apps on MacOS.
+Uninstall the app as you uninstall all apps on macOS.
 
 Delete the folder ``~/Library/Application Support/com.concordium.guardian`` where ``~`` represents either ``$HOME`` or ``/Users/<username>`` to remove all guardian keys.
 

@@ -110,7 +110,12 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    Validator Management <network/baker-pool>
-   Run a node on Concordium <network/nodes/node-requirements>
+   Run a Concordium Node <network/nodes/node-requirements>
+   Run a Node on Ubuntu <network/nodes/run-node-ubuntu/index>
+   Run a Node on macOS <network/nodes/run-node-macos/index>
+   Run a Node on Windows <network/nodes/run-node-windows/index>
+   Run a Node using Docker <network/nodes/run-node-docker/index>
+   Run a Node on AWS <network/nodes/run-node-aws/index>
    Use Concordium's ID layer <network/web3-id/index.rst>
    Run a local chain <network/guides/run-local-chain.rst>
    Indexers <network/indexers/intro.rst>

@@ -1,4 +1,4 @@
-.. troubleshoot-node-windows:
+.. _troubleshoot-node-windows:
 
 ======================================
 Troubleshoot a node on Windows
@@ -6,12 +6,37 @@ Troubleshoot a node on Windows
 
 This guide describes how to troubleshoot a node running on Windows on the Concordium network.
 
+View the node logs
+==================
+
+You can find the node logs here:
+
+- Mainnet: ``C:\ProgramData\Concordium\Node Runner\mainnet\logs``
+- Testnet: ``C:\ProgramData\Concordium\Node Runner\testnet\logs``
+
+If you specified a different installation folder for the configuration and data, the path might be different.
+
+The files ``mainnet.log`` and  ``testnet.log`` contain the latest logs, with ``mainnet.0.log`` and ``mainnet.1.log`` containing progressively older logs and the same for ``testnet.0.log`` and ``testnet.1.log``.
+
+The log files are rolled when the latest log file exceeds 50 MB. This means that ``mainnet.0.log`` is renamed to ``mainnet.1.log`` (replacing the old file if present), ``mainnet.log`` is renamed to ``mainnet.0.log``, and a new, empty ``testnet.log`` is created.
+
+The same goes for testnet. ``testnet.0.log`` is renamed to ``testnet.1.log`` (replacing the old file if present), ``testnet.log`` is renamed to ``testnet.0.log``, and a new, empty ``testnet.log`` is created.
+
+When nodes are stopped or started, this is also recorded in the system event log.
+
+#. Search for event in the **Search** bar, and then select **Event Viewer**.
+
+#. Select **Windows Logs**, and then under **Source** look for Concordium Node Runner Service.
+
+   .. image:: ../images/Node-setup-win-7.png
+         :width: 50%
+
 Event viewer
 ============
 
 Use the Event viewer to get more information about the problem. In the **Search** bar, search for **Event viewer**. In the **Windows Logs** click **Application**. Use the warnings and errors to diagnose the issue.
 
-.. image:: ../nodes/images/windows-event-viewer.png
+.. image:: ../images/windows-event-viewer.png
 
 Node crash or database corruption
 =================================

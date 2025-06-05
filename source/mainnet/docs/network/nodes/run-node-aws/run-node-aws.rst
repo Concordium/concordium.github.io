@@ -25,14 +25,14 @@ Concordium provides two AWS Marketplace products, a `mainnet <https://aws.amazon
 
 On the AWS marketplace, you should choose 'Continue to subscribe' and follow the instructions. When you reach the 'Launch this software' step, you should click the 'Choose action' drop-down and choose 'Launch through EC2' as shown.
 
-.. image:: ../images/aws-marketplace/marketplace-launch-action.png
+.. image:: ../images/marketplace-launch-action.png
   :alt: Choose 'Launch through EC2'
 
 After clicking 'Launch' you will be sent to the EC2 console, where you can configure the VPS.
 You should find the storage section and increase the storage to a minimum of 1000 GiB.
 You will find a section called 'Advanced details', expand this section.
 
-.. image:: ../images/aws-marketplace/marketplace-advanced-section.png
+.. image:: ../images/marketplace-advanced-section.png
 
 After expanding, you can scroll to the bottom of the page to find the 'user data' and paste in the configuration and remember to change networkname to either testnet or mainnet and also change node-name to the name you would like to change to
 
@@ -45,7 +45,7 @@ After expanding, you can scroll to the bottom of the page to find the 'user data
         [Service]
         Environment=CONCORDIUM_NODE_COLLECTOR_NODE_NAME=<node-name>
 
-.. image:: ../images/aws-marketplace/marketplace-user-data.png
+.. image:: ../images/marketplace-user-data.png
   :alt: Insert the configuration in the user data
 
 In the user data section, you can also change other configuration parameters or you can do it afterwards by adding one of the following parameters to the configuration files.

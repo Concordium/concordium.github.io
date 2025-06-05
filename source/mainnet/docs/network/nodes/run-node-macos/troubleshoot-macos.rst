@@ -1,10 +1,39 @@
 .. _troubleshoot-node-macos:
 
 ============================
-Troubleshoot a node on MacOS
+Troubleshoot a node on macOS
 ============================
 
-This guide describes how to troubleshoot a node running on MacOS on the Concordium network.
+This guide describes how to troubleshoot a node running on macOS on the Concordium network.
+
+View node logs
+==============
+
+There are two ways to view the logs:
+
+- With the **Console.app** you can start recording logs and view them, but you can't see logs from the past.
+
+  - Open the **Console app**, click on the **Start** button to begin recording logs.
+
+  - In the search bar, enter the following and press enter:
+
+    - For mainnet logs: ``software.concordium.mainnet.node``
+
+    - For testnet logs: ``software.conordium.testnet.node``
+
+  - Then click on the small **Any** button in the search bar and select **Subsystem** from the list of options.
+
+- With a terminal and *log show* you can view logs from the past and as they are logged.
+
+  - Open a terminal.
+
+  - Use the ``log`` command by entering:
+
+    - For mainnet logs: ``log show --predicate 'subsystem == "software.concordium.mainnet.node"'``
+
+    - For testnet logs: ``log show --predicate 'subsystem == "software.concordium.testnet.node"'``
+
+  - You can filter the logs with additional parameters, such as start and end date. Enter ``log show --help`` to see the parameters available.
 
 Node crash or database corruption
 =================================

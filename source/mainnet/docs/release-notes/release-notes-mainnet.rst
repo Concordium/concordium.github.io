@@ -365,10 +365,10 @@ SendTransaction for smart contract transactions can receive schemas that are for
 
 January 4, 2023
 
-Concordium Node 5.0.7 for MacOS
+Concordium Node 5.0.7 for macOS
 -------------------------------
 
-Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
+Fix a bug in the macOS node that caused an issue with NRG calculation. Concordium recommends that macOS node runners update their nodes to 5.0.7.
 
 Mainnet 4: Sirius
 =================

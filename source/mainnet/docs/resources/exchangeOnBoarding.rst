@@ -64,7 +64,7 @@ Platform-specific setup instructions
 * :ref:`Ubuntu Node <run-node-ubuntu>`
 * :ref:`Docker Node <run-a-node>`
 * :ref:`Windows Node <run-node-windows>`
-* :ref:`MacOS Node <run-node-macos>`
+* :ref:`macOS Node <run-node-macos>`
 * :ref:`AWS Node <run-a-node-aws>`
 
 For custom node setups, contact `Concordium Support <mailto:support@concordium.software>`_.

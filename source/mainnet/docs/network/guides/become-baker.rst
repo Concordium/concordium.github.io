@@ -89,13 +89,13 @@ where you replace
 
       For a node on Docker, the ``<concordium-data-dir>`` must use the following paths:
 
-      * on Linux and MacOS: ``~/.local/share/concordium``
+      * on Linux and macOS: ``~/.local/share/concordium``
       * on Windows: ``%LOCALAPPDATA%\\concordium``.
 
       Remember to configure your node for validation using this path:
 
       * using Docker: See :ref:`configure Linux node<baking-docker>`.
-      * on MacOS: See :ref:`configure MacOS node<baker-macos>`.
+      * on macOS: See :ref:`configure macOS node<baker-macos>`.
       * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
       * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
 
