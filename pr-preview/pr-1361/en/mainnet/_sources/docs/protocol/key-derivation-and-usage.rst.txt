@@ -5,17 +5,20 @@
 Key derivation and usage
 =========================
 
-Concordium uses a `SLIP-10/BIP32 <https://github.com/satoshilabs/slips/blob/master/slip-0010.md>`_ style key derivation scheme to generate all the cryptographic key material necessary to open and operate accounts on the blockchain.
+Concordium employs a `SLIP-10/BIP32 <https://github.com/satoshilabs/slips/blob/master/slip-0010.md>`_ hierarchial key derivation scheme to generate all cryptographic key material required for account creation and operation on the blockchain.
 
-Each account is associated with an identity credential issued to the user by an :term:`identity provider (IDP)<identity provider>`.
-This structure is also reflected in the derivation tree shown below, where there is a subtree for each identity provider, which itself contains a subtree for each identity credential the user got issued from that IDP.
+Each account is associated with an Identity Credential issued to the user by an :term:`Identity Provider (IDP)<identity provider>`.
+This structure is reflected in the key derivation tree structure:
 
-The subtree of a single identity credential consists of:
+* Each Identity Provider has its own subtree
+* Within each IDP subtree, there are individual subtrees for each Identity Credential issued to the user
 
-* A subtree dedicated to account signature keys (those are the ones used to sign transfers)
+The subtree of a single Identity Credential consists of:
+
+* A subtree dedicated to account signature keys used to sign transfers
 * Multiple subtrees that generate cryptographic material for the ID object itself
 
-Secrets in the ID related subtrees have to be exported either due to the complexity of the involved cryptographic operations, e.g. Bulletproofs, or as they need to be sent to an external party (in encrypted form). Note that even if all ID related secrets get leaked, the account keys cannot be compromised (assuming the key derivation scheme SLIP-10/BIP32 is sound).
+Secrets in the ID related subtrees must be exported for two reasons: due to the complexity of the involved cryptographic operations (e.g. Bulletproofs), or because they need to be sent to an external party in encrypted form. Note that even if all ID related secrets get leaked, the account keys cannot be compromised (assuming the key derivation scheme SLIP-10/BIP32 is sound).
 
 
 .. image:: ../protocol/images/cryptographic-key-derivation-structure.png
@@ -24,7 +27,7 @@ Secrets in the ID related subtrees have to be exported either due to the complex
 Derivation structure
 ====================
 
-All cryptographic keys related to an identity object and the related accounts are generated from a subtree with prefix=m/44'/919'/IDP'/ID' where IDP is the index of the identity provider and ID is the index of the ID, e.g. ID=0 for the first identity issued to the user.
+All cryptographic keys related to an identity object and the related accounts are generated from a subtree with prefix=m/44'/919'/IDP'/ID' where IDP is the index of the Identity Provider and ID is the index of the ID, e.g. ID=0 for the first identity issued to the user.
 
 
 Account keys
@@ -50,7 +53,7 @@ Each account created with the given identity contains the public identifier in e
 Impact of potential leakage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The attacker learns the identifier used to store the user's record at the identity provider. This alone is useless without collusion by the identity provider. It does not allow the attacker to take control of the account.
+The attacker learns the identifier used to store the user's record at the Identity Provider. This alone is useless without collusion by the Identity Provider. It does not allow the attacker to take control of the account.
 
 Pseudo-random function Key
 --------------------------
@@ -60,7 +63,7 @@ Subtree 3' defines the PRF key used to generate the addresses of accounts. Techn
 Why we export
 ^^^^^^^^^^^^^
 
-When an identity is issued, the identity provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the identity provider in zero-knowledge. The proof is again a combination of Bulletproofs and Sigma protocols over BLS12-381.
+When an identity is issued, the Identity Provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again a combination of Bulletproofs and Sigma protocols over BLS12-381.
 
 Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the PRF key.
 
@@ -72,19 +75,19 @@ The attacker can link all accounts on-chain that have been opened from the ident
 Blind signature randomness
 --------------------------
 
-Subtree 4' defines randomness m0 used in a blind signature protocol between the identity provider and the user when issuing a new identity. This allows the user to get a signature on both the identity attributes (e.g. name, birthdate) and things like the PRF key and the IDcredSec without the identity provider learning the secret values.
+Subtree 4' defines randomness m0 used in a blind signature protocol between the Identity Provider and the user when issuing a new identity. This allows the user to get a signature on both the identity attributes (e.g. name, birthdate) and things like the PRF key and the IDcredSec without the Identity Provider learning the secret values.
 
 Why we export
 ^^^^^^^^^^^^^
 
 The randomness m0 is needed as part of the ID issuance protocol. As part of this protocol the user needs to prove knowledge of m0. This is part of the same zero-knowledge proof as mentioned in the PRF key section.
 
-We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the seedphrase, the user can recover the signature from the identity provider at a later point (without having to do another blind signing ceremony).
+We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the seedphrase, the user can recover the signature from the Identity Provider at a later point (without having to do another blind signing ceremony).
 
 Impact of potential leakage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The attacker could recover the ID signature if they know the blinded version stored at the identity provider. It does not allow the attacker to take control of the account.
+The attacker could recover the ID signature if they know the blinded version stored at the Identity Provider. It does not allow the attacker to take control of the account.
 
 Pedersen commitment randomness
 ------------------------------
@@ -96,7 +99,7 @@ Why we export
 
 The randomness in these commitments is used to prove statements about the account holder in zero-knowledge proofs.
 
-As part of the account opening proof, the user also needs to show that the commitments have been generated correctly from the ID attributes signed by the identity provider. This again requires knowledge of the commit randomness.
+As part of the account opening proof, the user also needs to show that the commitments have been generated correctly from the ID attributes signed by the Identity Provider. This again requires knowledge of the commit randomness.
 
 The advantage of generating the commit randomness from the seed phrase is that the user can recover the commitment opening information.
 
@@ -108,7 +111,7 @@ The opening information on its own does not allow an attacker to learn the commi
 Legacy derivation tree
 ----------------------
 
-Some older wallets use a legacy derivation tree. The only differences between this and the derivation tree described above is the prefix m/1105'/0/0'/0'/ID', which omits the identity provider index, and the use of different indices for the key subtrees in the identity credential subtree. For example, the account signature keys are located in subtree 2' instead of 0'. It is important to note that the split of keys into subtrees is equivalent to those in the above tree. Thus one cannot control the account given the exported keys.
+Some older wallets use a legacy derivation tree. The only differences between this and the derivation tree described above are the prefix m/1105'/0/0'/0'/ID', which omits the Identity Provider index, and the use of different indices for the key subtrees in the Identity Credential subtree. For example, in the legacy tree the account signature keys are located in subtree 2' instead of 0'. It is important to note that the split of keys into subtrees is equivalent to those in the above tree. Thus one cannot control the account given the exported keys.
 
 .. image:: ../protocol/images/legacy-key-derivation-structure-new.png
    :alt: diagram of key derivation
