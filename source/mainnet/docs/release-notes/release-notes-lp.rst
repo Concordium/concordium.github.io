@@ -119,19 +119,30 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    April 18, 2025
+    June 6, 2025
 
-    Changed:
+    Changes:
 
-    - Analytics is now collected through Firebase (Google Analytics)
-    - Empty state Token logo
-    - Improved Wert onramp flow
+    - A warning is added when available funds are insufficient to cover the transaction fee during the earning setup.
+    - The issue that prevented staking the full available amount has been fixed.
 
-    Removed:
+    Other:
 
-    - USDT, USDC, ETH and WBTC tokens from the default token set
+    - Improved stability and handling in the third-party integration flow.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.9.0 - April 18, 2025
+
+            Changed:
+
+            - Analytics is now collected through Firebase (Google Analytics)
+            - Empty state Token logo
+            - Improved Wert onramp flow
+
+            Removed:
+
+            - USDT, USDC, ETH and WBTC tokens from the default token set
 
         .. dropdown:: |cryptox| 1.8.1 - April 9, 2025
 
