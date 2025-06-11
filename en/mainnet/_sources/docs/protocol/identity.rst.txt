@@ -16,7 +16,7 @@ Concordium features two independent but interrelated identity layers that work t
 ConcordiumID
 ============
 
-The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved :term:`identity provider` before they can create and use accounts on the blockchain.
+The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved :term:`Identity Provider` before they can create and use accounts on the blockchain.
 
 After successful identity verification, the account holder receives a ConcordiumID, which enables them to:
 
