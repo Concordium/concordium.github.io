@@ -8,7 +8,7 @@ Accounts
 
 Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the one of the Concordium wallets or Concordium Client for your transactions.
 
-You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identities<reference-id-accounts>`.
+You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identitity framework on Concordium<reference-identity>`.
 
 About accounts
 ==============
@@ -48,7 +48,7 @@ Initial account
 
    Initial accounts are not created by the identity provider when using |cryptox| or |bw|. You create all accounts yourself.
 
-The user gets an :term:`initial account` at the same time as an :ref:`identity<reference-id-accounts>` has been issued by an :term:`identity provider`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
+The user gets an :term:`initial account` at the same time as an :ref:`identity<reference-identity>` has been issued by an :term:`identity provider`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
 The user additionally :ref:`creates account keys<backup-import-recover>` for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
 and stores it locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
@@ -57,7 +57,7 @@ additional accounts and the user gets access to the initial account on the Conco
 by creating a new identity and going through the identity verification process again with an identity provider.
 
 Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the identity disclosure authorities and the identity provider are
-involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<reference-id-accounts>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
+involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<reference-identity-disclosure-processes>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
 
 Account creation
 ----------------
