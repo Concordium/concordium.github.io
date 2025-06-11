@@ -54,14 +54,14 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.4a9300a4-a946-4cb2-ac35-f32896b0e3c2.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.e7d756cd-1de7-46e8-9ac3-c4805132fd0f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/manage-accounts';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/manage-accounts.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Transactions" href="transactions.html" />
-    <link rel="prev" title="Identities" href="id-accounts.html" />
+    <link rel="prev" title="Identity disclosure processes" href="identity-disclosure-processes.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Accounts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="transaction%20lifecycle.html">Transaction lifecycle</a></li>
@@ -739,7 +744,7 @@
   <section id="accounts">
 <span id="managing-accounts"></span><h1>Accounts<a class="headerlink" href="#accounts" title="Link to this heading">#</a></h1>
 <p>Accounts and <a class="reference internal" href="../resources/glossary.html#term-Identity"><span class="xref std std-term">identities</span></a> are strongly linked on the Concordium Platform. To be able to hold, send, or receive <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a> or become a <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validator</span></a> on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the one of the Concordium wallets or Concordium Client for your transactions.</p>
-<p>You must have a verified identity and a user identity certificate issued by an authorized <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> to create accounts on the Concordium Platform. For more information about identities, see <a class="reference internal" href="id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities</span></a>.</p>
+<p>You must have a verified identity and a user identity certificate issued by an authorized <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> to create accounts on the Concordium Platform. For more information about identities, see <a class="reference internal" href="identity.html#reference-identity"><span class="std std-ref">Identitity framework on Concordium</span></a>.</p>
 <section id="about-accounts">
 <h2>About accounts<a class="headerlink" href="#about-accounts" title="Link to this heading">#</a></h2>
 <p>An account on the Concordium blockchain is owned by one or more <a class="reference internal" href="../resources/glossary.html#term-Credential-holder"><span class="xref std std-term">credential holders</span></a> and consists of two parts: The <a class="reference internal" href="../resources/glossary.html#term-On-chain"><span class="xref std std-term">on-chain</span></a> part, which is publicly visible and maintained by the validators, and the <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> part.</p>
@@ -772,14 +777,14 @@ The name is resolved to an address before interactions with the <a class="refere
 <p class="admonition-title">Note</p>
 <p>Initial accounts are not created by the identity provider when using CryptoX Concordium Wallet or Concordium Wallet for Web. You create all accounts yourself.</p>
 </div>
-<p>The user gets an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a> at the same time as an <a class="reference internal" href="id-accounts.html#reference-id-accounts"><span class="std std-ref">identity</span></a> has been issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.</p>
+<p>The user gets an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a> at the same time as an <a class="reference internal" href="identity.html#reference-identity"><span class="std std-ref">identity</span></a> has been issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.</p>
 <p>The user additionally <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">creates account keys</span></a> for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
 and stores it locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
 by creating a new identity and going through the identity verification process again with an identity provider.</p>
 <p>Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the identity disclosure authorities and the identity provider are
-involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an <em>identity</em> which is issued <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> by an Identity provider. While an account has to be created from an identity, the user’s privacy is still protected, and the account owner’s identity can only be revealed via the process of <a class="reference internal" href="id-accounts.html#reference-id-accounts"><span class="std std-ref">disclosing an identity</span></a>, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.</p>
+involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an <em>identity</em> which is issued <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> by an Identity provider. While an account has to be created from an identity, the user’s privacy is still protected, and the account owner’s identity can only be revealed via the process of <a class="reference internal" href="identity-disclosure-processes.html#reference-identity-disclosure-processes"><span class="std std-ref">disclosing an identity</span></a>, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.</p>
 </section>
 <section id="account-creation">
 <h3>Account creation<a class="headerlink" href="#account-creation" title="Link to this heading">#</a></h3>
@@ -922,12 +927,12 @@ send all other <a class="reference internal" href="transactions.html#transaction
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="id-accounts.html"
+       href="identity-disclosure-processes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Identities</p>
+        <p class="prev-next-title">Identity disclosure processes</p>
       </div>
     </a>
     <a class="right-next"

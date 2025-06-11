@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/overview-shared-accounts.c5abaaaa-67ec-4f9f-98c2-d31428679c9c.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/overview-shared-accounts.a3ba763b-2142-456b-95cb-8d183f0373f8.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/overview-shared-accounts';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/overview-shared-accounts.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
@@ -741,7 +746,7 @@
 <p>In the Desktop Wallet, you have the option of creating shared accounts, also known as multi-signature accounts. This is useful, for example, if your organization wants to allow multiple people to manage an account, or if you’re part of a group of people who want to share an account. In these cases, more credentials must be added to an account.</p>
 <section id="credentials">
 <h2>Credentials<a class="headerlink" href="#credentials" title="Link to this heading">#</a></h2>
-<p>It’s the <a class="reference internal" href="../resources/glossary.html#term-Credential"><span class="xref std std-term">credentials</span></a> on an account that determine who’s allowed to sign transactions. An account credential holds signature verification keys, information related to the <a class="reference internal" href="../resources/glossary.html#term-Identity-disclosure-authority"><span class="xref std std-term">identity disclosure authority</span></a>, and the public <a class="reference internal" href="../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> of the account owner. The credential proves that the account owner has been verified by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>, but it doesn’t identify the account owner to the identity provider. However, in the case of a valid request from a government authority via established legal channels, it allows the identity disclosure authorities and the identity provider, when they work together, to link the account to the users. For more information, see <a class="reference internal" href="../protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">Identities and accounts</span></a>.</p>
+<p>It’s the <a class="reference internal" href="../resources/glossary.html#term-Credential"><span class="xref std std-term">credentials</span></a> on an account that determine who’s allowed to sign transactions. An account credential holds signature verification keys, information related to the <a class="reference internal" href="../resources/glossary.html#term-Identity-disclosure-authority"><span class="xref std std-term">identity disclosure authority</span></a>, and the public <a class="reference internal" href="../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> of the account owner. The credential proves that the account owner has been verified by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>, but it doesn’t identify the account owner to the identity provider. However, in the case of a valid request from a government authority via established legal channels, it allows the identity disclosure authorities and the identity provider, when they work together, to link the account to the users. For more information, see <a class="reference internal" href="../protocol/identity.html#reference-identity"><span class="std std-ref">Identity framework on Concordium</span></a>.</p>
 </section>
 <section id="signature-threshold">
 <h2>Signature threshold<a class="headerlink" href="#signature-threshold" title="Link to this heading">#</a></h2>
