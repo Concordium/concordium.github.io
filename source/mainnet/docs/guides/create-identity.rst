@@ -11,7 +11,7 @@ For Desktop Wallet, the identity provider also issues an initial account and sub
 
 For |bw| and |cryptox|, an initial account is not submitted by the identity provider.
 
-To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
+To learn more about identities and accounts, see :ref:`Identitity <reference-identity>` and :ref:`Accounts <managing_accounts>`.
 
 
 .. Note::
