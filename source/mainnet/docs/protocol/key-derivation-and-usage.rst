@@ -18,7 +18,7 @@ The subtree of a single Identity Credential consists of:
 * A subtree dedicated to account signature keys used to sign transfers
 * Multiple subtrees that generate cryptographic material for the ID object itself
 
-Secrets in the ID related subtrees must be exported for two reasons: due to the complexity of the involved cryptographic operations (e.g. Bulletproofs), or because they need to be sent to an external party in encrypted form. Note that even if all ID related secrets get leaked, the account keys cannot be compromised (assuming the key derivation scheme SLIP-10/BIP32 is sound).
+Secrets in the ID related subtrees must be exported for two reasons: due to the complexity of the involved cryptographic operations (e.g. :term:`Bulletproofs<Bulletproof>`), or because they need to be sent to an external party in encrypted form. Note that even if all ID related secrets get leaked, the account keys cannot be compromised (assuming the key derivation scheme SLIP-10/BIP32 is sound).
 
 
 .. image:: ../protocol/images/cryptographic-key-derivation-structure.png
@@ -43,12 +43,12 @@ Subtree 0' is used to derive signature keys for accounts related to the ID objec
 Holder Identifier
 -----------------
 
-Subtree 2' defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium's identity disclosure scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.
+Subtree 2' defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium's :doc:`Identity Disclosure <identity-disclosure-processes>` scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.
 
 Why we export
 ^^^^^^^^^^^^^
 
-Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of an identity disclosure authority). Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  zero-knowledge proof for the account opening. The proof is a combination of Bulletproofs and Sigma protocols over BLS12-381. For generating the zero-knowledge proof, one needs the secret identifier.
+Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of a :term:`Privacy Guardian (PG)`. Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  :term:`Zero-knowledge proof` for the account opening. The proof is a combination of :term:`Bulletproofs<Bulletproof>` and :term:`Sigma protocols` over :term:`BLS12-381`. For generating the zero-knowledge proof, one needs the secret identifier.
 
 Impact of potential leakage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -63,7 +63,7 @@ Subtree 3' defines the PRF key used to generate the addresses of accounts. Techn
 Why we export
 ^^^^^^^^^^^^^
 
-When an identity is issued, the Identity Provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again a combination of Bulletproofs and Sigma protocols over BLS12-381.
+When an identity is issued, the Identity Provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of :term:`Bulletproofs<Bulletproof>` and :term:`Sigma protocols` over :term:`BLS12-381`.
 
 Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the PRF key.
 
@@ -82,7 +82,7 @@ Why we export
 
 The randomness m0 is needed as part of the ID issuance protocol. As part of this protocol the user needs to prove knowledge of m0. This is part of the same zero-knowledge proof as mentioned in the PRF key section.
 
-We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the seedphrase, the user can recover the signature from the Identity Provider at a later point (without having to do another blind signing ceremony).
+We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the :term:`seed phrase`, the user can recover the signature from the Identity Provider at a later point (without having to do another blind signing ceremony).
 
 Impact of potential leakage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
