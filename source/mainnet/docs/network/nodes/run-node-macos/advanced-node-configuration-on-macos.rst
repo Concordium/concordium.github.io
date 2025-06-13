@@ -69,7 +69,7 @@ but is not necessary. If you wish to disable it do the following:
    - For mainnet:
 
      - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"`` as an
-       administrator and remove the following in the *EnviromentVariables* section:
+       administrator and remove the following in the *EnvironmentVariables* section:
 
        .. code-block:: xml
 
