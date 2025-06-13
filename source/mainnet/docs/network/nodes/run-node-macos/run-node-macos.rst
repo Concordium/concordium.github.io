@@ -49,11 +49,11 @@ Installing and running Concordium Node on macOS
 
     - **Public node name**: Specify the name of your node as you want it to appear on the network dashboard if the node reports to the network dashboard. You must enter a name for at least one of the nodes.
 
-  #. Once configured, click **Continue** to go to the **Installation Type** page.
+  8. Once configured, click **Continue** to go to the **Installation Type** page.
 
-  #. Click **Install** and enter your administrator password. The installer needs the password because it installs the node for all users and runs it as a system service.
+  9. Click **Install** and enter your administrator password. The installer needs the password because it installs the node for all users and runs it as a system service.
 
-  #. Once installed, click **Close**. The following helper applications are now available on your computer (you can view them in the LaunchPad or in the */Applications/Concordium Node* folder):
+  10. Once installed, click **Close**. The following helper applications are now available on your computer (you can view them in the LaunchPad or in the */Applications/Concordium Node* folder):
 
     - **Concordium Node Start Mainnet**
 
