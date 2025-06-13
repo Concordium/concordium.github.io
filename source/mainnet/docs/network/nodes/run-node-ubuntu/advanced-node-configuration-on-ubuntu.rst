@@ -1,7 +1,7 @@
 .. _advanced-node-configuration-on-ubuntu:
 
 =====================================
-Advanced Node Configuration on Ubuntu
+Advanced node configuration on Ubuntu
 =====================================
 
 .. Note::
