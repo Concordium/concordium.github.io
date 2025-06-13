@@ -68,7 +68,7 @@ After the node is caught up remove the out of band catchup configuration to spee
 
 .. _changing-node-name-ubuntu:
 
-Changing the Node name
+Changing the node name
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to change the node name, you need to edit the ``concordium-mainnet-node-collector.service`` service. You can edit your overrides with:
