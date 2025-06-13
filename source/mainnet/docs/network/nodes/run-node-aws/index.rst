@@ -1,4 +1,4 @@
-Run a Node on AWS
+Run a node on AWS
 =================
 
 Follow these instructions to run a Concordium node on Amazon Web Services (AWS).
