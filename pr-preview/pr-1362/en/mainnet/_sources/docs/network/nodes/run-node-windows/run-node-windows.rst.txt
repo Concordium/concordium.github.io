@@ -18,7 +18,7 @@ Prerequisites
 
 .. _install-upgrade-node-windows:
 
-Installing and running Concordium Node on Windows
+Installing and running Concordium node on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Download the latest Windows Installer package (``.msi`` file) from the :ref:`Downloads page<node-downloads>`.
@@ -38,7 +38,7 @@ Installing and running Concordium Node on Windows
 
 #. Select **Next** and configure the **Node Runner Service**. You have the following options:
 
-   - **Automatically start nodes at system startup**:  When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option, you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or concordium-client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.
+   - **Automatically start nodes at system startup**:  When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option, you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or Concordium Client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.
 
    - **Start nodes after installation is complete**: The node will automatically start running after the installation is complete. Do not choose this option if you want to make further configuration changes before starting the node.
 
@@ -67,11 +67,11 @@ Installing and running Concordium Node on Windows
      .. image:: ../images/Node-setup-win-3.png
          :width: 50%
 
-Upgrading Concordium Node Version on Windows
+Upgrading Concordium node version on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To upgrade your Concordium node on Windows, download the latest ``.msi`` installer from the :ref:`Downloads <node-downloads>` page and run it.
-When upgrading Concordium Node on Windows, please be aware that the installer will overwrite your existing node configuration file.
+When upgrading Concordium Node on Windows, be aware that the installer will overwrite your existing node configuration file.
 If you have made any custom changes to your configuration, be sure to read the important notes below before proceeding.
 
 #. If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.) Or you can re-enter your values after upgrading. See :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>` for information about how to change the service configuration settings.

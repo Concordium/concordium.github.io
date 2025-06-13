@@ -1,7 +1,7 @@
 .. _advanced-node-configuration-on-ubuntu:
 
 =====================================
-Advanced Node Configuration on Ubuntu
+Advanced node configuration on Ubuntu
 =====================================
 
 .. Note::
@@ -36,7 +36,7 @@ catchup enabled. This will speed up the initial catchup and during out of
 band catchup the node will not have any peers.
 
 The out of band catchup can be kept enabled even after the node is caught up,
-but is not necessary. To disable out of band catchup unset the ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` environment variable as show in step 3 below:
+but is not necessary. To disable out of band catchup unset the ``CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM`` environment variable as shown in step 3 below:
 
   1. Stop the node if it is running
 
@@ -68,7 +68,7 @@ After the node is caught up remove the out of band catchup configuration to spee
 
 .. _changing-node-name-ubuntu:
 
-Changing the Node name
+Changing the node name
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to change the node name, you need to edit the ``concordium-mainnet-node-collector.service`` service. You can edit your overrides with:

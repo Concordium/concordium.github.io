@@ -1,7 +1,7 @@
 .. _advanced-node-configuration-on-macOS:
 
 ====================================
-Advanced Node configuration on macOS
+Advanced node configuration on macOS
 ====================================
 
 .. Note::
@@ -62,14 +62,14 @@ catchup enabled. This will speed up the initial catchup and during out of
 band catchup the node will not have any peers.
 
 The out of band catchup can be kept enabled even after the node is caught up,
-but is not necessary. If you wish to disable it do the the following:
+but is not necessary. If you wish to disable it do the following:
 
 #. Remove the environment variables from the configuration file:
 
    - For mainnet:
 
      - Edit ``"/Library/Concordium Node/LaunchDaemons/software.concordium.mainnet.node.plist"`` as an
-       administrator and remove the following in the *EnviromentVariables* section:
+       administrator and remove the following in the *EnvironmentVariables* section:
 
        .. code-block:: xml
 

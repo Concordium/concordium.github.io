@@ -1,4 +1,4 @@
-Run a Node on Ubuntu
+Run a node on Ubuntu
 ====================
 
 Choose a topic below to learn how to install, configure, or troubleshoot your Concordium node on Ubuntu.

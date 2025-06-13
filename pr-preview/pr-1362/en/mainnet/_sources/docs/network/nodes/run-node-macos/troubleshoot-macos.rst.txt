@@ -19,7 +19,7 @@ There are two ways to view the logs:
 
     - For mainnet logs: ``software.concordium.mainnet.node``
 
-    - For testnet logs: ``software.conordium.testnet.node``
+    - For testnet logs: ``software.concordium.testnet.node``
 
   - Then click on the small **Any** button in the search bar and select **Subsystem** from the list of options.
 

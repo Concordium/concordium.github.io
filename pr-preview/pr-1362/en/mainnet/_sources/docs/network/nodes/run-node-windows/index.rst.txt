@@ -1,4 +1,4 @@
-Run a Node on Windows
+Run a node on Windows
 =====================
 
 Choose a topic below to learn how to install, configure, or troubleshoot your Concordium node on Windows.

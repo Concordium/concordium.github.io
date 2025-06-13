@@ -1,7 +1,7 @@
 .. _advanced-node-configuration-on-docker:
 
 =====================================
-Advanced Node configuration on Docker
+Advanced node configuration on Docker
 =====================================
 
 .. Note::

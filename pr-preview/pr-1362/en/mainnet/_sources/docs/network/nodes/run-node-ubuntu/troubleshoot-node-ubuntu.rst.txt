@@ -6,7 +6,7 @@ Troubleshoot a node on Ubuntu
 
 This guide describes how to troubleshoot a node on the Concordium network from a server with Ubuntu.
 
-View Node logs
+View node logs
 ==============
 
 To view logs for the ``concordium-mainnet-node.service``, you can use the ``journalctl`` command-line utility, which interfaces with the systemd journal to display logs for services managed by ``systemd``.

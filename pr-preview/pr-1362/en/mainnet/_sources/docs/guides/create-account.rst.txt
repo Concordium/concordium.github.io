@@ -10,7 +10,7 @@ to the chain. When you already have an identity, you can create more :term:`acco
 
 |bw| and |cryptox| users: No initial account was created when you created your :term:`identity`. You create all :term:`accounts<account>` related to your identities.
 
-To learn more about identities and accounts, see :ref:`Identities <reference-id-accounts>` and :ref:`Accounts <managing_accounts>`.
+To learn more about identities and accounts, see :ref:`Identity framework on Concordium <reference-identity>` and :ref:`Accounts <managing_accounts>`.
 
 .. dropdown:: |cryptox|
 

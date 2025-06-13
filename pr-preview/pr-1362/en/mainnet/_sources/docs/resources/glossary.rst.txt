@@ -233,6 +233,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Before opening an account on the Concordium Platform, one's real-world identity must be verified and recorded by an :term:`identity provider`. A user’s identity is encrypted on-chain, however their real-world identity can be disclosed in response to a valid request from a government authority.
 
+   Identity Credential
+
+      An Identity Credential contains attributes on a user’s identity and is used to open accounts on-chain. It is issued by IDPs during user onboarding based on identity documents (e.g. passports). It is stored in both the user’s wallet and IDP’s database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
+
    Identity Issuer
 
       See :term:`identity provider`.
@@ -268,6 +272,14 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Issuer
 
       Party that issues Web3 ID credentials to users. May also revoke Web3 ID credentials.
+
+   KYB
+
+      Know Your Business - regulatory processes used to verify the identity and legitimacy of business entities, including their ownership structure, business activities, and compliance status.
+
+   KYC
+
+      Know Your Customer - regulatory processes used by financial institutions and other businesses to verify the identity of their customers, helping prevent money laundering, fraud, and other financial crimes.
 
    Leader Election
 
@@ -324,6 +336,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Passive delegation
 
       A form of delegation where a delegator's stake is effectively distributed among all staking pools. It is not associated with a specific validator. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific staking pool. However, passive delegation is not affected by poor performance of a single validator.
+
+   Privacy Guardian (PG)
+
+      Authorized legal entities, typically law firms, that participate in Concordium's identity disclosure process when legally required. PGs hold cryptographic keys that enable them to decrypt partial shares of encrypted identity information. Multiple PGs must collaborate to reconstruct complete identity data - a minimum threshold (minimum two out of three) of PGs must provide their decryption shares before the Authority can access the full information needed to connect accounts to identities.
 
    Private keys
 
@@ -537,6 +553,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    WebAssembly
 
       WebAssembly (Wasm) defines a portable binary-code format and a corresponding text format for executable programs as well as software interfaces for facilitating interactions between such programs and their host environment. Smart contracts are deployed on chain as Wasm files.
+
+   W3C standard
+
+      Standards and guidelines developed by the World Wide Web Consortium (W3C), an international organization that creates technical specifications to ensure the long-term growth and interoperability of the web.
 
    Winning probability
 

@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Advanced Node configuration on macOS &#8212; Concordium  documentation</title>
+    <title>Advanced node configuration on macOS &#8212; Concordium  documentation</title>
   
   
   
@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-macos/advanced-node-configuration-on-macos.2c57f5c6-ed92-4f93-bad0-7fc98eba3141.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-macos/advanced-node-configuration-on-macos.e274b640-0b09-4f7b-850e-6750177c0762.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-macos/advanced-node-configuration-on-macos';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-macos/advanced-node-configuration-on-macos.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
@@ -574,27 +579,27 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../node-requirements.html">Run a Concordium Node</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-ubuntu/index.html">Run a Node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/run-node-ubuntu.html">Install and manage a Node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced Node Configuration on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Run a Node on macOS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced Node configuration on macOS</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Advanced node configuration on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-windows/index.html">Run a Node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-windows/advanced-node-configuration-on-windows.html">Advanced Node Configuration on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-docker/index.html">Run a Node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-docker/advanced-node-configuration-on-docker.html">Advanced Node configuration on Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
 </ul>
 </details></li>
@@ -753,7 +758,7 @@
                 <article class="bd-article">
                   
   <section id="advanced-node-configuration-on-macos">
-<span id="id1"></span><h1>Advanced Node configuration on macOS<a class="headerlink" href="#advanced-node-configuration-on-macos" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1>Advanced node configuration on macOS<a class="headerlink" href="#advanced-node-configuration-on-macos" title="Link to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the node is <a class="reference external" href="https://github.com/Concordium/concordium-node/blob/main/docs/grpc2.md#grpc-api-v2">configured with TLS</a>, then <cite>CONCORDIUM_NODE_COLLECTOR_GRPC_HOST</cite> must be configured such that it uses the domain of the certificate, for example, <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=https://example.concordium-node.io:20000</span></code>.</p>
@@ -808,14 +813,14 @@ its peers. That is why all node distributions since 6.1 come with out of band
 catchup enabled. This will speed up the initial catchup and during out of
 band catchup the node will not have any peers.</p>
 <p>The out of band catchup can be kept enabled even after the node is caught up,
-but is not necessary. If you wish to disable it do the the following:</p>
+but is not necessary. If you wish to disable it do the following:</p>
 <ol class="arabic">
 <li><p>Remove the environment variables from the configuration file:</p>
 <ul>
 <li><p>For mainnet:</p>
 <ul>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">&quot;/Library/Concordium</span> <span class="pre">Node/LaunchDaemons/software.concordium.mainnet.node.plist&quot;</span></code> as an
-administrator and remove the following in the <em>EnviromentVariables</em> section:</p>
+administrator and remove the following in the <em>EnvironmentVariables</em> section:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;key&gt;</span>CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;string&gt;</span>https://catchup.mainnet.concordium.software/blocks.idx<span class="nt">&lt;/string&gt;</span>
 </pre></div>

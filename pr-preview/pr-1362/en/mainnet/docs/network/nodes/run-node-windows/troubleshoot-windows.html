@@ -54,13 +54,13 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-windows/troubleshoot-windows.4793f9b5-15b4-4913-8d72-3d29016ced30.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-windows/troubleshoot-windows.17ce3e68-675a-4263-9372-13c3204381b3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-windows/troubleshoot-windows';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-windows/troubleshoot-windows.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Run a Node using Docker" href="../run-node-docker/index.html" />
+    <link rel="next" title="Run a node using Docker" href="../run-node-docker/index.html" />
     <link rel="prev" title="Concordium Windows node runner service configuration" href="node-runner-service-configuration.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
@@ -574,27 +579,27 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../node-requirements.html">Run a Concordium Node</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-ubuntu/index.html">Run a Node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/run-node-ubuntu.html">Install and manage a Node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced Node Configuration on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-macos/advanced-node-configuration-on-macos.html">Advanced Node configuration on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Run a Node on Windows</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="run-node-windows.html">Install and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced-node-configuration-on-windows.html">Advanced Node Configuration on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Troubleshoot a node on Windows</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-docker/index.html">Run a Node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-docker/advanced-node-configuration-on-docker.html">Advanced Node configuration on Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
 </ul>
 </details></li>
@@ -764,7 +769,7 @@
 </ul>
 <p>If you specified a different installation folder for the configuration and data, the path might be different.</p>
 <p>The files <code class="docutils literal notranslate"><span class="pre">mainnet.log</span></code> and  <code class="docutils literal notranslate"><span class="pre">testnet.log</span></code> contain the latest logs, with <code class="docutils literal notranslate"><span class="pre">mainnet.0.log</span></code> and <code class="docutils literal notranslate"><span class="pre">mainnet.1.log</span></code> containing progressively older logs and the same for <code class="docutils literal notranslate"><span class="pre">testnet.0.log</span></code> and <code class="docutils literal notranslate"><span class="pre">testnet.1.log</span></code>.</p>
-<p>The log files are rolled when the latest log file exceeds 50 MB. This means that <code class="docutils literal notranslate"><span class="pre">mainnet.0.log</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">mainnet.1.log</span></code> (replacing the old file if present), <code class="docutils literal notranslate"><span class="pre">mainnet.log</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">mainnet.0.log</span></code>, and a new, empty <code class="docutils literal notranslate"><span class="pre">testnet.log</span></code> is created.</p>
+<p>The log files are rolled when the latest log file exceeds 50 MB. This means that <code class="docutils literal notranslate"><span class="pre">mainnet.0.log</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">mainnet.1.log</span></code> (replacing the old file if present), <code class="docutils literal notranslate"><span class="pre">mainnet.log</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">mainnet.0.log</span></code>, and a new, empty <code class="docutils literal notranslate"><span class="pre">mainnet.log</span></code> is created.</p>
 <p>The same goes for testnet. <code class="docutils literal notranslate"><span class="pre">testnet.0.log</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">testnet.1.log</span></code> (replacing the old file if present), <code class="docutils literal notranslate"><span class="pre">testnet.log</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">testnet.0.log</span></code>, and a new, empty <code class="docutils literal notranslate"><span class="pre">testnet.log</span></code> is created.</p>
 <p>When nodes are stopped or started, this is also recorded in the system event log.</p>
 <ol class="arabic">
@@ -777,7 +782,7 @@
 </section>
 <section id="event-viewer">
 <h2>Event viewer<a class="headerlink" href="#event-viewer" title="Link to this heading">#</a></h2>
-<p>Use the Event viewer to get more information about the problem. In the <strong>Search</strong> bar, search for <strong>Event viewer</strong>. In the <strong>Windows Logs</strong> click <strong>Application</strong>. Use the warnings and errors to diagnose the issue.</p>
+<p>Use the Event viewer to get more information about the problem. In the <strong>Search</strong> bar, search for <strong>Event viewer</strong>. In the <strong>Windows Logs</strong>, click <strong>Application</strong>. Use the warnings and errors to diagnose the issue.</p>
 <img alt="../../../../_images/windows-event-viewer.png" src="../../../../_images/windows-event-viewer.png" />
 </section>
 <section id="node-crash-or-database-corruption">
@@ -867,7 +872,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Run a Node using Docker</p>
+        <p class="prev-next-title">Run a node using Docker</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

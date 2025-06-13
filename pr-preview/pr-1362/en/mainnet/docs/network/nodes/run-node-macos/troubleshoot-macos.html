@@ -54,14 +54,14 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-macos/troubleshoot-macos.d8c1d4b4-24b8-453a-abdb-0227511349ef.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-macos/troubleshoot-macos.2057bb5f-4259-4dca-a714-85c8c8553c29.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-macos/troubleshoot-macos';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-macos/troubleshoot-macos.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Run a Node on Windows" href="../run-node-windows/index.html" />
-    <link rel="prev" title="Advanced Node configuration on macOS" href="advanced-node-configuration-on-macos.html" />
+    <link rel="next" title="Run a node on Windows" href="../run-node-windows/index.html" />
+    <link rel="prev" title="Advanced node configuration on macOS" href="advanced-node-configuration-on-macos.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
@@ -574,27 +579,27 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../node-requirements.html">Run a Concordium Node</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-ubuntu/index.html">Run a Node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/run-node-ubuntu.html">Install and manage a Node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced Node Configuration on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Run a Node on macOS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="run-node-macos.html">Install and manage a node on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced Node configuration on macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Troubleshoot a node on macOS</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-windows/index.html">Run a Node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-windows/advanced-node-configuration-on-windows.html">Advanced Node Configuration on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../run-node-docker/index.html">Run a Node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../run-node-docker/advanced-node-configuration-on-docker.html">Advanced Node configuration on Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
 </ul>
 </details></li>
@@ -765,7 +770,7 @@
 <li><p>In the search bar, enter the following and press enter:</p>
 <ul>
 <li><p>For mainnet logs: <code class="docutils literal notranslate"><span class="pre">software.concordium.mainnet.node</span></code></p></li>
-<li><p>For testnet logs: <code class="docutils literal notranslate"><span class="pre">software.conordium.testnet.node</span></code></p></li>
+<li><p>For testnet logs: <code class="docutils literal notranslate"><span class="pre">software.concordium.testnet.node</span></code></p></li>
 </ul>
 </li>
 <li><p>Then click on the small <strong>Any</strong> button in the search bar and select <strong>Subsystem</strong> from the list of options.</p></li>
@@ -881,7 +886,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Advanced Node configuration on macOS</p>
+        <p class="prev-next-title">Advanced node configuration on macOS</p>
       </div>
     </a>
     <a class="right-next"
@@ -889,7 +894,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Run a Node on Windows</p>
+        <p class="prev-next-title">Run a node on Windows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

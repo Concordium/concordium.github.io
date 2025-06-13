@@ -1,7 +1,7 @@
 .. _run-node-ubuntu:
 
 ===================================
-Install and manage a Node on Ubuntu
+Install and manage a node on Ubuntu
 ===================================
 
 This article explains how to run a Concordium node on Linux (Ubuntu) on mainnet or testnet, and how to set up your node as a :ref:`validator node<baker-node-Ubuntu>`.
