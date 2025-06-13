@@ -40,3 +40,4 @@ Next step
 ---------
 
 After installing the DevNet Browser Wallet, your next step is to :doc:`connect to DevNet and create an identity and account <devnet-connection>`.
+
