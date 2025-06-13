@@ -1,7 +1,7 @@
 .. _advanced-node-configuration-on-macOS:
 
 ====================================
-Advanced Node configuration on macOS
+Advanced node configuration on macOS
 ====================================
 
 .. Note::
