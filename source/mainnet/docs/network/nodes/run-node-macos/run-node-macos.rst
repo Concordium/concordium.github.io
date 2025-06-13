@@ -28,7 +28,7 @@ Installing and running Concordium Node on macOS
 
   #. In the folder where you downloaded the .pkg file, double-click the .pkg file. The **Install Concordium Node** program opens.
 
-  #. Click **Allow** to the message saying: *This package will run a program to determine if the software can be installed.* If you have a M1 based Mac, the installer might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
+  #. Click **Allow** to the message saying: *This package will run a program to determine if the software can be installed.* If you have an M1 based Mac, the installer might `ask you to install Rosetta <https://support.apple.com/en-us/HT211861>`_ if you haven't already. Click **Install** if that's the case.
 
   #. If you already have a version of the node installed, click **OK** to the message saying *Previous Installation Detected*.
 
