@@ -34,7 +34,7 @@ When nodes are stopped or started, this is also recorded in the system event log
 Event viewer
 ============
 
-Use the Event viewer to get more information about the problem. In the **Search** bar, search for **Event viewer**. In the **Windows Logs** click **Application**. Use the warnings and errors to diagnose the issue.
+Use the Event viewer to get more information about the problem. In the **Search** bar, search for **Event viewer**. In the **Windows Logs**, click **Application**. Use the warnings and errors to diagnose the issue.
 
 .. image:: ../images/windows-event-viewer.png
 
