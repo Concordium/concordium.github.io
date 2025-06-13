@@ -45,7 +45,7 @@ Installing and running Concordium Node on macOS
 
     - **Start the node after installation is complete**: The node will automatically start running after the installation is complete. Do not choose this option if you want to make further configuration changes before starting the node.
 
-    - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Deselect this option if you don't want your node displayed on the dashboard. If selected, you can view the statistics at the `CCDScan <https://ccdscan.io/>`_
+    - **Report to the network dashboard**: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Deselect this option if you don't want your node displayed on the dashboard. If selected, you can view the statistics on the `CCDScan <https://ccdscan.io/>`_
 
     - **Public node name**: Specify the name of your node as you want it to appear on the network dashboard if the node reports to the network dashboard. You must enter a name for at least one of the nodes.
 
