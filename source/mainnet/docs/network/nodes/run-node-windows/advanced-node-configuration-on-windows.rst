@@ -1,7 +1,7 @@
 .. _advanced-node-configuration-on-windows:
 
 ======================================
-Advanced Node Configuration on Windows
+Advanced node configuration on Windows
 ======================================
 
 .. Note::
