@@ -67,7 +67,7 @@ Installing and running Concordium Node on Windows
      .. image:: ../images/Node-setup-win-3.png
          :width: 50%
 
-Upgrading Concordium Node Version on Windows
+Upgrading Concordium node version on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To upgrade your Concordium node on Windows, download the latest ``.msi`` installer from the :ref:`Downloads <node-downloads>` page and run it.
