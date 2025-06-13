@@ -18,13 +18,13 @@ Follow these steps to configure your wallet to connect to DevNet:
 
 1. Open the wallet extension in your browser and click on the menu button
 
-   .. image:: images/wallet-main-menu.png
+   .. image:: ../setup-guide/images/wallet-main-menu.png
       :alt: Opening the wallet menu
       :width: 50%
 
 2. Click on **Network**
 
-   .. image:: images/verify-connection.png
+   .. image:: ../setup-guide/images/verify-connection.png
       :alt: Opening network options
       :width: 50%
 
@@ -36,7 +36,7 @@ Follow these steps to configure your wallet to connect to DevNet:
    - Wallet Proxy: ``https://wallet-proxy.devnet-plt-alpha.concordium.com``
    - CCDScan URL: ``https://devnet-plt-alpha.ccdscan.io``
 
-   .. image:: images/custom-network-connection-details.png
+   .. image:: ../setup-guide/images/custom-network-connection-details.png
       :alt: Opening the wallet menu
       :width: 50%
 
