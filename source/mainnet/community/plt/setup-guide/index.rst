@@ -40,5 +40,7 @@ These guides will walk you through the complete setup process to prepare you for
 
    browser-wallet
    devnet-connection
+   identity-creation
+   account-creation
    request-ccd
    request-plt

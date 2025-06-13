@@ -3,7 +3,7 @@
 Connect to DevNet
 =================
 
-This guide explains how to configure your DevNet Browser Wallet to connect to Concordium's DevNet environment and how to create an identity and account for working with Protocol Layer Tokens (PLTs).
+This guide explains how to configure your DevNet Browser Wallet to connect to Concordium's DevNet.
 
 Before you begin
 ----------------
@@ -16,13 +16,13 @@ Connect to DevNet
 
 Follow these steps to configure your wallet to connect to DevNet:
 
-1. Open the wallet extension in your browser and click on the menu button.
+1. Open the wallet extension in your browser and click on the menu button
 
    .. image:: images/wallet-main-menu.png
       :alt: Opening the wallet menu
       :width: 50%
 
-2. Click on **Network**.
+2. Click on **Network**
 
    .. image:: images/verify-connection.png
       :alt: Opening network options
@@ -42,39 +42,10 @@ Follow these steps to configure your wallet to connect to DevNet:
 
 4. Verify connection: Once connected, you'll see a lock icon next to "Custom Network" – that means the connection is successful!
 
-Create your DevNet Identity
----------------------------
 
-After connecting to DevNet, follow these steps to create your identity:
+Next step
+---------
 
-1. In the wallet, go to *Identities*
-2. Press **+** to add a new identity
-3. Choose **identity provider**: Select **Generated IP 0**
-4. Complete identity verification:
-
-   - You'll be redirected to a Testnet-style ID page
-   - Use the following credentials:
-     - Username: ``devnet-plt-alpha``
-     - Password: ``peachy2025``
-
-5. Complete the identity registration process
-6. Return to the wallet when finished
-
-Create your DevNet Account
---------------------------
-
-Once you have created your identity, you can create an account:
-
-1. Go to *Accounts* in the wallet
-2. Press **+** to create a new account
-3. Select your new identity that you just created
-4. Create a new account
-
-After completing these steps, you are now connected to DevNet with a working account and ready for the next step: requesting test CCD for transactions.
-
-Next steps
-----------
-
-After connecting to DevNet and creating an identity and account, your next step is to :doc:`request test CCD <request-ccd>` needed for transactions.
+After connecting to DevNet, your next step is to :ref:`create a DevNet identity <plt-identity-creation>` which is required before you can create accounts and work with Protocol Layer Tokens.
 
 

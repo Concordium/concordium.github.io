@@ -1,7 +1,7 @@
 .. _plt-request-ccd:
 
-Getting Test CCD on DevNet
-==========================
+Request test CCD
+================
 
 This guide explains how to request test CCD tokens on DevNet, which are required for transactions and PLT operations.
 
