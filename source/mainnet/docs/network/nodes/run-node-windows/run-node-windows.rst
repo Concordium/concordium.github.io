@@ -18,7 +18,7 @@ Prerequisites
 
 .. _install-upgrade-node-windows:
 
-Installing and running Concordium Node on Windows
+Installing and running Concordium node on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Download the latest Windows Installer package (``.msi`` file) from the :ref:`Downloads page<node-downloads>`.
