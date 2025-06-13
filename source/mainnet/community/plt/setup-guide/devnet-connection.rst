@@ -48,4 +48,3 @@ Next step
 
 After connecting to DevNet, your next step is to :ref:`create a DevNet identity <plt-identity-creation>` which is required before you can create accounts and work with Protocol Layer Tokens.
 
-
