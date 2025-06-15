@@ -99,12 +99,12 @@ Installing and running Concordium Node on macOS
 Upgrading Concordium node version on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To upgrade your Concordium node on macOS, simply download the latest ``.pkg`` installer from the :ref:`Downloads <node-downloads>` page and run it. The installer will automatically detect any previous installation of Concordium Node on your system and perform an in-place upgrade.
-No manual removal of the previous version is required. The upgrade process will retain your existing configuration and data while updating the node to the latest version.
-
 .. Note::
 
   When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
+To upgrade your Concordium node on macOS, simply download the latest ``.pkg`` installer from the :ref:`Downloads <node-downloads>` page and run it. The installer will automatically detect any previous installation of Concordium Node on your system and perform an in-place upgrade.
+No manual removal of the previous version is required. The upgrade process will retain your existing configuration and data while updating the node to the latest version.
 
 Uninstall Concordium Node on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
