@@ -70,6 +70,10 @@ Installing and running Concordium node on Windows
 Upgrading Concordium node version on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. Note::
+
+   When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
 To upgrade your Concordium node on Windows, download the latest ``.msi`` installer from the :ref:`Downloads <node-downloads>` page and run it.
 When upgrading Concordium Node on Windows, be aware that the installer will overwrite your existing node configuration file.
 If you have made any custom changes to your configuration, be sure to read the important notes below before proceeding.
@@ -77,10 +81,6 @@ If you have made any custom changes to your configuration, be sure to read the i
 #. If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. This file is typically located at ``C:\ProgramData\Concordium\Node Runner\nodes.toml.`` (The path on your system is determined by the ``Config`` value in the registry key ``HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node Runner``.) Or you can re-enter your values after upgrading. See :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>` for information about how to change the service configuration settings.
 
 #. It is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, click on the Start menu and search for Stop Concordium Node Service.
-
-.. Note::
-
-   When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 Uninstall Concordium node on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
