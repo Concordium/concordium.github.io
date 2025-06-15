@@ -10,7 +10,7 @@ The |cryptox| is a digital :term:`wallet` that enables you to create and manage 
 
 |cryptox| features a modern user interface with intuitive account management and token support. The wallet provides a clear overview of your balances, simplifies navigation between accounts, and supports multiple token types beyond CCD. It offers flexible account import and recovery options, supporting both seed phrase and backup file methods.
 
-To learn more about identities and accounts, see :ref:`identities<reference-id-accounts>` and :ref:`accounts<managing_accounts>`.
+To learn more about identities and accounts, see :ref:`identity<reference-identity>` and :ref:`accounts<managing_accounts>`.
 
 The CryptoX Concordium Wallet is available for both iOS and Android devices.
 

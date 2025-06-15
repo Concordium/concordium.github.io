@@ -86,7 +86,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    What is the Concordium Protocol <protocol/concordium-protocol>
-   Identities <protocol/id-accounts>
+   Identity <protocol/identity>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
    Consensus mechanisms <protocol/consensus-mechanisms>
