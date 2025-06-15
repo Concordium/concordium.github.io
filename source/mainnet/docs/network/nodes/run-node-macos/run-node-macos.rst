@@ -104,7 +104,7 @@ No manual removal of the previous version is required. The upgrade process will 
 
 .. Note::
 
-  When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. This applies to both minor and major releases. For patch versions, you can also upgrade directly to the desired version (e.g., from X.X.0 to X.X.3 or from X.1.1 to X.2.3) without the need to apply each patch in sequence. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+  When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 Uninstall Concordium Node on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
