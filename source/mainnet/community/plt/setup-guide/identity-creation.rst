@@ -9,19 +9,19 @@ After :ref:`connecting to DevNet <plt-devnet-connection>`, follow these steps to
 
 1. In the wallet, go to *Identities*
 
-   .. image:: images/create-identity1.png
+   .. image:: Images/create-identity1.png
       :alt: select identitties in the menu
       :width: 50%
 
 2. Press **+** to add a new identity
 
-   .. image:: images/create-identity2.png
+   .. image:: Images/create-identity2.png
       :alt: start creating new identity
       :width: 50%
 
 3. Choose **identity provider**: Select **Generated IP 0**
 
-   .. image:: images/request-identity.png
+   .. image:: Images/request-identity.png
       :alt: selecting-identity-provider
       :width: 50%
 
@@ -32,13 +32,13 @@ After :ref:`connecting to DevNet <plt-devnet-connection>`, follow these steps to
      - Username: ``devnet-plt-alpha``
      - Password: ``peachy2025``
 
-   .. image:: images/identity-verification.png
+   .. image:: Images/identity-verification.png
       :alt: completing identity verification
       :width: 50%
 
 5. Click **Done** to complete the identity registration process
 
-   .. image:: images/finish-identity-request.png
+   .. image:: Images/finish-identity-request.png
       :alt: finishing identity request
       :width: 50%
 
