@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-docker/run-node-docker.16c0e4f7-239f-4128-8f00-9a12770c42c2.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-docker/run-node-docker.ae1bcc2f-6bde-43e7-946e-cd6c15c0a624.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-docker/run-node-docker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-docker/run-node-docker.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -1072,6 +1072,10 @@ version, find the correct version in
 </details></section>
 <section id="upgrading-concordium-node-version-on-docker">
 <span id="upgrading-node-docker"></span><h2>Upgrading Concordium Node Version on Docker<a class="headerlink" href="#upgrading-concordium-node-version-on-docker" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see <a class="reference internal" href="../../../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
+</div>
 <p>To update your <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> when using the <code class="docutils literal notranslate"><span class="pre">latest</span></code> tag, simply run the following commands to stop the node, pull the newest image, and restart your service:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>mainnet-node.yaml<span class="w"> </span>down
 <span class="gp">$</span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>mainnet-node.yaml<span class="w"> </span>pull

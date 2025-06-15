@@ -327,6 +327,10 @@ The node requires a database which must be stored on the host system so that it 
 Upgrading Concordium Node Version on Docker
 ===========================================
 
+.. Note::
+
+   When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+
 To update your ``concordium-node`` when using the ``latest`` tag, simply run the following commands to stop the node, pull the newest image, and restart your service:
 
 .. code-block:: console

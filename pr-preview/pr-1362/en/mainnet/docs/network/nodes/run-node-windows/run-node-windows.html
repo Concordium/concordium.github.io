@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-windows/run-node-windows.521b9a18-9ae1-4517-ba60-ee51ecd9e354.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-windows/run-node-windows.88291b9a-4a28-4905-a948-01ba6f0166ff.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-windows/run-node-windows';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-windows/run-node-windows.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -816,6 +816,10 @@
 </section>
 <section id="upgrading-concordium-node-version-on-windows">
 <h3>Upgrading Concordium node version on Windows<a class="headerlink" href="#upgrading-concordium-node-version-on-windows" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see <a class="reference internal" href="../../../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
+</div>
 <p>To upgrade your Concordium node on Windows, download the latest <code class="docutils literal notranslate"><span class="pre">.msi</span></code> installer from the <a class="reference internal" href="../../../installation/downloads.html#node-downloads"><span class="std std-ref">Downloads</span></a> page and run it.
 When upgrading Concordium Node on Windows, be aware that the installer will overwrite your existing node configuration file.
 If you have made any custom changes to your configuration, be sure to read the important notes below before proceeding.</p>
@@ -823,10 +827,6 @@ If you have made any custom changes to your configuration, be sure to read the i
 <li><p>If you have done special configuration of your node, you may want to back up the service config file prior to upgrade, then replace the new one with your backup. This file is typically located at <code class="docutils literal notranslate"><span class="pre">C:\ProgramData\Concordium\Node</span> <span class="pre">Runner\nodes.toml.</span></code> (The path on your system is determined by the <code class="docutils literal notranslate"><span class="pre">Config</span></code> value in the registry key <code class="docutils literal notranslate"><span class="pre">HKEY_LOCAL_MACHINE\SOFTWARE\Concordium\Node</span> <span class="pre">Runner</span></code>.) Or you can re-enter your values after upgrading. See <a class="reference internal" href="node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for information about how to change the service configuration settings.</p></li>
 <li><p>It is a good idea to stop the node before running the installer for the new version so that you do not need to restart your computer. To do this, click on the Start menu and search for Stop Concordium Node Service.</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. This applies to both minor and major releases. For patch versions, you can also upgrade directly to the desired version (e.g., from X.X.0 to X.X.3 or from X.1.1 to X.2.3) without the need to apply each patch in sequence. To download previous node versions, see <a class="reference internal" href="../../../installation/previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
-</div>
 </section>
 <section id="uninstall-concordium-node-on-windows">
 <h3>Uninstall Concordium node on Windows<a class="headerlink" href="#uninstall-concordium-node-on-windows" title="Link to this heading">#</a></h3>
