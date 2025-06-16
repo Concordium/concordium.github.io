@@ -56,7 +56,7 @@ Set the token ID to query and optionally specify a block hash for historical dat
        println!(
            "Listing the Token ID of every protocol level token on chain at the time of block hash {}:",
            response.block_hash
-       );  
+       );
        // Collect tokens
        while let Some(token_id) = response.response.next().await.transpose()
            .context("Error while reading token from stream")?

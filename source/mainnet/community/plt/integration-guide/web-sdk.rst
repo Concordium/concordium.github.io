@@ -129,12 +129,12 @@ Query account information including PLT balances:
         // Or use undefined for latest finalized block
         const blockHash = undefined;
         // const blockHash = BlockHash.fromHexString("someblockhash");
-        
+
         const accountInfo: AccountInfo = await client.getAccountInfo(accountAddress, blockHash);
-        
+
         console.log('Account balance:', accountInfo.accountAmount);
         console.log('Account address:', accountInfo.accountAddress);
-        
+
         const tokenAccountInfo = accountInfo.accountTokens;
         tokenAccountInfo.forEach(balance =>
             console.log(`Token ${balance.id}, balance ${balance.state.balance}`)
@@ -192,32 +192,32 @@ Transfer PLTs between accounts:
        const walletExport = parseWallet(walletFile);
        const sender = AccountAddress.fromBase58(walletExport.value.address);
        const signer = buildAccountSigner(walletExport);
-       
+
        // using wallet.json file
        // const walletJson = readFileSync("wallet.json", 'utf8');
        // const keys = JSON.parse(walletJson);
        // const signer = buildAccountSigner(keys);
-       
+
        // parse the other arguments
        const tokenSymbol = TokenId.fromString("ExampleToken"); // Replace with actual token ID
        const amount = TokenAmount.fromDecimal(123); // some amount to transfer
        const recipient = AccountAddress.fromBase58("Recipient address"); // replace with actual address to receive
        const memo = undefined;
        // memo = CborMemo.fromString("Any Message To add")
-       
+
        const transfer: V1.TokenTransfer = {
            recipient,
            amount,
            memo,
        };
        console.log('Specified transfer:', JSON.stringify(transfer, null, 2));
-       
+
        // From a service perspective:
        // create the token instance
        const token = await V1.Token.fromId(client, tokenSymbol);
        const transaction = await V1.Token.transfer(token, sender, transfer, signer);
        console.log(`Transaction submitted with hash: ${transaction}`);
-       
+
        const result = await client.waitForTransactionFinalization(transaction);
        console.log('Transaction finalized:', result);
 
@@ -298,17 +298,17 @@ Mint new tokens (issuer only):
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
-        
+
         try {
             // create the token instance
             const token = await V1.Token.fromId(client, tokenId);
             // Only the token issuer can modify the deny list
             console.log(`Attempting to remove ${targetAddress.toString()} from deny list for ${tokenId.toString()}...`);
-            
+
             // Execute the remove from deny list operation
             const transaction = await V1.Governance.removeDenyList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -338,17 +338,17 @@ Mint new tokens (issuer only):
     } else {
         console.log(`Wallet file is empty!`);
     }port);
-        
+
         try {
             // create the token instance
             const token = await V1.Token.fromId(client, tokenId);
             // Only the token issuer can mint tokens
             console.log(`Attempting to mint ${tokenAmount.toString()} ${tokenId.toString()} tokens...`);
-            
+
             // Execute the mint operation
             const transaction = await V1.Governance.mint(token, sender, tokenAmount, signer);
             console.log(`Mint transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -430,17 +430,17 @@ Burn existing tokens (issuer only):
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
-        
+
         try {
             // create the token instance
             const token = await V1.Token.fromId(client, tokenId);
             // Only the token issuer can burn tokens
             console.log(`Attempting to burn ${tokenAmount.toString()} ${tokenId.toString()} tokens...`);
-            
+
             // Execute the burn operation
             const transaction = await V1.Governance.burn(token, sender, tokenAmount, signer);
             console.log(`Burn transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -527,17 +527,17 @@ Add an account to the token's allow list (issuer only):
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
-        
+
         try {
             // create the token instance
             const token = await V1.Token.fromId(client, tokenId);
             // Only the token issuer can modify the allow list
             console.log(`Attempting to add ${targetAddress.toString()} to allow list for ${tokenId.toString()}...`);
-            
+
             // Execute the add to allow list operation
             const transaction = await V1.Governance.addAllowList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -618,17 +618,17 @@ Remove an account from the token's allow list (issuer only):
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
-        
+
         try {
             // create the token instance
             const token = await V1.Token.fromId(client, tokenId);
             // Only the token issuer can modify the allow list
             console.log(`Attempting to remove ${targetAddress.toString()} from allow list for ${tokenId.toString()}...`);
-            
+
             // Execute the remove from allow list operation
             const transaction = await V1.Governance.removeAllowList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -710,17 +710,17 @@ Add an account to the token's deny list (issuer only):
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
-        
+
         try {
             // create the token instance
             const token = await V1.Token.fromId(client, tokenId);
             // Only the token issuer can modify the deny list
             console.log(`Attempting to add ${targetAddress.toString()} to deny list for ${tokenId.toString()}...`);
-            
+
             // Execute the add to deny list operation
             const transaction = await V1.Governance.addDenyList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -748,7 +748,7 @@ Add an account to the token's deny list (issuer only):
             console.error('Error during list operation:', error);
         }
     } else {
-       console.log(`Wallet file is empty!`); 
+       console.log(`Wallet file is empty!`);
     }
 
 .. _remove-from-deny-list:
