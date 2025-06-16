@@ -1,7 +1,7 @@
 .. _plt-identity-creation:
 
-Create your new DevNet identity
-===============================
+Create a DevNet identity
+=========================
 
 This guide explains how to to create an identity on DevNet. An identity is a prerequisite for creating accounts and working with Protocol Layer Tokens.
 

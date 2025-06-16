@@ -1,7 +1,7 @@
 .. _plt-account-creation:
 
-Create your new DevNet account
-==============================
+Create a DevNet account
+========================
 
 This guide explains how to create an account on DevNet using your existing identity. You'll need this account to perform transactions and work with Protocol Layer Tokens.
 

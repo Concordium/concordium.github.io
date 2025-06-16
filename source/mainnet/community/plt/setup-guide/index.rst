@@ -26,10 +26,12 @@ DevNet setup guide
 ------------------
 Before you can issue or interact with PLTs on DevNet, you need to set up your environment by following these steps:
 
-1. :doc:`Browser Wallet Setup for DevNet <browser-wallet>` - Install the custom DevNet Browser Wallet
-2. :doc:`Connecting to DevNet <devnet-connection>` - Configure your wallet to connect to the DevNet environment
-3. :doc:`Getting Test CCD on DevNet <request-ccd>` - Request test CCD tokens needed for transactions
-4. :doc:`Requesting PLT Issuance <request-plt>` - Submit a request to have your PLT issued on DevNet
+1. :doc:`Set up Browser Wallet for DevNet <browser-wallet>` - Install the custom DevNet Browser Wallet
+2. :doc:`Connect to DevNet <devnet-connection>` - Configure your wallet to connect to the DevNet environment
+3. :doc:`Create a DevNet identity <identity-creation>` - Create a new identity on DevNet, which is required for account creation
+4. :doc:`Create a DevNet account <account-creation>` - Create a new account on DevNet using your identity
+5. :doc:`Request test CCD on DevNet <request-ccd>` - Request test CCD tokens needed for transactions
+6. :doc:`Request PLT issuance <request-plt>` - Submit a request to have your PLT issued on DevNet
 
 These guides will walk you through the complete setup process to prepare you for working with PLTs on Concordium's DevNet environment.
 
