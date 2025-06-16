@@ -5,20 +5,6 @@ Query PLT information
 
 This guide covers how to query information about Protocol Layer Tokens (PLTs) and account balances on DevNet.
 
-Available query operations
---------------------------
-
-You can make three main types of queries:
-
-**Get account information**
-Returns account information including PLT balances for a specific account.
-
-**Get token information**
-Returns detailed information about a specific PLT by its symbol.
-
-**Get yoken list**
-Retrieves all PLTs that exist at the end of a given block.
-
 Prerequisites
 -------------
 
@@ -28,6 +14,23 @@ Before using these examples, make sure to install the required dependencies:
 
    npm install @concordium/web-sdk@10.0.0-alpha.4
    npm install @grpc/grpc-js
+
+
+Available query operations
+--------------------------
+
+You can make three main types of queries:
+
+- :ref:`Get account information: <get_account_info>`
+  Returns account information including PLT balances for a specific account.
+
+- :ref:`Get token information: <get_token_info>`
+  Returns detailed information about a specific PLT by its symbol.
+
+- :ref:`Get token list:  <get_token_list>`
+  Retrieves all PLTs that exist at the end of a given block.
+
+.. _get_account_info:
 
 Get account information
 -----------------------
@@ -66,6 +69,8 @@ This operation returns account information including PLT balances for a specific
 .. note::
    The method ``get_account_info.rs`` currently works inconsistently and may not always display correct account information due to a known bug. A fix will be provided in an upcoming release.
 
+.. _get_token_info:
+
 Get token information
 ---------------------
 
@@ -99,6 +104,7 @@ This operation returns detailed information about a specific PLT by its symbol.
    console.log('decimals:', tokenInfo.state.decimals);
    console.log('moduleRef:', tokenInfo.state.moduleRef); // only V1 for all PLTs initially.
 
+.. _get_token_list:
 Get token list
 --------------
 

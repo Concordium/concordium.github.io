@@ -43,8 +43,3 @@ Follow these steps to configure your wallet to connect to DevNet:
 4. Verify connection: Once connected, you'll see a lock icon next to "Custom Network" – that means the connection is successful!
 
 
-Next step
----------
-
-After connecting to DevNet, your next step is to :ref:`create a DevNet identity <plt-identity-creation>` which is required before you can create accounts and work with Protocol Layer Tokens.
-

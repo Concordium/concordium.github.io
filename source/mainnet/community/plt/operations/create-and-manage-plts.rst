@@ -5,31 +5,27 @@ Create and manage PLTs
 
 This guide covers token governance operations for Protocol Layer Tokens (PLTs), including minting, burning, and managing allow/deny lists.
 
-Available Operations
+.. _prerequisites:
+
+Prerequisites
+-------------
+
+Before using the available operations, make sure to install the required dependencies:
+
+.. code-block:: bash
+
+   npm install @concordium/web-sdk@10.0.0-alpha.4
+   npm install @grpc/grpc-js
+
+Available operations
 --------------------
 
-Jump to any section:
-
-- :ref:`Prerequisites <prerequisites>`
 - :ref:`Mint tokens <mint-tokens>`
 - :ref:`Burn tokens <burn-tokens>`
 - :ref:`Add account to allow list <add-allow-list>`
 - :ref:`Remove account from allow list <remove-allow-list>`
 - :ref:`Add account to deny list <add-deny-list>`
 - :ref:`Remove account from deny list <remove-deny-list>`
-
-
-.. _prerequisites:
-
-Prerequisites
--------------
-
-Before using these examples, make sure to install the required dependencies:
-
-.. code-block:: bash
-
-   npm install @concordium/web-sdk@10.0.0-alpha.4
-   npm install @grpc/grpc-js
 
 .. note::
    Only the nominated account (token issuer) can perform these governance operations.

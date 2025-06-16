@@ -44,8 +44,5 @@ After :ref:`connecting to DevNet <plt-devnet-connection>`, follow these steps to
 
 6. Return to the wallet when finished.
 
-Next step
----------
-
-After creating your DevNet identity, your next step is to :ref:`create a DevNet account <plt-account-creation>` which is needed to perform transactions and work with Protocol Layer Tokens.
+You have now successfully created your identity on DevNet. You can use this identity to create accounts and start working with Protocol Layer Tokens (PLTs).
 

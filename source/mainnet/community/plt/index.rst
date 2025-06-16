@@ -32,18 +32,7 @@ The following operations are available:
 
 Node APIs support retrieving information about PLTs at three levels: individual token details (capabilities, supply, etc.), a complete listing of all existing PLTs, and account-specific information (balances and allow/deny list status).
 
-PLT issuance overview
----------------------
-
-To issue a PLT on Concordium, the process involves:
-
-1. Creating a Concordium account to manage the PLT
-2. Preparing PLT metadata and token definition
-3. Submitting the definition to the governance committee
-4. Creating the PLT through a chain update
-5. Managing the token by the nominated account
-
-For detailed instructions on this process and all setup requirements, see the dedicated guides in the subsections below.
+For detailed instructions on the setup, available operations and integration options, see the dedicated guides in the subsections below.
 
 .. toctree::
    :maxdepth: 1

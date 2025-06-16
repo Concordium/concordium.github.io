@@ -36,8 +36,4 @@ Follow these steps to install the custom DevNet Browser Wallet:
 
    After successful installation, the Concordium Browser Wallet icon will appear in your browser's extension toolbar.
 
-Next step
----------
-
-After installing the DevNet Browser Wallet, your next step is to :doc:`connect to DevNet and create an identity and account <devnet-connection>`.
 

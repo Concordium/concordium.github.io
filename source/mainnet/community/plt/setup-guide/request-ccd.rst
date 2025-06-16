@@ -26,10 +26,4 @@ Within a few seconds, your account will be credited with 20,000 CCD.
 .. note::
    Each account can request CCD only once.
 
-Next step
----------
-After requesting test CCD, your next step is to :ref:`request PLT issuance <plt-request-plt>` to start working with Protocol Layer Tokens.
-
-
-
 

@@ -35,6 +35,4 @@ Once you have :ref:`created your identity <plt-identity-creation>`, follow these
 
 After completing these steps, you are now connected to DevNet with a working account.
 
-Next step
----------
-After creating your DevNet account, your next step is to :ref:`request test CCD <plt-request-ccd>` needed for transactions.
+
