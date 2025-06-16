@@ -40,4 +40,5 @@ What happens next
 - Tokens will be issued manually by the Concordium team
 - You'll receive confirmation in Discord when your PLT has been issued
 - The tokens will be transferred to your nominated account address
-- You can then use your custom PLT for testing on DevNet
+
+You are now ready to start using your custom PLT for testing on DevNet. Learn about the available operations in :ref:`PLT Operations <plt-operations>`.
