@@ -4,7 +4,7 @@
 .. _baker-macos:
 
 ===============================
-Import validator keys on MacOS
+Import validator keys on macOS
 ===============================
 
 This guide describes how to set up the node to run as a :ref:`validator <baker-concept>` node on a macOS node that participates in the Concordium network by importing your validation keys. A node receives blocks and transactions from other nodes and propagates information about blocks and transactions to the nodes in the Concordium network. In addition, a validator node also participates in the lottery and produces its own blocks. The validator node will start producing blocks two epochs after the transaction has been approved.
@@ -12,9 +12,9 @@ This guide describes how to set up the node to run as a :ref:`validator <baker-c
 Prerequisites
 =============
 
-- Run macOS 10.14 or later.
+- Run macOS 11 BigSur or later.
 - Have the administrator password to your computer.
-- :ref:`Run a node on MacOS <run-node-macos>`
+- :ref:`Run a node on macOS <run-node-macos>`
 - If you want to run the node as a validator, you must have generated validator keys, see :ref:`add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
 Configure a node as a validator

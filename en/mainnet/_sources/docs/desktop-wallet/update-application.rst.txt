@@ -4,7 +4,7 @@
 Update the Desktop Wallet
 ===========================
 
-The Desktop Wallet installs updates automatically on **MacOS**, **Windows**, and **Linux** (though only for the AppImage distribution).
+The Desktop Wallet installs updates automatically on **macOS**, **Windows**, and **Linux** (though only for the AppImage distribution).
 
 Automatic updates
 =================
