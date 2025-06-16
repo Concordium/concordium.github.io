@@ -56,3 +56,12 @@ This feature is enabled by default in all distributions since version 6.1, and o
 
 The speed of synchronization largely depends on the performance of your storage (NVMe drives are highly recommended).
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   run-node-ubuntu/index
+   run-node-macos/index
+   run-node-windows/index
+   run-node-docker/index
+   run-node-aws/index
