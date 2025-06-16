@@ -71,7 +71,7 @@ The following table lists the differences between wallets.
    *  - Must run on a computer
       - Must run on a computer
       - Runs only on mobile phone
-   *  - Runs on MacOS, Windows, Linux
+   *  - Runs on macOS, Windows, Linux
       - Runs on Chrome, Brave, Opera, Edge
       - Runs on iOS 15 or later, Android 8 or later
    *  - Secured by password and a LEDGER device

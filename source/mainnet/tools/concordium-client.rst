@@ -37,13 +37,13 @@ to set the `IP address`_ and `port number`_ where the node is accessible. These 
 Run Concordium Client
 =====================
 
-Run Concordium Client from the command line. On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
+Run Concordium Client from the command line. On macOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
 
 .. tab-set::
 
    .. tab-item:: macOS
 
-      On MacOS, you can run the Concordium Client from the command line by typing ``concordium-client``,
+      On macOS, you can run the Concordium Client from the command line by typing ``concordium-client``,
       since the installation adds the client to the PATH.
 
    .. tab-item:: Linux

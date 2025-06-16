@@ -260,7 +260,7 @@ and then press both buttons when the LEDGER device says **Trust certificate**.
 
 .. _install-ledger-app-macos:
 
-Install the Concordium LEDGER app on MacOS
+Install the Concordium LEDGER app on macOS
 ---------------------------------------------
 
 #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.

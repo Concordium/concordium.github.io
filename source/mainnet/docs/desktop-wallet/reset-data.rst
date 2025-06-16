@@ -19,7 +19,7 @@ Delete the following folder containing all the user data of the wallet:
 
 .. dropdown:: Mainnet
 
-   - MacOS: Users/<user>/Library/Application Support/Concordium Wallet
+   - macOS: Users/<user>/Library/Application Support/Concordium Wallet
 
    - Linux: ~/.config/Concordium Wallet
 
@@ -28,7 +28,7 @@ Delete the following folder containing all the user data of the wallet:
 
 .. dropdown:: Testnet
 
-   - MacOS: Users/<user>/Library/Application Support/Concordium Wallet testnet
+   - macOS: Users/<user>/Library/Application Support/Concordium Wallet testnet
 
    - Linux: ~/.config/Concordium Wallet testnet
 

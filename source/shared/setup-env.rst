@@ -106,7 +106,7 @@ Rename the package to ``concordium-client`` in case it has some version annotati
    omitting ``./`` searches for the executable package in the PATH variable.
    The macOS distribution is an installer that places an alias to the binary into the folder ``/usr/local/bin``. So after installing, you should have ``concordium-client`` on your path.
 
-On MacOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
+On macOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
 
 Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 

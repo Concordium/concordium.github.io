@@ -59,7 +59,7 @@ To start the node with these validator keys and produce blocks, do the following
 
    into the ``environment`` section of the ``node`` service section of the file.
 
-When you've placed the file in the appropriate directory, start the node again in the same way as the first time, e.g., ``docker-compose -f testnet-node.yaml
+When you've placed the file in the appropriate directory, start the node again in the same way as the first time, e.g., ``docker compose -f testnet-node.yaml
 up``. The node will automatically start producing blocks when the validator is included in the validators for the current epoch.
 
 In the wallets, a badge is added to the account associated with the validator node. The badge appears as soon as the transaction has been submitted. That is, before the two epochs have elapsed.

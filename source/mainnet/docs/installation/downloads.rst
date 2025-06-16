@@ -68,7 +68,7 @@ Concordium Desktop Wallet
    .. card:: Windows v1.8.1
       :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.exe
 
-   .. card:: MacOS v1.8.1
+   .. card:: macOS v1.8.1
       :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.dmg
 
    .. dropdown:: Linux® v1.8.1
@@ -93,7 +93,7 @@ Concordium Desktop Wallet
    .. card:: Windows v1.8.0
       :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.exe
 
-   .. card:: MacOS v1.8.0
+   .. card:: macOS v1.8.0
       :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.dmg
 
    .. dropdown:: Linux® v1.8.0
@@ -181,7 +181,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
 .. Note::
 
-   When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or `X.1.1` to `X.2.3`. To download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
+   When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see :ref:`Previous node versions<previous-downloads>`.
 
 .. dropdown:: Mainnet
 
@@ -296,7 +296,7 @@ Encrypt/decrypt tool v1.0.0
 
 - `Download the Encrypt/decrypt tool for Windows <https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip>`_
 
-- `Download the Encrypt/decrypt tool for MacOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
+- `Download the Encrypt/decrypt tool for macOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
 For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.
 
@@ -327,7 +327,7 @@ Use this tool to create a company identity, request accounts using a company ide
 
 - `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/Concordium_Company_ID_1.0.2_x64_en-US.msi>`_
 
-- `Download the Company identity management tool for MacOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
+- `Download the Company identity management tool for macOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
 
 For information about how to use the company identity management tool, see :ref:`company-identities`.
 
