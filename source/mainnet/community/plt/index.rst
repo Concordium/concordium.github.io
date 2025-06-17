@@ -3,7 +3,7 @@
 Protocol Layer Tokens (PLTs)
 ============================
 
-Protocol-Level Tokens (PLTs) are tokens issued and managed directly on the Concordium blockchain without a need for smart contracts. PLTs provide enhanced security by reducing attack vectors, improved efficiency in execution, and direct governance controls for token issuers.
+Protocol-Level Tokens (PLTs) are tokens issued and managed directly on the Concordium blockchain without a need for :term:`smart contracts<smart contract>`. PLTs provide enhanced security by reducing attack vectors, improved efficiency in execution, and direct governance controls for token issuers.
 
 PLTs are implemented at blockchain level. All account (balances, transfers etc.) and management operations are handled natively by the chain itself through transactions from regular Concordium accounts.
 
@@ -15,7 +15,7 @@ A PLT is instantiated through a governance transaction after an off-chain applic
 
 Each token has a unique string based symbol (e.g. USDQ), which is used in all transactions and events related to that token, and because the uniqueness is enforced by the chain, imitation of a PLT by creating another token with the same symbol is not possible.
 
-PLTs can optionally support allow and deny lists to control the ability of Concordium Accounts to hold/transfer that PLT. Furthermore, they can optionally support mint and burn operations to manage total supply of the PLT, with these being specified at instantiation.
+PLTs can optionally support allow and deny lists to control the ability of Concordium :term:`accounts<account>` to hold/transfer that PLT. Furthermore, they can optionally support mint and burn operations to manage total supply of the PLT, with these being specified at instantiation.
 
 Available operations
 --------------------
