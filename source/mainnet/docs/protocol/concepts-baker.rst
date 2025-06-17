@@ -105,6 +105,8 @@ A block is final when it cannot be rolled back any more, i.e., part of the autho
 
 A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.
 
+.. _concepts-baker-suspension:
+
 Validator Suspension
 ====================
 

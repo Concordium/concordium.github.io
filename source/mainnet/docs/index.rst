@@ -86,13 +86,12 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    What is the Concordium Protocol <protocol/concordium-protocol>
-   Identities <protocol/id-accounts>
+   Identity <protocol/identity>
    Accounts <protocol/manage-accounts>
    Transactions <protocol/transactions>
    Consensus mechanisms <protocol/consensus-mechanisms>
    Validation <protocol/concepts-baker>
    Delegation <protocol/concepts-delegation>
-
 
 .. toctree::
    :caption: Smart Contracts
@@ -110,11 +109,10 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    Validator Management <network/baker-pool>
-   Run a node on Concordium <network/nodes/node-requirements>
+   Run a Concordium Node <network/nodes/node-requirements>
    Use Concordium's ID layer <network/web3-id/index.rst>
    Run a local chain <network/guides/run-local-chain.rst>
    Indexers <network/indexers/intro.rst>
-
 
 .. toctree::
    :caption: Help & FAQ
@@ -127,7 +125,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Concordium Standards <https://proposals.concordium.software/index.html>
    Glossary of Concordium terms <resources/glossary>
    Exchange Onboarding Guide <resources/exchangeOnBoarding>
-
 
 .. toctree::
    :caption: Governance Committee Voting

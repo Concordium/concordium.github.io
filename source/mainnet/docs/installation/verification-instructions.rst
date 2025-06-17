@@ -99,7 +99,7 @@ In a terminal:
     $Get-FileHash |mainnet-genesis-block| -Algorithm SHA256
     |mainnet-genesis-block-checksum|
 
-**MacOS**
+**macOS**
 
 .. code-block:: console
     :substitutions:

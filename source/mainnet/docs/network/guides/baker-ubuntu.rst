@@ -12,7 +12,7 @@ Prerequisites
 
 - Run Ubuntu 20.04 or later
 - Have the administrator password to your computer.
-- :ref:`Run a node on ubuntu - Mainnet <run-node-ubuntu>` or :ref:`Run a node on ubuntu - Testnet <run-node-ubuntu-testnet>`
+- :ref:`Run a node on Ubuntu <run-node-ubuntu>`
 -  If you want to run the node as a validator, you must have generated validator keys, see :ref:`add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
 .. dropdown:: Configure the node with validator keys on Mainnet
