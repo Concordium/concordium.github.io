@@ -10,7 +10,7 @@ Learn how to integrate Protocol Layer Tokens into web applications using Concord
 Querying Tokens
 ---------------
 
-.. _get-token-list:
+.. _web-sdk-get-token-list:
 
 Get Token List
 ~~~~~~~~~~~~~~
@@ -52,7 +52,7 @@ Retrieve all Protocol Layer Tokens available on the network:
            console.log(token.toString());
        }
 
-.. _get-token-info:
+.. _web-sdk-get-token-info:
 
 Get Token Information
 ~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +96,7 @@ Retrieve detailed information about a specific PLT:
        console.log('decimals:', tokenInfo.state.decimals);
        console.log('moduleRef:', tokenInfo.state.moduleRef); // only V1 for all PLTs initially.
 
-.. _get-account-info:
+.. _web-sdk-get-account-info:
 
 Get Account Information
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,12 +144,12 @@ Query account information including PLT balances:
 
     main().catch(error => console.error('Error:', error));
 
-.. _token-holder-operations:
+.. _web-sdk-token-holder-operations:
 
 Token Holder Operations
 -----------------------
 
-.. _token-transfer:
+.. _web-sdk-token-transfer:
 
 Token Transfer
 ~~~~~~~~~~~~~~
@@ -242,12 +242,12 @@ Transfer PLTs between accounts:
                throw new Error('Unexpected transaction kind: ' + result.summary.transactionType);
        }
 
-.. _token-governance-operations:
+.. _web-sdk-token-governance-operations:
 
 Token Governance Operations
 ---------------------------
 
-.. _mint-tokens:
+.. _web-sdk-mint-tokens:
 
 Mint Tokens
 ~~~~~~~~~~~
@@ -379,7 +379,7 @@ Mint new tokens (issuer only):
         console.log(`Wallet file is empty!`);
     }
 
-.. _burn-tokens:
+.. _web-sdk-burn-tokens:
 
 Burn Tokens
 ~~~~~~~~~~~
@@ -471,12 +471,12 @@ Burn existing tokens (issuer only):
         console.log(`Wallet file is empty!`);
     }
 
-.. _list-management:
+.. _web-sdk-list-management:
 
 Allow and Deny List Management
 ------------------------------
 
-.. _add-to-allow-list:
+.. _web-sdk-add-to-allow-list:
 
 Add to Allow List
 ~~~~~~~~~~~~~~~~~
@@ -568,7 +568,7 @@ Add an account to the token's allow list (issuer only):
        console.log(`Wallet file is empty!`);
     }
 
-.. _remove-from-allow-list:
+.. _web-sdk-remove-from-allow-list:
 
 Remove from Allow List
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -659,7 +659,7 @@ Remove an account from the token's allow list (issuer only):
         console.log(`Wallet file is empty!`);
     }
 
-.. _add-to-deny-list:
+.. _web-sdk-add-to-deny-list:
 
 Add to Deny List
 ~~~~~~~~~~~~~~~~
@@ -751,7 +751,7 @@ Add an account to the token's deny list (issuer only):
        console.log(`Wallet file is empty!`);
     }
 
-.. _remove-from-deny-list:
+.. _web-sdk-remove-from-deny-list:
 
 Remove from Deny List
 ~~~~~~~~~~~~~~~~~~~~~
