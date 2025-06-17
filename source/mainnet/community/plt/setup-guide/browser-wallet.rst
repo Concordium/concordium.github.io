@@ -8,7 +8,7 @@ This guide explains how to download and install the custom DevNet Browser Wallet
 About the DevNet Browser Wallet
 -------------------------------
 
-The DevNet Browser Wallet is a special edition of the Concordium Browser Wallet that supports connections to custom networks, including DevNet. This version is required as the standard Browser Wallet only connects to Mainnet and Testnet.
+The DevNet Browser Wallet is a special edition of the Concordium Browser Wallet that supports connections to custom networks, including DevNet. This version is required as the standard Browser Wallet only connects to :term:`Mainnet` and :term:`Testnet`.
 
 Download and installation
 -------------------------

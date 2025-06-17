@@ -1,13 +1,13 @@
 .. _plt-rust-sdk:
 
-Rust SDK Integration
+Rust SDK integration
 ====================
 
 This guide shows how to work with Protocol Layer Tokens using Concordium's Rust SDK.
 
 .. _get-token-info:
 
-Get Protocol Level Token Information
+Get protocol level token information
 ------------------------------------
 
 This example demonstrates how to retrieve information about a Protocol Level Token (PLT).
@@ -116,7 +116,7 @@ Set the token ID to query and optionally specify a block hash for historical dat
 
 .. _get-account-info:
 
-Get Account Information
+Get account information
 -----------------------
 
 This example demonstrates how to retrieve account information including PLT balances.
@@ -184,7 +184,7 @@ Set the account address to query and optionally specify a block hash for histori
 
 .. _burn-tokens:
 
-Burn Protocol Level Tokens
+Burn protocol level tokens
 ---------------------------
 
 This example demonstrates how to burn existing Protocol Level Tokens.
@@ -275,7 +275,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 
 .. _add-to-deny-list:
 
-Add Account to Token Deny List
+Add account to token deny list
 -------------------------------
 
 This example demonstrates how to add an account to a Protocol Level Token's deny list.
@@ -356,7 +356,7 @@ Accounts on the deny list cannot hold the token when deny list is enabled.
 
 .. _add-to-allow-list:
 
-Add Account to Token Allow List
+Add account to token allow list
 --------------------------------
 
 This example demonstrates how to add an account to a Protocol Level Token's allow list.
@@ -436,7 +436,7 @@ Only the token issuer can modify the allow list.
 
 .. _transfer-tokens:
 
-Transfer Protocol Level Tokens
+Transfer protocol level tokens
 -------------------------------
 
 This example demonstrates how to transfer Protocol Level Tokens (PLTs) from one account to another.
@@ -627,7 +627,7 @@ Only the token issuer can modify the deny list.
 
 .. _remove-from-allow-list:
 
-Remove Account from Token Allow List
+Remove account from token allow list
 -------------------------------------
 
 This example demonstrates how to remove an account from a Protocol Level Token's allow list.
@@ -708,7 +708,7 @@ Only the token issuer can modify the allow list.
 
 .. _mint-tokens:
 
-Mint Protocol Level Tokens
+Mint protocol level tokens
 ---------------------------
 
 This example demonstrates how to mint new Protocol Level Tokens.
@@ -801,7 +801,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 
 .. _get-token-list:
 
-Get Protocol Level Token List
+Get protocol level token list
 ------------------------------
 
 This example demonstrates how to retrieve a list of all Protocol Level Tokens (PLTs) on the Concordium blockchain.

@@ -1,18 +1,33 @@
 .. _plt-web-sdk:
 
-Web SDK Integration
+Web SDK integration
 ===================
 
 Learn how to integrate Protocol Layer Tokens into web applications using Concordium's Web SDK.
 
+See the following sections for detailed examples:
+
+
+- :ref:`Get token list<web-sdk-get-token-list>`
+- :ref:`Get token information<web-sdk-get-token-info>`
+- :ref:`Get account information<web-sdk-get-account-info>`
+- :ref:`Transfer tokens<web-sdk-transfer-tokens>`
+- :ref:`Mint tokens<web-sdk-mint-tokens>`
+- :ref:`Burn tokens<web-sdk-burn-tokens>`
+- :ref:`Add to allow list<web-sdk-add-to-allow-list>`
+- :ref:`Remove from allow list<web-sdk-remove-from-allow-list>`
+- :ref:`Add to deny list<web-sdk-add-to-deny-list>`
+- :ref:`Remove from deny list<web-sdk-remove-from-deny-list>`
+
+
 .. _querying-tokens:
 
-Querying Tokens
+Querying tokens
 ---------------
 
 .. _web-sdk-get-token-list:
 
-Get Token List
+Get token list
 ~~~~~~~~~~~~~~
 
 Retrieve all Protocol Layer Tokens available on the network:
@@ -54,7 +69,7 @@ Retrieve all Protocol Layer Tokens available on the network:
 
 .. _web-sdk-get-token-info:
 
-Get Token Information
+Get token information
 ~~~~~~~~~~~~~~~~~~~~~
 
 Retrieve detailed information about a specific PLT:
@@ -98,7 +113,7 @@ Retrieve detailed information about a specific PLT:
 
 .. _web-sdk-get-account-info:
 
-Get Account Information
+Get account information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Query account information including PLT balances:
@@ -146,13 +161,13 @@ Query account information including PLT balances:
 
 .. _web-sdk-token-holder-operations:
 
-Token Holder Operations
+Token holder operations
 -----------------------
 
-.. _web-sdk-token-transfer:
+.. _web-sdk-transfer-tokens:
 
-Token Transfer
-~~~~~~~~~~~~~~
+Transfer tokens
+~~~~~~~~~~~~~~~
 
 Transfer PLTs between accounts:
 
@@ -244,12 +259,12 @@ Transfer PLTs between accounts:
 
 .. _web-sdk-token-governance-operations:
 
-Token Governance Operations
+Token governance operations
 ---------------------------
 
 .. _web-sdk-mint-tokens:
 
-Mint Tokens
+Mint tokens
 ~~~~~~~~~~~
 
 Mint new tokens (issuer only):
@@ -381,7 +396,7 @@ Mint new tokens (issuer only):
 
 .. _web-sdk-burn-tokens:
 
-Burn Tokens
+Burn tokens
 ~~~~~~~~~~~
 
 Burn existing tokens (issuer only):
@@ -473,12 +488,12 @@ Burn existing tokens (issuer only):
 
 .. _web-sdk-list-management:
 
-Allow and Deny List Management
+Allow and deny list management
 ------------------------------
 
 .. _web-sdk-add-to-allow-list:
 
-Add to Allow List
+Add to allow list
 ~~~~~~~~~~~~~~~~~
 
 Add an account to the token's allow list (issuer only):
@@ -570,7 +585,7 @@ Add an account to the token's allow list (issuer only):
 
 .. _web-sdk-remove-from-allow-list:
 
-Remove from Allow List
+Remove from allow list
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Remove an account from the token's allow list (issuer only):
@@ -661,7 +676,7 @@ Remove an account from the token's allow list (issuer only):
 
 .. _web-sdk-add-to-deny-list:
 
-Add to Deny List
+Add to deny list
 ~~~~~~~~~~~~~~~~
 
 Add an account to the token's deny list (issuer only):
@@ -753,7 +768,7 @@ Add an account to the token's deny list (issuer only):
 
 .. _web-sdk-remove-from-deny-list:
 
-Remove from Deny List
+Remove from deny list
 ~~~~~~~~~~~~~~~~~~~~~
 
 Remove an account from the token's deny list (issuer only):

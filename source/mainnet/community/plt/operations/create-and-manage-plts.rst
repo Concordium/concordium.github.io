@@ -20,12 +20,12 @@ Before using the available operations, make sure to install the required depende
 Available operations
 --------------------
 
-- :ref:`Mint tokens <mint-tokens>`
-- :ref:`Burn tokens <burn-tokens>`
-- :ref:`Add account to allow list <add-allow-list>`
-- :ref:`Remove account from allow list <remove-allow-list>`
-- :ref:`Add account to deny list <add-deny-list>`
-- :ref:`Remove account from deny list <remove-deny-list>`
+- :ref:`Mint tokens <plt-mint-tokens>`
+- :ref:`Burn tokens <plt-burn-tokens>`
+- :ref:`Add account to allow list <plt-add-allow-list>`
+- :ref:`Remove account from allow list <plt-remove-allow-list>`
+- :ref:`Add account to deny list <plt-add-deny-list>`
+- :ref:`Remove account from deny list <plt-remove-deny-list>`
 
 .. note::
    Only the nominated account (token issuer) can perform these governance operations.
@@ -216,7 +216,7 @@ Burns tokens from the issuer's account.
    }
 
 
-.. _add-allow-list:
+.. _plt-add-allow-list:
 
 Add account to allow list
 -------------------------
@@ -308,7 +308,7 @@ Adds an account to the token's allow list. Only accounts on the allow list can h
       console.log(`Wallet file is empty!`);
    }
 
-.. _remove-allow-list:
+.. _plt-remove-allow-list:
 
 Remove account from allow list
 ------------------------------
@@ -399,7 +399,7 @@ Removes an account from the token's allow list.
        console.log(`Wallet file is empty!`);
    }
 
-.. _add-deny-list:
+.. _plt-add-deny-list:
 
 Add account to deny list
 ------------------------
@@ -492,7 +492,7 @@ Adds an account to the token's deny list. Accounts on the deny list cannot hold 
    }
 
 
-.. _remove-deny-list:
+.. _plt-remove-deny-list:
 
 Remove account from deny list
 -----------------------------

@@ -10,7 +10,7 @@ PLT issuance process overview
 
 To issue and work with PLTs on the Concordium network, the following steps are required:
 
-1. **Create a Concordium blockchain account**. If you do not already have a Concordium account, you'll need to create one that can manage PLTs. This account will be nominated to manage the issued PLTs. Creation requires completing an identity check with an :term:`Identity Provider`, which is a prerequisite for obtaining a ConcordiumID.
+1. **Create a Concordium blockchain account**. If you do not already have a Concordium account, you'll need to create one that can manage PLTs. This account will be nominated to manage the issued PLTs. Creation requires completing an identity check with an :term:`Identity Provider`, which is a prerequisite for obtaining a :ref:`ConcordiumID <concordium-id>`.
 
 2. **Create PLT metadata and prepare the MetadataUrl**. You'll need to create and host (offchain) a PLT metadata JSON file. The metadata URL will be part of the PLT token definition.
 
