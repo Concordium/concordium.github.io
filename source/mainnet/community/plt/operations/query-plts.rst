@@ -105,6 +105,7 @@ This operation returns detailed information about a specific PLT by its symbol.
    console.log('moduleRef:', tokenInfo.state.moduleRef); // only V1 for all PLTs initially.
 
 .. _get_token_list:
+
 Get token list
 --------------
 

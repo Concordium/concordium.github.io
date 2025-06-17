@@ -31,7 +31,7 @@ Available operations
    Only the nominated account (token issuer) can perform these governance operations.
 
 
-.. _mint-tokens:
+.. _plt-mint-tokens:
 
 Mint tokens
 -----------
@@ -123,7 +123,7 @@ Mints new tokens to the issuer's account.
        console.log(`Wallet file is empty!`);
    }
 
-.. _burn-tokens:
+.. _plt-burn-tokens:
 
 Burn tokens
 -----------
