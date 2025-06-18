@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.576c3d3f-db49-4560-a4ae-73805822f8ea.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.2810864c-6ec9-4980-aa6d-5c8ece167775.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/key-derivation-and-usage';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/key-derivation-and-usage.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -567,24 +572,42 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/become-baker.html">Validation with the Concordium Client</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a node on Concordium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu-testnet.html">Run a node on Ubuntu - Testnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu.html">Run a node on Ubuntu - Mainnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-macos.html">Run and manage a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node.html">Run a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-ubuntu/index.html">Run a node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-windows/index.html">Run a node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-docker/index.html">Run a node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-aws/index.html">Run a node on AWS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-aws/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/web3-id/index.html">Use Concordium's ID layer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -751,7 +774,7 @@ This structure is reflected in the key derivation tree structure:</p>
 <li><p>A subtree dedicated to account signature keys used to sign transfers</p></li>
 <li><p>Multiple subtrees that generate cryptographic material for the ID object itself</p></li>
 </ul>
-<p>Secrets in the ID related subtrees must be exported for two reasons: due to the complexity of the involved cryptographic operations (e.g. Bulletproofs), or because they need to be sent to an external party in encrypted form. Note that even if all ID related secrets get leaked, the account keys cannot be compromised (assuming the key derivation scheme SLIP-10/BIP32 is sound).</p>
+<p>Secrets in the ID related subtrees must be exported for two reasons: due to the complexity of the involved cryptographic operations (e.g. <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a>), or because they need to be sent to an external party in encrypted form. Note that even if all ID related secrets get leaked, the account keys cannot be compromised (assuming the key derivation scheme SLIP-10/BIP32 is sound).</p>
 <img alt="diagram of key derivation" src="../../_images/cryptographic-key-derivation-structure.png" />
 <section id="derivation-structure">
 <h2>Derivation structure<a class="headerlink" href="#derivation-structure" title="Link to this heading">#</a></h2>
@@ -767,10 +790,10 @@ This structure is reflected in the key derivation tree structure:</p>
 </section>
 <section id="holder-identifier">
 <h3>Holder Identifier<a class="headerlink" href="#holder-identifier" title="Link to this heading">#</a></h3>
-<p>Subtree 2’ defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium’s identity disclosure scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.</p>
+<p>Subtree 2’ defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium’s <a class="reference internal" href="identity-disclosure-processes.html"><span class="doc">Identity Disclosure</span></a> scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.</p>
 <section id="why-we-export">
 <h4>Why we export<a class="headerlink" href="#why-we-export" title="Link to this heading">#</a></h4>
-<p>Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of an identity disclosure authority). Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  zero-knowledge proof for the account opening. The proof is a combination of Bulletproofs and Sigma protocols over BLS12-381. For generating the zero-knowledge proof, one needs the secret identifier.</p>
+<p>Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of a <a class="reference internal" href="../resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">Privacy Guardian (PG)</span></a>. Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  <a class="reference internal" href="../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Zero-knowledge proof</span></a> for the account opening. The proof is a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>. For generating the zero-knowledge proof, one needs the secret identifier.</p>
 </section>
 <section id="impact-of-potential-leakage">
 <h4>Impact of potential leakage<a class="headerlink" href="#impact-of-potential-leakage" title="Link to this heading">#</a></h4>
@@ -782,7 +805,7 @@ This structure is reflected in the key derivation tree structure:</p>
 <p>Subtree 3’ defines the PRF key used to generate the addresses of accounts. Technically the account address is PRF(PRF key, x) where x is the account index. Knowing the PRF key allows identifying all accounts that have been generated from a given identity.</p>
 <section id="id1">
 <h4>Why we export<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
-<p>When an identity is issued, the Identity Provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again a combination of Bulletproofs and Sigma protocols over BLS12-381.</p>
+<p>When an identity is issued, the Identity Provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>.</p>
 <p>Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the PRF key.</p>
 </section>
 <section id="id2">
@@ -796,7 +819,7 @@ This structure is reflected in the key derivation tree structure:</p>
 <section id="id3">
 <h4>Why we export<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>The randomness m0 is needed as part of the ID issuance protocol. As part of this protocol the user needs to prove knowledge of m0. This is part of the same zero-knowledge proof as mentioned in the PRF key section.</p>
-<p>We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the seedphrase, the user can recover the signature from the Identity Provider at a later point (without having to do another blind signing ceremony).</p>
+<p>We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the <a class="reference internal" href="../resources/glossary.html#term-Seed-phrase"><span class="xref std std-term">seed phrase</span></a>, the user can recover the signature from the Identity Provider at a later point (without having to do another blind signing ceremony).</p>
 </section>
 <section id="id4">
 <h4>Impact of potential leakage<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>

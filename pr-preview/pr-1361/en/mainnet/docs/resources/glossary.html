@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.ba1e4678-d467-490e-9a65-cc6412dc1da3.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.1fa7299e-037d-4e71-a9ae-06c63839bce5.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/resources/glossary';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/resources/glossary.html" />
@@ -501,7 +501,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -568,24 +573,42 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/become-baker.html">Validation with the Concordium Client</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a node on Concordium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu-testnet.html">Run a node on Ubuntu - Testnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu.html">Run a node on Ubuntu - Mainnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-macos.html">Run and manage a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node.html">Run a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-ubuntu/index.html">Run a node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-windows/index.html">Run a node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-docker/index.html">Run a node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-aws/index.html">Run a node on AWS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-aws/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/web3-id/index.html">Use Concordium's ID layer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -770,9 +793,14 @@
 </dd>
 <dt id="term-Block-reward-commission">Block reward commission<a class="headerlink" href="#term-Block-reward-commission" title="Link to this term">#</a></dt><dd><p>Sets the percentage of block rewards a validator retains when its pool successfully produces a block. Lower rates may attract more delegators, while higher rates increase your profit share from each block.</p>
 </dd>
+<dt id="term-BLS12-381">BLS12-381<a class="headerlink" href="#term-BLS12-381" title="Link to this term">#</a></dt><dd><p>An elliptic curve specifically designed for cryptographic applications requiring pairings, e.g., the BLS aggregate signature scheme or the Pointcheval-Sanders signature scheme. The latter can be used for blind signing and also allows for a simple proof of knowledge of a signature. BLS12-381, which is a crucial component of privacy-based self-sovereign identity systems.</p>
+</dd>
 <dt id="term-Branch">Branch<a class="headerlink" href="#term-Branch" title="Link to this term">#</a></dt><dd><p>A chain of blocks that has split from the main chain. All branches have the potential to become the main chain. The Chain selection rule determines which branch is the best chain.</p>
 </dd>
 <dt id="term-Build">Build<a class="headerlink" href="#term-Build" title="Link to this term">#</a></dt><dd><p>Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from <a class="reference internal" href="#term-cargo-concordium"><span class="xref std std-term">cargo-concordium</span></a>.</p>
+</dd>
+<dt id="term-Bulletproof">Bulletproof<a class="headerlink" href="#term-Bulletproof" title="Link to this term">#</a></dt><dd><p>A type of efficient interactive proof system that enables various <a class="reference internal" href="#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proofs</span></a>, including range-proofs, set-membership proofs, and
+set-non-membership proofs. The generated proofs have logarithmic size. They can be made non-interactive with the Fiat-Shamir transform.</p>
 </dd>
 <dt id="term-Candidate">Candidate<a class="headerlink" href="#term-Candidate" title="Link to this term">#</a></dt><dd><p>Option on the official list of candidates for the election. Since there are only 10 places for the 2025 election, not all nominees are necessarily candidates.</p>
 </dd>
@@ -860,6 +888,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 </dd>
 <dt id="term-Identity">Identity<a class="headerlink" href="#term-Identity" title="Link to this term">#</a></dt><dd><p>Before opening an account on the Concordium Platform, one’s real-world identity must be verified and recorded by an <a class="reference internal" href="#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. A user’s identity is encrypted on-chain, however their real-world identity can be disclosed in response to a valid request from a government authority.</p>
 </dd>
+<dt id="term-Identity-Credential">Identity Credential<a class="headerlink" href="#term-Identity-Credential" title="Link to this term">#</a></dt><dd><p>An Identity Credential contains attributes on a user’s identity and is used to open accounts on-chain. It is issued by IDPs during user onboarding based on identity documents (e.g. passports). It is stored in both the user’s wallet and IDP’s database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.</p>
+</dd>
 <dt id="term-Identity-Issuer">Identity Issuer<a class="headerlink" href="#term-Identity-Issuer" title="Link to this term">#</a></dt><dd><p>See <a class="reference internal" href="#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>.</p>
 </dd>
 <dt id="term-Identity-Object">Identity Object<a class="headerlink" href="#term-Identity-Object" title="Link to this term">#</a></dt><dd><p>An object issued by the <a class="reference internal" href="#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> to the user which allows the user to prove to third parties that their real life identity has been verified by a trusted third party.</p>
@@ -877,6 +907,10 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <p>Invoke is also the act of triggering a receive function in a smart contract from <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and viewing its return value. Invoking an instance is not a transaction and it does not change the state of a contract. Invoking can be useful to either view information about the instance or to test a receive method before running an update. Because invoking is not a transaction, there is no fee to run invoke. Click <a class="reference internal" href="../../tutorials/nft-minting/mint-xfer.html#nft-view-fn"><span class="std std-ref">here to see examples of how to use invoke to view information about the instance</span></a>.</p>
 </dd>
 <dt id="term-Issuer">Issuer<a class="headerlink" href="#term-Issuer" title="Link to this term">#</a></dt><dd><p>Party that issues Web3 ID credentials to users. May also revoke Web3 ID credentials.</p>
+</dd>
+<dt id="term-KYB">KYB<a class="headerlink" href="#term-KYB" title="Link to this term">#</a></dt><dd><p>Know Your Business - regulatory processes used to verify the identity and legitimacy of business entities, including their ownership structure, business activities, and compliance status.</p>
+</dd>
+<dt id="term-KYC">KYC<a class="headerlink" href="#term-KYC" title="Link to this term">#</a></dt><dd><p>Know Your Customer - regulatory processes used by financial institutions and other businesses to verify the identity of their customers, helping prevent money laundering, fraud, and other financial crimes.</p>
 </dd>
 <dt id="term-Leader-Election">Leader Election<a class="headerlink" href="#term-Leader-Election" title="Link to this term">#</a></dt><dd><p>In every round a leader is elected among the validators to produce a new block. The leader is chosen by hashing a leader election nonce and the round number, and interpreting the hash as a random number that picks a validator with probability equal to their relative stake. A new leader election nonce is generated every <a class="reference internal" href="#term-Epoch"><span class="xref std std-term">epoch</span></a> by hashing block nonces from the previous epoch. So the sequence of leaders for every epoch is determined at the beginning of the epoch when the leader election nonce is fixed.</p>
 <p>The <a class="reference internal" href="#term-Winning-probability"><span class="xref std std-term">winning probability</span></a> is proportional to the validator’s relative stake.</p>
@@ -908,6 +942,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 <dt id="term-Pay-day">Pay day<a class="headerlink" href="#term-Pay-day" title="Link to this term">#</a></dt><dd><p>A pay day is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin validation and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the <strong>next pay day after the cool-down period ends</strong>. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of lottery winners that are elected to be the leader for every round in that epoch is established at the beginning of the epoch.</p>
 </dd>
 <dt id="term-Passive-delegation">Passive delegation<a class="headerlink" href="#term-Passive-delegation" title="Link to this term">#</a></dt><dd><p>A form of delegation where a delegator’s stake is effectively distributed among all staking pools. It is not associated with a specific validator. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific staking pool. However, passive delegation is not affected by poor performance of a single validator.</p>
+</dd>
+<dt id="term-Privacy-Guardian-PG">Privacy Guardian (PG)<a class="headerlink" href="#term-Privacy-Guardian-PG" title="Link to this term">#</a></dt><dd><p>Authorized legal entities, typically law firms, that participate in Concordium’s identity disclosure process when legally required. PGs hold cryptographic keys that enable them to decrypt partial shares of encrypted identity information. Multiple PGs must collaborate to reconstruct complete identity data - a minimum threshold (minimum two out of three) of PGs must provide their decryption shares before the Authority can access the full information needed to connect accounts to identities.</p>
 </dd>
 <dt id="term-Private-keys">Private keys<a class="headerlink" href="#term-Private-keys" title="Link to this term">#</a></dt><dd><p>A random, secret string that is used in cryptography and cryptocurrency to prove ownership of an account and sign transactions to send, spend, delegate, and stake CCDs. A wallet consists of a set of public addresses and private keys. Anyone can deposit cryptocurrency in a public address, but funds cannot be removed from an address without the corresponding private key.</p>
 </dd>
@@ -951,6 +987,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 </dd>
 <dt id="term-Shielding">Shielding<a class="headerlink" href="#term-Shielding" title="Link to this term">#</a></dt><dd><p>(<a class="reference internal" href="../guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">Deprecated</span></a>):</p>
 <p>The action of transferring a part of the public balance to the <a class="reference internal" href="#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a>.</p>
+</dd>
+<dt id="term-Sigma-protocols">Sigma protocols<a class="headerlink" href="#term-Sigma-protocols" title="Link to this term">#</a></dt><dd><p>A class of efficient interactive <a class="reference internal" href="#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proof</span></a> systems that follow a three-round structure; commitment, challenge, and response. Sigma protocols enable a prover to demonstrate knowledge of secret information without revealing it. They can also be used for OR and AND statements, and can be made non-interactive with the Fiat-Shamir transform.</p>
 </dd>
 <dt id="term-Slot">Slot<a class="headerlink" href="#term-Slot" title="Link to this term">#</a></dt><dd><p>See <a class="reference internal" href="#term-Round"><span class="xref std std-term">round</span></a>.</p>
 </dd>
@@ -1019,6 +1057,8 @@ The user identity certificate includes attributes such as name, age, and nationa
 <dt id="term-Web3-ID">Web3 ID<a class="headerlink" href="#term-Web3-ID" title="Link to this term">#</a></dt><dd><p>Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements and won’t be part of the identity disclosure process, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.</p>
 </dd>
 <dt id="term-WebAssembly">WebAssembly<a class="headerlink" href="#term-WebAssembly" title="Link to this term">#</a></dt><dd><p>WebAssembly (Wasm) defines a portable binary-code format and a corresponding text format for executable programs as well as software interfaces for facilitating interactions between such programs and their host environment. Smart contracts are deployed on chain as Wasm files.</p>
+</dd>
+<dt id="term-W3C-standard">W3C standard<a class="headerlink" href="#term-W3C-standard" title="Link to this term">#</a></dt><dd><p>Standards and guidelines developed by the World Wide Web Consortium (W3C), an international organization that creates technical specifications to ensure the long-term growth and interoperability of the web.</p>
 </dd>
 <dt id="term-Winning-probability">Winning probability<a class="headerlink" href="#term-Winning-probability" title="Link to this term">#</a></dt><dd><p>The winning probability is the probability that a validator wins in a given round. The probability is <span class="math notranslate nohighlight">\(\alpha\)</span>, which equals the validator’s relative stake.</p>
 </dd>

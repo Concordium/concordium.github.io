@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/index.bd8e47e6-edd7-47cb-99dc-5dcb87eca0fb.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/index.d89a0370-8e4d-4e6c-9b7e-65d1468d162d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/index.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -602,13 +602,13 @@
 <span id="zk-proof-index"></span><h1>Building a Zero-Knowledge Proof dApp on Concordium<a class="headerlink" href="#building-a-zero-knowledge-proof-dapp-on-concordium" title="Link to this heading">#</a></h1>
 <p>In this tutorial, you’ll learn how to integrate Concordium’s browser and mobile wallets into a React-based decentralized application (dApp), and generate zero-knowledge (ZK) proofs.</p>
 <p>Concordium is an identity-based blockchain with a unique approach to balancing privacy and compliance. Through wallets, users can generate zero-knowledge proofs and selectively disclose identity attributes on their accounts like nationality, age, etc., instead of sharing the entire ID information.</p>
-<p>Concordium wallets serve a unique dual purpose compared to wallets on other blockchains. They not only hold <a class="reference internal" href="../../docs/protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">accounts</span></a> (blockchain addresses) but also manage <a class="reference internal" href="../../docs/protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">identities</span></a>.
+<p>Concordium wallets serve a unique dual purpose compared to wallets on other blockchains. They not only hold <a class="reference internal" href="../../docs/protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">accounts</span></a> (blockchain addresses) but also manage <a class="reference internal" href="../../docs/protocol/identity.html#reference-identity"><span class="std std-ref">identities</span></a>.
 Users first create an identity in their wallet by completing a verification process with an <a class="reference internal" href="../../docs/resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a> (using a passport or ID card). Then, they can create on-chain accounts through a <a class="reference internal" href="../../docs/protocol/transactions.html#transactions"><span class="std std-ref">transaction</span></a> that associates each account with their verified identity.</p>
 <p>Unlike other blockchains where addresses exist without any identity context, Concordium accounts are explicitly linked to real-world identities.
 This architecture enables wallets to generate zero-knowledge proofs about the identity information associated with a user’s account, allowing for selective disclosure of attributes in a self-sovereign way.</p>
 <p>Unlike many other blockchains where implementing zero-knowledge proofs requires deep cryptographic expertise, Concordium simplifies this process significantly:</p>
 <ol class="arabic simple">
-<li><p><strong>Built-in identity layer</strong>: Identity credentials are already associated with accounts, read <a class="reference internal" href="../../docs/protocol/id-accounts.html#reference-id-accounts"><span class="std std-ref">this article</span></a> for more details</p></li>
+<li><p><strong>Built-in identity layer</strong>: Identity credentials are already associated with accounts, read <a class="reference internal" href="../../docs/protocol/identity.html#reference-identity"><span class="std std-ref">this article</span></a> for more details</p></li>
 <li><p><strong>Wallet-managed proofs</strong>: The cryptographic heavy lifting happens in the wallet</p></li>
 <li><p><strong>Flexible proof types</strong>: Support for revealing attributes, range proofs, and set membership proofs, read <a class="reference internal" href="../../docs/network/guides/create-proofs.html#create-proofs"><span class="std std-ref">this article</span></a> for more information</p></li>
 <li><p><strong>Simple developer experience</strong>: No need for specialized ZK languages or custom implementations</p></li>

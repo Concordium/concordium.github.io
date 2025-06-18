@@ -8,10 +8,11 @@ Set up a wallet
 Choose your wallet for instructions about installation and configuration.
 
 .. toctree::
-    :hidden:
-    :maxdepth: 1
+   :maxdepth: 1
 
-    ../guides/setup-cryptox-wallet
-    ../browser-wallet/setup-browser-wallet
-    overview-desktop
-    ledger-tutorial
+   Set up the CryptoX Concordium Wallet <../guides/setup-cryptox-wallet>
+   Set up the Concordium Wallet for Web <../browser-wallet/setup-browser-wallet>
+   Set up the Desktop Wallet <overview-desktop>
+   Use your Ledger Device with Concordium Desktop Wallet <ledger-tutorial>
+
+

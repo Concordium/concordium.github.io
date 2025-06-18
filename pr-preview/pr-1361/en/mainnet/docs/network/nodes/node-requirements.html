@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Run a node on Concordium &#8212; Concordium  documentation</title>
+    <title>Run a Concordium node &#8212; Concordium  documentation</title>
   
   
   
@@ -54,13 +54,13 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/node-requirements.f9f24f72-c9ea-4173-b711-4caabb6df6bc.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/node-requirements.9bcf94c6-446e-4eee-aadb-1f379a551a35.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/node-requirements';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/node-requirements.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Run a node on Ubuntu - Testnet" href="run-node-ubuntu-testnet.html" />
+    <link rel="next" title="Run a node on Ubuntu" href="run-node-ubuntu/index.html" />
     <link rel="prev" title="Validation with the Concordium Client" href="../guides/become-baker.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -567,24 +572,42 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../guides/baker-macos.html">Import validator keys on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/baker-macos.html">Import validator keys on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../guides/become-baker.html">Validation with the Concordium Client</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Run a node on Concordium</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="run-node-ubuntu-testnet.html">Run a node on Ubuntu - Testnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run-node-ubuntu.html">Run a node on Ubuntu - Mainnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshoot-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run-node-macos.html">Run and manage a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run-node.html">Run a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Run a Concordium Node</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="run-node-ubuntu/index.html">Run a node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="run-node-windows/index.html">Run a node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="run-node-docker/index.html">Run a node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="run-node-aws/index.html">Run a node on AWS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="run-node-aws/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../web3-id/index.html">Use Concordium's ID layer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -737,27 +760,31 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="run-a-node-on-concordium">
-<span id="node-requirements"></span><h1>Run a node on Concordium<a class="headerlink" href="#run-a-node-on-concordium" title="Link to this heading">#</a></h1>
-<p>When you run a node on the Concordium blockchain, you are participating in the Concordium blockchain by validating transactions.</p>
-<p>Nodes are required for most things, from using a Concordium wallet to validation. You can choose to run a node yourself or you can have a third-party provider run a node for you. If you choose to run the node yourself, you can
-choose from four different platforms to run your node: Ubuntu, Windows, MacOS, or Docker/Linux.</p>
+  <section id="run-a-concordium-node">
+<span id="node-requirements"></span><h1>Run a Concordium node<a class="headerlink" href="#run-a-concordium-node" title="Link to this heading">#</a></h1>
+<p>Running a Concordium node is required for network validation, building custom services, or integrating directly with the blockchain.
+If you are a developer, operating your own node enables you to process events, access on-chain data, and build advanced integrations.
+You can choose to run a node yourself or have a third-party provider operate it for you.
+If you prefer to manage the node yourself, several options are available: <a class="reference internal" href="run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, <a class="reference internal" href="run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a>, or cloud platforms such as <a class="reference internal" href="run-node-aws/run-node-aws.html#run-a-node-aws"><span class="std std-ref">AWS</span></a>.
+Alternatively, you can deploy your Concordium node through a decentralized Web3 provider like <a class="reference external" href="https://akash.network/">Akash Network</a>.</p>
+<p>When you run a node on the Concordium blockchain as a validator, you participate in the network by producing blocks and validating transactions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Subscribe to the <a class="reference external" href="https://status.mainnet.concordium.software/">Mainnet status page</a> or to the <a class="reference external" href="https://status.testnet.concordium.software/">Testnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
+<p>To subscribe, click the <strong>Get updates</strong> button. You can choose all updates or only those for specific components.</p>
+</div>
 <section id="system-requirements-to-run-a-node">
 <h2>System requirements to run a node<a class="headerlink" href="#system-requirements-to-run-a-node" title="Link to this heading">#</a></h2>
 <p>The following are the minimum system requirements for running a node. If your system does not meet or exceed these requirements, you might not be able to run the node properly.</p>
 <p>You need a broadband connection to run a node, and Concordium strongly recommends that the node is running around the clock in a reliable place. This is especially important if you’re running a validator node.</p>
 <p>If you use a laptop in combination with Docker, sleep mode can cause problems with the Docker container used to run the node.</p>
-<section id="system-requirements">
-<span id="system-requirements-node-mainnet"></span><h3>System requirements<a class="headerlink" href="#system-requirements" title="Link to this heading">#</a></h3>
+<section id="hardware-requirements">
+<span id="system-requirements-node-mainnet"></span><h3>Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>CPU: A quad core CPU or better of a new generation x64 (AMD Ryzen™ 5000 series or Intel® Core™ 11000 series desktop or mobile CPUs or CPU with similar single threaded performance).</p></li>
 <li><p>Minimum 16 GB of RAM.</p></li>
 <li><p>Minimum of 1TB fast SSD disk space available (minimum NVMe PCI Express 3.0 4x SSD).</p></li>
 </ul>
-</section>
-<section id="platforms">
-<h3>Platforms<a class="headerlink" href="#platforms" title="Link to this heading">#</a></h3>
-<p>You can run a node on <a class="reference internal" href="run-node-ubuntu-testnet.html#run-node-ubuntu-testnet"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="run-node.html#run-a-node"><span class="std std-ref">Docker</span></a>, <a class="reference internal" href="run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, or <a class="reference internal" href="run-node-macos.html#run-node-macos"><span class="std std-ref">MacOS</span></a>.</p>
 </section>
 </section>
 <section id="node-metrics">
@@ -767,22 +794,10 @@ choose from four different platforms to run your node: Ubuntu, Windows, MacOS, o
 </section>
 <section id="synchronize-a-node-with-the-network">
 <h2>Synchronize a node with the network<a class="headerlink" href="#synchronize-a-node-with-the-network" title="Link to this heading">#</a></h2>
-<p>When you start a node for the first time, it can take a while to synchronize
-the node with the rest of the network, since it has to get all blocks from
-its peers.</p>
-<p>The startup time of the node can be improved by downloading the blocks from
-an out-of-band catchup service before starting the node. While it will still
-take time to process the blocks, it will typically be faster than requesting
-them from peers.</p>
-<p>This feature is enabled by default in all distributions since version 6.1
-and is controlled by the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span></code>
-environment variable in the configuration file. To disable this feature
-unset the environment variable.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Subscribe to the <a class="reference external" href="https://status.mainnet.concordium.software/">Mainnet status page</a> and the <a class="reference external" href="https://support.concordium.software/c/releases/9">release information on Discourse</a> to stay informed about updates and changes that may affect you as a node runner, including node software releases and protocol updates.</p>
-<p>To subscribe to updates on the Mainnet status page click <strong>Subscribe</strong> to get all updates or click <strong>Get updates</strong> to choose to get all updates or only updates for specific products.</p>
-</div>
+<p>When you start a node for the first time, it will take a while to synchronize the node with the network, since it has to get all blocks from its peers.</p>
+<p>To speed up this process, Concordium nodes use an out-of-band catch-up service to download blocks as soon as the node starts. While it will still take time to process the blocks, this method is typically faster than requesting them directly from peers.</p>
+<p>This feature is enabled by default in all distributions since version 6.1, and our packages are generally already set to use out-of-band catch-up. It is controlled by the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span></code> environment variable in the configuration file. To disable this feature, comment out the environment variable.</p>
+<p>The speed of synchronization largely depends on the performance of your storage (NVMe drives are highly recommended).</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -844,11 +859,11 @@ unset the environment variable.</p>
       </div>
     </a>
     <a class="right-next"
-       href="run-node-ubuntu-testnet.html"
+       href="run-node-ubuntu/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Run a node on Ubuntu - Testnet</p>
+        <p class="prev-next-title">Run a node on Ubuntu</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -872,8 +887,7 @@ unset the environment variable.</p>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements-to-run-a-node">System requirements to run a node</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-requirements">System requirements</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#platforms">Platforms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-requirements">Hardware requirements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#node-metrics">Node metrics</a></li>

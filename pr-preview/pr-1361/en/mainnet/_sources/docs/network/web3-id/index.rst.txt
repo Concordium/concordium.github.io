@@ -14,7 +14,7 @@ Concordium’s identity layer is built into the protocol. Every account on the c
 .. image:: ../../../docs/images/mobile-wallet/MW12.png
    :width: 25%
 
-You can read more about the identity provider issued account credentials in :ref:`Identities<reference-id-accounts>`.
+You can read more about the identity provider issued account credentials in :ref:`Identity<reference-identity>`.
 
 Web3 ID
 =======

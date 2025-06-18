@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.1fff0aea-6362-4b39-87f6-fc145f3e0294.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.62d969c2-21a1-4bf5-99c4-7a410402a552.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/run-local-chain';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/run-local-chain.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -567,24 +572,42 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="validation-with-wallets.html">Validation with Concordium wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-macos.html">Import validator keys on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baker-macos.html">Import validator keys on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="become-baker.html">Validation with the Concordium Client</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a node on Concordium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node-ubuntu-testnet.html">Run a node on Ubuntu - Testnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node-ubuntu.html">Run a node on Ubuntu - Mainnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node-macos.html">Run and manage a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node.html">Run a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nodes/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-ubuntu/index.html">Run a node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-windows/index.html">Run a node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-docker/index.html">Run a node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../nodes/run-node-aws/index.html">Run a node on AWS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../nodes/run-node-aws/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../web3-id/index.html">Use Concordium's ID layer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -750,7 +773,7 @@
 <p>You will either need a working installation of the <a class="reference internal" href="../../installation/downloads.html#node-downloads"><span class="std std-ref">Concordium Node distribution</span></a> or <a class="reference external" href="https://www.docker.com/">Docker</a>, instances of which will be used to run the validator node(s). You will need <a class="reference internal" href="../../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a> data, which defines your local chain and sets of credentials for validator accounts of the chain. The number of sets of validator credentials needed thus depends on the desired number of validators in the network, which in this example is one.</p>
 <section id="install-the-node-distribution">
 <h3>Install the node distribution<a class="headerlink" href="#install-the-node-distribution" title="Link to this heading">#</a></h3>
-<p>Concordium Node releases exist for Ubuntu, MacOS, Windows and Docker. See the <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">Node Requirements</span></a> section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a validator, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.</p>
+<p>Concordium Node releases exist for Ubuntu, macOS, Windows and Docker. See the <a class="reference internal" href="../nodes/node-requirements.html#node-requirements"><span class="std std-ref">Node Requirements</span></a> section for information on system requirements and detailed instructions on how to obtain, run, and manage a node. To run a validator, you either need a Concordium node binary supplied with your appropriate distribution in your path or a working Docker installation. This depends on whether you want to run the Node binary directly on your host or as a Docker instance. The details below assume the former, but if you want to run a Docker instance, you can skip to the next section.</p>
 <p>The name of the binary has <code class="docutils literal notranslate"><span class="pre">concordium-</span></code> as its prefix but depends on the distribution, so you may have to confer with the installation instructions to figure out the exact name. Upon successful installation of the distribution, verify that the binary exists in your path at the required version:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-node<span class="w"> </span>--version<span class="w"> </span><span class="c1"># name depends on distribution</span>
 <span class="go">concordium_node 6.1.7</span>

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/installation/downloads.bdf22e1a-743a-4b45-8836-35f981c5d90f.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/installation/downloads.dd755420-6cc0-44b9-800f-ce5eccbd21d1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/installation/downloads';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/installation/downloads.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -500,7 +500,12 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Concordium Protocol</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../protocol/concordium-protocol.html">What is the Concordium Protocol</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../protocol/id-accounts.html">Identities</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/identity.html">Identity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/principles-of-privacy.html">Principles of privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/user-processes.html">User processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocol/identity-disclosure-processes.html">Identity disclosure processes</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -567,24 +572,42 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/become-baker.html">Validation with the Concordium Client</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a node on Concordium</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu-testnet.html">Run a node on Ubuntu - Testnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-ubuntu.html">Run a node on Ubuntu - Mainnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-macos.html">Run and manage a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-macos.html">Troubleshoot a node on MacOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-windows.html">Run and manage a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node.html">Run a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/nodes/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-ubuntu/index.html">Run a node on Ubuntu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html">Install and manage a node on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/advanced-node-configuration-on-ubuntu.html">Advanced node configuration on Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-ubuntu/troubleshoot-node-ubuntu.html">Troubleshoot a node on Ubuntu</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-macos/index.html">Run a Node on macOS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html">Install and manage a node on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/advanced-node-configuration-on-macos.html">Advanced node configuration on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-macos/troubleshoot-macos.html">Troubleshoot a node on macOS</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-windows/index.html">Run a node on Windows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html">Install and manage a node on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/advanced-node-configuration-on-windows.html">Advanced node configuration on Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/node-runner-service-configuration.html">Concordium Windows node runner service configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-windows/troubleshoot-windows.html">Troubleshoot a node on Windows</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-docker/index.html">Run a node using Docker</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html">Install and manage a node on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/advanced-node-configuration-on-docker.html">Advanced node configuration on Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-docker/troubleshoot-docker.html">Troubleshoot a node in Docker</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../network/nodes/run-node-aws/index.html">Run a node on AWS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../network/nodes/run-node-aws/run-node-aws.html">Run a node on Amazon Web Services (AWS)</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/web3-id/index.html">Use Concordium's ID layer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -787,7 +810,7 @@ Windows v1.8.1</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-MacOS v1.8.1</div>
+macOS v1.8.1</div>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.dmg"><span>https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.dmg</span></a></div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -833,7 +856,7 @@ Windows v1.8.0</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-MacOS v1.8.0</div>
+macOS v1.8.0</div>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.dmg"><span>https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.dmg</span></a></div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -913,7 +936,7 @@ that are required to run the client.</p></li>
 <p>For the system requirements to run a node, see <a class="reference internal" href="../network/nodes/node-requirements.html#node-requirements"><span class="std std-ref">System requirements to run a node</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When upgrading, you can only upgrade one minor version at a time, or from the last release of major version X to major version X+1. You cannot skip versions. For patches, you can skip versions e.g. X.X.0 to X.X.3, or <cite>X.1.1</cite> to <cite>X.2.3</cite>. To download previous node versions, see <a class="reference internal" href="previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
+<p>When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. However, if you wish to download previous node versions, see <a class="reference internal" href="previous-node-downloads.html#previous-downloads"><span class="std std-ref">Previous node versions</span></a>.</p>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -932,19 +955,19 @@ that are required to run the client.</p></li>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Linux-Docker 8.0.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">To learn how to run a node with Ubuntu, see <a class="reference internal" href="../network/nodes/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>. To upgrade your Docker node either restart the service if you are using the <cite>:latest</cite> image tag, or change the image tag to the new version. See <a class="reference internal" href="../network/nodes/run-node.html#running-a-node"><span class="std std-ref">Running/upgrading a node</span></a> for details.</p>
+<p class="sd-card-text">To learn how to run a node with Ubuntu, see <a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>. To upgrade your Docker node either restart the service if you are using the <cite>:latest</cite> image tag, or change the image tag to the new version. See <a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html#running-a-node"><span class="std std-ref">Running/upgrading a node</span></a> for details.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Windows 8.0.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on Windows, <a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-8.0.3-1.msi">download a Mainnet Windows Installer package</a>. <strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
-<p class="sd-card-text">To learn how to run a node on Windows, see <a class="reference internal" href="../network/nodes/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a>.</p>
+<p class="sd-card-text">To learn how to run a node on Windows, see <a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Mac 8.0.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on macOS, <a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-8.0.3-1.pkg">download a Mainnet macOS installer package</a>.</p>
-<p class="sd-card-text">To learn how to run a node on Mac, see <a class="reference internal" href="../network/nodes/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
+<p class="sd-card-text">To learn how to run a node on Mac, see <a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
 </div>
 </details></div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" id="testnet-node-downloads">
@@ -957,25 +980,25 @@ that are required to run the client.</p></li>
 <ul class="simple">
 <li><p class="sd-card-text">SHA256 checksum of the download: <code class="docutils literal notranslate"><span class="pre">168a2991140f99845bb2289156d03d14eed8a441ba331f729d365f7220ffb869</span></code></p></li>
 </ul>
-<p class="sd-card-text">To learn how to run a node with Ubuntu, see <a class="reference internal" href="../network/nodes/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>.</p>
+<p class="sd-card-text">To learn how to run a node with Ubuntu, see <a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on a server with Ubuntu</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Linux-Docker 8.0.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text" id="concordium-docker-package-download-testnet">To learn how to run a node with Docker, see <a class="reference internal" href="../network/nodes/run-node.html#run-a-node"><span class="std std-ref">Run a node with Docker</span></a>.</p>
-<p class="sd-card-text">To upgrade your Docker node either restart the service if you are using the <cite>:latest</cite> image tag, or change the image tag to the new version. See <a class="reference internal" href="../network/nodes/run-node.html#running-a-node"><span class="std std-ref">Running/upgrading a node</span></a> for details.</p>
+<p class="sd-card-text" id="concordium-docker-package-download-testnet">To learn how to run a node with Docker, see <a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Run a node with Docker</span></a>.</p>
+<p class="sd-card-text">To upgrade your Docker node either restart the service if you are using the <cite>:latest</cite> image tag, or change the image tag to the new version. See <a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html#running-a-node"><span class="std std-ref">Running/upgrading a node</span></a> for details.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Windows 8.0.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on Windows, <a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-8.0.3-1.msi">download a Testnet Windows Installer package</a>. <strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
-<p class="sd-card-text">To learn how to run a node on Windows, see <a class="reference internal" href="../network/nodes/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a>.</p>
+<p class="sd-card-text">To learn how to run a node on Windows, see <a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Run and manage a node on Windows</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Mac 8.0.3</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To run a node on macOS, <a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-8.0.3-1.pkg">download a Testnet macOS installer package</a>.</p>
-<p class="sd-card-text">To learn how to run a node on Mac, see <a class="reference internal" href="../network/nodes/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
+<p class="sd-card-text">To learn how to run a node on Mac, see <a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">Run and manage a node on macOS</span></a>.</p>
 </div>
 </details></div>
 </details><section id="node-performance-monitoring">
@@ -1026,7 +1049,7 @@ Ubuntu</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/linux/utils-1.0.0">Download the Encrypt/decrypt tool for Linux</a></p></li>
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip">Download the Encrypt/decrypt tool for Windows</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip">Download the Encrypt/decrypt tool for MacOS</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip">Download the Encrypt/decrypt tool for macOS</a></p></li>
 </ul>
 <p>For information about how to use the encrypt/decrypt tool, see <a class="reference internal" href="../../tools/developer-tools.html#developer-tools"><span class="std std-ref">Auxiliary tools</span></a>.</p>
 </section>
@@ -1067,7 +1090,7 @@ Ubuntu</p>
 </div></blockquote>
 </li>
 <li><p><a class="reference external" href="https://distribution.concordium.software/tools/windows/signed/Concordium_Company_ID_1.0.2_x64_en-US.msi">Download the Company identity management tool for Windows</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg">Download the Company identity management tool for MacOS</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg">Download the Company identity management tool for macOS</a></p></li>
 </ul>
 <p>For information about how to use the company identity management tool, see <a class="reference internal" href="../../tutorials/company-identity/company-identities.html#company-identities"><span class="std std-ref">Company identity creation</span></a>.</p>
 <div class="toctree-wrapper compound">

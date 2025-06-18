@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-mainnet.cee4aa39-9247-41fd-9398-7e55ec34684d.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-mainnet.1cac9b00-b61b-4baf-825a-bd49d67ca4d2.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-mainnet';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-mainnet.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -669,7 +669,7 @@
 <li><p>Improved the node health check, so that if the node is configured with baker credentials, then it is required to be in the baking committee for it to be considered healthy.</p></li>
 <li><p>Fixed a bug that could cause the node to hang indefinitely during the out-of-band-catchup when the node is a finalizer.</p></li>
 <li><p>Fixed an additional bug in the <code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> endpoint in GRPCv2 where the incoming_amounts field of encrypted amounts was not always set correctly.</p></li>
-<li><p>The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: <a class="reference internal" href="../network/nodes/run-node.html#run-a-node"><span class="std std-ref">Linux</span></a>, <a class="reference internal" href="../network/nodes/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="../network/nodes/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, or <a class="reference internal" href="../network/nodes/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p></li>
+<li><p>The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: <a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Linux</span></a>, <a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Ubuntu</span></a>, <a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, or <a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>.</p></li>
 </ul>
 <p>April 12, 2023</p>
 </section>
@@ -791,8 +791,8 @@ output in the base64 format that is currently supported in the Concordium Wallet
 <p>January 4, 2023</p>
 </section>
 <section id="concordium-node-5-0-7-for-macos">
-<h2>Concordium Node 5.0.7 for MacOS<a class="headerlink" href="#concordium-node-5-0-7-for-macos" title="Link to this heading">#</a></h2>
-<p>Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.</p>
+<h2>Concordium Node 5.0.7 for macOS<a class="headerlink" href="#concordium-node-5-0-7-for-macos" title="Link to this heading">#</a></h2>
+<p>Fix a bug in the macOS node that caused an issue with NRG calculation. Concordium recommends that macOS node runners update their nodes to 5.0.7.</p>
 <section id="mainnet-4-sirius">
 <h3>Mainnet 4: Sirius<a class="headerlink" href="#mainnet-4-sirius" title="Link to this heading">#</a></h3>
 <div class="admonition note">
@@ -1621,7 +1621,7 @@ Concordium finality layer dynamically ‘checkpoints’ the blockchain using Byz
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-1-3">Concordium Node 5.1.3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargo-concordium-2-6-0">Cargo concordium 2.6.0</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw-0-9-6">Concordium Wallet for Web 0.9.6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-0-7-for-macos">Concordium Node 5.0.7 for MacOS</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-node-5-0-7-for-macos">Concordium Node 5.0.7 for macOS</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mainnet-4-sirius">Mainnet 4: Sirius</a></li>
 </ul>
 </li>
