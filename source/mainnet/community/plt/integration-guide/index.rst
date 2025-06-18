@@ -1,8 +1,8 @@
 .. _plt-integration:
 
-=====================
-PLT integration guide
-=====================
+===============
+PLT integration
+===============
 
 This section provides guidance on integrating Protocol Layer Tokens (PLTs) using tools and SDKs provided by Concordium.
 
