@@ -1,12 +1,13 @@
 .. _plt-query:
 
+=====================
 Query PLT information
 =====================
 
 This guide covers how to query information about Protocol Layer Tokens (PLTs) and account balances on DevNet.
 
 Prerequisites
--------------
+=============
 
 Before using these examples, make sure to install the required dependencies:
 
@@ -17,7 +18,7 @@ Before using these examples, make sure to install the required dependencies:
 
 
 Available query operations
---------------------------
+==========================
 
 You can make three main types of queries:
 

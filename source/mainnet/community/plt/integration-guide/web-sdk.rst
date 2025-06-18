@@ -1,5 +1,6 @@
 .. _plt-web-sdk:
 
+===================
 Web SDK integration
 ===================
 
@@ -30,12 +31,12 @@ See the following sections for detailed examples:
 .. _querying-tokens:
 
 Querying tokens
----------------
+===============
 
 .. _web-sdk-get-token-list:
 
 Get token list
-~~~~~~~~~~~~~~
+--------------
 
 Retrieve all Protocol Layer Tokens available on the network:
 
@@ -77,7 +78,7 @@ Retrieve all Protocol Layer Tokens available on the network:
 .. _web-sdk-get-token-info:
 
 Get token information
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Retrieve detailed information about a specific PLT:
 
@@ -121,7 +122,7 @@ Retrieve detailed information about a specific PLT:
 .. _web-sdk-get-account-info:
 
 Get account information
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Query account information including PLT balances:
 
@@ -169,12 +170,12 @@ Query account information including PLT balances:
 .. _web-sdk-token-holder-operations:
 
 Token holder operations
------------------------
+=======================
 
 .. _web-sdk-transfer-tokens:
 
 Transfer tokens
-~~~~~~~~~~~~~~~
+---------------
 
 Transfer PLTs between accounts:
 
@@ -267,12 +268,12 @@ Transfer PLTs between accounts:
 .. _web-sdk-token-governance-operations:
 
 Token governance operations
----------------------------
+===========================
 
 .. _web-sdk-mint-tokens:
 
 Mint tokens
-~~~~~~~~~~~
+-----------
 
 Mint new tokens (issuer only):
 
@@ -404,7 +405,7 @@ Mint new tokens (issuer only):
 .. _web-sdk-burn-tokens:
 
 Burn tokens
-~~~~~~~~~~~
+-----------
 
 Burn existing tokens (issuer only):
 
@@ -496,12 +497,12 @@ Burn existing tokens (issuer only):
 .. _web-sdk-list-management:
 
 Allow and deny list management
-------------------------------
+==============================
 
 .. _web-sdk-add-account-to-allow-list:
 
 Add account to allow list
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Add an account to the token's allow list (issuer only):
 
@@ -593,7 +594,7 @@ Add an account to the token's allow list (issuer only):
 .. _web-sdk-remove-account-from-allow-list:
 
 Remove account from allow list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 Remove an account from the token's allow list (issuer only):
 
@@ -684,7 +685,7 @@ Remove an account from the token's allow list (issuer only):
 .. _web-sdk-add-account-to-deny-list:
 
 Add account to deny list
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Add an account to the token's deny list (issuer only):
 
@@ -776,7 +777,7 @@ Add an account to the token's deny list (issuer only):
 .. _web-sdk-remove-account-from-deny-list:
 
 Remove account from deny list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Remove an account from the token's deny list (issuer only):
 

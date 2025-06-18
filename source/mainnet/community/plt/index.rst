@@ -1,5 +1,6 @@
 .. _plts:
 
+============================
 Protocol Layer Tokens (PLTs)
 ============================
 
@@ -9,7 +10,7 @@ PLTs are implemented at blockchain level. All account (balances, transfers etc.)
 
 
 Token governance
-----------------
+================
 
 A PLT is instantiated through a governance transaction after an off-chain application process by the issuer, and thereafter managed through on-chain transactions. The issuer can create the PLT either with or without an initial supply.
 
@@ -18,7 +19,7 @@ Each token has a unique string based symbol (e.g. USDQ), which is used in all tr
 PLTs can optionally support allow and deny lists to control the ability of Concordium :term:`accounts<account>` to hold/transfer that PLT. Furthermore, they can optionally support mint and burn operations to manage total supply of the PLT, with these being specified at instantiation.
 
 Available operations
---------------------
+====================
 
 The following operations are available:
 

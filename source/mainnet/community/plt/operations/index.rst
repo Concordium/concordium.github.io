@@ -1,12 +1,13 @@
 .. _plt-operations:
 
+==============
 PLT operations
 ==============
 
 This section covers the core operations available with Protocol Layer Tokens (PLTs) on Concordium's DevNet.
 
 Available SDKs and tools
-------------------------
+========================
 
 You can interact with PLTs using multiple development approaches:
 
@@ -18,7 +19,7 @@ You can interact with PLTs using multiple development approaches:
    All SDKs are currently in alpha development and recommended for testing and experimentation only.
 
 Operation Categories
---------------------
+====================
 
 PLT operations are organized into three main categories:
 

@@ -1,5 +1,6 @@
 .. _plt-rust-sdk:
 
+====================
 Rust SDK integration
 ====================
 
@@ -28,12 +29,12 @@ See the following sections for detailed examples:
 
 
 Querying tokens
----------------
+===============
 
 .. _rust-get-token-list:
 
 Get token list
-~~~~~~~~~~~~~~
+--------------
 
 This example demonstrates how to retrieve a list of all Protocol Level Tokens on the Concordium blockchain.
 Optionally specify a block hash for historical token lists.
@@ -95,7 +96,7 @@ Optionally specify a block hash for historical token lists.
 .. _rust-get-token-info:
 
 Get token information
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 This example demonstrates how to retrieve information about a Protocol Level Token (PLT).
 Set the token ID to query and optionally specify a block hash for historical data.
@@ -204,7 +205,7 @@ Set the token ID to query and optionally specify a block hash for historical dat
 .. _rust-get-account-info:
 
 Get account information
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 This example demonstrates how to retrieve account information including PLT balances.
 Set the account address to query and optionally specify a block hash for historical data.
@@ -270,12 +271,12 @@ Set the account address to query and optionally specify a block hash for histori
    }
 
 Token holder operations
------------------------
+=======================
 
 .. _rust-transfer-tokens:
 
 Transfer tokens
-~~~~~~~~~~~~~~~
+---------------
 
 This example demonstrates how to transfer Protocol Level Tokens from one account to another.
 Configure the recipient address and amount to complete the transfer.
@@ -387,7 +388,7 @@ Configure the recipient address and amount to complete the transfer.
 .. _rust-mint-tokens:
 
 Mint tokens
-~~~~~~~~~~~
+-----------
 
 This example demonstrates how to mint new Protocol Level Tokens.
 Only the token issuer can perform mint operations, adding new tokens to circulation.
@@ -481,7 +482,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 .. _rust-burn-tokens:
 
 Burn tokens
-~~~~~~~~~~~
+-----------
 
 This example demonstrates how to burn existing Protocol Level Tokens.
 Only the token issuer can perform burn operations, removing tokens from circulation.
@@ -571,12 +572,12 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 
 
 Token governance operations
----------------------------
+===========================
 
 .. _rust-add-to-allow-list:
 
 Add account to allow list
-~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 This example demonstrates how to add an account to a Protocol Level Token's allow list.
 Only the token issuer can modify the allow list.
@@ -657,7 +658,7 @@ Only the token issuer can modify the allow list.
 .. _rust-remove-from-allow-list:
 
 Remove account from allow list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 This example demonstrates how to remove an account from a Protocol Level Token's allow list.
 Only the token issuer can modify the allow list.
@@ -739,7 +740,7 @@ Only the token issuer can modify the allow list.
 .. _rust-add-to-deny-list:
 
 Add account to deny list
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 This example demonstrates how to add an account to a Protocol Level Token's deny list.
 Accounts on the deny list cannot hold the token when deny list is enabled.
@@ -822,7 +823,7 @@ Accounts on the deny list cannot hold the token when deny list is enabled.
 .. _rust-remove-from-deny-list:
 
 Remove account from deny list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 This example demonstrates how to remove an account from a Protocol Level Token's deny list.
 Only the token issuer can modify the deny list.

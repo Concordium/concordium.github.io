@@ -1,5 +1,6 @@
 .. _plt-create-and-manage:
 
+======================
 Create and manage PLTs
 ======================
 
@@ -8,7 +9,7 @@ This guide covers token governance operations for Protocol Layer Tokens (PLTs), 
 .. _prerequisites:
 
 Prerequisites
--------------
+=============
 
 Before using the available operations, make sure to install the required dependencies:
 
@@ -18,7 +19,7 @@ Before using the available operations, make sure to install the required depende
    npm install @grpc/grpc-js
 
 Available operations
---------------------
+====================
 
 - :ref:`Mint tokens <plt-mint-tokens>`
 - :ref:`Burn tokens <plt-burn-tokens>`
