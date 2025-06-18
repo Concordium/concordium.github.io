@@ -1,12 +1,13 @@
 .. _plt-setup-guide:
 
+===========================
 Get started with PLT DevNet
 ===========================
 
 This section covers everything you need to get started with Protocol Layer Tokens (PLTs) on Concordium's DevNet. Read the following overview to understand the PLT issuance process before proceeding to the setup guides.
 
 PLT issuance process overview
------------------------------
+==============================
 
 To issue and work with PLTs on the Concordium network, the following steps are required:
 
@@ -23,7 +24,7 @@ To issue and work with PLTs on the Concordium network, the following steps are r
 The PLT documentation guides will walk you through this entire process. We'll start with setting up your DevNet environment, guide you through the PLT issuance process, and show you how to perform operations with your PLTs once they're created. Beyond the initial setup, you'll find detailed information on token transfers, querying token information, integrating with SDKs, and working with the Concordium CLI to manage your PLTs.
 
 DevNet setup guide
-------------------
+==================
 Before you can issue or interact with PLTs on DevNet, you need to set up your environment by following these steps:
 
 1. :doc:`Set up Browser Wallet for DevNet <browser-wallet>` - Install the custom DevNet Browser Wallet
