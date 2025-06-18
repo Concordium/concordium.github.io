@@ -4,7 +4,7 @@
 Create a DevNet account
 ========================
 
-This guide explains how to create an :term:`account` on DevNet using your existing identity. You'll need this account to perform transactions and work with Protocol Layer Tokens.
+This guide explains how to create an :term:`account` on DevNet using your existing identity. You'll need this account to perform transactions and work with Protocol-Level Tokens.
 
 
 Once you have :ref:`created your identity <plt-identity-creation>`, follow these steps to create an account:

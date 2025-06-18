@@ -1,10 +1,25 @@
 .. _plt-rust-sdk:
 
-====================
-Rust SDK integration
-====================
+==============
+Rust SDK usage
+==============
 
-This guide shows how to work with Protocol Layer Tokens using Concordium's Rust SDK.
+This guide shows how to work with Protocol-Level Tokens using Concordium's Rust SDK.
+
+Installation and setup
+======================
+
+Before using this example, make sure your Cargo.toml includes:
+
+.. code-block:: toml
+
+  # Concordium dependencies
+  concordium-rust-sdk = "=7.0.0-alpha.1"
+  concordium_base = "=8.0.0-alpha"
+
+
+Available examples
+===================
 
 See the following sections for detailed examples:
 

@@ -4,7 +4,7 @@
 Query PLT information
 =====================
 
-This guide covers how to query information about Protocol Layer Tokens (PLTs) and account balances on DevNet.
+This guide covers how to query information about Protocol-Level Tokens (PLTs) and account balances on DevNet.
 
 Prerequisites
 =============

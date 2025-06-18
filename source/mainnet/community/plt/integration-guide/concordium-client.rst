@@ -44,11 +44,14 @@ The following PLT operations are available via CLI:
 Command examples
 ----------------
 
+.. _concordium-client-transfer-tokens:
+
 **Transfer PLT Tokens:**
 
 .. code-block:: bash
 
    concordium-client transaction plt send --sender YOUR_ACCOUNT --receiver RECEIVER_ADDRESS --amount 1 --tokenId TOKEN_SYMBOL --memo "test" --grpc-ip grpc.devnet-plt-alpha.concordium.com --grpc-port 20000 --secure
+
 
 **Mint PLT Tokens:**
 

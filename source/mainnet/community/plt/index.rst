@@ -1,7 +1,7 @@
 .. _plts:
 
 ============================
-Protocol Layer Tokens (PLTs)
+Protocol-Level Tokens (PLTs)
 ============================
 
 Protocol-Level Tokens (PLTs) are tokens issued and managed directly on the Concordium blockchain without a need for :term:`smart contracts<smart contract>`. PLTs provide enhanced security by reducing attack vectors, improved efficiency in execution, and direct governance controls for token issuers.

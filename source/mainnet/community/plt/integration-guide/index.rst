@@ -1,15 +1,15 @@
 .. _plt-integration:
 
-===============
-PLT integration
-===============
+=========
+PLT usage
+=========
 
-This section provides guidance on integrating Protocol Layer Tokens (PLTs) using tools and SDKs provided by Concordium.
+This section provides examples of how to work with Protocol-Level Tokens (PLTs) using tools and SDKs provided by Concordium.
 
 Development tools overview
 ==========================
 
-Concordium provides multiple tools for integrating PLT functionality into your applications:
+Concordium provides multiple tools for using PLT functionality into your applications:
 
 **Concordium Client CLI**:
 Use Concordium Client CLI for direct operations, scripting, and backend automation.

@@ -4,7 +4,7 @@
 Create and manage PLTs
 ======================
 
-This guide covers token governance operations for Protocol Layer Tokens (PLTs), including minting, burning, and managing allow/deny lists.
+This guide covers token governance operations for Protocol-Level Tokens (PLTs), including minting, burning, and managing allow/deny lists.
 
 .. _prerequisites:
 

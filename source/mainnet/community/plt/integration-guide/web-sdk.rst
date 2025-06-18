@@ -1,10 +1,24 @@
 .. _plt-web-sdk:
 
-===================
-Web SDK integration
-===================
+=============
+Web SDK usage
+=============
 
-This guide shows how to integrate Protocol Layer Tokens into web applications using Concordium's Web SDK.
+This guide shows how to integrate Protocol-Level Tokens into web applications using Concordium's Web SDK.
+
+Installation and setup
+======================
+
+Before using this example, make sure to install the required dependencies:
+
+.. code-block:: bash
+
+  npm install @concordium/web-sdk@10.0.0-alpha.6
+  npm install @grpc/grpc-js
+
+
+Available examples
+==================
 
 See the following sections for detailed examples:
 
@@ -38,7 +52,7 @@ Querying tokens
 Get token list
 --------------
 
-Retrieve all Protocol Layer Tokens available on the network:
+Retrieve all Protocol-Level Tokens available on the network:
 
 .. code-block:: typescript
 

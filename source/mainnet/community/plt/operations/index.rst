@@ -4,7 +4,7 @@
 PLT operations
 ==============
 
-This section covers the core operations available with Protocol Layer Tokens (PLTs) on Concordium's DevNet.
+This section covers the core operations available with Protocol-Level Tokens (PLTs) on Concordium's DevNet.
 
 Available SDKs and tools
 ========================
