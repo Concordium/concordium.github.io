@@ -5,10 +5,97 @@ Rust SDK integration
 
 This guide shows how to work with Protocol Layer Tokens using Concordium's Rust SDK.
 
-.. _get-token-info:
+See the following sections for detailed examples:
 
-Get protocol level token information
-------------------------------------
+**Querying tokens:**
+
+- :ref:`Get token list<rust-get-token-list>`
+- :ref:`Get token information<rust-get-token-info>`
+- :ref:`Get account information<rust-get-account-info>`
+
+**Token holder operations:**
+
+- :ref:`Transfer tokens<rust-transfer-tokens>`
+- :ref:`Mint tokens<rust-mint-tokens>`
+- :ref:`Burn tokens<rust-burn-tokens>`
+
+**Token governance operations:**
+
+- :ref:`Add account to allow list<rust-add-to-allow-list>`
+- :ref:`Remove account from allow list<rust-remove-from-allow-list>`
+- :ref:`Add account to deny list<rust-add-to-deny-list>`
+- :ref:`Remove account from deny list<rust-remove-from-deny-list>`
+
+
+Querying tokens
+---------------
+
+.. _rust-get-token-list:
+
+Get token list
+~~~~~~~~~~~~~~
+
+This example demonstrates how to retrieve a list of all Protocol Level Tokens on the Concordium blockchain.
+Optionally specify a block hash for historical token lists.
+
+.. code-block:: rust
+
+   //! # Get Protocol Level Token List
+   //! This example demonstrates how to retrieve a list of all (PLTs) on the Concordium blockchain.
+   //! ## How to use this example:
+   //! 1. Optionally set a specific block hash in `BLOCK_HASH` (or leave as None for latest)
+   //! 2. Run with: `cargo run --example get_token_list`
+
+   use anyhow::Context;
+   use concordium_base::hashes::BlockHash;
+    use concordium_rust_sdk::v2;
+    use futures::StreamExt;
+    use std::str::FromStr;
+
+    // CONFIGURATION - Modify these values for your use case
+    const BLOCK_HASH: Option<&str> = None; // Set to Some("blockhash") for specific block, None for latest
+
+    #[tokio::main]
+    async fn main() -> anyhow::Result<()> {
+        let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
+            .await
+            .context("Failed to connect to Concordium node")?;
+
+        // Determine block identifier
+        let block_ident = match BLOCK_HASH {
+            Some(hash_str) => {
+                let block_hash = BlockHash::from_str(hash_str)
+                    .context("Invalid block hash format")?;
+                v2::BlockIdentifier::Given(block_hash)
+            }
+            None => v2::BlockIdentifier::LastFinal,
+        };
+
+        // Get token list
+        let mut response = client
+            .get_token_list(&block_ident)
+            .await
+            .context("Failed to get token list")?;
+
+        println!(
+            "Listing the Token ID of every protocol level token on chain at the time of block hash {}:",
+            response.block_hash
+        );
+        // Collect tokens
+        while let Some(token_id) = response.response.next().await.transpose()
+            .context("Error while reading token from stream")?
+        {
+            println!(" - {}", String::from(token_id));
+        }
+
+        Ok(())
+    }
+
+
+.. _rust-get-token-info:
+
+Get token information
+~~~~~~~~~~~~~~~~~~~~~
 
 This example demonstrates how to retrieve information about a Protocol Level Token (PLT).
 Set the token ID to query and optionally specify a block hash for historical data.
@@ -114,10 +201,10 @@ Set the token ID to query and optionally specify a block hash for historical dat
        Ok(())
    }
 
-.. _get-account-info:
+.. _rust-get-account-info:
 
 Get account information
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This example demonstrates how to retrieve account information including PLT balances.
 Set the account address to query and optionally specify a block hash for historical data.
@@ -182,264 +269,15 @@ Set the account address to query and optionally specify a block hash for histori
        Ok(())
    }
 
-.. _burn-tokens:
+Token holder operations
+-----------------------
 
-Burn protocol level tokens
----------------------------
+.. _rust-transfer-tokens:
 
-This example demonstrates how to burn existing Protocol Level Tokens.
-Only the token issuer can perform burn operations, removing tokens from circulation.
+Transfer tokens
+~~~~~~~~~~~~~~~
 
-.. code-block:: rust
-
-   //! # Burn Protocol Level Tokens
-   //! This example demonstrates how to burn existing Protocol Level Tokens.
-   //! Only the token issuer can perform burn operations.
-   //! The burned tokens will be removed from the issuer's account and the total supply.
-   //! ## How to use this example:
-   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
-   //! 2. Set the token ID in the `TOKEN_ID` constant
-   //! 3. Set the amount to burn in the `TOKEN_AMOUNT` constant
-   //! 4. Run with: `cargo run --example burn_tokens`
-
-   use anyhow::Context;
-   use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
-   use concordium_rust_sdk::{
-       common::types::TransactionTime,
-       types::{
-           transactions::{send, BlockItem},
-           WalletAccount,
-       },
-       v2::{BlockIdentifier, self},
-   };
-   use rust_decimal::Decimal;
-   use std::{path::PathBuf, str::FromStr};
-
-   // CONFIGURATION - Modify these values for your use case
-   const WALLET_FILE: &str = "wallet.export";
-   const TOKEN_ID: &str = "ExampleToken";
-   const TOKEN_AMOUNT: &str = "10.0";
-
-   #[tokio::main]
-   async fn main() -> anyhow::Result<()> {
-       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
-           .await
-           .context("Failed to connect to Concordium node")?;
-
-       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
-
-       // Get token info for decimal handling
-       let token_info = client
-           .get_token_info(token_id.clone(), BlockIdentifier::LastFinal)
-           .await?
-           .response;
-
-       let mut amount = Decimal::from_str(TOKEN_AMOUNT)?;
-       amount.rescale(token_info.token_state.decimals as u32);
-       let token_amount = TokenAmount::from_raw(
-           amount.mantissa().try_into()?,
-           amount.scale().try_into()?
-       );
-
-       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
-           .context("Could not read the wallet file")?;
-
-       let nonce = client
-           .get_next_account_sequence_number(&keys.address)
-           .await?
-           .nonce;
-       let expiry: TransactionTime =
-           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
-
-       println!("Attempting to burn {} {} tokens...", token_amount, TOKEN_ID);
-
-       let operation = operations::burn_tokens(token_amount);
-       let txn = send::token_governance_operations(
-           &keys,
-           keys.address,
-           nonce,
-           expiry,
-           token_id,
-           [operation].into_iter().collect(),
-       )?;
-       let item = BlockItem::AccountTransaction(txn);
-
-       let transaction_hash = client.send_block_item(&item).await?;
-       println!("Burn transaction submitted with hash: {}", transaction_hash);
-
-       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
-       println!("Transaction finalized: {:#?}", result);
-
-       Ok(())
-   }
-
-.. _add-to-deny-list:
-
-Add account to token deny list
--------------------------------
-
-This example demonstrates how to add an account to a Protocol Level Token's deny list.
-Accounts on the deny list cannot hold the token when deny list is enabled.
-
-.. code-block:: rust
-
-   //! # Add Account to Token Deny List
-   //! This example demonstrates how to add an account to a Protocol Level Token's deny list.
-   //! Accounts on the deny list cannot hold the token when deny list is enabled.
-   //! Only the token issuer can modify the deny list.
-   //! ## How to use this example:
-   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
-   //! 2. Set the token ID in the `TOKEN_ID` constant
-   //! 3. Set the target address to add in the `TARGET_ADDRESS` constant
-   //! 4. Run with: `cargo run --example add_to_deny_list`
-
-   use anyhow::Context;
-   use concordium_base::{
-       contracts_common::AccountAddress,
-       protocol_level_tokens::{operations, TokenId},
-   };
-   use concordium_rust_sdk::{
-       common::types::TransactionTime,
-       types::{
-           transactions::{send, BlockItem},
-           WalletAccount,
-       },
-       v2,
-   };
-   use std::{path::PathBuf, str::FromStr};
-
-   // CONFIGURATION - Modify these values for your use case
-   const WALLET_FILE: &str = "wallet.export";
-   const TOKEN_ID: &str = "ExampleToken";
-   const TARGET_ADDRESS: &str = "ExampleAddress";
-
-   #[tokio::main]
-   async fn main() -> anyhow::Result<()> {
-       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
-           .await
-           .context("Failed to connect to Concordium node")?;
-
-       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
-       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
-
-       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
-           .context("Could not read the wallet file")?;
-
-       let nonce = client
-           .get_next_account_sequence_number(&keys.address)
-           .await?
-           .nonce;
-       let expiry: TransactionTime =
-           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
-
-       println!("Attempting to add {} to deny list for {}...", target_address, TOKEN_ID);
-
-       let operation = operations::add_token_deny_list(target_address);
-       let txn = send::token_governance_operations(
-           &keys,
-           keys.address,
-           nonce,
-           expiry,
-           token_id,
-           [operation].into_iter().collect(),
-       )?;
-       let item = BlockItem::AccountTransaction(txn);
-
-       let transaction_hash = client.send_block_item(&item).await?;
-       println!("Transaction submitted with hash: {}", transaction_hash);
-
-       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
-       println!("Transaction finalized: {:#?}", result);
-
-       Ok(())
-   }
-
-.. _add-to-allow-list:
-
-Add account to token allow list
---------------------------------
-
-This example demonstrates how to add an account to a Protocol Level Token's allow list.
-Only the token issuer can modify the allow list.
-
-.. code-block:: rust
-
-   //! # Add Account to Token Allow List
-   //! This example demonstrates how to add an account to a Protocol Level Token's allow list.
-   //! Only the token issuer can modify the allow list.
-   //! ## How to use this example:
-   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
-   //! 2. Set the token ID in the `TOKEN_ID` constant
-   //! 3. Set the target address to add in the `TARGET_ADDRESS` constant
-   //! 4. Run with: `cargo run --example add_to_allow_list`
-
-   use anyhow::Context;
-   use concordium_base::{
-       contracts_common::AccountAddress,
-       protocol_level_tokens::{operations, TokenId},
-   };
-   use concordium_rust_sdk::{
-       common::types::TransactionTime,
-       types::{
-           transactions::{send, BlockItem},
-           WalletAccount,
-       },
-       v2,
-   };
-   use std::{path::PathBuf, str::FromStr};
-
-   // CONFIGURATION - Modify these values for your use case
-   const WALLET_FILE: &str = "wallet.export";
-   const TOKEN_ID: &str = "ExampleToken";
-   const TARGET_ADDRESS: &str = "ExampleAddress";
-
-   #[tokio::main]
-   async fn main() -> anyhow::Result<()> {
-       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
-           .await
-           .context("Failed to connect to Concordium node")?;
-
-       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
-       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
-
-       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
-           .context("Could not read the wallet file")?;
-
-       let nonce = client
-           .get_next_account_sequence_number(&keys.address)
-           .await?
-           .nonce;
-       let expiry: TransactionTime =
-           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
-
-       println!("Attempting to add {} to allow list for {}...", target_address, TOKEN_ID);
-
-       let operation = operations::add_token_allow_list(target_address);
-       let txn = send::token_governance_operations(
-           &keys,
-           keys.address,
-           nonce,
-           expiry,
-           token_id,
-           [operation].into_iter().collect(),
-       )?;
-       let item = BlockItem::AccountTransaction(txn);
-
-       let transaction_hash = client.send_block_item(&item).await?;
-       println!("Transaction submitted with hash: {}", transaction_hash);
-
-       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
-       println!("Transaction finalized: {:#?}", result);
-
-       Ok(())
-   }
-
-.. _transfer-tokens:
-
-Transfer protocol level tokens
--------------------------------
-
-This example demonstrates how to transfer Protocol Level Tokens (PLTs) from one account to another.
+This example demonstrates how to transfer Protocol Level Tokens from one account to another.
 Configure the recipient address and amount to complete the transfer.
 
 .. code-block:: rust
@@ -545,171 +383,11 @@ Configure the recipient address and amount to complete the transfer.
        Ok(())
    }
 
-.. _remove-from-deny-list:
 
-Remove Account from Token Deny List
-------------------------------------
+.. _rust-mint-tokens:
 
-This example demonstrates how to remove an account from a Protocol Level Token's deny list.
-Only the token issuer can modify the deny list.
-
-.. code-block:: rust
-
-   //! # Remove Account from Token Deny List
-   //! This example demonstrates how to remove an account from a Protocol Level Token's deny list.
-   //! Only the token issuer can modify the deny list.
-   //! ## How to use this example:
-   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
-   //! 2. Set the token ID in the `TOKEN_ID` constant
-   //! 3. Set the target address to remove in the `TARGET_ADDRESS` constant
-   //! 4. Run with: `cargo run --example remove_from_deny_list`
-
-   use anyhow::Context;
-   use concordium_base::{
-       contracts_common::AccountAddress,
-       protocol_level_tokens::{operations, TokenId},
-   };
-   use concordium_rust_sdk::{
-       common::types::TransactionTime,
-       types::{
-           transactions::{send, BlockItem},
-           WalletAccount,
-       },
-       v2,
-   };
-   use std::{path::PathBuf, str::FromStr};
-
-   // CONFIGURATION - Modify these values for your use case
-   const WALLET_FILE: &str = "wallet.export";
-   const TOKEN_ID: &str = "ExampleToken";
-   const TARGET_ADDRESS: &str = "ExampleAddress";
-
-   #[tokio::main]
-   async fn main() -> anyhow::Result<()> {
-       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
-           .await
-           .context("Failed to connect to Concordium node")?;
-
-       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
-       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
-
-       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
-           .context("Could not read the wallet file")?;
-
-       let nonce = client
-           .get_next_account_sequence_number(&keys.address)
-           .await?
-           .nonce;
-       let expiry: TransactionTime =
-           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
-
-       println!("Attempting to remove {} from deny list for {}...", target_address, TOKEN_ID);
-
-       let operation = operations::remove_token_deny_list(target_address);
-       let txn = send::token_governance_operations(
-           &keys,
-           keys.address,
-           nonce,
-           expiry,
-           token_id,
-           [operation].into_iter().collect(),
-       )?;
-       let item = BlockItem::AccountTransaction(txn);
-
-       let transaction_hash = client.send_block_item(&item).await?;
-       println!("Transaction submitted with hash: {}", transaction_hash);
-
-       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
-       println!("Transaction finalized: {:#?}", result);
-
-       Ok(())
-   }
-
-.. _remove-from-allow-list:
-
-Remove account from token allow list
--------------------------------------
-
-This example demonstrates how to remove an account from a Protocol Level Token's allow list.
-Only the token issuer can modify the allow list.
-
-.. code-block:: rust
-
-   //! # Remove Account from Token Allow List
-   //! This example demonstrates how to remove an account from a Protocol Level Token's allow list.
-   //! Only the token issuer can modify the allow list.
-   //! ## How to use this example:
-   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
-   //! 2. Set the token ID in the `TOKEN_ID` constant
-   //! 3. Set the target address to remove in the `TARGET_ADDRESS` constant
-   //! 4. Run with: `cargo run --example remove_from_allow_list`
-
-   use anyhow::Context;
-   use concordium_base::{
-       contracts_common::AccountAddress,
-       protocol_level_tokens::{operations, TokenId},
-   };
-   use concordium_rust_sdk::{
-       common::types::TransactionTime,
-       types::{
-           transactions::{send, BlockItem},
-           WalletAccount,
-       },
-       v2,
-   };
-   use std::{path::PathBuf, str::FromStr};
-
-   // CONFIGURATION - Modify these values for your use case
-   const WALLET_FILE: &str = "wallet.export";
-   const TOKEN_ID: &str = "ExampleToken";
-   const TARGET_ADDRESS: &str = "ExampleAddress";
-
-   #[tokio::main]
-   async fn main() -> anyhow::Result<()> {
-       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
-           .await
-           .context("Failed to connect to Concordium node")?;
-
-       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
-       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
-
-       // Load account keys from wallet file
-       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
-           .context("Could not read the wallet file")?;
-
-       let nonce = client
-           .get_next_account_sequence_number(&keys.address)
-           .await?
-           .nonce;
-       let expiry: TransactionTime =
-           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
-
-       println!("Attempting to remove {} from allow list for {}...", target_address, TOKEN_ID);
-
-       let operation = operations::remove_token_allow_list(target_address);
-       let txn = send::token_governance_operations(
-           &keys,
-           keys.address,
-           nonce,
-           expiry,
-           token_id,
-           [operation].into_iter().collect(),
-       )?;
-       let item = BlockItem::AccountTransaction(txn);
-
-       let transaction_hash = client.send_block_item(&item).await?;
-       println!("Transaction submitted with hash: {}", transaction_hash);
-
-       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
-       println!("Transaction finalized: {:#?}", result);
-
-       Ok(())
-   }
-
-.. _mint-tokens:
-
-Mint protocol level tokens
----------------------------
+Mint tokens
+~~~~~~~~~~~
 
 This example demonstrates how to mint new Protocol Level Tokens.
 Only the token issuer can perform mint operations, adding new tokens to circulation.
@@ -799,64 +477,430 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
        Ok(())
    }
 
-.. _get-token-list:
 
-Get protocol level token list
-------------------------------
+.. _rust-burn-tokens:
 
-This example demonstrates how to retrieve a list of all Protocol Level Tokens (PLTs) on the Concordium blockchain.
-Optionally specify a block hash for historical token lists.
+Burn tokens
+~~~~~~~~~~~
+
+This example demonstrates how to burn existing Protocol Level Tokens.
+Only the token issuer can perform burn operations, removing tokens from circulation.
 
 .. code-block:: rust
 
-   //! # Get Protocol Level Token List
-   //! This example demonstrates how to retrieve a list of all (PLTs) on the Concordium blockchain.
+   //! # Burn Protocol Level Tokens
+   //! This example demonstrates how to burn existing Protocol Level Tokens.
+   //! Only the token issuer can perform burn operations.
+   //! The burned tokens will be removed from the issuer's account and the total supply.
    //! ## How to use this example:
-   //! 1. Optionally set a specific block hash in `BLOCK_HASH` (or leave as None for latest)
-   //! 2. Run with: `cargo run --example get_token_list`
+   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
+   //! 2. Set the token ID in the `TOKEN_ID` constant
+   //! 3. Set the amount to burn in the `TOKEN_AMOUNT` constant
+   //! 4. Run with: `cargo run --example burn_tokens`
 
    use anyhow::Context;
-   use concordium_base::hashes::BlockHash;
-    use concordium_rust_sdk::v2;
-    use futures::StreamExt;
-    use std::str::FromStr;
+   use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
+   use concordium_rust_sdk::{
+       common::types::TransactionTime,
+       types::{
+           transactions::{send, BlockItem},
+           WalletAccount,
+       },
+       v2::{BlockIdentifier, self},
+   };
+   use rust_decimal::Decimal;
+   use std::{path::PathBuf, str::FromStr};
 
-    // CONFIGURATION - Modify these values for your use case
-    const BLOCK_HASH: Option<&str> = None; // Set to Some("blockhash") for specific block, None for latest
+   // CONFIGURATION - Modify these values for your use case
+   const WALLET_FILE: &str = "wallet.export";
+   const TOKEN_ID: &str = "ExampleToken";
+   const TOKEN_AMOUNT: &str = "10.0";
 
-    #[tokio::main]
-    async fn main() -> anyhow::Result<()> {
-        let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
-            .await
-            .context("Failed to connect to Concordium node")?;
+   #[tokio::main]
+   async fn main() -> anyhow::Result<()> {
+       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
+           .await
+           .context("Failed to connect to Concordium node")?;
 
-        // Determine block identifier
-        let block_ident = match BLOCK_HASH {
-            Some(hash_str) => {
-                let block_hash = BlockHash::from_str(hash_str)
-                    .context("Invalid block hash format")?;
-                v2::BlockIdentifier::Given(block_hash)
-            }
-            None => v2::BlockIdentifier::LastFinal,
-        };
+       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
 
-        // Get token list
-        let mut response = client
-            .get_token_list(&block_ident)
-            .await
-            .context("Failed to get token list")?;
+       // Get token info for decimal handling
+       let token_info = client
+           .get_token_info(token_id.clone(), BlockIdentifier::LastFinal)
+           .await?
+           .response;
 
-        println!(
-            "Listing the Token ID of every protocol level token on chain at the time of block hash {}:",
-            response.block_hash
-        );
-        // Collect tokens
-        while let Some(token_id) = response.response.next().await.transpose()
-            .context("Error while reading token from stream")?
-        {
-            println!(" - {}", String::from(token_id));
-        }
+       let mut amount = Decimal::from_str(TOKEN_AMOUNT)?;
+       amount.rescale(token_info.token_state.decimals as u32);
+       let token_amount = TokenAmount::from_raw(
+           amount.mantissa().try_into()?,
+           amount.scale().try_into()?
+       );
 
-        Ok(())
-    }
+       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
+           .context("Could not read the wallet file")?;
+
+       let nonce = client
+           .get_next_account_sequence_number(&keys.address)
+           .await?
+           .nonce;
+       let expiry: TransactionTime =
+           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
+
+       println!("Attempting to burn {} {} tokens...", token_amount, TOKEN_ID);
+
+       let operation = operations::burn_tokens(token_amount);
+       let txn = send::token_governance_operations(
+           &keys,
+           keys.address,
+           nonce,
+           expiry,
+           token_id,
+           [operation].into_iter().collect(),
+       )?;
+       let item = BlockItem::AccountTransaction(txn);
+
+       let transaction_hash = client.send_block_item(&item).await?;
+       println!("Burn transaction submitted with hash: {}", transaction_hash);
+
+       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
+       println!("Transaction finalized: {:#?}", result);
+
+       Ok(())
+   }
+
+
+Token governance operations
+---------------------------
+
+.. _rust-add-to-allow-list:
+
+Add account to allow list
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example demonstrates how to add an account to a Protocol Level Token's allow list.
+Only the token issuer can modify the allow list.
+
+.. code-block:: rust
+
+   //! # Add Account to Token Allow List
+   //! This example demonstrates how to add an account to a Protocol Level Token's allow list.
+   //! Only the token issuer can modify the allow list.
+   //! ## How to use this example:
+   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
+   //! 2. Set the token ID in the `TOKEN_ID` constant
+   //! 3. Set the target address to add in the `TARGET_ADDRESS` constant
+   //! 4. Run with: `cargo run --example add_to_allow_list`
+
+   use anyhow::Context;
+   use concordium_base::{
+       contracts_common::AccountAddress,
+       protocol_level_tokens::{operations, TokenId},
+   };
+   use concordium_rust_sdk::{
+       common::types::TransactionTime,
+       types::{
+           transactions::{send, BlockItem},
+           WalletAccount,
+       },
+       v2,
+   };
+   use std::{path::PathBuf, str::FromStr};
+
+   // CONFIGURATION - Modify these values for your use case
+   const WALLET_FILE: &str = "wallet.export";
+   const TOKEN_ID: &str = "ExampleToken";
+   const TARGET_ADDRESS: &str = "ExampleAddress";
+
+   #[tokio::main]
+   async fn main() -> anyhow::Result<()> {
+       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
+           .await
+           .context("Failed to connect to Concordium node")?;
+
+       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
+       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
+
+       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
+           .context("Could not read the wallet file")?;
+
+       let nonce = client
+           .get_next_account_sequence_number(&keys.address)
+           .await?
+           .nonce;
+       let expiry: TransactionTime =
+           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
+
+       println!("Attempting to add {} to allow list for {}...", target_address, TOKEN_ID);
+
+       let operation = operations::add_token_allow_list(target_address);
+       let txn = send::token_governance_operations(
+           &keys,
+           keys.address,
+           nonce,
+           expiry,
+           token_id,
+           [operation].into_iter().collect(),
+       )?;
+       let item = BlockItem::AccountTransaction(txn);
+
+       let transaction_hash = client.send_block_item(&item).await?;
+       println!("Transaction submitted with hash: {}", transaction_hash);
+
+       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
+       println!("Transaction finalized: {:#?}", result);
+
+       Ok(())
+   }
+
+
+.. _rust-remove-from-allow-list:
+
+Remove account from allow list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example demonstrates how to remove an account from a Protocol Level Token's allow list.
+Only the token issuer can modify the allow list.
+
+.. code-block:: rust
+
+   //! # Remove Account from Token Allow List
+   //! This example demonstrates how to remove an account from a Protocol Level Token's allow list.
+   //! Only the token issuer can modify the allow list.
+   //! ## How to use this example:
+   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
+   //! 2. Set the token ID in the `TOKEN_ID` constant
+   //! 3. Set the target address to remove in the `TARGET_ADDRESS` constant
+   //! 4. Run with: `cargo run --example remove_from_allow_list`
+
+   use anyhow::Context;
+   use concordium_base::{
+       contracts_common::AccountAddress,
+       protocol_level_tokens::{operations, TokenId},
+   };
+   use concordium_rust_sdk::{
+       common::types::TransactionTime,
+       types::{
+           transactions::{send, BlockItem},
+           WalletAccount,
+       },
+       v2,
+   };
+   use std::{path::PathBuf, str::FromStr};
+
+   // CONFIGURATION - Modify these values for your use case
+   const WALLET_FILE: &str = "wallet.export";
+   const TOKEN_ID: &str = "ExampleToken";
+   const TARGET_ADDRESS: &str = "ExampleAddress";
+
+   #[tokio::main]
+   async fn main() -> anyhow::Result<()> {
+       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
+           .await
+           .context("Failed to connect to Concordium node")?;
+
+       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
+       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
+
+       // Load account keys from wallet file
+       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
+           .context("Could not read the wallet file")?;
+
+       let nonce = client
+           .get_next_account_sequence_number(&keys.address)
+           .await?
+           .nonce;
+       let expiry: TransactionTime =
+           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
+
+       println!("Attempting to remove {} from allow list for {}...", target_address, TOKEN_ID);
+
+       let operation = operations::remove_token_allow_list(target_address);
+       let txn = send::token_governance_operations(
+           &keys,
+           keys.address,
+           nonce,
+           expiry,
+           token_id,
+           [operation].into_iter().collect(),
+       )?;
+       let item = BlockItem::AccountTransaction(txn);
+
+       let transaction_hash = client.send_block_item(&item).await?;
+       println!("Transaction submitted with hash: {}", transaction_hash);
+
+       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
+       println!("Transaction finalized: {:#?}", result);
+
+       Ok(())
+   }
+
+
+.. _rust-add-to-deny-list:
+
+Add account to deny list
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example demonstrates how to add an account to a Protocol Level Token's deny list.
+Accounts on the deny list cannot hold the token when deny list is enabled.
+
+.. code-block:: rust
+
+   //! # Add Account to Token Deny List
+   //! This example demonstrates how to add an account to a Protocol Level Token's deny list.
+   //! Accounts on the deny list cannot hold the token when deny list is enabled.
+   //! Only the token issuer can modify the deny list.
+   //! ## How to use this example:
+   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
+   //! 2. Set the token ID in the `TOKEN_ID` constant
+   //! 3. Set the target address to add in the `TARGET_ADDRESS` constant
+   //! 4. Run with: `cargo run --example add_to_deny_list`
+
+   use anyhow::Context;
+   use concordium_base::{
+       contracts_common::AccountAddress,
+       protocol_level_tokens::{operations, TokenId},
+   };
+   use concordium_rust_sdk::{
+       common::types::TransactionTime,
+       types::{
+           transactions::{send, BlockItem},
+           WalletAccount,
+       },
+       v2,
+   };
+   use std::{path::PathBuf, str::FromStr};
+
+   // CONFIGURATION - Modify these values for your use case
+   const WALLET_FILE: &str = "wallet.export";
+   const TOKEN_ID: &str = "ExampleToken";
+   const TARGET_ADDRESS: &str = "ExampleAddress";
+
+   #[tokio::main]
+   async fn main() -> anyhow::Result<()> {
+       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
+           .await
+           .context("Failed to connect to Concordium node")?;
+
+       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
+       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
+
+       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
+           .context("Could not read the wallet file")?;
+
+       let nonce = client
+           .get_next_account_sequence_number(&keys.address)
+           .await?
+           .nonce;
+       let expiry: TransactionTime =
+           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
+
+       println!("Attempting to add {} to deny list for {}...", target_address, TOKEN_ID);
+
+       let operation = operations::add_token_deny_list(target_address);
+       let txn = send::token_governance_operations(
+           &keys,
+           keys.address,
+           nonce,
+           expiry,
+           token_id,
+           [operation].into_iter().collect(),
+       )?;
+       let item = BlockItem::AccountTransaction(txn);
+
+       let transaction_hash = client.send_block_item(&item).await?;
+       println!("Transaction submitted with hash: {}", transaction_hash);
+
+       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
+       println!("Transaction finalized: {:#?}", result);
+
+       Ok(())
+   }
+
+
+
+.. _rust-remove-from-deny-list:
+
+Remove account from deny list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This example demonstrates how to remove an account from a Protocol Level Token's deny list.
+Only the token issuer can modify the deny list.
+
+.. code-block:: rust
+
+   //! # Remove Account from Token Deny List
+   //! This example demonstrates how to remove an account from a Protocol Level Token's deny list.
+   //! Only the token issuer can modify the deny list.
+   //! ## How to use this example:
+   //! 1. Set your wallet file path in the `WALLET_FILE` constant below
+   //! 2. Set the token ID in the `TOKEN_ID` constant
+   //! 3. Set the target address to remove in the `TARGET_ADDRESS` constant
+   //! 4. Run with: `cargo run --example remove_from_deny_list`
+
+   use anyhow::Context;
+   use concordium_base::{
+       contracts_common::AccountAddress,
+       protocol_level_tokens::{operations, TokenId},
+   };
+   use concordium_rust_sdk::{
+       common::types::TransactionTime,
+       types::{
+           transactions::{send, BlockItem},
+           WalletAccount,
+       },
+       v2,
+   };
+   use std::{path::PathBuf, str::FromStr};
+
+   // CONFIGURATION - Modify these values for your use case
+   const WALLET_FILE: &str = "wallet.export";
+   const TOKEN_ID: &str = "ExampleToken";
+   const TARGET_ADDRESS: &str = "ExampleAddress";
+
+   #[tokio::main]
+   async fn main() -> anyhow::Result<()> {
+       let mut client = v2::Client::new(v2::Endpoint::from_str("https://grpc.devnet-plt-alpha.concordium.com:20000")?)
+           .await
+           .context("Failed to connect to Concordium node")?;
+
+       let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
+       let target_address = AccountAddress::from_str(TARGET_ADDRESS)?;
+
+       let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
+           .context("Could not read the wallet file")?;
+
+       let nonce = client
+           .get_next_account_sequence_number(&keys.address)
+           .await?
+           .nonce;
+       let expiry: TransactionTime =
+           TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
+
+       println!("Attempting to remove {} from deny list for {}...", target_address, TOKEN_ID);
+
+       let operation = operations::remove_token_deny_list(target_address);
+       let txn = send::token_governance_operations(
+           &keys,
+           keys.address,
+           nonce,
+           expiry,
+           token_id,
+           [operation].into_iter().collect(),
+       )?;
+       let item = BlockItem::AccountTransaction(txn);
+
+       let transaction_hash = client.send_block_item(&item).await?;
+       println!("Transaction submitted with hash: {}", transaction_hash);
+
+       let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
+       println!("Transaction finalized: {:#?}", result);
+
+       Ok(())
+   }
+
+
+
+
+
 

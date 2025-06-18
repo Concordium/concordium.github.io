@@ -3,21 +3,28 @@
 Web SDK integration
 ===================
 
-Learn how to integrate Protocol Layer Tokens into web applications using Concordium's Web SDK.
+This guide shows how to integrate Protocol Layer Tokens into web applications using Concordium's Web SDK.
 
 See the following sections for detailed examples:
 
+**Querying tokens:**
 
 - :ref:`Get token list<web-sdk-get-token-list>`
 - :ref:`Get token information<web-sdk-get-token-info>`
 - :ref:`Get account information<web-sdk-get-account-info>`
+
+**Token holder operations:**
+
 - :ref:`Transfer tokens<web-sdk-transfer-tokens>`
 - :ref:`Mint tokens<web-sdk-mint-tokens>`
 - :ref:`Burn tokens<web-sdk-burn-tokens>`
-- :ref:`Add to allow list<web-sdk-add-to-allow-list>`
-- :ref:`Remove from allow list<web-sdk-remove-from-allow-list>`
-- :ref:`Add to deny list<web-sdk-add-to-deny-list>`
-- :ref:`Remove from deny list<web-sdk-remove-from-deny-list>`
+
+**Token governance operations:**
+
+- :ref:`Add account to allow list<web-sdk-add-account-to-allow-list>`
+- :ref:`Remove account from allow list<web-sdk-remove-account-from-allow-list>`
+- :ref:`Add account to deny list<web-sdk-add-account-to-deny-list>`
+- :ref:`Remove account from deny list<web-sdk-remove-account-from-deny-list>`
 
 
 .. _querying-tokens:
@@ -491,10 +498,10 @@ Burn existing tokens (issuer only):
 Allow and deny list management
 ------------------------------
 
-.. _web-sdk-add-to-allow-list:
+.. _web-sdk-add-account-to-allow-list:
 
-Add to allow list
-~~~~~~~~~~~~~~~~~
+Add account to allow list
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Add an account to the token's allow list (issuer only):
 
@@ -583,10 +590,10 @@ Add an account to the token's allow list (issuer only):
        console.log(`Wallet file is empty!`);
     }
 
-.. _web-sdk-remove-from-allow-list:
+.. _web-sdk-remove-account-from-allow-list:
 
-Remove from allow list
-~~~~~~~~~~~~~~~~~~~~~~
+Remove account from allow list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Remove an account from the token's allow list (issuer only):
 
@@ -674,10 +681,10 @@ Remove an account from the token's allow list (issuer only):
         console.log(`Wallet file is empty!`);
     }
 
-.. _web-sdk-add-to-deny-list:
+.. _web-sdk-add-account-to-deny-list:
 
-Add to deny list
-~~~~~~~~~~~~~~~~
+Add account to deny list
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Add an account to the token's deny list (issuer only):
 
@@ -766,10 +773,10 @@ Add an account to the token's deny list (issuer only):
        console.log(`Wallet file is empty!`);
     }
 
-.. _web-sdk-remove-from-deny-list:
+.. _web-sdk-remove-account-from-deny-list:
 
-Remove from deny list
-~~~~~~~~~~~~~~~~~~~~~
+Remove account from deny list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Remove an account from the token's deny list (issuer only):
 
