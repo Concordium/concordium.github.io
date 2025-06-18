@@ -1,8 +1,8 @@
 .. _plt-integration:
 
-=========
-PLT usage
-=========
+============
+PLT examples
+============
 
 This section provides examples of how to work with Protocol-Level Tokens (PLTs) using tools and SDKs provided by Concordium.
 

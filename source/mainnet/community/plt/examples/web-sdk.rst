@@ -4,7 +4,7 @@
 Web SDK usage
 =============
 
-This guide shows how to integrate Protocol-Level Tokens into web applications using Concordium's Web SDK.
+This guide shows how to work with Protocol-Level Tokens using Concordium's Web SDK.
 
 Installation and setup
 ======================
