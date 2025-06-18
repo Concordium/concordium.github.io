@@ -12,10 +12,10 @@ Download and install Concordium Client v9.1.1-alpha:
 
 **Downloads (v9.1.1):**
 
-- `Linux <link>`_
-- `Windows (signed) <link>`_
-- `macOS - arm (signed) <link>`_
-- `macOS - intel (signed) <link>`_
+- `Linux <https://distribution.concordium.software/devnet/linux/concordium-client_9.1.1-0-alpha>`_
+- `Windows (signed) <https://distribution.concordium.software/devnet/windows/signed/concordium-client_9.1.1-0-alpha.zip>`_
+- `macOS - arm (signed) <https://distribution.concordium.software/devnet/macos/signed/concordium-client-arm-9.1.1-0-alpha.pkg>`_
+- `macOS - intel (signed) <https://distribution.concordium.software/devnet/macos/signed/concordium-client-intel-9.1.1-0-alpha.pkg>`_
 
 Available PLT commands
 ----------------------
