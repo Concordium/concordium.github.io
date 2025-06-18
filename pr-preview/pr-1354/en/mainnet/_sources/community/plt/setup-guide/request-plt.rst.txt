@@ -4,7 +4,7 @@
 Request PLT issuance
 =====================
 
-This guide explains how to request the issuance of a custom Protocol Layer Token (PLT) on DevNet for testing and development purposes.
+This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on DevNet for testing and development purposes.
 
 .. warning::
    All issued tokens will be cleared with the restart of the DevNet.

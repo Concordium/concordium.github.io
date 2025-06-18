@@ -4,7 +4,7 @@
 Create a DevNet identity
 =========================
 
-This guide explains how to to create an :ref:`identity <reference-identity>` on DevNet. An identity is a prerequisite for creating accounts and working with Protocol Layer Tokens.
+This guide explains how to to create an :ref:`identity <reference-identity>` on DevNet. An identity is a prerequisite for creating accounts and working with Protocol-Level Tokens.
 
 After :ref:`connecting to DevNet <plt-devnet-connection>`, follow these steps to create your identity:
 
@@ -45,5 +45,5 @@ After :ref:`connecting to DevNet <plt-devnet-connection>`, follow these steps to
 
 6. Return to the wallet when finished.
 
-You have now successfully created your identity on DevNet. You can use this identity to create accounts and start working with Protocol Layer Tokens (PLTs).
+You have now successfully created your identity on DevNet. You can use this identity to create accounts and start working with Protocol-Level Tokens (PLTs).
 
