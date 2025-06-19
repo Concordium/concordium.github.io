@@ -196,7 +196,7 @@ For the system requirements to run a node, see :ref:`System requirements to run 
    .. dropdown:: Linux-Docker |mainnet-node-version|
 
       To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
-      
+
       To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
    .. dropdown:: Windows |mainnet-node-version|
