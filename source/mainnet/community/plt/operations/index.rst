@@ -13,15 +13,15 @@ You can interact with PLTs using multiple development approaches:
 
 - **Concordium Web SDK** (v10.0.0-alpha.6) - TypeScript/JavaScript examples for web applications
 
-  `Find released versions here <https://www.npmjs.com/package/@concordium/web-sdk>`_
+  `Web SDK released versions <https://www.npmjs.com/package/@concordium/web-sdk>`_
 
 - **Concordium Rust SDK** (v7.0.0-alpha.1) - Rust examples for native applications
 
-  `Find released versions here <https://crates.io/crates/concordium-rust-sdk>`_
+  `Rust SDK released versions <https://crates.io/crates/concordium-rust-sdk>`_
 
 - **Concordium Client CLI** (v9.1.0-alpha) - Command-line interface for direct operations
 
-  `Find released versions here <https://github.com/Concordium/concordium-client/releases>`_
+  `CLI released versions <https://github.com/Concordium/concordium-client/releases>`_
 
 .. note::
    All SDKs are currently in alpha development and recommended for testing and experimentation only.
