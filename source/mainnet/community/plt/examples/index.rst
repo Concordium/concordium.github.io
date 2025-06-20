@@ -4,26 +4,21 @@
 PLT examples
 ============
 
-This section provides examples of how to work with Protocol-Level Tokens (PLTs) using tools and SDKs provided by Concordium.
+This section provides examples of how to work with Protocol-Level Tokens (PLTs) using tools and SDKs provided by Concordium:
 
-Development tools overview
-==========================
 
-Concordium provides multiple tools for using PLT functionality into your applications:
+:ref:`Concordium Client CLI Tool<plt-concordium-client>`:
+Command line tool for performing PLT operations directly on DevNet
 
-**Concordium Client CLI Tool**:
-Use concordium-client for direct operations, scripting, and backend automation.
+:ref:`Web SDK<plt-web-sdk>`:
+JavaScript/TypeScript SDK for PLT operations in web applications
 
-**Web SDK**:
-Integrate PLT functionality into web applications using TypeScript/JavaScript.
+:ref:`Rust SDK<plt-rust-sdk>`:
+Concordium Rust SDK for PLT operations in native applications
 
-**Rust SDK**:
-Build native applications and services with PLT support using Rust.
-
-Choose your integration approach
-================================
 
 .. toctree::
+   :hidden:
    :maxdepth: 1
 
    concordium-client
