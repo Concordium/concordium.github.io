@@ -68,6 +68,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Sets the percentage of block rewards a validator retains when its pool successfully produces a block. Lower rates may attract more delegators, while higher rates increase your profit share from each block.
 
+   BLS12-381
+
+      An elliptic curve specifically designed for cryptographic applications requiring pairings, e.g., the BLS aggregate signature scheme or the Pointcheval-Sanders signature scheme. The latter can be used for blind signing and also allows for a simple proof of knowledge of a signature. BLS12-381, which is a crucial component of privacy-based self-sovereign identity systems.
+
    Branch
 
       A chain of blocks that has split from the main chain. All branches have the potential to become the main chain. The Chain selection rule determines which branch is the best chain.
@@ -75,6 +79,11 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Build
 
       Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from :term:`cargo-concordium`.
+
+   Bulletproof
+
+      A type of efficient interactive proof system that enables various :term:`zero-knowledge proofs<zero-knowledge proof>`, including range-proofs, set-membership proofs, and
+      set-non-membership proofs. The generated proofs have logarithmic size. They can be made non-interactive with the Fiat-Shamir transform.
 
    Candidate
 
@@ -422,6 +431,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
       (:ref:`Deprecated<shielded-balance-feature-deprecation>`):
 
       The action of transferring a part of the public balance to the :term:`shielded balance`.
+
+   Sigma protocols
+
+      A class of efficient interactive :term:`zero-knowledge proof` systems that follow a three-round structure; commitment, challenge, and response. Sigma protocols enable a prover to demonstrate knowledge of secret information without revealing it. They can also be used for OR and AND statements, and can be made non-interactive with the Fiat-Shamir transform.
 
    Slot
 
