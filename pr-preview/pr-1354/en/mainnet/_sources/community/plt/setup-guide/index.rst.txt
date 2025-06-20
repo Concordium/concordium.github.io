@@ -21,7 +21,7 @@ To issue and work with PLTs on the Concordium network, the following steps are r
 
 5. **Perform Token-Holder and Query Transactions**. Once your PLT is created, you can perform the following operations: transferring PLTs, querying token lists, getting token information, and checking account balances using the available tools and SDKs.
 
-The PLT documentation guides will walk you through this entire process. We'll start with setting up your DevNet environment, guide you through the PLT issuance process, and show you how to perform operations with your PLTs once they're created. Beyond the initial setup, you'll find detailed information on token transfers, querying token information, integrating with SDKs, and working with the Concordium CLI to manage your PLTs.
+The PLT documentation guides will walk you through this entire process. We'll start with setting up your DevNet environment, guide you through the PLT issuance process, and show you how to perform operations with your PLTs once they're created. Beyond the initial setup, you'll find detailed information on token transfers, querying token information, integrating with SDKs, and working with the Concordium Client CLI Tool to manage your PLTs.
 
 DevNet setup guide
 ==================
