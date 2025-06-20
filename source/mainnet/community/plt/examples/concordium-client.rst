@@ -1,14 +1,14 @@
 .. _plt-concordium-client:
 
-Using Concordium Client with PLTs
-=================================
+Concordium Client CLI Tool
+==========================
 
-This guide explains how to use the Concordium Client CLI tool to perform PLT operations from the command line.
+This guide explains how to use concordium-client to perform PLT operations from the command line.
 
 Installation and setup
 ----------------------
 
-Download and install Concordium Client v9.1.1-alpha:
+Download and install concordium-client v9.1.1-alpha:
 
 **Downloads (v9.1.1):**
 
@@ -17,10 +17,18 @@ Download and install Concordium Client v9.1.1-alpha:
 - `macOS - arm (signed) <https://distribution.concordium.software/devnet/macos/signed/concordium-client-arm-9.1.1-0-alpha.pkg>`_
 - `macOS - intel (signed) <https://distribution.concordium.software/devnet/macos/signed/concordium-client-intel-9.1.1-0-alpha.pkg>`_
 
+.. note::
+   With new DevNet releases and features, new concordium-client versions may get released. Follow the communication channels for the most recent versions.
+
+
 Available PLT commands
 ----------------------
 
 The following PLT operations are available via CLI:
+
+**Token Query Operations:**
+
+- ``raw GetTokenList`` - Get a list of all PLTs available on DevNet
 
 **Token Transfer Operations:**
 
@@ -43,6 +51,15 @@ The following PLT operations are available via CLI:
 
 Command examples
 ----------------
+
+.. _concordium-client-get-token-list:
+
+**Get PLT Token List:**
+
+.. code-block:: bash
+
+  concordium-client raw GetTokenList --grpc-ip grpc.devnet-plt-alpha.concordium.com --grpc-port 20000 --secure
+
 
 .. _concordium-client-transfer-tokens:
 

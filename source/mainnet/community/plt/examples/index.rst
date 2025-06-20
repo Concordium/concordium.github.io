@@ -11,8 +11,8 @@ Development tools overview
 
 Concordium provides multiple tools for using PLT functionality into your applications:
 
-**Concordium Client CLI**:
-Use Concordium Client CLI for direct operations, scripting, and backend automation.
+**Concordium Client CLI Tool**:
+Use concordium-client for direct operations, scripting, and backend automation.
 
 **Web SDK**:
 Integrate PLT functionality into web applications using TypeScript/JavaScript.

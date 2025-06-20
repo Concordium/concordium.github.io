@@ -1,8 +1,8 @@
 .. _plt-rust-sdk:
 
-==============
-Rust SDK usage
-==============
+========
+Rust SDK
+========
 
 This guide shows how to work with Protocol-Level Tokens using Concordium's Rust SDK.
 

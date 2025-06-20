@@ -1,8 +1,8 @@
 .. _plt-web-sdk:
 
-=============
-Web SDK usage
-=============
+=======
+Web SDK
+=======
 
 This guide shows how to work with Protocol-Level Tokens using Concordium's Web SDK.
 
@@ -73,7 +73,7 @@ Retrieve all Protocol-Level Tokens available on the network:
     const client = new ConcordiumGRPCNodeClient(
        "grpc.devnet-plt-alpha.concordium.com",
        Number(20000),
-       credentials.createSsl() //  credentials.createInsecure(),
+       credentials.createSsl()
     );
 
     /**
@@ -114,7 +114,7 @@ Retrieve detailed information about a specific PLT:
     const client = new ConcordiumGRPCNodeClient(
        "grpc.devnet-plt-alpha.concordium.com",
        Number(20000),
-       credentials.createSsl() //  credentials.createInsecure(),
+       credentials.createSsl()
     );
 
     /**
@@ -154,7 +154,7 @@ Query account information including PLT balances:
         const client = new ConcordiumGRPCNodeClient(
             "grpc.devnet-plt-alpha.concordium.com",
             Number(20000),
-            credentials.createSsl() // Change to credentials.createSsl() if you want to use SSL
+            credentials.createSsl()
         );
 
         /**
@@ -216,7 +216,7 @@ Transfer PLTs between accounts:
     const client = new ConcordiumGRPCNodeClient(
        "grpc.devnet-plt-alpha.concordium.com",
        Number(20000),
-       credentials.createSsl() //  credentials.createInsecure(),
+       credentials.createSsl()
     );
 
     /**
@@ -314,7 +314,7 @@ Mint new tokens (issuer only):
     const client = new ConcordiumGRPCNodeClient(
         "grpc.devnet-plt-alpha.concordium.com",
         Number(20000),
-        credentials.createSsl() //  credentials.createInsecure(),
+        credentials.createSsl()
     );
 
     /**

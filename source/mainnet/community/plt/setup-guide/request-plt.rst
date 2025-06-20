@@ -30,9 +30,9 @@ For a tutorial on how to use IPFS by running a node, read :ref:`this article <up
 Metadata properties
 -------------------
 
-**Thumbnail**: URL JSON object - An image URL to a small image for displaying the asset
+**Thumbnail**: URL - An image URL to a small image for displaying the asset
 
-**Display**: URL JSON object - An image URL to a large image for displaying the asset
+**Display**: URL - An image URL to a large image for displaying the asset
 
 Example metadata file
 ---------------------
@@ -44,8 +44,8 @@ Example metadata file
       "symbol": "PLT Symbol",
       "decimals": 6,
       "description": "A protocol level stablecoin issued on Concordium.",
-      "thumbnail": { "url": "https://location.of/the/thumbnail.png" },
-      "display": { "url": "https://location.of/the/display.png" }
+      "thumbnail": "https://location.of/the/thumbnail.png" },
+      "display": "https://location.of/the/display.png" }
    }
 
 
@@ -66,7 +66,7 @@ Follow these steps to request PLT issuance on DevNet:
 
 3. **Fill out the required information**
 
-   * **Nominated Account**: The DevNet wallet address to receive your token
+   * **Nominated Account**: The DevNet wallet address to receive your token. **Important:** This account will have exclusive authority to perform all token-governance operations (mint, burn, add/remove allow and deny lists)
    * **Token Name**: Full name of your token (e.g., "My First PLT")
    * **Token Symbol**: Short ticker (e.g., "PLT")
    * **Initial supply**: Amount of tokens that will be issued and transferred to your account
@@ -125,7 +125,7 @@ What happens next
 
 * Tokens will be issued manually by the Concordium team
 * You'll receive confirmation in Discord when your PLT has been issued
-* The tokens will be transferred to your nominated account address
+* The tokens will be issued directly to your nominated account address
 
 
 You are now ready to start using your custom PLT for testing on DevNet. Learn about the available operations in :ref:`PLT Operations <plt-operations>`.
