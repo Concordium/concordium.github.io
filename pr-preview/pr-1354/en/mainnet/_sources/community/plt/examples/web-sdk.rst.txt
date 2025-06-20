@@ -222,8 +222,7 @@ Transfer PLTs between accounts:
     /**
     * The following example demonstrates how a simple transfer can be created.
     */
-       // #region documentation-snippet
-       console.log("Current working directory:", process.cwd());
+
        // using wallet.export file
        const walletFile = readFileSync("wallet.export", 'utf8');
        const walletExport = parseWallet(walletFile);
