@@ -415,17 +415,26 @@ Wallets
 |bw|
 -------------------------
 
-    April 24, 2025
+    June 23, 2025
 
-    Version 2.2.0
+    Version 2.3.0
 
-    -   Memo input field at Send Transaction screen
-    -   Added support for TransferWithMemo transaction type
-    -   Updated Send transaction status screens
-    -   Preview of memo at Transaction Log
-    -   Memo field at Transaction details screen
+    -   Added Google Analytics track screens and events
+    -   Updated delegation description help link from `node` list to `staking`
+    -   Fixed CIS-2 token validation of available funds, at Send Token screen
+    -   Memo input at Send Transaction screen should not be displayed for CIS-2 tokens
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.2.0 - April 24, 2025
+
+            Version 2.2.0 includes several changes.
+
+            -   Memo input field at Send Transaction screen
+            -   Added support for TransferWithMemo transaction type
+            -   Updated Send transaction status screens
+            -   Preview of memo at Transaction Log
+            -   Memo field at Transaction details screen
 
         .. dropdown:: |bw| 2.1.2 - March 6, 2025
 
