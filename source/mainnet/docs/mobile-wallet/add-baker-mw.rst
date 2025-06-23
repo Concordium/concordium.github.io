@@ -74,11 +74,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     11. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
-        - :ref:`Windows<baker-windows>`
-        - :ref:`macOS<baker-macos>`
-        - :ref:`Docker<baking-docker>`
-        - :ref:`Ubuntu<baker-ubuntu>`
-
+        - :ref:`Import validator keys<import-validator-keys>`
 
 .. dropdown:: Desktop wallet
 
@@ -312,11 +308,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     #. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
-       - :ref:`Windows<baker-windows>`
-       - :ref:`macOS<baker-macos>`
-       - :ref:`Docker<baking-docker>`
-       - :ref:`Ubuntu<baker-ubuntu>`
-
+       - :ref:`Import validator keys<import-validator-keys>`
 
 
 .. Warning::
