@@ -70,7 +70,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    BLS12-381
 
-      An elliptic curve specifically designed for cryptographic applications requiring pairings, e.g., the BLS aggregate signature scheme or the Pointcheval-Sanders signature scheme. The latter can be used for blind signing and also allows for a simple proof of knowledge of a signature. BLS12-381, which is a crucial component of privacy-based self-sovereign identity systems.
+      An elliptic curve specifically designed for cryptographic applications requiring pairings, e.g., the BLS aggregate signature scheme or the Pointcheval-Sanders signature scheme. The latter can be used for blind signing and also allows for a simple proof of knowledge of a signature. BLS12-381 is a crucial component of privacy-based self-sovereign identity systems.
 
    Branch
 
