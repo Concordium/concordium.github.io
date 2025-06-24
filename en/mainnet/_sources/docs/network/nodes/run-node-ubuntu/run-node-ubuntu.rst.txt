@@ -8,12 +8,14 @@ This article explains how to run a Concordium node on Linux (Ubuntu) on mainnet 
 
 An account is not required to run a node, but you will need one if you want to become a validator.
 
-You can also watch the video to learn how to run a node with Ubuntu.
+You can also watch the video to learn how to run a node with Ubuntu OS.
 
 .. raw:: html
 
-   <iframe src="https://www.youtube.com/embed/lFqf0tgS_r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/DmemZsdcdHQ"
+   title="YouTube video player" frameborder="0"
+   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen></iframe>
 
 Prerequisites
 =============

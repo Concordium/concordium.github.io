@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-docker/run-node-docker.adf0cd1e-9e51-4121-b5d2-3db0b82fe50b.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-docker/run-node-docker.93681372-ee24-4195-a927-c14e143d2109.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-docker/run-node-docker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-docker/run-node-docker.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -763,7 +763,11 @@
 <span id="run-a-node"></span><h1>Install and manage a node on Docker<a class="headerlink" href="#install-and-manage-a-node-on-docker" title="Link to this heading">#</a></h1>
 <p>This article explains how to run a Concordium node in Docker on Linux on mainnet or testnet, and how to set up your node as a <a class="reference internal" href="#configure-baker-docker"><span class="std std-ref">validator node</span></a>.</p>
 <p>An account is not required to run a node, but you will need one if you want to become a validator.</p>
-<section id="prerequisites">
+<p>You can also watch the video to learn how to run a node with Docker.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DRk1NSIKZSM"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe><section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <p>Before running a Concordium node you will need to</p>
 <ul>
@@ -782,10 +786,6 @@
 <p>Concordium provides two Docker images, a <a class="reference external" href="https://hub.docker.com/r/concordium/mainnet-node">mainnet</a> one and a <a class="reference external" href="https://hub.docker.com/r/concordium/testnet-node">testnet</a> one.
 These images are designed to be used together with docker-compose, or a similar driver. This guide provides a sample configuration using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code>.</p>
 <p>The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> or <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testent</span></code> but any location to which the user that runs the Docker command has access to will do.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. This applies to both minor and major releases. For patch versions, you can also upgrade directly to the desired version (e.g., from X.X.0 to X.X.3 or from X.1.1 to X.2.3) without the need to apply each patch in sequence.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The dollar sign (<code class="docutils literal notranslate"><span class="pre">$</span></code>) in a codeblock means that you should run the command that follows the <code class="docutils literal notranslate"><span class="pre">$</span></code> in a terminal.</p>
