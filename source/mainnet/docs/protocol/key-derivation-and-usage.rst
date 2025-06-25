@@ -19,8 +19,9 @@ The subtree of a single Identity Credential consists of:
 * Multiple subtrees that generate cryptographic material for the ID object itself
 
 
-.. image:: ../protocol/images/cryptographic-key-derivation-structure.png
+.. image:: ../protocol/images/key-derivation.png
    :alt: diagram of key derivation
+
 
 Derivation structure
 ====================
@@ -85,6 +86,6 @@ Legacy derivation tree
 
 Some older wallets use a legacy derivation tree. The only differences between this and the derivation tree described above are the prefix m/1105'/0/0'/0'/ID', which omits the Identity Provider index, and the use of different indices for the key subtrees in the Identity Credential subtree. For example, in the legacy tree the account signature keys are located in subtree 2' instead of 0'. It is important to note that the split of keys into subtrees is equivalent to those in the above tree.
 
-.. image:: ../protocol/images/legacy-key-derivation-structure-new.png
+.. image:: ../protocol/images/legacy-key-derivation.png
    :alt: diagram of key derivation
 
