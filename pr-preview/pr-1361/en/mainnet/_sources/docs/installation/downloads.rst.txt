@@ -65,25 +65,25 @@ Concordium Desktop Wallet
 
 .. dropdown:: Mainnet
 
-   .. card:: Windows v1.8.1
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.exe
+   .. card:: Windows v1.8.2
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.exe
 
-   .. card:: macOS v1.8.1
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.dmg
+   .. card:: macOS v1.8.2
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.dmg
 
-   .. dropdown:: Linux® v1.8.1
+   .. dropdown:: Linux® v1.8.2
 
-      - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.AppImage>`_
+      - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.AppImage>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
          - :ref:`Verification instructions <verification-cdw-appimage>`
 
-      - `Mainnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.deb>`_
+      - `Mainnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.deb>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
          - :ref:`Verification instructions <verification-cdw-deb>`
 
-      - `Mainnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.1-mainnet/concordium-desktop-wallet-1.8.1.rpm>`_
+      - `Mainnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.rpm>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
          - :ref:`Verification instructions <verification-cdw-rpm>`
@@ -195,7 +195,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Linux-Docker |mainnet-node-version|
 
-      To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`. To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
+      To learn how to run a node with Docker, see :ref:`Run a node with Docker <run-a-node>`.
+
+      To upgrade your Docker node either restart the service if you are using the `:latest` image tag, or change the image tag to the new version. See :ref:`Running/upgrading a node<running-a-node>` for details.
 
    .. dropdown:: Windows |mainnet-node-version|
 

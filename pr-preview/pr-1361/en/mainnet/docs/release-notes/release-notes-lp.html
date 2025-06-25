@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.1eaecc8f-8a4c-4a4d-b145-6bd6b109ca47.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.83c02a07-8792-4a75-b8a0-608035aa8605.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -891,20 +891,29 @@
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>June 6, 2025</p>
-<p>Changes:</p>
+<div><p>1.10.0 - June 19, 2025</p>
 <ul class="simple">
-<li><p>A warning is added when available funds are insufficient to cover the transaction fee during the earning setup.</p></li>
-<li><p>The issue that prevented staking the full available amount has been fixed.</p></li>
-</ul>
-<p>Other:</p>
-<ul class="simple">
-<li><p>Improved stability and handling in the third-party integration flow.</p></li>
+<li><p>EUROe token is no longer shown for newly created accounts</p></li>
+<li><p>On the Buy screen, exchanges are now linked externally via our website (on-ramps remain)</p></li>
+<li><p>You may be asked to rate the app on Google Play</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CryptoX Concordium Wallet 1.9.1 - June 6, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Changes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">A warning is added when available funds are insufficient to cover the transaction fee during the earning setup.</p></li>
+<li><p class="sd-card-text">The issue that prevented staking the full available amount has been fixed.</p></li>
+</ul>
+<p class="sd-card-text">Other:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Improved stability and handling in the third-party integration flow.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet 1.9.0 - April 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Changed:</p>
@@ -1156,19 +1165,30 @@
 <section id="bw">
 <span id="rn-bw"></span><h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>April 24, 2025</p>
-<p>Version 2.2.0</p>
+<div><p>June 23, 2025</p>
+<p>Version 2.3.0</p>
 <ul class="simple">
-<li><p>Memo input field at Send Transaction screen</p></li>
-<li><p>Added support for TransferWithMemo transaction type</p></li>
-<li><p>Updated Send transaction status screens</p></li>
-<li><p>Preview of memo at Transaction Log</p></li>
-<li><p>Memo field at Transaction details screen</p></li>
+<li><p>Added Google Analytics track screens and events</p></li>
+<li><p>Updated delegation description help link from <cite>node</cite> list to <cite>staking</cite></p></li>
+<li><p>Fixed CIS-2 token validation of available funds, at Send Token screen</p></li>
+<li><p>Memo input at Send Transaction screen should not be displayed for CIS-2 tokens</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Concordium Wallet for Web 2.2.0 - April 24, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 2.2.0 includes several changes.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Memo input field at Send Transaction screen</p></li>
+<li><p class="sd-card-text">Added support for TransferWithMemo transaction type</p></li>
+<li><p class="sd-card-text">Updated Send transaction status screens</p></li>
+<li><p class="sd-card-text">Preview of memo at Transaction Log</p></li>
+<li><p class="sd-card-text">Memo field at Transaction details screen</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web 2.1.2 - March 6, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Version 2.1.2 includes several changes.</p>

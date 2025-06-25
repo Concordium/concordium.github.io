@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-macos/run-node-macos.c052d476-84dd-41ef-ac66-9a718b42d897.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-macos/run-node-macos.e0268919-df8d-4b0c-a951-2dffbace7f48.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-macos/run-node-macos';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-macos/run-node-macos.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -764,7 +764,11 @@
 <span id="run-node-macos"></span><h1>Install and manage a node on macOS<a class="headerlink" href="#install-and-manage-a-node-on-macos" title="Link to this heading">#</a></h1>
 <p>This article explains how to run a Concordium node on macOS on mainnet or testnet, and how to set up your node as a <a class="reference internal" href="#configure-baker-macos"><span class="std std-ref">validator node</span></a>.</p>
 <p>An account is not required to run a node, but you will need one if you want to become a validator.</p>
-<section id="prerequisites">
+<p>You can also watch the video to learn how to run a node with macOS.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0x7O1pa-6pQ"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe><section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Run macOS 11 BigSur or later.</p></li>
@@ -774,79 +778,55 @@
 </ul>
 <section id="installing-and-running-concordium-node-on-macos">
 <h3>Installing and running Concordium Node on macOS<a class="headerlink" href="#installing-and-running-concordium-node-on-macos" title="Link to this heading">#</a></h3>
+<p>The node installer allows you to run both mainnet and testnet nodes—you do not need to download a separate installer for each network.
+You will be able to choose the desired network(s) during the installation process, as described below.</p>
+<ol class="arabic">
+<li><p>Download the latest macOS installer package (<code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file) from <a class="reference internal" href="../../../installation/downloads.html#node-downloads"><span class="std std-ref">Downloads</span></a>, then double-click it to launch the Concordium Node installation.</p></li>
+<li><p>Click <strong>Allow</strong> to the message saying: <em>This package will run a program to determine if the software can be installed.</em> If you have an M1 based Mac, the installer might <a class="reference external" href="https://support.apple.com/en-us/HT211861">ask you to install Rosetta</a> if you haven’t already. Click <strong>Install</strong> if that’s the case.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="advanced-node-configuration-on-macos.html#change-node-settings"><span class="std std-ref">Change the node startup settings</span></a> for information about how to change the service configuration settings.</p>
+<p>If you already have a version of the node installed, click <strong>OK</strong> to the message saying <em>Previous Installation Detected</em>.</p>
 </div>
+</li>
+<li><p>Click <strong>Continue</strong> on the <em>Introduction</em> and <em>License</em> pages, then <strong>Agree</strong> to accept the license agreement.</p></li>
+<li><p>The next step is to configure the Node Service. On the <em>Configuration</em> page you have the following options:</p>
+<a class="reference internal image-reference" href="../../../../_images/Node-setup-mac-1.png"><img alt="../../../../_images/Node-setup-mac-1.png" src="../../../../_images/Node-setup-mac-1.png" style="width: 60%;" />
+</a>
+<p>Select the network you want to run the node on, specify a node name, and set the desired service options. Uncheck all options for the network you do not intend to use.
+Expand the drop-down below for details on each option:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Mainnet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic simple">
-<li><p class="sd-card-text">Go to <a class="reference internal" href="../../../installation/downloads.html#node-downloads"><span class="std std-ref">Downloads</span></a>, and download the latest macOS installer package (<code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file).</p></li>
-<li><p class="sd-card-text">In the folder where you downloaded the .pkg file, double-click the .pkg file. The <strong>Install Concordium Node</strong> program opens.</p></li>
-<li><p class="sd-card-text">Click <strong>Allow</strong> to the message saying: <em>This package will run a program to determine if the software can be installed.</em> If you have an M1 based Mac, the installer might <a class="reference external" href="https://support.apple.com/en-us/HT211861">ask you to install Rosetta</a> if you haven’t already. Click <strong>Install</strong> if that’s the case.</p></li>
-<li><p class="sd-card-text">If you already have a version of the node installed, click <strong>OK</strong> to the message saying <em>Previous Installation Detected</em>.</p></li>
-<li><p class="sd-card-text">Click <strong>Continue</strong> on the <em>Introduction</em> page.</p></li>
-<li><p class="sd-card-text">Click <strong>Continue</strong> on the <em>License</em> page, and then <strong>Agree</strong> to accept the license agreement.</p></li>
-<li><p class="sd-card-text">On the <em>Configuration</em> page you have the following options.</p></li>
-</ol>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../../../_images/Node-setup-mac-1.png"><img alt="../../../../_images/Node-setup-mac-1.png" src="../../../../_images/Node-setup-mac-1.png" style="width: 60%;" />
-</a>
-<ul class="simple">
-<li><p class="sd-card-text"><strong>Run a [mainnet/testnet] node at start-up</strong>: When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option,   you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or Concordium Client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.</p></li>
-<li><p class="sd-card-text"><strong>Start the node after installation is complete</strong>: The node will automatically start running after the installation is complete. Do not choose this option if you want to make further configuration changes before starting the node.</p></li>
-<li><p class="sd-card-text"><strong>Report to the network dashboard</strong>: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Deselect this option if you don’t want your node displayed on the dashboard. If selected, you can view the statistics on the <a class="reference external" href="https://ccdscan.io/">CCDScan</a></p></li>
-<li><p class="sd-card-text"><strong>Public node name</strong>: Specify the name of your node as you want it to appear on the network dashboard if the node reports to the network dashboard. You must enter a name for at least one of the nodes.</p></li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple" start="8">
-<li><p class="sd-card-text">Once configured, click <strong>Continue</strong> to go to the <strong>Installation Type</strong> page.</p></li>
-<li><p class="sd-card-text">Click <strong>Install</strong> and enter your administrator password. The installer needs the password because it installs the node for all users and runs it as a system service.</p></li>
-<li><p class="sd-card-text">Once installed, click <strong>Close</strong>. The following helper applications are now available on your computer (you can view them in the LaunchPad or in the <em>/Applications/Concordium Node</em> folder):</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p class="sd-card-text"><strong>Concordium Node Start Mainnet</strong></p></li>
-<li><p class="sd-card-text"><strong>Concordium Node Stop Mainnet</strong></p></li>
-</ul>
-</div></blockquote>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Testnet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic simple">
-<li><p class="sd-card-text">Go to <a class="reference internal" href="../../../installation/downloads.html#testnet-node-downloads"><span class="std std-ref">Downloads</span></a>, and download the latest macOS installer package (.pkg file).</p></li>
-<li><p class="sd-card-text">In the folder where you downloaded the .pkg file, double-click the .pkg file. The <strong>Install Concordium Node</strong> program opens.</p></li>
-<li><p class="sd-card-text">Click <strong>Allow</strong> to the message saying: <em>This package will run a program to determine if the software can be installed.</em> If you have an M1 based Mac, the installer might <a class="reference external" href="https://support.apple.com/en-us/HT211861">ask you to install Rosetta</a> if you haven’t already. Click <strong>Install</strong> if that’s the case.</p></li>
-<li><p class="sd-card-text">If you already have a version of the node installed, click <strong>OK</strong> to the message saying <em>Previous Installation Detected</em>.</p></li>
-<li><p class="sd-card-text">Click <strong>Continue</strong> on the <em>Introduction</em> page.</p></li>
-<li><p class="sd-card-text">Click <strong>Continue</strong> on the <em>License</em> page, and then <strong>Agree</strong> to accept the license agreement.</p></li>
-<li><p class="sd-card-text">On the <em>Configuration</em> page you have the following options.</p></li>
-</ol>
-<blockquote>
-<div><a class="reference internal image-reference" href="../../../../_images/Node-setup-mac-1.png"><img alt="../../../../_images/Node-setup-mac-1.png" src="../../../../_images/Node-setup-mac-1.png" style="width: 60%;" />
-</a>
+<span class="sd-summary-text">Node Runner Service configuration</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
 <li><p class="sd-card-text"><strong>Run a [mainnet/testnet] node at start-up</strong>: When selected, the node runs when the system starts. Choose this option when you plan to use the node frequently and need it to be up-to-date at short notice. If you don’t select this option, you’ll have to start the node manually when required, for example, when you want to use the Desktop Wallet or Concordium Client. If you choose to start the node manually, it might take longer for the node to get up-to-date with the blockchain depending on when the node was last up-to-date.</p></li>
 <li><p class="sd-card-text"><strong>Start the node after installation is complete</strong>: The node will automatically start running after the installation is complete. Do not choose this option if you want to make further configuration changes before starting the node.</p></li>
-<li><p class="sd-card-text"><strong>Report to the network dashboard</strong>: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Deselect this option if you don’t want your node displayed on the dashboard. If selected, you can view the statistics on the <a class="reference external" href="https://testnet.ccdscan.io/">CCDScan for the testnet</a>.</p></li>
+<li><p class="sd-card-text"><strong>Report to the network dashboard</strong>: Select this option if you want to publish your node statistics to the relevant dashboard when the node is running. Go to the mainnet or testnet dashboard to view the statistics:</p>
+<ul>
+<li><p class="sd-card-text"><a class="reference external" href="https://ccdscan.io/">https://ccdscan.io/</a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://testnet.ccdscan.io/">https://testnet.ccdscan.io/</a></p></li>
+</ul>
+</li>
 <li><p class="sd-card-text"><strong>Public node name</strong>: Specify the name of your node as you want it to appear on the network dashboard if the node reports to the network dashboard. You must enter a name for at least one of the nodes.</p></li>
 </ul>
-</div></blockquote>
-<ol class="arabic simple" start="8">
-<li><p class="sd-card-text">Once configured, click <strong>Continue</strong> to go to the <strong>Installation Type</strong> page.</p></li>
-<li><p class="sd-card-text">Click <strong>Install</strong> and enter your administrator password. The installer needs the password because it installs the node for all users and runs it as a system service.</p></li>
-<li><p class="sd-card-text">Once installed, click <strong>Close</strong>. The following helper applications are now available on your computer (you can view them in the LaunchPad or in the <em>/Applications/Concordium Node</em> folder):</p></li>
+</div>
+</details><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="reference internal" href="advanced-node-configuration-on-macos.html#change-node-settings"><span class="std std-ref">Change the node startup settings</span></a> for information about how to change the service configuration settings.</p>
+</div>
+</li>
+<li><p>Once configured, click <strong>Continue</strong> to go to the Installation Type page, then click <strong>Install</strong> and enter your administrator password when prompted, as the installer needs it to install the node for all users and run it as a system service.</p></li>
 </ol>
+<p>After installation, click <strong>Close</strong>. Depending on the network you selected, the following helper applications are now available on your computer (you can view them in the LaunchPad or in the <em>/Applications/Concordium Node</em> folder):</p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="sd-card-text"><strong>Concordium Node Start Testnet</strong></p></li>
-<li><p class="sd-card-text"><strong>Concordium Node Stop Testnet</strong></p></li>
+<li><p><strong>Concordium Node Start Mainnet</strong></p></li>
+<li><p><strong>Concordium Node Stop Mainnet</strong></p></li>
+<li><p><strong>Concordium Node Start Testnet</strong></p></li>
+<li><p><strong>Concordium Node Stop Testnet</strong></p></li>
+<li><p><strong>Concordium Node Uninstaller</strong></p></li>
 </ul>
 </div></blockquote>
-</div>
-</details></section>
+</section>
 <section id="upgrading-concordium-node-version-on-macos">
 <h3>Upgrading Concordium node version on macOS<a class="headerlink" href="#upgrading-concordium-node-version-on-macos" title="Link to this heading">#</a></h3>
 <div class="admonition note">

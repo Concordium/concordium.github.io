@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-docker/run-node-docker.505235d1-f409-4bcd-983f-b4c438dc3b8a.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-docker/run-node-docker.a827a346-9b55-471b-ac04-23439bc46cf7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-docker/run-node-docker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-docker/run-node-docker.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -764,7 +764,11 @@
 <span id="run-a-node"></span><h1>Install and manage a node on Docker<a class="headerlink" href="#install-and-manage-a-node-on-docker" title="Link to this heading">#</a></h1>
 <p>This article explains how to run a Concordium node in Docker on Linux on mainnet or testnet, and how to set up your node as a <a class="reference internal" href="#configure-baker-docker"><span class="std std-ref">validator node</span></a>.</p>
 <p>An account is not required to run a node, but you will need one if you want to become a validator.</p>
-<section id="prerequisites">
+<p>You can also watch the video to learn how to run a node with Docker.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DRk1NSIKZSM"
+title="YouTube video player" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe><section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <p>Before running a Concordium node you will need to</p>
 <ul>
@@ -785,10 +789,6 @@ These images are designed to be used together with docker-compose, or a similar 
 <p>The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-mainnet</span></code> or <code class="docutils literal notranslate"><span class="pre">/var/lib/concordium-testent</span></code> but any location to which the user that runs the Docker command has access to will do.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. This applies to both minor and major releases. For patch versions, you can also upgrade directly to the desired version (e.g., from X.X.0 to X.X.3 or from X.1.1 to X.2.3) without the need to apply each patch in sequence.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p>The dollar sign (<code class="docutils literal notranslate"><span class="pre">$</span></code>) in a codeblock means that you should run the command that follows the <code class="docutils literal notranslate"><span class="pre">$</span></code> in a terminal.</p>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -800,98 +800,98 @@ These images are designed to be used together with docker-compose, or a similar 
 </ol>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example configuration for running the mainnet node</span>
 <span class="nt">services</span><span class="p">:</span>
-<span class="nt">mainnet-node</span><span class="p">:</span>
-<span class="w">   </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
-<span class="w">   </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
-<span class="w">   </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
-<span class="w">   </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-<span class="w">   </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># Environment specific configuration</span>
-<span class="w">      </span><span class="c1"># The url where IPs of the bootstrap nodes can be found.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.software:8888</span>
-<span class="w">      </span><span class="c1"># Where the genesis is located</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat</span>
-<span class="w">      </span><span class="c1"># The url of the catchup file. This speeds up the catchup process.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx</span>
-<span class="w">      </span><span class="c1"># General node configuration Data and config directories (it&#39;s OK if they</span>
-<span class="w">      </span><span class="c1"># are the same). This should match the volume mount below. If the location</span>
-<span class="w">      </span><span class="c1"># of the mount inside the container is changed, then these should be</span>
-<span class="w">      </span><span class="c1"># changed accordingly as well.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_DATA_DIR=/mnt/data</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONFIG_DIR=/mnt/data</span>
-<span class="w">      </span><span class="c1"># The port on which the node will listen for incoming connections. This is a</span>
-<span class="w">      </span><span class="c1"># port inside the container. It is mapped to an external port by the port</span>
-<span class="w">      </span><span class="c1"># mapping in the `ports` section below. If the internal and external ports</span>
-<span class="w">      </span><span class="c1"># are going to be different then you should also set</span>
-<span class="w">      </span><span class="c1"># `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_LISTEN_PORT=8888</span>
-<span class="w">      </span><span class="c1"># Desired number of nodes to be connected to.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5</span>
-<span class="w">      </span><span class="c1"># Maximum number of __nodes__ the node will be connected to.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10</span>
-<span class="w">      </span><span class="c1"># Address of the V2 GRPC server.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
-<span class="w">      </span><span class="c1"># And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`</span>
-<span class="w">      </span><span class="c1"># that is defined for the collector.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000</span>
-<span class="w">      </span><span class="c1"># Maximum number of __connections__ the node can have. This can temporarily be more than</span>
-<span class="w">      </span><span class="c1"># the number of peers when incoming connections are processed. This limit</span>
-<span class="w">      </span><span class="c1"># ensures that there cannot be too many of those.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20</span>
-<span class="w">      </span><span class="c1"># Number of threads to use to process network events. This should be</span>
-<span class="w">      </span><span class="c1"># adjusted based on the resources the node has (in combination with</span>
-<span class="w">      </span><span class="c1"># `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2</span>
-<span class="w">      </span><span class="c1"># The bootstrapping interval in seconds. This makes the node contact the</span>
-<span class="w">      </span><span class="c1"># specified bootstrappers at a given interval to discover new peers.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800</span>
-<span class="w">      </span><span class="c1"># Haskell RTS flags to pass to consensus. `-N2` means to use two threads</span>
-<span class="w">      </span><span class="c1"># for consensus operations. `-I0` disables the idle garbage collector</span>
-<span class="w">      </span><span class="c1"># which reduces CPU load for non-validator nodes.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0</span>
-<span class="w">   </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/concordium-node&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">   </span><span class="c1"># Exposed ports. The ports the node listens on inside the container (defined</span>
-<span class="w">   </span><span class="c1"># by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)</span>
-<span class="w">   </span><span class="c1"># should match what is defined here. When running multiple nodes the</span>
-<span class="w">   </span><span class="c1"># external ports should be changed so as not to conflict.</span>
-<span class="w">   </span><span class="c1"># In the mapping below, the first port is the `host` port, and the second</span>
-<span class="w">   </span><span class="c1"># port is the `container` port. When the `container` port is changed the</span>
-<span class="w">   </span><span class="c1"># relevant environment variable listed above must be changed as well. For</span>
-<span class="w">   </span><span class="c1"># example, changing `10000:10000` to `10000:13000` would mean that</span>
-<span class="w">   </span><span class="c1"># `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise</span>
-<span class="w">   </span><span class="c1"># the node&#39;s gRPC interface will not be available from the host.</span>
-<span class="w">   </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span>
-<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;20000:20000&quot;</span>
-<span class="w">   </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">   </span><span class="c1"># The node&#39;s database should be stored in a persistent volume so that it</span>
-<span class="w">   </span><span class="c1"># survives container restart. In this case we map the **host** directory</span>
-<span class="w">   </span><span class="c1"># /var/lib/concordium-mainnet to be used as the node&#39;s database directory.</span>
-<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/concordium-mainnet:/mnt/data</span>
-<span class="c1"># The collector reports the state of the node to the network dashboard. A node</span>
-<span class="c1"># can run without reporting to the network dashboard. Remove this section if</span>
-<span class="c1"># that is desired.</span>
-<span class="nt">mainnet-node-collector</span><span class="p">:</span>
-<span class="w">   </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node-collector</span>
-<span class="w">   </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
-<span class="w">   </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
-<span class="w">   </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-<span class="w">   </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># Settings that should be customized by the user.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet</span>
-<span class="w">      </span><span class="c1"># Environment specific settings.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.mainnet.concordium.software/nodes/post</span>
-<span class="w">      </span><span class="c1"># Collection settings.</span>
-<span class="w">      </span><span class="c1"># How often to collect the statistics from the node.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000</span>
-<span class="w">      </span><span class="c1"># The URL where the node can be reached. Note that this will use the</span>
-<span class="w">      </span><span class="c1"># docker created network which maps `mainnet-node` to the internal IP of</span>
-<span class="w">      </span><span class="c1"># the `mainnet-node`. If the name of the node service is changed from</span>
-<span class="w">      </span><span class="c1"># `mainnet-node` then the name here must also be changed.</span>
-<span class="w">      </span><span class="c1"># The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`</span>
-<span class="w">      </span><span class="c1"># that is defined for the node.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000</span>
-<span class="w">   </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/node-collector&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">   </span><span class="nt">mainnet-node</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
+<span class="w">      </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">      </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">      </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">         </span><span class="c1"># Environment specific configuration</span>
+<span class="w">         </span><span class="c1"># The url where IPs of the bootstrap nodes can be found.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.software:8888</span>
+<span class="w">         </span><span class="c1"># Where the genesis is located</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat</span>
+<span class="w">         </span><span class="c1"># The url of the catchup file. This speeds up the catchup process.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx</span>
+<span class="w">         </span><span class="c1"># General node configuration Data and config directories (it&#39;s OK if they</span>
+<span class="w">         </span><span class="c1"># are the same). This should match the volume mount below. If the location</span>
+<span class="w">         </span><span class="c1"># of the mount inside the container is changed, then these should be</span>
+<span class="w">         </span><span class="c1"># changed accordingly as well.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_DATA_DIR=/mnt/data</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONFIG_DIR=/mnt/data</span>
+<span class="w">         </span><span class="c1"># The port on which the node will listen for incoming connections. This is a</span>
+<span class="w">         </span><span class="c1"># port inside the container. It is mapped to an external port by the port</span>
+<span class="w">         </span><span class="c1"># mapping in the `ports` section below. If the internal and external ports</span>
+<span class="w">         </span><span class="c1"># are going to be different then you should also set</span>
+<span class="w">         </span><span class="c1"># `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_LISTEN_PORT=8888</span>
+<span class="w">         </span><span class="c1"># Desired number of nodes to be connected to.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5</span>
+<span class="w">         </span><span class="c1"># Maximum number of __nodes__ the node will be connected to.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10</span>
+<span class="w">         </span><span class="c1"># Address of the V2 GRPC server.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
+<span class="w">         </span><span class="c1"># And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`</span>
+<span class="w">         </span><span class="c1"># that is defined for the collector.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000</span>
+<span class="w">         </span><span class="c1"># Maximum number of __connections__ the node can have. This can temporarily be more than</span>
+<span class="w">         </span><span class="c1"># the number of peers when incoming connections are processed. This limit</span>
+<span class="w">         </span><span class="c1"># ensures that there cannot be too many of those.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20</span>
+<span class="w">         </span><span class="c1"># Number of threads to use to process network events. This should be</span>
+<span class="w">         </span><span class="c1"># adjusted based on the resources the node has (in combination with</span>
+<span class="w">         </span><span class="c1"># `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2</span>
+<span class="w">         </span><span class="c1"># The bootstrapping interval in seconds. This makes the node contact the</span>
+<span class="w">         </span><span class="c1"># specified bootstrappers at a given interval to discover new peers.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800</span>
+<span class="w">         </span><span class="c1"># Haskell RTS flags to pass to consensus. `-N2` means to use two threads</span>
+<span class="w">         </span><span class="c1"># for consensus operations. `-I0` disables the idle garbage collector</span>
+<span class="w">         </span><span class="c1"># which reduces CPU load for non-validator nodes.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0</span>
+<span class="w">      </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/concordium-node&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="c1"># Exposed ports. The ports the node listens on inside the container (defined</span>
+<span class="w">      </span><span class="c1"># by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)</span>
+<span class="w">      </span><span class="c1"># should match what is defined here. When running multiple nodes the</span>
+<span class="w">      </span><span class="c1"># external ports should be changed so as not to conflict.</span>
+<span class="w">      </span><span class="c1"># In the mapping below, the first port is the `host` port, and the second</span>
+<span class="w">      </span><span class="c1"># port is the `container` port. When the `container` port is changed the</span>
+<span class="w">      </span><span class="c1"># relevant environment variable listed above must be changed as well. For</span>
+<span class="w">      </span><span class="c1"># example, changing `10000:10000` to `10000:13000` would mean that</span>
+<span class="w">      </span><span class="c1"># `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise</span>
+<span class="w">      </span><span class="c1"># the node&#39;s gRPC interface will not be available from the host.</span>
+<span class="w">      </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;20000:20000&quot;</span>
+<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># The node&#39;s database should be stored in a persistent volume so that it</span>
+<span class="w">      </span><span class="c1"># survives container restart. In this case we map the **host** directory</span>
+<span class="w">      </span><span class="c1"># /var/lib/concordium-mainnet to be used as the node&#39;s database directory.</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/concordium-mainnet:/mnt/data</span>
+<span class="w">   </span><span class="c1"># The collector reports the state of the node to the network dashboard. A node</span>
+<span class="w">   </span><span class="c1"># can run without reporting to the network dashboard. Remove this section if</span>
+<span class="w">   </span><span class="c1"># that is desired.</span>
+<span class="w">   </span><span class="nt">mainnet-node-collector</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mainnet-node-collector</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/mainnet-node:latest</span>
+<span class="w">      </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">      </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">      </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">         </span><span class="c1"># Settings that should be customized by the user.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet</span>
+<span class="w">         </span><span class="c1"># Environment specific settings.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.mainnet.concordium.software/nodes/post</span>
+<span class="w">         </span><span class="c1"># Collection settings.</span>
+<span class="w">         </span><span class="c1"># How often to collect the statistics from the node.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000</span>
+<span class="w">         </span><span class="c1"># The URL where the node can be reached. Note that this will use the</span>
+<span class="w">         </span><span class="c1"># docker created network which maps `mainnet-node` to the internal IP of</span>
+<span class="w">         </span><span class="c1"># the `mainnet-node`. If the name of the node service is changed from</span>
+<span class="w">         </span><span class="c1"># `mainnet-node` then the name here must also be changed.</span>
+<span class="w">         </span><span class="c1"># The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`</span>
+<span class="w">         </span><span class="c1"># that is defined for the node.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000</span>
+<span class="w">      </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/node-collector&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <ol class="arabic" start="2">
@@ -954,102 +954,102 @@ configuration file should be used.</p>
 </ul>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is an example configuration for running the testnet node</span>
 <span class="nt">services</span><span class="p">:</span>
-<span class="nt">testnet-node</span><span class="p">:</span>
-<span class="w">   </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
-<span class="w">   </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
-<span class="w">   </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
-<span class="w">   </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-<span class="w">   </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># Environment specific configuration</span>
-<span class="w">      </span><span class="c1"># The url where IPs of the bootstrap nodes can be found.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.testnet.concordium.com:8888</span>
-<span class="w">      </span><span class="c1"># Where the genesis is located</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat</span>
-<span class="w">      </span><span class="c1"># The url of the catchup file. This speeds up the catchup process.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx</span>
-<span class="w">      </span><span class="c1"># General node configuration Data and config directories (it&#39;s OK if they</span>
-<span class="w">      </span><span class="c1"># are the same). This should match the volume mount below. If the location</span>
-<span class="w">      </span><span class="c1"># of the mount inside the container is changed, then these should be</span>
-<span class="w">      </span><span class="c1"># changed accordingly as well.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_DATA_DIR=/mnt/data</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONFIG_DIR=/mnt/data</span>
-<span class="w">      </span><span class="c1"># The port on which the node will listen for incoming connections. This is a</span>
-<span class="w">      </span><span class="c1"># port inside the container. It is mapped to an external port by the port</span>
-<span class="w">      </span><span class="c1"># mapping in the `ports` section below. If the internal and external ports</span>
-<span class="w">      </span><span class="c1"># are going to be different then you should also set</span>
-<span class="w">      </span><span class="c1"># `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_LISTEN_PORT=8889</span>
-<span class="w">      </span><span class="c1"># Desired number of nodes to be connected to.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5</span>
-<span class="w">      </span><span class="c1"># Maximum number of __nodes__ the node will be connected to.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10</span>
-<span class="w">      </span><span class="c1"># Address of the GRPC server</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0</span>
-<span class="w">      </span><span class="c1"># And its port</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_PORT=10001</span>
-<span class="w">      </span><span class="c1"># Address of the V2 GRPC server.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
-<span class="w">      </span><span class="c1"># And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`</span>
-<span class="w">      </span><span class="c1"># that is defined for the collector.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001</span>
-<span class="w">      </span><span class="c1"># Maximum number of __connections__ the node can have. This can temporarily be more than</span>
-<span class="w">      </span><span class="c1"># the number of peers when incoming connections are processed. This limit</span>
-<span class="w">      </span><span class="c1"># ensures that there cannot be too many of those.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20</span>
-<span class="w">      </span><span class="c1"># Number of threads to use to process network events. This should be</span>
-<span class="w">      </span><span class="c1"># adjusted based on the resources the node has (in combination with</span>
-<span class="w">      </span><span class="c1"># `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2</span>
-<span class="w">      </span><span class="c1"># The bootstrapping interval in seconds. This makes the node contact the</span>
-<span class="w">      </span><span class="c1"># specified bootstrappers at a given interval to discover new peers.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800</span>
-<span class="w">      </span><span class="c1"># Haskell RTS flags to pass to consensus. `-N2` means to use two threads</span>
-<span class="w">      </span><span class="c1"># for consensus operations. `-I0` disables the idle garbage collector</span>
-<span class="w">      </span><span class="c1"># which reduces CPU load for non-validator nodes.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0</span>
-<span class="w">   </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/concordium-node&quot;</span><span class="p p-Indicator">]</span>
-<span class="w">   </span><span class="c1"># Exposed ports. The ports the node listens on inside the container (defined</span>
-<span class="w">   </span><span class="c1"># by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)</span>
-<span class="w">   </span><span class="c1"># should match what is defined here. When running multiple nodes the</span>
-<span class="w">   </span><span class="c1"># external ports should be changed so as not to conflict.</span>
-<span class="w">   </span><span class="c1"># In the mapping below, the first port is the `host` port, and the second</span>
-<span class="w">   </span><span class="c1"># port is the `container` port. When the `container` port is changed the</span>
-<span class="w">   </span><span class="c1"># relevant environment variable listed above must be changed as well. For</span>
-<span class="w">   </span><span class="c1"># example, changing `10001:10001` to `10001:13000` would mean that</span>
-<span class="w">   </span><span class="c1"># `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise</span>
-<span class="w">   </span><span class="c1"># the node&#39;s gRPC interface will not be available from the host.</span>
-<span class="w">   </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8889:8889&quot;</span>
-<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;20001:20001&quot;</span>
-<span class="w">   </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">   </span><span class="c1"># The node&#39;s database should be stored in a persistent volume so that it</span>
-<span class="w">   </span><span class="c1"># survives container restart. In this case we map the **host** directory</span>
-<span class="w">   </span><span class="c1"># /var/lib/concordium-testnet to be used as the node&#39;s database directory.</span>
-<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/concordium-testnet:/mnt/data</span>
-<span class="c1"># The collector reports the state of the node to the network dashboard. A node</span>
-<span class="c1"># can run without reporting to the network dashboard. Remove this section if</span>
-<span class="c1"># that is desired.</span>
-<span class="nt">testnet-node-collector</span><span class="p">:</span>
-<span class="w">   </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node-collector</span>
-<span class="w">   </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
-<span class="w">   </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
-<span class="w">   </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-<span class="w">   </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># Settings that should be customized by the user.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test</span>
-<span class="w">      </span><span class="c1"># Environment specific settings.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.testnet.concordium.com/nodes/post</span>
-<span class="w">      </span><span class="c1"># Collection settings.</span>
-<span class="w">      </span><span class="c1"># How often to collect the statistics from the node.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000</span>
-<span class="w">      </span><span class="c1"># The URL where the node can be reached. Note that this will use the</span>
-<span class="w">      </span><span class="c1"># docker created network which maps `testnet-node` to the internal IP of</span>
-<span class="w">      </span><span class="c1"># the `testnet-node`. If the name of the node service is changed from</span>
-<span class="w">      </span><span class="c1"># `testnet-node` then the name here must also be changed.</span>
-<span class="w">      </span><span class="c1"># The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`</span>
-<span class="w">      </span><span class="c1"># that is defined for the node.</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001</span>
-<span class="w">   </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/node-collector&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">   </span><span class="nt">testnet-node</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
+<span class="w">      </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">      </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">      </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">         </span><span class="c1"># Environment specific configuration</span>
+<span class="w">         </span><span class="c1"># The url where IPs of the bootstrap nodes can be found.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.testnet.concordium.com:8888</span>
+<span class="w">         </span><span class="c1"># Where the genesis is located</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat</span>
+<span class="w">         </span><span class="c1"># The url of the catchup file. This speeds up the catchup process.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx</span>
+<span class="w">         </span><span class="c1"># General node configuration Data and config directories (it&#39;s OK if they</span>
+<span class="w">         </span><span class="c1"># are the same). This should match the volume mount below. If the location</span>
+<span class="w">         </span><span class="c1"># of the mount inside the container is changed, then these should be</span>
+<span class="w">         </span><span class="c1"># changed accordingly as well.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_DATA_DIR=/mnt/data</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONFIG_DIR=/mnt/data</span>
+<span class="w">         </span><span class="c1"># The port on which the node will listen for incoming connections. This is a</span>
+<span class="w">         </span><span class="c1"># port inside the container. It is mapped to an external port by the port</span>
+<span class="w">         </span><span class="c1"># mapping in the `ports` section below. If the internal and external ports</span>
+<span class="w">         </span><span class="c1"># are going to be different then you should also set</span>
+<span class="w">         </span><span class="c1"># `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_LISTEN_PORT=8889</span>
+<span class="w">         </span><span class="c1"># Desired number of nodes to be connected to.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5</span>
+<span class="w">         </span><span class="c1"># Maximum number of __nodes__ the node will be connected to.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10</span>
+<span class="w">         </span><span class="c1"># Address of the GRPC server</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0</span>
+<span class="w">         </span><span class="c1"># And its port</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RPC_SERVER_PORT=10001</span>
+<span class="w">         </span><span class="c1"># Address of the V2 GRPC server.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0</span>
+<span class="w">         </span><span class="c1"># And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`</span>
+<span class="w">         </span><span class="c1"># that is defined for the collector.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001</span>
+<span class="w">         </span><span class="c1"># Maximum number of __connections__ the node can have. This can temporarily be more than</span>
+<span class="w">         </span><span class="c1"># the number of peers when incoming connections are processed. This limit</span>
+<span class="w">         </span><span class="c1"># ensures that there cannot be too many of those.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20</span>
+<span class="w">         </span><span class="c1"># Number of threads to use to process network events. This should be</span>
+<span class="w">         </span><span class="c1"># adjusted based on the resources the node has (in combination with</span>
+<span class="w">         </span><span class="c1"># `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2</span>
+<span class="w">         </span><span class="c1"># The bootstrapping interval in seconds. This makes the node contact the</span>
+<span class="w">         </span><span class="c1"># specified bootstrappers at a given interval to discover new peers.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800</span>
+<span class="w">         </span><span class="c1"># Haskell RTS flags to pass to consensus. `-N2` means to use two threads</span>
+<span class="w">         </span><span class="c1"># for consensus operations. `-I0` disables the idle garbage collector</span>
+<span class="w">         </span><span class="c1"># which reduces CPU load for non-validator nodes.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0</span>
+<span class="w">      </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/concordium-node&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="c1"># Exposed ports. The ports the node listens on inside the container (defined</span>
+<span class="w">      </span><span class="c1"># by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)</span>
+<span class="w">      </span><span class="c1"># should match what is defined here. When running multiple nodes the</span>
+<span class="w">      </span><span class="c1"># external ports should be changed so as not to conflict.</span>
+<span class="w">      </span><span class="c1"># In the mapping below, the first port is the `host` port, and the second</span>
+<span class="w">      </span><span class="c1"># port is the `container` port. When the `container` port is changed the</span>
+<span class="w">      </span><span class="c1"># relevant environment variable listed above must be changed as well. For</span>
+<span class="w">      </span><span class="c1"># example, changing `10001:10001` to `10001:13000` would mean that</span>
+<span class="w">      </span><span class="c1"># `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise</span>
+<span class="w">      </span><span class="c1"># the node&#39;s gRPC interface will not be available from the host.</span>
+<span class="w">      </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8889:8889&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;20001:20001&quot;</span>
+<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># The node&#39;s database should be stored in a persistent volume so that it</span>
+<span class="w">      </span><span class="c1"># survives container restart. In this case we map the **host** directory</span>
+<span class="w">      </span><span class="c1"># /var/lib/concordium-testnet to be used as the node&#39;s database directory.</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/concordium-testnet:/mnt/data</span>
+<span class="w">   </span><span class="c1"># The collector reports the state of the node to the network dashboard. A node</span>
+<span class="w">   </span><span class="c1"># can run without reporting to the network dashboard. Remove this section if</span>
+<span class="w">   </span><span class="c1"># that is desired.</span>
+<span class="w">   </span><span class="nt">testnet-node-collector</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">testnet-node-collector</span>
+<span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">concordium/testnet-node:latest</span>
+<span class="w">      </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux/amd64</span>
+<span class="w">      </span><span class="nt">pull_policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">      </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">         </span><span class="c1"># Settings that should be customized by the user.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test</span>
+<span class="w">         </span><span class="c1"># Environment specific settings.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.testnet.concordium.com/nodes/post</span>
+<span class="w">         </span><span class="c1"># Collection settings.</span>
+<span class="w">         </span><span class="c1"># How often to collect the statistics from the node.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000</span>
+<span class="w">         </span><span class="c1"># The URL where the node can be reached. Note that this will use the</span>
+<span class="w">         </span><span class="c1"># docker created network which maps `testnet-node` to the internal IP of</span>
+<span class="w">         </span><span class="c1"># the `testnet-node`. If the name of the node service is changed from</span>
+<span class="w">         </span><span class="c1"># `testnet-node` then the name here must also be changed.</span>
+<span class="w">         </span><span class="c1"># The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`</span>
+<span class="w">         </span><span class="c1"># that is defined for the node.</span>
+<span class="w">         </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001</span>
+<span class="w">      </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/node-collector&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <div class="admonition note">
