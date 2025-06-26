@@ -213,7 +213,7 @@ Concordium Node 5.3.2
 
 - Fixed an additional bug in the ``GetAccountInfo`` endpoint in GRPCv2 where the incoming_amounts field of encrypted amounts was not always set correctly.
 
-- The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
+- The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
 
 April 12, 2023
 
@@ -372,10 +372,10 @@ SendTransaction for smart contract transactions can receive schemas that are for
 
 January 4, 2023
 
-Concordium Node 5.0.7 for MacOS
+Concordium Node 5.0.7 for macOS
 -------------------------------
 
-Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
+Fix a bug in the macOS node that caused an issue with NRG calculation. Concordium recommends that macOS node runners update their nodes to 5.0.7.
 
 Sirius Testnet
 ==============

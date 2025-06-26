@@ -119,18 +119,24 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    June 6, 2025
+    1.10.0 - June 19, 2025
 
-    Changes:
-
-    - A warning is added when available funds are insufficient to cover the transaction fee during the earning setup.
-    - The issue that prevented staking the full available amount has been fixed.
-
-    Other:
-
-    - Improved stability and handling in the third-party integration flow.
+    - EUROe token is no longer shown for newly created accounts
+    - On the Buy screen, exchanges are now linked externally via our website (on-ramps remain)
+    - You may be asked to rate the app on Google Play
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.9.1 - June 6, 2025
+
+            Changes:
+
+            - A warning is added when available funds are insufficient to cover the transaction fee during the earning setup.
+            - The issue that prevented staking the full available amount has been fixed.
+
+            Other:
+
+            - Improved stability and handling in the third-party integration flow.
 
         .. dropdown:: |cryptox| 1.9.0 - April 18, 2025
 
@@ -409,17 +415,26 @@ Wallets
 |bw|
 -------------------------
 
-    April 24, 2025
+    June 23, 2025
 
-    Version 2.2.0
+    Version 2.3.0
 
-    -   Memo input field at Send Transaction screen
-    -   Added support for TransferWithMemo transaction type
-    -   Updated Send transaction status screens
-    -   Preview of memo at Transaction Log
-    -   Memo field at Transaction details screen
+    -   Added Google Analytics track screens and events
+    -   Updated delegation description help link from `node` list to `staking`
+    -   Fixed CIS-2 token validation of available funds, at Send Token screen
+    -   Memo input at Send Transaction screen should not be displayed for CIS-2 tokens
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.2.0 - April 24, 2025
+
+            Version 2.2.0 includes several changes.
+
+            -   Memo input field at Send Transaction screen
+            -   Added support for TransferWithMemo transaction type
+            -   Updated Send transaction status screens
+            -   Preview of memo at Transaction Log
+            -   Memo field at Transaction details screen
 
         .. dropdown:: |bw| 2.1.2 - March 6, 2025
 
@@ -1101,9 +1116,9 @@ Mainnet
 
             - Removed the ``CONCORDIUM_NODE_PROMETHEUS_SERVER`` environment variable. The prometheus server is now started if ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT`` is set.
 
-        .. dropdown:: 5.0.7 for MacOS - January 4, 2023
+        .. dropdown:: 5.0.7 for macOS - January 4, 2023
 
-            Fix a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
+            Fix a bug in the macOS node that caused an issue with NRG calculation. Concordium recommends that macOS node runners update their nodes to 5.0.7.
 
         .. dropdown:: 5.0.6 - November 29, 2022
 
@@ -1551,7 +1566,7 @@ Testnet
 
             - Fixed an additional bug in the ``GetAccountInfo`` endpoint in GRPCv2 where the incoming_amounts field of encrypted amounts was not always set correctly.
 
-            - The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu-testnet>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
+            - The node collector is migrated to a separate package and now uses the V2 GRPC API. If you already have a node installed, you must update the configuration. For more information, see the Run a node topic that is specific to your node platform: :ref:`Linux<run-a-node>`, :ref:`Ubuntu<run-node-ubuntu>`, :ref:`Windows<run-node-windows>`, or :ref:`macOS<run-node-macos>`.
 
         .. dropdown:: 5.2.4 - March 09, 2023
 
@@ -1581,9 +1596,9 @@ Testnet
 
             - Removed the ``CONCORDIUM_NODE_PROMETHEUS_SERVER`` environment variable. The prometheus server is now started if ``CONCORDIUM_NODE_PROMETHEUS_LISTEN_PORT`` is set.
 
-        .. dropdown:: 5.0.7 for MacOS - January 4, 2023
+        .. dropdown:: 5.0.7 for macOS - January 4, 2023
 
-            Fixed a bug in the MacOS node that caused an issue with NRG calculation. Concordium recommends that MacOS node runners update their nodes to 5.0.7.
+            Fixed a bug in the macOS node that caused an issue with NRG calculation. Concordium recommends that macOS node runners update their nodes to 5.0.7.
 
         .. dropdown:: 5.0.6 - November 15, 2022
 
