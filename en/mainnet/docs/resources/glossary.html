@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.ff6e0e20-9cb3-413f-9b3a-f6952fcbc360.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/resources/glossary.3effb189-4ab8-47b0-9d8e-4bfb64f41850.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/resources/glossary';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/resources/glossary.html" />
@@ -508,6 +508,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
@@ -792,9 +793,14 @@
 </dd>
 <dt id="term-Block-reward-commission">Block reward commission<a class="headerlink" href="#term-Block-reward-commission" title="Link to this term">#</a></dt><dd><p>Sets the percentage of block rewards a validator retains when its pool successfully produces a block. Lower rates may attract more delegators, while higher rates increase your profit share from each block.</p>
 </dd>
+<dt id="term-BLS12-381">BLS12-381<a class="headerlink" href="#term-BLS12-381" title="Link to this term">#</a></dt><dd><p>An elliptic curve specifically designed for cryptographic applications requiring pairings, e.g., the BLS aggregate signature scheme or the Pointcheval-Sanders signature scheme. The latter can be used for blind signing and also allows for a simple proof of knowledge of a signature. BLS12-381 is a crucial component of privacy-based self-sovereign identity systems.</p>
+</dd>
 <dt id="term-Branch">Branch<a class="headerlink" href="#term-Branch" title="Link to this term">#</a></dt><dd><p>A chain of blocks that has split from the main chain. All branches have the potential to become the main chain. The Chain selection rule determines which branch is the best chain.</p>
 </dd>
 <dt id="term-Build">Build<a class="headerlink" href="#term-Build" title="Link to this term">#</a></dt><dd><p>Command to take a smart contract module written in Rust and create a Wasm module that can be deployed on chain. The command is run from <a class="reference internal" href="#term-cargo-concordium"><span class="xref std std-term">cargo-concordium</span></a>.</p>
+</dd>
+<dt id="term-Bulletproof">Bulletproof<a class="headerlink" href="#term-Bulletproof" title="Link to this term">#</a></dt><dd><p>A type of efficient interactive proof system that enables various <a class="reference internal" href="#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proofs</span></a>, including range-proofs, set-membership proofs, and
+set-non-membership proofs. The generated proofs have logarithmic size. They can be made non-interactive with the Fiat-Shamir transform.</p>
 </dd>
 <dt id="term-Candidate">Candidate<a class="headerlink" href="#term-Candidate" title="Link to this term">#</a></dt><dd><p>Option on the official list of candidates for the election. Since there are only 10 places for the 2025 election, not all nominees are necessarily candidates.</p>
 </dd>
@@ -981,6 +987,8 @@ blocks on top of the longest chain), to incentivize blockchain users.</p></li>
 </dd>
 <dt id="term-Shielding">Shielding<a class="headerlink" href="#term-Shielding" title="Link to this term">#</a></dt><dd><p>(<a class="reference internal" href="../guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">Deprecated</span></a>):</p>
 <p>The action of transferring a part of the public balance to the <a class="reference internal" href="#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a>.</p>
+</dd>
+<dt id="term-Sigma-protocols">Sigma protocols<a class="headerlink" href="#term-Sigma-protocols" title="Link to this term">#</a></dt><dd><p>A class of efficient interactive <a class="reference internal" href="#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proof</span></a> systems that follow a three-round structure; commitment, challenge, and response. Sigma protocols enable a prover to demonstrate knowledge of secret information without revealing it. They can also be used for OR and AND statements, and can be made non-interactive with the Fiat-Shamir transform.</p>
 </dd>
 <dt id="term-Slot">Slot<a class="headerlink" href="#term-Slot" title="Link to this term">#</a></dt><dd><p>See <a class="reference internal" href="#term-Round"><span class="xref std std-term">round</span></a>.</p>
 </dd>
