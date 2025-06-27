@@ -129,7 +129,7 @@ Account sequence number
 Each account on the Concordium blockchain has a :term:`sequence number<transaction sequence number>` and each
 transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
-the account. The sequence number is maintained by all the bakers in order to
+the account. The sequence number is maintained by all the validators in order to
 validate transactions.
 
 The sequence number can be looked up from an up to date node by running
@@ -197,7 +197,7 @@ Commands for transferring CCD
 The commands for transferring CCD
 are described in the following table.
 
-The add, remove, and configure bakers commands are described in the topic :ref:`becoming a baker using the Concordium Client<become-a-baker>`.
+The add, remove, and configure validators commands are described in the topic :ref:`becoming a validator using the Concordium Client<become-a-baker>`.
 
 .. note::
 
@@ -251,7 +251,7 @@ sender account A has three transaction signing keys 0, 1, and 3.
    Enter password for signing key with index 0: ...
    Enter password for signing key with index 1: ...
    Enter password for signing key with index 3: ...
-   Transaction '7c484aecbc9dce654956cae1a6f9315679f62afe091d74f865f3602bc8003fbd' sent to the baker.
+   Transaction '7c484aecbc9dce654956cae1a6f9315679f62afe091d74f865f3602bc8003fbd' sent to the validator.
    Waiting for the transaction to be committed and finalized.
    You may skip this step by interrupting the command using Ctrl-C (pass flag '--no-wait' to do this by default).
    The transaction will still get processed and may be queried using
@@ -302,7 +302,7 @@ additional flag ``--index.`` If given, this flag is used to select which
    Confirm [yN]: y
    Enter password for signing key with index 0: ...
    Enter password for signing key with index 1: ...
-   Transaction 'b240ed919767b89a03984e71a0c39cff52f3374ab2b1721e489c02dc3fb1e691' sent to the baker.
+   Transaction 'b240ed919767b89a03984e71a0c39cff52f3374ab2b1721e489c02dc3fb1e691' sent to the validator.
    Waiting for the transaction to be committed and finalized.
    You may skip this step by interrupting the command using Ctrl-C (pass flag '--no-wait' to do this by default).
    The transaction will still get processed and may be queried using
@@ -504,13 +504,13 @@ The output is:
      - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.
    * -
      - allowed range for finalization commission
-     - The allowed range of finalization commissions bakers may select when creating or updating pools.
+     - The allowed range of finalization commissions validators may select when creating or updating pools.
    * -
      - allowed range for block commission
      - The allowed range of block commissions validators may select when creating or updating pools.
    * -
      - allowed range for transaction commission
-     - The allowed range of transaction commissions bakers may select when creating or updating pools.
+     - The allowed range of transaction commissions validators may select when creating or updating pools.
    * - Passive delegation parameters
      - finalization commission
      - The percentage of finalization rewards retained by the passive delegation, i.e., not given out to delegators.
