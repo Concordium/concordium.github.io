@@ -2,7 +2,7 @@
 .. _node-dashboard: http://localhost:8099
 .. _Discord: https://discord.com/invite/xWmQ5tp
 
-.. _become-a-baker:
+.. _become-a-validator:
 
 =====================================
 Validation with the Concordium Client

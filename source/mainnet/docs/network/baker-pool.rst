@@ -52,7 +52,7 @@ The tool for both validator management and research is `CCDScan <https://ccdscan
    guides/baker-macos
    guides/baker-ubuntu
    guides/baker-docker
-   guides/become-baker
+   guides/become-validator
 
 
 

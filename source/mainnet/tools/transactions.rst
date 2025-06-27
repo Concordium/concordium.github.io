@@ -34,51 +34,51 @@ Transaction commands
 ====================
 
 
-+-------------------------------------+------------------------------------------------+
-| Command                             | Description                                    |
-+=====================================+================================================+
-| ``transaction send``                | Transfer CCD tokens                            |
-+-------------------------------------+------------------------------------------------+
-| ``transaction send-scheduled``      | Make a transfer that will be released          |
-|                                     | gradually                                      |
-+-------------------------------------+------------------------------------------------+
-| ``validator add``                   | Add a new validator. For more information, see |
-|                                     | :ref:`become-a-baker`.                         |
-+-------------------------------------+------------------------------------------------+
-| ``validator remove``                | Remove a validator. For more information, see  |
-|                                     | :ref:`become-a-baker`.                         |
-+-------------------------------------+------------------------------------------------+
-| ``validator update-stake``          | Update the staked amount of a validator. For   |
-|                                     | more information, see :ref:`become-a-baker`.   |
-+-------------------------------------+------------------------------------------------+
-| ``validator update-restake``        | Update the restaking switch of a validator. For|
-|                                     | more information, see :ref:`become-a-baker`.   |
-+-------------------------------------+------------------------------------------------+
-| ``validator set-key``               | Update the keys of a validator. For more       |
-|                                     | information, see :ref:`become-a-baker`.        |
-+-------------------------------------+------------------------------------------------+
-| ``account update-keys``             | Update credentials keys for a specific         |
-|                                     | credential                                     |
-+-------------------------------------+------------------------------------------------+
-| ``account unshield``                | Transfer part of the shielded balance to the   |
-|                                     | public balance                                 |
-+-------------------------------------+------------------------------------------------+
-| ``account show``                    | Show account information.                      |
-|                                     | :ref:`See below for specific                   |
-|                                     | information<account-commands>`.                |
-+-------------------------------------+------------------------------------------------+
-| ``identity show``                   | Show identity information.                     |
-|                                     | :ref:`See below for specific                   |
-|                                     | information<identity-commands>`.               |
-+-------------------------------------+------------------------------------------------+
-| ``delegator configure``             | Add, configure, and remove                     |
-|                                     | delegation. :ref:`See below for                |
-|                                     | information<delegation-commands>`.             |
-+-------------------------------------+------------------------------------------------+
-| ``consensus show-chain-parameters`` | Show chain parameters.                         |
-|                                     | :ref:`See below for specific                   |
-|                                     | information<consensus show-chain-parameters>`. |
-+-------------------------------------+------------------------------------------------+
++-------------------------------------+-------------------------------------------------+
+| Command                             | Description                                     |
++=====================================+=================================================+
+| ``transaction send``                | Transfer CCD tokens                             |
++-------------------------------------+-------------------------------------------------+
+| ``transaction send-scheduled``      | Make a transfer that will be released           |
+|                                     | gradually                                       |
++-------------------------------------+-------------------------------------------------+
+| ``validator add``                   | Add a new validator. For more information, see  |
+|                                     | :ref:`become-a-validator`.                      |
++-------------------------------------+-------------------------------------------------+
+| ``validator remove``                | Remove a validator. For more information, see   |
+|                                     | :ref:`become-a-validator`.                      |
++-------------------------------------+-------------------------------------------------+
+| ``validator update-stake``          | Update the staked amount of a validator. For    |
+|                                     | more information, see :ref:`become-a-validator`.|
++-------------------------------------+-------------------------------------------------+
+| ``validator update-restake``        | Update the restaking switch of a validator. For |
+|                                     | more information, see :ref:`become-a-validator`.|
++-------------------------------------+-------------------------------------------------+
+| ``validator set-key``               | Update the keys of a validator. For more        |
+|                                     | information, see :ref:`become-a-validator`.     |
++-------------------------------------+-------------------------------------------------+
+| ``account update-keys``             | Update credentials keys for a specific          |
+|                                     | credential                                      |
++-------------------------------------+-------------------------------------------------+
+| ``account unshield``                | Transfer part of the shielded balance to the    |
+|                                     | public balance                                  |
++-------------------------------------+-------------------------------------------------+
+| ``account show``                    | Show account information.                       |
+|                                     | :ref:`See below for specific                    |
+|                                     | information<account-commands>`.                 |
++-------------------------------------+-------------------------------------------------+
+| ``identity show``                   | Show identity information.                      |
+|                                     | :ref:`See below for specific                    |
+|                                     | information<identity-commands>`.                |
++-------------------------------------+-------------------------------------------------+
+| ``delegator configure``             | Add, configure, and remove                      |
+|                                     | delegation. :ref:`See below for                 |
+|                                     | information<delegation-commands>`.              |
++-------------------------------------+-------------------------------------------------+
+| ``consensus show-chain-parameters`` | Show chain parameters.                          |
+|                                     | :ref:`See below for specific                    |
+|                                     | information<consensus show-chain-parameters>`.  |
++-------------------------------------+-------------------------------------------------+
 
 Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.
 
@@ -197,7 +197,7 @@ Commands for transferring CCD
 The commands for transferring CCD
 are described in the following table.
 
-The add, remove, and configure validators commands are described in the topic :ref:`becoming a validator using the Concordium Client<become-a-baker>`.
+The add, remove, and configure validators commands are described in the topic :ref:`becoming a validator using the Concordium Client<become-a-validator>`.
 
 .. note::
 
