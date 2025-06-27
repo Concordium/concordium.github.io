@@ -48,11 +48,8 @@ The tool for both validator management and research is `CCDScan <https://ccdscan
    :maxdepth: 1
 
    guides/validation-with-wallets
-   guides/baker-windows
-   guides/baker-macos
-   guides/baker-ubuntu
-   guides/baker-docker
    guides/become-baker
+   guides/import-validator-keys
 
 
 

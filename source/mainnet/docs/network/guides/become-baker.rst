@@ -94,10 +94,7 @@ where you replace
 
       Remember to configure your node for validation using this path:
 
-      * using Docker: See :ref:`configure Linux node<baking-docker>`.
-      * on macOS: See :ref:`configure macOS node<baker-macos>`.
-      * on Windows: See :ref:`configure Windows node<configure-baker-windows>`.
-      * on Ubuntu: See :ref:`configure Ubuntu node<baker-ubuntu>`.
+      * :ref:`Import validator keys <import-validator-keys>`
 
 The following arguments are also required for the ``validator add`` transaction:
 
@@ -125,7 +122,7 @@ The following arguments are optional. If no selection is made, earnings are rest
 .. Warning::
    Do not stake all of your funds or you will not have enough funds to cover transaction fees.
 
-To start the node with these validator keys and produce blocks, :ref:`configure the node to use the validator keys<baker-macos>`, and **restart** it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.
+To start the node with these validator keys and produce blocks, :ref:`configure the node to use the validator keys<import-validator-keys>`, and **restart** it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.
 
 This change is executed immediately, and it will take effect at the next :term:`pay day` after the one in which the transaction for adding the validator was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 

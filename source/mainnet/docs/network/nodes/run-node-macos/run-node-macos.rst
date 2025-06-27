@@ -4,7 +4,7 @@
 Install and manage a node on macOS
 ==================================
 
-This article explains how to run a Concordium node on macOS on mainnet or testnet, and how to set up your node as a :ref:`validator node<configure-baker-macos>`.
+This article explains how to run a Concordium node on macOS on mainnet or testnet, and how to set up your node as a :ref:`validator node<import-validator-keys>`.
 
 An account is not required to run a node, but you will need one if you want to become a validator.
 
@@ -101,4 +101,4 @@ Uninstall Concordium Node on macOS
 Run a validator node on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For information about validation on a macOS node, see :ref:`baker-macos`.
+For information about validation on a macOS node, see :ref:`import-validator-keys`.

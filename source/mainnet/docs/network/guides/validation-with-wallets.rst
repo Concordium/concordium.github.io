@@ -46,13 +46,7 @@ This overview describes the recommended scenario for running a node and becoming
 
    The last step is to configure the running node with the validator keys so the node can start producing blocks. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your validator keys to the node runner in a secure manner.
 
-   - :ref:`On Windows<baker-windows>`
-
-   - :ref:`On macOS<baker-macos>`
-
-   - :ref:`On Ubuntu<baker-Ubuntu>`
-
-   - :ref:`On Docker/Linux<baking-docker>`.
+   - :ref:`Import validator keys <import-validator-keys>`
 
 For information about how to update your validator or stop validating, see :ref:`Change validation options<update-baker-mw>`.
 
@@ -85,13 +79,7 @@ This overview describes the recommended scenario for running a node and becoming
 
    The last step is to configure the running node with the validator keys so the node can start producing blocks. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.
 
-   - :ref:`On Windows<baker-windows>`
-
-   - :ref:`On macOS<baker-macos>`
-
-   - :ref:`On Ubuntu<baker-Ubuntu>`
-
-   - :ref:`On Docker/Linux<baking-docker>`.
+   - :ref:`Import validator keys <import-validator-keys>`
 
 For information about how to update your validator or stop validation, see :ref:`Change validator options<update-baker-mw>`.
 
