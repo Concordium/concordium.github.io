@@ -16,7 +16,7 @@ router, then you will probably only be able to connect to other nodes,
 but other nodes will not be able to initiate connections to your node.
 This is perfectly fine, and your node will fully participate in the
 Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to produce blocks.
+:ref:`if so configured<become-a-validator>`, to produce blocks.
 
 However you can also make your node an even better network participant by
 enabling inbound connections. The sample configuration makes the node

@@ -54,13 +54,13 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/baker-docker.ffa3403c-4fdd-485f-952e-deea90aed63f.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/baker-docker.8def5a9b-b943-4677-90ed-314e3bdf9443.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/baker-docker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/baker-docker.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Validation with the Concordium Client" href="become-baker.html" />
+    <link rel="next" title="Validation with the Concordium Client" href="become-validator.html" />
     <link rel="prev" title="Import validator keys on Ubuntu" href="baker-ubuntu.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -575,7 +575,7 @@
 <li class="toctree-l2"><a class="reference internal" href="baker-macos.html">Import validator keys on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Import validator keys on Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="become-baker.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="become-validator.html">Validation with the Concordium Client</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -786,7 +786,7 @@
 <p class="admonition-title">Warning</p>
 <p>Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
 </div>
-<p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the rewards to the staked amount on the validator account. Read more about this behavior in the section <a class="reference internal" href="become-baker.html#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
+<p>Provide a <code class="docutils literal notranslate"><span class="pre">--no-restake</span></code> flag to avoid automatically adding the rewards to the staked amount on the validator account. Read more about this behavior in the section <a class="reference internal" href="become-validator.html#restake-earnings"><span class="std std-ref">Restake earnings</span></a>.</p>
 <p>To start the node with these validator keys and produce blocks, do the following:</p>
 <ol class="arabic">
 <li><p>Stop the currently running node. To do this, press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> on the terminal where the node is running or run</p>
@@ -868,7 +868,7 @@
       </div>
     </a>
     <a class="right-next"
-       href="become-baker.html"
+       href="become-validator.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

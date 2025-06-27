@@ -12,6 +12,8 @@ Stable transaction costs
 
 Concordium combines the freely fluctuating value of the CCD with a transaction cost that remains stable versus EUR. This is achieved by fixing the price of a transaction in EUR, then multiplying this by the current CCD/EUR price. So if the value of the CCD goes up, a user needs fewer CCD to pay for transactions, thereby maintaining a stable cost in EUR terms. The technical implementation of the above principle is described in the following.
 
+.. _computing-transaction-costs:
+
 Computing transaction costs
 ===========================
 

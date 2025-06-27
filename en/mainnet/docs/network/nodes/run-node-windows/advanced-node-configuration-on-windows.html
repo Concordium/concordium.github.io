@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-windows/advanced-node-configuration-on-windows.03065d76-34ae-484e-ac9f-2eba148bb2cc.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-windows/advanced-node-configuration-on-windows.c6ca17dd-d67b-42d5-b8ab-9582ac61ba0c.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-windows/advanced-node-configuration-on-windows';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-windows/advanced-node-configuration-on-windows.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -575,7 +575,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../guides/baker-macos.html">Import validator keys on macOS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/baker-docker.html">Import validator keys on Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../guides/become-baker.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/become-validator.html">Validation with the Concordium Client</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../node-requirements.html">Run a Concordium Node</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -797,7 +797,7 @@
 </section>
 <section id="enable-inbound-connections">
 <h2>Enable inbound connections<a class="headerlink" href="#enable-inbound-connections" title="Link to this heading">#</a></h2>
-<p>If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, <a class="reference internal" href="../../guides/become-baker.html#become-a-baker"><span class="std std-ref">if so configured</span></a>, to produce blocks.</p>
+<p>If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, <a class="reference internal" href="../../guides/become-validator.html#become-a-validator"><span class="std std-ref">if so configured</span></a>, to produce blocks.</p>
 <p>However you can also make your node an even better network participant by enabling inbound connections. By default, <code class="docutils literal notranslate"><span class="pre">concordium-node</span></code> listens on port <code class="docutils literal notranslate"><span class="pre">8888</span></code> for inbound connections on <strong>Mainnet</strong> and on port <code class="docutils literal notranslate"><span class="pre">8889</span></code> for inbound connections on <strong>Testnet</strong>. Depending on your network and platform configuration you will either need to forward an external port to <code class="docutils literal notranslate"><span class="pre">8888</span></code> or <code class="docutils literal notranslate"><span class="pre">8889</span></code> on your router, open it in your firewall, or both. The details of how this is done will depend on your configuration. See <a class="reference internal" href="node-runner-service-configuration.html#node-runner-service-configuration"><span class="std std-ref">Concordium Windows node runner service configuration</span></a> for more information.</p>
 </section>
 <section id="connect-a-node-to-the-desktop-wallet">
