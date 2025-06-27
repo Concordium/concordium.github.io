@@ -644,5 +644,6 @@ redirects = {
     "net/references/net/references/grpc2" : "/en/mainnet/tools/grpc2.html",
     "guides/export-import": "/en/mainnet/docs/guides/recovery.html",
     "guides/recover-wallet": "/en/mainnet/docs/guides/recovery.html",
-    "docs/protocol/id-accounts": "/en/mainnet/docs/protocol/identity.html"
+    "docs/protocol/id-accounts": "/en/mainnet/docs/protocol/identity.html",
+    "docs/network/guides/become-baker": "en/mainnet/docs/network/guides/become-validator.html"
     }
