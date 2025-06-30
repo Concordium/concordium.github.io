@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.ec0edbda-8f66-4479-a3e5-a3e16e29bc38.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/run-local-chain.7f33a67a-1c3e-450c-be65-61b59411c24b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/run-local-chain';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/run-local-chain.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -766,7 +766,7 @@
 <p class="admonition-title">Note</p>
 <p>Running your own local chain is an advanced process and not applicable for all use cases. Users with little or no blockchain experience should not attempt to run a local chain. If you run into issues while installing, configuring, and running your local chain, contact <a class="reference external" href="http://support.concordium.software">Concordium support</a>.</p>
 </div>
-<p>This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects, such as the genesis parameters, identity disclosure authorities, identity providers, and foundation accounts.</p>
+<p>This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects, such as the genesis parameters, <a class="reference internal" href="../../resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a>, identity providers, and foundation accounts.</p>
 <p>The chain is run by a network of validator nodes that produce blocks. In the following minimal example you will set up a network comprised of a single validator node that runs <em>locally</em> on your system and <em>does not connect to mainnet or testnet</em>. Note, however, that the concepts demonstrated here equally apply to any number of validator nodes configured in a LAN or WAN setting.</p>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
@@ -813,7 +813,7 @@
 <ul class="simple">
 <li><p>the initial protocol version</p></li>
 <li><p>cryptographic parameters</p></li>
-<li><p>anonymity revokers (Identity disclosure authorities)</p></li>
+<li><p>anonymity revokers (<a class="reference internal" href="../../resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a>)</p></li>
 <li><p>identity providers</p></li>
 <li><p>foundation accounts</p></li>
 <li><p>keys for updating the chain</p></li>

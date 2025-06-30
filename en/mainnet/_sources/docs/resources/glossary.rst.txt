@@ -13,7 +13,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Account
 
-      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`identity disclosure authorities<identity disclosure authority>`, in cooperation with the account's :term:`identity provider`.
+      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`Privacy Guardians<Privacy Guardian (PG)>`, in cooperation with the account's :term:`identity provider`.
 
    Account credential
 
@@ -31,10 +31,6 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Alias
 
       A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
-
-   Identity disclosure authority
-
-      An authority who has power to know the identity of a participant. The identity disclosure authority and :term:`identity provider` can work together to determine the owner of an account and determine which accounts belong to the same owner. (They should only do so when legally obliged to, such as by a court order.) Identity disclosure is a two-stage process, requiring cooperation of multiple parties.
 
    Approval voting
 
@@ -260,7 +256,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Initial Account
 
-      An intial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by the identity disclosure authority working in concert with the identity provider.
+      An intial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by the :term:`Privacy Guardians<Privacy Guardian (PG)>` in concert with the identity provider.
 
       Initial accounts are only relevant for Desktop Wallet.
 
@@ -364,7 +360,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Qualified authority
 
-      A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of disclosing the identity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`identity disclosure authorities<identity disclosure authority>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
+      A governmental body that has the authority to act in a relevant jurisdiction. For example, a local police force, a local court or an investigatory division of a local authority that regulates financial conduct may have authority to act in their relevant jurisdictions. These authorities are qualified to begin the process of disclosing the identity of a user when they proceed through established legal channels and make a formal request. The outcome of such a request is likely to be that a qualified authority obtains an official order, which may be in the form of a warrant, court order, or similar instrument. Only after a qualified authority validly serves an official order upon the relevant :term:`Privacy Guardians<Privacy Guardian (PG)>` and :term:`identity provider`, can the real-world identity of a user be revealed and only to the extent set out in the order.
 
    Quorum certificate
 

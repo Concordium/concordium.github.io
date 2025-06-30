@@ -56,7 +56,7 @@ account, the initial account, on behalf of the user. At the end of the identity 
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
 by creating a new identity and going through the identity verification process again with an identity provider.
 
-Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the identity disclosure authorities and the identity provider are
+Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the :term:`Privacy Guardians<Privacy Guardian (PG)>` and the identity provider are
 involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<reference-identity-disclosure-processes>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
 
 Account creation
@@ -84,7 +84,7 @@ identity to create accounts.
 
 Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account and who the identity disclosure authority are
+provider issued an identity for an account and who the :term:`Privacy Guardians<Privacy Guardian (PG)>` are
 for the account and the identity. This means that anybody can check it
 before interacting with an account to judge the level of risk in the transaction.
 
