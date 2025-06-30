@@ -185,7 +185,7 @@ To show the identity providers authorized by Concordium and a URL, enter:
 
    $concordium-client identity show identity-providers
 
-To show the identity disclosure authorities, enter:
+To show the Privacy Guardians, enter:
 
 .. code-block:: console
 
