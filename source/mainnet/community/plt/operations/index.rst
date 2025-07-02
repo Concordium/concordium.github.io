@@ -19,7 +19,7 @@ You can interact with PLTs using multiple development approaches:
 
   `Rust SDK released versions <https://crates.io/crates/concordium-rust-sdk>`_
 
-- **Concordium Client CLI Tool** (v9.1.1-alpha) - Command-line interface for direct operations
+- **Concordium Client CLI Tool** (v9.1.2-alpha) - Command-line interface for direct operations
 
   `CLI released versions <https://github.com/Concordium/concordium-client/releases>`_
 

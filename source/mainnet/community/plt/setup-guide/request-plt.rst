@@ -60,24 +60,26 @@ Follow these steps to request PLT issuance on DevNet:
 
    Create and host your metadata JSON file following the format above.
 
-2. **Access the PLT issuance request form**
+2. **Fill out the form below**
 
-   Go to the `PLT issuance request form <https://tally.so/r/w8WKGl>`_ to submit your request.
+.. raw:: html
 
-3. **Fill out the required information**
+    <iframe data-tally-src="https://tally.so/r/mK4ZdK" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="PLT issuance request form"></iframe>
+    <script>
+      var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
+        "undefined" != typeof Tally && Tally.loadEmbeds();
+      };
+      if ("undefined" != typeof Tally) v();
+      else if (d.querySelector('script[src="' + w + '"]') == null) {
+        var s = d.createElement("script");
+        s.src = w;
+        s.onload = v;
+        s.type = "text/javascript";
+        d.body.appendChild(s);
+      }
+    </script>
 
-   * **Nominated Account**: The DevNet wallet address to receive your token. **Important:** This account will have exclusive authority to perform all token-governance operations (mint, burn, add/remove allow and deny lists)
-   * **Token Name**: Full name of your token (e.g., "My First PLT")
-   * **Token Symbol**: Short ticker (e.g., "PLT")
-   * **Initial supply**: Amount of tokens that will be issued and transferred to your account
-   * **Number of decimals**: Number of decimals in the token representation
-   * **Allowlist**: Only accounts on the allow list can hold the token
-   * **Denylist**: Accounts on the deny list cannot hold the token
-   * **Mintable**: Allows minting more tokens after issuance
-   * **Burnable**: Allows burning tokens after issuance
-   * **Your Discord username**: For communication about your request
-
-4. **Submit your request**
+3. **Submit your request**
 
    Click Submit to send your PLT issuance request with all the token parameters to the Concordium team.
 
@@ -111,8 +113,6 @@ Your PLT will be created with the following parameters:
      - Whether token supports a deny list
    * - Initial supply
      - Initial tokens minted to the token-governance account
-   * - Total Supply
-     - Maximum possible token supply
    * - Burnable
      - Whether tokens can be burnt
    * - Mintable
