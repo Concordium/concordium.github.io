@@ -10,6 +10,15 @@ This article explains how to run a Concordium node in Docker on Linux on mainnet
 
 An account is not required to run a node, but you will need one if you want to become a validator.
 
+You can also watch the video to learn how to run a node with Docker.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/DRk1NSIKZSM"
+   title="YouTube video player" frameborder="0"
+   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen></iframe>
+
 Prerequisites
 =============
 
@@ -30,10 +39,6 @@ Concordium provides two Docker images, a `mainnet <https://hub.docker.com/r/conc
 These images are designed to be used together with docker-compose, or a similar driver. This guide provides a sample configuration using ``docker compose``.
 
 The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is ``/var/lib/concordium-mainnet`` or ``/var/lib/concordium-testent`` but any location to which the user that runs the Docker command has access to will do.
-
-.. Note::
-
-   When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. This applies to both minor and major releases. For patch versions, you can also upgrade directly to the desired version (e.g., from X.X.0 to X.X.3 or from X.1.1 to X.2.3) without the need to apply each patch in sequence.
 
 .. note::
   The dollar sign (``$``) in a codeblock means that you should run the command that follows the ``$`` in a terminal.

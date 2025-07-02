@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/community/plt/examples/rust-sdk.1038498e-1a3b-4c6d-bb25-fd3990da2ed8.js"></script>
+    <script defer="defer" src="../../../_static/tippy/community/plt/examples/rust-sdk.f6e302a9-3ebf-404a-8578-51cfe79f2401.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/plt/examples/rust-sdk';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/community/plt/examples/rust-sdk.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -564,8 +564,8 @@
 <h2>Installation and setup<a class="headerlink" href="#installation-and-setup" title="Link to this heading">#</a></h2>
 <p>Before using this example, make sure your Cargo.toml includes:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concordium dependencies</span>
-<span class="n">concordium-rust-sdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;=7.0.0-alpha.1&quot;</span>
-<span class="n">concordium_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;=8.0.0-alpha&quot;</span>
+<span class="n">concordium-rust-sdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;=7.0.0-alpha.2&quot;</span>
+<span class="n">concordium_base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;=8.0.0-alpha.1&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -606,64 +606,6 @@ Optionally specify a block hash for historical token lists.</p>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">hashes</span><span class="p">::</span><span class="n">BlockHash</span><span class="p">;</span>
-<span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">concordium_rust_sdk</span><span class="p">::</span><span class="n">v2</span><span class="p">;</span>
-<span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">futures</span><span class="p">::</span><span class="n">StreamExt</span><span class="p">;</span>
-<span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">;</span>
-
-<span class="w"> </span><span class="c1">// CONFIGURATION - Modify these values for your use case</span>
-<span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BLOCK_HASH</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">None</span><span class="p">;</span><span class="w"> </span><span class="c1">// Set to Some(&quot;blockhash&quot;) for specific block, None for latest</span>
-
-<span class="w"> </span><span class="cp">#[tokio::main]</span>
-<span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">     </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">         </span><span class="p">.</span><span class="k">await</span>
-<span class="w">         </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-
-<span class="w">     </span><span class="c1">// Determine block identifier</span>
-<span class="w">     </span><span class="kd">let</span><span class="w"> </span><span class="n">block_ident</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">BLOCK_HASH</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="nb">Some</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">             </span><span class="kd">let</span><span class="w"> </span><span class="n">block_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BlockHash</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span>
-<span class="w">                 </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid block hash format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-<span class="w">             </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">Given</span><span class="p">(</span><span class="n">block_hash</span><span class="p">)</span>
-<span class="w">         </span><span class="p">}</span>
-<span class="w">         </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">LastFinal</span><span class="p">,</span>
-<span class="w">     </span><span class="p">};</span>
-
-<span class="w">     </span><span class="c1">// Get token list</span>
-<span class="w">     </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span>
-<span class="w">         </span><span class="p">.</span><span class="n">get_token_list</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block_ident</span><span class="p">)</span>
-<span class="w">         </span><span class="p">.</span><span class="k">await</span>
-<span class="w">         </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to get token list&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-
-<span class="w">     </span><span class="fm">println!</span><span class="p">(</span>
-<span class="w">         </span><span class="s">&quot;Listing the Token ID of every protocol level token on chain at the time of block hash {}:&quot;</span><span class="p">,</span>
-<span class="w">         </span><span class="n">response</span><span class="p">.</span><span class="n">block_hash</span>
-<span class="w">     </span><span class="p">);</span>
-<span class="w">     </span><span class="c1">// Collect tokens</span>
-<span class="w">     </span><span class="k">while</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">token_id</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">response</span><span class="p">.</span><span class="n">next</span><span class="p">().</span><span class="k">await</span><span class="p">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="w">         </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Error while reading token from stream&quot;</span><span class="p">)</span><span class="o">?</span>
-<span class="w">     </span><span class="p">{</span>
-<span class="w">         </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot; - {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">token_id</span><span class="p">));</span>
-<span class="w">     </span><span class="p">}</span>
-
-<span class="w">     </span><span class="nb">Ok</span><span class="p">(())</span>
-<span class="w"> </span><span class="p">}</span>
-</pre></div>
-</div>
-</section>
-<section id="get-token-information">
-<span id="rust-get-token-info"></span><h3>Get token information<a class="headerlink" href="#get-token-information" title="Link to this heading">#</a></h3>
-<p>This example demonstrates how to retrieve information about a Protocol Level Token (PLT).
-Set the token ID to query and optionally specify a block hash for historical data.</p>
-<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">//! # Get Protocol Level Token Information</span>
-<span class="sd">//! This example demonstrates how to retrieve information about a Protocol Level Token (PLT).</span>
-<span class="sd">//! ## How to use this example:</span>
-<span class="sd">//! 1. Set the token ID to query in the `TOKEN_ID` constant below</span>
-<span class="sd">//! 2. Optionally set a specific block hash in `BLOCK_HASH` (or leave as None for latest)</span>
-<span class="sd">//! 3. Run with: `cargo run --example get_token_info`</span>
-
-<span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
-<span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">hashes</span><span class="p">::</span><span class="n">BlockHash</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_rust_sdk</span><span class="p">::</span><span class="n">v2</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">futures</span><span class="p">::</span><span class="n">StreamExt</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">;</span>
@@ -673,15 +615,16 @@ Set the token ID to query and optionally specify a block hash for historical dat
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Determine block identifier</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">block_ident</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">BLOCK_HASH</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">block_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BlockHash</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid block hash format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">block_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BlockHash</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">hash_str</span><span class="p">).</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid block hash format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 <span class="w">            </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">Given</span><span class="p">(</span><span class="n">block_hash</span><span class="p">)</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">LastFinal</span><span class="p">,</span>
@@ -698,7 +641,11 @@ Set the token ID to query and optionally specify a block hash for historical dat
 <span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="n">block_hash</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// Collect tokens</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">token_id</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">response</span><span class="p">.</span><span class="n">next</span><span class="p">().</span><span class="k">await</span><span class="p">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">token_id</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span>
+<span class="w">        </span><span class="p">.</span><span class="n">response</span>
+<span class="w">        </span><span class="p">.</span><span class="n">next</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="k">await</span>
+<span class="w">        </span><span class="p">.</span><span class="n">transpose</span><span class="p">()</span>
 <span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Error while reading token from stream&quot;</span><span class="p">)</span><span class="o">?</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot; - {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">token_id</span><span class="p">));</span>
@@ -706,30 +653,44 @@ Set the token ID to query and optionally specify a block hash for historical dat
 
 <span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="get-token-information">
+<span id="rust-get-token-info"></span><h3>Get token information<a class="headerlink" href="#get-token-information" title="Link to this heading">#</a></h3>
+<p>This example demonstrates how to retrieve information about a Protocol Level Token (PLT).
+Set the token ID to query and optionally specify a block hash for historical data.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="sd">//! # Get Protocol Level Token Information</span>
+<span class="sd">//! This example demonstrates how to retrieve information about a Protocol Level Token (PLT).</span>
+<span class="sd">//! ## How to use this example:</span>
+<span class="sd">//! 1. Set the token ID to query in the `TOKEN_ID` constant below</span>
+<span class="sd">//! 2. Optionally set a specific block hash in `BLOCK_HASH` (or leave as None for latest)</span>
+<span class="sd">//! 3. Run with: `cargo run --example get_token_info`</span>
+
+<span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span><span class="n">hashes</span><span class="p">::</span><span class="n">BlockHash</span><span class="p">,</span><span class="w"> </span><span class="n">protocol_level_tokens</span><span class="p">::</span><span class="n">TokenId</span><span class="p">};</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_rust_sdk</span><span class="p">::</span><span class="n">v2</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">;</span>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual token ID you want to query</span>
 <span class="k">const</span><span class="w"> </span><span class="n">BLOCK_HASH</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">None</span><span class="p">;</span><span class="w"> </span><span class="c1">// Set to Some(&quot;blockhash&quot;) for specific block, None for latest</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Parse token ID</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid token ID format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">()).</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid token ID format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Determine block identifier</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">block_ident</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">BLOCK_HASH</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">block_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BlockHash</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid block hash format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">block_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BlockHash</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">hash_str</span><span class="p">).</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid block hash format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 <span class="w">            </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">Given</span><span class="p">(</span><span class="n">block_hash</span><span class="p">)</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">LastFinal</span><span class="p">,</span>
@@ -746,11 +707,10 @@ Set the token ID to query and optionally specify a block hash for historical dat
 
 <span class="w">    </span><span class="c1">// Display token information</span>
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Total token supply: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_state</span><span class="p">.</span><span class="n">total_supply</span><span class="p">);</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Token issuer: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_state</span><span class="p">.</span><span class="n">issuer</span><span class="p">);</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;decimals: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_state</span><span class="p">.</span><span class="n">nr_of_decimals</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;decimals: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_state</span><span class="p">.</span><span class="n">decimals</span><span class="p">);</span>
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;moduleRef: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_state</span><span class="p">.</span><span class="n">token_module_ref</span><span class="p">);</span>
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Token id: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">token_info</span><span class="p">.</span><span class="n">token_id</span><span class="p">.</span><span class="n">clone</span><span class="p">()));</span>
-
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Token state: {:#?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_state</span><span class="p">.</span><span class="n">decode_module_state</span><span class="p">());</span>
 <span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span>
 <span class="p">}</span>
 </pre></div>
@@ -769,29 +729,29 @@ Set the account address to query and optionally specify a block hash for histori
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span><span class="n">contracts_common</span><span class="p">::</span><span class="n">AccountAddress</span><span class="p">,</span><span class="w"> </span><span class="n">hashes</span><span class="p">::</span><span class="n">BlockHash</span><span class="p">};</span>
-<span class="k">use</span><span class="w"> </span><span class="n">concordium_rust_sdk</span><span class="p">::{</span><span class="n">v2</span><span class="p">};</span>
+<span class="k">use</span><span class="w"> </span><span class="n">concordium_rust_sdk</span><span class="p">::</span><span class="n">v2</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">;</span>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
-<span class="k">const</span><span class="w"> </span><span class="n">ACCOUNT_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;48C8aPRYyVNiMM1WS4g3Nzhg9NFxb5nmDAzS3VL1wGXVmFLsJb&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">ACCOUNT_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ACCOUNT_ADDRESS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual account address you want to query</span>
 <span class="k">const</span><span class="w"> </span><span class="n">BLOCK_HASH</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">None</span><span class="p">;</span><span class="w"> </span><span class="c1">// Set to Some(&quot;blockhash&quot;) for specific block, None for latest</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Parse account address</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">account_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">ACCOUNT_ADDRESS</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid account address format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">account_address</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">AccountAddress</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">ACCOUNT_ADDRESS</span><span class="p">).</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid account address format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Determine block identifier</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">block_ident</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">BLOCK_HASH</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">block_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BlockHash</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">hash_str</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid block hash format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">block_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BlockHash</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">hash_str</span><span class="p">).</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Invalid block hash format&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 <span class="w">            </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">Given</span><span class="p">(</span><span class="n">block_hash</span><span class="p">)</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">BlockIdentifier</span><span class="p">::</span><span class="n">LastFinal</span><span class="p">,</span>
@@ -810,10 +770,17 @@ Set the account address to query and optionally specify a block hash for histori
 <span class="w">    </span><span class="c1">// Display PLT token balances</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_balances</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">account_info</span><span class="p">.</span><span class="n">response</span><span class="p">.</span><span class="n">tokens</span><span class="p">;</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">token_balances</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Token {}, balance {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">balance</span><span class="p">.</span><span class="n">token_id</span><span class="p">.</span><span class="n">clone</span><span class="p">()),</span><span class="w"> </span><span class="n">balance</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">balance</span><span class="p">);</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Token {}, balance {}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">balance</span><span class="p">.</span><span class="n">token_id</span><span class="p">.</span><span class="n">clone</span><span class="p">()),</span>
+<span class="w">            </span><span class="n">balance</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">balance</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Token {}, state {:#?}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">balance</span><span class="p">.</span><span class="n">token_id</span><span class="p">.</span><span class="n">clone</span><span class="p">()),</span>
+<span class="w">            </span><span class="n">balance</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">decode_module_state</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Complete Token account info: {:#?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_balances</span><span class="p">);</span>
 
 <span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span>
 <span class="p">}</span>
@@ -835,6 +802,7 @@ Configure the recipient address and amount to complete the transfer.</p>
 <span class="sd">//! 3. Set the recipient address in the `RECIPIENT_ADDRESS` constant</span>
 <span class="sd">//! 4. Set the amount to transfer in the `TOKEN_AMOUNT` constant</span>
 <span class="sd">//! 5. Run with: `cargo run --example transfer_tokens`</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-transfer.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -847,23 +815,25 @@ Configure the recipient address and amount to complete the transfer.</p>
 <span class="w">        </span><span class="n">transactions</span><span class="p">::{</span><span class="n">send</span><span class="p">,</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">},</span>
 <span class="w">        </span><span class="n">WalletAccount</span><span class="p">,</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="n">v2</span><span class="p">::{</span><span class="n">BlockIdentifier</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">},</span>
+<span class="w">    </span><span class="n">v2</span><span class="p">::{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">BlockIdentifier</span><span class="p">},</span>
 <span class="p">};</span>
 <span class="k">use</span><span class="w"> </span><span class="n">rust_decimal</span><span class="p">::</span><span class="n">Decimal</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::{</span><span class="n">path</span><span class="p">::</span><span class="n">PathBuf</span><span class="p">,</span><span class="w"> </span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">};</span><span class="w"> </span><span class="c1">// Added PathBuf import</span>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
 <span class="k">const</span><span class="w"> </span><span class="n">WALLET_FILE</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wallet.export&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">RECIPIENT_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleAddress&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_AMOUNT</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;10&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Amount to transfer as decimal string</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual token ID you want to transfer</span>
+<span class="k">const</span><span class="w"> </span><span class="n">RECIPIENT_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;RECIPIENT_ADDRESS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual recipient address</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_AMOUNT</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;12&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Amount to transfer as decimal string</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Connecting to Concordium devnet...&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Parse token ID</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="o">?</span><span class="p">;</span>
@@ -877,10 +847,8 @@ Configure the recipient address and amount to complete the transfer.</p>
 <span class="w">    </span><span class="c1">// Convert amount to proper token amount with decimals</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Decimal</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">TOKEN_AMOUNT</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="n">amount</span><span class="p">.</span><span class="n">rescale</span><span class="p">(</span><span class="n">token_info</span><span class="p">.</span><span class="n">token_state</span><span class="p">.</span><span class="n">decimals</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u32</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenAmount</span><span class="p">::</span><span class="n">from_raw</span><span class="p">(</span>
-<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">mantissa</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">,</span>
-<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">scale</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span>
-<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_amount</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">TokenAmount</span><span class="p">::</span><span class="n">from_raw</span><span class="p">(</span><span class="n">amount</span><span class="p">.</span><span class="n">mantissa</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">scale</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">);</span>
 
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Token amount: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_amount</span><span class="p">);</span>
 
@@ -905,7 +873,7 @@ Configure the recipient address and amount to complete the transfer.</p>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operations</span><span class="p">::</span><span class="n">transfer_tokens</span><span class="p">(</span><span class="n">recipient_address</span><span class="p">,</span><span class="w"> </span><span class="n">token_amount</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Compose operation to transaction (like in the original)</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_holder_operations</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_update_operations</span><span class="p">(</span>
 <span class="w">        </span><span class="o">&amp;</span><span class="n">keys</span><span class="p">,</span>
 <span class="w">        </span><span class="n">keys</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
 <span class="w">        </span><span class="n">nonce</span><span class="p">,</span>
@@ -918,7 +886,10 @@ Configure the recipient address and amount to complete the transfer.</p>
 
 <span class="w">    </span><span class="c1">// Submit transaction</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">transaction_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">send_block_item</span><span class="p">(</span><span class="o">&amp;</span><span class="n">item</span><span class="p">).</span><span class="k">await</span><span class="o">?</span><span class="p">;</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Transaction {} submitted (nonce = {})&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">transaction_hash</span><span class="p">,</span><span class="w"> </span><span class="n">nonce</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;Transaction {} submitted (nonce = {})&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">transaction_hash</span><span class="p">,</span><span class="w"> </span><span class="n">nonce</span>
+<span class="w">    </span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// Wait for finalization</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">block_hash</span><span class="p">,</span><span class="w"> </span><span class="n">block_summary</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">wait_until_finalized</span><span class="p">(</span><span class="o">&amp;</span><span class="n">transaction_hash</span><span class="p">).</span><span class="k">await</span><span class="o">?</span><span class="p">;</span>
@@ -943,6 +914,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the amount to mint in the `TOKEN_AMOUNT` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example mint_tokens`</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">protocol_level_tokens</span><span class="p">::{</span><span class="n">operations</span><span class="p">,</span><span class="w"> </span><span class="n">TokenAmount</span><span class="p">,</span><span class="w"> </span><span class="n">TokenId</span><span class="p">};</span>
@@ -952,23 +924,23 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 <span class="w">        </span><span class="n">transactions</span><span class="p">::{</span><span class="n">send</span><span class="p">,</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">},</span>
 <span class="w">        </span><span class="n">WalletAccount</span><span class="p">,</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="n">v2</span><span class="p">::{</span><span class="n">BlockIdentifier</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">},</span>
+<span class="w">    </span><span class="n">v2</span><span class="p">::{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">BlockIdentifier</span><span class="p">},</span>
 <span class="p">};</span>
 <span class="k">use</span><span class="w"> </span><span class="n">rust_decimal</span><span class="p">::</span><span class="n">Decimal</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::{</span><span class="n">path</span><span class="p">::</span><span class="n">PathBuf</span><span class="p">,</span><span class="w"> </span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">};</span>
 
-
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
 <span class="k">const</span><span class="w"> </span><span class="n">WALLET_FILE</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wallet.export&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_AMOUNT</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;11&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with your token ID</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_AMOUNT</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;10&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Amount to mint as decimal string</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="o">?</span><span class="p">;</span>
 
@@ -980,10 +952,8 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Decimal</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">TOKEN_AMOUNT</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="n">amount</span><span class="p">.</span><span class="n">rescale</span><span class="p">(</span><span class="n">token_info</span><span class="p">.</span><span class="n">token_state</span><span class="p">.</span><span class="n">decimals</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u32</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenAmount</span><span class="p">::</span><span class="n">from_raw</span><span class="p">(</span>
-<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">mantissa</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">,</span>
-<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">scale</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span>
-<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_amount</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">TokenAmount</span><span class="p">::</span><span class="n">from_raw</span><span class="p">(</span><span class="n">amount</span><span class="p">.</span><span class="n">mantissa</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">scale</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">keys</span><span class="p">:</span><span class="w"> </span><span class="nc">WalletAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WalletAccount</span><span class="p">::</span><span class="n">from_json_file</span><span class="p">(</span><span class="n">PathBuf</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">WALLET_FILE</span><span class="p">))</span>
 <span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Could not read the wallet file&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -995,10 +965,10 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expiry</span><span class="p">:</span><span class="w"> </span><span class="nc">TransactionTime</span><span class="w"> </span><span class="o">=</span>
 <span class="w">        </span><span class="n">TransactionTime</span><span class="p">::</span><span class="n">from_seconds</span><span class="p">((</span><span class="n">chrono</span><span class="p">::</span><span class="n">Utc</span><span class="p">::</span><span class="n">now</span><span class="p">().</span><span class="n">timestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u64</span><span class="p">);</span>
 
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Attempting to mint {} {} tokens...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_amount</span><span class="p">,</span><span class="n">TOKEN_ID</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Attempting to mint {} {} tokens...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_amount</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operations</span><span class="p">::</span><span class="n">mint_tokens</span><span class="p">(</span><span class="n">token_amount</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_governance_operations</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_update_operations</span><span class="p">(</span>
 <span class="w">        </span><span class="o">&amp;</span><span class="n">keys</span><span class="p">,</span>
 <span class="w">        </span><span class="n">keys</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
 <span class="w">        </span><span class="n">nonce</span><span class="p">,</span>
@@ -1032,6 +1002,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the amount to burn in the `TOKEN_AMOUNT` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example burn_tokens`</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">protocol_level_tokens</span><span class="p">::{</span><span class="n">operations</span><span class="p">,</span><span class="w"> </span><span class="n">TokenAmount</span><span class="p">,</span><span class="w"> </span><span class="n">TokenId</span><span class="p">};</span>
@@ -1041,21 +1012,23 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 <span class="w">        </span><span class="n">transactions</span><span class="p">::{</span><span class="n">send</span><span class="p">,</span><span class="w"> </span><span class="n">BlockItem</span><span class="p">},</span>
 <span class="w">        </span><span class="n">WalletAccount</span><span class="p">,</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="n">v2</span><span class="p">::{</span><span class="n">BlockIdentifier</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">},</span>
+<span class="w">    </span><span class="n">v2</span><span class="p">::{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">BlockIdentifier</span><span class="p">},</span>
 <span class="p">};</span>
 <span class="k">use</span><span class="w"> </span><span class="n">rust_decimal</span><span class="p">::</span><span class="n">Decimal</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::{</span><span class="n">path</span><span class="p">::</span><span class="n">PathBuf</span><span class="p">,</span><span class="w"> </span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">};</span>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
 <span class="k">const</span><span class="w"> </span><span class="n">WALLET_FILE</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wallet.export&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_AMOUNT</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;10.0&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with your token ID</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_AMOUNT</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;10&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Amount to burn as decimal string</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="o">?</span><span class="p">;</span>
 
@@ -1067,10 +1040,8 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Decimal</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">TOKEN_AMOUNT</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="n">amount</span><span class="p">.</span><span class="n">rescale</span><span class="p">(</span><span class="n">token_info</span><span class="p">.</span><span class="n">token_state</span><span class="p">.</span><span class="n">decimals</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u32</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenAmount</span><span class="p">::</span><span class="n">from_raw</span><span class="p">(</span>
-<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">mantissa</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">,</span>
-<span class="w">        </span><span class="n">amount</span><span class="p">.</span><span class="n">scale</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span>
-<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_amount</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">TokenAmount</span><span class="p">::</span><span class="n">from_raw</span><span class="p">(</span><span class="n">amount</span><span class="p">.</span><span class="n">mantissa</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">.</span><span class="n">scale</span><span class="p">().</span><span class="n">try_into</span><span class="p">()</span><span class="o">?</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">keys</span><span class="p">:</span><span class="w"> </span><span class="nc">WalletAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WalletAccount</span><span class="p">::</span><span class="n">from_json_file</span><span class="p">(</span><span class="n">PathBuf</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="n">WALLET_FILE</span><span class="p">))</span>
 <span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Could not read the wallet file&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1085,7 +1056,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Attempting to burn {} {} tokens...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">token_amount</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operations</span><span class="p">::</span><span class="n">burn_tokens</span><span class="p">(</span><span class="n">token_amount</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_governance_operations</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_update_operations</span><span class="p">(</span>
 <span class="w">        </span><span class="o">&amp;</span><span class="n">keys</span><span class="p">,</span>
 <span class="w">        </span><span class="n">keys</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
 <span class="w">        </span><span class="n">nonce</span><span class="p">,</span>
@@ -1121,6 +1092,7 @@ Only the token issuer can modify the allow list.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to add in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example add_to_allow_list`</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1139,14 +1111,16 @@ Only the token issuer can modify the allow list.</p>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
 <span class="k">const</span><span class="w"> </span><span class="n">WALLET_FILE</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wallet.export&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleAddress&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual token ID</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TARGET_ADDRESS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual target address</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">target_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">TARGET_ADDRESS</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1161,10 +1135,13 @@ Only the token issuer can modify the allow list.</p>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expiry</span><span class="p">:</span><span class="w"> </span><span class="nc">TransactionTime</span><span class="w"> </span><span class="o">=</span>
 <span class="w">        </span><span class="n">TransactionTime</span><span class="p">::</span><span class="n">from_seconds</span><span class="p">((</span><span class="n">chrono</span><span class="p">::</span><span class="n">Utc</span><span class="p">::</span><span class="n">now</span><span class="p">().</span><span class="n">timestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u64</span><span class="p">);</span>
 
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Attempting to add {} to allow list for {}...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;Attempting to add {} to allow list for {}...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span>
+<span class="w">    </span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operations</span><span class="p">::</span><span class="n">add_token_allow_list</span><span class="p">(</span><span class="n">target_address</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_governance_operations</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_update_operations</span><span class="p">(</span>
 <span class="w">        </span><span class="o">&amp;</span><span class="n">keys</span><span class="p">,</span>
 <span class="w">        </span><span class="n">keys</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
 <span class="w">        </span><span class="n">nonce</span><span class="p">,</span>
@@ -1197,6 +1174,7 @@ Only the token issuer can modify the allow list.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to remove in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example remove_from_allow_list`</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1215,14 +1193,16 @@ Only the token issuer can modify the allow list.</p>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
 <span class="k">const</span><span class="w"> </span><span class="n">WALLET_FILE</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wallet.export&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleAddress&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual token ID</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TARGET_ADDRESS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual target address</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">target_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">TARGET_ADDRESS</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1238,10 +1218,13 @@ Only the token issuer can modify the allow list.</p>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expiry</span><span class="p">:</span><span class="w"> </span><span class="nc">TransactionTime</span><span class="w"> </span><span class="o">=</span>
 <span class="w">        </span><span class="n">TransactionTime</span><span class="p">::</span><span class="n">from_seconds</span><span class="p">((</span><span class="n">chrono</span><span class="p">::</span><span class="n">Utc</span><span class="p">::</span><span class="n">now</span><span class="p">().</span><span class="n">timestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u64</span><span class="p">);</span>
 
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Attempting to remove {} from allow list for {}...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;Attempting to remove {} from allow list for {}...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span>
+<span class="w">    </span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operations</span><span class="p">::</span><span class="n">remove_token_allow_list</span><span class="p">(</span><span class="n">target_address</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_governance_operations</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_update_operations</span><span class="p">(</span>
 <span class="w">        </span><span class="o">&amp;</span><span class="n">keys</span><span class="p">,</span>
 <span class="w">        </span><span class="n">keys</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
 <span class="w">        </span><span class="n">nonce</span><span class="p">,</span>
@@ -1275,6 +1258,7 @@ Accounts on the deny list cannot hold the token when deny list is enabled.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to add in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example add_to_deny_list`</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1293,14 +1277,16 @@ Accounts on the deny list cannot hold the token when deny list is enabled.</p>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
 <span class="k">const</span><span class="w"> </span><span class="n">WALLET_FILE</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wallet.export&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleAddress&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual token ID</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TARGET_ADDRESS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual target address</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">target_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">TARGET_ADDRESS</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1315,10 +1301,13 @@ Accounts on the deny list cannot hold the token when deny list is enabled.</p>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expiry</span><span class="p">:</span><span class="w"> </span><span class="nc">TransactionTime</span><span class="w"> </span><span class="o">=</span>
 <span class="w">        </span><span class="n">TransactionTime</span><span class="p">::</span><span class="n">from_seconds</span><span class="p">((</span><span class="n">chrono</span><span class="p">::</span><span class="n">Utc</span><span class="p">::</span><span class="n">now</span><span class="p">().</span><span class="n">timestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u64</span><span class="p">);</span>
 
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Attempting to add {} to deny list for {}...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;Attempting to add {} to deny list for {}...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span>
+<span class="w">    </span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operations</span><span class="p">::</span><span class="n">add_token_deny_list</span><span class="p">(</span><span class="n">target_address</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_governance_operations</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_update_operations</span><span class="p">(</span>
 <span class="w">        </span><span class="o">&amp;</span><span class="n">keys</span><span class="p">,</span>
 <span class="w">        </span><span class="n">keys</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
 <span class="w">        </span><span class="n">nonce</span><span class="p">,</span>
@@ -1351,6 +1340,7 @@ Only the token issuer can modify the deny list.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to remove in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example remove_from_deny_list`</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1369,14 +1359,16 @@ Only the token issuer can modify the deny list.</p>
 
 <span class="c1">// CONFIGURATION - Modify these values for your use case</span>
 <span class="k">const</span><span class="w"> </span><span class="n">WALLET_FILE</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wallet.export&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleToken&quot;</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ExampleAddress&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TOKEN_ID&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual token ID</span>
+<span class="k">const</span><span class="w"> </span><span class="n">TARGET_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;TARGET_ADDRESS&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Replace with the actual target address</span>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;https://grpc.devnet-plt-alpha.concordium.com:20000&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="k">await</span>
-<span class="w">        </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">await</span>
+<span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TokenId</span><span class="p">::</span><span class="n">try_from</span><span class="p">(</span><span class="n">TOKEN_ID</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="o">?</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">target_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AccountAddress</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="n">TARGET_ADDRESS</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1391,10 +1383,13 @@ Only the token issuer can modify the deny list.</p>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expiry</span><span class="p">:</span><span class="w"> </span><span class="nc">TransactionTime</span><span class="w"> </span><span class="o">=</span>
 <span class="w">        </span><span class="n">TransactionTime</span><span class="p">::</span><span class="n">from_seconds</span><span class="p">((</span><span class="n">chrono</span><span class="p">::</span><span class="n">Utc</span><span class="p">::</span><span class="n">now</span><span class="p">().</span><span class="n">timestamp</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u64</span><span class="p">);</span>
 
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Attempting to remove {} from deny list for {}...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span>
+<span class="w">        </span><span class="s">&quot;Attempting to remove {} from deny list for {}...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">target_address</span><span class="p">,</span><span class="w"> </span><span class="n">TOKEN_ID</span>
+<span class="w">    </span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">operations</span><span class="p">::</span><span class="n">remove_token_deny_list</span><span class="p">(</span><span class="n">target_address</span><span class="p">);</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_governance_operations</span><span class="p">(</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">txn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">send</span><span class="p">::</span><span class="n">token_update_operations</span><span class="p">(</span>
 <span class="w">        </span><span class="o">&amp;</span><span class="n">keys</span><span class="p">,</span>
 <span class="w">        </span><span class="n">keys</span><span class="p">.</span><span class="n">address</span><span class="p">,</span>
 <span class="w">        </span><span class="n">nonce</span><span class="p">,</span>

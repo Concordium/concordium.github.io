@@ -5,7 +5,7 @@
 Tools
 =====
 
-Welcome to the tools section where you'll find everythin you need to build on the Concordium blockchain.
+Welcome to the tools section where you'll find everything you need to build on the Concordium blockchain.
 
 
 Developer Resources

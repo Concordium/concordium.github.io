@@ -26,7 +26,7 @@ You can perform all types of transactions with the :ref:`concordium-client<conco
 
 .. Note::
 
-   All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
+   All transfers and transactions cost a fee. The fee is based on the set :ref:`NRG <computing-transaction-costs>` for that transaction and the current exchange rate.
    The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the **Balance** of the account, so it is important to have some available CCDs to cover fees.
    You can see the fee in the transaction log.
 
@@ -34,51 +34,51 @@ Transaction commands
 ====================
 
 
-+-------------------------------------+------------------------------------------------+
-| Command                             | Description                                    |
-+=====================================+================================================+
-| ``transaction send``                | Transfer CCD tokens                            |
-+-------------------------------------+------------------------------------------------+
-| ``transaction send-scheduled``      | Make a transfer that will be released          |
-|                                     | gradually                                      |
-+-------------------------------------+------------------------------------------------+
-| ``validator add``                   | Add a new validator. For more information, see |
-|                                     | :ref:`become-a-baker`.                         |
-+-------------------------------------+------------------------------------------------+
-| ``validator remove``                | Remove a validator. For more information, see  |
-|                                     | :ref:`become-a-baker`.                         |
-+-------------------------------------+------------------------------------------------+
-| ``validator update-stake``          | Update the staked amount of a validator. For   |
-|                                     | more information, see :ref:`become-a-baker`.   |
-+-------------------------------------+------------------------------------------------+
-| ``validator update-restake``        | Update the restaking switch of a validator. For|
-|                                     | more information, see :ref:`become-a-baker`.   |
-+-------------------------------------+------------------------------------------------+
-| ``validator set-key``               | Update the keys of a validator. For more       |
-|                                     | information, see :ref:`become-a-baker`.        |
-+-------------------------------------+------------------------------------------------+
-| ``account update-keys``             | Update credentials keys for a specific         |
-|                                     | credential                                     |
-+-------------------------------------+------------------------------------------------+
-| ``account unshield``                | Transfer part of the shielded balance to the   |
-|                                     | public balance                                 |
-+-------------------------------------+------------------------------------------------+
-| ``account show``                    | Show account information.                      |
-|                                     | :ref:`See below for specific                   |
-|                                     | information<account-commands>`.                |
-+-------------------------------------+------------------------------------------------+
-| ``identity show``                   | Show identity information.                     |
-|                                     | :ref:`See below for specific                   |
-|                                     | information<identity-commands>`.               |
-+-------------------------------------+------------------------------------------------+
-| ``delegator configure``             | Add, configure, and remove                     |
-|                                     | delegation. :ref:`See below for                |
-|                                     | information<delegation-commands>`.             |
-+-------------------------------------+------------------------------------------------+
-| ``consensus show-chain-parameters`` | Show chain parameters.                         |
-|                                     | :ref:`See below for specific                   |
-|                                     | information<consensus show-chain-parameters>`. |
-+-------------------------------------+------------------------------------------------+
++-------------------------------------+-------------------------------------------------+
+| Command                             | Description                                     |
++=====================================+=================================================+
+| ``transaction send``                | Transfer CCD tokens                             |
++-------------------------------------+-------------------------------------------------+
+| ``transaction send-scheduled``      | Make a transfer that will be released           |
+|                                     | gradually                                       |
++-------------------------------------+-------------------------------------------------+
+| ``validator add``                   | Add a new validator. For more information, see  |
+|                                     | :ref:`become-a-validator`.                      |
++-------------------------------------+-------------------------------------------------+
+| ``validator remove``                | Remove a validator. For more information, see   |
+|                                     | :ref:`become-a-validator`.                      |
++-------------------------------------+-------------------------------------------------+
+| ``validator update-stake``          | Update the staked amount of a validator. For    |
+|                                     | more information, see :ref:`become-a-validator`.|
++-------------------------------------+-------------------------------------------------+
+| ``validator update-restake``        | Update the restaking switch of a validator. For |
+|                                     | more information, see :ref:`become-a-validator`.|
++-------------------------------------+-------------------------------------------------+
+| ``validator set-key``               | Update the keys of a validator. For more        |
+|                                     | information, see :ref:`become-a-validator`.     |
++-------------------------------------+-------------------------------------------------+
+| ``account update-keys``             | Update credentials keys for a specific          |
+|                                     | credential                                      |
++-------------------------------------+-------------------------------------------------+
+| ``account unshield``                | Transfer part of the shielded balance to the    |
+|                                     | public balance                                  |
++-------------------------------------+-------------------------------------------------+
+| ``account show``                    | Show account information.                       |
+|                                     | :ref:`See below for specific                    |
+|                                     | information<account-commands>`.                 |
++-------------------------------------+-------------------------------------------------+
+| ``identity show``                   | Show identity information.                      |
+|                                     | :ref:`See below for specific                    |
+|                                     | information<identity-commands>`.                |
++-------------------------------------+-------------------------------------------------+
+| ``delegator configure``             | Add, configure, and remove                      |
+|                                     | delegation. :ref:`See below for                 |
+|                                     | information<delegation-commands>`.              |
++-------------------------------------+-------------------------------------------------+
+| ``consensus show-chain-parameters`` | Show chain parameters.                          |
+|                                     | :ref:`See below for specific                    |
+|                                     | information<consensus show-chain-parameters>`.  |
++-------------------------------------+-------------------------------------------------+
 
 Each of these commands have a number of parameters specific to them, but share a common set of flags and configuration to control how they build transactions.
 
@@ -129,7 +129,7 @@ Account sequence number
 Each account on the Concordium blockchain has a :term:`sequence number<transaction sequence number>` and each
 transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
-the account. The sequence number is maintained by all the bakers in order to
+the account. The sequence number is maintained by all the validators in order to
 validate transactions.
 
 The sequence number can be looked up from an up to date node by running
@@ -185,7 +185,7 @@ To show the identity providers authorized by Concordium and a URL, enter:
 
    $concordium-client identity show identity-providers
 
-To show the identity disclosure authorities, enter:
+To show the Privacy Guardians, enter:
 
 .. code-block:: console
 
@@ -197,7 +197,7 @@ Commands for transferring CCD
 The commands for transferring CCD
 are described in the following table.
 
-The add, remove, and configure bakers commands are described in the topic :ref:`becoming a baker using the Concordium Client<become-a-baker>`.
+The add, remove, and configure validators commands are described in the topic :ref:`becoming a validator using the Concordium Client<become-a-validator>`.
 
 .. note::
 
@@ -251,7 +251,7 @@ sender account A has three transaction signing keys 0, 1, and 3.
    Enter password for signing key with index 0: ...
    Enter password for signing key with index 1: ...
    Enter password for signing key with index 3: ...
-   Transaction '7c484aecbc9dce654956cae1a6f9315679f62afe091d74f865f3602bc8003fbd' sent to the baker.
+   Transaction '7c484aecbc9dce654956cae1a6f9315679f62afe091d74f865f3602bc8003fbd' sent to the validator.
    Waiting for the transaction to be committed and finalized.
    You may skip this step by interrupting the command using Ctrl-C (pass flag '--no-wait' to do this by default).
    The transaction will still get processed and may be queried using
@@ -302,7 +302,7 @@ additional flag ``--index.`` If given, this flag is used to select which
    Confirm [yN]: y
    Enter password for signing key with index 0: ...
    Enter password for signing key with index 1: ...
-   Transaction 'b240ed919767b89a03984e71a0c39cff52f3374ab2b1721e489c02dc3fb1e691' sent to the baker.
+   Transaction 'b240ed919767b89a03984e71a0c39cff52f3374ab2b1721e489c02dc3fb1e691' sent to the validator.
    Waiting for the transaction to be committed and finalized.
    You may skip this step by interrupting the command using Ctrl-C (pass flag '--no-wait' to do this by default).
    The transaction will still get processed and may be queried using
@@ -504,13 +504,13 @@ The output is:
      - The amount of time the pool owner needs to wait before changes are effective when either decreasing stake or removing the pool. Note that changes are effective on the first pay day after the cool-down period has expired.
    * -
      - allowed range for finalization commission
-     - The allowed range of finalization commissions bakers may select when creating or updating pools.
+     - The allowed range of finalization commissions validators may select when creating or updating pools.
    * -
      - allowed range for block commission
      - The allowed range of block commissions validators may select when creating or updating pools.
    * -
      - allowed range for transaction commission
-     - The allowed range of transaction commissions bakers may select when creating or updating pools.
+     - The allowed range of transaction commissions validators may select when creating or updating pools.
    * - Passive delegation parameters
      - finalization commission
      - The percentage of finalization rewards retained by the passive delegation, i.e., not given out to delegators.
