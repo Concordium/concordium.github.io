@@ -30,7 +30,7 @@ After :ref:`connecting to DevNet <plt-devnet-connection>`, follow these steps to
 
    - You'll be redirected to a Testnet-style ID page
    - Use the following credentials:
-     - Username: ``devnet-plt-alpha``
+     - Username: ``devnet-plt-beta``
      - Password: ``peachy2025``
 
    .. image:: Images/identity-verification.png

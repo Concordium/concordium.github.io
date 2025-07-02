@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/community/plt/setup-guide/request-plt.9c04200e-8f2c-4ede-8e18-d6091451682c.js"></script>
+    <script defer="defer" src="../../../_static/tippy/community/plt/setup-guide/request-plt.8b87ec92-aa0b-4d76-bb18-311703139d76.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/plt/setup-guide/request-plt';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/community/plt/setup-guide/request-plt.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -599,23 +599,22 @@ For a tutorial on how to use IPFS by running a node, read <a class="reference in
 <li><p><strong>Prepare your token metadata</strong></p>
 <p>Create and host your metadata JSON file following the format above.</p>
 </li>
-<li><p><strong>Access the PLT issuance request form</strong></p>
-<p>Go to the <a class="reference external" href="https://tally.so/r/w8WKGl">PLT issuance request form</a> to submit your request.</p>
-</li>
-<li><p><strong>Fill out the required information</strong></p>
-<ul class="simple">
-<li><p><strong>Nominated Account</strong>: The DevNet wallet address to receive your token. <strong>Important:</strong> This account will have exclusive authority to perform all token-governance operations (mint, burn, add/remove allow and deny lists)</p></li>
-<li><p><strong>Token Name</strong>: Full name of your token (e.g., “My First PLT”)</p></li>
-<li><p><strong>Token Symbol</strong>: Short ticker (e.g., “PLT”)</p></li>
-<li><p><strong>Initial supply</strong>: Amount of tokens that will be issued and transferred to your account</p></li>
-<li><p><strong>Number of decimals</strong>: Number of decimals in the token representation</p></li>
-<li><p><strong>Allowlist</strong>: Only accounts on the allow list can hold the token</p></li>
-<li><p><strong>Denylist</strong>: Accounts on the deny list cannot hold the token</p></li>
-<li><p><strong>Mintable</strong>: Allows minting more tokens after issuance</p></li>
-<li><p><strong>Burnable</strong>: Allows burning tokens after issuance</p></li>
-<li><p><strong>Your Discord username</strong>: For communication about your request</p></li>
-</ul>
-</li>
+<li><p><strong>Fill out the form below</strong></p></li>
+</ol>
+<iframe data-tally-src="https://tally.so/r/mK4ZdK" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="PLT issuance request form"></iframe>
+<script>
+  var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
+    "undefined" != typeof Tally && Tally.loadEmbeds();
+  };
+  if ("undefined" != typeof Tally) v();
+  else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script");
+    s.src = w;
+    s.onload = v;
+    s.type = "text/javascript";
+    d.body.appendChild(s);
+  }
+</script><ol class="arabic" start="3">
 <li><p><strong>Submit your request</strong></p>
 <p>Click Submit to send your PLT issuance request with all the token parameters to the Concordium team.</p>
 </li>
@@ -659,13 +658,10 @@ For a tutorial on how to use IPFS by running a node, read <a class="reference in
 <tr class="row-odd"><td><p>Initial supply</p></td>
 <td><p>Initial tokens minted to the token-governance account</p></td>
 </tr>
-<tr class="row-even"><td><p>Total Supply</p></td>
-<td><p>Maximum possible token supply</p></td>
-</tr>
-<tr class="row-odd"><td><p>Burnable</p></td>
+<tr class="row-even"><td><p>Burnable</p></td>
 <td><p>Whether tokens can be burnt</p></td>
 </tr>
-<tr class="row-even"><td><p>Mintable</p></td>
+<tr class="row-odd"><td><p>Mintable</p></td>
 <td><p>Whether additional tokens can be minted</p></td>
 </tr>
 </tbody>

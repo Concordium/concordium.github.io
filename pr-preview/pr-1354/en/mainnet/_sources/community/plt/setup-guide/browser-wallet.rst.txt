@@ -18,7 +18,7 @@ Follow these steps to install the custom DevNet Browser Wallet:
 
 1. **Download the DevNet Browser Wallet**
 
-   Download `Browser Wallet v2.2.7 <https://distribution.concordium.software/devnet/concordium-browser-wallet-2.2.7.zip>`_, the custom version that allows connection to DevNet.
+   Download `Browser Wallet v2.2.11 <https://distribution.concordium.software/devnet/concordium-browser-wallet-2.2.11.zip>`_, the custom version that allows connection to DevNet.
 
    .. note::
       This feature will be incorporated into the standard Browser Wallet in future versions, but currently requires this special edition.

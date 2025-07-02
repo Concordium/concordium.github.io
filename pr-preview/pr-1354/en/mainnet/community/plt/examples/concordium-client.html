@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/community/plt/examples/concordium-client.efcd170a-f7ec-46dd-ae4b-109c5a244217.js"></script>
+    <script defer="defer" src="../../../_static/tippy/community/plt/examples/concordium-client.c4d1972e-09d9-4f15-93fc-6a1fa2c8f939.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/plt/examples/concordium-client';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/community/plt/examples/concordium-client.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -562,13 +562,13 @@
 <p>This guide explains how to use concordium-client to perform PLT operations from the command line.</p>
 <section id="installation-and-setup">
 <h2>Installation and setup<a class="headerlink" href="#installation-and-setup" title="Link to this heading">#</a></h2>
-<p>Download and install concordium-client v9.1.1-alpha:</p>
-<p><strong>Downloads (v9.1.1):</strong></p>
+<p>Download and install concordium-client v9.1.2-alpha:</p>
+<p><strong>Downloads (v9.1.2):</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/linux/concordium-client_9.1.1-0-alpha">Linux</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/windows/signed/concordium-client_9.1.1-0-alpha.zip">Windows (signed)</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/macos/signed/concordium-client-arm-9.1.1-0-alpha.pkg">macOS - arm (signed)</a></p></li>
-<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/macos/signed/concordium-client-intel-9.1.1-0-alpha.pkg">macOS - intel (signed)</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/linux/concordium-client-9.1.2-0-alpha">Linux</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/windows/signed/concordium-client_9.1.2-0-alpha.zip">Windows (signed)</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/macos/signed/concordium-client-arm-9.1.2-0-alpha.pkg">macOS - arm (signed)</a></p></li>
+<li><p><a class="reference external" href="https://distribution.concordium.software/devnet/macos/signed/concordium-client-intel-9.1.2-0-alpha.pkg">macOS - intel (signed)</a></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -584,7 +584,7 @@
 </ul>
 <p><strong>Token Transfer Operations:</strong></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span> <span class="pre">send</span></code> - Transfer PLT tokens (renamed from <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">transfer-plt</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span> <span class="pre">send</span></code> - Transfer PLT tokens</p></li>
 </ul>
 <p><strong>Token Management Operations:</strong></p>
 <ul class="simple">
@@ -606,35 +606,35 @@
 <section id="command-examples">
 <h2>Command examples<a class="headerlink" href="#command-examples" title="Link to this heading">#</a></h2>
 <p id="concordium-client-get-token-list"><strong>Get PLT Token List:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>raw<span class="w"> </span>GetTokenList<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>raw<span class="w"> </span>GetTokenList<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 <p id="concordium-client-transfer-tokens"><strong>Transfer PLT Tokens:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>send<span class="w"> </span>--sender<span class="w"> </span>YOUR_ACCOUNT<span class="w"> </span>--receiver<span class="w"> </span>RECEIVER_ADDRESS<span class="w"> </span>--amount<span class="w"> </span><span class="m">1</span><span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--memo<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>send<span class="w"> </span>--sender<span class="w"> </span>YOUR_ACCOUNT<span class="w"> </span>--receiver<span class="w"> </span>RECEIVER_ADDRESS<span class="w"> </span>--amount<span class="w"> </span><span class="m">1</span><span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--memo<span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 <p><strong>Mint PLT Tokens:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>mint<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--amount<span class="w"> </span>TOKEN-AMOUNT<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>mint<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--amount<span class="w"> </span>TOKEN-AMOUNT<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 <p><strong>Burn PLT Tokens:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>burn<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--amount<span class="w"> </span>TOKEN-AMOUNT<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>burn<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--amount<span class="w"> </span>TOKEN-AMOUNT<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 <p><strong>Add an Account to the Allow List:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>add-to-allow-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>add-to-allow-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 <p><strong>Add an Account to the Deny List:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>add-to-deny-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>add-to-deny-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 <p><strong>Remove an Account from the Allow List:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>remove-from-allow-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>remove-from-allow-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 <p><strong>Remove an Account from the Deny List:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>remove-from-deny-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-alpha.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>remove-from-deny-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 </section>
