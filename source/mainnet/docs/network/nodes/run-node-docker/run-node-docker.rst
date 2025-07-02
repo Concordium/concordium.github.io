@@ -10,6 +10,15 @@ This article explains how to run a Concordium node in Docker on Linux on mainnet
 
 An account is not required to run a node, but you will need one if you want to become a validator.
 
+You can also watch the video to learn how to run a node with Docker.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/DRk1NSIKZSM"
+   title="YouTube video player" frameborder="0"
+   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen></iframe>
+
 Prerequisites
 =============
 
@@ -31,10 +40,6 @@ These images are designed to be used together with docker-compose, or a similar 
 
 The node requires a database which must be stored on the host system so that it persists when the docker container is stopped. It is up to the user to select the location of the database on their host system. In the guide the location used is ``/var/lib/concordium-mainnet`` or ``/var/lib/concordium-testent`` but any location to which the user that runs the Docker command has access to will do.
 
-.. Note::
-
-   When upgrading your Concordium node, it is generally possible to upgrade directly to the latest version without upgrading through each intermediate version. This applies to both minor and major releases. For patch versions, you can also upgrade directly to the desired version (e.g., from X.X.0 to X.X.3 or from X.1.1 to X.2.3) without the need to apply each patch in sequence.
-
 .. note::
   The dollar sign (``$``) in a codeblock means that you should run the command that follows the ``$`` in a terminal.
 
@@ -48,98 +53,98 @@ The node requires a database which must be stored on the host system so that it 
 
       # This is an example configuration for running the mainnet node
       services:
-      mainnet-node:
-         container_name: mainnet-node
-         image: concordium/mainnet-node:latest
-         platform: linux/amd64
-         pull_policy: always
-         environment:
-            # Environment specific configuration
-            # The url where IPs of the bootstrap nodes can be found.
-            - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.software:8888
-            # Where the genesis is located
-            - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat
-            # The url of the catchup file. This speeds up the catchup process.
-            - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
-            # General node configuration Data and config directories (it's OK if they
-            # are the same). This should match the volume mount below. If the location
-            # of the mount inside the container is changed, then these should be
-            # changed accordingly as well.
-            - CONCORDIUM_NODE_DATA_DIR=/mnt/data
-            - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
-            # The port on which the node will listen for incoming connections. This is a
-            # port inside the container. It is mapped to an external port by the port
-            # mapping in the `ports` section below. If the internal and external ports
-            # are going to be different then you should also set
-            # `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.
-            - CONCORDIUM_NODE_LISTEN_PORT=8888
-            # Desired number of nodes to be connected to.
-            - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5
-            # Maximum number of __nodes__ the node will be connected to.
-            - CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10
-            # Address of the V2 GRPC server.
-            - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
-            # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
-            # that is defined for the collector.
-            - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
-            # Maximum number of __connections__ the node can have. This can temporarily be more than
-            # the number of peers when incoming connections are processed. This limit
-            # ensures that there cannot be too many of those.
-            - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
-            # Number of threads to use to process network events. This should be
-            # adjusted based on the resources the node has (in combination with
-            # `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.
-            - CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2
-            # The bootstrapping interval in seconds. This makes the node contact the
-            # specified bootstrappers at a given interval to discover new peers.
-            - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
-            # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
-            # for consensus operations. `-I0` disables the idle garbage collector
-            # which reduces CPU load for non-validator nodes.
-            - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
-         entrypoint: ["/concordium-node"]
-         # Exposed ports. The ports the node listens on inside the container (defined
-         # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
-         # should match what is defined here. When running multiple nodes the
-         # external ports should be changed so as not to conflict.
-         # In the mapping below, the first port is the `host` port, and the second
-         # port is the `container` port. When the `container` port is changed the
-         # relevant environment variable listed above must be changed as well. For
-         # example, changing `10000:10000` to `10000:13000` would mean that
-         # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
-         # the node's gRPC interface will not be available from the host.
-         ports:
-         - "8888:8888"
-         - "20000:20000"
-         volumes:
-         # The node's database should be stored in a persistent volume so that it
-         # survives container restart. In this case we map the **host** directory
-         # /var/lib/concordium-mainnet to be used as the node's database directory.
-         - /var/lib/concordium-mainnet:/mnt/data
-      # The collector reports the state of the node to the network dashboard. A node
-      # can run without reporting to the network dashboard. Remove this section if
-      # that is desired.
-      mainnet-node-collector:
-         container_name: mainnet-node-collector
-         image: concordium/mainnet-node:latest
-         platform: linux/amd64
-         pull_policy: always
-         environment:
-            # Settings that should be customized by the user.
-            - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet
-            # Environment specific settings.
-            - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.mainnet.concordium.software/nodes/post
-            # Collection settings.
-            # How often to collect the statistics from the node.
-            - CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000
-            # The URL where the node can be reached. Note that this will use the
-            # docker created network which maps `mainnet-node` to the internal IP of
-            # the `mainnet-node`. If the name of the node service is changed from
-            # `mainnet-node` then the name here must also be changed.
-            # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
-            # that is defined for the node.
-            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
-         entrypoint: ["/node-collector"]
+         mainnet-node:
+            container_name: mainnet-node
+            image: concordium/mainnet-node:latest
+            platform: linux/amd64
+            pull_policy: always
+            environment:
+               # Environment specific configuration
+               # The url where IPs of the bootstrap nodes can be found.
+               - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.mainnet.concordium.software:8888
+               # Where the genesis is located
+               - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/mainnet-genesis.dat
+               # The url of the catchup file. This speeds up the catchup process.
+               - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.mainnet.concordium.software/blocks.idx
+               # General node configuration Data and config directories (it's OK if they
+               # are the same). This should match the volume mount below. If the location
+               # of the mount inside the container is changed, then these should be
+               # changed accordingly as well.
+               - CONCORDIUM_NODE_DATA_DIR=/mnt/data
+               - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
+               # The port on which the node will listen for incoming connections. This is a
+               # port inside the container. It is mapped to an external port by the port
+               # mapping in the `ports` section below. If the internal and external ports
+               # are going to be different then you should also set
+               # `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.
+               - CONCORDIUM_NODE_LISTEN_PORT=8888
+               # Desired number of nodes to be connected to.
+               - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5
+               # Maximum number of __nodes__ the node will be connected to.
+               - CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10
+               # Address of the V2 GRPC server.
+               - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
+               # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
+               # that is defined for the collector.
+               - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20000
+               # Maximum number of __connections__ the node can have. This can temporarily be more than
+               # the number of peers when incoming connections are processed. This limit
+               # ensures that there cannot be too many of those.
+               - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
+               # Number of threads to use to process network events. This should be
+               # adjusted based on the resources the node has (in combination with
+               # `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.
+               - CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2
+               # The bootstrapping interval in seconds. This makes the node contact the
+               # specified bootstrappers at a given interval to discover new peers.
+               - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
+               # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
+               # for consensus operations. `-I0` disables the idle garbage collector
+               # which reduces CPU load for non-validator nodes.
+               - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
+            entrypoint: ["/concordium-node"]
+            # Exposed ports. The ports the node listens on inside the container (defined
+            # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
+            # should match what is defined here. When running multiple nodes the
+            # external ports should be changed so as not to conflict.
+            # In the mapping below, the first port is the `host` port, and the second
+            # port is the `container` port. When the `container` port is changed the
+            # relevant environment variable listed above must be changed as well. For
+            # example, changing `10000:10000` to `10000:13000` would mean that
+            # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
+            # the node's gRPC interface will not be available from the host.
+            ports:
+            - "8888:8888"
+            - "20000:20000"
+            volumes:
+            # The node's database should be stored in a persistent volume so that it
+            # survives container restart. In this case we map the **host** directory
+            # /var/lib/concordium-mainnet to be used as the node's database directory.
+            - /var/lib/concordium-mainnet:/mnt/data
+         # The collector reports the state of the node to the network dashboard. A node
+         # can run without reporting to the network dashboard. Remove this section if
+         # that is desired.
+         mainnet-node-collector:
+            container_name: mainnet-node-collector
+            image: concordium/mainnet-node:latest
+            platform: linux/amd64
+            pull_policy: always
+            environment:
+               # Settings that should be customized by the user.
+               - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test-mainnet
+               # Environment specific settings.
+               - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.mainnet.concordium.software/nodes/post
+               # Collection settings.
+               # How often to collect the statistics from the node.
+               - CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000
+               # The URL where the node can be reached. Note that this will use the
+               # docker created network which maps `mainnet-node` to the internal IP of
+               # the `mainnet-node`. If the name of the node service is changed from
+               # `mainnet-node` then the name here must also be changed.
+               # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
+               # that is defined for the node.
+               - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://mainnet-node:20000
+            entrypoint: ["/node-collector"]
 
    2. Possibly modify the **volume mount** to map the database directory to a different location on the host system. The volume mount is the following section.
 
@@ -206,102 +211,102 @@ The node requires a database which must be stored on the host system so that it 
 
       # This is an example configuration for running the testnet node
       services:
-      testnet-node:
-         container_name: testnet-node
-         image: concordium/testnet-node:latest
-         platform: linux/amd64
-         pull_policy: always
-         environment:
-            # Environment specific configuration
-            # The url where IPs of the bootstrap nodes can be found.
-            - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.testnet.concordium.com:8888
-            # Where the genesis is located
-            - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat
-            # The url of the catchup file. This speeds up the catchup process.
-            - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
-            # General node configuration Data and config directories (it's OK if they
-            # are the same). This should match the volume mount below. If the location
-            # of the mount inside the container is changed, then these should be
-            # changed accordingly as well.
-            - CONCORDIUM_NODE_DATA_DIR=/mnt/data
-            - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
-            # The port on which the node will listen for incoming connections. This is a
-            # port inside the container. It is mapped to an external port by the port
-            # mapping in the `ports` section below. If the internal and external ports
-            # are going to be different then you should also set
-            # `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.
-            - CONCORDIUM_NODE_LISTEN_PORT=8889
-            # Desired number of nodes to be connected to.
-            - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5
-            # Maximum number of __nodes__ the node will be connected to.
-            - CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10
-            # Address of the GRPC server
-            - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
-            # And its port
-            - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
-            # Address of the V2 GRPC server.
-            - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
-            # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
-            # that is defined for the collector.
-            - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
-            # Maximum number of __connections__ the node can have. This can temporarily be more than
-            # the number of peers when incoming connections are processed. This limit
-            # ensures that there cannot be too many of those.
-            - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
-            # Number of threads to use to process network events. This should be
-            # adjusted based on the resources the node has (in combination with
-            # `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.
-            - CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2
-            # The bootstrapping interval in seconds. This makes the node contact the
-            # specified bootstrappers at a given interval to discover new peers.
-            - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
-            # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
-            # for consensus operations. `-I0` disables the idle garbage collector
-            # which reduces CPU load for non-validator nodes.
-            - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
-         entrypoint: ["/concordium-node"]
-         # Exposed ports. The ports the node listens on inside the container (defined
-         # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
-         # should match what is defined here. When running multiple nodes the
-         # external ports should be changed so as not to conflict.
-         # In the mapping below, the first port is the `host` port, and the second
-         # port is the `container` port. When the `container` port is changed the
-         # relevant environment variable listed above must be changed as well. For
-         # example, changing `10001:10001` to `10001:13000` would mean that
-         # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
-         # the node's gRPC interface will not be available from the host.
-         ports:
-         - "8889:8889"
-         - "20001:20001"
-         volumes:
-         # The node's database should be stored in a persistent volume so that it
-         # survives container restart. In this case we map the **host** directory
-         # /var/lib/concordium-testnet to be used as the node's database directory.
-         - /var/lib/concordium-testnet:/mnt/data
-      # The collector reports the state of the node to the network dashboard. A node
-      # can run without reporting to the network dashboard. Remove this section if
-      # that is desired.
-      testnet-node-collector:
-         container_name: testnet-node-collector
-         image: concordium/testnet-node:latest
-         platform: linux/amd64
-         pull_policy: always
-         environment:
-            # Settings that should be customized by the user.
-            - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
-            # Environment specific settings.
-            - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.testnet.concordium.com/nodes/post
-            # Collection settings.
-            # How often to collect the statistics from the node.
-            - CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000
-            # The URL where the node can be reached. Note that this will use the
-            # docker created network which maps `testnet-node` to the internal IP of
-            # the `testnet-node`. If the name of the node service is changed from
-            # `testnet-node` then the name here must also be changed.
-            # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
-            # that is defined for the node.
-            - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
-         entrypoint: ["/node-collector"]
+         testnet-node:
+            container_name: testnet-node
+            image: concordium/testnet-node:latest
+            platform: linux/amd64
+            pull_policy: always
+            environment:
+               # Environment specific configuration
+               # The url where IPs of the bootstrap nodes can be found.
+               - CONCORDIUM_NODE_CONNECTION_BOOTSTRAP_NODES=bootstrap.testnet.concordium.com:8888
+               # Where the genesis is located
+               - CONCORDIUM_NODE_CONSENSUS_GENESIS_DATA_FILE=/testnet-genesis.dat
+               # The url of the catchup file. This speeds up the catchup process.
+               - CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM=https://catchup.testnet.concordium.com/blocks.idx
+               # General node configuration Data and config directories (it's OK if they
+               # are the same). This should match the volume mount below. If the location
+               # of the mount inside the container is changed, then these should be
+               # changed accordingly as well.
+               - CONCORDIUM_NODE_DATA_DIR=/mnt/data
+               - CONCORDIUM_NODE_CONFIG_DIR=/mnt/data
+               # The port on which the node will listen for incoming connections. This is a
+               # port inside the container. It is mapped to an external port by the port
+               # mapping in the `ports` section below. If the internal and external ports
+               # are going to be different then you should also set
+               # `CONCORDIUM_NODE_EXTERNAL_PORT` variable to what the external port value is.
+               - CONCORDIUM_NODE_LISTEN_PORT=8889
+               # Desired number of nodes to be connected to.
+               - CONCORDIUM_NODE_CONNECTION_DESIRED_NODES=5
+               # Maximum number of __nodes__ the node will be connected to.
+               - CONCORDIUM_NODE_CONNECTION_MAX_ALLOWED_NODES=10
+               # Address of the GRPC server
+               - CONCORDIUM_NODE_RPC_SERVER_ADDR=0.0.0.0
+               # And its port
+               - CONCORDIUM_NODE_RPC_SERVER_PORT=10001
+               # Address of the V2 GRPC server.
+               - CONCORDIUM_NODE_GRPC2_LISTEN_ADDRESS=0.0.0.0
+               # And its port which has to be the same as in `CONCORDIUM_NODE_COLLECTOR_GRPC_HOST`
+               # that is defined for the collector.
+               - CONCORDIUM_NODE_GRPC2_LISTEN_PORT=20001
+               # Maximum number of __connections__ the node can have. This can temporarily be more than
+               # the number of peers when incoming connections are processed. This limit
+               # ensures that there cannot be too many of those.
+               - CONCORDIUM_NODE_CONNECTION_HARD_CONNECTION_LIMIT=20
+               # Number of threads to use to process network events. This should be
+               # adjusted based on the resources the node has (in combination with
+               # `CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS`) below.
+               - CONCORDIUM_NODE_CONNECTION_THREAD_POOL_SIZE=2
+               # The bootstrapping interval in seconds. This makes the node contact the
+               # specified bootstrappers at a given interval to discover new peers.
+               - CONCORDIUM_NODE_CONNECTION_BOOTSTRAPPING_INTERVAL=1800
+               # Haskell RTS flags to pass to consensus. `-N2` means to use two threads
+               # for consensus operations. `-I0` disables the idle garbage collector
+               # which reduces CPU load for non-validator nodes.
+               - CONCORDIUM_NODE_RUNTIME_HASKELL_RTS_FLAGS=-N2,-I0
+            entrypoint: ["/concordium-node"]
+            # Exposed ports. The ports the node listens on inside the container (defined
+            # by `CONCORDIUM_NODE_LISTEN_PORT` and `CONCORDIUM_NODE_RPC_SERVER_PORT`)
+            # should match what is defined here. When running multiple nodes the
+            # external ports should be changed so as not to conflict.
+            # In the mapping below, the first port is the `host` port, and the second
+            # port is the `container` port. When the `container` port is changed the
+            # relevant environment variable listed above must be changed as well. For
+            # example, changing `10001:10001` to `10001:13000` would mean that
+            # `CONCORDIUM_NODE_RPC_SERVER_PORT` should be set to `13000`. Otherwise
+            # the node's gRPC interface will not be available from the host.
+            ports:
+            - "8889:8889"
+            - "20001:20001"
+            volumes:
+            # The node's database should be stored in a persistent volume so that it
+            # survives container restart. In this case we map the **host** directory
+            # /var/lib/concordium-testnet to be used as the node's database directory.
+            - /var/lib/concordium-testnet:/mnt/data
+         # The collector reports the state of the node to the network dashboard. A node
+         # can run without reporting to the network dashboard. Remove this section if
+         # that is desired.
+         testnet-node-collector:
+            container_name: testnet-node-collector
+            image: concordium/testnet-node:latest
+            platform: linux/amd64
+            pull_policy: always
+            environment:
+               # Settings that should be customized by the user.
+               - CONCORDIUM_NODE_COLLECTOR_NODE_NAME=docker-test
+               # Environment specific settings.
+               - CONCORDIUM_NODE_COLLECTOR_URL=https://dashboard.testnet.concordium.com/nodes/post
+               # Collection settings.
+               # How often to collect the statistics from the node.
+               - CONCORDIUM_NODE_COLLECTOR_COLLECT_INTERVAL=5000
+               # The URL where the node can be reached. Note that this will use the
+               # docker created network which maps `testnet-node` to the internal IP of
+               # the `testnet-node`. If the name of the node service is changed from
+               # `testnet-node` then the name here must also be changed.
+               # The port also has to be the same as in `CONCORDIUM_NODE_GRPC2_LISTEN_PORT`
+               # that is defined for the node.
+               - CONCORDIUM_NODE_COLLECTOR_GRPC_HOST=http://testnet-node:20001
+            entrypoint: ["/node-collector"]
 
 
    .. Note::

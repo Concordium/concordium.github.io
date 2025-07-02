@@ -9,7 +9,7 @@
 Identity on Concordium
 ======================
 
-Concordium’s identity layer is built into the protocol. Every account on the chain has one or more credentials issued by specially sanctioned identity providers who are expected to be able to provide full disclosure of the identity (in concert with the identity disclosure authorities). ID 2.0 made it possible to use these identities off-chain: wallets allow using identities to prove properties about the holder, such as their nationality or age. These are known as :term:`account credentials<account credential>`.
+Concordium’s identity layer is built into the protocol. Every account on the chain has one or more credentials issued by specially sanctioned identity providers who are expected to be able to provide full disclosure of the identity in concert with the :term:`Privacy Guardians<Privacy Guardian (PG)>`. ID 2.0 made it possible to use these identities off-chain: wallets allow using identities to prove properties about the holder, such as their nationality or age. These are known as :term:`account credentials<account credential>`.
 
 .. image:: ../../../docs/images/mobile-wallet/MW12.png
    :width: 25%
