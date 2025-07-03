@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/transaction-fees.bbef1182-5a0e-4a71-96c6-abcabfcfb7a2.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/transaction-fees.55777b17-57f5-400d-908e-df393c717739.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/transaction-fees';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/transaction-fees.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -507,6 +507,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="transactions.html">Transactions</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="transaction%20lifecycle.html">Transaction lifecycle</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Transaction fees</a></li>
@@ -570,8 +571,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/become-baker.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/become-validator.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -674,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -764,7 +765,7 @@
 <p>Concordium combines the freely fluctuating value of the CCD with a transaction cost that remains stable versus EUR. This is achieved by fixing the price of a transaction in EUR, then multiplying this by the current CCD/EUR price. So if the value of the CCD goes up, a user needs fewer CCD to pay for transactions, thereby maintaining a stable cost in EUR terms. The technical implementation of the above principle is described in the following.</p>
 </section>
 <section id="computing-transaction-costs">
-<h2>Computing transaction costs<a class="headerlink" href="#computing-transaction-costs" title="Link to this heading">#</a></h2>
+<span id="id2"></span><h2>Computing transaction costs<a class="headerlink" href="#computing-transaction-costs" title="Link to this heading">#</a></h2>
 <p>ENERGY (NRG for short) is the internal unit of measurement for transaction costs. The transaction cost can be broken down into the header cost, which depends on the size of the transaction and number of signatures involved, and the payload cost, which depends on the type of transaction and the resource cost of executing it. Details of how transaction energy costs are calculated are given in <a class="reference internal" href="#transaction-costs-details"><span class="std std-ref">Transaction costs details</span></a> below.</p>
 <p>The calculated ENERGY is converted into a CCD cost by applying a fixed EUR/ENERGY conversion rate and a variable CCD/EUR exchange rate which is adjusted dynamically to ensure that the cost remains stable when measured in EUR. Thus, the GAS payment in CCD terms is calculated by applying the following calculation:</p>
 <p>GAS (CCD) = ENERGY  x  (EUR/ENERGY conversion)  x  (CCD/EUR exchange rate)</p>
@@ -775,7 +776,7 @@
 <p>The idea of our transaction cost system is that costs are stable in EUR. However, the EUR to ENERGY conversion rate may be changed by the Governance Committee in response to significant changes in market conditions or changes in the costs related to processing transactions. Any changes to the EUR cost of transactions will be announced to users and the public with a notice period of no less than 1 month, unless exceptional circumstances occur, thereby enabling users to make necessary adjustments to their use of the blockchain.</p>
 </section>
 <section id="transaction-costs-details">
-<span id="id2"></span><h2>Transaction costs details<a class="headerlink" href="#transaction-costs-details" title="Link to this heading">#</a></h2>
+<span id="id3"></span><h2>Transaction costs details<a class="headerlink" href="#transaction-costs-details" title="Link to this heading">#</a></h2>
 <p>The transaction energy cost is calculated as:</p>
 <div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">energy</span><span class="w"> </span><span class="n">cost</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">header</span><span class="w"> </span><span class="n">cost</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">payload</span><span class="w"> </span><span class="n">cost</span><span class="p">)</span>
 </pre></div>

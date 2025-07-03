@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/accounts-desktop.d915adcb-f1ce-4450-96c7-6217abe9343a.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/accounts-desktop.06145720-ada9-4aee-b3cf-7c65d5032395.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/desktop-wallet/accounts-desktop';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/desktop-wallet/accounts-desktop.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -507,6 +507,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../protocol/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../protocol/key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../protocol/transaction-fees.html">Transaction fees</a></li>
@@ -570,8 +571,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/become-baker.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/become-validator.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -674,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -809,7 +810,7 @@
 <li><p><strong>Credentials and attribute information</strong>: Here you can see all credential ID that are associated with the account and the attributes that are revealed for each credential ID (if any). You can also see the creation dates and valid to dates of the credentials. One or more credentials can be associated with an account.</p></li>
 <li><p><strong>Update credentials</strong>: Add new credentials to the account. See <a class="reference internal" href="../guides/multi-credentials.html#multi-credentials"><span class="std std-ref">Add credentials to an account</span></a>.</p></li>
 <li><p><strong>Register data</strong>: Add a small message to the chain, such as a hash. This information is visible on the chain and cannot be removed. Note that adding this message incurs a transaction fee.</p></li>
-<li><p><strong>Register as a validator</strong>: Make the account a validator account. See <a class="reference internal" href="../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>. If the account is already a validator account, you’ll see <strong>Validation</strong> which contains a list of options for managing a validator account: <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#remove-baker-mw"><span class="std std-ref">Remove validator</span></a>, <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-keys-mw"><span class="std std-ref">Update validator keys</span></a>, <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update validator stake</span></a>, and <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update validator restake earnings</span></a>.</p></li>
+<li><p><strong>Register as a validator</strong>: Make the account a validator account. See <a class="reference internal" href="../network/guides/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>. If the account is already a validator account, you’ll see <strong>Validation</strong> which contains a list of options for managing a validator account: <a class="reference internal" href="../network/guides/update-baker-mw.html#remove-baker-mw"><span class="std std-ref">Remove validator</span></a>, <a class="reference internal" href="../network/guides/update-baker-mw.html#update-baker-keys-mw"><span class="std std-ref">Update validator keys</span></a>, <a class="reference internal" href="../network/guides/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update validator stake</span></a>, and <a class="reference internal" href="../network/guides/update-baker-mw.html#update-baker-stake-mw"><span class="std std-ref">Update validator restake earnings</span></a>.</p></li>
 <li><p><strong>Register as a delegator</strong>: Register the account as a delegator. See <a class="reference internal" href="../protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">Delegation</span></a> for information about delegation. If you are already delegating, you’ll see <strong>Delegation</strong> which contains a list of options for managing delegation.</p></li>
 </ul>
 </section>

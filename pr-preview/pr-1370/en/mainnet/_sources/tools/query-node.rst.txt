@@ -273,7 +273,7 @@ ID layer
 
    $concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
 
-Display the list of identity providers or identity disclosure authorities at a given block,
+Display the list of identity providers or :term:`Privacy Guardians<Privacy Guardian (PG)>` at a given block,
 defaulting to the :term:`best block`.
 
 .. _exchange-rates:

@@ -81,7 +81,7 @@ Option 2: Generate and sign the transaction on the LEDGER device
 
 #. The LEDGER device says **Signature threshold** which is the number of signatures that’s currently required to make transactions with the account. Navigate to the right and verify that the following information is correct, and then press both buttons.
 
-   -  *AR threshold*: this is the number of identity disclosure authorities required to disclose an identity on the account.
+   -  *AR threshold*: this is the number of Privacy Guardians required to disclose an identity on the account.
 
    -  *Cred. sig. threshold*: this is the number of signatures required to sign transactions on the account.
 

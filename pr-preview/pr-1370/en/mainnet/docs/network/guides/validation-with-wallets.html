@@ -54,13 +54,13 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.0a1affdc-d883-4bf5-a09b-7e8cc17151dc.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.cd14e7a0-dacf-4fa1-ba33-6afdd78afa0a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/validation-with-wallets';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/validation-with-wallets.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Validation with the Concordium Client" href="become-baker.html" />
+    <link rel="next" title="Validation with the Concordium Client" href="become-validator.html" />
     <link rel="prev" title="Validator management" href="../baker-pool.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -507,6 +507,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/manage-accounts.html">Accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protocol/key-derivation-and-usage.html">Key derivation and usage</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/transactions.html">Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../protocol/transaction%20lifecycle.html">Transaction lifecycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protocol/transaction-fees.html">Transaction fees</a></li>
@@ -570,8 +571,12 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../baker-pool.html">Validator Management</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="become-baker.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="become-validator.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-baker-mw.html">Add a validator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -674,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -790,7 +791,7 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 4: Add validation to an account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Configure validation for an account. For instructions, see <a class="reference internal" href="../../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a>.</p>
+<p class="sd-card-text">Configure validation for an account. For instructions, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -800,7 +801,7 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 <li><p class="sd-card-text"><a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a></p></li>
 </ul>
 </div>
-</details><p>For information about how to update your validator or stop validating, see <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validation options</span></a>.</p>
+</details><p>For information about how to update your validator or stop validating, see <a class="reference internal" href="update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validation options</span></a>.</p>
 </section>
 <section id="validation-with-desktop-wallet">
 <h2>Validation with Desktop Wallet<a class="headerlink" href="#validation-with-desktop-wallet" title="Link to this heading">#</a></h2>
@@ -828,7 +829,7 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 5: Add a validator in the Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You’re now ready to add a validator in the Desktop Wallet and generate validator keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See <a class="reference internal" href="../../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>.</p>
+<p class="sd-card-text">You’re now ready to add a validator in the Desktop Wallet and generate validator keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -838,18 +839,17 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 <li><p class="sd-card-text"><a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a></p></li>
 </ul>
 </div>
-</details><p>For information about how to update your validator or stop validation, see <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validator options</span></a>.</p>
-<p>For information about how to update your validator or stop validation, see <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change baker options</span></a>.</p>
+</details><p>For information about how to update your validator or stop validation, see <a class="reference internal" href="update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validator options</span></a>.</p>
 </section>
 <section id="validation-with-concordium-client">
 <h2>Validation with <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code><a class="headerlink" href="#validation-with-concordium-client" title="Link to this heading">#</a></h2>
-<p>For information about configuring and managing validation in <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>, see <a class="reference internal" href="become-baker.html#become-a-baker"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p>
+<p>For information about configuring and managing validation in <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>, see <a class="reference internal" href="become-validator.html#become-a-validator"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p>
 <section id="next-steps">
 <h3>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Read the information about <a class="reference internal" href="../baker-pool.html#baker-pool"><span class="std std-ref">validation management</span></a>.</p></li>
 <li><p>If you are interested in a staking pool, read the <a class="reference internal" href="../../help-and-faq/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation FAQ</span></a>.</p></li>
-<li><p>You can then <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">update validator settings</span></a> as needed to manage your validator.</p></li>
+<li><p>You can then <a class="reference internal" href="update-baker-mw.html#update-baker-mw"><span class="std std-ref">update validator settings</span></a> as needed to manage your validator.</p></li>
 </ul>
 </section>
 </section>
@@ -911,7 +911,7 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
       </div>
     </a>
     <a class="right-next"
-       href="become-baker.html"
+       href="become-validator.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

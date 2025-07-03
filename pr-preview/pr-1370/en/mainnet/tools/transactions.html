@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tools/transactions.e71b4ad7-994a-45e8-9f6e-bf0f832ccf26.js"></script>
+    <script defer="defer" src="../_static/tippy/tools/transactions.f3ca379d-20ae-4543-bf82-2198beba40eb.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/transactions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/transactions.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -578,7 +578,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All transfers and transactions cost a fee. The fee is based on the set NRG for that transaction and the current exchange rate.
+<p>All transfers and transactions cost a fee. The fee is based on the set <a class="reference internal" href="../docs/protocol/transaction-fees.html#computing-transaction-costs"><span class="std std-ref">NRG</span></a> for that transaction and the current exchange rate.
 The cost of transaction fees is stable in Euros, and therefore the price in CCD varies depending on the CCD to EUR exchange rate. The fee will always be deducted from the <strong>Balance</strong> of the account, so it is important to have some available CCDs to cover fees.
 You can see the fee in the transaction log.</p>
 </div>
@@ -600,23 +600,23 @@ gradually</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">add</span></code></p></td>
 <td><p>Add a new validator. For more information, see
-<a class="reference internal" href="../docs/network/guides/become-baker.html#become-a-baker"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
+<a class="reference internal" href="../docs/network/guides/become-validator.html#become-a-validator"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">remove</span></code></p></td>
 <td><p>Remove a validator. For more information, see
-<a class="reference internal" href="../docs/network/guides/become-baker.html#become-a-baker"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
+<a class="reference internal" href="../docs/network/guides/become-validator.html#become-a-validator"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">update-stake</span></code></p></td>
 <td><p>Update the staked amount of a validator. For
-more information, see <a class="reference internal" href="../docs/network/guides/become-baker.html#become-a-baker"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
+more information, see <a class="reference internal" href="../docs/network/guides/become-validator.html#become-a-validator"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">update-restake</span></code></p></td>
 <td><p>Update the restaking switch of a validator. For
-more information, see <a class="reference internal" href="../docs/network/guides/become-baker.html#become-a-baker"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
+more information, see <a class="reference internal" href="../docs/network/guides/become-validator.html#become-a-validator"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validator</span> <span class="pre">set-key</span></code></p></td>
 <td><p>Update the keys of a validator. For more
-information, see <a class="reference internal" href="../docs/network/guides/become-baker.html#become-a-baker"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
+information, see <a class="reference internal" href="../docs/network/guides/become-validator.html#become-a-validator"><span class="std std-ref">Validation with the Concordium Client</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">update-keys</span></code></p></td>
 <td><p>Update credentials keys for a specific
@@ -684,7 +684,7 @@ the signing keys.</p>
 <p>Each account on the Concordium blockchain has a <a class="reference internal" href="../docs/resources/glossary.html#term-Transaction-Sequence-Number"><span class="xref std std-term">sequence number</span></a> and each
 transaction signed by the account must have a sequence number. For a transaction
 to be considered valid its sequence number must be the next available one for
-the account. The sequence number is maintained by all the bakers in order to
+the account. The sequence number is maintained by all the validators in order to
 validate transactions.</p>
 <p>The sequence number can be looked up from an up to date node by running</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span><span class="o">[</span>ACCOUNT<span class="o">]</span>
@@ -721,7 +721,7 @@ the same account. Thus, accounts can be referred to by any address whose initial
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>identity-providers
 </pre></div>
 </div>
-<p>To show the identity disclosure authorities, enter:</p>
+<p>To show the Privacy Guardians, enter:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span>anonymity-revokers
 </pre></div>
 </div>
@@ -730,7 +730,7 @@ the same account. Thus, accounts can be referred to by any address whose initial
 <h2>Commands for transferring CCD<a class="headerlink" href="#commands-for-transferring-ccd" title="Link to this heading">#</a></h2>
 <p>The commands for transferring CCD
 are described in the following table.</p>
-<p>The add, remove, and configure bakers commands are described in the topic <a class="reference internal" href="../docs/network/guides/become-baker.html#become-a-baker"><span class="std std-ref">becoming a baker using the Concordium Client</span></a>.</p>
+<p>The add, remove, and configure validators commands are described in the topic <a class="reference internal" href="../docs/network/guides/become-validator.html#become-a-validator"><span class="std std-ref">becoming a validator using the Concordium Client</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To see more information about a command, invoke it with the <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag.</p>
@@ -773,7 +773,7 @@ sender account A has three transaction signing keys 0, 1, and 3.</p>
 <span class="go">Enter password for signing key with index 0: ...</span>
 <span class="go">Enter password for signing key with index 1: ...</span>
 <span class="go">Enter password for signing key with index 3: ...</span>
-<span class="go">Transaction &#39;7c484aecbc9dce654956cae1a6f9315679f62afe091d74f865f3602bc8003fbd&#39; sent to the baker.</span>
+<span class="go">Transaction &#39;7c484aecbc9dce654956cae1a6f9315679f62afe091d74f865f3602bc8003fbd&#39; sent to the validator.</span>
 <span class="go">Waiting for the transaction to be committed and finalized.</span>
 <span class="go">You may skip this step by interrupting the command using Ctrl-C (pass flag &#39;--no-wait&#39; to do this by default).</span>
 <span class="go">The transaction will still get processed and may be queried using</span>
@@ -820,7 +820,7 @@ additional flag <code class="docutils literal notranslate"><span class="pre">--i
 <span class="go">Confirm [yN]: y</span>
 <span class="go">Enter password for signing key with index 0: ...</span>
 <span class="go">Enter password for signing key with index 1: ...</span>
-<span class="go">Transaction &#39;b240ed919767b89a03984e71a0c39cff52f3374ab2b1721e489c02dc3fb1e691&#39; sent to the baker.</span>
+<span class="go">Transaction &#39;b240ed919767b89a03984e71a0c39cff52f3374ab2b1721e489c02dc3fb1e691&#39; sent to the validator.</span>
 <span class="go">Waiting for the transaction to be committed and finalized.</span>
 <span class="go">You may skip this step by interrupting the command using Ctrl-C (pass flag &#39;--no-wait&#39; to do this by default).</span>
 <span class="go">The transaction will still get processed and may be queried using</span>
@@ -1009,7 +1009,7 @@ release schedule.</p>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>allowed range for finalization commission</p></td>
-<td><p>The allowed range of finalization commissions bakers may select when creating or updating pools.</p></td>
+<td><p>The allowed range of finalization commissions validators may select when creating or updating pools.</p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>allowed range for block commission</p></td>
@@ -1017,7 +1017,7 @@ release schedule.</p>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>allowed range for transaction commission</p></td>
-<td><p>The allowed range of transaction commissions bakers may select when creating or updating pools.</p></td>
+<td><p>The allowed range of transaction commissions validators may select when creating or updating pools.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Passive delegation parameters</p></td>
 <td><p>finalization commission</p></td>
