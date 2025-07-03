@@ -10,7 +10,7 @@ In the Desktop Wallet, you have the option of creating shared accounts, also kno
 Credentials
 ===========
 
-It’s the :term:`credentials<credential>` on an account that determine who’s allowed to sign transactions. An account credential holds signature verification keys, information related to the :term:`identity disclosure authority<identity disclosure authority>`, and the public :term:`attributes` of the account owner. The credential proves that the account owner has been verified by an :term:`identity provider`, but it doesn’t identify the account owner to the identity provider. However, in the case of a valid request from a government authority via established legal channels, it allows the identity disclosure authorities and the identity provider, when they work together, to link the account to the users. For more information, see :ref:`Identity framework on Concordium <reference-identity>`.
+It’s the :term:`credentials<credential>` on an account that determine who’s allowed to sign transactions. An account credential holds signature verification keys, information related to the :term:`Privacy Guardians<Privacy Guardian (PG)>`, and the public :term:`attributes` of the account owner. The credential proves that the account owner has been verified by an :term:`identity provider`, but it doesn’t identify the account owner to the identity provider. However, in the case of a valid request from a government authority via established legal channels, it allows the Privacy Guardians and the identity provider, when they work together, to link the account to the users. For more information, see :ref:`Identity framework on Concordium <reference-identity>`.
 
 Signature threshold
 ===================

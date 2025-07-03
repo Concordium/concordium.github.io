@@ -9,7 +9,7 @@ Run a local chain
 
     Running your own local chain is an advanced process and not applicable for all use cases. Users with little or no blockchain experience should not attempt to run a local chain. If you run into issues while installing, configuring, and running your local chain, contact `Concordium support <http://support.concordium.software>`_.
 
-This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects, such as the genesis parameters, identity disclosure authorities, identity providers, and foundation accounts.
+This guide details how to run your own instance of the Concordium blockchain. This is useful when developing and testing smart contracts. Running your own chain also lets you control various aspects, such as the genesis parameters, :term:`Privacy Guardians<Privacy Guardian (PG)>`, identity providers, and foundation accounts.
 
 The chain is run by a network of validator nodes that produce blocks. In the following minimal example you will set up a network comprised of a single validator node that runs *locally* on your system and *does not connect to mainnet or testnet*. Note, however, that the concepts demonstrated here equally apply to any number of validator nodes configured in a LAN or WAN setting.
 
@@ -71,7 +71,7 @@ The ``genesis-creator`` tool uses a TOML configuration file format for specifyin
 
 * the initial protocol version
 * cryptographic parameters
-* anonymity revokers (Identity disclosure authorities)
+* anonymity revokers (:term:`Privacy Guardians<Privacy Guardian (PG)>`)
 * identity providers
 * foundation accounts
 * keys for updating the chain

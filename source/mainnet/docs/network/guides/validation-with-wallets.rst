@@ -88,7 +88,7 @@ For information about how to update your validator or stop validation, see :ref:
 Validation with ``Concordium-client``
 -------------------------------------
 
-For information about configuring and managing validation in ``Concordium-client``, see :ref:`Validation with the Concordium Client<become-a-baker>`.
+For information about configuring and managing validation in ``Concordium-client``, see :ref:`Validation with the Concordium Client<become-a-validator>`.
 
 Next steps
 ==========

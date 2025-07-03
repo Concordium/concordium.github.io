@@ -38,7 +38,7 @@ The node runs as a background service with no user interface. To verify that itâ
 Enable inbound connections
 ==========================
 
-If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, :ref:`if so configured<become-a-baker>`, to produce blocks.
+If you are running your node behind a firewall, or behind your home router, then you will probably only be able to connect to other nodes, but other nodes will not be able to initiate connections to your node. This is perfectly fine, and your node will fully participate in the Concordium network. It will be able to send transactions and, :ref:`if so configured<become-a-validator>`, to produce blocks.
 
 However you can also make your node an even better network participant by enabling inbound connections. By default, ``concordium-node`` listens on port ``8888`` for inbound connections on **Mainnet** and on port ``8889`` for inbound connections on **Testnet**. Depending on your network and platform configuration you will either need to forward an external port to ``8888`` or ``8889`` on your router, open it in your firewall, or both. The details of how this is done will depend on your configuration. See :ref:`Concordium Windows node runner service configuration<node-runner-service-configuration>` for more information.
 

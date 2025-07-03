@@ -48,7 +48,7 @@ The tool for both validator management and research is `CCDScan <https://ccdscan
    :maxdepth: 1
 
    guides/validation-with-wallets
-   guides/become-baker
+   guides/become-validator
    guides/import-validator-keys
 
 
