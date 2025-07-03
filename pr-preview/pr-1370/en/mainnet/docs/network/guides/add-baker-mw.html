@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/add-baker-mw.a278e9f9-64eb-43b7-91b6-8378f4dcadc3.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/add-baker-mw.23bcd1e7-b045-4226-83ff-519a34f0a161.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/add-baker-mw';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/add-baker-mw.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -773,6 +773,7 @@ You can see the fee in the transaction log.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Access validator setup</strong></p>
 <ol class="arabic">
 <li><p class="sd-card-text">Tap the <strong>Earn</strong> button on the main screen.</p></li>
 <li><p class="sd-card-text">On the earnings information screen, tap <strong>Or become a validator (advanced)</strong> at the bottom of the screen.</p>
@@ -780,23 +781,26 @@ You can see the fee in the transaction log.</p>
 </a>
 </li>
 <li><p class="sd-card-text">Read through the validator information screen where the key concepts of validation on the Concordium blockchain are explained. This includes information about the validator role, key generation, node requirements, staking pool options, and suspension policies. Tap <strong>Start validating</strong> at the bottom of the screen to proceed.</p></li>
-<li><p class="sd-card-text">On the Register validator screen, enter the amount of CCD you want to stake. You can see your available balance for staking below. Toggle the <strong>Restake rewards</strong> switch if you want to automatically add your validator rewards to your stake amount. If disabled, rewards will be deposited to your disposable balance at each pay day. Tap <strong>Continue</strong> to proceed.</p>
+</ol>
+<p class="sd-card-text"><strong>Configure validator settings</strong></p>
+<ol class="arabic" start="4">
+<li><p class="sd-card-text">On the Register validator screen, configure your validator by entering the amount of CCD you want to stake and setting your preferences. You can see your available balance for staking below. Toggle the <strong>Restake rewards</strong> switch if you want to automatically add your validator rewards to your stake amount. If disabled, rewards will be deposited to your disposable balance at each pay day.</p>
 <a class="reference internal image-reference" href="../../../_images/cryptox-add-validator2.png"><img alt="screen to register validator for first time showing balance, amount to stake, and restake parameters" src="../../../_images/cryptox-add-validator2.png" style="width: 50%;" />
 </a>
-</li>
-<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a> or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a staking pool. Tap <strong>Continue</strong>.</p>
+<p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a> or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose <strong>Close for delegation</strong> if you do not wish to run a staking pool.</p>
 <a class="reference internal image-reference" href="../../../_images/cryptox-add-validator3.png"><img alt="screen to register validator for first time showing options to open or close pool for delegation" src="../../../_images/cryptox-add-validator3.png" style="width: 50%;" />
 </a>
-</li>
-<li><p class="sd-card-text">Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. The lower the commission, the greater reward the delegators receive, hence they are more motivated to delegate to you. For example, 10% commission means that you get 10% of the rewards for the total delegated amount, while delegators get the remaining 90% proportionally to their stake. You still get 100% of the rewards for your own staked amount.  Tap <strong>Continue</strong>.</p>
+<p class="sd-card-text">Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. The lower the commission, the greater reward the delegators receive, hence they are more motivated to delegate to you. For example, 10% commission means that you get 10% of the rewards for the total delegated amount, while delegators get the remaining 90% proportionally to their stake. You still get 100% of the rewards for your own staked amount.</p>
 <a class="reference internal image-reference" href="../../../_images/cryptox-add-validator4.png"><img alt="screen to register validator for first time showing commission rates for staking pools" src="../../../_images/cryptox-add-validator4.png" style="width: 50%;" />
 </a>
-</li>
-<li><p class="sd-card-text">If you open a staking pool, you can optionally provide a URL with information about your validator. This allows delegators to learn more about your pool and make informed decisions. This information is not shared for closed pools or validators. Tap <strong>Continue</strong>.</p>
+<p class="sd-card-text">If you open a staking pool, you can optionally provide a URL with information about your validator. This allows delegators to learn more about your pool and make informed decisions. This information is not shared for closed pools or validators. Tap <strong>Continue</strong> when you have completed your configuration.</p>
 <a class="reference internal image-reference" href="../../../_images/cryptox-add-validator5.png"><img alt="screen to register validator for first time showing field to paste URL with metadata for staking pools" src="../../../_images/cryptox-add-validator5.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Now, export the validator keys. You need the validator keys to start the node. Tap <strong>Continue</strong> and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.</p>
+</ol>
+<p class="sd-card-text"><strong>Export validator keys and submit</strong></p>
+<ol class="arabic" start="5">
+<li><p class="sd-card-text">Export the validator keys as you need them to start the node. Tap <strong>Continue</strong> and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.</p>
 <a class="reference internal image-reference" href="../../../_images/cryptox-add-validator6.png"><img alt="screen to register validator for first time showing all of the validator keys with option to export" src="../../../_images/cryptox-add-validator6.png" style="width: 50%;" />
 </a>
 </li>
@@ -805,16 +809,23 @@ You can see the fee in the transaction log.</p>
 <p class="admonition-title">Warning</p>
 <p class="sd-card-text">If you’re going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.</p>
 </div>
-<ol class="arabic" start="9">
+<ol class="arabic" start="6">
 <li><p class="sd-card-text">Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information. Swipe right on the <strong>Submit</strong> slider to submit the validator transaction.</p></li>
 <li><p class="sd-card-text">The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you’re validating with. You can click <strong>Transaction details</strong> to view more information about the transaction, or <strong>Close</strong> to return to the main screen.</p>
-<a class="reference internal image-reference" href="../../../_images/cryptox-add-valiator7.png"><img alt="screen confirming validator registration" src="../../../_images/cryptox-add-valiator7.png" style="width: 50%;" />
+<blockquote>
+<div><a class="reference internal image-reference" href="../../../_images/cryptox-add-valiator7.png"><img alt="screen confirming validator registration" src="../../../_images/cryptox-add-valiator7.png" style="width: 50%;" />
 </a>
+</div></blockquote>
 </li>
+</ol>
+<p class="sd-card-text"><strong>Next steps</strong></p>
+<ol class="arabic" start="8">
 <li><p class="sd-card-text">You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a validator for a longer time.</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a></p></li>
 </ul>
+</div></blockquote>
 </li>
 </ol>
 </div>
@@ -969,30 +980,34 @@ You can see the fee in the transaction log.</p>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Access validator setup</strong></p>
 <ol class="arabic">
 <li><p class="sd-card-text">In the dropdown list, select the account for which you will set up a validator and click <strong>Earn</strong>.</p></li>
 <li><p class="sd-card-text">In the <em>Validation</em> section, click <strong>Continue to validation setup</strong>.</p>
 <a class="reference internal image-reference" href="../../../_images/add_validator1.png"><img alt="../../../_images/add_validator1.png" src="../../../_images/add_validator1.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">You can now go through anumber of informational screens explaining the key concepts of validation on the Concordium blockchain, including the validator role and key generation, node requirements, staking pool options, and suspension policies. Click <strong>Next</strong> to navigate through the screens. Click <strong>Skip</strong> to proceed directly to registering your validation.</p></li>
-<li><p class="sd-card-text">On the Register validator screen you can see your available balance. Enter the amount you want to stake in the field and select your restake preference. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. Use the <em>Restake rewards</em> toggle to disable this feature if you prefer to have your rewards deposited to your disposable balance at each pay day instead of having them automatically restaked. Click <strong>Continue</strong> to proceed.</p>
+<li><p class="sd-card-text">You can now go through a number of informational screens explaining the key concepts of validation on the Concordium blockchain, including the validator role and key generation, node requirements, staking pool options, and suspension policies. Click <strong>Next</strong> to navigate through the screens. Click <strong>Skip</strong> to proceed directly to registering your validation.</p></li>
+</ol>
+<p class="sd-card-text"><strong>Configure validator settings</strong></p>
+<ol class="arabic" start="4">
+<li><p class="sd-card-text">On the Register validator screen, configure your validator by entering the amount you want to stake and selecting your preferences. You can see your available balance at the top. Enter the amount you want to stake in the field and select your restake preference. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. Use the <em>Restake rewards</em> toggle to disable this feature if you prefer to have your rewards deposited to your disposable balance at each pay day instead of having them automatically restaked.</p>
 <a class="reference internal image-reference" href="../../../_images/add_validator2.png"><img alt="../../../_images/add_validator2.png" src="../../../_images/add_validator2.png" style="width: 50%;" />
 </a>
-</li>
-<li><p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a> or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose <em>Close for delegation</em> if you do not wish to run a staking pool. Tap <strong>Continue</strong> to proceed.</p>
+<p class="sd-card-text">Choose whether you want to open a <a class="reference internal" href="../../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a> or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose <em>Close for delegation</em> if you do not wish to run a staking pool.</p>
 <a class="reference internal image-reference" href="../../../_images/add_validator3.png"><img alt="screen with balances at the top and text box to enter amount to stake" src="../../../_images/add_validator3.png" style="width: 50%;" />
 </a>
-</li>
-<li><p class="sd-card-text">On the Commissions screen, you can set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the <a class="reference internal" href="../../resources/glossary.html#term-Transaction-fee-commission"><span class="xref std std-term">Transaction fee commission</span></a> and <a class="reference internal" href="../../resources/glossary.html#term-Block-reward-commission"><span class="xref std std-term">Block reward commission</span></a> - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click <strong>Continue</strong> to proceed.</p>
+<p class="sd-card-text">On the Commissions screen, set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the <a class="reference internal" href="../../resources/glossary.html#term-Transaction-fee-commission"><span class="xref std std-term">Transaction fee commission</span></a> and <a class="reference internal" href="../../resources/glossary.html#term-Block-reward-commission"><span class="xref std std-term">Block reward commission</span></a> - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click <strong>Continue</strong> to proceed.</p>
 <a class="reference internal image-reference" href="../../../_images/add_validator4.png"><img alt="screen with balances at the top and text box to enter amount to stake" src="../../../_images/add_validator4.png" style="width: 50%;" />
 </a>
-</li>
-<li><p class="sd-card-text">If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. Click <strong>Continue</strong> to proceed.</p>
+<p class="sd-card-text">If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. Click <strong>Continue</strong> to proceed after completing your configuration.</p>
 <a class="reference internal image-reference" href="../../../_images/add_validator5.png"><img alt="screen with text box to enter url for staking pool information" src="../../../_images/add_validator5.png" style="width: 50%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Now, you must export the validator before continuing. The keys must be added to the validator node. Click <strong>Export as .json</strong> and the keys are automatically downloaded as <cite>validator-credentials.json</cite> to your default download folder. After export, click <strong>Continue</strong> to complete the transaction.</p>
+</ol>
+<p class="sd-card-text"><strong>Export validator keys and submit</strong></p>
+<ol class="arabic" start="5">
+<li><p class="sd-card-text">Export the validator keys before continuing as the keys must be added to the validator node. Click <strong>Export as .json</strong> and the keys are automatically downloaded as <cite>validator-credentials.json</cite> to your default download folder. After export, click <strong>Continue</strong> to complete the transaction.</p>
 <a class="reference internal image-reference" href="../../../_images/add_validator6.png"><img alt="screen with buttons to show keys or export validator keys" src="../../../_images/add_validator6.png" style="width: 50%;" />
 </a>
 <div class="admonition warning">
@@ -1008,6 +1023,9 @@ You can see the fee in the transaction log.</p>
 <a class="reference internal image-reference" href="../../../_images/add_validator8a.png"><img alt="../../../_images/add_validator8a.png" src="../../../_images/add_validator8a.png" style="width: 50%;" />
 </a>
 </li>
+</ol>
+<p class="sd-card-text"><strong>Next steps</strong></p>
+<ol class="arabic simple" start="8">
 <li><p class="sd-card-text">You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> as possible to prevent the node from being down as a validator for a longer time.</p>
 <ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a></p></li>
