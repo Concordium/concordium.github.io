@@ -11,7 +11,7 @@ Available SDKs and tools
 
 You can interact with PLTs using multiple development approaches:
 
-- **Concordium Web SDK** (v10.0.0-alpha.9) - TypeScript/JavaScript examples for web applications
+- **Concordium Web SDK** (v10.0.0-alpha.10) - TypeScript/JavaScript examples for web applications
 
   `Web SDK released versions <https://www.npmjs.com/package/@concordium/web-sdk>`_
 
