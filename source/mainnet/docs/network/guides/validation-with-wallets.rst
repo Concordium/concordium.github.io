@@ -83,8 +83,6 @@ This overview describes the recommended scenario for running a node and becoming
 
 For information about how to update your validator or stop validation, see :ref:`Change validator options<update-baker-mw>`.
 
-For information about how to update your validator or stop validation, see :ref:`Change baker options<update-baker-mw>`.
-
 Validation with ``Concordium-client``
 -------------------------------------
 

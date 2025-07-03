@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _add-baker-mw:
 
 ====================================
@@ -23,7 +23,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     2. On the earnings information screen, tap **Or become a validator (advanced)** at the bottom of the screen.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator1.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator1.png
             :width: 50%
             :alt: screen with earning options
 
@@ -32,31 +32,31 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     4. On the Register validator screen, enter the amount of CCD you want to stake. You can see your available balance for staking below. Toggle the **Restake rewards** switch if you want to automatically add your validator rewards to your stake amount. If disabled, rewards will be deposited to your disposable balance at each pay day. Tap **Continue** to proceed.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator2.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator2.png
             :alt: screen to register validator for first time showing balance, amount to stake, and restake parameters
             :width: 50%
 
     5. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose **Close for delegation** if you do not wish to run a staking pool. Tap **Continue**.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator3.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator3.png
             :alt: screen to register validator for first time showing options to open or close pool for delegation
             :width: 50%
 
     6. Set commissions for your pool. This is the percentage you wish to earn from delegators to your pool when you have produced a block. Delegators can use this information when choosing a pool. The lower the commission, the greater reward the delegators receive, hence they are more motivated to delegate to you. For example, 10% commission means that you get 10% of the rewards for the total delegated amount, while delegators get the remaining 90% proportionally to their stake. You still get 100% of the rewards for your own staked amount.  Tap **Continue**.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator4.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator4.png
             :alt: screen to register validator for first time showing commission rates for staking pools
             :width: 50%
 
     7. If you open a staking pool, you can optionally provide a URL with information about your validator. This allows delegators to learn more about your pool and make informed decisions. This information is not shared for closed pools or validators. Tap **Continue**.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator5.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator5.png
             :alt: screen to register validator for first time showing field to paste URL with metadata for staking pools
             :width: 50%
 
     8. Now, export the validator keys. You need the validator keys to start the node. Tap **Continue** and navigate to the location on your device where you want to save the file. Give the file a name and the extension .json.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator6.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator6.png
             :alt: screen to register validator for first time showing all of the validator keys with option to export
             :width: 50%
 
@@ -68,7 +68,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     10. The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you’re validating with. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
-        .. image:: ../images/cryptoX/cryptox-add-valiator7.png
+        .. image:: ../../images/cryptoX/cryptox-add-valiator7.png
              :alt: screen confirming validator registration
              :width: 50%
 
@@ -86,7 +86,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
         #. Go to **Accounts** and select the account you want to add as validator account and click **More options**.
 
-           .. image:: ../images/desktop-wallet/dw-more-options.png
+           .. image:: ../../images/desktop-wallet/dw-more-options.png
                :width: 50%
                :alt: screen showing accounts with more options highlighted
 
@@ -96,7 +96,7 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
            Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. However, you can change this setting so that the reward is added to the disposable amount instead. Select **No, don’t restake** if you'd rather add the rewards to the disposable amount on the account.
 
-           .. image:: ../images/desktop-wallet/dw-add-baker-stake.png
+           .. image:: ../../images/desktop-wallet/dw-add-baker-stake.png
                :width: 50%
                :alt: screen showing amount to stake and restake options
 
@@ -106,11 +106,11 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
            - Choose Closed if you do not want to open a staking pool. Click **Continue** after reviewing the commission rates and Validator metadata URL.
 
-           .. image:: ../images/desktop-wallet/dw-pool-commission.png
+           .. image:: ../../images/desktop-wallet/dw-pool-commission.png
                :width: 50%
                :alt: screen with pool url field and example
 
-           .. image:: ../images/desktop-wallet/dw-pool-url.png
+           .. image:: ../../images/desktop-wallet/dw-pool-url.png
                :width: 50%
                :alt: screen showing accounts with more options highlighted
 
@@ -255,38 +255,38 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     #. In the *Validation* section, click **Continue to validation setup**.
 
-       .. image:: ../images/browser-wallet/new/add_validator1.png
+       .. image:: ../../images/browser-wallet/new/add_validator1.png
            :width: 50%
 
     #. You can now go through anumber of informational screens explaining the key concepts of validation on the Concordium blockchain, including the validator role and key generation, node requirements, staking pool options, and suspension policies. Click **Next** to navigate through the screens. Click **Skip** to proceed directly to registering your validation.
 
     #. On the Register validator screen you can see your available balance. Enter the amount you want to stake in the field and select your restake preference. Validator accounts receive a reward when they have produced a block, and the reward is added to the staked amount on the account by default. Use the *Restake rewards* toggle to disable this feature if you prefer to have your rewards deposited to your disposable balance at each pay day instead of having them automatically restaked. Click **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/new/add_validator2.png
+       .. image:: ../../images/browser-wallet/new/add_validator2.png
            :width: 50%
 
     #. Choose whether you want to open a :term:`staking pool` or keep it closed. By opening a staking pool, others can delegate stake to your validator, thus increasing the chance that you are selected to produce a block and earn rewards. If you have a staking pool with delegators, the delegators also earn rewards when you produce blocks. Validators are also paid a commission by the delegators for producing blocks on their behalf. You can choose *Close for delegation* if you do not wish to run a staking pool. Tap **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/new/add_validator3.png
+       .. image:: ../../images/browser-wallet/new/add_validator3.png
            :alt: screen with balances at the top and text box to enter amount to stake
            :width: 50%
 
     #. On the Commissions screen, you can set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the :term:`Transaction fee commission` and :term:`Block reward commission` - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/new/add_validator4.png
+       .. image:: ../../images/browser-wallet/new/add_validator4.png
            :alt: screen with balances at the top and text box to enter amount to stake
            :width: 50%
 
 
     #. If you open a staking pool, you can optionally enter a URL with information about your validator to give delegators more information about your staking pool to help them research staking pools. Click **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/new/add_validator5.png
+       .. image:: ../../images/browser-wallet/new/add_validator5.png
             :alt: screen with text box to enter url for staking pool information
             :width: 50%
 
     #. Now, you must export the validator before continuing. The keys must be added to the validator node. Click **Export as .json** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. After export, click **Continue** to complete the transaction.
 
-       .. image:: ../images/browser-wallet/new/add_validator6.png
+       .. image:: ../../images/browser-wallet/new/add_validator6.png
             :alt: screen with buttons to show keys or export validator keys
             :width: 50%
 
@@ -297,13 +297,13 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information including your validator stake amount, reward settings, and commission rates. When you're satisfied with the configuration, scroll down and click **Send** to finalize the transaction.
 
-       .. image:: ../images/browser-wallet/new/add_validator7a.png
+       .. image:: ../../images/browser-wallet/new/add_validator7a.png
             :width: 50%
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you're validating with. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
 
-       .. image:: ../images/browser-wallet/new/add_validator8a.png
+       .. image:: ../../images/browser-wallet/new/add_validator8a.png
             :width: 50%
 
     #. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
@@ -315,18 +315,18 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     Transactions on the blockchain are permanent. That is, they are irreversible and can't be deleted. Therefore, carefully review that you have selected the right account to add as validator, and that you have entered the correct amount to stake.
 
-.. |earn| image:: ../images/earn.png
+.. |earn| image:: ../../images/earn.png
     :alt: Hand receiving money
     :width: 50px
 
-.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
+.. |cryptoX-earn| image:: ../../images/cryptoX/cryptoX-earn.png
     :alt: Hand receiving money
     :width: 50px
 
-.. |hamburger| image:: ../images/hamburger.png
+.. |hamburger| image:: ../../images/hamburger.png
              :alt: Three horizontal lines
              :width: 20px
 
-.. |moredetails| image:: ../images/more-arrow.png
+.. |moredetails| image:: ../../images/more-arrow.png
              :alt: Button with More and double-headed arrow
              :width: 50px
