@@ -147,4 +147,4 @@ To fully remove Concordium Node and all its data from your system:
 Run a validator node on Ubuntu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For information about how to configure a node to run as a validator, see :ref:`baker-ubuntu`.
+For information about how to configure a node to run as a validator, see :ref:`Import validator keys <import-validator-keys>`.

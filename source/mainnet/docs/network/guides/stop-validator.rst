@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _stop-validator:
 
 ================
@@ -38,20 +38,20 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
     #. On the next screen, click **Stop**.
 
-       .. image:: ../images/browser-wallet/new/update_validation1.png
+       .. image:: ../../images/browser-wallet/new/update_validation1.png
             :width: 50%
             :alt: screen showing validator update options
 
     #. Review the transaction details for removing your validator. Note that the validator stake is released after 7 days. Click **Send** to confirm and send your transaction to the blockchain.
 
-       .. image:: ../images/browser-wallet/new/stop_validator_send.png
+       .. image:: ../../images/browser-wallet/new/stop_validator_send.png
             :width: 50%
             :alt: screen showing send stop validator transaction
 
 
     #. The wallet displays a confirmation screen with a green checkmark, indicating your validator has successfully removed. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.
 
-       .. image:: ../images/browser-wallet/new/stop_validator2.png
+       .. image:: ../../images/browser-wallet/new/stop_validator2.png
             :width: 50%
             :alt: success screen for stopping validator
 
@@ -66,13 +66,13 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
         #. Click **Stop validation**.
 
-           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+           .. image:: ../../images/desktop-wallet/dw-baker-menu.png
                :width: 50%
                :alt: screen showing all validator options
 
         #. The cool-down period is displayed. Select **Continue**.
 
-           .. image:: ../images/desktop-wallet/dw-remove-baker.png
+           .. image:: ../../images/desktop-wallet/dw-remove-baker.png
                :width: 50%
                :alt: screen showing that validator will be removed
 
@@ -169,7 +169,7 @@ If you no longer wish to produce blocks on this account, you can stop validation
 
    If you stop as a validator, remember that this does not shut down your node. You need to shut down the node in a separate action if you no longer wish to run a node on the Concordium blockchain.
 
-.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
+.. |cryptoX-earn| image:: ../../images/cryptoX/cryptoX-earn.png
              :alt: Hand receiving money
              :width: 50px
 

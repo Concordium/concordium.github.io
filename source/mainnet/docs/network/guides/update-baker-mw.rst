@@ -1,4 +1,4 @@
-.. include:: ../../variables.rst
+.. include:: ../../../variables.rst
 .. _update-baker-mw:
 
 ========================
@@ -35,7 +35,7 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     #. On the validation screen, tap **Update** and then, **Update validator stake**.
 
-       .. image:: ../images/cryptoX/cryptox-change-validation-status-new.png
+       .. image:: ../../images/cryptoX/cryptox-change-validation-status-new.png
             :width: 50%
             :alt: screen showing select change validating status
 
@@ -45,7 +45,7 @@ When you change the stake it can influence your :term:`chance of being selected 
        Enter the total amount you want to stake.
        You can also choose to adjust your restake settings. Toggle the **Restake rewards** switch if you want to change your restaking preferences. When you're satisfied with your staking configuration, tap **Continue** to proceed with your updates.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator2.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator2.png
             :width: 50%
             :alt: screen showing options for changing validating status
 
@@ -60,31 +60,31 @@ When you change the stake it can influence your :term:`chance of being selected 
 
     #. On the next screen, click **Update**.
 
-       .. image:: ../images/browser-wallet/new/update_validation1.png
+       .. image:: ../../images/browser-wallet/new/update_validation1.png
            :width: 50%
 
     #. On the next screen, click **Update validation stake**.
 
-       .. image:: ../images/browser-wallet/new/update_validation2.png
+       .. image:: ../../images/browser-wallet/new/update_validation2.png
             :width: 50%
             :alt: buttons for update validaton options
 
     #. You can now change the staked amount by updating the *Amount* field or change your restaking preferences by toggling the 'Restake rewards' option. When the *Restake rewards* toggle is enabled, your validation rewards will automatically be added to your validation amount, increasing your stake over time. When the *Restake rewards* toggle is disabled, your rewards will instead be deposited to your disposable balance at each pay day. When you're satisfied with your staking configuration, tap the **Continue** to proceed with your updates.
 
-       .. image:: ../images/browser-wallet/new/update_validation3.png
+       .. image:: ../../images/browser-wallet/new/update_validation3.png
            :width: 50%
            :alt: screen showing firld and toggle to set preferences
 
 
     #. Review the transaction details. Click **Send** to submit the transaction. If you need to make any changes, you can go back to the previous step.
 
-       .. image:: ../images/browser-wallet/new/update_validation_send.png
+       .. image:: ../../images/browser-wallet/new/update_validation_send.png
            :width: 50%
            :alt: screen showing transaction receipt
 
     #. The wallet displays a confirmation screen with a green checkmark, indicating your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to go back to your account overview.
 
-       .. image:: ../images/browser-wallet/new/update_validation5.png
+       .. image:: ../../images/browser-wallet/new/update_validation5.png
            :width: 50%
            :alt: screen showing transaction receipt
 
@@ -98,13 +98,13 @@ When you change the stake it can influence your :term:`chance of being selected 
 
         #. Click **Update validator stake**.
 
-           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+           .. image:: ../../images/desktop-wallet/dw-baker-menu.png
                :alt: screen showing all validator options
                :width: 50%
 
         #. Enter the new amount that you want to stake if you want to change the amount. Change the restaking preference if you want to change that. Click **Continue**.
 
-           .. image:: ../images/desktop-wallet/dw-baker-stake.png
+           .. image:: ../../images/desktop-wallet/dw-baker-stake.png
                :alt: screen to update validator stake and restake preference options
                :width: 50%
 
@@ -210,7 +210,7 @@ Update pool settings
 
     #. On the validation screen, tap **Update** and then, **Update pool settings**.
 
-       .. image:: ../images/cryptoX/cryptox-change-validation-status-new.png
+       .. image:: ../../images/cryptoX/cryptox-change-validation-status-new.png
             :width: 50%
             :alt: screen showing select change validating status
 
@@ -224,7 +224,7 @@ Update pool settings
 
        Select the preferred setting and tap **Continue**.
 
-       .. image:: ../images/cryptoX/cryptox-update-pool-settings.png
+       .. image:: ../../images/cryptoX/cryptox-update-pool-settings.png
             :width: 50%
             :alt: screen showing three staking pool options
 
@@ -232,13 +232,13 @@ Update pool settings
 
        Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, tap **Continue** to proceed.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator4.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator4.png
             :width: 50%
             :alt: screen showing sliders for defining validator commissions
 
     #. If you have an open pool, you can, optionally, enter a URL with information about your validator. This will give delegators additional information when researching staking pools. This information is not shared in the case of a closed pool. Tap **Continue** to proceed.
 
-       .. image:: ../images/cryptoX/cryptox-add-validator5.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator5.png
             :width: 50%
             :alt: screen showing option for entering metadata url
 
@@ -254,42 +254,42 @@ Update pool settings
 
     #. On the next screen, click **Update**.
 
-       .. image:: ../images/browser-wallet/new/update_validation1.png
+       .. image:: ../../images/browser-wallet/new/update_validation1.png
            :width: 50%
 
     #. On the next screen, click **Update pool settings**.
 
-       .. image:: ../images/browser-wallet/new/update_validation2.png
+       .. image:: ../../images/browser-wallet/new/update_validation2.png
             :width: 50%
             :alt: screen showing validator update options
 
-    #. On this screen, you can toggle whether your validator is open for delegation. When enabled, other users can delegate their tokens to your validator, increasing your total stake and improving your chances of    producing blocks. Rewards earned will be distributed between you and your delegators at each pay day. If you prefer to validate with only your own stake, you can disable this option. Once you've made your   selection, tap **Continue** to proceed.
+    #. On this screen, you can toggle whether your validator is open for delegation. When enabled, other users can delegate their tokens to your validator, increasing your total stake and improving your chances of producing blocks. Rewards earned will be distributed between you and your delegators at each pay day. If you prefer to validate with only your own stake, you can disable this option. Once you've made your selection, tap **Continue** to proceed.
 
-       .. image:: ../images/browser-wallet/new/update_pool_settings1.png
+       .. image:: ../../images/browser-wallet/new/update_pool_settings1.png
             :width: 50%
             :alt: screen showing options pool
 
     #. On the Commissions screen, you can set the percentage of rewards you keep when others delegate their stake to your validator pool. Use the sliders to adjust both the Transaction fee commission and Block reward commission - by default, both are set to 100% (meaning you keep all rewards). After setting your desired commission rates, click Continue to proceed.
 
-       .. image:: ../images/browser-wallet/new/update_pool_settings2.png
+       .. image:: ../../images/browser-wallet/new/update_pool_settings2.png
            :width: 50%
            :alt: screen showing sliders and text boxes to adjust commissions
 
     #. Update the staking pool metadata URL, if desired. Click **Continue**.
 
-       .. image:: ../images/browser-wallet/new/update_pool_settings3.png
+       .. image:: ../../images/browser-wallet/new/update_pool_settings3.png
             :width: 50%
             :alt: screen showing option for adding metadata
 
     #. Review the transaction details. When you’re satisfied with the configuration, scroll down and click **Send** to finalize the transaction.
 
-       .. image:: ../images/browser-wallet/new/update_pool_settings_send.png
+       .. image:: ../../images/browser-wallet/new/update_pool_settings_send.png
            :width: 50%
            :alt: screen showing transaction receipt
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-       .. image:: ../images/browser-wallet/new/update_pool_settings5.png
+       .. image:: ../../images/browser-wallet/new/update_pool_settings5.png
            :width: 50%
            :alt: screen showing transaction receipt
 
@@ -303,7 +303,7 @@ Update pool settings
 
         #. Click **Update staking pool**.
 
-           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+           .. image:: ../../images/desktop-wallet/dw-baker-menu.png
                :alt: screen showing all validator options
                :width: 50%
 
@@ -315,19 +315,19 @@ Update pool settings
 
            - Closed for all: close the pool for all delegators.
 
-           .. image:: ../images/desktop-wallet/dw-pool-status.png
+           .. image:: ../../images/desktop-wallet/dw-pool-status.png
                :alt: screen showing staking pool options
                :width: 50%
 
         #. Review the commission rates and adjust with the sliders or type in the rate. Click **Continue**.
 
-           .. image:: ../images/desktop-wallet/dw-pool-commission.png
+           .. image:: ../../images/desktop-wallet/dw-pool-commission.png
                :alt: screen displaying the commission rates for staking pools
                :width: 50%
 
         #. Enter your validator metadata URL if you want to provide this information to potential delegators. This is optional. **Click Continue**.
 
-           .. image:: ../images/desktop-wallet/dw-pool-url.png
+           .. image:: ../../images/desktop-wallet/dw-pool-url.png
                :alt: screen to enter a URL for staking pool metadata
                :width: 50%
 
@@ -445,7 +445,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     #. On the validation screen, tap **Update** and then, **Update validator keys**.
 
-       .. image:: ../images/cryptoX/cryptox-change-validation-status-new.png
+       .. image:: ../../images/cryptoX/cryptox-change-validation-status-new.png
             :width: 50%
             :alt: screen showing select change validating status
 
@@ -459,7 +459,7 @@ If you believe your validator keys have been compromised or lost, you can genera
            If you're going to transfer the validator keys to someone else, make sure to do so through a secure channel. Generate new keys if you believe the keys have been compromised or lost.
 
 
-       .. image:: ../images/cryptoX/cryptox-add-validator6.png
+       .. image:: ../../images/cryptoX/cryptox-add-validator6.png
             :width: 50%
             :alt: screen showing new keys with button to export
 
@@ -471,11 +471,7 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     #. You need to import your validator keys file to your node in order to start producing blocks with the new keys. It is preferable to update them on the node as close to :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
-       - :ref:`Windows<baker-windows>`
-       - :ref:`macOS<baker-macos>`
-       - :ref:`Docker<baking-docker>`
-       - :ref:`Ubuntu<baker-ubuntu>`
-
+       - :ref:`Import validator keys <import-validator-keys>`
 
 .. dropdown:: |bw|
 
@@ -483,40 +479,36 @@ If you believe your validator keys have been compromised or lost, you can genera
 
     #. On the next screen, click **Update**.
 
-       .. image:: ../images/browser-wallet/new/update_validation1.png
+       .. image:: ../../images/browser-wallet/new/update_validation1.png
             :width: 50%
             :alt: screen validator update options
 
     #. On the next screen, click **Update validator keys**. Review the information about updating validator keys and click **Continue**.
 
-       .. image:: ../images/browser-wallet/new/update_validator_keys1.png
+       .. image:: ../../images/browser-wallet/new/update_validator_keys1.png
             :width: 50%
             :alt: screen showing validator options
 
 
     #. Click **Export export as .json** and the keys are automatically downloaded as `validator-credentials.json` to your default download folder. Click **Continue** to complete the transaction.
 
-       .. image:: ../images/browser-wallet/new/update_validator_keys2.png
+       .. image:: ../../images/browser-wallet/new/update_validator_keys2.png
             :alt: screen with buttons to show keys or export validator keys
             :width: 50%
 
     #. Once you have saved the keys, you see an overview screen of the add validator transaction. Review the information, then scroll down and click **Send**.
 
-       .. image:: ../images/browser-wallet/new/update_validator_keys3.png
+       .. image:: ../../images/browser-wallet/new/update_validator_keys3.png
             :width: 40%
 
     #. The wallet shows a confirmation screen with a green checkmark indicating that your validation settings have been successfully updated. You can click **Transaction details** to view more information about the transaction, or **Return to account** to return to your account overview.
 
-       .. image:: ../images/browser-wallet/new/update_validator_keys4.png
+       .. image:: ../../images/browser-wallet/new/update_validator_keys4.png
             :width: 50%
 
     #. You need to import your validator keys file to your node in order to start producing blocks. It is preferable to update them on the node as close to the next :term:`pay day` as possible to prevent the node from being down as a validator for a longer time.
 
-       - :ref:`Windows<baker-windows>`
-       - :ref:`macOS<baker-macos>`
-       - :ref:`Docker<baking-docker>`
-       - :ref:`Ubuntu<baker-ubuntu>`
-
+       - :ref:`Import validator keys <import-validator-keys>`
 
 .. dropdown:: Desktop Wallet
 
@@ -528,13 +520,13 @@ If you believe your validator keys have been compromised or lost, you can genera
 
         #. Click **Update validator keys**.
 
-           .. image:: ../images/desktop-wallet/dw-baker-menu.png
+           .. image:: ../../images/desktop-wallet/dw-baker-menu.png
                :alt: screen showing all validator options
                :width: 50%
 
         #. You have to export the validator credentials so that you can restart the node with the new validator keys. Select **Export validator credentials**. If you're running Windows make sure that **All Files** is selected in **Save as type**. Give the file a name and the extension .json, and then click **Save** and navigate to the place on your computer where you want to save the file.
 
-           .. image:: ../images/desktop-wallet/dw-baker-keys.png
+           .. image:: ../../images/desktop-wallet/dw-baker-keys.png
                :alt: screen showing new keys with button to export
                :width: 50%
 
@@ -638,18 +630,18 @@ If you believe your validator keys have been compromised or lost, you can genera
 .. _remove-baker-mw:
 
 
-.. |earn| image:: ../images/earn.png
+.. |earn| image:: ../../images/earn.png
              :alt: Hand receiving money
              :width: 50px
 
-.. |cryptoX-earn| image:: ../images/cryptoX/cryptoX-earn.png
+.. |cryptoX-earn| image:: ../../images/cryptoX/cryptoX-earn.png
              :alt: Hand receiving money
              :width: 50px
 
-.. |hamburger| image:: ../images/hamburger.png
+.. |hamburger| image:: ../../images/hamburger.png
              :alt: Three horizontal lines
              :width: 20px
 
-.. |moredetails| image:: ../images/more-arrow.png
+.. |moredetails| image:: ../../images/more-arrow.png
              :alt: Button with More and double-headed arrow
              :width: 20px
