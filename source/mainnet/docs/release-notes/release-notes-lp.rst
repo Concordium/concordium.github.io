@@ -415,16 +415,22 @@ Wallets
 |bw|
 -------------------------
 
-    June 23, 2025
+    July 03, 2025
 
-    Version 2.3.0
+    Version 2.4.0
 
-    -   Added Google Analytics track screens and events
-    -   Updated delegation description help link from `node` list to `staking`
-    -   Fixed CIS-2 token validation of available funds, at Send Token screen
-    -   Memo input at Send Transaction screen should not be displayed for CIS-2 tokens
+    -   Removed Google Analytics track screens and events
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.3.0 - June 23, 2025
+
+            Version 2.3.0 includes several changes.
+
+            -   Added Google Analytics track screens and events
+            -   Updated delegation description help link from `node` list to `staking`
+            -   Fixed CIS-2 token validation of available funds, at Send Token screen
+            -   Memo input at Send Transaction screen should not be displayed for CIS-2 tokens
 
         .. dropdown:: |bw| 2.2.0 - April 24, 2025
 
