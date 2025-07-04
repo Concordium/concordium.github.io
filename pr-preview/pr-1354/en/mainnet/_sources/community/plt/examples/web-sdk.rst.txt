@@ -13,7 +13,7 @@ Before using this example, make sure to install the required dependencies:
 
 .. code-block:: bash
 
-  npm install @concordium/web-sdk@10.0.0-alpha.9
+  npm install @concordium/web-sdk@10.0.0-alpha.10
   npm install @grpc/grpc-js
 
 

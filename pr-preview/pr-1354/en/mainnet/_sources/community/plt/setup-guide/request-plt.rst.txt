@@ -14,7 +14,7 @@ This guide explains how to request the issuance of a custom Protocol-Level Token
 Overview
 ========
 
-Creating a new PLT is a chain-governance operation performed by the Concordium governance committee through a chain creation update. The process involves defining token parameters, creating metadata, and having the governance committee perform a signing ceremony to create the PLT on the network.
+Creating a new PLT is a chain-governance operation performed by the Concordium team through a chain creation update. The process involves defining token parameters and creating metadata to create the PLT on the network.
 
 Once created, the PLT information is stored on-chain, including any initial supply that gets minted. After creation, token-governance operations and token-holder operations can be invoked for the new token type.
 
