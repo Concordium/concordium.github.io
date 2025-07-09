@@ -221,7 +221,7 @@ Select your platform below to configure your node with validator keys.
 
    **Configure a node as a validator**
 
-   Once you have generated validator keys, you then need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.
+   Once you have generated validator keys, you need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.
 
    To register the keys in the network you need to be :ref:`running a node <running-a-node>` and send a ``validator add`` transaction to the network:
 
