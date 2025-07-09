@@ -415,13 +415,19 @@ Wallets
 |bw|
 -------------------------
 
-    July 03, 2025
+    July 09, 2025
 
-    Version 2.4.0
+    Version 2.5.0
 
-    -   Removed Google Analytics track screens and events
+    -   Added Fiat on-ramp in the Browser Wallet.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.4.0 - July 03, 2025
+
+            Version 2.4.0 includes several changes.
+
+            -   Removed Google Analytics track screens and events
 
         .. dropdown:: |bw| 2.3.0 - June 23, 2025
 
