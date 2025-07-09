@@ -231,7 +231,7 @@ Select your platform below to configure your node with validator keys.
 
    where you replace
 
-   - ``<amount-to-stake>`` with the CCD amount for the validators's initial stake
+   - ``<amount-to-stake>`` with the CCD amount for the validator's initial stake
    - ``<concordium-data-dir>`` with the directory specified as the volume mount for the node database. In the :ref:`sample configuration file<run-a-node>` this is ``/var/lib/concordium-testnet`` for the testnet node, and ``/var/lib/concordium-mainnet`` for the mainnet node.
 
    .. Warning::
