@@ -20,8 +20,8 @@ Wallets
 -----------------
 
  Jul 9, 2025
-Version 3.3.5:
-   - Added ability to buy CCD through Banxa
+    Version 3.3.5:
+    - Added ability to buy CCD through Banxa
 
     .. dropdown:: Previous releases
         .. dropdown:: |cryptox| 3.3.2  -  May 13, 2025
