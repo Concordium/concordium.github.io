@@ -17,6 +17,9 @@ To become a validator in the Concordium network, you need to run a node, generat
 
    To check the minimum required amount of CCD (currently 500000) to become a validator, see :ref:`consensus show-chain-parameters`.
 
+.. Note::
+
+   Before adding a validator, you need to make sure your node is running and fully synchronized with the chain. Otherwise, if you add a validator before launching a node, your validator may be automatically suspended due to missing block production. To familiarize yourself with the process of suspending validators, check out this article: :ref:`Suspend or unsuspend validators <suspend-unsuspend-validator>`.
 
 Validation with |bw| and |cryptox|
 ----------------------------------
