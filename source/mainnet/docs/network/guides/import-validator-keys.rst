@@ -192,7 +192,7 @@ Select your platform below to configure your node with validator keys.
 
       For **Testnet**: ``"/Library/Concordium Node/LaunchDaemons/software.concordium.testnet.node.plist"``
 
-   #. In the *EnviromentVariables* section of the file add the following:
+   #. In the *EnvironmentVariables* section of the file add the following:
 
       For **Mainnet**::
 
