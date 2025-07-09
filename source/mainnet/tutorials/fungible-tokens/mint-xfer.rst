@@ -35,7 +35,7 @@ Run the command below to call the contract ``mint()`` function. Remember that th
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json ../nft-artifacts/mint-params.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-CONTRACT-INSTANCE> --entrypoint mint --parameter-json ../nft-artifacts/mint-params.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com
 
 Now you have successfully minted your fungible tokens.
 
@@ -47,7 +47,7 @@ Check the state to see the balance, circulating supply, and maximum supply. Run 
 
 .. code-block:: console
 
-    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract invoke <YOUR-CONTRACT-INSTANCE> --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com
 
 .. image:: images/invoke-after-mint.png
     :width: 100%
@@ -102,7 +102,7 @@ Run the command below to invoke the transfer. Remember that this is using the Co
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-INDEX> --entrypoint transfer --parameter-json ../token-artifacts/transfer.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-INDEX> --entrypoint transfer --parameter-json ../token-artifacts/transfer.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com
 
 Check the state one more time to see that the transfer worked as expected.
 
@@ -134,7 +134,7 @@ Burn 200 tokens from your first account. To do that, run the command below to ca
 
 .. code-block:: console
 
-    concordium-client contract update <YOUR-INDEX> --entrypoint burn --parameter-json ../token-artifacts/burn.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract update <YOUR-INDEX> --entrypoint burn --parameter-json ../token-artifacts/burn.json --sender <YOUR-ACCOUNT> --energy 6000 --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com
 
 .. image:: images/burn-tokens.png
     :width: 100%

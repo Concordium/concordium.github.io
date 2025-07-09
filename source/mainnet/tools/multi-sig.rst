@@ -101,7 +101,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
 
       $concordium-client account show <account-name-or-account-address> \
          --grpc-port 20000 \
-         --grpc-ip node.testnet.concordium.com
+         --grpc-ip grpc.testnet.concordium.com
 
    This will output something like:
 
@@ -141,7 +141,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
          --credId <credential-registration-id> \
          --sender <account-name-or-address> \
          --grpc-port 20000 \
-         --grpc-ip node.testnet.concordium.com
+         --grpc-ip grpc.testnet.concordium.com
 
    where ``update-keys.json`` is a file of the following format:
 
@@ -197,7 +197,7 @@ To add additional keys to an existing account on Concordium using the ``concordi
          --new-threshold <number-of-credential-to-sign> \
          --sender <account-name-or-address> \
          --grpc-port 20000 \
-         --grpc-ip node.testnet.concordium.com
+         --grpc-ip grpc.testnet.concordium.com
 
    where ``new-credential.json`` is the file from the previous step.
 
@@ -417,7 +417,7 @@ run the following command:
       --signers "0:0" \
       --expiry "24h" \
       --grpc-port 20000 \
-      --grpc-ip node.testnet.concordium.com
+      --grpc-ip grpc.testnet.concordium.com
 
 .. note::
 
@@ -467,7 +467,7 @@ from a file, run the following command:
       --energy 5000 \
       --sender 4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix \
       --signers "0:0" \
-      --grpc-ip node.testnet.concordium.com
+      --grpc-ip grpc.testnet.concordium.com
 
 where ``keypair.json`` is a file of the following format:
 
@@ -520,7 +520,7 @@ previous section) on a potentially different device by a different entity, run t
 
    $concordium-client transaction add-signature ./transaction.json \
       --grpc-port 20000 \
-      --grpc-ip node.testnet.concordium.com
+      --grpc-ip grpc.testnet.concordium.com
 
 .. note::
 
@@ -574,7 +574,7 @@ previous section) on-chain, run the following command:
 
    $concordium-client transaction submit ./transaction.json \
       --grpc-port 20000 \
-      --grpc-ip node.testnet.concordium.com
+      --grpc-ip grpc.testnet.concordium.com
 
 .. note::
 
