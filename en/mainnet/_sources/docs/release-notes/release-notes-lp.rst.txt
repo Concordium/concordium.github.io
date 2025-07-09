@@ -119,13 +119,17 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.10.0 - June 19, 2025
+    1.11.0 - July 8, 2025
 
-    - EUROe token is no longer shown for newly created accounts
-    - On the Buy screen, exchanges are now linked externally via our website (on-ramps remain)
-    - You may be asked to rate the app on Google Play
+    - Added ability to buy CCD through Banxa
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.10.0 - June 19, 2025
+
+            - EUROe token is no longer shown for newly created accounts
+            - On the Buy screen, exchanges are now linked externally via our website (on-ramps remain)
+            - You may be asked to rate the app on Google Play
 
         .. dropdown:: |cryptox| 1.9.1 - June 6, 2025
 
