@@ -73,9 +73,9 @@ Prior to becoming a validator, read :ref:`Validator management<baker-pool>` to l
 
     7. The wallet shows a confirmation screen with a green checkmark indicating that your validator registration transaction has been successfully submitted to the chain. You can see the amount you're validating with. You can click **Transaction details** to view more information about the transaction, or **Close** to return to the main screen.
 
-        .. image:: ../../images/cryptoX/cryptox-add-valiator7.png
-             :alt: screen confirming validator registration
-             :width: 50%
+    .. image:: ../../images/cryptoX/cryptox-add-valiator7.png
+            :alt: screen confirming validator registration
+            :width: 50%
 
     **Next steps**
 
