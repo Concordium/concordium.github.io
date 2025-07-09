@@ -217,7 +217,7 @@ Select your platform below to configure your node with validator keys.
    **Prerequisites**
 
    - :ref:`Run a node on Docker<run-a-node>`
-   - Have generated validator keys, see :ref:`add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
+   - Have generated validator keys, see :ref:`Add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
    **Configure a node as a validator**
 
