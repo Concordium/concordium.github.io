@@ -81,7 +81,7 @@ Select your platform below to configure your node with validator keys.
    - Run Ubuntu 20.04 or later
    - Have the administrator password to your computer
    - :ref:`Run a node on Ubuntu <run-node-ubuntu>`
-   - Have generated validator keys, see :ref:`add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
+   - Have generated validator keys, see :ref:`Add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
    **Configure the node with validator keys**
 
