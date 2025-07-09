@@ -19,14 +19,15 @@ Wallets
 |cryptox| for iOS
 -----------------
 
- May 13, 2025
-
-    Version 3.3.2 addresses the following issues:
-
-    - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
-    - Refactor Wert flow.
+ Jul 9, 2025
+Version 3.3.5:
+   - Added ability to buy CCD through Banxa
 
     .. dropdown:: Previous releases
+        .. dropdown:: |cryptox| 3.3.2  -  May 13, 2025
+
+            - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
+            - Refactor Wert flow.
 
         .. dropdown:: |cryptox| 3.3.1  -  May 5, 2025
 
