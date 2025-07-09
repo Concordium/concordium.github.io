@@ -494,7 +494,7 @@ Run the command below to deploy the smart contract. This command is structured t
 
 .. code-block:: console
 
-    concordium-client module deploy dist/fungible/module.wasm.v1 --sender <YOUR-ACCOUNT> --name <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com
+    concordium-client module deploy dist/fungible/module.wasm.v1 --sender <YOUR-ACCOUNT> --name <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: images/deploy-sc.png
     :width: 100%
@@ -507,7 +507,7 @@ Using the Module reference hash value, create a contract instance with the comma
 
 .. code-block:: console
 
-    concordium-client contract init <MODULE-HASH> --sender <YOUR-ACCOUNT> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com
+    concordium-client contract init <MODULE-HASH> --sender <YOUR-ACCOUNT> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: images/initialize-sc.png
     :width: 100%
