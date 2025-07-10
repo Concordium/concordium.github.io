@@ -90,24 +90,24 @@ Concordium Desktop Wallet
 
 .. dropdown:: Testnet
 
-   .. card:: Windows v1.8.0
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.exe
+   .. card:: Windows v1.8.2
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.exe
 
-   .. card:: macOS v1.8.0
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.dmg
+   .. card:: macOS v1.8.2
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.dmg
 
-   .. dropdown:: Linux® v1.8.0
+   .. dropdown:: Linux® v1.8.2
 
       Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-      -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.AppImage>`_
-         -  SHA256 checksum of the download: ``f52178d5b501e51d0a4b88344d29494e6417110bf9e28f6341e8e6a650fa73fd``
+      -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.AppImage>`_
+         -  SHA256 checksum of the download: ``e5001999334d36ab258a58e0972922345a785cd2ecd10446b043b5518254e61a``
 
-      -  `Testnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.deb>`_
-         -  SHA256 checksum of the download: ``5f8425b25e5906be361964700cf4ff0e3f771c535d879ef43e2a18cf1fd2f9e9``
+      -  `Testnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.deb>`_
+         -  SHA256 checksum of the download: ``4f23882475174e923493b50285b41ca3d363e840721c02688261420bac55070e``
 
-      -  `Testnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.0-testnet/concordium-desktop-wallet-testnet-1.8.0.rpm>`_
-         -  SHA256 checksum of the download: ``eda751dc5d1bfcb5a018694624c1b87eecdf62df6ca5cae308158232dddb7d1a``
+      -  `Testnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.rpm>`_
+         -  SHA256 checksum of the download: ``4b9ec89e4c4357b2ab4ec48daf3f08ece9727971f0be64d412d242e427ac18a4``
 
 .. _ledger-app-download:
 
