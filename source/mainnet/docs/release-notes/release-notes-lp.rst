@@ -19,14 +19,15 @@ Wallets
 |cryptox| for iOS
 -----------------
 
- May 13, 2025
-
-    Version 3.3.2 addresses the following issues:
-
-    - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
-    - Refactor Wert flow.
+ Jul 9, 2025
+    Version 3.3.5:
+    - Added ability to buy CCD through Banxa
 
     .. dropdown:: Previous releases
+        .. dropdown:: |cryptox| 3.3.2  -  May 13, 2025
+
+            - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
+            - Refactor Wert flow.
 
         .. dropdown:: |cryptox| 3.3.1  -  May 5, 2025
 
@@ -119,13 +120,17 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.10.0 - June 19, 2025
+    1.11.0 - July 8, 2025
 
-    - EUROe token is no longer shown for newly created accounts
-    - On the Buy screen, exchanges are now linked externally via our website (on-ramps remain)
-    - You may be asked to rate the app on Google Play
+    - Added ability to buy CCD through Banxa
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.10.0 - June 19, 2025
+
+            - EUROe token is no longer shown for newly created accounts
+            - On the Buy screen, exchanges are now linked externally via our website (on-ramps remain)
+            - You may be asked to rate the app on Google Play
 
         .. dropdown:: |cryptox| 1.9.1 - June 6, 2025
 
@@ -415,13 +420,19 @@ Wallets
 |bw|
 -------------------------
 
-    July 03, 2025
+    July 09, 2025
 
-    Version 2.4.0
+    Version 2.5.0
 
-    -   Removed Google Analytics track screens and events
+    -   Added Fiat on-ramp in the Browser Wallet.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.4.0 - July 03, 2025
+
+            Version 2.4.0 includes several changes.
+
+            -   Removed Google Analytics track screens and events
 
         .. dropdown:: |bw| 2.3.0 - June 23, 2025
 
