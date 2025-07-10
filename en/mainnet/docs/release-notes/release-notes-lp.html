@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.4c034725-49b8-43cb-8c2f-758efc4c9579.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.e16a2d80-4406-4744-bd86-ea25916326b3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -571,11 +571,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/become-validator.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/add-baker-mw.html">Add a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -678,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -772,16 +769,19 @@
 <section id="cryptox-for-ios">
 <span id="rn-cryptox-ios"></span><h3>CryptoX Concordium Wallet for iOS<a class="headerlink" href="#cryptox-for-ios" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>May 13, 2025</p>
-<blockquote>
-<div><p>Version 3.3.2 addresses the following issues:</p>
-<ul class="simple">
-<li><p>Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.</p></li>
-<li><p>Refactor Wert flow.</p></li>
-</ul>
+<div><dl>
+<dt>Jul 9, 2025</dt><dd><p>Version 3.3.5:
+- Added ability to buy CCD through Banxa</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Previous releases
+.. dropdown:: CryptoX Concordium Wallet 3.3.2  -  May 13, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.</p></li>
+<li><p class="sd-card-text">Refactor Wert flow.</p></li>
+</ul>
+</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet 3.3.1  -  May 5, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -885,7 +885,8 @@
 </ul>
 </div>
 </details></div>
-</details></div></blockquote>
+</details></dd>
+</dl>
 </div></blockquote>
 </section>
 <section id="cryptox-for-android">

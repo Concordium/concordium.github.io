@@ -54,13 +54,13 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.17928190-1624-4c01-963f-34f274a52af3.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.ad631f2b-f8d8-4e90-8e5f-9c4910ae68dc.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/validation-with-wallets';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/validation-with-wallets.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Import validator keys on Windows" href="baker-windows.html" />
+    <link rel="next" title="Validation with the Concordium Client" href="become-validator.html" />
     <link rel="prev" title="Validator management" href="../baker-pool.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -571,11 +571,12 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../baker-pool.html">Validator Management</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-macos.html">Import validator keys on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="become-validator.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-baker-mw.html">Add a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -678,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -762,7 +759,7 @@
                   
   <section id="validation-with-concordium-wallets">
 <span id="validation-with-wallets"></span><h1>Validation with Concordium wallets<a class="headerlink" href="#validation-with-concordium-wallets" title="Link to this heading">#</a></h1>
-<p>Validation is possible with the Concordium wallets as well as with the <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>, however the process differs between them. The overviews below give a brief description of the process.</p>
+<p>To become a validator in the Concordium network, you need to run a node, generate validator keys, and then import these keys to the node. Validator keys generation is possible with the Concordium wallets as well as with the <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code>; however, the process differs between them. The overviews below give a brief description of the process.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Before proceeding, read <a class="reference internal" href="../baker-pool.html#baker-pool"><span class="std std-ref">Validator management</span></a> for information about best practices for validators.</p>
@@ -771,13 +768,17 @@
 <p class="admonition-title">Note</p>
 <p>To check the minimum required amount of CCD (currently 500000) to become a validator, see <a class="reference internal" href="../../../tools/transactions.html#consensus-show-chain-parameters"><span class="std std-ref">Show chain parameters</span></a>.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before adding a validator, you need to make sure your node is running and fully synchronized with the chain. Otherwise, if you add a validator before launching a node, your validator may be automatically suspended due to missing block production. To familiarize yourself with the process of suspending validators, check out this article: <a class="reference internal" href="suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend or unsuspend validators</span></a>.</p>
+</div>
 <section id="validation-with-bw-and-cryptox">
 <h2>Validation with Concordium Wallet for Web and CryptoX Concordium Wallet<a class="headerlink" href="#validation-with-bw-and-cryptox" title="Link to this heading">#</a></h2>
 <p>This overview describes the recommended scenario for running a node and becoming a validator on the Concordium blockchain when using all wallets aside from the Desktop Wallet</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 1: Set up the node</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For validation you must be running a node on the Concordium blockchain. You can run a node <a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
+<p class="sd-card-text">For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating keys, you need to make sure that your node is fully synchronized. You can run a node <a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -794,20 +795,17 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 4: Add validation to an account</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Configure validation for an account. For instructions, see <a class="reference internal" href="../../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a>.</p>
+<p class="sd-card-text">Configure validation for an account. For instructions, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 5: Register validator keys</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The last step is to configure the running node with the validator keys so the node can start producing blocks. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your validator keys to the node runner in a secure manner.</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference internal" href="baker-windows.html#baker-windows"><span class="std std-ref">On Windows</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="baker-macos.html#baker-macos"><span class="std std-ref">On macOS</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">On Ubuntu</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="baker-docker.html#baking-docker"><span class="std std-ref">On Docker/Linux</span></a>.</p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a></p></li>
 </ul>
 </div>
-</details><p>For information about how to update your validator or stop validating, see <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validation options</span></a>.</p>
+</details><p>For information about how to update your validator or stop validating, see <a class="reference internal" href="update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validation options</span></a>.</p>
 </section>
 <section id="validation-with-desktop-wallet">
 <h2>Validation with Desktop Wallet<a class="headerlink" href="#validation-with-desktop-wallet" title="Link to this heading">#</a></h2>
@@ -835,21 +833,17 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 5: Add a validator in the Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You’re now ready to add a validator in the Desktop Wallet and generate validator keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See <a class="reference internal" href="../../mobile-wallet/add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>.</p>
+<p class="sd-card-text">You’re now ready to add a validator in the Desktop Wallet and generate validator keys. This process varies depending on whether you need one or more signatures before you can submit the transaction to the chain. See <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator account in the Desktop Wallet</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 6: Configure the node with the validator keys</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The last step is to configure the running node with the validator keys so the node can start producing blocks. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference internal" href="baker-windows.html#baker-windows"><span class="std std-ref">On Windows</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="baker-macos.html#baker-macos"><span class="std std-ref">On macOS</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">On Ubuntu</span></a></p></li>
-<li><p class="sd-card-text"><a class="reference internal" href="baker-docker.html#baking-docker"><span class="std std-ref">On Docker/Linux</span></a>.</p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a></p></li>
 </ul>
 </div>
-</details><p>For information about how to update your validator or stop validation, see <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validator options</span></a>.</p>
-<p>For information about how to update your validator or stop validation, see <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change baker options</span></a>.</p>
+</details><p>For information about how to update your validator or stop validation, see <a class="reference internal" href="update-baker-mw.html#update-baker-mw"><span class="std std-ref">Change validator options</span></a>.</p>
 </section>
 <section id="validation-with-concordium-client">
 <h2>Validation with <code class="docutils literal notranslate"><span class="pre">Concordium-client</span></code><a class="headerlink" href="#validation-with-concordium-client" title="Link to this heading">#</a></h2>
@@ -859,7 +853,7 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 <ul class="simple">
 <li><p>Read the information about <a class="reference internal" href="../baker-pool.html#baker-pool"><span class="std std-ref">validation management</span></a>.</p></li>
 <li><p>If you are interested in a staking pool, read the <a class="reference internal" href="../../help-and-faq/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation FAQ</span></a>.</p></li>
-<li><p>You can then <a class="reference internal" href="../../mobile-wallet/update-baker-mw.html#update-baker-mw"><span class="std std-ref">update validator settings</span></a> as needed to manage your validator.</p></li>
+<li><p>You can then <a class="reference internal" href="update-baker-mw.html#update-baker-mw"><span class="std std-ref">update validator settings</span></a> as needed to manage your validator.</p></li>
 </ul>
 </section>
 </section>
@@ -921,11 +915,11 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
       </div>
     </a>
     <a class="right-next"
-       href="baker-windows.html"
+       href="become-validator.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Import validator keys on Windows</p>
+        <p class="prev-next-title">Validation with the Concordium Client</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

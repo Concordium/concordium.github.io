@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/fungible-tokens/mint-xfer.b1480691-3aaf-4d8f-ad85-97e06c80cfc3.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/fungible-tokens/mint-xfer.1ea827b3-5423-47a8-af26-a1b880fefc5d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/fungible-tokens/mint-xfer';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/fungible-tokens/mint-xfer.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -626,14 +626,14 @@
 </pre></div>
 </div>
 <p>Run the command below to call the contract <code class="docutils literal notranslate"><span class="pre">mint()</span></code> function. Remember that this is using the Concordium testnet node; if you are using your own node your command needs to be changed.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint mint --parameter-json ../nft-artifacts/mint-params.json --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint mint --parameter-json ../nft-artifacts/mint-params.json --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure</span>
 </pre></div>
 </div>
 <p>Now you have successfully minted your fungible tokens.</p>
 <a class="reference internal image-reference" href="../../_images/mint-tokens.png"><img alt="dark console screen with result of running the command above" src="../../_images/mint-tokens.png" style="width: 100%;" />
 </a>
 <p>Check the state to see the balance, circulating supply, and maximum supply. Run the command below to invoke the <code class="docutils literal notranslate"><span class="pre">view()</span></code> function. Note that you don’t have to call the schema file since it is already embedded.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint view --grpc-port 20000 --grpc-ip node.testnet.concordium.com</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract invoke &lt;YOUR-CONTRACT-INSTANCE&gt; --entrypoint view --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/invoke-after-mint.png"><img alt="dark console screen with result of running the command above" src="../../_images/invoke-after-mint.png" style="width: 100%;" />
@@ -671,7 +671,7 @@
 </pre></div>
 </div>
 <p>Run the command below to invoke the transfer. Remember that this is using the Concordium testnet node; if you are using your own node your command needs to be changed.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-INDEX&gt; --entrypoint transfer --parameter-json ../token-artifacts/transfer.json --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-INDEX&gt; --entrypoint transfer --parameter-json ../token-artifacts/transfer.json --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure</span>
 </pre></div>
 </div>
 <p>Check the state one more time to see that the transfer worked as expected.</p>
@@ -692,7 +692,7 @@
 </pre></div>
 </div>
 <p>Burn 200 tokens from your first account. To do that, run the command below to call the <code class="docutils literal notranslate"><span class="pre">burn()</span></code> function.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-INDEX&gt; --entrypoint burn --parameter-json ../token-artifacts/burn.json --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 20000 --grpc-ip node.testnet.concordium.com</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract update &lt;YOUR-INDEX&gt; --entrypoint burn --parameter-json ../token-artifacts/burn.json --sender &lt;YOUR-ACCOUNT&gt; --energy 6000 --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/burn-tokens.png"><img alt="dark console screen with result of running the command above" src="../../_images/burn-tokens.png" style="width: 100%;" />

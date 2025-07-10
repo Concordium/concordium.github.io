@@ -428,5 +428,5 @@ Following these steps will completely remove the node, its Docker image, and all
 Run a validator node
 ====================
 
-For information about how to run a validator node for Linux/Docker, see :ref:`Run a validator node on Docker<baking-docker>`.
+For information about how to run a validator node for Linux/Docker, see :ref:`Import validator keys<import-validator-keys>`.
 

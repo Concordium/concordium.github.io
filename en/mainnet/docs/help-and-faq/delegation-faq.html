@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/delegation-faq.637ac169-7ca5-45e8-ae84-6b2fcc11b1cf.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/help-and-faq/delegation-faq.5ddcd3d6-7afa-45a2-afc3-837115a7f1c0.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/help-and-faq/delegation-faq';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/help-and-faq/delegation-faq.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -571,11 +571,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/baker-pool.html">Validator Management</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-macos.html">Import validator keys on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../network/guides/baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../network/guides/become-validator.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/add-baker-mw.html">Add a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/guides/stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../network/nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -678,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -902,12 +899,12 @@ When a validator is suspended, both the validator and its delegators stop earnin
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Can I open a pool on my existing validator node?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Yes. See <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-pool-settings"><span class="std std-ref">Update a staking pool</span></a> for instructions about how to set up a staking pool on an existing validator.</p>
+<p class="sd-card-text">Yes. See <a class="reference internal" href="../network/guides/update-baker-mw.html#update-pool-settings"><span class="std std-ref">Update a staking pool</span></a> for instructions about how to set up a staking pool on an existing validator.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">How do I activate a staking pool?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">All validators come with pool support built in. You can actively choose to disable this feature upon creating your validator keys. See <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-pool-settings"><span class="std std-ref">Update a staking pool</span></a> for instructions about how to set up a staking pool.</p>
+<p class="sd-card-text">All validators come with pool support built in. You can actively choose to disable this feature upon creating your validator keys. See <a class="reference internal" href="../network/guides/update-baker-mw.html#update-pool-settings"><span class="std std-ref">Update a staking pool</span></a> for instructions about how to set up a staking pool.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -944,7 +941,7 @@ When a validator is suspended, both the validator and its delegators stop earnin
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">How can I change the delegation commissions for my staking pool?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You can change the commissions for your staking pool within the allowed limits in the Concordium Wallet for Web, CryptoX Concordium Wallet, and Desktop Wallet. See <a class="reference internal" href="../mobile-wallet/update-baker-mw.html#update-pool-settings"><span class="std std-ref">update pool settings</span></a> for information about how to do this for each type of wallet.</p>
+<p class="sd-card-text">You can change the commissions for your staking pool within the allowed limits in the Concordium Wallet for Web, CryptoX Concordium Wallet, and Desktop Wallet. See <a class="reference internal" href="../network/guides/update-baker-mw.html#update-pool-settings"><span class="std std-ref">update pool settings</span></a> for information about how to do this for each type of wallet.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -987,7 +984,7 @@ The cool-down period is three weeks. The cool-down period is activated when you 
 <li><p class="sd-card-text">Both you and any delegators are notified about the suspension</p></li>
 </ul>
 <p class="sd-card-text">Your stake remains locked while suspended, but you won’t earn any rewards until you resume validation. For more details, see <a class="reference internal" href="../protocol/concepts-baker.html#concepts-baker-suspension"><span class="std std-ref">Validator suspension</span></a>.</p>
-<p class="sd-card-text">To learn how to suspend or unsuspend a validator, see <a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend/Unsuspend a validator</span></a>.</p>
+<p class="sd-card-text">To learn how to suspend or unsuspend a validator, see <a class="reference internal" href="../network/guides/suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend/Unsuspend a validator</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1003,7 +1000,7 @@ The cool-down period is three weeks. The cool-down period is activated when you 
 <p class="sd-card-text">High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders, while low-stake validators may take several days to reach the threshold.</p>
 <p class="sd-card-text">If your validator becomes primed for suspension (indicated by a warning banner in your wallet stating “Your validation is primed for suspension”), you must demonstrate activity before the next snapshot epoch by either producing a block or having your signature included in a quorum certificate.</p>
 <p class="sd-card-text">If you need to perform maintenance on your node, it’s recommended to use the self-suspension feature to avoid automatic suspension. You can manually suspend your validator, perform the maintenance, and then resume validation when your node is operational again.</p>
-<p class="sd-card-text">For instructions on how to suspend or unsuspend a validator, see <a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend/Unsuspend a validator</span></a>.</p>
+<p class="sd-card-text">For instructions on how to suspend or unsuspend a validator, see <a class="reference internal" href="../network/guides/suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend/Unsuspend a validator</span></a>.</p>
 </div>
 </details></section>
 <section id="for-validators-delegators-and-passive-delegators">

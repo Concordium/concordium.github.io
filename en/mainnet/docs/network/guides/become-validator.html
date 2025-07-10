@@ -54,14 +54,14 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/become-validator.66948cdb-bd39-49b8-b646-e83b92b446bf.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/become-validator.2f9e13f2-be17-43ff-93db-2e69ed89128b.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/become-validator';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/become-validator.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Run a Concordium node" href="../nodes/node-requirements.html" />
-    <link rel="prev" title="Import validator keys on Docker" href="baker-docker.html" />
+    <link rel="next" title="Add a validator" href="add-baker-mw.html" />
+    <link rel="prev" title="Validation with Concordium wallets" href="validation-with-wallets.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -571,11 +571,12 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../baker-pool.html">Validator Management</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="validation-with-wallets.html">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-macos.html">Import validator keys on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-baker-mw.html">Add a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -678,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -832,10 +829,7 @@
 </ul>
 <p>Remember to configure your node for validation using this path:</p>
 <ul class="simple">
-<li><p>using Docker: See <a class="reference internal" href="baker-docker.html#baking-docker"><span class="std std-ref">configure Linux node</span></a>.</p></li>
-<li><p>on macOS: See <a class="reference internal" href="baker-macos.html#baker-macos"><span class="std std-ref">configure macOS node</span></a>.</p></li>
-<li><p>on Windows: See <a class="reference internal" href="baker-windows.html#configure-baker-windows"><span class="std std-ref">configure Windows node</span></a>.</p></li>
-<li><p>on Ubuntu: See <a class="reference internal" href="baker-ubuntu.html#baker-ubuntu"><span class="std std-ref">configure Ubuntu node</span></a>.</p></li>
+<li><p><a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">Import validator keys</span></a></p></li>
 </ul>
 </div>
 </div></blockquote>
@@ -868,7 +862,7 @@ If this is a firm requirement for you, then you need to run the <a class="refere
 <p class="admonition-title">Warning</p>
 <p>Do not stake all of your funds or you will not have enough funds to cover transaction fees.</p>
 </div>
-<p>To start the node with these validator keys and produce blocks, <a class="reference internal" href="baker-macos.html#baker-macos"><span class="std std-ref">configure the node to use the validator keys</span></a>, and <strong>restart</strong> it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.</p>
+<p>To start the node with these validator keys and produce blocks, <a class="reference internal" href="import-validator-keys.html#import-validator-keys"><span class="std std-ref">configure the node to use the validator keys</span></a>, and <strong>restart</strong> it. The node will automatically start producing blocks when the validator is included in the validators list for the current epoch.</p>
 <p>This change is executed immediately, and it will take effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> after the one in which the transaction for adding the validator was included in a block. If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1170,20 +1164,20 @@ the staked amount. The change requires a 21 day cool-down period to take effect.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="baker-docker.html"
+       href="validation-with-wallets.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Import validator keys on Docker</p>
+        <p class="prev-next-title">Validation with Concordium wallets</p>
       </div>
     </a>
     <a class="right-next"
-       href="../nodes/node-requirements.html"
+       href="add-baker-mw.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Run a Concordium node</p>
+        <p class="prev-next-title">Add a validator</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

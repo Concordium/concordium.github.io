@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract.79a8e337-0e88-4a06-9f75-9ac243be7de1.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract.5e44a821-31e3-4969-bfcf-ae72a57b11ba.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/sponsoredTransactions/sponsoredTransactionsSmartContract.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -660,7 +660,7 @@ where the result is either “Entrypoint is not supported and can not be invoked
 the permit function using the sponsored transaction mechanism” or “Entrypoint is supported and
 can be invoked via the permit function using the sponsored transaction mechanism”.</p>
 <p>You can explore the function by invoking it with the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">6372</span><span class="w"> </span>--entrypoint<span class="w"> </span>supportsPermit<span class="w"> </span>--parameter-json<span class="w"> </span>supportsPermit.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">6372</span><span class="w"> </span>--entrypoint<span class="w"> </span>supportsPermit<span class="w"> </span>--parameter-json<span class="w"> </span>supportsPermit.json<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">6372</span></code> is the index of the smart contract. A smart contract address consists of an index and a subindex, in the current protocol the subindex will always be 0. So, in other words, the command above means invoke contract with index 6372 on the testnet.</p>
