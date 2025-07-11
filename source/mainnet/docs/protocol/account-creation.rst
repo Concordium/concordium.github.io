@@ -51,3 +51,27 @@ signed by an approved identity provider. It is publicly visible which identity
 provider issued an identity for an account and who the :term:`Privacy Guardians<Privacy Guardian (PG)>` are
 for the account and the identity. This means that anybody can check it
 before interacting with an account to judge the level of risk in the transaction.
+
+
+
+.. _tools:
+
+Tools
+=====
+
+Wallets
+-------
+
+You can use one of the :ref:`Concordium wallets<wallets-lp>` to create and manage your Concordium identities, credentials, and accounts and to create transactions.
+
+To learn more about the differences between the wallets, see :ref:`Deciding between the wallets<choosing-wallet>`.
+
+Command-line tool
+-----------------
+
+The Concordium distribution ships with a command-line tool named
+:ref:`concordium-client<concordium-client>`. It is designed as a low-level interface to the
+Concordium blockchain. It cannot be used to create identities, but it can
+:ref:`import accounts<concordium-client-import-accounts-keys>` exported from the |cryptox|. Once an account has been
+imported, the tool can be used to do CCD transfers from the account, as well as
+send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
