@@ -177,3 +177,9 @@ Concordium blockchain. It cannot be used to create identities, but it can
 :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the |cryptox|. Once an account has been
 imported, the tool can be used to do CCD transfers from the account, as well as
 send all other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
+
+.. toctree::
+   :maxdepth: 1
+
+   account-creation
+   account-concepts
