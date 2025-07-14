@@ -28,6 +28,14 @@ Select your platform below to configure your node with validator keys.
    - :ref:`Run a node on Windows<run-node-windows>`
    - Have generated validator keys, see :ref:`Add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
+   Watch the video guide below to learn how to import validator keys to your Windows node:
+      .. raw:: html
+
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/DY_1nD2JgGM"
+         title="YouTube video player" frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen></iframe>
+
    **Configure a validator node on Windows**
 
    #. Create validator keys in |bw|, |cryptox|, Desktop Wallet or Concordium Client and associate them with an account either on mainnet or testnet. Follow :ref:`this <add-baker-mw>` article for help.
@@ -82,6 +90,14 @@ Select your platform below to configure your node with validator keys.
    - Have the administrator password to your computer
    - :ref:`Run a node on Ubuntu <run-node-ubuntu>`
    - Have generated validator keys, see :ref:`Add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
+
+   Watch the video guide below to learn how to import validator keys to your Ubuntu node:
+      .. raw:: html
+
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/UMnu8ADg5ig"
+         title="YouTube video player" frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen></iframe>
 
    **Configure the node with validator keys**
 
@@ -166,6 +182,14 @@ Select your platform below to configure your node with validator keys.
    - :ref:`Run a node on macOS <run-node-macos>`
    - Have generated validator keys, see :ref:`Add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
 
+   Watch the video guide below to learn how to import validator keys to your macOS node:
+      .. raw:: html
+
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/ZWpMfIeTP6U"
+         title="YouTube video player" frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen></iframe>
+
    **Configure a node as a validator**
 
    Once you have generated validator keys, you need to move the generated validator keys file to a location accessible by the node, and finally specify this location in the service file for the Concordium Node.
@@ -218,6 +242,14 @@ Select your platform below to configure your node with validator keys.
 
    - :ref:`Run a node on Docker<run-a-node>`
    - Have generated validator keys, see :ref:`Add a validator <add-baker-mw>` for details. For an overview of the process, see :ref:`baker-concept`.
+
+   Watch the video guide below to learn how to import validator keys to your Docker node:
+      .. raw:: html
+
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/jLJb8ZqU5Ng"
+         title="YouTube video player" frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen></iframe>
 
    **Configure a node as a validator**
 
