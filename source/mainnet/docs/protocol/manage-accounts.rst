@@ -6,9 +6,9 @@
 Accounts
 ========
 
-Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This is regardless of whether you are using the one of the Concordium wallets or Concordium Client for your transactions.
+Accounts and :term:`identities<identity>` are strongly linked on the Concordium Platform. To be able to hold, send, or receive :term:`CCD` or become a :term:`validator` on the Concordium blockchain, you need an account and an identity. This applies regardless of which Concordium wallets or tool you use.
 
-You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identitity framework on Concordium<reference-identity>`.
+You must have a verified identity and a user identity certificate issued by an authorized :term:`identity provider` to create accounts on the Concordium Platform. For more information about identities, see :ref:`Identity framework on Concordium<reference-identity>`.
 
 About accounts
 ==============
@@ -37,7 +37,7 @@ sequence. The address is usually displayed in Base58Check encoding with version
 byte 1. An example of such an address is
 ``3ZFGxLtnUUSJGW2WqjMh1DDjxyq5rnytCwkSqxFTpsWSFdQnNn``.
 
-In the :ref:`tools<tools>` described below the user will typically select an **account name**
+When managing your account, you will typically select an **account name**
 which makes the account easier to identify. This is only a local alias, and is not used by the Concordium blockchain.
 The name is resolved to an address before interactions with the :term:`node`.
 
