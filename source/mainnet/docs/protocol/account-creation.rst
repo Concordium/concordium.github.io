@@ -5,12 +5,35 @@
 Account creation
 ================
 
-Initial account
----------------
+Once you have a verified identity and user identity certificate from an identity provider, you can create accounts on the Concordium platform.
+
+For general information about identity on the Concordium blockchain, see :ref:`Identity framework on Concordium<reference-identity>`.
+
+For specific information about the identity verification process that must be completed before creating accounts, see :ref:`User processes<reference-user-processes>`.
+
+
+
+Account creation is an on-chain action that requires sending a transaction to a node in the Concordium network. This is typically done using a Concordium wallet that guides you through the process.
+The transaction contains a credential with cryptographic proofs that establish your right to create the account without revealing information about your identity. The identity provider cannot determine who owns the account from this information alone.
+
+The private account keys are stored by the user, whereas public account creation information is
+published on the blockchain. The latter contains public account keys, and information about the
+identity provider and identity disclosure authorities. While this allows the relevant identity disclosure
+authorities and the identity provider, when working together, to link the account to the user, the
+account creation information does not allow other parties or any single party to identify the user.
+Further, accounts created with the same user identity certificate cannot be publicly linked
+
+Every account on the chain must be derived from an identity that is verified and signed by an approved identity provider. It is publicly visible which identity provider issued an identity for an account and who the privacy guardians (PG) are for the account and the identity. This allows anyone to check this information before interacting with an account to judge the level of risk in the transaction.
 
 .. Note::
+   It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
 
-   Initial accounts are not created by the identity provider when using |cryptox| or |bw|. You create all accounts yourself.
+Initial account
+===============
+
+When creating an an account from Desktop Wallet, the procedure differs slightly from the processes in other Concordium wallets.
+In Desktop Wallet, an initial account is created by the identity provider on behalf of the user, not by the user themselves.
+This is different from the process of creating a regular account, which is done by the user using their identity certificate.
 
 The user gets an :term:`initial account` at the same time as an :ref:`identity<reference-identity>` has been issued by an :term:`identity provider`. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.
 
@@ -22,6 +45,10 @@ by creating a new identity and going through the identity verification process a
 
 Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the :term:`Privacy Guardians<Privacy Guardian (PG)>` and the identity provider are
 involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, the user's privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<reference-identity-disclosure-processes>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
+
+.. Note::
+
+   Initial accounts are not created by the identity provider when using |cryptox| or |bw|. You create all accounts yourself.
 
 Account creation
 ----------------
