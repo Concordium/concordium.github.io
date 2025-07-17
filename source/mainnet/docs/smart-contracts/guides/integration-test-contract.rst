@@ -97,7 +97,7 @@ It is even possible to connect to an external Concordium node and get the exchan
        let mut chain = Chain::builder()
            // Connect to the public testnet node on its gRPCv2 port 20000.
            .external_node_connection(Endpoint::from_static(
-               "http://node.testnet.concordium.com:20000",
+               "http://grpc.testnet.concordium.com:20000",
            ))
            // Specify which block to use for queries. If omitted, the last final block will be used.
            .external_query_block(

@@ -125,4 +125,4 @@ Uninstall Concordium node on Windows
 Run a validator node on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For information about validation on a Windows node, see :ref:`baker-windows`.
+For information about validation on a Windows node, see :ref:`import-validator-keys`.

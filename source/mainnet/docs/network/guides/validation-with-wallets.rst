@@ -7,7 +7,7 @@ Validation with Concordium wallets
 ==================================
 
 
-Validation is possible with the Concordium wallets as well as with the ``Concordium-client``, however the process differs between them. The overviews below give a brief description of the process.
+To become a validator in the Concordium network, you need to run a node, generate validator keys, and then import these keys to the node. Validator keys generation is possible with the Concordium wallets as well as with the ``Concordium-client``; however, the process differs between them. The overviews below give a brief description of the process.
 
 .. Attention::
 
@@ -17,6 +17,9 @@ Validation is possible with the Concordium wallets as well as with the ``Concord
 
    To check the minimum required amount of CCD (currently 500000) to become a validator, see :ref:`consensus show-chain-parameters`.
 
+.. Note::
+
+   Before adding a validator, you need to make sure your node is running and fully synchronized with the chain. Otherwise, if you add a validator before launching a node, your validator may be automatically suspended due to missing block production. To familiarize yourself with the process of suspending validators, check out this article: :ref:`Suspend or unsuspend validators <suspend-unsuspend-validator>`.
 
 Validation with |bw| and |cryptox|
 ----------------------------------
@@ -25,7 +28,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 1: Set up the node
 
-   For validation you must be running a node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
+   For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating keys, you need to make sure that your node is fully synchronized. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
 
 .. dropdown:: Step 2: Set up the Wallet
 
@@ -46,13 +49,7 @@ This overview describes the recommended scenario for running a node and becoming
 
    The last step is to configure the running node with the validator keys so the node can start producing blocks. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself; in this case you will need to provide your validator keys to the node runner in a secure manner.
 
-   - :ref:`On Windows<baker-windows>`
-
-   - :ref:`On macOS<baker-macos>`
-
-   - :ref:`On Ubuntu<baker-Ubuntu>`
-
-   - :ref:`On Docker/Linux<baking-docker>`.
+   - :ref:`Import validator keys <import-validator-keys>`
 
 For information about how to update your validator or stop validating, see :ref:`Change validation options<update-baker-mw>`.
 
@@ -85,17 +82,9 @@ This overview describes the recommended scenario for running a node and becoming
 
    The last step is to configure the running node with the validator keys so the node can start producing blocks. If you have a third-party node runner run a node for you, you will need to provide your validator keys to the node runner in a secure manner.
 
-   - :ref:`On Windows<baker-windows>`
-
-   - :ref:`On macOS<baker-macos>`
-
-   - :ref:`On Ubuntu<baker-Ubuntu>`
-
-   - :ref:`On Docker/Linux<baking-docker>`.
+   - :ref:`Import validator keys <import-validator-keys>`
 
 For information about how to update your validator or stop validation, see :ref:`Change validator options<update-baker-mw>`.
-
-For information about how to update your validator or stop validation, see :ref:`Change baker options<update-baker-mw>`.
 
 Validation with ``Concordium-client``
 -------------------------------------

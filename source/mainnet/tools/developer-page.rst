@@ -23,7 +23,7 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     See :ref:`Node setup<node-requirements>` for information about the requirements to run a node and the available platforms for nodes.
 
-    For testing purposes, a node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with gRPC v2 and gRPC web. The address is node.testnet.concordium.com on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of *chain methods only*. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
+    For testing purposes, a node is available on testnet to use when testing smart contracts and dApps. You can use this node for API calls of chain methods only with gRPC v2 and gRPC web. The address is ``grpc.testnet.concordium.com`` on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of *chain methods only*. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__.
 
 .. dropdown:: SDKs and APIs
 

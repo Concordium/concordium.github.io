@@ -488,13 +488,13 @@ You can embed the schema file in the module, which means you don’t have to cal
 Deploy the smart contract
 -------------------------
 
-If you don't have your own testnet node running, Concordium provides a running testnet gRPC node that is available at ``node.testnet.concordium.com`` on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of *chain methods only*. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__. For some use cases you might need to run your own local node due to the limitations of this one.
+If you don't have your own testnet node running, Concordium provides a running testnet gRPC node that is available at ``grpc.testnet.concordium.com`` on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of *chain methods only*. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the `Testnet status page <https://status.testnet.concordium.software>`__. For some use cases you might need to run your own local node due to the limitations of this one.
 
 Run the command below to deploy the smart contract. This command is structured to use the Concordium testnet node described above. If you are using your own local node, adjust the command accordingly.
 
 .. code-block:: console
 
-    concordium-client module deploy dist/fungible/module.wasm.v1 --sender <YOUR-ACCOUNT> --name <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    concordium-client module deploy dist/fungible/module.wasm.v1 --sender <YOUR-ACCOUNT> --name <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: images/deploy-sc.png
     :width: 100%
@@ -507,7 +507,7 @@ Using the Module reference hash value, create a contract instance with the comma
 
 .. code-block:: console
 
-    concordium-client contract init <MODULE-HASH> --sender <YOUR-ACCOUNT> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    concordium-client contract init <MODULE-HASH> --sender <YOUR-ACCOUNT> --energy 30000 --contract <YOUR-CONTRACT-NAME> --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 .. image:: images/initialize-sc.png
     :width: 100%
