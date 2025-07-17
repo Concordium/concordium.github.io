@@ -530,7 +530,7 @@ Add an account to the token's allow list (issuer only):
             // Execute the add to allow list operation
             const transaction = await Token.addAllowList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -811,17 +811,17 @@ Remove an account from the token's deny list (issuer only):
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
-        
+
         try {
             // create the token instance
             const token = await Token.fromId(client, tokenId);
             // Only the token issuer can modify the deny list
             console.log(`Attempting to remove ${targetAddress.toString()} from deny list for ${tokenId.toString()}...`);
-            
+
             // Execute the remove from deny list operation
             const transaction = await Token.removeDenyList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-            
+
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -837,7 +837,7 @@ Remove an account from the token's deny list (issuer only):
                             throw new Error('Unexpected event type: ' + e.tag);
                         }
                         console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
-                    });                
+                    });
                     break;
                 case TransactionKindString.Failed:
                     if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
