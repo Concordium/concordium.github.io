@@ -34,7 +34,7 @@ List accounts
 
 List the addresses of all accounts on the chain as of a specific block:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :term:`best block`.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current best block.
 
 Example
 ~~~~~~~
@@ -60,8 +60,8 @@ can also decrypt the shielded balance (:ref:`deprecated<shielded-balance-feature
 
 -  ``ACCOUNT``: Address or local name of the account (if not provided,
    will show the account with the local alias ``"default"``).
--  ``BLOCK``: Full hash of target block. Defaults to the current :term:`best block`.
--  ``--shielded``: Show the :term:`shielded balance` (:ref:`deprecated<shielded-balance-feature-deprecation>`).
+-  ``BLOCK``: Full hash of target block. Defaults to the current best block`.
+-  ``--shielded``: Show the shielded balance (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 -  ``--reveal-shielded``: Show the shielded balance and reveal it
    (:ref:`deprecated<shielded-balance-feature-deprecation>`).
 
@@ -92,8 +92,8 @@ The output shows that the account with the local name ``my-account``
 -  has a balance of 1026 CCD,
 -  has :term:`transaction sequence number` ``1``,
 -  has ``a820662531d...`` as the key for receiving shielded transfers (:ref:`deprecated<shielded-balance-feature-deprecation>`).
--  has no :term:`incoming shielded amount<shielded balance>` (:ref:`deprecated<shielded-balance-feature-deprecation>`).
--  has a :term:`self balance<shielded balance>` of ``a9d35bf62442aabad72c...`` (:ref:`deprecated<shielded-balance-feature-deprecation>`). By default this
+-  has no incoming shielded amount (:ref:`deprecated<shielded-balance-feature-deprecation>`).
+-  has a self balance of ``a9d35bf62442aabad72c...`` (:ref:`deprecated<shielded-balance-feature-deprecation>`). By default this
    only shows the first 20 characters of the encrypted amount. With a
    ``--verbose`` flag the full encryption is shown.
 
@@ -149,7 +149,7 @@ Display information about a specific block. Note that some fields (e.g. slot
 time) are objective (i.e. all nodes participating in the Concordium network will
 agree on these) while others (e.g. arrival time) are specific to the local node:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :term:`best block`.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current best block.
 
 Example
 ~~~~~~~
@@ -190,7 +190,7 @@ Inspect consensus parameters
 Show :term:`election parameters<leader election>` for a specific block, optionally including
 bakers and their :term:`lottery power`:
 
--  ``BLOCK-HASH``: Full hash of the block. Defaults to the current :term:`best block`.
+-  ``BLOCK-HASH``: Full hash of the block. Defaults to the current best block.
 -  ``--include-bakers``: If set, include table of bakers and their
    lottery power. The lottery power is recomputed periodically, so operations
    that affect them do not take effect immediately.
@@ -274,7 +274,7 @@ ID layer
    $concordium-client identity show (identity-providers|anonymity-revokers) [--block BLOCK]
 
 Display the list of identity providers or :term:`Privacy Guardians<Privacy Guardian (PG)>` at a given block,
-defaulting to the :term:`best block`.
+defaulting to the best block.
 
 .. _exchange-rates:
 

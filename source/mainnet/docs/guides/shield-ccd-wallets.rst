@@ -17,8 +17,8 @@ Unshield CCD on an account
 
 The next few paragraphs contain some old context regarding the old shielding feature before protocol 7.
 
-Accounts on the Concordium blockchain had two balances, the **Balance** and the :term:`shielded balance`. You were able to move funds between these
-two balances using either a :term:`shield CCD transaction<shielding>` or an :term:`unshield CCD transaction<unshielding>`.
+Accounts on the Concordium blockchain had two balances, the **Balance** and the shielded balance. You were able to move funds between these
+two balances using either a shield CCD transaction or an unshield CCD transaction`.
 
 When you shield an amount on an account, only the account's credential holder can see the shielded amounts. Other participants in the network will be able to see the shielding transaction, but can't see the shielded balance or any shielded transfers going in or out of the account. You weren't able to make shielded transfers on multi-signature accounts, only on accounts with a single credential.
 

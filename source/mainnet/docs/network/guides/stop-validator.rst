@@ -5,7 +5,7 @@
 Stop a validator
 ================
 
-If you remove a validator, the node that is configured with the :term:`validator keys<private keys>` will stop producing blocks after the next :term:`pay day`.
+If you remove a validator, the node that is configured with the validator keys will stop producing blocks after the next :term:`pay day`.
 
 After the :term:`cool-down period`, the amount that you previously staked is returned to your disposable balance at the next pay day.
 
