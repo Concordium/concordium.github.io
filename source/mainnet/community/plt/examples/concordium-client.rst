@@ -45,6 +45,8 @@ The following PLT operations are available via CLI:
 - ``transaction plt add-to-deny-list`` - Add an account to the deny list
 - ``transaction plt remove-from-allow-list`` - Remove an account from the allow list
 - ``transaction plt remove-from-deny-list`` - Remove an account from the deny list
+- ``transaction plt pause`` - Suspend balance transfer operations for a selected PLT
+- ``transaction plt unpause`` - Resume balance transfer operations for a selected PLT
 
 .. note::
    All PLT management operations require a governance account.
@@ -106,5 +108,15 @@ Command examples
 
    concordium-client transaction plt remove-from-deny-list --sender GOVERNANCE_ACCOUNT --account ACCOUNT_ADDRESS --tokenId TOKEN_SYMBOL --grpc-ip grpc.devnet-plt-beta.concordium.com --grpc-port 20000 --secure
 
+**Suspend balance transfer operations for the PLT:**
 
+.. code-block:: bash
+
+   concordium-client transaction plt pause --sender GOVERNANCE_ACCOUNT --tokenId TOKEN_SYMBOL --grpc-ip grpc.devnet-plt-beta.concordium.com --grpc-port 20000 --secure
+
+**Resume balance transfer operations for the PLT:**
+
+.. code-block:: bash
+
+   concordium-client transaction plt unpause --sender GOVERNANCE_ACCOUNT --tokenId TOKEN_SYMBOL --grpc-ip grpc.devnet-plt-beta.concordium.com --grpc-port 20000 --secure
 
