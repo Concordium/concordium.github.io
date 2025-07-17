@@ -29,18 +29,14 @@ Follow these steps to configure your wallet to connect to DevNet:
       :alt: Opening network options
       :width: 50%
 
-3. Select *Custom Network* (this option will only be available if you already have a Testnet account) and fill in the following connection details:
+3. In the list of networks, select *Concordium DevNet* (this option will only be available if you already have a Testnet account) and click on it
 
-   - Genesis Hash: ``0599cdd0fe93057a276b447772b9a698712944d16c57c09cd11fe52aa96d37b1``
-   - Node Address: ``https://grpc.devnet-plt-beta.concordium.com``
-   - Node Port: ``20000``
-   - Wallet Proxy: ``https://wallet-proxy.devnet-plt-beta.concordium.com``
-   - CCDScan URL: ``https://devnet-plt-beta.ccdscan.io``
-
-   .. image:: ../setup-guide/Images/custom-network-connection-details.png
-      :alt: Opening the wallet menu
+   .. image:: ../setup-guide/Images/list_of_networks.png
+      :alt: Opening network options
       :width: 50%
 
-4. Verify connection: Once connected, you'll see a lock icon next to "Custom Network" – that means the connection is successful!
+4. Click on *Connect* button and verify connection: Once connected, you'll see a lock icon next to "Concordium DevNet" – that means the connection is successful!
 
-
+   .. image:: ../setup-guide/Images/devnet-connection.png
+      :alt: Opening network options
+      :width: 50%

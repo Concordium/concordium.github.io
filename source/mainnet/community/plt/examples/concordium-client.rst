@@ -8,7 +8,7 @@ This guide explains how to use concordium-client to perform PLT operations from 
 Installation and setup
 ----------------------
 
-Download and install concordium-client v9.1.3-1-alpha:
+Download and install ``concordium-client v9.1.3-1-alpha``:
 
 **Downloads (v9.1.3):**
 
