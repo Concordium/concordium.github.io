@@ -47,6 +47,10 @@ This category covers token governance operations:
 
 * **Remove account from deny list:** Remove an account from the deny list for a PLT (issuer only)
 
+* **Pause:** Suspends balance transfer operations for a PLT (issuer only)
+
+* **Unpause:** Resumes balance transfer operations for a PLT (issuer only)
+
 Transfer PLTs
 -------------
 This category covers the operation of transferring PLTs to another account on DevNet.

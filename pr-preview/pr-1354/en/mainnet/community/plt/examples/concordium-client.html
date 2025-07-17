@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/community/plt/examples/concordium-client.f22908ea-c94f-4efb-98fd-674ca98cf2a4.js"></script>
+    <script defer="defer" src="../../../_static/tippy/community/plt/examples/concordium-client.ca226a83-bdf0-42ea-b172-05e06867ab8a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/plt/examples/concordium-client';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/community/plt/examples/concordium-client.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -597,6 +597,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span> <span class="pre">add-to-deny-list</span></code> - Add an account to the deny list</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span> <span class="pre">remove-from-allow-list</span></code> - Remove an account from the allow list</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span> <span class="pre">remove-from-deny-list</span></code> - Remove an account from the deny list</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span> <span class="pre">pause</span></code> - Suspend balance transfer operations for a selected PLT</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span> <span class="pre">unpause</span></code> - Resume balance transfer operations for a selected PLT</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -635,6 +637,14 @@
 </div>
 <p><strong>Remove an Account from the Deny List:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>remove-from-deny-list<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--account<span class="w"> </span>ACCOUNT_ADDRESS<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+</pre></div>
+</div>
+<p><strong>Suspend balance transfer operations for the PLT:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>pause<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
+</pre></div>
+</div>
+<p><strong>Resume balance transfer operations for the PLT:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>plt<span class="w"> </span>unpause<span class="w"> </span>--sender<span class="w"> </span>GOVERNANCE_ACCOUNT<span class="w"> </span>--tokenId<span class="w"> </span>TOKEN_SYMBOL<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.devnet-plt-beta.concordium.com<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--secure
 </pre></div>
 </div>
 </section>

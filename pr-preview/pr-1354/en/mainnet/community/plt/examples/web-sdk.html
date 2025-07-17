@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/community/plt/examples/web-sdk.403d7d0b-d99d-47c3-aaee-b6b2f1874720.js"></script>
+    <script defer="defer" src="../../../_static/tippy/community/plt/examples/web-sdk.61dd99d4-a6b3-4828-bdbe-0832e45baa81.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/plt/examples/web-sdk';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/community/plt/examples/web-sdk.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -589,6 +589,8 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <li><p><a class="reference internal" href="#web-sdk-remove-account-from-allow-list"><span class="std std-ref">Remove account from allow list</span></a></p></li>
 <li><p><a class="reference internal" href="#web-sdk-add-account-to-deny-list"><span class="std std-ref">Add account to deny list</span></a></p></li>
 <li><p><a class="reference internal" href="#web-sdk-remove-account-from-deny-list"><span class="std std-ref">Remove account from deny list</span></a></p></li>
+<li><p><a class="reference internal" href="#web-sdk-pause-plt-transfers"><span class="std std-ref">Pause a token</span></a></p></li>
+<li><p><a class="reference internal" href="#web-sdk-unpause-plt-transfers"><span class="std std-ref">Unpause a token</span></a></p></li>
 </ul>
 </section>
 <section id="querying-tokens">
@@ -749,56 +751,69 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">*/</span>
 <span class="c1">// using wallet.export file</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">walletFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">&quot;wallet.export&quot;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">walletExport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parseWallet</span><span class="p">(</span><span class="nx">walletFile</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">signer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildAccountSigner</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">);</span>
-
-<span class="c1">// using wallet.json file</span>
-<span class="c1">// const walletJson = readFileSync(&quot;wallet.json&quot;, &#39;utf8&#39;);</span>
-<span class="c1">// const keys = JSON.parse(walletJson);</span>
-<span class="c1">// const signer = buildAccountSigner(keys);</span>
-
 <span class="c1">// parse the other arguments</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">tokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TokenId</span><span class="p">.</span><span class="nx">fromString</span><span class="p">(</span><span class="s2">&quot;TOKEN_SYMBOL&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Replace with actual token ID</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">fromId</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">tokenId</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TokenAmount</span><span class="p">.</span><span class="nx">fromDecimal</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">decimals</span><span class="p">);</span><span class="w"> </span><span class="c1">// some amount to transfer</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">recipient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TokenHolder</span><span class="p">.</span><span class="nx">fromAccountAddress</span><span class="p">(</span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="s2">&quot;recipient_address&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// replace with actual address to receive</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
-<span class="c1">// memo = CborMemo.fromString(&quot;Any Message To add&quot;)</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">transfer</span><span class="o">:</span><span class="w"> </span><span class="kt">TokenTransfer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">recipient</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">amount</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">memo</span><span class="p">,</span>
-<span class="p">};</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Specified transfer:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">transfer</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">walletFile</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Service perspective: For backend services and automated systems</span>
+<span class="cm">    Requires direct access to wallet files containing private keys. The service</span>
+<span class="cm">    can sign and execute transactions immediately. Use this when building APIs,</span>
+<span class="cm">    trading bots, or administrative tools where the service manages tokens automatically.*/</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">walletExport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parseWallet</span><span class="p">(</span><span class="nx">walletFile</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">signer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildAccountSigner</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">);</span>
 
-<span class="c1">// From a service perspective:</span>
-<span class="c1">// create the token instance</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">transfer</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="nx">transfer</span><span class="p">,</span><span class="w"> </span><span class="nx">signer</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Transaction submitted with hash: </span><span class="si">${</span><span class="nx">transaction</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// using wallet.json file</span>
+<span class="w">    </span><span class="c1">// const walletJson = readFileSync(&quot;wallet.json&quot;, &#39;utf8&#39;);</span>
+<span class="w">    </span><span class="c1">// const keys = JSON.parse(walletJson);</span>
+<span class="w">    </span><span class="c1">// const signer = buildAccountSigner(keys);</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">waitForTransactionFinalization</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction finalized:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">fromId</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">tokenId</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TokenAmount</span><span class="p">.</span><span class="nx">fromDecimal</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">.</span><span class="nx">info</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">decimals</span><span class="p">);</span><span class="w"> </span><span class="c1">// some amount to transfer</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">recipient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TokenHolder</span><span class="p">.</span><span class="nx">fromAccountAddress</span><span class="p">(</span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="s2">&quot;recipient_address&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// replace with actual address to receive</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// memo = CborMemo.fromString(&quot;Any Message To add&quot;)</span>
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">TransactionSummaryType</span><span class="p">.</span><span class="nx">AccountTransaction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction type: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">transfer</span><span class="o">:</span><span class="w"> </span><span class="kt">TokenTransfer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">recipient</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">amount</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">memo</span><span class="p">,</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Specified transfer:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">transfer</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
 
-<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.TokenUpdate</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">console.log</span><span class="p">(</span><span class="s1">&#39;TokenTransfer events:&#39;</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.Failed</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">RejectReasonTag</span><span class="p">.</span><span class="nx">TokenUpdateTransactionFailed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected reject reason tag: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// From a service perspective:</span>
+<span class="w">        </span><span class="c1">// create the token instance</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">transfer</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="nx">transfer</span><span class="p">,</span><span class="w"> </span><span class="nx">signer</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Transaction submitted with hash: </span><span class="si">${</span><span class="nx">transaction</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">waitForTransactionFinalization</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction finalized:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">TransactionSummaryType</span><span class="p">.</span><span class="nx">AccountTransaction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction type: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">details</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">.</span><span class="nx">details</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">,</span><span class="w"> </span><span class="nx">details</span><span class="p">);</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">default</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction kind: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.TokenUpdate</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">console.log</span><span class="p">(</span><span class="s1">&#39;TokenTransfer events:&#39;</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.Failed</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">RejectReasonTag</span><span class="p">.</span><span class="nx">TokenUpdateTransactionFailed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected reject reason tag: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">details</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">.</span><span class="nx">details</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">,</span><span class="w"> </span><span class="nx">details</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">default</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction kind: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error during transfer operation:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Wallet file is empty!`</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1356,6 +1371,200 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 </pre></div>
 </div>
 </section>
+<section id="pause-a-token">
+<span id="web-sdk-pause-plt-transfers"></span><h3>Pause a token<a class="headerlink" href="#pause-a-token" title="Link to this heading">#</a></h3>
+<p>This example demonstrates how to suspend balance transfer operations for a Protocol Level Token (PLT). Only the token issuer can pause the token.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* Pause: suspends balance transfer operations for the PLT.</span>
+<span class="cm">* Only the nominated account (token issuer) can pause the token.</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/pause.ts</span>
+<span class="cm">*/</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">parseWallet</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">buildAccountSigner</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">TransactionSummaryType</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">TransactionKindString</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">RejectReasonTag</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">TransactionEventTag</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TokenId</span><span class="p">,</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">,</span><span class="w"> </span><span class="nx">Token</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/plt&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/nodejs&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">credentials</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@grpc/grpc-js&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm">* The following example demonstrates how to pause a token.</span>
+<span class="cm">*/</span>
+<span class="c1">// using wallet.export file</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">walletFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">&quot;wallet.export&quot;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">);</span>
+<span class="c1">// parse the arguments</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TokenId</span><span class="p">.</span><span class="nx">fromString</span><span class="p">(</span><span class="s2">&quot;TOKEN_SYMBOL&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Replace with actual token ID</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">walletFile</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Service perspective: For backend services and automated systems</span>
+<span class="cm">    Requires direct access to wallet files containing private keys. The service</span>
+<span class="cm">    can sign and execute transactions immediately. Use this when building APIs,</span>
+<span class="cm">    trading bots, or administrative tools where the service manages tokens automatically.*/</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">walletExport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parseWallet</span><span class="p">(</span><span class="nx">walletFile</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">signer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildAccountSigner</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// using wallet.json file</span>
+<span class="w">    </span><span class="c1">// const walletJson = readFileSync(&quot;wallet.json&quot;, &#39;utf8&#39;);</span>
+<span class="w">    </span><span class="c1">// const keys = JSON.parse(walletJson);</span>
+<span class="w">    </span><span class="c1">// const signer = buildAccountSigner(keys);</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create the token instance</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">fromId</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">tokenId</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Only the token issuer can pause the token</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Attempting to pause token </span><span class="si">${</span><span class="nx">tokenId</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="si">}</span><span class="sb">...`</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Execute the pause operation</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">pause</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="nx">signer</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Pause transaction submitted with hash: </span><span class="si">${</span><span class="nx">transaction</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">waitForTransactionFinalization</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction finalized:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">TransactionSummaryType</span><span class="p">.</span><span class="nx">AccountTransaction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction type: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.TokenUpdate</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">console.log</span><span class="p">(</span><span class="s1">&#39;TokenPause events:&#39;</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">TransactionEventTag</span><span class="p">.</span><span class="nx">TokenModuleEvent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected event type: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">tag</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Token module event:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">,</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">details</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;TokenPauseEventDetails&#39;</span><span class="p">));</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.Failed</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">RejectReasonTag</span><span class="p">.</span><span class="nx">TokenUpdateTransactionFailed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected reject reason tag: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">details</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">.</span><span class="nx">details</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">,</span><span class="w"> </span><span class="nx">details</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">default</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction kind: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error during pause operation:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Wallet file is empty!`</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="unpause-a-token">
+<span id="web-sdk-unpause-plt-transfers"></span><h3>Unpause a token<a class="headerlink" href="#unpause-a-token" title="Link to this heading">#</a></h3>
+<p>This example demonstrates how to resume balance transfer operations for a Protocol Level Token (PLT). Only the token issuer can unpause the token.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* Unpause: resumes balance transfer operations for the PLT.</span>
+<span class="cm">* Only the nominated account (token issuer) can unpause the token.</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/pause.ts</span>
+<span class="cm">*/</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">parseWallet</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">buildAccountSigner</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">TransactionSummaryType</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">TransactionKindString</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">RejectReasonTag</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">TransactionEventTag</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TokenId</span><span class="p">,</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">,</span><span class="w"> </span><span class="nx">Token</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/plt&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/nodejs&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">credentials</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@grpc/grpc-js&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm">* The following example demonstrates how to unpause a token.</span>
+<span class="cm">*/</span>
+<span class="c1">// using wallet.export file</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">walletFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">&quot;wallet.export&quot;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="p">);</span>
+<span class="c1">// parse the arguments</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tokenId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TokenId</span><span class="p">.</span><span class="nx">fromString</span><span class="p">(</span><span class="s2">&quot;TOKEN_SYMBOL&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Replace with actual token ID</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">walletFile</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Service perspective: For backend services and automated systems</span>
+<span class="cm">    Requires direct access to wallet files containing private keys. The service</span>
+<span class="cm">    can sign and execute transactions immediately. Use this when building APIs,</span>
+<span class="cm">    trading bots, or administrative tools where the service manages tokens automatically.*/</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">walletExport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parseWallet</span><span class="p">(</span><span class="nx">walletFile</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">address</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">signer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildAccountSigner</span><span class="p">(</span><span class="nx">walletExport</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// using wallet.json file</span>
+<span class="w">    </span><span class="c1">// const walletJson = readFileSync(&quot;wallet.json&quot;, &#39;utf8&#39;);</span>
+<span class="w">    </span><span class="c1">// const keys = JSON.parse(walletJson);</span>
+<span class="w">    </span><span class="c1">// const signer = buildAccountSigner(keys);</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create the token instance</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">fromId</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span><span class="w"> </span><span class="nx">tokenId</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Only the token issuer can unpause the token</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Attempting to unpause token </span><span class="si">${</span><span class="nx">tokenId</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span><span class="si">}</span><span class="sb">...`</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Execute the unpause operation</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Token</span><span class="p">.</span><span class="nx">unpause</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="nx">signer</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Unpause transaction submitted with hash: </span><span class="si">${</span><span class="nx">transaction</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">waitForTransactionFinalization</span><span class="p">(</span><span class="nx">transaction</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transaction finalized:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">TransactionSummaryType</span><span class="p">.</span><span class="nx">AccountTransaction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction type: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="kr">type</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.TokenUpdate</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">console.log</span><span class="p">(</span><span class="s1">&#39;TokenUnpause events:&#39;</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">TransactionEventTag</span><span class="p">.</span><span class="nx">TokenModuleEvent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected event type: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">tag</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Token module event:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">e</span><span class="p">,</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">details</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;TokenPauseEventDetails&#39;</span><span class="p">));</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nx">TransactionKindString.Failed</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">RejectReasonTag</span><span class="p">.</span><span class="nx">TokenUpdateTransactionFailed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected reject reason tag: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">tag</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="kd">const</span><span class="w"> </span><span class="nx">details</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">.</span><span class="nx">details</span><span class="p">);</span>
+<span class="w">                </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">rejectReason</span><span class="p">.</span><span class="nx">contents</span><span class="p">,</span><span class="w"> </span><span class="nx">details</span><span class="p">);</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="nx">default</span><span class="o">:</span>
+<span class="w">                </span><span class="kt">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Unexpected transaction kind: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">summary</span><span class="p">.</span><span class="nx">transactionType</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error during unpause operation:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Wallet file is empty!`</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -1464,6 +1673,8 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-account-from-allow-list">Remove account from allow list</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-account-to-deny-list">Add account to deny list</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-account-from-deny-list">Remove account from deny list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pause-a-token">Pause a token</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unpause-a-token">Unpause a token</a></li>
 </ul>
 </li>
 </ul>
