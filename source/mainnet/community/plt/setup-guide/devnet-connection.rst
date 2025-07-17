@@ -40,3 +40,4 @@ Follow these steps to configure your wallet to connect to DevNet:
    .. image:: ../setup-guide/Images/devnet-connection.png
       :alt: Opening network options
       :width: 50%
+
