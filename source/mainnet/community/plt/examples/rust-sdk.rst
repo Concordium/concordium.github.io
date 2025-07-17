@@ -41,6 +41,8 @@ See the following sections for detailed examples:
 - :ref:`Remove account from allow list<rust-remove-from-allow-list>`
 - :ref:`Add account to deny list<rust-add-to-deny-list>`
 - :ref:`Remove account from deny list<rust-remove-from-deny-list>`
+- :ref:`Pause a token<rust-pause-token>`
+- :ref:`Unpause a token<rust-unpause-token>`
 
 
 Querying tokens
@@ -901,6 +903,160 @@ Only the token issuer can modify the deny list.
 
         let transaction_hash = client.send_block_item(&item).await?;
         println!("Transaction submitted with hash: {}", transaction_hash);
+
+        let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
+        println!("Transaction finalized: {:#?}", result);
+
+        Ok(())
+    }
+
+.. _rust-pause-token:
+
+Pause a token
+-------------
+
+This example demonstrates how to suspend balance transfer operations for a Protocol Level Token (PLT). Only the token issuer can pause the token.
+
+.. code-block:: rust
+
+    //! # Pause Token
+    //! This example demonstrates how to pause a Protocol Level Token.
+    //! Pausing suspends balance transfer operations for the PLT
+    //! Only the token issuer can pause the token.
+    //! ## How to use this example:
+    //! 1. Set your wallet file path in the `WALLET_FILE` constant below
+    //! 2. Set the token ID in the `TOKEN_ID` constant
+    //! 3. Run with: `cargo run --example pause_token`
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-pause.rs
+
+    use anyhow::Context;
+    use concordium_base::protocol_level_tokens::{operations, TokenId};
+    use concordium_rust_sdk::{
+        common::types::TransactionTime,
+        types::{
+            transactions::{send, BlockItem},
+            WalletAccount,
+        },
+        v2,
+    };
+    use std::{path::PathBuf, str::FromStr};
+
+    // CONFIGURATION - Modify these values for your use case
+    const WALLET_FILE: &str = "wallet.export";
+    const TOKEN_ID: &str = "TOKEN_SYMBOL"; // Replace with the actual token ID
+
+    #[tokio::main]
+    async fn main() -> anyhow::Result<()> {
+        let mut client = v2::Client::new(v2::Endpoint::from_str(
+            "https://grpc.devnet-plt-beta.concordium.com:20000",
+        )?)
+        .await
+        .context("Failed to connect to Concordium node")?;
+
+        let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
+
+        let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
+            .context("Could not read the wallet file")?;
+
+        let nonce = client
+            .get_next_account_sequence_number(&keys.address)
+            .await?
+            .nonce;
+        let expiry: TransactionTime =
+            TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
+
+        println!("Attempting to pause token {}...", TOKEN_ID);
+
+        let operation = operations::pause();
+        let txn = send::token_update_operations(
+            &keys,
+            keys.address,
+            nonce,
+            expiry,
+            token_id,
+            [operation].into_iter().collect(),
+        )?;
+        let item = BlockItem::AccountTransaction(txn);
+
+        let transaction_hash = client.send_block_item(&item).await?;
+        println!("Pause transaction submitted with hash: {}", transaction_hash);
+
+        let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
+        println!("Transaction finalized: {:#?}", result);
+
+        Ok(())
+    }
+
+.. _rust-unpause-token:
+
+Unpause a token
+---------------
+
+This example demonstrates how to resume balance transfer operations for a Protocol Level Token (PLT). Only the token issuer can unpause the token.
+
+.. code-block:: rust
+
+    //! # Unpause Token
+    //! This example demonstrates how to unpause a Protocol Level Token.
+    //! Unpausing resumes balance transfer operations for the PLT.
+    //! Only the token issuer can unpause the token.
+    //! ## How to use this example:
+    //! 1. Set your wallet file path in the `WALLET_FILE` constant below
+    //! 2. Set the token ID in the `TOKEN_ID` constant
+    //! 3. Run with: `cargo run --example unpause_token`
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-pause.rs
+
+    use anyhow::Context;
+    use concordium_base::protocol_level_tokens::{operations, TokenId};
+    use concordium_rust_sdk::{
+        common::types::TransactionTime,
+        types::{
+            transactions::{send, BlockItem},
+            WalletAccount,
+        },
+        v2,
+    };
+    use std::{path::PathBuf, str::FromStr};
+
+    // CONFIGURATION - Modify these values for your use case
+    const WALLET_FILE: &str = "wallet.export";
+    const TOKEN_ID: &str = "TOKEN_SYMBOL"; // Replace with the actual token ID
+
+    #[tokio::main]
+    async fn main() -> anyhow::Result<()> {
+        let mut client = v2::Client::new(v2::Endpoint::from_str(
+            "https://grpc.devnet-plt-beta.concordium.com:20000",
+        )?)
+        .await
+        .context("Failed to connect to Concordium node")?;
+
+        let token_id = TokenId::try_from(TOKEN_ID.to_string())?;
+
+        let keys: WalletAccount = WalletAccount::from_json_file(PathBuf::from(WALLET_FILE))
+            .context("Could not read the wallet file")?;
+
+        let nonce = client
+            .get_next_account_sequence_number(&keys.address)
+            .await?
+            .nonce;
+        let expiry: TransactionTime =
+            TransactionTime::from_seconds((chrono::Utc::now().timestamp() + 300) as u64);
+
+        println!("Attempting to unpause token {}...", TOKEN_ID);
+
+        let operation = operations::unpause();
+        let txn = send::token_update_operations(
+            &keys,
+            keys.address,
+            nonce,
+            expiry,
+            token_id,
+            [operation].into_iter().collect(),
+        )?;
+        let item = BlockItem::AccountTransaction(txn);
+
+        let transaction_hash = client.send_block_item(&item).await?;
+        println!("Unpause transaction submitted with hash: {}", transaction_hash);
 
         let (_, result) = client.wait_until_finalized(&transaction_hash).await?;
         println!("Transaction finalized: {:#?}", result);
