@@ -282,7 +282,7 @@ Exchange rates
 ==============
 
 Conversion rates between NRG, CCD, and Euros can fluctuate between blocks. To get a best estimate of the current
-exchange rates, query the chain parameters of the :term:`best block`:
+exchange rates, query the chain parameters of the best block:
 
 .. code-block:: console
 
