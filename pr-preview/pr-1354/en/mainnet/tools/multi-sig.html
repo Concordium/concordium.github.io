@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tools/multi-sig.801e22c1-6967-472b-af3b-ea583ec9a243.js"></script>
+    <script defer="defer" src="../_static/tippy/tools/multi-sig.b437d597-02b0-4fe6-bbce-ca8a0b2f76c6.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/multi-sig';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/multi-sig.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -644,7 +644,8 @@ additional key pair.</p>
 <p class="sd-card-text">Using the node connection to the hosted testnet node as an example:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>&lt;account-name-or-account-address&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<span class="w">   </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--secure
 </pre></div>
 </div>
 <p class="sd-card-text">This will output something like:</p>
@@ -679,7 +680,8 @@ additional key pair.</p>
 <span class="w">   </span>--credId<span class="w"> </span>&lt;credential-registration-id&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--sender<span class="w"> </span>&lt;account-name-or-address&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<span class="w">   </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--secure
 </pre></div>
 </div>
 <p class="sd-card-text">where <code class="docutils literal notranslate"><span class="pre">update-keys.json</span></code> is a file of the following format:</p>
@@ -730,7 +732,8 @@ and run its command locally to generate a credential file.</p>
 <span class="w">   </span>--new-threshold<span class="w"> </span>&lt;number-of-credential-to-sign&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--sender<span class="w"> </span>&lt;account-name-or-address&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<span class="w">   </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--secure
 </pre></div>
 </div>
 <p class="sd-card-text">where <code class="docutils literal notranslate"><span class="pre">new-credential.json</span></code> is the file from the previous step.</p>
@@ -926,7 +929,8 @@ run the following command:</p>
 <span class="w">   </span>--signers<span class="w"> </span><span class="s2">&quot;0:0&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--expiry<span class="w"> </span><span class="s2">&quot;24h&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<span class="w">   </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--secure
 </pre></div>
 </div>
 <div class="admonition note">
@@ -968,7 +972,8 @@ from a file, run the following command:</p>
 <span class="w">   </span>--energy<span class="w"> </span><span class="m">5000</span><span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--sender<span class="w"> </span>4jxvYasaPncfmCFCLZCvuL5cZuvR5HAQezCHZH7ZA7AGsRYpix<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--signers<span class="w"> </span><span class="s2">&quot;0:0&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<span class="w">   </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--secure
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">keypair.json</span></code> is a file of the following format:</p>
@@ -1013,7 +1018,8 @@ empty <code class="docutils literal notranslate"><span class="pre">keypair.json<
 previous section) on a potentially different device by a different entity, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>add-signature<span class="w"> </span>./transaction.json<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<span class="w">   </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--secure
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1062,7 +1068,8 @@ you can use the <code class="docutils literal notranslate"><span class="pre">--k
 previous section) on-chain, run the following command:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>transaction<span class="w"> </span>submit<span class="w"> </span>./transaction.json<span class="w"> </span><span class="se">\</span>
 <span class="w">   </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">   </span>--grpc-ip<span class="w"> </span>node.testnet.concordium.com
+<span class="w">   </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--secure
 </pre></div>
 </div>
 <div class="admonition note">

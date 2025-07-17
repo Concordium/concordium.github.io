@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/fungible-tokens/smart-contract.28a10ce3-4647-4d05-adbc-afa24ec5be71.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/fungible-tokens/smart-contract.6e00a790-2fa7-4e3d-88a5-3562a79fb247.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/fungible-tokens/smart-contract';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/fungible-tokens/smart-contract.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -1037,9 +1037,9 @@
 </section>
 <section id="deploy-the-smart-contract">
 <h3>Deploy the smart contract<a class="headerlink" href="#deploy-the-smart-contract" title="Link to this heading">#</a></h3>
-<p>If you don’t have your own testnet node running, Concordium provides a running testnet gRPC node that is available at <code class="docutils literal notranslate"><span class="pre">node.testnet.concordium.com</span></code> on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of <em>chain methods only</em>. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the <a class="reference external" href="https://status.testnet.concordium.software">Testnet status page</a>. For some use cases you might need to run your own local node due to the limitations of this one.</p>
+<p>If you don’t have your own testnet node running, Concordium provides a running testnet gRPC node that is available at <code class="docutils literal notranslate"><span class="pre">grpc.testnet.concordium.com</span></code> on port 20000 (gRPCv2 and gRPC-web). You can use this node for API calls of <em>chain methods only</em>. This node is maintained by Concordium, but Concordium does not guarantee availability. The status of this node is available on the <a class="reference external" href="https://status.testnet.concordium.software">Testnet status page</a>. For some use cases you might need to run your own local node due to the limitations of this one.</p>
 <p>Run the command below to deploy the smart contract. This command is structured to use the Concordium testnet node described above. If you are using your own local node, adjust the command accordingly.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/fungible/module.wasm.v1 --sender &lt;YOUR-ACCOUNT&gt; --name &lt;YOUR-CONTRACT-NAME&gt; --grpc-port 20000 --grpc-ip node.testnet.concordium.com</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client module deploy dist/fungible/module.wasm.v1 --sender &lt;YOUR-ACCOUNT&gt; --name &lt;YOUR-CONTRACT-NAME&gt; --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/deploy-sc.png"><img alt="dark console screen with result of running the command above" src="../../_images/deploy-sc.png" style="width: 100%;" />
@@ -1048,7 +1048,7 @@
 <section id="initialize-the-smart-contract">
 <h3>Initialize the smart contract<a class="headerlink" href="#initialize-the-smart-contract" title="Link to this heading">#</a></h3>
 <p>Using the Module reference hash value, create a contract instance with the command below. This command is structured to use the Concordium testnet node described above. If you are using your own local node, adjust the command accordingly.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;MODULE-HASH&gt; --sender &lt;YOUR-ACCOUNT&gt; --energy 30000 --contract &lt;YOUR-CONTRACT-NAME&gt; --grpc-port 20000 --grpc-ip node.testnet.concordium.com</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client contract init &lt;MODULE-HASH&gt; --sender &lt;YOUR-ACCOUNT&gt; --energy 30000 --contract &lt;YOUR-CONTRACT-NAME&gt; --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/initialize-sc.png"><img alt="dark console screen with result of running the command above" src="../../_images/initialize-sc.png" style="width: 100%;" />

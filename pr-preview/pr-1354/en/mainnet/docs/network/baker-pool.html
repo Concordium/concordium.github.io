@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/network/baker-pool.1a50fade-44e0-468b-9d79-0913847c3b86.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/network/baker-pool.6aa9e98b-84b3-4f47-ac4e-c163598df539.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/baker-pool';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/baker-pool.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -571,11 +571,12 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Validator Management</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="guides/validation-with-wallets.html">Validation with Concordium wallets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/baker-windows.html">Import validator keys on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/baker-macos.html">Import validator keys on macOS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/baker-ubuntu.html">Import validator keys on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guides/baker-docker.html">Import validator keys on Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guides/become-validator.html">Validation with the Concordium Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/add-baker-mw.html">Add a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/import-validator-keys.html">Import validator keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/update-baker-mw.html">Change validator options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guides/stop-validator.html">Stop a validator</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="nodes/node-requirements.html">Run a Concordium Node</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -678,10 +679,6 @@
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-account-private-key.html">Export account private key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/export-transaction-logs.html">Export transaction logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/add-baker-mw.html">Add a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/update-baker-mw.html">Change validator options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/stop-validator.html">Stop a validator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../mobile-wallet/suspend-unsuspend-validator.html">Suspend/Unsuspend a validator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/add-delegation.html">Delegate to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/remove-delegation.html">Remove delegation to a staking pool or passive delegation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/update-delegation.html">Update delegation to a staking pool or passive delegation</a></li>
@@ -765,7 +762,7 @@
 <p>A <a class="reference internal" href="../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">validator</span></a> is a node that participates in the network by producing new blocks that are added to the chain. There are some recommended best practices around validation, particularly when a validator runs a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a>. A validator can choose to open a staking pool to which others can <a class="reference internal" href="../protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">delegate</span></a> some of their stake.</p>
 <section id="best-practices-for-validation">
 <h2>Best practices for validation<a class="headerlink" href="#best-practices-for-validation" title="Link to this heading">#</a></h2>
-<p>As a validator you should manage your validator node responsibily for the benefit of all users of the blockchain. The recommendations for validators are:</p>
+<p>As a validator you should manage your validator node responsibly for the benefit of all users of the blockchain. The recommendations for validators are:</p>
 <ul class="simple">
 <li><p>Make sure your node is running 24/7/365 in a reliable place.</p></li>
 <li><p>Protect your validator keys so that they are not lost or compromised.</p></li>
@@ -776,7 +773,7 @@
 <section id="recommendations-for-staking-pool-owners">
 <h3>Recommendations for staking pool owners<a class="headerlink" href="#recommendations-for-staking-pool-owners" title="Link to this heading">#</a></h3>
 <p>If you are running a staking pool, you are responsible for managing your pool to maximize returns, both for yourself and those who have delegated stake to your pool.</p>
-<p>To help potential delegators with their choice, it is a good idea to create a website with information and add this URL to your staking pool configuration. The information you need is available on <a class="reference external" href="https://ccdscan.io">CCDScan</a> , read <a class="reference internal" href="../../tools/ccd-scan/ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">this staking article</span></a> for more details on and the tool. Through it, potential delegators can read about the pool, leading to a better understaing your goals. Having a URL on your staking pool configuration is not required.</p>
+<p>To help potential delegators with their choice, it is a good idea to create a website with information and add this URL to your staking pool configuration. The information you need is available on <a class="reference external" href="https://ccdscan.io">CCDScan</a> , read <a class="reference internal" href="../../tools/ccd-scan/ccd-scan-staking.html#home-screen-baker"><span class="std std-ref">this staking article</span></a> for more details on and the tool. Through it, potential delegators can read about the pool, leading to a better understanding of your goals. Having a URL on your staking pool configuration is not required.</p>
 </section>
 </section>
 <section id="research-a-staking-pool">

@@ -79,7 +79,7 @@ You can explore the function by invoking it with the ``concordium-client`` as fo
 
 .. code-block:: console
 
-    $ concordium-client contract invoke 6372 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 20000 --grpc-ip node.testnet.concordium.com
+    $ concordium-client contract invoke 6372 --entrypoint supportsPermit --parameter-json supportsPermit.json --grpc-port 20000 --grpc-ip grpc.testnet.concordium.com --secure
 
 ``6372`` is the index of the smart contract. A smart contract address consists of an index and a subindex, in the current protocol the subindex will always be 0. So, in other words, the command above means invoke contract with index 6372 on the testnet.
 
