@@ -13,7 +13,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Account
 
-      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`Privacy Guardians<Privacy Guardian (PG)>`, in cooperation with the account's :term:`identity provider`.
+      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`privacy guardians<Privacy Guardian (PG)>`, in cooperation with the account's :term:`identity provider`.
 
    Account address
 
@@ -291,7 +291,11 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Identity Provider
 
-      A person or organization that performs off-chain identification of users. Users are required to obtain an identity object from an identity provider in order to open an account on the Concordium Platform.
+      A person or organization that performs off-chain identification of users. Users are required to obtain an identity object from an identity provider in order to open an account on the Concordium platform.
+
+   Identity record
+
+      The record on the account holder stored at the IDP after having issued an identity credential to the account holder.
 
    Initial account
 
