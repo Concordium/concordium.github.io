@@ -13,7 +13,7 @@ Before using this example, make sure to install the required dependencies:
 
 .. code-block:: bash
 
-  npm install @concordium/web-sdk@10.0.0-alpha.10
+  npm install @concordium/web-sdk@10.0.0-alpha.12
   npm install @grpc/grpc-js
 
 
@@ -72,6 +72,7 @@ Retrieve all Protocol-Level Tokens available on the network:
         Number(20000),
         credentials.createSsl()
     );
+
     /**
     * The following example demonstrates how to query the list of PLTs available in the network.
     */
@@ -234,7 +235,7 @@ Transfer PLTs between accounts:
     // parse the other arguments
     const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
     const token = await Token.fromId(client, tokenId);
-    const amount = TokenAmount.fromDecimal(4, token.info.state.decimals); // some amount to transfer
+    const amount = TokenAmount.fromDecimal(1, token.info.state.decimals); // some amount to transfer
     const recipient = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("recipient_address")); // replace with actual address to receive
     const memo = undefined;
     // memo = CborMemo.fromString("Any Message To add")
@@ -261,7 +262,7 @@ Transfer PLTs between accounts:
     switch (result.summary.transactionType) {
         case TransactionKindString.TokenUpdate:
             console.log('TokenTransfer events:');
-            result.summary.events.forEach((e) => console.log(e.event));
+            result.summary.events.forEach((e) => console.log(e));
             break;
         case TransactionKindString.Failed:
             if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
@@ -352,7 +353,7 @@ Mint new tokens (issuer only):
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('TokenMint events:');
-                    result.summary.events.forEach((e) => console.log(e.event));
+                    result.summary.events.forEach((e) => console.log(e));
                     break;
                 case TransactionKindString.Failed:
                     if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
@@ -443,7 +444,7 @@ Burn existing tokens (issuer only):
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('TokenBurn events:');
-                    result.summary.events.forEach((e) => console.log(e.event));
+                    result.summary.events.forEach((e) => console.log(e));
                     break;
                 case TransactionKindString.Failed:
                     if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
@@ -489,6 +490,7 @@ Add an account to the token's allow list (issuer only):
         TransactionSummaryType,
         TransactionKindString,
         RejectReasonTag,
+        TransactionEventTag,
     } from '@concordium/web-sdk';
     import { TokenId, Cbor, TokenHolder, Token } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
@@ -528,7 +530,7 @@ Add an account to the token's allow list (issuer only):
             // Execute the add to allow list operation
             const transaction = await Token.addAllowList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-
+            
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -539,7 +541,12 @@ Add an account to the token's allow list (issuer only):
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('AddAllowListEvent events:');
-                    result.summary.events.forEach((e) => console.log(e.event));
+                    result.summary.events.forEach((e) => {
+                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e.tag);
+                        }
+                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                    });
                     break;
                 case TransactionKindString.Failed:
                     if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
@@ -580,6 +587,7 @@ Remove an account from the token's allow list (issuer only):
         TransactionSummaryType,
         TransactionKindString,
         RejectReasonTag,
+        TransactionEventTag,
     } from '@concordium/web-sdk';
     import { TokenId, Cbor, TokenHolder, Token } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
@@ -630,7 +638,12 @@ Remove an account from the token's allow list (issuer only):
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('RemoveAllowListEvent events:');
-                    result.summary.events.forEach((e) => console.log(e.event));
+                    result.summary.events.forEach((e) => {
+                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e.tag);
+                        }
+                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                    });
                     break;
                 case TransactionKindString.Failed:
                     if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
@@ -671,6 +684,7 @@ Add an account to the token's deny list (issuer only):
         TransactionSummaryType,
         TransactionKindString,
         RejectReasonTag,
+        TransactionEventTag,
     } from '@concordium/web-sdk';
     import { TokenId, Cbor, Token, TokenHolder } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
@@ -721,7 +735,12 @@ Add an account to the token's deny list (issuer only):
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('AddDenyListEvent events:');
-                    result.summary.events.forEach((e) => console.log(e.event));
+                    result.summary.events.forEach((e) => {
+                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e.tag);
+                        }
+                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                    });
                     break;
                 case TransactionKindString.Failed:
                     if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
@@ -762,6 +781,7 @@ Remove an account from the token's deny list (issuer only):
         TransactionSummaryType,
         TransactionKindString,
         RejectReasonTag,
+        TransactionEventTag,
     } from '@concordium/web-sdk';
     import { TokenId, Cbor, TokenHolder, Token } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
@@ -791,17 +811,17 @@ Remove an account from the token's deny list (issuer only):
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
-
+        
         try {
             // create the token instance
             const token = await Token.fromId(client, tokenId);
             // Only the token issuer can modify the deny list
             console.log(`Attempting to remove ${targetAddress.toString()} from deny list for ${tokenId.toString()}...`);
-
+            
             // Execute the remove from deny list operation
             const transaction = await Token.removeDenyList(token, sender, targetAddress, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
-
+            
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
@@ -812,7 +832,12 @@ Remove an account from the token's deny list (issuer only):
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('RemoveDenyListEvent events:');
-                    result.summary.events.forEach((e) => console.log(e.event));
+                    result.summary.events.forEach((e) => {
+                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e.tag);
+                        }
+                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                    });                
                     break;
                 case TransactionKindString.Failed:
                     if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {

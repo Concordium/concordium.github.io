@@ -14,8 +14,8 @@ Before using this example, make sure your Cargo.toml includes:
 .. code-block:: toml
 
   # Concordium dependencies
-  concordium-rust-sdk = "=7.0.0-alpha.2"
-  concordium_base = "=8.0.0-alpha.1"
+  concordium-rust-sdk = "=7.0.0-alpha.3"
+  concordium_base = "=8.0.0-alpha.2"
 
 
 Available examples
