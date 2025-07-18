@@ -43,5 +43,6 @@ Office Hours
    :hidden:
 
    DevNet <devnet>
+   Protocol-Level Tokens (PLTs) <plt/index>
    Developer Spotlight <developer-spotlight/index>
    Office Hours <office-hours/index>
