@@ -12,7 +12,7 @@ Validation is key to the Concordium blockchain. A :term:`node` is a validator no
 Stake and lottery
 =================
 
-A validator needs to :term:`stake<staked amount>` a part of its CCD balance on the validator account (at least 500,000 CCD), which is then locked. At any point, the validator can manually release a part of the staked amount, as long as the minimum 500,000 CCD remain staked, or close down the validator and release everything. Unstaked CCD goes through a :term:`cool-down<cool-down period>`, during which it does not earn rewards. Once the cool-down is over, the CCD is unlocked and available in the wallet to be moved or transferred.
+A validator needs to stake a part of its CCD balance on the validator account (at least 500,000 CCD), which is then locked. At any point, the validator can manually release a part of the staked amount, as long as the minimum 500,000 CCD remain staked, or close down the validator and release everything. Unstaked CCD goes through a :term:`cool-down<cool-down period>`, during which it does not earn rewards. Once the cool-down is over, the CCD is unlocked and available in the wallet to be moved or transferred.
 
 .. note::
 
@@ -72,7 +72,7 @@ For example, if you decrease a valiator's stake, the stake will be decreased at 
 Validator keys
 ==============
 
-A node uses a set of :term:`cryptographic keys<private keys>` called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the :term:`lottery <lottery power>` as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an account. The validator node will start validation after the next :term:`pay day` once the transaction has been approved.
+A node uses a set of cryptographic keys called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the :term:`lottery <lottery power>` as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an account. The validator node will start validation after the next :term:`pay day` once the transaction has been approved.
 
 Validator account
 -----------------

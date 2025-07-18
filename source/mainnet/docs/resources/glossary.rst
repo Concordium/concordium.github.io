@@ -13,16 +13,23 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Account
 
-      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`Privacy Guardians<Privacy Guardian (PG)>`, in cooperation with the account's :term:`identity provider`.
+      An addressable store of funds on the blockchain. An account is associated with one or more *account keys* that can be used to authorize transactions originating from the account, as well as with an :term:`encryption key`. An account is also associated with the account holder's :term:`identity`, although this association is encrypted. This identity can only be disclosed by :term:`privacy guardians<Privacy Guardian (PG)>`, in cooperation with the account's :term:`identity provider`.
+
+   Account address
+
+      Characters associated with an account that stores funds to access the account and perform transactions.
 
    Account credential
 
       A certificate derived from the :term:`identity object` that proves that the owner has been verified by an identity provider. The key feature of the credential is that it **does not** identify the owner to the identity provider, nor to any other single entity, however it contains enough information to allow disclosing an identity in concert with the identity provider to find the owner.
 
+   Account private key
+
+      Per account private key - 64 characters long hexadecimal string.
 
    Account weight
 
-      The Account weight of an account corresponds to the weight this account has for voting. In the 2025 election, this is computed as the average amount of CCD on the account between the 26th of February and the 25th of May 2025.
+      The account weight of an account in an election is computed as the average amount of CCD on the account during the designated calculation period.
 
    Accumulated weight
 
@@ -36,29 +43,21 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Approval voting is a single-winner electoral system in which the voter can choose or approve any number of candidates, effectively assigning a 0 or a 1 to every candidate. The winner is the single candidate approved by the largest number of voters. Approval voting can be achieved by setting the selection limit to the total number of options in a contest.
 
+   Archive
+
+      Action of hiding a verifiable credential from a wallet.
+
    Attributes
 
       User data, such as date of birth or country of residence, that is associated with a user :term:`identity`. Users can choose which attributes should be revealed in each of their accounts.
 
-   Baker
+   Backup file
 
-      This term is no longer used. See :term:`validator<validator>`.
-
-   Baker pool
-
-      This term is no longer used. See :term:`staking pool<staking pool>`.
-
-   Best block
-
-      This term is no longer used. See :term:`Concordium Byzantine Fault Tolerance (BFT) protocol`.
-
-   Best chain
-
-      This term is no longer used. See :term:`Concordium Byzantine Fault Tolerance (BFT) protocol`.
+      A secure, portable data file containing wallet information, keys, and/or credentials that can be exported from a wallet application and later imported to restore access to blockchain assets. Backup files provide one method for disaster recovery and wallet migration.
 
    Block
 
-      The basic unit of the blockchain, which is produced by a :term:`validator`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block has a :term:`slot time<slot>` that records when it was produced. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.
+      The basic unit of the blockchain, which is produced by a :term:`validator`. A block contains a (possibly empty) list of :term:`transactions<transaction>`, and has a pointer to a previous block (with the exception of the :term:`genesis block`). A block and its predecessors form a chain, and the sequence of transactions they contain form a ledger. Each block records when it was produced. A block also contains information relating to consensus, for instance establishing which validator created the block, and that the validator was entitled to do so.
 
    Block reward commission
 
@@ -83,11 +82,11 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Candidate
 
-      Option on the official list of candidates for the election. Since there are only 10 places for the 2025 election, not all nominees are necessarily candidates.
+      Option on the official list of candidates for the election.
 
    cargo-concordium
 
-      An extension of Rust's ``cargo`` tool. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
+      The Concordium smart contract building and testing tool. An extension of Rust's ``cargo`` tool. It can be used for compiling and testing smart contracts, and enables features such as building contract schemas.
 
    Catch-up
 
@@ -107,7 +106,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    CCDScan
 
-      CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. Often used to research validators and pools before deciding to delegate funds to a particular pool.
+      Block explorer tool for the Concordium blockchain. CCDScan effectively serves as a search engine for data on the Concordium blockchain and enables users to search for, explore, and analyze relevant on-chain data. Often used to research validators and pools before deciding to delegate funds to a particular pool.
 
    Chain
 
@@ -127,72 +126,88 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       To make sure that :term:`zero-knowledge proofs<zero-knowledge proof>` cannot be reused (e.g., if they are stolen), the verifier can and should specify a challenge string. This can be an arbitrary byte array which is used by the prover (wallet) when producing the proof. The proof will only validate with respect to the challenge that was used to produce it. The verifier server can thus use the challenge to make sure the proofs it is receiving are not reused, and to handle their lifetime (e.g., it can set the challenge it supplied to expire in 5 minutes).
 
+   Combined decryption share
+
+      The combination of all decryption shares, allows to fully decrypt a tallied result.
+
    Concordium client
 
-      A command-line tool that ships with the Concordium distribution. It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the mobile wallets. Once an account has been imported, Concordium client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
-
-   Consensus
-
-      The process by which nodes agree which :term:`transactions<transaction>` have occurred and in what order. This consists of :term:`validation<validation>`.
-
-   Cool-down period
-
-      A period of time during which the funds are frozen and cannot be spent.
+      The Concordium command line tool. It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the |bw|. Once an account has been imported, Concordium client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
 
    Concordium Byzantine Fault Tolerance (BFT) protocol
 
       The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the validators should produce a block. The other validators then sign this block, and their collective signatures are aggregated to form a quorum certificate (QC). This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the validators will instead send timeout messages, which are aggregated to form a timeout certificate (TC). Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
 
-   Credential
+   Consensus
 
-      See :term:`account credential`.
+      The process by which nodes agree which :term:`transactions<transaction>` have occurred and in what order. This consists of :term:`validation<validation>`.
+
+   Contract address
+
+      Address of the smart contract; made up of contract index and subindex.
+
+   Contract index
+
+      Used when adding and managing tokens in the wallet.
+
+   Contract initialization
+
+      The act of initializing a smart contract on the chain.
+
+   Contract subindex
+
+      Not used in any user facing context. Always 0.
+
+   Cool-down period
+
+      A period of time during which a transaction is frozen. Examples of when cool-down periods apply include removing a validator and updating stake. The length of a cool-down period varies between transactions.
 
    Credential holder
 
-      The user holding a credential. An account is owned by one or more credential holders.
+      User holding one or more credentials. The role usually involves the ability to generate presentations from the credentials or zero-knowledge proofs about their attributes.
 
    Credential registry contract
 
-      A smart contract used by :term:`issuers<issuer>` of :term:`verifiable credentials<verifiable credential>` to register credentials when they are issued. This contract will also be used to track the state of a credential, e.g., valid, revoked, expired.
-
-   Cryptographic proof
-
-      A method by which one party (the prover) can prove to another party (the verifier) that a given statement is true while the prover avoids conveying any additional information apart from the fact that the statement is indeed true. This is known as a :term:`zero-knowledge proof`.
+      A contract used by issuers of verifiable credentials to register credentials when they are issued. This contract will also be used to track the state of a credential.
 
    dApp connectivity
 
-      The abiity of a wallet to interact with decentralized applications, dApps, on the blockchain. This allows users to access various services and platforms built on blockchain technology, such as DeFi, NFTs, and gaming.
+      The ability of a wallet to interact with decentralized applications, dApps, on the blockchain. This allows users to access various services and platforms built on blockchain technology, such as DeFi, NFTs, and gaming.
 
-   Decryption key
+   Decryption proof
 
-      Dual to :term:`encryption key`. In contrast to the encryption key, which is public, this key is only known to the account holder.
+      A proof that a decrypted plain text is correct with respect to a given joint election public key.
 
    Decryption share
 
-      A guardian's partial share of a ballot decryption or tally decryption for an election.
+      A partial decryption by a single guardian that will contribute to the full decryption.
 
    Delegated weight
 
       Sum of account weights that delegated to an account. Delegated weight is made up of the account weight of each account that delegated a vote to the account that cast a ballot.
 
-   Delegator
-
-      An account that contributes stake to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
-
-      For delegation in an election, see :term:`Vote delegation`.
-
    Delegation
 
-    The process of contributing CCD stake to a validator's staking pool or to passive delegation without running a node. When delegating, the CCD amount becomes locked and cannot be spent or transferred until undelegated.Delegation allows CCD holders to earn rewards proportional to their stake, minus any applicable commission paid to validators.
+      The act of contributing part of one's stake to a staking pool or to passive delegation.
+
+   Delegator
+
+      An account that contributes to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
+
+      For delegation in an election, see :term:`Vote delegation`.
 
    Deploy
 
       Command that takes the built :term:`Wasm<webassembly>` file for a smart contract module and deploys it on chain. This command is run from :term:`Concordium client`.
 
+   Earn
+
+      To receive rewards on one's stake.
+
    Election manifest
 
-      The manifest is the information that uniquely specifies and describes the structure and type of the election, including geopolitical units, contests, candidates, ballot styles, etc. In the Guardian app, it is a file that is created before running an election. The internal manifest is a wrapper around the manifest used in programming code to simplify and avoid processing the same information twice. Unlike the manifest, the internal manifest is not meant for serialization.
+      The manifest is the information that uniquely specifies and describes the structure and type of the election, including geopolitical units, contests, candidates, ballot styles, etc. In In ElectionGuard, it is a file that is created before running an election. The internal manifest is a wrapper around the manifest used in programming code to simplify and avoid processing the same information twice. Unlike the manifest, the internal manifest is not meant for serialization.
 
    Election phase
 
@@ -200,11 +215,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Encryption key
 
-      An `ElGamal`_ public key associated to an account which is used to encrypt all :term:`shielded amounts<shielded amount>` (:ref:`deprecated<shielded-balance-feature-deprecation>`) on the account.
-
-   Endpoint
-
-      A point at which an API -- the code that allows two software programs to communicate with each other -- connects with the software program. APIs work by sending requests for information from a web application or web server and receiving a response.
+      An `ElGamal`_ public key associated to an account.
 
    Entrypoint
 
@@ -234,17 +245,45 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       One of a number of independent, trustworthy individuals who serve guardians in the election. All guardians must participate in a key ceremony to create a key to encrypt the election and may participate in the accompanying tally ceremony(s) to decrypt the tally(s). A guardian is available if they are available for the tally ceremony. A guardian is missing if they cannot attend the tally ceremony.
 
+   Guardian encrypted share
+
+      An encrypted version of a guardian share. Can be decrypted using the recipients guardian secret key. Can be computed using the dealer's guardian secret key (to get the guardian share) and the recipients guardian public key.
+
+   Guardian joint election public key
+
+      The joint public key of all guardians. It is used to encrypt ballots in the election. It can be computed from all guardian public keys.
+
+   Guardian joint election secret key
+
+      The secret key corresponding to the joint election public key. Is never used directly (for privacy reasons).
+
+   Guardian joint election secret key share
+
+      A share of the joint election secret key. Can be computed by the guardian from their guardian encrypted share and their guardian secret key.
+
+   Guardian public key
+
+      The public key of a guardian. It essentially consists of the coefficient commitments, and coefficient proofs of the corresponding secret key. In the specs the 0-th commitment is also called the public key.
+
+   Guardian secret key
+
+      The initial secret key generated by a guardian during key generation. It consists of the secret coefficients, the coefficient commitments, and the coefficient proof. In the specs the 0-th coefficient is also called the secret key.
+
+   Guardian share
+
+      A share of a guardian secret key. Can be computed from the coefficients of the secret key. A share is always associated with a dealer and a recipient.
+
    Identity
 
-      Before opening an account on the Concordium Platform, one's real-world identity must be verified and recorded by an :term:`identity provider`. A user’s identity is encrypted on-chain, however their real-world identity can be disclosed in response to a valid request from a government authority.
+      Before opening an account on the Concordium platform, one's real-world identity must be verified and recorded by an :term:`identity provider`. A user’s identity is encrypted on-chain, however their real-world identity can be disclosed in response to a valid request from a government authority.
 
-   Identity Credential
+   Identity credential
 
-      An Identity Credential contains attributes on a user’s identity and is used to open accounts on-chain. It is issued by IDPs during user onboarding based on identity documents (e.g. passports). It is stored in both the user’s wallet and IDP’s database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
+      An Identity credential contains attributes on a user’s identity and is used to open accounts on-chain. It is issued by IDPs during user onboarding based on identity documents (e.g. passports). It is stored in both the user’s wallet and IDP’s database, but never accessible to Concordium. Users can share verified attributes using zero-knowledge proofs without revealing the underlying data.
 
-   Identity Issuer
+   Identity disclosure
 
-      See :term:`identity provider`.
+      When an authority suspects suspicious behaviour and wants to open an investigation, a process can be followed with multiple stakeholders (authorities, IDPs and privacy guardians) to disclose the identity of the user of a given account or the finding of all accounts of a given user.
 
    Identity Object
 
@@ -252,11 +291,15 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Identity Provider
 
-      A person or organization that performs off-chain identification of users. Users are required to obtain an identity object from an identity provider in order to open an account on the Concordium Platform.
+      A person or organization that performs off-chain identification of users. Users are required to obtain an identity object from an identity provider in order to open an account on the Concordium platform.
 
-   Initial Account
+   Identity record
 
-      An intial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by the :term:`Privacy Guardians<Privacy Guardian (PG)>` in concert with the identity provider.
+      The record on the account holder stored at the IDP after having issued an identity credential to the account holder.
+
+   Initial account
+
+      An initial account is an account submitted to the chain by the identity provider during the process of requesting a new identity. The initial account can perform all of the same actions as a regular account, however the real-life identity of the initial-account owner is known by the identity provider who submitted it to the chain. In contrast, the real-life identity of the owner of a regular account can only be ascertained by the :term:`Privacy Guardians<Privacy Guardian (PG)>` in concert with the identity provider.
 
       Initial accounts are only relevant for Desktop Wallet.
 
@@ -276,7 +319,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Issuer
 
-      Party that issues Web3 ID credentials to users. May also revoke Web3 ID credentials.
+      Party that issues Web3 ID credentials to users.
 
    KYB
 
@@ -296,11 +339,15 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Lottery Power
 
-      A validator's lottery power is its relative stake and is therefore proportional to the :term:`staked amount` of that validator. The lottery power is updated each :term:`pay day`, and is based on the stake distribution at the end of the epoch before last. (This delay ensures that the stake distribution is determined before the randomness that fixes the validators for the epoch; otherwise, stakeholders might redistribute their stake to luckier validators, which undermines the security of the system.) :term:`Delegation<delegator>` affects the lottery power of the validator by increasing their stake, thus increasing the odds of that validator being chosen to produce a block.
+      A validator's lottery power is its relative stake and is therefore proportional to the staked amount of that validator. The lottery power is updated each :term:`pay day`, and is based on the stake distribution at the end of the epoch before last. (This delay ensures that the stake distribution is determined before the randomness that fixes the validators for the epoch; otherwise, stakeholders might redistribute their stake to luckier validators, which undermines the security of the system.) :term:`Delegation<delegator>` affects the lottery power of the validator by increasing their stake, thus increasing the odds of that validator being chosen to produce a block.
 
    Mainnet
 
       The main Concordium network which launched in June 2021. The mainnet will receive periodic upgrades, but in contrast to the :term:`testnet`, it will never be reset, and accounts created on the mainnet will remain indefinitely.
+
+   Member/Comitte member/Governance committee member
+
+      Individual elected to the Concordium governance committee.
 
    Membership proof
 
@@ -308,11 +355,15 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Node
 
-      A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A :term:`validator node<baker>` has cryptographic keys that enable it to take part in validation. A node without these keys is referred to as a *passive node*.
+      A participant in the Concordium network. Nodes receive blocks and transactions, and track the current state of the blockchain. A validator node has cryptographic keys that enable it to take part in validation. A node without these keys is referred to as a *passive node*.
 
    Nominee
 
       Someone who has volunteered to be a candidate in an election.
+
+   Non-membership proof
+
+      A proof to determine that an attribute of a user's identity is **not** included in a set, for example, that they are **not** a resident of a country under trade sanctions.
 
    Nonce
 
@@ -322,10 +373,6 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
       -  *Leadership Election Nonce*: a randomized value that is updated each :term:`epoch<epoch>` that is used to seed the :term:`leader election` process.
       -  :term:`Transaction sequence number` (same as account sequence number)
 
-   Non-membership proof
-
-      A proof to determine that an attribute of a user's identity is **not** included in a set, for example, that they are **not** a resident of a country under trade sanctions.
-
    Off-chain
 
       Refers to activities outside of the Concordium blockchain. Some on-chain actions need preliminary actions off-chain, for example to create an account on the Concordium blockchain the user must first work with an identity provider, e.g., via their website or mobile application, to obtain a specific digital certificate. Concordium refers to this certificate as the **identity**.
@@ -334,21 +381,34 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Refers to an an event or activity that is propagated through the Concordium network and recorded on the Concordium blockchain. The recording can be explicit or implicit as part of the consensus protocol. An example of the former is a transaction such as a CCD transfer, an example of the latter are the rewards given out to, e.g., validators.
 
-   Pay day
-
-      A pay day is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin validation and updates to delegation and validation take effect, such as increasing stake, restaking preferences, adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of lottery winners that are elected to be the leader for every round in that epoch is established at the beginning of the epoch.
-
    Passive delegation
 
       A form of delegation where a delegator's stake is effectively distributed among all staking pools. It is not associated with a specific validator. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific staking pool. However, passive delegation is not affected by poor performance of a single validator.
 
-   Privacy Guardian (PG)
+   Pay day
 
-      Authorized legal entities, typically law firms, that participate in Concordium's identity disclosure process when legally required. PGs hold cryptographic keys that enable them to decrypt partial shares of encrypted identity information. Multiple PGs must collaborate to reconstruct complete identity data - a minimum threshold (minimum two out of three) of PGs must provide their decryption shares before the Authority can access the full information needed to connect accounts to identities.
+      A pay day is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin validation and updates to delegation and validation take effect, such as increasing stake, restaking preferences, and adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of lottery winners that are elected to be the leader for every round in that epoch is established at the beginning of the epoch.
 
-   Private keys
+
+   Privacy guardian (PG)
+
+      Authorized entity participating in Concordium's identity disclosure process when legally required. PGs hold cryptographic keys that enable them to decrypt partial shares of encrypted identity information. Multiple PGs must collaborate to reconstruct complete identity data - a minimum threshold (minimum two out of three) of PGs must provide their decryption shares before the Authority can access the full information needed to connect accounts to identities.
+
+   Privacy guardian private key
+
+      Decryption key held by a privacy guardian.
+
+   Privacy guardian public key
+
+      Encryption key for a given privacy guardian. This key is public and available on-chain.
+
+   Private key
 
       A random, secret string that is used in cryptography and cryptocurrency to prove ownership of an account and sign transactions to send, spend, delegate, and stake CCDs. A wallet consists of a set of public addresses and private keys. Anyone can deposit cryptocurrency in a public address, but funds cannot be removed from an address without the corresponding private key.
+
+   Produce blocks
+
+      The process of producing blocks performed by validators.
 
    Proof-of-stake
 
@@ -364,19 +424,19 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Quorum certificate
 
-      When the validators sign the block, their collective signatures are aggregated to form a quorum certificate. This quorum certificate is then included in the next block. If the round leader fails to produce a block in the :term:`round`, or not enough signatures were gathered for a quorum certificate, then the validators will instead send timeout messages, which are aggregated to form a :term:`timeout certificate`. Each block either contains a quorum certificate or a timeout certificate for the previous round. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
+      Aggregated signatures of the members of the finalization committee who signed this block forms a quorum certificate. The quorum certificate is included in the next block.  Each block either contains a quorum certificate or a timeout certificate for the previous round.
 
    Range proofs
 
       A range proof asks a user to prove that they meet an attribute within a range of values. For example, when renting a car, you might need to prove that you are between 25 and 65 years old to the car rental company. This could be constructed as a range proof.
 
-   Reveal
+   revoke
 
-      To reveal an attribute. This can be used in identity verification proof. When you reveal an attribute, you give the dApp or service that requested it your exact information, such as date of birth, or nationality. You should only do this if you have **absolute trust** in them, and if you are familiar with their data usage and protection procedures.
+      Action of marking the credential as revoked in the credential registry contract.
 
    Round
 
-      Replaces slots in the Concordium BFT protocol. In each round, a predetermined leader among the validators should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. Rounds are an index to a block or timeout. In every round, each validator checks locally whether they won the lottery, which entitles the winner to produce a block in that round. Zero, one, or multiple validators can win the lottery. The probability of these different events is controlled by the difficulty parameter *f*. For example, with difficulty 0.5 on average every second round will have a lottery winner.
+      In each round, a predetermined leader among the validators should produce a block. Round leaders are determined each epoch, defined as a fixed time duration. Rounds are an index to a block or timeout. In every round, each validator checks locally whether they won the lottery, which entitles the winner to produce a block in that round.
 
    Rust
 
@@ -388,63 +448,15 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Seed phrase
 
-      A group of random words generated by the wallet that allows you to access the CCDs stored in it across devices or in case of non-functioning devices. Seed phrase is supported by |cryptox|.
-
-   Secret recovery phrase
-
-      Previously used term for seed phrase.
-
-   Setup phase
-
-      Time period prior to election start where setup of necessary election components occurs, candidates are nominated, guardians are selected, etc.
-
-   Shielded amount
-
-      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
-
-      An amount of :term:`CCD` that is encrypted with the public key of an account. Only the owner of the secret key can determine how many CCDs are contained in the encryption.
-
-   Shielded balance
-
-      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
-
-      The part of the balance of an :term:`account` that only the owner of the account can see. This is achieved by encrypting transfers to an account with the account's :term:`encryption key`. Every participant of the Concordium network can see the `ciphertexts`_ of all the transfers, however they provide no information on how many CCDs were transferred. The receiver of the transfer can use their secret key to decrypt the ciphertexts, and seeing how many CCDs they have received.
-
-      For technical reasons the shielded balance of the account consists of two parts, the "self balance" and the "incoming shielded amounts".
-
-      - Self balance: This is a single shielded amount that is updated each time the account performs a shielded transfer, :term:`shielding`, or :term:`unshielding`. Only the account itself can update this value.
-
-      - Incoming shielded amount: This is a list of shielded amounts that is extended each time an account receives an shielded transfer. When the account makes a shielded transfer it can use a number of shielded amounts from this list as inputs to the transfer.
-
-   Shielded transfer
-
-      (:ref:`deprecated<shielded-balance-feature-deprecation>`):
-
-      Transfer from :term:`shielded balance` of an account to a shielded balance of another account. The amount that is transferred is only visible to the sender and the receiver.
-
-   Shielding
-
-      (:ref:`Deprecated<shielded-balance-feature-deprecation>`):
-
-      The action of transferring a part of the public balance to the :term:`shielded balance`.
+      Mnemonic word list preceding the Seed. A seed phrase consists of 24 words.
 
    Sigma protocols
 
       A class of efficient interactive :term:`zero-knowledge proof` systems that follow a three-round structure; commitment, challenge, and response. Sigma protocols enable a prover to demonstrate knowledge of secret information without revealing it. They can also be used for OR and AND statements, and can be made non-interactive with the Fiat-Shamir transform.
 
-   Slot
-
-      See :term:`round`.
-
    Smart contract
 
       A computer program or a transaction protocol that is intended to automatically execute, control or document events and actions according to the terms of a contract or an agreement. An example is a smart contract for selling NFTs on a marketplace; it may contain information about royalties, selling the NFT on to others, and so on.
-
-   Staked Amount
-
-      :term:`Validators<validator>` can have part of the balance of their account staked. The amount that is staked remains locked while staked and cannot be transferred or moved in any way. The staked amount is proportional to the :term:`lottery power` of a validator.
-
-      :term:`Delegators<delegator>` can delegate stake to a staking pool or passive delegation. This affects the staked amount of the validator and thus their lottery power.
 
    Staking pool
 
@@ -464,7 +476,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Tally
 
-      Tally (noun) is the number of votes obtained by every candidate computed by summing all weighted votes for every candidate. Also, tally (verb) is the process of calculating the number of votes.
+      The number of votes obtained by every candidate computed by adding up all the weighted votes for every candidate.
 
    Tally ceremony
 
@@ -482,7 +494,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Timeout certificate
 
-      If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. A block always contains a quorum certificate as it serves as a reference to the parent block. The block might contain a timeout certificate if the previous round timed out. A quorum certificate or a timeout certificate ensures that the protocol progresses. When a node sees a valid quorum certificate or timeout certificate it progresses to the next round.
+      If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round.
 
    Total effective stake
 
@@ -496,6 +508,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Determines the percentage of transaction fees a validator keep when delegators' stakes contribute to validating transactions. Lower percentages can attract more delegators but reduce the validator's earnings per transaction.
 
+   Transaction Sequence Number
+
+      A sequence number that orders :term:`transaction` on a given :term:`account`. In a ledger, all transactions for an account must be ordered with consecutive transaction sequence numbers, starting from 1. Transaction sequence numbers ensure that a transaction cannot be repeated in the ledger, and that the transactions occur in the order intended by the sender account holder.
+
    Transfer Memo
 
       Additional data that a user can provide when making a transfer, or a transfer with schedule. The data will appear on chain as a bytestring. It is expected to be CBOR encoded and can therefore represent strings, numbers and JSON values, but this is not enforced.
@@ -504,24 +520,14 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A special kind of transfer of CCD that makes the CCD amount available to the receiver only in a limited way until a specified point in time. The point in time is specified as part of a transfer. The CCD are immediately owned by the receiver account, and the transfer cannot be revoked, but the receiver cannot spend the CCD until the specified time.
 
-   Transaction Sequence Number
-
-      A sequence number that orders :term:`transaction` on a given :term:`account`. In a ledger, all transactions for an account must be ordered with consecutive transaction sequence numbers, starting from 1. Transaction sequence numbers ensure that a transaction cannot be repeated in the ledger, and that the transactions occur in the order intended by the sender account holder.
-
-   Unshielding
-
-      (:ref:`Deprecated<shielded-balance-feature-deprecation>`):
-
-      The action of transferring a part of the :term:`shielded balance` to the public balance.
-
    User identity certificate
 
-      Issued to the individual or entity once their real-world identity has been verified and recorded by an Identity Provider. You cannot use the Concordium Platform without a User Identity Certificate.
-      The user identity certificate includes attributes such as name, age, and nationality. When the Identity Provider has validated the attributes, it issues a user identity certificate, which is basically the Identity Provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the Identity Provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. disclosing an identity). The Identity Provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
+      Issued to the individual or entity once their real-world identity has been verified and recorded by an identity provider. You cannot use the Concordium platform without a user identity certificate.
+      The user identity certificate includes attributes such as name, age, and nationality. When the identity provider has validated the attributes, it issues a user identity certificate, which is basically the identity provider’s signature over some cryptographic keys of the user and the validated personal attributes. Unlike usual public key certificates such as X.509 certificates, the user identity certificate is private to the user; it is not submitted to the chain. Note that the identity provider also stores some information, but this is only used for a possible, subsequent investigation of the user’s activities (i.e. disclosing an identity). The identity provider is not involved in any subsequent use of the user identity certificate. The user identity certificate is signed using the Pointcheval-Sanders signature scheme.
 
    Validation
 
-      The process of production of :term:`blocks<block>` done by validators. Validation makes the block part of the authoritative :term:`chain`. Transactions that are part of validated blocks are considered authoritative. Validation is conducted by the validators with a staked amount of at least 0.1% of the :term:`total effective stake` in staking pools. Total effective stake in staking pools does not include passive delegation and any amount that exceeds the :ref:`staking pool bounding caps<delegation-caps>`.
+      The process of production of :term:`blocks<block>`.
 
    Validator
 
@@ -529,43 +535,35 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Verifiable credential
 
-      Issued to the individual by an :term:`issuer` who has authority for the credential to be issued. A verifiable credential contains some information about the individual independent of its identity, such as membership in a club or loyalty program, education, and more. Verifiable credentials can be checked by a :term:`verifier` using :term:`zero-knowledge proofs<zero-knowledge proof>`. The issuer can choose to have the verifiable credential expire, or revoke it, if necessary. The issuer manages the verifiable credentials with a smart contract, a credential registry contract.
+      Verifiable credentials are Web3 credentials. They have attributes that don’t have to have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol level identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it. Verifiable credentials are not associated with accounts. Verifiable credentials can be used to build verifiable presentations, which can also be cryptographically verified.
 
    Verifiable presentation
 
-      Data derived from one or more verifiable credentials and/or account credentials, issued by one or more issuers or identity providers, that is shared with a specific verifier. A verifiable presentation is tamper-evident and encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. It contains a link that points to the contract and holder ID. A presentation that contains a **zero-knowledge proof** might contain data that confirms the truth of a statement from verifiable credentials or account credentials, but the presentation does not reveal the actual attributes of verifiable credentials.
+      Data derived from one or more verifiable credentials, issued by one or more issuers, that is shared with a specific verifier. A verifiable presentation is a tamper-evident presentation encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. Certain types of verifiable presentations might contain data that is synthesized from, but do not contain, the original verifiable credentials (for example, zero-knowledge proofs).
 
    Verifier
 
-      Party that checks users' :term:`verifiable credentials<verifiable credential>`.
+      Party that verifies users' Web3 ID credentials.
 
    Vote delegation
 
-      Method whereby a user can add account weight of their account to another account that will cast the ballot. This is used by users of Desktop Wallet to cast ballots in the 2025 election.
-
-      For delegation related to earning rewards on an account, see :term:`delegator`.
-
-   Wallet
-
-      A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts. Concordium has three wallet types.
-
-      - The Desktop Wallet: a digital wallet that enables you to create and manage your Concordium identities, credentials, and accounts from your desktop and to create transactions such as sending CCD, adding a validator, and exporting and importing account information.
-
-      - |cryptox|: a digital smartphone wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, be a validator and delegate, and to export and import your accounts and identities.
-
-      - The |bw|: a web browser extension wallet that enables you to create and manage your Concordium identities and accounts, to create simple transactions, and to connect to dApps.
-
-   Web3 ID
-
-      Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have stringent requirements and won't be part of the identity disclosure process, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it.
-
-   WebAssembly
-
-      WebAssembly (Wasm) defines a portable binary-code format and a corresponding text format for executable programs as well as software interfaces for facilitating interactions between such programs and their host environment. Smart contracts are deployed on chain as Wasm files.
+      Method whereby a user can add account weight of their account to another account that will cast the ballot. This allows accounts accessed from wallets without smart contract capabilities to cast votes by delegating to another account held by the same owner.
 
    W3C standard
 
       Standards and guidelines developed by the World Wide Web Consortium (W3C), an international organization that creates technical specifications to ensure the long-term growth and interoperability of the web.
+
+   Wallet
+
+      A wallet is an app that allows cryptocurrency users to store and retrieve their digital assets, and manage identities and accounts.
+
+   Web3 ID
+
+      Web3 ID is an extension of the core protocol identity with other types of credentials that don’t have to have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials and in contrast to protocol identities the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, the issuer, or some other third party has rights to revoke it.
+
+   WebAssembly
+
+      WebAssembly (Wasm) defines a portable binary-code format and a corresponding text format for executable programs as well as software interfaces for facilitating interactions between such programs and their host environment. Smart contracts are deployed on chain as Wasm files.
 
    Winning probability
 
