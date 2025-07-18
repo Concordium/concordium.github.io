@@ -24,7 +24,7 @@ The diagrams and descriptions below describe the process during each phase of th
 Before the election
 ===================
 
-The period of time before the election is the :term:`setup phase`. Several roles are involved in the setup of the election.
+The period of time before the election is the setup phase. Several roles are involved in the setup of the election.
 
 .. image:: ../images/voting/pre-election.png
     :alt: diagram showing steps below

@@ -144,15 +144,15 @@ Get started
 Recovery phrase setup
 =====================
 
-If you are creating a new wallet, you must set up a :term:`secret recovery phrase`. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your recovery phrase. It is important to keep this secret recovery phrase in a safe location in case you need to recover your wallet on a new device.
+If you are creating a new wallet, you must set up a seed phrase. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your seed phrase. It is important to keep this seed phrase in a safe location in case you need to recover your wallet on a new device.
 
-#. When you click **Create**, the 24 word secret recovery phrase is shown. Write it down and click **Continue**.
+#. When you click **Create**, the 24 word seed phrase is shown. Write it down and click **Continue**.
 
    .. image:: ../images/browser-wallet/new/recovery.png
             :alt: screen with recovery phrase and continue option
             :width: 50%
 
-#. Enter all 24 words of your secret recovery phrase to confirm it. Click **Continue**.
+#. Enter all 24 words of your seed phrase to confirm it. Click **Continue**.
 
 #. Choose whether to connect to Mainnet or Testnet to create your wallet.
 
@@ -307,7 +307,7 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 
 .. Warning::
 
-   Before proceeding, if you wish to continue to access your wallet and accounts, make sure you have your secret recovery phrase.
+   Before proceeding, if you wish to continue to access your wallet and accounts, make sure you have your seed phrase.
 
 .. dropdown:: Chrome
 
@@ -341,7 +341,7 @@ Removing your wallet does not remove your data on the Concordium blockchain.
 
 .. Note::
 
-   If you forget your passcode for your installed |bw|, you will need to remove the extension in your internet browswer and reinstall it, choosing the option to :ref:`recover your wallet<backup-import-recover>`. Use your secret recovery phrase to recover the wallet.
+   If you forget your passcode for your installed |bw|, you will need to remove the extension in your internet browswer and reinstall it, choosing the option to :ref:`recover your wallet<backup-import-recover>`. Use your seed phrase to recover the wallet.
 
 .. |chrome-ext|    image:: ../images/browser-wallet/chrome-extensions-icon.png
                     :width: 20px

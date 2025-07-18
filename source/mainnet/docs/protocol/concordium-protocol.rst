@@ -52,7 +52,7 @@ Economics and validation
 The protocol uses :term:`CCD` (ConCorDium) as its native token. CCD serves multiple purposes:
 
 - Paying for transaction fees
-- :term:`Staking<Staked Amount>` by :term:`validators<Validator>`
+- Staking by :term:`validators<Validator>`
 - Rewards for network participation
 
 Validators must stake CCD to participate in block production. Other CCD holders can delegate their tokens to validators to earn rewards without running a node themselves. The maximum size of a validator's staking pool is capped at 5% of the total stake to maintain decentralization.
