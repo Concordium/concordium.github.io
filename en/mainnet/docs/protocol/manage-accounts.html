@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.a6a7b01f-b88a-40f5-938f-31fc991155f3.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/manage-accounts.033a660b-96e8-467f-ac07-9074cf5e3a64.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/manage-accounts';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/manage-accounts.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -766,7 +766,7 @@
 <p>An account on the Concordium blockchain is owned by one or more <a class="reference internal" href="../resources/glossary.html#term-Credential-holder"><span class="xref std std-term">credential holders</span></a> and consists of two parts: The <a class="reference internal" href="../resources/glossary.html#term-On-chain"><span class="xref std std-term">on-chain</span></a> part, which is publicly visible and maintained by the validators, and the <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> part.</p>
 <p>The on-chain part of the account consists of:</p>
 <ul class="simple">
-<li><p>the <a class="reference internal" href="../resources/glossary.html#term-Credential"><span class="xref std std-term">credentials</span></a> of the credential holders associated with the account</p></li>
+<li><p>the credentials of the credential holders associated with the account</p></li>
 <li><p>public balance</p></li>
 <li><p>account sequence number</p></li>
 <li><p>public keys of each credential to verify transaction signatures.</p></li>
@@ -793,13 +793,13 @@ The name is resolved to an address before interactions with the <a class="refere
 <p class="admonition-title">Note</p>
 <p>Initial accounts are not created by the identity provider when using CryptoX Concordium Wallet or Concordium Wallet for Web. You create all accounts yourself.</p>
 </div>
-<p>The user gets an <a class="reference internal" href="../resources/glossary.html#term-Initial-Account"><span class="xref std std-term">initial account</span></a> at the same time as an <a class="reference internal" href="identity.html#reference-identity"><span class="std std-ref">identity</span></a> has been issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.</p>
+<p>The user gets an <a class="reference internal" href="../resources/glossary.html#term-Initial-account"><span class="xref std std-term">initial account</span></a> at the same time as an <a class="reference internal" href="identity.html#reference-identity"><span class="std std-ref">identity</span></a> has been issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.</p>
 <p>The user additionally <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">creates account keys</span></a> for an initial account, which the user stores privately. The identity provider then verifies the validity of the user identity information
 and stores it locally in an identity object that is specific to the user. Identity objects are only held by identity providers. The identity provider then opens an
 account, the initial account, on behalf of the user. At the end of the identity verification process, the user receives a user identity certificate that can be used for creating
 additional accounts and the user gets access to the initial account on the Concordium Platform. These certificates are valid for a given period. You can obtain a new certificate
 by creating a new identity and going through the identity verification process again with an identity provider.</p>
-<p>Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the <a class="reference internal" href="../resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a> and the identity provider are
+<p>Based on the user identity certificate the user can subsequently create other accounts (see below) that can only be linked to the user if the <a class="reference internal" href="../resources/glossary.html#term-Privacy-guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a> and the identity provider are
 involved. This gives a user a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an <em>identity</em> which is issued <a class="reference internal" href="../resources/glossary.html#term-Off-chain"><span class="xref std std-term">off-chain</span></a> by an Identity provider. While an account has to be created from an identity, the user’s privacy is still protected, and the account owner’s identity can only be revealed via the process of <a class="reference internal" href="identity-disclosure-processes.html#reference-identity-disclosure-processes"><span class="std std-ref">disclosing an identity</span></a>, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.</p>
 </section>
 <section id="account-creation">
@@ -809,7 +809,7 @@ involved. This gives a user a way to create accounts with an additional layer of
 <p class="admonition-title">Note</p>
 <p>CryptoX Concordium Wallet does not submit the transaction directly to a node, but via a proxy. CryptoX Concordium Wallet does not need to be connected to a node.</p>
 </div>
-<p>The input to the transaction is a <em>credential</em>, which contains a number of <a class="reference internal" href="../resources/glossary.html#term-Cryptographic-proof"><span class="xref std std-term">cryptographic proofs</span></a>. The proofs reveal no information about the owner of the account. In particular, the identity provider itself cannot determine the owner of the account.</p>
+<p>The input to the transaction is a <em>credential</em>, which contains a number of cryptographic proofs. The proofs reveal no information about the owner of the account. In particular, the identity provider itself cannot determine the owner of the account.</p>
 <img alt="graphic drawing showing how user creates accounts" src="../../_images/account-creation.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -822,7 +822,7 @@ well as a number of secret values the user must use to be able to use the
 identity to create accounts.</p>
 <p>Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account and who the <a class="reference internal" href="../resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a> are
+provider issued an identity for an account and who the <a class="reference internal" href="../resources/glossary.html#term-Privacy-guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a> are
 for the account and the identity. This means that anybody can check it
 before interacting with an account to judge the level of risk in the transaction.</p>
 </section>
@@ -837,7 +837,7 @@ producing blocks, and transfers.</p>
 <p>At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:</p>
 <ul class="simple">
-<li><p>the account has <a class="reference internal" href="../resources/glossary.html#term-Staked-Amount"><span class="xref std std-term">staked</span></a> some of the public
+<li><p>the account has staked some of the public
 balance in order to become a validator or to delegate</p></li>
 <li><p>some of the public balance is locked up because it was received via a
 <a class="reference internal" href="../resources/glossary.html#term-Transfer-with-schedule"><span class="xref std std-term">transfer with schedule</span></a></p></li>
