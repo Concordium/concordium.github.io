@@ -166,7 +166,7 @@ html_theme_options = {
     "secondary_sidebar_items": ["page-toc", "edit-this-page"],
     "article_footer_items": ["footer-article"],
     "show_prev_next": True,
-    "announcement": 'Protocol 8 is now live on mainnet. For more information, visit our <a href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html#mainnet" target="_blank">release notes page</a>.',
+    "announcement": 'Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="/community/plt/index.html">developer documentation</a>.',
     #"navbar_align": "left",
     "icon_links": [
         {
