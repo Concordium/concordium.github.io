@@ -290,7 +290,7 @@ This
 
 This command has all of the additional options of ``send``, as well as an
 additional flag ``--index.`` If given, this flag is used to select which
-:term:`incoming shielded amounts<shielded balance>` that will be used as input to the transaction.
+incoming shielded amounts that will be used as input to the transaction.
 
 .. code-block:: console
 

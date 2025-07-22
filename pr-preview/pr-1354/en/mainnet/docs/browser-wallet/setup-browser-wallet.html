@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/browser-wallet/setup-browser-wallet.14c87b7c-644f-4bb8-8f42-5c6bb4780bb2.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/browser-wallet/setup-browser-wallet.b992787e-e6c5-4bb7-b634-68490c364482.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/browser-wallet/setup-browser-wallet';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/browser-wallet/setup-browser-wallet.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -102,7 +102,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Protocol 8 is now live on mainnet. For more information, visit our <a href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html#mainnet" target="_blank">release notes page</a>.</div>
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="/community/plt/index.html">developer documentation</a>.</div>
 </aside>
 
   
@@ -866,13 +866,13 @@
 </details></section>
 <section id="recovery-phrase-setup">
 <h2>Recovery phrase setup<a class="headerlink" href="#recovery-phrase-setup" title="Link to this heading">#</a></h2>
-<p>If you are creating a new wallet, you must set up a <a class="reference internal" href="../resources/glossary.html#term-Secret-recovery-phrase"><span class="xref std std-term">secret recovery phrase</span></a>. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your recovery phrase. It is important to keep this secret recovery phrase in a safe location in case you need to recover your wallet on a new device.</p>
+<p>If you are creating a new wallet, you must set up a seed phrase. This is a 24 word phrase that stores your private keys, identities, and accounts. You must write down and confirm your seed phrase. It is important to keep this seed phrase in a safe location in case you need to recover your wallet on a new device.</p>
 <ol class="arabic">
-<li><p>When you click <strong>Create</strong>, the 24 word secret recovery phrase is shown. Write it down and click <strong>Continue</strong>.</p>
+<li><p>When you click <strong>Create</strong>, the 24 word seed phrase is shown. Write it down and click <strong>Continue</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/recovery.png"><img alt="screen with recovery phrase and continue option" src="../../_images/recovery.png" style="width: 50%;" />
 </a>
 </li>
-<li><p>Enter all 24 words of your secret recovery phrase to confirm it. Click <strong>Continue</strong>.</p></li>
+<li><p>Enter all 24 words of your seed phrase to confirm it. Click <strong>Continue</strong>.</p></li>
 <li><p>Choose whether to connect to Mainnet or Testnet to create your wallet.</p></li>
 </ol>
 </section>
@@ -987,7 +987,7 @@
 <p>Removing your wallet does not remove your data on the Concordium blockchain.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Before proceeding, if you wish to continue to access your wallet and accounts, make sure you have your secret recovery phrase.</p>
+<p>Before proceeding, if you wish to continue to access your wallet and accounts, make sure you have your seed phrase.</p>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -1026,7 +1026,7 @@
 </div>
 </details><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you forget your passcode for your installed Concordium Wallet for Web, you will need to remove the extension in your internet browswer and reinstall it, choosing the option to <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">recover your wallet</span></a>. Use your secret recovery phrase to recover the wallet.</p>
+<p>If you forget your passcode for your installed Concordium Wallet for Web, you will need to remove the extension in your internet browswer and reinstall it, choosing the option to <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">recover your wallet</span></a>. Use your seed phrase to recover the wallet.</p>
 </div>
 </section>
 </section>

@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tools/query-node.e501815e-b8a5-4a01-b496-5043ab547251.js"></script>
+    <script defer="defer" src="../_static/tippy/tools/query-node.52f23cec-2209-4f0a-87bb-17331bc7e457.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/query-node';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/query-node.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -102,7 +102,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Protocol 8 is now live on mainnet. For more information, visit our <a href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html#mainnet" target="_blank">release notes page</a>.</div>
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="/community/plt/index.html">developer documentation</a>.</div>
 </aside>
 
   
@@ -583,7 +583,7 @@ statistics related to production of blocks.</p></li>
 </div>
 <p>List the addresses of all accounts on the chain as of a specific block:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../docs/resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current best block.</p></li>
 </ul>
 <section id="example">
 <h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
@@ -607,8 +607,8 @@ can also decrypt the shielded balance (<a class="reference internal" href="../do
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ACCOUNT</span></code>: Address or local name of the account (if not provided,
 will show the account with the local alias <code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code>).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span></code>: Full hash of target block. Defaults to the current <a class="reference internal" href="../docs/resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--shielded</span></code>: Show the <a class="reference internal" href="../docs/resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">shielded balance</span></a> (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK</span></code>: Full hash of target block. Defaults to the current best block`.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--shielded</span></code>: Show the shielded balance (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--reveal-shielded</span></code>: Show the shielded balance and reveal it
 (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>).</p></li>
 </ul>
@@ -637,8 +637,8 @@ will show the account with the local alias <code class="docutils literal notrans
 <li><p>has a balance of 1026 CCD,</p></li>
 <li><p>has <a class="reference internal" href="../docs/resources/glossary.html#term-Transaction-Sequence-Number"><span class="xref std std-term">transaction sequence number</span></a> <code class="docutils literal notranslate"><span class="pre">1</span></code>,</p></li>
 <li><p>has <code class="docutils literal notranslate"><span class="pre">a820662531d...</span></code> as the key for receiving shielded transfers (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>).</p></li>
-<li><p>has no <a class="reference internal" href="../docs/resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">incoming shielded amount</span></a> (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>).</p></li>
-<li><p>has a <a class="reference internal" href="../docs/resources/glossary.html#term-Shielded-balance"><span class="xref std std-term">self balance</span></a> of <code class="docutils literal notranslate"><span class="pre">a9d35bf62442aabad72c...</span></code> (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>). By default this
+<li><p>has no incoming shielded amount (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>).</p></li>
+<li><p>has a self balance of <code class="docutils literal notranslate"><span class="pre">a9d35bf62442aabad72c...</span></code> (<a class="reference internal" href="../docs/guides/shield-ccd-wallets.html#shielded-balance-feature-deprecation"><span class="std std-ref">deprecated</span></a>). By default this
 only shows the first 20 characters of the encrypted amount. With a
 <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> flag the full encryption is shown.</p></li>
 </ul>
@@ -688,7 +688,7 @@ and execution cost is included as well.</p>
 time) are objective (i.e. all nodes participating in the Concordium network will
 agree on these) while others (e.g. arrival time) are specific to the local node:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../docs/resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current best block.</p></li>
 </ul>
 <section id="id3">
 <h4>Example<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
@@ -726,7 +726,7 @@ agree on these) while others (e.g. arrival time) are specific to the local node:
 <p>Show <a class="reference internal" href="../docs/resources/glossary.html#term-Leader-Election"><span class="xref std std-term">election parameters</span></a> for a specific block, optionally including
 bakers and their <a class="reference internal" href="../docs/resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">lottery power</span></a>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current <a class="reference internal" href="../docs/resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLOCK-HASH</span></code>: Full hash of the block. Defaults to the current best block.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">--include-bakers</span></code>: If set, include table of bakers and their
 lottery power. The lottery power is recomputed periodically, so operations
 that affect them do not take effect immediately.</p></li>
@@ -803,14 +803,14 @@ Standard Deviation, respectively.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span><span class="o">(</span>identity-providers<span class="p">|</span>anonymity-revokers<span class="o">)</span><span class="w"> </span><span class="o">[</span>--block<span class="w"> </span>BLOCK<span class="o">]</span>
 </pre></div>
 </div>
-<p>Display the list of identity providers or <a class="reference internal" href="../docs/resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a> at a given block,
-defaulting to the <a class="reference internal" href="../docs/resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>.</p>
+<p>Display the list of identity providers or <a class="reference internal" href="../docs/resources/glossary.html#term-Privacy-guardian-PG"><span class="xref std std-term">Privacy Guardians</span></a> at a given block,
+defaulting to the best block.</p>
 </section>
 </section>
 <section id="exchange-rates">
 <span id="id6"></span><h2>Exchange rates<a class="headerlink" href="#exchange-rates" title="Link to this heading">#</a></h2>
 <p>Conversion rates between NRG, CCD, and Euros can fluctuate between blocks. To get a best estimate of the current
-exchange rates, query the chain parameters of the <a class="reference internal" href="../docs/resources/glossary.html#term-Best-block"><span class="xref std std-term">best block</span></a>:</p>
+exchange rates, query the chain parameters of the best block:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>raw<span class="w"> </span>GetBlockChainParameters
 </pre></div>
 </div>

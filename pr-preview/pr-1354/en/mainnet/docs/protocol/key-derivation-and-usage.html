@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.d6812745-ad54-4f98-9a5f-20eebdeebae7.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.da936727-e7e8-44b7-9663-83d676a172d6.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/key-derivation-and-usage';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/key-derivation-and-usage.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -102,7 +102,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Protocol 8 is now live on mainnet. For more information, visit our <a href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html#mainnet" target="_blank">release notes page</a>.</div>
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="/community/plt/index.html">developer documentation</a>.</div>
 </aside>
 
   
@@ -782,7 +782,7 @@ This structure is reflected in the key derivation tree structure:</p>
 <section id="holder-identifier">
 <h3>Holder Identifier<a class="headerlink" href="#holder-identifier" title="Link to this heading">#</a></h3>
 <p>Subtree 2’ defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium’s <a class="reference internal" href="identity-disclosure-processes.html"><span class="doc">Identity Disclosure</span></a> scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.</p>
-<p>Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of a <a class="reference internal" href="../resources/glossary.html#term-Privacy-Guardian-PG"><span class="xref std std-term">Privacy Guardian (PG)</span></a>. Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  <a class="reference internal" href="../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Zero-knowledge proof</span></a> for the account opening. The proof is a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>. For generating the zero-knowledge proof, one needs the secret identifier.</p>
+<p>Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of a <a class="reference internal" href="../resources/glossary.html#term-Privacy-guardian-PG"><span class="xref std std-term">Privacy Guardian (PG)</span></a>. Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  <a class="reference internal" href="../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Zero-knowledge proof</span></a> for the account opening. The proof is a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>. For generating the zero-knowledge proof, one needs the secret identifier.</p>
 </section>
 <section id="pseudo-random-function-key">
 <h3>Pseudo-random function Key<a class="headerlink" href="#pseudo-random-function-key" title="Link to this heading">#</a></h3>

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-delegation.9aca5ca0-82f5-4efe-826c-d65f8c04609e.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-delegation.12153ce8-f472-4696-b8ce-cd450f2f3747.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-delegation';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concepts-delegation.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -102,7 +102,7 @@
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 <aside class="bd-header-announcement" aria-label="Announcement">
-  <div class="bd-header-announcement__content">Protocol 8 is now live on mainnet. For more information, visit our <a href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html#mainnet" target="_blank">release notes page</a>.</div>
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="/community/plt/index.html">developer documentation</a>.</div>
 </aside>
 
   
@@ -759,7 +759,7 @@
                   
   <section id="delegation">
 <span id="delegation-concept"></span><h1>Delegation<a class="headerlink" href="#delegation" title="Link to this heading">#</a></h1>
-<p>On the Concordium blockchain, <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validators</span></a> run the protocol that generates blocks, and the action of creating and verifying blocks is an important part of what validators do. Validators are rewarded for every block that they create with a payment of some <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a>. Because Concordium runs a proof-of-stake protocol, each validator needs to <a class="reference internal" href="../resources/glossary.html#term-Staked-Amount"><span class="xref std std-term">stake an amount to produce blocks</span></a>, and the <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">probability of being selected to create the next block</span></a> is proportional to each validator’s stake. So the payment may be seen as an interest on the validator’s capital.</p>
+<p>On the Concordium blockchain, <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validators</span></a> run the protocol that generates blocks, and the action of creating and verifying blocks is an important part of what validators do. Validators are rewarded for every block that they create with a payment of some <a class="reference internal" href="../resources/glossary.html#term-CCD"><span class="xref std std-term">CCD</span></a>. Because Concordium runs a proof-of-stake protocol, each validator needs to stake an amount to produce blocks, and the <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">probability of being selected to create the next block</span></a> is proportional to each validator’s stake. So the payment may be seen as an interest on the validator’s capital.</p>
 <p>Not everyone with CCD has the resources needed to run a validator. <a class="reference internal" href="../resources/glossary.html#term-Delegator"><span class="xref std std-term">Delegation</span></a> enables everyone to earn rewards for delegating some stake without the need to run a node or become a validator. Any party with CCD may delegate some of their capital to a validator. This increases the validator’s chance of producing the next block and getting rewards, which are then shared with the delegators. This is a non-custodial solution: when a party delegates an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under the party’s control; they are just considered part of the validator’s stake for the proof-of-stake protocol. Staked CCDs, both for delegators and validators, cannot be spent while staked. Unstaking CCDs is subject to a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>.</p>
 <p>You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.</p>
 <div class="admonition note">
