@@ -17,7 +17,7 @@ An account on the Concordium blockchain is owned by one or more :term:`credentia
 
 The on-chain part of the account consists of:
 
-- the :term:`credentials<credential>` of the credential holders associated with the account
+- the credentials of the credential holders associated with the account
 - public balance
 - account sequence number
 - public keys of each credential to verify transaction signatures.
@@ -67,7 +67,7 @@ Once you have an identity and a user identity certificate from an identity provi
 .. Note::
    |cryptoX| does not submit the transaction directly to a node, but via a proxy. |cryptox| does not need to be connected to a node.
 
-The input to the transaction is a *credential*, which contains a number of :term:`cryptographic proofs<cryptographic proof>`. The proofs reveal no information about the owner of the account. In particular, the identity provider itself cannot determine the owner of the account.
+The input to the transaction is a *credential*, which contains a number of cryptographic proofs. The proofs reveal no information about the owner of the account. In particular, the identity provider itself cannot determine the owner of the account.
 
 .. image:: ../protocol/images/account-creation.png
    :alt: graphic drawing showing how user creates accounts
@@ -104,7 +104,7 @@ producing blocks, and transfers.
 At any given time some of the public balance might be unavailable for use. This
 can happen in two ways:
 
-- the account has :term:`staked<staked amount>` some of the public
+- the account has staked some of the public
   balance in order to become a validator or to delegate
 - some of the public balance is locked up because it was received via a
   :term:`transfer with schedule`
