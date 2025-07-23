@@ -1,8 +1,8 @@
 .. _plt-setup-guide:
 
-===========================
-Get started with PLT DevNet
-===========================
+=====================
+Get started with PLTs
+=====================
 
 This section covers everything you need to get started with Protocol-Level Tokens (PLTs) on Concordium's DevNet. Read the following overview to understand the PLT issuance process before proceeding to the setup guides.
 
