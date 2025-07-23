@@ -95,6 +95,15 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Delegation <protocol/concepts-delegation>
 
 .. toctree::
+   :caption: Protocol Level Tokens
+   :hidden:
+
+   What are Protocol-Level Tokens (PLTs)? <plt/index>
+   Get started with PLTs <plt/setup-guide/index>
+   Operations <plt/operations/index>
+   Examples <plt/examples/index>
+
+.. toctree::
    :caption: Smart Contracts
    :hidden:
 
