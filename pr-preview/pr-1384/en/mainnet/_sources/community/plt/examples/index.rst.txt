@@ -21,7 +21,7 @@ DevNet Beta gRPC Connection
 
 When connecting to the DevNet Beta gRPC node, use the following parameters:
 
-- **Address:** ``https://grpc.devnet-plt-beta.concordium.com``  
+- **Address:** ``https://grpc.devnet-plt-beta.concordium.com``
 - **Port:** ``20000``
 
 
