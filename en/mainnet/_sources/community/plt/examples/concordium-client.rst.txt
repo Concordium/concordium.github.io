@@ -29,6 +29,7 @@ The following PLT operations are available via CLI:
 **Token Query Operations:**
 
 - ``raw GetTokenList`` - Get a list of all PLTs available on DevNet
+- ``raw GetTokenInfo`` - Query the gRPC server for the info of a protocol level token
 
 **Token Transfer Operations:**
 
@@ -56,29 +57,34 @@ Command examples
 
 .. _concordium-client-get-token-list:
 
-**Get PLT Token List:**
+**Get PLT List:**
 
 .. code-block:: bash
 
   concordium-client raw GetTokenList --grpc-ip grpc.devnet-plt-beta.concordium.com --grpc-port 20000 --secure
 
+**Get PLT Info:**
+
+.. code-block:: bash
+
+  concordium-client raw GetTokenInfo TOKEN_SYMBOL --grpc-ip grpc.devnet-plt-beta.concordium.com --grpc-port 20000 --secure
 
 .. _concordium-client-transfer-tokens:
 
-**Transfer PLT Tokens:**
+**Transfer PLT:**
 
 .. code-block:: bash
 
    concordium-client transaction plt send --sender YOUR_ACCOUNT --receiver RECEIVER_ADDRESS --amount 1 --tokenId TOKEN_SYMBOL --memo "test" --grpc-ip grpc.devnet-plt-beta.concordium.com --grpc-port 20000 --secure
 
 
-**Mint PLT Tokens:**
+**Mint PLT:**
 
 .. code-block:: bash
 
    concordium-client transaction plt mint --sender GOVERNANCE_ACCOUNT --amount TOKEN-AMOUNT --tokenId TOKEN_SYMBOL --grpc-ip grpc.devnet-plt-beta.concordium.com --grpc-port 20000 --secure
 
-**Burn PLT Tokens:**
+**Burn PLT:**
 
 .. code-block:: bash
 

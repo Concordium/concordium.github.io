@@ -36,6 +36,14 @@ Before you can issue or interact with PLTs on DevNet, you need to set up your en
 
 These guides will walk you through the complete setup process to prepare you for working with PLTs on Concordium's DevNet environment.
 
+CCDScan for DevNet
+==================
+
+You can explore transactions, accounts, and PLT activity on DevNet using the dedicated version of CCDScan, specifically configured for the DevNet Beta environment.
+This version reflects only DevNet data and is isolated from Testnet and Mainnet.
+
+`DevNet CCDScan <https://devnet-plt-beta.ccdscan.io>`_
+
 
 .. toctree::
    :maxdepth: 1
