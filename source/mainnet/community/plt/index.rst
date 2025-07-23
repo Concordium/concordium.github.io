@@ -18,6 +18,8 @@ Each token has a unique string based symbol (e.g. USDQ), which is used in all tr
 
 PLTs can optionally support allow and deny lists to control the ability of Concordium :term:`accounts<account>` to hold/transfer that PLT. Furthermore, they can optionally support mint and burn operations to manage total supply of the PLT, with these being specified at instantiation.
 
+PLT supports the pause and unpause operations, which allow temporarily disabling or re-enabling all balance-affecting actions, such as transfers, minting, and burning. When a token is paused, any attempt to perform these operations will fail. These actions can only be executed by the token-governance account.
+
 Available operations
 ====================
 
@@ -28,6 +30,7 @@ The following operations are available:
     * Minting tokens
     * Burning tokens
     * Administering allow- and deny-lists
+    * Pausing and unpausing
 * **Token-holder operations**: Transferring PLTs
 * **State queries**: Retrieving information about PLTs, balances, and accounts
 
