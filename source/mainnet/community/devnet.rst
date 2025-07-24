@@ -8,18 +8,18 @@ DevNet
 What is DevNet?
 ---------------
 
-DevNet is an open, experimental Concordium network where the latest protocol features 
-and innovations are first introduced and tested before moving to more stable environments. 
-Since April 2025, our engineering team has been regularly shipping new protocol releases to 
+DevNet is an open, experimental Concordium network where the latest protocol features
+and innovations are first introduced and tested before moving to more stable environments.
+Since April 2025, our engineering team has been regularly shipping new protocol releases to
 DevNet — pushing fresh code and features for early testing before they’re ready for testnet and mainnet.
 
-As of now, following the closed alpha testing phase, DevNet has become public and has entered the beta stage. 
+As of now, following the closed alpha testing phase, DevNet has become public and has entered the beta stage.
 No application or invite is required — everyone is welcome to join and experiment with the available features!
 
 .. note::
-    DevNet is an unstable and experimental environment. The network may be updated and reset regularly, 
+    DevNet is an unstable and experimental environment. The network may be updated and reset regularly,
     and APIs or data structures may change without backward compatibility.
-    However, the Concordium team typically provides advance notice about planned resets 
+    However, the Concordium team typically provides advance notice about planned resets
     or major updates, so users have time to prepare or save any important data.
 
 Why join DevNet?
