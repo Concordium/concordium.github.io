@@ -6,24 +6,37 @@ DevNet
 
 
 What is DevNet?
--------------------------
-We are starting a **Canary DevNet** to experiment
-with stablecoins at the **Protocol Layer**.
-Starting in April, our engineering team will begin deploying
-**releases every 2 weeks** to **DevNet**—pushing new code *before*
-our Alpha goes live to testnet.
+---------------
 
-👉 `Get involved now! - Application form <https://tally.so/r/3jvkLx>`_.
+DevNet is an open, experimental Concordium network where the latest protocol features 
+and innovations are first introduced and tested before moving to more stable environments. 
+Since April 2025, our engineering team has been regularly shipping new protocol releases to 
+DevNet — pushing fresh code and features for early testing before they’re ready for testnet and mainnet.
+
+As of now, following the closed alpha testing phase, DevNet has become public and has entered the beta stage. 
+No application or invite is required — everyone is welcome to join and experiment with the available features!
+
+.. note::
+    DevNet is an unstable and experimental environment. The network may be updated and reset regularly, 
+    and APIs or data structures may change without backward compatibility.
+    However, the Concordium team typically provides advance notice about planned resets 
+    or major updates, so users have time to prepare or save any important data.
 
 Why join DevNet?
 ------------------------
 
-- **Be among the first** to build and test newly released stablecoin payment products.
+- **Be among the first** to build and test newly released protocol innovations.
 - Focus on **APIs** to quickly and seamlessly integrate stablecoin payments into existing payment solutions (Stripe, Shopify, etc).
 - Your feedback will shape how we build Concordium’s stablecoins and guide the roadmap priorities.
 
 What can you do?
----------------------
+----------------
+
+Currently, the primary and only new feature available for testing and building on DevNet is Protocol Level Tokens (PLT).
+If you want to be among the first to explore, experiment, or develop solutions with Concordium’s PLT, DevNet is the place to do it.
+
+    Read the PLT documentation :ref:`here<plts>`.
+
 **DevNet** unlocks **powerful** new scenarios for **payment processing**, available only thanks for Concordium ID-layer:
 
 1. **Geofencing Payments**
@@ -42,6 +55,9 @@ Automate periodic payments, like rent or subscriptions.
 
 Execute transactions conditionally, e.g., payments triggered upon delivery or trade finance document verification.
 
+.. note::
+    Other features and use cases will appear in DevNet in the future. For now, all focus and experimentation is around PLT.
+
 Launch Timeline
 --------------------
 * **End of April 2025**: DevNet goes live; invite-only building begins!
@@ -49,9 +65,9 @@ Launch Timeline
 * **June 2025**: First two scenarios (Geofenced Payments, Verify & Pay) are delivered.
 * **November 2025**: Delivery of second two scenarios (Scheduled Transfers and Smart Payment Locks).
 
-Who can apply?
+Who can use DevNet?
 --------------------
-We’re inviting a select group of developers who want to help shape next-gen payment flows and stablecoin functionality, including:
+We invite all developers and innovators who want to help shape next-gen payment flows and stablecoin functionality, including:
 
 * **Payment Pros**: Devs with experience with Stripe, WorldPay, Shopify, or similar platforms.
 * **PayFi, Wallets & Stablecoin Integrators**: Teams already handling digital wallets, fiat on/off ramps, or stablecoin-based payment flows.
@@ -59,6 +75,4 @@ We’re inviting a select group of developers who want to help shape next-gen pa
 
 Ready to pioneer?
 ----------------------
-Reach out to request access and learn how to **bridge Web2 and Web3** with Concordium stablecoins payments.
-
-👉 `Get involved now! - Application form <https://tally.so/r/3jvkLx>`_.
+Just connect and start building — DevNet is open! Explore, test, and help **bridge Web2 and Web3** with Concordium’s latest protocol features.
