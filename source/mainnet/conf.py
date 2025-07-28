@@ -637,7 +637,7 @@ redirects = {
     "tutorials/piggy-bank/wCCD-frontend-set-up" : "/en/mainnet/tutorials/piggy-bank/frontend.html",
     "net/resources/bw-licenses" : "/en/mainnet/docs/guides/cryptox-terms.html",
     "net/guides/legal" : "/en/mainnet/docs/guides/cryptox-terms.html",
-    "net/guides/export-key" : "/en/mainnet/docs/guides/export-key.html",
+    "net/guides/export-key" : "/en/mainnet/docs/guides/export-account-private-key.html",
     "smart-contracts/guides/on-chain-index" : "/en/mainnet/docs/smart-contracts/introduction.html",
     "docs/protocol/company-identities" : "/en/mainnet/tutorials/company-identity/company-identities.html",
     "docs/network/query-node" : "/en/mainnet/tools/query-node.html",
