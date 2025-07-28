@@ -22,6 +22,9 @@ In certain situations, such as testing interaction with smart contracts, you may
 
     #. Now you can tap **Copy key** to copy copy the key to the clipboard, or **Export to file** to save the key as a file that is compatible with other tools like ``concordium-client``.
 
+    .. image:: ../images/cryptoX/export_account_private_key_cryptox.png
+         :width: 100%
+
 
 .. dropdown:: |bw|
 
@@ -32,6 +35,9 @@ In certain situations, such as testing interaction with smart contracts, you may
     #. Enter your passcode and click **Show private key**.
 
     #. When your private key is shown, you can click **Copy account private key** to get the key's value, or click **Export** to get a file compatible with other tools like ``concordium-client``.
+
+    .. image:: ../images/browser-wallet/new/export_account_private_key_bw.png
+        :width: 100%
 
 
 .. |cryptoX-acct-settings| image:: ../images/cryptoX/cryptoX-acct-settings.png
