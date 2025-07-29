@@ -29,9 +29,8 @@ After :ref:`connecting to DevNet <plt-devnet-connection>`, follow these steps to
 4. Complete identity verification:
 
    - You'll be redirected to a Testnet-style ID page
-   - Use the following credentials:
-     - Username: ``devnet-plt-beta``
-     - Password: ``peachy2025``
+   - You can specify custom details for your identity
+   - Click **Submit** to complete DevNet identity verification process
 
    .. image:: Images/identity-verification.png
       :alt: completing identity verification
