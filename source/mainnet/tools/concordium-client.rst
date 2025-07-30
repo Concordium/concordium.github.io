@@ -359,7 +359,7 @@ Importing accounts from |bw| or |cryptox|
 
 You can export a single account as a JSON file from the |bw| or |cryptox|.
 When importing the account, the ``--name`` parameter lets you assign a custom name for local use.
-This name is stored in your local CLI configuration and can be used to refer to the account in all subsequent ``concordium-client`` commands.
+This name is stored in your local Concordium Client configuration and can be used to refer to the account in all subsequent ``concordium-client`` commands.
 
 Importing accounts from |mw-gen1|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
