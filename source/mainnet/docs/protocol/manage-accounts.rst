@@ -174,7 +174,7 @@ You can generate and verify aliases using the Concordium SDKs:
 - ``Rust SDK``: use the ``get_alias`` and ``is_alias`` methods on the `AccountAddress type <https://docs.rs/concordium-rust-sdk/latest/concordium_rust_sdk/common/types/struct.AccountAddress.html#method.get_alias>`_. An `utility <https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/aliases.rs>`_ that checks whether a list of accounts are all aliases of each other is also available.
 - ``TypeScript SDK``: use the ``getAlias`` and ``isAlias`` `methods <https://github.com/Concordium/concordium-node-sdk-js/blob/main/packages/sdk/src/types/AccountAddress.ts#L182>`_ for reference.
 
-This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning. Key points to remember:
+Key points to remember:
 
 - All aliases share the same account balance and transaction history.
 - Transfers between aliases of the same account only cost transaction fees.
