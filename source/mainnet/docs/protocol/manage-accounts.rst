@@ -174,11 +174,17 @@ You can generate and verify aliases using the Concordium SDKs:
 - ``Rust SDK``: use the ``get_alias`` and ``is_alias`` methods on the `AccountAddress type <https://docs.rs/concordium-rust-sdk/latest/concordium_rust_sdk/common/types/struct.AccountAddress.html#method.get_alias>`_. An `utility <https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/aliases.rs>`_ that checks whether a list of accounts are all aliases of each other is also available.
 - ``TypeScript SDK``: use the ``getAlias`` and ``isAlias`` `methods <https://github.com/Concordium/concordium-node-sdk-js/blob/main/packages/sdk/src/types/AccountAddress.ts#L182>`_ for reference.
 
-Account aliases enable practical applications like payment separation, privacy enhancement, and service integration. Key points to remember:
+This allows each account to have aliases for different uses and creates a kind of sub-account structure. An account owner can give out different aliases for different uses to keep track of transfers and assign them meaning. Key points to remember:
 
 - All aliases share the same account balance and transaction history.
 - Transfers between aliases of the same account only cost transaction fees.
-- All ``16,777,216`` aliases exist mathematically without needing to be registered on the blockchain.
+- All ``16,777,216`` aliases exist mathematically from the moment you created your account on-chain.
+
+.. note:: Token Behavior with Alias Account Addresses
+
+   - ``CCD`` / ``PLTs``: Can be sent directly to alias account addresses since the aliases feature is built into the Concordium protocol.
+   - ``CIS-2 tokens``: Are not aware of aliases by default. Smart contracts typically treat each alias address as an independent entity, meaning each alias address maintains its own separate CIS-2 token balance. However, this behavior depends on the specific smart contract implementation—contracts can be designed to mimic the protocol layer's alias handling.
+   - Important consideration for smart contract developers: Special care should be taken when implementing blacklisting/whitelisting functionality due to alias behavior. Each alias address may need to be handled individually unless the contract is specifically designed to recognize aliases. Reference example: `CIS-2 Multi Contract Implementation <https://github.com/Concordium/concordium-rust-smart-contracts/blob/main/examples/cis2-multi/src/lib.rs#L831>`_.
 
 .. _tools:
 
