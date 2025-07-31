@@ -35,7 +35,7 @@ It is the main Concordium mobile wallet and has the widest set of features.
    **iOS**
 
    #.  Install `TestFlight <https://apps.apple.com/us/app/testflight/id899247664>`__ on your iPhone to get the |cryptox| for Testnet on iOS.
-   #.  Follow `this link <https://testflight.apple.com/join/YaKKqYMA>`__ on your iPhone to join the |cryptox| beta. You must have TestFlight installed.
+   #.  Follow `this link <https://testflight.apple.com/join/gnWggXOz>`__ on your iPhone to join the |cryptox| beta. You must have TestFlight installed.
 
    **Android**
 
