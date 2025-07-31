@@ -62,18 +62,18 @@ Run Concordium Client from the command line. On macOS or Linux, access the comma
    .. tab-item:: Windows
 
       On Windows, to run Concordium Client you usually have to specify the full path to the executable file,
-      unless you are running the command from the same directory where ``concordium-client.exe`` is located.
+      unless you are running the command from the same directory where ``concordium-client`` is located.
       In that case, you can invoke the client using either:
 
       .. code-block:: console
 
-         concordium-client.exe
+         concordium-client
 
       or
 
       .. code-block:: console
 
-         ./concordium-client.exe
+         ./concordium-client
 
       depending on the terminal you are using (e.g. PowerShell, Git Bash, or Command Prompt).
 
@@ -82,17 +82,17 @@ Run Concordium Client from the command line. On macOS or Linux, access the comma
 
       .. code-block:: console
 
-         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client
 
       When running commands for the Concordium Client in the terminal, replace
       ``concordium-client`` with the full path to the executable file, as shown in the following example:
 
       .. code-block:: console
 
-         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client config account import concordium-backup.export --name AccountA
 
       To run the client from any directory without specifying the full path, you can add the folder
-      containing ``concordium-client.exe`` to your **user environment variable** ``PATH``.
+      containing ``concordium-client`` to your **user environment variable** ``PATH``.
 
       .. Note::
 
@@ -101,7 +101,7 @@ Run Concordium Client from the command line. On macOS or Linux, access the comma
 
          .. code-block:: console
 
-            C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
+            C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
 
 Commands and help
 =================
