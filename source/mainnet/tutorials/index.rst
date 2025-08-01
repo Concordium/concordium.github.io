@@ -8,8 +8,8 @@ Tutorials
 
 Welcome to Concordium's tutorials section where you can sharpen your skills as a dApp (decentralized application) developer.
 
-Getting Started with Smart Contracts
-------------------------------------
+Getting Started
+---------------
 
 .. container:: tutorial-section tutorial-section-blue
 
@@ -79,7 +79,7 @@ Additional Resources
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: Smart Contract Tutorials
+   :caption: Tutorials
 
    setup-env
    Hello World <./hello-world/hello-world>

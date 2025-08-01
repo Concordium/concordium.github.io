@@ -4,7 +4,7 @@
 Set up the development environment
 ==================================
 
-Before starting the smart contract tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.
+Before starting the tutorials, you must prepare your development environment by installing a number of tools. This topic covers the setup required for the tutorials.
 
 .. Note::
 
