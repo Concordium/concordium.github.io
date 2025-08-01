@@ -37,6 +37,9 @@ to set the `IP address`_ and `port number`_ where the node is accessible. These 
 Run Concordium Client
 =====================
 
+.. Note::
+   ``concordium-client`` binary is available on the :ref:`Downloads<downloads>` page
+
 Run Concordium Client from the command line. On macOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.
 
 .. tab-set::
@@ -61,32 +64,47 @@ Run Concordium Client from the command line. On macOS or Linux, access the comma
 
    .. tab-item:: Windows
 
-      On Windows, to run Concordium Client you have to specify the full path to the executable file
-      (unless you are running from the same directory).
-      For example, if you extracted ``concordium-client_6.3.0-1.zip`` to
-      ``C:\Users\User\Downloads\concordium-client_6.3.0-1``, then you can run the client by typing:
+      On Windows, to run Concordium Client you usually have to specify the full path to the executable file,
+      unless you are running the command from the same directory where ``concordium-client`` is located.
+      In that case, you can invoke the client using either:
 
       .. code-block:: console
 
-         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe
+         concordium-client
+
+      or
+
+      .. code-block:: console
+
+         ./concordium-client
+
+      depending on the terminal you are using (e.g. PowerShell, Git Bash, or Command Prompt).
+
+      For example, if you extracted ``concordium-client_6.3.0-1.zip`` to
+      ``C:\Users\User\Downloads\concordium-client_6.3.0-1``, you can run the client by typing:
+
+      .. code-block:: console
+
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client
 
       When running commands for the Concordium Client in the terminal, replace
-      ``concordium-client`` with the full path to the executable file as in the following example:
+      ``concordium-client`` with the full path to the executable file, as shown in the following example:
 
       .. code-block:: console
 
-         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA
+         C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client config account import concordium-backup.export --name AccountA
 
-      If you add the directory containing the ``concordium-client.exe`` executable to the system environment variables, you can run it without specifying the full path. Alternatively, you can achieve the same result by moving ``concordium-client.exe`` to a directory that is already included in the system's PATH variable, such as ``C:\Windows\System32`` or any other predefined system directory.
+      To run the client from any directory without specifying the full path, you can add the folder
+      containing ``concordium-client`` to your **user environment variable** ``PATH``.
 
       .. Note::
 
          To import the backup file as shown in the example, you must be in the same directory where
-         the ``concordium-backup.export`` is saved. If not, you have to specify the full path to the file, for example:
+         the ``concordium-backup.export`` file is saved. If not, you need to specify the full path to the file, for example:
 
          .. code-block:: console
 
-            C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
+            C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA
 
 Commands and help
 =================
@@ -335,18 +353,29 @@ Import accounts and keys from the Wallet apps
 
 .. code-block:: console
 
-   $concordium-client config account import FILE [--name NAME]
+   $ concordium-client config account import FILE [--name NAME]
 
-Import the keys of one or more accounts from a JSON file exported from the
-|mw-gen1|.
+This command imports an account keys into your local configuration, allowing it to be used with the ``concordium-client`` CLI.
 
-The ``--name`` option selects which account to import and imports it with this
-name. If it's omitted, all accounts in the file are imported under their
-existing names.
+Importing accounts from |bw| or |cryptox|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. Note::
+You can export a single account as a JSON file from the |bw| or |cryptox|.
+When importing the account, the ``--name`` parameter lets you assign a custom name for local use.
+This name is stored in your local Concordium Client configuration and can be used to refer to the account in all subsequent ``concordium-client`` commands.
 
-   When importing keys that have been exported from |bw|, the ``--name`` option must be provided to name the account.
+Importing accounts from |mw-gen1|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The |mw-gen1| allows you to export all accounts at once using the **Backup** option.
+This generates a file that contains all accounts available in the wallet.
+When importing this file into your local configuration using ``concordium-client``,
+you can use the ``--name`` parameter to import a specific account by its name.
+
+If ``--name`` is omitted, **all accounts** in the backup file will be imported under their original names.
+
+.. note::
+   The |mw-gen1| is deprecated, does not receive updates and is not recommended for use.
 
 Account aliases
 ~~~~~~~~~~~~~~~~~~~~~~~~
