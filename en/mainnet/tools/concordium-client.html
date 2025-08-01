@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tools/concordium-client.7d5049e8-73bd-4a57-9888-aa8923ebca34.js"></script>
+    <script defer="defer" src="../_static/tippy/tools/concordium-client.4671fd62-49a8-4fd8-b7cd-c344851dcac1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/concordium-client';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/concordium-client.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -585,6 +585,10 @@ You can see the fee in the transaction log.</p>
 </div>
 <section id="run-concordium-client">
 <h2>Run Concordium Client<a class="headerlink" href="#run-concordium-client" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> binary is available on the <a class="reference internal" href="../docs/installation/downloads.html#downloads"><span class="std std-ref">Downloads</span></a> page</p>
+</div>
 <p>Run Concordium Client from the command line. On macOS or Linux, access the command line with the Terminal application. On Windows, use the Power Shell or Command Prompt application. If you run it outside of the command line (e.g., by double clicking in Windows Explorer), then the Concordium Client will exit immediately without doing anything useful.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
@@ -608,24 +612,34 @@ Note that after downloading the file, you may need to make it executable by runn
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Windows</label><div class="sd-tab-content docutils">
-<p>On Windows, to run Concordium Client you have to specify the full path to the executable file
-(unless you are running from the same directory).
-For example, if you extracted <code class="docutils literal notranslate"><span class="pre">concordium-client_6.3.0-1.zip</span></code> to
-<code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_6.3.0-1</span></code>, then you can run the client by typing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe</span>
+<p>On Windows, to run Concordium Client you usually have to specify the full path to the executable file,
+unless you are running the command from the same directory where <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> is located.
+In that case, you can invoke the client using either:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">concordium-client</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./concordium-client</span>
+</pre></div>
+</div>
+<p>depending on the terminal you are using (e.g. PowerShell, Git Bash, or Command Prompt).</p>
+<p>For example, if you extracted <code class="docutils literal notranslate"><span class="pre">concordium-client_6.3.0-1.zip</span></code> to
+<code class="docutils literal notranslate"><span class="pre">C:\Users\User\Downloads\concordium-client_6.3.0-1</span></code>, you can run the client by typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client</span>
 </pre></div>
 </div>
 <p>When running commands for the Concordium Client in the terminal, replace
-<code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> with the full path to the executable file as in the following example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import concordium-backup.export --name AccountA</span>
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> with the full path to the executable file, as shown in the following example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client config account import concordium-backup.export --name AccountA</span>
 </pre></div>
 </div>
-<p>If you add the directory containing the <code class="docutils literal notranslate"><span class="pre">concordium-client.exe</span></code> executable to the system environment variables, you can run it without specifying the full path. Alternatively, you can achieve the same result by moving <code class="docutils literal notranslate"><span class="pre">concordium-client.exe</span></code> to a directory that is already included in the system’s PATH variable, such as <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32</span></code> or any other predefined system directory.</p>
+<p>To run the client from any directory without specifying the full path, you can add the folder
+containing <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> to your <strong>user environment variable</strong> <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To import the backup file as shown in the example, you must be in the same directory where
-the <code class="docutils literal notranslate"><span class="pre">concordium-backup.export</span></code> is saved. If not, you have to specify the full path to the file, for example:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client.exe config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA</span>
+the <code class="docutils literal notranslate"><span class="pre">concordium-backup.export</span></code> file is saved. If not, you need to specify the full path to the file, for example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\Users\User\Downloads\concordium-client_6.3.0-1\concordium-client config account import C:\Users\User\Desktop\concordium-backup.export --name AccountA</span>
 </pre></div>
 </div>
 </div>
@@ -841,18 +855,28 @@ a JSON file that contains the keys that will be added in the same format as for 
 </section>
 <section id="import-accounts-and-keys-from-the-wallet-apps">
 <span id="concordium-client-import-accounts-keys"></span><h4>Import accounts and keys from the Wallet apps<a class="headerlink" href="#import-accounts-and-keys-from-the-wallet-apps" title="Link to this heading">#</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>FILE<span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>NAME<span class="o">]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>concordium-client<span class="w"> </span>config<span class="w"> </span>account<span class="w"> </span>import<span class="w"> </span>FILE<span class="w"> </span><span class="o">[</span>--name<span class="w"> </span>NAME<span class="o">]</span>
 </pre></div>
 </div>
-<p>Import the keys of one or more accounts from a JSON file exported from the
-Concordium Legacy Wallet.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">--name</span></code> option selects which account to import and imports it with this
-name. If it’s omitted, all accounts in the file are imported under their
-existing names.</p>
+<p>This command imports an account keys into your local configuration, allowing it to be used with the <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> CLI.</p>
+<section id="importing-accounts-from-bw-or-cryptox">
+<h5>Importing accounts from Concordium Wallet for Web or CryptoX Concordium Wallet<a class="headerlink" href="#importing-accounts-from-bw-or-cryptox" title="Link to this heading">#</a></h5>
+<p>You can export a single account as a JSON file from the Concordium Wallet for Web or CryptoX Concordium Wallet.
+When importing the account, the <code class="docutils literal notranslate"><span class="pre">--name</span></code> parameter lets you assign a custom name for local use.
+This name is stored in your local Concordium Client configuration and can be used to refer to the account in all subsequent <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> commands.</p>
+</section>
+<section id="importing-accounts-from-mw-gen1">
+<h5>Importing accounts from Concordium Legacy Wallet<a class="headerlink" href="#importing-accounts-from-mw-gen1" title="Link to this heading">#</a></h5>
+<p>The Concordium Legacy Wallet allows you to export all accounts at once using the <strong>Backup</strong> option.
+This generates a file that contains all accounts available in the wallet.
+When importing this file into your local configuration using <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code>,
+you can use the <code class="docutils literal notranslate"><span class="pre">--name</span></code> parameter to import a specific account by its name.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">--name</span></code> is omitted, <strong>all accounts</strong> in the backup file will be imported under their original names.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When importing keys that have been exported from Concordium Wallet for Web, the <code class="docutils literal notranslate"><span class="pre">--name</span></code> option must be provided to name the account.</p>
+<p>The Concordium Legacy Wallet is deprecated, does not receive updates and is not recommended for use.</p>
 </div>
+</section>
 </section>
 <section id="account-aliases">
 <h4>Account aliases<a class="headerlink" href="#account-aliases" title="Link to this heading">#</a></h4>
@@ -974,7 +998,11 @@ structure of <code class="docutils literal notranslate"><span class="pre">concor
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-key-to-an-account">Add key to an account</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-keys-of-an-account">Update keys of an account</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-keys-of-an-account">Remove keys of an account</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#import-accounts-and-keys-from-the-wallet-apps">Import accounts and keys from the Wallet apps</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#import-accounts-and-keys-from-the-wallet-apps">Import accounts and keys from the Wallet apps</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-accounts-from-bw-or-cryptox">Importing accounts from Concordium Wallet for Web or CryptoX Concordium Wallet</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-accounts-from-mw-gen1">Importing accounts from Concordium Legacy Wallet</a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#account-aliases">Account aliases</a></li>
 </ul>
 </li>
