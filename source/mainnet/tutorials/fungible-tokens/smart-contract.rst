@@ -479,7 +479,7 @@ You can embed the schema file in the module, which means you don’t have to cal
 
 .. code-block:: console
 
-    cargo concordium build --schema-embed --out dist/embedded/module.wasm.v1
+    cargo concordium build --out dist/embedded/module.wasm.v1
 
 .. image:: images/build-sc.png
     :width: 100%

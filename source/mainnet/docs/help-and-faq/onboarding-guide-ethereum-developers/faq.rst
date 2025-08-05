@@ -319,12 +319,6 @@ Concordium smart contracts
 
     .. code-block:: console
 
-        $cargo concordium build --schema-embed
-
-    The shorter version of the above command is as follows:
-
-    .. code-block:: console
-
         $cargo concordium build -e
 
     .. image:: ./images/onboarding_ethereum_developers_5.png
