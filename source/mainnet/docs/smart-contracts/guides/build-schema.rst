@@ -245,7 +245,7 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
    $cargo concordium schema-base64 --schema "/some/path/schema.bin" --out "/some/path/base64_schema.b64"
 
 Alternatively, a schema in base64 format can be extracted from an embedded schema in a
-module (obtained via ``cargo concordium build ``) by using
+module (obtained via ``cargo concordium build``) by using
 
 .. code-block:: console
 

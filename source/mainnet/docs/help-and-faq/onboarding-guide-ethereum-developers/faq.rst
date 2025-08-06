@@ -319,7 +319,7 @@ Concordium smart contracts
 
     .. code-block:: console
 
-        $cargo concordium build -e
+        $cargo concordium build
 
     .. image:: ./images/onboarding_ethereum_developers_5.png
         :width: 100 %

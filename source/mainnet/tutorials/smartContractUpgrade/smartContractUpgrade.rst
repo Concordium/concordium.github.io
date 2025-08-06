@@ -160,7 +160,7 @@ Compile the smart contract to a Wasm module which you will deploy to testnet in 
 
 .. code-block:: console
 
-    $cargo concordium build -e --out smart_contract_upgrade.wasm.v1
+    $cargo concordium build --out smart_contract_upgrade.wasm.v1
 
 .. image:: ./images/compile_contract_version1.png
    :alt: Compile contract version 1
@@ -237,7 +237,7 @@ Compile the smart contract to a Wasm module which you will deploy to testnet in 
 
 .. code-block:: console
 
-    $cargo concordium build -e --out smart_contract_upgrade.wasm.v1
+    $cargo concordium build --out smart_contract_upgrade.wasm.v1
 
 .. image:: ./images/compile_contract_version2.png
    :alt: Compile contract version 2
