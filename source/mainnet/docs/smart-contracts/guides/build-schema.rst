@@ -159,6 +159,23 @@ have the options to embed the schema and/or write the schema to a file and/or pr
    For more on which to choose see
    :ref:`here<contract-schema-which-to-choose>`.
 
+Embedding the schema
+--------------------
+
+The schema is embedded by default when building the smart contract module:
+
+.. code-block:: console
+
+   $cargo concordium build
+
+If successful the output of the command will tell you the total sie of the schema in bytes.
+
+You can disable the default behavior (not recommended) with:
+
+.. code-block:: console
+
+   $cargo concordium build --no-schema-embed
+
 Outputting a schema file
 ------------------------
 
