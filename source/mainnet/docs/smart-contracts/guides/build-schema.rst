@@ -162,15 +162,19 @@ have the options to embed the schema and/or write the schema to a file and/or pr
 Embedding the schema
 --------------------
 
-In order to embed the schema into the smart contract module, add
-``--schema-embed`` to the build command by using
+The schema is embedded by default when building the smart contract module:
 
 .. code-block:: console
 
-   $cargo concordium build --schema-embed
+   $cargo concordium build
 
-If successful the output of the command will tell you the total size of the
-schema in bytes.
+If successful the output of the command will tell you the total sie of the schema in bytes.
+
+You can disable the default behavior (not recommended) with:
+
+.. code-block:: console
+
+   $cargo concordium build --no-schema-embed
 
 Outputting a schema file
 ------------------------
@@ -220,7 +224,7 @@ schemas in all the formats will be output
 
    Why are there so many different schema formats?
 
-   - The flags ``--schema-embed/--schema-out`` convert the schema into bytes. This was the first schema representation used by Concordium and it is how we embed the schema into a module. This byte format is not human-readable but it is a very compact format and suitable to be used for the smart contract on-chain.
+   - The flags ``--schema-out`` convert the schema into bytes. This was the first schema representation used by Concordium and it is how we embed the schema into a module. This byte format is not human-readable but it is a very compact format and suitable to be used for the smart contract on-chain.
 
    - The command ``schema-base64`` and the flag ``--schema-base64-out`` convert the schema into base64 format. This is the format that is currently used by the |bw| and most of our frontend examples.
 
@@ -239,7 +243,7 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
    $cargo concordium schema-json --schema "/some/path/schema.bin" --out "/some/path/"
 
 Alternatively, a schema in JSON can be extracted from an embedded schema in a
-module (obtained via ``cargo concordium build --schema-embed``) by using
+module (obtained via ``cargo concordium build``) by using
 
 .. code-block:: console
 
@@ -258,7 +262,7 @@ To convert an existing binary schema (obtained via ``--schema-out``) use the
    $cargo concordium schema-base64 --schema "/some/path/schema.bin" --out "/some/path/base64_schema.b64"
 
 Alternatively, a schema in base64 format can be extracted from an embedded schema in a
-module (obtained via ``cargo concordium build --schema-embed``) by using
+module (obtained via ``cargo concordium build``) by using
 
 .. code-block:: console
 
