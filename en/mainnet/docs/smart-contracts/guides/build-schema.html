@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/build-schema.20e28225-772c-44b1-b1a9-aa7ac46bdb81.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/smart-contracts/guides/build-schema.99a5b64e-5247-4a1c-a6a5-1cb5d4c1bb96.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/smart-contracts/guides/build-schema';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/smart-contracts/guides/build-schema.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -922,13 +922,15 @@ have the options to embed the schema and/or write the schema to a file and/or pr
 </div>
 <section id="embedding-the-schema">
 <h3>Embedding the schema<a class="headerlink" href="#embedding-the-schema" title="Link to this heading">#</a></h3>
-<p>In order to embed the schema into the smart contract module, add
-<code class="docutils literal notranslate"><span class="pre">--schema-embed</span></code> to the build command by using</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--schema-embed
+<p>The schema is embedded by default when building the smart contract module:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build
 </pre></div>
 </div>
-<p>If successful the output of the command will tell you the total size of the
-schema in bytes.</p>
+<p>If successful the output of the command will tell you the total sie of the schema in bytes.</p>
+<p>You can disable the default behavior (not recommended) with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--no-schema-embed
+</pre></div>
+</div>
 </section>
 <section id="outputting-a-schema-file">
 <h3>Outputting a schema file<a class="headerlink" href="#outputting-a-schema-file" title="Link to this heading">#</a></h3>
@@ -967,7 +969,7 @@ schemas in all the formats will be output</p>
 <p class="admonition-title">Note</p>
 <p>Why are there so many different schema formats?</p>
 <ul class="simple">
-<li><p>The flags <code class="docutils literal notranslate"><span class="pre">--schema-embed/--schema-out</span></code> convert the schema into bytes. This was the first schema representation used by Concordium and it is how we embed the schema into a module. This byte format is not human-readable but it is a very compact format and suitable to be used for the smart contract on-chain.</p></li>
+<li><p>The flags <code class="docutils literal notranslate"><span class="pre">--schema-out</span></code> convert the schema into bytes. This was the first schema representation used by Concordium and it is how we embed the schema into a module. This byte format is not human-readable but it is a very compact format and suitable to be used for the smart contract on-chain.</p></li>
 <li><p>The command <code class="docutils literal notranslate"><span class="pre">schema-base64</span></code> and the flag <code class="docutils literal notranslate"><span class="pre">--schema-base64-out</span></code> convert the schema into base64 format. This is the format that is currently used by the Concordium Wallet for Web and most of our frontend examples.</p></li>
 <li><p>The command <code class="docutils literal notranslate"><span class="pre">schema-json</span></code> and the flag <code class="docutils literal notranslate"><span class="pre">--schema-json-out</span></code> convert the schema into JSON format. This is a human-readable format and will make it easier for developers to develop on the Concordium blockchain. Concordium is in the process of updating its tooling and implementing support for this format.</p></li>
 </ul>
@@ -982,7 +984,7 @@ schemas in all the formats will be output</p>
 </pre></div>
 </div>
 <p>Alternatively, a schema in JSON can be extracted from an embedded schema in a
-module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span> <span class="pre">--schema-embed</span></code>) by using</p>
+module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code>) by using</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-json<span class="w"> </span>--module<span class="w"> </span><span class="s2">&quot;module.wasm.v1&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="s2">&quot;/some/path/&quot;</span>
 </pre></div>
 </div>
@@ -996,7 +998,7 @@ module (obtained via <code class="docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 <p>Alternatively, a schema in base64 format can be extracted from an embedded schema in a
-module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span> <span class="pre">--schema-embed</span></code>) by using</p>
+module (obtained via <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">concordium</span> <span class="pre">build</span></code>) by using</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>schema-base64<span class="w"> </span>--module<span class="w"> </span><span class="s2">&quot;module.wasm.v1&quot;</span><span class="w"> </span>--out<span class="w"> </span><span class="s2">&quot;/some/path/base64_schema.b64&quot;</span>
 </pre></div>
 </div>

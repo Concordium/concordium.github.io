@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/tutorials/fungible-tokens/smart-contract.7f5b38cc-997d-4716-ad34-dec4189280db.js"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/fungible-tokens/smart-contract.56cd56e9-9dc0-4cab-929d-e6159fe57f19.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/fungible-tokens/smart-contract';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/fungible-tokens/smart-contract.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -1029,7 +1029,7 @@
 <h3>Build the smart contract<a class="headerlink" href="#build-the-smart-contract" title="Link to this heading">#</a></h3>
 <p>Run the command below to create a Wasm compiled build file of your smart contract. It is a good habit to create a folder for the output files. For example, here the user created a parent folder named <cite>dist</cite> and a child folder named <cite>fungible</cite> inside of it.</p>
 <p>You can embed the schema file in the module, which means you don’t have to call it again and again for your future function calls. To build the contract and embed the schema file, use the command below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo concordium build --schema-embed --out dist/embedded/module.wasm.v1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cargo concordium build --out dist/embedded/module.wasm.v1</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/build-sc.png"><img alt="dark console screen with result of running the command above" src="../../_images/build-sc.png" style="width: 100%;" />
