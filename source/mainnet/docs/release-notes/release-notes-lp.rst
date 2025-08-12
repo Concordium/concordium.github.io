@@ -431,7 +431,7 @@ Wallets
 
         .. dropdown:: |bw| 2.5.0 - July 09, 2025
 
-            Version 2.5.0 includes several changes.
+            Version 2.5.0 changes:
 
             -   Added Fiat on-ramp in the Browser Wallet.
 
