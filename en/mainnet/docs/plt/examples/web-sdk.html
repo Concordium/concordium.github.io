@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/web-sdk.afee459b-4fe5-40ec-b305-67ecd744f7c0.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/web-sdk.244b9ab5-4f86-433f-9a62-320230544e0d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/examples/web-sdk';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/examples/web-sdk.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -819,7 +819,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span id="web-sdk-get-token-list"></span><h3>Get token list<a class="headerlink" href="#get-token-list" title="Link to this heading">#</a></h3>
 <p>Retrieve all Protocol-Level Tokens available on the network:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/client/getTokenList.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/client/getTokenList.ts</span>
 <span class="cm">* Retrieves the protocol level tokens that exists at the end of a given block as an async</span>
 <span class="cm">* iterable. If a blockhash is not supplied it will pick the latest finalized</span>
 <span class="cm">* block. An optional abortSignal can also be provided that closes the stream.</span>
@@ -855,7 +855,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <p>Retrieve detailed information about a specific PLT:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm">* Returns the PLT information with symbol</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/client/getTokenInfo.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/client/getTokenInfo.ts</span>
 <span class="cm">* @param symbol</span>
 <span class="cm">* @returns TokenInfo {TokenId, TokenState}</span>
 <span class="cm">*/</span>
@@ -897,7 +897,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <p>Query account information including PLT balances:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm">* Returns the account information including PLT balances</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/client/getAccountInfo.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/client/getAccountInfo.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/nodejs&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">credentials</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@grpc/grpc-js&#39;</span><span class="p">;</span>
@@ -945,7 +945,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">* Transfers the specified amount of PLT to another address.</span>
 <span class="cm">* Shows how to use 2 different wallet exports (.export and .json)</span>
 <span class="cm">* Queries the PLT with symbol, and executes transfer with/without memo</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/transfer.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/transfer.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1048,7 +1048,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">* Mints new tokens to the issuer&#39;s account.</span>
 <span class="cm">* Only the nominated account (token issuer) can perform mint operations.</span>
 <span class="cm">* Shows how to mint tokens.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/update-supply.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/update-supply.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1136,7 +1136,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">* Burns tokens from the issuer&#39;s account.</span>
 <span class="cm">* Only the nominated account (token issuer) can perform burn operations.</span>
 <span class="cm">* Shows how to burn tokens.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/update-supply.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/update-supply.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1226,7 +1226,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">* Adds an account to the token&#39;s allow list.</span>
 <span class="cm">* Only accounts on the allow list can hold the token when allow list is enabled.</span>
 <span class="cm">* Only the nominated account (token issuer) can modify the allow list.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1319,7 +1319,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">* Removes an account from the token&#39;s allow list.</span>
 <span class="cm">* Only accounts on the allow list can hold the token when allow list is enabled.</span>
 <span class="cm">* Only the nominated account (token issuer) can modify the allow list.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1412,7 +1412,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">* Adds an account to the token&#39;s deny list.</span>
 <span class="cm">* Accounts on the deny list cannot hold the token when deny list is enabled.</span>
 <span class="cm">* Only the nominated account (token issuer) can modify the deny list.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1505,7 +1505,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="cm">* Removes an account from the token&#39;s deny list.</span>
 <span class="cm">* Accounts on the deny list cannot hold the token when deny list is enabled.</span>
 <span class="cm">* Only the nominated account (token issuer) can modify the deny list.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1597,7 +1597,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm">* Pause: suspends balance transfer operations for the PLT.</span>
 <span class="cm">* Only the nominated account (token issuer) can pause the token.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/pause.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/pause.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>
@@ -1694,7 +1694,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm">* Unpause: resumes balance transfer operations for the PLT.</span>
 <span class="cm">* Only the nominated account (token issuer) can unpause the token.</span>
-<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/pause.ts</span>
+<span class="cm">* full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/pause.ts</span>
 <span class="cm">*/</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">AccountAddress</span><span class="p">,</span>

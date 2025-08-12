@@ -275,7 +275,7 @@ Configure the recipient address and amount to complete the transfer.
     //! 3. Set the recipient address in the `RECIPIENT_ADDRESS` constant
     //! 4. Set the amount to transfer in the `TOKEN_AMOUNT` constant
     //! 5. Run with: `cargo run --example transfer_tokens`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-transfer.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-transfer.rs
 
     use anyhow::Context;
     use concordium_base::{
@@ -392,7 +392,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the amount to mint in the `TOKEN_AMOUNT` constant
     //! 4. Run with: `cargo run --example mint_tokens`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
@@ -485,7 +485,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the amount to burn in the `TOKEN_AMOUNT` constant
     //! 4. Run with: `cargo run --example burn_tokens`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
@@ -580,7 +580,7 @@ Only the token issuer can modify the allow list.
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the target address to add in the `TARGET_ADDRESS` constant
     //! 4. Run with: `cargo run --example add_to_allow_list`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs
 
     use anyhow::Context;
     use concordium_base::{
@@ -667,7 +667,7 @@ Only the token issuer can modify the allow list.
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the target address to remove in the `TARGET_ADDRESS` constant
     //! 4. Run with: `cargo run --example remove_from_allow_list`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs
 
     use anyhow::Context;
     use concordium_base::{
@@ -756,7 +756,7 @@ Accounts on the deny list cannot hold the token when deny list is enabled.
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the target address to add in the `TARGET_ADDRESS` constant
     //! 4. Run with: `cargo run --example add_to_deny_list`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs
 
     use anyhow::Context;
     use concordium_base::{
@@ -842,7 +842,7 @@ Only the token issuer can modify the deny list.
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the target address to remove in the `TARGET_ADDRESS` constant
     //! 4. Run with: `cargo run --example remove_from_deny_list`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs
 
     use anyhow::Context;
     use concordium_base::{
@@ -927,7 +927,7 @@ This example demonstrates how to suspend balance transfer operations for a Proto
     //! 1. Set your wallet file path in the `WALLET_FILE` constant below
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Run with: `cargo run --example pause_token`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-pause.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-pause.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenId};
@@ -1004,7 +1004,7 @@ This example demonstrates how to resume balance transfer operations for a Protoc
     //! 1. Set your wallet file path in the `WALLET_FILE` constant below
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Run with: `cargo run --example unpause_token`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-pause.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-pause.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenId};

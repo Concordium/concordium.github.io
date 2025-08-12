@@ -58,7 +58,7 @@ Retrieve all Protocol-Level Tokens available on the network:
 .. code-block:: typescript
 
     /**
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/client/getTokenList.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/client/getTokenList.ts
     * Retrieves the protocol level tokens that exists at the end of a given block as an async
     * iterable. If a blockhash is not supplied it will pick the latest finalized
     * block. An optional abortSignal can also be provided that closes the stream.
@@ -98,7 +98,7 @@ Retrieve detailed information about a specific PLT:
 
     /**
     * Returns the PLT information with symbol
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/client/getTokenInfo.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/client/getTokenInfo.ts
     * @param symbol
     * @returns TokenInfo {TokenId, TokenState}
     */
@@ -144,7 +144,7 @@ Query account information including PLT balances:
 
     /**
     * Returns the account information including PLT balances
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/client/getAccountInfo.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/client/getAccountInfo.ts
     */
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
@@ -198,7 +198,7 @@ Transfer PLTs between accounts:
     * Transfers the specified amount of PLT to another address.
     * Shows how to use 2 different wallet exports (.export and .json)
     * Queries the PLT with symbol, and executes transfer with/without memo
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/transfer.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/transfer.ts
     */
     import {
         AccountAddress,
@@ -307,7 +307,7 @@ Mint new tokens (issuer only):
     * Mints new tokens to the issuer's account.
     * Only the nominated account (token issuer) can perform mint operations.
     * Shows how to mint tokens.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/update-supply.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/update-supply.ts
     */
     import {
         AccountAddress,
@@ -399,7 +399,7 @@ Burn existing tokens (issuer only):
     * Burns tokens from the issuer's account.
     * Only the nominated account (token issuer) can perform burn operations.
     * Shows how to burn tokens.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/update-supply.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/update-supply.ts
     */
     import {
         AccountAddress,
@@ -495,7 +495,7 @@ Add an account to the token's allow list (issuer only):
     * Adds an account to the token's allow list.
     * Only accounts on the allow list can hold the token when allow list is enabled.
     * Only the nominated account (token issuer) can modify the allow list.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts
     */
     import {
         AccountAddress,
@@ -592,7 +592,7 @@ Remove an account from the token's allow list (issuer only):
     * Removes an account from the token's allow list.
     * Only accounts on the allow list can hold the token when allow list is enabled.
     * Only the nominated account (token issuer) can modify the allow list.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts
     */
     import {
         AccountAddress,
@@ -689,7 +689,7 @@ Add an account to the token's deny list (issuer only):
     * Adds an account to the token's deny list.
     * Accounts on the deny list cannot hold the token when deny list is enabled.
     * Only the nominated account (token issuer) can modify the deny list.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts
     */
     import {
         AccountAddress,
@@ -786,7 +786,7 @@ Remove an account from the token's deny list (issuer only):
     * Removes an account from the token's deny list.
     * Accounts on the deny list cannot hold the token when deny list is enabled.
     * Only the nominated account (token issuer) can modify the deny list.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/modify-list.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/modify-list.ts
     */
     import {
         AccountAddress,
@@ -882,7 +882,7 @@ This example demonstrates how to suspend balance transfer operations for a Proto
     /**
     * Pause: suspends balance transfer operations for the PLT.
     * Only the nominated account (token issuer) can pause the token.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/pause.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/pause.ts
     */
     import {
         AccountAddress,
@@ -983,7 +983,7 @@ This example demonstrates how to resume balance transfer operations for a Protoc
     /**
     * Unpause: resumes balance transfer operations for the PLT.
     * Only the nominated account (token issuer) can unpause the token.
-    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/plt/examples/nodejs/plt/pause.ts
+    * full code example using cli: https://github.com/Concordium/concordium-node-sdk-js/blob/main/examples/nodejs/plt/pause.ts
     */
     import {
         AccountAddress,

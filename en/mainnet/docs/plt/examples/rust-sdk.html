@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/rust-sdk.e76f0354-67bb-4bce-bff3-3562eb94d035.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/rust-sdk.63ee4959-4ea1-4a12-ac23-0a062af557bc.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/examples/rust-sdk';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/examples/rust-sdk.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -1024,7 +1024,7 @@ Configure the recipient address and amount to complete the transfer.</p>
 <span class="sd">//! 3. Set the recipient address in the `RECIPIENT_ADDRESS` constant</span>
 <span class="sd">//! 4. Set the amount to transfer in the `TOKEN_AMOUNT` constant</span>
 <span class="sd">//! 5. Run with: `cargo run --example transfer_tokens`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-transfer.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-transfer.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1136,7 +1136,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the amount to mint in the `TOKEN_AMOUNT` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example mint_tokens`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">protocol_level_tokens</span><span class="p">::{</span><span class="n">operations</span><span class="p">,</span><span class="w"> </span><span class="n">TokenAmount</span><span class="p">,</span><span class="w"> </span><span class="n">TokenId</span><span class="p">};</span>
@@ -1224,7 +1224,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the amount to burn in the `TOKEN_AMOUNT` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example burn_tokens`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">protocol_level_tokens</span><span class="p">::{</span><span class="n">operations</span><span class="p">,</span><span class="w"> </span><span class="n">TokenAmount</span><span class="p">,</span><span class="w"> </span><span class="n">TokenId</span><span class="p">};</span>
@@ -1314,7 +1314,7 @@ Only the token issuer can modify the allow list.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to add in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example add_to_allow_list`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1396,7 +1396,7 @@ Only the token issuer can modify the allow list.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to remove in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example remove_from_allow_list`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1480,7 +1480,7 @@ Accounts on the deny list cannot hold the token when deny list is enabled.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to add in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example add_to_deny_list`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1562,7 +1562,7 @@ Only the token issuer can modify the deny list.</p>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Set the target address to remove in the `TARGET_ADDRESS` constant</span>
 <span class="sd">//! 4. Run with: `cargo run --example remove_from_deny_list`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-allow-and-deny-list.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-allow-and-deny-list.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::{</span>
@@ -1643,7 +1643,7 @@ Only the token issuer can modify the deny list.</p>
 <span class="sd">//! 1. Set your wallet file path in the `WALLET_FILE` constant below</span>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Run with: `cargo run --example pause_token`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-pause.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-pause.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">protocol_level_tokens</span><span class="p">::{</span><span class="n">operations</span><span class="p">,</span><span class="w"> </span><span class="n">TokenId</span><span class="p">};</span>
@@ -1716,7 +1716,7 @@ Only the token issuer can modify the deny list.</p>
 <span class="sd">//! 1. Set your wallet file path in the `WALLET_FILE` constant below</span>
 <span class="sd">//! 2. Set the token ID in the `TOKEN_ID` constant</span>
 <span class="sd">//! 3. Run with: `cargo run --example unpause_token`</span>
-<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-pause.rs</span>
+<span class="sd">//! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-pause.rs</span>
 
 <span class="k">use</span><span class="w"> </span><span class="n">anyhow</span><span class="p">::</span><span class="n">Context</span><span class="p">;</span>
 <span class="k">use</span><span class="w"> </span><span class="n">concordium_base</span><span class="p">::</span><span class="n">protocol_level_tokens</span><span class="p">::{</span><span class="n">operations</span><span class="p">,</span><span class="w"> </span><span class="n">TokenId</span><span class="p">};</span>
