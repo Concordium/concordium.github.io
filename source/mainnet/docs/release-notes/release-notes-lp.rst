@@ -424,7 +424,7 @@ Wallets
 
     Version 2.5.1
 
-    -   Fixed issue when user was not able to complete web3id age verification.
+    -   Fixed issue when users were not able to complete Web3 ID age verification.
     -   Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the "Manage token list" menu manually.
 
     .. dropdown:: Previous releases
