@@ -420,13 +420,20 @@ Wallets
 |bw|
 -------------------------
 
-    July 09, 2025
+    Aug 12, 2025
 
-    Version 2.5.0
+    Version 2.5.1
 
-    -   Added Fiat on-ramp in the Browser Wallet.
+    -   Fixed issue when users were not able to complete Web3 ID age verification.
+    -   Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the "Manage token list" menu manually.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.5.0 - July 09, 2025
+
+            Version 2.5.0 changes:
+
+            -   Added Fiat on-ramp in the Browser Wallet.
 
         .. dropdown:: |bw| 2.4.0 - July 03, 2025
 
