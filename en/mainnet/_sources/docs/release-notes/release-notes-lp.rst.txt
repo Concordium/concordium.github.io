@@ -19,11 +19,21 @@ Wallets
 |cryptox| for iOS
 -----------------
 
- Jul 9, 2025
-    Version 3.3.5:
-    - Added ability to buy CCD through Banxa
+ Aug 12, 2025
+    Version 3.3.6:
+
+    - Added ID 2.5 statement approval functionality
+    - Introduced  ConcordiumClient wrapper over SDK
+    - Moved Lottie animations from DotLottie on Lottie framework
+    - Updated Reown(Wallet Connect) flow UI + alerts logic
+    - Added new type request_verifiable_presentation for incoming verify transactions type
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.3.5  -  Jul 9, 2025
+
+            - Added ability to buy CCD through Banxa
+
         .. dropdown:: |cryptox| 3.3.2  -  May 13, 2025
 
             - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
