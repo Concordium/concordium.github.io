@@ -433,7 +433,7 @@ redirects = {
     "net/nodes/baker-ubuntu": "/en/mainnet/docs/network/guides/import-validator-keys.html",
     "net/nodes/baker-docker": "/en/mainnet/docs/network/guides/import-validator-keys.html",
     "net/guides/become-baker": "/en/mainnet/docs/network/guides/become-baker.html",
-    "net/references/concordium-client": "/en/mainnet/docs/network/concordium-client.html",
+    "net/references/concordium-client": "/en/mainnet/tools/concordium-client.html",
     "net/references/transactions": "/en/mainnet/docs/protocol/manage-accounts.html#account-aliases",
     "net/references/query-node": "/en/mainnet/docs/network/query-node.html",
     "net/references/multi-sig": "/en/mainnet/docs/network/multi-sig.html",
