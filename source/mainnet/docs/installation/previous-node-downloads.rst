@@ -14,6 +14,8 @@ Windows - Mainnet and Testnet
 
 **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
+`Windows 8.0.3 <https://distribution.concordium.software/windows/Signed/Node-8.0.3-1.msi>`_
+
 `Windows 7.0.4 <https://distribution.concordium.software/windows/Signed/Node-7.0.4-0.msi>`_
 
 `Windows 6.3.1 <https://distribution.concordium.software/windows/Signed/Node-6.3.1-0.msi>`_
@@ -58,6 +60,8 @@ Windows - Mainnet and Testnet
 
 macOS - Mainnet and Testnet
 ===========================
+
+`macOS 8.0.3 <https://distribution.concordium.software/macos/signed/concordium-node-8.0.3-1.pkg>`_
 
 `macOS 7.0.4 <https://distribution.concordium.software/macos/signed/concordium-node-7.0.4.pkg>`_
 
@@ -112,7 +116,7 @@ Default listen port is set to 8888
       In a terminal:
 
       #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_7.0.5-0_amd64.deb
+      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_7.0.5-0_amd64.deb
       #. Verify that the output matches the SHA256 checksum ``42bb05409561bc30917d87a3479d3b76d9a3f17fa46bb2aee7475e7f7fa1df5d``
 
 `6.3.0 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.3.0-0_amd64.deb>`__
@@ -122,7 +126,7 @@ Default listen port is set to 8888
       In a terminal:
 
       #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_6.3.0-0_amd64.deb
+      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_6.3.0-0_amd64.deb
       #. Verify that the output matches the SHA256 checksum ``0e400051bc1626c69474a9cdf58f43b62dddd502edd94a1b563701e2eedd924b``
 
 `6.2.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.2.3-0_amd64.deb>`__
@@ -132,7 +136,7 @@ Default listen port is set to 8888
       In a terminal:
 
       #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_6.2.3-0_amd64.deb
+      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_6.2.3-0_amd64.deb
       #. Verify that the output matches the SHA256 checksum ``809dffd12cb075b374f16a36f35245cb5c928941745c6eb2598bcf61a2b60aa6``
 
 `6.1.7 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.1.7-0_amd64.deb>`__
@@ -142,7 +146,7 @@ Default listen port is set to 8888
       In a terminal:
 
       #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-testnet-node_6.1.7-0_amd64.deb
+      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_6.1.7-0_amd64.deb
       #. Verify that the output matches the SHA256 checksum ``fb9e4dd31bff676b2f06bed15f66d12b5bc4fd19f815051067dc32348d9447b6``
 
 `6.0.4 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_6.0.4-0_amd64.deb>`__
@@ -267,6 +271,16 @@ Ubuntu - Testnet
 
 Default GRPC port is set to 20001
 Default listen port is set to 8889
+
+`8.0.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_8.0.3-1_amd64.deb>`
+
+    - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the folloowing into the terminal: $sha256sum concordium-testnet-node_8.0.3-1_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``168a2991140f99845bb2289156d03d14eed8a441ba331f729d365f7220ffb869``
 
 `7.0.5 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_7.0.5-0_amd64.deb>`
 
