@@ -1388,7 +1388,7 @@ Testnet
         - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
 
         - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
-    
+ 
     The node API is updated to support PLTs as follows:
 
         - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
