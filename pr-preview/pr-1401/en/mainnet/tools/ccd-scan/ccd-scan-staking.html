@@ -1,0 +1,906 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CCDScan Staking overview &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/tools/ccd-scan/ccd-scan-staking.07fb990a-e7d7-4efb-a968-8e71d1fe3a49.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/ccd-scan/ccd-scan-staking';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/ccd-scan/ccd-scan-staking.html" />
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CCDScan Nodes overview" href="ccd-scan-nodes.html" />
+    <link rel="prev" title="CCDScan Accounts overview" href="ccd-scan-accounts.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="https://docs.concordium.com/en/mainnet/docs/plt/index.html">developer documentation</a>.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo light-logo" src="../../_static/concordium-logo-dark.svg" />
+        <img class="logo dark-logo" src="../../_static/concordium-logo.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developer-page.html"> Developer resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sdks-apis.html">SDKs and APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grpc2.html">gRPC V2 documentation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../wallet-sdk/wallet-sdk.html"> Wallet SDK</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wallet-sdk/wallet-sdk-identity-creation.html">Create an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wallet-sdk/wallet-sdk-identity-recovery.html">Recover an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wallet-sdk/wallet-sdk-credential-deployment.html">Create an account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wallet-sdk/wallet-sdk-account-transaction.html">Submit a transaction to a Concordium node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wallet-sdk/wallet-sdk-identity-provider.html">Get the list of identity providers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ccd-scan.html"> CCDScan</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ccd-scan-blocks.html">CCDScan Blocks overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccd-scan-transactions.html">CCDScan Transactions overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccd-scan-accounts.html">CCDScan Accounts overview</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CCDScan Staking overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccd-scan-nodes.html">CCDScan Nodes overview</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../concordium-client.html"> Concordium Client</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../transactions.html">Concordium Client transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../query-node.html">Querying a node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multi-sig.html">Multi-sig</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-tools.html"> Auxiliary Tools</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ccdscan-staking-overview">
+<span id="bakers-view"></span><h1>CCDScan Staking overview<a class="headerlink" href="#ccdscan-staking-overview" title="Link to this heading">#</a></h1>
+<p>The Staking overview shows information about validators during the selected time range in the filter:</p>
+<img alt="dark screen with graphs at top, table at bottom showing validator information" src="../../_images/ccd-scan-bakers.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The graphs show when the next pay day happens, the amount of staked CCD, the number of validators, and the total of rewards during the selected time range in the filter. The <strong>Previous payday block</strong> contains information about all rewards paid out for a payday period. If you click <strong>Previous payday block</strong>, a special block details screen for the previous pay day block appears.</p>
+<img alt="dark screen with block details" src="../../_images/ccd-scan-staking-payday-block-details.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The Pay Day block details contains the following:</p>
+<ul class="simple">
+<li><p><strong>Block</strong>: the first six characters of the block hash. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash. The block status is also shown.</p></li>
+<li><p><strong>Age</strong>: the age of the block and date/time stamp when it was created.</p></li>
+<li><p><strong>Validator id</strong>: ID of the validator who produced the block. Click the validator ID to see the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">validator details</span></a>.</p></li>
+<li><dl class="simple">
+<dt><strong>Tokenomics</strong>: contains the following details about the block:</dt><dd><ul>
+<li><p>Distributed minted CCD: Contains the total minted CCDs and a breakdown on their distribution across the block reward account, finalization reward account, and foundation account. Note that finalization rewards are zero as of December 7, 2023.</p></li>
+<li><p>Accrued block rewards: similar to a ‘regular’ <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block</span></a>; contains the accrued block rewards.</p></li>
+<li><p>Payday foundation rewards: displays the payout to the foundation account for the pay day period and contains the option to drill-through to the <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">foundation account</span></a>.</p></li>
+<li><p>Payday account rewards: lists all the accounts and the rewards broken down by block reward and transaction fees.</p></li>
+<li><p>Payday pool rewards: lists all the pools (including passive delegation) and the rewards broken down by block reward and transaction fees.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>Transactions</strong>: shows the transaction(s) contained in the block, if any, including the first six characters of the transaction hash, transaction type, first six characters of the Sender account, and the cost of the transaction. You can click <strong>Hash</strong> for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>, or click <strong>Sender</strong> for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the sender</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash or account number.</p></li>
+<li><p><strong>Block statistics</strong>: shows the block time (time since last block) and the finalization time of the block (the time before proof of finalization of the selected block was included in a subsequent block).</p></li>
+</ul>
+<p>Below the graphs, you can switch between <strong>Staking pools</strong> and <strong>Top delegators</strong>. You can also choose to see details for <strong>Passive delegation</strong>. There is a switch to <strong>Show only open pools</strong> and a filter where you can choose how the data shown in the table should be ordered.</p>
+<section id="staking-pools-view">
+<h2>Staking pools view<a class="headerlink" href="#staking-pools-view" title="Link to this heading">#</a></h2>
+<p>If you select <strong>Staking pools</strong> the table contains a list of all validators/pools (including historic validators) sorted by their staked amount, containing the following:</p>
+<ul class="simple">
+<li><p><strong>Validator ID</strong>: ID of the validator. This is the ID you need if you want to delegate to the staking pool in a wallet. Click the validator ID to see the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">validator details</span></a>. If the validator has been removed (i.e. the validator is no longer active), <strong>Removed</strong> appears next to the ID.</p></li>
+<li><p><strong>Validator APY (30 days)</strong>: the calculated yield of the validator for the past 30 days.</p></li>
+<li><p><strong>Delegators APY (30 days)</strong>: the calculated yield of the delegators for the past 30 days.</p></li>
+<li><p><strong>Delegation pool Status</strong>: the staking pool status. Can be <strong>Open for all</strong>, <strong>Closed for all</strong>, or <strong>Closed for new</strong>.</p></li>
+<li><p><strong>Delegators</strong>: the number of delegators that validator has if the validator has an open pool</p></li>
+<li><p><strong>Available for delegation</strong>: shows the maximum number of remaining CCDs available for delegation based on the capital bound and the leverage factor between a validator and associated delegators. Based on the <a class="reference internal" href="../../docs/protocol/concepts-delegation.html#delegation-caps"><span class="std std-ref">cap</span></a> imposed.</p></li>
+<li><p><strong>Total stake</strong>:  shows the combined stake of the validator and delegators (if any) and the percentage breakdown of the split between the two.</p></li>
+</ul>
+</section>
+<section id="top-delegators-view">
+<h2>Top delegators view<a class="headerlink" href="#top-delegators-view" title="Link to this heading">#</a></h2>
+<p>If you select <strong>Top delegaators</strong> you see a list of all delegators sorted by their staked amount. You can see account details, including details about the delegation target (staking pool or passive delegation), and so on. The table contains the following:</p>
+<img alt="dark screen showing table of information about top delegators" src="../../_images/ccd-scan-staking-delegators.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>Account address</strong>: the first six characters of the account address. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire address. If you click on an account address, the <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">account details</span></a> appears.</p></li>
+<li><p><strong>Delegation target</strong>: the validator whose pool the account has staked. If you click on a validator ID, the <a class="reference internal" href="#home-screen-baker"><span class="std std-ref">validator details</span></a> appears.</p></li>
+<li><p><strong>Restake earnings</strong>: shows the delegator’s restaking preference.</p></li>
+<li><p><strong>Staked amount</strong>: amount of CCD the delegator has staked.</p></li>
+</ul>
+</section>
+<section id="passive-delegation-view">
+<h2>Passive delegation view<a class="headerlink" href="#passive-delegation-view" title="Link to this heading">#</a></h2>
+<p>If you select <strong>Passive delegation</strong>  it is possible to see the size of the passive delegation in total and information about the yield from delegating to passive delegation. Furthermore it is possible to see the commission rates for passive delegation.</p>
+<img alt="dark screen with details about passive delegation" src="../../_images/ccd-scan-passive-delegation.png" />
+<ul class="simple">
+<li><p><strong>Delegated stake</strong>: amount of CCD delegated to passive delegation.</p></li>
+<li><p><strong>APY (7 days)</strong>: the calculated yield of passive delegation based on past 7 days.</p></li>
+<li><p><strong>APY (30 days)</strong>: the calculated yield of passive delegation based on past 30 days.</p></li>
+<li><p><strong>Block commission</strong>: percent of rewards paid as commission to validator.</p></li>
+<li><p><strong>Transaction commission</strong>: percentage of transaction rewards that are paid as commission to the validator.</p></li>
+<li><dl class="simple">
+<dt><strong>Rewards</strong>: list of rewards paid out during the selected time range. Includes an overview graph that shows the aggregated rewards for passive delegation based on the applied filter. Rewards details are displayed in a table.</dt><dd><ul>
+<li><p><strong>Time</strong> shows the date/time the reward was paid</p></li>
+<li><p><strong>Reference</strong> shows the first six characters of the block hash in which the reward was paid. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash. Click the hash to see the <a class="reference internal" href="ccd-scan-blocks.html#home-screen-block"><span class="std std-ref">block details</span></a> for the block where the award payout occurred.</p></li>
+<li><p><strong>Rewards</strong> shows the amount of reward distributed.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>Delegators</strong>: the delegators staking to passive delegation, their restake preference, and amount staked. Click on a <strong>Hash</strong> to see <a class="reference internal" href="ccd-scan-accounts.html#accounts-view"><span class="std std-ref">account details</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account address.</p></li>
+</ul>
+</section>
+<section id="validator-details">
+<span id="home-screen-baker"></span><h2>Validator details<a class="headerlink" href="#validator-details" title="Link to this heading">#</a></h2>
+<p>When you click a validator ID, the following appears:</p>
+<img alt="dark screen showing details of a single validator" src="../../_images/ccd-scan-baker-details.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The validator details shows the following information about the validator.</p>
+<ul class="simple">
+<li><p><strong>Validator</strong>: the validator ID. This is the ID you need if you want to delegate to the staking pool in a wallet. If the validator has been removed (i.e. the validator is no longer active), <strong>Removed</strong> appears next to the ID and a timestamp shows when the validator stopped.</p></li>
+<li><p>If there are any pending changes, they are shown here. Events such as stake increase, stake reduction, or validator stop are displayed.</p></li>
+<li><p><strong>Total stake</strong>: the validator’s total stake. Below the total is the amount staked by the validator and the amount of stake that comes from delegators.</p></li>
+<li><p><strong>Account</strong>: the first six characters of the validator account. You can click on the characters for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the sender</span></a>. You can click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account number.</p></li>
+<li><p><strong>Staking pool status</strong>: the staking pool status. <strong>Open for all</strong> means that the staking pool is open for delegation. <strong>Closed for all</strong> means that you cannot delegate to that staking pool. <strong>Closed for new</strong> means that new delegators cannot delegate to that pool but existing delegators remain in the pool.</p></li>
+<li><p><strong>APY Period</strong>: choose between 7 days or 30 days. This seletion affects the <strong>Total APY</strong>, <strong>Validator APY</strong>, and <strong>Delegators APY</strong>.</p></li>
+<li><p><strong>Validator rank</strong>: the validator’s rank out of all validators on Mainnet/Testnet based on the validator’s total stake.</p></li>
+<li><p><strong>Block commission</strong>: the validator’s commission percent.</p></li>
+<li><p><strong>Transaction commission</strong>: percentage of transaction rewards that are paid as commission to the validator.</p></li>
+<li><dl class="simple">
+<dt><strong>Payday rewards</strong>: shows the sum of rewards earned by the validator and the individual rewards transactions for the time range selected in the filter.</dt><dd><ul>
+<li><p><strong>Time</strong>: shows the date/time the reward was distributed.</p></li>
+<li><p><strong>Reference</strong>: shows the first six characters of the transaction hash. Click on the first six characters of a hash in Reference to see <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transaction</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash number.</p></li>
+<li><p><strong>Amount</strong>: shows the amount of the reward. If you click on Show more you can see the breakdown of the reward by validation rewards and transaction fees.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>Related transactions</strong>: shows other transactions related to this validator ID. You see the hash (transaction hash), transaction type, and the transaction age. You can click on the hash characters for more <a class="reference internal" href="ccd-scan-transactions.html#home-screen-transaction"><span class="std std-ref">information about the transacation</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire hash number.</p></li>
+<li><p><strong>Delegators</strong>: shows the first six characters of the account delegating to the validator, that account’s delegated stake, and whether earnings are restaked. You can click on the characters of the account for more <a class="reference internal" href="ccd-scan-accounts.html#home-screen-sender"><span class="std std-ref">information about the delegator</span></a>. Click Copy <img alt="Green document on top of another green document" class="button" src="../../_images/ccd-scan-copy.png" /> to copy the entire account number.</p></li>
+<li><p><strong>Metadata</strong>: contains the URL that the validator can optionally provide with information about the staking pool.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ccd-scan-accounts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CCDScan Accounts overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ccd-scan-nodes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CCDScan Nodes overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staking-pools-view">Staking pools view</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-delegators-view">Top delegators view</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passive-delegation-view">Passive delegation view</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-details">Validator details</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/tools/ccd-scan/ccd-scan-staking.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2025, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
