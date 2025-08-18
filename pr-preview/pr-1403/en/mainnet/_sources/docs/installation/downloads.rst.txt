@@ -133,7 +133,7 @@ Concordium Client |client-version|
 
          chmod +x concordium-client-linux
 
--  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`
+-  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
