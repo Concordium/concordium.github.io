@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.e72153a2-79c5-42c4-99f5-9600f76c6b44.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.5af6ab63-3b2f-48d7-b734-2eb5abfa2512.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -2781,22 +2781,67 @@ and an additional node in Hong Kong (all running both baker and finalizer).</p>
 <section id="concordium-client">
 <span id="rn-client"></span><h3>Concordium Client<a class="headerlink" href="#concordium-client" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>February 18, 2025</p>
-<p>Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.</p>
-<ul class="simple">
-<li><p>Support node version 8 and protocol version 8.</p></li>
-<li><p>Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)</p></li>
-<li><p>Add command <cite>consensus detailed-status</cite> for getting detailed consensus status (from protocol version 6).</p></li>
-<li><p>Add <cite>raw GetConsensusDetailedStatus</cite> that presents the detailed consensus status as JSON.</p></li>
-<li><p>Update GHC version to 9.6.6 (lts-22.39).</p></li>
-<li><p>Add raw commands <cite>GetScheduledReleaseAccounts</cite>, <cite>GetCooldownAccounts</cite>,  <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.</p></li>
-<li><p>Raw commands <cite>GetBlockTransactionEvents</cite> and <cite>GetTransactionStatus</cite> include the <cite>parameter</cite> for <cite>ContractInitialized</cite> events.</p></li>
-<li><p>From protocol version 8, raw command <cite>GetPoolStatus</cite> indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of  missed rounds.</p></li>
+<div><p>August 18, 2025</p>
+<p>Concordium Client 9.1.4 adds support for node version 9.0.7 and protocol version 9.
+In particular, it supports the new protocol-level token (PLT) functionality with the following additions and changes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> displays account info relating to PLTs (balances and list membership).</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">plt</span></code> commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">send</span></code>: transfer PLTs to a specified account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add-to-allow-list</span></code>: add an account to the allow-list of a PLT (governance operation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove-from-allow-list</span></code>: remove an account from the allow-list of a PLT (governance operation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add-to-deny-list</span></code>: add an account to the deny-list of a PLT (governance operation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove-from-deny-list</span></code>: remove an account from the deny-list of a PLT (governance operation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mint</span></code>: mint new PLTs (governance operation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">burn</span></code>: burn PLTs (governance operation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pause</span></code>: suspend all balance-update operations for a PLT (governance operation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unpause</span></code>: resume all balance-update operations for a PLT (governance operation).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code> commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> gets a list of PLTs registered on the chain.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets information about a PLT.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> now includes information about PLTs related to the account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetNextUpdateSequenceNumbers</span></code> now includes the next update sequence number for PLT chain updates.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">chain-update</span></code> supports creating new PLTs.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">..dropdown:: 7.0.1 - September 23, 2024</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">8.1.0 - February 28, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Client 8.1.0 introduces a new <code class="docutils literal notranslate"><span class="pre">pool</span> <span class="pre">status</span></code> command and improves the display of <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">status</span></code> and <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> commands.</p>
+<ul class="simple">
+<li><p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">transaction</span> <span class="pre">status</span></code> command output includes the <code class="docutils literal notranslate"><span class="pre">parameter</span></code> for <code class="docutils literal notranslate"><span class="pre">ContractInitialized</span></code> events.</p></li>
+<li><p class="sd-card-text">From protocol version 8, <code class="docutils literal notranslate"><span class="pre">account</span> <span class="pre">show</span></code> also shows if a validator is suspended.</p></li>
+<li><p class="sd-card-text">Add command <code class="docutils literal notranslate"><span class="pre">pool</span> <span class="pre">status</span></code> for getting information about a pool.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">8.0.0 - February 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Support node version 8 and protocol version 8.</p></li>
+<li><p class="sd-card-text">Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)</p></li>
+<li><p class="sd-card-text">Add command <code class="docutils literal notranslate"><span class="pre">consensus</span> <span class="pre">detailed-status</span></code> for getting detailed consensus status (from protocol version 6).</p></li>
+<li><p class="sd-card-text">Add <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">GetConsensusDetailedStatus</span></code> that presents the detailed consensus status as JSON.</p></li>
+<li><p class="sd-card-text">Update GHC version to 9.6.6 (lts-22.39).</p></li>
+<li><p class="sd-card-text">Add raw commands <code class="docutils literal notranslate"><span class="pre">GetScheduledReleaseAccounts</span></code>, <code class="docutils literal notranslate"><span class="pre">GetCooldownAccounts</span></code>,  <code class="docutils literal notranslate"><span class="pre">GetPreCooldownAccounts</span></code> and <code class="docutils literal notranslate"><span class="pre">GetPrePreCooldownAccounts</span></code> for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.</p></li>
+<li><p class="sd-card-text">Raw commands <code class="docutils literal notranslate"><span class="pre">GetBlockTransactionEvents</span></code> and <code class="docutils literal notranslate"><span class="pre">GetTransactionStatus</span></code> include the <code class="docutils literal notranslate"><span class="pre">parameter</span></code> for <code class="docutils literal notranslate"><span class="pre">ContractInitialized</span></code> events.</p></li>
+<li><p class="sd-card-text">From protocol version 8, raw command <code class="docutils literal notranslate"><span class="pre">GetPoolStatus</span></code> indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of missed rounds.</p></li>
+</ul>
+</div>
+</details><p class="sd-card-text">..dropdown:: 7.0.1 - September 23, 2024</p>
 <blockquote>
 <div><p class="sd-card-text">Concordium Client 7.0.1 includes the following features and bug fixes:</p>
 <ul class="simple">
