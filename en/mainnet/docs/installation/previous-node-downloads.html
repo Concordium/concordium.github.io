@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/installation/previous-node-downloads.8d2ef25a-0500-4943-91b9-4f93868b42fc.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/installation/previous-node-downloads.1ad14635-bade-47a8-95a6-5fdb7bf3b2be.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/installation/previous-node-downloads';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/installation/previous-node-downloads.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -526,6 +526,7 @@
 <section id="windows-mainnet-and-testnet">
 <h2>Windows - Mainnet and Testnet<a class="headerlink" href="#windows-mainnet-and-testnet" title="Link to this heading">#</a></h2>
 <p><strong>Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.</strong></p>
+<p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-8.0.3-1.msi">Windows 8.0.3</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-7.0.4-0.msi">Windows 7.0.4</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-6.3.1-0.msi">Windows 6.3.1</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/windows/Signed/Node-6.3.0-0.msi">Windows 6.3.0</a></p>
@@ -550,6 +551,7 @@
 </section>
 <section id="macos-mainnet-and-testnet">
 <h2>macOS - Mainnet and Testnet<a class="headerlink" href="#macos-mainnet-and-testnet" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-8.0.3-1.pkg">macOS 8.0.3</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-7.0.4.pkg">macOS 7.0.4</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-6.3.1.pkg">macOS 6.3.1</a></p>
 <p><a class="reference external" href="https://distribution.concordium.software/macos/signed/concordium-node-6.3.0.pkg">macOS 6.3.0</a></p>
@@ -583,7 +585,7 @@ Default listen port is set to 8888</p>
 <div><p>In a terminal:</p>
 <ol class="arabic simple">
 <li><p>Navigate to the download.</p></li>
-<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_7.0.5-0_amd64.deb</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_7.0.5-0_amd64.deb</p></li>
 <li><p>Verify that the output matches the SHA256 checksum <code class="docutils literal notranslate"><span class="pre">42bb05409561bc30917d87a3479d3b76d9a3f17fa46bb2aee7475e7f7fa1df5d</span></code></p></li>
 </ol>
 </div></blockquote>
@@ -598,7 +600,7 @@ Default listen port is set to 8888</p>
 <div><p>In a terminal:</p>
 <ol class="arabic simple">
 <li><p>Navigate to the download.</p></li>
-<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_6.3.0-0_amd64.deb</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_6.3.0-0_amd64.deb</p></li>
 <li><p>Verify that the output matches the SHA256 checksum <code class="docutils literal notranslate"><span class="pre">0e400051bc1626c69474a9cdf58f43b62dddd502edd94a1b563701e2eedd924b</span></code></p></li>
 </ol>
 </div></blockquote>
@@ -613,7 +615,7 @@ Default listen port is set to 8888</p>
 <div><p>In a terminal:</p>
 <ol class="arabic simple">
 <li><p>Navigate to the download.</p></li>
-<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_6.2.3-0_amd64.deb</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_6.2.3-0_amd64.deb</p></li>
 <li><p>Verify that the output matches the SHA256 checksum <code class="docutils literal notranslate"><span class="pre">809dffd12cb075b374f16a36f35245cb5c928941745c6eb2598bcf61a2b60aa6</span></code></p></li>
 </ol>
 </div></blockquote>
@@ -628,7 +630,7 @@ Default listen port is set to 8888</p>
 <div><p>In a terminal:</p>
 <ol class="arabic simple">
 <li><p>Navigate to the download.</p></li>
-<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_6.1.7-0_amd64.deb</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-mainnet-node_6.1.7-0_amd64.deb</p></li>
 <li><p>Verify that the output matches the SHA256 checksum <code class="docutils literal notranslate"><span class="pre">fb9e4dd31bff676b2f06bed15f66d12b5bc4fd19f815051067dc32348d9447b6</span></code></p></li>
 </ol>
 </div></blockquote>
@@ -806,6 +808,19 @@ Default listen port is set to 8888</p>
 <h2>Ubuntu - Testnet<a class="headerlink" href="#ubuntu-testnet" title="Link to this heading">#</a></h2>
 <p>Default GRPC port is set to 20001
 Default listen port is set to 8889</p>
+<p><cite>8.0.3 &lt;https://distribution.testnet.concordium.com/deb/concordium-testnet-node_8.0.3-1_amd64.deb&gt;</cite></p>
+<blockquote>
+<div><ul>
+<li><p>Verification instructions</p>
+<p>In a terminal:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the download.</p></li>
+<li><p>Paste the following into the terminal: $sha256sum concordium-testnet-node_8.0.3-1_amd64.deb</p></li>
+<li><p>Verify that the output matches the SHA256 checksum <code class="docutils literal notranslate"><span class="pre">168a2991140f99845bb2289156d03d14eed8a441ba331f729d365f7220ffb869</span></code></p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
 <p><cite>7.0.5 &lt;https://distribution.testnet.concordium.com/deb/concordium-testnet-node_7.0.5-0_amd64.deb&gt;</cite></p>
 <blockquote>
 <div><ul>
