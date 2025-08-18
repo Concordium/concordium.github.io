@@ -115,7 +115,7 @@ Create a ``dist`` folder for the compiled WASM contract. Then, run the build com
 
 .. code-block:: console
 
-    $cargo concordium build --out dist/module.wasm.v1 --schema-embed
+    $cargo concordium build --out dist/module.wasm.v1
 
 You may get a warning about the build not being verifiable, which you may ignore.
 

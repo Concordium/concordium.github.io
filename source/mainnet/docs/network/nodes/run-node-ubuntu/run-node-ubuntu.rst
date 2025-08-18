@@ -20,7 +20,7 @@ You can also watch the video to learn how to run a node with Ubuntu OS.
 Prerequisites
 =============
 
--  Ubuntu 20.04, 22.04, 24.04 or 25.04 must be installed on the server that is running the node.
+-  Ubuntu 22.04, 24.04 or 25.04 must be installed on the server that is running the node.
 -  The server must be running around the clock.
 -  Meet the :ref:`minimum system requirements<node-requirements>` for running a node.
 
