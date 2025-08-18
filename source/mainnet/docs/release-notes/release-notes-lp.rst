@@ -130,11 +130,15 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.11.0 - July 8, 2025
+    1.12.0 - August 18, 2025
 
-    - Added ability to buy CCD through Banxa
+    - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.11.0 - July 8, 2025
+
+            - Added ability to buy CCD through Banxa
 
         .. dropdown:: |cryptox| 1.10.0 - June 19, 2025
 
