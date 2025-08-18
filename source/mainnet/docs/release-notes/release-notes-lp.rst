@@ -2014,7 +2014,7 @@ Concordium Client
 
     .. dropdown:: Previous releases
 
-        ..dropdown:: 8.1.0 - February 28, 2025
+        .. dropdown:: 8.1.0 - February 28, 2025
 
             Concordium Client 8.1.0 introduces a new ``pool status`` command and improves the display of ``transaction status`` and ``account show`` commands.
 
