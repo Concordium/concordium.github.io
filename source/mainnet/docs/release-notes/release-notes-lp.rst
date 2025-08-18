@@ -1998,7 +1998,7 @@ Concordium Client
 
         - ``pause``: suspend all balance-update operations for a PLT (governance operation).
 
-        - ``unpause``: resume all balance-update operations for a PLT (governance operation)
+        - ``unpause``: resume all balance-update operations for a PLT (governance operation).
 
     - ``raw`` commands:
 
@@ -2014,7 +2014,7 @@ Concordium Client
 
     .. dropdown:: Previous releases
 
-        ..dropdown:: 8.1.0 - February 28, 2025
+        .. dropdown:: 8.1.0 - February 28, 2025
 
             Concordium Client 8.1.0 introduces a new ``pool status`` command and improves the display of ``transaction status`` and ``account show`` commands.
 
@@ -2025,7 +2025,7 @@ Concordium Client
             - Add command ``pool status`` for getting information about a pool.
 
 
-        ..dropdown:: 8.0.0 - February 18, 2025
+        .. dropdown:: 8.0.0 - February 18, 2025
 
             Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.
 
