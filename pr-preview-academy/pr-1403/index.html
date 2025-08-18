@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Concordium Documentation</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="_static/concordium-logo-no-text.svg" />
+    <meta name="theme-color" content="#000000" />
+    
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+</head>
+
+<body>
+    <div class="fit-content center margin-tb">
+        <a href="https://concordium.com/" target="_blank">
+            <img class="logo" src="_static/concordium-logo.svg" /><h3 class="lp">Academy</h3>
+        </a>
+
+    </div>
+    <div class="card-container max-width center margin-tb">
+        <a class="card" href="intro.html"><header class="lp"><i class="fas fa-wallet fa-2x"></i>Introduction to Concordium</header>All you need to know about Concordium</a>
+        <a class="card" href="setup-env.html"><header class="lp"><i class="fas fa-coins fa-2x"></i>Setup development environment</header>Set up the development environment.</a>
+        <a class="card" href="beg-tutorials.html"><header class="lp"><i class="fas fa-code-branch fa-2x"></i>Beginner level</header>Go through beginner level tutorials to learn about smart contracts and write your own smart contracts.</a>
+        <a class="card" href="mid-tutorials.html"><header class="lp"><i class="fas fa-download fa-2x"></i>Mid level</header>Challenge yourself with more complex smart contracts and dApps.</a>
+        <a class="card" href="adv-tutorials.html"><header class="lp"><i class="fas fa-id-card fa-2x"></i>Advanced level</header>Expert level tutorials and assignments.</a>
+        <a class="card" href="https://docs.google.com/forms/d/1ks_oWIxbRoW6NGHHjwOGfaO4pVvZAD92me0ChbvzDZc/edit"><header class="lp"><i class="fas fa-graduation-cap fa-2x"></i>Claim NFT badge</header>Get your NFT badge for completed assignments.</a>
+      </div>
+
+    <style>
+        body {
+            background: url('_static/background-img.png') no-repeat center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        p {
+            color: white;
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        h3 {
+            padding: 10px 0px 0px 0px;
+        }
+
+        .lp {
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        header {
+            justify-content: center;
+        }
+
+        i {
+            padding-right: 10px;
+        }
+
+        a {
+            color:white;
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        a:visited {
+            color: white;
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        .center {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .fit-content {
+            width: fit-content;
+        }
+
+        .max-width {
+            max-width: 1280px;
+        }
+
+        .text-center {
+            text-align:center;
+        }
+
+        .margin-tb {
+            margin-bottom: 3em;
+            margin-top: 3em;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2em;
+        }
+
+        .consent {
+                position: fixed;
+                right: 0;
+                top: auto;
+                bottom: 0;
+                max-width: 530px;
+                padding: 30px 45px 25px;
+                background: linear-gradient(157deg, #005A78 -18.68%, #2E8894 95.63%);
+                color: #fff;
+            }
+
+        /* Style the counter cards */
+        .card {
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            position: relative;
+            width:340px;
+            height: 175px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        /* border effect */
+        .card::before {
+            content: "";
+            z-index:-1;
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background-image: linear-gradient(210deg,
+             rgba(255, 255, 255, .05) 0%,
+             rgba(255, 255, 255, .4) 50%,
+             rgba(255, 255, 255, .05) 60%,
+             rgba(255, 255, 255, .3) 100%);
+            -webkit-mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#ffffff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            z-index:-2;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .05);
+            background-image: linear-gradient(-10deg,
+                rgba(255, 255, 255, .2) -50%,
+                rgba(255, 255, 255, .02) 30%,
+                rgba(255, 255, 255, .05) 60%,
+                rgba(255, 255, 255, .4) 150%);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0
+        }
+
+        .card:hover {
+            transform: translateY(12px);
+            transition-duration: 250ms;
+        }
+
+        .logo {
+            max-height: 200px;
+        }
+
+        /* Responsive columns - one column layout (vertical) on Extra small devices (phones, 600px and down) */
+        @media screen and (max-width: 600px) {
+            .consent {
+                left: 0;}
+        }
+
+    </style>
+
+<div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+</body>
+
+</html>
