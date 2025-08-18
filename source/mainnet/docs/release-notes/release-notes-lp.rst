@@ -1973,28 +1973,77 @@ Tools
 Concordium Client
 -----------------
 
-    February 18, 2025
+    August 18, 2025
 
-    Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.
+    Concordium Client 9.1.4 adds support for node version 9.0.7 and protocol version 9.
+    In particular, it supports the new protocol-level token (PLT) functionality with the following additions and changes:
 
-    - Support node version 8 and protocol version 8.
+    - ``account show`` displays account info relating to PLTs (balances and list membership).
 
-    - Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)
+    - New ``transaction plt`` commands:
 
-    - Add command `consensus detailed-status` for getting detailed consensus status (from protocol version 6).
+        - ``send``: transfer PLTs to a specified account.
 
-    - Add `raw GetConsensusDetailedStatus` that presents the detailed consensus status as JSON.
+        - ``add-to-allow-list``: add an account to the allow-list of a PLT (governance operation).
 
-    - Update GHC version to 9.6.6 (lts-22.39).
+        - ``remove-from-allow-list``: remove an account from the allow-list of a PLT (governance operation).
 
-    - Add raw commands `GetScheduledReleaseAccounts`, `GetCooldownAccounts`,  `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.
+        - ``add-to-deny-list``: add an account to the deny-list of a PLT (governance operation).
 
-    - Raw commands `GetBlockTransactionEvents` and `GetTransactionStatus` include the `parameter` for `ContractInitialized` events.
+        - ``remove-from-deny-list``: remove an account from the deny-list of a PLT (governance operation).
 
-    - From protocol version 8, raw command `GetPoolStatus` indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of  missed rounds.
+        - ``mint``: mint new PLTs (governance operation).
 
+        - ``burn``: burn PLTs (governance operation).
+
+        - ``pause``: suspend all balance-update operations for a PLT (governance operation).
+
+        - ``unpause``: resume all balance-update operations for a PLT (governance operation).
+
+    - ``raw`` commands:
+
+        - ``GetTokenList`` gets a list of PLTs registered on the chain.
+
+        - ``GetTokenInfo`` gets information about a PLT.
+
+        - ``GetAccountInfo`` now includes information about PLTs related to the account.
+
+        - ``GetNextUpdateSequenceNumbers`` now includes the next update sequence number for PLT chain updates.
+
+    - ``consensus chain-update`` supports creating new PLTs.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 8.1.0 - February 28, 2025
+
+            Concordium Client 8.1.0 introduces a new ``pool status`` command and improves the display of ``transaction status`` and ``account show`` commands.
+
+            - The ``transaction status`` command output includes the ``parameter`` for ``ContractInitialized`` events.
+
+            - From protocol version 8, ``account show`` also shows if a validator is suspended.
+
+            - Add command ``pool status`` for getting information about a pool.
+
+
+        .. dropdown:: 8.0.0 - February 18, 2025
+
+            Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.
+
+            - Support node version 8 and protocol version 8.
+
+            - Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)
+
+            - Add command ``consensus detailed-status`` for getting detailed consensus status (from protocol version 6).
+
+            - Add ``raw GetConsensusDetailedStatus`` that presents the detailed consensus status as JSON.
+
+            - Update GHC version to 9.6.6 (lts-22.39).
+
+            - Add raw commands ``GetScheduledReleaseAccounts``, ``GetCooldownAccounts``,  ``GetPreCooldownAccounts`` and ``GetPrePreCooldownAccounts`` for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.
+
+            - Raw commands ``GetBlockTransactionEvents`` and ``GetTransactionStatus`` include the ``parameter`` for ``ContractInitialized`` events.
+
+            - From protocol version 8, raw command ``GetPoolStatus`` indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of missed rounds.
 
         ..dropdown:: 7.0.1 - September 23, 2024
 
