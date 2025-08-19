@@ -9,34 +9,7 @@ This guide explains how to use concordium-client to perform PLT operations from 
 Installation and setup
 ----------------------
 
-Download and install ``concordium-client v9.1.4``:
-
-**Downloads (v9.1.4):**
-
--  `Linux <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-linux>`_
-
-      - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
-      - :ref:`Verification instructions <verification-client-linux>`
-
-   Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
-
-      .. code-block:: console
-
-         chmod +x concordium-client-linux
-
--  `Download Concordium Client for Windows <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-windows.zip>`_
-
-   - The Windows distribution is a zip file that must be extracted before use.
-     To do this, in Windows Explorer, right-click the downloaded file and select
-     "Extract All...". After extraction, you will have a folder containing the
-     Concordium Client executable (``concordium-client.exe``) as well as other files
-     that are required to run the client.
-
--  macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`_
-
-   - The macOS distribution is an installer that places an alias to the binary
-     into the folder ``/usr/local/bin``. So after installing, you should have
-     ``concordium-client`` on your path.
+Download and install ``concordium-client``: :ref:`Downloads <concordium-node-and-client-download>`
 
 .. note::
    With new DevNet releases and features, new concordium-client versions may get released. Follow the communication channels for the most recent versions.
