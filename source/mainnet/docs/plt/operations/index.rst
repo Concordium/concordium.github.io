@@ -21,7 +21,7 @@ You can interact with PLTs using multiple development approaches:
 
 - **Concordium Client CLI Tool** (v9.1.4) - Command-line interface for direct operations
 
-  :ref:`Download concordium-client <plt-concordium-client>`
+  :ref:`Download concordium-client <concordium-node-and-client-download>`
 
 .. note::
    All SDKs are currently in alpha development and recommended for testing and experimentation only.
