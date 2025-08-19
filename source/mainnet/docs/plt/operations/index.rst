@@ -11,7 +11,7 @@ Available SDKs and tools
 
 You can interact with PLTs using multiple development approaches:
 
-- **Concordium Web SDK** (v10.0.0-alpha.13) - TypeScript/JavaScript examples for web applications
+- **Concordium Web SDK** (v10.0.0) - TypeScript/JavaScript examples for web applications
 
   `Web SDK released versions <https://www.npmjs.com/package/@concordium/web-sdk>`_
 
@@ -19,9 +19,9 @@ You can interact with PLTs using multiple development approaches:
 
   `Rust SDK released versions <https://crates.io/crates/concordium-rust-sdk>`_
 
-- **Concordium Client CLI Tool** (v9.1.3-alpha) - Command-line interface for direct operations
+- **Concordium Client CLI Tool** (v9.1.4) - Command-line interface for direct operations
 
-  :ref:`Download concordium-client <plt-concordium-client>`
+  :ref:`Download concordium-client <concordium-node-and-client-download>`
 
 .. note::
    All SDKs are currently in alpha development and recommended for testing and experimentation only.
