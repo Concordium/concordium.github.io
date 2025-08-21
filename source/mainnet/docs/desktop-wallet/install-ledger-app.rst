@@ -99,7 +99,7 @@ To update the LEDGER device firmware, do the following:
       For details on how to update the LEDGER firmware, see `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 
 Install Python and pip
-=====================
+======================
 
 You need to install Python and pip to proceed with installing the Concordium LEDGER app. The installation steps depend on your operating system.
 
@@ -205,13 +205,13 @@ Once you have updated the firmware version, you can download the LEDGER app:
 
    .. group-tab:: Nano S
 
-      #. `Download the Concordium Governance LEDGER App for LEDGER <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip>`_
+      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip>`_
 
       #. Extract the files from the ``.zip`` folder to a folder on your computer.
 
    .. group-tab:: Nano S+
 
-      #. `Download the Concordium Governance LEDGER App for LEDGER <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanosplus.zip>`_
+      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S+ <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanosplus.zip>`_
 
       #. Extract the files from the ``.zip`` folder to a folder on your computer.
 
@@ -267,7 +267,7 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
       #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
 
          .. tabs::
- 
+
             .. group-tab:: Nano S
 
                .. code-block:: console
@@ -392,7 +392,7 @@ After installing the certificate, you can proceed to install the Concordium LEDG
       3. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
 
 Update the Concordium LEDGER app
-===============================
+================================
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
