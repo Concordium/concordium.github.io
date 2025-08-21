@@ -2,11 +2,15 @@
 
 .. include:: ../../variables.rst
 
+.. |nano-s-firmware| replace:: **2.1.0**
+.. |nano-s-plus-firmware| replace:: **1.4.0**
+.. |ccd-governance-version| replace:: **1.2.0**
+
 .. _install-Ledger-app:
 
-==============================================================
-Set up the LEDGER device and install the Concordium LEDGER App
-==============================================================
+=========================================================================
+Set up the LEDGER device and install the Concordium Governance LEDGER App
+=========================================================================
 
 .. warning::
 
@@ -48,45 +52,51 @@ The LEDGER device will generate the unique 24-word recovery phrase that is used 
 
    Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
-Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version 1.0.3 for LEDGER NANO S PLUS.
+
+.. tabs::
+
+   .. group-tab:: Nano S
+
+       Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version |nano-s-firmware| for LEDGER NANO S.
+
+   .. group-tab:: Nano S+
+
+       Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version |nano-s-plus-firmware| for LEDGER NANO S+.
 
 Update the LEDGER device firmware
 ---------------------------------
 
 To update the LEDGER device firmware, do the following:
 
-#. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
+.. tabs::
 
-#. Press both buttons on the **General** menu item.
+   .. group-tab:: Nano S
 
-#. Press the right button to navigate to **Firmware version**.
+      #. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
 
-#. Press both buttons to view the **Secure Element** version.
+      #. Press both buttons on the **General** menu item.
 
-   - I it says **1.1.0**, you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
+      #. Press the right button to navigate to **Firmware version**.
 
-For details on how to update the LEDGER firmware, see `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
+      #. Press both buttons to view the **Secure Element** version.
 
-.. _Ledger-downloads:
+          - If it says |nano-s-firmware|, you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
 
-Ledger packages
----------------
+      For details on how to update the LEDGER firmware, see `LEDGER NANO S guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 
-Once you have updated the firmware version, you can download the LEDGER app:
+   .. group-tab:: Nano S+
 
-`Dwnload the Concordium LEDGER App 1.1.0 for LEDGER firmware version 1.1.0 <https://s3.eu-west-1.amazonaws.com/distribution.mainnet.concordium.software/tools/concordium-governance-ledger-app-1.1.0-nanos-plus-.zip>`_
+      #. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
 
-When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
+      #. Press both buttons on the **General** menu item.
 
-Follow the instructions below to update your app:
+      #. Press the right button to navigate to **Firmware version**.
 
-   * :ref:`update-app-windows`
-   * :ref:`update-app-macos`
-   * :ref:`update-app-ubuntu`
+      #. Press both buttons to view the **Secure Element** version.
 
-It should not be necessary to update the certificate.
+          - If it says |nano-s-plus-firmware|, you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
 
-See the changelog(link) for this governance version of the app.
+      For details on how to update the LEDGER firmware, see `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
 
 Install Python and pip
 =====================
@@ -103,9 +113,9 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
       #. In **Search**, in the upper right corner, enter *python*.
 
-      #. Select **Python 3.9**, and then select **Install**.
+      #. Select **Python 3**, and then select **Install**.
 
-         Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying **Python 3.9 just got installed**.
+         Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying **Python 3 just got installed**.
 
       Restart your computer, and then confirm that Python and Pip were installed.
 
@@ -129,9 +139,7 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
       #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-      #. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``.
-
-      #. Install the package manager `Homebrew <https://brew.sh/>`_; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
+      #. Install the package manager `Homebrew <https://brew.sh/>`_ (if not already available on your mac); you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
 
          .. code-block:: console
 
@@ -141,7 +149,7 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
          .. code-block:: console
 
-            $brew install python@3.9 libusb libjpeg
+            $brew install python@3 libusb libjpeg
 
          You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
 
@@ -186,10 +194,36 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
             $sudo pip3 install ledgerblue
 
-Install the custom certificate
-=============================
+.. _Ledger-downloads:
 
-You need to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium's private key. The steps vary by operating system.
+Download Concordium Governance LEDGER app
+=========================================
+
+Once you have updated the firmware version, you can download the LEDGER app:
+
+.. tabs::
+
+   .. group-tab:: Nano S
+
+      #. `Download the Concordium Governance LEDGER App for LEDGER <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip>`_
+
+      #. Extract the files from the ``.zip`` folder to a folder on your computer.
+      
+
+   .. group-tab:: Nano S+
+
+      #. `Download the Concordium Governance LEDGER App for LEDGER <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanosplus.zip>`_
+
+      #. Extract the files from the ``.zip`` folder to a folder on your computer.
+
+Install the custom certificate (Nano S only)
+============================================
+
+.. Note::
+
+   If the certificate is already installed on the device, it should not be necessary to update this. If you're a LEDGER Nano S+ user, you can also skip this section.
+
+You need to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium's private key.
 
 .. tabs::
 
@@ -198,10 +232,6 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
       #. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you've completed the steps in this guide.
 
       #. Disconnect the LEDGER device from your computer.
-
-      #. :ref:`Download the ZIP folder with Concordium LEDGER application<Ledger-downloads>`.
-
-      #. Extract the files from the ZIP folder to a folder on your computer.
 
       #. Now you need to start recovery mode on the LEDGER device.
 
@@ -217,17 +247,13 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
 
          - :substitution-code:`|ledger-app-public-key|`
 
-      and then press both buttons when the LEDGER device says **Trust certificate**.
+      #. Press both buttons when the LEDGER device says **Trust certificate**.
 
       #. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
    .. group-tab:: macOS
 
       #. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you've completed the steps in this guide.
-
-      #. :ref:`Download the ZIP folder with the Concordium LEDGER application<Ledger-downloads>`.
-
-      #. Extract the files from the ZIP folder to a folder on your computer.
 
       #. Disconnect the LEDGER device from your computer.
 
@@ -239,7 +265,23 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
 
       #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-      #. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``.
+      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter 
+
+         .. tabs::
+            
+            .. group-tab:: Nano S
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+
+            .. group-tab:: Nano S+
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
       #. Load the certificate onto the LEDGER device by running the following script from the extracted folder:
 
@@ -253,17 +295,13 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
 
          - :substitution-code:`|ledger-app-public-key|`
 
-      and then press both buttons when the LEDGER device says **Trust certificate**.
+      #. Press both buttons when the LEDGER device says **Trust certificate**.
 
       #. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
    .. group-tab:: Ubuntu
 
       #. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you've completed the steps in this guide.
-
-      #. Download the ZIP folder with the Concordium LEDGER application.
-
-      #. Extract the files from the ZIP folder to a folder on your computer.
 
       #. Disconnect the LEDGER device from your computer.
 
@@ -285,14 +323,14 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
 
          - :substitution-code:`|ledger-app-public-key|`
 
-      and then press both buttons when the LEDGER device says **Trust certificate**.
+      #. Press both buttons when the LEDGER device says **Trust certificate**.
 
       #. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
-Install the Concordium LEDGER app
-================================
+Install the Concordium Governance LEDGER app
+============================================
 
-After installing the certificate, you can proceed to install the Concordium LEDGER app. The installation steps vary by operating system.
+After installing the certificate, you can proceed to install the Concordium LEDGER app.
 
 .. tabs::
 
@@ -312,7 +350,23 @@ After installing the certificate, you can proceed to install the Concordium LEDG
 
       #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-      #. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``.
+      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter 
+
+         .. tabs::
+            
+            .. group-tab:: Nano S
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+
+            .. group-tab:: Nano S+
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
       #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
 
@@ -341,7 +395,7 @@ After installing the certificate, you can proceed to install the Concordium LEDG
 Update the Concordium LEDGER app
 ===============================
 
-For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app. The update process varies by operating system.
+For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
 .. tabs::
 
@@ -379,7 +433,23 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
       #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-      #. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0``.
+      #. Navigate to where you have downloaded the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter 
+
+         .. tabs::
+            
+            .. group-tab:: Nano S
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+
+            .. group-tab:: Nano S+
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
       #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
 
@@ -387,9 +457,9 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
             $./install.sh
 
-      .. Note::
+         .. Note::
 
-         If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
+            If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
 
       #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
