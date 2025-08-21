@@ -15,7 +15,7 @@ You can interact with PLTs using multiple development approaches:
 
   `Web SDK released versions <https://www.npmjs.com/package/@concordium/web-sdk>`_
 
-- **Concordium Rust SDK** (v7.0.0-alpha.3) - Rust examples for native applications
+- **Concordium Rust SDK** (v7.0.0) - Rust examples for native applications
 
   `Rust SDK released versions <https://crates.io/crates/concordium-rust-sdk>`_
 
