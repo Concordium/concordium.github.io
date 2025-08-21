@@ -208,7 +208,6 @@ Once you have updated the firmware version, you can download the LEDGER app:
       #. `Download the Concordium Governance LEDGER App for LEDGER <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip>`_
 
       #. Extract the files from the ``.zip`` folder to a folder on your computer.
-      
 
    .. group-tab:: Nano S+
 
@@ -265,10 +264,10 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
 
       #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter 
+      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
 
          .. tabs::
-            
+ 
             .. group-tab:: Nano S
 
                .. code-block:: console
@@ -350,10 +349,10 @@ After installing the certificate, you can proceed to install the Concordium LEDG
 
       #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter 
+      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
 
          .. tabs::
-            
+
             .. group-tab:: Nano S
 
                .. code-block:: console
@@ -433,10 +432,10 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
       #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-      #. Navigate to where you have downloaded the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter 
+      #. Navigate to where you have downloaded the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
 
          .. tabs::
-            
+
             .. group-tab:: Nano S
 
                .. code-block:: console
