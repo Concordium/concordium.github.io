@@ -2,11 +2,17 @@
 
 .. include:: ../../variables.rst
 
+.. |nano-s-firmware| replace:: **2.1.0**
+.. |nano-s-plus-firmware| replace:: **1.4.0**
+.. |ccd-governance-version| replace:: **1.2.0**
+.. _dl-nanos: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip
+.. _dl-nanosp: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanosplus.zip
+
 .. _install-Ledger-app:
 
-==============================================================
-Set up the LEDGER device and install the Concordium LEDGER App
-==============================================================
+=========================================================================
+Set up the LEDGER device and install the Concordium Governance LEDGER App
+=========================================================================
 
 .. warning::
 
@@ -20,7 +26,7 @@ To be able to sign and send transactions using the Desktop Wallet, you need a LE
 
 .. Note::
 
-   The LEDGER NANO X is not supported currently.
+   Only Ledger Nano S/S+ is currently supported.
 
 Prerequisites
 =============
@@ -29,14 +35,14 @@ Prerequisites
 
 .. Warning::
 
-   During the process described in this guide, you’ll generate private keys on the LEDGER device, and you’ll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
+   During the process described in this guide, you'll generate private keys on the LEDGER device, and you'll receive a 24-word recovery phrase. This is the only backup of your private keys. Make sure that you store it securely.
 
 Set up the LEDGER device
 ========================
 
 The LEDGER device will generate the unique 24-word recovery phrase that is used to derive your private keys.
 
-#. Download and install **Ledger Live**. For information on how to do this, see `Ledger's documentation <https://www.ledger.com/ledger-live/download>`_. You’ll only need Ledger Live when you set up the LEDGER device and update the firmware.
+#. Download and install **Ledger Live**. For information on how to do this, see `Ledger's documentation <https://www.ledger.com/ledger-live/download>`_. You'll only need Ledger Live when you set up the LEDGER device and update the firmware.
 
 #. Open **Ledger Live**, select **Get started**, and then select **Ledger device**.
 
@@ -48,378 +54,444 @@ The LEDGER device will generate the unique 24-word recovery phrase that is used 
 
    Make sure that you write down the recovery phrase precisely as displayed and in the correct order. The recovery phrase is the only backup of your private keys.
 
-Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version 1.0.3 for LEDGER NANO S PLUS.
+
+.. tabs::
+
+   .. group-tab:: Nano S
+
+       Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version |nano-s-firmware| for LEDGER NANO S.
+
+   .. group-tab:: Nano S+
+
+       Once you've set up the LEDGER device, you must check that it's running the proper firmware version for your device. The Concordium LEDGER App currently supports LEDGER firmware version |nano-s-plus-firmware| for LEDGER NANO S+.
 
 Update the LEDGER device firmware
 ---------------------------------
 
 To update the LEDGER device firmware, do the following:
 
-#. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
+.. tabs::
 
-#. Press both buttons on the **General** menu item.
+   .. group-tab:: Nano S
 
-#. Press the right button to navigate to **Firmware version**.
+      #. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
 
-#. Press both buttons to view the **Secure Element** version.
+      #. Press both buttons on the **General** menu item.
 
-   - I it says **1.1.0**, you don't have to update the firmware. If there’s a lower version number, you’ll have to update the firmware.
+      #. Press the right button to navigate to **Firmware version**.
 
-For details on how to update the LEDGER firmware, see `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
+      #. Press both buttons to view the **Secure Element** version.
+
+          - If it says |nano-s-firmware|, you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
+
+   .. group-tab:: Nano S+
+
+      #. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
+
+      #. Press both buttons on the **General** menu item.
+
+      #. Press the right button to navigate to **Firmware version**.
+
+      #. Press both buttons to view the **Secure Element** version.
+
+          - If it says |nano-s-plus-firmware|, you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
+
+.. note::
+
+   For details on how to update the LEDGER firmware, see `LEDGER NANO S PLUS guide <https://support.ledger.com/article/360013349800-zd>`_.
+
+Install Python and pip
+======================
+
+You need to install Python and pip to proceed with installing the Concordium LEDGER app. The installation steps depend on your operating system.
+
+.. tabs::
+
+   .. group-tab:: Windows
+
+      .. _install-python-pip-windows:
+
+      #. In the **Start** menu, type *store* to open the Microsoft store.
+
+      #. In **Search**, in the upper right corner, enter *python*.
+
+      #. Select **Python 3**, and then select **Install**.
+
+         Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying **Python 3 just got installed**.
+
+      #. Restart your computer, and then confirm that Python and Pip were installed.
+
+      #. In the **Start** menu, type *PowerShell* and select **Windows PowerShell**. The command-line window opens.
+
+      #. To confirm that Python3 was installed, enter
+
+         .. code-block:: console
+
+            $Python3 --version
+
+      #. To confirm that the package manager named pip is installed, enter
+
+         .. code-block:: console
+
+            $pip --version
+
+   .. group-tab:: macOS
+
+      .. _install-python-pip-macos:
+
+      #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
+
+      #. Install the package manager `Homebrew <https://brew.sh/>`_ (if not already available on your mac); you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
+
+         .. code-block:: console
+
+            $/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+      #. To install Python3, Pip3, `libusb <https://libusb.info/>`_, and `libjpeg <http://libjpeg.sourceforge.net/>`_, copy the following into the Terminal and press Enter:
+
+         .. code-block:: console
+
+            $brew install python@3 libusb libjpeg
+
+         You can use `pyenv <https://github.com/pyenv/pyenv>`_ if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
+
+      #. To install ledgerblue, copy the following into the Terminal and press Enter:
+
+         .. code-block:: console
+
+            $pip3 install ledgerblue
+
+   .. group-tab:: Ubuntu
+
+      .. _install-python-pip-ubuntu:
+
+      #. Add udev rules. For more information, see the Linux section in `LEDGER 's guide Fix connection history <https://support.ledger.com/article/115005165269-zd>`_.
+
+         .. code-block:: console
+
+            $wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+
+
+      2. Install python3:
+
+         .. code-block:: console
+
+            $sudo apt-get install python3
+
+      3. Install pip:
+
+         .. code-block:: console
+
+            $sudo apt-get install python3-pip
+
+      4. Install
+
+         .. code-block:: console
+
+            $sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
+
+      5. Install ledgerblue:
+
+         .. code-block:: console
+
+            $sudo pip3 install ledgerblue
 
 .. _Ledger-downloads:
 
-Ledger packages
----------------
+Download Concordium Governance LEDGER app
+=========================================
 
 Once you have updated the firmware version, you can download the LEDGER app:
 
-`Dwnload the Concordium LEDGER App 1.1.0 for LEDGER firmware version 1.1.0 <https://s3.eu-west-1.amazonaws.com/distribution.mainnet.concordium.software/tools/concordium-governance-ledger-app-1.1.0-nanos-plus-.zip>`_
+.. tabs::
 
-When installing the certificate, ensure that the public key of the certificate is :substitution-code:`|ledger-app-public-key|`.
+   .. group-tab:: Nano S
 
-Follow the instructions below to update your app:
+      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S <dl-nanos_>`_
 
-   * :ref:`update-app-windows`
-   * :ref:`update-app-macos`
-   * :ref:`update-app-ubuntu`
+      #. Extract the files from the ``.zip`` folder to a folder on your computer.
 
-It should not be necessary to update the certificate.
+   .. group-tab:: Nano S+
 
-See the changelog(link) for this governance version of the app.
+      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S+ <dl-nanosp_>`_
 
-Install Concordium LEDGER app on Windows
-========================================
+      #. Extract the files from the ``.zip`` folder to a folder on your computer.
 
-.. _install-python-pip-windows:
+Install the custom certificate (Nano S only)
+============================================
 
-Install Python3 and pip
------------------------
+.. Note::
 
-#. In the **Start** menu, type *store* to open the Microsoft store.
+   If the certificate is already installed on the device, it should not be necessary to update this. If you're a LEDGER Nano S+ user, you can also skip this section.
 
-#. In **Search**, in the upper right corner, enter *python*.
+You need to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium's private key.
 
-#. Select **Python 3.9**, and then select **Install**.
+.. tabs::
 
-   Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying **Python 3.9 just got installed**.
+   .. group-tab:: Windows
 
-Restart your computer, and then confirm that Python and Pip were installed.
+      #. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you've completed the steps in this guide.
 
-#. In the **Start** menu, type *PowerShell* and select **Windows PowerShell**. The command-line window opens.
+      #. Disconnect the LEDGER device from your computer.
 
-#. To confirm that Python3 was installed, enter
+      #. Now you need to start recovery mode on the LEDGER device.
 
-   .. code-block:: console
+         - On the LEDGER device, press the *left* button and hold it down while you reconnect the LEDGER device to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
-      $Python3 --version
+      #. Enter your PIN code.
 
-#. To confirm that the package manager named pip is installed, enter
+      #. Open the folder you extracted the files to and double-click the ``loadcertificate.bat`` file. If there's a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**. A command-line window opens.
 
-   .. code-block:: console
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-      $pip --version
+      #. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
 
+         - :substitution-code:`|ledger-app-public-key|`
 
-Install the custom certificate on Windows
------------------------------------------
+      #. Press both buttons when the LEDGER device says **Trust certificate**.
 
-You now have to install a custom certificate on the LEDGER device to ensure that it trusts applications signed by Concordium's private key.
+      #. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
-#. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
+   .. group-tab:: macOS
 
-#. Disconnect the LEDGER device from your computer.
+      #. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you've completed the steps in this guide.
 
-#. :ref:`Download the ZIP folder with Concordium LEDGER application<Ledger-downloads>`.
+      #. Disconnect the LEDGER device from your computer.
 
-#. Extract the files from the ZIP folder to a folder on your computer.
+      #. Now you need to start recovery mode on the LEDGER device.
 
-#. Now you need to start recovery mode on the LEDGER device.
+         - On the LEDGER device, press the *left* button and hold it down while you reconnect the LEDGER device to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
 
-   - On the LEDGER device, press the *left* button and hold it down while you reconnect the LEDGER device to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
+      #. Enter your PIN code.
 
-#. Enter your PIN code.
+      #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-#. Open the folder you extracted the files to and double-click the ``loadcertificate.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**. A command-line window opens.
+      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
 
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
+         .. code-block:: console
+            :substitutions:
 
-#. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
+            $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
 
-   - :substitution-code:`|ledger-app-public-key|`
+         .. For now, setting up custom CAs on Nano S+ does not make any difference, as sideloading signed apps is not working.
+         ..
+         .. .. tabs::
+         ..
+         ..    .. group-tab:: Nano S
+         ..
+         ..       .. code-block:: console
+         ..          :substitutions:
+         ..
+         ..          $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+         ..
+         ..    .. group-tab:: Nano S+
+         ..
+         ..       .. code-block:: console
+         ..          :substitutions:
+         ..
+         ..          $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
-and then press both buttons when the LEDGER device says **Trust certificate**.
+      #. Load the certificate onto the LEDGER device by running the following script from the extracted folder:
 
-#. Enter your PIN. The certificate has now been installed on the LEDGER device.
+         .. code-block:: console
 
-.. _install-ledger-app-windows:
+            $./loadcertificate.sh
 
-Install the Concordium LEDGER app on Windows
---------------------------------------------
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
 
-#. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
+      #. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
 
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. The LEDGER device says **Loading, please wait** while it installs the app.
+         - :substitution-code:`|ledger-app-public-key|`
 
-#. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
+      #. Press both buttons when the LEDGER device says **Trust certificate**.
 
-.. _update-app-windows:
+      #. Enter your PIN. The certificate has now been installed on the LEDGER device.
 
-Update the Concordium LEDGER app on Windows
--------------------------------------------
+   .. group-tab:: Ubuntu
+
+      #. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you've completed the steps in this guide.
+
+      #. Disconnect the LEDGER device from your computer.
+
+      #. Now you need to start recovery mode on the LEDGER device.
+
+         - On the LEDGER device, press the *left* button and hold it down while you reconnect the LEDGER device to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
+
+      #. Enter your PIN code.
+
+      #. Run the following script from the folder you extracted the files to:
+
+         .. code-block:: console
+
+            $./loadcertificate.sh
+
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
+
+      #. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
+
+         - :substitution-code:`|ledger-app-public-key|`
+
+      #. Press both buttons when the LEDGER device says **Trust certificate**.
+
+      #. Enter your PIN. The certificate has now been installed on the LEDGER device.
+
+Install the Concordium Governance LEDGER app
+============================================
+
+After installing the certificate, you can proceed to install the Concordium LEDGER app.
+
+.. tabs::
+
+   .. group-tab:: Windows
+
+      .. _install-ledger-app-windows:
+
+      #. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there's a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
+
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. The LEDGER device says **Loading, please wait** while it installs the app.
+
+      #. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
+
+   .. group-tab:: macOS
+
+      .. _install-ledger-app-macos:
+
+      #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
+
+      #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
+
+         .. tabs::
+
+            .. group-tab:: Nano S
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+
+            .. group-tab:: Nano S+
+
+               .. code-block:: console
+                  :substitutions:
+
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
+
+      #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
+
+         .. code-block:: console
+
+            $./install.sh
+
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. The LEDGER device says **Loading, please wait** while it installs the app.
+
+      #. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
+
+   .. group-tab:: Ubuntu
+
+      .. _install-ledger-app-ubuntu:
+
+      #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
+
+         .. code-block:: console
+
+            $./install.sh
+
+      2. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. The LEDGER device says **Loading, please wait** while it installs the app.
+
+      3. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
+
+Update the Concordium LEDGER app
+================================
 
 For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
 
-.. Note::
-    Before updating, verify that you have :ref:`installed Python3, pip, and the Python tools <install-python-pip-windows>` for LEDGER (ledgerblue) before updating the app.
+.. tabs::
 
-#. :ref:`Download the LEDGER app<Ledger-downloads>` if you haven't done so already.
+   .. group-tab:: Windows
 
-#. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there’s a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
+      .. _update-app-windows:
 
-.. Note::
+      .. Note::
+          Before updating, verify that you have :ref:`installed Python3, pip, and the Python tools <install-python-pip-windows>` for LEDGER (ledgerblue) before updating the app.
 
-   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
+      #. :ref:`Download the LEDGER app<Ledger-downloads>` if you haven't done so already.
 
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons.
+      #. In the folder that you extracted the files to, double-click the ``install.bat`` file. If there's a message saying **Windows protected your PC**, select **More info**, and then select **Run anyway**.
 
-#. Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says **Uninstall Concordium**. Press the right button to navigate through the identifier until the LEDGER device says **Confirm action**. Press both buttons to confirm. The LEDGER device says **Loading, please wait** while it installs the app.
+      .. Note::
 
-#. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the LEDGER app.
+         If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
 
-Install Concordium LEDGER app on macOS
-======================================
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons.
 
-.. _install-python-pip-macos:
+      #. Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says **Uninstall Concordium**. Press the right button to navigate through the identifier until the LEDGER device says **Confirm action**. Press both buttons to confirm. The LEDGER device says **Loading, please wait** while it installs the app.
 
-Install Homebrew, Python3, and pip
-----------------------------------
+      #. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the LEDGER app.
 
-#. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
+   .. group-tab:: macOS
 
-#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``.
+      .. _update-app-macos:
 
-#. Install the package manager `Homebrew <https://brew.sh/>`_; you will need the Homebrew tool to install the remaining dependencies. Copy the following line into the Terminal and press enter.
+      When you update your LEDGER device, it should not be necessary to update the certificate.
 
-   .. code-block:: console
+      .. Note::
+          If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-macos>` tools for LEDGER (ledgerblue) before updating the app.
 
-      $/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      #. :ref:`Download the LEDGER app<Ledger-downloads>` if you haven't done so already.
 
-#. To install Python3, Pip3, `libusb <https://libusb.info/>`_, and `libjpeg <http://libjpeg.sourceforge.net/>`_, copy the following into the Terminal and press Enter:
+      #. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
 
-   .. code-block:: console
+      #. Navigate to where you have downloaded the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
 
-      $brew install python@3.9 libusb libjpeg
+         .. tabs::
 
-   You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
+            .. group-tab:: Nano S
 
-#. To install ledgerblue, copy the following into the Terminal and press Enter:
+               .. code-block:: console
+                  :substitutions:
 
-   .. code-block:: console
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
 
-      $pip3 install ledgerblue
+            .. group-tab:: Nano S+
 
-Install the custom certificate using macOS
-------------------------------------------
+               .. code-block:: console
+                  :substitutions:
 
-You now have to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium's private key.
+                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
-#. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
+      #. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
 
-#. :ref:`Download the ZIP folder with the Concordium LEDGER application<Ledger-downloads>`.
+         .. code-block:: console
 
-#. Extract the files from the ZIP folder to a folder on your computer.
+            $./install.sh
 
-#. Disconnect the LEDGER device from your computer.
+         .. Note::
 
-#. Now you need to start recovery mode on the LEDGER device.
+            If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
 
-   - On the LEDGER device, press the *left* button and hold it down while you reconnect the LEDGER device to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
-#. Enter your PIN code.
+      #. Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says **Uninstall Concordium**. Press the right button to navigate through the identifier until the LEDGER device says **Confirm action**. Press both buttons to confirm. The LEDGER device says **Loading, please wait** while it installs the app.
 
-#. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
+      #. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the LEDGER app.
 
-#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``.
+   .. group-tab:: Ubuntu
 
-#. Load the certificate onto the LEDGER device by running the following script from the extracted folder:
+      .. _update-app-ubuntu:
 
-   .. code-block:: console
+      .. Note::
+          If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-ubuntu>` for LEDGER (ledgerblue) before updating the app.
 
-      $./loadcertificate.sh
+      #. :ref:`Download <Ledger-downloads>` the latest version of the LEDGER app if you haven't done so already.
 
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
+      #. Run the ``install.sh`` file from the folder that you extracted the files to.
 
-#. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
+         .. Note::
 
-   - :substitution-code:`|ledger-app-public-key|`
+            If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$sudo pip3 install ledgerblue --upgrade``.
 
-and then press both buttons when the LEDGER device says **Trust certificate**.
+      #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
-#. Enter your PIN. The certificate has now been installed on the LEDGER device .
+      #. Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says **Uninstall Concordium**. Press the right button to navigate through the identifier until the LEDGER device says **Confirm action**. Press both buttons to confirm. The LEDGER device says **Loading, please wait** while it installs the app.
 
-.. _install-ledger-app-macos:
-
-Install the Concordium LEDGER app on macOS
----------------------------------------------
-
-#. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
-
-#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-governance-ledger-app-1.1.0-nanos-2.1.0.zip``.
-
-#. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
-
-   .. code-block:: console
-
-      $./install.sh
-
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. The LEDGER device says **Loading, please wait** while it installs the app.
-
-#. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
-
-.. _update-app-macos:
-
-Update/reinstall the Concordium LEDGER app on macOS
----------------------------------------------------
-
-For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
-
-When you update your LEDGER device, it should not be necessary to update the certificate.
-
-.. Note::
-    If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-macos>` tools for LEDGER (ledgerblue) before updating the app.
-
-#. :ref:`Download the LEDGER app<Ledger-downloads>` if you haven't done so already.
-
-#. Open the `Terminal <https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac>`_ application.
-
-#. Navigate to where you have downloaded the LEDGER install package. For example, this might be ``~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0``. To navigate to this directory in a Terminal, enter ``cd ~/Downloads/concordium-ledger-app-2.0.3-target-2.1.0``.
-
-#. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
-
-   .. code-block:: console
-
-      ./install.sh
-
-.. Note::
-
-   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$pip3 install ledgerblue --upgrade``.
-
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
-
-#. Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says **Uninstall Concordium**. Press the right button to navigate through the identifier until the LEDGER device says **Confirm action**. Press both buttons to confirm. The LEDGER device says **Loading, please wait** while it installs the app.
-
-#. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the LEDGER app.
-
-Install Concordium LEDGER app on Ubuntu
-=======================================
-
-Install Python3 and pip on Ubuntu
----------------------------------
-
-.. _install-python-pip-ubuntu:
-
-#. Add udev rules. For more information, see the Linux section in `LEDGER ‘s guide Fix connection history <https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues>`_.
-
-   .. code-block:: console
-
-      $wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
-
-
-2. Install python3:
-
-   .. code-block:: console
-
-      $sudo apt-get install python3
-
-3. Install pip:
-
-   .. code-block:: console
-
-      $sudo apt-get install python3-pip
-
-4. Install
-
-   .. code-block:: console
-
-      $sudo apt-get install libudev-dev libusb-1.0-0-dev python-dev
-
-5. Install ledgerblue:
-
-   .. code-block:: console
-
-      $sudo pip3 install ledgerblue
-
-Install the custom certificate on Ubuntu
-----------------------------------------
-
-You now have to install a custom certificate to ensure that the LEDGER device trusts applications signed by Concordium's private key.
-
-#. Close all applications that might be connected to the LEDGER device such as LEDGER LIVE and Concordium Desktop Wallet and keep them closed until you’ve completed the steps in this guide.
-
-#. Download the ZIP folder with the Concordium LEDGER application.
-
-#. Extract the files from the ZIP folder to a folder on your computer.
-
-#. Disconnect the LEDGER device from your computer.
-
-#. Now you need to start recovery mode on the LEDGER device.
-
-   - On the LEDGER device, press the *left* button and hold it down while you reconnect the LEDGER device to the computer. Navigate to **Recovery mode** and press both buttons to enter **recovery mode**.
-
-#. Enter your PIN code.
-
-#. Run the following script from the folder you extracted the files to:
-
-   .. code-block:: console
-
-      $./loadcertificate.sh
-
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. You can safely ignore the message in the command-line window saying **Broken certificate chain - loading from user key**. This is expected behavior.
-
-#. The LEDGER device says **Certificate concordium**. Press the right button to navigate through the key, while confirming that it is the following:
-
-   - :substitution-code:`|ledger-app-public-key|`
-
-and then press both buttons when the LEDGER device says **Trust certificate**.
-
-#. Enter your PIN. The certificate has now been installed on the LEDGER device.
-
-.. _install-ledger-app-ubuntu:
-
-Install the Concordium LEDGER app on Ubuntu
--------------------------------------------
-
-#. Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:
-
-   .. code-block:: console
-
-      $./install.sh
-
-2. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**. Press both buttons. The LEDGER device says **Loading, please wait** while it installs the app.
-
-3. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. You can now use the LEDGER device with the Desktop Wallet.
-
-.. _update-app-ubuntu:
-
-Update the Concordium LEDGER app on Ubuntu
--------------------------------------------
-
-For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.
-
-.. Note::
-    If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-ubuntu>` for LEDGER (ledgerblue) before updating the app.
-
-#. :ref:`Download <downloads>` the latest version of the LEDGER app if you haven't done so already.
-
-#. Run the ``install.sh`` file from the folder that you extracted the files to.
-
-.. Note::
-
-   If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$sudo pip3 install ledgerblue --upgrade``.
-
-#. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
-
-#. Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says **Uninstall Concordium**. Press the right button to navigate through the identifier until the LEDGER device says **Confirm action**. Press both buttons to confirm. The LEDGER device says **Loading, please wait** while it installs the app.
-
-#. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the LEDGER app.
+      #. The LEDGER device says **Concordium**. Press both buttons. The LEDGER device says **Concordium is ready**. Press the left button to verify that you've installed the latest version of the LEDGER app.
