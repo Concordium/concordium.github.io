@@ -55,7 +55,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/install-ledger-app.e3d7caf7-99ee-4088-a195-ee6eade1ca8c.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/desktop-wallet/install-ledger-app.eb1af3df-c81f-420d-a791-e7f3c3dc5f01.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/desktop-wallet/install-ledger-app';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/desktop-wallet/install-ledger-app.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -579,7 +579,6 @@
 </div></blockquote>
 </li>
 </ol>
-<p>For details on how to update the LEDGER firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true">LEDGER NANO S guide</a>.</p>
 </div><div aria-labelledby="tab-1-TmFubyBTKw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-TmFubyBTKw==" name="TmFubyBTKw==" role="tabpanel" tabindex="0"><ol class="arabic">
 <li><p>On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.</p></li>
 <li><p>Press both buttons on the <strong>General</strong> menu item.</p></li>
@@ -592,8 +591,11 @@
 </div></blockquote>
 </li>
 </ol>
-<p>For details on how to update the LEDGER firmware, see <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true">LEDGER NANO S PLUS guide</a>.</p>
 </div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For details on how to update the LEDGER firmware, see <a class="reference external" href="https://support.ledger.com/article/360013349800-zd">LEDGER NANO S PLUS guide</a>.</p>
+</div>
 </section>
 </section>
 <section id="install-python-and-pip">
@@ -632,7 +634,7 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>brew<span class="w"> </span>install<span class="w"> </span>python@3<span class="w"> </span>libusb<span class="w"> </span>libjpeg
 </pre></div>
 </div>
-<p>You can use <cite>pyenv&lt;https://github.com/pyenv/pyenv&gt;</cite> if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.</p>
+<p>You can use <a class="reference external" href="https://github.com/pyenv/pyenv">pyenv</a> if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.</p>
 </li>
 <li><p>To install ledgerblue, copy the following into the Terminal and press Enter:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip3<span class="w"> </span>install<span class="w"> </span>ledgerblue
@@ -641,7 +643,7 @@
 </li>
 </ol>
 </div><div aria-labelledby="tab-2-VWJ1bnR1" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-VWJ1bnR1" name="VWJ1bnR1" role="tabpanel" tabindex="0"><ol class="arabic" id="install-python-pip-ubuntu">
-<li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues">LEDGER ‘s guide Fix connection history</a>.</p>
+<li><p>Add udev rules. For more information, see the Linux section in <a class="reference external" href="https://support.ledger.com/article/115005165269-zd">LEDGER ‘s guide Fix connection history</a>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>wget<span class="w"> </span>-q<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>bash
 </pre></div>
 </div>
@@ -723,14 +725,9 @@
 <li><p>Enter your PIN code.</p></li>
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter</p>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-5-TmFubyBT" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-TmFubyBT" name="TmFubyBT" role="tab" tabindex="0">Nano S</button><button aria-controls="panel-5-TmFubyBTKw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-TmFubyBTKw==" name="TmFubyBTKw==" role="tab" tabindex="-1">Nano S+</button></div><div aria-labelledby="tab-5-TmFubyBT" class="sphinx-tabs-panel group-tab" id="panel-5-TmFubyBT" name="TmFubyBT" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanos-2.1.0
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanos-2.1.0
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-5-TmFubyBTKw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-TmFubyBTKw==" name="TmFubyBTKw==" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanosplus
-</pre></div>
-</div>
-</div></div>
 </li>
 <li><p>Load the certificate onto the LEDGER device by running the following script from the extracted folder:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./loadcertificate.sh
@@ -775,19 +772,19 @@
 <h2>Install the Concordium Governance LEDGER app<a class="headerlink" href="#install-the-concordium-governance-ledger-app" title="Link to this heading">#</a></h2>
 <p>After installing the certificate, you can proceed to install the Concordium LEDGER app.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-6-V2luZG93cw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-6-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="0">Windows</button><button aria-controls="panel-6-bWFjT1M=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-6-VWJ1bnR1" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-VWJ1bnR1" name="VWJ1bnR1" role="tab" tabindex="-1">Ubuntu</button></div><div aria-labelledby="tab-6-V2luZG93cw==" class="sphinx-tabs-panel group-tab" id="panel-6-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><ol class="arabic simple" id="install-ledger-app-windows">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-5-V2luZG93cw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="0">Windows</button><button aria-controls="panel-5-bWFjT1M=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-5-VWJ1bnR1" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-VWJ1bnR1" name="VWJ1bnR1" role="tab" tabindex="-1">Ubuntu</button></div><div aria-labelledby="tab-5-V2luZG93cw==" class="sphinx-tabs-panel group-tab" id="panel-5-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><ol class="arabic simple" id="install-ledger-app-windows">
 <li><p>In the folder that you extracted the files to, double-click the <code class="docutils literal notranslate"><span class="pre">install.bat</span></code> file. If there’s a message saying <strong>Windows protected your PC</strong>, select <strong>More info</strong>, and then select <strong>Run anyway</strong>.</p></li>
 <li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. You can now use the LEDGER device with the Desktop Wallet.</p></li>
 </ol>
-</div><div aria-labelledby="tab-6-bWFjT1M=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><ol class="arabic" id="install-ledger-app-macos">
+</div><div aria-labelledby="tab-5-bWFjT1M=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><ol class="arabic" id="install-ledger-app-macos">
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-7-TmFubyBT" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-7-TmFubyBT" name="TmFubyBT" role="tab" tabindex="0">Nano S</button><button aria-controls="panel-7-TmFubyBTKw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-7-TmFubyBTKw==" name="TmFubyBTKw==" role="tab" tabindex="-1">Nano S+</button></div><div aria-labelledby="tab-7-TmFubyBT" class="sphinx-tabs-panel group-tab" id="panel-7-TmFubyBT" name="TmFubyBT" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanos-2.1.0
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-6-TmFubyBT" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-6-TmFubyBT" name="TmFubyBT" role="tab" tabindex="0">Nano S</button><button aria-controls="panel-6-TmFubyBTKw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-TmFubyBTKw==" name="TmFubyBTKw==" role="tab" tabindex="-1">Nano S+</button></div><div aria-labelledby="tab-6-TmFubyBT" class="sphinx-tabs-panel group-tab" id="panel-6-TmFubyBT" name="TmFubyBT" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanos-2.1.0
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-7-TmFubyBTKw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-7-TmFubyBTKw==" name="TmFubyBTKw==" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanosplus
+</div><div aria-labelledby="tab-6-TmFubyBTKw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-TmFubyBTKw==" name="TmFubyBTKw==" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanosplus
 </pre></div>
 </div>
 </div></div>
@@ -800,7 +797,7 @@
 <li><p>The LEDGER device says <strong>Deny unsafe manager</strong>. Press the right button to navigate through the public key until the LEDGER device says <strong>Allow unsafe manager</strong>. Press both buttons. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. You can now use the LEDGER device with the Desktop Wallet.</p></li>
 </ol>
-</div><div aria-labelledby="tab-6-VWJ1bnR1" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-VWJ1bnR1" name="VWJ1bnR1" role="tabpanel" tabindex="0"><ol class="arabic" id="install-ledger-app-ubuntu">
+</div><div aria-labelledby="tab-5-VWJ1bnR1" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-VWJ1bnR1" name="VWJ1bnR1" role="tabpanel" tabindex="0"><ol class="arabic" id="install-ledger-app-ubuntu">
 <li><p>Install the Concordium application on the LEDGER device by running the following script from the folder you extracted the files to:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>./install.sh
 </pre></div>
@@ -817,7 +814,7 @@
 <h2>Update the Concordium LEDGER app<a class="headerlink" href="#update-the-concordium-ledger-app" title="Link to this heading">#</a></h2>
 <p>For the app to work properly with the current version of the Desktop Wallet, make sure that you update to the latest version of the app.</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-8-V2luZG93cw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-8-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="0">Windows</button><button aria-controls="panel-8-bWFjT1M=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-8-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-8-VWJ1bnR1" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-8-VWJ1bnR1" name="VWJ1bnR1" role="tab" tabindex="-1">Ubuntu</button></div><div aria-labelledby="tab-8-V2luZG93cw==" class="sphinx-tabs-panel group-tab" id="panel-8-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><div class="admonition note" id="update-app-windows">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-7-V2luZG93cw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-7-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="0">Windows</button><button aria-controls="panel-7-bWFjT1M=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-7-bWFjT1M=" name="bWFjT1M=" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-7-VWJ1bnR1" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-7-VWJ1bnR1" name="VWJ1bnR1" role="tab" tabindex="-1">Ubuntu</button></div><div aria-labelledby="tab-7-V2luZG93cw==" class="sphinx-tabs-panel group-tab" id="panel-7-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><div class="admonition note" id="update-app-windows">
 <p class="admonition-title">Note</p>
 <p>Before updating, verify that you have <a class="reference internal" href="#install-python-pip-windows"><span class="std std-ref">installed Python3, pip, and the Python tools</span></a> for LEDGER (ledgerblue) before updating the app.</p>
 </div>
@@ -834,7 +831,7 @@
 <li><p>Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the LEDGER device says <strong>Confirm action</strong>. Press both buttons to confirm. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the LEDGER app.</p></li>
 </ol>
-</div><div aria-labelledby="tab-8-bWFjT1M=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-8-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><p id="update-app-macos">When you update your LEDGER device, it should not be necessary to update the certificate.</p>
+</div><div aria-labelledby="tab-7-bWFjT1M=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-7-bWFjT1M=" name="bWFjT1M=" role="tabpanel" tabindex="0"><p id="update-app-macos">When you update your LEDGER device, it should not be necessary to update the certificate.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you’re using a different computer than the one you used when you installed the app, you must <a class="reference internal" href="#install-python-pip-macos"><span class="std std-ref">install Python3, pip, and the Python tools</span></a> tools for LEDGER (ledgerblue) before updating the app.</p>
@@ -844,10 +841,10 @@
 <li><p>Open the <a class="reference external" href="https://support.apple.com/en-gb/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac">Terminal</a> application.</p></li>
 <li><p>Navigate to where you have downloaded the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-9-TmFubyBT" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-9-TmFubyBT" name="TmFubyBT" role="tab" tabindex="0">Nano S</button><button aria-controls="panel-9-TmFubyBTKw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-9-TmFubyBTKw==" name="TmFubyBTKw==" role="tab" tabindex="-1">Nano S+</button></div><div aria-labelledby="tab-9-TmFubyBT" class="sphinx-tabs-panel group-tab" id="panel-9-TmFubyBT" name="TmFubyBT" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanos-2.1.0
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-8-TmFubyBT" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-8-TmFubyBT" name="TmFubyBT" role="tab" tabindex="0">Nano S</button><button aria-controls="panel-8-TmFubyBTKw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-8-TmFubyBTKw==" name="TmFubyBTKw==" role="tab" tabindex="-1">Nano S+</button></div><div aria-labelledby="tab-8-TmFubyBT" class="sphinx-tabs-panel group-tab" id="panel-8-TmFubyBT" name="TmFubyBT" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanos-2.1.0
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-9-TmFubyBTKw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-9-TmFubyBTKw==" name="TmFubyBTKw==" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanosplus
+</div><div aria-labelledby="tab-8-TmFubyBTKw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-8-TmFubyBTKw==" name="TmFubyBTKw==" role="tabpanel" tabindex="0"><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>~/Downloads/concordium-governance-ledger-app-1.2.0-nanosplus
 </pre></div>
 </div>
 </div></div>
@@ -865,12 +862,12 @@
 <li><p>Before you can install the new version of the LEDGER app, you have to uninstall the old one. The LEDGER device says <strong>Uninstall Concordium</strong>. Press the right button to navigate through the identifier until the LEDGER device says <strong>Confirm action</strong>. Press both buttons to confirm. The LEDGER device says <strong>Loading, please wait</strong> while it installs the app.</p></li>
 <li><p>The LEDGER device says <strong>Concordium</strong>. Press both buttons. The LEDGER device says <strong>Concordium is ready</strong>. Press the left button to verify that you’ve installed the latest version of the LEDGER app.</p></li>
 </ol>
-</div><div aria-labelledby="tab-8-VWJ1bnR1" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-8-VWJ1bnR1" name="VWJ1bnR1" role="tabpanel" tabindex="0"><div class="admonition note" id="update-app-ubuntu">
+</div><div aria-labelledby="tab-7-VWJ1bnR1" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-7-VWJ1bnR1" name="VWJ1bnR1" role="tabpanel" tabindex="0"><div class="admonition note" id="update-app-ubuntu">
 <p class="admonition-title">Note</p>
 <p>If you’re using a different computer than the one you used when you installed the app, you must <a class="reference internal" href="#install-python-pip-ubuntu"><span class="std std-ref">install Python3, pip, and the Python tools</span></a> for LEDGER (ledgerblue) before updating the app.</p>
 </div>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../installation/downloads.html#downloads"><span class="std std-ref">Download</span></a> the latest version of the LEDGER app if you haven’t done so already.</p></li>
+<li><p><a class="reference internal" href="#ledger-downloads"><span class="std std-ref">Download</span></a> the latest version of the LEDGER app if you haven’t done so already.</p></li>
 <li><p>Run the <code class="docutils literal notranslate"><span class="pre">install.sh</span></code> file from the folder that you extracted the files to.</p></li>
 </ol>
 <div class="admonition note">
