@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/proofs.da15a5a7-2610-4555-8a01-3f8eea7eb622.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/proofs.8d11b1dc-44ce-4297-92e0-da12e212bb6d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/proofs';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/proofs.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -662,6 +662,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../browser-wallet/setup-browser-wallet.html">Set up the Concordium Wallet for Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="overview-desktop.html">Set up the Desktop Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ledger-tutorial.html">Use your Ledger Device with Concordium Desktop Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../desktop-wallet/install-ledger-app.html">Set up Concordium Governance Ledger App</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="manage-wallets-lp.html">Wallet activities</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -780,15 +781,19 @@
   <section id="proofs-and-revealing-information">
 <span id="secret-proofs"></span><h1>Proofs and revealing information<a class="headerlink" href="#proofs-and-revealing-information" title="Link to this heading">#</a></h1>
 <p>Some dApps or services may require you to prove that you are over a certain age, that you reside in a specific range of countries or area without revealing your exact age or country of residence, or that you have a certain type of education. You can choose whether you want to prove these <a class="reference internal" href="../resources/glossary.html#term-Attributes"><span class="xref std std-term">attributes</span></a> to the dApp or service using your <a class="reference internal" href="../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> or <a class="reference internal" href="../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a>. The dApp or service uses a <a class="reference internal" href="../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proof</span></a> to request the attributes necessary for their service. This means that the dApp or service does not get any exact attributes, only proof that you live up to their requirements. You can choose which account (and thus identity) to use to fulfill the proof request for <a class="reference internal" href="../resources/glossary.html#term-Account-credential"><span class="xref std std-term">account credentials</span></a> using the drop-down above the proof.</p>
-<a class="reference internal image-reference" href="../../_images/zkp-one-attribute-ok.png"><img alt="../../_images/zkp-one-attribute-ok.png" src="../../_images/zkp-one-attribute-ok.png" style="width: 75%;" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Accounts created with the legacy backup file system (no longer possible to create) cannot generate or use zero-knowledge (zk) ID proofs. These existing accounts remain on the network but cannot be used to perform zk proof checks in dApps, including verifications such as age, nationality, or similar attributes.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/zkp-one-attribute-ok.png"><img alt="../../_images/zkp-one-attribute-ok.png" src="../../_images/zkp-one-attribute-ok.png" style="width: 50%;" />
 </a>
 <p>When an attribute or attributes will be proven by zero-knowledge proof but not revealed, the <strong>Zero-knowledge proof</strong> heading appears on the card with the attributes to prove.</p>
 <p>If you do not meet one of the attributes in the statement, you would see a screen similar to below.</p>
-<a class="reference internal image-reference" href="../../_images/zkp-two-attributes-not-ok.png"><img alt="../../_images/zkp-two-attributes-not-ok.png" src="../../_images/zkp-two-attributes-not-ok.png" style="width: 75%;" />
+<a class="reference internal image-reference" href="../../_images/zkp-two-attributes-not-ok.png"><img alt="../../_images/zkp-two-attributes-not-ok.png" src="../../_images/zkp-two-attributes-not-ok.png" style="width: 50%;" />
 </a>
 <p>In this situation you must reject the proof because you cannot prove that you meet the requirements in the statement.</p>
 <p>Other times the dApp or service may request that you <strong>reveal</strong> the information to them, such as your exact nationality or exact age. This is called <strong>Information to reveal</strong> and it appears as shown below in the wallet.</p>
-<a class="reference internal image-reference" href="../../_images/reveal-proof.png"><img alt="../../_images/reveal-proof.png" src="../../_images/reveal-proof.png" style="width: 75%;" />
+<a class="reference internal image-reference" href="../../_images/reveal-proof.png"><img alt="../../_images/reveal-proof.png" src="../../_images/reveal-proof.png" style="width: 50%;" />
 </a>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -797,7 +802,7 @@
 </div>
 <p>It is not possible for you to choose which attributes in the statement to prove/reveal or not prove/reveal. If there is something in the statement that you do not want to prove or reveal, you must reject the statement.</p>
 <p>It is also possible that a dApp could present a mixed statement that asks you to reveal one attribute and prove another. In the example below, the user’s sex must be revealed and the user’s age must be proven.</p>
-<a class="reference internal image-reference" href="../../_images/mixed-statement-proof.png"><img alt="../../_images/mixed-statement-proof.png" src="../../_images/mixed-statement-proof.png" style="width: 75%;" />
+<a class="reference internal image-reference" href="../../_images/mixed-statement-proof.png"><img alt="../../_images/mixed-statement-proof.png" src="../../_images/mixed-statement-proof.png" style="width: 50%;" />
 </a>
 <p>Another example of a mixed proof includes a request to prove information from your <a class="reference internal" href="../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credential</span></a> and from your identity. The first screen is requesting you prove information from your verifiable credential. Click <strong>Continue</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/vc-mixed-proof-1.png"><img alt="window with verifiable credential proof and continue button" src="../../_images/vc-mixed-proof-1.png" style="width: 50%;" />
@@ -816,7 +821,7 @@
 <section id="bw">
 <h2>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Link to this heading">#</a></h2>
 <p>When the wallet receives a request, a screen similiar to below appears.</p>
-<a class="reference internal image-reference" href="../../_images/zkp-one-attribute-ok.png"><img alt="../../_images/zkp-one-attribute-ok.png" src="../../_images/zkp-one-attribute-ok.png" style="width: 75%;" />
+<a class="reference internal image-reference" href="../../_images/zkp-one-attribute-ok.png"><img alt="../../_images/zkp-one-attribute-ok.png" src="../../_images/zkp-one-attribute-ok.png" style="width: 50%;" />
 </a>
 <p>Click <strong>Accept</strong> to allow the dApp or service to complete the proof or click <strong>Reject</strong> if you do not want to share this information. For more information about verifiable credentials and proofs, see <a class="reference internal" href="wallet.html#web3id-wallet"><span class="std std-ref">Web3 ID in the Concordium Wallet for Web</span></a>.</p>
 </section>
