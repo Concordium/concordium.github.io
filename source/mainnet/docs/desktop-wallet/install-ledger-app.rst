@@ -82,8 +82,6 @@ To update the LEDGER device firmware, do the following:
 
           - If it says |nano-s-firmware|, you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
 
-      For details on how to update the LEDGER firmware, see `LEDGER NANO S guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
-
    .. group-tab:: Nano S+
 
       #. On the LEDGER device press both buttons for a little while until the Settings icon appears. Press both buttons to enter the Settings menu.
@@ -96,7 +94,9 @@ To update the LEDGER device firmware, do the following:
 
           - If it says |nano-s-plus-firmware|, you don't have to update the firmware. If there's a lower version number, you'll have to update the firmware.
 
-      For details on how to update the LEDGER firmware, see `LEDGER NANO S PLUS guide <https://support.ledger.com/hc/en-us/articles/4445777839901-Update-Ledger-Nano-S-Plus-firmware?docs=true>`_.
+.. note::
+
+   For details on how to update the LEDGER firmware, see `LEDGER NANO S PLUS guide <https://support.ledger.com/article/360013349800-zd>`_.
 
 Install Python and pip
 ======================
@@ -151,7 +151,7 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
             $brew install python@3 libusb libjpeg
 
-         You can use `pyenv<https://github.com/pyenv/pyenv>` if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
+         You can use `pyenv <https://github.com/pyenv/pyenv>`_ if you need multiple python versions. Installing libjpeg is only necessary if you have a Mac with an M1 or similar Apple Silicon CPU.
 
       #. To install ledgerblue, copy the following into the Terminal and press Enter:
 
@@ -163,7 +163,7 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
       .. _install-python-pip-ubuntu:
 
-      #. Add udev rules. For more information, see the Linux section in `LEDGER 's guide Fix connection history <https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues>`_.
+      #. Add udev rules. For more information, see the Linux section in `LEDGER 's guide Fix connection history <https://support.ledger.com/article/115005165269-zd>`_.
 
          .. code-block:: console
 
@@ -266,21 +266,28 @@ You need to install a custom certificate to ensure that the LEDGER device trusts
 
       #. Navigate to where you have downloaded and extracted the LEDGER install package. For example to navigate to the default download directory in a Terminal, enter
 
-         .. tabs::
+         .. code-block:: console
+            :substitutions:
 
-            .. group-tab:: Nano S
+            $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
 
-               .. code-block:: console
-                  :substitutions:
-
-                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
-
-            .. group-tab:: Nano S+
-
-               .. code-block:: console
-                  :substitutions:
-
-                  $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
+         .. For now, setting up custom CAs on Nano S+ does not make any difference, as sideloading signed apps is not working.
+         ..
+         .. .. tabs::
+         ..
+         ..    .. group-tab:: Nano S
+         ..
+         ..       .. code-block:: console
+         ..          :substitutions:
+         ..
+         ..          $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanos-|nano-s-firmware|
+         ..
+         ..    .. group-tab:: Nano S+
+         ..
+         ..       .. code-block:: console
+         ..          :substitutions:
+         ..
+         ..          $cd ~/Downloads/concordium-governance-ledger-app-|ccd-governance-version|-nanosplus
 
       #. Load the certificate onto the LEDGER device by running the following script from the extracted folder:
 
@@ -473,7 +480,7 @@ For the app to work properly with the current version of the Desktop Wallet, mak
       .. Note::
           If you're using a different computer than the one you used when you installed the app, you must :ref:`install Python3, pip, and the Python tools <install-python-pip-ubuntu>` for LEDGER (ledgerblue) before updating the app.
 
-      #. :ref:`Download <downloads>` the latest version of the LEDGER app if you haven't done so already.
+      #. :ref:`Download <Ledger-downloads>` the latest version of the LEDGER app if you haven't done so already.
 
       #. Run the ``install.sh`` file from the folder that you extracted the files to.
 
