@@ -5,6 +5,8 @@
 .. |nano-s-firmware| replace:: **2.1.0**
 .. |nano-s-plus-firmware| replace:: **1.4.0**
 .. |ccd-governance-version| replace:: **1.2.0**
+.. _dl-nanos: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip
+.. _dl-nanosp: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanosplus.zip
 
 .. _install-Ledger-app:
 
@@ -205,13 +207,13 @@ Once you have updated the firmware version, you can download the LEDGER app:
 
    .. group-tab:: Nano S
 
-      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip>`_
+      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S <dl-nanos_>`_
 
       #. Extract the files from the ``.zip`` folder to a folder on your computer.
 
    .. group-tab:: Nano S+
 
-      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S+ <https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanosplus.zip>`_
+      #. `Download the Concordium Governance LEDGER App for LEDGER Nano S+ <dl-nanosp_>`_
 
       #. Extract the files from the ``.zip`` folder to a folder on your computer.
 
