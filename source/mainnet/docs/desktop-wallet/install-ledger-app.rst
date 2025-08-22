@@ -119,7 +119,7 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
          Python is downloaded and installed automatically. Depending on the setup of your computer, you might see a message saying **Python 3 just got installed**.
 
-      Restart your computer, and then confirm that Python and Pip were installed.
+      #. Restart your computer, and then confirm that Python and Pip were installed.
 
       #. In the **Start** menu, type *PowerShell* and select **Windows PowerShell**. The command-line window opens.
 
@@ -486,9 +486,9 @@ For the app to work properly with the current version of the Desktop Wallet, mak
 
       #. Run the ``install.sh`` file from the folder that you extracted the files to.
 
-      .. Note::
+         .. Note::
 
-         If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$sudo pip3 install ledgerblue --upgrade``.
+            If you get the error ``loadApp.py: error: unrecognized arguments: --apiLevel 1`` this means that you have an older version of the Python tools for LEDGER (ledgerblue). To update, run ``$sudo pip3 install ledgerblue --upgrade``.
 
       #. The LEDGER device says **Deny unsafe manager**. Press the right button to navigate through the public key until the LEDGER device says **Allow unsafe manager**.
 
