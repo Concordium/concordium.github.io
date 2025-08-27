@@ -33,6 +33,8 @@ Below you see a diagram of a validation round:
 
 In the case of a faulty leader who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If the leader does not produce a block within a certain time, a :term:`Timeout Certificate (TC)<Timeout certificate>` is issued to move the process forward. The next leader can now use the TC to skip the previous round and extend an older block for which they have a QC.
 
+A block becomes final when both the block and its child have Quorum Certificates in consecutive rounds of the same epoch, ensuring they cannot be rolled back and are part of the authoritative chain.
+
 Stake and lottery
 =================
 
@@ -67,6 +69,8 @@ Becoming a validator requires both financial commitment and technical capability
 
 Validators are responsible for the ongoing operation and maintenance of their nodes, including monitoring performance and applying necessary updates. The
 validator's performance directly impacts both their own rewards and, if operating a pool, the rewards of their delegators.
+
+As a validator you must set up a validator account and generate a validator key pair. The account holds your stake and receives rewards, and the keys are used to cryptographically sign the blocks you produce and prove your identity as a validator.
 
 How to become a validator
 =========================
