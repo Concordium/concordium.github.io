@@ -91,9 +91,9 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Key derivation and usage <protocol/key-derivation-and-usage>
    Transactions <protocol/transactions>
    Consensus mechanisms <protocol/consensus-mechanisms>
+   Staking <protocol/staking>
    Validation <protocol/concepts-baker>
-   Delegation <protocol/concepts-delegation>
-
+   
 .. toctree::
    :caption: Protocol Level Tokens
    :hidden:
