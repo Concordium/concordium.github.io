@@ -76,4 +76,5 @@ To become a validator, the setup process depends on your preferred tools and app
 * For general information on best practices and validator management, see :ref:`baker-pool`
 * To set up validation using Concordium wallets, see :ref:`validation-with-wallets`
 * To set up validation using Concordium's command line interface, see :ref:`become-a-validator`
+* For answers to the most commonly asked questions, see :ref:`Delegation and validation FAQ<delegation-faq-old>`.
 

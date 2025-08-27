@@ -6,9 +6,9 @@ Delegation
 ==========
 
 The Concordium blockchain consists of multiple validator nodes that create and verify blocks, and enable CCD holders to earn rewards. However, not everyone with CCD wishes to run a validator node.
-:term:`Delegation<delegator>` enables you to earn rewards for delegating some stake without the need to become a validator and run a node. Any CCD holder may delegate some of their CCD to a validator. This increases the validator's chance of getting selected to produce the next block and getting rewards, which are then shared with the delegators.
+:term:`Delegation<delegator>` enables you to earn rewards for delegating some stake without the need to become a validator and run a node. Any CCD holder may delegate some of their CCD to a validator. This increases the validator's chance of being selected to produce the next block and getting rewards, which are then shared with the delegators.
 
-When you delegate an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under your control; they are just considered part of the validator's stake for the proof-of-stake protocol. Staked CCDs, both for delegators and validators, cannot be spent while staked. Unstaking CCDs is subject to a :term:`cool-down period`.
+When you delegate an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under your control; they are just considered part of the validator's stake for the proof-of-stake protocol. While staked, these CCD cannot be spent, and if you later choose to unstake them, there will be a :term:`cool-down period` before they become available again.
 
 You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.
 
@@ -30,6 +30,8 @@ Pool rewards are in two categories: block rewards and transaction fee rewards. T
 
 The rewards earned by a pool depend greatly on the reliability of the validator. If they miss producing a block they were selected to produce, or if they go offline, then less rewards will be distributed to the entire pool. If a validator misses a block, the blockchain knows who missed it. To help a delegator choose the best pool possible, statistics are available on `CCDScan <https://ccdscan.io>`_ about the performance of the different pools, the reliability of the validator, and the size of the pool.
 
+For detailed information about reward rates, distribution mechanics, and overall tokenomics, see Concordium tokenomics system.
+
 .. _delegation-caps:
 
 Passive delegation
@@ -47,10 +49,12 @@ At pay day, rewards gathered over a 24 hour period are distributed at the same t
 
 When decreasing or removing the stake (whether for delegators or validators), the unstaked funds are not released until after a :term:`cool-down period`.
 
+For detailed information about cool-down periods, staking parameters, and tokenomics, see Concordium tokenomics system.
+
 How to become a delegator
 =========================
 
-You can :ref:`delegate CCDs<add-delegation>` from any of the Concordium wallets or from :ref:`Concordium Client<transactions>`. It is recommended that you use :ref:`CCDScan<ccd-scan>` to research the various validators and pools prior to delegation if you plan to delegate to a specific pool.
+You can :ref:`delegate CCDs<add-delegation>` by creating an account in any Concordium wallet.  If you plan to delegate to a specific validator pool, it is recommended that you research the various validators and their performance using :ref:`CCDScan<ccd-scan>` before making your decision.
 
-See the :ref:`Delegation FAQ<delegation-faq-old>` for answers to the most frequently asked questions.
+See the :ref:`Delegation and validationcon FAQ<delegation-faq-old>` for answers to the most frequently asked questions.
 
