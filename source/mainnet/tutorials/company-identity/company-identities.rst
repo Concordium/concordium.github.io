@@ -11,9 +11,6 @@ A company identity is for companies that need an identity and accounts on the Co
 
 Company identities can only be created through the |bw| or |cryptox| using Global FinReg as the identity provider. You cannot use the Desktop Wallet for this purpose.
 
-.. note::
-   Please be advised that Global FinReg identity verification is currently only supported on |cryptox| for Android devices. This service is not yet available for iOS users.
-
 The information below describes how to create a company identity, how to create accounts with a company identity, and how to recover a company identity. If you experience issues, please contact Concordium’s technical support via support@concordium.software.
 
 Request identity

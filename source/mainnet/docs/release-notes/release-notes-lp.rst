@@ -19,11 +19,21 @@ Wallets
 |cryptox| for iOS
 -----------------
 
- Jul 9, 2025
-    Version 3.3.5:
-    - Added ability to buy CCD through Banxa
+ Aug 12, 2025
+    Version 3.3.6:
+
+    - Added ID 2.5 statement approval functionality
+    - Introduced  ConcordiumClient wrapper over SDK
+    - Moved Lottie animations from DotLottie on Lottie framework
+    - Updated Reown(Wallet Connect) flow UI + alerts logic
+    - Added new type request_verifiable_presentation for incoming verify transactions type
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.3.5  -  Jul 9, 2025
+
+            - Added ability to buy CCD through Banxa
+
         .. dropdown:: |cryptox| 3.3.2  -  May 13, 2025
 
             - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
@@ -120,11 +130,15 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.11.0 - July 8, 2025
+    1.12.0 - August 18, 2025
 
-    - Added ability to buy CCD through Banxa
+    - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.11.0 - July 8, 2025
+
+            - Added ability to buy CCD through Banxa
 
         .. dropdown:: |cryptox| 1.10.0 - June 19, 2025
 
@@ -1359,43 +1373,72 @@ Mainnet
 Testnet
 -------
 
-    February 18, 2024
+    August 18, 2025
 
-    Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
-    The new consensus protocol will take effect on the testnet on February 24, 2025.
-    **Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.**
-    Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.
+    Concordium node version 9.0.7 contains support for `protocol version 9 <https://proposals.concordium.software/updates/P9.html>`_.
+    The new consensus protocol will take effect on the testnet on August 27, 2025.
+    **Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.**
+    Validators that do not upgrade before the protocol update may be suspended.
 
-    Protocol version 8 introduces the following changes:
+    Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
+    Protocol version 9 supports the following PLT functionality:
 
-        - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
+        - creating new PLTs (through the CreatePLT chain update);
 
-        - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
+        - transferring PLTs between accounts;
 
-        - Suspended validators are paused from participating in the consensus algorithm.
+        - minting and burning PLTs (limited to the nominated token governance account);
 
-    Additionally, the node release includes a number of fixes and improvements:
+        - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
 
-        - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
+        - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
 
-        - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
+    The node API is updated to support PLTs as follows:
 
-        - Update Rust version to 1.82.
+        - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
 
-        - Update GHC version to 9.6.6 (LTS-22.39).
+        - ``GetTokenList`` reports a list of the registered PLTs on the chain.
 
-        - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+        - ``GetTokenInfo`` gets the global state information for a particular PLT.
 
-        - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
-
-        - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
-
-        - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
-
-        - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
-
+    Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 8.0.3 - February 18, 2025
+
+            Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
+            The new consensus protocol will take effect on the testnet on February 24, 2025.
+            **Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.**
+            Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.
+
+            Protocol version 8 introduces the following changes:
+
+                - Validators are automatically suspended if they do not produce blocks for a certain number of rounds.
+
+                - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
+
+                - Suspended validators are paused from participating in the consensus algorithm.
+
+            Additionally, the node release includes a number of fixes and improvements:
+
+                - Add suspension info to `BakerPoolStatus` / `CurrentPaydayBakerPoolStatus` query results.
+
+                - Add `GetConsensusDetailedStatus` gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.
+
+                - Update Rust version to 1.82.
+
+                - Update GHC version to 9.6.6 (LTS-22.39).
+
+                - Add `GetScheduledReleaseAccounts` endpoint for querying the list of accounts that have scheduled releases.
+
+                - Add `GetCooldownAccounts`, `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.
+
+                - gRPC endpoints `DryRun`, `GetBlockItemStatus` and `GetBlockTransactionEvents` now report the parameter used to initialize a smart contract instance as part of a `ContractInitializedEvent`.
+
+                - Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.
+
+                - Fix a bug where `GetBlockInfo` reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.
 
         .. dropdown:: 7.0.5 - September 30, 2024
 
@@ -1930,28 +1973,77 @@ Tools
 Concordium Client
 -----------------
 
-    February 18, 2025
+    August 18, 2025
 
-    Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.
+    Concordium Client 9.1.4 adds support for node version 9.0.7 and protocol version 9.
+    In particular, it supports the new protocol-level token (PLT) functionality with the following additions and changes:
 
-    - Support node version 8 and protocol version 8.
+    - ``account show`` displays account info relating to PLTs (balances and list membership).
 
-    - Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)
+    - New ``transaction plt`` commands:
 
-    - Add command `consensus detailed-status` for getting detailed consensus status (from protocol version 6).
+        - ``send``: transfer PLTs to a specified account.
 
-    - Add `raw GetConsensusDetailedStatus` that presents the detailed consensus status as JSON.
+        - ``add-to-allow-list``: add an account to the allow-list of a PLT (governance operation).
 
-    - Update GHC version to 9.6.6 (lts-22.39).
+        - ``remove-from-allow-list``: remove an account from the allow-list of a PLT (governance operation).
 
-    - Add raw commands `GetScheduledReleaseAccounts`, `GetCooldownAccounts`,  `GetPreCooldownAccounts` and `GetPrePreCooldownAccounts` for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.
+        - ``add-to-deny-list``: add an account to the deny-list of a PLT (governance operation).
 
-    - Raw commands `GetBlockTransactionEvents` and `GetTransactionStatus` include the `parameter` for `ContractInitialized` events.
+        - ``remove-from-deny-list``: remove an account from the deny-list of a PLT (governance operation).
 
-    - From protocol version 8, raw command `GetPoolStatus` indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of  missed rounds.
+        - ``mint``: mint new PLTs (governance operation).
 
+        - ``burn``: burn PLTs (governance operation).
+
+        - ``pause``: suspend all balance-update operations for a PLT (governance operation).
+
+        - ``unpause``: resume all balance-update operations for a PLT (governance operation).
+
+    - ``raw`` commands:
+
+        - ``GetTokenList`` gets a list of PLTs registered on the chain.
+
+        - ``GetTokenInfo`` gets information about a PLT.
+
+        - ``GetAccountInfo`` now includes information about PLTs related to the account.
+
+        - ``GetNextUpdateSequenceNumbers`` now includes the next update sequence number for PLT chain updates.
+
+    - ``consensus chain-update`` supports creating new PLTs.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 8.1.0 - February 28, 2025
+
+            Concordium Client 8.1.0 introduces a new ``pool status`` command and improves the display of ``transaction status`` and ``account show`` commands.
+
+            - The ``transaction status`` command output includes the ``parameter`` for ``ContractInitialized`` events.
+
+            - From protocol version 8, ``account show`` also shows if a validator is suspended.
+
+            - Add command ``pool status`` for getting information about a pool.
+
+
+        .. dropdown:: 8.0.0 - February 18, 2025
+
+            Concordium Client 8.0.0 includes the following features and bug fixes. Many of these features require node version 8 to be used.
+
+            - Support node version 8 and protocol version 8.
+
+            - Support for suspend/resume in validator update transactions. (Only supported from protocol version 8.)
+
+            - Add command ``consensus detailed-status`` for getting detailed consensus status (from protocol version 6).
+
+            - Add ``raw GetConsensusDetailedStatus`` that presents the detailed consensus status as JSON.
+
+            - Update GHC version to 9.6.6 (lts-22.39).
+
+            - Add raw commands ``GetScheduledReleaseAccounts``, ``GetCooldownAccounts``,  ``GetPreCooldownAccounts`` and ``GetPrePreCooldownAccounts`` for querying accounts with scheduled releases, cooldowns, pre-cooldowns and pre-pre-cooldowns.
+
+            - Raw commands ``GetBlockTransactionEvents`` and ``GetTransactionStatus`` include the ``parameter`` for ``ContractInitialized`` events.
+
+            - From protocol version 8, raw command ``GetPoolStatus`` indicates if a validator is suspended and, if it is in the current committee, if it is primed for suspension and the current count of missed rounds.
 
         ..dropdown:: 7.0.1 - September 23, 2024
 

@@ -90,24 +90,24 @@ Concordium Desktop Wallet
 
 .. dropdown:: Testnet
 
-   .. card:: Windows v1.8.2
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.exe
+   .. card:: Windows v1.9.0
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.exe
 
-   .. card:: macOS v1.8.2
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.dmg
+   .. card:: macOS v1.9.0
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.dmg
 
-   .. dropdown:: Linux® v1.8.2
+   .. dropdown:: Linux® v1.9.0
 
       Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-      -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.AppImage>`_
-         -  SHA256 checksum of the download: ``e5001999334d36ab258a58e0972922345a785cd2ecd10446b043b5518254e61a``
+      -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.AppImage>`_
+         -  SHA256 checksum of the download: ``c9ec2ef793273450bbe3c810e8f086bbddbf63bb20b0d9c27e8b827215fffade``
 
-      -  `Testnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.deb>`_
-         -  SHA256 checksum of the download: ``4f23882475174e923493b50285b41ca3d363e840721c02688261420bac55070e``
+      -  `Testnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.deb>`_
+         -  SHA256 checksum of the download: ``d9a9136fd317ec4a364ea413d62fa24055e44e7a6168a9b5b845147d41c3dffe``
 
-      -  `Testnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-testnet/concordium-desktop-wallet-testnet-1.8.2.rpm>`_
-         -  SHA256 checksum of the download: ``4b9ec89e4c4357b2ab4ec48daf3f08ece9727971f0be64d412d242e427ac18a4``
+      -  `Testnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.rpm>`_
+         -  SHA256 checksum of the download: ``48188c44eddd25b6c1b8fbeb4849d55b8c59294c94a49dbab54d8e9ad099b444``
 
 .. _ledger-app-download:
 
@@ -122,7 +122,7 @@ Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For inf
 Concordium Client |client-version|
 ===================================
 
--  `Download Concordium Client for Linux <https://distribution.concordium.software/tools/linux/concordium-client_8.0.0-5>`_
+-  `Download Concordium Client for Linux <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-linux>`_
 
       - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
       - :ref:`Verification instructions <verification-client-linux>`
@@ -131,17 +131,15 @@ Concordium Client |client-version|
 
       .. code-block:: console
 
-         chmod +x concordium-client_*
+         chmod +x concordium-client-linux
 
-   where you replace `*` with |client-version|.
-
--  `Download Concordium Client for macOS <https://distribution.concordium.software/tools/macos/signed/concordium-client-8.0.0-5.pkg>`_
+-  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`_
 
    - The macOS distribution is an installer that places an alias to the binary
      into the folder ``/usr/local/bin``. So after installing, you should have
      ``concordium-client`` on your path.
 
--  `Download Concordium Client for Windows <https://distribution.concordium.software/tools/windows/signed/concordium-client_8.0.0-5.zip>`_
+-  `Download Concordium Client for Windows <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-windows.zip>`_
 
    - The Windows distribution is a zip file that must be extracted before use.
      To do this, in Windows Explorer, right-click the downloaded file and select
@@ -218,9 +216,9 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Ubuntu |testnet-node-version|
 
-      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_8.0.3-1_amd64.deb>`_.
+      To run a node on a server with Ubuntu, `download a Testnet Debian package <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_9.0.7-3_amd64.deb>`_.
 
-      - SHA256 checksum of the download: ``168a2991140f99845bb2289156d03d14eed8a441ba331f729d365f7220ffb869``
+      - SHA256 checksum of the download: ``676644f4b07204a62d45f5b7dc38f3dd89bff125d2e34f7b6238c5323da0a0bf``
 
       To learn how to run a node with Ubuntu, see :ref:`Run a node on a server with Ubuntu <run-node-ubuntu>`.
 
@@ -234,13 +232,13 @@ For the system requirements to run a node, see :ref:`System requirements to run 
 
    .. dropdown:: Windows |testnet-node-version|
 
-      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Signed/Node-8.0.3-1.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
+      To run a node on Windows, `download a Testnet Windows Installer package <https://distribution.concordium.software/windows/Node-9.0.7-3.msi>`_. **Please be aware that you should backup your configuration, as the installer will overwrite the current configuration with a standard configuration.**
 
       To learn how to run a node on Windows, see :ref:`Run and manage a node on Windows <run-node-windows>`.
 
    .. dropdown:: Mac |testnet-node-version|
 
-      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/signed/concordium-node-8.0.3-1.pkg>`_.
+      To run a node on macOS, `download a Testnet macOS installer package <https://distribution.concordium.software/macos/concordium-node-9.0.7-3.pkg>`_.
 
       To learn how to run a node on Mac, see :ref:`Run and manage a node on macOS <run-node-macos>`.
 
