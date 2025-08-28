@@ -1,0 +1,1423 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Implementing Wallet Connectors &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.b21723d9-9344-4afc-961b-7de2b77e2a6d.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/using-ID-in-dApps/wallet-connectors-tutorial';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.html" />
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ZK proof generation" href="zk-proofs-tutorial.html" />
+    <link rel="prev" title="Building a Zero-Knowledge Proof dApp on Concordium" href="index.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="https://docs.concordium.com/en/mainnet/docs/plt/index.html">developer documentation</a>.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo light-logo" src="../../_static/concordium-logo-dark.svg" />
+        <img class="logo dark-logo" src="../../_static/concordium-logo.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello-world/hello-world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/frontend.html">Setting up a frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Using ID in dApps</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Implementing Wallet Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zk-proofs-tutorial.html">ZK proof generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-sc.html">Writing a voting smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nft-minting/index.html">Mint an NFT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/upload-nft.html">Upload the NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">Mint a semi-fungible token</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fungible-tokens/index.html">Mint fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../low-code-nft-marketplace/introduction.html">Concordium low-code NFT framework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sponsoredTransactions/index.html">Sponsored Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsSmartContract.html">Exploring the sponsored Transactions Smart Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smartContractUpgrade/index.html">Smart Contract Upgrade</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smartContractUpgrade/smartContractUpgrade.html">Native upgradability</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Ressources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../daap-examples/dapp-examples.html"> dApp examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../company-identity/company-identities.html"> How to create a company identity</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="implementing-wallet-connectors">
+<span id="wallet-connectors-tutorial"></span><h1>Implementing Wallet Connectors<a class="headerlink" href="#implementing-wallet-connectors" title="Link to this heading">#</a></h1>
+<p>For this tutorial, we’ll be focusing on two key Concordium features:</p>
+<ol class="arabic simple">
+<li><p>Wallet connection (Browser and Mobile)</p></li>
+<li><p>Zero-knowledge proof generation</p></li>
+</ol>
+<p>Connecting to wallets allows users to interact with your dApp using their Concordium accounts, while zero-knowledge proofs enable privacy-preserving identity verification - a fundamental feature of compliance-focused applications on Concordium.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This tutorial presents selected code snippets to help you understand the key concepts and implementation patterns of a dApp on Concordium.
+The snippets are intentionally simplified and focus on illustrating specific concepts rather than providing complete implementations.
+Explanatory comments have been added to the code snippets to highlight important concepts and implementation details.
+For the full working code and context, please refer to the <a class="reference external" href="https://github.com/DOBEN/ZK_Proof_Demo">GitHub repository</a>.
+Exploring the complete codebase alongside this tutorial is recommended for a comprehensive understanding.</p>
+</div>
+<section id="setting-up-the-project">
+<h2>Setting up the project<a class="headerlink" href="#setting-up-the-project" title="Link to this heading">#</a></h2>
+<p>Before diving into the code details, you are encouraged to clone the project repository and explore it firsthand:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/DOBEN/ZK_Proof_Demo
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>zk-proof-demo
+</pre></div>
+</div>
+<p>At this point, open your preferred code editor in the zk-proof-demo directory to explore the full codebase.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>frontend
+<span class="gp">$ </span>yarn<span class="w"> </span>install
+<span class="gp">$ </span>yarn<span class="w"> </span>dev
+</pre></div>
+</div>
+<p>Running the application and interacting with it will give you a better understanding of the concepts we’ll be discussing.
+Feel free to explore the codebase, particularly focusing on the wallet connection components and ZK proof implementation.</p>
+<p>Before running the application, ensure you have:</p>
+<ul class="simple">
+<li><p>A <a class="reference internal" href="../../docs/guides/setup-wallets-lp.html#setup-wallets-lp"><span class="std std-ref">Concordium wallet</span></a> (either the Browser Wallet extension or CryptoX)</p></li>
+<li><p>At least one <a class="reference internal" href="../../docs/protocol/identity.html#reference-identity"><span class="std std-ref">identity</span></a> and <a class="reference internal" href="../../docs/protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">account</span></a> created in your wallet</p></li>
+</ul>
+<p>If you’d like to build this project from scratch or follow along step-by-step, you’ll need to set up your development environment:</p>
+<ol class="arabic simple">
+<li><p>Install NodeJS and yarn (or npm)</p></li>
+<li><p>Set up your frontend directories</p></li>
+<li><p>Add core dependencies:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>yarn<span class="w"> </span>add<span class="w"> </span>@concordium/web-sdk<span class="w"> </span>@concordium/browser-wallet-api-helpers<span class="w"> </span>@walletconnect/sign-client<span class="w"> </span>@walletconnect/qrcode-modal
+<span class="gp">$ </span>yarn<span class="w"> </span>add<span class="w"> </span>buffer<span class="w"> </span>json-bigint<span class="w"> </span>sha256<span class="w"> </span>qrcode<span class="w"> </span>lucide-react
+</pre></div>
+</div>
+</section>
+<section id="creating-wallet-provider-abstraction">
+<h2>Creating wallet provider abstraction<a class="headerlink" href="#creating-wallet-provider-abstraction" title="Link to this heading">#</a></h2>
+<p>First, let’s create an abstract class that serves as the foundation for different wallet providers. We’ll start by defining the basic structure and extending the <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code> class:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// wallet-connection.tsx, other imports ommited for brevity</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;events&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kr">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">WalletProvider</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">connectedAccount</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Abstract methods will be defined below</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">EventEmitter</span></code> extension enables our class to use a <strong>publish-subscribe pattern</strong> for wallet events.
+This allows React components to listen for account changes without tight coupling. We also define a <code class="docutils literal notranslate"><span class="pre">connectedAccount</span></code> property to track the currently connected account address.</p>
+<p>Next, let’s add the connection-related methods:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kr">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">WalletProvider</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">connectedAccount</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Connect to the wallet and return the selected account</span>
+<span class="w">  </span><span class="kr">abstract</span><span class="w"> </span><span class="nx">connect</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Optional method to disconnect from the wallet</span>
+<span class="w">  </span><span class="nx">disconnect</span><span class="o">?</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Update state and emit event when account changes</span>
+<span class="w">  </span><span class="kr">protected</span><span class="w"> </span><span class="nx">onAccountChanged</span><span class="p">(</span><span class="nx">new_account</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">new_account</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;accountChanged&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">new_account</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>These methods handle the connection lifecycle:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">connect()</span></code>: An abstract method that concrete implementations must provide. It establishes a connection with the wallet and prompts the user to select an account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disconnect()</span></code>: An optional method (note the <code class="docutils literal notranslate"><span class="pre">?</span></code>) that concrete implementations can provide to properly end the wallet connection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">onAccountChanged()</span></code>: A helper method that updates the internal state and emits an event when the account changes, allowing UI components to react.</p></li>
+</ul>
+<p>Now, let’s add the zero-knowledge proof related method:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Request a ZK proof from the wallet</span>
+<span class="kr">abstract</span><span class="w"> </span><span class="nx">requestVerifiablePresentation</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">challenge</span><span class="o">:</span><span class="w"> </span><span class="nx">HexString</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">statement</span><span class="o">:</span><span class="w"> </span><span class="nx">CredentialStatements</span><span class="p">,</span>
+<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">VerifiablePresentation</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This method is the core of our ZK functionality:</p>
+<ul class="simple">
+<li><p>It accepts a <a class="reference internal" href="../../docs/resources/glossary.html#term-Challenge"><span class="xref std std-term">Challenge</span></a> (a hex-encoded string) that ensures the proof is generated for this specific request</p></li>
+<li><p>It takes <a class="reference internal" href="../../docs/resources/glossary.html#term-Statement"><span class="xref std std-term">Statement</span></a> parameters that define what should be proved about the user’s identity</p></li>
+<li><p>It returns a <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/classes/types.VerifiablePresentation.html">VerifiablePresentation</a> containing the generated proof</p></li>
+</ul>
+<p>By using this abstract class as a foundation, we can implement concrete wallet providers for different environments (browser extension, mobile app)
+while maintaining a consistent interface throughout our application. This approach makes it easy to add support for new wallet types in the future without changing the rest of the codebase.</p>
+<p>The next sections will show how to implement concrete providers for both browser and mobile wallets.</p>
+</section>
+<section id="browser-wallet-implementation">
+<h2>Browser wallet implementation<a class="headerlink" href="#browser-wallet-implementation" title="Link to this heading">#</a></h2>
+<p>Now let’s implement the Browser Wallet provider by extending our abstract class. Let’s start with the constructor and event management:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// From wallet-connection.tsx</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">detectConcordiumProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">WalletApi</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@concordium/browser-wallet-api-helpers&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">serializeTypeValue</span><span class="p">,</span><span class="w"> </span><span class="nx">toBuffer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@concordium/web-sdk&quot;</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">browserWalletInstance</span><span class="o">:</span><span class="w"> </span><span class="nx">BrowserWalletProvider</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">BrowserWalletProvider</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">WalletProvider</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Private reference to the wallet API</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span><span class="w"> </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="nx">WalletApi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Set up event listeners for account changes</span>
+<span class="w">    </span><span class="nx">provider</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;accountChanged&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">account</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="nx">onAccountChanged</span><span class="p">(</span><span class="nx">account</span><span class="p">));</span>
+<span class="w">    </span><span class="nx">provider</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;accountDisconnected&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// When disconnected, check if there&#39;s another selected account</span>
+<span class="w">      </span><span class="k">super</span><span class="p">.</span><span class="nx">onAccountChanged</span><span class="p">(</span>
+<span class="w">        </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">getMostRecentlySelectedAccount</span><span class="p">())</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="kc">undefined</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The constructor takes a <code class="docutils literal notranslate"><span class="pre">WalletApi</span></code> instance from the browser wallet extension. We set up event listeners to forward wallet events to our abstract class’s event system:</p>
+<ul class="simple">
+<li><p>When the account changes in the wallet, we call <code class="docutils literal notranslate"><span class="pre">onAccountChanged</span></code> to update our state and emit an event</p></li>
+<li><p>When the wallet is disconnected, we check if there’s another selected account before clearing our state</p></li>
+</ul>
+<p>Next, let’s implement the singleton pattern to ensure only one provider instance exists:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Singleton pattern - ensure only one instance exists, allowing existing session to be restored</span>
+<span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">browserWalletInstance</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">detectConcordiumProvider</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">browserWalletInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">BrowserWalletProvider</span><span class="p">(</span><span class="nx">provider</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">browserWalletInstance</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">getInstance()</span></code> static method:</p>
+<ul class="simple">
+<li><p>Checks if we already have a provider instance</p></li>
+<li><p>If not, it uses <a class="reference external" href="https://www.npmjs.com/package/&#64;concordium/browser-wallet-api-helpers#using-the-api">detectConcordiumProvider()</a> to get a reference to the wallet extension</p></li>
+<li><p>Creates a new provider instance and caches it</p></li>
+<li><p>Returns the instance (either new or existing)</p></li>
+</ul>
+<p>This pattern prevents potential conflicts from multiple simultaneous connections to the wallet extension.</p>
+<p>Now let’s implement the <code class="docutils literal notranslate"><span class="pre">connect</span></code> method to initiate the wallet connection:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Connect to the browser wallet</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">connect</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Request accounts and update state</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">new_connected_account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">provider</span><span class="p">.</span><span class="nx">requestAccounts</span><span class="p">())[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">  </span><span class="k">super</span><span class="p">.</span><span class="nx">onAccountChanged</span><span class="p">(</span><span class="nx">new_connected_account</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">new_connected_account</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">connect()</span></code> method:</p>
+<ul class="simple">
+<li><p>Calls <code class="docutils literal notranslate"><span class="pre">requestAccounts()</span></code> on the wallet provider, which prompts the user to select an account</p></li>
+<li><p>Takes the first account from the returned array</p></li>
+<li><p>Updates our internal state by calling <code class="docutils literal notranslate"><span class="pre">onAccountChanged</span></code></p></li>
+<li><p>Returns the selected account address</p></li>
+</ul>
+<p>For requesting zero-knowledge proofs, we implement a simple pass-through method:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Request ZK proof directly from browser wallet</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">requestVerifiablePresentation</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">challenge</span><span class="o">:</span><span class="w"> </span><span class="nx">HexString</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">statement</span><span class="o">:</span><span class="w"> </span><span class="nx">CredentialStatements</span><span class="p">,</span>
+<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">VerifiablePresentation</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">provider</span><span class="p">.</span><span class="nx">requestVerifiablePresentation</span><span class="p">(</span><span class="nx">challenge</span><span class="p">,</span><span class="w"> </span><span class="nx">statement</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://www.npmjs.com/package/&#64;concordium/browser-wallet-api-helpers#request-verifiable-presentation-for-web3id-statements">requestVerifiablePresentation()</a> method directly calls the browser wallet’s implementation:</p>
+<ul class="simple">
+<li><p>It passes through the challenge and statements without modification</p></li>
+<li><p>The wallet extension shows a UI to the user for approving the ZK proof generation</p></li>
+<li><p>The wallet handles all the complex cryptography required</p></li>
+<li><p>The method returns the verifiable presentation containing the proof</p></li>
+</ul>
+<p>This implementation demonstrates how the Concordium Browser Wallet extension simplifies dApp development by handling the complex cryptographic operations
+while exposing a straightforward API for wallet interactions, account management, and ZK proof generation.</p>
+</section>
+<section id="mobile-wallet-implementation">
+<h2>Mobile wallet implementation<a class="headerlink" href="#mobile-wallet-implementation" title="Link to this heading">#</a></h2>
+<p>For mobile wallets, we implement the connection using <a class="reference external" href="https://specs.walletconnect.com/2.0/">WalletConnect</a>. Let’s start with the basic class structure and constructor:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// From wallet-connection.tsx</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">walletConnectInstance</span><span class="o">:</span><span class="w"> </span><span class="nx">WalletConnectProvider</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">WalletConnectProvider</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">WalletProvider</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Track the WalletConnect session topic</span>
+<span class="w">  </span><span class="kr">private</span><span class="w"> </span><span class="nx">topic</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span><span class="w"> </span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="nx">SignClient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Set up event handlers for session changes</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;session_update&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Update connected account when session changes</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAccount</span><span class="p">(</span><span class="nx">params</span><span class="p">.</span><span class="nx">namespaces</span><span class="p">);</span>
+<span class="w">      </span><span class="k">super</span><span class="p">.</span><span class="nx">onAccountChanged</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;session_delete&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Clear state when session is deleted</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">      </span><span class="k">super</span><span class="p">.</span><span class="nx">onAccountChanged</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The constructor takes a <code class="docutils literal notranslate"><span class="pre">SignClient</span></code> instance from WalletConnect and sets up event listeners:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">session_update</span></code>: Called when the session information changes, allowing us to update the connected account</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">session_delete</span></code>: Called when the session is deleted by the wallet, allowing us to clear our state</p></li>
+</ul>
+<p>We also define a private <code class="docutils literal notranslate"><span class="pre">topic</span></code> property to track the active WalletConnect session ID.</p>
+<p>Next, let’s implement the singleton pattern:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Singleton pattern - ensure only one instance exists, allowing existing session to be restored</span>
+<span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">walletConnectInstance</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">SignClient</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">walletConnectOpts</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">walletConnectInstance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WalletConnectProvider</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">walletConnectInstance</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">getInstance()</span></code> method ensures that only one WalletConnect provider exists throughout the application:</p>
+<ul class="simple">
+<li><p>It initializes a new WalletConnect client with our configuration options if one doesn’t exist</p></li>
+<li><p>It caches the provider instance for future use</p></li>
+<li><p>This prevents potential issues with multiple concurrent connections</p></li>
+</ul>
+<p>Now let’s implement the connection method:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// from wallet-connection.tsx, connect to a mobile wallet via WalletConnect</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">connect</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Request connection with required methods and chains</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">uri</span><span class="p">,</span><span class="w"> </span><span class="nx">approval</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">requiredNamespaces</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;ccd&quot;</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Concordium&#39;s identifier in WalletConnect</span>
+<span class="w">        </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;request_verifiable_presentation&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Methods supported by Concordium wallets</span>
+<span class="w">        </span><span class="nx">chains</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ccd:testnet&quot;</span><span class="p">],</span><span class="w"> </span><span class="c1">// For testnet use &quot;ccd:testnet&quot;, for mainnet use &quot;ccd:mainnet&quot;</span>
+<span class="w">        </span><span class="nx">events</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;accounts_changed&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="c1">// Connecting to an existing pairing; it can be assumed that the account is already available.</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">uri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Open QRCode modal if a URI was returned (i.e. we&#39;re not connecting an existing pairing).</span>
+<span class="w">  </span><span class="nx">QRCodeModal</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">uri</span><span class="p">,</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Await session approval from the wallet and store session information</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">approval</span><span class="p">();</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getAccount</span><span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">namespaces</span><span class="p">);</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">session</span><span class="p">.</span><span class="nx">topic</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">QRCodeModal</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">connect()</span></code> method establishes a connection with a mobile wallet:</p>
+<ol class="arabic simple">
+<li><p>It initiates a connection request with specific Concordium requirements:</p>
+<ul class="simple">
+<li><p>Namespace: <code class="docutils literal notranslate"><span class="pre">ccd</span></code> (Concordium’s identifier in WalletConnect)</p></li>
+<li><p>Methods: Includes <code class="docutils literal notranslate"><span class="pre">request_verifiable_presentation</span></code> for requesting ZK proofs</p></li>
+<li><p>Chains: The appropriate Concordium network (<cite>“ccd:testnet”</cite> for <strong>testnet</strong> or <cite>“ccd:mainnet”</cite> for <strong>mainnet</strong>)</p></li>
+<li><p>Events: To listen for account changes</p></li>
+</ul>
+</li>
+<li><p>For new connections, it:</p>
+<ul class="simple">
+<li><p>Displays a QR code for the user to scan with their mobile wallet</p></li>
+<li><p>Waits asynchronously for the user to approve the connection</p></li>
+<li><p>Extracts the connected account and stores the session information</p></li>
+<li><p>Closes the QR code modal once connected</p></li>
+</ul>
+</li>
+<li><p>For existing connections, it simply returns the current account</p></li>
+</ol>
+<p>Now let’s implement the ZK proof request method:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Request ZK proof via WalletConnect</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">requestVerifiablePresentation</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">challenge</span><span class="o">:</span><span class="w"> </span><span class="nx">HexString</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">statement</span><span class="o">:</span><span class="w"> </span><span class="nx">CredentialStatements</span><span class="p">,</span>
+<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">VerifiablePresentation</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">topic</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;No connection&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// Prepare parameters for the request</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">challenge</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">credentialStatements</span><span class="o">:</span><span class="w"> </span><span class="nx">statement</span><span class="p">,</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="c1">// Use JSONBigInt for proper handling of large numbers</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">serializedParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">JSONBigInt</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+
+<span class="c1">// will continue in next code block</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>First, we check if we have an active connection by verifying the existence of a session topic. If no connection exists, we throw an error to prevent attempting to request a proof without a connected wallet.</p>
+<p>The parameters for the ZK proof request include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">challenge</span></code>: A unique challenge string to prevent <a class="reference external" href="https://csrc.nist.gov/glossary/term/replay_attack">replay attacks</a></p></li>
+<li><p><a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/types/web3_id.CredentialStatement.html">CredentialStatements</a>: The statements defining what should be proven</p></li>
+</ul>
+<p>The ZK proof verification process involves two parties:</p>
+<ul class="simple">
+<li><p><strong>Prover</strong>: The wallet user who wants to prove something about their identity (in our case, the user with the Concordium account)</p></li>
+<li><p><strong>Verifier</strong>: The application or service that needs to validate the proof (our dApp or its backend)</p></li>
+</ul>
+<p>It’s important to understand that the <strong>challenge</strong> must be generated by the <strong>verifier</strong> (not the prover) to prevent replay attacks.
+Here’s how the process works:</p>
+<ol class="arabic simple">
+<li><p>The <strong>verifier</strong> generates a unique challenge (in our implementation, we use a recent block hash combined with a context string)</p></li>
+<li><p>The <strong>prover</strong> (wallet) creates a proof using this challenge</p></li>
+<li><p>The <strong>verifier</strong> checks that:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>The proof is cryptographically valid</p></li>
+<li><p>The proof was created using the specific challenge it provided</p></li>
+<li><p>The <strong>challenge</strong> has not been used in a previous proof</p></li>
+</ul>
+</div></blockquote>
+<p>Note that protection against replay attacks isn’t automatic - the <strong>verifier</strong> must implement proper challenge validation, typically by:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Checking that the <strong>challenge</strong> includes a recent block hash (time-limiting the proof)</p></li>
+<li><p>Tracking which <strong>challenges</strong> have been used in a database</p></li>
+<li><p>Rejecting proofs with previously-used challenges</p></li>
+</ul>
+</div></blockquote>
+<p>As an example, in the <a class="reference external" href="https://github.com/Concordium/concordium-dapp-examples/blob/main/compliant-reward-distribution/indexer-and-server/src/bin/server.rs#L462">compliant-reward-distribution dApp</a>,
+the verifier checks that the proof hasn’t expired by verifying that the block height is recent enough, but it doesn’t track which challenges have been used before.
+For complete security in a production environment, a backend would need to maintain a record of used challenges to fully protect against replay attacks.</p>
+<p>We serialize these parameters using <code class="docutils literal notranslate"><span class="pre">JSONBigInt</span></code> instead of standard JSON. This is important because ZK proofs often involve large numbers that standard JSON can’t handle correctly.</p>
+<p>Now, let’s implement the actual request to the mobile wallet:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Request ZK proof via WalletConnect</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">requestVerifiablePresentation</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">challenge</span><span class="o">:</span><span class="w"> </span><span class="nx">HexString</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">statement</span><span class="o">:</span><span class="w"> </span><span class="nx">CredentialStatements</span><span class="p">,</span>
+<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">VerifiablePresentation</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="c1">// code omitted from previous code block</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Send request to the mobile wallet</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">request</span><span class="o">&lt;</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">verifiablePresentationJson</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="o">&gt;</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">topic</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">topic</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;request_verifiable_presentation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">paramsJson</span><span class="o">:</span><span class="w"> </span><span class="nx">serializedParams</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">chainId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ccd:testnet&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Use &quot;ccd:testnet&quot; for testnet or &quot;ccd:mainnet&quot; for mainnet</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="c1">// Parse the result into a VerifiablePresentation</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">VerifiablePresentation</span><span class="p">.</span><span class="nx">fromString</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">result</span><span class="p">.</span><span class="nx">verifiablePresentationJson</span><span class="p">,</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The request is sent to the mobile wallet using the WalletConnect protocol. We specify:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">topic</span></code>: The current session identifier</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The Concordium-specific <code class="docutils literal notranslate"><span class="pre">request_verifiable_presentation</span></code> method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">params</span></code>: The serialized parameters wrapped in a <code class="docutils literal notranslate"><span class="pre">paramsJson</span></code> field</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chainId</span></code>: The Concordium chain identifier (<strong>testnet</strong> or <strong>mainnet</strong>)</p></li>
+</ul>
+<p>When the wallet responds with the generated proof, we parse the JSON string into a structured <code class="docutils literal notranslate"><span class="pre">VerifiablePresentation</span></code> object using the <code class="docutils literal notranslate"><span class="pre">fromString</span></code> method provided by <a class="reference external" href="https://docs.concordium.com/concordium-node-sdk-js/index.html">Concordium’s SDK</a>.</p>
+<p>Finally, let’s handle potential errors:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isWalletConnectError</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span>
+<span class="w">      </span><span class="s2">&quot;Generating proof request rejected in wallet: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">e</span><span class="p">),</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="nx">e</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The error handling section checks for WalletConnect-specific errors using the <code class="docutils literal notranslate"><span class="pre">isWalletConnectError</span></code> helper function. This allows us to provide more specific error messages when the proof request is rejected by the wallet.
+For example, the user might deny the proof request in their mobile wallet, which would result in a WalletConnect error with a specific error code. We capture this and throw a more descriptive error message to improve the user experience.</p>
+<p>Next, let’s add helper methods for session management. First, the <code class="docutils literal notranslate"><span class="pre">disconnect</span></code> method:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Disconnect from the wallet</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">disconnect</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">topic</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">client</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">topic</span><span class="o">:</span><span class="w"> </span><span class="kt">this.topic</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">reason</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">code</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;user disconnecting&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">disconnect()</span></code> method properly terminates the WalletConnect session:</p>
+<ul class="simple">
+<li><p>It first checks if there’s an active session (topic)</p></li>
+<li><p>If no session exists, it returns early without doing anything</p></li>
+<li><p>Otherwise, it sends a disconnect request to the wallet using the WalletConnect client</p></li>
+<li><p>The request includes the session topic and a reason with a standard error code (1) for user-initiated disconnection</p></li>
+</ul>
+<p>After terminating the session with the wallet, we need to update our local state:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Continuation of disconnect method</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">topic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="k">super</span><span class="p">.</span><span class="nx">onAccountChanged</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">connectedAccount</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Once the wallet session is terminated:</p>
+<ul class="simple">
+<li><p>We clear the <code class="docutils literal notranslate"><span class="pre">connectedAccount</span></code> property since no account is connected anymore</p></li>
+<li><p>We clear the <code class="docutils literal notranslate"><span class="pre">topic</span></code> property since there’s no active session</p></li>
+<li><p>We call <code class="docutils literal notranslate"><span class="pre">onAccountChanged()</span></code> from our parent class to emit an event notifying the application that the account has changed</p></li>
+<li><p>This ensures that UI components can update to reflect the disconnected state</p></li>
+</ul>
+<p>Now, let’s implement the helper for extracting the account address:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Helper to extract Concordium account from WalletConnect namespaces</span>
+<span class="k">private</span><span class="w"> </span><span class="nx">getAccount</span><span class="p">(</span><span class="nx">ns</span><span class="o">:</span><span class="w"> </span><span class="kt">SessionTypes.Namespaces</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">account</span><span class="p">]</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="nx">ns</span><span class="p">[</span><span class="s2">&quot;ccd&quot;</span><span class="p">].</span><span class="nx">accounts</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;ccd&quot; is the Concordium namespace in WalletConnect</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">account</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">getAccount()</span></code> method handles parsing Concordium account addresses from WalletConnect’s namespace format:</p>
+<ul class="simple">
+<li><p>WalletConnect represents accounts in a standardized format: <code class="docutils literal notranslate"><span class="pre">namespace:chainId:address</span></code></p></li>
+<li><p>For Concordium, this looks like <code class="docutils literal notranslate"><span class="pre">ccd:testnet:3XSLuJcXg6xEua6iBPnWacc3iWh93yEDMCqX8FbE3RDSbEnT9P</span></code></p></li>
+<li><p>The method splits this string by colons and extracts the third element (the account address)</p></li>
+<li><p>It uses array destructuring with empty positions to skip the namespace and chainId elements</p></li>
+<li><p>This helper is used when processing session updates and initial connections</p></li>
+</ul>
+<p>This implementation demonstrates the integration of <code class="docutils literal notranslate"><span class="pre">WalletConnect</span></code>, providing a seamless connection to mobile wallets with support for Concordium’s unique zero-knowledge proof capabilities.</p>
+</section>
+<section id="connecting-to-a-wallet-in-react">
+<h2>Connecting to a wallet in React<a class="headerlink" href="#connecting-to-a-wallet-in-react" title="Link to this heading">#</a></h2>
+<p>Now let’s look at how to use these wallet providers in a React component. Let’s start with the basic component structure and hooks:</p>
+<p>First, we import the necessary dependencies and set up our component. The key elements here are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">useWallet</span></code> hook: A custom hook that provides access to our wallet context, containing:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">provider</span></code>: The current wallet provider instance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setProvider</span></code>: Function to update the provider</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setConnectedAccount</span></code>: Function to update the connected account</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">useNavigate</span></code>: React Router’s hook for programmatic navigation</p></li>
+</ul>
+</div></blockquote>
+<p>Next, let’s implement the connection function:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Connect to selected wallet provider</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">connectProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="nx">WalletProvider</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;account&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">account</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">account</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setConnectedAccount</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">provider</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">connectProvider</span></code> function handles the wallet connection process:</p>
+<ol class="arabic simple">
+<li><p>It takes a wallet provider instance (Browser or Mobile)</p></li>
+<li><p>It calls the provider’s <code class="docutils literal notranslate"><span class="pre">connect()</span></code> method, which prompts the user to select an account</p></li>
+<li><p>If an account is successfully connected, it updates the app’s state</p></li>
+</ol>
+<p>Now, let’s add cleanup on component unmount:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Clean up on unmount</span>
+<span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">provider</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">provider</span><span class="o">?</span><span class="p">.</span><span class="nx">disconnect</span><span class="o">?</span><span class="p">.().</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">removeAllListeners</span><span class="p">());</span>
+<span class="w">      </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">provider</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>This first <code class="docutils literal notranslate"><span class="pre">useEffect</span></code> hook:</p>
+<ul class="simple">
+<li><p>Runs when the component mounts or when the provider changes</p></li>
+<li><p>Returns a cleanup function that:</p>
+<ul>
+<li><p>Disconnects from the wallet</p></li>
+<li><p>Removes all event listeners to prevent memory leaks</p></li>
+</ul>
+</li>
+<li><p>The dependency array <code class="docutils literal notranslate"><span class="pre">[provider]</span></code> ensures this effect runs whenever the provider changes</p></li>
+</ul>
+<p>Next, let’s look at the second <code class="docutils literal notranslate"><span class="pre">useEffect</span></code> that listens for account changes:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Listen for account changes</span>
+<span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleAccountChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">newAccount</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setConnectedAccount</span><span class="p">(</span><span class="nx">newAccount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="nx">provider</span><span class="o">?</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;accountChanged&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">handleAccountChange</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">provider</span><span class="o">?</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s2">&quot;accountChanged&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">handleAccountChange</span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">provider</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p>This second <code class="docutils literal notranslate"><span class="pre">useEffect</span></code> hook:</p>
+<ul class="simple">
+<li><p>Sets up an event listener for the provider’s <code class="docutils literal notranslate"><span class="pre">accountChanged</span></code> event</p></li>
+<li><p>When the account changes in the wallet, it updates our app’s state</p></li>
+<li><p>Also depends on the provider, so it runs whenever the provider changes</p></li>
+</ul>
+<p>Finally, let’s render the wallet options:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">Container</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;connect-wallet-container text-center pt-2&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;connect-wallet-title&quot;</span><span class="p">&gt;</span><span class="nx">Connect</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">wallet</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">{</span><span class="cm">/* Browser Wallet Option */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Container</span>
+<span class="w">      </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">connectProvider</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">BrowserWalletProvider</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">());</span>
+<span class="w">      </span><span class="p">}}</span>
+<span class="w">      </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;wallet-option p-4 cursor-pointer rounded-lg&quot;</span>
+<span class="w">    </span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* UI elements for Browser Wallet */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Container</span><span class="p">&gt;</span>
+
+<span class="w">    </span><span class="p">{</span><span class="cm">/* Mobile Wallet Option */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Container</span>
+<span class="w">      </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">connectProvider</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">WalletConnectProvider</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">());</span>
+<span class="w">      </span><span class="p">}}</span>
+<span class="w">      </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;wallet-option p-4 rounded-lg cursor-pointer mt-2&quot;</span>
+<span class="w">    </span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* UI elements for Mobile Wallet */</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Container</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">Container</span><span class="p">&gt;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>The render function creates a simple UI with:</p>
+<ul class="simple">
+<li><p>A heading that prompts the user to connect a wallet</p></li>
+<li><p>Two clickable containers representing the wallet options:</p>
+<ul>
+<li><p>Browser Wallet: Uses <code class="docutils literal notranslate"><span class="pre">BrowserWalletProvider.getInstance()</span></code> to get a provider instance</p></li>
+<li><p>Mobile Wallet: Uses <code class="docutils literal notranslate"><span class="pre">WalletConnectProvider.getInstance()</span></code> to get a provider instance</p></li>
+</ul>
+</li>
+<li><p>When clicked, each option calls the <code class="docutils literal notranslate"><span class="pre">connectProvider</span></code> function with the appropriate provider</p></li>
+</ul>
+<p>This component demonstrates a clean implementation pattern for wallet connections in React:</p>
+<ol class="arabic simple">
+<li><p>It uses React Context from <code class="docutils literal notranslate"><span class="pre">frontend/src/context/WalletContext.tsx</span></code> to manage global wallet state.</p></li>
+<li><p>It properly handles component lifecycle with <code class="docutils literal notranslate"><span class="pre">useEffect</span></code>.</p></li>
+<li><p>It sets up and cleans up event listeners to prevent memory leaks.</p></li>
+<li><p>It provides a user-friendly interface for selecting a wallet type.</p></li>
+<li><p>It encapsulates all the complexity of wallet connection behind a simple abstraction.</p></li>
+</ol>
+<p>By using this approach, we can maintain a consistent wallet connection experience throughout our application regardless of which wallet provider the user chooses.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Building a Zero-Knowledge Proof dApp on Concordium</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="zk-proofs-tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ZK proof generation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-project">Setting up the project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-wallet-provider-abstraction">Creating wallet provider abstraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#browser-wallet-implementation">Browser wallet implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mobile-wallet-implementation">Mobile wallet implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-a-wallet-in-react">Connecting to a wallet in React</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/tutorials/using-ID-in-dApps/wallet-connectors-tutorial.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2025, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>
+    <button onclick="consentDenied()">Decline</button>
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
+</div>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+
+// Save the choice in a cookie
+function storeChoice(granted) {
+  document.cookie = "cookie-consent=" + granted
+}
+
+// Look for a cookie storing the previous choice of the user.
+// Returns undefined if no choice was stored, otherwise a boolean for whether the
+// user gave consent.
+function loadChoice() {
+  if (!document.cookie.includes("cookie-consent=")) {
+      return undefined;
+  }
+  return document.cookie.includes("cookie-consent=true")
+}
+
+// Removes the cookie consent banner
+function removeCookieConsentBanner() {
+  document.getElementById("cookie-consent").remove()
+}
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {
+  storeChoice(true)
+  _paq.push(['setCookieConsentGiven']);
+  removeCookieConsentBanner()
+}
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {
+  storeChoice(true)
+  removeCookieConsentBanner()
+}
+
+const stored = loadChoice();
+if (stored) {
+ consentGranted()
+}
+
+_paq.push(['requireCookieConsent']);
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+
+(function() {
+    var u="https://concordium.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+  // remember tracking consent was given for all subsequent page views and visits
+_paq.push(['rememberCookieConsentGiven']);
+
+</script>
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
