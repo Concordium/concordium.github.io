@@ -30,7 +30,7 @@ Pool rewards are in two categories: block rewards and transaction fee rewards. T
 
 The rewards earned by a pool depend greatly on the reliability of the validator. If they miss producing a block they were selected to produce, or if they go offline, then less rewards will be distributed to the entire pool. If a validator misses a block, the blockchain knows who missed it. To help a delegator choose the best pool possible, statistics are available on `CCDScan <https://ccdscan.io>`_ about the performance of the different pools, the reliability of the validator, and the size of the pool.
 
-For detailed information about reward rates, distribution mechanics, and overall tokenomics, see Concordium tokenomics system.
+For detailed information about reward rates, distribution mechanics, and overall tokenomics, see see :ref:`tokenomics`.
 
 .. _delegation-caps:
 
@@ -49,7 +49,7 @@ At pay day, rewards gathered over a 24 hour period are distributed at the same t
 
 When decreasing or removing the stake (whether for delegators or validators), the unstaked funds are not released until after a :term:`cool-down period`.
 
-For detailed information about cool-down periods, staking parameters, and tokenomics, see Concordium tokenomics system.
+For detailed information about cool-down periods, staking parameters, and tokenomics, see see :ref:`tokenomics`.
 
 How to become a delegator
 =========================
