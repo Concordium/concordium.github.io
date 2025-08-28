@@ -1,68 +1,171 @@
 .. include:: ../../variables.rst
-.. _set-up-doc-env-MacOs:
+.. _set-up-doc-env:
 
-Set up Concordium documentation environment on MacOs
-====================================================
+Set up Concordium documentation environment
+===========================================
 
 - Step 1: Install Python3 and Pip
-  Ensure Python 3 and pip are installed. Check with:
 
-  .. code-block:: console
+  .. dropdown:: MacOS
 
-    python3 --version
+    Ensure Python 3 and pip are installed. Check with:
 
-  If not installed, run:
+    .. code-block:: console
 
-  .. code-block:: console
+       $python3 --version
 
-    brew install python
+    If not installed, run:
 
+    .. code-block:: console
 
-- Step 2: Step 2: Install Pipenv
+      $brew install python
 
-  You need ``pipenv`` for managing Python dependencies:
+  .. dropdown:: Windows
 
-  .. code-block:: console
+    Download and install **Python 3** from `python.org <https://www.python.org/downloads/windows/>`_. During installation, make sure to check **Add Python to PATH**.
 
-    pip3 install pipenv
+    Alternatively, you can install **Python** using the **Windows Store** or **Chocolatey**:
 
-  If you get the error “command not found: pipenv”, it is because the PATH for pipenv is not set.
-  In order to set it, run the following command to see where the user based bin directory is located:
+    .. code-block:: console
 
-  .. code-block:: console
+      $choco install python
 
-    python3 -m site --user-base
+    Verify the installation:
 
-  Then, copy the resulting location, it will be used to set the path.
-  Now, open the .zshrc file with your preferred editor, in this tutorial we shall use nano:
+    .. code-block:: console
 
-  .. code-block:: console
+      $python --version
+      $pip --version
 
-    nano ~/.zshrc
+  .. dropdown:: Linux
 
+    Most Linux distributions come with **Python 3** pre-installed. Check with:
 
-  Next, write the following line, which will include the location you copied previously, followed by /bin in order to export the PATH:
+    .. code-block:: console
 
-  .. code-block:: console
+      $python3 --version
 
-    export PATH="$PATH:/Users/<your_user_name>/Library/Python/3.9/bin"
+    If not installed, use your distribution's package manager:
 
+    **Ubuntu/Debian:**
 
-  Save the file, restart your terminal and run the following command to check if pipenv is installed:
+    .. code-block:: console
 
+      $sudo apt update
+      $sudo apt install python3 python3-pip
 
-  .. code-block:: console
+    **CentOS/RHEL/Fedora:**
 
-    pipenv --version
+    .. code-block:: console
 
-  You should get the installed version outputted now.
-  Finally, it is also a good idea to install pyenv in order for pipenv to work properly:
+      $sudo yum install python3 python3-pip
 
+    **Arch Linux:**
 
-  .. code-block:: console
+    .. code-block:: console
 
-    brew install pyenv
+      $sudo pacman -S python python-pip
 
+- Step 2: Install **Pipenv**
+
+  .. dropdown:: MacOS
+
+    You need ``pipenv`` for managing Python dependencies:
+
+    .. code-block:: console
+
+      $pip3 install pipenv
+
+    If you get the error ``command not found: pipenv``, it is because the ``PATH`` for pipenv is not set.
+    In order to set it, run the following command to see where the user based bin directory is located:
+
+    .. code-block:: console
+
+      $python3 -m site --user-base
+
+    Then, copy the resulting location, it will be used to set the path.
+    Now, open the .zshrc file with your preferred editor, in this tutorial we shall use nano:
+
+    .. code-block:: console
+
+      $nano ~/.zshrc
+
+    Next, write the following line, which will include the location you copied previously, followed by /bin in order to export the PATH:
+
+    .. code-block:: console
+
+      export PATH="$PATH:/Users/<your_user_name>/Library/Python/3.9/bin"
+
+    Save the file, restart your terminal and run the following command to check if pipenv is installed:
+
+    .. code-block:: console
+
+      $pipenv --version
+
+    You should get the installed version outputted now.
+    Finally, it is also a good idea to install pyenv in order for pipenv to work properly:
+
+    .. code-block:: console
+
+      $brew install pyenv
+
+  .. dropdown:: Windows
+
+    Install ``pipenv`` using pip:
+
+    .. code-block:: console
+
+      $pip install pipenv
+
+    If you get the error "command not found: pipenv", you may need to add the Python Scripts directory to your PATH.
+
+    To find the Scripts directory location, run:
+
+    .. code-block:: console
+
+      $python -m site --user-base
+
+    Add ``\Scripts`` to the end of the returned path. Then add this path to your system's PATH environment variable:
+
+    1. Press **Win + R**, type ``sysdm.cpl``, and press **Enter**
+    2. Click **Environment Variables**
+    3. Under **User variables**, select **Path** and click **Edit**
+    4. Click **New** and add the Scripts directory path
+    5. Click **OK** to save
+
+    Restart your command prompt and verify the installation:
+
+    .. code-block:: console
+
+      $pipenv --version
+
+  .. dropdown:: Linux
+
+    Install ``pipenv`` using pip3:
+
+    .. code-block:: console
+
+      $pip3 install --user pipenv
+
+    If you get the error "command not found: pipenv", you need to add the local bin directory to your PATH.
+
+    Add the following line to your shell configuration file (``~/.bashrc``, ``~/.zshrc``, or ``~/.profile``):
+
+    .. code-block:: console
+
+      export PATH="$PATH:$HOME/.local/bin"
+
+    Reload your shell configuration:
+
+    .. code-block:: console
+
+      $source ~/.bashrc
+
+    Verify the installation:
+
+    .. code-block:: console
+
+      $pipenv --version
 
 - Step 3: Clone the Concordium Documentation Repository
 
@@ -79,15 +182,54 @@ Set up Concordium documentation environment on MacOs
 
     pipenv sync --dev
 
-- Step 5: Install Graphviz
-  Graphviz is needed to render diagrams:
+- Step 5: Install **Graphviz**
 
-  .. code-block:: console
+  **Graphviz** is needed to render diagrams:
 
-    brew install graphviz
+  .. dropdown:: MacOS
+
+    .. code-block:: console
+
+      $brew install graphviz
+
+  .. dropdown:: Windows
+
+    Download and install Graphviz from the `official website <https://graphviz.org/download/>`_.
+
+    Alternatively, you can use Chocolatey:
+
+    .. code-block:: console
+
+      $choco install graphviz
+
+    Or use winget:
+
+    .. code-block:: console
+
+      $winget install graphviz
+
+  .. dropdown:: Linux
+
+    **Ubuntu/Debian:**
+
+    .. code-block:: console
+
+      $sudo apt install graphviz
+
+    **CentOS/RHEL/Fedora:**
+
+    .. code-block:: console
+
+      $sudo yum install graphviz
+
+    **Arch Linux:**
+
+    .. code-block:: console
+
+      $sudo pacman -S graphviz
 
 - Step 6: Build the Documentation (Text Version)
-  For building the "mainnet" documentation”:
+  For building the ``mainnet`` documentation:
 
   .. code-block:: console
 

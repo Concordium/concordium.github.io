@@ -91,6 +91,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Key derivation and usage <protocol/key-derivation-and-usage>
    Transactions <protocol/transactions>
    Consensus mechanisms <protocol/consensus-mechanisms>
+   Tokenomics <protocol/tokenomics>
    Staking <protocol/staking>
 
 .. toctree::
