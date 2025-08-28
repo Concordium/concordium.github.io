@@ -92,8 +92,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Transactions <protocol/transactions>
    Consensus mechanisms <protocol/consensus-mechanisms>
    Staking <protocol/staking>
-   Validation <protocol/concepts-baker>
-   
+
 .. toctree::
    :caption: Protocol Level Tokens
    :hidden:

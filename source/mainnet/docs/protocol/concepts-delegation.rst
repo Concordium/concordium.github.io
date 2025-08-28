@@ -8,7 +8,7 @@ Delegation
 The Concordium blockchain consists of multiple validator nodes that create and verify blocks, and enable CCD holders to earn rewards. However, not everyone with CCD wishes to run a validator node.
 :term:`Delegation<delegator>` enables you to earn rewards for delegating some stake without the need to become a validator and run a node. Any CCD holder may delegate some of their CCD to a validator. This increases the validator's chance of being selected to produce the next block and getting rewards, which are then shared with the delegators.
 
-When you delegate an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under your control; they are just considered part of the validator's stake for the proof-of-stake protocol. While staked, these CCD cannot be spent, and if you later choose to unstake them, there will be a :term:`cool-down period` before they become available again.
+When you delegate an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under your control; they are just considered part of the validator's stake for the :term:`proof-of-stake<proof-of-stake>` protocol. While staked, these CCD cannot be spent, and if you later choose to unstake them, there will be a :term:`cool-down period` before they become available again.
 
 You can only have one delegation per account. If you wish to delegate stake to multiple open pools, you can have multiple accounts and transfer CCD to those accounts to delegate.
 

@@ -15,7 +15,7 @@ A validator faces suspension if it reaches a threshold of missed rounds. The siz
 When a validator misses multiple blocks in succession and reaches the inactivity threshold by a payday, it becomes *primed for suspension*. The validator then has until the next snapshot epoch to demonstrate activity by either:
 
 * Producing a block
-* Having their signature included in a quorum certificate
+* Having their signature included in a :term:`Quorum Certificate<Quorum certificate>`
 
 If the validator remains inactive through the snapshot epoch, the suspension takes effect at the following payday epoch.
 
