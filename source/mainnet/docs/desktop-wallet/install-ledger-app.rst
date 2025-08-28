@@ -127,13 +127,19 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
          .. code-block:: console
 
-            $Python3 --version
+            $python3 --version
 
       #. To confirm that the package manager named pip is installed, enter
 
          .. code-block:: console
 
             $pip --version
+
+      #. To install ledgerblue, copy the following into the Terminal and press Enter:
+
+         .. code-block:: console
+
+            $pip install ledgerblue
 
    .. group-tab:: macOS
 
