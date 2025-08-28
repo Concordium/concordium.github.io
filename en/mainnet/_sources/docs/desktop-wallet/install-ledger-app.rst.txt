@@ -4,9 +4,9 @@
 
 .. |nano-s-firmware| replace:: **2.1.0**
 .. |nano-s-plus-firmware| replace:: **1.4.0**
-.. |ccd-governance-version| replace:: **1.2.0**
-.. _dl-nanos: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanos-2.1.0.zip
-.. _dl-nanosp: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.2.0/concordium-governance-ledger-app-1.2.0-nanosplus.zip
+.. |ccd-governance-version| replace:: **1.3.0**
+.. _dl-nanos: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.3.0/concordium-governance-ledger-app-1.3.0-nanos-2.1.0.zip
+.. _dl-nanosp: https://github.com/Concordium/concordium-ledger-app/releases/download/governance-app%2F1.3.0/concordium-governance-ledger-app-1.3.0-nanosplus.zip
 
 .. _install-Ledger-app:
 
@@ -127,13 +127,19 @@ You need to install Python and pip to proceed with installing the Concordium LED
 
          .. code-block:: console
 
-            $Python3 --version
+            $python3 --version
 
       #. To confirm that the package manager named pip is installed, enter
 
          .. code-block:: console
 
             $pip --version
+
+      #. To install ledgerblue, copy the following into the Terminal and press Enter:
+
+         .. code-block:: console
+
+            $pip install ledgerblue
 
    .. group-tab:: macOS
 
