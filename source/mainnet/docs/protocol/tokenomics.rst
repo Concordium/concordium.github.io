@@ -1,6 +1,6 @@
 .. include:: ../../variables.rst
 
-.. _reference-tokenomics:
+.. _tokenomics:
 
 ============================
 Concordium tokenomics system
