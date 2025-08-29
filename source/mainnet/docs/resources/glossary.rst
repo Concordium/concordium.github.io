@@ -41,7 +41,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Allow list
 
-      A configurable list for a Protocol-Level Token (PLT) that, if enabled, specifies which accounts are permitted to perform token transfers. If an allow list is supported, both the sender and recipient accounts must be on the list for a token transfer to succeed. This list is administered by the nominated token-governance account.
+      A configurable list for a :term:`Protocol-Level Token (PLT)` that, if enabled, specifies which accounts are permitted to perform token transfers. If an allow list is supported, both the sender and recipient accounts must be on the list for a token transfer to succeed. This list is administered by the nominated :term:`token-governance account`.
 
    Approval voting
 
@@ -86,7 +86,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Burn
 
-      A token-governance operation that destroys a specified amount of tokens from an account, thereby decreasing the total circulating supply of the PLT and the balance of the originating account. This operation can only be performed by the token-governance account. For a burn operation to succeed, the token-governance account must have a sufficient balance, the PLT must not be paused, and the PLT's configuration must support burning.
+      A :term:`token-governance operation` that destroys a specified amount of tokens from an account, thereby decreasing the total circulating supply of the :term:`PLT<Protocol-level token (PLT)>` and the balance of the originating account. This operation can only be performed by the :term:`token-governance account`. For a burn operation to succeed, the token-governance account must have a sufficient balance, the PLT must not be paused, and the PLT's configuration must support burning.
 
    Candidate
 
@@ -122,7 +122,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Chain-governance operation
 
-      An operation that can affect the entire chain, and is authorized by the chain governance keys. Chain-governance operations include updating chain parameters, protocol updates, and creating new PLTs.
+      An operation that can affect the entire chain, and is authorized by the chain governance keys. Chain-governance operations include updating chain parameters, protocol updates, and creating new :term:`PLTs<Protocol-level token (PLT)>`.
 
    Chain selection rule
 
@@ -211,7 +211,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Deny list
 
-      A configurable list for a Protocol-Level Token (PLT) that, if enabled, specifies which accounts are not permitted to perform token transfers. If a deny list is supported, neither the sender nor the recipient account may be on the list for a token transfer to succeed. This list is administered by the nominated token-governance account.
+      A configurable list for a :term:`Protocol-Level Token (PLT)` that, if enabled, specifies which accounts are not permitted to perform token transfers. If a deny list is supported, neither the sender nor the recipient account may be on the list for a token transfer to succeed. This list is administered by the nominated :term:`token-governance account`.
 
    Deploy
 
@@ -321,7 +321,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Initial supply
 
-      An optional amount of tokens that can be minted to the nominated token-governance account when a new Protocol-Level Token (PLT) is initially created as part of a chain-governance operation.
+      An optional amount of tokens that can be minted to the nominated :term:`token-governance account` when a new :term:`Protocol-Level Token (PLT)` is initially created as part of a :term:`chain-governance operation`.
 
    Initialize
 
@@ -379,7 +379,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Mint
 
-      A token-governance operation that creates new tokens, increasing both the total circulating supply of the PLT and the balance of the originating account. This operation can only be performed by the token-governance account, and the newly minted amount is added to this account.
+      A :term:`token-governance operation` that creates new tokens, increasing both the total circulating supply of the :term:`Protocol-Level Token (PLT)` and the balance of the originating account. This operation can only be performed by the :term:`token-governance account`, and the newly minted amount is added to this account.
 
    Node
 
@@ -415,7 +415,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Pause/unpause
 
-      Token-governance operations that suspend (pause) or resume (unpause) all balance-changing activities for a Protocol-Level Token (PLT), including transfers, minting, and burning. While a PLT is paused, any attempts to perform these operations will fail. These operations can only be performed by the token-governance account.
+     :term:`Token-governance operations<token-governance operation>` that suspend (pause) or resume (unpause) all balance-changing activities for a :term:`Protocol-Level Token (PLT)`, including transfers, minting, and burning. While a PLT is paused, any attempts to perform these operations will fail. These operations can only be performed by the :term:`token-governance account`.
 
    Pay day
 
@@ -452,7 +452,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Protocol-level token (PLT)
 
-      A feature that provides chain-native support for tokens other than CCD, implemented directly within the Concordium protocol without depending on smart contracts for their functionality. PLTs aim to enhance security, efficiency, and flexibility in token management by embedding core functionalities like creation, governance, and user operations directly at the protocol level. Each PLT is assigned a unique TokenId upon creation.
+      A feature that provides chain-native support for tokens other than CCD, implemented directly within the Concordium protocol without depending on smart contracts for their functionality. PLTs aim to enhance security, efficiency, and flexibility in token management by embedding core functionalities like creation, governance, and user operations directly at the protocol level. Each PLT is assigned a unique :term:`Token ID` upon creation.
 
    Qualified authority
 
@@ -534,35 +534,35 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Token-governance account
 
-      A specific Concordium account nominated during the creation of a Protocol-Level Token (PLT) that is granted the capabilities to perform administrative operations associated with that PLT. As of protocol version 9, this single account holds full authority over all token-governance operations, including minting, burning, administering allow/deny lists, and pausing/unpausing the token.
+      A specific Concordium account nominated during the creation of a :term:`Protocol-Level Token (PLT)` that is granted the capabilities to perform administrative operations associated with that PLT. As of protocol version 9, this single account holds full authority over all :term:`token-governance operations<Token-governance operation>`, including minting, burning, administering allow/deny lists, and pausing/unpausing the token.
 
 
    Token-governance operation
 
-      Administrative operations that control the behavior and supply of a Protocol-Level Token (PLT). These operations can only be performed by the token-governance account for that specific PLT. Examples include minting tokens, burning tokens, administering allow- and deny-lists, and pausing or unpausing the token. These operations are submitted as part of a token update transaction.
+      Administrative operations that control the behavior and supply of a :term:`Protocol-Level Token (PLT)`. These operations can only be performed by the :term:`token-governance account` for that specific PLT. Examples include minting tokens, burning tokens, administering allow- and deny-lists, and pausing or unpausing the token. These operations are submitted as part of a token update transaction.
 
    Token-holder operation
 
-      Operations that individual token holders can perform with their PLTs. As of protocol version 9, the only token-holder operation is the token transfer.
+      Operations that individual token holders can perform with their :term:`PLTs<Protocol-Level Token (PLT)>`. As of protocol version 9, the only token-holder operation is the token transfer.
 
    Token ID
 
-      A unique identifier assigned to each Protocol-Level Token (PLT) when it is created via a chain-governance operation. This identifier is used to uniquely identify the token on the Concordium chain in transactions and through its gRPC interface. A TokenId can be up to 128 characters long, consisting of a-z, A-Z, 0-9, -, ., and %, and is matched in a case-insensitive manner.
+      A unique identifier assigned to each :term:`Protocol-Level Token (PLT)` when it is created via a :term:`chain-governance operation`. This identifier is used to uniquely identify the token on the Concordium chain in transactions and through its gRPC interface. A TokenId can be up to 128 characters long, consisting of a-z, A-Z, 0-9, -, ., and %, and is matched in a case-insensitive manner.
 
    Token Kernel
 
-      The Token Kernel is a low-level component of the Concordium protocol that provides fundamental state update operations for Protocol-Level Tokens (PLTs). It defines the basic functionalities that the Token Module uses to implement more complex transactions and queries. The Token Kernel ensures core invariants are maintained, such as that all token transfers are accompanied by an event that logs the transfer.
+      The Token Kernel is a low-level component of the Concordium protocol that provides fundamental state update operations for :term:`Protocol-Level Tokens (PLTs)<Protocol-level token (PLT)>`. It defines the basic functionalities that the :term:`Token Module` uses to implement more complex transactions and queries. The Token Kernel ensures core invariants are maintained, such as that all token transfers are accompanied by an event that logs the transfer.
 
    Token Module
-      The component within the Concordium protocol responsible for the general handling and management of Protocol-Level Tokens (PLTs). Protocol version 9 supports a single Token Module, but future versions may introduce new Token Modules with additional functionality. When the PLT is created, the Token Module associated with it is identified by a reference consisting of a SHA-256 hash.
+      The component within the Concordium protocol responsible for the general handling and management of :term:`Protocol-Level Tokens (PLTs)<Protocol-level token (PLT)>`. Protocol version 9 supports a single Token Module, but future versions may introduce new Token Modules with additional functionality. When the PLT is created, the Token Module associated with it is identified by a reference consisting of a SHA-256 hash.
 
    Token transfer
 
-      The operation to send a specified amount of a Protocol-Level Token (PLT) from one Concordium account to another.
+      The operation to send a specified amount of a :term:`Protocol-level token (PLT)` from one Concordium account to another.
 
    Token update transaction
 
-      A new transaction type introduced in Protocol Version 9 to facilitate operations for Protocol-Level Tokens (PLTs). This transaction identifies a specific PLT by its Token ID and contains a list of token operations that can include both token-governance operations (e.g., mint, burn, pause) and token-holder operations (e.g., transfer). Operations within the transaction are executed in order, and if any single operation fails, the entire transaction is rejected and has no effect.
+      A new transaction type introduced in Protocol Version 9 to facilitate operations for :term:`Protocol-Level Tokens (PLTs)<Protocol-level token (PLT)>`. This transaction identifies a specific PLT by its :term:`Token ID` and contains a list of token operations that can include both :term:`token-governance operations<Token-governance operation>` (e.g., mint, burn, pause) and :term:`token-holder operations<Token-holder operation>` (e.g., transfer). Operations within the transaction are executed in order, and if any single operation fails, the entire transaction is rejected and has no effect.
 
    Total effective stake
 
