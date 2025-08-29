@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/update-baker-mw.e415e9f5-f91e-4816-97c2-bcc5d63a3c42.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/update-baker-mw.bdb922a0-0e35-4a1f-8bd6-fb77a3118812.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/update-baker-mw';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/update-baker-mw.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -515,8 +515,13 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../protocol/tokenomics.html">Tokenomics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../protocol/concepts-baker.html">Validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../protocol/concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/staking.html">Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/concepts-baker.html">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/time-concepts.html">Time concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/validator-suspension.html">Validator suspension</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Protocol Level Tokens</span></p>
 <ul class="nav bd-sidenav">
@@ -794,7 +799,7 @@ You can see the fee in the transaction log.</p>
 <p>The following information describes how to access validator settings to update your stake or restaking preference, to open and manage a staking pool, update validator keys, or stop validation for the CryptoX Concordium Wallet, Concordium Wallet for Web, and Desktop Wallet.</p>
 <section id="update-validator-stake-and-restaking-preference">
 <span id="update-baker-stake-mw"></span><h2>Update validator stake and restaking preference<a class="headerlink" href="#update-validator-stake-and-restaking-preference" title="Link to this heading">#</a></h2>
-<p>You can change the <a class="reference internal" href="../../protocol/concepts-baker.html#concepts-baker-stake"><span class="std std-ref">staked amount</span></a> on a validator account. Changes will take effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.
+<p>You can change the staked amount on a validator account. Changes will take effect at the next <a class="reference internal" href="../../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>.
 If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 However, if you decrease the stake, there is a cool-down period of three weeks.
 After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.</p>

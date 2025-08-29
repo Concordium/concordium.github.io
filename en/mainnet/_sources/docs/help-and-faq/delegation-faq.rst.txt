@@ -24,7 +24,7 @@ Delegation and validation FAQ
     - The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.
     - Suspended validators are paused from participating in the consensus algorithm.
 
-    For more information about validator suspension, see :ref:`Validator suspension<concepts-baker-suspension>`
+    For more information about validator suspension, see :ref:`Validator suspension<validator-suspension>`
 
 
 
@@ -205,7 +205,7 @@ For validators
    * Delegators to your validator stop earning rewards
    * Both you and any delegators are notified about the suspension
 
-   Your stake remains locked while suspended, but you won't earn any rewards until you resume validation. For more details, see :ref:`Validator suspension<concepts-baker-suspension>`.
+   Your stake remains locked while suspended, but you won't earn any rewards until you resume validation. For more details, see :ref:`Validator suspension<validator-suspension>`.
 
    To learn how to suspend or unsuspend a validator, see :ref:`Suspend/Unsuspend a validator<suspend-unsuspend-validator>`.
 

@@ -54,14 +54,14 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.2d328e07-05dc-4a11-95c9-9d08b226f929.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.47bbcc52-ebce-4f5f-843e-07aeccb93359.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-baker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concepts-baker.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Delegation" href="concepts-delegation.html" />
-    <link rel="prev" title="Concordium tokenomics system" href="tokenomics.html" />
+    <link rel="prev" title="Staking" href="staking.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -515,8 +515,13 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="consensus-mechanisms.html">Consensus mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tokenomics.html">Tokenomics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="staking.html">Staking</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-concepts.html">Time concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validator-suspension.html">Validator suspension</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Protocol Level Tokens</span></p>
 <ul class="nav bd-sidenav">
@@ -781,103 +786,65 @@
                   
   <section id="validation">
 <span id="baker-concept"></span><h1>Validation<a class="headerlink" href="#validation" title="Link to this heading">#</a></h1>
-<p>Validation is key to the Concordium blockchain. A <a class="reference internal" href="../resources/glossary.html#term-Node"><span class="xref std std-term">node</span></a> is a validator node when it participates actively in the network by creating new <a class="reference internal" href="../resources/glossary.html#term-Block"><span class="xref std std-term">blocks</span></a> that are added to the chain. The blockchain consists of multiple <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validator</span></a> nodes. A <a class="reference internal" href="../resources/glossary.html#term-Validator"><span class="xref std std-term">validator</span></a> collects, orders, and validates the <a class="reference internal" href="../resources/glossary.html#term-Transaction"><span class="xref std std-term">transactions</span></a> that are included in a block to maintain the integrity of the blockchain. The validators sign each block that they produce so that the block can be verified and executed by the other validators in the network.</p>
-<section id="stake-and-lottery">
-<span id="concepts-baker-stake"></span><h2>Stake and lottery<a class="headerlink" href="#stake-and-lottery" title="Link to this heading">#</a></h2>
-<p>A validator needs to stake a part of its CCD balance on the validator account (at least 500,000 CCD), which is then locked. At any point, the validator can manually release a part of the staked amount, as long as the minimum 500,000 CCD remain staked, or close down the validator and release everything. Unstaked CCD goes through a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down</span></a>, during which it does not earn rewards. Once the cool-down is over, the CCD is unlocked and available in the wallet to be moved or transferred.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If an account owns an amount that was transferred with a release schedule, the amount can be staked even if it hasn’t been released yet.</p>
-</div>
-<p>All validators automatically take part in a <em>lottery</em> every round to decide who will produce the next block, see <a class="reference internal" href="../resources/glossary.html#term-Leader-Election"><span class="xref std std-term">leader election</span></a>. The greater the validator’s stake, the greater the validator’s chance of <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">winning the lottery</span></a> and being selected to produce a block.</p>
-</section>
-<section id="overview-of-the-validation-process">
-<h2>Overview of the validation process<a class="headerlink" href="#overview-of-the-validation-process" title="Link to this heading">#</a></h2>
+<p>Validation is key to the Concordium blockchain. A node is a validator node when it participates actively in the network by creating new <a class="reference internal" href="../resources/glossary.html#term-Block"><span class="xref std std-term">blocks</span></a> that are added to the chain. The blockchain consists of multiple <a class="reference internal" href="../resources/glossary.html#term-Node"><span class="xref std std-term">validator nodes</span></a>. A validator collects, orders, and validates the
+transactions that are included in a block to maintain the integrity of the blockchain. The validators sign each block that they produce so that the block can be verified and executed by the other validators in the network.</p>
+<section id="how-validation-works">
+<h2>How validation works<a class="headerlink" href="#how-validation-works" title="Link to this heading">#</a></h2>
+<p>Concordium uses a consensus protocol, <a class="reference internal" href="../resources/glossary.html#term-Concordium-Byzantine-Fault-Tolerance-BFT-protocol"><span class="xref std std-term">ConcordiumBFT</span></a> , that proceeds in <a class="reference internal" href="../resources/glossary.html#term-Round"><span class="xref std std-term">rounds</span></a>. Each round requires a leader to produce a new block and extend the chain.
+These rounds are grouped into <a class="reference internal" href="../resources/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a>, with each epoch corresponding to one hour real time. For every epoch, a <a class="reference internal" href="../resources/glossary.html#term-Proof-of-stake"><span class="xref std std-term">proof-of-stake</span></a> based lottery system produces
+a list determining which validator will be the leader for each round during that period. The higher a validator’s stake, the higher the probability of
+being included on the list more often. The validator list remains fixed for the epoch.</p>
+<p>The validation process within an epoch then follows these steps:</p>
 <ol class="arabic simple">
-<li><p>A Proof-of-stake based lottery system produces a list of round leaders for the epoch. The higher the validator’s stake, the higher the probability of being included on the list more often.</p></li>
-<li><p>The first validator on the list (Bob) makes a new block that appends to the genesis block.</p></li>
-<li><p>Bob then broadcasts the block to all peers.</p></li>
+<li><p>The first leader on the list makes a new block that appends to the <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a>.</p></li>
+<li><p>The leader then broadcasts the block to all validators on the network.</p></li>
 <li><p>If the block is valid, i.e., it is well-formed and correctly placed in the chain, the validators will sign it.</p></li>
-<li><p>If the combined effective stake of the validators who sign the block is <em>greater than or equal to</em> two-thirds of the total stake, the block gets a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">Quorum Certificate</span></a> (QC) that certifies that this is a valid block. Without the QC the new round cannot progress.</p></li>
+<li><p>If the combined effective stake of the validators who sign the block is greater than or equal to two-thirds of the total stake, the block gets a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">Quorum Certiticate (QC)</span></a> that certifies that this is a valid block. Without the QC the new round cannot progress.</p></li>
+<li><p>The next leader on the list now uses the QC to produce the next block. The new block can only extend the previous block when a QC is presented to the leader.</p></li>
 </ol>
-<img alt="diagram of validator process" src="../../_images/baker-process1.png" />
-<ol class="arabic simple" start="6">
-<li><p>The next validator (Alice) now uses the QC to produce the next block. The new block can only extend the previous block when a QC is presented to Alice.</p></li>
-</ol>
-<img alt="diagram of validator process" src="../../_images/baker-process2.png" />
-<p>If there are no issues, the protocol repeats this process from step 3.</p>
-<p>In the case of a faulty validator who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If Bob does not produce a block within a certain time, a <a class="reference internal" href="../resources/glossary.html#term-Timeout-certificate"><span class="xref std std-term">Timeout Certificate</span></a> (TC) is issued to move the process forward. Alice can now use the TC to skip the previous round and extend an older block for which she has a QC.</p>
+<p>The process continues throughout the epoch, with each subsequent leader on the list following the same steps to create and validate the next block in the chain.</p>
+<p>Below you see a diagram of a validation round:</p>
+<img alt="diagram of one validation round" src="../../_images/validation-round.png" />
+<p>In the case of a faulty leader who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If the leader does not produce a block within a certain time, a <a class="reference internal" href="../resources/glossary.html#term-Timeout-certificate"><span class="xref std std-term">Timeout Certificate (TC)</span></a> is issued to move the process forward. The next leader can now use the TC to skip the previous round and extend an older block for which they have a QC.</p>
+<p>A block becomes final when both the block and its child have Quorum Certificates in consecutive rounds of the same epoch, ensuring they cannot be rolled back and are part of the authoritative chain.</p>
 </section>
-<section id="time-concepts">
-<h2>Time concepts<a class="headerlink" href="#time-concepts" title="Link to this heading">#</a></h2>
-<p>The Concordium blockchain divides time into <a class="reference internal" href="../resources/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a>.</p>
-<p>When considering the rewards and other validation-related concepts, the concept of an <em>epoch</em> is used as a unit of time that defines a period in which the set of current validators and stakes are fixed.
-Epochs have a duration of 1 hour and the duration is fixed at the <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">Genesis block</span></a>. Each epoch has a nominal ending, and when a block is finalized after this nominal ending then epoch transition occurs.</p>
-<p>Epochs are subdivided into <a class="reference internal" href="../resources/glossary.html#term-Round"><span class="xref std std-term">rounds</span></a>. In each round either a block is produced by the elected leader and validated by (2/3 of) the other validators,
-or a timeout is produced if the timeout time is reached before a block and its <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a> are produced.
-In the case of a timeout, a <a class="reference internal" href="../resources/glossary.html#term-Timeout-certificate"><span class="xref std std-term">timeout certificate</span></a> is produced for the block. The timeout time for the next round may shrink or grow depending on whether a block was finalized or a timeout occurred in the previous round.
-Using <a class="reference internal" href="../resources/glossary.html#term-Concordium-Byzantine-Fault-Tolerance-BFT-protocol"><span class="xref std std-term">consensus protocol</span></a>, a validator has to add the new block after the block from the previous round,
-unless a timeout occurred in the previous round, in which case they can add their block to an older round.
-The list of lottery winners that are <a class="reference internal" href="../resources/glossary.html#term-Leader-Election"><span class="xref std std-term">elected to be the leader for every round in that epoch</span></a> is established at the beginning of the epoch.</p>
-<p>A <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> is the point at which new CCDs are minted and rewards are distributed to validators and delegators.
-The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before).
-Pay day is thus when new validators begin producing blocks, and updates to delegation and validation take effect.
-Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet.</p>
-<p>In the case of decreasing stake or removing delegation or validation there is a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> of three weeks during which the unstaked funds are frozen.
-For example, if you decrease a valiator’s stake, the stake will be decreased at the first pay day but the funds will not be released to your disposable balance until after the cool-down period ends.</p>
+<section id="stake-and-lottery">
+<h2>Stake and lottery<a class="headerlink" href="#stake-and-lottery" title="Link to this heading">#</a></h2>
+<p>A validator needs to stake a minimum of 500,000 CCD on their validator account, which becomes locked while they are active. Validators can manually
+release part of the staked amount later, as long as the minimum requirement is maintained, or they can close the validator entirely.</p>
+<p>All validators automatically participate in a lottery every round to determine who will produce the next block. The greater the validator’s stake, the
+greater their chance of winning the lottery and being selected to produce a block.</p>
 </section>
-<section id="validator-keys">
-<h2>Validator keys<a class="headerlink" href="#validator-keys" title="Link to this heading">#</a></h2>
-<p>A node uses a set of cryptographic keys called validator keys to sign the blocks that it produces. The validator keys are uniquely determined from the associated account. The validator keys are used for signing the block that the node produces and for verifying whether the validator has won the <a class="reference internal" href="../resources/glossary.html#term-Lottery-Power"><span class="xref std std-term">lottery</span></a> as described below. To become a validator node, the node must be configured with a set of validator keys. You generate the validator keys in the wallet when you add validation to an account. The validator node will start validation after the next <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> once the transaction has been approved.</p>
-<section id="validator-account">
-<h3>Validator account<a class="headerlink" href="#validator-account" title="Link to this heading">#</a></h3>
-<p>Each account can use a set of validator keys to register a validator. Whenever a validator produces a valid block that gets included in the chain, a reward is paid to the validator’s account (and the staking pool delegators if they have a pool) at <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a>. The reward is derived from transaction fees paid for transactions included in the block and its predecessors, as well as from newly-minted CCDs.</p>
-<p>The account can be viewed in the CryptoX Concordium Wallet, the Desktop Wallet, or the Concordium Wallet for Web depending on where the account was created.</p>
-<p>Rewards are added to the staked amount by default. However, you can choose to receive the rewards in the account balance instead of staking them automatically.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is not possible to have multi-signature validator accounts in CryptoX Concordium Wallet or Concordium Wallet for Web. If you need this functionality, you need to run the Desktop Wallet.</p>
-</div>
+<section id="staking-pools">
+<h2>Staking pools<a class="headerlink" href="#staking-pools" title="Link to this heading">#</a></h2>
+<p>Validators have the option to open a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a>. A staking pool allows others who want to earn rewards to do so without the need to run a node or become
+a validator themselves. <a class="reference internal" href="../resources/glossary.html#term-Delegator"><span class="xref std std-term">Delegaters</span></a> add their stake to the validator’s pool, which increases the validator’s total stake and chances of winning the lottery
+to produce blocks.</p>
+<p>Validators can choose not to open a pool, in which case only their own stake applies toward the lottery. They can always open a pool later if they decide
+to accept delegations.</p>
 </section>
+<section id="validator-rewards">
+<h2>Validator rewards<a class="headerlink" href="#validator-rewards" title="Link to this heading">#</a></h2>
+<p>Validators earn rewards through multiple sources when they successfully participate in the network. These rewards are paid to the validator’s account at <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> and come from both newly minted CCD and <a class="reference internal" href="transaction-fees.html#transaction-fees"><span class="std std-ref">transaction fees</span></a> collected from processed transactions.</p>
+<p>Validators who operate staking pools can also earn commission from their delegators, providing an additional revenue stream based on the pool’s
+performance.</p>
 </section>
-<section id="staking-pool">
-<h2>Staking pool<a class="headerlink" href="#staking-pool" title="Link to this heading">#</a></h2>
-<p>You have the option to open a <a class="reference internal" href="../resources/glossary.html#term-Staking-pool"><span class="xref std std-term">staking pool</span></a>. A staking pool allows others who want to earn rewards to do so without the need to run a node or become a validator themselves. To do this they <a class="reference internal" href="concepts-delegation.html#delegation-concept"><span class="std std-ref">delegate</span></a> an amount of stake to your staking pool which then increases your stake and your <a class="reference internal" href="../resources/glossary.html#term-Winning-probability"><span class="xref std std-term">chances of winning the lottery</span></a> to produce a block. You can also choose not to open a pool, in which case only your own stake applies toward the lottery. You can always open a pool later.</p>
-<p>The maximum size of a pool is 5% of all stake. Any stake above this limit will not contribute towards earning rewards. It isn’t possible to add more stake to exceed the limit, but reward restaking can push it over the limit, or if a lot of other validators unstake and the thresholds change, the staking pool can exceed the limit.</p>
+<section id="requirements-and-responsibilities">
+<h2>Requirements and responsibilities<a class="headerlink" href="#requirements-and-responsibilities" title="Link to this heading">#</a></h2>
+<p>Becoming a validator requires both financial commitment and technical capability. Beyond the minimum 500,000 CCD stake, validators must run node software continuously and maintain reliable infrastructure.</p>
+<p>Validators are responsible for the ongoing operation and maintenance of their nodes, including monitoring performance and applying necessary updates. The
+validator’s performance directly impacts both their own rewards and, if operating a pool, the rewards of their delegators.</p>
+<p>As a validator you must set up a validator account and generate a validator key pair. The account holds your stake and receives rewards, and the keys are used to cryptographically sign the blocks you produce and prove your identity as a validator.</p>
 </section>
-<section id="when-is-a-block-final">
-<h2>When is a block final?<a class="headerlink" href="#when-is-a-block-final" title="Link to this heading">#</a></h2>
-<p>A block is final when it cannot be rolled back any more, i.e., part of the authoritative chain. Validators sign a block when they have verified that it is valid, and their collective signatures are aggregated to form a <a class="reference internal" href="../resources/glossary.html#term-Quorum-certificate"><span class="xref std std-term">quorum certificate</span></a>. This quorum certificate is then included in the next block. When two blocks that are parent-child are in consecutive rounds in the same epoch and both have a quorum certificate, then the block in the first of these rounds (together with its ancestors) is considered final. Why isn’t the child block considered to be final if it has a QC? This is to cover edge cases where network delays cause the QC of a block to not be received by the next block producer before a timeout. In that case, the block gets skipped by the next block producer and it cannot be considered final. To resolve this, only  the first among two consecutive certified blocks is considered to be final.</p>
-<p>A block is final at a minimum of two seconds after its creation. A new block has to be created descended from that block for the new block to be final.</p>
-</section>
-<section id="validator-suspension">
-<span id="concepts-baker-suspension"></span><h2>Validator Suspension<a class="headerlink" href="#validator-suspension" title="Link to this heading">#</a></h2>
-<p>A validator may be suspended if it remains inactive and fails to produce blocks when selected as a round leader. This mechanism, introduced in Protocol 8, helps maintain the blockchain’s performance and reliability by excluding inactive validators.</p>
-<p>A validator faces <a class="reference internal" href="../resources/glossary.html#term-Suspension"><span class="xref std std-term">suspension</span></a> if it reaches a threshold of missed rounds. The size of a validator’s stake affects how long the validator’s node has to be inactive before reaching the threshold:</p>
+<section id="how-to-become-a-validator">
+<h2>How to become a validator<a class="headerlink" href="#how-to-become-a-validator" title="Link to this heading">#</a></h2>
+<p>To become a validator, the setup process depends on your preferred tools and approach:</p>
 <ul class="simple">
-<li><p>High-stake validators may reach the suspension threshold within hours due to their frequent selection as round leaders.</p></li>
-<li><p>Low-stake validators may take several days to reach the threshold due to fewer opportunities to produce blocks.</p></li>
+<li><p>For general information on best practices and validator management, see <a class="reference internal" href="../network/baker-pool.html#baker-pool"><span class="std std-ref">Validator management</span></a></p></li>
+<li><p>To set up validation using Concordium wallets, see <a class="reference internal" href="../network/guides/validation-with-wallets.html#validation-with-wallets"><span class="std std-ref">Validation with Concordium wallets</span></a></p></li>
+<li><p>To set up validation using Concordium’s command line interface, see <a class="reference internal" href="../network/guides/become-validator.html#become-a-validator"><span class="std std-ref">Validation with the Concordium Client</span></a></p></li>
+<li><p>For answers to the most commonly asked questions, see <a class="reference internal" href="../help-and-faq/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation and validation FAQ</span></a>.</p></li>
 </ul>
-<p>When a validator misses multiple blocks in succession and reaches the inactivity threshold by a payday, it becomes <em>primed for suspension</em>. The validator then has until the next snapshot epoch to demonstrate activity by either:</p>
-<ul class="simple">
-<li><p>Producing a block</p></li>
-<li><p>Having their signature included in a quorum certificate</p></li>
-</ul>
-<p>If the validator remains inactive through the snapshot epoch, the suspension takes effect at the following payday epoch.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A high-stake validator could face suspension after approximately 23 hours of inactivity, while low-stake validators typically require a longer period of inactivity before reaching the threshold.</p>
-</div>
-<p>A suspended validator:</p>
-<ul class="simple">
-<li><p>Can resume validation through a manual transaction</p></li>
-<li><p>Incurs no specific penalties beyond the suspension period</p></li>
-<li><p>Maintains its delegators unless the delegators choose to update their delegation</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The protocol includes safeguards to prevent more than one-third of the total stake from being suspended simultaneously as this would halt the blockchain. This suspension mechanism protects against accidental or careless inactivity but does not protect against malicious behavior.</p>
-</div>
 </section>
 </section>
 
@@ -928,12 +895,12 @@ For example, if you decrease a valiator’s stake, the stake will be decreased a
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tokenomics.html"
+       href="staking.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Concordium tokenomics system</p>
+        <p class="prev-next-title">Staking</p>
       </div>
     </a>
     <a class="right-next"
@@ -964,16 +931,12 @@ For example, if you decrease a valiator’s stake, the stake will be decreased a
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-validation-works">How validation works</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stake-and-lottery">Stake and lottery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-the-validation-process">Overview of the validation process</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-concepts">Time concepts</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-keys">Validator keys</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-account">Validator account</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staking-pool">Staking pool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-is-a-block-final">When is a block final?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-suspension">Validator Suspension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#staking-pools">Staking pools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validator-rewards">Validator rewards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-responsibilities">Requirements and responsibilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-become-a-validator">How to become a validator</a></li>
 </ul>
   </nav></div>
 
