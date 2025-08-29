@@ -22,7 +22,7 @@ The following information describes how to access validator settings to update y
 Update validator stake and restaking preference
 ===============================================
 
-You can change the :ref:`staked amount <concepts-baker-stake>` on a validator account. Changes will take effect at the next :term:`pay day`.
+You can change the staked amount on a validator account. Changes will take effect at the next :term:`pay day`.
 If the change is made in the last epoch before pay day, then the change will not occur until the following pay day.
 However, if you decrease the stake, there is a cool-down period of three weeks.
 After the cool-down period, the amount you’ve decreased the stake with is returned to your disposable balance at the next pay day.

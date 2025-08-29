@@ -19,16 +19,22 @@ Wallets
 |cryptox| for iOS
 -----------------
 
- Aug 12, 2025
-    Version 3.3.6:
+ Aug 28, 2025
+    Version 3.3.7:
 
-    - Added ID 2.5 statement approval functionality
-    - Introduced  ConcordiumClient wrapper over SDK
-    - Moved Lottie animations from DotLottie on Lottie framework
-    - Updated Reown(Wallet Connect) flow UI + alerts logic
-    - Added new type request_verifiable_presentation for incoming verify transactions type
+    - Fixed Wert integration issue
+    - Brought back NFT page
+    - Rolled back Google Analytics
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 3.3.6  -  Aug 12, 2025
+
+            - Added ID 2.5 statement approval functionality
+            - Introduced  ConcordiumClient wrapper over SDK
+            - Moved Lottie animations from DotLottie on Lottie framework
+            - Updated Reown(Wallet Connect) flow UI + alerts logic
+            - Added new type request_verifiable_presentation for incoming verify transactions type
 
         .. dropdown:: |cryptox| 3.3.5  -  Jul 9, 2025
 
