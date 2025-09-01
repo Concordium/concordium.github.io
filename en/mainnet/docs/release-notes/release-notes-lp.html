@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.20065df6-50e0-4264-8b20-e26d14ab44ad.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.afa090f8-e578-4ab2-ad67-d62f90c91ec1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -1744,37 +1744,65 @@ delivering a more seamless and user-friendly experience while preserving all the
 <section id="mainnet">
 <span id="rn-node-mainnet"></span><span id="id3"></span><h3>Mainnet<a class="headerlink" href="#mainnet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>March 3, 2025</p>
-<p>Concordium node version 8.0.3 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P8.html">protocol version 8</a>.
-The new consensus protocol will take effect on the mainnet on March 17, 2025.
-<strong>Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.</strong>
-Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.</p>
-<p>Protocol version 8 introduces the following changes:</p>
+<div><p>September 1, 2025</p>
+<p>Concordium node version 9.0.7 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P9.html">protocol version 9</a>.
+The new consensus protocol will take effect on the mainnet on September 23, 2025.
+<strong>Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.</strong>
+Validators that do not upgrade before the protocol update may be suspended.</p>
+<p>Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
+Protocol version 9 supports the following PLT functionality:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Validators are automatically suspended if they do not produce blocks for a certain number of rounds.</p></li>
-<li><p>The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.</p></li>
-<li><p>Suspended validators are paused from participating in the consensus algorithm.</p></li>
+<li><p>creating new PLTs (through the CreatePLT chain update);</p></li>
+<li><p>transferring PLTs between accounts;</p></li>
+<li><p>minting and burning PLTs (limited to the nominated token governance account);</p></li>
+<li><p>managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and</p></li>
+<li><p>globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).</p></li>
 </ul>
 </div></blockquote>
-<p>Additionally, the node release includes a number of fixes and improvements:</p>
+<p>The node API is updated to support PLTs as follows:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Add suspension info to <cite>BakerPoolStatus</cite> / <cite>CurrentPaydayBakerPoolStatus</cite> query results.</p></li>
-<li><p>Add <cite>GetConsensusDetailedStatus</cite> gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.</p></li>
-<li><p>Update Rust version to 1.82.</p></li>
-<li><p>Update GHC version to 9.6.6 (LTS-22.39).</p></li>
-<li><p>Add <cite>GetScheduledReleaseAccounts</cite> endpoint for querying the list of accounts that have scheduled releases.</p></li>
-<li><p>Add <cite>GetCooldownAccounts</cite>, <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.</p></li>
-<li><p>gRPC endpoints <cite>DryRun</cite>, <cite>GetBlockItemStatus</cite> and <cite>GetBlockTransactionEvents</cite> now report the parameter used to initialize a smart contract instance as part of a <cite>ContractInitializedEvent</cite>.</p></li>
-<li><p>Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.</p></li>
-<li><p>Fix a bug where <cite>GetBlockInfo</cite> reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetAccountInfo</span></code> reports information about PLTs associated with the account, including any balance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenList</span></code> reports a list of the registered PLTs on the chain.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetTokenInfo</span></code> gets the global state information for a particular PLT.</p></li>
 </ul>
 </div></blockquote>
+<p>Note: <strong>Ubuntu 20.04 LTS is no longer supported;</strong> the minimum supported version for this release is 22.04 LTS.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">8.0.3 - March 3, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium node version 8.0.3 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P8.html">protocol version 8</a>.
+The new consensus protocol will take effect on the mainnet on March 17, 2025.
+<strong>Node runners should upgrade to version 8.0.3 before the protocol update to ensure that their nodes do not shut down.</strong>
+Validators in particular are encouraged to update their nodes, as the new protocol introduces suspension of inactive validators, meaning that failing to update may result in your validator being suspended.</p>
+<p class="sd-card-text">Protocol version 8 introduces the following changes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Validators are automatically suspended if they do not produce blocks for a certain number of rounds.</p></li>
+<li><p class="sd-card-text">The configure-validator transaction can suspend or resume a validator, including adding a validator in a suspended state.</p></li>
+<li><p class="sd-card-text">Suspended validators are paused from participating in the consensus algorithm.</p></li>
+</ul>
+</div></blockquote>
+<p class="sd-card-text">Additionally, the node release includes a number of fixes and improvements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p class="sd-card-text">Add suspension info to <cite>BakerPoolStatus</cite> / <cite>CurrentPaydayBakerPoolStatus</cite> query results.</p></li>
+<li><p class="sd-card-text">Add <cite>GetConsensusDetailedStatus</cite> gRPC endpoint for getting detailed information on the status of the consensus, at consensus version 1.</p></li>
+<li><p class="sd-card-text">Update Rust version to 1.82.</p></li>
+<li><p class="sd-card-text">Update GHC version to 9.6.6 (LTS-22.39).</p></li>
+<li><p class="sd-card-text">Add <cite>GetScheduledReleaseAccounts</cite> endpoint for querying the list of accounts that have scheduled releases.</p></li>
+<li><p class="sd-card-text">Add <cite>GetCooldownAccounts</cite>, <cite>GetPreCooldownAccounts</cite> and <cite>GetPrePreCooldownAccounts</cite> endpoints for querying the lists of accounts that have pending cooldowns in protocol version 7 onwards.</p></li>
+<li><p class="sd-card-text">gRPC endpoints <cite>DryRun</cite>, <cite>GetBlockItemStatus</cite> and <cite>GetBlockTransactionEvents</cite> now report the parameter used to initialize a smart contract instance as part of a <cite>ContractInitializedEvent</cite>.</p></li>
+<li><p class="sd-card-text">Fix a bug where, after a protocol update in consensus version 1 (P6 onwards), a node may miscalculate the absolute height of blocks when it is restarted.</p></li>
+<li><p class="sd-card-text">Fix a bug where <cite>GetBlockInfo</cite> reports the parent block of a genesis block to be the last finalized block of the previous genesis index, instead of the terminal block.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">7.0.5 - October 3, 2024</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Concordium node version 7.0.5 contains support for <a class="reference external" href="https://proposals.concordium.software/updates/P7.html">protocol version 7</a>.
