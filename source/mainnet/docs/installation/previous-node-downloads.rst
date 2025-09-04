@@ -109,6 +109,16 @@ Ubuntu - Mainnet
 Default GRPC port is set to 20000
 Default listen port is set to 8888
 
+`8.0.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_8.0.3-1_amd64.deb>`
+
+   - Verification instructions
+
+      In a terminal:
+
+      #. Navigate to the download.
+      #. Paste the following into the terminal: $sha256sum concordium-mainnet-node_8.0.3-1_amd64.deb
+      #. Verify that the output matches the SHA256 checksum ``83216d9985971f3dec3d3e99da3822e01e022558887e2461c0cb315d48bd0460``
+
 `7.0.5 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_7.0.5-0_amd64.deb>`__
 
    - Verification instructions
