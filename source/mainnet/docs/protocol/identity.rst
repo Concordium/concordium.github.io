@@ -8,23 +8,23 @@ Identity framework on Concordium
 
 Concordium's identity solution is designed to provide secure blockchain infrastructure that maintains accountability while preserving user privacy. The approach balances these requirements, enabling blockchain adoption across jurisdictions and ensuring regulatory compliance.
 
-Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, :ref:`ConcordiumID <concordium-id>` and :ref:`Web3 ID <web3-id>`.
+Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, :ref:`Concordium ID <concordium-id>` and :ref:`Web3 ID <web3-id>`.
 
 
 .. _concordium-id:
 
-ConcordiumID
-============
+Concordium ID
+=============
 
-The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved :term:`Identity Provider` before they can create and use accounts on the blockchain.
+The Concordium ID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a Concordium ID through identity verification with an approved :term:`Identity Provider` before they can create and use accounts on the blockchain.
 
-After successful identity verification, the account holder receives a ConcordiumID, which enables them to:
+After successful identity verification, the account holder receives a Concordium ID, which enables them to:
 
 - :doc:`Create accounts <manage-accounts>` on the Concordium blockchain
 - :doc:`Conduct transactions <transactions>` within the networkusing :term:`zero-knowledge proofs<zero-knowledge proof>` without revealing the underlying data
 - Prove certain identity attributes (such as age or citizenship)
 
-The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.
+The Concordium ID is foundational to the accountability and privacy features of the Concordium blockchain.
 
 .. Note::
 
@@ -47,7 +47,7 @@ This next-generation portable ID tool can be used for:
 - Professional certifications
 - Various other use cases requiring verified digital credentials
 
-While interaction with the Concordium blockchain always requires a ConcordiumID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.
+While interaction with the Concordium blockchain always requires a Concordium ID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.
 
 :doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
 
