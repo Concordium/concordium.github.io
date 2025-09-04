@@ -82,7 +82,7 @@ Understanding Concordium's identity framework requires familiarity with several 
 
 * **Public Holder Identifier**: An encrypted mapping between the user's Identity Credentials and their account. This identifier requires a court order and multiple Privacy Guardians to be decrypted.
 
-* **Account Holder Identity Records**: A collection of records related to the account owner, including their identity information and an :term:`encrypted linking key<Linking key>` that links to any other accounts opened with the same identity document. This data is stored in the IDP’s database.
+* **Account Holder Identity Records**: A collection of records related to the account owner, including their identity information and an encrypted  :term:`linking key<Linking key>` that links to any other accounts opened with the same identity document. This data is stored in the IDP’s database.
 
 
 .. toctree::
