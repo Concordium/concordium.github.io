@@ -39,6 +39,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A kind of sub-account structure that can be created. An account owner can create different aliases for different uses to keep track of transfers and assign them meaning. Each account has 16777216 addresses, namely a so-called canonical account address together with matching account aliases. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial 29 bytes are referred to as account aliases for the same account. Thus, accounts can be referred to by any address whose initial 29 bytes match.
 
+   Allow list
+
+      A configurable list for a :term:`Protocol-Level Token (PLT)` that, if enabled, specifies which accounts are permitted to perform token transfers. If an allow list is supported, both the sender and recipient accounts must be on the list for a token transfer to succeed. This list is administered by the nominated :term:`token-governance account`.
+
    Approval voting
 
       Approval voting is a single-winner electoral system in which the voter can choose or approve any number of candidates, effectively assigning a 0 or a 1 to every candidate. The winner is the single candidate approved by the largest number of voters. Approval voting can be achieved by setting the selection limit to the total number of options in a contest.
@@ -80,6 +84,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
       A type of efficient interactive proof system that enables various :term:`zero-knowledge proofs<zero-knowledge proof>`, including range-proofs, set-membership proofs, and
       set-non-membership proofs. The generated proofs have logarithmic size. They can be made non-interactive with the Fiat-Shamir transform.
 
+   Burn
+
+      A :term:`token-governance operation` that destroys a specified amount of tokens from an account, thereby decreasing the total circulating supply of the :term:`PLT<Protocol-level token (PLT)>` and the balance of the originating account. This operation can only be performed by the :term:`token-governance account`. For a burn operation to succeed, the token-governance account must have a sufficient balance, the PLT must not be paused, and the PLT's configuration must support burning.
+
    Candidate
 
       Option on the official list of candidates for the election.
@@ -111,6 +119,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Chain
 
       A sequence of :term:`blocks<block>`, starting from the :term:`genesis block`, in which each successive block points to the predecessor. There may be multiple valid chains, and the :term:`consensus` protocol establishes which chain is authoritative.
+
+   Chain-governance operation
+
+      An operation that can affect the entire chain, and is authorized by the chain governance keys. Chain-governance operations include updating chain parameters, protocol updates, and creating new :term:`PLTs<Protocol-level token (PLT)>`.
 
    Chain selection rule
 
@@ -196,6 +208,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
       An account that contributes to a staking pool, or to passive delegation. When an account becomes a delegator, the delegated amount of CCD is locked so that it cannot be spent or transferred while it is delegated. Delegators earn rewards, minus a commission to the validator, in proportion to their delegated stake.
 
       For delegation in an election, see :term:`Vote delegation`.
+
+   Deny list
+
+      A configurable list for a :term:`Protocol-Level Token (PLT)` that, if enabled, specifies which accounts are not permitted to perform token transfers. If a deny list is supported, neither the sender nor the recipient account may be on the list for a token transfer to succeed. This list is administered by the nominated :term:`token-governance account`.
 
    Deploy
 
@@ -303,6 +319,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Initial accounts are only relevant for Desktop Wallet.
 
+   Initial supply
+
+      An optional amount of tokens that can be minted to the nominated :term:`token-governance account` when a new :term:`Protocol-Level Token (PLT)` is initially created as part of a :term:`chain-governance operation`.
+
    Initialize
 
       Action that creates a new smart contract instance with the initial state. The only way to update the instance state is by invoking the instance’s entrypoints.
@@ -337,6 +357,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       See :term:`lottery power`.
 
+   Linking key
+
+      The linking key allows to find all accounts of a given account holder. This identifier is stored in encrypted form in the identity record of an account holder.
+
    Lottery Power
 
       A validator's lottery power is its relative stake and is therefore proportional to the staked amount of that validator. The lottery power is updated each :term:`pay day`, and is based on the stake distribution at the end of the epoch before last. (This delay ensures that the stake distribution is determined before the randomness that fixes the validators for the epoch; otherwise, stakeholders might redistribute their stake to luckier validators, which undermines the security of the system.) :term:`Delegation<delegator>` affects the lottery power of the validator by increasing their stake, thus increasing the odds of that validator being chosen to produce a block.
@@ -352,6 +376,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Membership proof
 
       A proof to determine if an attribute of a user's identity is included in a given set, for example, lives in the EU. Can also be a :term:`non-membership proof`.
+
+   Mint
+
+      A :term:`token-governance operation` that creates new tokens, increasing both the total circulating supply of the :term:`Protocol-Level Token (PLT)` and the balance of the originating account. This operation can only be performed by the :term:`token-governance account`, and the newly minted amount is added to this account.
 
    Node
 
@@ -385,6 +413,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       A form of delegation where a delegator's stake is effectively distributed among all staking pools. It is not associated with a specific validator. Delegators earn lower rewards when delegating to passive delegation than when delegating to a specific staking pool. However, passive delegation is not affected by poor performance of a single validator.
 
+   Pause/unpause
+
+     :term:`Token-governance operations<token-governance operation>` that suspend (pause) or resume (unpause) all balance-changing activities for a :term:`Protocol-Level Token (PLT)`, including transfers, minting, and burning. While a PLT is paused, any attempts to perform these operations will fail. These operations can only be performed by the :term:`token-governance account`.
+
    Pay day
 
       A pay day is the point at which new CCDs are minted and rewards to validators and delegators are distributed. The stakes of validators and delegators are updated each pay day (but the changes for each pay day are fixed one epoch before). Pay day is thus when new validators begin validation and updates to delegation and validation take effect, such as increasing stake, restaking preferences, and adding delegation. In the case of decreasing stake or removing delegation or validation, there is a longer cool-down period, after which the change is executed at the **next pay day after the cool-down period ends**. The cool-down period is 3 weeks. Pay day is every 24 hours (i.e., 24 epochs) at approximately 09:00 UTC on Mainnet and approximately 12:00 UTC on Testnet. The list of lottery winners that are elected to be the leader for every round in that epoch is established at the beginning of the epoch.
@@ -417,6 +449,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    proof-of-work
 
      A consensus mechanism where validators (miners) compete to solve complex cryptographic puzzles that require significant computational power. The first to solve the puzzle earns the right to produce the next block and receive the associated rewards.
+
+   Protocol-level token (PLT)
+
+      A feature that provides chain-native support for tokens other than CCD, implemented directly within the Concordium protocol without depending on smart contracts for their functionality. PLTs aim to enhance security, efficiency, and flexibility in token management by embedding core functionalities like creation, governance, and user operations directly at the protocol level. Each PLT is assigned a unique :term:`Token ID` upon creation.
 
    Qualified authority
 
@@ -495,6 +531,38 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
    Timeout certificate
 
       If the leader fails to produce a block in the round, or not enough signatures were gathered for a quorum certificate, then the finalizers will instead send timeout messages, which are aggregated to form a timeout certificate. Each block either contains a quorum certificate or a timeout certificate for the previous round.
+
+   Token-governance account
+
+      A specific Concordium account nominated during the creation of a :term:`Protocol-Level Token (PLT)` that is granted the capabilities to perform administrative operations associated with that PLT. As of protocol version 9, this single account holds full authority over all :term:`token-governance operations<Token-governance operation>`, including minting, burning, administering allow/deny lists, and pausing/unpausing the token.
+
+
+   Token-governance operation
+
+      Administrative operations that control the behavior and supply of a :term:`Protocol-Level Token (PLT)`. These operations can only be performed by the :term:`token-governance account` for that specific PLT. Examples include minting tokens, burning tokens, administering allow- and deny-lists, and pausing or unpausing the token. These operations are submitted as part of a token update transaction.
+
+   Token-holder operation
+
+      Operations that individual token holders can perform with their :term:`PLTs<Protocol-Level Token (PLT)>`. As of protocol version 9, the only token-holder operation is the token transfer.
+
+   Token ID
+
+      A unique identifier assigned to each :term:`Protocol-Level Token (PLT)` when it is created via a :term:`chain-governance operation`. This identifier is used to uniquely identify the token on the Concordium chain in transactions and through its gRPC interface. A TokenId can be up to 128 characters long, consisting of a-z, A-Z, 0-9, -, ., and %, and is matched in a case-insensitive manner.
+
+   Token Kernel
+
+      The Token Kernel is a low-level component of the Concordium protocol that provides fundamental state update operations for :term:`Protocol-Level Tokens (PLTs)<Protocol-level token (PLT)>`. It defines the basic functionalities that the :term:`Token Module` uses to implement more complex transactions and queries. The Token Kernel ensures core invariants are maintained, such as that all token transfers are accompanied by an event that logs the transfer.
+
+   Token Module
+      The component within the Concordium protocol responsible for the general handling and management of :term:`Protocol-Level Tokens (PLTs)<Protocol-level token (PLT)>`. Protocol version 9 supports a single Token Module, but future versions may introduce new Token Modules with additional functionality. When the PLT is created, the Token Module associated with it is identified by a reference consisting of a SHA-256 hash.
+
+   Token transfer
+
+      The operation to send a specified amount of a :term:`Protocol-level token (PLT)` from one Concordium account to another.
+
+   Token update transaction
+
+      A new transaction type introduced in Protocol Version 9 to facilitate operations for :term:`Protocol-Level Tokens (PLTs)<Protocol-level token (PLT)>`. This transaction identifies a specific PLT by its :term:`Token ID` and contains a list of token operations that can include both :term:`token-governance operations<Token-governance operation>` (e.g., mint, burn, pause) and :term:`token-holder operations<Token-holder operation>` (e.g., transfer). Operations within the transaction are executed in order, and if any single operation fails, the entire transaction is rejected and has no effect.
 
    Total effective stake
 
