@@ -87,7 +87,7 @@ The Concordium IDApp uses the same key derivation structure for:
 * Blind signature randomness (subtree 4’)
 * Pedersen commitment randomness (subtree 5’)
 
-The IDApp does not derive account keys (subtree 0’). Account keys are produced by the account wallets using their own key derivation methods.
+The IDApp does not derive account keys (subtree 0’). Account keys are produced by the account wallets using their own key generation methods.
 For third-party wallet implementations, we recommend using the derivation path: m/44'/919'/0'/0'/accountIndex'.
 
 Legacy derivation tree
