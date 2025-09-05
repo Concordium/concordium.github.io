@@ -9,7 +9,7 @@ User processes
 Account creation
 ================
 
-Users must complete an identity verification process to :doc:`create an account <manage-accounts>` and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as :term:`Identity Credentials<Identity Credential>`), and accounts (which contain cryptographic addresses). Every account must be linked to a ConcordiumID Identity Credential.
+Users must complete an identity verification process to :doc:`create an account <manage-accounts>` and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as :term:`Identity Credentials<Identity Credential>`), and accounts (which contain cryptographic addresses). Every account must be linked to a Concordium ID Identity Credential.
 
 The account creation process follows these steps:
 
@@ -38,7 +38,7 @@ Verifiable credentials with Web3 ID
 
 As a supplementary feature to the base identity provided on wallet creation, verified credentials can be issued to a user to power enhanced use cases.
 
-:ref:`Web3 ID <web3-id>` is based on the W3C standards for verifiable credentials. This makes them portable and interoperable. verifiable credentials can be used for KYC, compliance and regulation, for example to identify accredited investor status. Identity data, both ConcordiumID and Web3 ID verifiable credentials, can be used for off-chain uses such as zero-knowledge age verification.
+:ref:`Web3 ID <web3-id>` is based on the W3C standards for verifiable credentials. This makes them portable and interoperable. verifiable credentials can be used for KYC, compliance and regulation, for example to identify accredited investor status. Identity data, both Concordium ID and Web3 ID verifiable credentials, can be used for off-chain uses such as zero-knowledge age verification.
 
 The Web3 ID suite can be used for:
 
@@ -49,4 +49,4 @@ The Web3 ID suite can be used for:
 - Age verification without revealing birth date
 - Other use cases requiring verified digital credentials
 
-Web3 ID can leverage ConcordiumID, but doesn't have to. The verifiable credentials can, in principle, be used off-chain, but benefit from both the ConcordiumID, as well as transparent events logs on-chain.
+Web3 ID can leverage Concordium ID, but doesn't have to. The verifiable credentials can, in principle, be used off-chain, but benefit from both the Concordium ID, as well as transparent events logs on-chain.

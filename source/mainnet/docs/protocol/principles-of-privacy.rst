@@ -27,5 +27,5 @@ No single party can link a user's Identity to the accounts they have on Concordi
 Selective disclosure through zero-knowledge proofs
 --------------------------------------------------
 
-With Concordium users can choose to reveal :term:`zero-knowledge proof` verifications of attributes of their identity across both :ref:`ConcordiumID <concordium-id>` and :ref:`Web3 ID <web3-id>`, without revealing the underlying data (e.g. proving they are over 18 without revealing their birth date).
+With Concordium users can choose to reveal :term:`zero-knowledge proof` verifications of attributes of their identity across both :ref:`Concordium ID <concordium-id>` and :ref:`Web3 ID <web3-id>`, without revealing the underlying data (e.g. proving they are over 18 without revealing their birth date).
 

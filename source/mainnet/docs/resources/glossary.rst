@@ -359,7 +359,7 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
    Linking key
 
-      The linking key allows to find all accounts of a given account holder. This identifier is stored in encrypted form in the identity record of an account holder.
+      The linking key allows finding all accounts of a given account holder. This identifier is stored in encrypted form in the identity record of an account holder.
 
    Lottery Power
 
