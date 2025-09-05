@@ -46,7 +46,7 @@ Each account created with the given identity contains the public identifier in e
 Linking key
 -----------
 
-Subtree 3' defines the linking key used to generate the addresses of accounts. Technically the account address is linking key(linking key, x) where x is the account index. Knowing the linking key allows identifying all accounts that have been generated from a given identity.
+Subtree 3' defines the linking key used to generate the addresses of accounts. Technically the account address is PRF(linking key, x) where PRF is a pseudorandom function and x is the account index. Knowing the linking key allows identifying all accounts that have been generated from a given identity.
 
 
 When an identity is issued, the Identity Provider will store an encrypted copy of the linking key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of :term:`Bulletproofs<Bulletproof>` and :term:`Sigma protocols` over :term:`BLS12-381`.
