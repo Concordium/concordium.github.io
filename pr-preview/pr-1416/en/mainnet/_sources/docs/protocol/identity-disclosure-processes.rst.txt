@@ -42,7 +42,7 @@ Legal scenario 2: Investigation of person of interest
 
 3. If the IDP(s) can identify one or several database entries matching the user, then the IDP(s) sends all the corresponding account holder identity records to the Authority. Each record contains an encrypted :term:`linking key<Linking key>`, which allows the identity to be linked to the accounts opened with this identity.
 
-4. These linking keys are then sent to the PGs along with a court order from their jurisdiction by the Authority. The PGs decrypt their share of each key and return the resulting strings to the Authority.
+4. These linking keys are then sent to the PGs along with a court order from their jurisdiction by the Authority. The PGs decrypt their share of each linking key and return the resulting strings to the Authority.
 
 5. Once the Authority has collected the required threshold of shares (currently 2 out of 3 threshold) for a key from the PGs, it reconstructs the full key.
 

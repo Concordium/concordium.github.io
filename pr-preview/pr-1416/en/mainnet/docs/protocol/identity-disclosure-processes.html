@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/identity-disclosure-processes.24fb7d44-2674-4518-b768-62f421004651.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/identity-disclosure-processes.3f5b96b5-e965-432c-914a-7579f9eb1e95.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/identity-disclosure-processes';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/identity-disclosure-processes.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -807,7 +807,7 @@
 <li><p>A court order is required to start the disclosure process by the Authority in the jurisdiction(s) of the IDPs. The Authority sends the identifying data of a real-life person together with the official request to all IDPs on Concordium.</p></li>
 <li><p>The IDPs check their system for account holders that match the identity data they received from the Authority.</p></li>
 <li><p>If the IDP(s) can identify one or several database entries matching the user, then the IDP(s) sends all the corresponding account holder identity records to the Authority. Each record contains an encrypted <a class="reference internal" href="../resources/glossary.html#term-Linking-key"><span class="xref std std-term">linking key</span></a>, which allows the identity to be linked to the accounts opened with this identity.</p></li>
-<li><p>These linking keys are then sent to the PGs along with a court order from their jurisdiction by the Authority. The PGs decrypt their share of each key and return the resulting strings to the Authority.</p></li>
+<li><p>These linking keys are then sent to the PGs along with a court order from their jurisdiction by the Authority. The PGs decrypt their share of each linking key and return the resulting strings to the Authority.</p></li>
 <li><p>Once the Authority has collected the required threshold of shares (currently 2 out of 3 threshold) for a key from the PGs, it reconstructs the full key.</p></li>
 <li><p>Using the reconstructed keys, the Authority retrieves the list of all accounts associated with each account holder identity record across all IDPs.</p></li>
 <li><p>The Authority takes appropriate action based on the retrieved account and transaction information.</p></li>

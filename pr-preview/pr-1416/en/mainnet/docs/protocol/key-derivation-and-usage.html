@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.7463f6de-2861-48e0-98d7-eaf2b03a61eb.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.2600f77f-e06e-42ca-b420-189a2da1bb34.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/key-derivation-and-usage';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/key-derivation-and-usage.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -813,7 +813,7 @@ This structure is reflected in the key derivation tree structure:</p>
 </section>
 <section id="linking-key">
 <h3>Linking key<a class="headerlink" href="#linking-key" title="Link to this heading">#</a></h3>
-<p>Subtree 3’ defines the linking key used to generate the addresses of accounts. Technically the account address is linking key(linking key, x) where x is the account index. Knowing the linking key allows identifying all accounts that have been generated from a given identity.</p>
+<p>Subtree 3’ defines the linking key used to generate the addresses of accounts. Technically the account address is PRF(linking key, x) where PRF is a pseudorandom function and x is the account index. Knowing the linking key allows identifying all accounts that have been generated from a given identity.</p>
 <p>When an identity is issued, the Identity Provider will store an encrypted copy of the linking key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>.</p>
 <p>Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the linking key.</p>
 </section>
@@ -840,7 +840,7 @@ This structure is reflected in the key derivation tree structure:</p>
 <li><p>Blind signature randomness (subtree 4’)</p></li>
 <li><p>Pedersen commitment randomness (subtree 5’)</p></li>
 </ul>
-<p>The IDApp does not derive account keys (subtree 0’). Account keys are produced by the account wallets using their own key derivation methods.
+<p>The IDApp does not derive account keys (subtree 0’). Account keys are produced by the account wallets using their own key generation methods.
 For third-party wallet implementations, we recommend using the derivation path: m/44’/919’/0’/0’/accountIndex’.</p>
 </section>
 <section id="legacy-derivation-tree">
