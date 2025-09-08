@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/identity.3921e2ec-e80e-499d-8a9d-4c38e758f709.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/identity.1bd0ef9c-4bd8-4d96-939a-992467f29cf3.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/identity';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/identity.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -787,17 +787,17 @@
   <section id="reference-identity">
 <span id="identity-framework-on-concordium"></span><h1>Identity framework on Concordium<a class="headerlink" href="#reference-identity" title="Link to this heading">#</a></h1>
 <p>Concordium’s identity solution is designed to provide secure blockchain infrastructure that maintains accountability while preserving user privacy. The approach balances these requirements, enabling blockchain adoption across jurisdictions and ensuring regulatory compliance.</p>
-<p>Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, <a class="reference internal" href="#concordium-id"><span class="std std-ref">ConcordiumID</span></a> and <a class="reference internal" href="#web3-id"><span class="std std-ref">Web3 ID</span></a>.</p>
-<section id="concordiumid">
-<span id="concordium-id"></span><h2>ConcordiumID<a class="headerlink" href="#concordiumid" title="Link to this heading">#</a></h2>
-<p>The ConcordiumID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a ConcordiumID through identity verification with an approved <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">Identity Provider</span></a> before they can create and use accounts on the blockchain.</p>
-<p>After successful identity verification, the account holder receives a ConcordiumID, which enables them to:</p>
+<p>Concordium features two independent but interrelated identity layers that work together to provide a complete identity solution, <a class="reference internal" href="#concordium-id"><span class="std std-ref">Concordium ID</span></a> and <a class="reference internal" href="#web3-id"><span class="std std-ref">Web3 ID</span></a>.</p>
+<section id="concordium-id">
+<span id="id1"></span><h2>Concordium ID<a class="headerlink" href="#concordium-id" title="Link to this heading">#</a></h2>
+<p>The Concordium ID (also known as Base ID or Core ID) is the protocol-level identity system on Concordium. All users must obtain a Concordium ID through identity verification with an approved <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">Identity Provider</span></a> before they can create and use accounts on the blockchain.</p>
+<p>After successful identity verification, the account holder receives a Concordium ID, which enables them to:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="manage-accounts.html"><span class="doc">Create accounts</span></a> on the Concordium blockchain</p></li>
 <li><p><a class="reference internal" href="transactions.html"><span class="doc">Conduct transactions</span></a> within the networkusing <a class="reference internal" href="../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">zero-knowledge proofs</span></a> without revealing the underlying data</p></li>
 <li><p>Prove certain identity attributes (such as age or citizenship)</p></li>
 </ul>
-<p>The ConcordiumID is foundational to the accountability and privacy features of the Concordium blockchain.</p>
+<p>The Concordium ID is foundational to the accountability and privacy features of the Concordium blockchain.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to create a company identity using corporate documents rather than individual identification.
@@ -806,7 +806,7 @@ For more information, see <a class="reference external" href="https://developer.
 </div>
 </section>
 <section id="web3-id">
-<span id="id1"></span><h2>Web3 ID<a class="headerlink" href="#web3-id" title="Link to this heading">#</a></h2>
+<span id="id2"></span><h2>Web3 ID<a class="headerlink" href="#web3-id" title="Link to this heading">#</a></h2>
 <p>The Web3 ID suite (also referred to as Portable ID) is a system for issuing and managing <a class="reference internal" href="../resources/glossary.html#term-Verifiable-credential"><span class="xref std std-term">verifiable credentials</span></a>, based on the
 <a class="reference external" href="https://www.w3.org/TR/vc-data-model-2.0/">W3C Verifiable Credentials Data Model</a>.</p>
 <p>This next-generation portable ID tool can be used for:</p>
@@ -816,7 +816,7 @@ For more information, see <a class="reference external" href="https://developer.
 <li><p>Professional certifications</p></li>
 <li><p>Various other use cases requiring verified digital credentials</p></li>
 </ul>
-<p>While interaction with the Concordium blockchain always requires a ConcordiumID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.</p>
+<p>While interaction with the Concordium blockchain always requires a Concordium ID, Web3 ID verifiable credentials can be used both within the Concordium ecosystem and in off-chain environments.</p>
 <p><a class="reference internal" href="../network/web3-id/index.html"><span class="doc">Learn more about using Concordium’s ID layer</span></a>.</p>
 </section>
 <section id="key-participants">
@@ -840,7 +840,7 @@ For more information, see <a class="reference external" href="https://developer.
 <li><p><strong>Wallet</strong>: A wallet is a secure application where users manage their accounts, hold and transfer tokens on the network, and store Identity Credentials issued by Identity Providers. It also enables users to generate zero-knowledge proofs to share verified identity information without revealing personal data. <a class="reference internal" href="../guides/setup-wallets-lp.html"><span class="doc">View wallet setup guides</span></a>.</p></li>
 <li><p><strong>Seed (phrase)</strong>: A seed phrase is secret randomness created during wallet initialization. All cryptographic material needed for identity and account credentials is derived from this seed, allowing users to recover their Concordium accounts if needed.</p></li>
 <li><p><strong>Public Holder Identifier</strong>: An encrypted mapping between the user’s Identity Credentials and their account. This identifier requires a court order and multiple Privacy Guardians to be decrypted.</p></li>
-<li><p><strong>Account Holder Identity Records</strong>: A collection of records related to the account owner, including their identity information and an encrypted key that links to any other accounts opened with the same identity document. This data is stored in the IDP’s database.</p></li>
+<li><p><strong>Account Holder Identity Records</strong>: A collection of records related to the account owner, including their identity information and an encrypted  <a class="reference internal" href="../resources/glossary.html#term-Linking-key"><span class="xref std std-term">linking key</span></a> that links to any other accounts opened with the same identity document. This data is stored in the IDP’s database.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <ul>
@@ -935,7 +935,7 @@ For more information, see <a class="reference external" href="https://developer.
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordiumid">ConcordiumID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-id">Concordium ID</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web3-id">Web3 ID</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-participants">Key participants</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key concepts</a></li>

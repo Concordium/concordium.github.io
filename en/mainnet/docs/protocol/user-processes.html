@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/user-processes.98bad4fc-ab09-4182-82cc-7e0bca3f4a39.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/user-processes.5ce04bee-7913-4af6-b8dc-469c236ccf9a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/user-processes';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/user-processes.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -788,7 +788,7 @@
 <span id="reference-user-processes"></span><h1>User processes<a class="headerlink" href="#user-processes" title="Link to this heading">#</a></h1>
 <section id="account-creation">
 <h2>Account creation<a class="headerlink" href="#account-creation" title="Link to this heading">#</a></h2>
-<p>Users must complete an identity verification process to <a class="reference internal" href="manage-accounts.html"><span class="doc">create an account</span></a> and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as <a class="reference internal" href="../resources/glossary.html#term-Identity-credential"><span class="xref std std-term">Identity Credentials</span></a>), and accounts (which contain cryptographic addresses). Every account must be linked to a ConcordiumID Identity Credential.</p>
+<p>Users must complete an identity verification process to <a class="reference internal" href="manage-accounts.html"><span class="doc">create an account</span></a> and become a participant on the Concordium network. This guards against unknown actors, hackers or fraudsters abusing the network. Wallets in the Concordium ecosystem hold both identities (stored as <a class="reference internal" href="../resources/glossary.html#term-Identity-credential"><span class="xref std std-term">Identity Credentials</span></a>), and accounts (which contain cryptographic addresses). Every account must be linked to a Concordium ID Identity Credential.</p>
 <p>The account creation process follows these steps:</p>
 <ol class="arabic simple">
 <li><p>A user <a class="reference internal" href="../installation/downloads.html"><span class="doc">downloads</span></a> their chosen wallet application. <a class="reference internal" href="../guides/deciding-wallet.html"><span class="doc">Mobile, browser and desktop versions are available</span></a>.</p></li>
@@ -805,7 +805,7 @@
 <section id="verifiable-credentials-with-web3-id">
 <h2>Verifiable credentials with Web3 ID<a class="headerlink" href="#verifiable-credentials-with-web3-id" title="Link to this heading">#</a></h2>
 <p>As a supplementary feature to the base identity provided on wallet creation, verified credentials can be issued to a user to power enhanced use cases.</p>
-<p><a class="reference internal" href="identity.html#web3-id"><span class="std std-ref">Web3 ID</span></a> is based on the W3C standards for verifiable credentials. This makes them portable and interoperable. verifiable credentials can be used for KYC, compliance and regulation, for example to identify accredited investor status. Identity data, both ConcordiumID and Web3 ID verifiable credentials, can be used for off-chain uses such as zero-knowledge age verification.</p>
+<p><a class="reference internal" href="identity.html#web3-id"><span class="std std-ref">Web3 ID</span></a> is based on the W3C standards for verifiable credentials. This makes them portable and interoperable. verifiable credentials can be used for KYC, compliance and regulation, for example to identify accredited investor status. Identity data, both Concordium ID and Web3 ID verifiable credentials, can be used for off-chain uses such as zero-knowledge age verification.</p>
 <p>The Web3 ID suite can be used for:</p>
 <ul class="simple">
 <li><p>Issuance, management, and verification of digital certifications</p></li>
@@ -815,7 +815,7 @@
 <li><p>Age verification without revealing birth date</p></li>
 <li><p>Other use cases requiring verified digital credentials</p></li>
 </ul>
-<p>Web3 ID can leverage ConcordiumID, but doesn’t have to. The verifiable credentials can, in principle, be used off-chain, but benefit from both the ConcordiumID, as well as transparent events logs on-chain.</p>
+<p>Web3 ID can leverage Concordium ID, but doesn’t have to. The verifiable credentials can, in principle, be used off-chain, but benefit from both the Concordium ID, as well as transparent events logs on-chain.</p>
 </section>
 </section>
 

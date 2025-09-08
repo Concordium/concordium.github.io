@@ -19,7 +19,7 @@ The subtree of a single Identity Credential consists of:
 * Multiple subtrees that generate cryptographic material for the ID object itself
 
 
-.. image:: ../protocol/images/key-derivation.png
+.. image:: ../protocol/images/key-derivation-linking-key.png
    :alt: diagram of key derivation
 
 
@@ -43,24 +43,24 @@ Subtree 2' defines the holder identifier (essentially a public/private key pair)
 Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of a :term:`Privacy Guardian (PG)`. Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  :term:`Zero-knowledge proof` for the account opening. The proof is a combination of :term:`Bulletproofs<Bulletproof>` and :term:`Sigma protocols` over :term:`BLS12-381`. For generating the zero-knowledge proof, one needs the secret identifier.
 
 
-Pseudo-random function Key
---------------------------
+Linking key
+-----------
 
-Subtree 3' defines the PRF key used to generate the addresses of accounts. Technically the account address is PRF(PRF key, x) where x is the account index. Knowing the PRF key allows identifying all accounts that have been generated from a given identity.
+Subtree 3' defines the linking key used to generate the addresses of accounts. Technically the account address is PRF(linking key, x) where PRF is a pseudorandom function and x is the account index. Knowing the linking key allows identifying all accounts that have been generated from a given identity.
 
 
-When an identity is issued, the Identity Provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of :term:`Bulletproofs<Bulletproof>` and :term:`Sigma protocols` over :term:`BLS12-381`.
+When an identity is issued, the Identity Provider will store an encrypted copy of the linking key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of :term:`Bulletproofs<Bulletproof>` and :term:`Sigma protocols` over :term:`BLS12-381`.
 
-Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the PRF key.
+Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the linking key.
 
 
 Blind signature randomness
 --------------------------
 
-Subtree 4' defines randomness m0 used in a blind signature protocol between the Identity Provider and the user when issuing a new identity. This allows the user to get a signature on both the identity attributes (e.g. name, birthdate) and things like the PRF key and the IDcredSec without the Identity Provider learning the secret values.
+Subtree 4' defines randomness m0 used in a blind signature protocol between the Identity Provider and the user when issuing a new identity. This allows the user to get a signature on both the identity attributes (e.g. name, birthdate) and things like the linking key and the IDcredSec without the Identity Provider learning the secret values.
 
 
-The randomness m0 is needed as part of the ID issuance protocol. As part of this protocol the user needs to prove knowledge of m0. This is part of the same zero-knowledge proof as mentioned in the PRF key section.
+The randomness m0 is needed as part of the ID issuance protocol. As part of this protocol the user needs to prove knowledge of m0. This is part of the same zero-knowledge proof as mentioned in the linking key section.
 
 We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the :term:`seed phrase`, the user can recover the signature from the Identity Provider at a later point (without having to do another blind signing ceremony).
 
@@ -77,8 +77,21 @@ As part of the account opening proof, the user also needs to show that the commi
 
 The advantage of generating the commit randomness from the seed phrase is that the user can recover the commitment opening information.
 
+Concordium IDApp key derivation
+===============================
+
+The Concordium IDApp uses the same key derivation structure for:
+
+* Holder Identifier (subtree 2’)
+* Linking key (subtree 3’)
+* Blind signature randomness (subtree 4’)
+* Pedersen commitment randomness (subtree 5’)
+
+The IDApp does not derive account keys (subtree 0’). Account keys are produced by the account wallets using their own key generation methods.
+For third-party wallet implementations, we recommend using the derivation path: m/44'/919'/0'/0'/accountIndex'.
+
 Legacy derivation tree
-----------------------
+======================
 
 .. note::
 
@@ -86,6 +99,6 @@ Legacy derivation tree
 
 Some older wallets use a legacy derivation tree. The only differences between this and the derivation tree described above are the prefix m/1105'/0/0'/0'/ID', which omits the Identity Provider index, and the use of different indices for the key subtrees in the Identity Credential subtree. For example, in the legacy tree the account signature keys are located in subtree 2' instead of 0'. It is important to note that the split of keys into subtrees is equivalent to those in the above tree.
 
-.. image:: ../protocol/images/legacy-key-derivation.png
+.. image:: ../protocol/images/legacy-key-derivation-linking-key.png
    :alt: diagram of key derivation
 

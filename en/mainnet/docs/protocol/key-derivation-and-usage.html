@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.d0ca55b7-3a9b-42f0-a205-c4d2d1995375.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/key-derivation-and-usage.e3219c46-0f8a-4bb6-b334-80265e506e25.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/key-derivation-and-usage';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/key-derivation-and-usage.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -798,7 +798,7 @@ This structure is reflected in the key derivation tree structure:</p>
 <li><p>A subtree dedicated to account signature keys used to sign transfers</p></li>
 <li><p>Multiple subtrees that generate cryptographic material for the ID object itself</p></li>
 </ul>
-<img alt="diagram of key derivation" src="../../_images/key-derivation.png" />
+<img alt="diagram of key derivation" src="../../_images/key-derivation-linking-key.png" />
 <section id="derivation-structure">
 <h2>Derivation structure<a class="headerlink" href="#derivation-structure" title="Link to this heading">#</a></h2>
 <p>All cryptographic keys related to an identity object and the related accounts are generated from a subtree with prefix=m/44’/919’/IDP’/ID’ where IDP is the index of the Identity Provider and ID is the index of the ID, e.g. ID=0 for the first identity issued to the user.</p>
@@ -811,16 +811,16 @@ This structure is reflected in the key derivation tree structure:</p>
 <p>Subtree 2’ defines the holder identifier (essentially a public/private key pair) which is used as a user identifier in Concordium’s <a class="reference internal" href="identity-disclosure-processes.html"><span class="doc">Identity Disclosure</span></a> scheme. Technically, the public identifier IDcredPub is an element in G1 of BLS12-381 and the secret identifier IDcredSec is a field element in the corresponding finite field.</p>
 <p>Each account created with the given identity contains the public identifier in encrypted form (technically, secret shared where each share is ElGamal encrypted under the public key of a <a class="reference internal" href="../resources/glossary.html#term-Privacy-guardian-PG"><span class="xref std std-term">Privacy Guardian (PG)</span></a>. Generating the encryption requires knowledge of the secret identifier. The correctness of this encryption is proven in zero-knowledge as part of a larger  <a class="reference internal" href="../resources/glossary.html#term-Zero-knowledge-proof"><span class="xref std std-term">Zero-knowledge proof</span></a> for the account opening. The proof is a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>. For generating the zero-knowledge proof, one needs the secret identifier.</p>
 </section>
-<section id="pseudo-random-function-key">
-<h3>Pseudo-random function Key<a class="headerlink" href="#pseudo-random-function-key" title="Link to this heading">#</a></h3>
-<p>Subtree 3’ defines the PRF key used to generate the addresses of accounts. Technically the account address is PRF(PRF key, x) where x is the account index. Knowing the PRF key allows identifying all accounts that have been generated from a given identity.</p>
-<p>When an identity is issued, the Identity Provider will store an encrypted copy of the PRF key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>.</p>
-<p>Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the PRF key.</p>
+<section id="linking-key">
+<h3>Linking key<a class="headerlink" href="#linking-key" title="Link to this heading">#</a></h3>
+<p>Subtree 3’ defines the linking key used to generate the addresses of accounts. Technically the account address is PRF(linking key, x) where PRF is a pseudorandom function and x is the account index. Knowing the linking key allows identifying all accounts that have been generated from a given identity.</p>
+<p>When an identity is issued, the Identity Provider will store an encrypted copy of the linking key (same encryption scheme as mentioned above for the holder identifier). The correctness of this encryption is proven to the Identity Provider in zero-knowledge. The proof is again  a combination of <a class="reference internal" href="../resources/glossary.html#term-Bulletproof"><span class="xref std std-term">Bulletproofs</span></a> and <a class="reference internal" href="../resources/glossary.html#term-Sigma-protocols"><span class="xref std std-term">Sigma protocols</span></a> over <a class="reference internal" href="../resources/glossary.html#term-BLS12-381"><span class="xref std std-term">BLS12-381</span></a>.</p>
+<p>Furthermore, in the account opening proof one also needs to prove that the account address was correctly computed. This also requires knowledge of the linking key.</p>
 </section>
 <section id="blind-signature-randomness">
 <h3>Blind signature randomness<a class="headerlink" href="#blind-signature-randomness" title="Link to this heading">#</a></h3>
-<p>Subtree 4’ defines randomness m0 used in a blind signature protocol between the Identity Provider and the user when issuing a new identity. This allows the user to get a signature on both the identity attributes (e.g. name, birthdate) and things like the PRF key and the IDcredSec without the Identity Provider learning the secret values.</p>
-<p>The randomness m0 is needed as part of the ID issuance protocol. As part of this protocol the user needs to prove knowledge of m0. This is part of the same zero-knowledge proof as mentioned in the PRF key section.</p>
+<p>Subtree 4’ defines randomness m0 used in a blind signature protocol between the Identity Provider and the user when issuing a new identity. This allows the user to get a signature on both the identity attributes (e.g. name, birthdate) and things like the linking key and the IDcredSec without the Identity Provider learning the secret values.</p>
+<p>The randomness m0 is needed as part of the ID issuance protocol. As part of this protocol the user needs to prove knowledge of m0. This is part of the same zero-knowledge proof as mentioned in the linking key section.</p>
 <p>We observe that the randomness could be generated from scratch by the wallet during the ID issuance process. However, by having it generated from the <a class="reference internal" href="../resources/glossary.html#term-Seed-phrase"><span class="xref std std-term">seed phrase</span></a>, the user can recover the signature from the Identity Provider at a later point (without having to do another blind signing ceremony).</p>
 </section>
 <section id="pedersen-commitment-randomness">
@@ -830,15 +830,27 @@ This structure is reflected in the key derivation tree structure:</p>
 <p>As part of the account opening proof, the user also needs to show that the commitments have been generated correctly from the ID attributes signed by the Identity Provider. This again requires knowledge of the commit randomness.</p>
 <p>The advantage of generating the commit randomness from the seed phrase is that the user can recover the commitment opening information.</p>
 </section>
+</section>
+<section id="concordium-idapp-key-derivation">
+<h2>Concordium IDApp key derivation<a class="headerlink" href="#concordium-idapp-key-derivation" title="Link to this heading">#</a></h2>
+<p>The Concordium IDApp uses the same key derivation structure for:</p>
+<ul class="simple">
+<li><p>Holder Identifier (subtree 2’)</p></li>
+<li><p>Linking key (subtree 3’)</p></li>
+<li><p>Blind signature randomness (subtree 4’)</p></li>
+<li><p>Pedersen commitment randomness (subtree 5’)</p></li>
+</ul>
+<p>The IDApp does not derive account keys (subtree 0’). Account keys are produced by the account wallets using their own key generation methods.
+For third-party wallet implementations, we recommend using the derivation path: m/44’/919’/0’/0’/accountIndex’.</p>
+</section>
 <section id="legacy-derivation-tree">
-<h3>Legacy derivation tree<a class="headerlink" href="#legacy-derivation-tree" title="Link to this heading">#</a></h3>
+<h2>Legacy derivation tree<a class="headerlink" href="#legacy-derivation-tree" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The legacy derivation tree is only mentioned here for completeness and should never be used for new products.</p>
 </div>
 <p>Some older wallets use a legacy derivation tree. The only differences between this and the derivation tree described above are the prefix m/1105’/0/0’/0’/ID’, which omits the Identity Provider index, and the use of different indices for the key subtrees in the Identity Credential subtree. For example, in the legacy tree the account signature keys are located in subtree 2’ instead of 0’. It is important to note that the split of keys into subtrees is equivalent to those in the above tree.</p>
-<img alt="diagram of key derivation" src="../../_images/legacy-key-derivation.png" />
-</section>
+<img alt="diagram of key derivation" src="../../_images/legacy-key-derivation-linking-key.png" />
 </section>
 </section>
 
@@ -928,12 +940,13 @@ This structure is reflected in the key derivation tree structure:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-structure">Derivation structure</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-keys">Account keys</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#holder-identifier">Holder Identifier</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-random-function-key">Pseudo-random function Key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linking-key">Linking key</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#blind-signature-randomness">Blind signature randomness</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pedersen-commitment-randomness">Pedersen commitment randomness</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#legacy-derivation-tree">Legacy derivation tree</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-idapp-key-derivation">Concordium IDApp key derivation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legacy-derivation-tree">Legacy derivation tree</a></li>
 </ul>
   </nav></div>
 
