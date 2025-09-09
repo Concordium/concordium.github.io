@@ -16,12 +16,12 @@ JavaScript/TypeScript SDK for PLT operations in web applications
 :ref:`Rust SDK<plt-rust-sdk>`:
 Concordium Rust SDK for PLT operations in native applications
 
-DevNet Beta gRPC Connection
+Testnet gRPC Connection
 ===========================
 
-When connecting to the DevNet Beta gRPC node, use the following parameters:
+When connecting to the testnet gRPC node, use the following parameters:
 
-- **Address:** ``https://grpc.devnet-plt-beta.concordium.com``
+- **Address:** ``https://grpc.testnet.concordium.com``
 - **Port:** ``20000``
 
 
