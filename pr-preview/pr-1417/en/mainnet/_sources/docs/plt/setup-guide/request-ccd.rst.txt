@@ -27,4 +27,7 @@ Within a few seconds, your account will be credited with 20,000 CCD.
 .. note::
    Each account can request CCD only once.
 
+.. note::
+   You can request test CCDs only for an account that does not have any incoming transactions.
+
 
