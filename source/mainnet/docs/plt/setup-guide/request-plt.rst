@@ -124,7 +124,6 @@ What happens next
 =================
 
 * Tokens will be issued manually by the Concordium team
-* You'll receive confirmation in Discord when your PLT has been issued
 * The tokens will be issued directly to your nominated account address
 
 
