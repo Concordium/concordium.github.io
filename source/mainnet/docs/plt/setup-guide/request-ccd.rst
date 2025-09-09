@@ -4,11 +4,11 @@
 Request test CCD
 ================
 
-This guide explains how to request test CCD tokens on DevNet, which are required for transactions and PLT operations.
+This guide explains how to request test CCD tokens on testnet, which are required for transactions and PLT operations.
 
 Follow these steps to request test CCD:
 
-1. Open your Devnet Browser Wallet
+1. Open your testnet Browser Wallet
 2. Go to **Accounts** and select your account
 3. On the main page click the **Activity** button. This will open the activity page for your account.
 

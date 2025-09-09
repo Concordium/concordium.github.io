@@ -1,5 +1,3 @@
-:orphan:
-
 .. include:: ../../variables.rst
 .. _change-mw-acct-name:
 

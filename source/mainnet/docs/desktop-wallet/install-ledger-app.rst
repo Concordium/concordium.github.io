@@ -1,5 +1,3 @@
-:orphan:
-
 .. include:: ../../variables.rst
 
 .. |nano-s-firmware| replace:: **2.1.0**

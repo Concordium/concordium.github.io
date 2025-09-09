@@ -4,10 +4,7 @@
 Request PLT issuance
 =====================
 
-This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on DevNet for testing and development purposes.
-
-.. warning::
-   All issued tokens will be cleared with the restart of the DevNet.
+This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on testnet for testing and development purposes.
 
 .. _plt-overview:
 
@@ -48,13 +45,16 @@ Example metadata file
       "display": "https://location.of/the/display.png" }
    }
 
+The metadata can also be any publicly accessible URL. For example, this can be an IPFS link to a logo or other asset, or a URL to a JSON metadata file — it’s entirely up to you. 
+If you prefer a full JSON object, see the example above.
+If you prefer a link to a logo image, we recommend using IPFS (e.g., via IPFS Desktop), but it’s optional. If you use IPFS, make sure the content is pinned and reachable. For IPFS Desktop instructions, follow `this guide <https://docs.ipfs.tech/how-to/desktop-app/#share-files>`_.
 
 .. _plt-request-process:
 
 Request process
 ===============
 
-Follow these steps to request PLT issuance on DevNet:
+Follow these steps to request PLT issuance on testnet:
 
 1. **Prepare your token metadata**
 
@@ -128,4 +128,4 @@ What happens next
 * The tokens will be issued directly to your nominated account address
 
 
-You are now ready to start using your custom PLT for testing on DevNet. Learn about the available operations in :ref:`PLT Operations <plt-operations>`.
+You are now ready to start using your custom PLT for testing on testnet. Learn about the available operations in :ref:`PLT Operations <plt-operations>`.

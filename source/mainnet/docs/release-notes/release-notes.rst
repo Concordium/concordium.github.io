@@ -1,4 +1,5 @@
 :orphan:
+:no-search:
 
 .. include:: ../../variables.rst
 .. _testnet-release-notes:
