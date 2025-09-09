@@ -1,8 +1,8 @@
 :orphan:
 :no-search:
-   
+
 .. _plt-devnet-connection:
-   
+
 =================
 Connect to DevNet
 =================

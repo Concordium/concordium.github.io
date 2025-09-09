@@ -45,7 +45,7 @@ Example metadata file
       "display": "https://location.of/the/display.png" }
    }
 
-The metadata can also be any publicly accessible URL. For example, this can be an IPFS link to a logo or other asset, or a URL to a JSON metadata file — it’s entirely up to you. 
+The metadata can also be any publicly accessible URL. For example, this can be an IPFS link to a logo or other asset, or a URL to a JSON metadata file — it’s entirely up to you.
 If you prefer a full JSON object, see the example above.
 If you prefer a link to a logo image, we recommend using IPFS (e.g., via IPFS Desktop), but it’s optional. If you use IPFS, make sure the content is pinned and reachable. For IPFS Desktop instructions, follow `this guide <https://docs.ipfs.tech/how-to/desktop-app/#share-files>`_.
 
