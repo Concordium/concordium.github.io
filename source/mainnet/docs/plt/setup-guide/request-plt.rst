@@ -21,33 +21,9 @@ PLT metadata
 ============
 
 
-To provide visual assets like token thumbnails and images, you should create a metadata JSON file and host it off-chain. Ideally, this should be uploaded to IPFS or another public storage online.
-For a tutorial on how to use IPFS by running a node, read :ref:`this article <upload-nft>`. Or you can use a pinning solution, i.e https://pinata.cloud/ or any other decentralized storage systems. The URL of the metadata file will be added to the PLT definition.
+To provide visual assets like token thumbnails and images, create a metadata JSON file and host it off-chain. You can read more about the **metadata URL** parameter in `this section <https://proposals.concordium.com/CIS/cis-7.html#metadata-url>`_ of the CIS-7 standard, and about the metadata format in `this chapter <https://proposals.concordium.com/CIS/cis-7.html#token-metadata-format>`_ of the standard.
 
-Metadata properties
--------------------
-
-**Thumbnail**: URL - An image URL to a small image for displaying the asset
-
-**Display**: URL - An image URL to a large image for displaying the asset
-
-Example metadata file
----------------------
-
-.. code-block:: json
-
-   {
-      "name": "PLT Name",
-      "symbol": "PLT Symbol",
-      "decimals": 6,
-      "description": "A protocol level stablecoin issued on Concordium.",
-      "thumbnail": "https://location.of/the/thumbnail.png" },
-      "display": "https://location.of/the/display.png" }
-   }
-
-The metadata can also be any publicly accessible URL. For example, this can be an IPFS link to a logo or other asset, or a URL to a JSON metadata file — it’s entirely up to you.
-If you prefer a full JSON object, see the example above.
-If you prefer a link to a logo image, we recommend using IPFS (e.g., via IPFS Desktop), but it’s optional. If you use IPFS, make sure the content is pinned and reachable. For IPFS Desktop instructions, follow `this guide <https://docs.ipfs.tech/how-to/desktop-app/#share-files>`_.
+An option is to upload it to IPFS or another public storage online. For a tutorial on how to use IPFS by running a node, read :ref:`this article <upload-nft>`. Alternatively, you can use a pinning solution such as https://pinata.cloud/ or any other decentralized storage systems. The URL of the metadata file will be added to the PLT definition.
 
 .. _plt-request-process:
 
