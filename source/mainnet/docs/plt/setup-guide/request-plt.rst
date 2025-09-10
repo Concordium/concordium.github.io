@@ -65,7 +65,7 @@ Follow these steps to request PLT issuance on testnet:
 Token definition properties
 ===========================
 
-Your PLT will be created with the following parameters:
+For a detailed explanation of the parameters, please read the `CIS-7: Protocol-level Tokens (PLTs) Standard <https://proposals.concordium.com/CIS/cis-7.html#common-types>`_. Your PLT will be created with the following parameters:
 
 .. list-table::
    :header-rows: 1
