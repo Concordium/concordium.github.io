@@ -24,30 +24,9 @@ PLT metadata
 ============
 
 
-To provide visual assets like token thumbnails and images, you should create a metadata JSON file and host it off-chain. Ideally, this should be uploaded to IPFS or another public storage online.
-For a tutorial on how to use IPFS by running a node, read :ref:`this article <upload-nft>`. Or you can use a pinning solution, i.e https://pinata.cloud/ or any other decentralized storage systems. The URL of the metadata file will be added to the PLT definition.
+To provide visual assets like token thumbnails and images, you should create a metadata JSON file and host it off-chain. You can read more about the **metadata URL** parameter in `this section <https://proposals.concordium.com/CIS/cis-7.html#metadata-url>`_ of the CIS-7 standard and you can read more about the metadata format in `this chapter <https://proposals.concordium.com/CIS/cis-7.html#token-metadata-format>`_ of the standard.
 
-Metadata properties
--------------------
-
-**Thumbnail**: URL - An image URL to a small image for displaying the asset
-
-**Display**: URL - An image URL to a large image for displaying the asset
-
-Example metadata file
----------------------
-
-.. code-block:: json
-
-   {
-      "name": "PLT Name",
-      "symbol": "PLT Symbol",
-      "decimals": 6,
-      "description": "A protocol level stablecoin issued on Concordium.",
-      "thumbnail": "https://location.of/the/thumbnail.png" },
-      "display": "https://location.of/the/display.png" }
-   }
-
+An option is to upload it to IPFS or another public storage online. For a tutorial on how to use IPFS by running a node, read :ref:`this article <upload-nft>`. Or you can use a pinning solution, i.e https://pinata.cloud/ or any other decentralized storage systems. The URL of the metadata file will be added to the PLT definition.
 
 .. _plt-request-process:
 
@@ -89,7 +68,7 @@ Follow these steps to request PLT issuance on DevNet:
 Token definition properties
 ===========================
 
-Your PLT will be created with the following parameters:
+For a detailed explanation of the parameters, please read the `CIS-7: Protocol-level Tokens (PLTs) Standard <https://proposals.concordium.com/CIS/cis-7.html#common-types>`_. Your PLT will be created with the following parameters:
 
 .. list-table::
    :header-rows: 1
