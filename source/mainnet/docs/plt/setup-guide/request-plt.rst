@@ -24,7 +24,7 @@ PLT metadata
 ============
 
 
-To provide visual assets like token thumbnails and images, you should create a metadata JSON file and host it off-chain. You can read more about the **metadata URL** parameter in `this section <https://proposals.concordium.com/CIS/cis-7.html#metadata-url>`_ of the CIS-7 standard and you can read more about the metadata format in `this chapter <https://proposals.concordium.com/CIS/cis-7.html#token-metadata-format>`_ of the standard.
+To provide visual assets like token thumbnails and images, create a metadata JSON file and host it off-chain. You can read more about the **metadata URL** parameter in `this section <https://proposals.concordium.com/CIS/cis-7.html#metadata-url>`_ of the CIS-7 standard, and about the metadata format in `this chapter <https://proposals.concordium.com/CIS/cis-7.html#token-metadata-format>`_ of the standard.
 
 An option is to upload it to IPFS or another public storage online. For a tutorial on how to use IPFS by running a node, read :ref:`this article <upload-nft>`. Or you can use a pinning solution, i.e https://pinata.cloud/ or any other decentralized storage systems. The URL of the metadata file will be added to the PLT definition.
 
