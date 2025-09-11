@@ -33,6 +33,9 @@ The off-chain part of the account contains:
 -  the identity an account is created from (needed for managing
    the account on the chain)
 
+.. Note::
+   It is possible to create a shared account where multiple users share one account. For more information, see :ref:`Overview of shared accounts with multiple credentials<overview-shared-accounts>`.
+
 How to use an account
 ======================
 
@@ -65,7 +68,6 @@ Account creation is an on-chain transaction that submits a credential containing
    :hidden:
    :maxdepth: 1
 
-   account-creation
    account-concepts
    account-aliases
 
