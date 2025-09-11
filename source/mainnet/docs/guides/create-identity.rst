@@ -85,6 +85,7 @@ To learn more about identities and accounts, see :ref:`Identitity <reference-ide
    .. Note::
       You can change the name of an identity after it has been created. Go to the **Identities** page. Select the identity. Click |edit| next to the identity name. Change the name and click the |save| to save the change.
 
+.. _create-testnet-identity-bw:
 
 .. dropdown:: |bw|
 

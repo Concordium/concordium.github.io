@@ -76,7 +76,7 @@ Optionally specify a block hash for historical token lists.
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -144,7 +144,7 @@ Set the token ID to query and optionally specify a block hash for historical dat
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -208,7 +208,7 @@ Set the account address to query and optionally specify a block hash for histori
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -303,7 +303,7 @@ Configure the recipient address and amount to complete the transfer.
     async fn main() -> anyhow::Result<()> {
         println!("Connecting to Concordium devnet...");
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -415,7 +415,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -508,7 +508,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -605,7 +605,7 @@ Only the token issuer can modify the allow list.
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -692,7 +692,7 @@ Only the token issuer can modify the allow list.
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -781,7 +781,7 @@ Accounts on the deny list cannot hold the token when deny list is enabled.
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -867,7 +867,7 @@ Only the token issuer can modify the deny list.
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -948,7 +948,7 @@ This example demonstrates how to suspend balance transfer operations for a Proto
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;
@@ -1025,7 +1025,7 @@ This example demonstrates how to resume balance transfer operations for a Protoc
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
         let mut client = v2::Client::new(v2::Endpoint::from_str(
-            "https://grpc.devnet-plt-beta.concordium.com:20000",
+            "https://grpc.testnet.concordium.com:20000",
         )?)
         .await
         .context("Failed to connect to Concordium node")?;

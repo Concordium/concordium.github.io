@@ -1,3 +1,6 @@
+:orphan:
+:no-search:
+
 .. _plt-account-creation:
 
 ========================
