@@ -54,13 +54,13 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/setup-guide/index.d2b690e3-24d1-498f-bd88-0b41be3b2036.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/setup-guide/index.b50e7ed6-04c4-4127-8c79-f14949cff541.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/setup-guide/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/setup-guide/index.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Set up Browser Wallet for DevNet" href="browser-wallet.html" />
+    <link rel="next" title="Request test CCD" href="request-ccd.html" />
     <link rel="prev" title="Protocol-Level Tokens (PLTs)" href="../index.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -527,10 +527,6 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">What are Protocol-Level Tokens (PLTs)?</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Get started with PLTs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="browser-wallet.html">Set up Browser Wallet for DevNet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="devnet-connection.html">Connect to DevNet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="identity-creation.html">Create a DevNet identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="account-creation.html">Create a DevNet account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="request-ccd.html">Request test CCD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="request-plt.html">Request PLT issuance</a></li>
 </ul>
@@ -786,7 +782,7 @@
                   
   <section id="get-started-with-plts">
 <span id="plt-setup-guide"></span><h1>Get started with PLTs<a class="headerlink" href="#get-started-with-plts" title="Link to this heading">#</a></h1>
-<p>This section covers everything you need to get started with Protocol-Level Tokens (PLTs) on Concordium’s DevNet. Read the following overview to understand the PLT issuance process before proceeding to the setup guides.</p>
+<p>This section covers everything you need to get started with Protocol-Level Tokens (PLTs) on Concordium’s testnet. Read the following overview to understand the PLT issuance process before proceeding to the setup guides.</p>
 <section id="plt-issuance-process-overview">
 <h2>PLT issuance process overview<a class="headerlink" href="#plt-issuance-process-overview" title="Link to this heading">#</a></h2>
 <p>To issue and work with PLTs on the Concordium network, the following steps are required:</p>
@@ -797,26 +793,25 @@
 <li><p><strong>Concordium creates the new PLT</strong>. Creating a new PLT is a chain-governance operation. The Concordium team will convene to perform a chain update to issue the PLT token. After the chain update, the PLT is created with the initial supply (if any) available on the nominated account.</p></li>
 <li><p><strong>Perform Token-Holder and Query Transactions</strong>. Once your PLT is created, you can perform the following operations: transferring PLTs, querying token lists, getting token information, and checking account balances using the available tools and SDKs.</p></li>
 </ol>
-<p>The PLT documentation guides will walk you through this entire process. We’ll start with setting up your DevNet environment, guide you through the PLT issuance process, and show you how to perform operations with your PLTs once they’re created. Beyond the initial setup, you’ll find detailed information on token transfers, querying token information, integrating with SDKs, and working with the Concordium Client CLI Tool to manage your PLTs.</p>
+<p>The PLT documentation guides will walk you through this entire process. We’ll start with setting up your testnet environment, guide you through the PLT issuance process, and show you how to perform operations with your PLTs once they’re created. Beyond the initial setup, you’ll find detailed information on token transfers, querying token information, integrating with SDKs, and working with the Concordium Client CLI Tool to manage your PLTs.</p>
 </section>
-<section id="devnet-setup-guide">
-<h2>DevNet setup guide<a class="headerlink" href="#devnet-setup-guide" title="Link to this heading">#</a></h2>
-<p>Before you can issue or interact with PLTs on DevNet, you need to set up your environment by following these steps:</p>
+<section id="testnet-plt-setup-guide">
+<h2>Testnet PLT setup guide<a class="headerlink" href="#testnet-plt-setup-guide" title="Link to this heading">#</a></h2>
+<p>Before you can issue or interact with PLTs on testnet, you need to set up your environment by following these steps:</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="browser-wallet.html"><span class="doc">Set up Browser Wallet for DevNet</span></a> - Install the custom DevNet Browser Wallet</p></li>
-<li><p><a class="reference internal" href="devnet-connection.html"><span class="doc">Connect to DevNet</span></a> - Configure your wallet to connect to the DevNet environment</p></li>
-<li><p><a class="reference internal" href="identity-creation.html"><span class="doc">Create a DevNet identity</span></a> - Create a new identity on DevNet, which is required for account creation</p></li>
-<li><p><a class="reference internal" href="account-creation.html"><span class="doc">Create a DevNet account</span></a> - Create a new account on DevNet using your identity</p></li>
-<li><p><a class="reference internal" href="request-ccd.html"><span class="doc">Request test CCD on DevNet</span></a> - Request test CCD tokens needed for transactions</p></li>
-<li><p><a class="reference internal" href="request-plt.html"><span class="doc">Request PLT issuance</span></a> - Submit a request to have your PLT issued on DevNet</p></li>
+<li><p><a class="reference internal" href="../../installation/downloads.html#downloads-browser-wallet-testnet"><span class="std std-ref">Download Browser Wallet</span></a> - Download and install the Browser Wallet extension</p></li>
+<li><p><a class="reference internal" href="../../browser-wallet/setup-browser-wallet.html#switch-network"><span class="std std-ref">Connect Browser Wallet to testnet</span></a> - Follow the guide to connect to testnet</p></li>
+<li><p><a class="reference internal" href="../../guides/create-identity.html#create-testnet-identity-bw"><span class="std std-ref">Create a testnet identity</span></a> - Create a new identity on testnet, which is required for account creation; Use “Concordium testnet IP” as the Identity Provider</p></li>
+<li><p><a class="reference internal" href="../../guides/create-account.html#create-account"><span class="std std-ref">Create a testnet account</span></a> - Create a new account on testnet using your identity</p></li>
+<li><p><a class="reference internal" href="request-ccd.html"><span class="doc">Request test CCD on testnet</span></a> - Request test CCD tokens needed for transactions</p></li>
+<li><p><a class="reference internal" href="request-plt.html"><span class="doc">Request PLT issuance</span></a> - Submit a request to have your PLT issued on testnet</p></li>
 </ol>
-<p>These guides will walk you through the complete setup process to prepare you for working with PLTs on Concordium’s DevNet environment.</p>
+<p>These guides will walk you through the complete setup process to prepare you for working with PLTs on Concordium’s testnet environment.</p>
 </section>
-<section id="ccdscan-for-devnet">
-<h2>CCDScan for DevNet<a class="headerlink" href="#ccdscan-for-devnet" title="Link to this heading">#</a></h2>
-<p>You can explore transactions, accounts, and PLT activity on DevNet using the dedicated version of CCDScan, specifically configured for the DevNet Beta environment.
-This version reflects only DevNet data and is isolated from Testnet and Mainnet.</p>
-<p><a class="reference external" href="https://devnet-plt-beta.ccdscan.io">DevNet CCDScan</a></p>
+<section id="ccdscan-for-testnet">
+<h2>CCDScan for testnet<a class="headerlink" href="#ccdscan-for-testnet" title="Link to this heading">#</a></h2>
+<p>You can explore transactions, accounts, and PLT activity on testnet using the dedicated version of CCDScan, specifically configured for the testnet environment.
+This version reflects only testnet data and is isolated from DevNet and Mainnet. You can access it <a class="reference external" href="https://testnet.ccdscan.io">here</a></p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -878,11 +873,11 @@ This version reflects only DevNet data and is isolated from Testnet and Mainnet.
       </div>
     </a>
     <a class="right-next"
-       href="browser-wallet.html"
+       href="request-ccd.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Set up Browser Wallet for DevNet</p>
+        <p class="prev-next-title">Request test CCD</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -906,8 +901,8 @@ This version reflects only DevNet data and is isolated from Testnet and Mainnet.
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-issuance-process-overview">PLT issuance process overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#devnet-setup-guide">DevNet setup guide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ccdscan-for-devnet">CCDScan for DevNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testnet-plt-setup-guide">Testnet PLT setup guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ccdscan-for-testnet">CCDScan for testnet</a></li>
 </ul>
   </nav></div>
 

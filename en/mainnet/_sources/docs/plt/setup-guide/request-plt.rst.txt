@@ -4,10 +4,7 @@
 Request PLT issuance
 =====================
 
-This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on DevNet for testing and development purposes.
-
-.. warning::
-   All issued tokens will be cleared with the restart of the DevNet.
+This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on testnet for testing and development purposes.
 
 .. _plt-overview:
 
@@ -33,7 +30,7 @@ An option is to upload it to IPFS or another public storage online. For a tutori
 Request process
 ===============
 
-Follow these steps to request PLT issuance on DevNet:
+Follow these steps to request PLT issuance on testnet:
 
 1. **Prepare your token metadata**
 
@@ -103,8 +100,7 @@ What happens next
 =================
 
 * Tokens will be issued manually by the Concordium team
-* You'll receive confirmation in Discord when your PLT has been issued
 * The tokens will be issued directly to your nominated account address
 
 
-You are now ready to start using your custom PLT for testing on DevNet. Learn about the available operations in :ref:`PLT Operations <plt-operations>`.
+You are now ready to start using your custom PLT for testing on testnet. Learn about the available operations in :ref:`PLT Operations <plt-operations>`.

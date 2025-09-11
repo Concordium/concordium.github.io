@@ -69,7 +69,7 @@ Retrieve all Protocol-Level Tokens available on the network:
     import { credentials } from '@grpc/grpc-js';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -108,7 +108,7 @@ Retrieve detailed information about a specific PLT:
     import { Cbor, TokenId, TokenInfo } from '@concordium/web-sdk/plt';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -152,7 +152,7 @@ Query account information including PLT balances:
     import { Cbor } from '@concordium/web-sdk/plt';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -214,7 +214,7 @@ Transfer PLTs between accounts:
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -323,7 +323,7 @@ Mint new tokens (issuer only):
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -415,7 +415,7 @@ Burn existing tokens (issuer only):
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -512,7 +512,7 @@ Add an account to the token's allow list (issuer only):
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -609,7 +609,7 @@ Remove an account from the token's allow list (issuer only):
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -706,7 +706,7 @@ Add an account to the token's deny list (issuer only):
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl() //  credentials.Insecure(),
     );
@@ -803,7 +803,7 @@ Remove an account from the token's deny list (issuer only):
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -899,7 +899,7 @@ This example demonstrates how to suspend balance transfer operations for a Proto
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -1000,7 +1000,7 @@ This example demonstrates how to resume balance transfer operations for a Protoc
     import { readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.devnet-plt-beta.concordium.com",
+        "grpc.testnet.concordium.com",
         Number(20000),
         credentials.createSsl()
     );

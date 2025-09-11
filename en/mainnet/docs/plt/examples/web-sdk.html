@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/web-sdk.5ba3875f-47a0-4178-a771-d3e13d4d894c.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/web-sdk.11ac28ab-5e5d-47bb-b537-993c9de438eb.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/examples/web-sdk';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/examples/web-sdk.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -527,10 +527,6 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">What are Protocol-Level Tokens (PLTs)?</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../setup-guide/index.html">Get started with PLTs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/browser-wallet.html">Set up Browser Wallet for DevNet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/devnet-connection.html">Connect to DevNet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/identity-creation.html">Create a DevNet identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/account-creation.html">Create a DevNet account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup-guide/request-ccd.html">Request test CCD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup-guide/request-plt.html">Request PLT issuance</a></li>
 </ul>
@@ -837,7 +833,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">credentials</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@grpc/grpc-js&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -872,7 +868,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Cbor</span><span class="p">,</span><span class="w"> </span><span class="nx">TokenId</span><span class="p">,</span><span class="w"> </span><span class="nx">TokenInfo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/plt&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -912,7 +908,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Cbor</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/plt&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -968,7 +964,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -1071,7 +1067,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -1159,7 +1155,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -1250,7 +1246,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -1343,7 +1339,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -1436,7 +1432,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span><span class="w"> </span><span class="c1">//  credentials.Insecure(),</span>
 <span class="p">);</span>
@@ -1529,7 +1525,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -1621,7 +1617,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>
@@ -1718,7 +1714,7 @@ npm<span class="w"> </span>install<span class="w"> </span>@grpc/grpc-js
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">readFileSync</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;node:fs&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;grpc.devnet-plt-beta.concordium.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;grpc.testnet.concordium.com&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nb">Number</span><span class="p">(</span><span class="mf">20000</span><span class="p">),</span>
 <span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">()</span>
 <span class="p">);</span>

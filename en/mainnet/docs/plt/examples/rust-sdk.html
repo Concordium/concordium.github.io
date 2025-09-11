@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/rust-sdk.18760e18-dd8a-41f7-b44e-dc36ba8a89d4.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/rust-sdk.24f41eb8-8a6c-438d-9683-7bb4c5267f46.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/examples/rust-sdk';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/examples/rust-sdk.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -527,10 +527,6 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">What are Protocol-Level Tokens (PLTs)?</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../setup-guide/index.html">Get started with PLTs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/browser-wallet.html">Set up Browser Wallet for DevNet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/devnet-connection.html">Connect to DevNet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/identity-creation.html">Create a DevNet identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup-guide/account-creation.html">Create a DevNet account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup-guide/request-ccd.html">Request test CCD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup-guide/request-plt.html">Request PLT issuance</a></li>
 </ul>
@@ -845,7 +841,7 @@ Optionally specify a block hash for historical token lists.</p>
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -908,7 +904,7 @@ Set the token ID to query and optionally specify a block hash for historical dat
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -968,7 +964,7 @@ Set the account address to query and optionally specify a block hash for histori
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1059,7 +1055,7 @@ Configure the recipient address and amount to complete the transfer.</p>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Connecting to Concordium devnet...&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1166,7 +1162,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1254,7 +1250,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1346,7 +1342,7 @@ Only the token issuer can modify the allow list.</p>
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1428,7 +1424,7 @@ Only the token issuer can modify the allow list.</p>
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1512,7 +1508,7 @@ Accounts on the deny list cannot hold the token when deny list is enabled.</p>
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1594,7 +1590,7 @@ Only the token issuer can modify the deny list.</p>
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1671,7 +1667,7 @@ Only the token issuer can modify the deny list.</p>
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
@@ -1744,7 +1740,7 @@ Only the token issuer can modify the deny list.</p>
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;https://grpc.devnet-plt-beta.concordium.com:20000&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
 <span class="w">    </span><span class="p">.</span><span class="k">await</span>
 <span class="w">    </span><span class="p">.</span><span class="n">context</span><span class="p">(</span><span class="s">&quot;Failed to connect to Concordium node&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
