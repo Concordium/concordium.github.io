@@ -27,7 +27,7 @@ Testnet PLT setup guide
 =======================
 Before you can issue or interact with PLTs on testnet, you need to set up your environment by following these steps:
 
-1. :ref:`Download Browser Wallet <downloads-browser-wallet-testnet>` - Donwload and install the Browser Wallet
+1. :ref:`Download Browser Wallet <downloads-browser-wallet-testnet>` - Download and install the Browser Wallet extension
 2. :ref:`Connect Browser Wallet to testnet <switch-network>` - Follow the guide to connect to testnet
 3. :ref:`Create a testnet identity <create-testnet-identity-bw>` - Create a new identity on testnet, which is required for account creation; Use "Concordium testnet IP" as the Identity Provider
 4. :ref:`Create a testnet account <create-account>` - Create a new account on testnet using your identity
