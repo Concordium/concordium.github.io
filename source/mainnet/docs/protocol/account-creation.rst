@@ -5,7 +5,7 @@
 Account creation
 ================
 
-Once you have an identity and a user identity certificate from an identity provider, you can use it to create more accounts on the Concordium Platform. This is typically done using an :ref:`app or wallet<tools>` that guides users through the account creation process. The creation of an account is an :term:`on-chain` action that requires sending a transaction to a node that participates in the Concordium network.
+Once you have an :term:`identity` and a user identity certificate from an :term:`identity provider`, you can use it to create more accounts on the Concordium platform. This is typically done using an :ref:`app or wallet<tools>` that will guide you through the account creation process. The creation of an account is an :term:`on-chain` action that requires sending a transaction to a :term:`node` that participates in the Concordium network.
 
 .. Note::
    |cryptoX| does not submit the transaction directly to a node, but via a proxy. |cryptox| does not need to be connected to a node.
@@ -27,7 +27,7 @@ identity to create accounts.
 
 Every account on the chain must be derived from an identity that is verified and
 signed by an approved identity provider. It is publicly visible which identity
-provider issued an identity for an account and who the :term:`Privacy Guardians<Privacy Guardian (PG)>` are
+provider issued an identity for an account and who the :term:`privacy guardians<Privacy Guardian (PG)>` are
 for the account and the identity. This means that anybody can check it
 before interacting with an account to judge the level of risk in the transaction.
 
