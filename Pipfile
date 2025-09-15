@@ -16,6 +16,7 @@ sphinx-notfound-page = "*"
 pydata-sphinx-theme = "*"
 sphinx-sitemap = "*"
 sphinxcontrib-video = "*"
+sphinx-selective-exclude = "*"
 
 [dev-packages]
 doc8 = "*"
