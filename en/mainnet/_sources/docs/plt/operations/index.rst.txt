@@ -4,7 +4,7 @@
 PLT operations
 ==============
 
-This page covers the core operations available with Protocol-Level Tokens (PLTs) on Concordium's DevNet.
+This page covers the core operations available with Protocol-Level Tokens (PLTs) on Concordium's testnet.
 
 Available SDKs and tools
 ========================
@@ -53,7 +53,7 @@ This category covers token governance operations:
 
 Transfer PLTs
 -------------
-This category covers the operation of transferring PLTs to another account on DevNet.
+This category covers the operation of transferring PLTs to another account on testnet.
 
 The transfer operation is the only token-holder operation implemented in the MVP. (In the future, other operations may include scheduled send and creating locks, for instance.) As with token-governance, there will be a single token-holder account transaction that supports cases for each token-holder operation. All token-holder operations will identify the token by its ticker symbol.
 
@@ -61,7 +61,7 @@ The token transfer transaction specifies the destination (currently limited to a
 
 Query PLT information
 ---------------------
-This category covers operations for querying information about PLTs and account balances on DevNet.
+This category covers operations for querying information about PLTs and account balances on testnet.
 
 * **Get token list:** Retrieve all PLTs available on the network.
 * **Get token information:** Retrieve detailed information about a specific PLT.

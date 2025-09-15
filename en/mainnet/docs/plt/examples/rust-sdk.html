@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/rust-sdk.f6a23b15-8fd5-4c72-88d9-abae2f989863.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/examples/rust-sdk.111c2b89-7142-46db-8cbe-c30638545de7.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/examples/rust-sdk';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/examples/rust-sdk.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -1057,7 +1057,7 @@ Configure the recipient address and amount to complete the transfer.</p>
 
 <span class="cp">#[tokio::main]</span>
 <span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">anyhow</span><span class="p">::</span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Connecting to Concordium devnet...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Connecting to Concordium testnet...&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="p">::</span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="n">v2</span><span class="p">::</span><span class="n">Endpoint</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span>
 <span class="w">        </span><span class="s">&quot;https://grpc.testnet.concordium.com:20000&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">)</span><span class="o">?</span><span class="p">)</span>
