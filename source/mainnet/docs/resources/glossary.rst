@@ -142,9 +142,9 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       The combination of all decryption shares, allows to fully decrypt a tallied result.
 
-   Concordium client
+   Concordium Client
 
-      The Concordium command line tool. It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the |bw|. Once an account has been imported, Concordium client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
+      The Concordium command line tool. It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the |bw|. Once an account has been imported, Concordium Client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
 
    Concordium Byzantine Fault Tolerance (BFT) protocol
