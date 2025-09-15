@@ -38,6 +38,7 @@ On January 3 the account becomes a validator with the initial stake of 125 CCD.
 This is successful because the total public balance is 150CCD.
 After this the account still has 25 CCD at disposal, because CCD locked in a release schedule will be prioritized for stakes.
 
+.. _initial-accounts:
 
 Initial accounts
 ================
