@@ -301,7 +301,7 @@ Configure the recipient address and amount to complete the transfer.
 
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
-        println!("Connecting to Concordium devnet...");
+        println!("Connecting to Concordium testnet...");
         let mut client = v2::Client::new(v2::Endpoint::from_str(
             "https://grpc.testnet.concordium.com:20000",
         )?)
