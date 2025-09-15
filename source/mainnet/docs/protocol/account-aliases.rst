@@ -1,5 +1,5 @@
 .. include:: ../../variables.rst
-.. _account-aliases:
+.. _account-aliases-details:
 
 ================
 Account aliases

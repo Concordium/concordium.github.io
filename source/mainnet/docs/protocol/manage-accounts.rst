@@ -69,5 +69,5 @@ Account creation is an on-chain transaction that submits a credential containing
    :maxdepth: 1
 
    account-concepts
-   account-aliases
+   _account-aliases-details
 
