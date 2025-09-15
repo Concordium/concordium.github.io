@@ -5,8 +5,6 @@
 Account aliases
 ================
 
-.. _account-aliases:
-
 
 In protocol versions 1 and 2 accounts and account addresses have a one-to-one relationship. In protocol version 3 each account has ``16777216`` addresses, namely a so-called canonical account address together with
 matching :term:`account aliases<alias>`. The canonical account address is derived when an account is created on chain. The other 16 million addresses with matching initial ``29 bytes`` are referred to as account aliases for
