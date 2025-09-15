@@ -8,7 +8,7 @@ This section provides examples of how to work with Protocol-Level Tokens (PLTs) 
 
 
 :ref:`Concordium Client CLI Tool<plt-concordium-client>`:
-Command line tool for performing PLT operations directly on DevNet
+Command line tool for performing PLT operations directly on testnet
 
 :ref:`Web SDK<plt-web-sdk>`:
 JavaScript/TypeScript SDK for PLT operations in web applications
