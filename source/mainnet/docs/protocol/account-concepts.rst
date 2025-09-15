@@ -5,6 +5,8 @@
 Account concepts
 =================
 
+This section covers important technical aspects of how accounts work on the Concordium blockchain, including :ref:`account balances<managing-account-balances>`, :ref:`initial accounts<initial-accounts>`, and :ref:`account-sequence-numbers<account-sequence-number>`.
+
 .. _managing-account-balances:
 
 Account balances
@@ -56,8 +58,10 @@ by creating a new identity and going through the identity verification process a
 Based on your user identity certificate the you can subsequently create other accounts (see below) that can only be linked to you if the :term:`privacy guardians<Privacy Guardian (PG)>` and the identity provider are
 involved. This gives you a way to create accounts with an additional layer of privacy protection compared to that in the initial account. The owner of a regular account is not known to the identity providers or any other single entity. To facilitate compliance with relevant regulations, a regular account can only be created from an *identity* which is issued :term:`off-chain` by an Identity provider. While an account has to be created from an identity, your privacy is still protected, and the account owner's identity can only be revealed via the process of :ref:`disclosing an identity<reference-identity-disclosure-processes>`, which can only happen under stringent regulations. In particular, a key feature of the design of identities and accounts is that the identity provider cannot reveal the identity of an account on their own.
 
-Account sequence number
-=======================
+.. _account-sequence-number:
+
+Account sequence numbers
+========================
 
 Each account on the Concordium blockchain has a :term:`sequence number<transaction sequence number>` and each
 transaction signed by the account must have a sequence number. For a transaction
