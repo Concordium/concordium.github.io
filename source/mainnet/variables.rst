@@ -12,6 +12,7 @@
 .. |mw-gen2| replace:: Concordium Wallet for Mobile
 .. |bw| replace:: Concordium Wallet for Web
 .. |cryptox| replace:: Concordium Wallet
+.. |cryptox-legacy| replace:: CryptoX Concordium Wallet
 
 .. Client verification variables
 .. |client-linux| replace:: concordium-client-linux
