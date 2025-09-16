@@ -648,5 +648,6 @@ redirects = {
     "guides/export-import": "/en/mainnet/docs/guides/recovery.html",
     "guides/recover-wallet": "/en/mainnet/docs/guides/recovery.html",
     "docs/protocol/id-accounts": "/en/mainnet/docs/protocol/identity.html",
-    "docs/network/guides/become-baker": "en/mainnet/docs/network/guides/become-validator.html"
+    "docs/network/guides/become-baker": "en/mainnet/docs/network/guides/become-validator.html",
+    "docs/guides/cryptox-faq": "/en/mainnet/docs/guides/concordium-wallet-faq.html"
     }

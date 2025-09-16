@@ -18,5 +18,5 @@ Want to learn more about the |bw|? Read :ref:`browser-wallet-faq`
     :maxdepth: 1
 
     deciding-wallet
-    cryptox-faq
+    concordium-wallet-faq
     ../browser-wallet/browser-wallet-faq
