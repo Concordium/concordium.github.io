@@ -446,7 +446,7 @@ The output is:
 # Parameters related to delegators:
   + delegator cooldown duration: 7d
 
-# Exchange rate parameters: 
+# Exchange rate parameters:
   + EUR per CCD rate (approx): 0.0039
   + EUR per Energy rate: 1 / 50000 (approx 2.0e-5)
   + microCCD per EUR rate: 9309295728319683584 / 36703199911 (approx 2.5363716926299047e8)
@@ -468,8 +468,8 @@ The output is:
 # Time parameters:
   + reward period length: 24 epochs
 
-# Consensus parameters: 
-  + Timeout parameters: 
+# Consensus parameters:
+  + Timeout parameters:
      * base timeout: 10000 ms.
      * timeout increase: 6 / 5 (approx 1.2)
      * timeout decrease: 3 / 4 (approx 0.75)
@@ -484,10 +484,9 @@ The output is:
 # Validator score parameters:
   + maximum missed rounds: 10
 
-# Other parameters: 
+# Other parameters:
   + foundation account index: 13
   + maximum credential deployments per block: 10
-
 .. list-table::
    :widths: 25 25 50
    :header-rows: 1
