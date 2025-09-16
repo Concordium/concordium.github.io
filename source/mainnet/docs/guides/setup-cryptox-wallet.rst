@@ -12,7 +12,7 @@ The |cryptox| is a digital :term:`wallet` that enables you to create and manage 
 
 To learn more about identities and accounts, see :ref:`identity<reference-identity>` and :ref:`accounts<managing_accounts>`.
 
-The CryptoX Concordium Wallet is available for both iOS and Android devices.
+The |cryptox| is available for both iOS and Android devices.
 
 Follow this guide to set up your wallet.
 
