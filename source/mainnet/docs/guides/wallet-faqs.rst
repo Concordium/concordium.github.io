@@ -9,7 +9,7 @@ The wallet FAQs can help you decide which wallet is best for you.
 
 Need help deciding which wallet to choose? Read :ref:`choosing-wallet`.
 
-Want to learn more about |cryptox|? Read :ref:`cryptox-faq`.
+Want to learn more about |cryptox|? Read :ref:`concordium-wallet-faq`.
 
 Want to learn more about the |bw|? Read :ref:`browser-wallet-faq`
 
