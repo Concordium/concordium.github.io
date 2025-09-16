@@ -487,6 +487,7 @@ The output is:
 # Other parameters:
   + foundation account index: 13
   + maximum credential deployments per block: 10
+
 .. list-table::
    :widths: 25 25 50
    :header-rows: 1
