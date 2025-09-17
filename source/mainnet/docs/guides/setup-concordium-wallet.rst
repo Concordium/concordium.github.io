@@ -1,18 +1,14 @@
 .. include:: ../../variables.rst
 .. _setup-concordium-wallet:
 
-===============================
+=====================
 Set up the |cryptox|
-===============================
+=====================
 
-The |cryptox| is a digital :term:`wallet` that enables you to create and manage your Concordium
-:term:`identities<identity>` and :term:`accounts<account>`, transfer, receive, and stake CCD, and connect to decentralized applications (dApps).
-
-|cryptox| features a modern user interface with intuitive account management and token support. The wallet provides a clear overview of your balances, simplifies navigation between accounts, and supports multiple token types beyond CCD. It offers flexible account import and recovery options, supporting both seed phrase and backup file methods.
+The |cryptox| enables you to create and manage Concordium :term:`identities<identity>` and :term:`accounts<account>`, transfer and stake CCD, and connect to decentralized applications (dApps). It features intuitive account management, multi-token support, and flexible recovery options using seed phrases or backup files. Available for iOS and Android.
 
 To learn more about identities and accounts, see :ref:`identity<reference-identity>` and :ref:`accounts<managing_accounts>`.
 
-The |cryptox| is available for both iOS and Android devices.
 
 Follow this guide to set up your wallet.
 
@@ -21,17 +17,11 @@ Get started
 
 #. Install the |cryptox| on an Android or iOS phone. See :ref:`Downloads<downloads-cryptox>`.
 
-#. Open the |cryptox|. You'll see an introduction screen explaining the key features.
+#. Open the |cryptox|.
 
-#. Read and accept the Terms and Conditions and Privacy Policy by checking the box.
+#. Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap **Get started**.
 
-   You can also choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.
-
-#. Tap **Get started**.
-
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1a.png
-      :width: 40%
-      :alt: screen with terms and conditions
+   You can choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.
 
 
 Set up your wallet
@@ -46,19 +36,14 @@ Create passcode
 
 #. Tap **Continue** to begin creating your new wallet.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding2.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding2a.png
       :width: 40%
       :alt: screen with activate account
 
    .. Note::
       If you already have a wallet to import, you can select **Import a wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
 
-#. Create a six-digit passcode or use a full password. Repeat passcode or password.
-
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding3.png
-      :width: 40%
-      :alt: screen with keypad to enter passcode
-
+#. Create and confirm a six-digit passcode or full password.
 
 Save seed phrase
 ----------------
