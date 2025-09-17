@@ -1,5 +1,5 @@
 .. include:: ../../variables.rst
-.. _cryptox-terms:
+.. _concordium-wallet-terms:
 
 ====================================
 End User License Terms for |cryptox|
