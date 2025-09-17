@@ -650,5 +650,6 @@ redirects = {
     "docs/protocol/id-accounts": "/en/mainnet/docs/protocol/identity.html",
     "docs/network/guides/become-baker": "en/mainnet/docs/network/guides/become-validator.html",
     "docs/guides/cryptox-faq": "/en/mainnet/docs/guides/concordium-wallet-faq.html",
-    "docs/guides/setup-cryptox-wallet": "/en/mainnet/docs/guides/setup-concordium-wallet.html"
+    "docs/guides/setup-cryptox-wallet": "/en/mainnet/docs/guides/setup-concordium-wallet.html",
+    "docs/guides/cryptox-terms": "/en/mainnet/docs/guides/concordium-wallet-terms.html"
     }
