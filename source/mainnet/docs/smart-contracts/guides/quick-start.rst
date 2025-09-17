@@ -68,7 +68,7 @@ Before starting, it is a good idea to read the :ref:`Smart contracts best practi
 
     - |bw| :ref:`setup<setup-browser-wallet>`
         - :ref:`Key export<export-key>`
-    - |cryptox| :ref:`setup<setup-cryptox-wallet>`
+    - |cryptox| :ref:`setup<setup-concordium-wallet>`
         - :ref:`Key export<export-key>`
     - :ref:`Import keys to concordium-client<concordium-client-import-accounts-keys>`
 
