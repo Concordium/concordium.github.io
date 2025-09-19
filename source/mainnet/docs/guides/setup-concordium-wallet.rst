@@ -5,12 +5,8 @@
 Set up the |cryptox|
 =====================
 
-The |cryptox| enables you to create and manage Concordium :term:`identities<identity>` and :term:`accounts<account>`, transfer and stake CCD, and connect to decentralized applications (dApps). It features intuitive account management, multi-token support, and flexible recovery options using seed phrases or backup files. Available for iOS and Android.
+The |cryptox| enables you to create and manage Concordium :ref:`identities<reference-identity>` and :ref:`accounts<managing_accounts>`, transfer and stake CCD, and connect to decentralized applications (dApps). It features intuitive account management, multi-token support, and flexible recovery options using seed phrase, backup file, or wallet private key. Available for iOS and Android.
 
-To learn more about identities and accounts, see :ref:`identity<reference-identity>` and :ref:`accounts<managing_accounts>`.
-
-
-Follow this guide to set up your wallet.
 
 Get started
 ===========
@@ -44,7 +40,7 @@ Create passcode
       :alt: screen with activate account
 
    .. Note::
-      If you already have a wallet to import, you can select **Import a wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
+      If you already have a wallet, you can select **Import a wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
 
 #. Create and confirm a six-digit passcode or full password.
 
@@ -95,7 +91,7 @@ After securing your seed phrase, you'll return to the main wallet screen showing
 Create account
 ==============
 
-Once the identity provider has approved your verification request, you can create your first account. A progress bar shows that you have now completed the setup and can create your first account.
+Once the identity provider has approved your verification request, you can create your first account.
 
 #. Tap **Create account** to set up your first account.
 
