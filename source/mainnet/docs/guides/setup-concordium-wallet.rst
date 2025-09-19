@@ -1,82 +1,62 @@
 .. include:: ../../variables.rst
-.. _setup-cryptox-wallet:
+.. _setup-concordium-wallet:
 
-===============================
+=====================
 Set up the |cryptox|
-===============================
+=====================
 
-The |cryptox| is a digital :term:`wallet` that enables you to create and manage your Concordium
-:term:`identities<identity>` and :term:`accounts<account>`, transfer, receive, and stake CCD, and connect to decentralized applications (dApps).
+The |cryptox| enables you to create and manage Concordium :ref:`identities<reference-identity>` and :ref:`accounts<managing_accounts>`, transfer and stake CCD, and connect to decentralized applications (dApps). It features intuitive account management, multi-token support, and flexible recovery options using seed phrase, backup file, or wallet private key. Available for iOS and Android.
 
-|cryptox| features a modern user interface with intuitive account management and token support. The wallet provides a clear overview of your balances, simplifies navigation between accounts, and supports multiple token types beyond CCD. It offers flexible account import and recovery options, supporting both seed phrase and backup file methods.
-
-To learn more about identities and accounts, see :ref:`identity<reference-identity>` and :ref:`accounts<managing_accounts>`.
-
-The CryptoX Concordium Wallet is available for both iOS and Android devices.
-
-Follow this guide to set up your wallet.
 
 Get started
 ===========
 
 #. Install the |cryptox| on an Android or iOS phone. See :ref:`Downloads<downloads-cryptox>`.
 
-#. Open the |cryptox|. You'll see an introduction screen explaining the key features.
+#. Open the |cryptox|.
 
-#. Read and accept the Terms and Conditions and Privacy Policy by checking the box.
+#. Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap **Get started**.
 
-   You can also choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.
-
-#. Tap **Get started**.
-
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1a.png
-      :width: 40%
-      :alt: screen with terms and conditions
+   You can choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.
 
 
 Set up your wallet
 ==================
 
-The wallet setup consists of three phases: Create a 6-digit passcode, Save seed phrase, and Verify identity.
+The wallet setup consists of three phases: :ref:`Create a 6-digit passcode<create-passcode>`, :ref:`save seed phrase<save-seed-phrase>`, and :ref:`verify identity<verify-identity>`.
 
 You can pause between the phases and return later to continue.
+
+
+.. _create-passcode:
 
 Create passcode
 ---------------
 
 #. Tap **Continue** to begin creating your new wallet.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding2.png
+   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding2a.png
       :width: 40%
       :alt: screen with activate account
 
    .. Note::
-      If you already have a wallet to import, you can select **Import a wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
+      If you already have a wallet, you can select **Import a wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
 
-#. Create a six-digit passcode or use a full password. Repeat passcode or password.
+#. Create and confirm a six-digit passcode or full password.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding3.png
-      :width: 40%
-      :alt: screen with keypad to enter passcode
 
+.. _save-seed-phrase:
 
 Save seed phrase
 ----------------
 
-After setting up your passcode, you'll see the main wallet screen with a progress indicator showing your setup progress. Your progress is automatically saved, so you can close the app now and continue the setup later if you wish.
+After creating your passcode, you'll see a progress indicator. Your progress is automatically saved, so you can close the app and continue the setup later if you wish.
 
 #. Tap **Save seed phrase** to continue setup.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding4a.png
-      :width: 40%
-      :alt: screen with information about saving seed phrase
+#. Write down, digitally copy, or screenshot your seed phrase and store it securely. Check the confirmation box and tap **Continue**.
 
-#. Now you see your seed phrase which is the access key to all the funds in your wallet.
-
-   You can either write it down, make a digital copy, or take a screenshot of it.
-   In either case, make sure to keep it somewhere safe in case you need to recover your wallet.
-
-   When done, check the confirmation box and tap **Continue**.
+   **Important:** Your seed phrase is the only way to recover your wallet if you lose access. Keep it safe and private.
 
    .. image:: ../images/cryptoX/onboarding/cryptox-onboarding5a.png
       :width: 40%
@@ -84,44 +64,34 @@ After setting up your passcode, you'll see the main wallet screen with a progres
 
 #. Enter your passcode when prompted.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding6a.png
-      :width: 40%
-      :alt: screen with identity providers
 
+.. _verify-identity:
 
 Verify identity
 ---------------
 
-After securing your seed phrase, you'll return to the main wallet screen. A progress bar shows that you're now ready for the final step. Your progress is automatically saved, so you can close the app now and continue the setup later if you wish.
+After securing your seed phrase, you'll return to the main wallet screen showing you're now ready for the final step. Your progress is automatically saved.
 
 #. Tap **Verify identity** to continue setup.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding7a.png
-      :width: 40%
-      :alt: screen with identity providers
-
-
-
-#. Now you must submit a request for an identity verification. Select an identity provider.
+#. Select an identity provider.
 
    .. image:: ../images/cryptoX/onboarding/cryptox-onboarding8a.png
       :width: 40%
       :alt: screen with identity providers
 
-#. Enter your passcode or password when prompted. An external web page opens within the app.
+#. Enter your passcode when prompted. An external web page opens within the app.
 
-#. Enter the information requested by the third-party identity provider. The information might vary depending on the identity provider.
-   However, they will ask you to provide photos of identification documents and a selfie.
+#. Enter the requested information and provide photos of identification documents and a selfie.
 
-#. When you have submitted the information to the identity provider, the verification or rejection is usually retrieved from the identity provider within minutes, but check your app frequently to retrieve
-   the result. The result can be retrieved for up to seven days.
+#. Wait for verification (usually within minutes, but results can be retrieved for up to seven days). Check the app frequently for the result.
 
-   If your identity request is rejected, you see a message. Tap **Make new identity request** to create a new identity request. You can choose another identity provider.
+   If rejected: Tap **Make new identity request** to create a new identity request with a different provider.
 
 Create account
 ==============
 
-Once the identity provider has approved your verification request, you can create your first account. A progress bar shows that you have now completed the setup and can create your first account.
+Once the identity provider has approved your verification request, you can create your first account.
 
 #. Tap **Create account** to set up your first account.
 

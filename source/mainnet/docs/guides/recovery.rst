@@ -177,111 +177,49 @@ If you need to export the private key of a specific account to use in Concordium
 
     #. After installing or reinstalling the |cryptox| app, open the app.
 
-    #. On the Welcome screen, read and accept Terms and Conditions and Pricacy Policy by checking the box.
-
-       You can also choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.
-
-    #. Tap **Get started**.
-
-       .. image:: ../images/cryptoX/onboarding/cryptox-onboarding1a.png
-         :width: 40%
-         :alt: screen with terms and conditions
-
+    #. Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap **Get started**.
 
     #. Tap **Import a wallet**.
 
-       .. image:: ../images/cryptoX/recovery/cryptox-recover2.png
-         :width: 40%
+    #. Create and confirm a 6-digit passcode for your wallet.
 
-    #. Enter and then re-enter a 6-digit passcode for your wallet.
+    #. Select your recovery method: Seed phrase, wallet private key, or backup file.
 
-    #. You now have three options: Import via seed phrase, import via wallet private key, or import via backup file.
-
-       Tap on the desired option.
-
-       .. image:: ../images/cryptoX/recovery/cryptox-recover3.png
-         :width: 40%
 
     .. dropdown:: Import via seed phrase
 
-         #. Enter each word of your seed phrase in the correct order. When you start typing, possible words appear for you to select.
+         #. Enter each word of your seed phrase in the correct order. Possible words will appear as you type for selection.
 
-            If you have a copy of your seed phrase, you can also tap **Paste your seed phrase** to paste it from your clipboard.
+            **Tip:** Tap **Paste your seed phrase** to paste from your clipboard.
 
             .. image:: ../images/cryptoX/recovery/cryptox-recover4a.png
                 :width: 40%
 
-         #. Once the words are correct, tap **Recover** to submit the recovery request to the identity provider(s).
+         #. Tap **Recover** to submit the recovery request to the identity provider(s).
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover5d.png
-                :width: 40%
+         #. Wait for recovery to complete (this may take a few moments).
 
-         #. It may take a little while for recovery to complete.
-
-            .. image:: ../images/cryptoX/recovery/cryptox-recover6a.png
-                :width: 40%
-
-
-         #. After after copletion, you will see an overview of identities and accounts that have been recovered. Tap **Continue to Wallet**.
-
-            .. image:: ../images/cryptoX/recovery/cryptox-recover-overview.png
-                :width: 40%
-
-         #. You have succesfully restored your wallet.
-
-            .. image:: ../images/cryptoX/recovery/cryptox-recover7d.png
-                :width: 40%
-
-
+         #. Review the recovered identities and accounts, then tap **Continue to Wallet**.
 
     .. dropdown:: Import via wallet private key
 
          #. Enter or paste your wallet private key.
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover4b.png
-                :width: 40%
+         #. Tap **Recover** to submit the recovery request to the identity provider(s).
 
-         #. Once the key is entered, tap **Recover** to submit the recovery request to the identity provider(s).
+         #. Wait for recovery to complete (this may take a few moments).
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover5d.png
-                :width: 40%
-
-         #. It may take a little while for recovery to complete.
-
-            .. image:: ../images/cryptoX/recovery/cryptox-recover6b.png
-                :width: 40%
-
-         #. After after copletion, you will see an overview of identities and accounts that have been recovered. Tap **Continue to Wallet**.
-
-            .. image:: ../images/cryptoX/recovery/cryptox-recover-overview.png
-                :width: 40%
-
-
-         #. You have succesfully restored your wallet.
-
-            .. image:: ../images/cryptoX/recovery/cryptox-recover7d.png
-                :width: 40%
-
+         #. Review the recovered identities and accounts, then tap **Continue to Wallet**.
 
     .. dropdown:: Import via backup file
 
          #. Tap **Import**.
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover4c.png
-                :width: 40%
-
          #. Select the file you want to import.
 
-         #. Enter the password you created when exporting the backup file. Tap **Continue**. It may take a little while for recovery to complete.
+         #. Enter the password you created when exporting the backup file, then tap **Continue**.
 
-            .. image:: ../images/cryptoX/recovery/cryptox-recover5c.png
-                :width: 40%
-
-
-         #. Once the import is finished, tap **Okay** to go to the Accounts list.
-
-            .. image:: ../images/cryptoX/recovery/cryptox-recover6c.png
-                :width: 40%
+         #.  Wait for recovery to complete (this may take a few moments), then tap **Okay** to go to the Accounts list.
 
 
     .. Note::

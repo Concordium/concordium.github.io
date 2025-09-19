@@ -1,4 +1,5 @@
 .. _wallet-connectors-tutorial:
+.. include:: ../../variables.rst
 
 ==============================
 Implementing Wallet Connectors
@@ -42,7 +43,7 @@ Feel free to explore the codebase, particularly focusing on the wallet connectio
 
 Before running the application, ensure you have:
 
-* A :ref:`Concordium wallet <setup-wallets-lp>` (either the Browser Wallet extension or CryptoX)
+* A :ref:`Concordium wallet <setup-wallets-lp>` (either the |bw| extension or |cryptox|)
 * At least one :ref:`identity <reference-identity>` and :ref:`account <managing_accounts>` created in your wallet
 
 If you'd like to build this project from scratch or follow along step-by-step, you'll need to set up your development environment:
