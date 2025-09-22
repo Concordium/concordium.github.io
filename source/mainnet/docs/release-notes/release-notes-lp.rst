@@ -136,11 +136,25 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.12.0 - August 18, 2025
+    1.13.0 - September 22, 2025
 
-    - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
+    Added:
+
+    - Protocol-Level Token support.
+    - Display of transfer sender or recipient in the Activity screen.
+
+    Changed:
+
+    - Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.
+
+    Fixed:
+
+    - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
 
     .. dropdown:: Previous releases
+        .. dropdown:: |cryptox| 1.12.0 - August 18, 2025
+
+        - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
         .. dropdown:: |cryptox| 1.11.0 - July 8, 2025
 
