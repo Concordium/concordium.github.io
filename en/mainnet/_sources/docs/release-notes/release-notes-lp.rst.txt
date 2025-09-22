@@ -454,14 +454,21 @@ Wallets
 |bw|
 -------------------------
 
-    Aug 12, 2025
+    Sep 22, 2025
 
-    Version 2.5.1
+    Version 2.6.0
 
-    -   Fixed issue when users were not able to complete Web3 ID age verification.
-    -   Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the "Manage token list" menu manually.
+    -   Added support of protocol-level tokens (PLT). Including token transfer, transaction history update, token details, token management.
+    -   Fixed token amount displayed as NaN when value is negative and less than token precision. At Send screen when 'Send Max' calculated.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.5.1 - Aug 12, 2025
+
+            Version 2.5.1 changes:
+
+            -   Fixed issue when users were not able to complete Web3 ID age verification.
+            -   Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the "Manage token list" menu manually.
 
         .. dropdown:: |bw| 2.5.0 - July 09, 2025
 
