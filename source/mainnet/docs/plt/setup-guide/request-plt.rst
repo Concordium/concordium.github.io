@@ -40,20 +40,16 @@ Follow these steps to request PLT issuance on testnet:
 
 .. raw:: html
 
-    <iframe data-tally-src="https://tally.so/r/mK4ZdK" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="PLT issuance request form"></iframe>
-    <script>
-      var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
-        "undefined" != typeof Tally && Tally.loadEmbeds();
-      };
-      if ("undefined" != typeof Tally) v();
-      else if (d.querySelector('script[src="' + w + '"]') == null) {
-        var s = d.createElement("script");
-        s.src = w;
-        s.onload = v;
-        s.type = "text/javascript";
-        d.body.appendChild(s);
-      }
-    </script>
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLScjTvpdAYeWO9VEYitaXR46Fb5flT70zi5U88dVsjLIKWAKXA/viewform?embedded=true" 
+      width="100%" 
+      height="2988" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0" 
+      title="PLT issuance request form">
+      Loading…
+    </iframe>
 
 3. **Submit your request**
 
