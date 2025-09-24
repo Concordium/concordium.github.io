@@ -62,7 +62,7 @@ Transfer PLTs
 -------------
 This category covers the operation of transferring PLTs to another account on testnet.
 
-The transfer operation is the only token-holder operation implemented in the MVP. (In the future, other operations may include scheduled send and creating locks, for instance.) As with token-governance, there will be a single token-holder account transaction that supports cases for each token-holder operation. All token-holder operations will identify the token by its ticker symbol.
+The transfer operation is currently the only :term:`token-holder operation` available. (In the future, other operations may include scheduled send and creating locks, for instance.) As with token-governance, there will be a single token-holder account transaction that supports cases for each token-holder operation. All token-holder operations will identify the token by its ticker symbol.
 
 The token transfer transaction specifies the destination (currently limited to an account), the amount, and an optional memo. The originating account must have a sufficient balance in the PLT to cover the transfer. The receiving account must exist. If there is an allow list for the PLT, both accounts must be on the allow list. If there is a deny list, neither account may be on the deny list.
 
