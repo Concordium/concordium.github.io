@@ -23,8 +23,6 @@ You can interact with PLTs using multiple development approaches:
 
   :ref:`Download concordium-client <concordium-node-and-client-download>`
 
-.. note::
-   All SDKs are currently in alpha development and recommended for testing and experimentation only.
 
 Operation Categories
 ====================
