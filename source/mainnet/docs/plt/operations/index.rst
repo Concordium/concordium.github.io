@@ -27,7 +27,16 @@ You can interact with PLTs using multiple development approaches:
 Operation Categories
 ====================
 
-PLT operations are organized into three main categories:
+Find descriptions of the PLT operations in the sections below.
+
+Skip to examples here:
+
+* :ref:`Using Concordium Client CLI Tool<plt-concordium-client>`
+
+* :ref:`Using Web SDK<plt-web-sdk>`
+
+* :ref:`Using Rust SDK<plt-rust-sdk>`
+
 
 Create and manage PLTs
 ----------------------
@@ -65,13 +74,4 @@ This category covers operations for querying information about PLTs and account 
 * **Get token information:** Retrieve detailed information about a specific PLT.
 * **Get account information:** Retrieve account details including PLT balances.
 
-Examples
-========
-Depending on your development approach, you can find examples for each operation category:
-
-* :ref:`Using Concordium Client CLI Tool<plt-concordium-client>`
-
-* :ref:`Using Web SDK<plt-web-sdk>`
-
-* :ref:`Using Rust SDK<plt-rust-sdk>`
 
