@@ -742,14 +742,22 @@ Wallets
 Desktop Wallet
 --------------
 
-    May 1, 2025
+    September 24, 2025
 
-    Version 1.8.1 contains the following changes:
+    Version 1.9.2 contains the following changes:
 
-    - Fixed issue with blank screen on startup first seen in 1.8.0.
-    - Fixed error message in terminal when failing to lookup the latest release.
+    - Fixed being unable to add a 2nd account in a DW
+    - Fix display of new size of level 2 key set which now accounts for removed keys correctly
+    - Update the flow for signing authorizations updates with support for v2 authorizations
+    - Add create PLT (protocol level token) governance transaction
+    - Add a separate menu for governance transactions in multi sig panel
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.8.1 - May 1, 2025
+
+            - Fixed issue with blank screen on startup first seen in 1.8.0.
+            - Fixed error message in terminal when failing to lookup the latest release.
 
         .. dropdown:: 1.8.0 - March 18, 2025
 
