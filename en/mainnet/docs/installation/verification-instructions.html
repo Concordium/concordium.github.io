@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/installation/verification-instructions.0693c4f9-5e4f-4133-bda2-3b16917ae3a3.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/installation/verification-instructions.85000d75-cfe2-45ff-b238-e9fb76dc5085.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/installation/verification-instructions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/installation/verification-instructions.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -800,8 +800,8 @@
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.9.2.AppImage
-<span class="go">c513162998e610b84c6e43c8d01e6158baf0f46b71a55548cfcba726bc1e27fe</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.9.3.AppImage
+<span class="go">a4aab82a574920d7d9f87eb59b210cdcee32ae367ca6c54f3023a20bb72ad830</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
@@ -817,7 +817,7 @@
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.9.2.AppImage<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.9.2.AppImage.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.9.3.AppImage<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.9.3.AppImage.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
@@ -832,8 +832,8 @@
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.9.2.deb
-<span class="go">2d3d56c11b0d1c100cfc0f40943fd7135e1ae5f57be6aafb26ba962e5cdef0ab</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.9.3.deb
+<span class="go">9bbf1d5b3b1a618793efafcc8af2d7ac4504a8adf8c506f626b5dd2598c4e36f</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
@@ -849,7 +849,7 @@
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.9.2.deb<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.9.2.deb.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.9.3.deb<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.9.3.deb.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
@@ -864,8 +864,8 @@
 <li><p>Then paste the first line of the following block into the terminal.</p></li>
 <li><p>Verify that the output matches the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.9.2.rpm
-<span class="go">38a787bcc7705ac01a4e6c27199e38ba5fc21b6de778bdec80029607d7757182</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>sha256sum<span class="w"> </span>concordium-desktop-wallet-1.9.3.rpm
+<span class="go">84852d39c72453c7b8fb40efde41cd2a718f6e92a40d5330d14bf5a87a05e13b</span>
 </pre></div>
 </div>
 <p><strong>Verify download with signature</strong></p>
@@ -881,7 +881,7 @@
 <li><p>Then paste the first line of the following block into the terminal</p></li>
 <li><p>The command outputs <strong>Signature Verified Successfully</strong> as a result, as inidicated by the second line in the block.</p></li>
 </ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.9.2.rpm<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.9.2.rpm.sig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>openssl<span class="w"> </span>pkeyutl<span class="w"> </span>-verify<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>concordium-desktop-wallet-pubkey.pem<span class="w"> </span>-rawin<span class="w"> </span>-in<span class="w"> </span>concordium-desktop-wallet-1.9.3.rpm<span class="w"> </span>-sigfile<span class="w"> </span>concordium-desktop-wallet-1.9.3.rpm.sig
 <span class="go">Signature Verified Successfully</span>
 </pre></div>
 </div>
