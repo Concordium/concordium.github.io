@@ -742,17 +742,21 @@ Wallets
 Desktop Wallet
 --------------
 
-    September 24, 2025
+    September 26, 2025
 
-    Version 1.9.2 contains the following changes:
+    Version 1.9.3 contains the following changes:
 
-    - Fixed being unable to add a 2nd account in a DW
-    - Fix display of new size of level 2 key set which now accounts for removed keys correctly
-    - Update the flow for signing authorizations updates with support for v2 authorizations
-    - Add create PLT (protocol level token) governance transaction
-    - Add a separate menu for governance transactions in multi sig panel
+    - Fixed issue where wallet losses connection to ledger
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.9.2 - September 24, 2025
+
+            - Fixed being unable to add a 2nd account in a DW
+            - Fix display of new size of level 2 key set which now accounts for removed keys correctly
+            - Update the flow for signing authorizations updates with support for v2 authorizations
+            - Add create PLT (protocol level token) governance transaction
+            - Add a separate menu for governance transactions in multi sig panel
 
         .. dropdown:: 1.8.1 - May 1, 2025
 
