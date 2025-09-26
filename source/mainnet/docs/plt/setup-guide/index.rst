@@ -17,7 +17,7 @@ To issue and work with PLTs on the Concordium network, the following steps are r
 
 3. **Submit the PLT definition to Concordium**. In v1.0, this information is sent directly to the Concordium team.
 
-4. **Concordium creates the new PLT**. Creating a new PLT is a chain-governance operation. The Concordium team will convene to perform a chain update to issue the PLT token. After the chain update, the PLT is created with the initial supply (if any) available on the nominated account.
+4. **Concordium creates the new PLT**. Creating a new PLT is a :term:`chain-governance operation`. The Concordium team will convene to perform a chain update to issue the PLT token. After the chain update, the PLT is created with the :term:`initial supply` (if any) available on the nominated account.
 
 5. **Perform Token-Holder and Query Transactions**. Once your PLT is created, you can perform the following operations: transferring PLTs, querying token lists, getting token information, and checking account balances using the available tools and SDKs.
 
