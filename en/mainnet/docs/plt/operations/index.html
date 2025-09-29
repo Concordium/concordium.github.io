@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/operations/index.c83bf688-5155-4109-8a23-1dbe7a934646.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/operations/index.3809e9a3-bbc7-4cb0-a428-1c6bd9499798.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/operations/index';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/operations/index.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -786,7 +786,7 @@
                   
   <section id="plt-operations">
 <span id="id1"></span><h1>PLT operations<a class="headerlink" href="#plt-operations" title="Link to this heading">#</a></h1>
-<p>This page covers the core operations available with Protocol-Level Tokens (PLTs) on Concordium’s testnet.</p>
+<p>This page covers the core operations available with <a class="reference internal" href="../../resources/glossary.html#term-Protocol-level-token-PLT"><span class="xref std std-term">Protocol-Level Tokens (PLTs)</span></a> on Concordium’s testnet.</p>
 <section id="available-sdks-and-tools">
 <h2>Available SDKs and tools<a class="headerlink" href="#available-sdks-and-tools" title="Link to this heading">#</a></h2>
 <p>You can interact with PLTs using multiple development approaches:</p>
@@ -801,23 +801,25 @@
 <p><a class="reference internal" href="../../installation/downloads.html#concordium-node-and-client-download"><span class="std std-ref">Download concordium-client</span></a></p>
 </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All SDKs are currently in alpha development and recommended for testing and experimentation only.</p>
-</div>
 </section>
 <section id="operation-categories">
 <h2>Operation Categories<a class="headerlink" href="#operation-categories" title="Link to this heading">#</a></h2>
-<p>PLT operations are organized into three main categories:</p>
+<p>Find descriptions of the PLT operations in the sections below.</p>
+<p>Skip to examples here:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../examples/concordium-client.html#plt-concordium-client"><span class="std std-ref">Using Concordium Client CLI Tool</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/web-sdk.html#plt-web-sdk"><span class="std std-ref">Using Web SDK</span></a></p></li>
+<li><p><a class="reference internal" href="../examples/rust-sdk.html#plt-rust-sdk"><span class="std std-ref">Using Rust SDK</span></a></p></li>
+</ul>
 <section id="create-and-manage-plts">
 <h3>Create and manage PLTs<a class="headerlink" href="#create-and-manage-plts" title="Link to this heading">#</a></h3>
-<p>This category covers token governance operations:</p>
+<p>This category covers <a class="reference internal" href="../../resources/glossary.html#term-Token-governance-operation"><span class="xref std std-term">token-governance operations</span></a>:</p>
 <ul class="simple">
-<li><p><strong>Mint tokens:</strong> Mint new tokens (issuer only)</p></li>
-<li><p><strong>Burn tokens:</strong> Burn existing tokens (issuer only)</p></li>
-<li><p><strong>Add account to allow list:</strong> Add an account to the allow list for a PLT (issuer only)</p></li>
+<li><p><strong>Mint tokens:</strong> <a class="reference internal" href="../../resources/glossary.html#term-Mint"><span class="xref std std-term">Mint</span></a> new tokens (issuer only)</p></li>
+<li><p><strong>Burn tokens:</strong> <a class="reference internal" href="../../resources/glossary.html#term-Burn"><span class="xref std std-term">Burn</span></a> existing tokens (issuer only)</p></li>
+<li><p><strong>Add account to allow list:</strong> Add an account to the <a class="reference internal" href="../../resources/glossary.html#term-Allow-list"><span class="xref std std-term">allow list</span></a> for a PLT (issuer only)</p></li>
 <li><p><strong>Remove account from allow list:</strong> Remove an account from the allow list for a PLT (issuer only)</p></li>
-<li><p><strong>Add account to deny list:</strong> Add an account to the deny list for a PLT (issuer only)</p></li>
+<li><p><strong>Add account to deny list:</strong> Add an account to the <a class="reference internal" href="../../resources/glossary.html#term-Deny-list"><span class="xref std std-term">deny list</span></a> for a PLT (issuer only)</p></li>
 <li><p><strong>Remove account from deny list:</strong> Remove an account from the deny list for a PLT (issuer only)</p></li>
 <li><p><strong>Pause:</strong> Suspends balance transfer operations for a PLT (issuer only)</p></li>
 <li><p><strong>Unpause:</strong> Resumes balance transfer operations for a PLT (issuer only)</p></li>
@@ -826,7 +828,7 @@
 <section id="transfer-plts">
 <h3>Transfer PLTs<a class="headerlink" href="#transfer-plts" title="Link to this heading">#</a></h3>
 <p>This category covers the operation of transferring PLTs to another account on testnet.</p>
-<p>The transfer operation is the only token-holder operation implemented in the MVP. (In the future, other operations may include scheduled send and creating locks, for instance.) As with token-governance, there will be a single token-holder account transaction that supports cases for each token-holder operation. All token-holder operations will identify the token by its ticker symbol.</p>
+<p>Currently this is the only <a class="reference internal" href="../../resources/glossary.html#term-Token-holder-operation"><span class="xref std std-term">token-holder operation</span></a> available. (In the future, other operations may include scheduled send and creating locks, for instance.) As with <a class="reference internal" href="../../resources/glossary.html#term-Token-governance-operation"><span class="xref std std-term">token-governance operations</span></a>, there will be a single token-holder account transaction that supports cases for each token-holder operation. All token-holder operations will identify the token by its ticker symbol.</p>
 <p>The token transfer transaction specifies the destination (currently limited to an account), the amount, and an optional memo. The originating account must have a sufficient balance in the PLT to cover the transfer. The receiving account must exist. If there is an allow list for the PLT, both accounts must be on the allow list. If there is a deny list, neither account may be on the deny list.</p>
 </section>
 <section id="query-plt-information">
@@ -838,15 +840,6 @@
 <li><p><strong>Get account information:</strong> Retrieve account details including PLT balances.</p></li>
 </ul>
 </section>
-</section>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
-<p>Depending on your development approach, you can find examples for each operation category:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../examples/concordium-client.html#plt-concordium-client"><span class="std std-ref">Using Concordium Client CLI Tool</span></a></p></li>
-<li><p><a class="reference internal" href="../examples/web-sdk.html#plt-web-sdk"><span class="std std-ref">Using Web SDK</span></a></p></li>
-<li><p><a class="reference internal" href="../examples/rust-sdk.html#plt-rust-sdk"><span class="std std-ref">Using Rust SDK</span></a></p></li>
-</ul>
 </section>
 </section>
 
@@ -940,7 +933,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-plt-information">Query PLT information</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
   </nav></div>
 
