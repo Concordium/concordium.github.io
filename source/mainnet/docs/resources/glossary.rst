@@ -609,6 +609,9 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Data derived from one or more verifiable credentials, issued by one or more issuers, that is shared with a specific verifier. A verifiable presentation is a tamper-evident presentation encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. Certain types of verifiable presentations might contain data that is synthesized from, but do not contain, the original verifiable credentials (for example, zero-knowledge proofs).
 
+   Verification Request Anchor
+      A transaction initiated by the merchant immediately after generating a presentation request, but prior to sending it to the ID app. Its purpose is to allow the ID app to confirm that the presentation request is both authentic and recent.
+
    Verifier
 
       Party that verifies users' Web3 ID credentials.
