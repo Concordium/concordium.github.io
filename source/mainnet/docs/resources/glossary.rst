@@ -605,6 +605,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Verifiable credentials are Web3 credentials. They have attributes that don’t have to have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol level identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it. Verifiable credentials are not associated with accounts. Verifiable credentials can be used to build verifiable presentations, which can also be cryptographically verified.
 
+   Verifiable decryption
+
+      The provable decryption of e.g. an election result. Provable means that the resulting plaintext comes with auxiliary information (here a ZK proof) that allows any third party to verify the correctness of the decryption process.
+
    Verifiable presentation
 
       Data derived from one or more verifiable credentials, issued by one or more issuers, that is shared with a specific verifier. A verifiable presentation is a tamper-evident presentation encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. Certain types of verifiable presentations might contain data that is synthesized from, but do not contain, the original verifiable credentials (for example, zero-knowledge proofs).
