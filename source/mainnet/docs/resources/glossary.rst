@@ -609,6 +609,10 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Data derived from one or more verifiable credentials, issued by one or more issuers, that is shared with a specific verifier. A verifiable presentation is a tamper-evident presentation encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. Certain types of verifiable presentations might contain data that is synthesized from, but do not contain, the original verifiable credentials (for example, zero-knowledge proofs).
 
+   Verification Audit Anchor
+
+      A transaction initiated by the merchant after verifying of the presentation, and generating the verification audit record. The anchor makes the audit record tamper-evident and timestamps it.
+
    Verification Audit Record
 
       A private record stored by the merchant as a result of verifying a presentation (and shown to an auditor as needed).
