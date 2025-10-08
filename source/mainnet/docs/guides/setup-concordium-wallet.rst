@@ -8,107 +8,48 @@ Set up the |cryptox|
 The |cryptox| enables you to create and manage Concordium :ref:`identities<reference-identity>` and :ref:`accounts<managing_accounts>`, transfer and stake CCD, and connect to decentralized applications (dApps). It features intuitive account management, multi-token support, and flexible recovery options using seed phrase, backup file, or wallet private key. Available for iOS and Android.
 
 
-Get started
-===========
-
-#. Install the |cryptox| on an Android or iOS phone. See :ref:`Downloads<downloads-cryptox>`.
-
-#. Open the |cryptox|.
-
-#. Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap **Get started**.
-
-   You can choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.
-
-
-Set up your wallet
+Create your wallet
 ==================
 
-The wallet setup consists of three phases: :ref:`Create a 6-digit passcode<create-passcode>`, :ref:`save seed phrase<save-seed-phrase>`, and :ref:`verify identity<verify-identity>`.
+#. Install |cryptox| on an Android or iOS phone. See :ref:`Downloads<downloads-cryptox>`.
 
-You can pause between the phases and return later to continue.
+#. Open the wallet.
 
+   .. image:: ../images/cryptoX/concordium-wallet-welcome-screen.png
+            :alt: wallet welcome screen
+            :width: 40%
 
-.. _create-passcode:
+#. Swipe through the introduction screens, and then, tap **Get started**.
 
-Create passcode
----------------
+#. Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap **Create a New Wallet**.
 
-#. Tap **Continue** to begin creating your new wallet.
-
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding2a.png
-      :width: 40%
-      :alt: screen with activate account
+   .. image:: ../images/cryptoX/concordium-wallet-create-a-new-wallet.png
+            :alt: create new wallet screen
+            :width: 40%
 
    .. Note::
-      If you already have a wallet, you can select **Import a wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
+      If you already have a wallet, you can select **Restore Existing Wallet** at the bottom of the screen. This allows you to :ref:`restore using a seed phrase, wallet private key, or backup file<backup-import-recover>`.
 
-#. Create and confirm a six-digit passcode or full password.
+#. Create and confirm a six-digit passcode.
 
+#. Tap **Verify identity**, and select an identity provider. Enter your passcode when prompted.
+   An external web page opens within the app, where you must enter the requested information and provide photos of identification documents and a selfie.
+   Wait for verification (usually within minutes, but results can be retrieved for up to seven days).
 
-.. _save-seed-phrase:
+#. Once verification is completed, tap **Create account** and enter your passcode to set up your first account.
+   Your new account will be visible in the Accounts list. You can :ref:`change the name of the account<change-mw-acct-name>` if you want to.
 
-Save seed phrase
-----------------
+Back up your wallet
+===================
 
-After creating your passcode, you'll see a progress indicator. Your progress is automatically saved, so you can close the app and continue the setup later if you wish.
-
-#. Tap **Save seed phrase** to continue setup.
-
-#. Write down, digitally copy, or screenshot your seed phrase and store it securely. Check the confirmation box and tap **Continue**.
-
-   **Important:** Your seed phrase is the only way to recover your wallet if you lose access. Keep it safe and private.
-
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding5a.png
-      :width: 40%
-      :alt: screen with information about saving seed phrase
-
-#. Enter your passcode when prompted.
+After creating your account, you'll see a prompt to backup your wallet. Tap **Backup Your Wallet**, then write down, digitally copy, or screenshot your seed phrase and store it securely.
 
 
-.. _verify-identity:
-
-Verify identity
----------------
-
-After securing your seed phrase, you'll return to the main wallet screen showing you're now ready for the final step. Your progress is automatically saved.
-
-#. Tap **Verify identity** to continue setup.
-
-#. Select an identity provider.
-
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding8a.png
-      :width: 40%
-      :alt: screen with identity providers
-
-#. Enter your passcode when prompted. An external web page opens within the app.
-
-#. Enter the requested information and provide photos of identification documents and a selfie.
-
-#. Wait for verification (usually within minutes, but results can be retrieved for up to seven days). Check the app frequently for the result.
-
-   If rejected: Tap **Make new identity request** to create a new identity request with a different provider.
-
-Create account
-==============
-
-Once the identity provider has approved your verification request, you can create your first account.
-
-#. Tap **Create account** to set up your first account.
-
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding9a.png
-      :width: 40%
-      :alt: screen with identity providers
-
-#. Enter your passcode or password when prompted.
+.. Important::
+      Your seed phrase is the only way to recover your wallet if you lose access. Keep it safe and private.
 
 
-#. Your new account will be visible in the Accounts list.
 
-   .. image:: ../images/cryptoX/onboarding/cryptox-onboarding10a.png
-      :width: 40%
-      :alt: screen showing first account in list
-
-If you want to, you can :ref:`change the name of the account<change-mw-acct-name>`.
 
 Basic navigation
 ================
