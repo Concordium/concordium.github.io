@@ -142,14 +142,17 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       The combination of all decryption shares, allows to fully decrypt a tallied result.
 
+   Concordium Byzantine Fault Tolerance (BFT) protocol
+
+      The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the validators should produce a block. The other validators then sign this block, and their collective signatures are aggregated to form a quorum certificate (QC). This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the validators will instead send timeout messages, which are aggregated to form a timeout certificate (TC). Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
+
    Concordium Client
 
       The Concordium command line tool. It is designed as a low-level interface to the Concordium blockchain. It cannot be used to create identities, but it can :ref:`import accounts<concordium-client-import-accounts-keys>` exported from the |bw|. Once an account has been imported, Concordium Client can be used to do CCD transfers from the account and other :ref:`transaction<transactions>` types supported by the Concordium blockchain.
 
+   Concordium ID
 
-   Concordium Byzantine Fault Tolerance (BFT) protocol
-
-      The consensus protocol for the blockchain. The protocol offers high transaction throughput and lower confirmation time because a block can be produced as soon as the previous block has been signed. The protocol proceeds by rounds. In each round, a predetermined leader among the validators should produce a block. The other validators then sign this block, and their collective signatures are aggregated to form a quorum certificate (QC). This quorum certificate is then included in the next block. If the leader fails to produce a block in the round, or not enough signatures were gathered for a QC, then the validators will instead send timeout messages, which are aggregated to form a timeout certificate (TC). Each block always contains a quorum certificate and may contain a timeout certificate for the previous round if and only if the previous round timed out. When blocks on a common chain in two consecutive rounds have quorum certificates, the block in the first of these rounds (together with its ancestors) is considered final. At this point, the protocol ensures that it cannot be rolled back. The two consecutive blocks must also be within the same epoch.
+      The protocol-level identity system on Concordium. All users must obtain a Concordium ID through identity verification with an approved identity provider before they can create and use accounts on the blockchain.
 
    Consensus
 
@@ -605,9 +608,24 @@ Also see the Concordium `Whitepaper <https://developer.concordium.software/gover
 
       Verifiable credentials are Web3 credentials. They have attributes that don’t have to have stringent requirements on anonymity revocation, but can also witness a number of other attributes of the holder. Examples of this would be club membership credentials, reward programs, etc. There are no requirements imposed on who can be an issuer of these credentials, and in contrast to protocol level identities, the Web3 ID credentials can be revoked according to the logic imposed by the issuer. This could be that the credential holder can revoke it, the credential expires, or the issuer or some other third party has rights to revoke it. Verifiable credentials are not associated with accounts. Verifiable credentials can be used to build verifiable presentations, which can also be cryptographically verified.
 
+   Verifiable decryption
+
+      The provable decryption of e.g. an election result. Provable means that the resulting plaintext comes with auxiliary information (here a ZK proof) that allows any third party to verify the correctness of the decryption process.
+
    Verifiable presentation
 
       Data derived from one or more verifiable credentials, issued by one or more issuers, that is shared with a specific verifier. A verifiable presentation is a tamper-evident presentation encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. Certain types of verifiable presentations might contain data that is synthesized from, but do not contain, the original verifiable credentials (for example, zero-knowledge proofs).
+
+   Verification Audit Anchor
+
+      A transaction initiated by the merchant after verifying of the presentation, and generating the verification audit record. The anchor makes the audit record tamper-evident and timestamps it.
+
+   Verification Audit Record
+
+      A private record stored by the merchant as a result of verifying a presentation (and shown to an auditor as needed).
+
+   Verification Request Anchor
+      A transaction initiated by the merchant immediately after generating a presentation request, but prior to sending it to the ID app. Its purpose is to allow the ID app to confirm that the presentation request is both authentic and recent.
 
    Verifier
 

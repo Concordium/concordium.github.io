@@ -65,49 +65,49 @@ Concordium Desktop Wallet
 
 .. dropdown:: Mainnet
 
-   .. card:: Windows v1.8.2
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.exe
+   .. card:: Windows v1.9.3
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.exe
 
-   .. card:: macOS v1.8.2
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.dmg
+   .. card:: macOS v1.9.3
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.dmg
 
-   .. dropdown:: Linux® v1.8.2
+   .. dropdown:: Linux® v1.9.3
 
-      - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.AppImage>`_
+      - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.AppImage>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-appimage-checksum|`
          - :ref:`Verification instructions <verification-cdw-appimage>`
 
-      - `Mainnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.deb>`_
+      - `Mainnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.deb>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-deb-checksum|`
          - :ref:`Verification instructions <verification-cdw-deb>`
 
-      - `Mainnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.8.2-mainnet/concordium-desktop-wallet-1.8.2.rpm>`_
+      - `Mainnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.rpm>`_
 
          - SHA256 checksum of the download: :substitution-code:`|cdw-rpm-checksum|`
          - :ref:`Verification instructions <verification-cdw-rpm>`
 
 .. dropdown:: Testnet
 
-   .. card:: Windows v1.9.0
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.exe
+   .. card:: Windows v1.9.3
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.exe
 
-   .. card:: macOS v1.9.0
-      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.dmg
+   .. card:: macOS v1.9.3
+      :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.dmg
 
-   .. dropdown:: Linux® v1.9.0
+   .. dropdown:: Linux® v1.9.3
 
       Download the Testnet version of Concordium Desktop Wallet for Linux®:
 
-      -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.AppImage>`_
-         -  SHA256 checksum of the download: ``c9ec2ef793273450bbe3c810e8f086bbddbf63bb20b0d9c27e8b827215fffade``
+      -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.AppImage>`_
+         -  SHA256 checksum of the download: ``d38c74635a30f467e1acdf17e1fd2409cb59caecf1365942c16fd79a5cf0db60``
 
-      -  `Testnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.deb>`_
-         -  SHA256 checksum of the download: ``d9a9136fd317ec4a364ea413d62fa24055e44e7a6168a9b5b845147d41c3dffe``
+      -  `Testnet Debian package <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.deb>`_
+         -  SHA256 checksum of the download: ``d480b27f8d2f5dd4e7f3b4901d6647c8341ac89b3124a6255cfbe12dad42a9a2``
 
-      -  `Testnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.0-testnet/concordium-desktop-wallet-testnet-1.9.0.rpm>`_
-         -  SHA256 checksum of the download: ``48188c44eddd25b6c1b8fbeb4849d55b8c59294c94a49dbab54d8e9ad099b444``
+      -  `Testnet RPM <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.rpm>`_
+         -  SHA256 checksum of the download: ``10dc5e84158f9eae1d009eb9bb55298bbe7e8aa49be592f129795c751df73e77``
 
 .. _ledger-app-download:
 
