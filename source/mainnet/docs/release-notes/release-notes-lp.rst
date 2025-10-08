@@ -134,13 +134,27 @@ Wallets
 
 .. _rn-cryptox-android:
 
-|cryptox-legacy| for Android
-----------------------------
-    1.12.0 - August 18, 2025
+|cryptox| for Android
+---------------------
+    1.13.0 - September 22, 2025
 
-    - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
+    Added:
+
+    - Protocol-Level Token support.
+    - Display of transfer sender or recipient in the Activity screen.
+
+    Changed:
+
+    - Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.
+
+    Fixed:
+
+    - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
 
     .. dropdown:: Previous releases
+        .. dropdown:: |cryptox| 1.12.0 - August 18, 2025
+
+        - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
         .. dropdown:: |cryptox-legacy| 1.11.0 - July 8, 2025
 
@@ -440,14 +454,21 @@ Wallets
 |bw|
 -------------------------
 
-    Aug 12, 2025
+    Sep 22, 2025
 
-    Version 2.5.1
+    Version 2.6.0
 
-    -   Fixed issue when users were not able to complete Web3 ID age verification.
-    -   Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the "Manage token list" menu manually.
+    -   Added support of protocol-level tokens (PLT). Including token transfer, transaction history update, token details, token management.
+    -   Fixed token amount displayed as NaN when value is negative and less than token precision. At Send screen when 'Send Max' calculated.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.5.1 - Aug 12, 2025
+
+            Version 2.5.1 changes:
+
+            -   Fixed issue when users were not able to complete Web3 ID age verification.
+            -   Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the "Manage token list" menu manually.
 
         .. dropdown:: |bw| 2.5.0 - July 09, 2025
 
@@ -721,14 +742,26 @@ Wallets
 Desktop Wallet
 --------------
 
-    May 1, 2025
+    September 26, 2025
 
-    Version 1.8.1 contains the following changes:
+    Version 1.9.3 contains the following changes:
 
-    - Fixed issue with blank screen on startup first seen in 1.8.0.
-    - Fixed error message in terminal when failing to lookup the latest release.
+    - Fixed issue where wallet losses connection to ledger
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.9.2 - September 24, 2025
+
+            - Fixed being unable to add a 2nd account in a DW
+            - Fix display of new size of level 2 key set which now accounts for removed keys correctly
+            - Update the flow for signing authorizations updates with support for v2 authorizations
+            - Add create PLT (protocol level token) governance transaction
+            - Add a separate menu for governance transactions in multi sig panel
+
+        .. dropdown:: 1.8.1 - May 1, 2025
+
+            - Fixed issue with blank screen on startup first seen in 1.8.0.
+            - Fixed error message in terminal when failing to lookup the latest release.
 
         .. dropdown:: 1.8.0 - March 18, 2025
 
