@@ -13,7 +13,7 @@ Create your wallet
 
 #. Install |cryptox| on an Android or iOS phone. See :ref:`Downloads<downloads-cryptox>`.
 
-#. Open the wallet.
+#. Open the wallet app.
 
    .. image:: ../images/cryptoX/concordium-wallet-welcome-screen.png
             :alt: wallet welcome screen
@@ -42,7 +42,7 @@ Create your wallet
 Back up your wallet
 ===================
 
-After creating your account, you'll see a prompt to backup your wallet.
+After creating your account, you'll see a prompt to back up your wallet.
 
 .. image:: ../images/cryptoX/back-up-your-wallet-banner.png
             :alt: back-up wallet banner
