@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/setup-concordium-wallet.8a6ef365-30d1-4ddf-a929-a0232b96aca8.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/setup-concordium-wallet.09155468-fd55-4816-849a-fe616b3ee589.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/setup-concordium-wallet';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/setup-concordium-wallet.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -787,163 +787,54 @@
   <section id="set-up-the-cryptox">
 <span id="setup-concordium-wallet"></span><h1>Set up the Concordium Wallet<a class="headerlink" href="#set-up-the-cryptox" title="Link to this heading">#</a></h1>
 <p>The Concordium Wallet enables you to create and manage Concordium <a class="reference internal" href="../protocol/identity.html#reference-identity"><span class="std std-ref">identities</span></a> and <a class="reference internal" href="../protocol/manage-accounts.html#managing-accounts"><span class="std std-ref">accounts</span></a>, transfer and stake CCD, and connect to decentralized applications (dApps). It features intuitive account management, multi-token support, and flexible recovery options using seed phrase, backup file, or wallet private key. Available for iOS and Android.</p>
-<section id="get-started">
-<h2>Get started<a class="headerlink" href="#get-started" title="Link to this heading">#</a></h2>
+<section id="create-your-wallet">
+<h2>Create your wallet<a class="headerlink" href="#create-your-wallet" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Install the Concordium Wallet on an Android or iOS phone. See <a class="reference internal" href="../installation/downloads.html#downloads-cryptox"><span class="std std-ref">Downloads</span></a>.</p></li>
-<li><p>Open the Concordium Wallet.</p></li>
-<li><p>Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap <strong>Get started</strong>.</p>
-<p>You can choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.</p>
+<li><p>Install Concordium Wallet on an Android or iOS phone. See <a class="reference internal" href="../installation/downloads.html#downloads-cryptox"><span class="std std-ref">Downloads</span></a>.</p></li>
+<li><p>Open the wallet.</p>
+<a class="reference internal image-reference" href="../../_images/concordium-wallet-welcome-screen.png"><img alt="wallet welcome screen" src="../../_images/concordium-wallet-welcome-screen.png" style="width: 40%;" />
+</a>
 </li>
-</ol>
-</section>
-<section id="set-up-your-wallet">
-<h2>Set up your wallet<a class="headerlink" href="#set-up-your-wallet" title="Link to this heading">#</a></h2>
-<p>The wallet setup consists of three phases: <a class="reference internal" href="#create-passcode"><span class="std std-ref">Create a 6-digit passcode</span></a>, <a class="reference internal" href="#save-seed-phrase"><span class="std std-ref">save seed phrase</span></a>, and <a class="reference internal" href="#verify-identity"><span class="std std-ref">verify identity</span></a>.</p>
-<p>You can pause between the phases and return later to continue.</p>
-<section id="create-passcode">
-<span id="id1"></span><h3>Create passcode<a class="headerlink" href="#create-passcode" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Tap <strong>Continue</strong> to begin creating your new wallet.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-onboarding2a.png"><img alt="screen with activate account" src="../../_images/cryptox-onboarding2a.png" style="width: 40%;" />
+<li><p>Swipe through the introduction screens, and then, tap <strong>Get started</strong>.</p></li>
+<li><p>Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap <strong>Create a New Wallet</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/concordium-wallet-create-a-new-wallet.png"><img alt="create new wallet screen" src="../../_images/concordium-wallet-create-a-new-wallet.png" style="width: 40%;" />
 </a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you already have a wallet, you can select <strong>Import a wallet</strong> at the bottom of the screen. This allows you to <a class="reference internal" href="recovery.html#backup-import-recover"><span class="std std-ref">restore using a seed phrase, wallet private key, or backup file</span></a>.</p>
+<p>If you already have a wallet, you can select <strong>Restore Existing Wallet</strong>. This allows you to <a class="reference internal" href="recovery.html#backup-import-recover"><span class="std std-ref">restore using a seed phrase, wallet private key, or backup file</span></a>.</p>
 </div>
 </li>
-<li><p>Create and confirm a six-digit passcode or full password.</p></li>
+<li><p>Create and confirm a six-digit passcode.</p></li>
+<li><p>Tap <strong>Verify identity</strong>, and select an identity provider. Enter your passcode when prompted.
+An external web page opens within the app, where you must enter the requested information and provide photos of identification documents and a selfie.
+Wait for verification (usually within minutes, but results can be retrieved for up to seven days).</p></li>
+<li><p>Once verification is completed, tap <strong>Create account</strong> and enter your passcode to set up your first account.
+Your new account will be visible in the Accounts list. You can <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">change the name of the account</span></a> if you want to.</p></li>
 </ol>
 </section>
-<section id="save-seed-phrase">
-<span id="id2"></span><h3>Save seed phrase<a class="headerlink" href="#save-seed-phrase" title="Link to this heading">#</a></h3>
-<p>After creating your passcode, you’ll see a progress indicator. Your progress is automatically saved, so you can close the app and continue the setup later if you wish.</p>
-<ol class="arabic">
-<li><p>Tap <strong>Save seed phrase</strong> to continue setup.</p></li>
-<li><p>Write down, digitally copy, or screenshot your seed phrase and store it securely. Check the confirmation box and tap <strong>Continue</strong>.</p>
-<p><strong>Important:</strong> Your seed phrase is the only way to recover your wallet if you lose access. Keep it safe and private.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-onboarding5a.png"><img alt="screen with information about saving seed phrase" src="../../_images/cryptox-onboarding5a.png" style="width: 40%;" />
+<section id="back-up-your-wallet">
+<h2>Back up your wallet<a class="headerlink" href="#back-up-your-wallet" title="Link to this heading">#</a></h2>
+<p>After creating your account, you’ll see a prompt to backup your wallet.</p>
+<a class="reference internal image-reference" href="../../_images/back-up-your-wallet-banner.png"><img alt="back-up wallet banner" src="../../_images/back-up-your-wallet-banner.png" style="width: 40%;" />
 </a>
-</li>
-<li><p>Enter your passcode when prompted.</p></li>
-</ol>
-</section>
-<section id="verify-identity">
-<span id="id3"></span><h3>Verify identity<a class="headerlink" href="#verify-identity" title="Link to this heading">#</a></h3>
-<p>After securing your seed phrase, you’ll return to the main wallet screen showing you’re now ready for the final step. Your progress is automatically saved.</p>
-<ol class="arabic">
-<li><p>Tap <strong>Verify identity</strong> to continue setup.</p></li>
-<li><p>Select an identity provider.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-onboarding8a.png"><img alt="screen with identity providers" src="../../_images/cryptox-onboarding8a.png" style="width: 40%;" />
-</a>
-</li>
-<li><p>Enter your passcode when prompted. An external web page opens within the app.</p></li>
-<li><p>Enter the requested information and provide photos of identification documents and a selfie.</p></li>
-<li><p>Wait for verification (usually within minutes, but results can be retrieved for up to seven days). Check the app frequently for the result.</p>
-<p>If rejected: Tap <strong>Make new identity request</strong> to create a new identity request with a different provider.</p>
-</li>
-</ol>
-</section>
-</section>
-<section id="create-account">
-<h2>Create account<a class="headerlink" href="#create-account" title="Link to this heading">#</a></h2>
-<p>Once the identity provider has approved your verification request, you can create your first account.</p>
-<ol class="arabic">
-<li><p>Tap <strong>Create account</strong> to set up your first account.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-onboarding9a.png"><img alt="screen with identity providers" src="../../_images/cryptox-onboarding9a.png" style="width: 40%;" />
-</a>
-</li>
-<li><p>Enter your passcode or password when prompted.</p></li>
-<li><p>Your new account will be visible in the Accounts list.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-onboarding10a.png"><img alt="screen showing first account in list" src="../../_images/cryptox-onboarding10a.png" style="width: 40%;" />
-</a>
-</li>
-</ol>
-<p>If you want to, you can <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">change the name of the account</span></a>.</p>
+<p>Tap it to go to your seed phrase, then tap <strong>Show seed phrase</strong>. Write down, digitally copy, or screenshot your seed phrase and store it securely.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Your seed phrase is the only way to recover your wallet if you lose access. Keep it safe and private.</p>
+</div>
 </section>
 <section id="basic-navigation">
 <h2>Basic navigation<a class="headerlink" href="#basic-navigation" title="Link to this heading">#</a></h2>
-<p>The Concordium Wallet provides the navigation elements described in the following.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-basic-navigation1a.png"><img alt="main wallet screen with position numbers" src="../../_images/cryptox-basic-navigation1a.png" style="width: 40%;" />
+<a class="reference internal image-reference" href="../../_images/concordium-wallet-main-screen-a.png"><img alt="main wallet screen" src="../../_images/concordium-wallet-main-screen-a.png" style="width: 40%;" />
 </a>
-<section id="accounts-balances-and-qr-scan">
-<h3>Accounts, balances and QR scan<a class="headerlink" href="#accounts-balances-and-qr-scan" title="Link to this heading">#</a></h3>
-<a class="reference internal image-reference" href="../../_images/cryptox-navigation-top.png"><img alt="main wallet screen with position numbers" src="../../_images/cryptox-navigation-top.png" style="width: 50%;" />
-</a>
-<p>At the top left of the screen, you find the account selector displaying your shortened account identifier. Tapping this account identifier will take you to the <a class="reference internal" href="#mw-cryptox-account-navigation"><span class="std std-ref">Your accounts screen</span></a> where you can view and select from all your accounts.</p>
-<p>The account identifier shown at the top left represents your currently selected account. All actions on the main screen (sending, receiving, earning through staking or delegation, and viewing transactions) will apply to this selected account. To change account, tap the account identifier and select another account on the Your accounts screen.</p>
-<p>In the top right corner, you find the QR code scan button that allows you to <a class="reference internal" href="../browser-wallet/connect-app.html#connect-app-bw"><span class="std std-ref">scan a QR code to connect to a dApp</span></a>.</p>
-<p>Below the account selector, a large display shows your total CCD balance, and right under that you see your available balance indicated as <em>CCD at disposal</em> - this is the amount you can use for transactions.</p>
-</section>
-<section id="quick-access-buttons">
-<h3>Quick access buttons<a class="headerlink" href="#quick-access-buttons" title="Link to this heading">#</a></h3>
-<a class="reference internal image-reference" href="../../_images/cryptox-navigation-action-bar.png"><img alt="main wallet screen with position numbers" src="../../_images/cryptox-navigation-action-bar.png" style="width: 50%;" />
-</a>
-<p>Below the balance information, you find a number of quick access buttons to core functionality:</p>
+<p>The main screen shows your account balance and quick access buttons for key actions: <strong>Buy</strong>, <strong>Send</strong>, <strong>Receive</strong>, <strong>Earn</strong>, and <strong>Activity</strong>.</p>
+<p>Tap your account identifier at the top left to view all your accounts, switch between them, create new ones, or access account settings. Use the QR code icon at the top right to scan and connect to dApps.</p>
+<p>The navigation bar at the bottom provides access to:</p>
 <ul class="simple">
-<li><p>Buy: purchase CCD</p></li>
-<li><p>Send: <a class="reference internal" href="send-ccd-wallets.html#send-ccd-wallets"><span class="std std-ref">send funds</span></a> to another account</p></li>
-<li><p>Receive: get your address to receive funds</p></li>
-<li><p>Earn: access <a class="reference internal" href="../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">validation</span></a> or <a class="reference internal" href="../protocol/concepts-delegation.html#delegation-concept"><span class="std std-ref">delegation</span></a> functionality</p></li>
-<li><p>Activity: view transaction history</p></li>
+<li><p><strong>Home</strong>: main wallet screen</p></li>
+<li><p><strong>Browser</strong>: Concordium News</p></li>
+<li><p><strong>Settings</strong>: wallet preferences and security options</p></li>
 </ul>
-</section>
-<section id="token-list">
-<h3>Token list<a class="headerlink" href="#token-list" title="Link to this heading">#</a></h3>
-<a class="reference internal image-reference" href="../../_images/cryptox-navigation-token-list.png"><img alt="main wallet screen with position numbers" src="../../_images/cryptox-navigation-token-list.png" style="width: 50%;" />
-</a>
-<p>The central part of the screen displays your token list, showing all digital assets in your wallet including their current balances. Tapping on any token entry will take you to a detailed view for that specific token, where you can perform token-specific actions.</p>
-</section>
-<section id="navigation-bar">
-<h3>Navigation bar<a class="headerlink" href="#navigation-bar" title="Link to this heading">#</a></h3>
-<a class="reference internal image-reference" href="../../_images/cryptox-navigation-bar.png"><img alt="main wallet screen with position numbers" src="../../_images/cryptox-navigation-bar.png" style="width: 50%;" />
-</a>
-<p>At the bottom of the screen, you find the navigation bar with three main options:</p>
-<ul class="simple">
-<li><p>Home (house icon): return to the main wallet screen</p></li>
-<li><p>Browser (compass icon): access Concordium News</p></li>
-<li><p><a class="reference internal" href="#mw-cryptox-wallet-settings"><span class="std std-ref">Settings (gear icon)</span></a>: configure wallet preferences and security options</p></li>
-</ul>
-</section>
-<section id="wallet-settings">
-<span id="mw-cryptox-wallet-settings"></span><h3>Wallet settings<a class="headerlink" href="#wallet-settings" title="Link to this heading">#</a></h3>
-<p>Tapping the gear icon in the bottom right part of the screen opens up the <em>Wallet Settings</em> screen with the following options:</p>
-<ul class="simple">
-<li><p>Identities: view all identities in the wallet and details of the identities, <a class="reference internal" href="change-identity-name.html#change-mw-id-name"><span class="std std-ref">edit identity names</span></a>, and <a class="reference internal" href="create-identity.html#create-initial-account"><span class="std std-ref">create new identities</span></a>.</p></li>
-<li><p>Wallets: manage different wallet types (seed phrase or file wallet), add existing wallets, and switch between them.</p></li>
-<li><p>Address book: <a class="reference internal" href="address-book.html#address-book-mw"><span class="std std-ref">manage your address book</span></a>.</p></li>
-<li><p>Notifications: enable or disable notifications for CCD and CIS-2 token transactions.</p></li>
-<li><p>Recovery: <a class="reference internal" href="recovery.html#backup-import-recover"><span class="std std-ref">recover your wallet</span></a>.</p></li>
-<li><p>Seed phrase: <a class="reference internal" href="show-seed-phrase.html#show-seed-phrase"><span class="std std-ref">show seed phrase</span></a></p></li>
-<li><p>Update passcode and biometrics: <a class="reference internal" href="../mobile-wallet/change-passcode-mw.html#change-passcode-mw"><span class="std std-ref">change your wallet passcode or activate biometrics</span></a>.</p></li>
-<li><p>Clear WalletConnect: disconnect all active WalletConnect sessions.</p></li>
-<li><p>Erase data: remove all wallet data from this device (can be restored using seed phrase or backup file).</p></li>
-<li><p>Analytics: enable or disable app usage tracking (no personal data or transaction information is collected).</p></li>
-<li><p>NFT: view and manage your NFT collections, and discover new NFTs.</p></li>
-<li><p>About: access app version, support information, website links, legal documents, and social media channels.</p></li>
-</ul>
-<p>In case you have created your wallet from a backup file, you will not have the Recovery and Show seed phrase options, but instead the options <a class="reference internal" href="import-export-file.html#import-export-file-wallet"><span class="std std-ref">Import</span></a> and <a class="reference internal" href="import-export-file.html#import-export-file-wallet"><span class="std std-ref">Export</span></a>.</p>
-</section>
-<section id="account-navigation">
-<span id="mw-cryptox-account-navigation"></span><h3>Account navigation<a class="headerlink" href="#account-navigation" title="Link to this heading">#</a></h3>
-<p>When you tap your account identifier at the top of the main screen, you access the <em>Your accounts</em> screen. Here, you see a list of all your accounts.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-your-accounts-screen.png"><img alt="account details screen" src="../../_images/cryptox-your-accounts-screen.png" style="width: 40%;" />
-</a>
-<p>You can:</p>
-<ul class="simple">
-<li><p>Tap an account to select it and return to the main screen</p></li>
-<li><p>Create a new account using the button at the bottom of the screen</p></li>
-</ul>
-<p>When you select an account, all actions on the main screen (sending, receiving, earning through staking or delegation, and viewing transactions) will apply to this selected account.</p>
-<p>To access account-specific settings, tap the gear icon in the top right corner of the screen. The Account settings screen provides these options:</p>
-<ul class="simple">
-<li><p>Transfer filters: configure filters to show or hide rewards</p></li>
-<li><p>Release schedule: <a class="reference internal" href="../mobile-wallet/inspect-release-schedule-mw.html#inspect-release-schedule-mw"><span class="std std-ref">inspect a release schedule</span></a></p></li>
-<li><p>Export private key: <a class="reference internal" href="export-account-private-key.html#export-key"><span class="std std-ref">export your private key</span></a> for testing smart contracts, for example</p></li>
-<li><p>Export transaction logs: <a class="reference internal" href="export-transaction-logs.html#export-transaction-logs"><span class="std std-ref">export transaction logs</span></a></p></li>
-<li><p>Change account name: <a class="reference internal" href="change-account-name.html#change-mw-acct-name"><span class="std std-ref">customize account names</span></a></p></li>
-</ul>
-</section>
 </section>
 </section>
 
@@ -1030,23 +921,9 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-started">Get started</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-wallet">Set up your wallet</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-passcode">Create passcode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-seed-phrase">Save seed phrase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-identity">Verify identity</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-account">Create account</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-navigation">Basic navigation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accounts-balances-and-qr-scan">Accounts, balances and QR scan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-access-buttons">Quick access buttons</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#token-list">Token list</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigation-bar">Navigation bar</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wallet-settings">Wallet settings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#account-navigation">Account navigation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-wallet">Create your wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-up-your-wallet">Back up your wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-navigation">Basic navigation</a></li>
 </ul>
   </nav></div>
 

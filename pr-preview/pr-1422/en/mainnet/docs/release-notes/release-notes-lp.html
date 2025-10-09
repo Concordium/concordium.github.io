@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.ee073fd0-4d93-4a07-8a03-d0c166738164.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.5b4a80bc-7bd3-4d15-8e15-9d7a4ff31142.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -939,16 +939,30 @@
 </dl>
 </div></blockquote>
 </section>
-<section id="cryptox-legacy-for-android">
-<span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-legacy-for-android" title="Link to this heading">#</a></h3>
+<section id="cryptox-for-android">
+<span id="rn-cryptox-android"></span><h3>Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>1.12.0 - August 18, 2025</p>
+<div><p>1.13.0 - September 22, 2025</p>
+<p>Added:</p>
 <ul class="simple">
-<li><p>Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service</p></li>
+<li><p>Protocol-Level Token support.</p></li>
+<li><p>Display of transfer sender or recipient in the Activity screen.</p></li>
+</ul>
+<p>Changed:</p>
+<ul class="simple">
+<li><p>Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.</p></li>
+</ul>
+<p>Fixed:</p>
+<ul class="simple">
+<li><p>The reject reason for failed transactions is now correctly displayed in the transaction details screen.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Previous releases
+.. dropdown:: Concordium Wallet 1.12.0 - August 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service</p></li>
+</ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet 1.11.0 - July 8, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -1230,16 +1244,25 @@
 <section id="bw">
 <span id="rn-bw"></span><h3>Concordium Wallet for Web<a class="headerlink" href="#bw" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>Aug 12, 2025</p>
-<p>Version 2.5.1</p>
+<div><p>Sep 22, 2025</p>
+<p>Version 2.6.0</p>
 <ul class="simple">
-<li><p>Fixed issue when users were not able to complete Web3 ID age verification.</p></li>
-<li><p>Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the “Manage token list” menu manually.</p></li>
+<li><p>Added support of protocol-level tokens (PLT). Including token transfer, transaction history update, token details, token management.</p></li>
+<li><p>Fixed token amount displayed as NaN when value is negative and less than token precision. At Send screen when ‘Send Max’ calculated.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Concordium Wallet for Web 2.5.1 - Aug 12, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Version 2.5.1 changes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Fixed issue when users were not able to complete Web3 ID age verification.</p></li>
+<li><p class="sd-card-text">Removed EUROe as default token and associated migrations with EUROe as default token. EUROe can still be added by the “Manage token list” menu manually.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Concordium Wallet for Web 2.5.0 - July 09, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Version 2.5.0 changes:</p>
@@ -1531,16 +1554,34 @@ delivering a more seamless and user-friendly experience while preserving all the
 <section id="desktop-wallet">
 <span id="rn-dw"></span><h3>Desktop Wallet<a class="headerlink" href="#desktop-wallet" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>May 1, 2025</p>
-<p>Version 1.8.1 contains the following changes:</p>
+<div><p>September 26, 2025</p>
+<p>Version 1.9.3 contains the following changes:</p>
 <ul class="simple">
-<li><p>Fixed issue with blank screen on startup first seen in 1.8.0.</p></li>
-<li><p>Fixed error message in terminal when failing to lookup the latest release.</p></li>
+<li><p>Fixed issue where wallet losses connection to ledger</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1.9.2 - September 24, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Fixed being unable to add a 2nd account in a DW</p></li>
+<li><p class="sd-card-text">Fix display of new size of level 2 key set which now accounts for removed keys correctly</p></li>
+<li><p class="sd-card-text">Update the flow for signing authorizations updates with support for v2 authorizations</p></li>
+<li><p class="sd-card-text">Add create PLT (protocol level token) governance transaction</p></li>
+<li><p class="sd-card-text">Add a separate menu for governance transactions in multi sig panel</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">1.8.1 - May 1, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Fixed issue with blank screen on startup first seen in 1.8.0.</p></li>
+<li><p class="sd-card-text">Fixed error message in terminal when failing to lookup the latest release.</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">1.8.0 - March 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
@@ -3269,7 +3310,7 @@ CCDScan release 1 includes core functionality to scan and gain insights into C
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wallets">Wallets</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox-legacy-for-ios">CryptoX Concordium Wallet for iOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox-legacy-for-android">CryptoX Concordium Wallet for Android</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox-for-android">Concordium Wallet for Android</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bw">Concordium Wallet for Web</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desktop-wallet">Desktop Wallet</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concordium-ledger-app">Concordium LEDGER app</a></li>

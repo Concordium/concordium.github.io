@@ -429,59 +429,64 @@ The output is:
 
 .. code-block:: console
 
-   # Parameters related to staking pools:
-     + minimum equity capital: 500000.000000 CCD
-     + maximum fraction of total stake a pool is allowed to hold: 0.05
-     + maximum factor a pool may stake relative to the validators's stake: 6 % 1
-     + pool owner cooldown duration: 21d
-     + allowed range for finalization commission: [1.0, 1.0]
-     + allowed range for block commission: [0.1, 0.1]
-     + allowed range for transaction commission: [0.1, 0.1]
+# Parameters related to staking pools:
+  + minimum equity capital: 500000.000000 CCD
+  + maximum fraction of total stake a pool is allowed to hold: 5.0e-2
+  + maximum factor a pool may stake relative to the validator's stake: 6 % 1
+  + pool owner cooldown duration: 7d
+  + allowed range for finalization commission: [1.0, 1.0]
+  + allowed range for block reward commission: [0.0, 1.0]
+  + allowed range for transaction commission: [0.0, 1.0]
 
-   # Passive delegation parameters:
-     + finalization commission: 1.0
-     + block commission: 0.12
-     + transaction commission: 0.12
+# Passive delegation parameters:
+  + finalization commission: 1.0
+  + block reward commission: 0.25
+  + transaction commission: 0.25
 
-   # Parameters related to delegators:
-     + delegator cooldown duration: 14d
+# Parameters related to delegators:
+  + delegator cooldown duration: 7d
 
-   # Exchange rate parameters:
-     - EUR per CCD rate (approx): 0.0200
-     - EUR per Energy rate: 1 / 50000 (approx 2.0e-5)
-     - microCCD per EUR rate: 11803749708081170432 / 236031671743 (approx 5.000917724691426e7)
+# Exchange rate parameters:
+  + EUR per CCD rate (approx): 0.0039
+  + EUR per Energy rate: 1 / 50000 (approx 2.0e-5)
+  + microCCD per EUR rate: 9309295728319683584 / 36703199911 (approx 2.5363716926299047e8)
 
-   # Parameters that affect rewards distribution:
-     + mint amount per reward period: 261157877e-12
-     + mint distribution:
-         * block reward: 0.6
-     + transaction fee distribution:
-         * validator: 0.45
-         * GAS account: 0.45
-     + GAS rewards:
-         * producing a block: 0.25
-         * adding a credential deployment: 2.0e-2
-         * adding a chain update: 5.0e-3
+# Parameters that affect rewards distribution:
+  + mint amount per reward period: 107459782e-12
+  + mint distribution:
+     * block reward: 0.9
+     * finalization reward: 0.0
+  + transaction fee distribution:
+     * validator: 0.45
+     * GAS account: 0.45
+  + GAS account distribution:
+     * producing a block: 0.25
+     * adding a finalization proof: N/A
+     * adding a credential deployment: 2.0e-2
+     * adding a chain update: 5.0e-3
 
-   # Time parameters:
-     + reward period length: 24 epochs
+# Time parameters:
+  + reward period length: 24 epochs
 
-  # Consensus parameters:
-    + Timeout parameters:
-      * base timeout: 10000 ms.
-      * timeout increase: 5 / 4 (approx 1.25)
-      * timeout decrease: 4 / 5 (approx 0.8)
-    + minimum time between blocks: 2000 ms.
-    + block energy limit: 3000000
+# Consensus parameters:
+  + Timeout parameters:
+     * base timeout: 10000 ms.
+     * timeout increase: 6 / 5 (approx 1.2)
+     * timeout decrease: 3 / 4 (approx 0.75)
+  + minimum time between blocks: 2000 ms.
+  + block energy limit: 3000000
 
-  # Finalization committee parameters:
-    + minimum finalizers: 40
-    + maximum finalizers: 1000
-    + finalizer relative stake threshold: 1.0e-3
+# Finalization committee parameters:
+  + minimum finalizers: 40
+  + maximum finalizers: 1000
+  + finalizer relative stake threshold: 5.0e-5
 
-   # Other parameters:
-     + foundation account index: 10
-     + maximum credential deployments per block: 10
+# Validator score parameters:
+  + maximum missed rounds: 10
+
+# Other parameters:
+  + foundation account index: 13
+  + maximum credential deployments per block: 10
 
 .. list-table::
    :widths: 25 25 50

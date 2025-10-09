@@ -175,11 +175,11 @@ If you need to export the private key of a specific account to use in Concordium
 
     For all three methods, start doing this:
 
-    #. After installing or reinstalling the |cryptox| app, open the app.
+    #. After installing or reinstalling the |cryptox| app, open the app and swipe through the introduction screens.
 
-    #. Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap **Get started**.
+    #. Tap **Get started**.
 
-    #. Tap **Import a wallet**.
+    #. Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap **Restore Existing Wallet**.
 
     #. Create and confirm a 6-digit passcode for your wallet.
 
