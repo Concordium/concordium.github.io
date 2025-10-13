@@ -1,13 +1,13 @@
 .. include:: ../../variables.rst
-.. _concordium-wallet-terms:
+.. _cryptox-terms:
 
-====================================
-End User License Terms for |cryptox|
-====================================
+====================================================
+End User License Terms for CryptoX Concordium Wallet
+====================================================
 
 Effective April 1, 2023
 
-These End User License Terms (these **“Terms”**) constitute a legally binding agreement made between you, whether personally or on behalf of an entity (**“you”**) and Concordium Software ApS (together with its subsidiaries and affiliates, **“we”**, **“us”**, or **“our”**) governing your download, installation, and use of the |cryptox| in the form of browser extensions, mobile applications, desktop applications, or other applications or API (collectively, the **“App”**). The App enables users to self-custody digital assets and verified credentials, connect to blockchains, applications and protocols running on blockchains such as, but not limited to layer-2 solutions, decentralized applications (**“dApps”**) and bridges. The App also includes links to support channels and other information resources available by the use of third-party tools (such third-party tools, applications, and protocols, together **“Third Party Services”**).
+These End User License Terms (these **“Terms”**) constitute a legally binding agreement made between you, whether personally or on behalf of an entity (**“you”**) and Concordium Software ApS (together with its subsidiaries and affiliates, **“we”**, **“us”**, or **“our”**) governing your download, installation, and use of the CryptoX Wallet in the form of browser extensions, mobile applications, desktop applications, or other applications or API (collectively, the **“App”**). The App enables users to self-custody digital assets and verified credentials, connect to blockchains, applications and protocols running on blockchains such as, but not limited to layer-2 solutions, decentralized applications (**“dApps”**) and bridges. The App also includes links to support channels and other information resources available by the use of third-party tools (such third-party tools, applications, and protocols, together **“Third Party Services”**).
 You agree that by downloading, installing, and using the App, you expressly acknowledge that you have read and agree to be bound by these Terms and any important notices posted from time to time on [●], which is hereby incorporated herein by reference. IF YOU DO NOT AGREE WITH THESE TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE APP AND THE THIRD-PARTY SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.
 
 Summary
