@@ -162,22 +162,22 @@ Wallets
 
         .. dropdown:: |cryptox| 1.13.0 - September 22, 2025
 
-        Added:
+            Added:
 
-        - Protocol-Level Token support.
-        - Display of transfer sender or recipient in the Activity screen.
+            - Protocol-Level Token support.
+            - Display of transfer sender or recipient in the Activity screen.
 
-        Changed:
+            Changed:
 
-        - Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.
+            - Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.
 
-        Fixed:
+            Fixed:
 
-        - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
+            - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
 
         .. dropdown:: |cryptox| 1.12.0 - August 18, 2025
 
-        - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
+            - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
         .. dropdown:: |cryptox| 1.11.0 - July 8, 2025
 
