@@ -54,7 +54,7 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../_static/tippy/tools/transactions.f55cc8c6-b56e-49a8-80c9-471136ab6666.js"></script>
+    <script defer="defer" src="../_static/tippy/tools/transactions.3c22db0b-fbe8-4d06-a63c-e3cd7bc45b50.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tools/transactions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tools/transactions.html" />
     <link rel="icon" href="../_static/concordium-logo-no-text.svg"/>
@@ -923,61 +923,100 @@ release schedule.</p>
 </div>
 <p>To see the chain parameters for a specific block use the <code class="docutils literal notranslate"><span class="pre">--block</span></code> flag to specify the block hash.</p>
 <p>The output is:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> # </span>Parameters<span class="w"> </span>related<span class="w"> </span>to<span class="w"> </span>staking<span class="w"> </span>pools:
-<span class="go">   + minimum equity capital: 500000.000000 CCD</span>
-<span class="go">   + maximum fraction of total stake a pool is allowed to hold: 0.05</span>
-<span class="go">   + maximum factor a pool may stake relative to the validators&#39;s stake: 6 % 1</span>
-<span class="go">   + pool owner cooldown duration: 21d</span>
-<span class="go">   + allowed range for finalization commission: [1.0, 1.0]</span>
-<span class="go">   + allowed range for block commission: [0.1, 0.1]</span>
-<span class="go">   + allowed range for transaction commission: [0.1, 0.1]</span>
-
-<span class="gp"> # </span>Passive<span class="w"> </span>delegation<span class="w"> </span>parameters:
-<span class="go">   + finalization commission: 1.0</span>
-<span class="go">   + block commission: 0.12</span>
-<span class="go">   + transaction commission: 0.12</span>
-
-<span class="gp"> # </span>Parameters<span class="w"> </span>related<span class="w"> </span>to<span class="w"> </span>delegators:
-<span class="go">   + delegator cooldown duration: 14d</span>
-
-<span class="gp"> # </span>Exchange<span class="w"> </span>rate<span class="w"> </span>parameters:
-<span class="go">   - EUR per CCD rate (approx): 0.0200</span>
-<span class="go">   - EUR per Energy rate: 1 / 50000 (approx 2.0e-5)</span>
-<span class="go">   - microCCD per EUR rate: 11803749708081170432 / 236031671743 (approx 5.000917724691426e7)</span>
-
-<span class="gp"> # </span>Parameters<span class="w"> </span>that<span class="w"> </span>affect<span class="w"> </span>rewards<span class="w"> </span>distribution:
-<span class="go">   + mint amount per reward period: 261157877e-12</span>
-<span class="go">   + mint distribution:</span>
-<span class="go">       * block reward: 0.6</span>
-<span class="go">   + transaction fee distribution:</span>
-<span class="go">       * validator: 0.45</span>
-<span class="go">       * GAS account: 0.45</span>
-<span class="go">   + GAS rewards:</span>
-<span class="go">       * producing a block: 0.25</span>
-<span class="go">       * adding a credential deployment: 2.0e-2</span>
-<span class="go">       * adding a chain update: 5.0e-3</span>
-
-<span class="gp"> # </span>Time<span class="w"> </span>parameters:
-<span class="go">   + reward period length: 24 epochs</span>
-
-<span class="gp"># </span>Consensus<span class="w"> </span>parameters:
-<span class="go">  + Timeout parameters:</span>
-<span class="go">    * base timeout: 10000 ms.</span>
-<span class="go">    * timeout increase: 5 / 4 (approx 1.25)</span>
-<span class="go">    * timeout decrease: 4 / 5 (approx 0.8)</span>
-<span class="go">  + minimum time between blocks: 2000 ms.</span>
-<span class="go">  + block energy limit: 3000000</span>
-
-<span class="gp"># </span>Finalization<span class="w"> </span>committee<span class="w"> </span>parameters:
-<span class="go">  + minimum finalizers: 40</span>
-<span class="go">  + maximum finalizers: 1000</span>
-<span class="go">  + finalizer relative stake threshold: 1.0e-3</span>
-
-<span class="gp"> # </span>Other<span class="w"> </span>parameters:
-<span class="go">   + foundation account index: 10</span>
-<span class="go">   + maximum credential deployments per block: 10</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<dl class="simple">
+<dt># Parameters related to staking pools:</dt><dd><ul class="simple">
+<li><p>minimum equity capital: 500000.000000 CCD</p></li>
+<li><p>maximum fraction of total stake a pool is allowed to hold: 5.0e-2</p></li>
+<li><p>maximum factor a pool may stake relative to the validator’s stake: 6 % 1</p></li>
+<li><p>pool owner cooldown duration: 7d</p></li>
+<li><p>allowed range for finalization commission: [1.0, 1.0]</p></li>
+<li><p>allowed range for block reward commission: [0.0, 1.0]</p></li>
+<li><p>allowed range for transaction commission: [0.0, 1.0]</p></li>
+</ul>
+</dd>
+<dt># Passive delegation parameters:</dt><dd><ul class="simple">
+<li><p>finalization commission: 1.0</p></li>
+<li><p>block reward commission: 0.25</p></li>
+<li><p>transaction commission: 0.25</p></li>
+</ul>
+</dd>
+<dt># Parameters related to delegators:</dt><dd><ul class="simple">
+<li><p>delegator cooldown duration: 7d</p></li>
+</ul>
+</dd>
+<dt># Exchange rate parameters:</dt><dd><ul class="simple">
+<li><p>EUR per CCD rate (approx): 0.0039</p></li>
+<li><p>EUR per Energy rate: 1 / 50000 (approx 2.0e-5)</p></li>
+<li><p>microCCD per EUR rate: 9309295728319683584 / 36703199911 (approx 2.5363716926299047e8)</p></li>
+</ul>
+</dd>
+<dt># Parameters that affect rewards distribution:</dt><dd><ul class="simple">
+<li><p>mint amount per reward period: 107459782e-12</p></li>
+<li><dl class="simple">
+<dt>mint distribution:</dt><dd><ul>
+<li><p>block reward: 0.9</p></li>
+<li><p>finalization reward: 0.0</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>transaction fee distribution:</dt><dd><ul>
+<li><p>validator: 0.45</p></li>
+<li><p>GAS account: 0.45</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>GAS account distribution:</dt><dd><ul>
+<li><p>producing a block: 0.25</p></li>
+<li><p>adding a finalization proof: N/A</p></li>
+<li><p>adding a credential deployment: 2.0e-2</p></li>
+<li><p>adding a chain update: 5.0e-3</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt># Time parameters:</dt><dd><ul class="simple">
+<li><p>reward period length: 24 epochs</p></li>
+</ul>
+</dd>
+<dt># Consensus parameters:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Timeout parameters:</dt><dd><ul>
+<li><p>base timeout: 10000 ms.</p></li>
+<li><p>timeout increase: 6 / 5 (approx 1.2)</p></li>
+<li><p>timeout decrease: 3 / 4 (approx 0.75)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>minimum time between blocks: 2000 ms.</p></li>
+<li><p>block energy limit: 3000000</p></li>
+</ul>
+</dd>
+<dt># Finalization committee parameters:</dt><dd><ul class="simple">
+<li><p>minimum finalizers: 40</p></li>
+<li><p>maximum finalizers: 1000</p></li>
+<li><p>finalizer relative stake threshold: 5.0e-5</p></li>
+</ul>
+</dd>
+<dt># Validator score parameters:</dt><dd><ul class="simple">
+<li><p>maximum missed rounds: 10</p></li>
+</ul>
+</dd>
+<dt># Other parameters:</dt><dd><ul class="simple">
+<li><p>foundation account index: 13</p></li>
+<li><p>maximum credential deployments per block: 10</p></li>
+</ul>
+</dd>
+</dl>
 <div class="pst-scrollable-table-container"><table class="table">
 <colgroup>
 <col style="width: 25.0%" />

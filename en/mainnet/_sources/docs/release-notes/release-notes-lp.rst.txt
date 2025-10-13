@@ -136,22 +136,45 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.13.0 - September 22, 2025
+    1.14.0 - October 8, 2025
 
     Added:
 
-    - Protocol-Level Token support.
-    - Display of transfer sender or recipient in the Activity screen.
-
-    Changed:
-
-    - Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.
+    - You can now start the Send flow directly by scanning a QR code with a Concordium address from the main screen.
+    - Added onboarding slides to help new users get familiar with the wallet upon first installation.
 
     Fixed:
 
-    - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
+    - Tokens are now correctly displayed after switching between wallets.
+
+    Changed:
+
+    - Updated the app launcher icon.
+    - Refreshed the CCD token icon.
+    - Improved the design of WalletConnect dialogs for a cleaner look.
+
+    Removed:
+
+    - The prompt to save the seed phrase during wallet creation has been removed. You can now save it later on in the settings.
+    - Removed analytics consent from the initial setup screen.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox| 1.13.0 - September 22, 2025
+
+        Added:
+
+        - Protocol-Level Token support.
+        - Display of transfer sender or recipient in the Activity screen.
+
+        Changed:
+
+        - Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.
+
+        Fixed:
+
+        - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
+
         .. dropdown:: |cryptox| 1.12.0 - August 18, 2025
 
         - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service

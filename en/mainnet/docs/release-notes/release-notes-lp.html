@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.3d7ade79-644d-477d-8d6c-d21b94425067.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.d2d05a95-de73-49b0-85d8-f41f2ee02e1d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -942,25 +942,52 @@
 <section id="cryptox-for-android">
 <span id="rn-cryptox-android"></span><h3>CryptoX Concordium Wallet for Android<a class="headerlink" href="#cryptox-for-android" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>1.13.0 - September 22, 2025</p>
+<div><p>1.14.0 - October 8, 2025</p>
 <p>Added:</p>
 <ul class="simple">
-<li><p>Protocol-Level Token support.</p></li>
-<li><p>Display of transfer sender or recipient in the Activity screen.</p></li>
-</ul>
-<p>Changed:</p>
-<ul class="simple">
-<li><p>Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.</p></li>
+<li><p>You can now start the Send flow directly by scanning a QR code with a Concordium address from the main screen.</p></li>
+<li><p>Added onboarding slides to help new users get familiar with the wallet upon first installation.</p></li>
 </ul>
 <p>Fixed:</p>
 <ul class="simple">
-<li><p>The reject reason for failed transactions is now correctly displayed in the transaction details screen.</p></li>
+<li><p>Tokens are now correctly displayed after switching between wallets.</p></li>
+</ul>
+<p>Changed:</p>
+<ul class="simple">
+<li><p>Updated the app launcher icon.</p></li>
+<li><p>Refreshed the CCD token icon.</p></li>
+<li><p>Improved the design of WalletConnect dialogs for a cleaner look.</p></li>
+</ul>
+<p>Removed:</p>
+<ul class="simple">
+<li><p>The prompt to save the seed phrase during wallet creation has been removed. You can now save it later on in the settings.</p></li>
+<li><p>Removed analytics consent from the initial setup screen.</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Previous releases
-.. dropdown:: CryptoX Concordium Wallet 1.12.0 - August 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CryptoX Concordium Wallet 1.13.0 - September 22, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details><p class="sd-card-text">Added:</p>
 <ul class="simple">
+<li><p class="sd-card-text">Protocol-Level Token support.</p></li>
+<li><p class="sd-card-text">Display of transfer sender or recipient in the Activity screen.</p></li>
+</ul>
+<p class="sd-card-text">Changed:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Outgoing transfers in the Activity screen now show the amount excluding the fee, with the fee displayed separately below.</p></li>
+</ul>
+<p class="sd-card-text">Fixed:</p>
+<ul class="simple">
+<li><p class="sd-card-text">The reject reason for failed transactions is now correctly displayed in the transaction details screen.</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CryptoX Concordium Wallet 1.12.0 - August 18, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details><ul class="simple">
 <li><p class="sd-card-text">Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
