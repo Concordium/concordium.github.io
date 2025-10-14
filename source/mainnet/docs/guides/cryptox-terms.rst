@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _cryptox-terms:
 
-====================================
-End User License Terms for |cryptox|
-====================================
+====================================================
+End User License Terms for CryptoX Concordium Wallet
+====================================================
 
 Effective April 1, 2023
 

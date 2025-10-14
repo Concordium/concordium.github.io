@@ -53,7 +53,7 @@ After successfully importing the file, you will have access to your identities a
 Add or remove file based wallet to a seed phrase wallet
 =======================================================
 
-If you have :ref:`set up your wallet<setup-cryptox-wallet>` with a seed phrase or :ref:`restored your wallet<backup-import-recover>` from a seed phrase, you have the opportunity to also add a file based wallet and switch between the seed phrase wallet and the file wallet. Note, however, that you will not be able to create new accounts or identities in your file wallet.
+If you have :ref:`set up your wallet<setup-concordium-wallet>` with a seed phrase or :ref:`restored your wallet<backup-import-recover>` from a seed phrase, you have the opportunity to also add a file based wallet and switch between the seed phrase wallet and the file wallet. Note, however, that you will not be able to create new accounts or identities in your file wallet.
 
 You add the file wallet by navigating to the Wallets screen (tap the gear icon in the lower right of the main screen to open Wallet Settings, and then tap **Wallets**). Then proceed like this:
 
