@@ -1,5 +1,5 @@
 .. include:: ../../variables.rst
-.. _cryptox-faq:
+.. _concordium-wallet-faq:
 
 ======================
 |cryptox| FAQ
