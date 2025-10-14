@@ -34,7 +34,7 @@ This overview describes the recommended scenario for running a node and becoming
 
    The |bw| is available for chromium browsers. For instructions about download and setup, see :ref:`setup-browser-wallet`.
 
-   The |cryptox| is available for iOS and Android devices. For instructions about download and setup of |cryptox|, see :ref:`setup-cryptox-wallet`.
+   The |cryptox| is available for iOS and Android devices. For instructions about download and setup of |cryptox|, see :ref:`setup-concordium-wallet`.
 
 .. dropdown:: Step 3: Set up an identity and account
 

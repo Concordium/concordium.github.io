@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/account-concepts.e49535ab-b243-41c7-b821-33dbb3c80436.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/account-concepts.ce3535a1-acbd-46eb-bab7-1bd76ac71909.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/account-concepts';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/account-concepts.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -659,12 +659,12 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../guides/wallets-lp.html">Concordium wallets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../guides/wallet-faqs.html">Wallet FAQs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../guides/deciding-wallet.html">Deciding between the wallets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../guides/cryptox-faq.html">CryptoX Concordium Wallet FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/concordium-wallet-faq.html">Concordium Wallet FAQ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../browser-wallet/browser-wallet-faq.html">Concordium Wallet for Web FAQ</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../guides/setup-wallets-lp.html">Set up a wallet</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../guides/setup-cryptox-wallet.html">Set up the CryptoX Concordium Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/setup-concordium-wallet.html">Set up the Concordium Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../browser-wallet/setup-browser-wallet.html">Set up the Concordium Wallet for Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/overview-desktop.html">Set up the Desktop Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/ledger-tutorial.html">Use your Ledger Device with Concordium Desktop Wallet</a></li>
@@ -815,7 +815,7 @@ After this the account still has 25 CCD at disposal, because CCD locked in a rel
 </section>
 <section id="initial-accounts">
 <span id="id2"></span><h2>Initial accounts<a class="headerlink" href="#initial-accounts" title="Link to this heading">#</a></h2>
-<p>When using CryptoX Concordium Wallet or Concordium Wallet for Web, you create all accounts yourself. The procedure is different when using Desktop Wallet.</p>
+<p>When using Concordium Wallet or Concordium Wallet for Web, you create all accounts yourself. The procedure is different when using Desktop Wallet.</p>
 <p>When using Desktop Wallet, you get an initial account at the same time as an <a class="reference internal" href="identity.html#reference-identity"><span class="std std-ref">identity</span></a> has been issued by an <a class="reference internal" href="../resources/glossary.html#term-Identity-Provider"><span class="xref std std-term">identity provider</span></a>. As the initial account is submitted to the chain by the identity provider, the identity provider knows the owner of the initial account. For this reason, you may not want to use the initial account and create a regular account instead. There can only be one initial account for one identity.</p>
 <p>You additionally <a class="reference internal" href="../guides/recovery.html#backup-import-recover"><span class="std std-ref">create account keys</span></a> for an initial account, which you store privately. The identity provider then verifies the validity of your identity information
 and stores it locally in an identity object that is specific to you. Identity objects are only held by identity providers. The identity provider then opens an
@@ -833,7 +833,7 @@ to be considered valid its sequence number must be the next available one for
 the account. The sequence number is maintained by all the bakers in order to
 validate transactions.</p>
 <p>You can <a class="reference internal" href="../../tools/transactions.html#account-seqno"><span class="std std-ref">look up the sequence number</span></a> from an up to date node using Concordium Client.</p>
-<p>The CryptoX Concordium Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
+<p>The Concordium Wallet keeps track of the sequence number and assigns the correct one when sending transactions.
 <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> tracks the sequence number automatically, but it can
 also be set manually.</p>
 </section>

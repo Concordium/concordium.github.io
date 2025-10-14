@@ -16,8 +16,8 @@ Wallets
 
 .. _rn-cryptox-ios:
 
-|cryptox| for iOS
------------------
+|cryptox-legacy| for iOS
+------------------------
 
  Aug 28, 2025
     Version 3.3.7:
@@ -28,7 +28,7 @@ Wallets
 
     .. dropdown:: Previous releases
 
-        .. dropdown:: |cryptox| 3.3.6  -  Aug 12, 2025
+        .. dropdown:: |cryptox-legacy| 3.3.6  -  Aug 12, 2025
 
             - Added ID 2.5 statement approval functionality
             - Introduced  ConcordiumClient wrapper over SDK
@@ -36,27 +36,27 @@ Wallets
             - Updated Reown(Wallet Connect) flow UI + alerts logic
             - Added new type request_verifiable_presentation for incoming verify transactions type
 
-        .. dropdown:: |cryptox| 3.3.5  -  Jul 9, 2025
+        .. dropdown:: |cryptox-legacy| 3.3.5  -  Jul 9, 2025
 
             - Added ability to buy CCD through Banxa
 
-        .. dropdown:: |cryptox| 3.3.2  -  May 13, 2025
+        .. dropdown:: |cryptox-legacy| 3.3.2  -  May 13, 2025
 
             - Show suspended banner for all accounts in the wallet when Validator or Validation for any account is suspended.
             - Refactor Wert flow.
 
-        .. dropdown:: |cryptox| 3.3.1  -  May 5, 2025
+        .. dropdown:: |cryptox-legacy| 3.3.1  -  May 5, 2025
 
             - Fixed an issue with password hashes.
 
-        .. dropdown:: |cryptox| 3.2.2 - April 9, 2025
+        .. dropdown:: |cryptox-legacy| 3.2.2 - April 9, 2025
 
             Changed:
 
                 - Earn flow design
                 - Swipelux onramp flow
 
-        .. dropdown:: |cryptox| 3.1.0 - February 21, 2025
+        .. dropdown:: |cryptox-legacy| 3.1.0 - February 21, 2025
 
             New Features & Enhancements:
 
@@ -75,21 +75,21 @@ Wallets
             - Updated background color
             - General styling updates across all screens
 
-        .. dropdown:: |cryptox| 3.0.0 - December 18, 2024
+        .. dropdown:: |cryptox-legacy| 3.0.0 - December 18, 2024
 
             Version 3.0.0 addresses the following issues:
 
             - Added new onboarding flow
             - Changed minimum iOS version to 16.4
 
-        .. dropdown:: |cryptox| 2.0.1 - November 25, 2024
+        .. dropdown:: |cryptox-legacy| 2.0.1 - November 25, 2024
 
             Version 2.0.1 addresses the following issues:
 
             - Fixed Concordex connectivity Issue
             - Improved recover from file journey
 
-        .. dropdown:: |cryptox| 2.0.0 - October 29, 2024
+        .. dropdown:: |cryptox-legacy| 2.0.0 - October 29, 2024
 
             Removed:
 
@@ -179,17 +179,17 @@ Wallets
 
             - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
-        .. dropdown:: |cryptox| 1.11.0 - July 8, 2025
+        .. dropdown:: |cryptox-legacy| 1.11.0 - July 8, 2025
 
             - Added ability to buy CCD through Banxa
 
-        .. dropdown:: |cryptox| 1.10.0 - June 19, 2025
+        .. dropdown:: |cryptox-legacy| 1.10.0 - June 19, 2025
 
             - EUROe token is no longer shown for newly created accounts
             - On the Buy screen, exchanges are now linked externally via our website (on-ramps remain)
             - You may be asked to rate the app on Google Play
 
-        .. dropdown:: |cryptox| 1.9.1 - June 6, 2025
+        .. dropdown:: |cryptox-legacy| 1.9.1 - June 6, 2025
 
             Changes:
 
@@ -200,7 +200,7 @@ Wallets
 
             - Improved stability and handling in the third-party integration flow.
 
-        .. dropdown:: |cryptox| 1.9.0 - April 18, 2025
+        .. dropdown:: |cryptox-legacy| 1.9.0 - April 18, 2025
 
             Changed:
 
@@ -212,13 +212,13 @@ Wallets
 
             - USDT, USDC, ETH and WBTC tokens from the default token set
 
-        .. dropdown:: |cryptox| 1.8.1 - April 9, 2025
+        .. dropdown:: |cryptox-legacy| 1.8.1 - April 9, 2025
 
             Fixed:
 
             - Cutting off a text on the delegation action button
 
-        .. dropdown:: |cryptox| 1.8.0 - April 4, 2025
+        .. dropdown:: |cryptox-legacy| 1.8.0 - April 4, 2025
 
             Added:
 
@@ -228,7 +228,7 @@ Wallets
 
             - Revamped UI across the delegation and validation flow
 
-        .. dropdown:: |cryptox| 1.7.0 - March 4, 2025
+        .. dropdown:: |cryptox-legacy| 1.7.0 - March 4, 2025
 
             Added:
 
@@ -236,7 +236,7 @@ Wallets
             - Display of the suspension warning, for both validators and delegators
             - Ability to see automatic validation suspension status changes in the Activity (Primed for suspension, Suspended)
 
-        .. dropdown:: |cryptox| 1.6.1 - February 25, 2025
+        .. dropdown:: |cryptox-legacy| 1.6.1 - February 25, 2025
 
             Fixed:
 
@@ -251,7 +251,7 @@ Wallets
             - Replaced system dialogs with new gradient style dialogs
             - Transaction details screen
 
-        .. dropdown:: |cryptox| 1.6.0 - February 21, 2025
+        .. dropdown:: |cryptox-legacy| 1.6.0 - February 21, 2025
 
             Changes:
 
@@ -271,7 +271,7 @@ Wallets
             - Updated background color
             - General styling updates across all screens
 
-        .. dropdown:: |cryptox| 1.5.0 - January 27, 2025
+        .. dropdown:: |cryptox-legacy| 1.5.0 - January 27, 2025
 
             Version 1.5.0 addresses the following issues:
 
@@ -289,7 +289,7 @@ Wallets
 
             - Ability to create new accounts and identities in a file wallet. We recommend that you migrate to a seed phrase wallet in order to make use of the full range of CryptoX features.
 
-        .. dropdown:: |cryptox| 1.4.0 - December 18, 2024
+        .. dropdown:: |cryptox-legacy| 1.4.0 - December 18, 2024
 
             Version 1.4.0 addresses the following issues:
 
@@ -302,7 +302,7 @@ Wallets
 
             - The "," decimal separator is now used for all amounts in the wallet
 
-        .. dropdown:: |cryptox| 1.3.2 - November 28, 2024
+        .. dropdown:: |cryptox-legacy| 1.3.2 - November 28, 2024
 
             Version 1.3.2 fixes the following issues:
 
@@ -311,13 +311,13 @@ Wallets
             - Crashing when first launching the app offline
             - Not receiving CIS-2 transaction notifications when they are disabled for CCD transactions
 
-        .. dropdown:: |cryptox| 1.3.1 - November 7, 2024
+        .. dropdown:: |cryptox-legacy| 1.3.1 - November 7, 2024
 
             Version 1.3.1 fixes the following UI issue:
 
             While updating validator stakes, the app shows invalid commission.
 
-        .. dropdown:: |cryptox| 1.3.0 - October 28, 2024
+        .. dropdown:: |cryptox-legacy| 1.3.0 - October 28, 2024
 
             This update introduces support for Protocol 7, push notifications, and seed import and export. It also fixes several bugs.
 
@@ -343,7 +343,7 @@ Wallets
 
             - Validation/delegation text notices
 
-        .. dropdown:: |cryptox| 1.2.0 - August 27, 2024
+        .. dropdown:: |cryptox-legacy| 1.2.0 - August 27, 2024
 
             This update introduces support for Company ID, CCD listings, and a newsfeed, along with optional anonymous analytics. It also fixes several visual bugs.
 
@@ -369,7 +369,7 @@ Wallets
 
             - The paste button on the recovery phrase input screen is now attached to the top of the keyboard hence remains always visible
 
-        .. dropdown:: |cryptox| 1.1.0 and 1.1.1 - June, 2024
+        .. dropdown:: |cryptox-legacy| 1.1.0 and 1.1.1 - June, 2024
 
             **1.1.1 - June 11, 2024**
 
@@ -399,7 +399,7 @@ Wallets
 
             - Fixed a way to get into an empty wallet without confirming the seed phrase
 
-        .. dropdown:: |cryptox| 1.0.0 - April 25, 2024
+        .. dropdown:: |cryptox-legacy| 1.0.0 - April 25, 2024
 
             Version 1.0.0 brings feature parity with |mw-gen2|, fixes multiple bugs and improves the overall user experience.
 

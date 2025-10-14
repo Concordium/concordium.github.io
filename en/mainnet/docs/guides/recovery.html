@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/recovery.25611357-27e9-41bc-bb17-5ad461778242.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/recovery.48af4250-d9c0-473c-a635-b23aedc65981.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/recovery';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/recovery.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -659,12 +659,12 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="wallets-lp.html">Concordium wallets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="wallet-faqs.html">Wallet FAQs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="deciding-wallet.html">Deciding between the wallets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cryptox-faq.html">CryptoX Concordium Wallet FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concordium-wallet-faq.html">Concordium Wallet FAQ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../browser-wallet/browser-wallet-faq.html">Concordium Wallet for Web FAQ</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="setup-wallets-lp.html">Set up a wallet</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="setup-cryptox-wallet.html">Set up the CryptoX Concordium Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-concordium-wallet.html">Set up the Concordium Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../browser-wallet/setup-browser-wallet.html">Set up the Concordium Wallet for Web</a></li>
 <li class="toctree-l3"><a class="reference internal" href="overview-desktop.html">Set up the Desktop Wallet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ledger-tutorial.html">Use your Ledger Device with Concordium Desktop Wallet</a></li>
@@ -897,8 +897,8 @@ If you use both networks, you can recover on the other net after setup, through 
 </div>
 </details></section>
 <section id="cryptox">
-<h2>CryptoX Concordium Wallet<a class="headerlink" href="#cryptox" title="Link to this heading">#</a></h2>
-<p>CryptoX Concordium Wallet supports three ways of recovering your wallet: from seed phrase, backup file, or wallet private key.</p>
+<h2>Concordium Wallet<a class="headerlink" href="#cryptox" title="Link to this heading">#</a></h2>
+<p>Concordium Wallet supports three ways of recovering your wallet: from seed phrase, backup file, or wallet private key.</p>
 <p>If you have set up your wallet with a seed phrase, you will need this for recovering your wallet.
 You can <a class="reference internal" href="show-seed-phrase.html#show-seed-phrase"><span class="std std-ref">view and copy the seed phrase</span></a> in Wallet Settings if you need to write it down again.</p>
 <p>If you have restored your wallet from an imported back-up file, you will need this file for recovering your wallet. You can <a class="reference internal" href="import-export-file.html#import-export-file-wallet"><span class="std std-ref">export and import back-up files</span></a> in Wallet Settings.</p>
@@ -907,99 +907,48 @@ You can <a class="reference internal" href="show-seed-phrase.html#show-seed-phra
 <p>If you need to export the private key of a specific account to use in Concordium Client (for example, to work with smart contracts or to set up a validator node), see <a class="reference internal" href="export-account-private-key.html#export-key"><span class="std std-ref">Export a private key</span></a>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Recover CryptoX Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">CryptoX Concordium Wallet offers three recovery methods: using a seed phrase, a backup file, or a wallet private key.</p>
+<span class="sd-summary-text">Recover Concordium Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Concordium Wallet offers three recovery methods: using a seed phrase, a backup file, or a wallet private key.</p>
 <p class="sd-card-text">For all three methods, start doing this:</p>
-<ol class="arabic">
-<li><p class="sd-card-text">After installing or reinstalling the CryptoX Concordium Wallet app, open the app.</p></li>
-<li><p class="sd-card-text">On the Welcome screen, read and accept Terms and Conditions and Pricacy Policy by checking the box.</p>
-<p class="sd-card-text">You can also choose to allow activity tracking in the app. This tracking only applies to general usage, not funds, transactions, or personal data.</p>
-</li>
-<li><p class="sd-card-text">Tap <strong>Get started</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-onboarding1a.png"><img alt="screen with terms and conditions" src="../../_images/cryptox-onboarding1a.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Tap <strong>Import a wallet</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover2.png"><img alt="../../_images/cryptox-recover2.png" src="../../_images/cryptox-recover2.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Enter and then re-enter a 6-digit passcode for your wallet.</p></li>
-<li><p class="sd-card-text">You now have three options: Import via seed phrase, import via wallet private key, or import via backup file.</p>
-<p class="sd-card-text">Tap on the desired option.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover3.png"><img alt="../../_images/cryptox-recover3.png" src="../../_images/cryptox-recover3.png" style="width: 40%;" />
-</a>
-</li>
+<ol class="arabic simple">
+<li><p class="sd-card-text">After installing or reinstalling the Concordium Wallet app, open the app and swipe through the introduction screens.</p></li>
+<li><p class="sd-card-text">Tap <strong>Get started</strong>.</p></li>
+<li><p class="sd-card-text">Read and accept the Terms and Conditions and Privacy Policy by checking the box. Then, tap <strong>Restore Existing Wallet</strong>.</p></li>
+<li><p class="sd-card-text">Create and confirm a 6-digit passcode for your wallet.</p></li>
+<li><p class="sd-card-text">Select your recovery method: Seed phrase, wallet private key, or backup file.</p></li>
 </ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Import via seed phrase</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ol class="arabic">
-<li><p class="sd-card-text">Enter each word of your seed phrase in the correct order. When you start typing, possible words appear for you to select.</p>
-<p class="sd-card-text">If you have a copy of your seed phrase, you can also tap <strong>Paste your seed phrase</strong> to paste it from your clipboard.</p>
+<li><p class="sd-card-text">Enter each word of your seed phrase in the correct order. Possible words will appear as you type for selection.</p>
+<p class="sd-card-text"><strong>Tip:</strong> Tap <strong>Paste your seed phrase</strong> to paste from your clipboard.</p>
 <a class="reference internal image-reference" href="../../_images/cryptox-recover4a.png"><img alt="../../_images/cryptox-recover4a.png" src="../../_images/cryptox-recover4a.png" style="width: 40%;" />
 </a>
 </li>
-<li><p class="sd-card-text">Once the words are correct, tap <strong>Recover</strong> to submit the recovery request to the identity provider(s).</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover5d.png"><img alt="../../_images/cryptox-recover5d.png" src="../../_images/cryptox-recover5d.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">It may take a little while for recovery to complete.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover6a.png"><img alt="../../_images/cryptox-recover6a.png" src="../../_images/cryptox-recover6a.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">After after copletion, you will see an overview of identities and accounts that have been recovered. Tap <strong>Continue to Wallet</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover-overview.png"><img alt="../../_images/cryptox-recover-overview.png" src="../../_images/cryptox-recover-overview.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">You have succesfully restored your wallet.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover7d.png"><img alt="../../_images/cryptox-recover7d.png" src="../../_images/cryptox-recover7d.png" style="width: 40%;" />
-</a>
-</li>
+<li><p class="sd-card-text">Tap <strong>Recover</strong> to submit the recovery request to the identity provider(s).</p></li>
+<li><p class="sd-card-text">Wait for recovery to complete (this may take a few moments).</p></li>
+<li><p class="sd-card-text">Review the recovered identities and accounts, then tap <strong>Continue to Wallet</strong>.</p></li>
 </ol>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Import via wallet private key</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">Enter or paste your wallet private key.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover4b.png"><img alt="../../_images/cryptox-recover4b.png" src="../../_images/cryptox-recover4b.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Once the key is entered, tap <strong>Recover</strong> to submit the recovery request to the identity provider(s).</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover5d.png"><img alt="../../_images/cryptox-recover5d.png" src="../../_images/cryptox-recover5d.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">It may take a little while for recovery to complete.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover6b.png"><img alt="../../_images/cryptox-recover6b.png" src="../../_images/cryptox-recover6b.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">After after copletion, you will see an overview of identities and accounts that have been recovered. Tap <strong>Continue to Wallet</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover-overview.png"><img alt="../../_images/cryptox-recover-overview.png" src="../../_images/cryptox-recover-overview.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">You have succesfully restored your wallet.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover7d.png"><img alt="../../_images/cryptox-recover7d.png" src="../../_images/cryptox-recover7d.png" style="width: 40%;" />
-</a>
-</li>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Enter or paste your wallet private key.</p></li>
+<li><p class="sd-card-text">Tap <strong>Recover</strong> to submit the recovery request to the identity provider(s).</p></li>
+<li><p class="sd-card-text">Wait for recovery to complete (this may take a few moments).</p></li>
+<li><p class="sd-card-text">Review the recovered identities and accounts, then tap <strong>Continue to Wallet</strong>.</p></li>
 </ol>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Import via backup file</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic">
-<li><p class="sd-card-text">Tap <strong>Import</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover4c.png"><img alt="../../_images/cryptox-recover4c.png" src="../../_images/cryptox-recover4c.png" style="width: 40%;" />
-</a>
-</li>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Tap <strong>Import</strong>.</p></li>
 <li><p class="sd-card-text">Select the file you want to import.</p></li>
-<li><p class="sd-card-text">Enter the password you created when exporting the backup file. Tap <strong>Continue</strong>. It may take a little while for recovery to complete.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover5c.png"><img alt="../../_images/cryptox-recover5c.png" src="../../_images/cryptox-recover5c.png" style="width: 40%;" />
-</a>
-</li>
-<li><p class="sd-card-text">Once the import is finished, tap <strong>Okay</strong> to go to the Accounts list.</p>
-<a class="reference internal image-reference" href="../../_images/cryptox-recover6c.png"><img alt="../../_images/cryptox-recover6c.png" src="../../_images/cryptox-recover6c.png" style="width: 40%;" />
-</a>
-</li>
+<li><p class="sd-card-text">Enter the password you created when exporting the backup file, then tap <strong>Continue</strong>.</p></li>
+<li><p class="sd-card-text">Wait for recovery to complete (this may take a few moments), then tap <strong>Okay</strong> to go to the Accounts list.</p></li>
 </ol>
 </div>
 </details><div class="admonition note">
@@ -1095,7 +1044,7 @@ You can <a class="reference internal" href="show-seed-phrase.html#show-seed-phra
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desktop-wallet">Desktop Wallet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bw">Concordium Wallet for Web</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox">CryptoX Concordium Wallet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cryptox">Concordium Wallet</a></li>
 </ul>
   </nav></div>
 
