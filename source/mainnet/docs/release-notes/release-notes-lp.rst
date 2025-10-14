@@ -160,7 +160,7 @@ Wallets
 
     .. dropdown:: Previous releases
 
-        .. dropdown:: |cryptox| 1.13.0 - September 22, 2025
+        .. dropdown:: |cryptox-legacy| 1.13.0 - September 22, 2025
 
             Added:
 
@@ -175,7 +175,7 @@ Wallets
 
             - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
 
-        .. dropdown:: |cryptox| 1.12.0 - August 18, 2025
+        .. dropdown:: |cryptox-legacy| 1.12.0 - August 18, 2025
 
             - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
