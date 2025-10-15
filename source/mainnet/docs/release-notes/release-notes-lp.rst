@@ -16,17 +16,29 @@ Wallets
 
 .. _rn-cryptox-ios:
 
-|cryptox-legacy| for iOS
+|cryptox| for iOS
 ------------------------
 
- Aug 28, 2025
-    Version 3.3.7:
+    3.3.10 - October 13, 2025
 
-    - Fixed Wert integration issue
-    - Brought back NFT page
-    - Rolled back Google Analytics
+    Added:
+
+    - Improved QR scanner logic: the main scanner is now used for both wallet connections and payments
+    - Adjusted decimal handling for Protocol Level Tokens (PLTs) to ensure accurate numerical display
+    - Updated the app icon and splash screen with the new design
+
+    Fixed:
+
+    - Fixed a token balance bug affecting PLTs
+    - Resolved several UI issues introduced with the iOS 26 update
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox-legacy| 3.3.7  -  Aug 28, 2025
+
+            - Fixed Wert integration issue
+            - Brought back NFT page
+            - Rolled back Google Analytics
 
         .. dropdown:: |cryptox-legacy| 3.3.6  -  Aug 12, 2025
 
@@ -160,7 +172,7 @@ Wallets
 
     .. dropdown:: Previous releases
 
-        .. dropdown:: |cryptox| 1.13.0 - September 22, 2025
+        .. dropdown:: |cryptox-legacy| 1.13.0 - September 22, 2025
 
             Added:
 
@@ -175,7 +187,7 @@ Wallets
 
             - The reject reason for failed transactions is now correctly displayed in the transaction details screen.
 
-        .. dropdown:: |cryptox| 1.12.0 - August 18, 2025
+        .. dropdown:: |cryptox-legacy| 1.12.0 - August 18, 2025
 
             - Removed Google Analytics. Although the user interface remained the same, the data is no longer sent to this service
 
