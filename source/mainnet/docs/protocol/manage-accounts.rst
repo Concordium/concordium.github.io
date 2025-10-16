@@ -70,4 +70,5 @@ Account creation is an on-chain transaction that submits a credential containing
 
    account-concepts
    account-aliases
+   key-derivation-and-usage
 
