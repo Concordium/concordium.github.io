@@ -489,14 +489,25 @@ Wallets
 |bw|
 -------------------------
 
-    Sep 22, 2025
+    Oct 20, 2025
 
-    Version 2.6.0
+    Version 2.6.1
 
-    -   Added support of protocol-level tokens (PLT). Including token transfer, transaction history update, token details, token management.
-    -   Fixed token amount displayed as NaN when value is negative and less than token precision. At Send screen when 'Send Max' calculated.
+    -   Added confirmation message after successfully connecting to a network, at Network Connect page.
+    -   Added fix for Memo parsing in Transaction Log, unable to render object. Now in case when memo is an object, it is displayed as string representation.
+    -   Removed increased size, of spawned Id-Proof window in New UI.
+    -   Updated Manage token page, search result. For UI consistency between mobile and web platforms, token name in search results was replaced with tokenId.
+    -   Updated SignTransaction page, for TokenUpdate transaction. In case of multiple operations, they paced under collapsible menu, for single transfer operation created separated display page.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.6.0 - Sep 22, 2025
+
+            Version 2.6.0 changes:
+
+            -   Added support of protocol-level tokens (PLT). Including token transfer, transaction history update, token details, token management.
+            -   Fixed token amount displayed as NaN when value is negative and less than token precision. At Send screen when 'Send Max' calculated.
+
 
         .. dropdown:: |bw| 2.5.1 - Aug 12, 2025
 
