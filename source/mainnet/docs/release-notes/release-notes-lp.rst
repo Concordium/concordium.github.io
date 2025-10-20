@@ -508,7 +508,6 @@ Wallets
             -   Added support of protocol-level tokens (PLT). Including token transfer, transaction history update, token details, token management.
             -   Fixed token amount displayed as NaN when value is negative and less than token precision. At Send screen when 'Send Max' calculated.
 
-
         .. dropdown:: |bw| 2.5.1 - Aug 12, 2025
 
             Version 2.5.1 changes:
