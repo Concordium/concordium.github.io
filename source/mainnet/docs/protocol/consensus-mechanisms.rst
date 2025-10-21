@@ -29,9 +29,10 @@ Block creation
 
 In Concordium, block creation follows a leader-based approach. For each round, a leader is selected through a lottery-based system where the probability of selection is proportional to the validator's stake. The selected leader creates a new block and broadcasts it to the network.
 
-`Learn more about the complete validation process here. <concepts-baker.html>`_
-
 Unlike :term:`proof-of-work` systems that require solving complex puzzles, Concordium's block creation is energy-efficient. The chosen leader simply needs to create a valid block and prove they were legitimately selected through the verifiable random function (VRF) system.
+
+`See a detailed description of block production and  validation here. <concepts-baker.html>`_
+
 
 Security
 --------
@@ -47,6 +48,8 @@ Epoch structure
 ---------------
 
 Concordium organizes time into :term:`epochs<epoch>` during which the validator set remains constant. This structure provides clear checkpoints for updates to the system and helps coordinate the network's operation. Every 24 epochs, there is a :term:`pay day` where rewards are distributed and stake changes take effect.
+
+`Learn more about time concepts on Concordium. <time-concepts.html>`_
 
 Delegation and participation
 ----------------------------
