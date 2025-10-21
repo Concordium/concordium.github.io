@@ -18,7 +18,7 @@ being included on the list more often. The validator list remains fixed for the 
 
 The validation process within an epoch then follows these steps:
 
-1. The first leader on the list makes a new block that appends to the :term:`genesis block<genesis block>`.
+1. The first leader on the list makes a new block that extends the chain.
 2. The leader then broadcasts the block to all validators on the network.
 3. If the block is valid, i.e., it is well-formed and correctly placed in the chain, the validators will sign it.
 4. If the combined effective stake of the validators who sign the block is greater than or equal to two-thirds of the total stake, the block gets a :term:`Quorum Certiticate (QC)<Quorum certificate>` that certifies that this is a valid block. Without the QC the new round cannot progress.
