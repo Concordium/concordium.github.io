@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _baker-concept:
 
-==========
-Validation
-==========
+===============================
+Block production and validation
+===============================
 
 Validation is key to the Concordium blockchain. A node is a validator node when it participates actively in the network by creating new :term:`blocks<block>` that are added to the chain. The blockchain consists of multiple :term:`validator nodes<node>`. A validator collects, orders, and validates the
 transactions that are included in a block to maintain the integrity of the blockchain. The validators sign each block that they produce so that the block can be verified and executed by the other validators in the network.

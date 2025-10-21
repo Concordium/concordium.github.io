@@ -37,8 +37,5 @@ For more information, see :ref:`delegation-concept`.
    :hidden:
    :maxdepth: 1
 
-   concepts-baker
    concepts-delegation
-   time-concepts
-   validator-suspension
 

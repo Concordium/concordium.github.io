@@ -63,3 +63,11 @@ A unique aspect of Concordium's consensus mechanism is its integration with the 
 
 `Learn more about identities here. <identity.html>`_
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   concepts-baker
+   time-concepts
+   validator-suspension
+
