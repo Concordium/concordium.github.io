@@ -14,7 +14,9 @@ How validation works
 Concordium uses a consensus protocol, :term:`ConcordiumBFT<Concordium Byzantine Fault Tolerance (BFT) protocol>` , that proceeds in :term:`rounds<round>`. Each round requires a leader to produce a new block and extend the chain.
 These rounds are grouped into :term:`epochs<epoch>`, with each epoch corresponding to one hour real time. For every epoch, a :term:`proof-of-stake<proof-of-stake>` based lottery system produces
 a list determining which validator will be the leader for each round during that period. The higher a validator's stake, the higher the probability of
-being included on the list more often. The validator list remains fixed for the epoch.
+being included on the list more often. The validator list remains fixed for the epoch. `See details about time concepts on Concordium. <time-concepts.html>`_
+
+
 
 The validation process within an epoch then follows these steps:
 
