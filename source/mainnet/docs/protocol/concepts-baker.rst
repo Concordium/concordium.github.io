@@ -50,7 +50,7 @@ Staking pools
 =============
 
 Validators have the option to open a :term:`staking pool<Staking pool>`. A staking pool allows others who want to earn rewards to do so without the need to run a node or become
-a validator themselves. :term:`Delegaters<Delegator>` add their stake to the validator's pool, which increases the validator's total stake and chances of winning the lottery
+a validator themselves. :term:`Delegators<Delegator>` add their stake to the validator's pool, which increases the validator's total stake and chances of winning the lottery
 to produce blocks.
 
 Validators can choose not to open a pool, in which case only their own stake applies toward the lottery. They can always open a pool later if they decide
