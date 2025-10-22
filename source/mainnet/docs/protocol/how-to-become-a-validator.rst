@@ -5,78 +5,56 @@
 How to become a validator
 ==========================
 
-Validators run nodes that produce and verify blocks on the Concordium blockchain. By becoming a validator, you participate directly in the consensus mechanism and earn rewards for your contribution to network security.
+Validators run nodes that produce and verify blocks on the Concordium blockchain. By becoming a validator, you participate directly in the :ref:`consensus mechanism<reference-consensus-mechanisms>` and earn rewards for your contribution to network security.
 
 Prerequisites
 =============
 
-Before you can become a validator, you need:
+To become a validator you will need:
 
-* Minimum stake: 500,000 CCD that will be locked while you validate
-* Technical infrastructure: Reliable hardware and network connection to run a node 24/7
-* Concordium account: An account with sufficient CCD balance for the stake and transaction fees
-* Validator keys: Generated through your wallet to sign blocks
+* **A Concordium account:** A Concordium wallet with an account that has sufficient CCD balance for the stake and transaction fees
+* **A Minimum stake:** 500,000 CCD that will be locked while you validate
+* **Validator keys:** Generated through your wallet to sign blocks
+* **Technical infrastructure:** Reliable hardware and network connection to run a node 24/7/365
+* **Ongoing commitment:** Capacity to monitor your validator, stay informed about network updates and protocol changes, and perform regular maintenance
 
 Validation setup
 ================
 
-Prepare your validator account
--------------------------------
+The validation setup process involves several key steps: preparing your validator account, generating validator keys, configuring and running your node, and registering as a validator on the blockchain.
+The specific steps and tools you use depend on your preferred setup method. Concordium provides guides for different approaches:
 
-Choose which account will be your validator account. This account will hold your staked CCD and receive your validation rewards. Make sure the account has at least 500,000 CCD available for staking, plus additional CCD for transaction fees.
+* **For wallet-based setup:** :ref:`See Validation with Concordium wallets<validation-with-wallets>`.
+* **For command-line setup:** :ref:`See Validation with the Concordium Client<become-a-validator>`.
 
-Generate validator keys
------------------------
+Choose the method that works best for your setup, and follow the corresponding guide for detailed instructions. Before proceeding with setup, review :ref:`Validator management<baker-pool>` for information about best practices for validators.
 
-Your validator keys are cryptographic keys used to sign the blocks you produce. Generate these keys through your wallet when setting up validation. Keep these keys secure - they are essential for your validator's operation.
-
-Configure and run your node
-----------------------------
-Set up your validator node with the appropriate hardware and network configuration. Your node must run continuously to participate in block production. The configuration process depends on your chosen setup method.
-
-Register as a validator
------------------------
-
-Submit a validator registration transaction to the blockchain. This transaction includes:
-
-* Your validator account address
-* The amount of CCD you want to stake (equity capital)
-* Whether rewards should automatically be added to your stake
-* Whether you want to open a staking pool for delegators
-
-Once the transaction is approved, your validator will be registered.
-
-When does validation start?
-============================
-
-After registration, your validator becomes active at the next pay day, which occurs every 24 hours at approximately 09:00 UTC on Mainnet. Your validator must be registered at least one hour before a pay day begins for validation to start at that pay day.
+After registration, your validator becomes active at the next :term:`pay day`.
 
 Opening a staking pool (optional)
 ==================================
 
 You can choose to open a staking pool, which allows others to delegate their CCD to your validator. This increases your total stake and your chances of being selected to produce blocks. You earn commission on the rewards earned by your delegators.
+For more information about how rewards and commissions work, see :ref:`Concordium tokenomics system<tokenomics>`.
 
-You can open a pool during initial registration or add it later by updating your validator configuration.
-
-Setup guides
-============
-
-For detailed step-by-step instructions on setting up your validator:
-
-* **Validator management**: Best practices for running and managing your validator
-* **Validation with Concordium wallets**: Setup using the Desktop Wallet or Mobile Wallet
-* **Validation with the Concordium Client**: Setup using the command-line interface
-* **Delegation and validation FAQ**: Answers to frequently asked questions
+You can open a pool during initial registration or add it later by updating your validator configuration. You will be guided to instructions about opening and managing a staking pool when following the setup guides above. For frequently asked questions about staking pools and delegation, see :ref:`Delegation and validation FAQ<delegation-faq-old>`.
 
 Next steps
 ==========
 
-Once your validator is active:
+Once your validator is active, focus on maintaining reliable uptime and monitoring your validator's performance. Follow the best practices outlined in :ref:`Validator management<baker-pool>` to ensure your validator operates effectively and maximizes rewards for you and your delegators.
 
-* Monitor your validator's performance and uptime
-* Consider subscribing to the Mainnet status page for updates
-* If running a pool, create a website with information about your pool
-* Regularly check your stake levels relative to the pool capital bounds
+Useful resources
+================
 
-For ongoing validator management and best practices, see Validator management.
+The following guides and resources provide detailed information about validation:
+
+* :ref:`Validation with Concordium wallets<validation-with-wallets>`: Step-by-step setup using wallets
+* :ref:`Validation with the Concordium Client<become-a-validator>`: Step-by-step setup using Concordium's command line interface
+* :ref:`Validator management<baker-pool>`: Best practices for running and managing your validator
+* :ref:`Block production and validation<baker-concept>`: Technical details on how block production and validation work
+* :ref:`Concordium tokenomics system<tokenomics>`: Information about rewards, commissions, and staking economics
+* :ref:`Delegation and validation FAQ<delegation-faq-old>`: For answers to the most commonly asked questions
+* :ref:`CCDScan<ccd-scan>`: Tool for monitoring validator and pool performance
+
 
