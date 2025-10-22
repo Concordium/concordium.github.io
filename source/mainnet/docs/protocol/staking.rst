@@ -20,7 +20,7 @@ As a validator, you run a node and must stake a minimum of 500,000 CCD, which be
 
 You can choose to open a :term:`staking pool`, which allows others to delegate their CCD to you and increase your chances of being selected to produce blocks.
 
-For more information, see
+For more information, see :ref:`how-to-become-a-validator`.
 
 Become a delegator
 ==================
