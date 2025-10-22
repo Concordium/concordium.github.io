@@ -74,13 +74,12 @@ validator's performance directly impacts both their own rewards and, if operatin
 
 As a validator you must set up a validator account and generate a validator key pair. The account holds your stake and receives rewards, and the keys are used to cryptographically sign the blocks you produce and prove your identity as a validator.
 
-How to become a validator
-=========================
+Further reading
+===============
 
-To become a validator, the setup process depends on your preferred tools and approach:
+For more information on validation:
 
-* For general information on best practices and validator management, see :ref:`baker-pool`
-* To set up validation using Concordium wallets, see :ref:`validation-with-wallets`
-* To set up validation using Concordium's command line interface, see :ref:`become-a-validator`
-* For answers to the most commonly asked questions, see :ref:`Delegation and validation FAQ<delegation-faq-old>`.
+* :ref:`Staking<staking>`: Introduction to validation and delegation on Concordium
+* :ref:`How to become a validator<how-to-become-a-validator>` : Guide to becoming a validator
+* :ref:`Validator management <baker-pool>`: Best practices for running and managing your validator
 
