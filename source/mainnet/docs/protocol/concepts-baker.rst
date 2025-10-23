@@ -35,7 +35,7 @@ Below you see a diagram of a validation round:
 
 In the case of a faulty leader who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If the leader does not produce a block within a certain time, a :term:`Timeout Certificate (TC)<Timeout certificate>` is issued to move the process forward. The next leader can now use the TC to skip the previous round and extend an older block for which they have a QC.
 
-A block becomes final when both the block and its child have Quorum Certificates in consecutive rounds of the same epoch, ensuring they cannot be rolled back and are part of the authoritative chain.
+A block becomes final when both the block and its child have Quorum Certificates in consecutive rounds of the same epoch, ensuring it cannot be rolled back and is part of the authoritative chain.
 
 Stake and lottery
 =================
