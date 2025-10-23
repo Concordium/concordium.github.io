@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.ca90b9ed-5688-4504-9734-e4560b417c4b.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-baker.652050df-711f-4bd8-8675-65a3029280ca.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-baker';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concepts-baker.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -809,7 +809,7 @@ being included on the list more often. The validator list remains fixed for the 
 <p>Below you see a diagram of a validation round:</p>
 <img alt="diagram of one validation round" src="../../_images/validation-round.png" />
 <p>In the case of a faulty leader who does not produce a block or produces an invalid block, a timeout mechanism handles the process. If the leader does not produce a block within a certain time, a <a class="reference internal" href="../resources/glossary.html#term-Timeout-certificate"><span class="xref std std-term">Timeout Certificate (TC)</span></a> is issued to move the process forward. The next leader can now use the TC to skip the previous round and extend an older block for which they have a QC.</p>
-<p>A block becomes final when both the block and its child have Quorum Certificates in consecutive rounds of the same epoch, ensuring they cannot be rolled back and are part of the authoritative chain.</p>
+<p>A block becomes final when both the block and its child have Quorum Certificates in consecutive rounds of the same epoch, ensuring it cannot be rolled back and is part of the authoritative chain.</p>
 </section>
 <section id="stake-and-lottery">
 <h2>Stake and lottery<a class="headerlink" href="#stake-and-lottery" title="Link to this heading">#</a></h2>
