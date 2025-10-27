@@ -54,7 +54,7 @@ The following table lists all attributes available for Individual IDs.
      - countryOfResidence
      - ISO3166-1 alpha-2
    * - Country of nationality
-     - Optional
+     - Mandatory
      - nationality
      - ISO3166-1 alpha-2
    * - Identity Document number
