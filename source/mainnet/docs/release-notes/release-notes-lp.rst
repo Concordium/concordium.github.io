@@ -489,17 +489,23 @@ Wallets
 |bw|
 -------------------------
 
-    Oct 20, 2025
+    Oct 27, 2025
 
-    Version 2.6.1
+    Version 2.6.2
 
-    -   Added confirmation message after successfully connecting to a network, at Network Connect page.
-    -   Added fix for Memo parsing in Transaction Log, unable to render object. Now in case when memo is an object, it is displayed as string representation.
-    -   Removed increased size, of spawned Id-Proof window in New UI.
-    -   Updated Manage token page, search result. For UI consistency between mobile and web platforms, token name in search results was replaced with tokenId.
-    -   Updated SignTransaction page, for TokenUpdate transaction. In case of multiple operations, they paced under collapsible menu, for single transfer operation created separated display page.
+    -   Updated App icon
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.6.1 - Oct 20, 2025
+
+            Version 2.6.1 changes:
+
+            -   Added confirmation message after successfully connecting to a network, at Network Connect page.
+            -   Added fix for Memo parsing in Transaction Log, unable to render object. Now in case when memo is an object, it is displayed as string representation.
+            -   Removed increased size, of spawned Id-Proof window in New UI.
+            -   Updated Manage token page, search result. For UI consistency between mobile and web platforms, token name in search results was replaced with tokenId.
+            -   Updated SignTransaction page, for TokenUpdate transaction. In case of multiple operations, they paced under collapsible menu, for single transfer operation created separated display page.
 
         .. dropdown:: |bw| 2.6.0 - Sep 22, 2025
 
