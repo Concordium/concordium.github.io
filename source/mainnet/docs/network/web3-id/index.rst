@@ -104,4 +104,5 @@ An example backend can be found in `the Web3 ID repository <https://github.com/C
    issuer
    Wallet identity provider interfaces <identity-provider-interfaces>
    ../guides/create-proofs
+   id-attributes-reference
 
