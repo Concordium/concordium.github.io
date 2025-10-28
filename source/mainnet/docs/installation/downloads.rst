@@ -143,8 +143,8 @@ For usage instructions see :ref:`Concordium-client <concordium-client>`
 
       - The macOS distribution is an installer that places an alias to the binary
       into the folder ``/usr/local/bin``. So after installing, you should have
-      ``concordium-client`` on your path.
 
+      ``concordium-client`` on your path.
 
 .. dropdown:: Windows
 
@@ -152,10 +152,10 @@ For usage instructions see :ref:`Concordium-client <concordium-client>`
 
       - The Windows distribution is a zip file that must be extracted before use.
       To do this, in Windows Explorer, right-click the downloaded file and select
+
       "Extract All...". After extraction, you will have a folder containing the
       Concordium Client executable (``concordium-client.exe``) as well as other files
       that are required to run the client.
-
 
 .. _cargo-concordium-testnet:
 
