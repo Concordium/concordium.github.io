@@ -113,6 +113,13 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Best practices <smart-contracts/best-practices/index>
    References <smart-contracts/references/index>
 
+
+.. toctree::
+   :caption: Integration
+   :hidden:
+
+   Wallet integration <integration/wallet integration/wallet-integration>
+
 .. toctree::
    :caption: Network
    :hidden:
