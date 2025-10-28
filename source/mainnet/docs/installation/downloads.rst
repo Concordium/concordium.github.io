@@ -11,7 +11,7 @@ This topic contains information about where you can download the Concordium Wall
 .. _downloads-cryptox:
 
 |cryptox|
-========================
+=========
 
 The |cryptox| is available for iOS (16.4 or later) and Android™ (8 or later).
 
@@ -53,7 +53,7 @@ It is the main Concordium mobile wallet and has the widest set of features.
 .. _downloads-browser-wallet-testnet:
 
 |bw|
-=================================
+====
 
 The |bw| is available to download as an extension for the `chromium web browsers <https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg?hl=en-US>`_. The extension supports both Mainnet and Testnet.
 
@@ -61,7 +61,7 @@ The |bw| is available to download as an extension for the `chromium web browsers
 .. _downloads-desktop-wallet-testnet:
 
 Concordium Desktop Wallet
-=================================
+=========================
 
 .. dropdown:: Mainnet
 
@@ -71,7 +71,7 @@ Concordium Desktop Wallet
    .. card:: macOS v1.9.3
       :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.dmg
 
-   .. dropdown:: Linux® v1.9.3
+   .. dropdown:: Linux v1.9.3
 
       - `Mainnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-mainnet/concordium-desktop-wallet-1.9.3.AppImage>`_
 
@@ -96,9 +96,9 @@ Concordium Desktop Wallet
    .. card:: macOS v1.9.3
       :link: https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.dmg
 
-   .. dropdown:: Linux® v1.9.3
+   .. dropdown:: Linux v1.9.3
 
-      Download the Testnet version of Concordium Desktop Wallet for Linux®:
+      Download the Testnet version of Concordium Desktop Wallet for Linux:
 
       -  `Testnet AppImage <https://github.com/Concordium/concordium-desktop-wallet/releases/download/desktop-wallet%2F1.9.3-testnet/concordium-desktop-wallet-testnet-1.9.3.AppImage>`_
          -  SHA256 checksum of the download: ``d38c74635a30f467e1acdf17e1fd2409cb59caecf1365942c16fd79a5cf0db60``
@@ -122,35 +122,43 @@ Install the LEDGER App for use with the Desktop Wallet from LEDGER Live. For inf
 Concordium Client |client-version|
 ===================================
 
--  `Download Concordium Client for Linux <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-linux>`_
+For usage instructions see :ref:`Concordium-client <concordium-client>`
 
-      - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
-      - :ref:`Verification instructions <verification-client-linux>`
+.. dropdown:: Linux
 
-   Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
+   -  `Download Concordium Client for Linux <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-linux>`_
 
-      .. code-block:: console
+         - SHA256 checksum of the download: :substitution-code:`|client-linux-checksum|`
+         - :ref:`Verification instructions <verification-client-linux>`
 
-         chmod +x concordium-client-linux
+      Before you can use the downloaded Concordium Client on Linux you have to make the downloaded file executable. Run the following command to make the file you download executable:
 
--  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`_
+         .. code-block:: console
 
-   - The macOS distribution is an installer that places an alias to the binary
-     into the folder ``/usr/local/bin``. So after installing, you should have
-     ``concordium-client`` on your path.
+            chmod +x concordium-client-linux
 
--  `Download Concordium Client for Windows <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-windows.zip>`_
+.. dropdown:: macOS
 
-   - The Windows distribution is a zip file that must be extracted before use.
-     To do this, in Windows Explorer, right-click the downloaded file and select
-     "Extract All...". After extraction, you will have a folder containing the
-     Concordium Client executable (``concordium-client.exe``) as well as other files
-     that are required to run the client.
+   -  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`_
+
+      - The macOS distribution is an installer that places an alias to the binary
+      into the folder ``/usr/local/bin``. So after installing, you should have
+      ``concordium-client`` on your path.
+
+.. dropdown:: Windows
+
+   -  `Download Concordium Client for Windows <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-windows.zip>`_
+
+      - The Windows distribution is a zip file that must be extracted before use.
+      To do this, in Windows Explorer, right-click the downloaded file and select
+      "Extract All...". After extraction, you will have a folder containing the
+      Concordium Client executable (``concordium-client.exe``) as well as other files
+      that are required to run the client.
 
 .. _cargo-concordium-testnet:
 
-``cargo-concordium``
-====================
+cargo-concordium
+================
 
 For information about installing ``cargo-concordium``, see :ref:`Install tools for development <build-contract>`.
 
@@ -175,7 +183,7 @@ To ease deployment and initialization, you can use the `Smart contract deploy an
 Concordium node distributions
 =============================
 
-For the system requirements to run a node, see :ref:`System requirements to run a node<node-requirements>`.
+For the system requirements to run a node and installation instructions for each operating system, see :ref:`System requirements to run a node <node-requirements>`.
 
 .. Note::
 
@@ -272,15 +280,17 @@ Download the block separately to inspect it or to run a node in a custom configu
 
 .. _downloads-voting-tools:
 
-Voting tools
-============
+.. only:: never
 
-Coordinator tool
-Windows
-Mac
-Ubuntu
+   Voting tools
+   ============
 
-The Guardian app, voting dApp, and election smart contract are created by the election coordinator during the setup phase of the election.
+   Coordinator tool
+   Windows
+   Mac
+   Ubuntu
+
+   The Guardian app, voting dApp, and election smart contract are created by the election coordinator during the setup phase of the election.
 
 .. _downloads-auxiliary-tools:
 
@@ -292,44 +302,49 @@ Auxiliary tools are a collection of tools that can be used to perform actions as
 Encrypt/decrypt tool v1.0.0
 ---------------------------
 
+For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.
+
 - `Download the Encrypt/decrypt tool for Linux <https://distribution.concordium.software/tools/linux/utils-1.0.0>`_
 
 - `Download the Encrypt/decrypt tool for Windows <https://distribution.concordium.software/tools/windows/signed/utils-1.0.0.zip>`_
 
 - `Download the Encrypt/decrypt tool for macOS <https://distribution.concordium.software/tools/macos/signed/utils-1.0.0.zip>`_
 
-For information about how to use the encrypt/decrypt tool, see :ref:`Auxiliary tools <developer-tools>`.
-
 Company identity management tool v1.0.2
 ---------------------------------------
 
 Use this tool to create a company identity, request accounts using a company identity, and recover a company identity.
-
-- `Download the Company identity management tool for Linux - Debian package <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.deb>`_
-
-   - Verification instructions
-
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.deb
-      #. Verify that the output matches the SHA256 checksum ``c728dbe0b5ab950e4e705d7faceaee4b5ade615acd34b3bc6e75250acdedfaa9``.
-
-- `Download the Company identity management tool for Linux - App image <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.AppImage>`_
-
-   - Verification instructions
-
-      In a terminal:
-
-      #. Navigate to the download.
-      #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.AppImage
-      #. Verify that the output matches the SHA256 checksum ``8b6964d827808d3a8a9244d202e3aa8cdffeb2462edf44b3e32e7b41549b710f``.
-
-- `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/Concordium_Company_ID_1.0.2_x64_en-US.msi>`_
-
-- `Download the Company identity management tool for macOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
-
 For information about how to use the company identity management tool, see :ref:`company-identities`.
+
+.. dropdown:: Linux
+
+   - `Download the Company identity management tool for Linux - Debian package <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.deb>`_
+
+      - Verification instructions
+
+         In a terminal:
+
+         #. Navigate to the download.
+         #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.deb
+         #. Verify that the output matches the SHA256 checksum ``c728dbe0b5ab950e4e705d7faceaee4b5ade615acd34b3bc6e75250acdedfaa9``.
+
+   - `Download the Company identity management tool for Linux - App image <https://distribution.concordium.software/tools/linux/concordium-company-id_1.0.2_amd64.AppImage>`_
+
+      - Verification instructions
+
+         In a terminal:
+
+         #. Navigate to the download.
+         #. Paste the following into the terminal: $sha256sum concordium-company-id_1.0.2_amd64.AppImage
+         #. Verify that the output matches the SHA256 checksum ``8b6964d827808d3a8a9244d202e3aa8cdffeb2462edf44b3e32e7b41549b710f``.
+
+.. dropdown:: Windows
+
+   - `Download the Company identity management tool for Windows <https://distribution.concordium.software/tools/windows/signed/Concordium_Company_ID_1.0.2_x64_en-US.msi>`_
+
+.. dropdown:: macOS
+
+   - `Download the Company identity management tool for macOS <https://distribution.concordium.software/tools/macos/signed/concordium_company_id_1.0.2-1_x64.dmg>`_
 
 .. toctree::
    :hidden:
