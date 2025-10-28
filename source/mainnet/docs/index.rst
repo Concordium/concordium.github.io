@@ -113,13 +113,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Best practices <smart-contracts/best-practices/index>
    References <smart-contracts/references/index>
 
-
-.. toctree::
-   :caption: Integration
-   :hidden:
-
-   Wallet integration <integration/wallet integration/wallet-integration>
-
 .. toctree::
    :caption: Network
    :hidden:
@@ -129,6 +122,12 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Use Concordium's ID layer <network/web3-id/index.rst>
    Run a local chain <network/guides/run-local-chain.rst>
    Indexers <network/indexers/intro.rst>
+
+.. toctree::
+   :caption: Integration
+   :hidden:
+
+   Wallet integration <integration/wallet integration/wallet-integration>
 
 .. toctree::
    :caption: Help & FAQ
