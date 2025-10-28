@@ -1,4 +1,3 @@
-.. include:: ../../variables.rst
 .. _id-attributes-reference:
 
 ========================
