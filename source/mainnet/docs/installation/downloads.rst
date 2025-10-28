@@ -141,18 +141,16 @@ For usage instructions see :ref:`Concordium-client <concordium-client>`
 
    -  Download Concordium Client for macOS: `ARM <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-arm.pkg>`_ `Intel <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-macos-intel.pkg>`_
 
-      - The macOS distribution is an installer that places an alias to the binary
+      The macOS distribution is an installer that places an alias to the binary
       into the folder ``/usr/local/bin``. So after installing, you should have
-
       ``concordium-client`` on your path.
 
 .. dropdown:: Windows
 
    -  `Download Concordium Client for Windows <https://github.com/Concordium/concordium-client/releases/download/9.1.4-0-rc/concordium-client-windows.zip>`_
 
-      - The Windows distribution is a zip file that must be extracted before use.
+      The Windows distribution is a zip file that must be extracted before use.
       To do this, in Windows Explorer, right-click the downloaded file and select
-
       "Extract All...". After extraction, you will have a folder containing the
       Concordium Client executable (``concordium-client.exe``) as well as other files
       that are required to run the client.
