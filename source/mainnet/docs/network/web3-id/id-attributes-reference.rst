@@ -111,12 +111,12 @@ The following table lists all attributes available for Company IDs.
      - string
    * - Created Date
      - Mandatory
-     - 
-     - 
+     - TBD
+     - TBD
    * - Valid to Date
      - Mandatory
-     - 
-     - 
+     - TBD
+     - TBD
    * - LEI-code
      - Optional
      - lei
