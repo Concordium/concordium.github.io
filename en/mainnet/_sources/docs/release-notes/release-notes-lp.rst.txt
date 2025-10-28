@@ -148,29 +148,33 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.14.0 - October 8, 2025
+    1.15.0 - October 27, 2025
 
-    Added:
-
-    - You can now start the Send flow directly by scanning a QR code with a Concordium address from the main screen.
-    - Added onboarding slides to help new users get familiar with the wallet upon first installation.
-
-    Fixed:
-
-    - Tokens are now correctly displayed after switching between wallets.
-
-    Changed:
-
-    - Updated the app launcher icon.
-    - Refreshed the CCD token icon.
-    - Improved the design of WalletConnect dialogs for a cleaner look.
-
-    Removed:
-
-    - The prompt to save the seed phrase during wallet creation has been removed. You can now save it later on in the settings.
-    - Removed analytics consent from the initial setup screen.
+    Added support for PLT (Protocol-Level Token) payments on connected third-party websites.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.14.0 - October 8, 2025
+
+            Added:
+
+            - You can now start the Send flow directly by scanning a QR code with a Concordium address from the main screen.
+            - Added onboarding slides to help new users get familiar with the wallet upon first installation.
+
+            Fixed:
+
+            - Tokens are now correctly displayed after switching between wallets.
+
+            Changed:
+
+            - Updated the app launcher icon.
+            - Refreshed the CCD token icon.
+            - Improved the design of WalletConnect dialogs for a cleaner look.
+
+            Removed:
+
+            - The prompt to save the seed phrase during wallet creation has been removed. You can now save it later on in the settings.
+            - Removed analytics consent from the initial setup screen.
 
         .. dropdown:: |cryptox-legacy| 1.13.0 - September 22, 2025
 
