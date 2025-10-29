@@ -9,6 +9,8 @@ Concordium uses a :term:`proof-of-stake<proof-of-stake>` mechanism to ensure res
 
 If you hold CCD, you can participate in two ways: you can either become a :term:`validator` by staking CCD and running your own :term:`node`, or you can delegate your CCD to existing validators. When you delegate to a validator, you increase that validator's chance of winning the lottery to produce a :term:`block`, and you share in the rewards they receive.
 
+To understand the technical process of block production and validation, see :ref:`baker-concept`.
+
 For detailed information about how the reward system works, see :ref:`tokenomics`.
 
 Become a validator
@@ -18,7 +20,7 @@ As a validator, you run a node and must stake a minimum of 500,000 CCD, which be
 
 You can choose to open a :term:`staking pool`, which allows others to delegate their CCD to you and increase your chances of being selected to produce blocks.
 
-For more information, see :ref:`baker-concept`.
+For more information, see :ref:`how-to-become-a-validator`.
 
 Become a delegator
 ==================
@@ -37,8 +39,6 @@ For more information, see :ref:`delegation-concept`.
    :hidden:
    :maxdepth: 1
 
-   concepts-baker
+   how-to-become-a-validator
    concepts-delegation
-   time-concepts
-   validator-suspension
 
