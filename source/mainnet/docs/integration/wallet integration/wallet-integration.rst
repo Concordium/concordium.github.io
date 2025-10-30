@@ -7,7 +7,7 @@ Wallet integration
 
 This guide covers the technical requirements for integrating Concordium blockchain support into a cryptocurrency wallet. It walks you through core protocol features and key architectural decisions to help you plan your integration approach.
 
-Concordium is a Layer-1 proof-of-stake blockchain with a built-in identity layer that balances user privacy with regulatory compliance through zero-knowledge proofs. The platform supports multiple transaction types, offers native staking and delegation functionality, and uses an efficient gRPC-based node communication protocol.
+Concordium is a Layer-1 :term:`proof-of-stake` blockchain with a built-in :ref:`identity layer<reference-identity>` that balances user privacy with regulatory compliance through :term:`zero-knowledge proofs<Zero-knowledge proof>`. The platform supports multiple transaction types, offers native staking and :term:`delegation` functionality, and uses an efficient gRPC-based node communication protocol.
 
 Integrating Concordium requires implementing support for several protocol-specific features:
 
