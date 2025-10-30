@@ -40,16 +40,25 @@ Follow these steps to request PLT issuance on testnet:
 
 .. raw:: html
 
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLScjTvpdAYeWO9VEYitaXR46Fb5flT70zi5U88dVsjLIKWAKXA/viewform?embedded=true"
-      width="100%"
-      height="2988"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      title="PLT issuance request form">
-      Loading…
-    </iframe>
+   <iframe
+     id="plt-form"
+     src="https://docs.google.com/forms/d/e/1FAIpQLScjTvpdAYeWO9VEYitaXR46Fb5flT70zi5U88dVsjLIKWAKXA/viewform?embedded=true"
+     width="100%"
+     height="1500"
+     frameborder="0"
+     marginheight="0"
+     marginwidth="0"
+     title="PLT issuance request form">
+   </iframe>
+
+   <script>
+     const iframe = document.getElementById('plt-form');
+     iframe.onload = () => {
+       setTimeout(() => {
+         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+       }, 1000);
+     };
+   </script>
 
 3. **Submit your request**
 
