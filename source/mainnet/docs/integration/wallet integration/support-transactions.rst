@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
-.. _support-transaction-types:
+.. _support-transactions:
 
-=========================
-Support transaction types
-=========================
+====================
+Support transactions
+====================
 
 A wallet's fundamental purpose is to construct, sign, and broadcast :term:`transactions<transaction>`. Each user-facing feature you implement will require your wallet to generate a specific type of transaction payload.
 

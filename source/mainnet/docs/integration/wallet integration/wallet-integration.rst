@@ -12,7 +12,7 @@ Concordium is a Layer-1 proof-of-stake blockchain with a built-in identity layer
 Integrating Concordium requires implementing support for several protocol-specific features:
 
 * :ref:`Identity layer management <integrate-identity-layer>` - handling verified on-chain identities and zero-knowledge proofs
-* :ref:`Transaction types <support-transaction-types>` - supporting CCD transfers, smart contracts, staking, and protocol-level tokens
+* :ref:`Transaction types <support-transactions>` - supporting CCD transfers, smart contracts, staking, and protocol-level tokens
 * :ref:`Staking functionality <support-staking>` - enabling users to delegate CCD and earn rewards
 * :ref:`Network connectivity <connect-wallet-to-network>` - establishing communication with Concordium nodes
 
@@ -24,7 +24,7 @@ This guide walks through each integration area and provides links to relevant SD
    :maxdepth: 1
 
    integrate-identity-layer
-   support-transaction-types
+   support-transactions
    support-staking
    connect-wallet-to-network
 
