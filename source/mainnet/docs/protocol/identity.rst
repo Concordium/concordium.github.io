@@ -51,6 +51,9 @@ While interaction with the Concordium blockchain always requires a Concordium ID
 
 :doc:`Learn more about using Concordium's ID layer <../network/web3-id/index>`.
 
+
+.. _key-participants:
+
 Key participants
 ================
 The identity solution on Concordium involves several key participants, each with specific roles and responsibilities in the process.
