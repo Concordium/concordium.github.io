@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/plt/setup-guide/request-plt.c91533f4-dafa-4f1f-9ff8-94348a5e0d7a.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/plt/setup-guide/request-plt.78547df5-9878-41ba-883b-cb3385676d11.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/plt/setup-guide/request-plt';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/plt/setup-guide/request-plt.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -808,15 +808,24 @@
 <li><p><strong>Fill out the form below</strong></p></li>
 </ol>
 <iframe
+  id="plt-form"
   src="https://docs.google.com/forms/d/e/1FAIpQLScjTvpdAYeWO9VEYitaXR46Fb5flT70zi5U88dVsjLIKWAKXA/viewform?embedded=true"
   width="100%"
-  height="2988"
+  height="1500"
   frameborder="0"
   marginheight="0"
   marginwidth="0"
   title="PLT issuance request form">
-  Loading…
-</iframe><ol class="arabic" start="3">
+</iframe>
+
+<script>
+  const iframe = document.getElementById('plt-form');
+  iframe.onload = () => {
+    setTimeout(() => {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }, 1000);
+  };
+</script><ol class="arabic" start="3">
 <li><p><strong>Submit your request</strong></p>
 <p>Click Submit to send your PLT issuance request with all the token parameters to the Concordium team.</p>
 </li>
