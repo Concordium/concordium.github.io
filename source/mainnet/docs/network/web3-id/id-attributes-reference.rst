@@ -108,14 +108,6 @@ The following table lists all attributes available for Company IDs.
      - Mandatory
      - businessNumber
      - string
-   * - Created Date
-     - Mandatory
-     - TBD
-     - TBD
-   * - Valid to Date
-     - Mandatory
-     - TBD
-     - TBD
    * - LEI-code
      - Optional
      - lei
