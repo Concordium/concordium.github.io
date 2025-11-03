@@ -5,13 +5,12 @@
 Time concepts
 =============
 
+Concordium's consensus mechanism relies on organizing time into distinct periods that coordinate network operations and validator activities. The following sections explain the key time-based concepts.
+
 Epochs
 ======
 
-The Concordium blockchain divides time into epochs.
-
-When considering rewards and other validation-related concepts, the concept of an epoch is used as a unit of time that defines a period in which the
-set of current validators and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the :term:`genesis block<genesis block>`. Each epoch has a nominal ending, and when a block is finalized after this nominal ending, epoch transition occurs.
+Epochs form the basic time unit for coordinating validator activity. An epoch defines a period in which the validator set and stakes remain fixed. Epochs have a duration of 1 hour and the duration is fixed at the :term:`genesis block<genesis block>`. Each epoch has a nominal ending, and when a block is finalized after this nominal ending, epoch transition occurs.
 
 Rounds
 ======
