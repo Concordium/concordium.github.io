@@ -1,9 +1,9 @@
 .. include:: ../../variables.rst
 .. _delegation-concept:
 
-==========
-Delegation
-==========
+=========================
+How to become a delegator
+=========================
 
 The Concordium blockchain consists of multiple validator nodes that create and verify blocks, and enable CCD holders to earn rewards. However, not everyone with CCD wishes to run a validator node.
 :term:`Delegation<delegator>` enables you to earn rewards for delegating some stake without the need to become a validator and run a node. Any CCD holder may delegate some of their CCD to a validator. This increases the validator's chance of being selected to produce the next block and getting rewards, which are then shared with the delegators.
