@@ -54,13 +54,13 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/consensus-mechanisms.731b0e0f-9114-446e-9cd2-838f28e666fa.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/consensus-mechanisms.84a1fad4-00fe-41c0-a339-00f52fe73e18.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/consensus-mechanisms';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/consensus-mechanisms.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Concordium tokenomics system" href="tokenomics.html" />
+    <link rel="next" title="Block production and validation" href="concepts-baker.html" />
     <link rel="prev" title="Transaction fees" href="transaction-fees.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -517,13 +517,16 @@
 <li class="toctree-l2"><a class="reference internal" href="transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Consensus mechanisms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tokenomics.html">Tokenomics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="staking.html">Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Consensus mechanisms</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Block production and validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="time-concepts.html">Time concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validator-suspension.html">Validator suspension</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="tokenomics.html">Tokenomics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="staking.html">Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="how-to-become-a-validator.html">How to become a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html">How to become a delegator</a></li>
 </ul>
 </details></li>
 </ul>
@@ -805,8 +808,8 @@
 <section id="block-creation">
 <h2>Block creation<a class="headerlink" href="#block-creation" title="Link to this heading">#</a></h2>
 <p>In Concordium, block creation follows a leader-based approach. For each round, a leader is selected through a lottery-based system where the probability of selection is proportional to the validator’s stake. The selected leader creates a new block and broadcasts it to the network.</p>
-<p><a class="reference external" href="concepts-baker.html">Learn more about the complete validation process here.</a></p>
 <p>Unlike <a class="reference internal" href="../resources/glossary.html#term-proof-of-work"><span class="xref std std-term">proof-of-work</span></a> systems that require solving complex puzzles, Concordium’s block creation is energy-efficient. The chosen leader simply needs to create a valid block and prove they were legitimately selected through the verifiable random function (VRF) system.</p>
+<p><a class="reference external" href="concepts-baker.html">See a detailed description of block production and  validation here.</a></p>
 </section>
 <section id="security">
 <h2>Security<a class="headerlink" href="#security" title="Link to this heading">#</a></h2>
@@ -820,6 +823,7 @@
 <section id="epoch-structure">
 <h2>Epoch structure<a class="headerlink" href="#epoch-structure" title="Link to this heading">#</a></h2>
 <p>Concordium organizes time into <a class="reference internal" href="../resources/glossary.html#term-Epoch"><span class="xref std std-term">epochs</span></a> during which the validator set remains constant. This structure provides clear checkpoints for updates to the system and helps coordinate the network’s operation. Every 24 epochs, there is a <a class="reference internal" href="../resources/glossary.html#term-Pay-day"><span class="xref std std-term">pay day</span></a> where rewards are distributed and stake changes take effect.</p>
+<p><a class="reference external" href="time-concepts.html">Learn more about time concepts on Concordium.</a></p>
 </section>
 <section id="delegation-and-participation">
 <h2>Delegation and participation<a class="headerlink" href="#delegation-and-participation" title="Link to this heading">#</a></h2>
@@ -830,6 +834,8 @@
 <h2>The role of identity<a class="headerlink" href="#the-role-of-identity" title="Link to this heading">#</a></h2>
 <p>A unique aspect of Concordium’s consensus mechanism is its integration with the identity layer. While consensus operates pseudonymously, the underlying identity system ensures that validators can be held accountable if necessary, providing an additional security guarantee without compromising the network’s decentralized nature.</p>
 <p><a class="reference external" href="identity.html">Learn more about identities here.</a></p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 
@@ -889,11 +895,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="tokenomics.html"
+       href="concepts-baker.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Concordium tokenomics system</p>
+        <p class="prev-next-title">Block production and validation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

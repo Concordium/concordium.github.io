@@ -54,14 +54,14 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/time-concepts.dcac3c8a-a453-4e4a-b5d9-9b7fe879dd7a.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/time-concepts.12a39820-d2f8-406f-b97d-5528948afeae.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/time-concepts';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/time-concepts.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Validator suspension" href="validator-suspension.html" />
-    <link rel="prev" title="Delegation" href="concepts-delegation.html" />
+    <link rel="prev" title="Block production and validation" href="concepts-baker.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -517,13 +517,16 @@
 <li class="toctree-l2"><a class="reference internal" href="transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="consensus-mechanisms.html">Consensus mechanisms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tokenomics.html">Tokenomics</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="staking.html">Staking</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="consensus-mechanisms.html">Consensus mechanisms</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Block production and validation</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Time concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validator-suspension.html">Validator suspension</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="tokenomics.html">Tokenomics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="staking.html">Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="how-to-become-a-validator.html">How to become a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts-delegation.html">How to become a delegator</a></li>
 </ul>
 </details></li>
 </ul>
@@ -786,15 +789,14 @@
                   
   <section id="time-concepts">
 <span id="id1"></span><h1>Time concepts<a class="headerlink" href="#time-concepts" title="Link to this heading">#</a></h1>
+<p>Concordium’s consensus mechanism relies on organizing time into distinct periods that coordinate network operations and validator activities. The following sections explain the key time-based concepts.</p>
 <section id="epochs">
 <h2>Epochs<a class="headerlink" href="#epochs" title="Link to this heading">#</a></h2>
-<p>The Concordium blockchain divides time into epochs.</p>
-<p>When considering rewards and other validation-related concepts, the concept of an epoch is used as a unit of time that defines a period in which the
-set of current validators and stakes are fixed. Epochs have a duration of 1 hour and the duration is fixed at the <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a>. Each epoch has a nominal ending, and when a block is finalized after this nominal ending, epoch transition occurs.</p>
+<p>Epochs form the basic time unit for coordinating validator activity. An epoch defines a period in which the validator set and stakes remain fixed. Epochs have a duration of 1 hour and the duration is fixed at the <a class="reference internal" href="../resources/glossary.html#term-Genesis-Block"><span class="xref std std-term">genesis block</span></a>. Each epoch has a nominal ending, and when a block is finalized after this nominal ending, epoch transition occurs.</p>
 </section>
 <section id="rounds">
 <h2>Rounds<a class="headerlink" href="#rounds" title="Link to this heading">#</a></h2>
-<p>Epochs are subdivided into rounds. In each round either a block is produced by the elected leader and validated by (2/3 of) the other validators, or a  imeout is produced if the timeout time is reached before a block and its quorum certificate are produced. In the case of a timeout, a timeout certificate
+<p>Epochs are subdivided into rounds. In each round either a block is produced by the elected leader and validated by (2/3 of) the other validators, or a timeout is produced if the timeout time is reached before a block and its quorum certificate are produced. In the case of a timeout, a timeout certificate
 is produced for the block. The timeout time for the next round may shrink or grow depending on whether a block was finalized or a timeout occurred in the
 previous round. Using consensus protocol, a validator has to add the new block after the block from the previous round, unless a timeout occurred in the
 previous round, in which case they can add their block to an older round. The list of lottery winners that are elected to be the leader for every round in
@@ -809,7 +811,7 @@ updates to delegation and validation take effect. Pay day is every 24 hours (i.e
 <section id="cool-down-period">
 <h2>Cool-down period<a class="headerlink" href="#cool-down-period" title="Link to this heading">#</a></h2>
 <p>In the case of decreasing stake or removing delegation or validation there is a cool-down period of three weeks during which the unstaked funds are
-frozen. For example, if you decrease a valiator’s stake, the stake will be decreased at the first pay day but the funds will not be released to your
+frozen. For example, if you decrease a validator’s stake, the stake will be decreased at the first pay day but the funds will not be released to your
 disposable balance until after the cool-down period ends.</p>
 </section>
 </section>
@@ -861,12 +863,12 @@ disposable balance until after the cool-down period ends.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="concepts-delegation.html"
+       href="concepts-baker.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Delegation</p>
+        <p class="prev-next-title">Block production and validation</p>
       </div>
     </a>
     <a class="right-next"

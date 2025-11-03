@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/import-validator-keys.4178f00f-1ad9-4027-9178-f32507b42ae0.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/import-validator-keys.672afebb-ef79-48a2-bdae-089c7928e2ad.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/import-validator-keys';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/import-validator-keys.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -517,13 +517,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../protocol/transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../../protocol/consensus-mechanisms.html">Consensus mechanisms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../protocol/tokenomics.html">Tokenomics</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/staking.html">Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../protocol/concepts-baker.html">Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../protocol/concepts-delegation.html">Delegation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/consensus-mechanisms.html">Consensus mechanisms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/concepts-baker.html">Block production and validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protocol/time-concepts.html">Time concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../protocol/validator-suspension.html">Validator suspension</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../protocol/tokenomics.html">Tokenomics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../protocol/staking.html">Staking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/how-to-become-a-validator.html">How to become a validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../protocol/concepts-delegation.html">How to become a delegator</a></li>
 </ul>
 </details></li>
 </ul>
@@ -802,7 +805,7 @@
 <li><p class="sd-card-text">Run Windows 10 or later or Windows Server 2019 or later</p></li>
 <li><p class="sd-card-text">Have the administrator password to your computer</p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Run a node on Windows</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Validation</span></a>.</p></li>
+<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
 </ul>
 <dl>
 <dt>Watch the video guide below to learn how to import validator keys to your Windows node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/DY_1nD2JgGM"
@@ -859,7 +862,7 @@ allowfullscreen></iframe></dd>
 <li><p class="sd-card-text">Run Ubuntu 22.04 or later</p></li>
 <li><p class="sd-card-text">Have the administrator password to your computer</p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">Run a node on Ubuntu</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Validation</span></a>.</p></li>
+<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
 </ul>
 <dl>
 <dt>Watch the video guide below to learn how to import validator keys to your Ubuntu node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/UMnu8ADg5ig"
@@ -932,7 +935,7 @@ allowfullscreen></iframe></dd>
 <li><p class="sd-card-text">Run macOS 11 BigSur or later</p></li>
 <li><p class="sd-card-text">Have the administrator password to your computer</p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">Run a node on macOS</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Validation</span></a>.</p></li>
+<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
 </ul>
 <dl>
 <dt>Watch the video guide below to learn how to import validator keys to your macOS node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/ZWpMfIeTP6U"
@@ -984,7 +987,7 @@ allowfullscreen></iframe></dd>
 <p class="sd-card-text"><strong>Prerequisites</strong></p>
 <ul class="simple">
 <li><p class="sd-card-text"><a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Run a node on Docker</span></a></p></li>
-<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Validation</span></a>.</p></li>
+<li><p class="sd-card-text">Have generated validator keys, see <a class="reference internal" href="add-baker-mw.html#add-baker-mw"><span class="std std-ref">Add a validator</span></a> for details. For an overview of the process, see <a class="reference internal" href="../../protocol/concepts-baker.html#baker-concept"><span class="std std-ref">Block production and validation</span></a>.</p></li>
 </ul>
 <dl>
 <dt>Watch the video guide below to learn how to import validator keys to your Docker node:</dt><dd><iframe width="560" height="315" src="https://www.youtube.com/embed/jLJb8ZqU5Ng"

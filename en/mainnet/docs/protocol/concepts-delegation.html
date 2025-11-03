@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Delegation &#8212; Concordium  documentation</title>
+    <title>How to become a delegator &#8212; Concordium  documentation</title>
   
   
   
@@ -54,14 +54,14 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-delegation.48b117fd-0acf-4845-9e4a-7f8858dc9451.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/concepts-delegation.a3e8be0c-5cb6-45ae-b0a2-b79d933e91e9.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/concepts-delegation';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/concepts-delegation.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Time concepts" href="time-concepts.html" />
-    <link rel="prev" title="Validation" href="concepts-baker.html" />
+    <link rel="next" title="Protocol-Level Tokens (PLTs)" href="../plt/index.html" />
+    <link rel="prev" title="How to become a validator" href="how-to-become-a-validator.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
   </head>
@@ -517,13 +517,16 @@
 <li class="toctree-l2"><a class="reference internal" href="transaction-fees.html">Transaction fees</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="consensus-mechanisms.html">Consensus mechanisms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tokenomics.html">Tokenomics</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="staking.html">Staking</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Validation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Delegation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="consensus-mechanisms.html">Consensus mechanisms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts-baker.html">Block production and validation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="time-concepts.html">Time concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="validator-suspension.html">Validator suspension</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="tokenomics.html">Tokenomics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="staking.html">Staking</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="how-to-become-a-validator.html">How to become a validator</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">How to become a delegator</a></li>
 </ul>
 </details></li>
 </ul>
@@ -784,8 +787,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="delegation">
-<span id="delegation-concept"></span><h1>Delegation<a class="headerlink" href="#delegation" title="Link to this heading">#</a></h1>
+  <section id="how-to-become-a-delegator">
+<span id="delegation-concept"></span><h1>How to become a delegator<a class="headerlink" href="#how-to-become-a-delegator" title="Link to this heading">#</a></h1>
 <p>The Concordium blockchain consists of multiple validator nodes that create and verify blocks, and enable CCD holders to earn rewards. However, not everyone with CCD wishes to run a validator node.
 <a class="reference internal" href="../resources/glossary.html#term-Delegator"><span class="xref std std-term">Delegation</span></a> enables you to earn rewards for delegating some stake without the need to become a validator and run a node. Any CCD holder may delegate some of their CCD to a validator. This increases the validator’s chance of being selected to produce the next block and getting rewards, which are then shared with the delegators.</p>
 <p>When you delegate an amount of CCD to a validator, the CCDs are not transferred to the validator and remain under your control; they are just considered part of the validator’s stake for the <a class="reference internal" href="../resources/glossary.html#term-Proof-of-stake"><span class="xref std std-term">proof-of-stake</span></a> protocol. While staked, these CCD cannot be spent, and if you later choose to unstake them, there will be a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a> before they become available again.</p>
@@ -817,8 +820,8 @@ At pay day, rewards gathered over a 24 hour period are distributed at the same t
 <p>When decreasing or removing the stake (whether for delegators or validators), the unstaked funds are not released until after a <a class="reference internal" href="../resources/glossary.html#term-Cool-down-period"><span class="xref std std-term">cool-down period</span></a>.</p>
 <p>For detailed information about cool-down periods, staking parameters, and tokenomics, see see <a class="reference internal" href="tokenomics.html#tokenomics"><span class="std std-ref">Concordium tokenomics system</span></a>.</p>
 </section>
-<section id="how-to-become-a-delegator">
-<h2>How to become a delegator<a class="headerlink" href="#how-to-become-a-delegator" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>How to become a delegator<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>You can <a class="reference internal" href="../guides/add-delegation.html#add-delegation"><span class="std std-ref">delegate CCDs</span></a> by creating an account in any Concordium wallet.  If you plan to delegate to a specific validator pool, it is recommended that you research the various validators and their performance using <a class="reference internal" href="../../tools/ccd-scan/ccd-scan.html#ccd-scan"><span class="std std-ref">CCDScan</span></a> before making your decision.</p>
 <p>See the <a class="reference internal" href="../help-and-faq/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation and validationcon FAQ</span></a> for answers to the most frequently asked questions.</p>
 </section>
@@ -871,20 +874,20 @@ At pay day, rewards gathered over a 24 hour period are distributed at the same t
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="concepts-baker.html"
+       href="how-to-become-a-validator.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Validation</p>
+        <p class="prev-next-title">How to become a validator</p>
       </div>
     </a>
     <a class="right-next"
-       href="time-concepts.html"
+       href="../plt/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Time concepts</p>
+        <p class="prev-next-title">Protocol-Level Tokens (PLTs)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -913,7 +916,7 @@ At pay day, rewards gathered over a 24 hour period are distributed at the same t
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-and-cool-downs">Time and cool-downs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-become-a-delegator">How to become a delegator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">How to become a delegator</a></li>
 </ul>
   </nav></div>
 
