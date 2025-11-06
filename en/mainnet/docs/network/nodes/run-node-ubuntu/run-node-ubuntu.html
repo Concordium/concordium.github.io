@@ -54,7 +54,7 @@
     <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-ubuntu/run-node-ubuntu.57c47bad-a345-49c6-a33c-cae9fde65889.js"></script>
+    <script defer="defer" src="../../../../_static/tippy/docs/network/nodes/run-node-ubuntu/run-node-ubuntu.0b984149-d8fb-4cad-898f-509532ca1aa6.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/run-node-ubuntu/run-node-ubuntu';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/run-node-ubuntu/run-node-ubuntu.html" />
     <link rel="icon" href="../../../../_static/concordium-logo-no-text.svg"/>
@@ -644,6 +644,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../web3-id/issuer.html">Web3 ID issuers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../web3-id/identity-provider-interfaces.html">Wallet identity provider interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../guides/create-proofs.html">Create proofs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../web3-id/id-attributes-reference.html">ID attributes reference</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guides/run-local-chain.html">Run a local chain</a></li>
@@ -1078,76 +1079,88 @@ the collector are started as before.</p>
     Legal information
   </a>
 </div>
-  <div id="cookie-consent" class="consent">
+  <div id="cookie-consent" class="consent">     
     <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
-    <button onclick="consentGranted()">Allow</button>
-    <button onclick="consentDenied()">Decline</button>
-    <a href="https://concordium.com/privacy-policy/">Privacy policy</a>
-</div>
+    <button onclick="consentGranted()">Allow</button>     
+    <button onclick="consentDenied()">Decline</button>     
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a> 
+</div>  
 
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
+<!-- Matomo --> 
+<script>   
+var _paq = window._paq = window._paq || [];  
 
-// Save the choice in a cookie
-function storeChoice(granted) {
-  document.cookie = "cookie-consent=" + granted
-}
+// Save the choice in a cookie with proper attributes
+function storeChoice(granted) {   
+    // Set cookie with 1 year expiration, path, and secure attributes
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = "cookie-consent=" + granted + "; expires=" + expires.toUTCString() + "; path=/; SameSite=Lax";
+}  
 
-// Look for a cookie storing the previous choice of the user.
-// Returns undefined if no choice was stored, otherwise a boolean for whether the
-// user gave consent.
-function loadChoice() {
-  if (!document.cookie.includes("cookie-consent=")) {
-      return undefined;
-  }
-  return document.cookie.includes("cookie-consent=true")
-}
+// Look for a cookie storing the previous choice of the user. 
+// Returns null if no choice was stored, true if granted, false if denied
+function loadChoice() {   
+    if (!document.cookie.includes("cookie-consent=")) {       
+        return null;   
+    }   
+    return document.cookie.includes("cookie-consent=true");
+}  
 
-// Removes the cookie consent banner
-function removeCookieConsentBanner() {
-  document.getElementById("cookie-consent").remove()
-}
+// Removes the cookie consent banner safely
+function removeCookieConsentBanner() {   
+    const banner = document.getElementById("cookie-consent");
+    if (banner) {
+        banner.remove();
+    }
+}  
 
 // Called by the cookie consent banner if granted permission
-function consentGranted() {
-  storeChoice(true)
-  _paq.push(['setCookieConsentGiven']);
-  removeCookieConsentBanner()
-}
+function consentGranted() {   
+    storeChoice(true);
+    _paq.push(['setCookieConsentGiven']);   
+    removeCookieConsentBanner();
+}  
 
 // Called by the cookie consent banner if denied permission
-function consentDenied() {
-  storeChoice(true)
-  removeCookieConsentBanner()
+function consentDenied() {   
+    storeChoice(false);  // FIXED: Now correctly stores false
+    removeCookieConsentBanner();
+}  
+
+// Check for stored consent and act accordingly
+const stored = loadChoice(); 
+if (stored === true) {
+    // User previously granted consent
+    _paq.push(['setCookieConsentGiven']);
+    removeCookieConsentBanner();
+} else if (stored === false) {
+    // User previously denied consent
+    removeCookieConsentBanner();
 }
+// If stored === null, show the banner (do nothing)
 
-const stored = loadChoice();
-if (stored) {
- consentGranted()
+_paq.push(['requireCookieConsent']); 
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */ 
+_paq.push(['trackPageView']); 
+_paq.push(['enableLinkTracking']);  
+
+(function() {     
+    var u="https://concordium.matomo.cloud/";     
+    _paq.push(['setTrackerUrl', u+'matomo.php']);     
+    _paq.push(['setSiteId', '2']);     
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];     
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);   
+})();    
+
+// Only remember consent if it was actually granted
+if (stored === true) {
+    _paq.push(['rememberCookieConsentGiven']);
 }
+</script>   
 
-_paq.push(['requireCookieConsent']);
-/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-_paq.push(['trackPageView']);
-_paq.push(['enableLinkTracking']);
-
-(function() {
-    var u="https://concordium.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-
-  // remember tracking consent was given for all subsequent page views and visits
-_paq.push(['rememberCookieConsentGiven']);
-
-</script>
-
-
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script>
+<!-- Start of HubSpot Embed Code --> 
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script> 
 <!-- End of HubSpot Embed Code -->
 
   </body>
