@@ -53,7 +53,7 @@ How to get an account
 
 Once you have a verified identity and user identity certificate, you can create accounts through your chosen wallet application. The process varies slightly depending on which wallet you use:
 
-* CryptoX Concordium Wallet and Concordium Wallet for Web: You create all accounts yourself directly in the wallet.
+* Concordium Wallet and Concordium Wallet for Web: You create all accounts yourself directly in the wallet.
 
 * Desktop Wallet: The identity provider creates an :ref:`initial account<initial-accounts>` for you during identity verification, though you may want to create additional regular accounts for enhanced privacy.
 
@@ -70,4 +70,5 @@ Account creation is an on-chain transaction that submits a credential containing
 
    account-concepts
    account-aliases
+   key-derivation-and-usage
 

@@ -88,7 +88,6 @@ Explore our developer resources, including detailed documentation, tutorials, an
    What is the Concordium Protocol <protocol/concordium-protocol>
    Identity <protocol/identity>
    Accounts <protocol/manage-accounts>
-   Key derivation and usage <protocol/key-derivation-and-usage>
    Transactions <protocol/transactions>
    Consensus mechanisms <protocol/consensus-mechanisms>
    Tokenomics <protocol/tokenomics>

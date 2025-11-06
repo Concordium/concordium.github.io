@@ -108,6 +108,6 @@ Next steps
 - If you want to use the Desktop Wallet, :ref:`download <downloads-desktop-wallet>` and install it on your computer, and then see :ref:`Overview of setting up the Desktop Wallet<overview-desktop>` for the next steps.
 - If you want to learn more about the LEDGER device, go to `LEDGER's website <https://www.ledger.com>`_.
 - If you want to use the |bw|, :ref:`install <downloads-browser-wallet>` the Google Chrome extension, and then see :ref:`Set up the Concordium Wallet for Chrome<setup-browser-wallet>` for the next steps.
-- If you want to use the |cryptox|, :ref:`install <downloads-cryptox>` on your mobile phone, and then see :ref:`Set up<setup-cryptox-wallet>` for the next steps.
+- If you want to use the |cryptox|, :ref:`install <downloads-cryptox>` on your mobile phone, and then see :ref:`Set up<setup-concordium-wallet>` for the next steps.
 
 
