@@ -5,7 +5,7 @@
 Wallet integration
 ==================
 
-This guide covers the technical requirements for integrating Concordium blockchain support into a cryptocurrency wallet. It walks you through core protocol features and key architectural decisions. Whether you're evaluating Concordium for integration or ready to begin implementation, this guide provides the foundation for making informed decisions.
+This guide covers the technical requirements for integrating Concordium blockchain support into a crypto wallet. It walks you through core protocol features and key architectural decisions. Whether you're evaluating Concordium for integration or ready to begin implementation, this guide provides the foundation for making informed decisions.
 
 Integration overview
 ====================

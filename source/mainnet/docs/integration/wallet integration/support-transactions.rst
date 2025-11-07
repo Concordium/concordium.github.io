@@ -63,3 +63,4 @@ To help you implement support for these transaction types, Concordium provides s
 `gRPC API Reference <https://docs.concordium.com/concordium-grpc-api/#v2%2fconcordium%2fservice.proto>`_ - For developers needing to interact directly with a node, the gRPC reference details the exact API endpoints and data structures for submitting transactions
 
 :ref:`Block explorers<ccd-scan>` - Tools like `CCDScan <https://ccdscan.io/>`_ and `CCDExplorer <https://ccdexplorer.io/mainnet>`_ allow you to inspect live transactions on the network. You can use them to see the structure, cost, and outcome of each transaction type in a real-world context
+
