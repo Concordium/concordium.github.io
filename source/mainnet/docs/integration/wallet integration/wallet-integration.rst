@@ -5,18 +5,30 @@
 Wallet integration
 ==================
 
-This guide covers the technical requirements for integrating Concordium blockchain support into a cryptocurrency wallet. It walks you through core protocol features and key architectural decisions to help you plan your integration approach.
+This guide covers the technical requirements for integrating Concordium blockchain support into a cryptocurrency wallet. It walks you through core protocol features and key architectural decisions. Whether you're evaluating Concordium for integration or ready to begin implementation, this guide provides the foundation for making informed decisions.
 
-Concordium is a Layer-1 :term:`proof-of-stake` blockchain with a built-in :ref:`identity layer<reference-identity>` that balances user privacy with regulatory compliance through :term:`zero-knowledge proofs<Zero-knowledge proof>`. The platform supports multiple transaction types, offers native staking and :term:`delegation` functionality, and uses an efficient gRPC-based node communication protocol.
+Integration overview
+====================
+
+Concordium is a Layer-1 :term:`proof-of-stake` blockchain with a built-in :ref:`identity layer<reference-identity>` at protocol level balancing user privacy with regulatory compliance. The platform supports multiple transaction types, offers native staking and :term:`delegation` functionality, and uses an efficient gRPC-based node communication protocol.
 
 Integrating Concordium requires implementing support for several protocol-specific features:
 
-* :ref:`Identity layer management <integrate-identity-layer>` - handling verified on-chain identities and zero-knowledge proofs
-* :ref:`Transaction types <support-transactions>` - supporting CCD transfers, smart contracts, staking, and protocol-level tokens
-* :ref:`Staking functionality <support-staking>` - enabling users to delegate CCD and earn rewards
-* :ref:`Network connectivity <connect-wallet-to-network>` - establishing communication with Concordium nodes
+* **Identity layer management:** handling verified on-chain identities and zero-knowledge proofs
+* **Transaction types:** supporting CCD transfers, smart contracts, staking, and protocol-level tokens
+* **Staking functionality:** enabling users to delegate CCD and earn rewards
 
-This guide walks through each integration area and provides links to relevant SDKs, APIs, and reference implementations.
+In addition to implementing these features, you'll need to establish network connectivity through Concordium's gRPC-based communication protocol. You may consider using a wallet proxy for simplified data handling.
+
+Guide structure
+===============
+
+The following pages provide detailed guidance for each integration area, including technical specifications and links to relevant SDKs and APIs.
+
+* :ref:`Integrate Concordium's ID layer<integrate-identity-layer>`
+* :ref:`Support transactions<support-transactions>`
+* :ref:`Support staking<support-staking>`
+* :ref:`Connect your wallet to the network<connect-wallet-to-network>`
 
 
 .. toctree::
