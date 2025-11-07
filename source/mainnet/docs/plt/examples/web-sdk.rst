@@ -13,7 +13,7 @@ Before using this example, make sure to install the required dependencies:
 
 .. code-block:: bash
 
-  npm install @concordium/web-sdk@10.0.0
+  npm install @concordium/web-sdk@11.0.0
   npm install @grpc/grpc-js
 
 
@@ -302,7 +302,7 @@ Transfer PLTs between accounts:
         /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for transferring tokens
         const token = await Token.fromId(client, tokenId);
@@ -316,11 +316,11 @@ Transfer PLTs between accounts:
             amount,
             memo,
         };
-        
+
         const transferOperation: TokenTransferOperation = {
             transfer,
         };
-        
+
         console.log('Specified transfer:', JSON.stringify(transferOperation, null, 2));
 
         const payload = createTokenUpdatePayload(tokenId, transferOperation);
@@ -449,11 +449,11 @@ Mint new tokens (issuer only):
     /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for minting tokens
         const update: TokenSupplyUpdate = { amount: tokenAmount };
-        
+
         const operation: TokenOperation = {
             'mint': update,
         };
@@ -580,7 +580,7 @@ Burn existing tokens (issuer only):
         /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for burning tokens
         const update: TokenSupplyUpdate = { amount: tokenAmount };
@@ -664,7 +664,7 @@ Add an account to the token's allow list (issuer only):
         Requires direct access to wallet files containing private keys. The service
         can sign and execute transactions immediately. Use this when building APIs,
         trading bots, or administrative tools where the service manages tokens automatically.*/
-        
+
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
@@ -722,7 +722,7 @@ Add an account to the token's allow list (issuer only):
         /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for adding to allow list
         const listPayload: TokenListUpdate = {
@@ -861,7 +861,7 @@ Remove an account from the token's allow list (issuer only):
         /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for removing from allow list
         const listPayload: TokenListUpdate = {
@@ -1000,7 +1000,7 @@ Add an account to the token's deny list (issuer only):
         /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for adding to allow list
         const listPayload: TokenListUpdate = {
@@ -1139,7 +1139,7 @@ Remove an account from the token's deny list (issuer only):
         /* Wallet perspective: For dApps and wallet integrations
             Creates a transaction payload that can be signed by wallet applications.
             The wallet holds the private keys and the user reviews transactions before signing.
-            Use this when building dApps where users connect their wallet (Browser Wallet, 
+            Use this when building dApps where users connect their wallet (Browser Wallet,
             Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for removing from allow list
         const listPayload: TokenListUpdate = {
@@ -1277,7 +1277,7 @@ This example demonstrates how to suspend balance transfer operations for a Proto
     /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for pausing the token
         const pauseOperation = { pause: true } as TokenOperation;
@@ -1408,7 +1408,7 @@ This example demonstrates how to resume balance transfer operations for a Protoc
         /* Wallet perspective: For dApps and wallet integrations
         Creates a transaction payload that can be signed by wallet applications.
         The wallet holds the private keys and the user reviews transactions before signing.
-        Use this when building dApps where users connect their wallet (Browser Wallet, 
+        Use this when building dApps where users connect their wallet (Browser Wallet,
         Mobile Wallet, etc.) and maintain control of their keys. */
         // Create the payload for unpausing the token
         const pauseOperation = { pause: false } as TokenOperation;

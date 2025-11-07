@@ -14,8 +14,8 @@ Before using this example, make sure your Cargo.toml includes:
 .. code-block:: toml
 
   # Concordium dependencies
-  concordium-rust-sdk = "=7.0.0"
-  concordium_base = "=8.0.0"
+  concordium-rust-sdk = "=8.0.0"
+  concordium_base = "=9.0.0"
 
 
 Available examples
@@ -114,7 +114,6 @@ Optionally specify a block hash for historical token lists.
         Ok(())
     }
 
-
 .. _rust-get-token-info:
 
 Get token information
@@ -202,7 +201,7 @@ Set the account address to query and optionally specify a block hash for histori
     use std::str::FromStr;
 
     // CONFIGURATION - Modify these values for your use case
-    const ACCOUNT_ADDRESS: &str = "ACCOUNT_ADDRESS"; // Replace with the actual account address you want to query
+    const ACCOUNT_ADDRESS: &str = "TARGET_ADDRESS"; // Replace with the actual account address you want to query
     const BLOCK_HASH: Option<&str> = None; // Set to Some("blockhash") for specific block, None for latest
 
     #[tokio::main]
@@ -294,14 +293,13 @@ Configure the recipient address and amount to complete the transfer.
     use std::{path::PathBuf, str::FromStr}; // Added PathBuf import
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
+    const WALLET_FILE: &str = "keys/wallet.export";
     const TOKEN_ID: &str = "TOKEN_ID"; // Replace with the actual token ID you want to transfer
     const RECIPIENT_ADDRESS: &str = "RECIPIENT_ADDRESS"; // Replace with the actual recipient address
-    const TOKEN_AMOUNT: &str = "12"; // Amount to transfer as decimal string
+    const TOKEN_AMOUNT: &str = "1"; // Amount to transfer as decimal string
 
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
-        println!("Connecting to Concordium testnet...");
         let mut client = v2::Client::new(v2::Endpoint::from_str(
             "https://grpc.testnet.concordium.com:20000",
         )?)
@@ -372,7 +370,6 @@ Configure the recipient address and amount to complete the transfer.
         Ok(())
     }
 
-
 .. _rust-mint-tokens:
 
 Mint tokens
@@ -392,7 +389,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the amount to mint in the `TOKEN_AMOUNT` constant
     //! 4. Run with: `cargo run --example mint_tokens`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
@@ -408,7 +405,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
     use std::{path::PathBuf, str::FromStr};
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
+    const WALLET_FILE: &str = "keys/wallet.export";
     const TOKEN_ID: &str = "TOKEN_ID"; // Replace with your token ID
     const TOKEN_AMOUNT: &str = "10"; // Amount to mint as decimal string
 
@@ -485,7 +482,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the amount to burn in the `TOKEN_AMOUNT` constant
     //! 4. Run with: `cargo run --example burn_tokens`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
@@ -501,7 +498,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
     use std::{path::PathBuf, str::FromStr};
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
+    const WALLET_FILE: &str = "keys/wallet.export";
     const TOKEN_ID: &str = "TOKEN_ID"; // Replace with your token ID
     const TOKEN_AMOUNT: &str = "10"; // Amount to burn as decimal string
 
@@ -558,7 +555,6 @@ Only the token issuer can perform burn operations, removing tokens from circulat
         Ok(())
     }
 
-
 Token governance operations
 ===========================
 
@@ -598,7 +594,7 @@ Only the token issuer can modify the allow list.
     use std::{path::PathBuf, str::FromStr};
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
+    const WALLET_FILE: &str = "keys/wallet.export";
     const TOKEN_ID: &str = "TOKEN_ID"; // Replace with the actual token ID
     const TARGET_ADDRESS: &str = "TARGET_ADDRESS"; // Replace with the actual target address
 
@@ -685,7 +681,7 @@ Only the token issuer can modify the allow list.
     use std::{path::PathBuf, str::FromStr};
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
+    const WALLET_FILE: &str = "keys/wallet.export";
     const TOKEN_ID: &str = "TOKEN_ID"; // Replace with the actual token ID
     const TARGET_ADDRESS: &str = "TARGET_ADDRESS"; // Replace with the actual target address
 
@@ -735,7 +731,6 @@ Only the token issuer can modify the allow list.
 
         Ok(())
     }
-
 
 .. _rust-add-to-deny-list:
 
@@ -860,7 +855,7 @@ Only the token issuer can modify the deny list.
     use std::{path::PathBuf, str::FromStr};
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
+    const WALLET_FILE: &str = "keys/wallet.export";
     const TOKEN_ID: &str = "TOKEN_ID"; // Replace with the actual token ID
     const TARGET_ADDRESS: &str = "TARGET_ADDRESS"; // Replace with the actual target address
 
@@ -942,8 +937,8 @@ This example demonstrates how to suspend balance transfer operations for a Proto
     use std::{path::PathBuf, str::FromStr};
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
-    const TOKEN_ID: &str = "TOKEN_SYMBOL"; // Replace with the actual token ID
+    const WALLET_FILE: &str = "keys/wallet.export";
+    const TOKEN_ID: &str = "TOKEN_ID"; // Replace with the actual token ID
 
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
@@ -1019,8 +1014,8 @@ This example demonstrates how to resume balance transfer operations for a Protoc
     use std::{path::PathBuf, str::FromStr};
 
     // CONFIGURATION - Modify these values for your use case
-    const WALLET_FILE: &str = "wallet.export";
-    const TOKEN_ID: &str = "TOKEN_SYMBOL"; // Replace with the actual token ID
+    const WALLET_FILE: &str = "keys/wallet.export";
+    const TOKEN_ID: &str = "TOKEN_ID"; // Replace with the actual token ID
 
     #[tokio::main]
     async fn main() -> anyhow::Result<()> {
