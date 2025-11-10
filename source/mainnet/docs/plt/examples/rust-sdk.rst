@@ -389,7 +389,7 @@ Only the token issuer can perform mint operations, adding new tokens to circulat
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the amount to mint in the `TOKEN_AMOUNT` constant
     //! 4. Run with: `cargo run --example mint_tokens`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
@@ -482,7 +482,7 @@ Only the token issuer can perform burn operations, removing tokens from circulat
     //! 2. Set the token ID in the `TOKEN_ID` constant
     //! 3. Set the amount to burn in the `TOKEN_AMOUNT` constant
     //! 4. Run with: `cargo run --example burn_tokens`
-    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/plt/examples/plt-mint-and-burn.rs
+    //! full example in the rust sdk repository: https://github.com/Concordium/concordium-rust-sdk/blob/main/examples/plt-mint-and-burn.rs
 
     use anyhow::Context;
     use concordium_base::protocol_level_tokens::{operations, TokenAmount, TokenId};
