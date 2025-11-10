@@ -7,7 +7,7 @@ Support transactions
 
 A wallet's fundamental purpose is to construct, sign, and broadcast :term:`transactions<transaction>`. Each user-facing feature you implement will require your wallet to generate a specific type of transaction payload.
 
-This guide breaks down the core transaction types you can support.
+The following section lists the core transaction types you can support.
 
 Transaction types
 =================
@@ -35,10 +35,10 @@ These transactions are essential for participating in Concordium's :term:`proof-
 
 Unique to Concordium's architecture, this category includes the crucial create account transaction. This must be submitted with the cryptographic credential from a user's verified :term:`identity object`, linking the new account to that identity.
 
-Protocol Level Tokens
-======================
+Protocol-level tokens
+=====================
 
-Beyond the standard transaction types, Concordium features Protocol Level Tokens (PLTs), a unique class of tokens created directly at protocol level.
+Beyond the standard transaction types, Concordium features :term:`protocol-level tokens (PLTs)<protocol-level token (PLT)>`, a unique class of tokens created directly at protocol level.
 
 These tokens are distinct from user-created CIS-2 smart contract tokens. They are typically reserved for foundational assets, such as bridged tokens (e.g., wETH), that require native protocol integration.
 
@@ -50,6 +50,8 @@ Key advantages of PLTs
 * **Standardized Governance** - Upgrades are managed through Concordium's established on-chain governance process, ensuring stability.
 
 For a wallet, supporting a PLT transfer means constructing a dedicated, protocol-level transaction, which is different from the general-purpose update function used for smart contracts.
+
+For further details on PLTs, refer to our :ref:`PLT<plts>` documentation.
 
 Developer tools and resources
 =============================

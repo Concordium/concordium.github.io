@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/integration/wallet integration/support-transactions.24038b96-7b8d-42e2-bc18-c41cc6cfe8b3.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/integration/wallet integration/support-transactions.cd6b88be-b0dd-425f-a9aa-27a23a59ff32.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/integration/wallet integration/support-transactions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/integration/wallet%20integration/support-transactions.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -801,7 +801,7 @@
   <section id="support-transactions">
 <span id="id1"></span><h1>Support transactions<a class="headerlink" href="#support-transactions" title="Link to this heading">#</a></h1>
 <p>A wallet’s fundamental purpose is to construct, sign, and broadcast <a class="reference internal" href="../../resources/glossary.html#term-Transaction"><span class="xref std std-term">transactions</span></a>. Each user-facing feature you implement will require your wallet to generate a specific type of transaction payload.</p>
-<p>This guide breaks down the core transaction types you can support.</p>
+<p>The following section lists the core transaction types you can support.</p>
 <section id="transaction-types">
 <h2>Transaction types<a class="headerlink" href="#transaction-types" title="Link to this heading">#</a></h2>
 <p><strong>1. Simple transfer</strong></p>
@@ -823,8 +823,8 @@
 <p>Unique to Concordium’s architecture, this category includes the crucial create account transaction. This must be submitted with the cryptographic credential from a user’s verified <a class="reference internal" href="../../resources/glossary.html#term-Identity-Object"><span class="xref std std-term">identity object</span></a>, linking the new account to that identity.</p>
 </section>
 <section id="protocol-level-tokens">
-<h2>Protocol Level Tokens<a class="headerlink" href="#protocol-level-tokens" title="Link to this heading">#</a></h2>
-<p>Beyond the standard transaction types, Concordium features Protocol Level Tokens (PLTs), a unique class of tokens created directly at protocol level.</p>
+<h2>Protocol-level tokens<a class="headerlink" href="#protocol-level-tokens" title="Link to this heading">#</a></h2>
+<p>Beyond the standard transaction types, Concordium features <a class="reference internal" href="../../resources/glossary.html#term-Protocol-level-token-PLT"><span class="xref std std-term">protocol-level tokens (PLTs)</span></a>, a unique class of tokens created directly at protocol level.</p>
 <p>These tokens are distinct from user-created CIS-2 smart contract tokens. They are typically reserved for foundational assets, such as bridged tokens (e.g., wETH), that require native protocol integration.</p>
 <section id="key-advantages-of-plts">
 <h3>Key advantages of PLTs<a class="headerlink" href="#key-advantages-of-plts" title="Link to this heading">#</a></h3>
@@ -834,6 +834,7 @@
 <li><p><strong>Standardized Governance</strong> - Upgrades are managed through Concordium’s established on-chain governance process, ensuring stability.</p></li>
 </ul>
 <p>For a wallet, supporting a PLT transfer means constructing a dedicated, protocol-level transaction, which is different from the general-purpose update function used for smart contracts.</p>
+<p>For further details on PLTs, refer to our <a class="reference internal" href="../../plt/index.html#plts"><span class="std std-ref">PLT</span></a> documentation.</p>
 </section>
 </section>
 <section id="developer-tools-and-resources">
@@ -930,7 +931,7 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-types">Transaction types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol-level-tokens">Protocol Level Tokens</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protocol-level-tokens">Protocol-level tokens</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-advantages-of-plts">Key advantages of PLTs</a></li>
 </ul>
 </li>
