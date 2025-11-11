@@ -5,6 +5,13 @@ Interview with `AesirX <https://aesirx.io/>`_
 
 **Developer Spotlight: A Conversation with Ronni K. Gothard Christiansen, Founder of AesirX**
 
+.. figure:: AX.png
+   :alt: AesirX team photo
+   :align: center
+   :scale: 80%
+
+   *AesirX team*
+
 In this edition of Developer Spotlight, we sit down with Ronni K. Gothard Christiansen, the founder of AesirX, to explore how his company is leveraging Concordium to build a privacy-first Web3 ecosystem. With tools that bridge Web2 and Web3, AesirX is focused on empowering users with data ownership while helping businesses stay compliant through practical, decentralized technologies.
 
 To begin, could you tell us about your background and how AesirX was founded?

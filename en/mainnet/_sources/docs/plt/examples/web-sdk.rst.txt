@@ -13,7 +13,7 @@ Before using this example, make sure to install the required dependencies:
 
 .. code-block:: bash
 
-  npm install @concordium/web-sdk@10.0.0
+  npm install @concordium/web-sdk@11.0.0
   npm install @grpc/grpc-js
 
 
@@ -118,7 +118,7 @@ Retrieve detailed information about a specific PLT:
     * token id.
     */
     // token symbol
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token symbol
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token symbol
 
     // If using a specific block hash, uncomment and replace with actual hash
     // Or use undefined for latest finalized block
@@ -160,7 +160,7 @@ Query account information including PLT balances:
     /**
     * Retrieves information about an account including its PLT balances
     */
-    const accountAddress = AccountAddress.fromBase58("your_account_address"); // Replace with a real address
+    const accountAddress = AccountAddress.fromBase58("ACCOUNT_ADDRESS"); // Replace with a real address
 
     // If using a specific block hash, uncomment and replace with actual hash
     // Or use undefined for latest finalized block
@@ -207,11 +207,14 @@ Transfer PLTs between accounts:
         TransactionSummaryType,
         TransactionKindString,
         RejectReasonTag,
+        isKnown,
+        serializeAccountTransactionPayload,
+        AccountTransactionType,
     } from '@concordium/web-sdk';
-    import { TokenId, TokenAmount, Cbor, Token, TokenTransfer, TokenHolder } from '@concordium/web-sdk/plt';
+    import { TokenId, TokenAmount, Cbor, Token, TokenTransfer, TokenHolder, CborAccountAddress, TokenTransferOperation, createTokenUpdatePayload } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
         "grpc.testnet.concordium.com",
@@ -223,9 +226,15 @@ Transfer PLTs between accounts:
     * The following example demonstrates how a simple transfer can be created.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the other arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
 
     if (walletFile !== undefined) {
         /* Service perspective: For backend services and automated systems
@@ -243,12 +252,12 @@ Transfer PLTs between accounts:
 
         try {
             const token = await Token.fromId(client, tokenId);
-            const amount = TokenAmount.fromDecimal(1, token.info.state.decimals); // some amount to transfer
-            const recipient = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("recipient_address")); // replace with actual address to receive
+            const amount = TokenAmount.fromDecimal(100, token.info.state.decimals); // some amount to transfer
+            const recipient = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("RECIPIENT_ADDRESS")).address; // replace with actual address to receive
             const memo = undefined;
             // memo = CborMemo.fromString("Any Message To add")
 
-            const transfer: TokenTransfer = {
+            const transfer: Token.TransferInput = {
                 recipient,
                 amount,
                 memo,
@@ -258,35 +267,71 @@ Transfer PLTs between accounts:
             // From a service perspective:
             // create the token instance
             const transaction = await Token.transfer(token, sender, transfer, signer);
-            console.log(`Transaction submitted with hash: ${transaction}`);
+            console.log(`Transfer transaction submitted with hash: ${transaction}`);
 
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
-            if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
-                throw new Error('Unexpected transaction type: ' + result.summary.type);
+            if (!isKnown(result.summary)) {
+                    throw new Error('Unexpected transaction outcome');
             }
 
-            switch (result.summary.transactionType) {
+            if (result.summary!.type !== TransactionSummaryType.AccountTransaction) {
+                throw new Error('Unexpected transaction type: ' + result.summary!.type);
+            }
+
+            switch (result.summary!.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('TokenTransfer events:');
-                    result.summary.events.forEach((e) => console.log(e));
+                    result.summary!.events.forEach((e) => console.log(e));
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary!.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary!.rejectReason!.tag);
                     }
-                    const details = Cbor.decode(result.summary.rejectReason.contents.details);
-                    console.error(result.summary.rejectReason.contents, details);
+                    const details = Cbor.decode(result.summary!.rejectReason.contents.details);
+                    console.error(result.summary!.rejectReason.contents, details);
                     break;
                 default:
-                    throw new Error('Unexpected transaction kind: ' + result.summary.transactionType);
+                    throw new Error('Unexpected transaction kind: ' + result.summary!.transactionType);
             }
         } catch (error) {
             console.error('Error during transfer operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+        /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for transferring tokens
+        const token = await Token.fromId(client, tokenId);
+        const amount = TokenAmount.fromDecimal(100, token.info.state.decimals); // some amount to transfer
+        const recipient = AccountAddress.fromBase58("RECIPIENT_ADDRESS"); // replace with actual address to receive
+        const memo = undefined;
+        // memo = CborMemo.fromString("Any Message To add")
+
+        const transfer: TokenTransfer = {
+            recipient: CborAccountAddress.fromAccountAddress(recipient),
+            amount,
+            memo,
+        };
+
+        const transferOperation: TokenTransferOperation = {
+            transfer,
+        };
+
+        console.log('Specified transfer:', JSON.stringify(transferOperation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, transferOperation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-token-governance-operations:
@@ -316,11 +361,14 @@ Mint new tokens (issuer only):
         TransactionSummaryType,
         TransactionKindString,
         RejectReasonTag,
+        isKnown,
+        serializeAccountTransactionPayload,
+        AccountTransactionType,
     } from '@concordium/web-sdk';
-    import { TokenId, TokenAmount, Cbor, Token } from '@concordium/web-sdk/plt';
+    import { TokenId, TokenAmount, Cbor, Token, TokenSupplyUpdate, TokenOperation, createTokenUpdatePayload } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
         "grpc.testnet.concordium.com",
@@ -332,9 +380,15 @@ Mint new tokens (issuer only):
     * The following example demonstrates how to mint new tokens.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
     // create the token instance
     const token = await Token.fromId(client, tokenId);
     const tokenAmount = TokenAmount.fromDecimal(10, token.info.state.decimals); // amount to mint
@@ -348,6 +402,11 @@ Mint new tokens (issuer only):
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
 
+        // using wallet.json file
+        // const walletJson = readFileSync("wallet.json", 'utf8');
+        // const keys = JSON.parse(walletJson);
+        // const signer = buildAccountSigner(keys);
+
         try {
 
             // Only the token issuer can mint tokens
@@ -360,6 +419,10 @@ Mint new tokens (issuer only):
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
+            if (!isKnown(result.summary)) {
+                throw new Error('Unexpected transaction outcome');
+            }
+
             if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
                 throw new Error('Unexpected transaction type: ' + result.summary.type);
             }
@@ -370,8 +433,8 @@ Mint new tokens (issuer only):
                     result.summary.events.forEach((e) => console.log(e));
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason!.tag);
                     }
                     const details = Cbor.decode(result.summary.rejectReason.contents.details);
                     console.error(result.summary.rejectReason.contents, details);
@@ -383,7 +446,29 @@ Mint new tokens (issuer only):
             console.error('Error during minting operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+    /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for minting tokens
+        const update: TokenSupplyUpdate = { amount: tokenAmount };
+
+        const operation: TokenOperation = {
+            'mint': update,
+        };
+
+        console.log('Specified mint action:', JSON.stringify(operation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, operation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-burn-tokens:
@@ -408,11 +493,14 @@ Burn existing tokens (issuer only):
         TransactionSummaryType,
         TransactionKindString,
         RejectReasonTag,
+        isKnown,
+        serializeAccountTransactionPayload,
+        AccountTransactionType,
     } from '@concordium/web-sdk';
-    import { TokenId, TokenAmount, Cbor, Token } from '@concordium/web-sdk/plt';
+    import { TokenId, TokenAmount, Cbor, Token, TokenSupplyUpdate, TokenOperation, createTokenUpdatePayload } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
         "grpc.testnet.concordium.com",
@@ -424,9 +512,15 @@ Burn existing tokens (issuer only):
     * The following example demonstrates how to burn existing tokens.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // replace with your token ID
+    const tokenId = TokenId.fromString("TOKEN_ID"); // replace with your token ID
     // create the token instance
     const token = await Token.fromId(client, tokenId);
     const tokenAmount = TokenAmount.fromDecimal(10, token.info.state.decimals); // amount to burn
@@ -440,6 +534,11 @@ Burn existing tokens (issuer only):
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
 
+        // using wallet.json file
+        // const walletJson = readFileSync("wallet.json", 'utf8');
+        // const keys = JSON.parse(walletJson);
+        // const signer = buildAccountSigner(keys);
+
         try {
             // Only the token issuer can burn tokens
             console.log(`Attempting to burn ${tokenAmount.toString()} ${tokenId.toString()} tokens...`);
@@ -451,6 +550,10 @@ Burn existing tokens (issuer only):
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
+            if (!isKnown(result.summary)) {
+                throw new Error('Unexpected transaction outcome');
+            }
+
             if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
                 throw new Error('Unexpected transaction type: ' + result.summary.type);
             }
@@ -461,8 +564,8 @@ Burn existing tokens (issuer only):
                     result.summary.events.forEach((e) => console.log(e));
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason!.tag);
                     }
                     const details = Cbor.decode(result.summary.rejectReason.contents.details);
                     console.error(result.summary.rejectReason.contents, details);
@@ -474,7 +577,29 @@ Burn existing tokens (issuer only):
             console.error('Error during burning operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+        /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for burning tokens
+        const update: TokenSupplyUpdate = { amount: tokenAmount };
+
+        const operation: TokenOperation = {
+            'burn': update,
+        };
+
+        console.log('Specified burn action:', JSON.stringify(operation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, operation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-list-management:
@@ -505,12 +630,14 @@ Add an account to the token's allow list (issuer only):
         TransactionKindString,
         RejectReasonTag,
         TransactionEventTag,
+        AccountTransactionType,
+        serializeAccountTransactionPayload,
+        isKnown,
     } from '@concordium/web-sdk';
-    import { TokenId, Cbor, TokenHolder, Token } from '@concordium/web-sdk/plt';
+    import { TokenId, Cbor, TokenHolder, Token, TokenListUpdate, TokenOperation, createTokenUpdatePayload, CborAccountAddress, parseTokenModuleEvent } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
-
+    import { existsSync, readFileSync } from 'node:fs';
     const client = new ConcordiumGRPCNodeClient(
         "grpc.testnet.concordium.com",
         Number(20000),
@@ -521,19 +648,31 @@ Add an account to the token's allow list (issuer only):
     * The following example demonstrates how to add an account to the allow list.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
-    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("target_address")); // Replace with actual target address
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
+    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("TARGET_ADDRESS")); // Replace with actual target address
 
     if (walletFile !== undefined) {
         /* Service perspective: For backend services and automated systems
         Requires direct access to wallet files containing private keys. The service
         can sign and execute transactions immediately. Use this when building APIs,
         trading bots, or administrative tools where the service manages tokens automatically.*/
+
         const walletExport = parseWallet(walletFile);
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
+
+        // using wallet.json file
+        // const walletJson = readFileSync("wallet.json", 'utf8');
+        // const keys = JSON.parse(walletJson);
+        // const signer = buildAccountSigner(keys);
 
         try {
             // create the token instance
@@ -542,41 +681,69 @@ Add an account to the token's allow list (issuer only):
             console.log(`Attempting to add ${targetAddress.toString()} to allow list for ${tokenId.toString()}...`);
 
             // Execute the add to allow list operation
-            const transaction = await Token.addAllowList(token, sender, targetAddress, signer);
+            const transaction = await Token.addAllowList(token, sender, targetAddress.address, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
 
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
-            if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
-                throw new Error('Unexpected transaction type: ' + result.summary.type);
+            if (!isKnown(result.summary)) {
+                throw new Error('Unexpected transaction outcome');
             }
 
-            switch (result.summary.transactionType) {
+            if (result.summary!.type !== TransactionSummaryType.AccountTransaction) {
+                throw new Error('Unexpected transaction type: ' + result.summary!.type);
+            }
+
+            switch (result.summary!.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('AddAllowListEvent events:');
-                    result.summary.events.forEach((e) => {
-                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
-                            throw new Error('Unexpected event type: ' + e.tag);
+                    result.summary!.events.forEach((e) => {
+                        if (e?.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e!.tag);
                         }
-                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                        console.log('Token module event:', parseTokenModuleEvent(e));
                     });
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary!.rejectReason?.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary!.rejectReason?.tag);
                     }
-                    const details = Cbor.decode(result.summary.rejectReason.contents.details);
-                    console.error(result.summary.rejectReason.contents, details);
+                    const details = Cbor.decode(result.summary!.rejectReason.contents.details);
+                    console.error(result.summary!.rejectReason.contents, details);
                     break;
                 default:
-                    throw new Error('Unexpected transaction kind: ' + result.summary.transactionType);
+                    throw new Error('Unexpected transaction kind: ' + result.summary!.transactionType);
             }
         } catch (error) {
             console.error('Error during list operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+        /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for adding to allow list
+        const listPayload: TokenListUpdate = {
+            target: CborAccountAddress.fromAccountAddress(targetAddress.address)
+        };
+
+        const listOperation: TokenOperation = {
+            'addAllowList': listPayload,
+        };
+
+        console.log('Specified list action:', JSON.stringify(listOperation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, listOperation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-remove-account-from-allow-list:
@@ -602,11 +769,14 @@ Remove an account from the token's allow list (issuer only):
         TransactionKindString,
         RejectReasonTag,
         TransactionEventTag,
+        AccountTransactionType,
+        serializeAccountTransactionPayload,
+        isKnown,
     } from '@concordium/web-sdk';
-    import { TokenId, Cbor, TokenHolder, Token } from '@concordium/web-sdk/plt';
+    import { TokenId, Cbor, TokenHolder, Token, parseTokenModuleEvent, TokenListUpdate, TokenOperation, createTokenUpdatePayload, CborAccountAddress } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
         "grpc.testnet.concordium.com",
@@ -618,10 +788,16 @@ Remove an account from the token's allow list (issuer only):
     * The following example demonstrates how to remove an account from the allow list.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
-    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("target_address")); // Replace with actual target address
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
+    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("TARGET_ADDRESS")); // Replace with actual target address
 
     if (walletFile !== undefined) {
         /* Service perspective: For backend services and automated systems
@@ -632,6 +808,11 @@ Remove an account from the token's allow list (issuer only):
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
 
+        // using wallet.json file
+        // const walletJson = readFileSync("wallet.json", 'utf8');
+        // const keys = JSON.parse(walletJson);
+        // const signer = buildAccountSigner(keys);
+
         try {
             // create the token instance
             const token = await Token.fromId(client, tokenId);
@@ -639,41 +820,69 @@ Remove an account from the token's allow list (issuer only):
             console.log(`Attempting to remove ${targetAddress.toString()} from allow list for ${tokenId.toString()}...`);
 
             // Execute the remove from allow list operation
-            const transaction = await Token.removeAllowList(token, sender, targetAddress, signer);
+            const transaction = await Token.removeAllowList(token, sender, targetAddress.address, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
 
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
-            if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
-                throw new Error('Unexpected transaction type: ' + result.summary.type);
+            if (!isKnown(result.summary)) {
+                throw new Error('Unexpected transaction outcome');
             }
 
-            switch (result.summary.transactionType) {
+            if (result.summary!.type !== TransactionSummaryType.AccountTransaction) {
+                throw new Error('Unexpected transaction type: ' + result.summary!.type);
+            }
+
+            switch (result.summary!.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('RemoveAllowListEvent events:');
-                    result.summary.events.forEach((e) => {
-                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
-                            throw new Error('Unexpected event type: ' + e.tag);
+                    result.summary!.events.forEach((e) => {
+                        if (e!.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e!.tag);
                         }
-                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                        console.log('Token module event:', parseTokenModuleEvent(e!));
                     });
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary!.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary!.rejectReason!.tag);
                     }
-                    const details = Cbor.decode(result.summary.rejectReason.contents.details);
-                    console.error(result.summary.rejectReason.contents, details);
+                    const details = Cbor.decode(result.summary!.rejectReason.contents.details);
+                    console.error(result.summary!.rejectReason.contents, details);
                     break;
                 default:
-                    throw new Error('Unexpected transaction kind: ' + result.summary.transactionType);
+                    throw new Error('Unexpected transaction kind: ' + result.summary!.transactionType);
             }
         } catch (error) {
             console.error('Error during list operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+        /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for removing from allow list
+        const listPayload: TokenListUpdate = {
+            target: CborAccountAddress.fromAccountAddress(targetAddress.address)
+        };
+
+        const listOperation: TokenOperation = {
+            'removeAllowList': listPayload,
+        };
+
+        console.log('Specified list action:', JSON.stringify(listOperation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, listOperation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-add-account-to-deny-list:
@@ -699,14 +908,17 @@ Add an account to the token's deny list (issuer only):
         TransactionKindString,
         RejectReasonTag,
         TransactionEventTag,
+        isKnown,
+        serializeAccountTransactionPayload,
+        AccountTransactionType,
     } from '@concordium/web-sdk';
-    import { TokenId, Cbor, Token, TokenHolder } from '@concordium/web-sdk/plt';
+    import { TokenId, Cbor, Token, TokenHolder, parseTokenModuleEvent, TokenListUpdate, CborAccountAddress, TokenOperation, createTokenUpdatePayload } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.testnet.concordium.com",
+        "grpc.devnet-plt-beta.concordium.com",
         Number(20000),
         credentials.createSsl() //  credentials.Insecure(),
     );
@@ -715,10 +927,16 @@ Add an account to the token's deny list (issuer only):
     * The following example demonstrates how to add an account to the deny list.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
-    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("target_address")); // Replace with actual target address
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
+    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("TARGET_ADDRESS")); // Replace with actual target address
 
     if (walletFile !== undefined) {
         /* Service perspective: For backend services and automated systems
@@ -729,6 +947,11 @@ Add an account to the token's deny list (issuer only):
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
 
+        // using wallet.json file
+        // const walletJson = readFileSync("wallet.json", 'utf8');
+        // const keys = JSON.parse(walletJson);
+        // const signer = buildAccountSigner(keys);
+
         try {
             // create the token instance
             const token = await Token.fromId(client, tokenId);
@@ -736,29 +959,33 @@ Add an account to the token's deny list (issuer only):
             console.log(`Attempting to add ${targetAddress.toString()} to deny list for ${tokenId.toString()}...`);
 
             // Execute the add to deny list operation
-            const transaction = await Token.addDenyList(token, sender, targetAddress, signer);
+            const transaction = await Token.addDenyList(token, sender, targetAddress.address, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
 
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
-            if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
-                throw new Error('Unexpected transaction type: ' + result.summary.type);
+            if (!isKnown(result.summary)) {
+                throw new Error('Unexpected transaction outcome');
+            }
+
+            if (result.summary!.type !== TransactionSummaryType.AccountTransaction) {
+                throw new Error('Unexpected transaction type: ' + result.summary!.type);
             }
 
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('AddDenyListEvent events:');
                     result.summary.events.forEach((e) => {
-                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
-                            throw new Error('Unexpected event type: ' + e.tag);
+                        if (e!.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e!.tag);
                         }
-                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                        console.log('Token module event:', parseTokenModuleEvent(e!));
                     });
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason!.tag);
                     }
                     const details = Cbor.decode(result.summary.rejectReason.contents.details);
                     console.error(result.summary.rejectReason.contents, details);
@@ -770,7 +997,31 @@ Add an account to the token's deny list (issuer only):
             console.error('Error during list operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+        /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for adding to allow list
+        const listPayload: TokenListUpdate = {
+            target: CborAccountAddress.fromAccountAddress(targetAddress.address)
+        };
+
+        const listOperation: TokenOperation = {
+            'addDenyList': listPayload,
+        };
+
+        console.log('Specified list action:', JSON.stringify(listOperation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, listOperation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-remove-account-from-deny-list:
@@ -796,14 +1047,17 @@ Remove an account from the token's deny list (issuer only):
         TransactionKindString,
         RejectReasonTag,
         TransactionEventTag,
+        isKnown,
+        serializeAccountTransactionPayload,
+        AccountTransactionType,
     } from '@concordium/web-sdk';
-    import { TokenId, Cbor, TokenHolder, Token } from '@concordium/web-sdk/plt';
+    import { TokenId, Cbor, TokenHolder, Token, parseTokenModuleEvent, TokenListUpdate, CborAccountAddress, TokenOperation, createTokenUpdatePayload } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.testnet.concordium.com",
+        "grpc.devnet-plt-beta.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -812,10 +1066,16 @@ Remove an account from the token's deny list (issuer only):
     * The following example demonstrates how to remove an account from the deny list.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
-    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("target_address")); // Replace with actual target address
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
+    const targetAddress = TokenHolder.fromAccountAddress(AccountAddress.fromBase58("TARGET_ADDRESS")); // Replace with actual target address
 
     if (walletFile !== undefined) {
         /* Service perspective: For backend services and automated systems
@@ -826,6 +1086,11 @@ Remove an account from the token's deny list (issuer only):
         const sender = AccountAddress.fromBase58(walletExport.value.address);
         const signer = buildAccountSigner(walletExport);
 
+        // using wallet.json file
+        // const walletJson = readFileSync("wallet.json", 'utf8');
+        // const keys = JSON.parse(walletJson);
+        // const signer = buildAccountSigner(keys);
+
         try {
             // create the token instance
             const token = await Token.fromId(client, tokenId);
@@ -833,29 +1098,33 @@ Remove an account from the token's deny list (issuer only):
             console.log(`Attempting to remove ${targetAddress.toString()} from deny list for ${tokenId.toString()}...`);
 
             // Execute the remove from deny list operation
-            const transaction = await Token.removeDenyList(token, sender, targetAddress, signer);
+            const transaction = await Token.removeDenyList(token, sender, targetAddress.address, signer);
             console.log(`Transaction submitted with hash: ${transaction}`);
 
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
-            if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
-                throw new Error('Unexpected transaction type: ' + result.summary.type);
+            if (!isKnown(result.summary)) {
+                throw new Error('Unexpected transaction outcome');
+            }
+
+            if (result.summary!.type !== TransactionSummaryType.AccountTransaction) {
+                throw new Error('Unexpected transaction type: ' + result.summary!.type);
             }
 
             switch (result.summary.transactionType) {
                 case TransactionKindString.TokenUpdate:
                     console.log('RemoveDenyListEvent events:');
                     result.summary.events.forEach((e) => {
-                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
-                            throw new Error('Unexpected event type: ' + e.tag);
+                        if (e!.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e!.tag);
                         }
-                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenListUpdateEventDetails'));
+                        console.log('Token module event:', parseTokenModuleEvent(e!));
                     });
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason!.tag);
                     }
                     const details = Cbor.decode(result.summary.rejectReason.contents.details);
                     console.error(result.summary.rejectReason.contents, details);
@@ -867,7 +1136,31 @@ Remove an account from the token's deny list (issuer only):
             console.error('Error during list operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+        /* Wallet perspective: For dApps and wallet integrations
+            Creates a transaction payload that can be signed by wallet applications.
+            The wallet holds the private keys and the user reviews transactions before signing.
+            Use this when building dApps where users connect their wallet (Browser Wallet,
+            Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for removing from allow list
+        const listPayload: TokenListUpdate = {
+            target: CborAccountAddress.fromAccountAddress(targetAddress.address)
+        };
+
+        const listOperation: TokenOperation = {
+            'removeDenyList': listPayload,
+        };
+
+        console.log('Specified list action:', JSON.stringify(listOperation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, listOperation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-pause-plt-transfers:
@@ -892,14 +1185,17 @@ This example demonstrates how to suspend balance transfer operations for a Proto
         TransactionKindString,
         RejectReasonTag,
         TransactionEventTag,
+        isKnown,
+        serializeAccountTransactionPayload,
+        AccountTransactionType,
     } from '@concordium/web-sdk';
-    import { TokenId, Cbor, Token } from '@concordium/web-sdk/plt';
+    import { TokenId, Cbor, Token, parseTokenModuleEvent, TokenOperation, createTokenUpdatePayload } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.testnet.concordium.com",
+        "grpc.devnet-plt-beta.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -908,9 +1204,15 @@ This example demonstrates how to suspend balance transfer operations for a Proto
     * The following example demonstrates how to pause a token.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
 
     if (walletFile !== undefined) {
         /* Service perspective: For backend services and automated systems
@@ -940,6 +1242,10 @@ This example demonstrates how to suspend balance transfer operations for a Proto
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
+            if (!isKnown(result.summary)) {
+                    throw new Error('Unexpected transaction outcome');
+            }
+
             if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
                 throw new Error('Unexpected transaction type: ' + result.summary.type);
             }
@@ -948,15 +1254,15 @@ This example demonstrates how to suspend balance transfer operations for a Proto
                 case TransactionKindString.TokenUpdate:
                     console.log('TokenPause events:');
                     result.summary.events.forEach((e) => {
-                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
-                            throw new Error('Unexpected event type: ' + e.tag);
+                        if (e!.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e!.tag);
                         }
-                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenPauseEventDetails'));
+                        console.log('Token module event:', parseTokenModuleEvent(e!));
                     });
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason!.tag);
                     }
                     const details = Cbor.decode(result.summary.rejectReason.contents.details);
                     console.error(result.summary.rejectReason.contents, details);
@@ -968,7 +1274,24 @@ This example demonstrates how to suspend balance transfer operations for a Proto
             console.error('Error during pause operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+    /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for pausing the token
+        const pauseOperation = { pause: true } as TokenOperation;
+        console.log('Specified pause action:', JSON.stringify(pauseOperation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, pauseOperation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
 
 .. _web-sdk-unpause-plt-transfers:
@@ -993,14 +1316,17 @@ This example demonstrates how to resume balance transfer operations for a Protoc
         TransactionKindString,
         RejectReasonTag,
         TransactionEventTag,
+        isKnown,
+        serializeAccountTransactionPayload,
+        AccountTransactionType,
     } from '@concordium/web-sdk';
-    import { TokenId, Cbor, Token } from '@concordium/web-sdk/plt';
+    import { TokenId, Cbor, Token, parseTokenModuleEvent, TokenOperation, createTokenUpdatePayload } from '@concordium/web-sdk/plt';
     import { ConcordiumGRPCNodeClient } from '@concordium/web-sdk/nodejs';
     import { credentials } from '@grpc/grpc-js';
-    import { readFileSync } from 'node:fs';
+    import { existsSync, readFileSync } from 'node:fs';
 
     const client = new ConcordiumGRPCNodeClient(
-        "grpc.testnet.concordium.com",
+        "grpc.devnet-plt-beta.concordium.com",
         Number(20000),
         credentials.createSsl()
     );
@@ -1009,9 +1335,15 @@ This example demonstrates how to resume balance transfer operations for a Protoc
     * The following example demonstrates how to unpause a token.
     */
     // using wallet.export file
-    const walletFile = readFileSync("wallet.export", 'utf8');
+    const walletFilePath = "keys/wallet.export";
+    let walletFile: string | undefined;
+
+    // Only read the file if it exists
+    if (existsSync(walletFilePath)) {
+        walletFile = readFileSync(walletFilePath, 'utf8');
+    }
     // parse the arguments
-    const tokenId = TokenId.fromString("TOKEN_SYMBOL"); // Replace with actual token ID
+    const tokenId = TokenId.fromString("TOKEN_ID"); // Replace with actual token ID
 
     if (walletFile !== undefined) {
         /* Service perspective: For backend services and automated systems
@@ -1041,6 +1373,10 @@ This example demonstrates how to resume balance transfer operations for a Protoc
             const result = await client.waitForTransactionFinalization(transaction);
             console.log('Transaction finalized:', result);
 
+            if (!isKnown(result.summary)) {
+                throw new Error('Unexpected transaction outcome');
+            }
+
             if (result.summary.type !== TransactionSummaryType.AccountTransaction) {
                 throw new Error('Unexpected transaction type: ' + result.summary.type);
             }
@@ -1049,15 +1385,15 @@ This example demonstrates how to resume balance transfer operations for a Protoc
                 case TransactionKindString.TokenUpdate:
                     console.log('TokenUnpause events:');
                     result.summary.events.forEach((e) => {
-                        if (e.tag !== TransactionEventTag.TokenModuleEvent) {
-                            throw new Error('Unexpected event type: ' + e.tag);
+                        if (e!.tag !== TransactionEventTag.TokenModuleEvent) {
+                            throw new Error('Unexpected event type: ' + e!.tag);
                         }
-                        console.log('Token module event:', e, Cbor.decode(e.details, 'TokenPauseEventDetails'));
+                        console.log('Token module event:', parseTokenModuleEvent(e!));
                     });
                     break;
                 case TransactionKindString.Failed:
-                    if (result.summary.rejectReason.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
-                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason.tag);
+                    if (result.summary.rejectReason!.tag !== RejectReasonTag.TokenUpdateTransactionFailed) {
+                        throw new Error('Unexpected reject reason tag: ' + result.summary.rejectReason!.tag);
                     }
                     const details = Cbor.decode(result.summary.rejectReason.contents.details);
                     console.error(result.summary.rejectReason.contents, details);
@@ -1069,5 +1405,22 @@ This example demonstrates how to resume balance transfer operations for a Protoc
             console.error('Error during unpause operation:', error);
         }
     } else {
-        console.log(`Wallet file is empty!`);
+        /* Wallet perspective: For dApps and wallet integrations
+        Creates a transaction payload that can be signed by wallet applications.
+        The wallet holds the private keys and the user reviews transactions before signing.
+        Use this when building dApps where users connect their wallet (Browser Wallet,
+        Mobile Wallet, etc.) and maintain control of their keys. */
+        // Create the payload for unpausing the token
+        const pauseOperation = { pause: false } as TokenOperation;
+        console.log('Specified unpause action:', JSON.stringify(pauseOperation, null, 2));
+
+        const payload = createTokenUpdatePayload(tokenId, pauseOperation);
+        console.log('Created payload:', payload);
+
+        // Serialize payload for signing/submission by wallet
+        const serialized = serializeAccountTransactionPayload({
+            payload,
+            type: AccountTransactionType.TokenUpdate,
+        });
+        console.log('Serialized payload for wallet to sign & send:', serialized.toString('hex'));
     }
