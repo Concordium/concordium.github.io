@@ -5,6 +5,13 @@ Interview with `Provenance Tags <https://ptagchain.io/>`_
 
 **Developer Spotlight: A Conversation with Niels Soerensen, founder and CTO of Provenance Tags**
 
+.. figure:: PT.png
+   :alt: Provenance Tags team photo
+   :align: center
+   :scale: 80%
+
+   *Provenance Tags team*
+
 In this interview, we speak with Niels Soerensen, founder and CTO of Provenance Tags, to learn more about how the project is redefining trust, transparency, and product authentication in e-commerce and logistics.
 
 Could you share the inspiration behind founding Provenance Tags and the specific challenges you aimed to address in the e-commerce and supply chain sectors?
