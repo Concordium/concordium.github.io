@@ -54,13 +54,13 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/integration/wallet integration/wallet-integration.d0bc4185-25cb-46bb-95cf-e917b704d621.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/integration/wallet integration/wallet-integration.4b72b4f7-5fae-4313-b7da-1169c1bde799.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/integration/wallet integration/wallet-integration';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/integration/wallet%20integration/wallet-integration.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Integrate Concordium’s ID layer" href="integrate-identity-layer.html" />
+    <link rel="next" title="Integrating Concordium’s ID layer" href="integrating-identity-layer.html" />
     <link rel="prev" title="SubQuery" href="../../network/indexers/subquery.html" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
 
@@ -656,10 +656,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Wallet integration</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="integrate-identity-layer.html">Integrate Concordium’s ID layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="support-transactions.html">Support transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="support-staking.html">Support staking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connect-wallet-to-network.html">Connect your wallet to the network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrating-identity-layer.html">Integrating Concordium’s ID layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supporting-zero-knowledge-proofs.html">Supporting zero-knowledge proofs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supporting-transactions.html">Supporting transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supporting-staking.html">Supporting staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting-wallet-to-network.html">Connecting your wallet to the network</a></li>
 </ul>
 </details></li>
 </ul>
@@ -804,9 +805,10 @@
 <section id="integration-overview">
 <h2>Integration overview<a class="headerlink" href="#integration-overview" title="Link to this heading">#</a></h2>
 <p>Concordium is a Layer-1 <a class="reference internal" href="../../resources/glossary.html#term-Proof-of-stake"><span class="xref std std-term">proof-of-stake</span></a> blockchain with a built-in <a class="reference internal" href="../../protocol/identity.html#reference-identity"><span class="std std-ref">identity layer</span></a> at protocol level balancing user privacy with regulatory compliance. The platform supports multiple transaction types, offers native staking and <a class="reference internal" href="../../resources/glossary.html#term-Delegation"><span class="xref std std-term">delegation</span></a> functionality, and uses an efficient gRPC-based node communication protocol.</p>
-<p>Integrating Concordium requires implementing support for several protocol-specific features:</p>
+<p>Integrating Concordium involves implementing support for several protocol-specific features:</p>
 <ul class="simple">
-<li><p><strong>Identity layer management:</strong> handling verified on-chain identities and zero-knowledge proofs</p></li>
+<li><p><strong>Identity layer management:</strong> handling verified on-chain identities</p></li>
+<li><p><strong>Zero-knowledge proofs (ZKPs):</strong> managing cryptographic proofs for privacy-preserving identity verification</p></li>
 <li><p><strong>Transaction types:</strong> supporting CCD transfers, smart contracts, staking, and protocol-level tokens</p></li>
 <li><p><strong>Staking functionality:</strong> enabling users to delegate CCD and earn rewards</p></li>
 </ul>
@@ -816,10 +818,11 @@
 <h2>Guide structure<a class="headerlink" href="#guide-structure" title="Link to this heading">#</a></h2>
 <p>The following pages provide detailed guidance for each integration area, including technical specifications and links to relevant SDKs and APIs.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="integrate-identity-layer.html#integrate-identity-layer"><span class="std std-ref">Integrate Concordium’s ID layer</span></a></p></li>
-<li><p><a class="reference internal" href="support-transactions.html#support-transactions"><span class="std std-ref">Support transactions</span></a></p></li>
-<li><p><a class="reference internal" href="support-staking.html#support-staking"><span class="std std-ref">Support staking</span></a></p></li>
-<li><p><a class="reference internal" href="connect-wallet-to-network.html#connect-wallet-to-network"><span class="std std-ref">Connect your wallet to the network</span></a></p></li>
+<li><p><a class="reference internal" href="integrating-identity-layer.html#integrating-identity-layer"><span class="std std-ref">Integrating Concordium’s ID layer</span></a></p></li>
+<li><p><a class="reference internal" href="supporting-zero-knowledge-proofs.html#supporting-zero-knowledge-proofs"><span class="std std-ref">Supporting zero-knowledge proofs (ZKPs)</span></a></p></li>
+<li><p><a class="reference internal" href="supporting-transactions.html#supporting-transactions"><span class="std std-ref">Supporting transactions</span></a></p></li>
+<li><p><a class="reference internal" href="supporting-staking.html#supporting-staking"><span class="std std-ref">Supporting staking</span></a></p></li>
+<li><p><a class="reference internal" href="connecting-wallet-to-network.html#connecting-wallet-to-network"><span class="std std-ref">Connecting your wallet to the network</span></a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -882,11 +885,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="integrate-identity-layer.html"
+       href="integrating-identity-layer.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Integrate Concordium’s ID layer</p>
+        <p class="prev-next-title">Integrating Concordium’s ID layer</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
