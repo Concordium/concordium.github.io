@@ -53,16 +53,3 @@ For a wallet, supporting a PLT transfer means constructing a dedicated, protocol
 
 For further details on PLTs, refer to our :ref:`PLT<plts>` documentation.
 
-Developer tools and resources
-=============================
-
-To help you implement support for these transaction types, Concordium provides several key resources:
-
-:ref:`Concordium Client transactions<transactions-old>` - Command-line tool documentation with examples of constructing and sending different transaction types
-
-:ref:`Concordium SDKs<sdks-apis>` - The SDKs provide high-level, easy-to-use functions for building, signing, and sending all the transaction types mentioned above, abstracting away the low-level complexity
-
-`gRPC API Reference <https://docs.concordium.com/concordium-grpc-api/#v2%2fconcordium%2fservice.proto>`_ - For developers needing to interact directly with a node, the gRPC reference details the exact API endpoints and data structures for submitting transactions
-
-:ref:`Block explorers<ccd-scan>` - Tools like `CCDScan <https://ccdscan.io/>`_ and `CCDExplorer <https://ccdexplorer.io/mainnet>`_ allow you to inspect live transactions on the network. You can use them to see the structure, cost, and outcome of each transaction type in a real-world context
-
