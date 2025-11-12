@@ -25,19 +25,19 @@ Guide structure
 
 The following pages provide detailed guidance for each integration area, including technical specifications and links to relevant SDKs and APIs.
 
-* :ref:`Integrate Concordium's ID layer<integrate-identity-layer>`
-* :ref:`Support transactions<support-transactions>`
-* :ref:`Support staking<support-staking>`
-* :ref:`Connect your wallet to the network<connect-wallet-to-network>`
+* :ref:`Integrating Concordium's ID layer<integrating-identity-layer>`
+* :ref:`Supporting transactions<supporting-transactions>`
+* :ref:`Supporting staking<supporting-staking>`
+* :ref:`Connecting your wallet to the network<connecting-wallet-to-network>`
 
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
-   integrate-identity-layer
-   support-transactions
-   support-staking
-   connect-wallet-to-network
+   integrating-identity-layer
+   supporting-transactions
+   supporting-staking
+   connecting-wallet-to-network
 
 

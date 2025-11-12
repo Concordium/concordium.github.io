@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
-.. _connect-wallet-to-network:
+.. _connecting-wallet-to-network:
 
-==================================
-Connect your wallet to the network
-==================================
+=====================================
+Connecting your wallet to the network
+=====================================
 
 A :term:`Concordium node<Node>` is the gateway to the blockchain. For your wallet to perform any :term:`on-chain action<On-chain>`, it must communicate with a node.
 

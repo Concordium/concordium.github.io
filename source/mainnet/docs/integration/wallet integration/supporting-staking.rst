@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
-.. _support-staking:
+.. _supporting-staking:
 
-===============
-Support staking
-===============
+==================
+Supporting staking
+==================
 
 Concordium secures its network using a :term:`proof-of-stake` model enabling your users to earn rewards on their CCD holdings. This ecosystem is built on two key roles: :term:`validators<validator>`, who operate the nodes that run the network, and :term:`delegators<delegator>`, who are users that stake their CCD to support these validators.
 

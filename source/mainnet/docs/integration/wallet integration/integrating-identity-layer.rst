@@ -1,9 +1,9 @@
 .. include:: ../../../variables.rst
-.. _integrate-identity-layer:
+.. _integrating-identity-layer:
 
-===============================
-Integrate Concordium's ID layer
-===============================
+=================================
+Integrating Concordium's ID layer
+=================================
 
 Every account on Concordium is backed by a verified identity, requiring a balance between compliance and on-chain privacy. The process begins with an off-chain :term:`Identity Provider (IDP)<Identity Provider>` who issues a sensitive :term:`identity object` to the user. This object is the cryptographic root of the user's on-chain presence.
 
