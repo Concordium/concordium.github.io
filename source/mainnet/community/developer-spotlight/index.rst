@@ -29,7 +29,7 @@ How to Apply
 ------------
 
 To nominate your project, submit an application using the following form:
-`Submit your application <https://tally.so/r/mRV5Gl>`_
+`Submit your application <https://docs.google.com/forms/d/e/1FAIpQLScvWKkjXlBTVN3KiW4EpWr1Tx2CSJMSYb9uzU_z-xZzxi4e4g/viewform?usp=dialog>`_
 
 What to Expect
 --------------
