@@ -34,24 +34,7 @@ What to expect from Office Hours
 How to request an Office Hours session
 --------------------------------------
 
-To initiate an Office Hours session, simply fill out the short form below. We will review all submissions, and once at least 3 requests for the same topic have been received, we will contact you and schedule the session.
-
-.. raw:: html
-
-    <iframe data-tally-src="https://tally.so/r/nPPqrV" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Concordium Office Hours Request Form"></iframe>
-    <script>
-      var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
-        "undefined" != typeof Tally && Tally.loadEmbeds();
-      };
-      if ("undefined" != typeof Tally) v();
-      else if (d.querySelector('script[src="' + w + '"]') == null) {
-        var s = d.createElement("script");
-        s.src = w;
-        s.onload = v;
-        s.type = "text/javascript";
-        d.body.appendChild(s);
-      }
-    </script>
+To initiate an Office Hours session, simply fill out the form `Request a Concordium Developer Office Hours Session <https://docs.google.com/forms/d/e/1FAIpQLSfyzAVs2mtM1isF4xK6VWTm5WhuKjzyGUW3k2MWZdpVsD9o9A/viewform?usp=dialog>`_. We will review your submission, and once at least 3 requests for the same topic have been received, we will make an announcement about the upcoming session in the `announcements Discord channel <https://discord.com/channels/667378330923696158/1062725290704515092>`_ in the Dev Army category.
 
 .. .. toctree::
 ..    :maxdepth: 1
