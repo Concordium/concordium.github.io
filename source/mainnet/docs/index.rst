@@ -124,6 +124,12 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Indexers <network/indexers/intro.rst>
 
 .. toctree::
+   :caption: Integration
+   :hidden:
+
+   Wallet integration <integration/wallet integration/wallet-integration>
+
+.. toctree::
    :caption: Help & FAQ
    :hidden:
 
