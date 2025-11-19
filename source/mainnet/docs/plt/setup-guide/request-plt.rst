@@ -4,7 +4,7 @@
 Request PLT issuance
 =====================
 
-This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on testnet for testing and development purposes.
+This guide explains how to request the issuance of a custom Protocol-Level Token (PLT) on testnet for testing and development purposes. Please read the `CIS-7 standard <https://proposals.concordium.com/CIS/cis-7.html#cis-7-protocol-level-tokens-plts>`_ for PLTs to understand the token parameters and metadata requirements before submitting your request.
 
 .. _plt-overview:
 
@@ -30,13 +30,13 @@ An option is to upload it to IPFS or another public storage online. For a tutori
 Request process
 ===============
 
-Follow these steps to request PLT issuance on testnet:
+Follow these steps to request PLT issuance:
 
 1. **Prepare your token metadata**
 
    Create and host your metadata JSON file following the format above.
 
-2. **Fill out the form below**
+2. **Fill out the form below** (or use `this link <https://docs.google.com/forms/d/e/1FAIpQLScjTvpdAYeWO9VEYitaXR46Fb5flT70zi5U88dVsjLIKWAKXA/viewform?usp=dialog>`_ to fill out the PLT initialization application form)
 
 .. raw:: html
 

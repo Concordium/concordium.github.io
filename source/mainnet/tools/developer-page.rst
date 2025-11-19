@@ -73,6 +73,8 @@ All of our repositories are on `GitHub <https://github.com/Concordium>`__.
 
     For information about how to create proofs to verify identity for dApps and services see :ref:`Create proofs<create-proofs>`.
 
+    For a complete list of available ID attributes that can be used in proofs, see :ref:`id-attributes-reference`.
+
     If you want to familiarize yourself with how proofs work and can be constructed as well as test them, you can use the `Concordium Proof Explorer <https://web3id-proof-explorer.testnet.concordium.com/>`__ to create proofs and send them to a |bw| to see how they interact with account credentials and verifiable credentials. The Concordium Proof Explorer works on Testnet. You can use the `Web3Id Issuer Frontend <https://web3id-issuer-frontend.testnet.concordium.com/>`__ to create verifiable credential to test with the proof explorer.
 
     If you decide that you want to become an issuer of verifiable credentials, see :ref:`Web3 ID issuers<web3id-issuer>` to learn more and access the production ready tools to become an issuer.
