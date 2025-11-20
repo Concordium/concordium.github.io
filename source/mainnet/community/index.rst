@@ -42,6 +42,6 @@ Office Hours
    :maxdepth: 2
    :hidden:
 
-   DevNet <devnet>
+   DevNet <devnet/devnet>
    Developer Spotlight <developer-spotlight/index>
    Office Hours <office-hours/index>
