@@ -19,7 +19,7 @@ P10 DevNet is dedicated to testing the features slated for the next major protoc
 
 More features will be added in the following months as we round out the list of enhancements for protocol 10.
 
-Register Your Interest for P10 DevNet
+Register your interest for P10 DevNet
 =====================================
 
 We are compiling a list of early testers and partners who wish to be notified immediately upon the launch of P10 and receive pre-release communications.

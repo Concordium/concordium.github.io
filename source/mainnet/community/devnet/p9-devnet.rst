@@ -22,7 +22,7 @@ This network successfully unlocked powerful new scenarios for payment processing
 - **Scheduled Transfers**:  Automate periodic payments, like rent or subscriptions.
 - **Smart Payment Lock**:  Execute transactions conditionally (e.g., payments triggered upon delivery or trade finance document verification).
 
-P9 DevNet Launch Timeline
+P9 DevNet launch timeline
 =========================
 
 - **End of April 2025:** P9 DevNet goes live; invite-only building begins.
