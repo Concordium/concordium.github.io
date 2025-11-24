@@ -28,3 +28,4 @@ P9 DevNet launch timeline
 - **End of April 2025:** P9 DevNet goes live; invite-only building begins.
 - **June 2025:** First two scenarios (Geofenced Payments, Verify & Pay) are delivered.
 - **November 2025:** Delivery of second two scenarios (Scheduled Transfers and Smart Payment Locks).
+
