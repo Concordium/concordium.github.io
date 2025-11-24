@@ -24,7 +24,7 @@ Register Your Interest for P10 DevNet
 
 We are compiling a list of early testers and partners who wish to be notified immediately upon the launch of P10 and receive pre-release communications.
 
-To ensure you are among the first to get access and have priority support, please register your interest here.
+To ensure you are among the first to get access and have priority support, `register your interest here <https://docs.google.com/forms/d/1XOfI2l2B9J2iWNdNOW5GAIrpQ8tjOJTLHNDJq9BOoVk/viewform?edit_requested=true>`_.
 
 **Ready to pioneer?** Explore, test, and help bridge Web2 and Web3 with Concordium's cutting-edge features on the new P10 DevNet.
 
