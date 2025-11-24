@@ -19,7 +19,7 @@ You can make transactions using one of the Concordium wallets or the Concordium 
 +----------------------------+-------------------+---------------+-------------------+-----------+
 | Send CCD with a schedule   |                   | |check|       | |check|           |           |
 +----------------------------+-------------------+---------------+-------------------+-----------+
-| Unshield CCD               |                   |               |                   | |check|   |
+| Send CCD with memo message | |check|           | |check|       | |check|           ||check|    |
 +----------------------------+-------------------+---------------+-------------------+-----------+
 | Add validator              | |check|           | |check|       | |check|           | |check|   |
 +----------------------------+-------------------+---------------+-------------------+-----------+
@@ -37,14 +37,19 @@ You can make transactions using one of the Concordium wallets or the Concordium 
 +----------------------------+-------------------+---------------+-------------------+-----------+
 | Delegation                 | |check|           | |check|       | |check|           | |check|   |
 +----------------------------+-------------------+---------------+-------------------+-----------+
-| Smart contract transactions|                   |               | |check|           |           |
+| Smart contract transactions| |check|           |               | |check|           | |check|   |
 +----------------------------+-------------------+---------------+-------------------+-----------+
-| Manage tokens              |                   | |check|       + |check|           + |check|   +
+| Send Protocol Level Tokens | |check|           |               | |check|           | |check|   |
++----------------------------+-------------------+---------------+-------------------+-----------+
+| Manage tokens              | |check|           |               | |check|           | |check|   |
++----------------------------+-------------------+---------------+-------------------+-----------+
+| Register Data              |                   |               | |check|           |           |
 +----------------------------+-------------------+---------------+-------------------+-----------+
 
-- |cryptox|: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage tokens, and unshielding.
-- |bw|: supports send CCD, receive CCD, connect to dApps, validator management, delegation.
-- Desktop Wallet: supports all transaction types (except smart contract transactions).
+
+- |cryptox|: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage token.
+- |bw|: supports send CCD (with or without memo message), receive CCD, connect to dApps, validator management, delegation, send and receive PLTs(Protocol-Level Tokens), manage tokens (both CIS-2 and PLTs).
+- Desktop Wallet: supports all transaction types (except smart contract and PLT transactions).
 - Concordium Client: supports all transaction types.
 
 .. |check|  unicode:: U+2713 .. CHECKMARK
