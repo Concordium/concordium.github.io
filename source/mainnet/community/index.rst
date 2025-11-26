@@ -12,7 +12,7 @@ DevNet
 
 .. container:: tutorial-section tutorial-section-blue
 
-   Our :doc:`canary devnet <devnet>` where we are going to push PLT-related releases regarding the following scenarios:
+   Our :doc:`canary devnet <devnet/devnet>` where we are going to push PLT-related releases regarding the following scenarios:
 
    * Geofencing Payments
    * Verify & Pay
@@ -42,6 +42,6 @@ Office Hours
    :maxdepth: 2
    :hidden:
 
-   DevNet <devnet>
+   DevNet <devnet/devnet>
    Developer Spotlight <developer-spotlight/index>
    Office Hours <office-hours/index>
