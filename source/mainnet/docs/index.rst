@@ -128,6 +128,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    :hidden:
 
    Wallet integration <integration/wallet integration/wallet-integration>
+   X402 Integration <integration/x402 integration/x402-integration>
 
 .. toctree::
    :caption: Help & FAQ
