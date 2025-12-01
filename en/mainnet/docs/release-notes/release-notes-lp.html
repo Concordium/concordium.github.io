@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.124b9f52-5449-497f-ad9b-8afea2c7657c.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/release-notes/release-notes-lp.0da3b408-8c02-4aa0-98f8-d00f80d7d6a1.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/release-notes/release-notes-lp';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/release-notes/release-notes-lp.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -812,22 +812,70 @@
 <section id="cryptox-for-ios">
 <span id="rn-cryptox-ios"></span><h3>Concordium Wallet for iOS<a class="headerlink" href="#cryptox-for-ios" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>3.3.10 - October 13, 2025</p>
-<p>Added:</p>
+<div><p>3.4.1 - November 27, 2025</p>
+<p>Updated:</p>
 <ul class="simple">
-<li><p>Improved QR scanner logic: the main scanner is now used for both wallet connections and payments</p></li>
-<li><p>Adjusted decimal handling for Protocol Level Tokens (PLTs) to ensure accurate numerical display</p></li>
-<li><p>Updated the app icon and splash screen with the new design</p></li>
+<li><p>Updated onboarding UI and UX</p></li>
+<li><p>Seed phrase is now saved automatically in the new onboarding flow with backup remaining optional</p></li>
+<li><p>WalletConnect now validates optional namespaces</p></li>
+<li><p>Updated FCA compliance text across the app</p></li>
 </ul>
 <p>Fixed:</p>
 <ul class="simple">
-<li><p>Fixed a token balance bug affecting PLTs</p></li>
-<li><p>Resolved several UI issues introduced with the iOS 26 update</p></li>
+<li><p>Fixed missing error message for insufficient funds during staking cooldown</p></li>
+<li><p>Fixed users getting stuck on the Confirmation Screen when lacking CCD for fees</p></li>
 </ul>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Previous releases</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CryptoX Concordium Wallet 3.4.0  -  Nov 13, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="simple">
+<dt>Added:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">Added support for PLT (Protocol-Level Token) payments on connected third-party websites</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CryptoX Concordium Wallet 3.3.15  -  Nov 6, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="simple">
+<dt>Fixed:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">Fixed inability to connect to certain merchants’ sites</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CryptoX Concordium Wallet 3.3.14  -  Oct 23, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="simple">
+<dt>Updated:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">Updated storefront images</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CryptoX Concordium Wallet 3.3.10  -  Oct 13, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<dl class="simple">
+<dt>Added:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">Improved QR scanner logic: the main scanner is now used for both wallet connections and payments</p></li>
+<li><p class="sd-card-text">Adjusted decimal handling for Protocol Level Tokens (PLTs) to ensure accurate numerical display</p></li>
+<li><p class="sd-card-text">Updated the app icon and splash screen with the new design</p></li>
+</ul>
+</dd>
+<dt>Fixed:</dt><dd><ul class="simple">
+<li><p class="sd-card-text">Fixed a token balance bug affecting PLTs</p></li>
+<li><p class="sd-card-text">Resolved several UI issues introduced with the iOS 26 update</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">CryptoX Concordium Wallet 3.3.7  -  Aug 28, 2025</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
