@@ -19,20 +19,47 @@ Wallets
 |cryptox| for iOS
 ------------------------
 
-    3.3.10 - October 13, 2025
+    3.4.1 - November 27, 2025
 
-    Added:
+    Updated:
 
-    - Improved QR scanner logic: the main scanner is now used for both wallet connections and payments
-    - Adjusted decimal handling for Protocol Level Tokens (PLTs) to ensure accurate numerical display
-    - Updated the app icon and splash screen with the new design
+    - Updated onboarding UI and UX
+    - Seed phrase is now saved automatically in the new onboarding flow with backup remaining optional
+    - WalletConnect now validates optional namespaces
+    - Updated FCA compliance text across the app
 
     Fixed:
 
-    - Fixed a token balance bug affecting PLTs
-    - Resolved several UI issues introduced with the iOS 26 update
+    - Fixed missing error message for insufficient funds during staking cooldown
+    - Fixed users getting stuck on the Confirmation Screen when lacking CCD for fees
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox-legacy| 3.4.0  -  Nov 13, 2025
+
+            Added:
+             - Added support for PLT (Protocol-Level Token) payments on connected third-party websites
+
+        .. dropdown:: |cryptox-legacy| 3.3.15  -  Nov 6, 2025
+
+            Fixed:
+             - Fixed inability to connect to certain merchants’ sites
+
+        .. dropdown:: |cryptox-legacy| 3.3.14  -  Oct 23, 2025
+
+            Updated:
+             - Updated storefront images
+
+        .. dropdown:: |cryptox-legacy| 3.3.10  -  Oct 13, 2025
+
+           Added:
+            - Improved QR scanner logic: the main scanner is now used for both wallet connections and payments
+            - Adjusted decimal handling for Protocol Level Tokens (PLTs) to ensure accurate numerical display
+            - Updated the app icon and splash screen with the new design
+
+           Fixed:
+            - Fixed a token balance bug affecting PLTs
+            - Resolved several UI issues introduced with the iOS 26 update
 
         .. dropdown:: |cryptox-legacy| 3.3.7  -  Aug 28, 2025
 
