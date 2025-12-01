@@ -148,11 +148,31 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.15.0 - October 27, 2025
+    1.16.0 - November 28, 2025
 
-    Added support for PLT (Protocol-Level Token) payments on connected third-party websites.
+    - Updated UI across the entire app with improved visuals and usability
+    - Redesigned Main Screen with clearer navigation
+    - Fixed issues related to CIS-2 token error reporting, including cases with corrupted or missing metadata and balances
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.15.2 - November 11, 2025
+
+            Fixed UI bugs
+
+        .. dropdown:: 1.15.1 - November 6, 2025
+
+            Fixed:
+
+            - The Send screen Max button not working properly with large balances
+
+            Changed:
+
+            - Updated staking flow texts
+
+        .. dropdown:: 1.15.0 - October 27, 2025
+
+            Added support for PLT (Protocol-Level Token) payments on connected third-party websites.
 
         .. dropdown:: 1.14.0 - October 8, 2025
 
