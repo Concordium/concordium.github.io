@@ -540,13 +540,22 @@ Wallets
 |bw|
 -------------------------
 
-    Oct 27, 2025
+    Dec 03, 2025
 
-    Version 2.6.2
+    Version 2.7.0
 
-    -   Updated App icon
+    -   Updated onboarding flow, focusing on streamlining the user experience from landing screens to account setup.
+    -   Updated texts across the wallet to be FCA legally compliant.
+    -   Fixed accounts display under incorrect identities.
+    -   Fixed an issue where CBOR encoded objects passed in register data payloads would crash the application.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.6.2 - Oct 27, 2025
+
+            Version 2.6.2 changes:
+
+            -   Updated App icon
 
         .. dropdown:: |bw| 2.6.1 - Oct 20, 2025
 
