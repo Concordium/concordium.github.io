@@ -1,0 +1,1086 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Native upgradability &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/smartContractUpgrade/smartContractUpgrade.51f9fdfe-80a5-4fd3-abf2-c83027e22872.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/smartContractUpgrade/smartContractUpgrade';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/smartContractUpgrade/smartContractUpgrade.html" />
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="dApp examples" href="../daap-examples/dapp-examples.html" />
+    <link rel="prev" title="Upgrading smart contracts on Concordium" href="index.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="https://docs.concordium.com/en/mainnet/docs/plt/index.html">developer documentation</a>.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo light-logo" src="../../_static/concordium-logo-dark.svg" />
+        <img class="logo dark-logo" src="../../_static/concordium-logo.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello-world/hello-world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/frontend.html">Setting up a frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../using-ID-in-dApps/index.html">Using ID in dApps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using-ID-in-dApps/wallet-connectors-tutorial.html">Implementing Wallet Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using-ID-in-dApps/zk-proofs-tutorial.html">ZK proof generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-sc.html">Writing a voting smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nft-minting/index.html">Mint an NFT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/upload-nft.html">Upload the NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">Mint a semi-fungible token</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fungible-tokens/index.html">Mint fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../low-code-nft-marketplace/introduction.html">Concordium low-code NFT framework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sponsoredTransactions/index.html">Sponsored Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsSmartContract.html">Exploring the sponsored Transactions Smart Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Smart Contract Upgrade</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Native upgradability</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Ressources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../daap-examples/dapp-examples.html"> dApp examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../company-identity/company-identities.html"> How to create a company identity</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="native-upgradability">
+<span id="smart-contract-upgrade"></span><h1>Native upgradability<a class="headerlink" href="#native-upgradability" title="Link to this heading">#</a></h1>
+<p>The goal of this tutorial is to deploy a <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>, upgrade its logic, and migrate its state to <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code>.</p>
+<p>The <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/smart-contract-upgrade/contract-version1">contract-version1</a>
+includes an <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function and the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/smart-contract-upgrade/contract-version2">contract-version2</a>
+includes a <code class="docutils literal notranslate"><span class="pre">migration</span></code> function. These functions are explored in the next two sections.</p>
+<section id="the-migration-function">
+<h2>The <code class="docutils literal notranslate"><span class="pre">migration</span></code> function<a class="headerlink" href="#the-migration-function" title="Link to this heading">#</a></h2>
+<p>When deploying <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>, you might not know the exact logic of the <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> yet.
+<code class="docutils literal notranslate"><span class="pre">Contract-version2</span></code> might be a smart contract that fixes a security bug in your smart contract code which will be discovered at some point in the future.
+For that reason, it is good to have the option to call a <code class="docutils literal notranslate"><span class="pre">migration</span></code> function in <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> when executing the upgrade mechanism in <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>.
+This allows you to add additional execution logic when upgrading the smart contract.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">migration</span></code> function could have a variety of different purposes such as:</p>
+<ul class="simple">
+<li><p>Log some events.</p></li>
+<li><p>Change values in the state.</p></li>
+<li><p>Change the shape of the smart contract state.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no universal <code class="docutils literal notranslate"><span class="pre">migration</span></code> function and it is not necessary for all upgrades to call a <code class="docutils literal notranslate"><span class="pre">migration</span></code> function.
+In the example smart contract, a <code class="docutils literal notranslate"><span class="pre">migration</span></code> function is provided that should be suitable for most use cases.
+In more detail, the example <code class="docutils literal notranslate"><span class="pre">migration</span></code> function
+focuses on how to change the shape of your smart contract state since this bullet point from above is non-trivial.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Contract-version1</span></code> allows you to call a <code class="docutils literal notranslate"><span class="pre">migration</span></code> function as part of the upgrade.
+The <code class="docutils literal notranslate"><span class="pre">migration</span></code> function in <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> changes the shape of the state from <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> to <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code>.</p>
+</section>
+<section id="the-upgrade-function">
+<h2>The <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function<a class="headerlink" href="#the-upgrade-function" title="Link to this heading">#</a></h2>
+<p>A native smart contract upgrade can be triggered on the <code class="docutils literal notranslate"><span class="pre">host</span></code> as seen in the code snippet below:</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(</span>
+<span class="cp">   ...</span>
+<span class="cp">   low_level</span>
+<span class="cp">)]</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">contract_name</span><span class="p">(</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="w">   </span><span class="n">host</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">LowLevelHost</span><span class="p">,</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="p">)</span><span class="w">  </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">host</span><span class="p">.</span><span class="n">upgrade</span><span class="p">(</span><span class="n">moduleReference</span><span class="p">);</span>
+<span class="w">   </span><span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> functions in the example smart contracts are marked as <code class="docutils literal notranslate"><span class="pre">low_level</span></code>. This is <em>necessary</em> since the default (<em>high_level</em>) mutable functions store the state of the contract at the end of
+execution. This conflicts with migration since the shape of the state <em>might</em> be changed by the <code class="docutils literal notranslate"><span class="pre">migration</span></code> function. If the state is then written
+by the default (<em>high_level</em>) <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function, it would overwrite the state stored by the <code class="docutils literal notranslate"><span class="pre">migration</span></code> function.</p>
+<p>Greater control is given to the smart contract developer when using <code class="docutils literal notranslate"><span class="pre">low_level</span></code> functions (e.g., additional state manipulation
+capabilities are exposed which are unavailable when using <em>high_level</em> functions). These additional state manipulation features are necessary to change the
+shape of the state during the <code class="docutils literal notranslate"><span class="pre">migration</span></code> but they bear the risk that the state becomes corrupted if the <code class="docutils literal notranslate"><span class="pre">migration</span></code> function has some coding bugs.
+Make sure you test your upgrade thoroughly (with integration tests as well as manual tests on testnet)
+and ensure your state is migrated as intended before doing
+the same smart contract upgrade on mainnet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To write smart contract code safely and to avoid accidentally corrupting your state,
+you shouldn’t use <code class="docutils literal notranslate"><span class="pre">low-level</span></code> functions unless strictly necessary (e.g., for <code class="docutils literal notranslate"><span class="pre">upgrade</span></code>/<code class="docutils literal notranslate"><span class="pre">migration</span></code> functions).
+Smart contract functions are by default
+<em>high_level</em> (no need to add this attribute explicitly).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also write a very simple upgrade mechanism using a <em>high_level</em> function with no <code class="docutils literal notranslate"><span class="pre">migration</span></code> function at all. This upgrade
+mechanism requires that the shape of the smart contract state is the same in <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> and <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code>.
+This means, the <code class="docutils literal notranslate"><span class="pre">State</span></code> struct in <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> and <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> has to be identical.</p>
+<div class="highlight-rust notranslate"><div class="highlight"><pre><span></span><span class="cp">#[receive(</span>
+<span class="cp">   contract = </span><span class="s">&quot;contract_name&quot;</span><span class="cp">,</span>
+<span class="cp">   name = </span><span class="s">&quot;upgrade&quot;</span><span class="cp">,</span>
+<span class="cp">   error = </span><span class="s">&quot;ContractError&quot;</span><span class="cp">,</span>
+<span class="cp">   mutable</span>
+<span class="cp">)]</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">contract_upgrade</span><span class="p">(</span>
+<span class="w">   </span><span class="n">_ctx</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">ReceiveContext</span><span class="p">,</span>
+<span class="w">   </span><span class="n">host</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Host</span><span class="o">&lt;</span><span class="n">State</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">ContractResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// TODO: Include some authorization checks.</span>
+
+<span class="w">   </span><span class="c1">// Trigger the upgrade.</span>
+<span class="w">   </span><span class="n">host</span><span class="p">.</span><span class="n">upgrade</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="n">module</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+
+<span class="w">   </span><span class="c1">// No `migration` function.</span>
+
+<span class="w">   </span><span class="nb">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function in <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> can be invoked with the following JSON file (input parameter):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Some&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">[</span>
+<span class="w">         </span><span class="s2">&quot;&lt;EntryPointNameOfMigrationFunction&gt;&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s2">&quot;&lt;InputParametersOfMigrationFunction&gt;&quot;</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The section <a class="reference internal" href="#input-parameters"><span class="std std-ref">executing an upgrade</span></a> will give examples of how to set the input parameter for the <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the module reference should be upgraded without invoking a <code class="docutils literal notranslate"><span class="pre">migration</span></code> function, use the JSON file (input parameter) below instead:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;None&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since more responsibility is given to the smart contract developer, smart contract <code class="docutils literal notranslate"><span class="pre">upgrade</span></code>/<code class="docutils literal notranslate"><span class="pre">migration</span></code> functions
+should be coded and executed by experts that know about the underlying risks. You are about to become such an expert.</p>
+</div>
+<p>You now have the required knowledge to execute the upgrade mechanism on testnet in the next section.</p>
+</section>
+<section id="executing-an-upgrade">
+<h2>Executing an upgrade<a class="headerlink" href="#executing-an-upgrade" title="Link to this heading">#</a></h2>
+<p>Clone the <a class="reference external" href="https://github.com/Concordium/concordium-rust-smart-contracts/tree/main/examples/smart-contract-upgrade">smart contract upgrade example</a>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>git@github.com:Concordium/concordium-rust-smart-contracts.git
+</pre></div>
+</div>
+<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> example folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>./examples/smart-contract-upgrade/contract-version1
+</pre></div>
+</div>
+<p>Compile the smart contract to a Wasm module which you will deploy to testnet in the next step.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>smart_contract_upgrade.wasm.v1
+</pre></div>
+</div>
+<img alt="Compile contract version 1" class="align-center" src="../../_images/compile_contract_version1.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Comprehensive instructions on how to download and set up <code class="docutils literal notranslate"><span class="pre">cargo-concordium</span></code> can be found in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
+</div>
+<p>This command will create the <code class="docutils literal notranslate"><span class="pre">smart_contract_upgrade.wasm.v1</span></code> file in your current folder. Deploy the smart contract module to testnet with the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>./smart_contract_upgrade.wasm.v1<span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<img alt="Deploy contract version 1" class="align-center" src="../../_images/deploy_contract_version1.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Comprehensive instructions on how to download and set up <code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> and how to import an account that you can use
+for the placeholder <code class="docutils literal notranslate"><span class="pre">YourAccountAddress</span></code> above can be found in <a class="reference internal" href="../setup-env.html#setup-env"><span class="std std-ref">Setup the development environment</span></a>.</p>
+</div>
+<p>Since other users will read this tutorial, you will likely get an error that the module above is already deployed.
+If the module is already deployed or not deployed, it does not make a
+difference because in both cases the console output will print the <code class="docutils literal notranslate"><span class="pre">moduleReference</span></code> that you need for the next step.</p>
+<p>Initialize a <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code> smart contract instance with the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>&lt;ModuleReference&gt;<span class="w"> </span>--contract<span class="w"> </span>smart_contract_upgrade<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w">  </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<p>For example, when using the module reference from the image above, the command will look as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>init<span class="w"> </span>8fc09d2519f516cfbb3d139b1e567753780fbb52854ecbf9a12c447756d18eb0<span class="w"> </span>--contract<span class="w"> </span>smart_contract_upgrade<span class="w"> </span>--energy<span class="w"> </span><span class="m">30000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w">  </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<img alt="Initialize contract version 1" class="align-center" src="../../_images/initialize_contract.png" />
+<p>As seen in the image above, this command returns your smart contract index <code class="docutils literal notranslate"><span class="pre">4462</span></code>.</p>
+<p>Before upgrading the <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>, you can check its state with the view function as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;YourContractVersion1Index&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>view<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<p>For example, when using the smart contract index from the image above, the command will look as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span><span class="m">4462</span><span class="w"> </span>--entrypoint<span class="w"> </span>view<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<p>You should see the following output.</p>
+<img alt="View contract version 1" class="align-center" src="../../_images/view_contract_version1.png" />
+<p>You need to compile and deploy <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> before you can upgrade your smart contract instance <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>.</p>
+<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> example folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nb">cd</span><span class="w"> </span>./examples/smart-contract-upgrade/contract-version2
+</pre></div>
+</div>
+<p>Compile the smart contract to a Wasm module which you will deploy to testnet in the next step.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>cargo<span class="w"> </span>concordium<span class="w"> </span>build<span class="w"> </span>--out<span class="w"> </span>smart_contract_upgrade.wasm.v1
+</pre></div>
+</div>
+<img alt="Compile contract version 2" class="align-center" src="../../_images/compile_contract_version2.png" />
+<p>This command will create the <code class="docutils literal notranslate"><span class="pre">smart_contract_upgrade.wasm.v1</span></code> file in your current folder. Deploy the smart contract module to testnet with the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>module<span class="w"> </span>deploy<span class="w"> </span>./smart_contract_upgrade.wasm.v1<span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<img alt="Deploy contract version 2" class="align-center" src="../../_images/deploy_contract_version2.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">moduleReference</span></code> returned when deploying <code class="docutils literal notranslate"><span class="pre">contract-version2</span></code> is different from the <code class="docutils literal notranslate"><span class="pre">moduleReference</span></code> when deploying <code class="docutils literal notranslate"><span class="pre">contract-version1</span></code>.
+This shows that the module’s code is not identical.</p>
+<p>Create a file named <code class="docutils literal notranslate"><span class="pre">upgrade.json</span></code> with the following content by inserting the <code class="docutils literal notranslate"><span class="pre">moduleReference</span></code> returned by the previous step:</p>
+<div class="highlight-json notranslate" id="input-parameters"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Some&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">[</span>
+<span class="w">         </span><span class="s2">&quot;migration&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s2">&quot;&quot;</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;ModuleReferenceContractVersion2&gt;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For example, when using the module reference from the image above, the file will look as follows:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;migrate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;Some&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">         </span><span class="p">[</span>
+<span class="w">         </span><span class="s2">&quot;migration&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="s2">&quot;&quot;</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;31539c983f2ee56822041230d7fd20a3516da9271837e23bb77111bb8c4c7dcd&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When invoking the <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function with the file above, it specifies that the smart contract
+code should be upgraded to the module <code class="docutils literal notranslate"><span class="pre">31539c983f2ee56822041230d7fd20a3516da9271837e23bb77111bb8c4c7dcd</span></code>
+and the <code class="docutils literal notranslate"><span class="pre">migration</span></code> function should be invoked
+with no input parameters (empty string: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) as part of the upgrade.</p>
+<p>Upgrade the smart contract as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span>&lt;YourContractVersion1Index&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>upgrade<span class="w"> </span>--parameter-json<span class="w"> </span>upgrade.json<span class="w"> </span>--energy<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<p>For example, when using the smart contract index from the image above, the command will look as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>update<span class="w"> </span><span class="m">4462</span><span class="w"> </span>--entrypoint<span class="w"> </span>upgrade<span class="w"> </span>--parameter-json<span class="w"> </span>upgrade.json<span class="w"> </span>--energy<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--sender<span class="w"> </span>&lt;YourAccountAddress&gt;<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<p>You should see the following output.</p>
+<img alt="Upgrade contract version 1" class="align-center" src="../../_images/upgrade.png" />
+<p>You can check that the state migration was successful by inspecting the state with the view function:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>contract<span class="w"> </span>invoke<span class="w"> </span>&lt;YourContractVersion1Index&gt;<span class="w"> </span>--entrypoint<span class="w"> </span>view<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">20000</span><span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.testnet.concordium.com<span class="w"> </span>--secure
+</pre></div>
+</div>
+<img alt="View contract version 2" class="align-center" src="../../_images/view_contract_version2.png" />
+<p>If the migration function had a bug and changed the shape of the state incorrectly, your state might be corrupted. You might see different output errors in case of a corrupted state. One example is shown below:</p>
+<img alt="Corrupted state" class="align-center" src="../../_images/corrupted_state.png" />
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Upgrading smart contracts on Concordium</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../daap-examples/dapp-examples.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">dApp examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-migration-function">The <code class="docutils literal notranslate"><span class="pre">migration</span></code> function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-upgrade-function">The <code class="docutils literal notranslate"><span class="pre">upgrade</span></code> function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-an-upgrade">Executing an upgrade</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/tutorials/smartContractUpgrade/smartContractUpgrade.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2025, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">     
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>     
+    <button onclick="consentDenied()">Decline</button>     
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a> 
+</div>  
+
+<!-- Matomo --> 
+<script>   
+var _paq = window._paq = window._paq || [];  
+
+// Save the choice in a cookie with proper attributes
+function storeChoice(granted) {   
+    // Set cookie with 1 year expiration, path, and secure attributes
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = "cookie-consent=" + granted + "; expires=" + expires.toUTCString() + "; path=/; SameSite=Lax";
+}  
+
+// Look for a cookie storing the previous choice of the user. 
+// Returns null if no choice was stored, true if granted, false if denied
+function loadChoice() {   
+    if (!document.cookie.includes("cookie-consent=")) {       
+        return null;   
+    }   
+    return document.cookie.includes("cookie-consent=true");
+}  
+
+// Removes the cookie consent banner safely
+function removeCookieConsentBanner() {   
+    const banner = document.getElementById("cookie-consent");
+    if (banner) {
+        banner.remove();
+    }
+}  
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {   
+    storeChoice(true);
+    _paq.push(['setCookieConsentGiven']);   
+    removeCookieConsentBanner();
+}  
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {   
+    storeChoice(false);  // FIXED: Now correctly stores false
+    removeCookieConsentBanner();
+}  
+
+// Check for stored consent and act accordingly
+const stored = loadChoice(); 
+if (stored === true) {
+    // User previously granted consent
+    _paq.push(['setCookieConsentGiven']);
+    removeCookieConsentBanner();
+} else if (stored === false) {
+    // User previously denied consent
+    removeCookieConsentBanner();
+}
+// If stored === null, show the banner (do nothing)
+
+_paq.push(['requireCookieConsent']); 
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */ 
+_paq.push(['trackPageView']); 
+_paq.push(['enableLinkTracking']);  
+
+(function() {     
+    var u="https://concordium.matomo.cloud/";     
+    _paq.push(['setTrackerUrl', u+'matomo.php']);     
+    _paq.push(['setSiteId', '2']);     
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];     
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);   
+})();    
+
+// Only remember consent if it was actually granted
+if (stored === true) {
+    _paq.push(['rememberCookieConsentGiven']);
+}
+</script>   
+
+<!-- Start of HubSpot Embed Code --> 
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script> 
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
