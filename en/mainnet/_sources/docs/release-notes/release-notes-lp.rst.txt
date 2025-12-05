@@ -19,21 +19,33 @@ Wallets
 |cryptox| for iOS
 ------------------------
 
-    3.4.1 - November 27, 2025
+    3.4.2 - December 5, 2025
 
     Updated:
 
-    - Updated onboarding UI and UX
-    - Seed phrase is now saved automatically in the new onboarding flow with backup remaining optional
-    - WalletConnect now validates optional namespaces
-    - Updated FCA compliance text across the app
+    - WalletConnect proposal now validates only namespaces relevant to the active chain
+    - Transaction details in the WalletConnect signing screen now show formatted, readable information
 
     Fixed:
 
-    - Fixed missing error message for insufficient funds during staking cooldown
-    - Fixed users getting stuck on the Confirmation Screen when lacking CCD for fees
+    - Proposal validation no longer rejects sessions that include a mix of allowed and disallowed methods
+    - Signing screen no longer shows raw JSON in tx details
+    - Correct CTA banner is shown based on state
+    - App crash upon wallet removal
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox-legacy| 3.4.1  -  Nov 27, 2025
+
+            Updated:
+             - Updated onboarding UI and UX
+             - Seed phrase is now saved automatically in the new onboarding flow with backup remaining optional
+             - WalletConnect now validates optional namespaces
+             - Updated FCA compliance text across the app
+
+            Fixed:
+             - Fixed missing error message for insufficient funds during staking cooldown
+             - Fixed users getting stuck on the Confirmation Screen when lacking CCD for fees
 
         .. dropdown:: |cryptox-legacy| 3.4.0  -  Nov 13, 2025
 
