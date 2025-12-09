@@ -187,13 +187,19 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.16.0 - November 28, 2025
+    1.16.1 - December 9, 2025
 
-    - Updated UI across the entire app with improved visuals and usability
-    - Redesigned Main Screen with clearer navigation
-    - Fixed issues related to CIS-2 token error reporting, including cases with corrupted or missing metadata and balances
+    Fixed:
+
+    - Crash while using the file wallet
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.16.0 - November 28, 2025
+
+            - Updated UI across the entire app with improved visuals and usability
+            - Redesigned Main Screen with clearer navigation
+            - Fixed issues related to CIS-2 token error reporting, including cases with corrupted or missing metadata and balances
 
         .. dropdown:: 1.15.2 - November 11, 2025
 
