@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/transactions.236e52d6-0663-4d45-b683-ce35bb506d0a.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/transactions.b19a2112-7b11-4955-87ac-4b1bb96eeb5c.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/transactions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/transactions.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -827,10 +827,10 @@
 <td><p>✓</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>Unshield CCD</p></td>
-<td></td>
-<td></td>
-<td></td>
+<tr class="row-even"><td><p>Send CCD with memo message</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
 <td><p>✓</p></td>
 </tr>
 <tr class="row-odd"><td><p>Add validator</p></td>
@@ -882,25 +882,36 @@
 <td><p>✓</p></td>
 </tr>
 <tr class="row-odd"><td><p>Smart contract transactions</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Send Protocol Level Tokens</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manage tokens</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Register Data</p></td>
 <td></td>
 <td></td>
 <td><p>✓</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td rowspan="2"><p>Manage tokens</p></td>
-<td rowspan="2"></td>
-<td rowspan="2"><p>✓</p></td>
-<td rowspan="2"><p>✓</p></td>
-<td rowspan="2"><p>✓</p></td>
-</tr>
-<tr class="row-odd"></tr>
 </tbody>
 </table>
 </div>
 <ul class="simple">
-<li><p>Concordium Wallet: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage tokens, and unshielding.</p></li>
-<li><p>Concordium Wallet for Web: supports send CCD, receive CCD, connect to dApps, validator management, delegation.</p></li>
-<li><p>Desktop Wallet: supports all transaction types (except smart contract transactions).</p></li>
+<li><p>Concordium Wallet: supports send CCD, receive CCD, validator management, delegation, connect to dApps, add and manage token.</p></li>
+<li><p>Concordium Wallet for Web: supports send CCD (with or without memo message), receive CCD, connect to dApps, validator management, delegation, send and receive PLTs(Protocol-Level Tokens), manage tokens (both CIS-2 and PLTs).</p></li>
+<li><p>Desktop Wallet: supports all transaction types (except smart contract and PLT transactions).</p></li>
 <li><p>Concordium Client: supports all transaction types.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
