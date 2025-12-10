@@ -19,21 +19,25 @@ Wallets
 |cryptox| for iOS
 ------------------------
 
-    3.4.2 - December 5, 2025
+    3.4.3 - December 10, 2025
 
     Updated:
 
-    - WalletConnect proposal now validates only namespaces relevant to the active chain
-    - Transaction details in the WalletConnect signing screen now show formatted, readable information
-
-    Fixed:
-
-    - Proposal validation no longer rejects sessions that include a mix of allowed and disallowed methods
-    - Signing screen no longer shows raw JSON in tx details
-    - Correct CTA banner is shown based on state
-    - App crash upon wallet removal
+    - Updated Reown version to 2.0.0
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox-legacy| 3.4.2  -  Dec 5, 2025
+
+            Updated:
+                - WalletConnect proposal now validates only namespaces relevant to the active chain
+                - Transaction details in the WalletConnect signing screen now show formatted, readable information
+
+            Fixed:
+                - Proposal validation no longer rejects sessions that include a mix of allowed and disallowed methods
+                - Signing screen no longer shows raw JSON in tx details
+                - Correct CTA banner is shown based on state
+                - App crash upon wallet removal
 
         .. dropdown:: |cryptox-legacy| 3.4.1  -  Nov 27, 2025
 
