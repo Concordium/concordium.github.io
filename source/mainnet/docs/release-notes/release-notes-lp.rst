@@ -19,20 +19,59 @@ Wallets
 |cryptox| for iOS
 ------------------------
 
-    3.3.10 - October 13, 2025
+    3.4.2 - December 5, 2025
 
-    Added:
+    Updated:
 
-    - Improved QR scanner logic: the main scanner is now used for both wallet connections and payments
-    - Adjusted decimal handling for Protocol Level Tokens (PLTs) to ensure accurate numerical display
-    - Updated the app icon and splash screen with the new design
+    - WalletConnect proposal now validates only namespaces relevant to the active chain
+    - Transaction details in the WalletConnect signing screen now show formatted, readable information
 
     Fixed:
 
-    - Fixed a token balance bug affecting PLTs
-    - Resolved several UI issues introduced with the iOS 26 update
+    - Proposal validation no longer rejects sessions that include a mix of allowed and disallowed methods
+    - Signing screen no longer shows raw JSON in tx details
+    - Correct CTA banner is shown based on state
+    - App crash upon wallet removal
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |cryptox-legacy| 3.4.1  -  Nov 27, 2025
+
+            Updated:
+             - Updated onboarding UI and UX
+             - Seed phrase is now saved automatically in the new onboarding flow with backup remaining optional
+             - WalletConnect now validates optional namespaces
+             - Updated FCA compliance text across the app
+
+            Fixed:
+             - Fixed missing error message for insufficient funds during staking cooldown
+             - Fixed users getting stuck on the Confirmation Screen when lacking CCD for fees
+
+        .. dropdown:: |cryptox-legacy| 3.4.0  -  Nov 13, 2025
+
+            Added:
+             - Added support for PLT (Protocol-Level Token) payments on connected third-party websites
+
+        .. dropdown:: |cryptox-legacy| 3.3.15  -  Nov 6, 2025
+
+            Fixed:
+             - Fixed inability to connect to certain merchants’ sites
+
+        .. dropdown:: |cryptox-legacy| 3.3.14  -  Oct 23, 2025
+
+            Updated:
+             - Updated storefront images
+
+        .. dropdown:: |cryptox-legacy| 3.3.10  -  Oct 13, 2025
+
+           Added:
+            - Improved QR scanner logic: the main scanner is now used for both wallet connections and payments
+            - Adjusted decimal handling for Protocol Level Tokens (PLTs) to ensure accurate numerical display
+            - Updated the app icon and splash screen with the new design
+
+           Fixed:
+            - Fixed a token balance bug affecting PLTs
+            - Resolved several UI issues introduced with the iOS 26 update
 
         .. dropdown:: |cryptox-legacy| 3.3.7  -  Aug 28, 2025
 
@@ -148,11 +187,37 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.15.0 - October 27, 2025
+    1.16.1 - December 9, 2025
 
-    Added support for PLT (Protocol-Level Token) payments on connected third-party websites.
+    Fixed:
+
+    - Crash while using the file wallet
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.16.0 - November 28, 2025
+
+            - Updated UI across the entire app with improved visuals and usability
+            - Redesigned Main Screen with clearer navigation
+            - Fixed issues related to CIS-2 token error reporting, including cases with corrupted or missing metadata and balances
+
+        .. dropdown:: 1.15.2 - November 11, 2025
+
+            Fixed UI bugs
+
+        .. dropdown:: 1.15.1 - November 6, 2025
+
+            Fixed:
+
+            - The Send screen Max button not working properly with large balances
+
+            Changed:
+
+            - Updated staking flow texts
+
+        .. dropdown:: 1.15.0 - October 27, 2025
+
+            Added support for PLT (Protocol-Level Token) payments on connected third-party websites.
 
         .. dropdown:: 1.14.0 - October 8, 2025
 
@@ -493,13 +558,22 @@ Wallets
 |bw|
 -------------------------
 
-    Oct 27, 2025
+    Dec 03, 2025
 
-    Version 2.6.2
+    Version 2.7.0
 
-    -   Updated App icon
+    -   Updated onboarding flow, focusing on streamlining the user experience from landing screens to account setup.
+    -   Updated texts across the wallet to be FCA legally compliant.
+    -   Fixed accounts display under incorrect identities.
+    -   Fixed an issue where CBOR encoded objects passed in register data payloads would crash the application.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: |bw| 2.6.2 - Oct 27, 2025
+
+            Version 2.6.2 changes:
+
+            -   Updated App icon
 
         .. dropdown:: |bw| 2.6.1 - Oct 20, 2025
 
