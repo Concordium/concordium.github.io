@@ -2,7 +2,7 @@
 .. _transaction-reference:
 
 =====================
-Transaction Reference
+Transaction reference
 =====================
 
 You can make transactions using one of the Concordium wallets or the Concordium Client. Note that some wallets do not support all transaction types, and that you need a LEDGER device to submit transactions from the Desktop Wallet.
