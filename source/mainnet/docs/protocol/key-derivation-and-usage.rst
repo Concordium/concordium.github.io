@@ -26,7 +26,7 @@ The subtree of a single Identity Credential consists of:
 Derivation structure
 ====================
 
-All cryptographic keys related to an identity object and the related accounts are generated from a subtree with prefix=m/44'/919'/IDP'/ID' where IDP is the index of the Identity Provider and ID is the index of the ID, e.g. ID=0 for the first identity issued to the user.
+All cryptographic keys related to an identity object and the related accounts are generated from a subtree (with prefix=m/44'/919'/IDP'/ID' for mainnet, prefix=m/44'/1'/IDP'/ID' for testnet and other non-mainnet networks) where IDP is the index of the Identity Provider and ID is the index of the ID, e.g. ID=0 for the first identity issued to the user.
 
 
 Account keys
