@@ -38,10 +38,12 @@ Testnet identity creation
 Account creation
 ================
 
-Once you have a verified identity, you can create multiple accounts from it.
+Once you have a verified identity, you can create multiple accounts from it:
 
-* Up to 25 initial accounts can be created from a single identity
-* Accounts can be created using any Concordium wallet, follow the documentation at :ref:`create an account <create-account>` for more information
+* Desktop Wallet: 1 initial account plus up to 25 additional accounts (26 total)
+* Other wallets: Up to 26 accounts (numbered 0-25)
+
+Accounts can be created using any Concordium wallet, follow the documentation at :ref:`create an account <create-account>` for more information.
 
 Node setup
 ==========
