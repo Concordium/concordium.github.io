@@ -27,14 +27,18 @@ Transaction types
 
 This is the most fundamental transaction type, used for sending the native CCD token from one account to another. It is a straightforward value transfer, equivalent to a standard payment on other blockchains.
 
-**2. Smart contract transactions**
+**2. Register data**
+
+A Register Data transaction records an arbitrary byte array inside the transaction payload on-chain. It’s commonly used to anchor a hash, a timestamped proof, or an opaque blob without changing account balances or contract state (other than paying the transaction fee). The registered bytes are constrained by a protocol maximum size: MAX_REGISTERED_DATA_SIZE = 256 bytes.
+
+**3. Smart contract transactions**
 
 This category covers all interactions with :term:`smart contracts<smart contract>`. It enables users to interact with dApps and manage tokens built on the CIS-2 standard (Concordium's universal token standard for Fungible, Non-Fungible, and Semi-Fungible tokens). Common actions include:
 
 * Deploying and initializing contracts
 * Updating contracts (e.g., calling a transfer function on a CIS-2 token)
 
-**3. Staking and delegation transactions**
+**4. Staking and delegation transactions**
 
 These transactions are essential for participating in Concordium's :term:`proof-of-stake` network. Key transactions for :term:`delegators<Delegator>` include:
 
@@ -42,10 +46,9 @@ These transactions are essential for participating in Concordium's :term:`proof-
 * Update delegation: Changing the staked amount
 * Remove delegation: Unstaking CCD
 
-**4. Account and identity transactions**
+**5. Account and identity transactions**
 
 Unique to Concordium's architecture, this category includes the crucial create account transaction. This must be submitted with the cryptographic credential from a user's verified :term:`identity object`, linking the new account to that identity.
-
 
 References
 ==========
