@@ -113,7 +113,7 @@ allowing us to quickly resolve technical challenges.
 What improvements would you like to see in the Concordium ecosystem?
 --------------------------------------------------------------------
 
-**Jerry:** One improvement would be better discoverability of documentation externally. An MCP server and a RAG-based chatbot for documentation
+**Jerry:** One improvement would be better external documentation discoverability. An MCP server and a RAG-based chatbot for documentation
 would help developers integrate faster and get answers more efficiently when working with AI-assisted tools.
 
 How do you engage with your community and grow your user base?
@@ -133,7 +133,7 @@ This ensures transparency and prevents manual interference.
 How do you plan to handle compliance and regulatory requirements?
 -----------------------------------------------------------------
 
-**Navneet:** Currently, we rely on smart contracts, but with the version one we plan to integrate Concordium’s identity and verification features.
+**Navneet:** Currently, we rely on smart contracts, but with version one we plan to integrate Concordium’s identity and verification features.
 This will allow us to handle KYC and compliance across different jurisdictions, while eventually leveraging zero-knowledge proofs for privacy.
 
 What advice would you give to other developers joining the Concordium ecosystem?
