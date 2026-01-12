@@ -152,10 +152,10 @@ The following table shows the details for different payload types. The total cos
 |                        |                       |                       |                       |
 |                        |                       |                       |                       |
 +------------------------+-----------------------+-----------------------+-----------------------+
-| Token Update           | variable              | 300 + 50              | 350                   |
-| Operations             |                       |                       |                       |
-| - Pause                |                       |                       |                       |
-| - Unpause              |                       |                       |                       |
+| Sponsored Transaction  | variable              | 32 + (100*number of   | variable              |
+|                        |                       |  sponsor signatures)  |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
 |                        |                       |                       |                       |
 |                        |                       |                       |                       |
 |                        |                       |                       |                       |
