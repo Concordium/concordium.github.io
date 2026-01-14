@@ -56,3 +56,4 @@ Apply now and let the world see what you are building on Concordium!
    Interview with AesirX <aesirx/index>
    Interview with Provenance Tags <provenance-tags/index>
    Interview with Edubuk <edubuk/index>
+   Interview with PanenkaFC <panenkafc/index>

@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/transaction-fees.c447916f-a5be-4f9f-8584-ee5e6cfd3e52.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/transaction-fees.36d38fa8-9e12-4df5-983d-56442952c82e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/transaction-fees';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/transaction-fees.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -980,6 +980,43 @@ credentials) +
 credential:
 54000 + 100 x
 number of keys]</p></td>
+<td><p>variable</p></td>
+</tr>
+<tr class="row-even"><td><p>Token Update
+Operations - Transfer</p></td>
+<td><p>variable</p></td>
+<td><p>300 + 100</p></td>
+<td><p>400</p></td>
+</tr>
+<tr class="row-odd"><td><p>Token Update
+Operations - Mint</p></td>
+<td><p>variable</p></td>
+<td><p>300 + 50</p></td>
+<td><p>350</p></td>
+</tr>
+<tr class="row-even"><td><p>Token Update
+Operations - Burn</p></td>
+<td><p>variable</p></td>
+<td><p>300 + 50</p></td>
+<td><p>350</p></td>
+</tr>
+<tr class="row-odd"><td><p>Token Update
+Operations
+- AddAllowList
+- RemoveAllowList
+- AddDenyList
+- RemoveDenyList</p></td>
+<td><p>variable</p></td>
+<td><p>300 + 50</p></td>
+<td><p>350</p></td>
+</tr>
+<tr class="row-even"><td><p>Sponsored Transaction</p></td>
+<td><p>variable</p></td>
+<td><dl class="simple">
+<dt>32 + (100*number of</dt><dd><p>sponsor signatures)</p>
+</dd>
+</dl>
+</td>
 <td><p>variable</p></td>
 </tr>
 </tbody>
