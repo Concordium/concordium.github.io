@@ -120,7 +120,7 @@ Explore our developer resources, including detailed documentation, tutorials, an
    Validator Management <network/baker-pool>
    Run a Concordium Node <network/nodes/node-requirements>
    Use Concordium's ID layer <network/web3-id/index.rst>
-   Run a local chain <network/guides/run-local-chain.rst>
+   Run a local chain <network/guides/run-local-chain/index>
    Indexers <network/indexers/intro.rst>
 
 .. toctree::
