@@ -116,6 +116,53 @@ The following table shows the details for different payload types. The total cos
 |                        |                       | 54000 + 100 x         |                       |
 |                        |                       | number of keys]       |                       |
 +------------------------+-----------------------+-----------------------+-----------------------+
+| Token Update           | variable              | 300 + 100             | 400                   |
+| Operations - Transfer  |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
++------------------------+-----------------------+-----------------------+-----------------------+
+| Token Update           | variable              | 300 + 50              | 350                   |
+| Operations - Mint      |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
++------------------------+-----------------------+-----------------------+-----------------------+
+| Token Update           | variable              | 300 + 50              | 350                   |
+| Operations - Burn      |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
++------------------------+-----------------------+-----------------------+-----------------------+
+| Token Update           | variable              | 300 + 50              | 350                   |
+| Operations             |                       |                       |                       |
+| - AddAllowList         |                       |                       |                       |
+| - RemoveAllowList      |                       |                       |                       |
+| - AddDenyList          |                       |                       |                       |
+| - RemoveDenyList       |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
++------------------------+-----------------------+-----------------------+-----------------------+
+| Sponsored Transaction  | variable              | 32 + (100*number of   | variable              |
+|                        |                       |  sponsor signatures)  |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
+|                        |                       |                       |                       |
++------------------------+-----------------------+-----------------------+-----------------------+
+
+
 
 The payload cost for an update smart contract transaction is complex. The cost includes loading contract modules, loading the contract state, storing any updated state, and the interpreter energy cost. As smart contracts may invoke other smart contracts, there are costs for each of these similar to if they were invoked directly by a transaction. Furthermore, invoking host functions may also come with specific costs.
 
