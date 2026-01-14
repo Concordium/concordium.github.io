@@ -24,7 +24,7 @@ Getting started
 
 See the full setup instructions, prerequisites, and usage guide:
 
-👉 `Concordium Local Stack on GitHub <https://github.com/Concordium/concordium-local-stack>`_
+- `Concordium Local Stack on GitHub <https://github.com/Concordium/concordium-local-stack>`_
 
 The repository includes everything you need: wallet configuration, identity provisioning, test CCD distribution, and PLT token creation.
 
