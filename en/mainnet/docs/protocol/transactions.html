@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/protocol/transactions.993565c7-3568-47d5-b719-237bc6993502.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/protocol/transactions.9576a3f5-6616-4cfe-870e-0fc371dd678a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/protocol/transactions';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/protocol/transactions.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -814,20 +814,22 @@
 <span id="transaction-types-overview"></span><h2>Transaction types<a class="headerlink" href="#transaction-types" title="Link to this heading">#</a></h2>
 <p><strong>1. Simple transfer</strong></p>
 <p>This is the most fundamental transaction type, used for sending the native CCD token from one account to another. It is a straightforward value transfer, equivalent to a standard payment on other blockchains.</p>
-<p><strong>2. Smart contract transactions</strong></p>
+<p><strong>2. Register data</strong></p>
+<p>A Register Data transaction records an arbitrary byte array inside the transaction payload on-chain. It’s commonly used to anchor a hash, a timestamped proof, or an opaque blob without changing account balances or contract state (other than paying the transaction fee). The registered bytes are constrained by a protocol maximum size: MAX_REGISTERED_DATA_SIZE = 256 bytes.</p>
+<p><strong>3. Smart contract transactions</strong></p>
 <p>This category covers all interactions with <a class="reference internal" href="../resources/glossary.html#term-Smart-contract"><span class="xref std std-term">smart contracts</span></a>. It enables users to interact with dApps and manage tokens built on the CIS-2 standard (Concordium’s universal token standard for Fungible, Non-Fungible, and Semi-Fungible tokens). Common actions include:</p>
 <ul class="simple">
 <li><p>Deploying and initializing contracts</p></li>
 <li><p>Updating contracts (e.g., calling a transfer function on a CIS-2 token)</p></li>
 </ul>
-<p><strong>3. Staking and delegation transactions</strong></p>
+<p><strong>4. Staking and delegation transactions</strong></p>
 <p>These transactions are essential for participating in Concordium’s <a class="reference internal" href="../resources/glossary.html#term-Proof-of-stake"><span class="xref std std-term">proof-of-stake</span></a> network. Key transactions for <a class="reference internal" href="../resources/glossary.html#term-Delegator"><span class="xref std std-term">delegators</span></a> include:</p>
 <ul class="simple">
 <li><p>Add delegation: Staking CCD with a validator pool</p></li>
 <li><p>Update delegation: Changing the staked amount</p></li>
 <li><p>Remove delegation: Unstaking CCD</p></li>
 </ul>
-<p><strong>4. Account and identity transactions</strong></p>
+<p><strong>5. Account and identity transactions</strong></p>
 <p>Unique to Concordium’s architecture, this category includes the crucial create account transaction. This must be submitted with the cryptographic credential from a user’s verified <a class="reference internal" href="../resources/glossary.html#term-Identity-Object"><span class="xref std std-term">identity object</span></a>, linking the new account to that identity.</p>
 </section>
 <section id="references">
@@ -963,7 +965,7 @@
 
   <p class="copyright">
     
-      © Copyright 2021 - 2025, Concordium Software ApS.
+      © Copyright 2021 - 2026, Concordium Software ApS.
       <br/>
     
   </p>
