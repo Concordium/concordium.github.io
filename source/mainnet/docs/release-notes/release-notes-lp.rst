@@ -196,7 +196,7 @@ Wallets
     Updates:
 
     - Updated UI across the app with modernized UI components and the latest design system
-    - Support for verifiable presentations (proofs) from identities and accounts
+    - Added support for verifiable presentations (proofs) from identities and accounts
     - Fixed inability to change validator pool ID
 
     .. dropdown:: Previous releases
