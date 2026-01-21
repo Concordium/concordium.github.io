@@ -191,13 +191,19 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.16.1 - December 9, 2025
+    1.17.0 - January 21, 2026
 
-    Fixed:
+    Updates:
 
-    - Crash while using the file wallet
+    - Updated UI across the app with modernized UI components and the latest design system
+    - Added support for verifiable presentations (proofs) from identities and accounts
+    - Fixed inability to change validator pool ID
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.16.1 - December 9, 2025
+
+            - Crash while using the file wallet
 
         .. dropdown:: 1.16.0 - November 28, 2025
 
