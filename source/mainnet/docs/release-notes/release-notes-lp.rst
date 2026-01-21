@@ -191,7 +191,7 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.17.0 - December 9, 2025
+    1.17.0 - January 21, 2026
 
     Updates:
 
