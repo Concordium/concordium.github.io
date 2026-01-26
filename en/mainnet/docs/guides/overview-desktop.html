@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/guides/overview-desktop.bd3fe91e-0650-47bf-b2e7-da8253748d6c.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/guides/overview-desktop.9ce00f47-3ea3-4003-bb79-897cd020027a.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/guides/overview-desktop';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/guides/overview-desktop.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -815,17 +815,17 @@
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 1: Set up the node</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The Desktop Wallet must be connected to a running <strong>trusted</strong> node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default <code class="docutils literal notranslate"><span class="pre">grpc.mainnet.concordium.software</span></code> is provided. But you can run a node yourself using <a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, and <a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">with Docker</span></a> or <a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">a Debian package</span></a> on Linux. You can also have a third-party provider run a node for you.</p>
+<p class="sd-card-text">The Desktop Wallet must be connected to a running <strong>trusted</strong> node on the Concordium blockchain. The node enables the Desktop Wallet to interact with the Concordium blockchain to receive updates and submit transactions. A default <code class="docutils literal notranslate"><span class="pre">grpc.mainnet.concordium.software</span></code> is provided. Optionally, you can run a node yourself using <a class="reference internal" href="../network/nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="../network/nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">macOS</span></a>, <a class="reference internal" href="../network/nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a> or <a class="reference internal" href="../network/nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">a Debian package</span></a> on Linux. You can also have a third-party provider run a node for you.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 2: Install the Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p class="sd-card-text">Download the latest version of the Desktop Wallet for <a class="reference internal" href="../installation/downloads.html#downloads-desktop-wallet"><span class="std std-ref">Mainnet</span></a> or <a class="reference internal" href="../installation/downloads.html#downloads-desktop-wallet-testnet"><span class="std std-ref">Testnet</span></a>.</p></li>
 <li><p class="sd-card-text">Open the Desktop Wallet and create a password that contains at least 6 characters. Keep the password safe. You’ll need it to sign into the Desktop Wallet again.</p></li>
-<li><p class="sd-card-text">If this is the first time you’re opening the Desktop Wallet, you’re asked to connect to a node. If you don’t see this message, go to <strong>Settings</strong>, and then select <strong>Node settings</strong>. By default, <code class="docutils literal notranslate"><span class="pre">grpc.mainnet.concordium.software</span></code> is inserted, but you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the <strong>Address</strong> and <strong>Port</strong> of the node you’re running. The address is the network address of the node.</p></li>
-</ol>
-<ul>
+<li><p class="sd-card-text">If this is the first time you’re opening the Desktop Wallet, you’re asked to connect to a node. If you don’t see this message, go to <strong>Settings</strong>, and then select <strong>Node settings</strong>. By default, <code class="docutils literal notranslate"><span class="pre">grpc.mainnet.concordium.software</span></code> with port <code class="docutils literal notranslate"><span class="pre">20000</span></code> is inserted. Optionally, you can change this to any other node that you prefer or the node provided by your third-party provider. Enter the <strong>Address</strong> and <strong>Port</strong> of the node you’re running. The address is the network address of the node.</p>
+<blockquote>
+<div><ul>
 <li><p class="sd-card-text">If you’re running the mainnet version of the Desktop Wallet, you must connect to a mainnet node. In the <strong>Address field</strong>, enter <em>127.0.0.1</em>, and in the <strong>Port field</strong> enter <em>20000</em>.</p></li>
 <li><p class="sd-card-text">If you’re running the testnet version of the Desktop Wallet, you must connect to a testnet node. In the <strong>Address</strong> field, enter <em>127.0.0.1</em>, and in the <strong>Port field</strong> enter <em>20001</em>.</p>
 <blockquote>
@@ -834,7 +834,12 @@
 </div></blockquote>
 </li>
 </ul>
-<ol class="arabic simple">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">The “Use SSL” checkbox should be enabled when connecting to a node running with TLS mode enabled. If you are connecting to your own node with TLS mode disabled, you should uncheck this box.</p>
+</div>
+</div></blockquote>
+</li>
 <li><p class="sd-card-text">Select <strong>Set connection</strong>. If the connection is working properly, there’s a message saying <em>Successfully connected</em>.</p></li>
 </ol>
 </div>
@@ -842,12 +847,16 @@
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 3: Install the Concordium LEDGER app using LEDGER Live</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The Desktop Wallet requires that you store your keys on a LEDGER device. This is to ensure that your private account keys are kept secure. To be able to use the LEDGER device with the Desktop Wallet, you must install the Concordium LEDGER App on the hardware wallet.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p class="sd-card-text">Connect the LEDGER device to your computer, and enter your PIN code to unlock the LEDGER.</p></li>
 <li><p class="sd-card-text">In the LEDGER Live app select <strong>My Ledger</strong> in the left side panel.</p></li>
 <li><p class="sd-card-text">The LEDGER says <strong>Allow Ledger Manager</strong>. Press both buttons simultaneously to allow the manager on your LEDGER.</p></li>
-<li><p class="sd-card-text">Press the right button to navigate to <strong>Install app</strong>, and then press both buttons.</p></li>
 <li><p class="sd-card-text">Search for <strong>Concordium Ledger App</strong> in the App catalog in Ledger Live, and then select <strong>Install</strong>.</p></li>
+<li><p class="sd-card-text">If the connection to the node is successfully established and the Concordium App is installed on your Ledger device and launched, you will see the connection status with two green check marks in the lower left corner when you launch Desktop Wallet:</p>
+<blockquote>
+<div><img alt="../../_images/DW-successful-connection.png" src="../../_images/DW-successful-connection.png" />
+</div></blockquote>
+</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/node-requirements.3eee1670-787c-44b0-b2bb-818211162604.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/nodes/node-requirements.0482a5f1-90df-4f10-9026-2fc4eaeb9c6d.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/nodes/node-requirements';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/nodes/node-requirements.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -838,8 +838,60 @@ Alternatively, you can deploy your Concordium node through a decentralized Web3 
 <p>To speed up this process, Concordium nodes use an out-of-band catch-up service to download blocks as soon as the node starts. While it will still take time to process the blocks, this method is typically faster than requesting them directly from peers.</p>
 <p>This feature is enabled by default in all distributions since version 6.1, and our packages are generally already set to use out-of-band catch-up. It is controlled by the <code class="docutils literal notranslate"><span class="pre">CONCORDIUM_NODE_CONSENSUS_DOWNLOAD_BLOCKS_FROM</span></code> environment variable in the configuration file. To disable this feature, comment out the environment variable.</p>
 <p>The speed of synchronization largely depends on the performance of your storage (NVMe drives are highly recommended).</p>
-<div class="toctree-wrapper compound">
+<section id="checking-the-node-synchronization-status">
+<h3>Checking the Node synchronization status<a class="headerlink" href="#checking-the-node-synchronization-status" title="Link to this heading">#</a></h3>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Using CCDScan</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To verify whether a Concordium node is synchronized with the network, compare
+the node’s finalized block height with the latest finalized block height
+reported by CCDScan.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Open the <strong>Blocks</strong> page on <a class="reference external" href="https://ccdscan.io/blocks">CCDScan</a></p></li>
+<li><p class="sd-card-text">Locate the <strong>Height</strong> column, which represents the height of finalized
+blocks (the sequential position of each finalized block in the blockchain)
+for the selected network. The highest value displayed corresponds to the latest finalized block height.</p></li>
+<li><p class="sd-card-text">Note the highest <strong>Height</strong> value.</p></li>
+<li><p class="sd-card-text">Open your node’s page on CCDScan and locate the parameter <strong>Last Finalized Block Height</strong></p></li>
+<li><p class="sd-card-text">Compare the node’s <strong>Last Finalized Block Height</strong> with the block height
+obtained from the CCDScan <strong>Blocks</strong> page.</p></li>
+</ol>
+<p class="sd-card-text">Interpretation:</p>
+<ul class="simple">
+<li><p class="sd-card-text">If the values are equal, the node is synchronized with the network.</p></li>
+<li><p class="sd-card-text">If the node’s <strong>Last Finalized Block Height</strong> is lower than the value shown on CCDScan, the node is still synchronizing.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">A difference of 1–2 blocks is generally not considered significant and may
+occur due to normal network latency, block propagation delays, or delays in
+updating the node’s local state. Since the block time on Concordium is
+approximately 2 seconds, such a difference corresponds to only a few
+seconds.</p>
 </div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Using Concordium-client</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can also verify the synchronization status of a node using the
+<code class="docutils literal notranslate"><span class="pre">concordium-client</span></code> command-line tool.</p>
+<p class="sd-card-text">Run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>concordium-client<span class="w"> </span>raw<span class="w"> </span>GetPeerData
+</pre></div>
+</div>
+<p class="sd-card-text">The command returns information about the node’s peers and their current
+synchronization status.</p>
+<p class="sd-card-text">Interpretation:</p>
+<ul class="simple">
+<li><p class="sd-card-text">If the output lists multiple peers and all of them have the status
+<code class="docutils literal notranslate"><span class="pre">Up</span> <span class="pre">to</span> <span class="pre">date</span></code>, the node is synchronized with the network.</p></li>
+<li><p class="sd-card-text">If one or more peers are not marked as <code class="docutils literal notranslate"><span class="pre">Up</span> <span class="pre">to</span> <span class="pre">date</span></code>, the node may still
+be in the process of synchronizing.</p></li>
+</ul>
+</div>
+</details><div class="toctree-wrapper compound">
+</div>
+</section>
 </section>
 </section>
 
@@ -931,7 +983,10 @@ Alternatively, you can deploy your Concordium node through a decentralized Web3 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#node-metrics">Node metrics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronize-a-node-with-the-network">Synchronize a node with the network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synchronize-a-node-with-the-network">Synchronize a node with the network</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-the-node-synchronization-status">Checking the Node synchronization status</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -54,7 +54,7 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.c969ba7b-6d5e-4963-883c-b591e9e76954.js"></script>
+    <script defer="defer" src="../../../_static/tippy/docs/network/guides/validation-with-wallets.d8e94754-e61f-454f-86e9-3411e946b81f.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/network/guides/validation-with-wallets';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/network/guides/validation-with-wallets.html" />
     <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
@@ -813,7 +813,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Before adding a validator, you need to make sure your node is running and fully synchronized with the chain. Otherwise, if you add a validator before launching a node, your validator may be automatically suspended due to missing block production. To familiarize yourself with the process of suspending validators, check out this article: <a class="reference internal" href="suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend or unsuspend validators</span></a>.</p>
+<p>Before generating validator keys, you need to make sure your node is running and fully synchronized with the chain. Otherwise, if you generated validator keys before launching a node, your validator may be automatically suspended due to missing block production. To familiarize yourself with the process of suspending validators, check out this article: <a class="reference internal" href="suspend-unsuspend-validator.html#suspend-unsuspend-validator"><span class="std std-ref">Suspend or unsuspend validators</span></a>.</p>
 </div>
 <section id="validation-with-bw-and-cryptox">
 <h2>Validation with Concordium Wallet for Web and Concordium Wallet<a class="headerlink" href="#validation-with-bw-and-cryptox" title="Link to this heading">#</a></h2>
@@ -821,7 +821,7 @@
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 1: Set up the node</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating keys, you need to make sure that your node is fully synchronized. You can run a node <a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
+<p class="sd-card-text">For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating validator keys, you need to make sure that your node is fully synchronized. You can run a node <a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -856,7 +856,7 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 1: Set up the node</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The Desktop Wallet must be connected to a running node on the Concordium blockchain. You can run a node <a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself.</p>
+<p class="sd-card-text">For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating validator keys, you need to make sure that your node is fully synchronized. You can run a node <a class="reference internal" href="../nodes/run-node-windows/run-node-windows.html#run-node-windows"><span class="std std-ref">on Windows</span></a>, <a class="reference internal" href="../nodes/run-node-macos/run-node-macos.html#run-node-macos"><span class="std std-ref">on macOS</span></a>, <a class="reference internal" href="../nodes/run-node-ubuntu/run-node-ubuntu.html#run-node-ubuntu"><span class="std std-ref">on Ubuntu</span></a> or using <a class="reference internal" href="../nodes/run-node-docker/run-node-docker.html#run-a-node"><span class="std std-ref">Docker</span></a>. You can also have a third-party run a node on your behalf.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -866,7 +866,7 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Step 3: Set up the Concordium Desktop Wallet</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You’ll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a validator. See <a class="reference internal" href="../../guides/overview-desktop.html#overview-desktop"><span class="std std-ref">Set up the Desktop Wallet</span></a>.</p>
+<p class="sd-card-text">The Desktop Wallet must be connected to a running node on the Concordium blockchain. You’ll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a validator. See <a class="reference internal" href="../../guides/overview-desktop.html#overview-desktop"><span class="std std-ref">Set up the Desktop Wallet</span></a>.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -894,7 +894,6 @@ For instructions, see <a class="reference internal" href="../../guides/create-id
 <section id="next-steps">
 <h3>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Read the information about <a class="reference internal" href="../baker-pool.html#baker-pool"><span class="std std-ref">validation management</span></a>.</p></li>
 <li><p>If you are interested in a staking pool, read the <a class="reference internal" href="../../help-and-faq/delegation-faq.html#delegation-faq-old"><span class="std std-ref">Delegation FAQ</span></a>.</p></li>
 <li><p>You can then <a class="reference internal" href="update-baker-mw.html#update-baker-mw"><span class="std std-ref">update validator settings</span></a> as needed to manage your validator.</p></li>
 </ul>
