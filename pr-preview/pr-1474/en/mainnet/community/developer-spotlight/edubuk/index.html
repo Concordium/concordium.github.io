@@ -1,0 +1,1114 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interview with Edubuk &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=19c83c19" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tippy.css?v=124524c4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../../_static/tippy/community/developer-spotlight/edubuk/index.30c77907-de6d-4f43-a882-e9b634cbef66.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'community/developer-spotlight/edubuk/index';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/community/developer-spotlight/edubuk/index.html" />
+    <link rel="icon" href="../../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Interview with PanenkaFC" href="../panenkafc/index.html" />
+    <link rel="prev" title="Interview with Provenance Tags" href="../provenance-tags/index.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="https://docs.concordium.com/en/mainnet/docs/plt/index.html">developer documentation</a>.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo light-logo" src="../../../_static/concordium-logo-dark.svg" />
+        <img class="logo dark-logo" src="../../../_static/concordium-logo.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../devnet/devnet.html">DevNet</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../devnet/p10-devnet.html">P10 DevNet - The next generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../devnet/p9-devnet.html">P9 DevNet - Protocol-level tokens (archived)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Developer Spotlight</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../aesirx/index.html">Interview with AesirX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../provenance-tags/index.html">Interview with Provenance Tags</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Interview with Edubuk</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../panenkafc/index.html">Interview with PanenkaFC</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../office-hours/index.html">Office Hours</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="interview-with-edubuk">
+<span id="edubuk-interview"></span><h1>Interview with <a class="reference external" href="https://edubukeseal.org/">Edubuk</a><a class="headerlink" href="#interview-with-edubuk" title="Link to this heading">#</a></h1>
+<p><strong>Developer Spotlight: A Conversation with Apoorva Bajaj, Co-Founder and CEO of Edubuk</strong></p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../_images/edubuk.png"><img alt="Edubuk team photo" src="../../../_images/edubuk.png" style="width: 432.0px; height: 432.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><em>Edubuk team</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this edition of Developer Spotlight, we speak with the Edubuk team to understand how their platform is built from a technical perspective.
+The conversation focuses on Edubuk’s experience developing blockchain-based credential solutions on Concordium, including products such as eSeal and TruCV.</p>
+<p>We discuss how the team approaches development, which Concordium features are used in practice, and what challenges arise when building systems for real-world education and hiring use cases.
+This interview is intended for developers who want to learn how a production-ready project is implemented on Concordium.</p>
+</section>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<section id="can-you-introduce-yourself-and-tell-us-about-your-background-in-technology">
+<h2>Can you introduce yourself and tell us about your background in technology?<a class="headerlink" href="#can-you-introduce-yourself-and-tell-us-about-your-background-in-technology" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> I’m part of the core engineering and product leadership team at Edubuk, working at the intersection of AI, blockchain, and digital credentials.
+My background spans full-stack system design, blockchain protocol integration, and enterprise-grade application architecture, with a strong focus on building production-ready systems rather than experimental demos.</p>
+<p>Before Edubuk, our team worked extensively on data systems, security-first architectures, and compliance-heavy environments, which naturally shaped how we approach decentralized systems today.
+At Edubuk, we are responsible for designing and deploying TruCV — a blockchain-based, verifiable CV and credential framework used by universities, employers, and governments.</p>
+</section>
+<section id="how-did-you-first-get-into-blockchain-or-web3">
+<h2>How did you first get into blockchain or Web3?<a class="headerlink" href="#how-did-you-first-get-into-blockchain-or-web3" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> We entered blockchain not out of hype, but out of necessity. While working on credential verification and hiring workflows, we repeatedly encountered the same hard problems:</p>
+<ul class="simple">
+<li><p>Credential forgery and unverifiable claims</p></li>
+<li><p>Centralized databases acting as single points of failure</p></li>
+<li><p>No cryptographic way to prove authenticity without exposing personal data</p></li>
+</ul>
+<p>Traditional databases and PKI systems simply couldn’t solve trust at scale across institutions.
+Blockchain became compelling once we realized it could act as a neutral trust layer, where:</p>
+<ul class="simple">
+<li><p>Issuers don’t need to trust each other</p></li>
+<li><p>Verifiers don’t need direct integrations</p></li>
+<li><p>Individuals retain ownership of their data</p></li>
+</ul>
+<p>From there, Web3 became less about tokens and more about verifiable truth, privacy, and interoperability.</p>
+</section>
+<section id="what-motivated-you-from-a-technical-standpoint-to-choose-concordium-as-your-base-chain-was-it-performance-identity-integrations-tooling-or-something-else">
+<h2>What motivated you — from a technical standpoint — to choose Concordium as your base chain? Was it performance, identity integrations, tooling, or something else?<a class="headerlink" href="#what-motivated-you-from-a-technical-standpoint-to-choose-concordium-as-your-base-chain-was-it-performance-identity-integrations-tooling-or-something-else" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Choosing Concordium was a very deliberate engineering decision, driven by production requirements rather than ideology. The key technical reasons were:</p>
+<ul class="simple">
+<li><p><strong>Protocol-level Identity</strong>. For verifiable credentials, identity is not optional. Concordium’s built-in ID layer allowed us to anchor real-world accountability while still preserving on-chain privacy. No custom KYC smart contracts. No fragmented identity logic. It’s native to the protocol.</p></li>
+<li><p><strong>Privacy by Design using Cryptography</strong>. Concordium’s zero-knowledge proof support allows users to prove facts without revealing raw data. This aligned perfectly with our GDPR, DPDP, and CCPA compliance requirements.</p></li>
+<li><p><strong>Deterministic Finality &amp; Predictable Fees</strong>. Credential issuance and verification are real-world workflows — they cannot fail randomly or become expensive overnight. Concordium’s fast finality and stable, predictable transaction costs made it viable for mass issuance at institutional scale.</p></li>
+<li><p><strong>Mature Smart Contract Model</strong>. The Rust-based smart contract environment allowed us to write secure, auditable, and deterministic logic, which is essential when credentials are long-lived and legally relevant.</p></li>
+<li><p><strong>Enterprise &amp; Regulator Readiness</strong>. Most chains optimize for DeFi or NFTs. Concordium optimizes for regulated use cases, which matches our users: universities, employers, public institutions, and cross-border partners.</p></li>
+</ul>
+</section>
+</section>
+<section id="about-edubuk-project">
+<h1>About Edubuk Project<a class="headerlink" href="#about-edubuk-project" title="Link to this heading">#</a></h1>
+<section id="could-you-give-us-a-brief-summary-of-your-project">
+<h2>Could you give us a brief summary of your project?<a class="headerlink" href="#could-you-give-us-a-brief-summary-of-your-project" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Edubuk is building <strong>TruCV</strong>, world’s first blockchain-verified, tamper-proof digital CV and credential framework designed for real-world hiring and education ecosystems.
+At a technical level, TruCV enables:</p>
+<ul class="simple">
+<li><p>Issuance of academic and professional credentials by trusted institutions</p></li>
+<li><p>On-chain verification of authenticity and integrity</p></li>
+<li><p>Off-chain, user-controlled storage of documents</p></li>
+<li><p>Privacy-preserving sharing of verifiable claims</p></li>
+</ul>
+<p>The system combines blockchain anchoring, cryptographic proofs, and AI-driven job matching, allowing employers to verify credentials instantly while candidates retain full ownership of their data.</p>
+</section>
+<section id="what-problem-does-your-project-aim-to-solve-and-for-whom">
+<h2>What problem does your project aim to solve, and for whom?<a class="headerlink" href="#what-problem-does-your-project-aim-to-solve-and-for-whom" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> The core problem is trust fragmentation in education and hiring. Today:</p>
+<ul class="simple">
+<li><p>Employers cannot reliably verify CV claims</p></li>
+<li><p>Universities struggle with costly, manual verification requests</p></li>
+<li><p>Candidates lose control over their data</p></li>
+<li><p>Governments face credential fraud at national scale</p></li>
+</ul>
+<p>TruCV solves this for:</p>
+<ul class="simple">
+<li><p>Students and professionals → portable, verifiable credentials they own</p></li>
+<li><p>Universities and training institutions → secure issuance without managing verification infrastructure</p></li>
+<li><p>Employers and recruiters → instant, cryptographically verifiable hiring signals</p></li>
+<li><p>Governments and regulators → auditability without mass data exposure</p></li>
+</ul>
+<p>The result is trust without centralization.</p>
+</section>
+<section id="what-makes-your-project-built-on-the-concordium-chain-unique-from-other-similar-projects">
+<h2>What makes your project built on the Concordium chain unique from other similar projects?<a class="headerlink" href="#what-makes-your-project-built-on-the-concordium-chain-unique-from-other-similar-projects" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Building TruCV on Concordium allowed us to address challenges that are extremely difficult to solve on identity-agnostic blockchains. What makes TruCV unique is not just that credentials are stored on-chain, but how identity, privacy, and accountability are combined at a system level.</p>
+<p>TruCV is built around the idea that verifiable credentials must be issued by real, accountable institutions, while still protecting user privacy. Concordium’s protocol-level identity allows issuers to be cryptographically verified entities, which makes credential issuance auditable and legally defensible, without forcing users to expose personal data on-chain. This balance between accountability and privacy is essential for CVs and credentials to work in real-world, regulated environments.</p>
+<p>At the same time, TruCV is designed so that verification can happen without disclosing underlying personal data. Credentials can be proven valid while sensitive information remains off-chain, with selective disclosure enforced cryptographically. This is a core requirement for operating across jurisdictions with regulations such as GDPR, DPDP, and CCPA.</p>
+<p>Another key differentiator is reliability at scale. Credential issuance is not an experimental workflow — it is an operational process for universities and employers. Concordium’s deterministic finality and predictable transaction costs allow us to issue credentials in batches, avoid re-organization risks, and provide institutions with the level of reliability and guarantees they expect.</p>
+<p>Finally, TruCV treats credentials as long-lived assets. CVs must remain verifiable years after issuance, support controlled revocation, and withstand audits over time. Concordium’s smart contract model enabled us to design contracts with clear state transitions and strong security properties, which is critical when credentials are meant to serve as durable proofs rather than short-lived tokens.</p>
+<p>Taken together, these factors allow TruCV to function not just as a Web3-native product, but as infrastructure that universities, employers, and governments can realistically adopt.</p>
+</section>
+</section>
+<section id="team-and-background">
+<h1>Team and Background<a class="headerlink" href="#team-and-background" title="Link to this heading">#</a></h1>
+<section id="could-you-share-a-bit-about-your-team">
+<h2>Could you share a bit about your team?<a class="headerlink" href="#could-you-share-a-bit-about-your-team" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> The leadership team is alumni from Indian IVY League colleges: IIT, IIM, GoldMedallist, CFA Charterholder, ex-Goldman Sachs,
+JP Morgan, DE Shaw and ex-Professor from Indian Education Ecosystem, also Topper and Summa Cum Laude from their academics perspective.
+Edubuk is built by a cross-functional team combining deep expertise in blockchain engineering, AI systems, and enterprise education technology.</p>
+<p>From the beginning, the team has focused on building production-grade infrastructure rather than experimental prototypes.
+This mindset comes from working closely with universities, employers, government bodies, and regulated ecosystems, where reliability, security, and compliance are essential.
+The team operates with a product-first and engineering-led culture.</p>
+</section>
+<section id="how-many-team-members-are-participating-in-the-project">
+<h2>How many team members are participating in the project?<a class="headerlink" href="#how-many-team-members-are-participating-in-the-project" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> The core team working on Edubuk and TruCV consists of 12 members, supported by extended contributors and advisors across technology, academia, and policy.
+The core group includes blockchain and smart contract engineers, backend and platform engineers, AI and data science specialists, and product, compliance, and partnerships leads.</p>
+</section>
+<section id="where-is-your-team-based">
+<h2>Where is your team based?<a class="headerlink" href="#where-is-your-team-based" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> The team operates in a distributed setup, with a strong base in India, and active collaboration across and the Middle East.
+This geographic distribution mirrors the cross-border nature of education credentials and hiring.</p>
+</section>
+<section id="what-are-the-areas-of-expertise-represented-in-your-team">
+<h2>What are the areas of expertise represented in your team?<a class="headerlink" href="#what-are-the-areas-of-expertise-represented-in-your-team" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Our team brings together expertise across several critical domains:</p>
+<ul class="simple">
+<li><p>Blockchain &amp; Smart Contracts: Design and deployment of secure, auditable smart contracts on Concordium.</p></li>
+<li><p>AI &amp; Data Systems: Building AI-driven CV-to-job matching, skill inference, and analytics on top of verified data.</p></li>
+<li><p>Backend &amp; Platform Engineering: Scalable APIs, off-chain storage orchestration, indexing services.</p></li>
+<li><p>Security &amp; Compliance: Designing systems compliant with GDPR, DPDP, and CCPA.</p></li>
+<li><p>Education &amp; HR Domain Expertise: Deep understanding of academic credentialing and hiring workflows.</p></li>
+</ul>
+</section>
+</section>
+<section id="technology-deep-dive">
+<h1>Technology Deep Dive<a class="headerlink" href="#technology-deep-dive" title="Link to this heading">#</a></h1>
+<section id="what-key-technologies-frameworks-or-tools-did-you-use-to-build-your-project">
+<h2>What key technologies, frameworks, or tools did you use to build your project?<a class="headerlink" href="#what-key-technologies-frameworks-or-tools-did-you-use-to-build-your-project" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Edubuk’s TruCV and eSeal systems are built using a hybrid on-chain / off-chain architecture, optimized for privacy, compliance, and scale. Core stack highlights:</p>
+<ul class="simple">
+<li><p>Blockchain Layer: Smart contracts written in Rust on Concordium. On-chain state used only for hash anchoring, metadata, issuer proofs, and revocation flags.</p></li>
+<li><p>Identity &amp; Wallet Layer: Concordium’s protocol-level identity framework and CCD wallet.</p></li>
+<li><p>Backend &amp; APIs: Node.js / Python microservices, REST + event-driven services.</p></li>
+<li><p>Off-Chain Storage: User-controlled storage. Only cryptographic hashes and proofs are recorded on-chain.</p></li>
+<li><p>AI &amp; Data Layer: NLP models for CV parsing, AI-driven JD-to-CV matching using verified credential signals.</p></li>
+</ul>
+<p>This separation ensures the blockchain is used only where trust and immutability are required.</p>
+</section>
+<section id="are-there-technical-insights-or-architectural-decisions-you-d-highlight-for-other-developers">
+<h2>Are there technical insights or architectural decisions you’d highlight for other developers?<a class="headerlink" href="#are-there-technical-insights-or-architectural-decisions-you-d-highlight-for-other-developers" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Yes - three key takeaways:</p>
+<ol class="arabic simple">
+<li><p>Do not put personal data on-chain unless absolutely required. Use blockchain as a trust anchor, not a database.</p></li>
+<li><p>Identity should be native, not bolted on. Protocol-level identity simplifies compliance and security enormously.</p></li>
+<li><p>Design for 5-10 year durability. Credentials must remain verifiable long after technologies change.</p></li>
+</ol>
+</section>
+<section id="your-eseal-system-is-central-to-how-edubuk-issues-tamper-proof-certificates-on-chain-could-you-explain-how-eseal-works-at-a-high-level-and-why-you-chose-to-anchor-these-credentials-on-concordium-blockchain">
+<h2>Your eSeal system is central to how Edubuk issues tamper-proof certificates on-chain. Could you explain how eSeal works at a high level and why you chose to anchor these credentials on Concordium blockchain?<a class="headerlink" href="#your-eseal-system-is-central-to-how-edubuk-issues-tamper-proof-certificates-on-chain-could-you-explain-how-eseal-works-at-a-high-level-and-why-you-chose-to-anchor-these-credentials-on-concordium-blockchain" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> eSeal is Edubuk’s tamper-proof digital sealing system for certificates, transcripts, CVs, and official documents. How it works at the high Level:</p>
+<ol class="arabic simple">
+<li><p>Document Creation: Institution issues a digital document.</p></li>
+<li><p>Cryptographic Sealing: A cryptographic hash is generated and signed by the issuer’s verified Concordium identity.</p></li>
+<li><p>On-Chain Anchoring: The hash, issuer signature, timestamp, and metadata are recorded on-chain. No document content is stored.</p></li>
+<li><p>Verification: Any verifier can re-hash the document and match it against the on-chain record to confirm authenticity.</p></li>
+</ol>
+<p>We chose Concordium because eSeal requires three guarantees simultaneously: Authenticity (verified issuer identities), Privacy (no personal data on-chain), and Legal &amp; Regulatory Readiness (lawful accountability). These are native protocol properties on Concordium.</p>
+</section>
+<section id="trucv-is-a-powerful-concept-a-fully-verifiable-cv-built-from-authenticated-on-chain-credentials-how-do-you-envision-trucv-improving-trust-between-learners-institutions-and-employers-and-what-opportunities-does-it-unlock-for-the-future-of-digital-identity">
+<h2>TruCV is a powerful concept - a fully verifiable CV built from authenticated on-chain credentials. How do you envision TruCV improving trust between learners, institutions, and employers, and what opportunities does it unlock for the future of digital identity?<a class="headerlink" href="#trucv-is-a-powerful-concept-a-fully-verifiable-cv-built-from-authenticated-on-chain-credentials-how-do-you-envision-trucv-improving-trust-between-learners-institutions-and-employers-and-what-opportunities-does-it-unlock-for-the-future-of-digital-identity" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> At its core, TruCV transforms the CV from a self-declared document into a cryptographically
+verifiable trust object, replacing claims with verifiable truth by default. Improving Trust Across the Ecosystem:</p>
+<ul class="simple">
+<li><p>For Learners &amp; Professionals: Gives ownership of credibility with a portable, verifiable profile, reducing friction and protecting privacy.</p></li>
+<li><p>For Institutions: Allows them to issue credentials once and have them verified globally, lowering overhead and increasing credibility.</p></li>
+<li><p>For Employers &amp; Recruiters: Enables focus on candidate fit rather than authenticity, making hiring faster, fairer, and less risky.</p></li>
+</ul>
+<p>TruCV represents a new model for digital identity that is privacy-preserving, accountable, and interoperable. It unlocks possibilities like:</p>
+<ul class="simple">
+<li><p>Minimal-Disclosure Identity: Proving attributes without revealing personal details.</p></li>
+<li><p>AI Systems That Trust Their Inputs: Models operating only on verified data for reliable outcomes.</p></li>
+<li><p>Cross-Border Credential Portability: Instant global verification and lifelong portability.</p></li>
+<li><p>Identity as a Public Good: Shifting ownership away from centralized platforms to individuals and institutions.</p></li>
+</ul>
+<p>We see TruCV as a foundational layer for trusted digital identity, helping move the internet from a claims-based world to a proof-based one.</p>
+</section>
+</section>
+<section id="community-collaboration">
+<h1>Community &amp; Collaboration<a class="headerlink" href="#community-collaboration" title="Link to this heading">#</a></h1>
+<section id="how-do-you-engage-with-your-community-users-or-partners-and-what-role-do-they-play-in-your-project-s-growth">
+<h2>How do you engage with your community, users, or partners, and what role do they play in your project’s growth?<a class="headerlink" href="#how-do-you-engage-with-your-community-users-or-partners-and-what-role-do-they-play-in-your-project-s-growth" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Community and partner engagement is a core input into our product design. We engage at three levels:</p>
+<ul class="simple">
+<li><p>Institutional Users - Universities, Employers, Governments. Their feedback influences credential formats, revocation workflows, and verification UX/SLAs. Early feedback is critical to avoid theoretical designs.</p></li>
+<li><p>Developers &amp; Integrators: We work with them to stress-test APIs, identify friction in identity flows, and improve abstraction layers.</p></li>
+<li><p>End Users - Students &amp; Professionals. They validate usability, privacy expectations, and data ownership models, influencing our off-chain storage and selective disclosure design.</p></li>
+</ul>
+</section>
+<section id="how-has-our-community-supported-you-discord-forums-hackathons-grants-events">
+<h2>How has our community supported you (Discord, forums, hackathons, grants, events)?<a class="headerlink" href="#how-has-our-community-supported-you-discord-forums-hackathons-grants-events" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> The Concordium community has been supportive in concrete ways:</p>
+<ul class="simple">
+<li><p>Developer Channels (Discord &amp; Forums): Useful for clarifying identity flows and smart contract best practices. The signal-to-noise ratio is high.</p></li>
+<li><p>Direct Technical Support &amp; Knowledge Sharing: Benefited from documentation and example repos written for builders.</p></li>
+<li><p>Ecosystem Alignment: Concordium’s focus on identity, privacy, and regulatory readiness aligns closely with our mission, reducing friction with partners.</p></li>
+</ul>
+<p>While hackathons/grants aren’t our primary driver, the ecosystem’s emphasis on long-term adoption over short-term hype is a strong cultural match.</p>
+</section>
+</section>
+<section id="challenges-lessons-learned">
+<h1>Challenges &amp; Lessons Learned<a class="headerlink" href="#challenges-lessons-learned" title="Link to this heading">#</a></h1>
+<section id="what-were-the-main-technical-challenges-you-encountered-during-development-and-how-did-you-address-them">
+<h2>What were the main technical challenges you encountered during development, and how did you address them?<a class="headerlink" href="#what-were-the-main-technical-challenges-you-encountered-during-development-and-how-did-you-address-them" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> The main challenge was designing a system that balances three competing requirements: immutability, privacy, and real-world compliance.
+Credentials must remain tamper-proof and long-lived, personal and academic data must not be exposed, and institutions and regulators need accountability and lawful auditability.
+Reconciling these constraints required careful architectural separation.</p>
+<p>We treat the blockchain strictly as a trust anchor, keep identity at the protocol level, and ensure that personal data remains off-chain under user control.
+This approach became the foundation of the system after multiple iterations.</p>
+<p>One concrete challenge was handling revocation without compromising immutability. While credential hashes remain permanently anchored on-chain,
+revocation status is managed through issuer-controlled registries, allowing credentials to be invalidated in exceptional cases without altering historical records.</p>
+<p>Another challenge was balancing privacy with verifiability. Storing full credentials on-chain was neither legally nor ethically acceptable,
+so we adopted a hash-anchoring model where only cryptographic fingerprints and issuer signatures are recorded on-chain, while documents themselves remain off-chain.</p>
+<p>Finally, institutional usability was a critical consideration. Most universities and employers are not Web3-native,
+so we abstracted blockchain complexity behind familiar dashboards and APIs, minimizing the need for direct interaction with wallets or on-chain tooling.</p>
+</section>
+<section id="what-is-the-most-important-lesson-you-learned-while-building-your-project">
+<h2>What is the most important lesson you learned while building your project?<a class="headerlink" href="#what-is-the-most-important-lesson-you-learned-while-building-your-project" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> The most important lesson is: Blockchain should reduce complexity for real users - not increase it.
+The most successful systems use blockchain sparingly and intentionally, hide complexity behind familiar interfaces,
+and respect legal and usability constraints.</p>
+<p>Another key lesson: identity and compliance cannot be bolted on later.
+This is why building on Concordium worked so well—it allowed us to design for long-term trust and adoption from day one.</p>
+</section>
+</section>
+<section id="future-plans-and-vision">
+<h1>Future Plans and Vision<a class="headerlink" href="#future-plans-and-vision" title="Link to this heading">#</a></h1>
+<section id="what-s-next-for-your-project-what-features-or-improvements-are-you-planning">
+<h2>What’s next for your project? What features or improvements are you planning?<a class="headerlink" href="#what-s-next-for-your-project-what-features-or-improvements-are-you-planning" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Our roadmap is focused on scaling trust, not just adding features. We are expanding the range of credentials supported by the platform,
+including micro-credentials, employment history proofs, and government-issued certifications, so that TruCV can represent a broader and more complete professional profile.</p>
+<p>At the same time, we are continuing to enhance AI-driven trust signals across the ecosystem.
+This includes improving AI-based CV-to-job-description matching, skill gap analysis, and institution-level analytics, all built exclusively on verified data.
+Together, these improvements are designed to make TruCV and eSeal easier to integrate, harder to misuse, and more valuable at scale.</p>
+</section>
+<section id="are-there-new-capabilities-you-re-excited-to-build-using-concordium-blockchain">
+<h2>Are there new capabilities you’re excited to build using Concordium blockchain?<a class="headerlink" href="#are-there-new-capabilities-you-re-excited-to-build-using-concordium-blockchain" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> Yes. Building on Concordium enables us to explore advanced selective disclosure and attribute proofs,
+where specific attributes can be proven without revealing full credentials, enabling minimal-disclosure hiring scenarios.</p>
+<p>We are also focused on verifiable credential interoperability by aligning with global standards for cross-platform verification,
+which is essential as credentials move across systems and jurisdictions. In parallel, we are working on
+governance-controlled credential lifecycles, introducing transparent and rule-based processes for credential updates and revocations.</p>
+<p>Beyond credentials themselves, Concordium also enables ecosystem-level collaboration in areas such as identity-aware payments
+and trusted data exchange between institutions, extending the value of verified identity across multiple use cases.</p>
+</section>
+</section>
+<section id="final-question">
+<h1>Final Question<a class="headerlink" href="#final-question" title="Link to this heading">#</a></h1>
+<section id="is-there-anything-important-we-haven-t-asked-about-for-example-would-you-like-to-share-insights-into-how-your-ai-job-matching-system-works-or-any-other-engineering-elements-behind-edubuk">
+<h2>Is there anything important we haven’t asked about? For example, would you like to share insights into how your AI job-matching system works or any other engineering elements behind Edubuk?<a class="headerlink" href="#is-there-anything-important-we-haven-t-asked-about-for-example-would-you-like-to-share-insights-into-how-your-ai-job-matching-system-works-or-any-other-engineering-elements-behind-edubuk" title="Link to this heading">#</a></h2>
+<p><strong>Apoorva:</strong> One important area is TruJobs - our AI-driven, trust-first job-matching system built on top of TruCV.
+While TruCV establishes verifiable truth, TruJobs turns it into actionable intelligence.
+Let me explain how TruJobs Works from an engineering perspective. Most job-matching systems operate on unverified, self-declared data. TruJobs is architected differently:</p>
+<ol class="arabic simple">
+<li><p>Verified-Data-First AI Pipeline: Models only consume verified signals (on-chain credentials, institution-issued certificates), leading to proof-backed matching.</p></li>
+<li><p>CV-to-JD Matching with Explainability: Uses NLP and semantic similarity, weighting matches based on credential authenticity. Outputs an explainable match rationale.</p></li>
+<li><p>Privacy-Preserving Matching: AI inference runs on selectively disclosed attributes; raw documents remain off-chain.</p></li>
+<li><p>Trust-Aware Ranking: Ranks candidates based on credential trustworthiness, which is not possible on identity-agnostic platforms.</p></li>
+</ol>
+<p>Why Concordium Matters for TruJobs ? It allows us to make AI systems accountable by anchoring them to cryptographic truth,
+because identities are protocol-leveland issuers are real, verified entities. Engineering Insight: AI is only as good as the trustworthiness of its inputs.
+By combining verifiable credentials (TruCV) with AI-driven matching (TruJobs), we design systems that are more accurate, fair, explainable, and compliant.</p>
+</section>
+</section>
+<section id="closing">
+<h1>Closing<a class="headerlink" href="#closing" title="Link to this heading">#</a></h1>
+<p>Edubuk is building an end-to-end trust stack: eSeal (issuance), TruCV (identity), TruJobs (hiring).
+Together, they represent a shift from claims-based digital systems to proof-based ones - essential for the future of education, employment, and digital identity.</p>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../provenance-tags/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Interview with Provenance Tags</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../panenkafc/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Interview with PanenkaFC</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interview with Edubuk</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-you-introduce-yourself-and-tell-us-about-your-background-in-technology">Can you introduce yourself and tell us about your background in technology?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-did-you-first-get-into-blockchain-or-web3">How did you first get into blockchain or Web3?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-motivated-you-from-a-technical-standpoint-to-choose-concordium-as-your-base-chain-was-it-performance-identity-integrations-tooling-or-something-else">What motivated you — from a technical standpoint — to choose Concordium as your base chain? Was it performance, identity integrations, tooling, or something else?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-edubuk-project">About Edubuk Project</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-give-us-a-brief-summary-of-your-project">Could you give us a brief summary of your project?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-problem-does-your-project-aim-to-solve-and-for-whom">What problem does your project aim to solve, and for whom?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-your-project-built-on-the-concordium-chain-unique-from-other-similar-projects">What makes your project built on the Concordium chain unique from other similar projects?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#team-and-background">Team and Background</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#could-you-share-a-bit-about-your-team">Could you share a bit about your team?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-many-team-members-are-participating-in-the-project">How many team members are participating in the project?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-your-team-based">Where is your team based?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-areas-of-expertise-represented-in-your-team">What are the areas of expertise represented in your team?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#technology-deep-dive">Technology Deep Dive</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-key-technologies-frameworks-or-tools-did-you-use-to-build-your-project">What key technologies, frameworks, or tools did you use to build your project?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-technical-insights-or-architectural-decisions-you-d-highlight-for-other-developers">Are there technical insights or architectural decisions you’d highlight for other developers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-eseal-system-is-central-to-how-edubuk-issues-tamper-proof-certificates-on-chain-could-you-explain-how-eseal-works-at-a-high-level-and-why-you-chose-to-anchor-these-credentials-on-concordium-blockchain">Your eSeal system is central to how Edubuk issues tamper-proof certificates on-chain. Could you explain how eSeal works at a high level and why you chose to anchor these credentials on Concordium blockchain?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trucv-is-a-powerful-concept-a-fully-verifiable-cv-built-from-authenticated-on-chain-credentials-how-do-you-envision-trucv-improving-trust-between-learners-institutions-and-employers-and-what-opportunities-does-it-unlock-for-the-future-of-digital-identity">TruCV is a powerful concept - a fully verifiable CV built from authenticated on-chain credentials. How do you envision TruCV improving trust between learners, institutions, and employers, and what opportunities does it unlock for the future of digital identity?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#community-collaboration">Community &amp; Collaboration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-you-engage-with-your-community-users-or-partners-and-what-role-do-they-play-in-your-project-s-growth">How do you engage with your community, users, or partners, and what role do they play in your project’s growth?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-has-our-community-supported-you-discord-forums-hackathons-grants-events">How has our community supported you (Discord, forums, hackathons, grants, events)?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-lessons-learned">Challenges &amp; Lessons Learned</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-were-the-main-technical-challenges-you-encountered-during-development-and-how-did-you-address-them">What were the main technical challenges you encountered during development, and how did you address them?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-most-important-lesson-you-learned-while-building-your-project">What is the most important lesson you learned while building your project?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#future-plans-and-vision">Future Plans and Vision</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next-for-your-project-what-features-or-improvements-are-you-planning">What’s next for your project? What features or improvements are you planning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-new-capabilities-you-re-excited-to-build-using-concordium-blockchain">Are there new capabilities you’re excited to build using Concordium blockchain?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#final-question">Final Question</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-anything-important-we-haven-t-asked-about-for-example-would-you-like-to-share-insights-into-how-your-ai-job-matching-system-works-or-any-other-engineering-elements-behind-edubuk">Is there anything important we haven’t asked about? For example, would you like to share insights into how your AI job-matching system works or any other engineering elements behind Edubuk?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closing">Closing</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/community/developer-spotlight/edubuk/index.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2026, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">     
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>     
+    <button onclick="consentDenied()">Decline</button>     
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a> 
+</div>  
+
+<!-- Matomo --> 
+<script>   
+var _paq = window._paq = window._paq || [];  
+
+// Save the choice in a cookie with proper attributes
+function storeChoice(granted) {   
+    // Set cookie with 1 year expiration, path, and secure attributes
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = "cookie-consent=" + granted + "; expires=" + expires.toUTCString() + "; path=/; SameSite=Lax";
+}  
+
+// Look for a cookie storing the previous choice of the user. 
+// Returns null if no choice was stored, true if granted, false if denied
+function loadChoice() {   
+    if (!document.cookie.includes("cookie-consent=")) {       
+        return null;   
+    }   
+    return document.cookie.includes("cookie-consent=true");
+}  
+
+// Removes the cookie consent banner safely
+function removeCookieConsentBanner() {   
+    const banner = document.getElementById("cookie-consent");
+    if (banner) {
+        banner.remove();
+    }
+}  
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {   
+    storeChoice(true);
+    _paq.push(['setCookieConsentGiven']);   
+    removeCookieConsentBanner();
+}  
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {   
+    storeChoice(false);  // FIXED: Now correctly stores false
+    removeCookieConsentBanner();
+}  
+
+// Check for stored consent and act accordingly
+const stored = loadChoice(); 
+if (stored === true) {
+    // User previously granted consent
+    _paq.push(['setCookieConsentGiven']);
+    removeCookieConsentBanner();
+} else if (stored === false) {
+    // User previously denied consent
+    removeCookieConsentBanner();
+}
+// If stored === null, show the banner (do nothing)
+
+_paq.push(['requireCookieConsent']); 
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */ 
+_paq.push(['trackPageView']); 
+_paq.push(['enableLinkTracking']);  
+
+(function() {     
+    var u="https://concordium.matomo.cloud/";     
+    _paq.push(['setTrackerUrl', u+'matomo.php']);     
+    _paq.push(['setSiteId', '2']);     
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];     
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);   
+})();    
+
+// Only remember consent if it was actually granted
+if (stored === true) {
+    _paq.push(['rememberCookieConsentGiven']);
+}
+</script>   
+
+<!-- Start of HubSpot Embed Code --> 
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script> 
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
