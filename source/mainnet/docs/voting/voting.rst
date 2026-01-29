@@ -34,7 +34,7 @@ Voting from multiple accounts
 
 Since the votes are weighted by the number of CCD on the account, for a user to vote with their full weight they need to vote from all their accounts.
 
-For |cryptox| wallet users: Simply disconnect and reconnect to select a different account.
+For |cryptox| users: Simply disconnect and reconnect to select a different account.
 
 For |bw| users: Disconnecting and connecting will reconnect to the same account. To change accounts, follow the instructions below.
 
@@ -74,7 +74,7 @@ These wallets do not have the capability to connect to dApps. But you do have an
 
     #. In the account from which you want to vote, click **Send**.
 
-    #. Enter any amount of CCD (1 micro-CCD is enough). The target account in |bw| or |cryptox| is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says **delegatevote2025**.
+    #. Enter any amount of CCD (1 micro-CCD is enough). The target account in |bw| or |cryptox| is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says ``delegatevote``.
 
         .. image:: ../images/voting/dw-vote-delegation.png
             :alt: send CCD window in desktop wallet showing how to delegate vote
@@ -97,11 +97,22 @@ These wallets do not have the capability to connect to dApps. But you do have an
 
     .. code-block:: console
 
-        $concordium-client --secure --grpc-ip grpc.mainnet.concordium.software transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote2025
+        $concordium-client --secure --grpc-ip grpc.mainnet.concordium.software transaction send --amount AMOUNT --receiver A --sender B --memo delegatevote
 
-    #. Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo *delegatevote2025* for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.
+    #. Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo ``delegatevote`` for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.
 
     #. Vote from the account that has received the delegation.
+
+Transaction fees when voting from a delegated account
+-----------------------------------------------------
+
+If you delegate your voting power from one account to another (for example, from a Desktop Wallet account or via concordium-client to an account managed by |bw| or |cryptox|),
+please note that casting a vote involves submitting a transaction to the voting smart contract, and any transaction fees are paid from the balance of the account used to cast the vote.
+
+This means that after delegation, you must ensure that the receiving account has enough CCD to cover the smart contract transaction fee
+required to cast the vote. The fee amount can vary depending on the voting contract and network conditions.
+
+For example, if you delegate voting power from ``Account A`` to ``Account B``, the vote is submitted using Account B, and the transaction fee is deducted from Account B’s balance.
 
 How to see delegations
 ======================
