@@ -54,7 +54,7 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="../../_static/tippy/docs/voting/voting.873989c2-3d7f-4c90-ae62-9cfc699543ed.js"></script>
+    <script defer="defer" src="../../_static/tippy/docs/voting/voting.62638850-2e84-4ac4-a068-cce33e97ad3c.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/voting/voting';</script>
     <link rel="canonical" href="https://docs.concordium.com/en/mainnet/docs/voting/voting.html" />
     <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
@@ -825,7 +825,7 @@
 <section id="voting-from-multiple-accounts">
 <h3>Voting from multiple accounts<a class="headerlink" href="#voting-from-multiple-accounts" title="Link to this heading">#</a></h3>
 <p>Since the votes are weighted by the number of CCD on the account, for a user to vote with their full weight they need to vote from all their accounts.</p>
-<p>For Concordium Wallet wallet users: Simply disconnect and reconnect to select a different account.</p>
+<p>For Concordium Wallet users: Simply disconnect and reconnect to select a different account.</p>
 <p>For Concordium Wallet for Web users: Disconnecting and connecting will reconnect to the same account. To change accounts, follow the instructions below.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -864,7 +864,7 @@
 <p class="sd-card-text"><strong>To delegate your vote:</strong></p>
 <ol class="arabic">
 <li><p class="sd-card-text">In the account from which you want to vote, click <strong>Send</strong>.</p></li>
-<li><p class="sd-card-text">Enter any amount of CCD (1 micro-CCD is enough). The target account in Concordium Wallet for Web or Concordium Wallet is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says <strong>delegatevote2025</strong>.</p>
+<li><p class="sd-card-text">Enter any amount of CCD (1 micro-CCD is enough). The target account in Concordium Wallet for Web or Concordium Wallet is the recipient (in the image below the recipient account has been added to the address book and named My vote delegation). Add a transaction memo that says <code class="docutils literal notranslate"><span class="pre">delegatevote</span></code>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/dw-vote-delegation.png"><img alt="send CCD window in desktop wallet showing how to delegate vote" src="../../_images/dw-vote-delegation.png" style="width: 100%;" />
 </a>
@@ -884,15 +884,23 @@
 <span class="sd-summary-text">Concordium Client</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Users need to create a new account in Concordium Wallet for Web or Concordium Wallet and delegate their vote from their Concordium Client wallet account(s) to the new account, then vote from the new account. You can create the new account in Concordium Wallet for Web or Concordium Wallet at any time before delegating your vote. But the memo transaction, which effectively delegates the vote, and the vote from the new account both need to take place within the official voting window.</p>
 <p class="sd-card-text"><strong>To delegate your vote:</strong></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>--secure<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.mainnet.concordium.software<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>A<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--memo<span class="w"> </span>delegatevote2025
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>concordium-client<span class="w"> </span>--secure<span class="w"> </span>--grpc-ip<span class="w"> </span>grpc.mainnet.concordium.software<span class="w"> </span>transaction<span class="w"> </span>send<span class="w"> </span>--amount<span class="w"> </span>AMOUNT<span class="w"> </span>--receiver<span class="w"> </span>A<span class="w"> </span>--sender<span class="w"> </span>B<span class="w"> </span>--memo<span class="w"> </span>delegatevote
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><p class="sd-card-text">Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo <em>delegatevote2025</em> for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.</p></li>
+<li><p class="sd-card-text">Enter the command above in the Concordium Client, where AMOUNT is the number of CCD to be sent (1 micro-CCD is enough), A is the name/address of the account to which the vote is delegated, and B is the sender name/address. Note the memo <code class="docutils literal notranslate"><span class="pre">delegatevote</span></code> for the delegation to be valid. Furthermore, there is no service license agreement for the grpc endpoint.</p></li>
 <li><p class="sd-card-text">Vote from the account that has received the delegation.</p></li>
 </ol>
 </div>
-</details></section>
+</details><section id="transaction-fees-when-voting-from-a-delegated-account">
+<h3>Transaction fees when voting from a delegated account<a class="headerlink" href="#transaction-fees-when-voting-from-a-delegated-account" title="Link to this heading">#</a></h3>
+<p>If you delegate your voting power from one account to another (for example, from a Desktop Wallet account or via concordium-client to an account managed by Concordium Wallet for Web or Concordium Wallet),
+please note that casting a vote involves submitting a transaction to the voting smart contract, and any transaction fees are paid from the balance of the account used to cast the vote.</p>
+<p>This means that after delegation, you must ensure that the receiving account has enough CCD to cover the smart contract transaction fee
+required to cast the vote. The fee amount can vary depending on the voting contract and CCD price.</p>
+<p>For example, if you delegate voting power from <code class="docutils literal notranslate"><span class="pre">Account</span> <span class="pre">A</span></code> to <code class="docutils literal notranslate"><span class="pre">Account</span> <span class="pre">B</span></code>, the vote is submitted using Account B, and the transaction fee is deducted from Account B’s balance.</p>
+</section>
+</section>
 <section id="how-to-see-delegations">
 <h2>How to see delegations<a class="headerlink" href="#how-to-see-delegations" title="Link to this heading">#</a></h2>
 <p>It is possible to see delegations to an account in the voting dApp. Anyone can check the delegations on an account. You do not need to connect a wallet to do this.</p>
@@ -989,7 +997,10 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-from-multiple-accounts">Voting from multiple accounts</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-desktop-wallet-and-concordium-client-wallet-holders">For Desktop wallet and Concordium Client wallet holders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-desktop-wallet-and-concordium-client-wallet-holders">For Desktop wallet and Concordium Client wallet holders</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transaction-fees-when-voting-from-a-delegated-account">Transaction fees when voting from a delegated account</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-see-delegations">How to see delegations</a></li>
 </ul>
   </nav></div>
