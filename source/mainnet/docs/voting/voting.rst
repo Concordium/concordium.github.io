@@ -110,7 +110,7 @@ If you delegate your voting power from one account to another (for example, from
 please note that casting a vote involves submitting a transaction to the voting smart contract, and any transaction fees are paid from the balance of the account used to cast the vote.
 
 This means that after delegation, you must ensure that the receiving account has enough CCD to cover the smart contract transaction fee
-required to cast the vote. The fee amount can vary depending on the voting contract and network conditions.
+required to cast the vote. The fee amount can vary depending on the voting contract and CCD price.
 
 For example, if you delegate voting power from ``Account A`` to ``Account B``, the vote is submitted using Account B, and the transaction fee is deducted from Account B’s balance.
 
