@@ -43,9 +43,7 @@ This guide is structured to help you understand and implement Concordium's Verif
 
 * :ref:`manage-transaction-costs` explains how to manage a CCD account with sufficient funds for operations.
 
-* :ref:`integrate-with-verification-flow-backend` provides technical integration guidance for server-side verification processing and audit management.
-
-* :ref:`integrate-with-verification-flow-frontend` provides technical integration guidance for wallet connections and user verification interfaces.
+* :ref:`integrate-with-verification-flow` provides technical integration guidance for integrating the verification flow into your platform.
 
 * :ref:`access-the-concordium-network` covers connecting to the Concordium network through your own node or a hosted service.
 
@@ -58,7 +56,6 @@ This guide is structured to help you understand and implement Concordium's Verif
    select-verification-method
    select-identity-provider
    manage-transaction-costs
-   integrate-with-verification-flow-backend
-   integrate-with-verification-flow-frontend
+   integrate-with-verification-flow
    access-the-concordium-network
 
