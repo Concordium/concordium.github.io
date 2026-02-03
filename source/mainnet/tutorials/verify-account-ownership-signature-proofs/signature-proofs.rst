@@ -210,7 +210,7 @@ Create the App component
        const [result, setResult] = useState(null);
 
        useEffect(() => {
-           detectConcordiumProvider()
+           detectConcordiumProvider(5000) //set a timeout of 5 seconds
                .then(setProvider)
                .catch(() => setStatus({ type: 'error', message: 'Wallet not found' }));
        }, []);
