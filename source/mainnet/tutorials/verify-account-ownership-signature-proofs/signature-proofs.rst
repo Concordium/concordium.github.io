@@ -76,7 +76,7 @@ The ``@concordium/web-sdk/nodejs`` package provides the gRPC client for server-s
 Create the challenge endpoint
 -----------------------------
 
-This endpoint generates a unique challenge for the user to sign. The challenge includes the account address (binds it to a specific account), a random nonce (prevents reuse), and a timestamp (enables expiry checks).
+This endpoint generates a unique challenge for the user to sign. The challenge includes the account address to bind it to a specific account, a random nonce to prevent reuse, and a timestamp to enable expiry checks.
 
 .. code-block:: jsx
 
