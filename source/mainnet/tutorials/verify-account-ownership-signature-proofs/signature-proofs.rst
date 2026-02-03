@@ -151,7 +151,7 @@ Add to ``package.json``:
        "start": "node index.js"
      }
    }
-
+With the server complete, you're now ready to build the client application.
 Build the client
 ================
 
