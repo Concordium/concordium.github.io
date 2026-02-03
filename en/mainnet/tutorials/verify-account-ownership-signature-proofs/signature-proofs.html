@@ -1,0 +1,1177 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Verifying account ownership &#8212; Concordium  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=19c83c19" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tippy.css?v=124524c4" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=716d1818"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../../_static/tippy/tutorials/verify-account-ownership-signature-proofs/signature-proofs.f0756c0f-e631-4b08-b567-a91842664610.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/verify-account-ownership-signature-proofs/signature-proofs';</script>
+    <link rel="canonical" href="https://docs.concordium.com/en/mainnet/tutorials/verify-account-ownership-signature-proofs/signature-proofs.html" />
+    <link rel="icon" href="../../_static/concordium-logo-no-text.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Building a Zero-Knowledge Proof dApp on Concordium" href="../using-ID-in-dApps/index.html" />
+    <link rel="prev" title="Setting up a frontend" href="../piggy-bank/frontend.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" />
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Learn how to build with Protocol Level Tokens (PLTs). Read more about PLTs on the <a href="https://www.concordium.com/article/smart-money-starts-here-concordiums-protocol-level-tokens" target="_blank">Concordium website</a> or dive into our <a href="https://docs.concordium.com/en/mainnet/docs/plt/index.html">developer documentation</a>.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><style>
+.navbar-brand img {
+    max-height: 200px;
+    width: auto;
+}
+</style>
+
+<div>
+    <a href="https://developer.concordium.software/">
+        <img class="logo light-logo" src="../../_static/concordium-logo-dark.svg" />
+        <img class="logo dark-logo" src="../../_static/concordium-logo.svg" />
+    </a>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../docs/index.html">
+    Docs
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tools/index.html">
+    Tools
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../community/index.html">
+    Community
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Concordium" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="mailto:support@concordium.software" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://developer.concordium.software/en/mainnet/net/guides/developer-page.html#block-explorers" title="Monitor" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-chart-line fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Monitor</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://support.concordium.software/latest" title="Discourse" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discourse fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discourse</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://discord.com/invite/GpKGE2hCFx" title="Discord" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-discord fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Discord</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCPZc2CuB2jGbZjD_5zX7-1A" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://medium.com/@concordium" title="Medium" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-medium fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Medium</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup-env.html">Set up the development environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hello-world/hello-world.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../counter/counter-contract.html">Counter</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../piggy-bank/index.html">PiggyBank</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/writing.html">Writing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/testing.html">Testing the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/deploying.html">Deploying the piggy bank smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../piggy-bank/frontend.html">Setting up a frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Verify account ownership, signature proofs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../using-ID-in-dApps/index.html">Using ID in dApps</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using-ID-in-dApps/wallet-connectors-tutorial.html">Implementing Wallet Connectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using-ID-in-dApps/zk-proofs-tutorial.html">ZK proof generation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../onReceivingCIS2/on-receivingCIS2.html">Using the onReceivingCIS2 hook</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../wCCD/index.html">wCCD</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-introduction.html">Understanding the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-interacting.html">Interacting with the wCCD token protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wCCD/wCCD-frontend-set-up.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../voting/index.html">The Voting dApp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-sc.html">Writing a voting smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../voting/voting-dapp.html">Setting up the frontend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nft-minting/index.html">Mint an NFT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/upload-nft.html">Upload the NFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/build-smart-contract.html">Initialize, build, and deploy the smart contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nft-minting/mint-xfer.html">Mint and transfer the NFT</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sft-minting/index.html">Mint a semi-fungible token</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/build-smart-contract.html">Smart contract modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sft-minting/mint-xfer.html">Mint and transfer semi-fungible token</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fungible-tokens/index.html">Mint fungible tokens</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/smart-contract.html">Smart contract implementation for fungible tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fungible-tokens/mint-xfer.html">Mint, transfer, and burn fungible tokens</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../low-code-nft-marketplace/introduction.html">Concordium low-code NFT framework</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/marketplace.html">Low code NFT marketplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-code-nft-marketplace/minting-tool.html">Low-code NFT minting tool</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../eSealing/index.html">eSealing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eSealing/eSealing_dapp.html">Exploring the eSealing dapp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sponsoredTransactions/index.html">Sponsored Transactions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsSmartContract.html">Exploring the sponsored Transactions Smart Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sponsoredTransactions/sponsoredTransactionsFrontendAndBackend.html">Exploring the sponsored Transactions dApp</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../smartContractUpgrade/index.html">Smart Contract Upgrade</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../smartContractUpgrade/smartContractUpgrade.html">Native upgradability</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Ressources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../daap-examples/dapp-examples.html"> dApp examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../company-identity/company-identities.html"> How to create a company identity</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="verifying-account-ownership">
+<span id="signature-proofs"></span><h1>Verifying account ownership<a class="headerlink" href="#verifying-account-ownership" title="Link to this heading">#</a></h1>
+<p>This tutorial shows how to verify that a user controls a Concordium account by having them sign a challenge message. This is useful for authentication, compliance screening, or any situation where you need proof that someone owns a particular account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is different from identity proofs. Identity proofs verify attributes like age or nationality. Signature proofs only verify that someone holds the private key.</p>
+</div>
+<p>The flow is straightforward:</p>
+<ul class="simple">
+<li><p>your server generates a challenge</p></li>
+<li><p>the user signs it</p></li>
+<li><p>your server verifies the signature against on-chain credentials.</p></li>
+</ul>
+<p>No transactions, no gas fees.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nodejs.org/">Node.js</a> v18+</p></li>
+<li><p><a class="reference external" href="https://chrome.google.com/webstore/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg">Concordium Browser Wallet</a></p></li>
+</ul>
+</section>
+<section id="sdk-functions">
+<h2>SDK functions<a class="headerlink" href="#sdk-functions" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.npmjs.com/package/&#64;concordium/web-sdk">Web SDK</a> (<code class="docutils literal notranslate"><span class="pre">&#64;concordium/web-sdk</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">signMessage</span></code> - Signs a message with an account’s private key</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verifyMessageSignature</span></code> - Verifies a signature against account credentials</p></li>
+</ul>
+<p><a class="reference external" href="https://crates.io/crates/concordium-rust-sdk">Rust SDK</a> equivalents: <code class="docutils literal notranslate"><span class="pre">sign_as_account</span></code> and <code class="docutils literal notranslate"><span class="pre">verify_account_signature</span></code></p>
+</section>
+<section id="build-the-server">
+<h2>Build the server<a class="headerlink" href="#build-the-server" title="Link to this heading">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>signature-proof-server<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>signature-proof-server
+<span class="gp">$ </span>npm<span class="w"> </span>init<span class="w"> </span>-y
+<span class="gp">$ </span>npm<span class="w"> </span>install<span class="w"> </span>express<span class="w"> </span>cors<span class="w"> </span>@concordium/web-sdk<span class="w"> </span>@grpc/grpc-js
+</pre></div>
+</div>
+<p>Create <code class="docutils literal notranslate"><span class="pre">index.js</span></code>:</p>
+<section id="set-up-imports-and-connect-to-the-node">
+<h3>Set up imports and connect to the node<a class="headerlink" href="#set-up-imports-and-connect-to-the-node" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;concordium/web-sdk/nodejs</span></code> package provides the gRPC client for server-side node communication.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">cors</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;cors&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">crypto</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;crypto&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk/nodejs&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">credentials</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@grpc/grpc-js&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">AccountAddress</span><span class="p">,</span><span class="w"> </span><span class="nx">verifyMessageSignature</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/web-sdk&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConcordiumGRPCNodeClient</span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;grpc.testnet.concordium.com&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">20000</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">credentials</span><span class="p">.</span><span class="nx">createSsl</span><span class="p">(),</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="mf">15000</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+
+<span class="c1">// Use Redis in production - this won&#39;t survive restarts</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">challenges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="create-the-challenge-endpoint">
+<h3>Create the challenge endpoint<a class="headerlink" href="#create-the-challenge-endpoint" title="Link to this heading">#</a></h3>
+<p>This endpoint generates a unique challenge for the user to sign. The challenge includes the account address to bind it to a specific account, a random nonce to prevent reuse, and a timestamp to enable expiry checks.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/challenge&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Invalid account address&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">crypto</span><span class="p">.</span><span class="nx">randomBytes</span><span class="p">(</span><span class="mf">8</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">challenge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Prove ownership of </span><span class="si">${</span><span class="nx">account</span><span class="si">}</span><span class="sb">\nNonce: </span><span class="si">${</span><span class="nx">crypto</span><span class="p">.</span><span class="nx">randomBytes</span><span class="p">(</span><span class="mf">16</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">\nTime: </span><span class="si">${</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">challenges</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">account</span><span class="p">,</span><span class="w"> </span><span class="nx">challenge</span><span class="p">,</span><span class="w"> </span><span class="nx">expires</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">300000</span><span class="w"> </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">challenge</span><span class="w"> </span><span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<section id="create-the-verification-endpoint">
+<h3>Create the verification endpoint<a class="headerlink" href="#create-the-verification-endpoint" title="Link to this heading">#</a></h3>
+<p>The endpoint retrieves the pending challenge, fetches account credentials from the chain using <code class="docutils literal notranslate"><span class="pre">getAccountInfo</span></code>, and verifies the signature with <code class="docutils literal notranslate"><span class="pre">verifyMessageSignature</span></code>.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/verify&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">account</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">pending</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">challenges</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">pending</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">pending</span><span class="p">.</span><span class="nx">account</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">pending</span><span class="p">.</span><span class="nx">expires</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Invalid or expired challenge&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">accountInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getAccountInfo</span><span class="p">(</span><span class="nx">AccountAddress</span><span class="p">.</span><span class="nx">fromBase58</span><span class="p">(</span><span class="nx">account</span><span class="p">));</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">verifyMessageSignature</span><span class="p">(</span><span class="nx">pending</span><span class="p">.</span><span class="nx">challenge</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="p">,</span><span class="w"> </span><span class="nx">accountInfo</span><span class="p">);</span>
+
+<span class="w">        </span><span class="nx">challenges</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">valid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">verified</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">401</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">verified</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Invalid signature&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>A common point of confusion: <code class="docutils literal notranslate"><span class="pre">verifyMessageSignature</span></code> accepts the full <code class="docutils literal notranslate"><span class="pre">accountInfo</span></code> object directly. Earlier SDK versions required extracting <code class="docutils literal notranslate"><span class="pre">accountCredentials</span></code> first, but that is no longer necessary.</p>
+<p>If verification fails unexpectedly, check that the challenge string matches exactly what was signed - whitespace differences will cause failures.</p>
+</section>
+<section id="start-the-server-and-configure-the-project">
+<h3>Start the server and configure the project<a class="headerlink" href="#start-the-server-and-configure-the-project" title="Link to this heading">#</a></h3>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">3001</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running on port 3001&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Add to <code class="docutils literal notranslate"><span class="pre">package.json</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node index.js&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With the server complete, you’re now ready to build the client application.</p>
+</section>
+</section>
+<section id="build-the-client">
+<h2>Build the client<a class="headerlink" href="#build-the-client" title="Link to this heading">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>signature-proof-client<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>signature-proof-client
+<span class="gp">$ </span>npm<span class="w"> </span>init<span class="w"> </span>-y
+<span class="gp">$ </span>npm<span class="w"> </span>install<span class="w"> </span>react<span class="w"> </span>react-dom<span class="w"> </span>@concordium/browser-wallet-api-helpers
+<span class="gp">$ </span>npm<span class="w"> </span>install<span class="w"> </span>-D<span class="w"> </span>vite<span class="w"> </span>@vitejs/plugin-react
+</pre></div>
+</div>
+<section id="create-the-entry-points">
+<h3>Create the entry points<a class="headerlink" href="#create-the-entry-points" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">index.html</span></code> loads Bootstrap for styling and mounts the React application:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span> <span class="na">data-bs-theme</span><span class="o">=</span><span class="s">&quot;dark&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Signature Proof<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;root&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/src/main.jsx&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">src/main.jsx</span></code> initializes the React application:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom/client&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./App&#39;</span><span class="p">;</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)).</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nt">App</span><span class="w"> </span><span class="p">/&gt;);</span>
+</pre></div>
+</div>
+</section>
+<section id="create-the-app-component">
+<h3>Create the App component<a class="headerlink" href="#create-the-app-component" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">src/App.jsx</span></code> - use <code class="docutils literal notranslate"><span class="pre">detectConcordiumProvider</span></code> to check if the wallet is installed, and <code class="docutils literal notranslate"><span class="pre">provider.connect</span></code> to request access to the user’s account.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">detectConcordiumProvider</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@concordium/browser-wallet-api-helpers&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">provider</span><span class="p">,</span><span class="w"> </span><span class="nx">setProvider</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">account</span><span class="p">,</span><span class="w"> </span><span class="nx">setAccount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">status</span><span class="p">,</span><span class="w"> </span><span class="nx">setStatus</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;idle&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">result</span><span class="p">,</span><span class="w"> </span><span class="nx">setResult</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">detectConcordiumProvider</span><span class="p">(</span><span class="mf">5000</span><span class="p">)</span><span class="w"> </span><span class="c1">//set a timeout of 5 seconds</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">setProvider</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="k">catch</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setStatus</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Wallet not found&#39;</span><span class="w"> </span><span class="p">}));</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">connect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">setAccount</span><span class="p">(</span><span class="nx">acc</span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">detectConcordiumProvider</span></code> rejects if the extension is not installed. In production, you’d add comprehensive error handling here.</p>
+</section>
+<section id="implement-the-verification-flow">
+<h3>Implement the verification flow<a class="headerlink" href="#implement-the-verification-flow" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">verify</span></code> function handles the three-step process: request a challenge from the server, sign it with <code class="docutils literal notranslate"><span class="pre">provider.signMessage</span></code>, and send the signature back for verification.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">verify</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setStatus</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;loading&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Requesting challenge...&#39;</span><span class="w"> </span><span class="p">});</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">challengeRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/api/challenge&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">account</span><span class="w"> </span><span class="p">}),</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">challenge</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">challengeRes</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">    </span><span class="nx">setStatus</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;loading&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Sign the message in your wallet...&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">signMessage</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span><span class="w"> </span><span class="nx">challenge</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">setStatus</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;loading&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Verifying...&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">verifyRes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;/api/verify&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">account</span><span class="p">,</span><span class="w"> </span><span class="nx">signature</span><span class="w"> </span><span class="p">}),</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">verifyRes</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">verified</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">setResult</span><span class="p">({</span><span class="w"> </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">account</span><span class="o">:</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">account</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">provider.signMessage</span></code> opens a wallet popup. If the user closes it without signing, the promise rejects - add error handling for production applications.</p>
+</section>
+<section id="render-the-ui">
+<h3>Render the UI<a class="headerlink" href="#render-the-ui" title="Link to this heading">#</a></h3>
+<p>The UI shows different content based on the current state: a connect button, a verify button, or the verification result.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;container py-5&quot;</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">maxWidth</span><span class="o">:</span><span class="w"> </span><span class="mf">600</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Signature</span><span class="w"> </span><span class="nx">Proof</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="o">!</span><span class="nx">account</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">connect</span><span class="p">}&gt;</span>
+<span class="w">                    </span><span class="nx">Connect</span><span class="w"> </span><span class="nx">Wallet</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">result</span><span class="o">?</span><span class="p">.</span><span class="nx">success</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;alert alert-success&quot;</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="nx">Verified</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">result</span><span class="p">.</span><span class="nx">account</span><span class="p">}</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">verify</span><span class="p">}&gt;</span>
+<span class="w">                    </span><span class="nx">Sign</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Verify</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">)}</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="configure-vite-and-the-project">
+<h3>Configure Vite and the project<a class="headerlink" href="#configure-vite-and-the-project" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">vite.config.js</span></code> proxies API requests to the server during development:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vite&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">react</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vitejs/plugin-react&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">react</span><span class="p">()],</span>
+<span class="w">    </span><span class="nx">server</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="mf">3000</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">proxy</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s1">&#39;/api&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://localhost:3001&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Add to <code class="docutils literal notranslate"><span class="pre">package.json</span></code>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite build&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="run-the-application">
+<h2>Run the application<a class="headerlink" href="#run-the-application" title="Link to this heading">#</a></h2>
+<p>Terminal 1:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>signature-proof-server<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>start
+</pre></div>
+</div>
+<p>Terminal 2:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>signature-proof-client<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</pre></div>
+</div>
+<p>Open <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> with the Browser Wallet installed. Select <strong>Connect Wallet</strong>, then <strong>Sign &amp; Verify</strong>, and approve the signature in your wallet.</p>
+</section>
+<section id="security-notes">
+<h2>Security notes<a class="headerlink" href="#security-notes" title="Link to this heading">#</a></h2>
+<p>Production considerations:</p>
+<ul class="simple">
+<li><p>The in-memory challenge store does not survive server restarts. Use Redis or a database.</p></li>
+<li><p>Always fetch fresh <code class="docutils literal notranslate"><span class="pre">accountInfo</span></code> at verification time. Account keys can be rotated, so stale credential data may cause valid signatures to fail.</p></li>
+<li><p>Five minutes is probably too generous for challenge expiry. Consider 60-90 seconds.</p></li>
+<li><p>Never verify signatures client-side only.</p></li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>This tutorial demonstrated how to verify account ownership using signature proofs. You built a server that generates challenges and verifies signatures, and a client application that requests challenges and signs them using the Browser Wallet.
+The key functions are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">signMessage</span></code> (client, via wallet)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getAccountInfo</span></code> (server)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verifyMessageSignature</span></code> (server) - pass <code class="docutils literal notranslate"><span class="pre">accountInfo</span></code> directly</p></li>
+</ul>
+<p>For Rust, see <code class="docutils literal notranslate"><span class="pre">sign_as_account</span></code> and <code class="docutils literal notranslate"><span class="pre">verify_account_signature</span></code> in the <a class="reference external" href="https://docs.rs/concordium-rust-sdk/latest/concordium_rust_sdk/">Rust SDK docs</a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><style>
+  legend {
+    font-size: 12px;
+    font-weight:bold ;
+  }
+
+  label {
+    font-size: 12px;
+  }
+</style>
+
+<fieldset>
+  <legend>Was this article helpful?</legend>
+  <input type="radio" id="Yes" name="rating" value="Yes" onclick="_paq.push(['trackEvent', 'Rating', 'ClickYes', 'Yes']);">
+  <label for="Yes">Yes</label>
+  <input type="radio" id="No" name="rating" value="No" onclick="_paq.push(['trackEvent', 'Rating', 'ClickNo', 'No']);">
+  <label for="No">No</label>
+</fieldset>
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/concordium.matomo.cloud/container_8ZIoCz8b.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager --></div>
+  
+</div>
+                </footer>
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../piggy-bank/frontend.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setting up a frontend</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../using-ID-in-dApps/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Building a Zero-Knowledge Proof dApp on Concordium</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sdk-functions">SDK functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-server">Build the server</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-imports-and-connect-to-the-node">Set up imports and connect to the node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-challenge-endpoint">Create the challenge endpoint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-verification-endpoint">Create the verification endpoint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-server-and-configure-the-project">Start the server and configure the project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-client">Build the client</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-entry-points">Create the entry points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-app-component">Create the App component</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-the-verification-flow">Implement the verification flow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#render-the-ui">Render the UI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-vite-and-the-project">Configure Vite and the project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-application">Run the application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-notes">Security notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/Concordium/concordium.github.io/edit/main/source/mainnet/tutorials/verify-account-ownership-signature-proofs/signature-proofs.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  
+
+  <p class="copyright">
+    
+      © Copyright 2021 - 2026, Concordium Software ApS.
+      <br/>
+    
+  </p>
+
+  <style>
+    .cc {
+      position: relative;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .cc a {
+      display: inline-block;
+      text-align: left;
+      padding-left: 16px;
+      padding-bottom: 8px;
+      color: black;
+      font-size: 8px;
+    }
+</style>
+
+<div class="cc">
+  <a text-decoration=none href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img src="../../_static/cc-sa-by.png" />
+  </a>
+  <a text-decoration=none href="../../net/guides/legal.html" >
+    Legal information
+  </a>
+</div>
+  <div id="cookie-consent" class="consent">     
+    <p>This website only aggregates and analyzes the actions you take here if you allow cookies. If you do not allow cookies, it protects your privacy, but also prevents the owner from learning from your actions and creating a better experience for you and other users.</p><p>Note that if you opt in and you clear your cookies, delete the opt-in cookie, or if you change computers or Web browsers, you will need to perform the opt-in procedure again.</p>
+    <button onclick="consentGranted()">Allow</button>     
+    <button onclick="consentDenied()">Decline</button>     
+    <a href="https://concordium.com/privacy-policy/">Privacy policy</a> 
+</div>  
+
+<!-- Matomo --> 
+<script>   
+var _paq = window._paq = window._paq || [];  
+
+// Save the choice in a cookie with proper attributes
+function storeChoice(granted) {   
+    // Set cookie with 1 year expiration, path, and secure attributes
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    document.cookie = "cookie-consent=" + granted + "; expires=" + expires.toUTCString() + "; path=/; SameSite=Lax";
+}  
+
+// Look for a cookie storing the previous choice of the user. 
+// Returns null if no choice was stored, true if granted, false if denied
+function loadChoice() {   
+    if (!document.cookie.includes("cookie-consent=")) {       
+        return null;   
+    }   
+    return document.cookie.includes("cookie-consent=true");
+}  
+
+// Removes the cookie consent banner safely
+function removeCookieConsentBanner() {   
+    const banner = document.getElementById("cookie-consent");
+    if (banner) {
+        banner.remove();
+    }
+}  
+
+// Called by the cookie consent banner if granted permission
+function consentGranted() {   
+    storeChoice(true);
+    _paq.push(['setCookieConsentGiven']);   
+    removeCookieConsentBanner();
+}  
+
+// Called by the cookie consent banner if denied permission
+function consentDenied() {   
+    storeChoice(false);  // FIXED: Now correctly stores false
+    removeCookieConsentBanner();
+}  
+
+// Check for stored consent and act accordingly
+const stored = loadChoice(); 
+if (stored === true) {
+    // User previously granted consent
+    _paq.push(['setCookieConsentGiven']);
+    removeCookieConsentBanner();
+} else if (stored === false) {
+    // User previously denied consent
+    removeCookieConsentBanner();
+}
+// If stored === null, show the banner (do nothing)
+
+_paq.push(['requireCookieConsent']); 
+/* tracker methods like "setCustomDimension" should be called before "trackPageView" */ 
+_paq.push(['trackPageView']); 
+_paq.push(['enableLinkTracking']);  
+
+(function() {     
+    var u="https://concordium.matomo.cloud/";     
+    _paq.push(['setTrackerUrl', u+'matomo.php']);     
+    _paq.push(['setSiteId', '2']);     
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];     
+    g.async=true; g.src='//cdn.matomo.cloud/concordium.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);   
+})();    
+
+// Only remember consent if it was actually granted
+if (stored === true) {
+    _paq.push(['rememberCookieConsentGiven']);
+}
+</script>   
+
+<!-- Start of HubSpot Embed Code --> 
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4771748.js"></script> 
+<!-- End of HubSpot Embed Code -->
+
+  </body>
+</html>
