@@ -4,7 +4,7 @@
 Verifying account ownership
 =============================
 
-This tutorial shows how to verify that a user controls a Concordium account by having them sign a challenge message. This is useful for authentication, compliance screening or any situation where you need proof that someone owns a particular account.
+This tutorial shows how to verify that a user controls a Concordium account by having them sign a challenge message. This is useful for authentication, compliance screening, or any situation where you need proof that someone owns a particular account.
 
 .. note::
 
