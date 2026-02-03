@@ -336,7 +336,7 @@ Open http://localhost:3000 with the Browser Wallet installed. Select **Connect W
 Security notes
 ==============
 
-A few things to keep in mind for production:
+Production considerations:
 
 - The in-memory challenge store does not survive server restarts. Use Redis or a database.
 - Always fetch fresh ``accountInfo`` at verification time. Account keys can be rotated, so stale credential data may cause valid signatures to fail.
