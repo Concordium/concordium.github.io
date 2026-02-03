@@ -346,7 +346,8 @@ Production considerations:
 Summary
 =======
 
-The relevant functions:
+This tutorial demonstrated how to verify account ownership using signature proofs. You built a server that generates challenges and verifies signatures, and a client application that requests challenges and signs them using the Browser Wallet.
+The key functions are:
 
 - ``signMessage`` (client, via wallet)
 - ``getAccountInfo`` (server)
