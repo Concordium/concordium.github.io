@@ -19,15 +19,24 @@ Wallets
 |cryptox| for iOS
 ------------------------
 
-    3.4.3 - December 10, 2025
+    3.4.4 - January 27, 2026
 
     Updated:
 
-    - Updated Reown version to 2.0.0
+    - UI of the WalletConnect flow
+
+    Added:
+
+    - CCD namespaces with genesis hash for WalletConnect
 
     .. dropdown:: Previous releases
 
-        .. dropdown:: |cryptox-legacy| 3.4.2  -  Dec 5, 2025
+        .. dropdown:: |cryptox| 3.4.3  -  Dec 10, 2025
+
+           Updated:
+               - Updated Reown version to 2.0.0
+
+        .. dropdown:: |cryptox| 3.4.2  -  Dec 5, 2025
 
             Updated:
                 - WalletConnect proposal now validates only namespaces relevant to the active chain
@@ -39,7 +48,7 @@ Wallets
                 - Correct CTA banner is shown based on state
                 - App crash upon wallet removal
 
-        .. dropdown:: |cryptox-legacy| 3.4.1  -  Nov 27, 2025
+        .. dropdown:: |cryptox| 3.4.1  -  Nov 27, 2025
 
             Updated:
              - Updated onboarding UI and UX
@@ -51,7 +60,7 @@ Wallets
              - Fixed missing error message for insufficient funds during staking cooldown
              - Fixed users getting stuck on the Confirmation Screen when lacking CCD for fees
 
-        .. dropdown:: |cryptox-legacy| 3.4.0  -  Nov 13, 2025
+        .. dropdown:: |cryptox| 3.4.0  -  Nov 13, 2025
 
             Added:
              - Added support for PLT (Protocol-Level Token) payments on connected third-party websites
@@ -191,13 +200,19 @@ Wallets
 
 |cryptox| for Android
 ---------------------
-    1.16.1 - December 9, 2025
+    1.17.0 - January 21, 2026
 
-    Fixed:
+    Updates:
 
-    - Crash while using the file wallet
+    - Updated UI across the app with modernized UI components and the latest design system
+    - Added support for verifiable presentations (proofs) from identities and accounts
+    - Fixed inability to change validator pool ID
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 1.16.1 - December 9, 2025
+
+            - Crash while using the file wallet
 
         .. dropdown:: 1.16.0 - November 28, 2025
 

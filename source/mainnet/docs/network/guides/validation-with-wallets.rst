@@ -19,7 +19,7 @@ To become a validator in the Concordium network, you need to run a node, generat
 
 .. Note::
 
-   Before adding a validator, you need to make sure your node is running and fully synchronized with the chain. Otherwise, if you add a validator before launching a node, your validator may be automatically suspended due to missing block production. To familiarize yourself with the process of suspending validators, check out this article: :ref:`Suspend or unsuspend validators <suspend-unsuspend-validator>`.
+   Before generating validator keys, you need to make sure your node is running and fully synchronized with the chain. Otherwise, if you generated validator keys before launching a node, your validator may be automatically suspended due to missing block production. To familiarize yourself with the process of suspending validators, check out this article: :ref:`Suspend or unsuspend validators <suspend-unsuspend-validator>`.
 
 Validation with |bw| and |cryptox|
 ----------------------------------
@@ -28,7 +28,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 1: Set up the node
 
-   For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating keys, you need to make sure that your node is fully synchronized. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
+   For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating validator keys, you need to make sure that your node is fully synchronized. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
 
 .. dropdown:: Step 2: Set up the Wallet
 
@@ -60,7 +60,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 1: Set up the node
 
-   The Desktop Wallet must be connected to a running node on the Concordium blockchain. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also choose to have a third-party node runner run a node for you if you do not want to run the node yourself.
+   For validation you must be running a node on the Concordium blockchain. Synchronization of the node takes some time, depending on the performance of your hardware and the length of the chain. Before generating validator keys, you need to make sure that your node is fully synchronized. You can run a node :ref:`on Windows<run-node-windows>`, :ref:`on macOS<run-node-macos>`, :ref:`on Ubuntu<run-node-ubuntu>` or using :ref:`Docker<run-a-node>`. You can also have a third-party run a node on your behalf.
 
 .. dropdown:: Step 2: Set up the LEDGER device
 
@@ -68,7 +68,7 @@ This overview describes the recommended scenario for running a node and becoming
 
 .. dropdown:: Step 3: Set up the Concordium Desktop Wallet
 
-   You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a validator. See :ref:`Set up the Desktop Wallet<overview-desktop>`.
+   The Desktop Wallet must be connected to a running node on the Concordium blockchain. You'll need to install and set up the Desktop Wallet to create and manage identities and accounts and add a validator. See :ref:`Set up the Desktop Wallet<overview-desktop>`.
 
 .. dropdown:: Step 4: Set up an identity and an initial account
 
@@ -94,7 +94,6 @@ For information about configuring and managing validation in ``Concordium-client
 Next steps
 ==========
 
-- Read the information about :ref:`validation management<baker-pool>`.
 - If you are interested in a staking pool, read the :ref:`Delegation FAQ<delegation-faq-old>`.
 - You can then :ref:`update validator settings <update-baker-mw>` as needed to manage your validator.
 
