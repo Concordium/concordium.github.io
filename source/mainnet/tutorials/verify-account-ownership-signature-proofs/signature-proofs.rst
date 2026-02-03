@@ -255,7 +255,7 @@ The ``verify`` function handles the three-step process: request a challenge from
            }
        };
 
-``provider.signMessage`` opens a wallet popup. If the user closes it without signing, the promise rejects - add error handling for real applications.
+``provider.signMessage`` opens a wallet popup. If the user closes it without signing, the promise rejects - add error handling for production applications.
 
 Render the UI
 -------------
