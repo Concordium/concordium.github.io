@@ -110,7 +110,7 @@ Default GRPC port is set to ``20000``
 
 Default listen port is set to ``8888``
 
-`8.0.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_8.0.3-1_amd64.deb>`_
+`8.0.3 <https://distribution.mainnet.concordium.software/deb/concordium-mainnet-node_8.0.3-1_amd64.deb>`__
 
    - Verification instructions
 
@@ -302,7 +302,7 @@ Default listen port is set to ``8889``
       #. Paste the following into the terminal: $sha256sum concordium-testnet-node_9.0.7-3_amd64.deb
       #. Verify that the output matches the SHA256 checksum ``676644f4b07204a62d45f5b7dc38f3dd89bff125d2e34f7b6238c5323da0a0bf``
 
-`8.0.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_8.0.3-1_amd64.deb>`_
+`8.0.3 <https://distribution.testnet.concordium.com/deb/concordium-testnet-node_8.0.3-1_amd64.deb>`__
 
     - Verification instructions
 
