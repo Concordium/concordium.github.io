@@ -1599,7 +1599,7 @@ Testnet
         Support for protocol version 10:
 
             - Send any account transaction as a sponsored transaction.
-        
+
         Additionally, the following changes are included in the release
 
             - Fix a bug (present in 8.1.0 - 10.0.1 versions) where a protocol update can be executed twice, resulting in a corrupted database. Means of recovery from the bug has also been added.
