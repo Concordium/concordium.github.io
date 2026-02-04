@@ -2208,46 +2208,65 @@ Tools
 Concordium Client
 -----------------
 
-    August 18, 2025
+    February 4, 2026
 
-    Concordium Client 9.1.4 adds support for node version 9.0.7 and protocol version 9.
-    In particular, it supports the new protocol-level token (PLT) functionality with the following additions and changes:
+    Concordium Client 10.0.0 adds support for node version 10.0.4 and protocol version 10.
+    In particular, it supports creating, signing, and submitting sponsored transactions by utilizing the extended transaction format.
 
-    - ``account show`` displays account info relating to PLTs (balances and list membership).
+        - `--extended` transaction configuration option has been added as a means to submit a transaction in the v1 transaction format.
 
-    - New ``transaction plt`` commands:
+        - `--unsigned` transaction configuration option has been added to support constructing unsigned transactions. These can be signed at a later point by using `transaction add-signature`. This option can only be used when `--out` is also specified.
 
-        - ``send``: transfer PLTs to a specified account.
+        - All transaction commands can now be configured to construct sponsored transactions by using `--sponsor <ACCOUNT>` enabling a new set of optional configuration options:
 
-        - ``add-to-allow-list``: add an account to the allow-list of a PLT (governance operation).
+        - `--sponsor-keys` to specify a file holding the sponsor keys to use for signing. Similar to `--keys`.
 
-        - ``remove-from-allow-list``: remove an account from the allow-list of a PLT (governance operation).
+        - `--sponsor-signers` to specify the credential and key indices to sign with for the sponsor account. Similar to `--signers`.
 
-        - ``add-to-deny-list``: add an account to the deny-list of a PLT (governance operation).
+        - `--sponsor-sign` to sign the transaction on behalf of the sponsor as part of transaction construction. Inverse of `--unsigned` for the transaction sender.
 
-        - ``remove-from-deny-list``: remove an account from the deny-list of a PLT (governance operation).
-
-        - ``mint``: mint new PLTs (governance operation).
-
-        - ``burn``: burn PLTs (governance operation).
-
-        - ``pause``: suspend all balance-update operations for a PLT (governance operation).
-
-        - ``unpause``: resume all balance-update operations for a PLT (governance operation).
-
-    - ``raw`` commands:
-
-        - ``GetTokenList`` gets a list of PLTs registered on the chain.
-
-        - ``GetTokenInfo`` gets information about a PLT.
-
-        - ``GetAccountInfo`` now includes information about PLTs related to the account.
-
-        - ``GetNextUpdateSequenceNumbers`` now includes the next update sequence number for PLT chain updates.
-
-    - ``consensus chain-update`` supports creating new PLTs.
+        - `transaction add-signature` now supports signing on behalf of a sponsor by specifying the `--sponsor` flag.
 
     .. dropdown:: Previous releases
+
+        .. dropdown:: 9.1.4 - August 18, 2025
+
+            Concordium Client 9.1.4 adds support for node version 9.0.7 and protocol version 9.
+            In particular, it supports the new protocol-level token (PLT) functionality with the following additions and changes:
+
+            - ``account show`` displays account info relating to PLTs (balances and list membership).
+
+            - New ``transaction plt`` commands:
+
+                - ``send``: transfer PLTs to a specified account.
+
+                - ``add-to-allow-list``: add an account to the allow-list of a PLT (governance operation).
+
+                - ``remove-from-allow-list``: remove an account from the allow-list of a PLT (governance operation).
+
+                - ``add-to-deny-list``: add an account to the deny-list of a PLT (governance operation).
+
+                - ``remove-from-deny-list``: remove an account from the deny-list of a PLT (governance operation).
+
+                - ``mint``: mint new PLTs (governance operation).
+
+                - ``burn``: burn PLTs (governance operation).
+
+                - ``pause``: suspend all balance-update operations for a PLT (governance operation).
+
+                - ``unpause``: resume all balance-update operations for a PLT (governance operation).
+
+            - ``raw`` commands:
+
+                - ``GetTokenList`` gets a list of PLTs registered on the chain.
+
+                - ``GetTokenInfo`` gets information about a PLT.
+
+                - ``GetAccountInfo`` now includes information about PLTs related to the account.
+
+                - ``GetNextUpdateSequenceNumbers`` now includes the next update sequence number for PLT chain updates.
+
+            - ``consensus chain-update`` supports creating new PLTs.
 
         .. dropdown:: 8.1.0 - February 28, 2025
 
