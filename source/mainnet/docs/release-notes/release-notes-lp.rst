@@ -1590,7 +1590,7 @@ Mainnet
 Testnet
 -------
 
-    February 2, 2026
+    February 4, 2026
 
     Concordium node version 10.0.4 contains support for `protocol version 10 <https://proposals.concordium.com/updates/P10.html>`_.
     The new consensus protocol will take effect on the testnet on February 11, 2026.
