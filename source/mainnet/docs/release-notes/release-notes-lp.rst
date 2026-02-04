@@ -1590,38 +1590,85 @@ Mainnet
 Testnet
 -------
 
-    August 18, 2025
+    February 2, 2026
 
-    Concordium node version 9.0.7 contains support for `protocol version 9 <https://proposals.concordium.software/updates/P9.html>`_.
-    The new consensus protocol will take effect on the testnet on August 27, 2025.
-    **Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.**
+    Concordium node version 10.0.4 contains support for `protocol version 10 <https://proposals.concordium.com/updates/P10.html>`_.
+    The new consensus protocol will take effect on the testnet on February 11, 2026.
+    **Node runners should upgrade to version 10.0.4 before the protocol update to ensure that their nodes do not shut down.**
     Validators that do not upgrade before the protocol update may be suspended.
 
-    Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
-    Protocol version 9 supports the following PLT functionality:
+    The protocol change introduces sponsored transactions, which allow an account other than the sender of a transaction to pay the transaction fee. Protocol version 10 supports the following functionality:
 
-        - creating new PLTs (through the CreatePLT chain update);
+    **Sponsored Transactions**
 
-        - transferring PLTs between accounts;
+        - Transactions can now optionally include a sponsor account.
+        - The sponsor co-signs the transaction and pays the transaction fee instead of the sender.
+        - The transaction is still executed on behalf of the sender only; the sponsor has no execution privileges.
 
-        - minting and burning PLTs (limited to the nominated token governance account);
+    **New transaction format**
 
-        - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
+        - A new block item type, TransactionV1, is introduced.
+        - TransactionV1 supports optional sponsor data and signatures while remaining fully backward-compatible with existing transaction semantics.
+        - Sender and sponsor signatures are both verified when a sponsor is present.
 
-        - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
+    **Fee payment logic**
 
-    The node API is updated to support PLTs as follows:
+        - For sponsored transactions, transaction fees are deducted from the sponsor’s balance.
+        - For non-sponsored transactions, the sender pays the fee as before.
+        - Balance checks for fees are performed against the actual fee payer (sponsor or sender).
 
-        - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
+    **Transaction summaries updated**
 
-        - ``GetTokenList`` reports a list of the registered PLTs on the chain.
+        Transaction summaries now optionally include:
 
-        - ``GetTokenInfo`` gets the global state information for a particular PLT.
+        - Sponsor account address
+        - Fee amount paid by the sponsor
 
-    Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.
+        The summary always includes:
+
+        - Fee charged to the sender (zero for sponsored transactions)
+
+        Block hash computation is updated accordingly to include sponsor-related data when present.
+
+    **No changes to execution semantics**
+
+        - Apart from fee payment, sponsored transactions behave exactly like regular transactions.
+        - Payload size limits, execution rules, and transaction effects remain unchanged.
 
     .. dropdown:: Previous releases
 
+        .. dropdown:: 9.0.7 - August 18, 2025
+
+                August 18, 2025
+
+                Concordium node version 9.0.7 contains support for `protocol version 9 <https://proposals.concordium.software/updates/P9.html>`_.
+                The new consensus protocol will take effect on the testnet on August 27, 2025.
+                **Node runners should upgrade to version 9.0.7 before the protocol update to ensure that their nodes do not shut down.**
+                Validators that do not upgrade before the protocol update may be suspended.
+
+                Protocol version 9 introduces Protocol-Level Tokens (PLTs), which enable chain-native support for tokens other than CCD, without reliance on smart contracts.
+                Protocol version 9 supports the following PLT functionality:
+
+                    - creating new PLTs (through the CreatePLT chain update);
+
+                    - transferring PLTs between accounts;
+
+                    - minting and burning PLTs (limited to the nominated token governance account);
+
+                    - managing permissions for which accounts can send and receive each PLT through an allow- or deny-list (limited to the governance account); and
+
+                    - globally pausing or unpausing balance changing operations for a PLT (limited to the governance account).
+
+                The node API is updated to support PLTs as follows:
+
+                    - ``GetAccountInfo`` reports information about PLTs associated with the account, including any balance.
+
+                    - ``GetTokenList`` reports a list of the registered PLTs on the chain.
+
+                    - ``GetTokenInfo`` gets the global state information for a particular PLT.
+
+                Note: **Ubuntu 20.04 LTS is no longer supported;** the minimum supported version for this release is 22.04 LTS.           
+            
         .. dropdown:: 8.0.3 - February 18, 2025
 
             Concordium node version 8.0.3 contains support for `protocol version 8 <https://proposals.concordium.software/updates/P8.html>`_.
